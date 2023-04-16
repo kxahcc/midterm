@@ -1,0 +1,179 @@
+digraph "loadEnvironment" {  
+"938" [label = <(METHOD,loadEnvironment)<SUB>520</SUB>> ]
+"82" [label = <(PARAM,this)<SUB>520</SUB>> ]
+"939" [label = <(PARAM,String prefix)<SUB>520</SUB>> ]
+"940" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>520</SUB>> ]
+"80" [label = <(LOCAL,Properties props: java.util.Properties)> ]
+"941" [label = <(&lt;operator&gt;.assignment,Properties props = new Properties())<SUB>521</SUB>> ]
+"942" [label = <(IDENTIFIER,props,Properties props = new Properties())<SUB>521</SUB>> ]
+"943" [label = <(&lt;operator&gt;.alloc,new Properties())<SUB>521</SUB>> ]
+"944" [label = <(&lt;init&gt;,new Properties())<SUB>521</SUB>> ]
+"79" [label = <(IDENTIFIER,props,new Properties())<SUB>521</SUB>> ]
+"945" [label = <(CONTROL_STRUCTURE,if (!prefix.endsWith(&quot;.&quot;)),if (!prefix.endsWith(&quot;.&quot;)))<SUB>522</SUB>> ]
+"946" [label = <(&lt;operator&gt;.logicalNot,!prefix.endsWith(&quot;.&quot;))<SUB>522</SUB>> ]
+"947" [label = <(endsWith,prefix.endsWith(&quot;.&quot;))<SUB>522</SUB>> ]
+"948" [label = <(IDENTIFIER,prefix,prefix.endsWith(&quot;.&quot;))<SUB>522</SUB>> ]
+"949" [label = <(LITERAL,&quot;.&quot;,prefix.endsWith(&quot;.&quot;))<SUB>522</SUB>> ]
+"950" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>522</SUB>> ]
+"951" [label = <(&lt;operator&gt;.assignmentPlus,prefix += &quot;.&quot;)<SUB>523</SUB>> ]
+"952" [label = <(IDENTIFIER,prefix,prefix += &quot;.&quot;)<SUB>523</SUB>> ]
+"953" [label = <(LITERAL,&quot;.&quot;,prefix += &quot;.&quot;)<SUB>523</SUB>> ]
+"954" [label = <(log,log(&quot;Loading Environment &quot; + prefix, Project.MSG_VERBOSE))<SUB>525</SUB>> ]
+"81" [label = <(IDENTIFIER,this,log(&quot;Loading Environment &quot; + prefix, Project.MSG_VERBOSE))<SUB>525</SUB>> ]
+"955" [label = <(&lt;operator&gt;.addition,&quot;Loading Environment &quot; + prefix)<SUB>525</SUB>> ]
+"956" [label = <(LITERAL,&quot;Loading Environment &quot;,&quot;Loading Environment &quot; + prefix)<SUB>525</SUB>> ]
+"957" [label = <(IDENTIFIER,prefix,&quot;Loading Environment &quot; + prefix)<SUB>525</SUB>> ]
+"958" [label = <(&lt;operator&gt;.fieldAccess,Project.MSG_VERBOSE)<SUB>525</SUB>> ]
+"959" [label = <(IDENTIFIER,Project,log(&quot;Loading Environment &quot; + prefix, Project.MSG_VERBOSE))<SUB>525</SUB>> ]
+"960" [label = <(FIELD_IDENTIFIER,MSG_VERBOSE,MSG_VERBOSE)<SUB>525</SUB>> ]
+"961" [label = <(LOCAL,Vector osEnv: java.util.Vector)> ]
+"962" [label = <(&lt;operator&gt;.assignment,Vector osEnv = getProcEnvironment())<SUB>526</SUB>> ]
+"963" [label = <(IDENTIFIER,osEnv,Vector osEnv = getProcEnvironment())<SUB>526</SUB>> ]
+"964" [label = <(getProcEnvironment,getProcEnvironment())<SUB>526</SUB>> ]
+"965" [label = <(IDENTIFIER,Execute,getProcEnvironment())<SUB>526</SUB>> ]
+"966" [label = <(CONTROL_STRUCTURE,for (Enumeration e = osEnv.elements(); Some(e.hasMoreElements()); ),for (Enumeration e = osEnv.elements(); Some(e.hasMoreElements()); ))<SUB>527</SUB>> ]
+"967" [label = <(LOCAL,Enumeration e: java.util.Enumeration)> ]
+"968" [label = <(&lt;operator&gt;.assignment,Enumeration e = osEnv.elements())<SUB>527</SUB>> ]
+"969" [label = <(IDENTIFIER,e,Enumeration e = osEnv.elements())<SUB>527</SUB>> ]
+"970" [label = <(elements,osEnv.elements())<SUB>527</SUB>> ]
+"971" [label = <(IDENTIFIER,osEnv,osEnv.elements())<SUB>527</SUB>> ]
+"972" [label = <(hasMoreElements,e.hasMoreElements())<SUB>527</SUB>> ]
+"973" [label = <(IDENTIFIER,e,e.hasMoreElements())<SUB>527</SUB>> ]
+"974" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>527</SUB>> ]
+"975" [label = <(LOCAL,String entry: java.lang.String)> ]
+"976" [label = <(&lt;operator&gt;.assignment,String entry = (String) e.nextElement())<SUB>528</SUB>> ]
+"977" [label = <(IDENTIFIER,entry,String entry = (String) e.nextElement())<SUB>528</SUB>> ]
+"978" [label = <(&lt;operator&gt;.cast,(String) e.nextElement())<SUB>528</SUB>> ]
+"979" [label = <(TYPE_REF,String,String)<SUB>528</SUB>> ]
+"980" [label = <(nextElement,e.nextElement())<SUB>528</SUB>> ]
+"981" [label = <(IDENTIFIER,e,e.nextElement())<SUB>528</SUB>> ]
+"982" [label = <(LOCAL,int pos: int)> ]
+"983" [label = <(&lt;operator&gt;.assignment,int pos = entry.indexOf('='))<SUB>529</SUB>> ]
+"984" [label = <(IDENTIFIER,pos,int pos = entry.indexOf('='))<SUB>529</SUB>> ]
+"985" [label = <(indexOf,entry.indexOf('='))<SUB>529</SUB>> ]
+"986" [label = <(IDENTIFIER,entry,entry.indexOf('='))<SUB>529</SUB>> ]
+"987" [label = <(LITERAL,'=',entry.indexOf('='))<SUB>529</SUB>> ]
+"988" [label = <(CONTROL_STRUCTURE,if (pos == -1),if (pos == -1))<SUB>530</SUB>> ]
+"989" [label = <(&lt;operator&gt;.equals,pos == -1)<SUB>530</SUB>> ]
+"990" [label = <(IDENTIFIER,pos,pos == -1)<SUB>530</SUB>> ]
+"991" [label = <(&lt;operator&gt;.minus,-1)<SUB>530</SUB>> ]
+"992" [label = <(LITERAL,1,-1)<SUB>530</SUB>> ]
+"993" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>530</SUB>> ]
+"994" [label = <(log,log(&quot;Ignoring: &quot; + entry, Project.MSG_WARN))<SUB>531</SUB>> ]
+"83" [label = <(IDENTIFIER,this,log(&quot;Ignoring: &quot; + entry, Project.MSG_WARN))<SUB>531</SUB>> ]
+"995" [label = <(&lt;operator&gt;.addition,&quot;Ignoring: &quot; + entry)<SUB>531</SUB>> ]
+"996" [label = <(LITERAL,&quot;Ignoring: &quot;,&quot;Ignoring: &quot; + entry)<SUB>531</SUB>> ]
+"997" [label = <(IDENTIFIER,entry,&quot;Ignoring: &quot; + entry)<SUB>531</SUB>> ]
+"998" [label = <(&lt;operator&gt;.fieldAccess,Project.MSG_WARN)<SUB>531</SUB>> ]
+"999" [label = <(IDENTIFIER,Project,log(&quot;Ignoring: &quot; + entry, Project.MSG_WARN))<SUB>531</SUB>> ]
+"1000" [label = <(FIELD_IDENTIFIER,MSG_WARN,MSG_WARN)<SUB>531</SUB>> ]
+"1001" [label = <(CONTROL_STRUCTURE,else,else)<SUB>532</SUB>> ]
+"1002" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>532</SUB>> ]
+"1003" [label = <(put,props.put(prefix + entry.substring(0, pos), entry.substring(pos + 1)))<SUB>533</SUB>> ]
+"1004" [label = <(IDENTIFIER,props,props.put(prefix + entry.substring(0, pos), entry.substring(pos + 1)))<SUB>533</SUB>> ]
+"1005" [label = <(&lt;operator&gt;.addition,prefix + entry.substring(0, pos))<SUB>533</SUB>> ]
+"1006" [label = <(IDENTIFIER,prefix,prefix + entry.substring(0, pos))<SUB>533</SUB>> ]
+"1007" [label = <(substring,entry.substring(0, pos))<SUB>533</SUB>> ]
+"1008" [label = <(IDENTIFIER,entry,entry.substring(0, pos))<SUB>533</SUB>> ]
+"1009" [label = <(LITERAL,0,entry.substring(0, pos))<SUB>533</SUB>> ]
+"1010" [label = <(IDENTIFIER,pos,entry.substring(0, pos))<SUB>533</SUB>> ]
+"1011" [label = <(substring,entry.substring(pos + 1))<SUB>534</SUB>> ]
+"1012" [label = <(IDENTIFIER,entry,entry.substring(pos + 1))<SUB>534</SUB>> ]
+"1013" [label = <(&lt;operator&gt;.addition,pos + 1)<SUB>534</SUB>> ]
+"1014" [label = <(IDENTIFIER,pos,pos + 1)<SUB>534</SUB>> ]
+"1015" [label = <(LITERAL,1,pos + 1)<SUB>534</SUB>> ]
+"1016" [label = <(addProperties,this.addProperties(props))<SUB>537</SUB>> ]
+"84" [label = <(IDENTIFIER,this,this.addProperties(props))<SUB>537</SUB>> ]
+"1017" [label = <(IDENTIFIER,props,this.addProperties(props))<SUB>537</SUB>> ]
+"1018" [label = <(MODIFIER,PROTECTED)> ]
+"1019" [label = <(MODIFIER,VIRTUAL)> ]
+"1020" [label = <(METHOD_RETURN,void)<SUB>520</SUB>> ]
+  "938" -> "82" 
+  "938" -> "939" 
+  "938" -> "940" 
+  "938" -> "1018" 
+  "938" -> "1019" 
+  "938" -> "1020" 
+  "940" -> "80" 
+  "940" -> "941" 
+  "940" -> "944" 
+  "940" -> "945" 
+  "940" -> "954" 
+  "940" -> "961" 
+  "940" -> "962" 
+  "940" -> "966" 
+  "940" -> "1016" 
+  "941" -> "942" 
+  "941" -> "943" 
+  "944" -> "79" 
+  "945" -> "946" 
+  "945" -> "950" 
+  "946" -> "947" 
+  "947" -> "948" 
+  "947" -> "949" 
+  "950" -> "951" 
+  "951" -> "952" 
+  "951" -> "953" 
+  "954" -> "81" 
+  "954" -> "955" 
+  "954" -> "958" 
+  "955" -> "956" 
+  "955" -> "957" 
+  "958" -> "959" 
+  "958" -> "960" 
+  "962" -> "963" 
+  "962" -> "964" 
+  "964" -> "965" 
+  "966" -> "967" 
+  "966" -> "968" 
+  "966" -> "972" 
+  "966" -> "974" 
+  "968" -> "969" 
+  "968" -> "970" 
+  "970" -> "971" 
+  "972" -> "973" 
+  "974" -> "975" 
+  "974" -> "976" 
+  "974" -> "982" 
+  "974" -> "983" 
+  "974" -> "988" 
+  "976" -> "977" 
+  "976" -> "978" 
+  "978" -> "979" 
+  "978" -> "980" 
+  "980" -> "981" 
+  "983" -> "984" 
+  "983" -> "985" 
+  "985" -> "986" 
+  "985" -> "987" 
+  "988" -> "989" 
+  "988" -> "993" 
+  "988" -> "1001" 
+  "989" -> "990" 
+  "989" -> "991" 
+  "991" -> "992" 
+  "993" -> "994" 
+  "994" -> "83" 
+  "994" -> "995" 
+  "994" -> "998" 
+  "995" -> "996" 
+  "995" -> "997" 
+  "998" -> "999" 
+  "998" -> "1000" 
+  "1001" -> "1002" 
+  "1002" -> "1003" 
+  "1003" -> "1004" 
+  "1003" -> "1005" 
+  "1003" -> "1011" 
+  "1005" -> "1006" 
+  "1005" -> "1007" 
+  "1007" -> "1008" 
+  "1007" -> "1009" 
+  "1007" -> "1010" 
+  "1011" -> "1012" 
+  "1011" -> "1013" 
+  "1013" -> "1014" 
+  "1013" -> "1015" 
+  "1016" -> "84" 
+  "1016" -> "1017" 
+}

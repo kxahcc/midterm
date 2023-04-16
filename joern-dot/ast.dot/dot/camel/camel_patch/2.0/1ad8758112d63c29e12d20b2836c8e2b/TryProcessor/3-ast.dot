@@ -1,0 +1,71 @@
+digraph "handleAll" {  
+"161" [label = <(METHOD,handleAll)<SUB>86</SUB>> ]
+"162" [label = <(PARAM,this)<SUB>86</SUB>> ]
+"163" [label = <(PARAM,Exchange exchange)<SUB>86</SUB>> ]
+"164" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>86</SUB>> ]
+"165" [label = <(CONTROL_STRUCTURE,if (finallyProcessor != null),if (finallyProcessor != null))<SUB>87</SUB>> ]
+"166" [label = <(&lt;operator&gt;.notEquals,finallyProcessor != null)<SUB>87</SUB>> ]
+"167" [label = <(&lt;operator&gt;.fieldAccess,this.finallyProcessor)<SUB>87</SUB>> ]
+"168" [label = <(IDENTIFIER,this,finallyProcessor != null)<SUB>87</SUB>> ]
+"169" [label = <(FIELD_IDENTIFIER,finallyProcessor,finallyProcessor)<SUB>87</SUB>> ]
+"170" [label = <(LITERAL,null,finallyProcessor != null)<SUB>87</SUB>> ]
+"171" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>87</SUB>> ]
+"172" [label = <(setFailureHandled,setFailureHandled(exchange, true))<SUB>88</SUB>> ]
+"173" [label = <(IDENTIFIER,DeadLetterChannel,setFailureHandled(exchange, true))<SUB>88</SUB>> ]
+"174" [label = <(IDENTIFIER,exchange,setFailureHandled(exchange, true))<SUB>88</SUB>> ]
+"175" [label = <(LITERAL,true,setFailureHandled(exchange, true))<SUB>88</SUB>> ]
+"176" [label = <(CONTROL_STRUCTURE,try,try)<SUB>89</SUB>> ]
+"177" [label = <(BLOCK,try,try)<SUB>89</SUB>> ]
+"178" [label = <(process,process(exchange))<SUB>90</SUB>> ]
+"179" [label = <(&lt;operator&gt;.fieldAccess,this.finallyProcessor)<SUB>90</SUB>> ]
+"180" [label = <(IDENTIFIER,this,process(exchange))<SUB>90</SUB>> ]
+"181" [label = <(FIELD_IDENTIFIER,finallyProcessor,finallyProcessor)<SUB>90</SUB>> ]
+"182" [label = <(IDENTIFIER,exchange,process(exchange))<SUB>90</SUB>> ]
+"183" [label = <(BLOCK,catch,catch)> ]
+"184" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>91</SUB>> ]
+"185" [label = <(warn,warn(&quot;Caught exception in finally block while handling other exception: &quot; + e2, e2))<SUB>92</SUB>> ]
+"186" [label = <(&lt;operator&gt;.fieldAccess,TryProcessor.LOG)<SUB>92</SUB>> ]
+"187" [label = <(IDENTIFIER,TryProcessor,warn(&quot;Caught exception in finally block while handling other exception: &quot; + e2, e2))<SUB>92</SUB>> ]
+"188" [label = <(FIELD_IDENTIFIER,LOG,LOG)<SUB>92</SUB>> ]
+"189" [label = <(&lt;operator&gt;.addition,&quot;Caught exception in finally block while handling other exception: &quot; + e2)<SUB>92</SUB>> ]
+"190" [label = <(LITERAL,&quot;Caught exception in finally block while handling other exception: &quot;,&quot;Caught exception in finally block while handling other exception: &quot; + e2)<SUB>92</SUB>> ]
+"191" [label = <(IDENTIFIER,e2,&quot;Caught exception in finally block while handling other exception: &quot; + e2)<SUB>92</SUB>> ]
+"192" [label = <(IDENTIFIER,e2,warn(&quot;Caught exception in finally block while handling other exception: &quot; + e2, e2))<SUB>92</SUB>> ]
+"193" [label = <(MODIFIER,PRIVATE)> ]
+"194" [label = <(MODIFIER,VIRTUAL)> ]
+"195" [label = <(METHOD_RETURN,void)<SUB>86</SUB>> ]
+  "161" -> "162" 
+  "161" -> "163" 
+  "161" -> "164" 
+  "161" -> "193" 
+  "161" -> "194" 
+  "161" -> "195" 
+  "164" -> "165" 
+  "165" -> "166" 
+  "165" -> "171" 
+  "166" -> "167" 
+  "166" -> "170" 
+  "167" -> "168" 
+  "167" -> "169" 
+  "171" -> "172" 
+  "171" -> "176" 
+  "172" -> "173" 
+  "172" -> "174" 
+  "172" -> "175" 
+  "176" -> "177" 
+  "176" -> "183" 
+  "177" -> "178" 
+  "178" -> "179" 
+  "178" -> "182" 
+  "179" -> "180" 
+  "179" -> "181" 
+  "183" -> "184" 
+  "184" -> "185" 
+  "185" -> "186" 
+  "185" -> "189" 
+  "185" -> "192" 
+  "186" -> "187" 
+  "186" -> "188" 
+  "189" -> "190" 
+  "189" -> "191" 
+}

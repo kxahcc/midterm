@@ -1,0 +1,79 @@
+digraph "resolveEndpoint" {  
+"49" [label = <(METHOD,resolveEndpoint)<SUB>78</SUB>> ]
+"50" [label = <(PARAM,E exchange)<SUB>79</SUB>> ]
+"51" [label = <(PARAM,Object value)<SUB>79</SUB>> ]
+"52" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>80</SUB>> ]
+"53" [label = <(LOCAL,Endpoint&lt;E&gt; endpoint: ANY)> ]
+"54" [label = <(CONTROL_STRUCTURE,if (value instanceof Endpoint),if (value instanceof Endpoint))<SUB>82</SUB>> ]
+"55" [label = <(&lt;operator&gt;.instanceOf,value instanceof Endpoint)<SUB>82</SUB>> ]
+"56" [label = <(IDENTIFIER,value,value instanceof Endpoint)<SUB>82</SUB>> ]
+"57" [label = <(TYPE_REF,Endpoint,Endpoint)<SUB>82</SUB>> ]
+"58" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>82</SUB>> ]
+"59" [label = <(&lt;operator&gt;.assignment,endpoint = (Endpoint&lt;E&gt;) value)<SUB>83</SUB>> ]
+"60" [label = <(IDENTIFIER,endpoint,endpoint = (Endpoint&lt;E&gt;) value)<SUB>83</SUB>> ]
+"61" [label = <(&lt;operator&gt;.cast,(Endpoint&lt;E&gt;) value)<SUB>83</SUB>> ]
+"62" [label = <(TYPE_REF,Endpoint&lt;E&gt;,Endpoint&lt;E&gt;)<SUB>83</SUB>> ]
+"63" [label = <(IDENTIFIER,value,(Endpoint&lt;E&gt;) value)<SUB>83</SUB>> ]
+"64" [label = <(CONTROL_STRUCTURE,else,else)<SUB>84</SUB>> ]
+"65" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>84</SUB>> ]
+"66" [label = <(LOCAL,String uri: java.lang.String)> ]
+"67" [label = <(&lt;operator&gt;.assignment,String uri = value.toString())<SUB>85</SUB>> ]
+"68" [label = <(IDENTIFIER,uri,String uri = value.toString())<SUB>85</SUB>> ]
+"69" [label = <(toString,value.toString())<SUB>85</SUB>> ]
+"70" [label = <(IDENTIFIER,value,value.toString())<SUB>85</SUB>> ]
+"71" [label = <(&lt;operator&gt;.assignment,endpoint = getMandatoryEndpoint(exchange.getContext(), uri))<SUB>86</SUB>> ]
+"72" [label = <(IDENTIFIER,endpoint,endpoint = getMandatoryEndpoint(exchange.getContext(), uri))<SUB>86</SUB>> ]
+"73" [label = <(getMandatoryEndpoint,getMandatoryEndpoint(exchange.getContext(), uri))<SUB>86</SUB>> ]
+"74" [label = <(IDENTIFIER,CamelContextHelper,getMandatoryEndpoint(exchange.getContext(), uri))<SUB>86</SUB>> ]
+"75" [label = <(getContext,getContext())<SUB>86</SUB>> ]
+"76" [label = <(IDENTIFIER,exchange,getContext())<SUB>86</SUB>> ]
+"77" [label = <(IDENTIFIER,uri,getMandatoryEndpoint(exchange.getContext(), uri))<SUB>86</SUB>> ]
+"78" [label = <(RETURN,return endpoint;,return endpoint;)<SUB>88</SUB>> ]
+"79" [label = <(IDENTIFIER,endpoint,return endpoint;)<SUB>88</SUB>> ]
+"80" [label = <(MODIFIER,PUBLIC)> ]
+"81" [label = <(MODIFIER,STATIC)> ]
+"82" [label = <(ANNOTATION,@SuppressWarnings({ &quot;unchecked&quot; }),@SuppressWarnings({ &quot;unchecked&quot; }))<SUB>78</SUB>> ]
+"83" [label = <(ANNOTATION_PARAMETER_ASSIGN,{ &quot;unchecked&quot; })> ]
+"84" [label = <(ANNOTATION_PARAMETER,value)> ]
+"85" [label = <(ARRAY_INITIALIZER,{ &quot;unchecked&quot; },{ &quot;unchecked&quot; })> ]
+"86" [label = <(ANNOTATION_LITERAL,unchecked,unchecked)> ]
+"87" [label = <(METHOD_RETURN,ANY)<SUB>79</SUB>> ]
+  "49" -> "50" 
+  "49" -> "51" 
+  "49" -> "52" 
+  "49" -> "80" 
+  "49" -> "81" 
+  "49" -> "82" 
+  "49" -> "87" 
+  "52" -> "53" 
+  "52" -> "54" 
+  "52" -> "78" 
+  "54" -> "55" 
+  "54" -> "58" 
+  "54" -> "64" 
+  "55" -> "56" 
+  "55" -> "57" 
+  "58" -> "59" 
+  "59" -> "60" 
+  "59" -> "61" 
+  "61" -> "62" 
+  "61" -> "63" 
+  "64" -> "65" 
+  "65" -> "66" 
+  "65" -> "67" 
+  "65" -> "71" 
+  "67" -> "68" 
+  "67" -> "69" 
+  "69" -> "70" 
+  "71" -> "72" 
+  "71" -> "73" 
+  "73" -> "74" 
+  "73" -> "75" 
+  "73" -> "77" 
+  "75" -> "76" 
+  "78" -> "79" 
+  "82" -> "83" 
+  "83" -> "84" 
+  "83" -> "85" 
+  "85" -> "86" 
+}

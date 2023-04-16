@@ -1,0 +1,85 @@
+digraph "split" {  
+"1023" [label = <(METHOD,split)<SUB>622</SUB>> ]
+"1024" [label = <(PARAM,final String string)<SUB>622</SUB>> ]
+"1025" [label = <(PARAM,final String onToken)<SUB>623</SUB>> ]
+"1026" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>623</SUB>> ]
+"44" [label = <(LOCAL,StringTokenizer tokenizer: java.util.StringTokenizer)> ]
+"1027" [label = <(&lt;operator&gt;.assignment,StringTokenizer tokenizer = new StringTokenizer(string, onToken))<SUB>624</SUB>> ]
+"1028" [label = <(IDENTIFIER,tokenizer,StringTokenizer tokenizer = new StringTokenizer(string, onToken))<SUB>624</SUB>> ]
+"1029" [label = <(&lt;operator&gt;.alloc,new StringTokenizer(string, onToken))<SUB>624</SUB>> ]
+"1030" [label = <(&lt;init&gt;,new StringTokenizer(string, onToken))<SUB>624</SUB>> ]
+"43" [label = <(IDENTIFIER,tokenizer,new StringTokenizer(string, onToken))<SUB>624</SUB>> ]
+"1031" [label = <(IDENTIFIER,string,new StringTokenizer(string, onToken))<SUB>624</SUB>> ]
+"1032" [label = <(IDENTIFIER,onToken,new StringTokenizer(string, onToken))<SUB>624</SUB>> ]
+"1033" [label = <(LOCAL,String[] result: java.lang.String[])> ]
+"1034" [label = <(&lt;operator&gt;.assignment,String[] result = new String[tokenizer.countTokens()])<SUB>625</SUB>> ]
+"1035" [label = <(IDENTIFIER,result,String[] result = new String[tokenizer.countTokens()])<SUB>625</SUB>> ]
+"1036" [label = <(&lt;operator&gt;.alloc,new String[tokenizer.countTokens()])> ]
+"1037" [label = <(countTokens,tokenizer.countTokens())<SUB>625</SUB>> ]
+"1038" [label = <(IDENTIFIER,tokenizer,tokenizer.countTokens())<SUB>625</SUB>> ]
+"1039" [label = <(CONTROL_STRUCTURE,for (int i = 0; Some(i &lt; result.length); i++),for (int i = 0; Some(i &lt; result.length); i++))<SUB>627</SUB>> ]
+"1040" [label = <(LOCAL,int i: int)> ]
+"1041" [label = <(&lt;operator&gt;.assignment,int i = 0)<SUB>627</SUB>> ]
+"1042" [label = <(IDENTIFIER,i,int i = 0)<SUB>627</SUB>> ]
+"1043" [label = <(LITERAL,0,int i = 0)<SUB>627</SUB>> ]
+"1044" [label = <(&lt;operator&gt;.lessThan,i &lt; result.length)<SUB>627</SUB>> ]
+"1045" [label = <(IDENTIFIER,i,i &lt; result.length)<SUB>627</SUB>> ]
+"1046" [label = <(&lt;operator&gt;.fieldAccess,result.length)<SUB>627</SUB>> ]
+"1047" [label = <(IDENTIFIER,result,i &lt; result.length)<SUB>627</SUB>> ]
+"1048" [label = <(FIELD_IDENTIFIER,length,length)<SUB>627</SUB>> ]
+"1049" [label = <(&lt;operator&gt;.postIncrement,i++)<SUB>627</SUB>> ]
+"1050" [label = <(IDENTIFIER,i,i++)<SUB>627</SUB>> ]
+"1051" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>627</SUB>> ]
+"1052" [label = <(&lt;operator&gt;.assignment,result[i] = tokenizer.nextToken())<SUB>628</SUB>> ]
+"1053" [label = <(&lt;operator&gt;.indexAccess,result[i])<SUB>628</SUB>> ]
+"1054" [label = <(IDENTIFIER,result,result[i] = tokenizer.nextToken())<SUB>628</SUB>> ]
+"1055" [label = <(IDENTIFIER,i,result[i] = tokenizer.nextToken())<SUB>628</SUB>> ]
+"1056" [label = <(nextToken,tokenizer.nextToken())<SUB>628</SUB>> ]
+"1057" [label = <(IDENTIFIER,tokenizer,tokenizer.nextToken())<SUB>628</SUB>> ]
+"1058" [label = <(RETURN,return result;,return result;)<SUB>631</SUB>> ]
+"1059" [label = <(IDENTIFIER,result,return result;)<SUB>631</SUB>> ]
+"1060" [label = <(MODIFIER,PRIVATE)> ]
+"1061" [label = <(MODIFIER,STATIC)> ]
+"1062" [label = <(METHOD_RETURN,java.lang.String[])<SUB>622</SUB>> ]
+  "1023" -> "1024" 
+  "1023" -> "1025" 
+  "1023" -> "1026" 
+  "1023" -> "1060" 
+  "1023" -> "1061" 
+  "1023" -> "1062" 
+  "1026" -> "44" 
+  "1026" -> "1027" 
+  "1026" -> "1030" 
+  "1026" -> "1033" 
+  "1026" -> "1034" 
+  "1026" -> "1039" 
+  "1026" -> "1058" 
+  "1027" -> "1028" 
+  "1027" -> "1029" 
+  "1030" -> "43" 
+  "1030" -> "1031" 
+  "1030" -> "1032" 
+  "1034" -> "1035" 
+  "1034" -> "1036" 
+  "1036" -> "1037" 
+  "1037" -> "1038" 
+  "1039" -> "1040" 
+  "1039" -> "1041" 
+  "1039" -> "1044" 
+  "1039" -> "1049" 
+  "1039" -> "1051" 
+  "1041" -> "1042" 
+  "1041" -> "1043" 
+  "1044" -> "1045" 
+  "1044" -> "1046" 
+  "1046" -> "1047" 
+  "1046" -> "1048" 
+  "1049" -> "1050" 
+  "1051" -> "1052" 
+  "1052" -> "1053" 
+  "1052" -> "1056" 
+  "1053" -> "1054" 
+  "1053" -> "1055" 
+  "1056" -> "1057" 
+  "1058" -> "1059" 
+}

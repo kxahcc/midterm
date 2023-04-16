@@ -1,0 +1,143 @@
+digraph "fillNonPatternSet" {  
+"3350" [label = <(METHOD,fillNonPatternSet)<SUB>1673</SUB>> ]
+"133" [label = <(PARAM,this)<SUB>1673</SUB>> ]
+"3351" [label = <(PARAM,Set set)<SUB>1673</SUB>> ]
+"3352" [label = <(PARAM,String[] patterns)<SUB>1673</SUB>> ]
+"3353" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>1673</SUB>> ]
+"131" [label = <(LOCAL,ArrayList al: java.util.ArrayList)> ]
+"3354" [label = <(&lt;operator&gt;.assignment,ArrayList al = new ArrayList(patterns.length))<SUB>1674</SUB>> ]
+"3355" [label = <(IDENTIFIER,al,ArrayList al = new ArrayList(patterns.length))<SUB>1674</SUB>> ]
+"3356" [label = <(&lt;operator&gt;.alloc,new ArrayList(patterns.length))<SUB>1674</SUB>> ]
+"3357" [label = <(&lt;init&gt;,new ArrayList(patterns.length))<SUB>1674</SUB>> ]
+"130" [label = <(IDENTIFIER,al,new ArrayList(patterns.length))<SUB>1674</SUB>> ]
+"3358" [label = <(&lt;operator&gt;.fieldAccess,patterns.length)<SUB>1674</SUB>> ]
+"3359" [label = <(IDENTIFIER,patterns,new ArrayList(patterns.length))<SUB>1674</SUB>> ]
+"3360" [label = <(FIELD_IDENTIFIER,length,length)<SUB>1674</SUB>> ]
+"3361" [label = <(CONTROL_STRUCTURE,for (int i = 0; Some(i &lt; patterns.length); i++),for (int i = 0; Some(i &lt; patterns.length); i++))<SUB>1675</SUB>> ]
+"3362" [label = <(LOCAL,int i: int)> ]
+"3363" [label = <(&lt;operator&gt;.assignment,int i = 0)<SUB>1675</SUB>> ]
+"3364" [label = <(IDENTIFIER,i,int i = 0)<SUB>1675</SUB>> ]
+"3365" [label = <(LITERAL,0,int i = 0)<SUB>1675</SUB>> ]
+"3366" [label = <(&lt;operator&gt;.lessThan,i &lt; patterns.length)<SUB>1675</SUB>> ]
+"3367" [label = <(IDENTIFIER,i,i &lt; patterns.length)<SUB>1675</SUB>> ]
+"3368" [label = <(&lt;operator&gt;.fieldAccess,patterns.length)<SUB>1675</SUB>> ]
+"3369" [label = <(IDENTIFIER,patterns,i &lt; patterns.length)<SUB>1675</SUB>> ]
+"3370" [label = <(FIELD_IDENTIFIER,length,length)<SUB>1675</SUB>> ]
+"3371" [label = <(&lt;operator&gt;.postIncrement,i++)<SUB>1675</SUB>> ]
+"3372" [label = <(IDENTIFIER,i,i++)<SUB>1675</SUB>> ]
+"3373" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>1675</SUB>> ]
+"3374" [label = <(CONTROL_STRUCTURE,if (!SelectorUtils.hasWildcards(patterns[i])),if (!SelectorUtils.hasWildcards(patterns[i])))<SUB>1676</SUB>> ]
+"3375" [label = <(&lt;operator&gt;.logicalNot,!SelectorUtils.hasWildcards(patterns[i]))<SUB>1676</SUB>> ]
+"3376" [label = <(hasWildcards,hasWildcards(patterns[i]))<SUB>1676</SUB>> ]
+"3377" [label = <(IDENTIFIER,SelectorUtils,hasWildcards(patterns[i]))<SUB>1676</SUB>> ]
+"3378" [label = <(&lt;operator&gt;.indexAccess,patterns[i])<SUB>1676</SUB>> ]
+"3379" [label = <(IDENTIFIER,patterns,hasWildcards(patterns[i]))<SUB>1676</SUB>> ]
+"3380" [label = <(IDENTIFIER,i,hasWildcards(patterns[i]))<SUB>1676</SUB>> ]
+"3381" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>1676</SUB>> ]
+"3382" [label = <(add,set.add(isCaseSensitive() ? patterns[i] : patterns[i].toUpperCase()))<SUB>1677</SUB>> ]
+"3383" [label = <(IDENTIFIER,set,set.add(isCaseSensitive() ? patterns[i] : patterns[i].toUpperCase()))<SUB>1677</SUB>> ]
+"3384" [label = <(&lt;operator&gt;.conditional,isCaseSensitive() ? patterns[i] : patterns[i].toUpperCase())<SUB>1677</SUB>> ]
+"3385" [label = <(isCaseSensitive,this.isCaseSensitive())<SUB>1677</SUB>> ]
+"132" [label = <(IDENTIFIER,this,this.isCaseSensitive())<SUB>1677</SUB>> ]
+"3386" [label = <(&lt;operator&gt;.indexAccess,patterns[i])<SUB>1677</SUB>> ]
+"3387" [label = <(IDENTIFIER,patterns,isCaseSensitive() ? patterns[i] : patterns[i].toUpperCase())<SUB>1677</SUB>> ]
+"3388" [label = <(IDENTIFIER,i,isCaseSensitive() ? patterns[i] : patterns[i].toUpperCase())<SUB>1677</SUB>> ]
+"3389" [label = <(toUpperCase,this.toUpperCase())<SUB>1678</SUB>> ]
+"3390" [label = <(&lt;operator&gt;.indexAccess,patterns[i])<SUB>1678</SUB>> ]
+"3391" [label = <(IDENTIFIER,patterns,this.toUpperCase())<SUB>1678</SUB>> ]
+"3392" [label = <(IDENTIFIER,i,this.toUpperCase())<SUB>1678</SUB>> ]
+"3393" [label = <(CONTROL_STRUCTURE,else,else)<SUB>1679</SUB>> ]
+"3394" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>1679</SUB>> ]
+"3395" [label = <(add,al.add(patterns[i]))<SUB>1680</SUB>> ]
+"3396" [label = <(IDENTIFIER,al,al.add(patterns[i]))<SUB>1680</SUB>> ]
+"3397" [label = <(&lt;operator&gt;.indexAccess,patterns[i])<SUB>1680</SUB>> ]
+"3398" [label = <(IDENTIFIER,patterns,al.add(patterns[i]))<SUB>1680</SUB>> ]
+"3399" [label = <(IDENTIFIER,i,al.add(patterns[i]))<SUB>1680</SUB>> ]
+"3400" [label = <(RETURN,return set.size() == 0 ? patterns : (String[]) al.toArray(new String[al.size()]);,return set.size() == 0 ? patterns : (String[]) al.toArray(new String[al.size()]);)<SUB>1683</SUB>> ]
+"3401" [label = <(&lt;operator&gt;.conditional,set.size() == 0 ? patterns : (String[]) al.toArray(new String[al.size()]))<SUB>1683</SUB>> ]
+"3402" [label = <(&lt;operator&gt;.equals,set.size() == 0)<SUB>1683</SUB>> ]
+"3403" [label = <(size,set.size())<SUB>1683</SUB>> ]
+"3404" [label = <(IDENTIFIER,set,set.size())<SUB>1683</SUB>> ]
+"3405" [label = <(LITERAL,0,set.size() == 0)<SUB>1683</SUB>> ]
+"3406" [label = <(IDENTIFIER,patterns,set.size() == 0 ? patterns : (String[]) al.toArray(new String[al.size()]))<SUB>1683</SUB>> ]
+"3407" [label = <(&lt;operator&gt;.cast,(String[]) al.toArray(new String[al.size()]))<SUB>1684</SUB>> ]
+"3408" [label = <(TYPE_REF,String[],String[])<SUB>1684</SUB>> ]
+"3409" [label = <(toArray,al.toArray(new String[al.size()]))<SUB>1684</SUB>> ]
+"3410" [label = <(IDENTIFIER,al,al.toArray(new String[al.size()]))<SUB>1684</SUB>> ]
+"3411" [label = <(&lt;operator&gt;.alloc,new String[al.size()])> ]
+"3412" [label = <(size,al.size())<SUB>1684</SUB>> ]
+"3413" [label = <(IDENTIFIER,al,al.size())<SUB>1684</SUB>> ]
+"3414" [label = <(MODIFIER,PRIVATE)> ]
+"3415" [label = <(MODIFIER,VIRTUAL)> ]
+"3416" [label = <(METHOD_RETURN,java.lang.String[])<SUB>1673</SUB>> ]
+  "3350" -> "133" 
+  "3350" -> "3351" 
+  "3350" -> "3352" 
+  "3350" -> "3353" 
+  "3350" -> "3414" 
+  "3350" -> "3415" 
+  "3350" -> "3416" 
+  "3353" -> "131" 
+  "3353" -> "3354" 
+  "3353" -> "3357" 
+  "3353" -> "3361" 
+  "3353" -> "3400" 
+  "3354" -> "3355" 
+  "3354" -> "3356" 
+  "3357" -> "130" 
+  "3357" -> "3358" 
+  "3358" -> "3359" 
+  "3358" -> "3360" 
+  "3361" -> "3362" 
+  "3361" -> "3363" 
+  "3361" -> "3366" 
+  "3361" -> "3371" 
+  "3361" -> "3373" 
+  "3363" -> "3364" 
+  "3363" -> "3365" 
+  "3366" -> "3367" 
+  "3366" -> "3368" 
+  "3368" -> "3369" 
+  "3368" -> "3370" 
+  "3371" -> "3372" 
+  "3373" -> "3374" 
+  "3374" -> "3375" 
+  "3374" -> "3381" 
+  "3374" -> "3393" 
+  "3375" -> "3376" 
+  "3376" -> "3377" 
+  "3376" -> "3378" 
+  "3378" -> "3379" 
+  "3378" -> "3380" 
+  "3381" -> "3382" 
+  "3382" -> "3383" 
+  "3382" -> "3384" 
+  "3384" -> "3385" 
+  "3384" -> "3386" 
+  "3384" -> "3389" 
+  "3385" -> "132" 
+  "3386" -> "3387" 
+  "3386" -> "3388" 
+  "3389" -> "3390" 
+  "3390" -> "3391" 
+  "3390" -> "3392" 
+  "3393" -> "3394" 
+  "3394" -> "3395" 
+  "3395" -> "3396" 
+  "3395" -> "3397" 
+  "3397" -> "3398" 
+  "3397" -> "3399" 
+  "3400" -> "3401" 
+  "3401" -> "3402" 
+  "3401" -> "3406" 
+  "3401" -> "3407" 
+  "3402" -> "3403" 
+  "3402" -> "3405" 
+  "3403" -> "3404" 
+  "3407" -> "3408" 
+  "3407" -> "3409" 
+  "3409" -> "3410" 
+  "3409" -> "3411" 
+  "3411" -> "3412" 
+  "3412" -> "3413" 
+}

@@ -1,0 +1,133 @@
+digraph "getPrompt" {  
+"88" [label = <(METHOD,getPrompt)<SUB>109</SUB>> ]
+"89" [label = <(PARAM,this)<SUB>109</SUB>> ]
+"90" [label = <(PARAM,InputRequest request)<SUB>109</SUB>> ]
+"91" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>109</SUB>> ]
+"92" [label = <(LOCAL,String prompt: java.lang.String)> ]
+"93" [label = <(&lt;operator&gt;.assignment,String prompt = getPrompt())<SUB>110</SUB>> ]
+"94" [label = <(IDENTIFIER,prompt,String prompt = getPrompt())<SUB>110</SUB>> ]
+"95" [label = <(getPrompt,getPrompt())<SUB>110</SUB>> ]
+"96" [label = <(IDENTIFIER,request,getPrompt())<SUB>110</SUB>> ]
+"97" [label = <(CONTROL_STRUCTURE,if (request instanceof MultipleChoiceInputRequest),if (request instanceof MultipleChoiceInputRequest))<SUB>111</SUB>> ]
+"98" [label = <(&lt;operator&gt;.instanceOf,request instanceof MultipleChoiceInputRequest)<SUB>111</SUB>> ]
+"99" [label = <(IDENTIFIER,request,request instanceof MultipleChoiceInputRequest)<SUB>111</SUB>> ]
+"100" [label = <(TYPE_REF,MultipleChoiceInputRequest,MultipleChoiceInputRequest)<SUB>111</SUB>> ]
+"101" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>111</SUB>> ]
+"9" [label = <(LOCAL,StringBuffer sb: java.lang.StringBuffer)> ]
+"102" [label = <(&lt;operator&gt;.assignment,StringBuffer sb = new StringBuffer(prompt))<SUB>112</SUB>> ]
+"103" [label = <(IDENTIFIER,sb,StringBuffer sb = new StringBuffer(prompt))<SUB>112</SUB>> ]
+"104" [label = <(&lt;operator&gt;.alloc,new StringBuffer(prompt))<SUB>112</SUB>> ]
+"105" [label = <(&lt;init&gt;,new StringBuffer(prompt))<SUB>112</SUB>> ]
+"8" [label = <(IDENTIFIER,sb,new StringBuffer(prompt))<SUB>112</SUB>> ]
+"106" [label = <(IDENTIFIER,prompt,new StringBuffer(prompt))<SUB>112</SUB>> ]
+"107" [label = <(append,sb.append(&quot;(&quot;))<SUB>113</SUB>> ]
+"108" [label = <(IDENTIFIER,sb,sb.append(&quot;(&quot;))<SUB>113</SUB>> ]
+"109" [label = <(LITERAL,&quot;(&quot;,sb.append(&quot;(&quot;))<SUB>113</SUB>> ]
+"110" [label = <(LOCAL,Enumeration enum: java.util.Enumeration)> ]
+"111" [label = <(&lt;operator&gt;.assignment,Enumeration enum = elements())<SUB>114</SUB>> ]
+"112" [label = <(IDENTIFIER,enum,Enumeration enum = elements())<SUB>114</SUB>> ]
+"113" [label = <(elements,elements())<SUB>115</SUB>> ]
+"114" [label = <(getChoices,getChoices())<SUB>115</SUB>> ]
+"115" [label = <(&lt;operator&gt;.cast,(MultipleChoiceInputRequest) request)<SUB>115</SUB>> ]
+"116" [label = <(TYPE_REF,MultipleChoiceInputRequest,MultipleChoiceInputRequest)<SUB>115</SUB>> ]
+"117" [label = <(IDENTIFIER,request,(MultipleChoiceInputRequest) request)<SUB>115</SUB>> ]
+"118" [label = <(LOCAL,boolean first: boolean)> ]
+"119" [label = <(&lt;operator&gt;.assignment,boolean first = true)<SUB>116</SUB>> ]
+"120" [label = <(IDENTIFIER,first,boolean first = true)<SUB>116</SUB>> ]
+"121" [label = <(LITERAL,true,boolean first = true)<SUB>116</SUB>> ]
+"122" [label = <(CONTROL_STRUCTURE,while (enum.hasMoreElements()),while (enum.hasMoreElements()))<SUB>117</SUB>> ]
+"123" [label = <(hasMoreElements,enum.hasMoreElements())<SUB>117</SUB>> ]
+"124" [label = <(IDENTIFIER,enum,enum.hasMoreElements())<SUB>117</SUB>> ]
+"125" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>117</SUB>> ]
+"126" [label = <(CONTROL_STRUCTURE,if (!first),if (!first))<SUB>118</SUB>> ]
+"127" [label = <(&lt;operator&gt;.logicalNot,!first)<SUB>118</SUB>> ]
+"128" [label = <(IDENTIFIER,first,!first)<SUB>118</SUB>> ]
+"129" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>118</SUB>> ]
+"130" [label = <(append,sb.append(&quot;,&quot;))<SUB>119</SUB>> ]
+"131" [label = <(IDENTIFIER,sb,sb.append(&quot;,&quot;))<SUB>119</SUB>> ]
+"132" [label = <(LITERAL,&quot;,&quot;,sb.append(&quot;,&quot;))<SUB>119</SUB>> ]
+"133" [label = <(append,sb.append(enum.nextElement()))<SUB>121</SUB>> ]
+"134" [label = <(IDENTIFIER,sb,sb.append(enum.nextElement()))<SUB>121</SUB>> ]
+"135" [label = <(nextElement,enum.nextElement())<SUB>121</SUB>> ]
+"136" [label = <(IDENTIFIER,enum,enum.nextElement())<SUB>121</SUB>> ]
+"137" [label = <(&lt;operator&gt;.assignment,first = false)<SUB>122</SUB>> ]
+"138" [label = <(IDENTIFIER,first,first = false)<SUB>122</SUB>> ]
+"139" [label = <(LITERAL,false,first = false)<SUB>122</SUB>> ]
+"140" [label = <(append,sb.append(&quot;)&quot;))<SUB>124</SUB>> ]
+"141" [label = <(IDENTIFIER,sb,sb.append(&quot;)&quot;))<SUB>124</SUB>> ]
+"142" [label = <(LITERAL,&quot;)&quot;,sb.append(&quot;)&quot;))<SUB>124</SUB>> ]
+"143" [label = <(&lt;operator&gt;.assignment,prompt = sb.toString())<SUB>125</SUB>> ]
+"144" [label = <(IDENTIFIER,prompt,prompt = sb.toString())<SUB>125</SUB>> ]
+"145" [label = <(toString,sb.toString())<SUB>125</SUB>> ]
+"146" [label = <(IDENTIFIER,sb,sb.toString())<SUB>125</SUB>> ]
+"147" [label = <(RETURN,return prompt;,return prompt;)<SUB>127</SUB>> ]
+"148" [label = <(IDENTIFIER,prompt,return prompt;)<SUB>127</SUB>> ]
+"149" [label = <(MODIFIER,PROTECTED)> ]
+"150" [label = <(MODIFIER,VIRTUAL)> ]
+"151" [label = <(METHOD_RETURN,java.lang.String)<SUB>109</SUB>> ]
+  "88" -> "89" 
+  "88" -> "90" 
+  "88" -> "91" 
+  "88" -> "149" 
+  "88" -> "150" 
+  "88" -> "151" 
+  "91" -> "92" 
+  "91" -> "93" 
+  "91" -> "97" 
+  "91" -> "147" 
+  "93" -> "94" 
+  "93" -> "95" 
+  "95" -> "96" 
+  "97" -> "98" 
+  "97" -> "101" 
+  "98" -> "99" 
+  "98" -> "100" 
+  "101" -> "9" 
+  "101" -> "102" 
+  "101" -> "105" 
+  "101" -> "107" 
+  "101" -> "110" 
+  "101" -> "111" 
+  "101" -> "118" 
+  "101" -> "119" 
+  "101" -> "122" 
+  "101" -> "140" 
+  "101" -> "143" 
+  "102" -> "103" 
+  "102" -> "104" 
+  "105" -> "8" 
+  "105" -> "106" 
+  "107" -> "108" 
+  "107" -> "109" 
+  "111" -> "112" 
+  "111" -> "113" 
+  "113" -> "114" 
+  "114" -> "115" 
+  "115" -> "116" 
+  "115" -> "117" 
+  "119" -> "120" 
+  "119" -> "121" 
+  "122" -> "123" 
+  "122" -> "125" 
+  "123" -> "124" 
+  "125" -> "126" 
+  "125" -> "133" 
+  "125" -> "137" 
+  "126" -> "127" 
+  "126" -> "129" 
+  "127" -> "128" 
+  "129" -> "130" 
+  "130" -> "131" 
+  "130" -> "132" 
+  "133" -> "134" 
+  "133" -> "135" 
+  "135" -> "136" 
+  "137" -> "138" 
+  "137" -> "139" 
+  "140" -> "141" 
+  "140" -> "142" 
+  "143" -> "144" 
+  "143" -> "145" 
+  "145" -> "146" 
+  "147" -> "148" 
+}

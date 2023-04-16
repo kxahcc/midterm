@@ -1,0 +1,111 @@
+digraph "process" {  
+"146" [label = <(METHOD,process)<SUB>73</SUB>> ]
+"12" [label = <(PARAM,this)<SUB>73</SUB>> ]
+"147" [label = <(PARAM,Exchange exchange)<SUB>73</SUB>> ]
+"148" [label = <(PARAM,AsyncCallback callback)<SUB>73</SUB>> ]
+"149" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>73</SUB>> ]
+"150" [label = <(CONTROL_STRUCTURE,if (producer == null),if (producer == null))<SUB>74</SUB>> ]
+"151" [label = <(&lt;operator&gt;.equals,producer == null)<SUB>74</SUB>> ]
+"152" [label = <(&lt;operator&gt;.fieldAccess,this.producer)<SUB>74</SUB>> ]
+"153" [label = <(IDENTIFIER,this,producer == null)<SUB>74</SUB>> ]
+"154" [label = <(FIELD_IDENTIFIER,producer,producer)<SUB>74</SUB>> ]
+"155" [label = <(LITERAL,null,producer == null)<SUB>74</SUB>> ]
+"156" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>74</SUB>> ]
+"157" [label = <(CONTROL_STRUCTURE,if (isStopped()),if (isStopped()))<SUB>75</SUB>> ]
+"158" [label = <(isStopped,isStopped())<SUB>75</SUB>> ]
+"11" [label = <(IDENTIFIER,this,isStopped())<SUB>75</SUB>> ]
+"159" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>75</SUB>> ]
+"160" [label = <(warn,warn(&quot;Ignoring exchange sent after processor is stopped: &quot; + exchange))<SUB>76</SUB>> ]
+"161" [label = <(&lt;operator&gt;.fieldAccess,SendProcessor.LOG)<SUB>76</SUB>> ]
+"162" [label = <(IDENTIFIER,SendProcessor,warn(&quot;Ignoring exchange sent after processor is stopped: &quot; + exchange))<SUB>76</SUB>> ]
+"163" [label = <(FIELD_IDENTIFIER,LOG,LOG)<SUB>76</SUB>> ]
+"164" [label = <(&lt;operator&gt;.addition,&quot;Ignoring exchange sent after processor is stopped: &quot; + exchange)<SUB>76</SUB>> ]
+"165" [label = <(LITERAL,&quot;Ignoring exchange sent after processor is stopped: &quot;,&quot;Ignoring exchange sent after processor is stopped: &quot; + exchange)<SUB>76</SUB>> ]
+"166" [label = <(IDENTIFIER,exchange,&quot;Ignoring exchange sent after processor is stopped: &quot; + exchange)<SUB>76</SUB>> ]
+"167" [label = <(CONTROL_STRUCTURE,else,else)<SUB>77</SUB>> ]
+"168" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>77</SUB>> ]
+"169" [label = <(setException,setException(new IllegalStateException(&quot;No producer, this processor has not been started!&quot;)))<SUB>78</SUB>> ]
+"170" [label = <(IDENTIFIER,exchange,setException(new IllegalStateException(&quot;No producer, this processor has not been started!&quot;)))<SUB>78</SUB>> ]
+"171" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>78</SUB>> ]
+"172" [label = <(&lt;operator&gt;.assignment,&lt;empty&gt;)> ]
+"173" [label = <(IDENTIFIER,$obj2,&lt;empty&gt;)> ]
+"174" [label = <(&lt;operator&gt;.alloc,new IllegalStateException(&quot;No producer, this processor has not been started!&quot;))<SUB>78</SUB>> ]
+"175" [label = <(&lt;init&gt;,new IllegalStateException(&quot;No producer, this processor has not been started!&quot;))<SUB>78</SUB>> ]
+"176" [label = <(IDENTIFIER,$obj2,new IllegalStateException(&quot;No producer, this processor has not been started!&quot;))> ]
+"177" [label = <(LITERAL,&quot;No producer, this processor has not been started!&quot;,new IllegalStateException(&quot;No producer, this processor has not been started!&quot;))<SUB>78</SUB>> ]
+"178" [label = <(IDENTIFIER,$obj2,&lt;empty&gt;)> ]
+"179" [label = <(done,done(true))<SUB>80</SUB>> ]
+"180" [label = <(IDENTIFIER,callback,done(true))<SUB>80</SUB>> ]
+"181" [label = <(LITERAL,true,done(true))<SUB>80</SUB>> ]
+"182" [label = <(RETURN,return true;,return true;)<SUB>81</SUB>> ]
+"183" [label = <(LITERAL,true,return true;)<SUB>81</SUB>> ]
+"184" [label = <(CONTROL_STRUCTURE,else,else)<SUB>82</SUB>> ]
+"185" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>82</SUB>> ]
+"186" [label = <(configureExchange,configureExchange(exchange))<SUB>83</SUB>> ]
+"13" [label = <(IDENTIFIER,this,configureExchange(exchange))<SUB>83</SUB>> ]
+"187" [label = <(IDENTIFIER,exchange,configureExchange(exchange))<SUB>83</SUB>> ]
+"188" [label = <(RETURN,return processor.process(exchange, callback);,return processor.process(exchange, callback);)<SUB>84</SUB>> ]
+"189" [label = <(process,process(exchange, callback))<SUB>84</SUB>> ]
+"190" [label = <(&lt;operator&gt;.fieldAccess,this.processor)<SUB>84</SUB>> ]
+"191" [label = <(IDENTIFIER,this,process(exchange, callback))<SUB>84</SUB>> ]
+"192" [label = <(FIELD_IDENTIFIER,processor,processor)<SUB>84</SUB>> ]
+"193" [label = <(IDENTIFIER,exchange,process(exchange, callback))<SUB>84</SUB>> ]
+"194" [label = <(IDENTIFIER,callback,process(exchange, callback))<SUB>84</SUB>> ]
+"195" [label = <(MODIFIER,PUBLIC)> ]
+"196" [label = <(MODIFIER,VIRTUAL)> ]
+"197" [label = <(METHOD_RETURN,boolean)<SUB>73</SUB>> ]
+  "146" -> "12" 
+  "146" -> "147" 
+  "146" -> "148" 
+  "146" -> "149" 
+  "146" -> "195" 
+  "146" -> "196" 
+  "146" -> "197" 
+  "149" -> "150" 
+  "150" -> "151" 
+  "150" -> "156" 
+  "150" -> "184" 
+  "151" -> "152" 
+  "151" -> "155" 
+  "152" -> "153" 
+  "152" -> "154" 
+  "156" -> "157" 
+  "156" -> "179" 
+  "156" -> "182" 
+  "157" -> "158" 
+  "157" -> "159" 
+  "157" -> "167" 
+  "158" -> "11" 
+  "159" -> "160" 
+  "160" -> "161" 
+  "160" -> "164" 
+  "161" -> "162" 
+  "161" -> "163" 
+  "164" -> "165" 
+  "164" -> "166" 
+  "167" -> "168" 
+  "168" -> "169" 
+  "169" -> "170" 
+  "169" -> "171" 
+  "171" -> "172" 
+  "171" -> "175" 
+  "171" -> "178" 
+  "172" -> "173" 
+  "172" -> "174" 
+  "175" -> "176" 
+  "175" -> "177" 
+  "179" -> "180" 
+  "179" -> "181" 
+  "182" -> "183" 
+  "184" -> "185" 
+  "185" -> "186" 
+  "185" -> "188" 
+  "186" -> "13" 
+  "186" -> "187" 
+  "188" -> "189" 
+  "189" -> "190" 
+  "189" -> "193" 
+  "189" -> "194" 
+  "190" -> "191" 
+  "190" -> "192" 
+}

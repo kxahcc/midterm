@@ -1,0 +1,235 @@
+digraph "toDosTime" {  
+"1503" [label = <(METHOD,toDosTime)<SUB>631</SUB>> ]
+"1504" [label = <(PARAM,Date time)<SUB>631</SUB>> ]
+"1505" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>631</SUB>> ]
+"1506" [label = <(LOCAL,int year: int)> ]
+"1507" [label = <(&lt;operator&gt;.assignment,int year = time.getYear() + 1900)<SUB>632</SUB>> ]
+"1508" [label = <(IDENTIFIER,year,int year = time.getYear() + 1900)<SUB>632</SUB>> ]
+"1509" [label = <(&lt;operator&gt;.addition,time.getYear() + 1900)<SUB>632</SUB>> ]
+"1510" [label = <(getYear,time.getYear())<SUB>632</SUB>> ]
+"1511" [label = <(IDENTIFIER,time,time.getYear())<SUB>632</SUB>> ]
+"1512" [label = <(LITERAL,1900,time.getYear() + 1900)<SUB>632</SUB>> ]
+"1513" [label = <(LOCAL,int month: int)> ]
+"1514" [label = <(&lt;operator&gt;.assignment,int month = time.getMonth() + 1)<SUB>633</SUB>> ]
+"1515" [label = <(IDENTIFIER,month,int month = time.getMonth() + 1)<SUB>633</SUB>> ]
+"1516" [label = <(&lt;operator&gt;.addition,time.getMonth() + 1)<SUB>633</SUB>> ]
+"1517" [label = <(getMonth,time.getMonth())<SUB>633</SUB>> ]
+"1518" [label = <(IDENTIFIER,time,time.getMonth())<SUB>633</SUB>> ]
+"1519" [label = <(LITERAL,1,time.getMonth() + 1)<SUB>633</SUB>> ]
+"1520" [label = <(CONTROL_STRUCTURE,if (year &lt; 1980),if (year &lt; 1980))<SUB>634</SUB>> ]
+"1521" [label = <(&lt;operator&gt;.lessThan,year &lt; 1980)<SUB>634</SUB>> ]
+"1522" [label = <(IDENTIFIER,year,year &lt; 1980)<SUB>634</SUB>> ]
+"1523" [label = <(LITERAL,1980,year &lt; 1980)<SUB>634</SUB>> ]
+"1524" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>634</SUB>> ]
+"1525" [label = <(RETURN,return DOS_TIME_MIN;,return DOS_TIME_MIN;)<SUB>635</SUB>> ]
+"1526" [label = <(&lt;operator&gt;.fieldAccess,ZipOutputStream.DOS_TIME_MIN)<SUB>635</SUB>> ]
+"1527" [label = <(IDENTIFIER,ZipOutputStream,return DOS_TIME_MIN;)<SUB>635</SUB>> ]
+"1528" [label = <(FIELD_IDENTIFIER,DOS_TIME_MIN,DOS_TIME_MIN)<SUB>635</SUB>> ]
+"1529" [label = <(LOCAL,long value: long)> ]
+"1530" [label = <(&lt;operator&gt;.assignment,long value = ((year - 1980) &lt;&lt; 25) | (month &lt;&lt; 21) | (time.getDate() &lt;&lt; 16) | (time.getHours() &lt;&lt; 11) | (time.getMinutes() &lt;&lt; 5) | (time.getSeconds() &gt;&gt; 1))<SUB>637</SUB>> ]
+"1531" [label = <(IDENTIFIER,value,long value = ((year - 1980) &lt;&lt; 25) | (month &lt;&lt; 21) | (time.getDate() &lt;&lt; 16) | (time.getHours() &lt;&lt; 11) | (time.getMinutes() &lt;&lt; 5) | (time.getSeconds() &gt;&gt; 1))<SUB>637</SUB>> ]
+"1532" [label = <(&lt;operator&gt;.or,((year - 1980) &lt;&lt; 25) | (month &lt;&lt; 21) | (time.getDate() &lt;&lt; 16) | (time.getHours() &lt;&lt; 11) | (time.getMinutes() &lt;&lt; 5) | (time.getSeconds() &gt;&gt; 1))<SUB>637</SUB>> ]
+"1533" [label = <(&lt;operator&gt;.or,((year - 1980) &lt;&lt; 25) | (month &lt;&lt; 21) | (time.getDate() &lt;&lt; 16) | (time.getHours() &lt;&lt; 11) | (time.getMinutes() &lt;&lt; 5))<SUB>637</SUB>> ]
+"1534" [label = <(&lt;operator&gt;.or,((year - 1980) &lt;&lt; 25) | (month &lt;&lt; 21) | (time.getDate() &lt;&lt; 16) | (time.getHours() &lt;&lt; 11))<SUB>637</SUB>> ]
+"1535" [label = <(&lt;operator&gt;.or,((year - 1980) &lt;&lt; 25) | (month &lt;&lt; 21) | (time.getDate() &lt;&lt; 16))<SUB>637</SUB>> ]
+"1536" [label = <(&lt;operator&gt;.or,((year - 1980) &lt;&lt; 25) | (month &lt;&lt; 21))<SUB>637</SUB>> ]
+"1537" [label = <(&lt;operator&gt;.shiftLeft,(year - 1980) &lt;&lt; 25)<SUB>637</SUB>> ]
+"1538" [label = <(&lt;operator&gt;.subtraction,year - 1980)<SUB>637</SUB>> ]
+"1539" [label = <(IDENTIFIER,year,year - 1980)<SUB>637</SUB>> ]
+"1540" [label = <(LITERAL,1980,year - 1980)<SUB>637</SUB>> ]
+"1541" [label = <(LITERAL,25,(year - 1980) &lt;&lt; 25)<SUB>637</SUB>> ]
+"1542" [label = <(&lt;operator&gt;.shiftLeft,month &lt;&lt; 21)<SUB>638</SUB>> ]
+"1543" [label = <(IDENTIFIER,month,month &lt;&lt; 21)<SUB>638</SUB>> ]
+"1544" [label = <(LITERAL,21,month &lt;&lt; 21)<SUB>638</SUB>> ]
+"1545" [label = <(&lt;operator&gt;.shiftLeft,time.getDate() &lt;&lt; 16)<SUB>639</SUB>> ]
+"1546" [label = <(getDate,time.getDate())<SUB>639</SUB>> ]
+"1547" [label = <(IDENTIFIER,time,time.getDate())<SUB>639</SUB>> ]
+"1548" [label = <(LITERAL,16,time.getDate() &lt;&lt; 16)<SUB>639</SUB>> ]
+"1549" [label = <(&lt;operator&gt;.shiftLeft,time.getHours() &lt;&lt; 11)<SUB>640</SUB>> ]
+"1550" [label = <(getHours,time.getHours())<SUB>640</SUB>> ]
+"1551" [label = <(IDENTIFIER,time,time.getHours())<SUB>640</SUB>> ]
+"1552" [label = <(LITERAL,11,time.getHours() &lt;&lt; 11)<SUB>640</SUB>> ]
+"1553" [label = <(&lt;operator&gt;.shiftLeft,time.getMinutes() &lt;&lt; 5)<SUB>641</SUB>> ]
+"1554" [label = <(getMinutes,time.getMinutes())<SUB>641</SUB>> ]
+"1555" [label = <(IDENTIFIER,time,time.getMinutes())<SUB>641</SUB>> ]
+"1556" [label = <(LITERAL,5,time.getMinutes() &lt;&lt; 5)<SUB>641</SUB>> ]
+"1557" [label = <(&lt;operator&gt;.logicalShiftRight,time.getSeconds() &gt;&gt; 1)<SUB>642</SUB>> ]
+"1558" [label = <(getSeconds,time.getSeconds())<SUB>642</SUB>> ]
+"1559" [label = <(IDENTIFIER,time,time.getSeconds())<SUB>642</SUB>> ]
+"1560" [label = <(LITERAL,1,time.getSeconds() &gt;&gt; 1)<SUB>642</SUB>> ]
+"1561" [label = <(LOCAL,byte[] result: byte[])> ]
+"1562" [label = <(&lt;operator&gt;.assignment,byte[] result = new byte[4])<SUB>644</SUB>> ]
+"1563" [label = <(IDENTIFIER,result,byte[] result = new byte[4])<SUB>644</SUB>> ]
+"1564" [label = <(&lt;operator&gt;.alloc,new byte[4])> ]
+"1565" [label = <(LITERAL,4,new byte[4])<SUB>644</SUB>> ]
+"1566" [label = <(&lt;operator&gt;.assignment,result[0] = (byte) ((value &amp; 0xFF)))<SUB>645</SUB>> ]
+"1567" [label = <(&lt;operator&gt;.indexAccess,result[0])<SUB>645</SUB>> ]
+"1568" [label = <(IDENTIFIER,result,result[0] = (byte) ((value &amp; 0xFF)))<SUB>645</SUB>> ]
+"1569" [label = <(LITERAL,0,result[0] = (byte) ((value &amp; 0xFF)))<SUB>645</SUB>> ]
+"1570" [label = <(&lt;operator&gt;.cast,(byte) ((value &amp; 0xFF)))<SUB>645</SUB>> ]
+"1571" [label = <(TYPE_REF,byte,byte)<SUB>645</SUB>> ]
+"1572" [label = <(&lt;operator&gt;.and,value &amp; 0xFF)<SUB>645</SUB>> ]
+"1573" [label = <(IDENTIFIER,value,value &amp; 0xFF)<SUB>645</SUB>> ]
+"1574" [label = <(LITERAL,0xFF,value &amp; 0xFF)<SUB>645</SUB>> ]
+"1575" [label = <(&lt;operator&gt;.assignment,result[1] = (byte) ((value &amp; 0xFF00) &gt;&gt; 8))<SUB>646</SUB>> ]
+"1576" [label = <(&lt;operator&gt;.indexAccess,result[1])<SUB>646</SUB>> ]
+"1577" [label = <(IDENTIFIER,result,result[1] = (byte) ((value &amp; 0xFF00) &gt;&gt; 8))<SUB>646</SUB>> ]
+"1578" [label = <(LITERAL,1,result[1] = (byte) ((value &amp; 0xFF00) &gt;&gt; 8))<SUB>646</SUB>> ]
+"1579" [label = <(&lt;operator&gt;.cast,(byte) ((value &amp; 0xFF00) &gt;&gt; 8))<SUB>646</SUB>> ]
+"1580" [label = <(TYPE_REF,byte,byte)<SUB>646</SUB>> ]
+"1581" [label = <(&lt;operator&gt;.logicalShiftRight,(value &amp; 0xFF00) &gt;&gt; 8)<SUB>646</SUB>> ]
+"1582" [label = <(&lt;operator&gt;.and,value &amp; 0xFF00)<SUB>646</SUB>> ]
+"1583" [label = <(IDENTIFIER,value,value &amp; 0xFF00)<SUB>646</SUB>> ]
+"1584" [label = <(LITERAL,0xFF00,value &amp; 0xFF00)<SUB>646</SUB>> ]
+"1585" [label = <(LITERAL,8,(value &amp; 0xFF00) &gt;&gt; 8)<SUB>646</SUB>> ]
+"1586" [label = <(&lt;operator&gt;.assignment,result[2] = (byte) ((value &amp; 0xFF0000) &gt;&gt; 16))<SUB>647</SUB>> ]
+"1587" [label = <(&lt;operator&gt;.indexAccess,result[2])<SUB>647</SUB>> ]
+"1588" [label = <(IDENTIFIER,result,result[2] = (byte) ((value &amp; 0xFF0000) &gt;&gt; 16))<SUB>647</SUB>> ]
+"1589" [label = <(LITERAL,2,result[2] = (byte) ((value &amp; 0xFF0000) &gt;&gt; 16))<SUB>647</SUB>> ]
+"1590" [label = <(&lt;operator&gt;.cast,(byte) ((value &amp; 0xFF0000) &gt;&gt; 16))<SUB>647</SUB>> ]
+"1591" [label = <(TYPE_REF,byte,byte)<SUB>647</SUB>> ]
+"1592" [label = <(&lt;operator&gt;.logicalShiftRight,(value &amp; 0xFF0000) &gt;&gt; 16)<SUB>647</SUB>> ]
+"1593" [label = <(&lt;operator&gt;.and,value &amp; 0xFF0000)<SUB>647</SUB>> ]
+"1594" [label = <(IDENTIFIER,value,value &amp; 0xFF0000)<SUB>647</SUB>> ]
+"1595" [label = <(LITERAL,0xFF0000,value &amp; 0xFF0000)<SUB>647</SUB>> ]
+"1596" [label = <(LITERAL,16,(value &amp; 0xFF0000) &gt;&gt; 16)<SUB>647</SUB>> ]
+"1597" [label = <(&lt;operator&gt;.assignment,result[3] = (byte) ((value &amp; 0xFF000000l) &gt;&gt; 24))<SUB>648</SUB>> ]
+"1598" [label = <(&lt;operator&gt;.indexAccess,result[3])<SUB>648</SUB>> ]
+"1599" [label = <(IDENTIFIER,result,result[3] = (byte) ((value &amp; 0xFF000000l) &gt;&gt; 24))<SUB>648</SUB>> ]
+"1600" [label = <(LITERAL,3,result[3] = (byte) ((value &amp; 0xFF000000l) &gt;&gt; 24))<SUB>648</SUB>> ]
+"1601" [label = <(&lt;operator&gt;.cast,(byte) ((value &amp; 0xFF000000l) &gt;&gt; 24))<SUB>648</SUB>> ]
+"1602" [label = <(TYPE_REF,byte,byte)<SUB>648</SUB>> ]
+"1603" [label = <(&lt;operator&gt;.logicalShiftRight,(value &amp; 0xFF000000l) &gt;&gt; 24)<SUB>648</SUB>> ]
+"1604" [label = <(&lt;operator&gt;.and,value &amp; 0xFF000000l)<SUB>648</SUB>> ]
+"1605" [label = <(IDENTIFIER,value,value &amp; 0xFF000000l)<SUB>648</SUB>> ]
+"1606" [label = <(LITERAL,0xFF000000l,value &amp; 0xFF000000l)<SUB>648</SUB>> ]
+"1607" [label = <(LITERAL,24,(value &amp; 0xFF000000l) &gt;&gt; 24)<SUB>648</SUB>> ]
+"1608" [label = <(RETURN,return new ZipLong(result);,return new ZipLong(result);)<SUB>649</SUB>> ]
+"1609" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>649</SUB>> ]
+"1610" [label = <(&lt;operator&gt;.assignment,&lt;empty&gt;)> ]
+"1611" [label = <(IDENTIFIER,$obj47,&lt;empty&gt;)> ]
+"1612" [label = <(&lt;operator&gt;.alloc,new ZipLong(result))<SUB>649</SUB>> ]
+"1613" [label = <(&lt;init&gt;,new ZipLong(result))<SUB>649</SUB>> ]
+"1614" [label = <(IDENTIFIER,$obj47,new ZipLong(result))> ]
+"1615" [label = <(IDENTIFIER,result,new ZipLong(result))<SUB>649</SUB>> ]
+"1616" [label = <(IDENTIFIER,$obj47,&lt;empty&gt;)> ]
+"1617" [label = <(MODIFIER,PROTECTED)> ]
+"1618" [label = <(MODIFIER,STATIC)> ]
+"1619" [label = <(METHOD_RETURN,java.io.ZipLong)<SUB>631</SUB>> ]
+  "1503" -> "1504" 
+  "1503" -> "1505" 
+  "1503" -> "1617" 
+  "1503" -> "1618" 
+  "1503" -> "1619" 
+  "1505" -> "1506" 
+  "1505" -> "1507" 
+  "1505" -> "1513" 
+  "1505" -> "1514" 
+  "1505" -> "1520" 
+  "1505" -> "1529" 
+  "1505" -> "1530" 
+  "1505" -> "1561" 
+  "1505" -> "1562" 
+  "1505" -> "1566" 
+  "1505" -> "1575" 
+  "1505" -> "1586" 
+  "1505" -> "1597" 
+  "1505" -> "1608" 
+  "1507" -> "1508" 
+  "1507" -> "1509" 
+  "1509" -> "1510" 
+  "1509" -> "1512" 
+  "1510" -> "1511" 
+  "1514" -> "1515" 
+  "1514" -> "1516" 
+  "1516" -> "1517" 
+  "1516" -> "1519" 
+  "1517" -> "1518" 
+  "1520" -> "1521" 
+  "1520" -> "1524" 
+  "1521" -> "1522" 
+  "1521" -> "1523" 
+  "1524" -> "1525" 
+  "1525" -> "1526" 
+  "1526" -> "1527" 
+  "1526" -> "1528" 
+  "1530" -> "1531" 
+  "1530" -> "1532" 
+  "1532" -> "1533" 
+  "1532" -> "1557" 
+  "1533" -> "1534" 
+  "1533" -> "1553" 
+  "1534" -> "1535" 
+  "1534" -> "1549" 
+  "1535" -> "1536" 
+  "1535" -> "1545" 
+  "1536" -> "1537" 
+  "1536" -> "1542" 
+  "1537" -> "1538" 
+  "1537" -> "1541" 
+  "1538" -> "1539" 
+  "1538" -> "1540" 
+  "1542" -> "1543" 
+  "1542" -> "1544" 
+  "1545" -> "1546" 
+  "1545" -> "1548" 
+  "1546" -> "1547" 
+  "1549" -> "1550" 
+  "1549" -> "1552" 
+  "1550" -> "1551" 
+  "1553" -> "1554" 
+  "1553" -> "1556" 
+  "1554" -> "1555" 
+  "1557" -> "1558" 
+  "1557" -> "1560" 
+  "1558" -> "1559" 
+  "1562" -> "1563" 
+  "1562" -> "1564" 
+  "1564" -> "1565" 
+  "1566" -> "1567" 
+  "1566" -> "1570" 
+  "1567" -> "1568" 
+  "1567" -> "1569" 
+  "1570" -> "1571" 
+  "1570" -> "1572" 
+  "1572" -> "1573" 
+  "1572" -> "1574" 
+  "1575" -> "1576" 
+  "1575" -> "1579" 
+  "1576" -> "1577" 
+  "1576" -> "1578" 
+  "1579" -> "1580" 
+  "1579" -> "1581" 
+  "1581" -> "1582" 
+  "1581" -> "1585" 
+  "1582" -> "1583" 
+  "1582" -> "1584" 
+  "1586" -> "1587" 
+  "1586" -> "1590" 
+  "1587" -> "1588" 
+  "1587" -> "1589" 
+  "1590" -> "1591" 
+  "1590" -> "1592" 
+  "1592" -> "1593" 
+  "1592" -> "1596" 
+  "1593" -> "1594" 
+  "1593" -> "1595" 
+  "1597" -> "1598" 
+  "1597" -> "1601" 
+  "1598" -> "1599" 
+  "1598" -> "1600" 
+  "1601" -> "1602" 
+  "1601" -> "1603" 
+  "1603" -> "1604" 
+  "1603" -> "1607" 
+  "1604" -> "1605" 
+  "1604" -> "1606" 
+  "1608" -> "1609" 
+  "1609" -> "1610" 
+  "1609" -> "1613" 
+  "1609" -> "1616" 
+  "1610" -> "1611" 
+  "1610" -> "1612" 
+  "1613" -> "1614" 
+  "1613" -> "1615" 
+}

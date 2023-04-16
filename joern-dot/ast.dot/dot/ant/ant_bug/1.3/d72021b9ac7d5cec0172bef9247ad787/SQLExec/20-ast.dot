@@ -1,0 +1,211 @@
+digraph "execSQL" {  
+"1179" [label = <(METHOD,execSQL)<SUB>500</SUB>> ]
+"67" [label = <(PARAM,this)<SUB>500</SUB>> ]
+"1180" [label = <(PARAM,String sql)<SUB>500</SUB>> ]
+"1181" [label = <(PARAM,PrintStream out)<SUB>500</SUB>> ]
+"1182" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>500</SUB>> ]
+"1183" [label = <(CONTROL_STRUCTURE,if (&quot;&quot;.equals(sql.trim())),if (&quot;&quot;.equals(sql.trim())))<SUB>502</SUB>> ]
+"1184" [label = <(equals,this.equals(sql.trim()))<SUB>502</SUB>> ]
+"1185" [label = <(LITERAL,&quot;&quot;,this.equals(sql.trim()))<SUB>502</SUB>> ]
+"1186" [label = <(trim,sql.trim())<SUB>502</SUB>> ]
+"1187" [label = <(IDENTIFIER,sql,sql.trim())<SUB>502</SUB>> ]
+"1188" [label = <(RETURN,return;,return;)<SUB>502</SUB>> ]
+"1189" [label = <(CONTROL_STRUCTURE,try,try)<SUB>504</SUB>> ]
+"1190" [label = <(BLOCK,try,try)<SUB>504</SUB>> ]
+"1191" [label = <(&lt;operator&gt;.postIncrement,totalSql++)<SUB>505</SUB>> ]
+"1192" [label = <(&lt;operator&gt;.fieldAccess,this.totalSql)<SUB>505</SUB>> ]
+"1193" [label = <(IDENTIFIER,this,totalSql++)<SUB>505</SUB>> ]
+"1194" [label = <(FIELD_IDENTIFIER,totalSql,totalSql)<SUB>505</SUB>> ]
+"1195" [label = <(CONTROL_STRUCTURE,if (!statement.execute(sql)),if (!statement.execute(sql)))<SUB>506</SUB>> ]
+"1196" [label = <(&lt;operator&gt;.logicalNot,!statement.execute(sql))<SUB>506</SUB>> ]
+"1197" [label = <(execute,statement.execute(sql))<SUB>506</SUB>> ]
+"1198" [label = <(&lt;operator&gt;.fieldAccess,this.statement)<SUB>506</SUB>> ]
+"1199" [label = <(IDENTIFIER,this,statement.execute(sql))<SUB>506</SUB>> ]
+"1200" [label = <(FIELD_IDENTIFIER,statement,statement)<SUB>506</SUB>> ]
+"1201" [label = <(IDENTIFIER,sql,statement.execute(sql))<SUB>506</SUB>> ]
+"1202" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>506</SUB>> ]
+"1203" [label = <(log,log(statement.getUpdateCount() + &quot; rows affected&quot;, Project.MSG_VERBOSE))<SUB>507</SUB>> ]
+"66" [label = <(IDENTIFIER,this,log(statement.getUpdateCount() + &quot; rows affected&quot;, Project.MSG_VERBOSE))<SUB>507</SUB>> ]
+"1204" [label = <(&lt;operator&gt;.addition,statement.getUpdateCount() + &quot; rows affected&quot;)<SUB>507</SUB>> ]
+"1205" [label = <(getUpdateCount,statement.getUpdateCount())<SUB>507</SUB>> ]
+"1206" [label = <(&lt;operator&gt;.fieldAccess,this.statement)<SUB>507</SUB>> ]
+"1207" [label = <(IDENTIFIER,this,statement.getUpdateCount())<SUB>507</SUB>> ]
+"1208" [label = <(FIELD_IDENTIFIER,statement,statement)<SUB>507</SUB>> ]
+"1209" [label = <(LITERAL,&quot; rows affected&quot;,statement.getUpdateCount() + &quot; rows affected&quot;)<SUB>507</SUB>> ]
+"1210" [label = <(&lt;operator&gt;.fieldAccess,Project.MSG_VERBOSE)<SUB>508</SUB>> ]
+"1211" [label = <(IDENTIFIER,Project,log(statement.getUpdateCount() + &quot; rows affected&quot;, Project.MSG_VERBOSE))<SUB>508</SUB>> ]
+"1212" [label = <(FIELD_IDENTIFIER,MSG_VERBOSE,MSG_VERBOSE)<SUB>508</SUB>> ]
+"1213" [label = <(CONTROL_STRUCTURE,if (print),if (print))<SUB>511</SUB>> ]
+"1214" [label = <(&lt;operator&gt;.fieldAccess,this.print)<SUB>511</SUB>> ]
+"1215" [label = <(IDENTIFIER,this,if (print))<SUB>511</SUB>> ]
+"1216" [label = <(FIELD_IDENTIFIER,print,print)<SUB>511</SUB>> ]
+"1217" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>511</SUB>> ]
+"1218" [label = <(printResults,this.printResults(out))<SUB>512</SUB>> ]
+"68" [label = <(IDENTIFIER,this,this.printResults(out))<SUB>512</SUB>> ]
+"1219" [label = <(IDENTIFIER,out,this.printResults(out))<SUB>512</SUB>> ]
+"1220" [label = <(LOCAL,SQLWarning warning: java.sql.SQLWarning)> ]
+"1221" [label = <(&lt;operator&gt;.assignment,SQLWarning warning = conn.getWarnings())<SUB>515</SUB>> ]
+"1222" [label = <(IDENTIFIER,warning,SQLWarning warning = conn.getWarnings())<SUB>515</SUB>> ]
+"1223" [label = <(getWarnings,conn.getWarnings())<SUB>515</SUB>> ]
+"1224" [label = <(&lt;operator&gt;.fieldAccess,this.conn)<SUB>515</SUB>> ]
+"1225" [label = <(IDENTIFIER,this,conn.getWarnings())<SUB>515</SUB>> ]
+"1226" [label = <(FIELD_IDENTIFIER,conn,conn)<SUB>515</SUB>> ]
+"1227" [label = <(CONTROL_STRUCTURE,while (warning != null),while (warning != null))<SUB>516</SUB>> ]
+"1228" [label = <(&lt;operator&gt;.notEquals,warning != null)<SUB>516</SUB>> ]
+"1229" [label = <(IDENTIFIER,warning,warning != null)<SUB>516</SUB>> ]
+"1230" [label = <(LITERAL,null,warning != null)<SUB>516</SUB>> ]
+"1231" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>516</SUB>> ]
+"1232" [label = <(log,log(warning + &quot; sql warning&quot;, Project.MSG_VERBOSE))<SUB>517</SUB>> ]
+"69" [label = <(IDENTIFIER,this,log(warning + &quot; sql warning&quot;, Project.MSG_VERBOSE))<SUB>517</SUB>> ]
+"1233" [label = <(&lt;operator&gt;.addition,warning + &quot; sql warning&quot;)<SUB>517</SUB>> ]
+"1234" [label = <(IDENTIFIER,warning,warning + &quot; sql warning&quot;)<SUB>517</SUB>> ]
+"1235" [label = <(LITERAL,&quot; sql warning&quot;,warning + &quot; sql warning&quot;)<SUB>517</SUB>> ]
+"1236" [label = <(&lt;operator&gt;.fieldAccess,Project.MSG_VERBOSE)<SUB>517</SUB>> ]
+"1237" [label = <(IDENTIFIER,Project,log(warning + &quot; sql warning&quot;, Project.MSG_VERBOSE))<SUB>517</SUB>> ]
+"1238" [label = <(FIELD_IDENTIFIER,MSG_VERBOSE,MSG_VERBOSE)<SUB>517</SUB>> ]
+"1239" [label = <(&lt;operator&gt;.assignment,warning = warning.getNextWarning())<SUB>518</SUB>> ]
+"1240" [label = <(IDENTIFIER,warning,warning = warning.getNextWarning())<SUB>518</SUB>> ]
+"1241" [label = <(getNextWarning,warning.getNextWarning())<SUB>518</SUB>> ]
+"1242" [label = <(IDENTIFIER,warning,warning.getNextWarning())<SUB>518</SUB>> ]
+"1243" [label = <(clearWarnings,conn.clearWarnings())<SUB>520</SUB>> ]
+"1244" [label = <(&lt;operator&gt;.fieldAccess,this.conn)<SUB>520</SUB>> ]
+"1245" [label = <(IDENTIFIER,this,conn.clearWarnings())<SUB>520</SUB>> ]
+"1246" [label = <(FIELD_IDENTIFIER,conn,conn)<SUB>520</SUB>> ]
+"1247" [label = <(&lt;operator&gt;.postIncrement,goodSql++)<SUB>521</SUB>> ]
+"1248" [label = <(&lt;operator&gt;.fieldAccess,this.goodSql)<SUB>521</SUB>> ]
+"1249" [label = <(IDENTIFIER,this,goodSql++)<SUB>521</SUB>> ]
+"1250" [label = <(FIELD_IDENTIFIER,goodSql,goodSql)<SUB>521</SUB>> ]
+"1251" [label = <(BLOCK,catch,catch)> ]
+"1252" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>523</SUB>> ]
+"1253" [label = <(log,log(&quot;Failed to execute: &quot; + sql, Project.MSG_ERR))<SUB>524</SUB>> ]
+"70" [label = <(IDENTIFIER,this,log(&quot;Failed to execute: &quot; + sql, Project.MSG_ERR))<SUB>524</SUB>> ]
+"1254" [label = <(&lt;operator&gt;.addition,&quot;Failed to execute: &quot; + sql)<SUB>524</SUB>> ]
+"1255" [label = <(LITERAL,&quot;Failed to execute: &quot;,&quot;Failed to execute: &quot; + sql)<SUB>524</SUB>> ]
+"1256" [label = <(IDENTIFIER,sql,&quot;Failed to execute: &quot; + sql)<SUB>524</SUB>> ]
+"1257" [label = <(&lt;operator&gt;.fieldAccess,Project.MSG_ERR)<SUB>524</SUB>> ]
+"1258" [label = <(IDENTIFIER,Project,log(&quot;Failed to execute: &quot; + sql, Project.MSG_ERR))<SUB>524</SUB>> ]
+"1259" [label = <(FIELD_IDENTIFIER,MSG_ERR,MSG_ERR)<SUB>524</SUB>> ]
+"1260" [label = <(CONTROL_STRUCTURE,if (!onError.equals(&quot;continue&quot;)),if (!onError.equals(&quot;continue&quot;)))<SUB>525</SUB>> ]
+"1261" [label = <(&lt;operator&gt;.logicalNot,!onError.equals(&quot;continue&quot;))<SUB>525</SUB>> ]
+"1262" [label = <(equals,onError.equals(&quot;continue&quot;))<SUB>525</SUB>> ]
+"1263" [label = <(&lt;operator&gt;.fieldAccess,this.onError)<SUB>525</SUB>> ]
+"1264" [label = <(IDENTIFIER,this,onError.equals(&quot;continue&quot;))<SUB>525</SUB>> ]
+"1265" [label = <(FIELD_IDENTIFIER,onError,onError)<SUB>525</SUB>> ]
+"1266" [label = <(LITERAL,&quot;continue&quot;,onError.equals(&quot;continue&quot;))<SUB>525</SUB>> ]
+"1267" [label = <(&lt;operator&gt;.throw,throw e;)<SUB>525</SUB>> ]
+"1268" [label = <(IDENTIFIER,e,throw e;)<SUB>525</SUB>> ]
+"1269" [label = <(log,log(e.toString(), Project.MSG_ERR))<SUB>526</SUB>> ]
+"71" [label = <(IDENTIFIER,this,log(e.toString(), Project.MSG_ERR))<SUB>526</SUB>> ]
+"1270" [label = <(toString,e.toString())<SUB>526</SUB>> ]
+"1271" [label = <(IDENTIFIER,e,e.toString())<SUB>526</SUB>> ]
+"1272" [label = <(&lt;operator&gt;.fieldAccess,Project.MSG_ERR)<SUB>526</SUB>> ]
+"1273" [label = <(IDENTIFIER,Project,log(e.toString(), Project.MSG_ERR))<SUB>526</SUB>> ]
+"1274" [label = <(FIELD_IDENTIFIER,MSG_ERR,MSG_ERR)<SUB>526</SUB>> ]
+"1275" [label = <(MODIFIER,PROTECTED)> ]
+"1276" [label = <(MODIFIER,VIRTUAL)> ]
+"1277" [label = <(METHOD_RETURN,void)<SUB>500</SUB>> ]
+  "1179" -> "67" 
+  "1179" -> "1180" 
+  "1179" -> "1181" 
+  "1179" -> "1182" 
+  "1179" -> "1275" 
+  "1179" -> "1276" 
+  "1179" -> "1277" 
+  "1182" -> "1183" 
+  "1182" -> "1189" 
+  "1183" -> "1184" 
+  "1183" -> "1188" 
+  "1184" -> "1185" 
+  "1184" -> "1186" 
+  "1186" -> "1187" 
+  "1189" -> "1190" 
+  "1189" -> "1251" 
+  "1190" -> "1191" 
+  "1190" -> "1195" 
+  "1190" -> "1213" 
+  "1190" -> "1220" 
+  "1190" -> "1221" 
+  "1190" -> "1227" 
+  "1190" -> "1243" 
+  "1190" -> "1247" 
+  "1191" -> "1192" 
+  "1192" -> "1193" 
+  "1192" -> "1194" 
+  "1195" -> "1196" 
+  "1195" -> "1202" 
+  "1196" -> "1197" 
+  "1197" -> "1198" 
+  "1197" -> "1201" 
+  "1198" -> "1199" 
+  "1198" -> "1200" 
+  "1202" -> "1203" 
+  "1203" -> "66" 
+  "1203" -> "1204" 
+  "1203" -> "1210" 
+  "1204" -> "1205" 
+  "1204" -> "1209" 
+  "1205" -> "1206" 
+  "1206" -> "1207" 
+  "1206" -> "1208" 
+  "1210" -> "1211" 
+  "1210" -> "1212" 
+  "1213" -> "1214" 
+  "1213" -> "1217" 
+  "1214" -> "1215" 
+  "1214" -> "1216" 
+  "1217" -> "1218" 
+  "1218" -> "68" 
+  "1218" -> "1219" 
+  "1221" -> "1222" 
+  "1221" -> "1223" 
+  "1223" -> "1224" 
+  "1224" -> "1225" 
+  "1224" -> "1226" 
+  "1227" -> "1228" 
+  "1227" -> "1231" 
+  "1228" -> "1229" 
+  "1228" -> "1230" 
+  "1231" -> "1232" 
+  "1231" -> "1239" 
+  "1232" -> "69" 
+  "1232" -> "1233" 
+  "1232" -> "1236" 
+  "1233" -> "1234" 
+  "1233" -> "1235" 
+  "1236" -> "1237" 
+  "1236" -> "1238" 
+  "1239" -> "1240" 
+  "1239" -> "1241" 
+  "1241" -> "1242" 
+  "1243" -> "1244" 
+  "1244" -> "1245" 
+  "1244" -> "1246" 
+  "1247" -> "1248" 
+  "1248" -> "1249" 
+  "1248" -> "1250" 
+  "1251" -> "1252" 
+  "1252" -> "1253" 
+  "1252" -> "1260" 
+  "1252" -> "1269" 
+  "1253" -> "70" 
+  "1253" -> "1254" 
+  "1253" -> "1257" 
+  "1254" -> "1255" 
+  "1254" -> "1256" 
+  "1257" -> "1258" 
+  "1257" -> "1259" 
+  "1260" -> "1261" 
+  "1260" -> "1267" 
+  "1261" -> "1262" 
+  "1262" -> "1263" 
+  "1262" -> "1266" 
+  "1263" -> "1264" 
+  "1263" -> "1265" 
+  "1267" -> "1268" 
+  "1269" -> "71" 
+  "1269" -> "1270" 
+  "1269" -> "1272" 
+  "1270" -> "1271" 
+  "1272" -> "1273" 
+  "1272" -> "1274" 
+}

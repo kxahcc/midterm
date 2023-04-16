@@ -1,0 +1,115 @@
+digraph "loadUrl" {  
+"714" [label = <(METHOD,loadUrl)<SUB>426</SUB>> ]
+"58" [label = <(PARAM,this)<SUB>426</SUB>> ]
+"715" [label = <(PARAM,URL url)<SUB>426</SUB>> ]
+"716" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>426</SUB>> ]
+"56" [label = <(LOCAL,Properties props: java.util.Properties)> ]
+"717" [label = <(&lt;operator&gt;.assignment,Properties props = new Properties())<SUB>427</SUB>> ]
+"718" [label = <(IDENTIFIER,props,Properties props = new Properties())<SUB>427</SUB>> ]
+"719" [label = <(&lt;operator&gt;.alloc,new Properties())<SUB>427</SUB>> ]
+"720" [label = <(&lt;init&gt;,new Properties())<SUB>427</SUB>> ]
+"55" [label = <(IDENTIFIER,props,new Properties())<SUB>427</SUB>> ]
+"721" [label = <(log,log(&quot;Loading &quot; + url, Project.MSG_VERBOSE))<SUB>428</SUB>> ]
+"57" [label = <(IDENTIFIER,this,log(&quot;Loading &quot; + url, Project.MSG_VERBOSE))<SUB>428</SUB>> ]
+"722" [label = <(&lt;operator&gt;.addition,&quot;Loading &quot; + url)<SUB>428</SUB>> ]
+"723" [label = <(LITERAL,&quot;Loading &quot;,&quot;Loading &quot; + url)<SUB>428</SUB>> ]
+"724" [label = <(IDENTIFIER,url,&quot;Loading &quot; + url)<SUB>428</SUB>> ]
+"725" [label = <(&lt;operator&gt;.fieldAccess,Project.MSG_VERBOSE)<SUB>428</SUB>> ]
+"726" [label = <(IDENTIFIER,Project,log(&quot;Loading &quot; + url, Project.MSG_VERBOSE))<SUB>428</SUB>> ]
+"727" [label = <(FIELD_IDENTIFIER,MSG_VERBOSE,MSG_VERBOSE)<SUB>428</SUB>> ]
+"728" [label = <(CONTROL_STRUCTURE,try,try)<SUB>429</SUB>> ]
+"729" [label = <(BLOCK,try,try)<SUB>429</SUB>> ]
+"730" [label = <(LOCAL,InputStream is: java.io.InputStream)> ]
+"731" [label = <(&lt;operator&gt;.assignment,InputStream is = url.openStream())<SUB>430</SUB>> ]
+"732" [label = <(IDENTIFIER,is,InputStream is = url.openStream())<SUB>430</SUB>> ]
+"733" [label = <(openStream,url.openStream())<SUB>430</SUB>> ]
+"734" [label = <(IDENTIFIER,url,url.openStream())<SUB>430</SUB>> ]
+"735" [label = <(CONTROL_STRUCTURE,try,try)<SUB>431</SUB>> ]
+"736" [label = <(BLOCK,try,try)<SUB>431</SUB>> ]
+"737" [label = <(load,props.load(is))<SUB>432</SUB>> ]
+"738" [label = <(IDENTIFIER,props,props.load(is))<SUB>432</SUB>> ]
+"739" [label = <(IDENTIFIER,is,props.load(is))<SUB>432</SUB>> ]
+"740" [label = <(BLOCK,finally,finally)<SUB>433</SUB>> ]
+"741" [label = <(CONTROL_STRUCTURE,if (is != null),if (is != null))<SUB>434</SUB>> ]
+"742" [label = <(&lt;operator&gt;.notEquals,is != null)<SUB>434</SUB>> ]
+"743" [label = <(IDENTIFIER,is,is != null)<SUB>434</SUB>> ]
+"744" [label = <(LITERAL,null,is != null)<SUB>434</SUB>> ]
+"745" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>434</SUB>> ]
+"746" [label = <(close,is.close())<SUB>435</SUB>> ]
+"747" [label = <(IDENTIFIER,is,is.close())<SUB>435</SUB>> ]
+"748" [label = <(addProperties,this.addProperties(props))<SUB>438</SUB>> ]
+"59" [label = <(IDENTIFIER,this,this.addProperties(props))<SUB>438</SUB>> ]
+"749" [label = <(IDENTIFIER,props,this.addProperties(props))<SUB>438</SUB>> ]
+"750" [label = <(BLOCK,catch,catch)> ]
+"751" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>439</SUB>> ]
+"752" [label = <(&lt;operator&gt;.throw,throw new BuildException(ex, getLocation());)<SUB>440</SUB>> ]
+"753" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>440</SUB>> ]
+"754" [label = <(&lt;operator&gt;.assignment,&lt;empty&gt;)> ]
+"755" [label = <(IDENTIFIER,$obj6,&lt;empty&gt;)> ]
+"756" [label = <(&lt;operator&gt;.alloc,new BuildException(ex, getLocation()))<SUB>440</SUB>> ]
+"757" [label = <(&lt;init&gt;,new BuildException(ex, getLocation()))<SUB>440</SUB>> ]
+"758" [label = <(IDENTIFIER,$obj6,new BuildException(ex, getLocation()))> ]
+"759" [label = <(IDENTIFIER,ex,new BuildException(ex, getLocation()))<SUB>440</SUB>> ]
+"760" [label = <(getLocation,getLocation())<SUB>440</SUB>> ]
+"60" [label = <(IDENTIFIER,this,getLocation())<SUB>440</SUB>> ]
+"761" [label = <(IDENTIFIER,$obj6,&lt;empty&gt;)> ]
+"762" [label = <(MODIFIER,PROTECTED)> ]
+"763" [label = <(MODIFIER,VIRTUAL)> ]
+"764" [label = <(METHOD_RETURN,void)<SUB>426</SUB>> ]
+  "714" -> "58" 
+  "714" -> "715" 
+  "714" -> "716" 
+  "714" -> "762" 
+  "714" -> "763" 
+  "714" -> "764" 
+  "716" -> "56" 
+  "716" -> "717" 
+  "716" -> "720" 
+  "716" -> "721" 
+  "716" -> "728" 
+  "717" -> "718" 
+  "717" -> "719" 
+  "720" -> "55" 
+  "721" -> "57" 
+  "721" -> "722" 
+  "721" -> "725" 
+  "722" -> "723" 
+  "722" -> "724" 
+  "725" -> "726" 
+  "725" -> "727" 
+  "728" -> "729" 
+  "728" -> "750" 
+  "729" -> "730" 
+  "729" -> "731" 
+  "729" -> "735" 
+  "729" -> "748" 
+  "731" -> "732" 
+  "731" -> "733" 
+  "733" -> "734" 
+  "735" -> "736" 
+  "735" -> "740" 
+  "736" -> "737" 
+  "737" -> "738" 
+  "737" -> "739" 
+  "740" -> "741" 
+  "741" -> "742" 
+  "741" -> "745" 
+  "742" -> "743" 
+  "742" -> "744" 
+  "745" -> "746" 
+  "746" -> "747" 
+  "748" -> "59" 
+  "748" -> "749" 
+  "750" -> "751" 
+  "751" -> "752" 
+  "752" -> "753" 
+  "753" -> "754" 
+  "753" -> "757" 
+  "753" -> "761" 
+  "754" -> "755" 
+  "754" -> "756" 
+  "757" -> "758" 
+  "757" -> "759" 
+  "757" -> "760" 
+  "760" -> "60" 
+}

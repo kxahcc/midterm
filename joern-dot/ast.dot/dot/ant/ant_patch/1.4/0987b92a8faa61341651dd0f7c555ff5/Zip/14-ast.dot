@@ -1,0 +1,189 @@
+digraph "addZipEntries" {  
+"935" [label = <(METHOD,addZipEntries)<SUB>399</SUB>> ]
+"49" [label = <(PARAM,this)<SUB>399</SUB>> ]
+"936" [label = <(PARAM,ZipFileSet fs)<SUB>399</SUB>> ]
+"937" [label = <(PARAM,DirectoryScanner ds)<SUB>399</SUB>> ]
+"938" [label = <(PARAM,ZipOutputStream zOut)<SUB>400</SUB>> ]
+"939" [label = <(PARAM,String prefix)<SUB>400</SUB>> ]
+"940" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>402</SUB>> ]
+"941" [label = <(LOCAL,ZipScanner zipScanner: ANY)> ]
+"942" [label = <(&lt;operator&gt;.assignment,ANY zipScanner = (ZipScanner) ds)<SUB>403</SUB>> ]
+"943" [label = <(IDENTIFIER,zipScanner,ANY zipScanner = (ZipScanner) ds)<SUB>403</SUB>> ]
+"944" [label = <(&lt;operator&gt;.cast,(ZipScanner) ds)<SUB>403</SUB>> ]
+"945" [label = <(TYPE_REF,ZipScanner,ZipScanner)<SUB>403</SUB>> ]
+"946" [label = <(IDENTIFIER,ds,(ZipScanner) ds)<SUB>403</SUB>> ]
+"947" [label = <(LOCAL,File zipSrc: java.io.File)> ]
+"948" [label = <(&lt;operator&gt;.assignment,File zipSrc = getSrc())<SUB>404</SUB>> ]
+"949" [label = <(IDENTIFIER,zipSrc,File zipSrc = getSrc())<SUB>404</SUB>> ]
+"950" [label = <(getSrc,getSrc())<SUB>404</SUB>> ]
+"951" [label = <(IDENTIFIER,fs,getSrc())<SUB>404</SUB>> ]
+"47" [label = <(LOCAL,ZipEntry entry: ANY)> ]
+"952" [label = <(LOCAL,java.util.zip.ZipEntry origEntry: java.util.zip.ZipEntry)> ]
+"45" [label = <(LOCAL,ZipInputStream in: java.util.zip.ZipInputStream)> ]
+"953" [label = <(&lt;operator&gt;.assignment,ZipInputStream in = null)<SUB>408</SUB>> ]
+"954" [label = <(IDENTIFIER,in,ZipInputStream in = null)<SUB>408</SUB>> ]
+"955" [label = <(LITERAL,null,ZipInputStream in = null)<SUB>408</SUB>> ]
+"956" [label = <(CONTROL_STRUCTURE,try,try)<SUB>409</SUB>> ]
+"957" [label = <(BLOCK,try,try)<SUB>409</SUB>> ]
+"958" [label = <(&lt;operator&gt;.assignment,in = new ZipInputStream(new FileInputStream(zipSrc)))<SUB>410</SUB>> ]
+"959" [label = <(IDENTIFIER,in,in = new ZipInputStream(new FileInputStream(zipSrc)))<SUB>410</SUB>> ]
+"960" [label = <(&lt;operator&gt;.alloc,new ZipInputStream(new FileInputStream(zipSrc)))<SUB>410</SUB>> ]
+"961" [label = <(&lt;init&gt;,new ZipInputStream(new FileInputStream(zipSrc)))<SUB>410</SUB>> ]
+"44" [label = <(IDENTIFIER,in,new ZipInputStream(new FileInputStream(zipSrc)))<SUB>410</SUB>> ]
+"962" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>410</SUB>> ]
+"963" [label = <(&lt;operator&gt;.assignment,&lt;empty&gt;)> ]
+"964" [label = <(IDENTIFIER,$obj21,&lt;empty&gt;)> ]
+"965" [label = <(&lt;operator&gt;.alloc,new FileInputStream(zipSrc))<SUB>410</SUB>> ]
+"966" [label = <(&lt;init&gt;,new FileInputStream(zipSrc))<SUB>410</SUB>> ]
+"967" [label = <(IDENTIFIER,$obj21,new FileInputStream(zipSrc))> ]
+"968" [label = <(IDENTIFIER,zipSrc,new FileInputStream(zipSrc))<SUB>410</SUB>> ]
+"969" [label = <(IDENTIFIER,$obj21,&lt;empty&gt;)> ]
+"970" [label = <(CONTROL_STRUCTURE,while ((origEntry = in.getNextEntry()) != null),while ((origEntry = in.getNextEntry()) != null))<SUB>412</SUB>> ]
+"971" [label = <(&lt;operator&gt;.notEquals,(origEntry = in.getNextEntry()) != null)<SUB>412</SUB>> ]
+"972" [label = <(&lt;operator&gt;.assignment,origEntry = in.getNextEntry())<SUB>412</SUB>> ]
+"973" [label = <(IDENTIFIER,origEntry,origEntry = in.getNextEntry())<SUB>412</SUB>> ]
+"974" [label = <(getNextEntry,in.getNextEntry())<SUB>412</SUB>> ]
+"975" [label = <(IDENTIFIER,in,in.getNextEntry())<SUB>412</SUB>> ]
+"976" [label = <(LITERAL,null,(origEntry = in.getNextEntry()) != null)<SUB>412</SUB>> ]
+"977" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>412</SUB>> ]
+"978" [label = <(&lt;operator&gt;.assignment,entry = new ZipEntry(origEntry))<SUB>413</SUB>> ]
+"979" [label = <(IDENTIFIER,entry,entry = new ZipEntry(origEntry))<SUB>413</SUB>> ]
+"980" [label = <(&lt;operator&gt;.alloc,new ZipEntry(origEntry))<SUB>413</SUB>> ]
+"981" [label = <(&lt;init&gt;,new ZipEntry(origEntry))<SUB>413</SUB>> ]
+"46" [label = <(IDENTIFIER,entry,new ZipEntry(origEntry))<SUB>413</SUB>> ]
+"982" [label = <(IDENTIFIER,origEntry,new ZipEntry(origEntry))<SUB>413</SUB>> ]
+"983" [label = <(LOCAL,String vPath: java.lang.String)> ]
+"984" [label = <(&lt;operator&gt;.assignment,String vPath = getName())<SUB>414</SUB>> ]
+"985" [label = <(IDENTIFIER,vPath,String vPath = getName())<SUB>414</SUB>> ]
+"986" [label = <(getName,getName())<SUB>414</SUB>> ]
+"987" [label = <(IDENTIFIER,entry,getName())<SUB>414</SUB>> ]
+"988" [label = <(CONTROL_STRUCTURE,if (zipScanner.match(vPath)),if (zipScanner.match(vPath)))<SUB>415</SUB>> ]
+"989" [label = <(match,match(vPath))<SUB>415</SUB>> ]
+"990" [label = <(IDENTIFIER,zipScanner,match(vPath))<SUB>415</SUB>> ]
+"991" [label = <(IDENTIFIER,vPath,match(vPath))<SUB>415</SUB>> ]
+"992" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>415</SUB>> ]
+"993" [label = <(addParentDirs,addParentDirs(null, vPath, zOut, prefix))<SUB>416</SUB>> ]
+"48" [label = <(IDENTIFIER,this,addParentDirs(null, vPath, zOut, prefix))<SUB>416</SUB>> ]
+"994" [label = <(LITERAL,null,addParentDirs(null, vPath, zOut, prefix))<SUB>416</SUB>> ]
+"995" [label = <(IDENTIFIER,vPath,addParentDirs(null, vPath, zOut, prefix))<SUB>416</SUB>> ]
+"996" [label = <(IDENTIFIER,zOut,addParentDirs(null, vPath, zOut, prefix))<SUB>416</SUB>> ]
+"997" [label = <(IDENTIFIER,prefix,addParentDirs(null, vPath, zOut, prefix))<SUB>416</SUB>> ]
+"998" [label = <(CONTROL_STRUCTURE,if (!entry.isDirectory()),if (!entry.isDirectory()))<SUB>417</SUB>> ]
+"999" [label = <(&lt;operator&gt;.logicalNot,!entry.isDirectory())<SUB>417</SUB>> ]
+"1000" [label = <(isDirectory,isDirectory())<SUB>417</SUB>> ]
+"1001" [label = <(IDENTIFIER,entry,isDirectory())<SUB>417</SUB>> ]
+"1002" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>417</SUB>> ]
+"1003" [label = <(zipFile,zipFile(in, zOut, prefix + vPath, entry.getTime()))<SUB>418</SUB>> ]
+"50" [label = <(IDENTIFIER,this,zipFile(in, zOut, prefix + vPath, entry.getTime()))<SUB>418</SUB>> ]
+"1004" [label = <(IDENTIFIER,in,zipFile(in, zOut, prefix + vPath, entry.getTime()))<SUB>418</SUB>> ]
+"1005" [label = <(IDENTIFIER,zOut,zipFile(in, zOut, prefix + vPath, entry.getTime()))<SUB>418</SUB>> ]
+"1006" [label = <(&lt;operator&gt;.addition,prefix + vPath)<SUB>418</SUB>> ]
+"1007" [label = <(IDENTIFIER,prefix,prefix + vPath)<SUB>418</SUB>> ]
+"1008" [label = <(IDENTIFIER,vPath,prefix + vPath)<SUB>418</SUB>> ]
+"1009" [label = <(getTime,getTime())<SUB>418</SUB>> ]
+"1010" [label = <(IDENTIFIER,entry,getTime())<SUB>418</SUB>> ]
+"1011" [label = <(BLOCK,finally,finally)<SUB>422</SUB>> ]
+"1012" [label = <(CONTROL_STRUCTURE,if (in != null),if (in != null))<SUB>423</SUB>> ]
+"1013" [label = <(&lt;operator&gt;.notEquals,in != null)<SUB>423</SUB>> ]
+"1014" [label = <(IDENTIFIER,in,in != null)<SUB>423</SUB>> ]
+"1015" [label = <(LITERAL,null,in != null)<SUB>423</SUB>> ]
+"1016" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>423</SUB>> ]
+"1017" [label = <(close,in.close())<SUB>424</SUB>> ]
+"1018" [label = <(IDENTIFIER,in,in.close())<SUB>424</SUB>> ]
+"1019" [label = <(MODIFIER,PROTECTED)> ]
+"1020" [label = <(MODIFIER,VIRTUAL)> ]
+"1021" [label = <(METHOD_RETURN,void)<SUB>399</SUB>> ]
+  "935" -> "49" 
+  "935" -> "936" 
+  "935" -> "937" 
+  "935" -> "938" 
+  "935" -> "939" 
+  "935" -> "940" 
+  "935" -> "1019" 
+  "935" -> "1020" 
+  "935" -> "1021" 
+  "940" -> "941" 
+  "940" -> "942" 
+  "940" -> "947" 
+  "940" -> "948" 
+  "940" -> "47" 
+  "940" -> "952" 
+  "940" -> "45" 
+  "940" -> "953" 
+  "940" -> "956" 
+  "942" -> "943" 
+  "942" -> "944" 
+  "944" -> "945" 
+  "944" -> "946" 
+  "948" -> "949" 
+  "948" -> "950" 
+  "950" -> "951" 
+  "953" -> "954" 
+  "953" -> "955" 
+  "956" -> "957" 
+  "956" -> "1011" 
+  "957" -> "958" 
+  "957" -> "961" 
+  "957" -> "970" 
+  "958" -> "959" 
+  "958" -> "960" 
+  "961" -> "44" 
+  "961" -> "962" 
+  "962" -> "963" 
+  "962" -> "966" 
+  "962" -> "969" 
+  "963" -> "964" 
+  "963" -> "965" 
+  "966" -> "967" 
+  "966" -> "968" 
+  "970" -> "971" 
+  "970" -> "977" 
+  "971" -> "972" 
+  "971" -> "976" 
+  "972" -> "973" 
+  "972" -> "974" 
+  "974" -> "975" 
+  "977" -> "978" 
+  "977" -> "981" 
+  "977" -> "983" 
+  "977" -> "984" 
+  "977" -> "988" 
+  "978" -> "979" 
+  "978" -> "980" 
+  "981" -> "46" 
+  "981" -> "982" 
+  "984" -> "985" 
+  "984" -> "986" 
+  "986" -> "987" 
+  "988" -> "989" 
+  "988" -> "992" 
+  "989" -> "990" 
+  "989" -> "991" 
+  "992" -> "993" 
+  "992" -> "998" 
+  "993" -> "48" 
+  "993" -> "994" 
+  "993" -> "995" 
+  "993" -> "996" 
+  "993" -> "997" 
+  "998" -> "999" 
+  "998" -> "1002" 
+  "999" -> "1000" 
+  "1000" -> "1001" 
+  "1002" -> "1003" 
+  "1003" -> "50" 
+  "1003" -> "1004" 
+  "1003" -> "1005" 
+  "1003" -> "1006" 
+  "1003" -> "1009" 
+  "1006" -> "1007" 
+  "1006" -> "1008" 
+  "1009" -> "1010" 
+  "1011" -> "1012" 
+  "1012" -> "1013" 
+  "1012" -> "1016" 
+  "1013" -> "1014" 
+  "1013" -> "1015" 
+  "1016" -> "1017" 
+  "1017" -> "1018" 
+}

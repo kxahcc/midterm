@@ -1,0 +1,223 @@
+digraph "process" {  
+"34" [label = <(METHOD,process)<SUB>38</SUB>> ]
+"35" [label = <(PARAM,this)<SUB>38</SUB>> ]
+"36" [label = <(PARAM,final Exchange exchange)<SUB>38</SUB>> ]
+"37" [label = <(PARAM,final AsyncCallback callback)<SUB>38</SUB>> ]
+"38" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>38</SUB>> ]
+"39" [label = <(CONTROL_STRUCTURE,if (processor == null),if (processor == null))<SUB>39</SUB>> ]
+"40" [label = <(&lt;operator&gt;.equals,processor == null)<SUB>39</SUB>> ]
+"41" [label = <(IDENTIFIER,processor,processor == null)<SUB>39</SUB>> ]
+"42" [label = <(LITERAL,null,processor == null)<SUB>39</SUB>> ]
+"43" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>39</SUB>> ]
+"44" [label = <(done,done(true))<SUB>41</SUB>> ]
+"45" [label = <(IDENTIFIER,callback,done(true))<SUB>41</SUB>> ]
+"46" [label = <(LITERAL,true,done(true))<SUB>41</SUB>> ]
+"47" [label = <(RETURN,return true;,return true;)<SUB>42</SUB>> ]
+"48" [label = <(LITERAL,true,return true;)<SUB>42</SUB>> ]
+"49" [label = <(CONTROL_STRUCTURE,if (processor instanceof AsyncProcessor),if (processor instanceof AsyncProcessor))<SUB>45</SUB>> ]
+"50" [label = <(&lt;operator&gt;.instanceOf,processor instanceof AsyncProcessor)<SUB>45</SUB>> ]
+"51" [label = <(IDENTIFIER,processor,processor instanceof AsyncProcessor)<SUB>45</SUB>> ]
+"52" [label = <(TYPE_REF,AsyncProcessor,AsyncProcessor)<SUB>45</SUB>> ]
+"53" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>45</SUB>> ]
+"54" [label = <(RETURN,return ((AsyncProcessor) processor).process(exchange, new AsyncCallback() {\012\012    public void done(boolean doneSynchronously) {\012        Message faultMessage = exchange.getFault(false);\012        if (faultMessage != null) {\012            final Object faultBody = faultMessage.getBody();\012            if (faultBody != null) {\012                faultMessage.setBody(null);\012                if (faultBody instanceof Throwable) {\012                    exchange.setException((Throwable) faultBody);\012                } else {\012                    if (exchange.getException() == null) {\012                        exchange.setException(new CamelException(&quot;Message contains fault of type &quot; + faultBody.getClass().getName() + &quot;:\n&quot; + faultBody));\012                    }\012                }\012            }\012        }\012        callback.done(doneSynchronously);\012    }\012});,return ((AsyncProcessor) processor).process(exchange, new AsyncCallback() {\012\012    public void done(boolean doneSynchronously) {\012        Message faultMessage = exchange.getFault(false);\012        if (faultMessage != null) {\012            final Object faultBody = faultMessage.getBody();\012            if (faultBody != null) {\012                faultMessage.setBody(null);\012                if (faultBody instanceof Throwable) {\012                    exchange.setException((Throwable) faultBody);\012                } else {\012                    if (exchange.getException() == null) {\012                        exchange.setException(new CamelException(&quot;Message contains fault of type &quot; + faultBody.getClass().getName() + &quot;:\n&quot; + faultBody));\012                    }\012                }\012            }\012        }\012        callback.done(doneSynchronously);\012    }\012});)<SUB>46</SUB>> ]
+"55" [label = <(process,process(exchange, new AsyncCallback() {\012\012    public void done(boolean doneSynchronously) {\012        Message faultMessage = exchange.getFault(false);\012        if (faultMessage != null) {\012            final Object faultBody = faultMessage.getBody();\012            if (faultBody != null) {\012                faultMessage.setBody(null);\012                if (faultBody instanceof Throwable) {\012                    exchange.setException((Throwable) faultBody);\012                } else {\012                    if (exchange.getException() == null) {\012                        exchange.setException(new CamelException(&quot;Message contains fault of type &quot; + faultBody.getClass().getName() + &quot;:\n&quot; + faultBody));\012                    }\012                }\012            }\012        }\012        callback.done(doneSynchronously);\012    }\012}))<SUB>46</SUB>> ]
+"56" [label = <(&lt;operator&gt;.cast,(AsyncProcessor) processor)<SUB>46</SUB>> ]
+"57" [label = <(TYPE_REF,AsyncProcessor,AsyncProcessor)<SUB>46</SUB>> ]
+"58" [label = <(IDENTIFIER,processor,(AsyncProcessor) processor)<SUB>46</SUB>> ]
+"59" [label = <(IDENTIFIER,exchange,process(exchange, new AsyncCallback() {\012\012    public void done(boolean doneSynchronously) {\012        Message faultMessage = exchange.getFault(false);\012        if (faultMessage != null) {\012            final Object faultBody = faultMessage.getBody();\012            if (faultBody != null) {\012                faultMessage.setBody(null);\012                if (faultBody instanceof Throwable) {\012                    exchange.setException((Throwable) faultBody);\012                } else {\012                    if (exchange.getException() == null) {\012                        exchange.setException(new CamelException(&quot;Message contains fault of type &quot; + faultBody.getClass().getName() + &quot;:\n&quot; + faultBody));\012                    }\012                }\012            }\012        }\012        callback.done(doneSynchronously);\012    }\012}))<SUB>46</SUB>> ]
+"60" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>46</SUB>> ]
+"61" [label = <(&lt;operator&gt;.assignment,&lt;empty&gt;)> ]
+"62" [label = <(IDENTIFIER,$obj0,&lt;empty&gt;)> ]
+"63" [label = <(&lt;operator&gt;.alloc,new AsyncCallback() {\012\012    public void done(boolean doneSynchronously) {\012        Message faultMessage = exchange.getFault(false);\012        if (faultMessage != null) {\012            final Object faultBody = faultMessage.getBody();\012            if (faultBody != null) {\012                faultMessage.setBody(null);\012                if (faultBody instanceof Throwable) {\012                    exchange.setException((Throwable) faultBody);\012                } else {\012                    if (exchange.getException() == null) {\012                        exchange.setException(new CamelException(&quot;Message contains fault of type &quot; + faultBody.getClass().getName() + &quot;:\n&quot; + faultBody));\012                    }\012                }\012            }\012        }\012        callback.done(doneSynchronously);\012    }\012})<SUB>46</SUB>> ]
+"64" [label = <(&lt;init&gt;,new AsyncCallback() {\012\012    public void done(boolean doneSynchronously) {\012        Message faultMessage = exchange.getFault(false);\012        if (faultMessage != null) {\012            final Object faultBody = faultMessage.getBody();\012            if (faultBody != null) {\012                faultMessage.setBody(null);\012                if (faultBody instanceof Throwable) {\012                    exchange.setException((Throwable) faultBody);\012                } else {\012                    if (exchange.getException() == null) {\012                        exchange.setException(new CamelException(&quot;Message contains fault of type &quot; + faultBody.getClass().getName() + &quot;:\n&quot; + faultBody));\012                    }\012                }\012            }\012        }\012        callback.done(doneSynchronously);\012    }\012})<SUB>46</SUB>> ]
+"65" [label = <(IDENTIFIER,$obj0,new AsyncCallback() {\012\012    public void done(boolean doneSynchronously) {\012        Message faultMessage = exchange.getFault(false);\012        if (faultMessage != null) {\012            final Object faultBody = faultMessage.getBody();\012            if (faultBody != null) {\012                faultMessage.setBody(null);\012                if (faultBody instanceof Throwable) {\012                    exchange.setException((Throwable) faultBody);\012                } else {\012                    if (exchange.getException() == null) {\012                        exchange.setException(new CamelException(&quot;Message contains fault of type &quot; + faultBody.getClass().getName() + &quot;:\n&quot; + faultBody));\012                    }\012                }\012            }\012        }\012        callback.done(doneSynchronously);\012    }\012})> ]
+"66" [label = <(IDENTIFIER,$obj0,&lt;empty&gt;)> ]
+"67" [label = <(CONTROL_STRUCTURE,try,try)<SUB>70</SUB>> ]
+"68" [label = <(BLOCK,try,try)<SUB>70</SUB>> ]
+"69" [label = <(process,process(exchange))<SUB>71</SUB>> ]
+"70" [label = <(IDENTIFIER,processor,process(exchange))<SUB>71</SUB>> ]
+"71" [label = <(IDENTIFIER,exchange,process(exchange))<SUB>71</SUB>> ]
+"72" [label = <(BLOCK,catch,catch)> ]
+"73" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>72</SUB>> ]
+"74" [label = <(setException,setException(e))<SUB>73</SUB>> ]
+"75" [label = <(IDENTIFIER,exchange,setException(e))<SUB>73</SUB>> ]
+"76" [label = <(IDENTIFIER,e,setException(e))<SUB>73</SUB>> ]
+"77" [label = <(LOCAL,Message faultMessage: org.apache.camel.Message)> ]
+"78" [label = <(&lt;operator&gt;.assignment,Message faultMessage = getFault(false))<SUB>76</SUB>> ]
+"79" [label = <(IDENTIFIER,faultMessage,Message faultMessage = getFault(false))<SUB>76</SUB>> ]
+"80" [label = <(getFault,getFault(false))<SUB>76</SUB>> ]
+"81" [label = <(IDENTIFIER,exchange,getFault(false))<SUB>76</SUB>> ]
+"82" [label = <(LITERAL,false,getFault(false))<SUB>76</SUB>> ]
+"83" [label = <(CONTROL_STRUCTURE,if (faultMessage != null),if (faultMessage != null))<SUB>77</SUB>> ]
+"84" [label = <(&lt;operator&gt;.notEquals,faultMessage != null)<SUB>77</SUB>> ]
+"85" [label = <(IDENTIFIER,faultMessage,faultMessage != null)<SUB>77</SUB>> ]
+"86" [label = <(LITERAL,null,faultMessage != null)<SUB>77</SUB>> ]
+"87" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>77</SUB>> ]
+"88" [label = <(LOCAL,Object faultBody: java.lang.Object)> ]
+"89" [label = <(&lt;operator&gt;.assignment,Object faultBody = getBody())<SUB>78</SUB>> ]
+"90" [label = <(IDENTIFIER,faultBody,Object faultBody = getBody())<SUB>78</SUB>> ]
+"91" [label = <(getBody,getBody())<SUB>78</SUB>> ]
+"92" [label = <(IDENTIFIER,faultMessage,getBody())<SUB>78</SUB>> ]
+"93" [label = <(CONTROL_STRUCTURE,if (faultBody != null),if (faultBody != null))<SUB>79</SUB>> ]
+"94" [label = <(&lt;operator&gt;.notEquals,faultBody != null)<SUB>79</SUB>> ]
+"95" [label = <(IDENTIFIER,faultBody,faultBody != null)<SUB>79</SUB>> ]
+"96" [label = <(LITERAL,null,faultBody != null)<SUB>79</SUB>> ]
+"97" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>79</SUB>> ]
+"98" [label = <(setBody,setBody(null))<SUB>80</SUB>> ]
+"99" [label = <(IDENTIFIER,faultMessage,setBody(null))<SUB>80</SUB>> ]
+"100" [label = <(LITERAL,null,setBody(null))<SUB>80</SUB>> ]
+"101" [label = <(CONTROL_STRUCTURE,if (faultBody instanceof Throwable),if (faultBody instanceof Throwable))<SUB>81</SUB>> ]
+"102" [label = <(&lt;operator&gt;.instanceOf,faultBody instanceof Throwable)<SUB>81</SUB>> ]
+"103" [label = <(IDENTIFIER,faultBody,faultBody instanceof Throwable)<SUB>81</SUB>> ]
+"104" [label = <(TYPE_REF,Throwable,Throwable)<SUB>81</SUB>> ]
+"105" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>81</SUB>> ]
+"106" [label = <(setException,setException((Throwable) faultBody))<SUB>82</SUB>> ]
+"107" [label = <(IDENTIFIER,exchange,setException((Throwable) faultBody))<SUB>82</SUB>> ]
+"108" [label = <(&lt;operator&gt;.cast,(Throwable) faultBody)<SUB>82</SUB>> ]
+"109" [label = <(TYPE_REF,Throwable,Throwable)<SUB>82</SUB>> ]
+"110" [label = <(IDENTIFIER,faultBody,(Throwable) faultBody)<SUB>82</SUB>> ]
+"111" [label = <(CONTROL_STRUCTURE,else,else)<SUB>83</SUB>> ]
+"112" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>83</SUB>> ]
+"113" [label = <(CONTROL_STRUCTURE,if (exchange.getException() == null),if (exchange.getException() == null))<SUB>84</SUB>> ]
+"114" [label = <(&lt;operator&gt;.equals,exchange.getException() == null)<SUB>84</SUB>> ]
+"115" [label = <(getException,getException())<SUB>84</SUB>> ]
+"116" [label = <(IDENTIFIER,exchange,getException())<SUB>84</SUB>> ]
+"117" [label = <(LITERAL,null,exchange.getException() == null)<SUB>84</SUB>> ]
+"118" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>84</SUB>> ]
+"119" [label = <(setException,setException(new CamelException(&quot;Message contains fault of type &quot; + faultBody.getClass().getName() + &quot;:\n&quot; + faultBody)))<SUB>85</SUB>> ]
+"120" [label = <(IDENTIFIER,exchange,setException(new CamelException(&quot;Message contains fault of type &quot; + faultBody.getClass().getName() + &quot;:\n&quot; + faultBody)))<SUB>85</SUB>> ]
+"121" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>85</SUB>> ]
+"122" [label = <(&lt;operator&gt;.assignment,&lt;empty&gt;)> ]
+"123" [label = <(IDENTIFIER,$obj1,&lt;empty&gt;)> ]
+"124" [label = <(&lt;operator&gt;.alloc,new CamelException(&quot;Message contains fault of type &quot; + faultBody.getClass().getName() + &quot;:\n&quot; + faultBody))<SUB>85</SUB>> ]
+"125" [label = <(&lt;init&gt;,new CamelException(&quot;Message contains fault of type &quot; + faultBody.getClass().getName() + &quot;:\n&quot; + faultBody))<SUB>85</SUB>> ]
+"126" [label = <(IDENTIFIER,$obj1,new CamelException(&quot;Message contains fault of type &quot; + faultBody.getClass().getName() + &quot;:\n&quot; + faultBody))> ]
+"127" [label = <(&lt;operator&gt;.addition,&quot;Message contains fault of type &quot; + faultBody.getClass().getName() + &quot;:\n&quot; + faultBody)<SUB>85</SUB>> ]
+"128" [label = <(&lt;operator&gt;.addition,&quot;Message contains fault of type &quot; + faultBody.getClass().getName() + &quot;:\n&quot;)<SUB>85</SUB>> ]
+"129" [label = <(&lt;operator&gt;.addition,&quot;Message contains fault of type &quot; + faultBody.getClass().getName())<SUB>85</SUB>> ]
+"130" [label = <(LITERAL,&quot;Message contains fault of type &quot;,&quot;Message contains fault of type &quot; + faultBody.getClass().getName())<SUB>85</SUB>> ]
+"131" [label = <(getName,faultBody.getClass().getName())<SUB>86</SUB>> ]
+"132" [label = <(getClass,faultBody.getClass())<SUB>86</SUB>> ]
+"133" [label = <(IDENTIFIER,faultBody,faultBody.getClass())<SUB>86</SUB>> ]
+"134" [label = <(LITERAL,&quot;:\n&quot;,&quot;Message contains fault of type &quot; + faultBody.getClass().getName() + &quot;:\n&quot;)<SUB>86</SUB>> ]
+"135" [label = <(IDENTIFIER,faultBody,&quot;Message contains fault of type &quot; + faultBody.getClass().getName() + &quot;:\n&quot; + faultBody)<SUB>86</SUB>> ]
+"136" [label = <(IDENTIFIER,$obj1,&lt;empty&gt;)> ]
+"137" [label = <(done,done(true))<SUB>91</SUB>> ]
+"138" [label = <(IDENTIFIER,callback,done(true))<SUB>91</SUB>> ]
+"139" [label = <(LITERAL,true,done(true))<SUB>91</SUB>> ]
+"140" [label = <(RETURN,return true;,return true;)<SUB>92</SUB>> ]
+"141" [label = <(LITERAL,true,return true;)<SUB>92</SUB>> ]
+"142" [label = <(MODIFIER,PUBLIC)> ]
+"143" [label = <(MODIFIER,VIRTUAL)> ]
+"144" [label = <(METHOD_RETURN,boolean)<SUB>38</SUB>> ]
+  "34" -> "35" 
+  "34" -> "36" 
+  "34" -> "37" 
+  "34" -> "38" 
+  "34" -> "142" 
+  "34" -> "143" 
+  "34" -> "144" 
+  "38" -> "39" 
+  "38" -> "49" 
+  "38" -> "67" 
+  "38" -> "77" 
+  "38" -> "78" 
+  "38" -> "83" 
+  "38" -> "137" 
+  "38" -> "140" 
+  "39" -> "40" 
+  "39" -> "43" 
+  "40" -> "41" 
+  "40" -> "42" 
+  "43" -> "44" 
+  "43" -> "47" 
+  "44" -> "45" 
+  "44" -> "46" 
+  "47" -> "48" 
+  "49" -> "50" 
+  "49" -> "53" 
+  "50" -> "51" 
+  "50" -> "52" 
+  "53" -> "54" 
+  "54" -> "55" 
+  "55" -> "56" 
+  "55" -> "59" 
+  "55" -> "60" 
+  "56" -> "57" 
+  "56" -> "58" 
+  "60" -> "61" 
+  "60" -> "64" 
+  "60" -> "66" 
+  "61" -> "62" 
+  "61" -> "63" 
+  "64" -> "65" 
+  "67" -> "68" 
+  "67" -> "72" 
+  "68" -> "69" 
+  "69" -> "70" 
+  "69" -> "71" 
+  "72" -> "73" 
+  "73" -> "74" 
+  "74" -> "75" 
+  "74" -> "76" 
+  "78" -> "79" 
+  "78" -> "80" 
+  "80" -> "81" 
+  "80" -> "82" 
+  "83" -> "84" 
+  "83" -> "87" 
+  "84" -> "85" 
+  "84" -> "86" 
+  "87" -> "88" 
+  "87" -> "89" 
+  "87" -> "93" 
+  "89" -> "90" 
+  "89" -> "91" 
+  "91" -> "92" 
+  "93" -> "94" 
+  "93" -> "97" 
+  "94" -> "95" 
+  "94" -> "96" 
+  "97" -> "98" 
+  "97" -> "101" 
+  "98" -> "99" 
+  "98" -> "100" 
+  "101" -> "102" 
+  "101" -> "105" 
+  "101" -> "111" 
+  "102" -> "103" 
+  "102" -> "104" 
+  "105" -> "106" 
+  "106" -> "107" 
+  "106" -> "108" 
+  "108" -> "109" 
+  "108" -> "110" 
+  "111" -> "112" 
+  "112" -> "113" 
+  "113" -> "114" 
+  "113" -> "118" 
+  "114" -> "115" 
+  "114" -> "117" 
+  "115" -> "116" 
+  "118" -> "119" 
+  "119" -> "120" 
+  "119" -> "121" 
+  "121" -> "122" 
+  "121" -> "125" 
+  "121" -> "136" 
+  "122" -> "123" 
+  "122" -> "124" 
+  "125" -> "126" 
+  "125" -> "127" 
+  "127" -> "128" 
+  "127" -> "135" 
+  "128" -> "129" 
+  "128" -> "134" 
+  "129" -> "130" 
+  "129" -> "131" 
+  "131" -> "132" 
+  "132" -> "133" 
+  "137" -> "138" 
+  "137" -> "139" 
+  "140" -> "141" 
+}

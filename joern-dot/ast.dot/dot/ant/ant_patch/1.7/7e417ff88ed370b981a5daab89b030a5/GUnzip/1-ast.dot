@@ -1,0 +1,233 @@
+digraph "extract" {  
+"31" [label = <(METHOD,extract)<SUB>53</SUB>> ]
+"4" [label = <(PARAM,this)<SUB>53</SUB>> ]
+"32" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>53</SUB>> ]
+"33" [label = <(CONTROL_STRUCTURE,if (source.lastModified() &gt; dest.lastModified()),if (source.lastModified() &gt; dest.lastModified()))<SUB>54</SUB>> ]
+"34" [label = <(&lt;operator&gt;.greaterThan,source.lastModified() &gt; dest.lastModified())<SUB>54</SUB>> ]
+"35" [label = <(lastModified,lastModified())<SUB>54</SUB>> ]
+"36" [label = <(IDENTIFIER,source,lastModified())<SUB>54</SUB>> ]
+"37" [label = <(lastModified,lastModified())<SUB>54</SUB>> ]
+"38" [label = <(IDENTIFIER,dest,lastModified())<SUB>54</SUB>> ]
+"39" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>54</SUB>> ]
+"40" [label = <(log,log(&quot;Expanding &quot; + source.getAbsolutePath() + &quot; to &quot; + dest.getAbsolutePath()))<SUB>55</SUB>> ]
+"3" [label = <(IDENTIFIER,this,log(&quot;Expanding &quot; + source.getAbsolutePath() + &quot; to &quot; + dest.getAbsolutePath()))<SUB>55</SUB>> ]
+"41" [label = <(&lt;operator&gt;.addition,&quot;Expanding &quot; + source.getAbsolutePath() + &quot; to &quot; + dest.getAbsolutePath())<SUB>55</SUB>> ]
+"42" [label = <(&lt;operator&gt;.addition,&quot;Expanding &quot; + source.getAbsolutePath() + &quot; to &quot;)<SUB>55</SUB>> ]
+"43" [label = <(&lt;operator&gt;.addition,&quot;Expanding &quot; + source.getAbsolutePath())<SUB>55</SUB>> ]
+"44" [label = <(LITERAL,&quot;Expanding &quot;,&quot;Expanding &quot; + source.getAbsolutePath())<SUB>55</SUB>> ]
+"45" [label = <(getAbsolutePath,getAbsolutePath())<SUB>55</SUB>> ]
+"46" [label = <(IDENTIFIER,source,getAbsolutePath())<SUB>55</SUB>> ]
+"47" [label = <(LITERAL,&quot; to &quot;,&quot;Expanding &quot; + source.getAbsolutePath() + &quot; to &quot;)<SUB>55</SUB>> ]
+"48" [label = <(getAbsolutePath,getAbsolutePath())<SUB>56</SUB>> ]
+"49" [label = <(IDENTIFIER,dest,getAbsolutePath())<SUB>56</SUB>> ]
+"6" [label = <(LOCAL,FileOutputStream out: java.io.FileOutputStream)> ]
+"50" [label = <(&lt;operator&gt;.assignment,FileOutputStream out = null)<SUB>58</SUB>> ]
+"51" [label = <(IDENTIFIER,out,FileOutputStream out = null)<SUB>58</SUB>> ]
+"52" [label = <(LITERAL,null,FileOutputStream out = null)<SUB>58</SUB>> ]
+"8" [label = <(LOCAL,GZIPInputStream zIn: java.util.zip.GZIPInputStream)> ]
+"53" [label = <(&lt;operator&gt;.assignment,GZIPInputStream zIn = null)<SUB>59</SUB>> ]
+"54" [label = <(IDENTIFIER,zIn,GZIPInputStream zIn = null)<SUB>59</SUB>> ]
+"55" [label = <(LITERAL,null,GZIPInputStream zIn = null)<SUB>59</SUB>> ]
+"56" [label = <(LOCAL,InputStream fis: java.io.InputStream)> ]
+"57" [label = <(&lt;operator&gt;.assignment,InputStream fis = null)<SUB>60</SUB>> ]
+"58" [label = <(IDENTIFIER,fis,InputStream fis = null)<SUB>60</SUB>> ]
+"59" [label = <(LITERAL,null,InputStream fis = null)<SUB>60</SUB>> ]
+"60" [label = <(CONTROL_STRUCTURE,try,try)<SUB>61</SUB>> ]
+"61" [label = <(BLOCK,try,try)<SUB>61</SUB>> ]
+"62" [label = <(&lt;operator&gt;.assignment,out = new FileOutputStream(dest))<SUB>62</SUB>> ]
+"63" [label = <(IDENTIFIER,out,out = new FileOutputStream(dest))<SUB>62</SUB>> ]
+"64" [label = <(&lt;operator&gt;.alloc,new FileOutputStream(dest))<SUB>62</SUB>> ]
+"65" [label = <(&lt;init&gt;,new FileOutputStream(dest))<SUB>62</SUB>> ]
+"5" [label = <(IDENTIFIER,out,new FileOutputStream(dest))<SUB>62</SUB>> ]
+"66" [label = <(IDENTIFIER,dest,new FileOutputStream(dest))<SUB>62</SUB>> ]
+"67" [label = <(&lt;operator&gt;.assignment,fis = getInputStream())<SUB>63</SUB>> ]
+"68" [label = <(IDENTIFIER,fis,fis = getInputStream())<SUB>63</SUB>> ]
+"69" [label = <(getInputStream,getInputStream())<SUB>63</SUB>> ]
+"70" [label = <(IDENTIFIER,srcResource,getInputStream())<SUB>63</SUB>> ]
+"71" [label = <(&lt;operator&gt;.assignment,zIn = new GZIPInputStream(fis))<SUB>64</SUB>> ]
+"72" [label = <(IDENTIFIER,zIn,zIn = new GZIPInputStream(fis))<SUB>64</SUB>> ]
+"73" [label = <(&lt;operator&gt;.alloc,new GZIPInputStream(fis))<SUB>64</SUB>> ]
+"74" [label = <(&lt;init&gt;,new GZIPInputStream(fis))<SUB>64</SUB>> ]
+"7" [label = <(IDENTIFIER,zIn,new GZIPInputStream(fis))<SUB>64</SUB>> ]
+"75" [label = <(IDENTIFIER,fis,new GZIPInputStream(fis))<SUB>64</SUB>> ]
+"76" [label = <(LOCAL,byte[] buffer: byte[])> ]
+"77" [label = <(&lt;operator&gt;.assignment,byte[] buffer = new byte[8 * 1024])<SUB>65</SUB>> ]
+"78" [label = <(IDENTIFIER,buffer,byte[] buffer = new byte[8 * 1024])<SUB>65</SUB>> ]
+"79" [label = <(&lt;operator&gt;.alloc,new byte[8 * 1024])> ]
+"80" [label = <(&lt;operator&gt;.multiplication,8 * 1024)<SUB>65</SUB>> ]
+"81" [label = <(LITERAL,8,8 * 1024)<SUB>65</SUB>> ]
+"82" [label = <(LITERAL,1024,8 * 1024)<SUB>65</SUB>> ]
+"83" [label = <(LOCAL,int count: int)> ]
+"84" [label = <(&lt;operator&gt;.assignment,int count = 0)<SUB>66</SUB>> ]
+"85" [label = <(IDENTIFIER,count,int count = 0)<SUB>66</SUB>> ]
+"86" [label = <(LITERAL,0,int count = 0)<SUB>66</SUB>> ]
+"87" [label = <(CONTROL_STRUCTURE,do {...} while (count != -1),do {...} while (count != -1))<SUB>67</SUB>> ]
+"88" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>67</SUB>> ]
+"89" [label = <(write,out.write(buffer, 0, count))<SUB>68</SUB>> ]
+"90" [label = <(IDENTIFIER,out,out.write(buffer, 0, count))<SUB>68</SUB>> ]
+"91" [label = <(IDENTIFIER,buffer,out.write(buffer, 0, count))<SUB>68</SUB>> ]
+"92" [label = <(LITERAL,0,out.write(buffer, 0, count))<SUB>68</SUB>> ]
+"93" [label = <(IDENTIFIER,count,out.write(buffer, 0, count))<SUB>68</SUB>> ]
+"94" [label = <(&lt;operator&gt;.assignment,count = zIn.read(buffer, 0, buffer.length))<SUB>69</SUB>> ]
+"95" [label = <(IDENTIFIER,count,count = zIn.read(buffer, 0, buffer.length))<SUB>69</SUB>> ]
+"96" [label = <(read,zIn.read(buffer, 0, buffer.length))<SUB>69</SUB>> ]
+"97" [label = <(IDENTIFIER,zIn,zIn.read(buffer, 0, buffer.length))<SUB>69</SUB>> ]
+"98" [label = <(IDENTIFIER,buffer,zIn.read(buffer, 0, buffer.length))<SUB>69</SUB>> ]
+"99" [label = <(LITERAL,0,zIn.read(buffer, 0, buffer.length))<SUB>69</SUB>> ]
+"100" [label = <(&lt;operator&gt;.fieldAccess,buffer.length)<SUB>69</SUB>> ]
+"101" [label = <(IDENTIFIER,buffer,zIn.read(buffer, 0, buffer.length))<SUB>69</SUB>> ]
+"102" [label = <(FIELD_IDENTIFIER,length,length)<SUB>69</SUB>> ]
+"103" [label = <(&lt;operator&gt;.notEquals,count != -1)<SUB>70</SUB>> ]
+"104" [label = <(IDENTIFIER,count,count != -1)<SUB>70</SUB>> ]
+"105" [label = <(&lt;operator&gt;.minus,-1)<SUB>70</SUB>> ]
+"106" [label = <(LITERAL,1,-1)<SUB>70</SUB>> ]
+"107" [label = <(BLOCK,catch,catch)> ]
+"108" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>71</SUB>> ]
+"109" [label = <(LOCAL,String msg: java.lang.String)> ]
+"110" [label = <(&lt;operator&gt;.assignment,String msg = &quot;Problem expanding gzip &quot; + ioe.getMessage())<SUB>72</SUB>> ]
+"111" [label = <(IDENTIFIER,msg,String msg = &quot;Problem expanding gzip &quot; + ioe.getMessage())<SUB>72</SUB>> ]
+"112" [label = <(&lt;operator&gt;.addition,&quot;Problem expanding gzip &quot; + ioe.getMessage())<SUB>72</SUB>> ]
+"113" [label = <(LITERAL,&quot;Problem expanding gzip &quot;,&quot;Problem expanding gzip &quot; + ioe.getMessage())<SUB>72</SUB>> ]
+"114" [label = <(getMessage,ioe.getMessage())<SUB>72</SUB>> ]
+"115" [label = <(IDENTIFIER,ioe,ioe.getMessage())<SUB>72</SUB>> ]
+"116" [label = <(&lt;operator&gt;.throw,throw new BuildException(msg, ioe, getLocation());)<SUB>73</SUB>> ]
+"117" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>73</SUB>> ]
+"118" [label = <(&lt;operator&gt;.assignment,&lt;empty&gt;)> ]
+"119" [label = <(IDENTIFIER,$obj2,&lt;empty&gt;)> ]
+"120" [label = <(&lt;operator&gt;.alloc,new BuildException(msg, ioe, getLocation()))<SUB>73</SUB>> ]
+"121" [label = <(&lt;init&gt;,new BuildException(msg, ioe, getLocation()))<SUB>73</SUB>> ]
+"122" [label = <(IDENTIFIER,$obj2,new BuildException(msg, ioe, getLocation()))> ]
+"123" [label = <(IDENTIFIER,msg,new BuildException(msg, ioe, getLocation()))<SUB>73</SUB>> ]
+"124" [label = <(IDENTIFIER,ioe,new BuildException(msg, ioe, getLocation()))<SUB>73</SUB>> ]
+"125" [label = <(getLocation,getLocation())<SUB>73</SUB>> ]
+"9" [label = <(IDENTIFIER,this,getLocation())<SUB>73</SUB>> ]
+"126" [label = <(IDENTIFIER,$obj2,&lt;empty&gt;)> ]
+"127" [label = <(BLOCK,finally,finally)<SUB>74</SUB>> ]
+"128" [label = <(close,close(fis))<SUB>75</SUB>> ]
+"129" [label = <(IDENTIFIER,FileUtils,close(fis))<SUB>75</SUB>> ]
+"130" [label = <(IDENTIFIER,fis,close(fis))<SUB>75</SUB>> ]
+"131" [label = <(close,close(out))<SUB>76</SUB>> ]
+"132" [label = <(IDENTIFIER,FileUtils,close(out))<SUB>76</SUB>> ]
+"133" [label = <(IDENTIFIER,out,close(out))<SUB>76</SUB>> ]
+"134" [label = <(close,close(zIn))<SUB>77</SUB>> ]
+"135" [label = <(IDENTIFIER,FileUtils,close(zIn))<SUB>77</SUB>> ]
+"136" [label = <(IDENTIFIER,zIn,close(zIn))<SUB>77</SUB>> ]
+"137" [label = <(MODIFIER,PROTECTED)> ]
+"138" [label = <(MODIFIER,VIRTUAL)> ]
+"139" [label = <(METHOD_RETURN,void)<SUB>53</SUB>> ]
+  "31" -> "4" 
+  "31" -> "32" 
+  "31" -> "137" 
+  "31" -> "138" 
+  "31" -> "139" 
+  "32" -> "33" 
+  "33" -> "34" 
+  "33" -> "39" 
+  "34" -> "35" 
+  "34" -> "37" 
+  "35" -> "36" 
+  "37" -> "38" 
+  "39" -> "40" 
+  "39" -> "6" 
+  "39" -> "50" 
+  "39" -> "8" 
+  "39" -> "53" 
+  "39" -> "56" 
+  "39" -> "57" 
+  "39" -> "60" 
+  "40" -> "3" 
+  "40" -> "41" 
+  "41" -> "42" 
+  "41" -> "48" 
+  "42" -> "43" 
+  "42" -> "47" 
+  "43" -> "44" 
+  "43" -> "45" 
+  "45" -> "46" 
+  "48" -> "49" 
+  "50" -> "51" 
+  "50" -> "52" 
+  "53" -> "54" 
+  "53" -> "55" 
+  "57" -> "58" 
+  "57" -> "59" 
+  "60" -> "61" 
+  "60" -> "107" 
+  "60" -> "127" 
+  "61" -> "62" 
+  "61" -> "65" 
+  "61" -> "67" 
+  "61" -> "71" 
+  "61" -> "74" 
+  "61" -> "76" 
+  "61" -> "77" 
+  "61" -> "83" 
+  "61" -> "84" 
+  "61" -> "87" 
+  "62" -> "63" 
+  "62" -> "64" 
+  "65" -> "5" 
+  "65" -> "66" 
+  "67" -> "68" 
+  "67" -> "69" 
+  "69" -> "70" 
+  "71" -> "72" 
+  "71" -> "73" 
+  "74" -> "7" 
+  "74" -> "75" 
+  "77" -> "78" 
+  "77" -> "79" 
+  "79" -> "80" 
+  "80" -> "81" 
+  "80" -> "82" 
+  "84" -> "85" 
+  "84" -> "86" 
+  "87" -> "88" 
+  "87" -> "103" 
+  "88" -> "89" 
+  "88" -> "94" 
+  "89" -> "90" 
+  "89" -> "91" 
+  "89" -> "92" 
+  "89" -> "93" 
+  "94" -> "95" 
+  "94" -> "96" 
+  "96" -> "97" 
+  "96" -> "98" 
+  "96" -> "99" 
+  "96" -> "100" 
+  "100" -> "101" 
+  "100" -> "102" 
+  "103" -> "104" 
+  "103" -> "105" 
+  "105" -> "106" 
+  "107" -> "108" 
+  "108" -> "109" 
+  "108" -> "110" 
+  "108" -> "116" 
+  "110" -> "111" 
+  "110" -> "112" 
+  "112" -> "113" 
+  "112" -> "114" 
+  "114" -> "115" 
+  "116" -> "117" 
+  "117" -> "118" 
+  "117" -> "121" 
+  "117" -> "126" 
+  "118" -> "119" 
+  "118" -> "120" 
+  "121" -> "122" 
+  "121" -> "123" 
+  "121" -> "124" 
+  "121" -> "125" 
+  "125" -> "9" 
+  "127" -> "128" 
+  "127" -> "131" 
+  "127" -> "134" 
+  "128" -> "129" 
+  "128" -> "130" 
+  "131" -> "132" 
+  "131" -> "133" 
+  "134" -> "135" 
+  "134" -> "136" 
+}

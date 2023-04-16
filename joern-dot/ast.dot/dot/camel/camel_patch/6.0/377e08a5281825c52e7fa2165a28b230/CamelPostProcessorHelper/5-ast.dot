@@ -1,0 +1,149 @@
+digraph "subscribeMethod" {  
+"159" [label = <(METHOD,subscribeMethod)<SUB>82</SUB>> ]
+"11" [label = <(PARAM,this)<SUB>82</SUB>> ]
+"160" [label = <(PARAM,Method method)<SUB>82</SUB>> ]
+"161" [label = <(PARAM,Object bean)<SUB>82</SUB>> ]
+"162" [label = <(PARAM,String endpointUri)<SUB>82</SUB>> ]
+"163" [label = <(PARAM,String endpointName)<SUB>82</SUB>> ]
+"164" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>82</SUB>> ]
+"165" [label = <(LOCAL,String injectionPointName: java.lang.String)> ]
+"166" [label = <(&lt;operator&gt;.assignment,String injectionPointName = method.getName())<SUB>84</SUB>> ]
+"167" [label = <(IDENTIFIER,injectionPointName,String injectionPointName = method.getName())<SUB>84</SUB>> ]
+"168" [label = <(getName,method.getName())<SUB>84</SUB>> ]
+"169" [label = <(IDENTIFIER,method,method.getName())<SUB>84</SUB>> ]
+"170" [label = <(LOCAL,Endpoint endpoint: org.apache.camel.Endpoint)> ]
+"171" [label = <(&lt;operator&gt;.assignment,Endpoint endpoint = this.getEndpointInjection(endpointUri, endpointName, injectionPointName, true))<SUB>85</SUB>> ]
+"172" [label = <(IDENTIFIER,endpoint,Endpoint endpoint = this.getEndpointInjection(endpointUri, endpointName, injectionPointName, true))<SUB>85</SUB>> ]
+"173" [label = <(getEndpointInjection,this.getEndpointInjection(endpointUri, endpointName, injectionPointName, true))<SUB>85</SUB>> ]
+"10" [label = <(IDENTIFIER,this,this.getEndpointInjection(endpointUri, endpointName, injectionPointName, true))<SUB>85</SUB>> ]
+"174" [label = <(IDENTIFIER,endpointUri,this.getEndpointInjection(endpointUri, endpointName, injectionPointName, true))<SUB>85</SUB>> ]
+"175" [label = <(IDENTIFIER,endpointName,this.getEndpointInjection(endpointUri, endpointName, injectionPointName, true))<SUB>85</SUB>> ]
+"176" [label = <(IDENTIFIER,injectionPointName,this.getEndpointInjection(endpointUri, endpointName, injectionPointName, true))<SUB>85</SUB>> ]
+"177" [label = <(LITERAL,true,this.getEndpointInjection(endpointUri, endpointName, injectionPointName, true))<SUB>85</SUB>> ]
+"178" [label = <(CONTROL_STRUCTURE,if (endpoint != null),if (endpoint != null))<SUB>86</SUB>> ]
+"179" [label = <(&lt;operator&gt;.notEquals,endpoint != null)<SUB>86</SUB>> ]
+"180" [label = <(IDENTIFIER,endpoint,endpoint != null)<SUB>86</SUB>> ]
+"181" [label = <(LITERAL,null,endpoint != null)<SUB>86</SUB>> ]
+"182" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>86</SUB>> ]
+"183" [label = <(CONTROL_STRUCTURE,try,try)<SUB>87</SUB>> ]
+"184" [label = <(BLOCK,try,try)<SUB>87</SUB>> ]
+"185" [label = <(LOCAL,Processor processor: org.apache.camel.Processor)> ]
+"186" [label = <(&lt;operator&gt;.assignment,Processor processor = createConsumerProcessor(bean, method, endpoint))<SUB>88</SUB>> ]
+"187" [label = <(IDENTIFIER,processor,Processor processor = createConsumerProcessor(bean, method, endpoint))<SUB>88</SUB>> ]
+"188" [label = <(createConsumerProcessor,createConsumerProcessor(bean, method, endpoint))<SUB>88</SUB>> ]
+"12" [label = <(IDENTIFIER,this,createConsumerProcessor(bean, method, endpoint))<SUB>88</SUB>> ]
+"189" [label = <(IDENTIFIER,bean,createConsumerProcessor(bean, method, endpoint))<SUB>88</SUB>> ]
+"190" [label = <(IDENTIFIER,method,createConsumerProcessor(bean, method, endpoint))<SUB>88</SUB>> ]
+"191" [label = <(IDENTIFIER,endpoint,createConsumerProcessor(bean, method, endpoint))<SUB>88</SUB>> ]
+"192" [label = <(info,info(&quot;Created processor: &quot; + processor))<SUB>89</SUB>> ]
+"193" [label = <(&lt;operator&gt;.fieldAccess,CamelPostProcessorHelper.LOG)<SUB>89</SUB>> ]
+"194" [label = <(IDENTIFIER,CamelPostProcessorHelper,info(&quot;Created processor: &quot; + processor))<SUB>89</SUB>> ]
+"195" [label = <(FIELD_IDENTIFIER,LOG,LOG)<SUB>89</SUB>> ]
+"196" [label = <(&lt;operator&gt;.addition,&quot;Created processor: &quot; + processor)<SUB>89</SUB>> ]
+"197" [label = <(LITERAL,&quot;Created processor: &quot;,&quot;Created processor: &quot; + processor)<SUB>89</SUB>> ]
+"198" [label = <(IDENTIFIER,processor,&quot;Created processor: &quot; + processor)<SUB>89</SUB>> ]
+"199" [label = <(LOCAL,Consumer consumer: org.apache.camel.Consumer)> ]
+"200" [label = <(&lt;operator&gt;.assignment,Consumer consumer = createConsumer(processor))<SUB>90</SUB>> ]
+"201" [label = <(IDENTIFIER,consumer,Consumer consumer = createConsumer(processor))<SUB>90</SUB>> ]
+"202" [label = <(createConsumer,createConsumer(processor))<SUB>90</SUB>> ]
+"203" [label = <(IDENTIFIER,endpoint,createConsumer(processor))<SUB>90</SUB>> ]
+"204" [label = <(IDENTIFIER,processor,createConsumer(processor))<SUB>90</SUB>> ]
+"205" [label = <(startService,startService(consumer))<SUB>91</SUB>> ]
+"13" [label = <(IDENTIFIER,this,startService(consumer))<SUB>91</SUB>> ]
+"206" [label = <(IDENTIFIER,consumer,startService(consumer))<SUB>91</SUB>> ]
+"207" [label = <(BLOCK,catch,catch)> ]
+"208" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>92</SUB>> ]
+"209" [label = <(warn,warn(e))<SUB>93</SUB>> ]
+"210" [label = <(&lt;operator&gt;.fieldAccess,CamelPostProcessorHelper.LOG)<SUB>93</SUB>> ]
+"211" [label = <(IDENTIFIER,CamelPostProcessorHelper,warn(e))<SUB>93</SUB>> ]
+"212" [label = <(FIELD_IDENTIFIER,LOG,LOG)<SUB>93</SUB>> ]
+"213" [label = <(IDENTIFIER,e,warn(e))<SUB>93</SUB>> ]
+"214" [label = <(&lt;operator&gt;.throw,throw org.apache.camel.util.ObjectHelper.wrapRuntimeCamelException(e);)<SUB>94</SUB>> ]
+"215" [label = <(wrapRuntimeCamelException,wrapRuntimeCamelException(e))<SUB>94</SUB>> ]
+"216" [label = <(&lt;operator&gt;.fieldAccess,org.apache.camel.util.ObjectHelper)<SUB>94</SUB>> ]
+"217" [label = <(&lt;operator&gt;.fieldAccess,org.apache.camel.util)<SUB>94</SUB>> ]
+"218" [label = <(&lt;operator&gt;.fieldAccess,org.apache.camel)<SUB>94</SUB>> ]
+"219" [label = <(&lt;operator&gt;.fieldAccess,org.apache)<SUB>94</SUB>> ]
+"220" [label = <(IDENTIFIER,org,wrapRuntimeCamelException(e))<SUB>94</SUB>> ]
+"221" [label = <(FIELD_IDENTIFIER,apache,apache)<SUB>94</SUB>> ]
+"222" [label = <(FIELD_IDENTIFIER,camel,camel)<SUB>94</SUB>> ]
+"223" [label = <(FIELD_IDENTIFIER,util,util)<SUB>94</SUB>> ]
+"224" [label = <(FIELD_IDENTIFIER,ObjectHelper,ObjectHelper)<SUB>94</SUB>> ]
+"225" [label = <(IDENTIFIER,e,wrapRuntimeCamelException(e))<SUB>94</SUB>> ]
+"226" [label = <(MODIFIER,PROTECTED)> ]
+"227" [label = <(MODIFIER,VIRTUAL)> ]
+"228" [label = <(METHOD_RETURN,void)<SUB>82</SUB>> ]
+  "159" -> "11" 
+  "159" -> "160" 
+  "159" -> "161" 
+  "159" -> "162" 
+  "159" -> "163" 
+  "159" -> "164" 
+  "159" -> "226" 
+  "159" -> "227" 
+  "159" -> "228" 
+  "164" -> "165" 
+  "164" -> "166" 
+  "164" -> "170" 
+  "164" -> "171" 
+  "164" -> "178" 
+  "166" -> "167" 
+  "166" -> "168" 
+  "168" -> "169" 
+  "171" -> "172" 
+  "171" -> "173" 
+  "173" -> "10" 
+  "173" -> "174" 
+  "173" -> "175" 
+  "173" -> "176" 
+  "173" -> "177" 
+  "178" -> "179" 
+  "178" -> "182" 
+  "179" -> "180" 
+  "179" -> "181" 
+  "182" -> "183" 
+  "183" -> "184" 
+  "183" -> "207" 
+  "184" -> "185" 
+  "184" -> "186" 
+  "184" -> "192" 
+  "184" -> "199" 
+  "184" -> "200" 
+  "184" -> "205" 
+  "186" -> "187" 
+  "186" -> "188" 
+  "188" -> "12" 
+  "188" -> "189" 
+  "188" -> "190" 
+  "188" -> "191" 
+  "192" -> "193" 
+  "192" -> "196" 
+  "193" -> "194" 
+  "193" -> "195" 
+  "196" -> "197" 
+  "196" -> "198" 
+  "200" -> "201" 
+  "200" -> "202" 
+  "202" -> "203" 
+  "202" -> "204" 
+  "205" -> "13" 
+  "205" -> "206" 
+  "207" -> "208" 
+  "208" -> "209" 
+  "208" -> "214" 
+  "209" -> "210" 
+  "209" -> "213" 
+  "210" -> "211" 
+  "210" -> "212" 
+  "214" -> "215" 
+  "215" -> "216" 
+  "215" -> "225" 
+  "216" -> "217" 
+  "216" -> "224" 
+  "217" -> "218" 
+  "217" -> "223" 
+  "218" -> "219" 
+  "218" -> "222" 
+  "219" -> "220" 
+  "219" -> "221" 
+}

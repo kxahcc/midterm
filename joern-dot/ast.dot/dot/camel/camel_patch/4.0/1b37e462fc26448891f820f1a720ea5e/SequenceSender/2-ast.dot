@@ -1,0 +1,107 @@
+digraph "run" {  
+"101" [label = <(METHOD,run)<SUB>63</SUB>> ]
+"102" [label = <(PARAM,this)<SUB>63</SUB>> ]
+"103" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>63</SUB>> ]
+"104" [label = <(CONTROL_STRUCTURE,while (true),while (true))<SUB>64</SUB>> ]
+"105" [label = <(LITERAL,true,while (true))<SUB>64</SUB>> ]
+"106" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>64</SUB>> ]
+"107" [label = <(CONTROL_STRUCTURE,try,try)<SUB>65</SUB>> ]
+"108" [label = <(BLOCK,try,try)<SUB>65</SUB>> ]
+"109" [label = <(LOCAL,Exchange exchange: org.apache.camel.Exchange)> ]
+"110" [label = <(&lt;operator&gt;.assignment,Exchange exchange = take())<SUB>66</SUB>> ]
+"111" [label = <(IDENTIFIER,exchange,Exchange exchange = take())<SUB>66</SUB>> ]
+"112" [label = <(take,take())<SUB>66</SUB>> ]
+"113" [label = <(&lt;operator&gt;.fieldAccess,this.queue)<SUB>66</SUB>> ]
+"114" [label = <(IDENTIFIER,this,take())<SUB>66</SUB>> ]
+"115" [label = <(FIELD_IDENTIFIER,queue,queue)<SUB>66</SUB>> ]
+"116" [label = <(CONTROL_STRUCTURE,if (exchange == STOP),if (exchange == STOP))<SUB>67</SUB>> ]
+"117" [label = <(&lt;operator&gt;.equals,exchange == STOP)<SUB>67</SUB>> ]
+"118" [label = <(IDENTIFIER,exchange,exchange == STOP)<SUB>67</SUB>> ]
+"119" [label = <(&lt;operator&gt;.fieldAccess,SequenceSender.STOP)<SUB>67</SUB>> ]
+"120" [label = <(IDENTIFIER,SequenceSender,exchange == STOP)<SUB>67</SUB>> ]
+"121" [label = <(FIELD_IDENTIFIER,STOP,STOP)<SUB>67</SUB>> ]
+"122" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>67</SUB>> ]
+"123" [label = <(info,info(&quot;Exit processing loop after cancellation&quot;))<SUB>68</SUB>> ]
+"124" [label = <(&lt;operator&gt;.fieldAccess,SequenceSender.LOG)<SUB>68</SUB>> ]
+"125" [label = <(IDENTIFIER,SequenceSender,info(&quot;Exit processing loop after cancellation&quot;))<SUB>68</SUB>> ]
+"126" [label = <(FIELD_IDENTIFIER,LOG,LOG)<SUB>68</SUB>> ]
+"127" [label = <(LITERAL,&quot;Exit processing loop after cancellation&quot;,info(&quot;Exit processing loop after cancellation&quot;))<SUB>68</SUB>> ]
+"128" [label = <(RETURN,return;,return;)<SUB>69</SUB>> ]
+"129" [label = <(process,process(exchange))<SUB>71</SUB>> ]
+"130" [label = <(&lt;operator&gt;.fieldAccess,this.processor)<SUB>71</SUB>> ]
+"131" [label = <(IDENTIFIER,this,process(exchange))<SUB>71</SUB>> ]
+"132" [label = <(FIELD_IDENTIFIER,processor,processor)<SUB>71</SUB>> ]
+"133" [label = <(IDENTIFIER,exchange,process(exchange))<SUB>71</SUB>> ]
+"134" [label = <(BLOCK,catch,catch)> ]
+"135" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>72</SUB>> ]
+"136" [label = <(info,info(&quot;Exit processing loop after interrupt&quot;))<SUB>73</SUB>> ]
+"137" [label = <(&lt;operator&gt;.fieldAccess,SequenceSender.LOG)<SUB>73</SUB>> ]
+"138" [label = <(IDENTIFIER,SequenceSender,info(&quot;Exit processing loop after interrupt&quot;))<SUB>73</SUB>> ]
+"139" [label = <(FIELD_IDENTIFIER,LOG,LOG)<SUB>73</SUB>> ]
+"140" [label = <(LITERAL,&quot;Exit processing loop after interrupt&quot;,info(&quot;Exit processing loop after interrupt&quot;))<SUB>73</SUB>> ]
+"141" [label = <(RETURN,return;,return;)<SUB>74</SUB>> ]
+"142" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>75</SUB>> ]
+"143" [label = <(warn,warn(&quot;Exception during exchange processing: &quot; + e.getMessage()))<SUB>76</SUB>> ]
+"144" [label = <(&lt;operator&gt;.fieldAccess,SequenceSender.LOG)<SUB>76</SUB>> ]
+"145" [label = <(IDENTIFIER,SequenceSender,warn(&quot;Exception during exchange processing: &quot; + e.getMessage()))<SUB>76</SUB>> ]
+"146" [label = <(FIELD_IDENTIFIER,LOG,LOG)<SUB>76</SUB>> ]
+"147" [label = <(&lt;operator&gt;.addition,&quot;Exception during exchange processing: &quot; + e.getMessage())<SUB>76</SUB>> ]
+"148" [label = <(LITERAL,&quot;Exception during exchange processing: &quot;,&quot;Exception during exchange processing: &quot; + e.getMessage())<SUB>76</SUB>> ]
+"149" [label = <(getMessage,e.getMessage())<SUB>76</SUB>> ]
+"150" [label = <(IDENTIFIER,e,e.getMessage())<SUB>76</SUB>> ]
+"151" [label = <(MODIFIER,PUBLIC)> ]
+"152" [label = <(MODIFIER,VIRTUAL)> ]
+"153" [label = <(METHOD_RETURN,void)<SUB>63</SUB>> ]
+  "101" -> "102" 
+  "101" -> "103" 
+  "101" -> "151" 
+  "101" -> "152" 
+  "101" -> "153" 
+  "103" -> "104" 
+  "104" -> "105" 
+  "104" -> "106" 
+  "106" -> "107" 
+  "107" -> "108" 
+  "107" -> "134" 
+  "108" -> "109" 
+  "108" -> "110" 
+  "108" -> "116" 
+  "108" -> "129" 
+  "110" -> "111" 
+  "110" -> "112" 
+  "112" -> "113" 
+  "113" -> "114" 
+  "113" -> "115" 
+  "116" -> "117" 
+  "116" -> "122" 
+  "117" -> "118" 
+  "117" -> "119" 
+  "119" -> "120" 
+  "119" -> "121" 
+  "122" -> "123" 
+  "122" -> "128" 
+  "123" -> "124" 
+  "123" -> "127" 
+  "124" -> "125" 
+  "124" -> "126" 
+  "129" -> "130" 
+  "129" -> "133" 
+  "130" -> "131" 
+  "130" -> "132" 
+  "134" -> "135" 
+  "134" -> "142" 
+  "135" -> "136" 
+  "135" -> "141" 
+  "136" -> "137" 
+  "136" -> "140" 
+  "137" -> "138" 
+  "137" -> "139" 
+  "142" -> "143" 
+  "143" -> "144" 
+  "143" -> "147" 
+  "144" -> "145" 
+  "144" -> "146" 
+  "147" -> "148" 
+  "147" -> "149" 
+  "149" -> "150" 
+}

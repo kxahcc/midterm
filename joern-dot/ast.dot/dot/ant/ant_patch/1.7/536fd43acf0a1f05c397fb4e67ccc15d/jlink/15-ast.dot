@@ -1,0 +1,117 @@
+digraph "calcChecksum" {  
+"888" [label = <(METHOD,calcChecksum)<SUB>444</SUB>> ]
+"889" [label = <(PARAM,this)<SUB>444</SUB>> ]
+"890" [label = <(PARAM,InputStream in)<SUB>444</SUB>> ]
+"891" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>444</SUB>> ]
+"50" [label = <(LOCAL,CRC32 crc: java.util.zip.CRC32)> ]
+"892" [label = <(&lt;operator&gt;.assignment,CRC32 crc = new CRC32())<SUB>445</SUB>> ]
+"893" [label = <(IDENTIFIER,crc,CRC32 crc = new CRC32())<SUB>445</SUB>> ]
+"894" [label = <(&lt;operator&gt;.alloc,new CRC32())<SUB>445</SUB>> ]
+"895" [label = <(&lt;init&gt;,new CRC32())<SUB>445</SUB>> ]
+"49" [label = <(IDENTIFIER,crc,new CRC32())<SUB>445</SUB>> ]
+"896" [label = <(LOCAL,int len: int)> ]
+"897" [label = <(&lt;operator&gt;.assignment,int len = buffer.length)<SUB>446</SUB>> ]
+"898" [label = <(IDENTIFIER,len,int len = buffer.length)<SUB>446</SUB>> ]
+"899" [label = <(&lt;operator&gt;.fieldAccess,buffer.length)<SUB>446</SUB>> ]
+"900" [label = <(&lt;operator&gt;.fieldAccess,this.buffer)<SUB>446</SUB>> ]
+"901" [label = <(IDENTIFIER,this,int len = buffer.length)<SUB>446</SUB>> ]
+"902" [label = <(FIELD_IDENTIFIER,buffer,buffer)<SUB>446</SUB>> ]
+"903" [label = <(FIELD_IDENTIFIER,length,length)<SUB>446</SUB>> ]
+"904" [label = <(LOCAL,int count: int)> ]
+"905" [label = <(&lt;operator&gt;.assignment,int count = -1)<SUB>447</SUB>> ]
+"906" [label = <(IDENTIFIER,count,int count = -1)<SUB>447</SUB>> ]
+"907" [label = <(&lt;operator&gt;.minus,-1)<SUB>447</SUB>> ]
+"908" [label = <(LITERAL,1,-1)<SUB>447</SUB>> ]
+"909" [label = <(LOCAL,int haveRead: int)> ]
+"910" [label = <(&lt;operator&gt;.assignment,int haveRead = 0)<SUB>448</SUB>> ]
+"911" [label = <(IDENTIFIER,haveRead,int haveRead = 0)<SUB>448</SUB>> ]
+"912" [label = <(LITERAL,0,int haveRead = 0)<SUB>448</SUB>> ]
+"913" [label = <(CONTROL_STRUCTURE,while ((count = in.read(buffer, 0, len)) &gt; 0),while ((count = in.read(buffer, 0, len)) &gt; 0))<SUB>450</SUB>> ]
+"914" [label = <(&lt;operator&gt;.greaterThan,(count = in.read(buffer, 0, len)) &gt; 0)<SUB>450</SUB>> ]
+"915" [label = <(&lt;operator&gt;.assignment,count = in.read(buffer, 0, len))<SUB>450</SUB>> ]
+"916" [label = <(IDENTIFIER,count,count = in.read(buffer, 0, len))<SUB>450</SUB>> ]
+"917" [label = <(read,in.read(buffer, 0, len))<SUB>450</SUB>> ]
+"918" [label = <(IDENTIFIER,in,in.read(buffer, 0, len))<SUB>450</SUB>> ]
+"919" [label = <(&lt;operator&gt;.fieldAccess,this.buffer)<SUB>450</SUB>> ]
+"920" [label = <(IDENTIFIER,this,in.read(buffer, 0, len))<SUB>450</SUB>> ]
+"921" [label = <(FIELD_IDENTIFIER,buffer,buffer)<SUB>450</SUB>> ]
+"922" [label = <(LITERAL,0,in.read(buffer, 0, len))<SUB>450</SUB>> ]
+"923" [label = <(IDENTIFIER,len,in.read(buffer, 0, len))<SUB>450</SUB>> ]
+"924" [label = <(LITERAL,0,(count = in.read(buffer, 0, len)) &gt; 0)<SUB>450</SUB>> ]
+"925" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>450</SUB>> ]
+"926" [label = <(&lt;operator&gt;.assignmentPlus,haveRead += count)<SUB>451</SUB>> ]
+"927" [label = <(IDENTIFIER,haveRead,haveRead += count)<SUB>451</SUB>> ]
+"928" [label = <(IDENTIFIER,count,haveRead += count)<SUB>451</SUB>> ]
+"929" [label = <(update,crc.update(buffer, 0, count))<SUB>452</SUB>> ]
+"930" [label = <(IDENTIFIER,crc,crc.update(buffer, 0, count))<SUB>452</SUB>> ]
+"931" [label = <(&lt;operator&gt;.fieldAccess,this.buffer)<SUB>452</SUB>> ]
+"932" [label = <(IDENTIFIER,this,crc.update(buffer, 0, count))<SUB>452</SUB>> ]
+"933" [label = <(FIELD_IDENTIFIER,buffer,buffer)<SUB>452</SUB>> ]
+"934" [label = <(LITERAL,0,crc.update(buffer, 0, count))<SUB>452</SUB>> ]
+"935" [label = <(IDENTIFIER,count,crc.update(buffer, 0, count))<SUB>452</SUB>> ]
+"936" [label = <(close,in.close())<SUB>454</SUB>> ]
+"937" [label = <(IDENTIFIER,in,in.close())<SUB>454</SUB>> ]
+"938" [label = <(RETURN,return crc.getValue();,return crc.getValue();)<SUB>455</SUB>> ]
+"939" [label = <(getValue,crc.getValue())<SUB>455</SUB>> ]
+"940" [label = <(IDENTIFIER,crc,crc.getValue())<SUB>455</SUB>> ]
+"941" [label = <(MODIFIER,PRIVATE)> ]
+"942" [label = <(MODIFIER,VIRTUAL)> ]
+"943" [label = <(METHOD_RETURN,long)<SUB>444</SUB>> ]
+  "888" -> "889" 
+  "888" -> "890" 
+  "888" -> "891" 
+  "888" -> "941" 
+  "888" -> "942" 
+  "888" -> "943" 
+  "891" -> "50" 
+  "891" -> "892" 
+  "891" -> "895" 
+  "891" -> "896" 
+  "891" -> "897" 
+  "891" -> "904" 
+  "891" -> "905" 
+  "891" -> "909" 
+  "891" -> "910" 
+  "891" -> "913" 
+  "891" -> "936" 
+  "891" -> "938" 
+  "892" -> "893" 
+  "892" -> "894" 
+  "895" -> "49" 
+  "897" -> "898" 
+  "897" -> "899" 
+  "899" -> "900" 
+  "899" -> "903" 
+  "900" -> "901" 
+  "900" -> "902" 
+  "905" -> "906" 
+  "905" -> "907" 
+  "907" -> "908" 
+  "910" -> "911" 
+  "910" -> "912" 
+  "913" -> "914" 
+  "913" -> "925" 
+  "914" -> "915" 
+  "914" -> "924" 
+  "915" -> "916" 
+  "915" -> "917" 
+  "917" -> "918" 
+  "917" -> "919" 
+  "917" -> "922" 
+  "917" -> "923" 
+  "919" -> "920" 
+  "919" -> "921" 
+  "925" -> "926" 
+  "925" -> "929" 
+  "926" -> "927" 
+  "926" -> "928" 
+  "929" -> "930" 
+  "929" -> "931" 
+  "929" -> "934" 
+  "929" -> "935" 
+  "931" -> "932" 
+  "931" -> "933" 
+  "936" -> "937" 
+  "938" -> "939" 
+  "939" -> "940" 
+}

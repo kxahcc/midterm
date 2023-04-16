@@ -1,0 +1,107 @@
+digraph "getEndpointsImpl" {  
+"125" [label = <(METHOD,getEndpointsImpl)<SUB>101</SUB>> ]
+"126" [label = <(PARAM,CamelContext camelContext)<SUB>101</SUB>> ]
+"127" [label = <(PARAM,Class&lt;T&gt; type)<SUB>101</SUB>> ]
+"128" [label = <(PARAM,boolean singleton)<SUB>101</SUB>> ]
+"129" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>101</SUB>> ]
+"6" [label = <(LOCAL,List&lt;T&gt; answer: java.util.List)> ]
+"130" [label = <(&lt;operator&gt;.assignment,List answer = new ArrayList&lt;T&gt;())<SUB>102</SUB>> ]
+"131" [label = <(IDENTIFIER,answer,List answer = new ArrayList&lt;T&gt;())<SUB>102</SUB>> ]
+"132" [label = <(&lt;operator&gt;.alloc,new ArrayList&lt;T&gt;())<SUB>102</SUB>> ]
+"133" [label = <(&lt;init&gt;,new ArrayList&lt;T&gt;())<SUB>102</SUB>> ]
+"5" [label = <(IDENTIFIER,answer,new ArrayList&lt;T&gt;())<SUB>102</SUB>> ]
+"134" [label = <(LOCAL,Collection&lt;Endpoint&gt; endpoints: ANY)> ]
+"135" [label = <(&lt;operator&gt;.assignment,ANY endpoints = singleton ? camelContext.getSingletonEndpoints() : camelContext.getEndpoints())<SUB>103</SUB>> ]
+"136" [label = <(IDENTIFIER,endpoints,ANY endpoints = singleton ? camelContext.getSingletonEndpoints() : camelContext.getEndpoints())<SUB>103</SUB>> ]
+"137" [label = <(&lt;operator&gt;.conditional,singleton ? camelContext.getSingletonEndpoints() : camelContext.getEndpoints())<SUB>103</SUB>> ]
+"138" [label = <(IDENTIFIER,singleton,singleton ? camelContext.getSingletonEndpoints() : camelContext.getEndpoints())<SUB>103</SUB>> ]
+"139" [label = <(getSingletonEndpoints,getSingletonEndpoints())<SUB>103</SUB>> ]
+"140" [label = <(IDENTIFIER,camelContext,getSingletonEndpoints())<SUB>103</SUB>> ]
+"141" [label = <(getEndpoints,getEndpoints())<SUB>103</SUB>> ]
+"142" [label = <(IDENTIFIER,camelContext,getEndpoints())<SUB>103</SUB>> ]
+"143" [label = <(LOCAL,$iterLocal0: java.util.Iterator)<SUB>104</SUB>> ]
+"144" [label = <(&lt;operator&gt;.assignment,)<SUB>104</SUB>> ]
+"145" [label = <(IDENTIFIER,$iterLocal0,)<SUB>104</SUB>> ]
+"146" [label = <(iterator,&lt;empty&gt;)<SUB>104</SUB>> ]
+"147" [label = <(IDENTIFIER,endpoints,&lt;empty&gt;)<SUB>104</SUB>> ]
+"148" [label = <(CONTROL_STRUCTURE,FOR,FOR)<SUB>104</SUB>> ]
+"149" [label = <(hasNext,&lt;empty&gt;)<SUB>104</SUB>> ]
+"150" [label = <(IDENTIFIER,$iterLocal0,&lt;empty&gt;)<SUB>104</SUB>> ]
+"151" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>104</SUB>> ]
+"152" [label = <(LOCAL,endpoint: ANY)<SUB>104</SUB>> ]
+"153" [label = <(&lt;operator&gt;.assignment,&lt;empty&gt;)<SUB>104</SUB>> ]
+"154" [label = <(IDENTIFIER,endpoint,&lt;empty&gt;)<SUB>104</SUB>> ]
+"155" [label = <(next,&lt;empty&gt;)<SUB>104</SUB>> ]
+"156" [label = <(IDENTIFIER,$iterLocal0,&lt;empty&gt;)<SUB>104</SUB>> ]
+"157" [label = <(CONTROL_STRUCTURE,if (type.isInstance(endpoint)),if (type.isInstance(endpoint)))<SUB>105</SUB>> ]
+"158" [label = <(isInstance,isInstance(endpoint))<SUB>105</SUB>> ]
+"159" [label = <(IDENTIFIER,type,isInstance(endpoint))<SUB>105</SUB>> ]
+"160" [label = <(IDENTIFIER,endpoint,isInstance(endpoint))<SUB>105</SUB>> ]
+"161" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>105</SUB>> ]
+"162" [label = <(LOCAL,T value: java.lang.Object)> ]
+"163" [label = <(&lt;operator&gt;.assignment,Object value = cast(endpoint))<SUB>106</SUB>> ]
+"164" [label = <(IDENTIFIER,value,Object value = cast(endpoint))<SUB>106</SUB>> ]
+"165" [label = <(cast,cast(endpoint))<SUB>106</SUB>> ]
+"166" [label = <(IDENTIFIER,type,cast(endpoint))<SUB>106</SUB>> ]
+"167" [label = <(IDENTIFIER,endpoint,cast(endpoint))<SUB>106</SUB>> ]
+"168" [label = <(add,answer.add(value))<SUB>107</SUB>> ]
+"169" [label = <(IDENTIFIER,answer,answer.add(value))<SUB>107</SUB>> ]
+"170" [label = <(IDENTIFIER,value,answer.add(value))<SUB>107</SUB>> ]
+"171" [label = <(RETURN,return answer;,return answer;)<SUB>110</SUB>> ]
+"172" [label = <(IDENTIFIER,answer,return answer;)<SUB>110</SUB>> ]
+"173" [label = <(MODIFIER,PRIVATE)> ]
+"174" [label = <(MODIFIER,STATIC)> ]
+"175" [label = <(METHOD_RETURN,java.util.List)<SUB>101</SUB>> ]
+  "125" -> "126" 
+  "125" -> "127" 
+  "125" -> "128" 
+  "125" -> "129" 
+  "125" -> "173" 
+  "125" -> "174" 
+  "125" -> "175" 
+  "129" -> "6" 
+  "129" -> "130" 
+  "129" -> "133" 
+  "129" -> "134" 
+  "129" -> "135" 
+  "129" -> "143" 
+  "129" -> "144" 
+  "129" -> "148" 
+  "129" -> "171" 
+  "130" -> "131" 
+  "130" -> "132" 
+  "133" -> "5" 
+  "135" -> "136" 
+  "135" -> "137" 
+  "137" -> "138" 
+  "137" -> "139" 
+  "137" -> "141" 
+  "139" -> "140" 
+  "141" -> "142" 
+  "144" -> "145" 
+  "144" -> "146" 
+  "146" -> "147" 
+  "148" -> "149" 
+  "148" -> "151" 
+  "149" -> "150" 
+  "151" -> "152" 
+  "151" -> "153" 
+  "151" -> "157" 
+  "153" -> "154" 
+  "153" -> "155" 
+  "155" -> "156" 
+  "157" -> "158" 
+  "157" -> "161" 
+  "158" -> "159" 
+  "158" -> "160" 
+  "161" -> "162" 
+  "161" -> "163" 
+  "161" -> "168" 
+  "163" -> "164" 
+  "163" -> "165" 
+  "165" -> "166" 
+  "165" -> "167" 
+  "168" -> "169" 
+  "168" -> "170" 
+  "171" -> "172" 
+}

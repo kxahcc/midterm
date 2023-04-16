@@ -1,0 +1,61 @@
+digraph "replaceContextLoader" {  
+"468" [label = <(METHOD,replaceContextLoader)<SUB>286</SUB>> ]
+"30" [label = <(PARAM,this)<SUB>286</SUB>> ]
+"469" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>286</SUB>> ]
+"470" [label = <(LOCAL,ClassLoader origContextClassLoader: java.lang.ClassLoader)> ]
+"471" [label = <(&lt;operator&gt;.assignment,ClassLoader origContextClassLoader = Thread.currentThread().getContextClassLoader())<SUB>287</SUB>> ]
+"472" [label = <(IDENTIFIER,origContextClassLoader,ClassLoader origContextClassLoader = Thread.currentThread().getContextClassLoader())<SUB>287</SUB>> ]
+"473" [label = <(getContextClassLoader,Thread.currentThread().getContextClassLoader())<SUB>288</SUB>> ]
+"474" [label = <(currentThread,Thread.currentThread())<SUB>288</SUB>> ]
+"475" [label = <(IDENTIFIER,Thread,Thread.currentThread())<SUB>288</SUB>> ]
+"476" [label = <(CONTROL_STRUCTURE,if (getScriptClassLoader() == null),if (getScriptClassLoader() == null))<SUB>289</SUB>> ]
+"477" [label = <(&lt;operator&gt;.equals,getScriptClassLoader() == null)<SUB>289</SUB>> ]
+"478" [label = <(getScriptClassLoader,this.getScriptClassLoader())<SUB>289</SUB>> ]
+"29" [label = <(IDENTIFIER,this,this.getScriptClassLoader())<SUB>289</SUB>> ]
+"479" [label = <(LITERAL,null,getScriptClassLoader() == null)<SUB>289</SUB>> ]
+"480" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>289</SUB>> ]
+"481" [label = <(setScriptClassLoader,this.setScriptClassLoader(getClass().getClassLoader()))<SUB>290</SUB>> ]
+"32" [label = <(IDENTIFIER,this,this.setScriptClassLoader(getClass().getClassLoader()))<SUB>290</SUB>> ]
+"482" [label = <(getClassLoader,this.getClass().getClassLoader())<SUB>290</SUB>> ]
+"483" [label = <(getClass,this.getClass())<SUB>290</SUB>> ]
+"31" [label = <(IDENTIFIER,this,this.getClass())<SUB>290</SUB>> ]
+"484" [label = <(setContextClassLoader,Thread.currentThread().setContextClassLoader(getScriptClassLoader()))<SUB>292</SUB>> ]
+"485" [label = <(currentThread,Thread.currentThread())<SUB>292</SUB>> ]
+"486" [label = <(IDENTIFIER,Thread,Thread.currentThread())<SUB>292</SUB>> ]
+"487" [label = <(getScriptClassLoader,this.getScriptClassLoader())<SUB>292</SUB>> ]
+"33" [label = <(IDENTIFIER,this,this.getScriptClassLoader())<SUB>292</SUB>> ]
+"488" [label = <(RETURN,return origContextClassLoader;,return origContextClassLoader;)<SUB>293</SUB>> ]
+"489" [label = <(IDENTIFIER,origContextClassLoader,return origContextClassLoader;)<SUB>293</SUB>> ]
+"490" [label = <(MODIFIER,PROTECTED)> ]
+"491" [label = <(MODIFIER,VIRTUAL)> ]
+"492" [label = <(METHOD_RETURN,java.lang.ClassLoader)<SUB>286</SUB>> ]
+  "468" -> "30" 
+  "468" -> "469" 
+  "468" -> "490" 
+  "468" -> "491" 
+  "468" -> "492" 
+  "469" -> "470" 
+  "469" -> "471" 
+  "469" -> "476" 
+  "469" -> "484" 
+  "469" -> "488" 
+  "471" -> "472" 
+  "471" -> "473" 
+  "473" -> "474" 
+  "474" -> "475" 
+  "476" -> "477" 
+  "476" -> "480" 
+  "477" -> "478" 
+  "477" -> "479" 
+  "478" -> "29" 
+  "480" -> "481" 
+  "481" -> "32" 
+  "481" -> "482" 
+  "482" -> "483" 
+  "483" -> "31" 
+  "484" -> "485" 
+  "484" -> "487" 
+  "485" -> "486" 
+  "487" -> "33" 
+  "488" -> "489" 
+}

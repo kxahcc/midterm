@@ -1,0 +1,171 @@
+digraph "encodedata" {  
+"417" [label = <(METHOD,encodedata)<SUB>256</SUB>> ]
+"20" [label = <(PARAM,this)<SUB>256</SUB>> ]
+"418" [label = <(PARAM,final String value)<SUB>256</SUB>> ]
+"419" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>256</SUB>> ]
+"18" [label = <(LOCAL,StringBuffer sb: java.lang.StringBuffer)> ]
+"420" [label = <(&lt;operator&gt;.assignment,StringBuffer sb = new StringBuffer())<SUB>257</SUB>> ]
+"421" [label = <(IDENTIFIER,sb,StringBuffer sb = new StringBuffer())<SUB>257</SUB>> ]
+"422" [label = <(&lt;operator&gt;.alloc,new StringBuffer())<SUB>257</SUB>> ]
+"423" [label = <(&lt;init&gt;,new StringBuffer())<SUB>257</SUB>> ]
+"17" [label = <(IDENTIFIER,sb,new StringBuffer())<SUB>257</SUB>> ]
+"424" [label = <(LOCAL,int len: int)> ]
+"425" [label = <(&lt;operator&gt;.assignment,int len = value.length())<SUB>258</SUB>> ]
+"426" [label = <(IDENTIFIER,len,int len = value.length())<SUB>258</SUB>> ]
+"427" [label = <(length,value.length())<SUB>258</SUB>> ]
+"428" [label = <(IDENTIFIER,value,value.length())<SUB>258</SUB>> ]
+"429" [label = <(CONTROL_STRUCTURE,for (int i = 0; Some(i &lt; len); ++i),for (int i = 0; Some(i &lt; len); ++i))<SUB>259</SUB>> ]
+"430" [label = <(LOCAL,int i: int)> ]
+"431" [label = <(&lt;operator&gt;.assignment,int i = 0)<SUB>259</SUB>> ]
+"432" [label = <(IDENTIFIER,i,int i = 0)<SUB>259</SUB>> ]
+"433" [label = <(LITERAL,0,int i = 0)<SUB>259</SUB>> ]
+"434" [label = <(&lt;operator&gt;.lessThan,i &lt; len)<SUB>259</SUB>> ]
+"435" [label = <(IDENTIFIER,i,i &lt; len)<SUB>259</SUB>> ]
+"436" [label = <(IDENTIFIER,len,i &lt; len)<SUB>259</SUB>> ]
+"437" [label = <(&lt;operator&gt;.preIncrement,++i)<SUB>259</SUB>> ]
+"438" [label = <(IDENTIFIER,i,++i)<SUB>259</SUB>> ]
+"439" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>259</SUB>> ]
+"440" [label = <(LOCAL,char c: char)> ]
+"441" [label = <(&lt;operator&gt;.assignment,char c = value.charAt(i))<SUB>260</SUB>> ]
+"442" [label = <(IDENTIFIER,c,char c = value.charAt(i))<SUB>260</SUB>> ]
+"443" [label = <(charAt,value.charAt(i))<SUB>260</SUB>> ]
+"444" [label = <(IDENTIFIER,value,value.charAt(i))<SUB>260</SUB>> ]
+"445" [label = <(IDENTIFIER,i,value.charAt(i))<SUB>260</SUB>> ]
+"446" [label = <(CONTROL_STRUCTURE,if (isLegalCharacter(c)),if (isLegalCharacter(c)))<SUB>261</SUB>> ]
+"447" [label = <(isLegalCharacter,this.isLegalCharacter(c))<SUB>261</SUB>> ]
+"19" [label = <(IDENTIFIER,this,this.isLegalCharacter(c))<SUB>261</SUB>> ]
+"448" [label = <(IDENTIFIER,c,this.isLegalCharacter(c))<SUB>261</SUB>> ]
+"449" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>261</SUB>> ]
+"450" [label = <(append,sb.append(c))<SUB>262</SUB>> ]
+"451" [label = <(IDENTIFIER,sb,sb.append(c))<SUB>262</SUB>> ]
+"452" [label = <(IDENTIFIER,c,sb.append(c))<SUB>262</SUB>> ]
+"453" [label = <(LOCAL,String result: java.lang.String)> ]
+"454" [label = <(&lt;operator&gt;.assignment,String result = sb.substring(0))<SUB>266</SUB>> ]
+"455" [label = <(IDENTIFIER,result,String result = sb.substring(0))<SUB>266</SUB>> ]
+"456" [label = <(substring,sb.substring(0))<SUB>266</SUB>> ]
+"457" [label = <(IDENTIFIER,sb,sb.substring(0))<SUB>266</SUB>> ]
+"458" [label = <(LITERAL,0,sb.substring(0))<SUB>266</SUB>> ]
+"459" [label = <(LOCAL,int cdEnd: int)> ]
+"460" [label = <(&lt;operator&gt;.assignment,int cdEnd = result.indexOf(&quot;]]&gt;&quot;))<SUB>267</SUB>> ]
+"461" [label = <(IDENTIFIER,cdEnd,int cdEnd = result.indexOf(&quot;]]&gt;&quot;))<SUB>267</SUB>> ]
+"462" [label = <(indexOf,result.indexOf(&quot;]]&gt;&quot;))<SUB>267</SUB>> ]
+"463" [label = <(IDENTIFIER,result,result.indexOf(&quot;]]&gt;&quot;))<SUB>267</SUB>> ]
+"464" [label = <(LITERAL,&quot;]]&gt;&quot;,result.indexOf(&quot;]]&gt;&quot;))<SUB>267</SUB>> ]
+"465" [label = <(CONTROL_STRUCTURE,while (cdEnd != -1),while (cdEnd != -1))<SUB>268</SUB>> ]
+"466" [label = <(&lt;operator&gt;.notEquals,cdEnd != -1)<SUB>268</SUB>> ]
+"467" [label = <(IDENTIFIER,cdEnd,cdEnd != -1)<SUB>268</SUB>> ]
+"468" [label = <(&lt;operator&gt;.minus,-1)<SUB>268</SUB>> ]
+"469" [label = <(LITERAL,1,-1)<SUB>268</SUB>> ]
+"470" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>268</SUB>> ]
+"471" [label = <(setLength,sb.setLength(cdEnd))<SUB>269</SUB>> ]
+"472" [label = <(IDENTIFIER,sb,sb.setLength(cdEnd))<SUB>269</SUB>> ]
+"473" [label = <(IDENTIFIER,cdEnd,sb.setLength(cdEnd))<SUB>269</SUB>> ]
+"474" [label = <(append,sb.append(&quot;&amp;#x5d;&amp;#x5d;&amp;gt;&quot;).append(result.substring(cdEnd + 3)))<SUB>270</SUB>> ]
+"475" [label = <(append,sb.append(&quot;&amp;#x5d;&amp;#x5d;&amp;gt;&quot;))<SUB>270</SUB>> ]
+"476" [label = <(IDENTIFIER,sb,sb.append(&quot;&amp;#x5d;&amp;#x5d;&amp;gt;&quot;))<SUB>270</SUB>> ]
+"477" [label = <(LITERAL,&quot;&amp;#x5d;&amp;#x5d;&amp;gt;&quot;,sb.append(&quot;&amp;#x5d;&amp;#x5d;&amp;gt;&quot;))<SUB>270</SUB>> ]
+"478" [label = <(substring,result.substring(cdEnd + 3))<SUB>271</SUB>> ]
+"479" [label = <(IDENTIFIER,result,result.substring(cdEnd + 3))<SUB>271</SUB>> ]
+"480" [label = <(&lt;operator&gt;.addition,cdEnd + 3)<SUB>271</SUB>> ]
+"481" [label = <(IDENTIFIER,cdEnd,cdEnd + 3)<SUB>271</SUB>> ]
+"482" [label = <(LITERAL,3,cdEnd + 3)<SUB>271</SUB>> ]
+"483" [label = <(&lt;operator&gt;.assignment,result = sb.substring(0))<SUB>272</SUB>> ]
+"484" [label = <(IDENTIFIER,result,result = sb.substring(0))<SUB>272</SUB>> ]
+"485" [label = <(substring,sb.substring(0))<SUB>272</SUB>> ]
+"486" [label = <(IDENTIFIER,sb,sb.substring(0))<SUB>272</SUB>> ]
+"487" [label = <(LITERAL,0,sb.substring(0))<SUB>272</SUB>> ]
+"488" [label = <(&lt;operator&gt;.assignment,cdEnd = result.indexOf(&quot;]]&gt;&quot;))<SUB>273</SUB>> ]
+"489" [label = <(IDENTIFIER,cdEnd,cdEnd = result.indexOf(&quot;]]&gt;&quot;))<SUB>273</SUB>> ]
+"490" [label = <(indexOf,result.indexOf(&quot;]]&gt;&quot;))<SUB>273</SUB>> ]
+"491" [label = <(IDENTIFIER,result,result.indexOf(&quot;]]&gt;&quot;))<SUB>273</SUB>> ]
+"492" [label = <(LITERAL,&quot;]]&gt;&quot;,result.indexOf(&quot;]]&gt;&quot;))<SUB>273</SUB>> ]
+"493" [label = <(RETURN,return result;,return result;)<SUB>276</SUB>> ]
+"494" [label = <(IDENTIFIER,result,return result;)<SUB>276</SUB>> ]
+"495" [label = <(MODIFIER,PUBLIC)> ]
+"496" [label = <(MODIFIER,VIRTUAL)> ]
+"497" [label = <(METHOD_RETURN,java.lang.String)<SUB>256</SUB>> ]
+  "417" -> "20" 
+  "417" -> "418" 
+  "417" -> "419" 
+  "417" -> "495" 
+  "417" -> "496" 
+  "417" -> "497" 
+  "419" -> "18" 
+  "419" -> "420" 
+  "419" -> "423" 
+  "419" -> "424" 
+  "419" -> "425" 
+  "419" -> "429" 
+  "419" -> "453" 
+  "419" -> "454" 
+  "419" -> "459" 
+  "419" -> "460" 
+  "419" -> "465" 
+  "419" -> "493" 
+  "420" -> "421" 
+  "420" -> "422" 
+  "423" -> "17" 
+  "425" -> "426" 
+  "425" -> "427" 
+  "427" -> "428" 
+  "429" -> "430" 
+  "429" -> "431" 
+  "429" -> "434" 
+  "429" -> "437" 
+  "429" -> "439" 
+  "431" -> "432" 
+  "431" -> "433" 
+  "434" -> "435" 
+  "434" -> "436" 
+  "437" -> "438" 
+  "439" -> "440" 
+  "439" -> "441" 
+  "439" -> "446" 
+  "441" -> "442" 
+  "441" -> "443" 
+  "443" -> "444" 
+  "443" -> "445" 
+  "446" -> "447" 
+  "446" -> "449" 
+  "447" -> "19" 
+  "447" -> "448" 
+  "449" -> "450" 
+  "450" -> "451" 
+  "450" -> "452" 
+  "454" -> "455" 
+  "454" -> "456" 
+  "456" -> "457" 
+  "456" -> "458" 
+  "460" -> "461" 
+  "460" -> "462" 
+  "462" -> "463" 
+  "462" -> "464" 
+  "465" -> "466" 
+  "465" -> "470" 
+  "466" -> "467" 
+  "466" -> "468" 
+  "468" -> "469" 
+  "470" -> "471" 
+  "470" -> "474" 
+  "470" -> "483" 
+  "470" -> "488" 
+  "471" -> "472" 
+  "471" -> "473" 
+  "474" -> "475" 
+  "474" -> "478" 
+  "475" -> "476" 
+  "475" -> "477" 
+  "478" -> "479" 
+  "478" -> "480" 
+  "480" -> "481" 
+  "480" -> "482" 
+  "483" -> "484" 
+  "483" -> "485" 
+  "485" -> "486" 
+  "485" -> "487" 
+  "488" -> "489" 
+  "488" -> "490" 
+  "490" -> "491" 
+  "490" -> "492" 
+  "493" -> "494" 
+}

@@ -1,0 +1,65 @@
+digraph "createProxy" {  
+"50" [label = <(METHOD,createProxy)<SUB>53</SUB>> ]
+"51" [label = <(PARAM,Endpoint endpoint)<SUB>53</SUB>> ]
+"52" [label = <(PARAM,Class[] interfaces)<SUB>53</SUB>> ]
+"53" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>53</SUB>> ]
+"54" [label = <(CONTROL_STRUCTURE,if (interfaces.length &lt; 1),if (interfaces.length &lt; 1))<SUB>54</SUB>> ]
+"55" [label = <(&lt;operator&gt;.lessThan,interfaces.length &lt; 1)<SUB>54</SUB>> ]
+"56" [label = <(&lt;operator&gt;.fieldAccess,interfaces.length)<SUB>54</SUB>> ]
+"57" [label = <(IDENTIFIER,interfaces,interfaces.length &lt; 1)<SUB>54</SUB>> ]
+"58" [label = <(FIELD_IDENTIFIER,length,length)<SUB>54</SUB>> ]
+"59" [label = <(LITERAL,1,interfaces.length &lt; 1)<SUB>54</SUB>> ]
+"60" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>54</SUB>> ]
+"61" [label = <(&lt;operator&gt;.throw,throw new IllegalArgumentException(&quot;You must provide at least 1 interface class.&quot;);)<SUB>55</SUB>> ]
+"62" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>55</SUB>> ]
+"63" [label = <(&lt;operator&gt;.assignment,&lt;empty&gt;)> ]
+"64" [label = <(IDENTIFIER,$obj1,&lt;empty&gt;)> ]
+"65" [label = <(&lt;operator&gt;.alloc,new IllegalArgumentException(&quot;You must provide at least 1 interface class.&quot;))<SUB>55</SUB>> ]
+"66" [label = <(&lt;init&gt;,new IllegalArgumentException(&quot;You must provide at least 1 interface class.&quot;))<SUB>55</SUB>> ]
+"67" [label = <(IDENTIFIER,$obj1,new IllegalArgumentException(&quot;You must provide at least 1 interface class.&quot;))> ]
+"68" [label = <(LITERAL,&quot;You must provide at least 1 interface class.&quot;,new IllegalArgumentException(&quot;You must provide at least 1 interface class.&quot;))<SUB>55</SUB>> ]
+"69" [label = <(IDENTIFIER,$obj1,&lt;empty&gt;)> ]
+"70" [label = <(RETURN,return createProxy(endpoint, interfaces[0].getClassLoader(), interfaces);,return createProxy(endpoint, interfaces[0].getClassLoader(), interfaces);)<SUB>57</SUB>> ]
+"71" [label = <(createProxy,createProxy(endpoint, interfaces[0].getClassLoader(), interfaces))<SUB>57</SUB>> ]
+"72" [label = <(IDENTIFIER,this,createProxy(endpoint, interfaces[0].getClassLoader(), interfaces))<SUB>57</SUB>> ]
+"73" [label = <(IDENTIFIER,endpoint,createProxy(endpoint, interfaces[0].getClassLoader(), interfaces))<SUB>57</SUB>> ]
+"74" [label = <(getClassLoader,this.getClassLoader())<SUB>57</SUB>> ]
+"75" [label = <(&lt;operator&gt;.indexAccess,interfaces[0])<SUB>57</SUB>> ]
+"76" [label = <(IDENTIFIER,interfaces,this.getClassLoader())<SUB>57</SUB>> ]
+"77" [label = <(LITERAL,0,this.getClassLoader())<SUB>57</SUB>> ]
+"78" [label = <(IDENTIFIER,interfaces,createProxy(endpoint, interfaces[0].getClassLoader(), interfaces))<SUB>57</SUB>> ]
+"79" [label = <(MODIFIER,PUBLIC)> ]
+"80" [label = <(MODIFIER,STATIC)> ]
+"81" [label = <(METHOD_RETURN,java.lang.Object)<SUB>53</SUB>> ]
+  "50" -> "51" 
+  "50" -> "52" 
+  "50" -> "53" 
+  "50" -> "79" 
+  "50" -> "80" 
+  "50" -> "81" 
+  "53" -> "54" 
+  "53" -> "70" 
+  "54" -> "55" 
+  "54" -> "60" 
+  "55" -> "56" 
+  "55" -> "59" 
+  "56" -> "57" 
+  "56" -> "58" 
+  "60" -> "61" 
+  "61" -> "62" 
+  "62" -> "63" 
+  "62" -> "66" 
+  "62" -> "69" 
+  "63" -> "64" 
+  "63" -> "65" 
+  "66" -> "67" 
+  "66" -> "68" 
+  "70" -> "71" 
+  "71" -> "72" 
+  "71" -> "73" 
+  "71" -> "74" 
+  "71" -> "78" 
+  "74" -> "75" 
+  "75" -> "76" 
+  "75" -> "77" 
+}

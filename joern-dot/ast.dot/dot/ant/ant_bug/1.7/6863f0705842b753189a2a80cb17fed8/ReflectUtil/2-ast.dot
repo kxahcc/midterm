@@ -1,0 +1,69 @@
+digraph "invoke" {  
+"57" [label = <(METHOD,invoke)<SUB>64</SUB>> ]
+"58" [label = <(PARAM,Object obj)<SUB>65</SUB>> ]
+"59" [label = <(PARAM,String methodName)<SUB>65</SUB>> ]
+"60" [label = <(PARAM,Class argType)<SUB>65</SUB>> ]
+"61" [label = <(PARAM,Object arg)<SUB>65</SUB>> ]
+"62" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>65</SUB>> ]
+"63" [label = <(CONTROL_STRUCTURE,try,try)<SUB>66</SUB>> ]
+"64" [label = <(BLOCK,try,try)<SUB>66</SUB>> ]
+"65" [label = <(LOCAL,Method method: java.lang.reflect.Method)> ]
+"66" [label = <(&lt;operator&gt;.assignment,method = obj.getClass().getMethod(methodName, new Class[] { argType }))<SUB>68</SUB>> ]
+"67" [label = <(IDENTIFIER,method,method = obj.getClass().getMethod(methodName, new Class[] { argType }))<SUB>68</SUB>> ]
+"68" [label = <(getMethod,obj.getClass().getMethod(methodName, new Class[] { argType }))<SUB>68</SUB>> ]
+"69" [label = <(getClass,obj.getClass())<SUB>68</SUB>> ]
+"70" [label = <(IDENTIFIER,obj,obj.getClass())<SUB>68</SUB>> ]
+"71" [label = <(IDENTIFIER,methodName,obj.getClass().getMethod(methodName, new Class[] { argType }))<SUB>69</SUB>> ]
+"72" [label = <(&lt;operator&gt;.arrayInitializer,&lt;operator&gt;.arrayInitializer)<SUB>68</SUB>> ]
+"73" [label = <(&lt;operator&gt;.arrayInitializer,new Class[] { argType })<SUB>69</SUB>> ]
+"74" [label = <(IDENTIFIER,argType,new Class[] { argType })<SUB>69</SUB>> ]
+"75" [label = <(RETURN,return method.invoke(obj, new Object[] { arg });,return method.invoke(obj, new Object[] { arg });)<SUB>70</SUB>> ]
+"76" [label = <(invoke,method.invoke(obj, new Object[] { arg }))<SUB>70</SUB>> ]
+"77" [label = <(IDENTIFIER,method,method.invoke(obj, new Object[] { arg }))<SUB>70</SUB>> ]
+"78" [label = <(IDENTIFIER,obj,method.invoke(obj, new Object[] { arg }))<SUB>70</SUB>> ]
+"79" [label = <(&lt;operator&gt;.arrayInitializer,&lt;operator&gt;.arrayInitializer)<SUB>70</SUB>> ]
+"80" [label = <(&lt;operator&gt;.arrayInitializer,new Object[] { arg })<SUB>70</SUB>> ]
+"81" [label = <(IDENTIFIER,arg,new Object[] { arg })<SUB>70</SUB>> ]
+"82" [label = <(BLOCK,catch,catch)> ]
+"83" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>71</SUB>> ]
+"84" [label = <(throwBuildException,throwBuildException(t))<SUB>72</SUB>> ]
+"85" [label = <(IDENTIFIER,t,throwBuildException(t))<SUB>72</SUB>> ]
+"86" [label = <(RETURN,return null;,return null;)<SUB>73</SUB>> ]
+"87" [label = <(LITERAL,null,return null;)<SUB>73</SUB>> ]
+"88" [label = <(MODIFIER,PUBLIC)> ]
+"89" [label = <(MODIFIER,STATIC)> ]
+"90" [label = <(METHOD_RETURN,java.lang.Object)<SUB>64</SUB>> ]
+  "57" -> "58" 
+  "57" -> "59" 
+  "57" -> "60" 
+  "57" -> "61" 
+  "57" -> "62" 
+  "57" -> "88" 
+  "57" -> "89" 
+  "57" -> "90" 
+  "62" -> "63" 
+  "63" -> "64" 
+  "63" -> "82" 
+  "64" -> "65" 
+  "64" -> "66" 
+  "64" -> "75" 
+  "66" -> "67" 
+  "66" -> "68" 
+  "68" -> "69" 
+  "68" -> "71" 
+  "68" -> "72" 
+  "69" -> "70" 
+  "72" -> "73" 
+  "73" -> "74" 
+  "75" -> "76" 
+  "76" -> "77" 
+  "76" -> "78" 
+  "76" -> "79" 
+  "79" -> "80" 
+  "80" -> "81" 
+  "82" -> "83" 
+  "83" -> "84" 
+  "83" -> "86" 
+  "84" -> "85" 
+  "86" -> "87" 
+}

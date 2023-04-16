@@ -1,0 +1,105 @@
+digraph "makeCircularException" {  
+"3047" [label = <(METHOD,makeCircularException)<SUB>1751</SUB>> ]
+"3048" [label = <(PARAM,String end)<SUB>1751</SUB>> ]
+"3049" [label = <(PARAM,Stack stk)<SUB>1751</SUB>> ]
+"3050" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>1751</SUB>> ]
+"135" [label = <(LOCAL,StringBuffer sb: java.lang.StringBuffer)> ]
+"3051" [label = <(&lt;operator&gt;.assignment,StringBuffer sb = new StringBuffer(&quot;Circular dependency: &quot;))<SUB>1752</SUB>> ]
+"3052" [label = <(IDENTIFIER,sb,StringBuffer sb = new StringBuffer(&quot;Circular dependency: &quot;))<SUB>1752</SUB>> ]
+"3053" [label = <(&lt;operator&gt;.alloc,new StringBuffer(&quot;Circular dependency: &quot;))<SUB>1752</SUB>> ]
+"3054" [label = <(&lt;init&gt;,new StringBuffer(&quot;Circular dependency: &quot;))<SUB>1752</SUB>> ]
+"134" [label = <(IDENTIFIER,sb,new StringBuffer(&quot;Circular dependency: &quot;))<SUB>1752</SUB>> ]
+"3055" [label = <(LITERAL,&quot;Circular dependency: &quot;,new StringBuffer(&quot;Circular dependency: &quot;))<SUB>1752</SUB>> ]
+"3056" [label = <(append,sb.append(end))<SUB>1753</SUB>> ]
+"3057" [label = <(IDENTIFIER,sb,sb.append(end))<SUB>1753</SUB>> ]
+"3058" [label = <(IDENTIFIER,end,sb.append(end))<SUB>1753</SUB>> ]
+"3059" [label = <(LOCAL,String c: java.lang.String)> ]
+"3060" [label = <(CONTROL_STRUCTURE,do {...} while (!c.equals(end)),do {...} while (!c.equals(end)))<SUB>1755</SUB>> ]
+"3061" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>1755</SUB>> ]
+"3062" [label = <(&lt;operator&gt;.assignment,c = (String) stk.pop())<SUB>1756</SUB>> ]
+"3063" [label = <(IDENTIFIER,c,c = (String) stk.pop())<SUB>1756</SUB>> ]
+"3064" [label = <(&lt;operator&gt;.cast,(String) stk.pop())<SUB>1756</SUB>> ]
+"3065" [label = <(TYPE_REF,String,String)<SUB>1756</SUB>> ]
+"3066" [label = <(pop,stk.pop())<SUB>1756</SUB>> ]
+"3067" [label = <(IDENTIFIER,stk,stk.pop())<SUB>1756</SUB>> ]
+"3068" [label = <(append,sb.append(&quot; &lt;- &quot;))<SUB>1757</SUB>> ]
+"3069" [label = <(IDENTIFIER,sb,sb.append(&quot; &lt;- &quot;))<SUB>1757</SUB>> ]
+"3070" [label = <(LITERAL,&quot; &lt;- &quot;,sb.append(&quot; &lt;- &quot;))<SUB>1757</SUB>> ]
+"3071" [label = <(append,sb.append(c))<SUB>1758</SUB>> ]
+"3072" [label = <(IDENTIFIER,sb,sb.append(c))<SUB>1758</SUB>> ]
+"3073" [label = <(IDENTIFIER,c,sb.append(c))<SUB>1758</SUB>> ]
+"3074" [label = <(&lt;operator&gt;.logicalNot,!c.equals(end))<SUB>1759</SUB>> ]
+"3075" [label = <(equals,c.equals(end))<SUB>1759</SUB>> ]
+"3076" [label = <(IDENTIFIER,c,c.equals(end))<SUB>1759</SUB>> ]
+"3077" [label = <(IDENTIFIER,end,c.equals(end))<SUB>1759</SUB>> ]
+"3078" [label = <(RETURN,return new BuildException(new String(sb));,return new BuildException(new String(sb));)<SUB>1760</SUB>> ]
+"3079" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>1760</SUB>> ]
+"3080" [label = <(&lt;operator&gt;.assignment,&lt;empty&gt;)> ]
+"3081" [label = <(IDENTIFIER,$obj49,&lt;empty&gt;)> ]
+"3082" [label = <(&lt;operator&gt;.alloc,new BuildException(new String(sb)))<SUB>1760</SUB>> ]
+"3083" [label = <(&lt;init&gt;,new BuildException(new String(sb)))<SUB>1760</SUB>> ]
+"3084" [label = <(IDENTIFIER,$obj49,new BuildException(new String(sb)))> ]
+"3085" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>1760</SUB>> ]
+"3086" [label = <(&lt;operator&gt;.assignment,&lt;empty&gt;)> ]
+"3087" [label = <(IDENTIFIER,$obj48,&lt;empty&gt;)> ]
+"3088" [label = <(&lt;operator&gt;.alloc,new String(sb))<SUB>1760</SUB>> ]
+"3089" [label = <(&lt;init&gt;,new String(sb))<SUB>1760</SUB>> ]
+"3090" [label = <(IDENTIFIER,$obj48,new String(sb))> ]
+"3091" [label = <(IDENTIFIER,sb,new String(sb))<SUB>1760</SUB>> ]
+"3092" [label = <(IDENTIFIER,$obj48,&lt;empty&gt;)> ]
+"3093" [label = <(IDENTIFIER,$obj49,&lt;empty&gt;)> ]
+"3094" [label = <(MODIFIER,PRIVATE)> ]
+"3095" [label = <(MODIFIER,STATIC)> ]
+"3096" [label = <(METHOD_RETURN,ANY)<SUB>1751</SUB>> ]
+  "3047" -> "3048" 
+  "3047" -> "3049" 
+  "3047" -> "3050" 
+  "3047" -> "3094" 
+  "3047" -> "3095" 
+  "3047" -> "3096" 
+  "3050" -> "135" 
+  "3050" -> "3051" 
+  "3050" -> "3054" 
+  "3050" -> "3056" 
+  "3050" -> "3059" 
+  "3050" -> "3060" 
+  "3050" -> "3078" 
+  "3051" -> "3052" 
+  "3051" -> "3053" 
+  "3054" -> "134" 
+  "3054" -> "3055" 
+  "3056" -> "3057" 
+  "3056" -> "3058" 
+  "3060" -> "3061" 
+  "3060" -> "3074" 
+  "3061" -> "3062" 
+  "3061" -> "3068" 
+  "3061" -> "3071" 
+  "3062" -> "3063" 
+  "3062" -> "3064" 
+  "3064" -> "3065" 
+  "3064" -> "3066" 
+  "3066" -> "3067" 
+  "3068" -> "3069" 
+  "3068" -> "3070" 
+  "3071" -> "3072" 
+  "3071" -> "3073" 
+  "3074" -> "3075" 
+  "3075" -> "3076" 
+  "3075" -> "3077" 
+  "3078" -> "3079" 
+  "3079" -> "3080" 
+  "3079" -> "3083" 
+  "3079" -> "3093" 
+  "3080" -> "3081" 
+  "3080" -> "3082" 
+  "3083" -> "3084" 
+  "3083" -> "3085" 
+  "3085" -> "3086" 
+  "3085" -> "3089" 
+  "3085" -> "3092" 
+  "3086" -> "3087" 
+  "3086" -> "3088" 
+  "3089" -> "3090" 
+  "3089" -> "3091" 
+}

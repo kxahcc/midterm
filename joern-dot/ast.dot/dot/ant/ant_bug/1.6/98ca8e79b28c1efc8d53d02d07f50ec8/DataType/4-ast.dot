@@ -1,0 +1,115 @@
+digraph "dieOnCircularReference" {  
+"95" [label = <(METHOD,dieOnCircularReference)<SUB>158</SUB>> ]
+"6" [label = <(PARAM,this)<SUB>158</SUB>> ]
+"96" [label = <(PARAM,final Stack stack)<SUB>158</SUB>> ]
+"97" [label = <(PARAM,final Project project)<SUB>159</SUB>> ]
+"98" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>160</SUB>> ]
+"99" [label = <(CONTROL_STRUCTURE,if (checked || !isReference()),if (checked || !isReference()))<SUB>162</SUB>> ]
+"100" [label = <(&lt;operator&gt;.logicalOr,checked || !isReference())<SUB>162</SUB>> ]
+"101" [label = <(&lt;operator&gt;.fieldAccess,this.checked)<SUB>162</SUB>> ]
+"102" [label = <(IDENTIFIER,this,checked || !isReference())<SUB>162</SUB>> ]
+"103" [label = <(FIELD_IDENTIFIER,checked,checked)<SUB>162</SUB>> ]
+"104" [label = <(&lt;operator&gt;.logicalNot,!isReference())<SUB>162</SUB>> ]
+"105" [label = <(isReference,this.isReference())<SUB>162</SUB>> ]
+"5" [label = <(IDENTIFIER,this,this.isReference())<SUB>162</SUB>> ]
+"106" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>162</SUB>> ]
+"107" [label = <(RETURN,return;,return;)<SUB>163</SUB>> ]
+"108" [label = <(LOCAL,Object o: java.lang.Object)> ]
+"109" [label = <(&lt;operator&gt;.assignment,Object o = getReferencedObject(project))<SUB>165</SUB>> ]
+"110" [label = <(IDENTIFIER,o,Object o = getReferencedObject(project))<SUB>165</SUB>> ]
+"111" [label = <(getReferencedObject,getReferencedObject(project))<SUB>165</SUB>> ]
+"112" [label = <(&lt;operator&gt;.fieldAccess,this.ref)<SUB>165</SUB>> ]
+"113" [label = <(IDENTIFIER,this,getReferencedObject(project))<SUB>165</SUB>> ]
+"114" [label = <(FIELD_IDENTIFIER,ref,ref)<SUB>165</SUB>> ]
+"115" [label = <(IDENTIFIER,project,getReferencedObject(project))<SUB>165</SUB>> ]
+"116" [label = <(CONTROL_STRUCTURE,if (o instanceof DataType),if (o instanceof DataType))<SUB>167</SUB>> ]
+"117" [label = <(&lt;operator&gt;.instanceOf,o instanceof DataType)<SUB>167</SUB>> ]
+"118" [label = <(IDENTIFIER,o,o instanceof DataType)<SUB>167</SUB>> ]
+"119" [label = <(TYPE_REF,DataType,DataType)<SUB>167</SUB>> ]
+"120" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>167</SUB>> ]
+"121" [label = <(CONTROL_STRUCTURE,if (stack.contains(o)),if (stack.contains(o)))<SUB>168</SUB>> ]
+"122" [label = <(contains,stack.contains(o))<SUB>168</SUB>> ]
+"123" [label = <(IDENTIFIER,stack,stack.contains(o))<SUB>168</SUB>> ]
+"124" [label = <(IDENTIFIER,o,stack.contains(o))<SUB>168</SUB>> ]
+"125" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>168</SUB>> ]
+"126" [label = <(&lt;operator&gt;.throw,throw circularReference();)<SUB>169</SUB>> ]
+"127" [label = <(circularReference,this.circularReference())<SUB>169</SUB>> ]
+"7" [label = <(IDENTIFIER,this,this.circularReference())<SUB>169</SUB>> ]
+"128" [label = <(CONTROL_STRUCTURE,else,else)<SUB>170</SUB>> ]
+"129" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>170</SUB>> ]
+"130" [label = <(push,stack.push(o))<SUB>171</SUB>> ]
+"131" [label = <(IDENTIFIER,stack,stack.push(o))<SUB>171</SUB>> ]
+"132" [label = <(IDENTIFIER,o,stack.push(o))<SUB>171</SUB>> ]
+"133" [label = <(dieOnCircularReference,dieOnCircularReference(stack, project))<SUB>172</SUB>> ]
+"134" [label = <(&lt;operator&gt;.cast,(DataType) o)<SUB>172</SUB>> ]
+"135" [label = <(TYPE_REF,DataType,DataType)<SUB>172</SUB>> ]
+"136" [label = <(IDENTIFIER,o,(DataType) o)<SUB>172</SUB>> ]
+"137" [label = <(IDENTIFIER,stack,dieOnCircularReference(stack, project))<SUB>172</SUB>> ]
+"138" [label = <(IDENTIFIER,project,dieOnCircularReference(stack, project))<SUB>172</SUB>> ]
+"139" [label = <(pop,stack.pop())<SUB>173</SUB>> ]
+"140" [label = <(IDENTIFIER,stack,stack.pop())<SUB>173</SUB>> ]
+"141" [label = <(&lt;operator&gt;.assignment,this.checked = true)<SUB>176</SUB>> ]
+"142" [label = <(&lt;operator&gt;.fieldAccess,this.checked)<SUB>176</SUB>> ]
+"143" [label = <(IDENTIFIER,this,this.checked = true)<SUB>176</SUB>> ]
+"144" [label = <(FIELD_IDENTIFIER,checked,checked)<SUB>176</SUB>> ]
+"145" [label = <(LITERAL,true,this.checked = true)<SUB>176</SUB>> ]
+"146" [label = <(MODIFIER,PROTECTED)> ]
+"147" [label = <(MODIFIER,VIRTUAL)> ]
+"148" [label = <(METHOD_RETURN,void)<SUB>158</SUB>> ]
+  "95" -> "6" 
+  "95" -> "96" 
+  "95" -> "97" 
+  "95" -> "98" 
+  "95" -> "146" 
+  "95" -> "147" 
+  "95" -> "148" 
+  "98" -> "99" 
+  "98" -> "108" 
+  "98" -> "109" 
+  "98" -> "116" 
+  "98" -> "141" 
+  "99" -> "100" 
+  "99" -> "106" 
+  "100" -> "101" 
+  "100" -> "104" 
+  "101" -> "102" 
+  "101" -> "103" 
+  "104" -> "105" 
+  "105" -> "5" 
+  "106" -> "107" 
+  "109" -> "110" 
+  "109" -> "111" 
+  "111" -> "112" 
+  "111" -> "115" 
+  "112" -> "113" 
+  "112" -> "114" 
+  "116" -> "117" 
+  "116" -> "120" 
+  "117" -> "118" 
+  "117" -> "119" 
+  "120" -> "121" 
+  "121" -> "122" 
+  "121" -> "125" 
+  "121" -> "128" 
+  "122" -> "123" 
+  "122" -> "124" 
+  "125" -> "126" 
+  "126" -> "127" 
+  "127" -> "7" 
+  "128" -> "129" 
+  "129" -> "130" 
+  "129" -> "133" 
+  "129" -> "139" 
+  "130" -> "131" 
+  "130" -> "132" 
+  "133" -> "134" 
+  "133" -> "137" 
+  "133" -> "138" 
+  "134" -> "135" 
+  "134" -> "136" 
+  "139" -> "140" 
+  "141" -> "142" 
+  "141" -> "145" 
+  "142" -> "143" 
+  "142" -> "144" 
+}

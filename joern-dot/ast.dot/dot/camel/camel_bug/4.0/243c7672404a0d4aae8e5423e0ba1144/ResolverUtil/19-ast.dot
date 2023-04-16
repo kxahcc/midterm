@@ -1,0 +1,193 @@
+digraph "loadImplementationsInJar" {  
+"1002" [label = <(METHOD,loadImplementationsInJar)<SUB>473</SUB>> ]
+"81" [label = <(PARAM,this)<SUB>473</SUB>> ]
+"1003" [label = <(PARAM,Test test)<SUB>473</SUB>> ]
+"1004" [label = <(PARAM,String parent)<SUB>473</SUB>> ]
+"1005" [label = <(PARAM,File jarfile)<SUB>473</SUB>> ]
+"1006" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>473</SUB>> ]
+"79" [label = <(LOCAL,JarInputStream jarStream: java.util.jar.JarInputStream)> ]
+"1007" [label = <(&lt;operator&gt;.assignment,JarInputStream jarStream = null)<SUB>474</SUB>> ]
+"1008" [label = <(IDENTIFIER,jarStream,JarInputStream jarStream = null)<SUB>474</SUB>> ]
+"1009" [label = <(LITERAL,null,JarInputStream jarStream = null)<SUB>474</SUB>> ]
+"1010" [label = <(CONTROL_STRUCTURE,try,try)<SUB>475</SUB>> ]
+"1011" [label = <(BLOCK,try,try)<SUB>475</SUB>> ]
+"1012" [label = <(&lt;operator&gt;.assignment,jarStream = new JarInputStream(new FileInputStream(jarfile)))<SUB>476</SUB>> ]
+"1013" [label = <(IDENTIFIER,jarStream,jarStream = new JarInputStream(new FileInputStream(jarfile)))<SUB>476</SUB>> ]
+"1014" [label = <(&lt;operator&gt;.alloc,new JarInputStream(new FileInputStream(jarfile)))<SUB>476</SUB>> ]
+"1015" [label = <(&lt;init&gt;,new JarInputStream(new FileInputStream(jarfile)))<SUB>476</SUB>> ]
+"78" [label = <(IDENTIFIER,jarStream,new JarInputStream(new FileInputStream(jarfile)))<SUB>476</SUB>> ]
+"1016" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>476</SUB>> ]
+"1017" [label = <(&lt;operator&gt;.assignment,&lt;empty&gt;)> ]
+"1018" [label = <(IDENTIFIER,$obj7,&lt;empty&gt;)> ]
+"1019" [label = <(&lt;operator&gt;.alloc,new FileInputStream(jarfile))<SUB>476</SUB>> ]
+"1020" [label = <(&lt;init&gt;,new FileInputStream(jarfile))<SUB>476</SUB>> ]
+"1021" [label = <(IDENTIFIER,$obj7,new FileInputStream(jarfile))> ]
+"1022" [label = <(IDENTIFIER,jarfile,new FileInputStream(jarfile))<SUB>476</SUB>> ]
+"1023" [label = <(IDENTIFIER,$obj7,&lt;empty&gt;)> ]
+"1024" [label = <(LOCAL,JarEntry entry: java.util.jar.JarEntry)> ]
+"1025" [label = <(CONTROL_STRUCTURE,while ((entry = jarStream.getNextJarEntry()) != null),while ((entry = jarStream.getNextJarEntry()) != null))<SUB>479</SUB>> ]
+"1026" [label = <(&lt;operator&gt;.notEquals,(entry = jarStream.getNextJarEntry()) != null)<SUB>479</SUB>> ]
+"1027" [label = <(&lt;operator&gt;.assignment,entry = jarStream.getNextJarEntry())<SUB>479</SUB>> ]
+"1028" [label = <(IDENTIFIER,entry,entry = jarStream.getNextJarEntry())<SUB>479</SUB>> ]
+"1029" [label = <(getNextJarEntry,jarStream.getNextJarEntry())<SUB>479</SUB>> ]
+"1030" [label = <(IDENTIFIER,jarStream,jarStream.getNextJarEntry())<SUB>479</SUB>> ]
+"1031" [label = <(LITERAL,null,(entry = jarStream.getNextJarEntry()) != null)<SUB>479</SUB>> ]
+"1032" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>479</SUB>> ]
+"1033" [label = <(LOCAL,String name: java.lang.String)> ]
+"1034" [label = <(&lt;operator&gt;.assignment,String name = entry.getName())<SUB>480</SUB>> ]
+"1035" [label = <(IDENTIFIER,name,String name = entry.getName())<SUB>480</SUB>> ]
+"1036" [label = <(getName,entry.getName())<SUB>480</SUB>> ]
+"1037" [label = <(IDENTIFIER,entry,entry.getName())<SUB>480</SUB>> ]
+"1038" [label = <(CONTROL_STRUCTURE,if (name != null),if (name != null))<SUB>481</SUB>> ]
+"1039" [label = <(&lt;operator&gt;.notEquals,name != null)<SUB>481</SUB>> ]
+"1040" [label = <(IDENTIFIER,name,name != null)<SUB>481</SUB>> ]
+"1041" [label = <(LITERAL,null,name != null)<SUB>481</SUB>> ]
+"1042" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>481</SUB>> ]
+"1043" [label = <(&lt;operator&gt;.assignment,name = name.trim())<SUB>482</SUB>> ]
+"1044" [label = <(IDENTIFIER,name,name = name.trim())<SUB>482</SUB>> ]
+"1045" [label = <(trim,name.trim())<SUB>482</SUB>> ]
+"1046" [label = <(IDENTIFIER,name,name.trim())<SUB>482</SUB>> ]
+"1047" [label = <(CONTROL_STRUCTURE,if (!entry.isDirectory() &amp;&amp; name.startsWith(parent) &amp;&amp; name.endsWith(&quot;.class&quot;)),if (!entry.isDirectory() &amp;&amp; name.startsWith(parent) &amp;&amp; name.endsWith(&quot;.class&quot;)))<SUB>483</SUB>> ]
+"1048" [label = <(&lt;operator&gt;.logicalAnd,!entry.isDirectory() &amp;&amp; name.startsWith(parent) &amp;&amp; name.endsWith(&quot;.class&quot;))<SUB>483</SUB>> ]
+"1049" [label = <(&lt;operator&gt;.logicalAnd,!entry.isDirectory() &amp;&amp; name.startsWith(parent))<SUB>483</SUB>> ]
+"1050" [label = <(&lt;operator&gt;.logicalNot,!entry.isDirectory())<SUB>483</SUB>> ]
+"1051" [label = <(isDirectory,entry.isDirectory())<SUB>483</SUB>> ]
+"1052" [label = <(IDENTIFIER,entry,entry.isDirectory())<SUB>483</SUB>> ]
+"1053" [label = <(startsWith,name.startsWith(parent))<SUB>483</SUB>> ]
+"1054" [label = <(IDENTIFIER,name,name.startsWith(parent))<SUB>483</SUB>> ]
+"1055" [label = <(IDENTIFIER,parent,name.startsWith(parent))<SUB>483</SUB>> ]
+"1056" [label = <(endsWith,name.endsWith(&quot;.class&quot;))<SUB>483</SUB>> ]
+"1057" [label = <(IDENTIFIER,name,name.endsWith(&quot;.class&quot;))<SUB>483</SUB>> ]
+"1058" [label = <(LITERAL,&quot;.class&quot;,name.endsWith(&quot;.class&quot;))<SUB>483</SUB>> ]
+"1059" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>483</SUB>> ]
+"1060" [label = <(addIfMatching,this.addIfMatching(test, name))<SUB>484</SUB>> ]
+"80" [label = <(IDENTIFIER,this,this.addIfMatching(test, name))<SUB>484</SUB>> ]
+"1061" [label = <(IDENTIFIER,test,this.addIfMatching(test, name))<SUB>484</SUB>> ]
+"1062" [label = <(IDENTIFIER,name,this.addIfMatching(test, name))<SUB>484</SUB>> ]
+"1063" [label = <(BLOCK,catch,catch)> ]
+"1064" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>488</SUB>> ]
+"1065" [label = <(error,error(&quot;Could not search jar file '&quot; + jarfile + &quot;' for classes matching criteria: &quot; + test + &quot; due to an IOException: &quot; + ioe.getMessage(), ioe))<SUB>489</SUB>> ]
+"1066" [label = <(&lt;operator&gt;.fieldAccess,ResolverUtil.LOG)<SUB>489</SUB>> ]
+"1067" [label = <(IDENTIFIER,ResolverUtil,error(&quot;Could not search jar file '&quot; + jarfile + &quot;' for classes matching criteria: &quot; + test + &quot; due to an IOException: &quot; + ioe.getMessage(), ioe))<SUB>489</SUB>> ]
+"1068" [label = <(FIELD_IDENTIFIER,LOG,LOG)<SUB>489</SUB>> ]
+"1069" [label = <(&lt;operator&gt;.addition,&quot;Could not search jar file '&quot; + jarfile + &quot;' for classes matching criteria: &quot; + test + &quot; due to an IOException: &quot; + ioe.getMessage())<SUB>489</SUB>> ]
+"1070" [label = <(&lt;operator&gt;.addition,&quot;Could not search jar file '&quot; + jarfile + &quot;' for classes matching criteria: &quot; + test + &quot; due to an IOException: &quot;)<SUB>489</SUB>> ]
+"1071" [label = <(&lt;operator&gt;.addition,&quot;Could not search jar file '&quot; + jarfile + &quot;' for classes matching criteria: &quot; + test)<SUB>489</SUB>> ]
+"1072" [label = <(&lt;operator&gt;.addition,&quot;Could not search jar file '&quot; + jarfile + &quot;' for classes matching criteria: &quot;)<SUB>489</SUB>> ]
+"1073" [label = <(&lt;operator&gt;.addition,&quot;Could not search jar file '&quot; + jarfile)<SUB>489</SUB>> ]
+"1074" [label = <(LITERAL,&quot;Could not search jar file '&quot;,&quot;Could not search jar file '&quot; + jarfile)<SUB>489</SUB>> ]
+"1075" [label = <(IDENTIFIER,jarfile,&quot;Could not search jar file '&quot; + jarfile)<SUB>489</SUB>> ]
+"1076" [label = <(LITERAL,&quot;' for classes matching criteria: &quot;,&quot;Could not search jar file '&quot; + jarfile + &quot;' for classes matching criteria: &quot;)<SUB>489</SUB>> ]
+"1077" [label = <(IDENTIFIER,test,&quot;Could not search jar file '&quot; + jarfile + &quot;' for classes matching criteria: &quot; + test)<SUB>489</SUB>> ]
+"1078" [label = <(LITERAL,&quot; due to an IOException: &quot;,&quot;Could not search jar file '&quot; + jarfile + &quot;' for classes matching criteria: &quot; + test + &quot; due to an IOException: &quot;)<SUB>490</SUB>> ]
+"1079" [label = <(getMessage,ioe.getMessage())<SUB>490</SUB>> ]
+"1080" [label = <(IDENTIFIER,ioe,ioe.getMessage())<SUB>490</SUB>> ]
+"1081" [label = <(IDENTIFIER,ioe,error(&quot;Could not search jar file '&quot; + jarfile + &quot;' for classes matching criteria: &quot; + test + &quot; due to an IOException: &quot; + ioe.getMessage(), ioe))<SUB>490</SUB>> ]
+"1082" [label = <(BLOCK,finally,finally)<SUB>491</SUB>> ]
+"1083" [label = <(close,close(jarStream, jarfile.getPath(), LOG))<SUB>492</SUB>> ]
+"1084" [label = <(IDENTIFIER,ObjectHelper,close(jarStream, jarfile.getPath(), LOG))<SUB>492</SUB>> ]
+"1085" [label = <(IDENTIFIER,jarStream,close(jarStream, jarfile.getPath(), LOG))<SUB>492</SUB>> ]
+"1086" [label = <(getPath,jarfile.getPath())<SUB>492</SUB>> ]
+"1087" [label = <(IDENTIFIER,jarfile,jarfile.getPath())<SUB>492</SUB>> ]
+"1088" [label = <(&lt;operator&gt;.fieldAccess,ResolverUtil.LOG)<SUB>492</SUB>> ]
+"1089" [label = <(IDENTIFIER,ResolverUtil,close(jarStream, jarfile.getPath(), LOG))<SUB>492</SUB>> ]
+"1090" [label = <(FIELD_IDENTIFIER,LOG,LOG)<SUB>492</SUB>> ]
+"1091" [label = <(MODIFIER,PRIVATE)> ]
+"1092" [label = <(MODIFIER,VIRTUAL)> ]
+"1093" [label = <(METHOD_RETURN,void)<SUB>473</SUB>> ]
+  "1002" -> "81" 
+  "1002" -> "1003" 
+  "1002" -> "1004" 
+  "1002" -> "1005" 
+  "1002" -> "1006" 
+  "1002" -> "1091" 
+  "1002" -> "1092" 
+  "1002" -> "1093" 
+  "1006" -> "79" 
+  "1006" -> "1007" 
+  "1006" -> "1010" 
+  "1007" -> "1008" 
+  "1007" -> "1009" 
+  "1010" -> "1011" 
+  "1010" -> "1063" 
+  "1010" -> "1082" 
+  "1011" -> "1012" 
+  "1011" -> "1015" 
+  "1011" -> "1024" 
+  "1011" -> "1025" 
+  "1012" -> "1013" 
+  "1012" -> "1014" 
+  "1015" -> "78" 
+  "1015" -> "1016" 
+  "1016" -> "1017" 
+  "1016" -> "1020" 
+  "1016" -> "1023" 
+  "1017" -> "1018" 
+  "1017" -> "1019" 
+  "1020" -> "1021" 
+  "1020" -> "1022" 
+  "1025" -> "1026" 
+  "1025" -> "1032" 
+  "1026" -> "1027" 
+  "1026" -> "1031" 
+  "1027" -> "1028" 
+  "1027" -> "1029" 
+  "1029" -> "1030" 
+  "1032" -> "1033" 
+  "1032" -> "1034" 
+  "1032" -> "1038" 
+  "1034" -> "1035" 
+  "1034" -> "1036" 
+  "1036" -> "1037" 
+  "1038" -> "1039" 
+  "1038" -> "1042" 
+  "1039" -> "1040" 
+  "1039" -> "1041" 
+  "1042" -> "1043" 
+  "1042" -> "1047" 
+  "1043" -> "1044" 
+  "1043" -> "1045" 
+  "1045" -> "1046" 
+  "1047" -> "1048" 
+  "1047" -> "1059" 
+  "1048" -> "1049" 
+  "1048" -> "1056" 
+  "1049" -> "1050" 
+  "1049" -> "1053" 
+  "1050" -> "1051" 
+  "1051" -> "1052" 
+  "1053" -> "1054" 
+  "1053" -> "1055" 
+  "1056" -> "1057" 
+  "1056" -> "1058" 
+  "1059" -> "1060" 
+  "1060" -> "80" 
+  "1060" -> "1061" 
+  "1060" -> "1062" 
+  "1063" -> "1064" 
+  "1064" -> "1065" 
+  "1065" -> "1066" 
+  "1065" -> "1069" 
+  "1065" -> "1081" 
+  "1066" -> "1067" 
+  "1066" -> "1068" 
+  "1069" -> "1070" 
+  "1069" -> "1079" 
+  "1070" -> "1071" 
+  "1070" -> "1078" 
+  "1071" -> "1072" 
+  "1071" -> "1077" 
+  "1072" -> "1073" 
+  "1072" -> "1076" 
+  "1073" -> "1074" 
+  "1073" -> "1075" 
+  "1079" -> "1080" 
+  "1082" -> "1083" 
+  "1083" -> "1084" 
+  "1083" -> "1085" 
+  "1083" -> "1086" 
+  "1083" -> "1088" 
+  "1086" -> "1087" 
+  "1088" -> "1089" 
+  "1088" -> "1090" 
+}

@@ -1,0 +1,215 @@
+digraph "execSQL" {  
+"1391" [label = <(METHOD,execSQL)<SUB>573</SUB>> ]
+"75" [label = <(PARAM,this)<SUB>573</SUB>> ]
+"1392" [label = <(PARAM,String sql)<SUB>573</SUB>> ]
+"1393" [label = <(PARAM,PrintStream out)<SUB>573</SUB>> ]
+"1394" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>573</SUB>> ]
+"1395" [label = <(CONTROL_STRUCTURE,if (&quot;&quot;.equals(sql.trim())),if (&quot;&quot;.equals(sql.trim())))<SUB>575</SUB>> ]
+"1396" [label = <(equals,this.equals(sql.trim()))<SUB>575</SUB>> ]
+"1397" [label = <(LITERAL,&quot;&quot;,this.equals(sql.trim()))<SUB>575</SUB>> ]
+"1398" [label = <(trim,sql.trim())<SUB>575</SUB>> ]
+"1399" [label = <(IDENTIFIER,sql,sql.trim())<SUB>575</SUB>> ]
+"1400" [label = <(RETURN,return;,return;)<SUB>575</SUB>> ]
+"1401" [label = <(CONTROL_STRUCTURE,try,try)<SUB>577</SUB>> ]
+"1402" [label = <(BLOCK,try,try)<SUB>577</SUB>> ]
+"1403" [label = <(&lt;operator&gt;.postIncrement,totalSql++)<SUB>578</SUB>> ]
+"1404" [label = <(&lt;operator&gt;.fieldAccess,this.totalSql)<SUB>578</SUB>> ]
+"1405" [label = <(IDENTIFIER,this,totalSql++)<SUB>578</SUB>> ]
+"1406" [label = <(FIELD_IDENTIFIER,totalSql,totalSql)<SUB>578</SUB>> ]
+"1407" [label = <(CONTROL_STRUCTURE,if (!statement.execute(sql)),if (!statement.execute(sql)))<SUB>579</SUB>> ]
+"1408" [label = <(&lt;operator&gt;.logicalNot,!statement.execute(sql))<SUB>579</SUB>> ]
+"1409" [label = <(execute,statement.execute(sql))<SUB>579</SUB>> ]
+"1410" [label = <(&lt;operator&gt;.fieldAccess,this.statement)<SUB>579</SUB>> ]
+"1411" [label = <(IDENTIFIER,this,statement.execute(sql))<SUB>579</SUB>> ]
+"1412" [label = <(FIELD_IDENTIFIER,statement,statement)<SUB>579</SUB>> ]
+"1413" [label = <(IDENTIFIER,sql,statement.execute(sql))<SUB>579</SUB>> ]
+"1414" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>579</SUB>> ]
+"1415" [label = <(log,log(statement.getUpdateCount() + &quot; rows affected&quot;, Project.MSG_VERBOSE))<SUB>580</SUB>> ]
+"74" [label = <(IDENTIFIER,this,log(statement.getUpdateCount() + &quot; rows affected&quot;, Project.MSG_VERBOSE))<SUB>580</SUB>> ]
+"1416" [label = <(&lt;operator&gt;.addition,statement.getUpdateCount() + &quot; rows affected&quot;)<SUB>580</SUB>> ]
+"1417" [label = <(getUpdateCount,statement.getUpdateCount())<SUB>580</SUB>> ]
+"1418" [label = <(&lt;operator&gt;.fieldAccess,this.statement)<SUB>580</SUB>> ]
+"1419" [label = <(IDENTIFIER,this,statement.getUpdateCount())<SUB>580</SUB>> ]
+"1420" [label = <(FIELD_IDENTIFIER,statement,statement)<SUB>580</SUB>> ]
+"1421" [label = <(LITERAL,&quot; rows affected&quot;,statement.getUpdateCount() + &quot; rows affected&quot;)<SUB>580</SUB>> ]
+"1422" [label = <(&lt;operator&gt;.fieldAccess,Project.MSG_VERBOSE)<SUB>581</SUB>> ]
+"1423" [label = <(IDENTIFIER,Project,log(statement.getUpdateCount() + &quot; rows affected&quot;, Project.MSG_VERBOSE))<SUB>581</SUB>> ]
+"1424" [label = <(FIELD_IDENTIFIER,MSG_VERBOSE,MSG_VERBOSE)<SUB>581</SUB>> ]
+"1425" [label = <(CONTROL_STRUCTURE,else,else)<SUB>583</SUB>> ]
+"1426" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>583</SUB>> ]
+"1427" [label = <(CONTROL_STRUCTURE,if (print),if (print))<SUB>584</SUB>> ]
+"1428" [label = <(&lt;operator&gt;.fieldAccess,this.print)<SUB>584</SUB>> ]
+"1429" [label = <(IDENTIFIER,this,if (print))<SUB>584</SUB>> ]
+"1430" [label = <(FIELD_IDENTIFIER,print,print)<SUB>584</SUB>> ]
+"1431" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>584</SUB>> ]
+"1432" [label = <(printResults,this.printResults(out))<SUB>585</SUB>> ]
+"76" [label = <(IDENTIFIER,this,this.printResults(out))<SUB>585</SUB>> ]
+"1433" [label = <(IDENTIFIER,out,this.printResults(out))<SUB>585</SUB>> ]
+"1434" [label = <(LOCAL,SQLWarning warning: java.sql.SQLWarning)> ]
+"1435" [label = <(&lt;operator&gt;.assignment,SQLWarning warning = conn.getWarnings())<SUB>589</SUB>> ]
+"1436" [label = <(IDENTIFIER,warning,SQLWarning warning = conn.getWarnings())<SUB>589</SUB>> ]
+"1437" [label = <(getWarnings,conn.getWarnings())<SUB>589</SUB>> ]
+"1438" [label = <(&lt;operator&gt;.fieldAccess,this.conn)<SUB>589</SUB>> ]
+"1439" [label = <(IDENTIFIER,this,conn.getWarnings())<SUB>589</SUB>> ]
+"1440" [label = <(FIELD_IDENTIFIER,conn,conn)<SUB>589</SUB>> ]
+"1441" [label = <(CONTROL_STRUCTURE,while (warning != null),while (warning != null))<SUB>590</SUB>> ]
+"1442" [label = <(&lt;operator&gt;.notEquals,warning != null)<SUB>590</SUB>> ]
+"1443" [label = <(IDENTIFIER,warning,warning != null)<SUB>590</SUB>> ]
+"1444" [label = <(LITERAL,null,warning != null)<SUB>590</SUB>> ]
+"1445" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>590</SUB>> ]
+"1446" [label = <(log,log(warning + &quot; sql warning&quot;, Project.MSG_VERBOSE))<SUB>591</SUB>> ]
+"77" [label = <(IDENTIFIER,this,log(warning + &quot; sql warning&quot;, Project.MSG_VERBOSE))<SUB>591</SUB>> ]
+"1447" [label = <(&lt;operator&gt;.addition,warning + &quot; sql warning&quot;)<SUB>591</SUB>> ]
+"1448" [label = <(IDENTIFIER,warning,warning + &quot; sql warning&quot;)<SUB>591</SUB>> ]
+"1449" [label = <(LITERAL,&quot; sql warning&quot;,warning + &quot; sql warning&quot;)<SUB>591</SUB>> ]
+"1450" [label = <(&lt;operator&gt;.fieldAccess,Project.MSG_VERBOSE)<SUB>591</SUB>> ]
+"1451" [label = <(IDENTIFIER,Project,log(warning + &quot; sql warning&quot;, Project.MSG_VERBOSE))<SUB>591</SUB>> ]
+"1452" [label = <(FIELD_IDENTIFIER,MSG_VERBOSE,MSG_VERBOSE)<SUB>591</SUB>> ]
+"1453" [label = <(&lt;operator&gt;.assignment,warning = warning.getNextWarning())<SUB>592</SUB>> ]
+"1454" [label = <(IDENTIFIER,warning,warning = warning.getNextWarning())<SUB>592</SUB>> ]
+"1455" [label = <(getNextWarning,warning.getNextWarning())<SUB>592</SUB>> ]
+"1456" [label = <(IDENTIFIER,warning,warning.getNextWarning())<SUB>592</SUB>> ]
+"1457" [label = <(clearWarnings,conn.clearWarnings())<SUB>594</SUB>> ]
+"1458" [label = <(&lt;operator&gt;.fieldAccess,this.conn)<SUB>594</SUB>> ]
+"1459" [label = <(IDENTIFIER,this,conn.clearWarnings())<SUB>594</SUB>> ]
+"1460" [label = <(FIELD_IDENTIFIER,conn,conn)<SUB>594</SUB>> ]
+"1461" [label = <(&lt;operator&gt;.postIncrement,goodSql++)<SUB>595</SUB>> ]
+"1462" [label = <(&lt;operator&gt;.fieldAccess,this.goodSql)<SUB>595</SUB>> ]
+"1463" [label = <(IDENTIFIER,this,goodSql++)<SUB>595</SUB>> ]
+"1464" [label = <(FIELD_IDENTIFIER,goodSql,goodSql)<SUB>595</SUB>> ]
+"1465" [label = <(BLOCK,catch,catch)> ]
+"1466" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>597</SUB>> ]
+"1467" [label = <(log,log(&quot;Failed to execute: &quot; + sql, Project.MSG_ERR))<SUB>598</SUB>> ]
+"78" [label = <(IDENTIFIER,this,log(&quot;Failed to execute: &quot; + sql, Project.MSG_ERR))<SUB>598</SUB>> ]
+"1468" [label = <(&lt;operator&gt;.addition,&quot;Failed to execute: &quot; + sql)<SUB>598</SUB>> ]
+"1469" [label = <(LITERAL,&quot;Failed to execute: &quot;,&quot;Failed to execute: &quot; + sql)<SUB>598</SUB>> ]
+"1470" [label = <(IDENTIFIER,sql,&quot;Failed to execute: &quot; + sql)<SUB>598</SUB>> ]
+"1471" [label = <(&lt;operator&gt;.fieldAccess,Project.MSG_ERR)<SUB>598</SUB>> ]
+"1472" [label = <(IDENTIFIER,Project,log(&quot;Failed to execute: &quot; + sql, Project.MSG_ERR))<SUB>598</SUB>> ]
+"1473" [label = <(FIELD_IDENTIFIER,MSG_ERR,MSG_ERR)<SUB>598</SUB>> ]
+"1474" [label = <(CONTROL_STRUCTURE,if (!onError.equals(&quot;continue&quot;)),if (!onError.equals(&quot;continue&quot;)))<SUB>599</SUB>> ]
+"1475" [label = <(&lt;operator&gt;.logicalNot,!onError.equals(&quot;continue&quot;))<SUB>599</SUB>> ]
+"1476" [label = <(equals,onError.equals(&quot;continue&quot;))<SUB>599</SUB>> ]
+"1477" [label = <(&lt;operator&gt;.fieldAccess,this.onError)<SUB>599</SUB>> ]
+"1478" [label = <(IDENTIFIER,this,onError.equals(&quot;continue&quot;))<SUB>599</SUB>> ]
+"1479" [label = <(FIELD_IDENTIFIER,onError,onError)<SUB>599</SUB>> ]
+"1480" [label = <(LITERAL,&quot;continue&quot;,onError.equals(&quot;continue&quot;))<SUB>599</SUB>> ]
+"1481" [label = <(&lt;operator&gt;.throw,throw e;)<SUB>599</SUB>> ]
+"1482" [label = <(IDENTIFIER,e,throw e;)<SUB>599</SUB>> ]
+"1483" [label = <(log,log(e.toString(), Project.MSG_ERR))<SUB>600</SUB>> ]
+"79" [label = <(IDENTIFIER,this,log(e.toString(), Project.MSG_ERR))<SUB>600</SUB>> ]
+"1484" [label = <(toString,e.toString())<SUB>600</SUB>> ]
+"1485" [label = <(IDENTIFIER,e,e.toString())<SUB>600</SUB>> ]
+"1486" [label = <(&lt;operator&gt;.fieldAccess,Project.MSG_ERR)<SUB>600</SUB>> ]
+"1487" [label = <(IDENTIFIER,Project,log(e.toString(), Project.MSG_ERR))<SUB>600</SUB>> ]
+"1488" [label = <(FIELD_IDENTIFIER,MSG_ERR,MSG_ERR)<SUB>600</SUB>> ]
+"1489" [label = <(MODIFIER,PROTECTED)> ]
+"1490" [label = <(MODIFIER,VIRTUAL)> ]
+"1491" [label = <(METHOD_RETURN,void)<SUB>573</SUB>> ]
+  "1391" -> "75" 
+  "1391" -> "1392" 
+  "1391" -> "1393" 
+  "1391" -> "1394" 
+  "1391" -> "1489" 
+  "1391" -> "1490" 
+  "1391" -> "1491" 
+  "1394" -> "1395" 
+  "1394" -> "1401" 
+  "1395" -> "1396" 
+  "1395" -> "1400" 
+  "1396" -> "1397" 
+  "1396" -> "1398" 
+  "1398" -> "1399" 
+  "1401" -> "1402" 
+  "1401" -> "1465" 
+  "1402" -> "1403" 
+  "1402" -> "1407" 
+  "1402" -> "1434" 
+  "1402" -> "1435" 
+  "1402" -> "1441" 
+  "1402" -> "1457" 
+  "1402" -> "1461" 
+  "1403" -> "1404" 
+  "1404" -> "1405" 
+  "1404" -> "1406" 
+  "1407" -> "1408" 
+  "1407" -> "1414" 
+  "1407" -> "1425" 
+  "1408" -> "1409" 
+  "1409" -> "1410" 
+  "1409" -> "1413" 
+  "1410" -> "1411" 
+  "1410" -> "1412" 
+  "1414" -> "1415" 
+  "1415" -> "74" 
+  "1415" -> "1416" 
+  "1415" -> "1422" 
+  "1416" -> "1417" 
+  "1416" -> "1421" 
+  "1417" -> "1418" 
+  "1418" -> "1419" 
+  "1418" -> "1420" 
+  "1422" -> "1423" 
+  "1422" -> "1424" 
+  "1425" -> "1426" 
+  "1426" -> "1427" 
+  "1427" -> "1428" 
+  "1427" -> "1431" 
+  "1428" -> "1429" 
+  "1428" -> "1430" 
+  "1431" -> "1432" 
+  "1432" -> "76" 
+  "1432" -> "1433" 
+  "1435" -> "1436" 
+  "1435" -> "1437" 
+  "1437" -> "1438" 
+  "1438" -> "1439" 
+  "1438" -> "1440" 
+  "1441" -> "1442" 
+  "1441" -> "1445" 
+  "1442" -> "1443" 
+  "1442" -> "1444" 
+  "1445" -> "1446" 
+  "1445" -> "1453" 
+  "1446" -> "77" 
+  "1446" -> "1447" 
+  "1446" -> "1450" 
+  "1447" -> "1448" 
+  "1447" -> "1449" 
+  "1450" -> "1451" 
+  "1450" -> "1452" 
+  "1453" -> "1454" 
+  "1453" -> "1455" 
+  "1455" -> "1456" 
+  "1457" -> "1458" 
+  "1458" -> "1459" 
+  "1458" -> "1460" 
+  "1461" -> "1462" 
+  "1462" -> "1463" 
+  "1462" -> "1464" 
+  "1465" -> "1466" 
+  "1466" -> "1467" 
+  "1466" -> "1474" 
+  "1466" -> "1483" 
+  "1467" -> "78" 
+  "1467" -> "1468" 
+  "1467" -> "1471" 
+  "1468" -> "1469" 
+  "1468" -> "1470" 
+  "1471" -> "1472" 
+  "1471" -> "1473" 
+  "1474" -> "1475" 
+  "1474" -> "1481" 
+  "1475" -> "1476" 
+  "1476" -> "1477" 
+  "1476" -> "1480" 
+  "1477" -> "1478" 
+  "1477" -> "1479" 
+  "1481" -> "1482" 
+  "1483" -> "79" 
+  "1483" -> "1484" 
+  "1483" -> "1486" 
+  "1484" -> "1485" 
+  "1486" -> "1487" 
+  "1486" -> "1488" 
+}

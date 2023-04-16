@@ -1,0 +1,111 @@
+digraph "addFile" {  
+"671" [label = <(METHOD,addFile)<SUB>336</SUB>> ]
+"36" [label = <(PARAM,this)<SUB>336</SUB>> ]
+"672" [label = <(PARAM,ZipOutputStream output)<SUB>336</SUB>> ]
+"673" [label = <(PARAM,File file)<SUB>336</SUB>> ]
+"674" [label = <(PARAM,String prefix)<SUB>336</SUB>> ]
+"675" [label = <(PARAM,boolean compress)<SUB>337</SUB>> ]
+"676" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>337</SUB>> ]
+"677" [label = <(CONTROL_STRUCTURE,if (!file.exists()),if (!file.exists()))<SUB>339</SUB>> ]
+"678" [label = <(&lt;operator&gt;.logicalNot,!file.exists())<SUB>339</SUB>> ]
+"679" [label = <(exists,file.exists())<SUB>339</SUB>> ]
+"680" [label = <(IDENTIFIER,file,file.exists())<SUB>339</SUB>> ]
+"681" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>339</SUB>> ]
+"682" [label = <(RETURN,return;,return;)<SUB>340</SUB>> ]
+"38" [label = <(LOCAL,ZipEntry entry: java.util.zip.ZipEntry)> ]
+"683" [label = <(&lt;operator&gt;.assignment,ZipEntry entry = new ZipEntry(getEntryName(file, prefix)))<SUB>342</SUB>> ]
+"684" [label = <(IDENTIFIER,entry,ZipEntry entry = new ZipEntry(getEntryName(file, prefix)))<SUB>342</SUB>> ]
+"685" [label = <(&lt;operator&gt;.alloc,new ZipEntry(getEntryName(file, prefix)))<SUB>342</SUB>> ]
+"686" [label = <(&lt;init&gt;,new ZipEntry(getEntryName(file, prefix)))<SUB>342</SUB>> ]
+"37" [label = <(IDENTIFIER,entry,new ZipEntry(getEntryName(file, prefix)))<SUB>342</SUB>> ]
+"687" [label = <(getEntryName,this.getEntryName(file, prefix))<SUB>342</SUB>> ]
+"35" [label = <(IDENTIFIER,this,this.getEntryName(file, prefix))<SUB>342</SUB>> ]
+"688" [label = <(IDENTIFIER,file,this.getEntryName(file, prefix))<SUB>342</SUB>> ]
+"689" [label = <(IDENTIFIER,prefix,this.getEntryName(file, prefix))<SUB>342</SUB>> ]
+"690" [label = <(setTime,entry.setTime(file.lastModified()))<SUB>344</SUB>> ]
+"691" [label = <(IDENTIFIER,entry,entry.setTime(file.lastModified()))<SUB>344</SUB>> ]
+"692" [label = <(lastModified,file.lastModified())<SUB>344</SUB>> ]
+"693" [label = <(IDENTIFIER,file,file.lastModified())<SUB>344</SUB>> ]
+"694" [label = <(setSize,entry.setSize(file.length()))<SUB>345</SUB>> ]
+"695" [label = <(IDENTIFIER,entry,entry.setSize(file.length()))<SUB>345</SUB>> ]
+"696" [label = <(length,file.length())<SUB>345</SUB>> ]
+"697" [label = <(IDENTIFIER,file,file.length())<SUB>345</SUB>> ]
+"698" [label = <(CONTROL_STRUCTURE,if (!compress),if (!compress))<SUB>346</SUB>> ]
+"699" [label = <(&lt;operator&gt;.logicalNot,!compress)<SUB>346</SUB>> ]
+"700" [label = <(IDENTIFIER,compress,!compress)<SUB>346</SUB>> ]
+"701" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>346</SUB>> ]
+"702" [label = <(setCrc,entry.setCrc(calcChecksum(file)))<SUB>347</SUB>> ]
+"703" [label = <(IDENTIFIER,entry,entry.setCrc(calcChecksum(file)))<SUB>347</SUB>> ]
+"704" [label = <(calcChecksum,this.calcChecksum(file))<SUB>347</SUB>> ]
+"39" [label = <(IDENTIFIER,this,this.calcChecksum(file))<SUB>347</SUB>> ]
+"705" [label = <(IDENTIFIER,file,this.calcChecksum(file))<SUB>347</SUB>> ]
+"41" [label = <(LOCAL,FileInputStream input: java.io.FileInputStream)> ]
+"706" [label = <(&lt;operator&gt;.assignment,FileInputStream input = new FileInputStream(file))<SUB>349</SUB>> ]
+"707" [label = <(IDENTIFIER,input,FileInputStream input = new FileInputStream(file))<SUB>349</SUB>> ]
+"708" [label = <(&lt;operator&gt;.alloc,new FileInputStream(file))<SUB>349</SUB>> ]
+"709" [label = <(&lt;init&gt;,new FileInputStream(file))<SUB>349</SUB>> ]
+"40" [label = <(IDENTIFIER,input,new FileInputStream(file))<SUB>349</SUB>> ]
+"710" [label = <(IDENTIFIER,file,new FileInputStream(file))<SUB>349</SUB>> ]
+"711" [label = <(addToOutputStream,this.addToOutputStream(output, input, entry))<SUB>351</SUB>> ]
+"42" [label = <(IDENTIFIER,this,this.addToOutputStream(output, input, entry))<SUB>351</SUB>> ]
+"712" [label = <(IDENTIFIER,output,this.addToOutputStream(output, input, entry))<SUB>351</SUB>> ]
+"713" [label = <(IDENTIFIER,input,this.addToOutputStream(output, input, entry))<SUB>351</SUB>> ]
+"714" [label = <(IDENTIFIER,entry,this.addToOutputStream(output, input, entry))<SUB>351</SUB>> ]
+"715" [label = <(MODIFIER,PRIVATE)> ]
+"716" [label = <(MODIFIER,VIRTUAL)> ]
+"717" [label = <(METHOD_RETURN,void)<SUB>336</SUB>> ]
+  "671" -> "36" 
+  "671" -> "672" 
+  "671" -> "673" 
+  "671" -> "674" 
+  "671" -> "675" 
+  "671" -> "676" 
+  "671" -> "715" 
+  "671" -> "716" 
+  "671" -> "717" 
+  "676" -> "677" 
+  "676" -> "38" 
+  "676" -> "683" 
+  "676" -> "686" 
+  "676" -> "690" 
+  "676" -> "694" 
+  "676" -> "698" 
+  "676" -> "41" 
+  "676" -> "706" 
+  "676" -> "709" 
+  "676" -> "711" 
+  "677" -> "678" 
+  "677" -> "681" 
+  "678" -> "679" 
+  "679" -> "680" 
+  "681" -> "682" 
+  "683" -> "684" 
+  "683" -> "685" 
+  "686" -> "37" 
+  "686" -> "687" 
+  "687" -> "35" 
+  "687" -> "688" 
+  "687" -> "689" 
+  "690" -> "691" 
+  "690" -> "692" 
+  "692" -> "693" 
+  "694" -> "695" 
+  "694" -> "696" 
+  "696" -> "697" 
+  "698" -> "699" 
+  "698" -> "701" 
+  "699" -> "700" 
+  "701" -> "702" 
+  "702" -> "703" 
+  "702" -> "704" 
+  "704" -> "39" 
+  "704" -> "705" 
+  "706" -> "707" 
+  "706" -> "708" 
+  "709" -> "40" 
+  "709" -> "710" 
+  "711" -> "42" 
+  "711" -> "712" 
+  "711" -> "713" 
+  "711" -> "714" 
+}

@@ -1,0 +1,79 @@
+digraph "noStreamCaching" {  
+"44" [label = <(METHOD,noStreamCaching)<SUB>61</SUB>> ]
+"45" [label = <(PARAM,List&lt;InterceptorType&gt; interceptors)<SUB>61</SUB>> ]
+"46" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>61</SUB>> ]
+"47" [label = <(CONTROL_STRUCTURE,for (int i = 0; Some(i &lt; interceptors.size()); i++),for (int i = 0; Some(i &lt; interceptors.size()); i++))<SUB>62</SUB>> ]
+"48" [label = <(LOCAL,int i: int)> ]
+"49" [label = <(&lt;operator&gt;.assignment,int i = 0)<SUB>62</SUB>> ]
+"50" [label = <(IDENTIFIER,i,int i = 0)<SUB>62</SUB>> ]
+"51" [label = <(LITERAL,0,int i = 0)<SUB>62</SUB>> ]
+"52" [label = <(&lt;operator&gt;.lessThan,i &lt; interceptors.size())<SUB>62</SUB>> ]
+"53" [label = <(IDENTIFIER,i,i &lt; interceptors.size())<SUB>62</SUB>> ]
+"54" [label = <(size,size())<SUB>62</SUB>> ]
+"55" [label = <(IDENTIFIER,interceptors,size())<SUB>62</SUB>> ]
+"56" [label = <(&lt;operator&gt;.postIncrement,i++)<SUB>62</SUB>> ]
+"57" [label = <(IDENTIFIER,i,i++)<SUB>62</SUB>> ]
+"58" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>62</SUB>> ]
+"59" [label = <(LOCAL,InterceptorType interceptor: org.apache.camel.model.InterceptorType)> ]
+"60" [label = <(&lt;operator&gt;.assignment,InterceptorType interceptor = get(i))<SUB>63</SUB>> ]
+"61" [label = <(IDENTIFIER,interceptor,InterceptorType interceptor = get(i))<SUB>63</SUB>> ]
+"62" [label = <(get,get(i))<SUB>63</SUB>> ]
+"63" [label = <(IDENTIFIER,interceptors,get(i))<SUB>63</SUB>> ]
+"64" [label = <(IDENTIFIER,i,get(i))<SUB>63</SUB>> ]
+"65" [label = <(CONTROL_STRUCTURE,if (interceptor instanceof InterceptorRef &amp;&amp; ((InterceptorRef) interceptor).getInterceptor() instanceof StreamCachingInterceptor),if (interceptor instanceof InterceptorRef &amp;&amp; ((InterceptorRef) interceptor).getInterceptor() instanceof StreamCachingInterceptor))<SUB>64</SUB>> ]
+"66" [label = <(&lt;operator&gt;.logicalAnd,interceptor instanceof InterceptorRef &amp;&amp; ((InterceptorRef) interceptor).getInterceptor() instanceof StreamCachingInterceptor)<SUB>64</SUB>> ]
+"67" [label = <(&lt;operator&gt;.instanceOf,interceptor instanceof InterceptorRef)<SUB>64</SUB>> ]
+"68" [label = <(IDENTIFIER,interceptor,interceptor instanceof InterceptorRef)<SUB>64</SUB>> ]
+"69" [label = <(TYPE_REF,InterceptorRef,InterceptorRef)<SUB>64</SUB>> ]
+"70" [label = <(&lt;operator&gt;.instanceOf,((InterceptorRef) interceptor).getInterceptor() instanceof StreamCachingInterceptor)<SUB>65</SUB>> ]
+"71" [label = <(getInterceptor,getInterceptor())<SUB>65</SUB>> ]
+"72" [label = <(&lt;operator&gt;.cast,(InterceptorRef) interceptor)<SUB>65</SUB>> ]
+"73" [label = <(TYPE_REF,InterceptorRef,InterceptorRef)<SUB>65</SUB>> ]
+"74" [label = <(IDENTIFIER,interceptor,(InterceptorRef) interceptor)<SUB>65</SUB>> ]
+"75" [label = <(TYPE_REF,StreamCachingInterceptor,StreamCachingInterceptor)<SUB>65</SUB>> ]
+"76" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>65</SUB>> ]
+"77" [label = <(remove,remove(interceptor))<SUB>66</SUB>> ]
+"78" [label = <(IDENTIFIER,interceptors,remove(interceptor))<SUB>66</SUB>> ]
+"79" [label = <(IDENTIFIER,interceptor,remove(interceptor))<SUB>66</SUB>> ]
+"80" [label = <(MODIFIER,PUBLIC)> ]
+"81" [label = <(MODIFIER,STATIC)> ]
+"82" [label = <(METHOD_RETURN,void)<SUB>61</SUB>> ]
+  "44" -> "45" 
+  "44" -> "46" 
+  "44" -> "80" 
+  "44" -> "81" 
+  "44" -> "82" 
+  "46" -> "47" 
+  "47" -> "48" 
+  "47" -> "49" 
+  "47" -> "52" 
+  "47" -> "56" 
+  "47" -> "58" 
+  "49" -> "50" 
+  "49" -> "51" 
+  "52" -> "53" 
+  "52" -> "54" 
+  "54" -> "55" 
+  "56" -> "57" 
+  "58" -> "59" 
+  "58" -> "60" 
+  "58" -> "65" 
+  "60" -> "61" 
+  "60" -> "62" 
+  "62" -> "63" 
+  "62" -> "64" 
+  "65" -> "66" 
+  "65" -> "76" 
+  "66" -> "67" 
+  "66" -> "70" 
+  "67" -> "68" 
+  "67" -> "69" 
+  "70" -> "71" 
+  "70" -> "75" 
+  "71" -> "72" 
+  "72" -> "73" 
+  "72" -> "74" 
+  "76" -> "77" 
+  "77" -> "78" 
+  "77" -> "79" 
+}

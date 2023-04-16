@@ -1,0 +1,101 @@
+digraph "addFilesToCommand" {  
+"194" [label = <(METHOD,addFilesToCommand)<SUB>147</SUB>> ]
+"18" [label = <(PARAM,this)<SUB>147</SUB>> ]
+"195" [label = <(PARAM,Hashtable filesToBuild)<SUB>147</SUB>> ]
+"196" [label = <(PARAM,NetCommand command)<SUB>147</SUB>> ]
+"197" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>147</SUB>> ]
+"198" [label = <(LOCAL,int count: int)> ]
+"199" [label = <(&lt;operator&gt;.assignment,int count = filesToBuild.size())<SUB>148</SUB>> ]
+"200" [label = <(IDENTIFIER,count,int count = filesToBuild.size())<SUB>148</SUB>> ]
+"201" [label = <(size,filesToBuild.size())<SUB>148</SUB>> ]
+"202" [label = <(IDENTIFIER,filesToBuild,filesToBuild.size())<SUB>148</SUB>> ]
+"203" [label = <(log,log(&quot;compiling &quot; + count + &quot; file&quot; + ((count == 1) ? &quot;&quot; : &quot;s&quot;), Project.MSG_VERBOSE))<SUB>149</SUB>> ]
+"17" [label = <(IDENTIFIER,this,log(&quot;compiling &quot; + count + &quot; file&quot; + ((count == 1) ? &quot;&quot; : &quot;s&quot;), Project.MSG_VERBOSE))<SUB>149</SUB>> ]
+"204" [label = <(&lt;operator&gt;.addition,&quot;compiling &quot; + count + &quot; file&quot; + ((count == 1) ? &quot;&quot; : &quot;s&quot;))<SUB>149</SUB>> ]
+"205" [label = <(&lt;operator&gt;.addition,&quot;compiling &quot; + count + &quot; file&quot;)<SUB>149</SUB>> ]
+"206" [label = <(&lt;operator&gt;.addition,&quot;compiling &quot; + count)<SUB>149</SUB>> ]
+"207" [label = <(LITERAL,&quot;compiling &quot;,&quot;compiling &quot; + count)<SUB>149</SUB>> ]
+"208" [label = <(IDENTIFIER,count,&quot;compiling &quot; + count)<SUB>149</SUB>> ]
+"209" [label = <(LITERAL,&quot; file&quot;,&quot;compiling &quot; + count + &quot; file&quot;)<SUB>149</SUB>> ]
+"210" [label = <(&lt;operator&gt;.conditional,(count == 1) ? &quot;&quot; : &quot;s&quot;)<SUB>149</SUB>> ]
+"211" [label = <(&lt;operator&gt;.equals,count == 1)<SUB>149</SUB>> ]
+"212" [label = <(IDENTIFIER,count,count == 1)<SUB>149</SUB>> ]
+"213" [label = <(LITERAL,1,count == 1)<SUB>149</SUB>> ]
+"214" [label = <(LITERAL,&quot;&quot;,(count == 1) ? &quot;&quot; : &quot;s&quot;)<SUB>149</SUB>> ]
+"215" [label = <(LITERAL,&quot;s&quot;,(count == 1) ? &quot;&quot; : &quot;s&quot;)<SUB>149</SUB>> ]
+"216" [label = <(&lt;operator&gt;.fieldAccess,Project.MSG_VERBOSE)<SUB>150</SUB>> ]
+"217" [label = <(IDENTIFIER,Project,log(&quot;compiling &quot; + count + &quot; file&quot; + ((count == 1) ? &quot;&quot; : &quot;s&quot;), Project.MSG_VERBOSE))<SUB>150</SUB>> ]
+"218" [label = <(FIELD_IDENTIFIER,MSG_VERBOSE,MSG_VERBOSE)<SUB>150</SUB>> ]
+"219" [label = <(LOCAL,Enumeration files: java.util.Enumeration)> ]
+"220" [label = <(&lt;operator&gt;.assignment,Enumeration files = filesToBuild.elements())<SUB>151</SUB>> ]
+"221" [label = <(IDENTIFIER,files,Enumeration files = filesToBuild.elements())<SUB>151</SUB>> ]
+"222" [label = <(elements,filesToBuild.elements())<SUB>151</SUB>> ]
+"223" [label = <(IDENTIFIER,filesToBuild,filesToBuild.elements())<SUB>151</SUB>> ]
+"224" [label = <(CONTROL_STRUCTURE,while (files.hasMoreElements()),while (files.hasMoreElements()))<SUB>152</SUB>> ]
+"225" [label = <(hasMoreElements,files.hasMoreElements())<SUB>152</SUB>> ]
+"226" [label = <(IDENTIFIER,files,files.hasMoreElements())<SUB>152</SUB>> ]
+"227" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>152</SUB>> ]
+"228" [label = <(LOCAL,File file: java.io.File)> ]
+"229" [label = <(&lt;operator&gt;.assignment,File file = (File) files.nextElement())<SUB>153</SUB>> ]
+"230" [label = <(IDENTIFIER,file,File file = (File) files.nextElement())<SUB>153</SUB>> ]
+"231" [label = <(&lt;operator&gt;.cast,(File) files.nextElement())<SUB>153</SUB>> ]
+"232" [label = <(TYPE_REF,File,File)<SUB>153</SUB>> ]
+"233" [label = <(nextElement,files.nextElement())<SUB>153</SUB>> ]
+"234" [label = <(IDENTIFIER,files,files.nextElement())<SUB>153</SUB>> ]
+"235" [label = <(addArgument,addArgument(file.toString()))<SUB>154</SUB>> ]
+"236" [label = <(IDENTIFIER,command,addArgument(file.toString()))<SUB>154</SUB>> ]
+"237" [label = <(toString,file.toString())<SUB>154</SUB>> ]
+"238" [label = <(IDENTIFIER,file,file.toString())<SUB>154</SUB>> ]
+"239" [label = <(MODIFIER,PROTECTED)> ]
+"240" [label = <(MODIFIER,VIRTUAL)> ]
+"241" [label = <(METHOD_RETURN,void)<SUB>147</SUB>> ]
+  "194" -> "18" 
+  "194" -> "195" 
+  "194" -> "196" 
+  "194" -> "197" 
+  "194" -> "239" 
+  "194" -> "240" 
+  "194" -> "241" 
+  "197" -> "198" 
+  "197" -> "199" 
+  "197" -> "203" 
+  "197" -> "219" 
+  "197" -> "220" 
+  "197" -> "224" 
+  "199" -> "200" 
+  "199" -> "201" 
+  "201" -> "202" 
+  "203" -> "17" 
+  "203" -> "204" 
+  "203" -> "216" 
+  "204" -> "205" 
+  "204" -> "210" 
+  "205" -> "206" 
+  "205" -> "209" 
+  "206" -> "207" 
+  "206" -> "208" 
+  "210" -> "211" 
+  "210" -> "214" 
+  "210" -> "215" 
+  "211" -> "212" 
+  "211" -> "213" 
+  "216" -> "217" 
+  "216" -> "218" 
+  "220" -> "221" 
+  "220" -> "222" 
+  "222" -> "223" 
+  "224" -> "225" 
+  "224" -> "227" 
+  "225" -> "226" 
+  "227" -> "228" 
+  "227" -> "229" 
+  "227" -> "235" 
+  "229" -> "230" 
+  "229" -> "231" 
+  "231" -> "232" 
+  "231" -> "233" 
+  "233" -> "234" 
+  "235" -> "236" 
+  "235" -> "237" 
+  "237" -> "238" 
+}

@@ -1,0 +1,71 @@
+digraph "getBean" {  
+"143" [label = <(METHOD,getBean)<SUB>81</SUB>> ]
+"24" [label = <(PARAM,this)<SUB>81</SUB>> ]
+"144" [label = <(PARAM,String remaining)<SUB>81</SUB>> ]
+"145" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>81</SUB>> ]
+"146" [label = <(LOCAL,Registry registry: org.apache.camel.spi.Registry)> ]
+"147" [label = <(&lt;operator&gt;.assignment,Registry registry = getRegistry())<SUB>82</SUB>> ]
+"148" [label = <(IDENTIFIER,registry,Registry registry = getRegistry())<SUB>82</SUB>> ]
+"149" [label = <(getRegistry,getRegistry())<SUB>82</SUB>> ]
+"150" [label = <(getCamelContext,getCamelContext())<SUB>82</SUB>> ]
+"23" [label = <(IDENTIFIER,this,getCamelContext())<SUB>82</SUB>> ]
+"151" [label = <(LOCAL,Object bean: java.lang.Object)> ]
+"152" [label = <(&lt;operator&gt;.assignment,Object bean = lookup(remaining))<SUB>83</SUB>> ]
+"153" [label = <(IDENTIFIER,bean,Object bean = lookup(remaining))<SUB>83</SUB>> ]
+"154" [label = <(lookup,lookup(remaining))<SUB>83</SUB>> ]
+"155" [label = <(IDENTIFIER,registry,lookup(remaining))<SUB>83</SUB>> ]
+"156" [label = <(IDENTIFIER,remaining,lookup(remaining))<SUB>83</SUB>> ]
+"157" [label = <(CONTROL_STRUCTURE,if (bean == null),if (bean == null))<SUB>84</SUB>> ]
+"158" [label = <(&lt;operator&gt;.equals,bean == null)<SUB>84</SUB>> ]
+"159" [label = <(IDENTIFIER,bean,bean == null)<SUB>84</SUB>> ]
+"160" [label = <(LITERAL,null,bean == null)<SUB>84</SUB>> ]
+"161" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>84</SUB>> ]
+"162" [label = <(&lt;operator&gt;.throw,throw new NoBeanAvailableException(remaining);)<SUB>85</SUB>> ]
+"163" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>85</SUB>> ]
+"164" [label = <(&lt;operator&gt;.assignment,&lt;empty&gt;)> ]
+"165" [label = <(IDENTIFIER,$obj2,&lt;empty&gt;)> ]
+"166" [label = <(&lt;operator&gt;.alloc,new NoBeanAvailableException(remaining))<SUB>85</SUB>> ]
+"167" [label = <(&lt;init&gt;,new NoBeanAvailableException(remaining))<SUB>85</SUB>> ]
+"168" [label = <(IDENTIFIER,$obj2,new NoBeanAvailableException(remaining))> ]
+"169" [label = <(IDENTIFIER,remaining,new NoBeanAvailableException(remaining))<SUB>85</SUB>> ]
+"170" [label = <(IDENTIFIER,$obj2,&lt;empty&gt;)> ]
+"171" [label = <(RETURN,return bean;,return bean;)<SUB>87</SUB>> ]
+"172" [label = <(IDENTIFIER,bean,return bean;)<SUB>87</SUB>> ]
+"173" [label = <(MODIFIER,PUBLIC)> ]
+"174" [label = <(MODIFIER,VIRTUAL)> ]
+"175" [label = <(METHOD_RETURN,java.lang.Object)<SUB>81</SUB>> ]
+  "143" -> "24" 
+  "143" -> "144" 
+  "143" -> "145" 
+  "143" -> "173" 
+  "143" -> "174" 
+  "143" -> "175" 
+  "145" -> "146" 
+  "145" -> "147" 
+  "145" -> "151" 
+  "145" -> "152" 
+  "145" -> "157" 
+  "145" -> "171" 
+  "147" -> "148" 
+  "147" -> "149" 
+  "149" -> "150" 
+  "150" -> "23" 
+  "152" -> "153" 
+  "152" -> "154" 
+  "154" -> "155" 
+  "154" -> "156" 
+  "157" -> "158" 
+  "157" -> "161" 
+  "158" -> "159" 
+  "158" -> "160" 
+  "161" -> "162" 
+  "162" -> "163" 
+  "163" -> "164" 
+  "163" -> "167" 
+  "163" -> "170" 
+  "164" -> "165" 
+  "164" -> "166" 
+  "167" -> "168" 
+  "167" -> "169" 
+  "171" -> "172" 
+}

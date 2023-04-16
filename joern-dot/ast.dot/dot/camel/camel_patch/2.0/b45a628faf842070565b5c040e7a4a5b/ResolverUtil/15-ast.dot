@@ -1,0 +1,167 @@
+digraph "loadImplementationsInJar" {  
+"596" [label = <(METHOD,loadImplementationsInJar)<SUB>348</SUB>> ]
+"64" [label = <(PARAM,this)<SUB>348</SUB>> ]
+"597" [label = <(PARAM,Test test)<SUB>348</SUB>> ]
+"598" [label = <(PARAM,String parent)<SUB>348</SUB>> ]
+"599" [label = <(PARAM,File jarfile)<SUB>348</SUB>> ]
+"600" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>348</SUB>> ]
+"601" [label = <(CONTROL_STRUCTURE,try,try)<SUB>350</SUB>> ]
+"602" [label = <(BLOCK,try,try)<SUB>350</SUB>> ]
+"603" [label = <(LOCAL,JarEntry entry: java.util.jar.JarEntry)> ]
+"62" [label = <(LOCAL,JarInputStream jarStream: java.util.jar.JarInputStream)> ]
+"604" [label = <(&lt;operator&gt;.assignment,JarInputStream jarStream = new JarInputStream(new FileInputStream(jarfile)))<SUB>352</SUB>> ]
+"605" [label = <(IDENTIFIER,jarStream,JarInputStream jarStream = new JarInputStream(new FileInputStream(jarfile)))<SUB>352</SUB>> ]
+"606" [label = <(&lt;operator&gt;.alloc,new JarInputStream(new FileInputStream(jarfile)))<SUB>352</SUB>> ]
+"607" [label = <(&lt;init&gt;,new JarInputStream(new FileInputStream(jarfile)))<SUB>352</SUB>> ]
+"61" [label = <(IDENTIFIER,jarStream,new JarInputStream(new FileInputStream(jarfile)))<SUB>352</SUB>> ]
+"608" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>352</SUB>> ]
+"609" [label = <(&lt;operator&gt;.assignment,&lt;empty&gt;)> ]
+"610" [label = <(IDENTIFIER,$obj6,&lt;empty&gt;)> ]
+"611" [label = <(&lt;operator&gt;.alloc,new FileInputStream(jarfile))<SUB>352</SUB>> ]
+"612" [label = <(&lt;init&gt;,new FileInputStream(jarfile))<SUB>352</SUB>> ]
+"613" [label = <(IDENTIFIER,$obj6,new FileInputStream(jarfile))> ]
+"614" [label = <(IDENTIFIER,jarfile,new FileInputStream(jarfile))<SUB>352</SUB>> ]
+"615" [label = <(IDENTIFIER,$obj6,&lt;empty&gt;)> ]
+"616" [label = <(CONTROL_STRUCTURE,while ((entry = jarStream.getNextJarEntry()) != null),while ((entry = jarStream.getNextJarEntry()) != null))<SUB>354</SUB>> ]
+"617" [label = <(&lt;operator&gt;.notEquals,(entry = jarStream.getNextJarEntry()) != null)<SUB>354</SUB>> ]
+"618" [label = <(&lt;operator&gt;.assignment,entry = jarStream.getNextJarEntry())<SUB>354</SUB>> ]
+"619" [label = <(IDENTIFIER,entry,entry = jarStream.getNextJarEntry())<SUB>354</SUB>> ]
+"620" [label = <(getNextJarEntry,jarStream.getNextJarEntry())<SUB>354</SUB>> ]
+"621" [label = <(IDENTIFIER,jarStream,jarStream.getNextJarEntry())<SUB>354</SUB>> ]
+"622" [label = <(LITERAL,null,(entry = jarStream.getNextJarEntry()) != null)<SUB>354</SUB>> ]
+"623" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>354</SUB>> ]
+"624" [label = <(LOCAL,String name: java.lang.String)> ]
+"625" [label = <(&lt;operator&gt;.assignment,String name = entry.getName())<SUB>355</SUB>> ]
+"626" [label = <(IDENTIFIER,name,String name = entry.getName())<SUB>355</SUB>> ]
+"627" [label = <(getName,entry.getName())<SUB>355</SUB>> ]
+"628" [label = <(IDENTIFIER,entry,entry.getName())<SUB>355</SUB>> ]
+"629" [label = <(CONTROL_STRUCTURE,if (name != null),if (name != null))<SUB>356</SUB>> ]
+"630" [label = <(&lt;operator&gt;.notEquals,name != null)<SUB>356</SUB>> ]
+"631" [label = <(IDENTIFIER,name,name != null)<SUB>356</SUB>> ]
+"632" [label = <(LITERAL,null,name != null)<SUB>356</SUB>> ]
+"633" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>356</SUB>> ]
+"634" [label = <(&lt;operator&gt;.assignment,name = name.trim())<SUB>357</SUB>> ]
+"635" [label = <(IDENTIFIER,name,name = name.trim())<SUB>357</SUB>> ]
+"636" [label = <(trim,name.trim())<SUB>357</SUB>> ]
+"637" [label = <(IDENTIFIER,name,name.trim())<SUB>357</SUB>> ]
+"638" [label = <(CONTROL_STRUCTURE,if (!entry.isDirectory() &amp;&amp; name.startsWith(parent) &amp;&amp; name.endsWith(&quot;.class&quot;)),if (!entry.isDirectory() &amp;&amp; name.startsWith(parent) &amp;&amp; name.endsWith(&quot;.class&quot;)))<SUB>359</SUB>> ]
+"639" [label = <(&lt;operator&gt;.logicalAnd,!entry.isDirectory() &amp;&amp; name.startsWith(parent) &amp;&amp; name.endsWith(&quot;.class&quot;))<SUB>359</SUB>> ]
+"640" [label = <(&lt;operator&gt;.logicalAnd,!entry.isDirectory() &amp;&amp; name.startsWith(parent))<SUB>359</SUB>> ]
+"641" [label = <(&lt;operator&gt;.logicalNot,!entry.isDirectory())<SUB>359</SUB>> ]
+"642" [label = <(isDirectory,entry.isDirectory())<SUB>359</SUB>> ]
+"643" [label = <(IDENTIFIER,entry,entry.isDirectory())<SUB>359</SUB>> ]
+"644" [label = <(startsWith,name.startsWith(parent))<SUB>359</SUB>> ]
+"645" [label = <(IDENTIFIER,name,name.startsWith(parent))<SUB>359</SUB>> ]
+"646" [label = <(IDENTIFIER,parent,name.startsWith(parent))<SUB>359</SUB>> ]
+"647" [label = <(endsWith,name.endsWith(&quot;.class&quot;))<SUB>359</SUB>> ]
+"648" [label = <(IDENTIFIER,name,name.endsWith(&quot;.class&quot;))<SUB>359</SUB>> ]
+"649" [label = <(LITERAL,&quot;.class&quot;,name.endsWith(&quot;.class&quot;))<SUB>359</SUB>> ]
+"650" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>359</SUB>> ]
+"651" [label = <(addIfMatching,this.addIfMatching(test, name))<SUB>360</SUB>> ]
+"63" [label = <(IDENTIFIER,this,this.addIfMatching(test, name))<SUB>360</SUB>> ]
+"652" [label = <(IDENTIFIER,test,this.addIfMatching(test, name))<SUB>360</SUB>> ]
+"653" [label = <(IDENTIFIER,name,this.addIfMatching(test, name))<SUB>360</SUB>> ]
+"654" [label = <(BLOCK,catch,catch)> ]
+"655" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>363</SUB>> ]
+"656" [label = <(error,error(&quot;Could not search jar file '&quot; + jarfile + &quot;' for classes matching criteria: &quot; + test + &quot;due to an IOException: &quot; + ioe.getMessage()))<SUB>364</SUB>> ]
+"657" [label = <(&lt;operator&gt;.fieldAccess,ResolverUtil.LOG)<SUB>364</SUB>> ]
+"658" [label = <(IDENTIFIER,ResolverUtil,error(&quot;Could not search jar file '&quot; + jarfile + &quot;' for classes matching criteria: &quot; + test + &quot;due to an IOException: &quot; + ioe.getMessage()))<SUB>364</SUB>> ]
+"659" [label = <(FIELD_IDENTIFIER,LOG,LOG)<SUB>364</SUB>> ]
+"660" [label = <(&lt;operator&gt;.addition,&quot;Could not search jar file '&quot; + jarfile + &quot;' for classes matching criteria: &quot; + test + &quot;due to an IOException: &quot; + ioe.getMessage())<SUB>364</SUB>> ]
+"661" [label = <(&lt;operator&gt;.addition,&quot;Could not search jar file '&quot; + jarfile + &quot;' for classes matching criteria: &quot; + test + &quot;due to an IOException: &quot;)<SUB>364</SUB>> ]
+"662" [label = <(&lt;operator&gt;.addition,&quot;Could not search jar file '&quot; + jarfile + &quot;' for classes matching criteria: &quot; + test)<SUB>364</SUB>> ]
+"663" [label = <(&lt;operator&gt;.addition,&quot;Could not search jar file '&quot; + jarfile + &quot;' for classes matching criteria: &quot;)<SUB>364</SUB>> ]
+"664" [label = <(&lt;operator&gt;.addition,&quot;Could not search jar file '&quot; + jarfile)<SUB>364</SUB>> ]
+"665" [label = <(LITERAL,&quot;Could not search jar file '&quot;,&quot;Could not search jar file '&quot; + jarfile)<SUB>364</SUB>> ]
+"666" [label = <(IDENTIFIER,jarfile,&quot;Could not search jar file '&quot; + jarfile)<SUB>364</SUB>> ]
+"667" [label = <(LITERAL,&quot;' for classes matching criteria: &quot;,&quot;Could not search jar file '&quot; + jarfile + &quot;' for classes matching criteria: &quot;)<SUB>364</SUB>> ]
+"668" [label = <(IDENTIFIER,test,&quot;Could not search jar file '&quot; + jarfile + &quot;' for classes matching criteria: &quot; + test)<SUB>364</SUB>> ]
+"669" [label = <(LITERAL,&quot;due to an IOException: &quot;,&quot;Could not search jar file '&quot; + jarfile + &quot;' for classes matching criteria: &quot; + test + &quot;due to an IOException: &quot;)<SUB>365</SUB>> ]
+"670" [label = <(getMessage,ioe.getMessage())<SUB>365</SUB>> ]
+"671" [label = <(IDENTIFIER,ioe,ioe.getMessage())<SUB>365</SUB>> ]
+"672" [label = <(MODIFIER,PRIVATE)> ]
+"673" [label = <(MODIFIER,VIRTUAL)> ]
+"674" [label = <(METHOD_RETURN,void)<SUB>348</SUB>> ]
+  "596" -> "64" 
+  "596" -> "597" 
+  "596" -> "598" 
+  "596" -> "599" 
+  "596" -> "600" 
+  "596" -> "672" 
+  "596" -> "673" 
+  "596" -> "674" 
+  "600" -> "601" 
+  "601" -> "602" 
+  "601" -> "654" 
+  "602" -> "603" 
+  "602" -> "62" 
+  "602" -> "604" 
+  "602" -> "607" 
+  "602" -> "616" 
+  "604" -> "605" 
+  "604" -> "606" 
+  "607" -> "61" 
+  "607" -> "608" 
+  "608" -> "609" 
+  "608" -> "612" 
+  "608" -> "615" 
+  "609" -> "610" 
+  "609" -> "611" 
+  "612" -> "613" 
+  "612" -> "614" 
+  "616" -> "617" 
+  "616" -> "623" 
+  "617" -> "618" 
+  "617" -> "622" 
+  "618" -> "619" 
+  "618" -> "620" 
+  "620" -> "621" 
+  "623" -> "624" 
+  "623" -> "625" 
+  "623" -> "629" 
+  "623" -> "638" 
+  "625" -> "626" 
+  "625" -> "627" 
+  "627" -> "628" 
+  "629" -> "630" 
+  "629" -> "633" 
+  "630" -> "631" 
+  "630" -> "632" 
+  "633" -> "634" 
+  "634" -> "635" 
+  "634" -> "636" 
+  "636" -> "637" 
+  "638" -> "639" 
+  "638" -> "650" 
+  "639" -> "640" 
+  "639" -> "647" 
+  "640" -> "641" 
+  "640" -> "644" 
+  "641" -> "642" 
+  "642" -> "643" 
+  "644" -> "645" 
+  "644" -> "646" 
+  "647" -> "648" 
+  "647" -> "649" 
+  "650" -> "651" 
+  "651" -> "63" 
+  "651" -> "652" 
+  "651" -> "653" 
+  "654" -> "655" 
+  "655" -> "656" 
+  "656" -> "657" 
+  "656" -> "660" 
+  "657" -> "658" 
+  "657" -> "659" 
+  "660" -> "661" 
+  "660" -> "670" 
+  "661" -> "662" 
+  "661" -> "669" 
+  "662" -> "663" 
+  "662" -> "668" 
+  "663" -> "664" 
+  "663" -> "667" 
+  "664" -> "665" 
+  "664" -> "666" 
+  "670" -> "671" 
+}

@@ -1,0 +1,67 @@
+digraph "process" {  
+"24" [label = <(METHOD,process)<SUB>42</SUB>> ]
+"25" [label = <(PARAM,AsyncProcessor processor)<SUB>42</SUB>> ]
+"26" [label = <(PARAM,Exchange exchange)<SUB>42</SUB>> ]
+"27" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>42</SUB>> ]
+"4" [label = <(LOCAL,CountDownLatch latch: java.util.concurrent.CountDownLatch)> ]
+"28" [label = <(&lt;operator&gt;.assignment,CountDownLatch latch = new CountDownLatch(1))<SUB>43</SUB>> ]
+"29" [label = <(IDENTIFIER,latch,CountDownLatch latch = new CountDownLatch(1))<SUB>43</SUB>> ]
+"30" [label = <(&lt;operator&gt;.alloc,new CountDownLatch(1))<SUB>43</SUB>> ]
+"31" [label = <(&lt;init&gt;,new CountDownLatch(1))<SUB>43</SUB>> ]
+"3" [label = <(IDENTIFIER,latch,new CountDownLatch(1))<SUB>43</SUB>> ]
+"32" [label = <(LITERAL,1,new CountDownLatch(1))<SUB>43</SUB>> ]
+"33" [label = <(LOCAL,boolean sync: boolean)> ]
+"34" [label = <(&lt;operator&gt;.assignment,boolean sync = process(exchange, new AsyncCallback() {\012\012    public void done(boolean sync) {\012        if (!sync) {\012            latch.countDown();\012        }\012    }\012}))<SUB>44</SUB>> ]
+"35" [label = <(IDENTIFIER,sync,boolean sync = process(exchange, new AsyncCallback() {\012\012    public void done(boolean sync) {\012        if (!sync) {\012            latch.countDown();\012        }\012    }\012}))<SUB>44</SUB>> ]
+"36" [label = <(process,process(exchange, new AsyncCallback() {\012\012    public void done(boolean sync) {\012        if (!sync) {\012            latch.countDown();\012        }\012    }\012}))<SUB>44</SUB>> ]
+"37" [label = <(IDENTIFIER,processor,process(exchange, new AsyncCallback() {\012\012    public void done(boolean sync) {\012        if (!sync) {\012            latch.countDown();\012        }\012    }\012}))<SUB>44</SUB>> ]
+"38" [label = <(IDENTIFIER,exchange,process(exchange, new AsyncCallback() {\012\012    public void done(boolean sync) {\012        if (!sync) {\012            latch.countDown();\012        }\012    }\012}))<SUB>44</SUB>> ]
+"39" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>44</SUB>> ]
+"40" [label = <(&lt;operator&gt;.assignment,&lt;empty&gt;)> ]
+"41" [label = <(IDENTIFIER,$obj1,&lt;empty&gt;)> ]
+"42" [label = <(&lt;operator&gt;.alloc,new AsyncCallback() {\012\012    public void done(boolean sync) {\012        if (!sync) {\012            latch.countDown();\012        }\012    }\012})<SUB>44</SUB>> ]
+"43" [label = <(&lt;init&gt;,new AsyncCallback() {\012\012    public void done(boolean sync) {\012        if (!sync) {\012            latch.countDown();\012        }\012    }\012})<SUB>44</SUB>> ]
+"44" [label = <(IDENTIFIER,$obj1,new AsyncCallback() {\012\012    public void done(boolean sync) {\012        if (!sync) {\012            latch.countDown();\012        }\012    }\012})> ]
+"45" [label = <(IDENTIFIER,$obj1,&lt;empty&gt;)> ]
+"46" [label = <(CONTROL_STRUCTURE,if (!sync),if (!sync))<SUB>51</SUB>> ]
+"47" [label = <(&lt;operator&gt;.logicalNot,!sync)<SUB>51</SUB>> ]
+"48" [label = <(IDENTIFIER,sync,!sync)<SUB>51</SUB>> ]
+"49" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>51</SUB>> ]
+"50" [label = <(await,latch.await())<SUB>52</SUB>> ]
+"51" [label = <(IDENTIFIER,latch,latch.await())<SUB>52</SUB>> ]
+"52" [label = <(MODIFIER,PUBLIC)> ]
+"53" [label = <(MODIFIER,STATIC)> ]
+"54" [label = <(METHOD_RETURN,void)<SUB>42</SUB>> ]
+  "24" -> "25" 
+  "24" -> "26" 
+  "24" -> "27" 
+  "24" -> "52" 
+  "24" -> "53" 
+  "24" -> "54" 
+  "27" -> "4" 
+  "27" -> "28" 
+  "27" -> "31" 
+  "27" -> "33" 
+  "27" -> "34" 
+  "27" -> "46" 
+  "28" -> "29" 
+  "28" -> "30" 
+  "31" -> "3" 
+  "31" -> "32" 
+  "34" -> "35" 
+  "34" -> "36" 
+  "36" -> "37" 
+  "36" -> "38" 
+  "36" -> "39" 
+  "39" -> "40" 
+  "39" -> "43" 
+  "39" -> "45" 
+  "40" -> "41" 
+  "40" -> "42" 
+  "43" -> "44" 
+  "46" -> "47" 
+  "46" -> "49" 
+  "47" -> "48" 
+  "49" -> "50" 
+  "50" -> "51" 
+}

@@ -1,0 +1,183 @@
+digraph "sendFileToRemote" {  
+"339" [label = <(METHOD,sendFileToRemote)<SUB>194</SUB>> ]
+"32" [label = <(PARAM,this)<SUB>194</SUB>> ]
+"340" [label = <(PARAM,ChannelSftp channel)<SUB>194</SUB>> ]
+"341" [label = <(PARAM,File localFile)<SUB>195</SUB>> ]
+"342" [label = <(PARAM,String remotePath)<SUB>196</SUB>> ]
+"343" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>197</SUB>> ]
+"344" [label = <(LOCAL,long filesize: long)> ]
+"345" [label = <(&lt;operator&gt;.assignment,long filesize = localFile.length())<SUB>198</SUB>> ]
+"346" [label = <(IDENTIFIER,filesize,long filesize = localFile.length())<SUB>198</SUB>> ]
+"347" [label = <(length,localFile.length())<SUB>198</SUB>> ]
+"348" [label = <(IDENTIFIER,localFile,localFile.length())<SUB>198</SUB>> ]
+"349" [label = <(CONTROL_STRUCTURE,if (remotePath == null),if (remotePath == null))<SUB>200</SUB>> ]
+"350" [label = <(&lt;operator&gt;.equals,remotePath == null)<SUB>200</SUB>> ]
+"351" [label = <(IDENTIFIER,remotePath,remotePath == null)<SUB>200</SUB>> ]
+"352" [label = <(LITERAL,null,remotePath == null)<SUB>200</SUB>> ]
+"353" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>200</SUB>> ]
+"354" [label = <(&lt;operator&gt;.assignment,remotePath = localFile.getName())<SUB>201</SUB>> ]
+"355" [label = <(IDENTIFIER,remotePath,remotePath = localFile.getName())<SUB>201</SUB>> ]
+"356" [label = <(getName,localFile.getName())<SUB>201</SUB>> ]
+"357" [label = <(IDENTIFIER,localFile,localFile.getName())<SUB>201</SUB>> ]
+"358" [label = <(LOCAL,long startTime: long)> ]
+"359" [label = <(&lt;operator&gt;.assignment,long startTime = System.currentTimeMillis())<SUB>204</SUB>> ]
+"360" [label = <(IDENTIFIER,startTime,long startTime = System.currentTimeMillis())<SUB>204</SUB>> ]
+"361" [label = <(currentTimeMillis,System.currentTimeMillis())<SUB>204</SUB>> ]
+"362" [label = <(IDENTIFIER,System,System.currentTimeMillis())<SUB>204</SUB>> ]
+"363" [label = <(LOCAL,long totalLength: long)> ]
+"364" [label = <(&lt;operator&gt;.assignment,long totalLength = filesize)<SUB>205</SUB>> ]
+"365" [label = <(IDENTIFIER,totalLength,long totalLength = filesize)<SUB>205</SUB>> ]
+"366" [label = <(IDENTIFIER,filesize,long totalLength = filesize)<SUB>205</SUB>> ]
+"367" [label = <(LOCAL,boolean trackProgress: boolean)> ]
+"368" [label = <(&lt;operator&gt;.assignment,boolean trackProgress = getVerbose() &amp;&amp; filesize &gt; 102400)<SUB>208</SUB>> ]
+"369" [label = <(IDENTIFIER,trackProgress,boolean trackProgress = getVerbose() &amp;&amp; filesize &gt; 102400)<SUB>208</SUB>> ]
+"370" [label = <(&lt;operator&gt;.logicalAnd,getVerbose() &amp;&amp; filesize &gt; 102400)<SUB>208</SUB>> ]
+"371" [label = <(getVerbose,getVerbose())<SUB>208</SUB>> ]
+"31" [label = <(IDENTIFIER,this,getVerbose())<SUB>208</SUB>> ]
+"372" [label = <(&lt;operator&gt;.greaterThan,filesize &gt; 102400)<SUB>208</SUB>> ]
+"373" [label = <(IDENTIFIER,filesize,filesize &gt; 102400)<SUB>208</SUB>> ]
+"374" [label = <(LITERAL,102400,filesize &gt; 102400)<SUB>208</SUB>> ]
+"375" [label = <(LOCAL,SftpProgressMonitor monitor: com.jcraft.jsch.SftpProgressMonitor)> ]
+"376" [label = <(&lt;operator&gt;.assignment,SftpProgressMonitor monitor = null)<SUB>210</SUB>> ]
+"377" [label = <(IDENTIFIER,monitor,SftpProgressMonitor monitor = null)<SUB>210</SUB>> ]
+"378" [label = <(LITERAL,null,SftpProgressMonitor monitor = null)<SUB>210</SUB>> ]
+"379" [label = <(CONTROL_STRUCTURE,if (trackProgress),if (trackProgress))<SUB>211</SUB>> ]
+"380" [label = <(IDENTIFIER,trackProgress,if (trackProgress))<SUB>211</SUB>> ]
+"381" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>211</SUB>> ]
+"382" [label = <(&lt;operator&gt;.assignment,monitor = getProgressMonitor())<SUB>212</SUB>> ]
+"383" [label = <(IDENTIFIER,monitor,monitor = getProgressMonitor())<SUB>212</SUB>> ]
+"384" [label = <(getProgressMonitor,getProgressMonitor())<SUB>212</SUB>> ]
+"33" [label = <(IDENTIFIER,this,getProgressMonitor())<SUB>212</SUB>> ]
+"385" [label = <(CONTROL_STRUCTURE,try,try)<SUB>215</SUB>> ]
+"386" [label = <(BLOCK,try,try)<SUB>215</SUB>> ]
+"387" [label = <(CONTROL_STRUCTURE,if (this.getVerbose()),if (this.getVerbose()))<SUB>216</SUB>> ]
+"388" [label = <(getVerbose,getVerbose())<SUB>216</SUB>> ]
+"34" [label = <(IDENTIFIER,this,getVerbose())<SUB>216</SUB>> ]
+"389" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>216</SUB>> ]
+"390" [label = <(log,log(&quot;Sending: &quot; + localFile.getName() + &quot; : &quot; + filesize))<SUB>217</SUB>> ]
+"35" [label = <(IDENTIFIER,this,log(&quot;Sending: &quot; + localFile.getName() + &quot; : &quot; + filesize))<SUB>217</SUB>> ]
+"391" [label = <(&lt;operator&gt;.addition,&quot;Sending: &quot; + localFile.getName() + &quot; : &quot; + filesize)<SUB>217</SUB>> ]
+"392" [label = <(&lt;operator&gt;.addition,&quot;Sending: &quot; + localFile.getName() + &quot; : &quot;)<SUB>217</SUB>> ]
+"393" [label = <(&lt;operator&gt;.addition,&quot;Sending: &quot; + localFile.getName())<SUB>217</SUB>> ]
+"394" [label = <(LITERAL,&quot;Sending: &quot;,&quot;Sending: &quot; + localFile.getName())<SUB>217</SUB>> ]
+"395" [label = <(getName,localFile.getName())<SUB>217</SUB>> ]
+"396" [label = <(IDENTIFIER,localFile,localFile.getName())<SUB>217</SUB>> ]
+"397" [label = <(LITERAL,&quot; : &quot;,&quot;Sending: &quot; + localFile.getName() + &quot; : &quot;)<SUB>217</SUB>> ]
+"398" [label = <(IDENTIFIER,filesize,&quot;Sending: &quot; + localFile.getName() + &quot; : &quot; + filesize)<SUB>217</SUB>> ]
+"399" [label = <(put,put(localFile.getAbsolutePath(), remotePath, monitor))<SUB>219</SUB>> ]
+"400" [label = <(IDENTIFIER,channel,put(localFile.getAbsolutePath(), remotePath, monitor))<SUB>219</SUB>> ]
+"401" [label = <(getAbsolutePath,localFile.getAbsolutePath())<SUB>219</SUB>> ]
+"402" [label = <(IDENTIFIER,localFile,localFile.getAbsolutePath())<SUB>219</SUB>> ]
+"403" [label = <(IDENTIFIER,remotePath,put(localFile.getAbsolutePath(), remotePath, monitor))<SUB>219</SUB>> ]
+"404" [label = <(IDENTIFIER,monitor,put(localFile.getAbsolutePath(), remotePath, monitor))<SUB>219</SUB>> ]
+"405" [label = <(BLOCK,finally,finally)<SUB>220</SUB>> ]
+"406" [label = <(CONTROL_STRUCTURE,if (this.getVerbose()),if (this.getVerbose()))<SUB>221</SUB>> ]
+"407" [label = <(getVerbose,getVerbose())<SUB>221</SUB>> ]
+"36" [label = <(IDENTIFIER,this,getVerbose())<SUB>221</SUB>> ]
+"408" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>221</SUB>> ]
+"409" [label = <(LOCAL,long endTime: long)> ]
+"410" [label = <(&lt;operator&gt;.assignment,long endTime = System.currentTimeMillis())<SUB>222</SUB>> ]
+"411" [label = <(IDENTIFIER,endTime,long endTime = System.currentTimeMillis())<SUB>222</SUB>> ]
+"412" [label = <(currentTimeMillis,System.currentTimeMillis())<SUB>222</SUB>> ]
+"413" [label = <(IDENTIFIER,System,System.currentTimeMillis())<SUB>222</SUB>> ]
+"414" [label = <(logStats,logStats(startTime, endTime, (int) totalLength))<SUB>223</SUB>> ]
+"37" [label = <(IDENTIFIER,this,logStats(startTime, endTime, (int) totalLength))<SUB>223</SUB>> ]
+"415" [label = <(IDENTIFIER,startTime,logStats(startTime, endTime, (int) totalLength))<SUB>223</SUB>> ]
+"416" [label = <(IDENTIFIER,endTime,logStats(startTime, endTime, (int) totalLength))<SUB>223</SUB>> ]
+"417" [label = <(&lt;operator&gt;.cast,(int) totalLength)<SUB>223</SUB>> ]
+"418" [label = <(TYPE_REF,int,int)<SUB>223</SUB>> ]
+"419" [label = <(IDENTIFIER,totalLength,(int) totalLength)<SUB>223</SUB>> ]
+"420" [label = <(MODIFIER,PRIVATE)> ]
+"421" [label = <(MODIFIER,VIRTUAL)> ]
+"422" [label = <(METHOD_RETURN,void)<SUB>194</SUB>> ]
+  "339" -> "32" 
+  "339" -> "340" 
+  "339" -> "341" 
+  "339" -> "342" 
+  "339" -> "343" 
+  "339" -> "420" 
+  "339" -> "421" 
+  "339" -> "422" 
+  "343" -> "344" 
+  "343" -> "345" 
+  "343" -> "349" 
+  "343" -> "358" 
+  "343" -> "359" 
+  "343" -> "363" 
+  "343" -> "364" 
+  "343" -> "367" 
+  "343" -> "368" 
+  "343" -> "375" 
+  "343" -> "376" 
+  "343" -> "379" 
+  "343" -> "385" 
+  "345" -> "346" 
+  "345" -> "347" 
+  "347" -> "348" 
+  "349" -> "350" 
+  "349" -> "353" 
+  "350" -> "351" 
+  "350" -> "352" 
+  "353" -> "354" 
+  "354" -> "355" 
+  "354" -> "356" 
+  "356" -> "357" 
+  "359" -> "360" 
+  "359" -> "361" 
+  "361" -> "362" 
+  "364" -> "365" 
+  "364" -> "366" 
+  "368" -> "369" 
+  "368" -> "370" 
+  "370" -> "371" 
+  "370" -> "372" 
+  "371" -> "31" 
+  "372" -> "373" 
+  "372" -> "374" 
+  "376" -> "377" 
+  "376" -> "378" 
+  "379" -> "380" 
+  "379" -> "381" 
+  "381" -> "382" 
+  "382" -> "383" 
+  "382" -> "384" 
+  "384" -> "33" 
+  "385" -> "386" 
+  "385" -> "405" 
+  "386" -> "387" 
+  "386" -> "399" 
+  "387" -> "388" 
+  "387" -> "389" 
+  "388" -> "34" 
+  "389" -> "390" 
+  "390" -> "35" 
+  "390" -> "391" 
+  "391" -> "392" 
+  "391" -> "398" 
+  "392" -> "393" 
+  "392" -> "397" 
+  "393" -> "394" 
+  "393" -> "395" 
+  "395" -> "396" 
+  "399" -> "400" 
+  "399" -> "401" 
+  "399" -> "403" 
+  "399" -> "404" 
+  "401" -> "402" 
+  "405" -> "406" 
+  "406" -> "407" 
+  "406" -> "408" 
+  "407" -> "36" 
+  "408" -> "409" 
+  "408" -> "410" 
+  "408" -> "414" 
+  "410" -> "411" 
+  "410" -> "412" 
+  "412" -> "413" 
+  "414" -> "37" 
+  "414" -> "415" 
+  "414" -> "416" 
+  "414" -> "417" 
+  "417" -> "418" 
+  "417" -> "419" 
+}

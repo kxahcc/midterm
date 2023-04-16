@@ -1,0 +1,145 @@
+digraph "writeFileByFile" {  
+"148" [label = <(METHOD,writeFileByFile)<SUB>83</SUB>> ]
+"14" [label = <(PARAM,this)<SUB>83</SUB>> ]
+"149" [label = <(PARAM,File source)<SUB>83</SUB>> ]
+"150" [label = <(PARAM,File target)<SUB>83</SUB>> ]
+"151" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>83</SUB>> ]
+"152" [label = <(LOCAL,FileChannel in: java.nio.channels.FileChannel)> ]
+"153" [label = <(&lt;operator&gt;.assignment,FileChannel in = new FileInputStream(source).getChannel())<SUB>84</SUB>> ]
+"154" [label = <(IDENTIFIER,in,FileChannel in = new FileInputStream(source).getChannel())<SUB>84</SUB>> ]
+"155" [label = <(getChannel,new FileInputStream(source).getChannel())<SUB>84</SUB>> ]
+"156" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>84</SUB>> ]
+"157" [label = <(&lt;operator&gt;.assignment,&lt;empty&gt;)> ]
+"158" [label = <(IDENTIFIER,$obj0,&lt;empty&gt;)> ]
+"159" [label = <(&lt;operator&gt;.alloc,new FileInputStream(source))<SUB>84</SUB>> ]
+"160" [label = <(&lt;init&gt;,new FileInputStream(source))<SUB>84</SUB>> ]
+"161" [label = <(IDENTIFIER,$obj0,new FileInputStream(source))> ]
+"162" [label = <(IDENTIFIER,source,new FileInputStream(source))<SUB>84</SUB>> ]
+"163" [label = <(IDENTIFIER,$obj0,&lt;empty&gt;)> ]
+"164" [label = <(LOCAL,FileChannel out: java.nio.channels.FileChannel)> ]
+"165" [label = <(&lt;operator&gt;.assignment,FileChannel out = null)<SUB>85</SUB>> ]
+"166" [label = <(IDENTIFIER,out,FileChannel out = null)<SUB>85</SUB>> ]
+"167" [label = <(LITERAL,null,FileChannel out = null)<SUB>85</SUB>> ]
+"168" [label = <(CONTROL_STRUCTURE,try,try)<SUB>86</SUB>> ]
+"169" [label = <(BLOCK,try,try)<SUB>86</SUB>> ]
+"170" [label = <(&lt;operator&gt;.assignment,out = this.prepareOutputFileChannel(target, out))<SUB>87</SUB>> ]
+"171" [label = <(IDENTIFIER,out,out = this.prepareOutputFileChannel(target, out))<SUB>87</SUB>> ]
+"172" [label = <(prepareOutputFileChannel,this.prepareOutputFileChannel(target, out))<SUB>87</SUB>> ]
+"13" [label = <(IDENTIFIER,this,this.prepareOutputFileChannel(target, out))<SUB>87</SUB>> ]
+"173" [label = <(IDENTIFIER,target,this.prepareOutputFileChannel(target, out))<SUB>87</SUB>> ]
+"174" [label = <(IDENTIFIER,out,this.prepareOutputFileChannel(target, out))<SUB>87</SUB>> ]
+"175" [label = <(CONTROL_STRUCTURE,if (LOG.isTraceEnabled()),if (LOG.isTraceEnabled()))<SUB>89</SUB>> ]
+"176" [label = <(isTraceEnabled,isTraceEnabled())<SUB>89</SUB>> ]
+"177" [label = <(&lt;operator&gt;.fieldAccess,FileProducer.LOG)<SUB>89</SUB>> ]
+"178" [label = <(IDENTIFIER,FileProducer,isTraceEnabled())<SUB>89</SUB>> ]
+"179" [label = <(FIELD_IDENTIFIER,LOG,LOG)<SUB>89</SUB>> ]
+"180" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>89</SUB>> ]
+"181" [label = <(trace,trace(&quot;Using FileChannel to transfer from: &quot; + in + &quot; to: &quot; + out))<SUB>90</SUB>> ]
+"182" [label = <(&lt;operator&gt;.fieldAccess,FileProducer.LOG)<SUB>90</SUB>> ]
+"183" [label = <(IDENTIFIER,FileProducer,trace(&quot;Using FileChannel to transfer from: &quot; + in + &quot; to: &quot; + out))<SUB>90</SUB>> ]
+"184" [label = <(FIELD_IDENTIFIER,LOG,LOG)<SUB>90</SUB>> ]
+"185" [label = <(&lt;operator&gt;.addition,&quot;Using FileChannel to transfer from: &quot; + in + &quot; to: &quot; + out)<SUB>90</SUB>> ]
+"186" [label = <(&lt;operator&gt;.addition,&quot;Using FileChannel to transfer from: &quot; + in + &quot; to: &quot;)<SUB>90</SUB>> ]
+"187" [label = <(&lt;operator&gt;.addition,&quot;Using FileChannel to transfer from: &quot; + in)<SUB>90</SUB>> ]
+"188" [label = <(LITERAL,&quot;Using FileChannel to transfer from: &quot;,&quot;Using FileChannel to transfer from: &quot; + in)<SUB>90</SUB>> ]
+"189" [label = <(IDENTIFIER,in,&quot;Using FileChannel to transfer from: &quot; + in)<SUB>90</SUB>> ]
+"190" [label = <(LITERAL,&quot; to: &quot;,&quot;Using FileChannel to transfer from: &quot; + in + &quot; to: &quot;)<SUB>90</SUB>> ]
+"191" [label = <(IDENTIFIER,out,&quot;Using FileChannel to transfer from: &quot; + in + &quot; to: &quot; + out)<SUB>90</SUB>> ]
+"192" [label = <(transferTo,in.transferTo(0, in.size(), out))<SUB>92</SUB>> ]
+"193" [label = <(IDENTIFIER,in,in.transferTo(0, in.size(), out))<SUB>92</SUB>> ]
+"194" [label = <(LITERAL,0,in.transferTo(0, in.size(), out))<SUB>92</SUB>> ]
+"195" [label = <(size,in.size())<SUB>92</SUB>> ]
+"196" [label = <(IDENTIFIER,in,in.size())<SUB>92</SUB>> ]
+"197" [label = <(IDENTIFIER,out,in.transferTo(0, in.size(), out))<SUB>92</SUB>> ]
+"198" [label = <(BLOCK,finally,finally)<SUB>93</SUB>> ]
+"199" [label = <(close,close(in, source.getName(), LOG))<SUB>94</SUB>> ]
+"200" [label = <(IDENTIFIER,ObjectHelper,close(in, source.getName(), LOG))<SUB>94</SUB>> ]
+"201" [label = <(IDENTIFIER,in,close(in, source.getName(), LOG))<SUB>94</SUB>> ]
+"202" [label = <(getName,source.getName())<SUB>94</SUB>> ]
+"203" [label = <(IDENTIFIER,source,source.getName())<SUB>94</SUB>> ]
+"204" [label = <(&lt;operator&gt;.fieldAccess,FileProducer.LOG)<SUB>94</SUB>> ]
+"205" [label = <(IDENTIFIER,FileProducer,close(in, source.getName(), LOG))<SUB>94</SUB>> ]
+"206" [label = <(FIELD_IDENTIFIER,LOG,LOG)<SUB>94</SUB>> ]
+"207" [label = <(close,close(out, source.getName(), LOG))<SUB>95</SUB>> ]
+"208" [label = <(IDENTIFIER,ObjectHelper,close(out, source.getName(), LOG))<SUB>95</SUB>> ]
+"209" [label = <(IDENTIFIER,out,close(out, source.getName(), LOG))<SUB>95</SUB>> ]
+"210" [label = <(getName,source.getName())<SUB>95</SUB>> ]
+"211" [label = <(IDENTIFIER,source,source.getName())<SUB>95</SUB>> ]
+"212" [label = <(&lt;operator&gt;.fieldAccess,FileProducer.LOG)<SUB>95</SUB>> ]
+"213" [label = <(IDENTIFIER,FileProducer,close(out, source.getName(), LOG))<SUB>95</SUB>> ]
+"214" [label = <(FIELD_IDENTIFIER,LOG,LOG)<SUB>95</SUB>> ]
+"215" [label = <(MODIFIER,PRIVATE)> ]
+"216" [label = <(MODIFIER,VIRTUAL)> ]
+"217" [label = <(METHOD_RETURN,void)<SUB>83</SUB>> ]
+  "148" -> "14" 
+  "148" -> "149" 
+  "148" -> "150" 
+  "148" -> "151" 
+  "148" -> "215" 
+  "148" -> "216" 
+  "148" -> "217" 
+  "151" -> "152" 
+  "151" -> "153" 
+  "151" -> "164" 
+  "151" -> "165" 
+  "151" -> "168" 
+  "153" -> "154" 
+  "153" -> "155" 
+  "155" -> "156" 
+  "156" -> "157" 
+  "156" -> "160" 
+  "156" -> "163" 
+  "157" -> "158" 
+  "157" -> "159" 
+  "160" -> "161" 
+  "160" -> "162" 
+  "165" -> "166" 
+  "165" -> "167" 
+  "168" -> "169" 
+  "168" -> "198" 
+  "169" -> "170" 
+  "169" -> "175" 
+  "169" -> "192" 
+  "170" -> "171" 
+  "170" -> "172" 
+  "172" -> "13" 
+  "172" -> "173" 
+  "172" -> "174" 
+  "175" -> "176" 
+  "175" -> "180" 
+  "176" -> "177" 
+  "177" -> "178" 
+  "177" -> "179" 
+  "180" -> "181" 
+  "181" -> "182" 
+  "181" -> "185" 
+  "182" -> "183" 
+  "182" -> "184" 
+  "185" -> "186" 
+  "185" -> "191" 
+  "186" -> "187" 
+  "186" -> "190" 
+  "187" -> "188" 
+  "187" -> "189" 
+  "192" -> "193" 
+  "192" -> "194" 
+  "192" -> "195" 
+  "192" -> "197" 
+  "195" -> "196" 
+  "198" -> "199" 
+  "198" -> "207" 
+  "199" -> "200" 
+  "199" -> "201" 
+  "199" -> "202" 
+  "199" -> "204" 
+  "202" -> "203" 
+  "204" -> "205" 
+  "204" -> "206" 
+  "207" -> "208" 
+  "207" -> "209" 
+  "207" -> "210" 
+  "207" -> "212" 
+  "210" -> "211" 
+  "212" -> "213" 
+  "212" -> "214" 
+}

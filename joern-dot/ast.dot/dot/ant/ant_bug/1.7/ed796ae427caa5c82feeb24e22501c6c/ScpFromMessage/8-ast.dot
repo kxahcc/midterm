@@ -1,0 +1,267 @@
+digraph "fetchFile" {  
+"445" [label = <(METHOD,fetchFile)<SUB>196</SUB>> ]
+"36" [label = <(PARAM,this)<SUB>196</SUB>> ]
+"446" [label = <(PARAM,File localFile)<SUB>196</SUB>> ]
+"447" [label = <(PARAM,long filesize)<SUB>197</SUB>> ]
+"448" [label = <(PARAM,OutputStream out)<SUB>198</SUB>> ]
+"449" [label = <(PARAM,InputStream in)<SUB>199</SUB>> ]
+"450" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>199</SUB>> ]
+"451" [label = <(LOCAL,byte[] buf: byte[])> ]
+"452" [label = <(&lt;operator&gt;.assignment,byte[] buf = new byte[BUFFER_SIZE])<SUB>200</SUB>> ]
+"453" [label = <(IDENTIFIER,buf,byte[] buf = new byte[BUFFER_SIZE])<SUB>200</SUB>> ]
+"454" [label = <(&lt;operator&gt;.alloc,new byte[BUFFER_SIZE])> ]
+"455" [label = <(&lt;operator&gt;.fieldAccess,ScpFromMessage.BUFFER_SIZE)<SUB>200</SUB>> ]
+"456" [label = <(IDENTIFIER,ScpFromMessage,new byte[BUFFER_SIZE])<SUB>200</SUB>> ]
+"457" [label = <(FIELD_IDENTIFIER,BUFFER_SIZE,BUFFER_SIZE)<SUB>200</SUB>> ]
+"458" [label = <(sendAck,sendAck(out))<SUB>201</SUB>> ]
+"35" [label = <(IDENTIFIER,this,sendAck(out))<SUB>201</SUB>> ]
+"459" [label = <(IDENTIFIER,out,sendAck(out))<SUB>201</SUB>> ]
+"38" [label = <(LOCAL,FileOutputStream fos: java.io.FileOutputStream)> ]
+"460" [label = <(&lt;operator&gt;.assignment,FileOutputStream fos = new FileOutputStream(localFile))<SUB>204</SUB>> ]
+"461" [label = <(IDENTIFIER,fos,FileOutputStream fos = new FileOutputStream(localFile))<SUB>204</SUB>> ]
+"462" [label = <(&lt;operator&gt;.alloc,new FileOutputStream(localFile))<SUB>204</SUB>> ]
+"463" [label = <(&lt;init&gt;,new FileOutputStream(localFile))<SUB>204</SUB>> ]
+"37" [label = <(IDENTIFIER,fos,new FileOutputStream(localFile))<SUB>204</SUB>> ]
+"464" [label = <(IDENTIFIER,localFile,new FileOutputStream(localFile))<SUB>204</SUB>> ]
+"465" [label = <(LOCAL,int length: int)> ]
+"466" [label = <(LOCAL,long totalLength: long)> ]
+"467" [label = <(&lt;operator&gt;.assignment,long totalLength = 0)<SUB>206</SUB>> ]
+"468" [label = <(IDENTIFIER,totalLength,long totalLength = 0)<SUB>206</SUB>> ]
+"469" [label = <(LITERAL,0,long totalLength = 0)<SUB>206</SUB>> ]
+"470" [label = <(LOCAL,long startTime: long)> ]
+"471" [label = <(&lt;operator&gt;.assignment,long startTime = System.currentTimeMillis())<SUB>207</SUB>> ]
+"472" [label = <(IDENTIFIER,startTime,long startTime = System.currentTimeMillis())<SUB>207</SUB>> ]
+"473" [label = <(currentTimeMillis,System.currentTimeMillis())<SUB>207</SUB>> ]
+"474" [label = <(IDENTIFIER,System,System.currentTimeMillis())<SUB>207</SUB>> ]
+"475" [label = <(LOCAL,boolean trackProgress: boolean)> ]
+"476" [label = <(&lt;operator&gt;.assignment,boolean trackProgress = getVerbose() &amp;&amp; filesize &gt; 102400)<SUB>210</SUB>> ]
+"477" [label = <(IDENTIFIER,trackProgress,boolean trackProgress = getVerbose() &amp;&amp; filesize &gt; 102400)<SUB>210</SUB>> ]
+"478" [label = <(&lt;operator&gt;.logicalAnd,getVerbose() &amp;&amp; filesize &gt; 102400)<SUB>210</SUB>> ]
+"479" [label = <(getVerbose,getVerbose())<SUB>210</SUB>> ]
+"39" [label = <(IDENTIFIER,this,getVerbose())<SUB>210</SUB>> ]
+"480" [label = <(&lt;operator&gt;.greaterThan,filesize &gt; 102400)<SUB>210</SUB>> ]
+"481" [label = <(IDENTIFIER,filesize,filesize &gt; 102400)<SUB>210</SUB>> ]
+"482" [label = <(LITERAL,102400,filesize &gt; 102400)<SUB>210</SUB>> ]
+"483" [label = <(LOCAL,long initFilesize: long)> ]
+"484" [label = <(&lt;operator&gt;.assignment,long initFilesize = filesize)<SUB>213</SUB>> ]
+"485" [label = <(IDENTIFIER,initFilesize,long initFilesize = filesize)<SUB>213</SUB>> ]
+"486" [label = <(IDENTIFIER,filesize,long initFilesize = filesize)<SUB>213</SUB>> ]
+"487" [label = <(LOCAL,int percentTransmitted: int)> ]
+"488" [label = <(&lt;operator&gt;.assignment,int percentTransmitted = 0)<SUB>214</SUB>> ]
+"489" [label = <(IDENTIFIER,percentTransmitted,int percentTransmitted = 0)<SUB>214</SUB>> ]
+"490" [label = <(LITERAL,0,int percentTransmitted = 0)<SUB>214</SUB>> ]
+"491" [label = <(CONTROL_STRUCTURE,try,try)<SUB>216</SUB>> ]
+"492" [label = <(BLOCK,try,try)<SUB>216</SUB>> ]
+"493" [label = <(CONTROL_STRUCTURE,while (true),while (true))<SUB>217</SUB>> ]
+"494" [label = <(LITERAL,true,while (true))<SUB>217</SUB>> ]
+"495" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>217</SUB>> ]
+"496" [label = <(&lt;operator&gt;.assignment,length = in.read(buf, 0, (BUFFER_SIZE &lt; filesize) ? BUFFER_SIZE : (int) filesize))<SUB>218</SUB>> ]
+"497" [label = <(IDENTIFIER,length,length = in.read(buf, 0, (BUFFER_SIZE &lt; filesize) ? BUFFER_SIZE : (int) filesize))<SUB>218</SUB>> ]
+"498" [label = <(read,in.read(buf, 0, (BUFFER_SIZE &lt; filesize) ? BUFFER_SIZE : (int) filesize))<SUB>218</SUB>> ]
+"499" [label = <(IDENTIFIER,in,in.read(buf, 0, (BUFFER_SIZE &lt; filesize) ? BUFFER_SIZE : (int) filesize))<SUB>218</SUB>> ]
+"500" [label = <(IDENTIFIER,buf,in.read(buf, 0, (BUFFER_SIZE &lt; filesize) ? BUFFER_SIZE : (int) filesize))<SUB>218</SUB>> ]
+"501" [label = <(LITERAL,0,in.read(buf, 0, (BUFFER_SIZE &lt; filesize) ? BUFFER_SIZE : (int) filesize))<SUB>218</SUB>> ]
+"502" [label = <(&lt;operator&gt;.conditional,(BUFFER_SIZE &lt; filesize) ? BUFFER_SIZE : (int) filesize)<SUB>219</SUB>> ]
+"503" [label = <(&lt;operator&gt;.lessThan,BUFFER_SIZE &lt; filesize)<SUB>219</SUB>> ]
+"504" [label = <(&lt;operator&gt;.fieldAccess,ScpFromMessage.BUFFER_SIZE)<SUB>219</SUB>> ]
+"505" [label = <(IDENTIFIER,ScpFromMessage,BUFFER_SIZE &lt; filesize)<SUB>219</SUB>> ]
+"506" [label = <(FIELD_IDENTIFIER,BUFFER_SIZE,BUFFER_SIZE)<SUB>219</SUB>> ]
+"507" [label = <(IDENTIFIER,filesize,BUFFER_SIZE &lt; filesize)<SUB>219</SUB>> ]
+"508" [label = <(&lt;operator&gt;.fieldAccess,ScpFromMessage.BUFFER_SIZE)<SUB>219</SUB>> ]
+"509" [label = <(IDENTIFIER,ScpFromMessage,(BUFFER_SIZE &lt; filesize) ? BUFFER_SIZE : (int) filesize)<SUB>219</SUB>> ]
+"510" [label = <(FIELD_IDENTIFIER,BUFFER_SIZE,BUFFER_SIZE)<SUB>219</SUB>> ]
+"511" [label = <(&lt;operator&gt;.cast,(int) filesize)<SUB>220</SUB>> ]
+"512" [label = <(TYPE_REF,int,int)<SUB>220</SUB>> ]
+"513" [label = <(IDENTIFIER,filesize,(int) filesize)<SUB>220</SUB>> ]
+"514" [label = <(CONTROL_STRUCTURE,if (length &lt; 0),if (length &lt; 0))<SUB>221</SUB>> ]
+"515" [label = <(&lt;operator&gt;.lessThan,length &lt; 0)<SUB>221</SUB>> ]
+"516" [label = <(IDENTIFIER,length,length &lt; 0)<SUB>221</SUB>> ]
+"517" [label = <(LITERAL,0,length &lt; 0)<SUB>221</SUB>> ]
+"518" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>221</SUB>> ]
+"519" [label = <(&lt;operator&gt;.throw,throw new EOFException(&quot;Unexpected end of stream.&quot;);)<SUB>222</SUB>> ]
+"520" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>222</SUB>> ]
+"521" [label = <(&lt;operator&gt;.assignment,&lt;empty&gt;)> ]
+"522" [label = <(IDENTIFIER,$obj5,&lt;empty&gt;)> ]
+"523" [label = <(&lt;operator&gt;.alloc,new EOFException(&quot;Unexpected end of stream.&quot;))<SUB>222</SUB>> ]
+"524" [label = <(&lt;init&gt;,new EOFException(&quot;Unexpected end of stream.&quot;))<SUB>222</SUB>> ]
+"525" [label = <(IDENTIFIER,$obj5,new EOFException(&quot;Unexpected end of stream.&quot;))> ]
+"526" [label = <(LITERAL,&quot;Unexpected end of stream.&quot;,new EOFException(&quot;Unexpected end of stream.&quot;))<SUB>222</SUB>> ]
+"527" [label = <(IDENTIFIER,$obj5,&lt;empty&gt;)> ]
+"528" [label = <(write,fos.write(buf, 0, length))<SUB>224</SUB>> ]
+"529" [label = <(IDENTIFIER,fos,fos.write(buf, 0, length))<SUB>224</SUB>> ]
+"530" [label = <(IDENTIFIER,buf,fos.write(buf, 0, length))<SUB>224</SUB>> ]
+"531" [label = <(LITERAL,0,fos.write(buf, 0, length))<SUB>224</SUB>> ]
+"532" [label = <(IDENTIFIER,length,fos.write(buf, 0, length))<SUB>224</SUB>> ]
+"533" [label = <(&lt;operator&gt;.assignmentMinus,filesize -= length)<SUB>225</SUB>> ]
+"534" [label = <(IDENTIFIER,filesize,filesize -= length)<SUB>225</SUB>> ]
+"535" [label = <(IDENTIFIER,length,filesize -= length)<SUB>225</SUB>> ]
+"536" [label = <(&lt;operator&gt;.assignmentPlus,totalLength += length)<SUB>226</SUB>> ]
+"537" [label = <(IDENTIFIER,totalLength,totalLength += length)<SUB>226</SUB>> ]
+"538" [label = <(IDENTIFIER,length,totalLength += length)<SUB>226</SUB>> ]
+"539" [label = <(CONTROL_STRUCTURE,if (filesize == 0),if (filesize == 0))<SUB>227</SUB>> ]
+"540" [label = <(&lt;operator&gt;.equals,filesize == 0)<SUB>227</SUB>> ]
+"541" [label = <(IDENTIFIER,filesize,filesize == 0)<SUB>227</SUB>> ]
+"542" [label = <(LITERAL,0,filesize == 0)<SUB>227</SUB>> ]
+"543" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>227</SUB>> ]
+"544" [label = <(CONTROL_STRUCTURE,break;,break;)<SUB>228</SUB>> ]
+"545" [label = <(CONTROL_STRUCTURE,if (trackProgress),if (trackProgress))<SUB>231</SUB>> ]
+"546" [label = <(IDENTIFIER,trackProgress,if (trackProgress))<SUB>231</SUB>> ]
+"547" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>231</SUB>> ]
+"548" [label = <(&lt;operator&gt;.assignment,percentTransmitted = trackProgress(initFilesize, totalLength, percentTransmitted))<SUB>232</SUB>> ]
+"549" [label = <(IDENTIFIER,percentTransmitted,percentTransmitted = trackProgress(initFilesize, totalLength, percentTransmitted))<SUB>232</SUB>> ]
+"550" [label = <(trackProgress,trackProgress(initFilesize, totalLength, percentTransmitted))<SUB>232</SUB>> ]
+"40" [label = <(IDENTIFIER,this,trackProgress(initFilesize, totalLength, percentTransmitted))<SUB>232</SUB>> ]
+"551" [label = <(IDENTIFIER,initFilesize,trackProgress(initFilesize, totalLength, percentTransmitted))<SUB>232</SUB>> ]
+"552" [label = <(IDENTIFIER,totalLength,trackProgress(initFilesize, totalLength, percentTransmitted))<SUB>233</SUB>> ]
+"553" [label = <(IDENTIFIER,percentTransmitted,trackProgress(initFilesize, totalLength, percentTransmitted))<SUB>234</SUB>> ]
+"554" [label = <(BLOCK,finally,finally)<SUB>237</SUB>> ]
+"555" [label = <(LOCAL,long endTime: long)> ]
+"556" [label = <(&lt;operator&gt;.assignment,long endTime = System.currentTimeMillis())<SUB>238</SUB>> ]
+"557" [label = <(IDENTIFIER,endTime,long endTime = System.currentTimeMillis())<SUB>238</SUB>> ]
+"558" [label = <(currentTimeMillis,System.currentTimeMillis())<SUB>238</SUB>> ]
+"559" [label = <(IDENTIFIER,System,System.currentTimeMillis())<SUB>238</SUB>> ]
+"560" [label = <(logStats,logStats(startTime, endTime, totalLength))<SUB>239</SUB>> ]
+"41" [label = <(IDENTIFIER,this,logStats(startTime, endTime, totalLength))<SUB>239</SUB>> ]
+"561" [label = <(IDENTIFIER,startTime,logStats(startTime, endTime, totalLength))<SUB>239</SUB>> ]
+"562" [label = <(IDENTIFIER,endTime,logStats(startTime, endTime, totalLength))<SUB>239</SUB>> ]
+"563" [label = <(IDENTIFIER,totalLength,logStats(startTime, endTime, totalLength))<SUB>239</SUB>> ]
+"564" [label = <(flush,fos.flush())<SUB>240</SUB>> ]
+"565" [label = <(IDENTIFIER,fos,fos.flush())<SUB>240</SUB>> ]
+"566" [label = <(close,fos.close())<SUB>241</SUB>> ]
+"567" [label = <(IDENTIFIER,fos,fos.close())<SUB>241</SUB>> ]
+"568" [label = <(MODIFIER,PRIVATE)> ]
+"569" [label = <(MODIFIER,VIRTUAL)> ]
+"570" [label = <(METHOD_RETURN,void)<SUB>196</SUB>> ]
+  "445" -> "36" 
+  "445" -> "446" 
+  "445" -> "447" 
+  "445" -> "448" 
+  "445" -> "449" 
+  "445" -> "450" 
+  "445" -> "568" 
+  "445" -> "569" 
+  "445" -> "570" 
+  "450" -> "451" 
+  "450" -> "452" 
+  "450" -> "458" 
+  "450" -> "38" 
+  "450" -> "460" 
+  "450" -> "463" 
+  "450" -> "465" 
+  "450" -> "466" 
+  "450" -> "467" 
+  "450" -> "470" 
+  "450" -> "471" 
+  "450" -> "475" 
+  "450" -> "476" 
+  "450" -> "483" 
+  "450" -> "484" 
+  "450" -> "487" 
+  "450" -> "488" 
+  "450" -> "491" 
+  "452" -> "453" 
+  "452" -> "454" 
+  "454" -> "455" 
+  "455" -> "456" 
+  "455" -> "457" 
+  "458" -> "35" 
+  "458" -> "459" 
+  "460" -> "461" 
+  "460" -> "462" 
+  "463" -> "37" 
+  "463" -> "464" 
+  "467" -> "468" 
+  "467" -> "469" 
+  "471" -> "472" 
+  "471" -> "473" 
+  "473" -> "474" 
+  "476" -> "477" 
+  "476" -> "478" 
+  "478" -> "479" 
+  "478" -> "480" 
+  "479" -> "39" 
+  "480" -> "481" 
+  "480" -> "482" 
+  "484" -> "485" 
+  "484" -> "486" 
+  "488" -> "489" 
+  "488" -> "490" 
+  "491" -> "492" 
+  "491" -> "554" 
+  "492" -> "493" 
+  "493" -> "494" 
+  "493" -> "495" 
+  "495" -> "496" 
+  "495" -> "514" 
+  "495" -> "528" 
+  "495" -> "533" 
+  "495" -> "536" 
+  "495" -> "539" 
+  "495" -> "545" 
+  "496" -> "497" 
+  "496" -> "498" 
+  "498" -> "499" 
+  "498" -> "500" 
+  "498" -> "501" 
+  "498" -> "502" 
+  "502" -> "503" 
+  "502" -> "508" 
+  "502" -> "511" 
+  "503" -> "504" 
+  "503" -> "507" 
+  "504" -> "505" 
+  "504" -> "506" 
+  "508" -> "509" 
+  "508" -> "510" 
+  "511" -> "512" 
+  "511" -> "513" 
+  "514" -> "515" 
+  "514" -> "518" 
+  "515" -> "516" 
+  "515" -> "517" 
+  "518" -> "519" 
+  "519" -> "520" 
+  "520" -> "521" 
+  "520" -> "524" 
+  "520" -> "527" 
+  "521" -> "522" 
+  "521" -> "523" 
+  "524" -> "525" 
+  "524" -> "526" 
+  "528" -> "529" 
+  "528" -> "530" 
+  "528" -> "531" 
+  "528" -> "532" 
+  "533" -> "534" 
+  "533" -> "535" 
+  "536" -> "537" 
+  "536" -> "538" 
+  "539" -> "540" 
+  "539" -> "543" 
+  "540" -> "541" 
+  "540" -> "542" 
+  "543" -> "544" 
+  "545" -> "546" 
+  "545" -> "547" 
+  "547" -> "548" 
+  "548" -> "549" 
+  "548" -> "550" 
+  "550" -> "40" 
+  "550" -> "551" 
+  "550" -> "552" 
+  "550" -> "553" 
+  "554" -> "555" 
+  "554" -> "556" 
+  "554" -> "560" 
+  "554" -> "564" 
+  "554" -> "566" 
+  "556" -> "557" 
+  "556" -> "558" 
+  "558" -> "559" 
+  "560" -> "41" 
+  "560" -> "561" 
+  "560" -> "562" 
+  "560" -> "563" 
+  "564" -> "565" 
+  "566" -> "567" 
+}

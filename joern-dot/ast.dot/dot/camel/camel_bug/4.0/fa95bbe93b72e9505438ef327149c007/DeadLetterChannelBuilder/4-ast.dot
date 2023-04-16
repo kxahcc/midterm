@@ -1,0 +1,67 @@
+digraph "createErrorHandler" {  
+"220" [label = <(METHOD,createErrorHandler)<SUB>65</SUB>> ]
+"12" [label = <(PARAM,this)<SUB>65</SUB>> ]
+"221" [label = <(PARAM,RouteContext routeContext)<SUB>65</SUB>> ]
+"222" [label = <(PARAM,Processor processor)<SUB>65</SUB>> ]
+"223" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>65</SUB>> ]
+"224" [label = <(LOCAL,Processor deadLetter: org.apache.camel.Processor)> ]
+"225" [label = <(&lt;operator&gt;.assignment,Processor deadLetter = createProcessor())<SUB>66</SUB>> ]
+"226" [label = <(IDENTIFIER,deadLetter,Processor deadLetter = createProcessor())<SUB>66</SUB>> ]
+"227" [label = <(createProcessor,createProcessor())<SUB>66</SUB>> ]
+"228" [label = <(getDeadLetterFactory,this.getDeadLetterFactory())<SUB>66</SUB>> ]
+"11" [label = <(IDENTIFIER,this,this.getDeadLetterFactory())<SUB>66</SUB>> ]
+"17" [label = <(LOCAL,DeadLetterChannel answer: org.apache.camel.processor.DeadLetterChannel)> ]
+"229" [label = <(&lt;operator&gt;.assignment,DeadLetterChannel answer = new DeadLetterChannel(processor, deadLetter, getRedeliveryPolicy(), getLogger(), getExceptionPolicyStrategy()))<SUB>67</SUB>> ]
+"230" [label = <(IDENTIFIER,answer,DeadLetterChannel answer = new DeadLetterChannel(processor, deadLetter, getRedeliveryPolicy(), getLogger(), getExceptionPolicyStrategy()))<SUB>67</SUB>> ]
+"231" [label = <(&lt;operator&gt;.alloc,new DeadLetterChannel(processor, deadLetter, getRedeliveryPolicy(), getLogger(), getExceptionPolicyStrategy()))<SUB>67</SUB>> ]
+"232" [label = <(&lt;init&gt;,new DeadLetterChannel(processor, deadLetter, getRedeliveryPolicy(), getLogger(), getExceptionPolicyStrategy()))<SUB>67</SUB>> ]
+"16" [label = <(IDENTIFIER,answer,new DeadLetterChannel(processor, deadLetter, getRedeliveryPolicy(), getLogger(), getExceptionPolicyStrategy()))<SUB>67</SUB>> ]
+"233" [label = <(IDENTIFIER,processor,new DeadLetterChannel(processor, deadLetter, getRedeliveryPolicy(), getLogger(), getExceptionPolicyStrategy()))<SUB>67</SUB>> ]
+"234" [label = <(IDENTIFIER,deadLetter,new DeadLetterChannel(processor, deadLetter, getRedeliveryPolicy(), getLogger(), getExceptionPolicyStrategy()))<SUB>67</SUB>> ]
+"235" [label = <(getRedeliveryPolicy,this.getRedeliveryPolicy())<SUB>67</SUB>> ]
+"13" [label = <(IDENTIFIER,this,this.getRedeliveryPolicy())<SUB>67</SUB>> ]
+"236" [label = <(getLogger,this.getLogger())<SUB>67</SUB>> ]
+"14" [label = <(IDENTIFIER,this,this.getLogger())<SUB>67</SUB>> ]
+"237" [label = <(getExceptionPolicyStrategy,this.getExceptionPolicyStrategy())<SUB>67</SUB>> ]
+"15" [label = <(IDENTIFIER,this,this.getExceptionPolicyStrategy())<SUB>67</SUB>> ]
+"238" [label = <(configure,configure(answer))<SUB>68</SUB>> ]
+"18" [label = <(IDENTIFIER,this,configure(answer))<SUB>68</SUB>> ]
+"239" [label = <(IDENTIFIER,answer,configure(answer))<SUB>68</SUB>> ]
+"240" [label = <(RETURN,return answer;,return answer;)<SUB>69</SUB>> ]
+"241" [label = <(IDENTIFIER,answer,return answer;)<SUB>69</SUB>> ]
+"242" [label = <(MODIFIER,PUBLIC)> ]
+"243" [label = <(MODIFIER,VIRTUAL)> ]
+"244" [label = <(METHOD_RETURN,org.apache.camel.Processor)<SUB>65</SUB>> ]
+  "220" -> "12" 
+  "220" -> "221" 
+  "220" -> "222" 
+  "220" -> "223" 
+  "220" -> "242" 
+  "220" -> "243" 
+  "220" -> "244" 
+  "223" -> "224" 
+  "223" -> "225" 
+  "223" -> "17" 
+  "223" -> "229" 
+  "223" -> "232" 
+  "223" -> "238" 
+  "223" -> "240" 
+  "225" -> "226" 
+  "225" -> "227" 
+  "227" -> "228" 
+  "228" -> "11" 
+  "229" -> "230" 
+  "229" -> "231" 
+  "232" -> "16" 
+  "232" -> "233" 
+  "232" -> "234" 
+  "232" -> "235" 
+  "232" -> "236" 
+  "232" -> "237" 
+  "235" -> "13" 
+  "236" -> "14" 
+  "237" -> "15" 
+  "238" -> "18" 
+  "238" -> "239" 
+  "240" -> "241" 
+}

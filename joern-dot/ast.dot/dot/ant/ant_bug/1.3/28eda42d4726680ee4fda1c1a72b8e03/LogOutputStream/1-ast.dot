@@ -1,0 +1,85 @@
+digraph "write" {  
+"69" [label = <(METHOD,write)<SUB>100</SUB>> ]
+"7" [label = <(PARAM,this)<SUB>100</SUB>> ]
+"70" [label = <(PARAM,int cc)<SUB>100</SUB>> ]
+"71" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>100</SUB>> ]
+"72" [label = <(LOCAL,byte c: byte)> ]
+"73" [label = <(&lt;operator&gt;.assignment,byte c = (byte) cc)<SUB>101</SUB>> ]
+"74" [label = <(IDENTIFIER,c,byte c = (byte) cc)<SUB>101</SUB>> ]
+"75" [label = <(&lt;operator&gt;.cast,(byte) cc)<SUB>101</SUB>> ]
+"76" [label = <(TYPE_REF,byte,byte)<SUB>101</SUB>> ]
+"77" [label = <(IDENTIFIER,cc,(byte) cc)<SUB>101</SUB>> ]
+"78" [label = <(CONTROL_STRUCTURE,if ((c == '\n') || (c == '\r')),if ((c == '\n') || (c == '\r')))<SUB>102</SUB>> ]
+"79" [label = <(&lt;operator&gt;.logicalOr,(c == '\n') || (c == '\r'))<SUB>102</SUB>> ]
+"80" [label = <(&lt;operator&gt;.equals,c == '\n')<SUB>102</SUB>> ]
+"81" [label = <(IDENTIFIER,c,c == '\n')<SUB>102</SUB>> ]
+"82" [label = <(LITERAL,'\n',c == '\n')<SUB>102</SUB>> ]
+"83" [label = <(&lt;operator&gt;.equals,c == '\r')<SUB>102</SUB>> ]
+"84" [label = <(IDENTIFIER,c,c == '\r')<SUB>102</SUB>> ]
+"85" [label = <(LITERAL,'\r',c == '\r')<SUB>102</SUB>> ]
+"86" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>102</SUB>> ]
+"87" [label = <(CONTROL_STRUCTURE,if (!skip),if (!skip))<SUB>103</SUB>> ]
+"88" [label = <(&lt;operator&gt;.logicalNot,!skip)<SUB>103</SUB>> ]
+"89" [label = <(&lt;operator&gt;.fieldAccess,this.skip)<SUB>103</SUB>> ]
+"90" [label = <(IDENTIFIER,this,!skip)<SUB>103</SUB>> ]
+"91" [label = <(FIELD_IDENTIFIER,skip,skip)<SUB>103</SUB>> ]
+"92" [label = <(processBuffer,this.processBuffer())<SUB>103</SUB>> ]
+"6" [label = <(IDENTIFIER,this,this.processBuffer())<SUB>103</SUB>> ]
+"93" [label = <(CONTROL_STRUCTURE,else,else)<SUB>104</SUB>> ]
+"94" [label = <(write,buffer.write(cc))<SUB>104</SUB>> ]
+"95" [label = <(&lt;operator&gt;.fieldAccess,this.buffer)<SUB>104</SUB>> ]
+"96" [label = <(IDENTIFIER,this,buffer.write(cc))<SUB>104</SUB>> ]
+"97" [label = <(FIELD_IDENTIFIER,buffer,buffer)<SUB>104</SUB>> ]
+"98" [label = <(IDENTIFIER,cc,buffer.write(cc))<SUB>104</SUB>> ]
+"99" [label = <(&lt;operator&gt;.assignment,this.skip = c == '\r')<SUB>105</SUB>> ]
+"100" [label = <(&lt;operator&gt;.fieldAccess,this.skip)<SUB>105</SUB>> ]
+"101" [label = <(IDENTIFIER,this,this.skip = c == '\r')<SUB>105</SUB>> ]
+"102" [label = <(FIELD_IDENTIFIER,skip,skip)<SUB>105</SUB>> ]
+"103" [label = <(&lt;operator&gt;.equals,c == '\r')<SUB>105</SUB>> ]
+"104" [label = <(IDENTIFIER,c,c == '\r')<SUB>105</SUB>> ]
+"105" [label = <(LITERAL,'\r',c == '\r')<SUB>105</SUB>> ]
+"106" [label = <(MODIFIER,PUBLIC)> ]
+"107" [label = <(MODIFIER,VIRTUAL)> ]
+"108" [label = <(METHOD_RETURN,void)<SUB>100</SUB>> ]
+  "69" -> "7" 
+  "69" -> "70" 
+  "69" -> "71" 
+  "69" -> "106" 
+  "69" -> "107" 
+  "69" -> "108" 
+  "71" -> "72" 
+  "71" -> "73" 
+  "71" -> "78" 
+  "71" -> "99" 
+  "73" -> "74" 
+  "73" -> "75" 
+  "75" -> "76" 
+  "75" -> "77" 
+  "78" -> "79" 
+  "78" -> "86" 
+  "78" -> "93" 
+  "79" -> "80" 
+  "79" -> "83" 
+  "80" -> "81" 
+  "80" -> "82" 
+  "83" -> "84" 
+  "83" -> "85" 
+  "86" -> "87" 
+  "87" -> "88" 
+  "87" -> "92" 
+  "88" -> "89" 
+  "89" -> "90" 
+  "89" -> "91" 
+  "92" -> "6" 
+  "93" -> "94" 
+  "94" -> "95" 
+  "94" -> "98" 
+  "95" -> "96" 
+  "95" -> "97" 
+  "99" -> "100" 
+  "99" -> "103" 
+  "100" -> "101" 
+  "100" -> "102" 
+  "103" -> "104" 
+  "103" -> "105" 
+}

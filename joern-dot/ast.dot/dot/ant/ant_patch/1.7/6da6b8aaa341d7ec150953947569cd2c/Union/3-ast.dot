@@ -1,0 +1,61 @@
+digraph "list" {  
+"61" [label = <(METHOD,list)<SUB>63</SUB>> ]
+"6" [label = <(PARAM,this)<SUB>63</SUB>> ]
+"62" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>63</SUB>> ]
+"63" [label = <(CONTROL_STRUCTURE,if (isReference()),if (isReference()))<SUB>64</SUB>> ]
+"64" [label = <(isReference,isReference())<SUB>64</SUB>> ]
+"5" [label = <(IDENTIFIER,this,isReference())<SUB>64</SUB>> ]
+"65" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>64</SUB>> ]
+"66" [label = <(RETURN,return ((Union) getCheckedRef()).list();,return ((Union) getCheckedRef()).list();)<SUB>65</SUB>> ]
+"67" [label = <(list,this.list())<SUB>65</SUB>> ]
+"68" [label = <(&lt;operator&gt;.cast,(Union) getCheckedRef())<SUB>65</SUB>> ]
+"69" [label = <(TYPE_REF,Union,Union)<SUB>65</SUB>> ]
+"70" [label = <(getCheckedRef,getCheckedRef())<SUB>65</SUB>> ]
+"7" [label = <(IDENTIFIER,this,getCheckedRef())<SUB>65</SUB>> ]
+"71" [label = <(LOCAL,Collection result: java.util.Collection)> ]
+"72" [label = <(&lt;operator&gt;.assignment,Collection result = this.getCollection(true))<SUB>67</SUB>> ]
+"73" [label = <(IDENTIFIER,result,Collection result = this.getCollection(true))<SUB>67</SUB>> ]
+"74" [label = <(getCollection,this.getCollection(true))<SUB>67</SUB>> ]
+"8" [label = <(IDENTIFIER,this,this.getCollection(true))<SUB>67</SUB>> ]
+"75" [label = <(LITERAL,true,this.getCollection(true))<SUB>67</SUB>> ]
+"76" [label = <(RETURN,return (String[]) (result.toArray(new String[result.size()]));,return (String[]) (result.toArray(new String[result.size()]));)<SUB>68</SUB>> ]
+"77" [label = <(&lt;operator&gt;.cast,(String[]) (result.toArray(new String[result.size()])))<SUB>68</SUB>> ]
+"78" [label = <(TYPE_REF,String[],String[])<SUB>68</SUB>> ]
+"79" [label = <(toArray,result.toArray(new String[result.size()]))<SUB>68</SUB>> ]
+"80" [label = <(IDENTIFIER,result,result.toArray(new String[result.size()]))<SUB>68</SUB>> ]
+"81" [label = <(&lt;operator&gt;.alloc,new String[result.size()])> ]
+"82" [label = <(size,result.size())<SUB>68</SUB>> ]
+"83" [label = <(IDENTIFIER,result,result.size())<SUB>68</SUB>> ]
+"84" [label = <(MODIFIER,PUBLIC)> ]
+"85" [label = <(MODIFIER,VIRTUAL)> ]
+"86" [label = <(METHOD_RETURN,java.lang.String[])<SUB>63</SUB>> ]
+  "61" -> "6" 
+  "61" -> "62" 
+  "61" -> "84" 
+  "61" -> "85" 
+  "61" -> "86" 
+  "62" -> "63" 
+  "62" -> "71" 
+  "62" -> "72" 
+  "62" -> "76" 
+  "63" -> "64" 
+  "63" -> "65" 
+  "64" -> "5" 
+  "65" -> "66" 
+  "66" -> "67" 
+  "67" -> "68" 
+  "68" -> "69" 
+  "68" -> "70" 
+  "70" -> "7" 
+  "72" -> "73" 
+  "72" -> "74" 
+  "74" -> "8" 
+  "74" -> "75" 
+  "76" -> "77" 
+  "77" -> "78" 
+  "77" -> "79" 
+  "79" -> "80" 
+  "79" -> "81" 
+  "81" -> "82" 
+  "82" -> "83" 
+}

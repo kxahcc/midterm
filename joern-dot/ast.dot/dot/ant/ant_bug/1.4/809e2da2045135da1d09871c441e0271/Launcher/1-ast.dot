@@ -1,0 +1,289 @@
+digraph "determineAntHome" {  
+"105" [label = <(METHOD,determineAntHome)<SUB>85</SUB>> ]
+"106" [label = <(PARAM,ClassLoader systemClassLoader)<SUB>85</SUB>> ]
+"107" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>85</SUB>> ]
+"108" [label = <(CONTROL_STRUCTURE,try,try)<SUB>86</SUB>> ]
+"109" [label = <(BLOCK,try,try)<SUB>86</SUB>> ]
+"110" [label = <(LOCAL,String className: java.lang.String)> ]
+"111" [label = <(&lt;operator&gt;.assignment,String className = Launcher.class.getName().replace('.', '/') + &quot;.class&quot;)<SUB>87</SUB>> ]
+"112" [label = <(IDENTIFIER,className,String className = Launcher.class.getName().replace('.', '/') + &quot;.class&quot;)<SUB>87</SUB>> ]
+"113" [label = <(&lt;operator&gt;.addition,Launcher.class.getName().replace('.', '/') + &quot;.class&quot;)<SUB>87</SUB>> ]
+"114" [label = <(replace,this.getName().replace('.', '/'))<SUB>87</SUB>> ]
+"115" [label = <(getName,this.getName())<SUB>87</SUB>> ]
+"116" [label = <(&lt;operator&gt;.fieldAccess,Launcher.class)<SUB>87</SUB>> ]
+"117" [label = <(IDENTIFIER,Launcher,this.getName())<SUB>87</SUB>> ]
+"118" [label = <(FIELD_IDENTIFIER,class,class)<SUB>87</SUB>> ]
+"119" [label = <(LITERAL,'.',this.getName().replace('.', '/'))<SUB>87</SUB>> ]
+"120" [label = <(LITERAL,'/',this.getName().replace('.', '/'))<SUB>87</SUB>> ]
+"121" [label = <(LITERAL,&quot;.class&quot;,Launcher.class.getName().replace('.', '/') + &quot;.class&quot;)<SUB>87</SUB>> ]
+"122" [label = <(LOCAL,URL classResource: java.net.URL)> ]
+"123" [label = <(&lt;operator&gt;.assignment,URL classResource = systemClassLoader.getResource(className))<SUB>88</SUB>> ]
+"124" [label = <(IDENTIFIER,classResource,URL classResource = systemClassLoader.getResource(className))<SUB>88</SUB>> ]
+"125" [label = <(getResource,systemClassLoader.getResource(className))<SUB>88</SUB>> ]
+"126" [label = <(IDENTIFIER,systemClassLoader,systemClassLoader.getResource(className))<SUB>88</SUB>> ]
+"127" [label = <(IDENTIFIER,className,systemClassLoader.getResource(className))<SUB>88</SUB>> ]
+"128" [label = <(LOCAL,String fileComponent: java.lang.String)> ]
+"129" [label = <(&lt;operator&gt;.assignment,String fileComponent = classResource.getFile())<SUB>89</SUB>> ]
+"130" [label = <(IDENTIFIER,fileComponent,String fileComponent = classResource.getFile())<SUB>89</SUB>> ]
+"131" [label = <(getFile,classResource.getFile())<SUB>89</SUB>> ]
+"132" [label = <(IDENTIFIER,classResource,classResource.getFile())<SUB>89</SUB>> ]
+"133" [label = <(CONTROL_STRUCTURE,if (classResource.getProtocol().equals(&quot;file&quot;)),if (classResource.getProtocol().equals(&quot;file&quot;)))<SUB>90</SUB>> ]
+"134" [label = <(equals,classResource.getProtocol().equals(&quot;file&quot;))<SUB>90</SUB>> ]
+"135" [label = <(getProtocol,classResource.getProtocol())<SUB>90</SUB>> ]
+"136" [label = <(IDENTIFIER,classResource,classResource.getProtocol())<SUB>90</SUB>> ]
+"137" [label = <(LITERAL,&quot;file&quot;,classResource.getProtocol().equals(&quot;file&quot;))<SUB>90</SUB>> ]
+"138" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>90</SUB>> ]
+"139" [label = <(LOCAL,int classFileIndex: int)> ]
+"140" [label = <(&lt;operator&gt;.assignment,int classFileIndex = fileComponent.lastIndexOf(className))<SUB>93</SUB>> ]
+"141" [label = <(IDENTIFIER,classFileIndex,int classFileIndex = fileComponent.lastIndexOf(className))<SUB>93</SUB>> ]
+"142" [label = <(lastIndexOf,fileComponent.lastIndexOf(className))<SUB>93</SUB>> ]
+"143" [label = <(IDENTIFIER,fileComponent,fileComponent.lastIndexOf(className))<SUB>93</SUB>> ]
+"144" [label = <(IDENTIFIER,className,fileComponent.lastIndexOf(className))<SUB>93</SUB>> ]
+"145" [label = <(CONTROL_STRUCTURE,if (classFileIndex != -1),if (classFileIndex != -1))<SUB>94</SUB>> ]
+"146" [label = <(&lt;operator&gt;.notEquals,classFileIndex != -1)<SUB>94</SUB>> ]
+"147" [label = <(IDENTIFIER,classFileIndex,classFileIndex != -1)<SUB>94</SUB>> ]
+"148" [label = <(&lt;operator&gt;.minus,-1)<SUB>94</SUB>> ]
+"149" [label = <(LITERAL,1,-1)<SUB>94</SUB>> ]
+"150" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>94</SUB>> ]
+"151" [label = <(&lt;operator&gt;.assignment,fileComponent = fileComponent.substring(0, classFileIndex))<SUB>95</SUB>> ]
+"152" [label = <(IDENTIFIER,fileComponent,fileComponent = fileComponent.substring(0, classFileIndex))<SUB>95</SUB>> ]
+"153" [label = <(substring,fileComponent.substring(0, classFileIndex))<SUB>95</SUB>> ]
+"154" [label = <(IDENTIFIER,fileComponent,fileComponent.substring(0, classFileIndex))<SUB>95</SUB>> ]
+"155" [label = <(LITERAL,0,fileComponent.substring(0, classFileIndex))<SUB>95</SUB>> ]
+"156" [label = <(IDENTIFIER,classFileIndex,fileComponent.substring(0, classFileIndex))<SUB>95</SUB>> ]
+"12" [label = <(LOCAL,File classFilesDir: java.io.File)> ]
+"157" [label = <(&lt;operator&gt;.assignment,File classFilesDir = new File(fileComponent))<SUB>97</SUB>> ]
+"158" [label = <(IDENTIFIER,classFilesDir,File classFilesDir = new File(fileComponent))<SUB>97</SUB>> ]
+"159" [label = <(&lt;operator&gt;.alloc,new File(fileComponent))<SUB>97</SUB>> ]
+"160" [label = <(&lt;init&gt;,new File(fileComponent))<SUB>97</SUB>> ]
+"11" [label = <(IDENTIFIER,classFilesDir,new File(fileComponent))<SUB>97</SUB>> ]
+"161" [label = <(IDENTIFIER,fileComponent,new File(fileComponent))<SUB>97</SUB>> ]
+"14" [label = <(LOCAL,File buildDir: java.io.File)> ]
+"162" [label = <(&lt;operator&gt;.assignment,File buildDir = new File(classFilesDir.getParent()))<SUB>98</SUB>> ]
+"163" [label = <(IDENTIFIER,buildDir,File buildDir = new File(classFilesDir.getParent()))<SUB>98</SUB>> ]
+"164" [label = <(&lt;operator&gt;.alloc,new File(classFilesDir.getParent()))<SUB>98</SUB>> ]
+"165" [label = <(&lt;init&gt;,new File(classFilesDir.getParent()))<SUB>98</SUB>> ]
+"13" [label = <(IDENTIFIER,buildDir,new File(classFilesDir.getParent()))<SUB>98</SUB>> ]
+"166" [label = <(getParent,classFilesDir.getParent())<SUB>98</SUB>> ]
+"167" [label = <(IDENTIFIER,classFilesDir,classFilesDir.getParent())<SUB>98</SUB>> ]
+"16" [label = <(LOCAL,File devAntHome: java.io.File)> ]
+"168" [label = <(&lt;operator&gt;.assignment,File devAntHome = new File(buildDir.getParent()))<SUB>99</SUB>> ]
+"169" [label = <(IDENTIFIER,devAntHome,File devAntHome = new File(buildDir.getParent()))<SUB>99</SUB>> ]
+"170" [label = <(&lt;operator&gt;.alloc,new File(buildDir.getParent()))<SUB>99</SUB>> ]
+"171" [label = <(&lt;init&gt;,new File(buildDir.getParent()))<SUB>99</SUB>> ]
+"15" [label = <(IDENTIFIER,devAntHome,new File(buildDir.getParent()))<SUB>99</SUB>> ]
+"172" [label = <(getParent,buildDir.getParent())<SUB>99</SUB>> ]
+"173" [label = <(IDENTIFIER,buildDir,buildDir.getParent())<SUB>99</SUB>> ]
+"174" [label = <(RETURN,return devAntHome;,return devAntHome;)<SUB>100</SUB>> ]
+"175" [label = <(IDENTIFIER,devAntHome,return devAntHome;)<SUB>100</SUB>> ]
+"176" [label = <(CONTROL_STRUCTURE,else,else)<SUB>102</SUB>> ]
+"177" [label = <(CONTROL_STRUCTURE,if (classResource.getProtocol().equals(&quot;jar&quot;)),if (classResource.getProtocol().equals(&quot;jar&quot;)))<SUB>102</SUB>> ]
+"178" [label = <(equals,classResource.getProtocol().equals(&quot;jar&quot;))<SUB>102</SUB>> ]
+"179" [label = <(getProtocol,classResource.getProtocol())<SUB>102</SUB>> ]
+"180" [label = <(IDENTIFIER,classResource,classResource.getProtocol())<SUB>102</SUB>> ]
+"181" [label = <(LITERAL,&quot;jar&quot;,classResource.getProtocol().equals(&quot;jar&quot;))<SUB>102</SUB>> ]
+"182" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>102</SUB>> ]
+"183" [label = <(LOCAL,int classSeparatorIndex: int)> ]
+"184" [label = <(&lt;operator&gt;.assignment,int classSeparatorIndex = fileComponent.lastIndexOf(&quot;!&quot;))<SUB>105</SUB>> ]
+"185" [label = <(IDENTIFIER,classSeparatorIndex,int classSeparatorIndex = fileComponent.lastIndexOf(&quot;!&quot;))<SUB>105</SUB>> ]
+"186" [label = <(lastIndexOf,fileComponent.lastIndexOf(&quot;!&quot;))<SUB>105</SUB>> ]
+"187" [label = <(IDENTIFIER,fileComponent,fileComponent.lastIndexOf(&quot;!&quot;))<SUB>105</SUB>> ]
+"188" [label = <(LITERAL,&quot;!&quot;,fileComponent.lastIndexOf(&quot;!&quot;))<SUB>105</SUB>> ]
+"189" [label = <(CONTROL_STRUCTURE,if (classSeparatorIndex != -1),if (classSeparatorIndex != -1))<SUB>106</SUB>> ]
+"190" [label = <(&lt;operator&gt;.notEquals,classSeparatorIndex != -1)<SUB>106</SUB>> ]
+"191" [label = <(IDENTIFIER,classSeparatorIndex,classSeparatorIndex != -1)<SUB>106</SUB>> ]
+"192" [label = <(&lt;operator&gt;.minus,-1)<SUB>106</SUB>> ]
+"193" [label = <(LITERAL,1,-1)<SUB>106</SUB>> ]
+"194" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>106</SUB>> ]
+"195" [label = <(&lt;operator&gt;.assignment,fileComponent = fileComponent.substring(0, classSeparatorIndex))<SUB>107</SUB>> ]
+"196" [label = <(IDENTIFIER,fileComponent,fileComponent = fileComponent.substring(0, classSeparatorIndex))<SUB>107</SUB>> ]
+"197" [label = <(substring,fileComponent.substring(0, classSeparatorIndex))<SUB>107</SUB>> ]
+"198" [label = <(IDENTIFIER,fileComponent,fileComponent.substring(0, classSeparatorIndex))<SUB>107</SUB>> ]
+"199" [label = <(LITERAL,0,fileComponent.substring(0, classSeparatorIndex))<SUB>107</SUB>> ]
+"200" [label = <(IDENTIFIER,classSeparatorIndex,fileComponent.substring(0, classSeparatorIndex))<SUB>107</SUB>> ]
+"18" [label = <(LOCAL,URL antJarURL: java.net.URL)> ]
+"201" [label = <(&lt;operator&gt;.assignment,URL antJarURL = new URL(fileComponent))<SUB>109</SUB>> ]
+"202" [label = <(IDENTIFIER,antJarURL,URL antJarURL = new URL(fileComponent))<SUB>109</SUB>> ]
+"203" [label = <(&lt;operator&gt;.alloc,new URL(fileComponent))<SUB>109</SUB>> ]
+"204" [label = <(&lt;init&gt;,new URL(fileComponent))<SUB>109</SUB>> ]
+"17" [label = <(IDENTIFIER,antJarURL,new URL(fileComponent))<SUB>109</SUB>> ]
+"205" [label = <(IDENTIFIER,fileComponent,new URL(fileComponent))<SUB>109</SUB>> ]
+"20" [label = <(LOCAL,File antJarFile: java.io.File)> ]
+"206" [label = <(&lt;operator&gt;.assignment,File antJarFile = new File(antJarURL.getFile()))<SUB>110</SUB>> ]
+"207" [label = <(IDENTIFIER,antJarFile,File antJarFile = new File(antJarURL.getFile()))<SUB>110</SUB>> ]
+"208" [label = <(&lt;operator&gt;.alloc,new File(antJarURL.getFile()))<SUB>110</SUB>> ]
+"209" [label = <(&lt;init&gt;,new File(antJarURL.getFile()))<SUB>110</SUB>> ]
+"19" [label = <(IDENTIFIER,antJarFile,new File(antJarURL.getFile()))<SUB>110</SUB>> ]
+"210" [label = <(getFile,antJarURL.getFile())<SUB>110</SUB>> ]
+"211" [label = <(IDENTIFIER,antJarURL,antJarURL.getFile())<SUB>110</SUB>> ]
+"22" [label = <(LOCAL,File libDirectory: java.io.File)> ]
+"212" [label = <(&lt;operator&gt;.assignment,File libDirectory = new File(antJarFile.getParent()))<SUB>111</SUB>> ]
+"213" [label = <(IDENTIFIER,libDirectory,File libDirectory = new File(antJarFile.getParent()))<SUB>111</SUB>> ]
+"214" [label = <(&lt;operator&gt;.alloc,new File(antJarFile.getParent()))<SUB>111</SUB>> ]
+"215" [label = <(&lt;init&gt;,new File(antJarFile.getParent()))<SUB>111</SUB>> ]
+"21" [label = <(IDENTIFIER,libDirectory,new File(antJarFile.getParent()))<SUB>111</SUB>> ]
+"216" [label = <(getParent,antJarFile.getParent())<SUB>111</SUB>> ]
+"217" [label = <(IDENTIFIER,antJarFile,antJarFile.getParent())<SUB>111</SUB>> ]
+"24" [label = <(LOCAL,File antHome: java.io.File)> ]
+"218" [label = <(&lt;operator&gt;.assignment,File antHome = new File(libDirectory.getParent()))<SUB>112</SUB>> ]
+"219" [label = <(IDENTIFIER,antHome,File antHome = new File(libDirectory.getParent()))<SUB>112</SUB>> ]
+"220" [label = <(&lt;operator&gt;.alloc,new File(libDirectory.getParent()))<SUB>112</SUB>> ]
+"221" [label = <(&lt;init&gt;,new File(libDirectory.getParent()))<SUB>112</SUB>> ]
+"23" [label = <(IDENTIFIER,antHome,new File(libDirectory.getParent()))<SUB>112</SUB>> ]
+"222" [label = <(getParent,libDirectory.getParent())<SUB>112</SUB>> ]
+"223" [label = <(IDENTIFIER,libDirectory,libDirectory.getParent())<SUB>112</SUB>> ]
+"224" [label = <(RETURN,return antHome;,return antHome;)<SUB>113</SUB>> ]
+"225" [label = <(IDENTIFIER,antHome,return antHome;)<SUB>113</SUB>> ]
+"226" [label = <(BLOCK,catch,catch)> ]
+"227" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>116</SUB>> ]
+"228" [label = <(printStackTrace,e.printStackTrace())<SUB>117</SUB>> ]
+"229" [label = <(IDENTIFIER,e,e.printStackTrace())<SUB>117</SUB>> ]
+"230" [label = <(RETURN,return null;,return null;)<SUB>119</SUB>> ]
+"231" [label = <(LITERAL,null,return null;)<SUB>119</SUB>> ]
+"232" [label = <(MODIFIER,PRIVATE)> ]
+"233" [label = <(MODIFIER,STATIC)> ]
+"234" [label = <(METHOD_RETURN,java.io.File)<SUB>85</SUB>> ]
+  "105" -> "106" 
+  "105" -> "107" 
+  "105" -> "232" 
+  "105" -> "233" 
+  "105" -> "234" 
+  "107" -> "108" 
+  "107" -> "230" 
+  "108" -> "109" 
+  "108" -> "226" 
+  "109" -> "110" 
+  "109" -> "111" 
+  "109" -> "122" 
+  "109" -> "123" 
+  "109" -> "128" 
+  "109" -> "129" 
+  "109" -> "133" 
+  "111" -> "112" 
+  "111" -> "113" 
+  "113" -> "114" 
+  "113" -> "121" 
+  "114" -> "115" 
+  "114" -> "119" 
+  "114" -> "120" 
+  "115" -> "116" 
+  "116" -> "117" 
+  "116" -> "118" 
+  "123" -> "124" 
+  "123" -> "125" 
+  "125" -> "126" 
+  "125" -> "127" 
+  "129" -> "130" 
+  "129" -> "131" 
+  "131" -> "132" 
+  "133" -> "134" 
+  "133" -> "138" 
+  "133" -> "176" 
+  "134" -> "135" 
+  "134" -> "137" 
+  "135" -> "136" 
+  "138" -> "139" 
+  "138" -> "140" 
+  "138" -> "145" 
+  "138" -> "12" 
+  "138" -> "157" 
+  "138" -> "160" 
+  "138" -> "14" 
+  "138" -> "162" 
+  "138" -> "165" 
+  "138" -> "16" 
+  "138" -> "168" 
+  "138" -> "171" 
+  "138" -> "174" 
+  "140" -> "141" 
+  "140" -> "142" 
+  "142" -> "143" 
+  "142" -> "144" 
+  "145" -> "146" 
+  "145" -> "150" 
+  "146" -> "147" 
+  "146" -> "148" 
+  "148" -> "149" 
+  "150" -> "151" 
+  "151" -> "152" 
+  "151" -> "153" 
+  "153" -> "154" 
+  "153" -> "155" 
+  "153" -> "156" 
+  "157" -> "158" 
+  "157" -> "159" 
+  "160" -> "11" 
+  "160" -> "161" 
+  "162" -> "163" 
+  "162" -> "164" 
+  "165" -> "13" 
+  "165" -> "166" 
+  "166" -> "167" 
+  "168" -> "169" 
+  "168" -> "170" 
+  "171" -> "15" 
+  "171" -> "172" 
+  "172" -> "173" 
+  "174" -> "175" 
+  "176" -> "177" 
+  "177" -> "178" 
+  "177" -> "182" 
+  "178" -> "179" 
+  "178" -> "181" 
+  "179" -> "180" 
+  "182" -> "183" 
+  "182" -> "184" 
+  "182" -> "189" 
+  "182" -> "18" 
+  "182" -> "201" 
+  "182" -> "204" 
+  "182" -> "20" 
+  "182" -> "206" 
+  "182" -> "209" 
+  "182" -> "22" 
+  "182" -> "212" 
+  "182" -> "215" 
+  "182" -> "24" 
+  "182" -> "218" 
+  "182" -> "221" 
+  "182" -> "224" 
+  "184" -> "185" 
+  "184" -> "186" 
+  "186" -> "187" 
+  "186" -> "188" 
+  "189" -> "190" 
+  "189" -> "194" 
+  "190" -> "191" 
+  "190" -> "192" 
+  "192" -> "193" 
+  "194" -> "195" 
+  "195" -> "196" 
+  "195" -> "197" 
+  "197" -> "198" 
+  "197" -> "199" 
+  "197" -> "200" 
+  "201" -> "202" 
+  "201" -> "203" 
+  "204" -> "17" 
+  "204" -> "205" 
+  "206" -> "207" 
+  "206" -> "208" 
+  "209" -> "19" 
+  "209" -> "210" 
+  "210" -> "211" 
+  "212" -> "213" 
+  "212" -> "214" 
+  "215" -> "21" 
+  "215" -> "216" 
+  "216" -> "217" 
+  "218" -> "219" 
+  "218" -> "220" 
+  "221" -> "23" 
+  "221" -> "222" 
+  "222" -> "223" 
+  "224" -> "225" 
+  "226" -> "227" 
+  "227" -> "228" 
+  "228" -> "229" 
+  "230" -> "231" 
+}

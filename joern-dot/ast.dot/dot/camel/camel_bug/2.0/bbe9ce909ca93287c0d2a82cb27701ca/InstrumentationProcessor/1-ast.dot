@@ -1,0 +1,89 @@
+digraph "process" {  
+"19" [label = <(METHOD,process)<SUB>31</SUB>> ]
+"20" [label = <(PARAM,this)<SUB>31</SUB>> ]
+"21" [label = <(PARAM,Exchange exchange)<SUB>31</SUB>> ]
+"22" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>31</SUB>> ]
+"23" [label = <(LOCAL,long startTime: long)> ]
+"24" [label = <(&lt;operator&gt;.assignment,long startTime = System.nanoTime())<SUB>32</SUB>> ]
+"25" [label = <(IDENTIFIER,startTime,long startTime = System.nanoTime())<SUB>32</SUB>> ]
+"26" [label = <(nanoTime,System.nanoTime())<SUB>32</SUB>> ]
+"27" [label = <(IDENTIFIER,System,System.nanoTime())<SUB>32</SUB>> ]
+"28" [label = <(process,process(exchange))<SUB>33</SUB>> ]
+"29" [label = <(IDENTIFIER,super,process(exchange))<SUB>33</SUB>> ]
+"30" [label = <(IDENTIFIER,exchange,process(exchange))<SUB>33</SUB>> ]
+"31" [label = <(CONTROL_STRUCTURE,if (counter != null),if (counter != null))<SUB>34</SUB>> ]
+"32" [label = <(&lt;operator&gt;.notEquals,counter != null)<SUB>34</SUB>> ]
+"33" [label = <(&lt;operator&gt;.fieldAccess,this.counter)<SUB>34</SUB>> ]
+"34" [label = <(IDENTIFIER,this,counter != null)<SUB>34</SUB>> ]
+"35" [label = <(FIELD_IDENTIFIER,counter,counter)<SUB>34</SUB>> ]
+"36" [label = <(LITERAL,null,counter != null)<SUB>34</SUB>> ]
+"37" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>34</SUB>> ]
+"38" [label = <(CONTROL_STRUCTURE,if (exchange.getException() == null),if (exchange.getException() == null))<SUB>35</SUB>> ]
+"39" [label = <(&lt;operator&gt;.equals,exchange.getException() == null)<SUB>35</SUB>> ]
+"40" [label = <(getException,getException())<SUB>35</SUB>> ]
+"41" [label = <(IDENTIFIER,exchange,getException())<SUB>35</SUB>> ]
+"42" [label = <(LITERAL,null,exchange.getException() == null)<SUB>35</SUB>> ]
+"43" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>35</SUB>> ]
+"44" [label = <(completedExchange,completedExchange((System.nanoTime() - startTime) / 1000))<SUB>36</SUB>> ]
+"45" [label = <(&lt;operator&gt;.fieldAccess,this.counter)<SUB>36</SUB>> ]
+"46" [label = <(IDENTIFIER,this,completedExchange((System.nanoTime() - startTime) / 1000))<SUB>36</SUB>> ]
+"47" [label = <(FIELD_IDENTIFIER,counter,counter)<SUB>36</SUB>> ]
+"48" [label = <(&lt;operator&gt;.division,(System.nanoTime() - startTime) / 1000)<SUB>36</SUB>> ]
+"49" [label = <(&lt;operator&gt;.subtraction,System.nanoTime() - startTime)<SUB>36</SUB>> ]
+"50" [label = <(nanoTime,System.nanoTime())<SUB>36</SUB>> ]
+"51" [label = <(IDENTIFIER,System,System.nanoTime())<SUB>36</SUB>> ]
+"52" [label = <(IDENTIFIER,startTime,System.nanoTime() - startTime)<SUB>36</SUB>> ]
+"53" [label = <(LITERAL,1000,(System.nanoTime() - startTime) / 1000)<SUB>36</SUB>> ]
+"54" [label = <(CONTROL_STRUCTURE,else,else)<SUB>38</SUB>> ]
+"55" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>38</SUB>> ]
+"56" [label = <(completedExchange,completedExchange())<SUB>39</SUB>> ]
+"57" [label = <(&lt;operator&gt;.fieldAccess,this.counter)<SUB>39</SUB>> ]
+"58" [label = <(IDENTIFIER,this,completedExchange())<SUB>39</SUB>> ]
+"59" [label = <(FIELD_IDENTIFIER,counter,counter)<SUB>39</SUB>> ]
+"60" [label = <(MODIFIER,PUBLIC)> ]
+"61" [label = <(MODIFIER,VIRTUAL)> ]
+"62" [label = <(METHOD_RETURN,void)<SUB>31</SUB>> ]
+  "19" -> "20" 
+  "19" -> "21" 
+  "19" -> "22" 
+  "19" -> "60" 
+  "19" -> "61" 
+  "19" -> "62" 
+  "22" -> "23" 
+  "22" -> "24" 
+  "22" -> "28" 
+  "22" -> "31" 
+  "24" -> "25" 
+  "24" -> "26" 
+  "26" -> "27" 
+  "28" -> "29" 
+  "28" -> "30" 
+  "31" -> "32" 
+  "31" -> "37" 
+  "32" -> "33" 
+  "32" -> "36" 
+  "33" -> "34" 
+  "33" -> "35" 
+  "37" -> "38" 
+  "38" -> "39" 
+  "38" -> "43" 
+  "38" -> "54" 
+  "39" -> "40" 
+  "39" -> "42" 
+  "40" -> "41" 
+  "43" -> "44" 
+  "44" -> "45" 
+  "44" -> "48" 
+  "45" -> "46" 
+  "45" -> "47" 
+  "48" -> "49" 
+  "48" -> "53" 
+  "49" -> "50" 
+  "49" -> "52" 
+  "50" -> "51" 
+  "54" -> "55" 
+  "55" -> "56" 
+  "56" -> "57" 
+  "57" -> "58" 
+  "57" -> "59" 
+}

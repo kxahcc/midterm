@@ -1,0 +1,83 @@
+digraph "process" {  
+"16" [label = <(METHOD,process)<SUB>35</SUB>> ]
+"17" [label = <(PARAM,this)<SUB>35</SUB>> ]
+"18" [label = <(PARAM,final Exchange exchange)<SUB>35</SUB>> ]
+"19" [label = <(PARAM,final AsyncCallback callback)<SUB>35</SUB>> ]
+"20" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>35</SUB>> ]
+"21" [label = <(CONTROL_STRUCTURE,if (exchange.getUnitOfWork() == null),if (exchange.getUnitOfWork() == null))<SUB>36</SUB>> ]
+"22" [label = <(&lt;operator&gt;.equals,exchange.getUnitOfWork() == null)<SUB>36</SUB>> ]
+"23" [label = <(getUnitOfWork,getUnitOfWork())<SUB>36</SUB>> ]
+"24" [label = <(IDENTIFIER,exchange,getUnitOfWork())<SUB>36</SUB>> ]
+"25" [label = <(LITERAL,null,exchange.getUnitOfWork() == null)<SUB>36</SUB>> ]
+"26" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>36</SUB>> ]
+"27" [label = <(setUnitOfWork,setUnitOfWork(new DefaultUnitOfWork()))<SUB>39</SUB>> ]
+"28" [label = <(IDENTIFIER,exchange,setUnitOfWork(new DefaultUnitOfWork()))<SUB>39</SUB>> ]
+"29" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>39</SUB>> ]
+"30" [label = <(&lt;operator&gt;.assignment,&lt;empty&gt;)> ]
+"31" [label = <(IDENTIFIER,$obj0,&lt;empty&gt;)> ]
+"32" [label = <(&lt;operator&gt;.alloc,new DefaultUnitOfWork())<SUB>39</SUB>> ]
+"33" [label = <(&lt;init&gt;,new DefaultUnitOfWork())<SUB>39</SUB>> ]
+"34" [label = <(IDENTIFIER,$obj0,new DefaultUnitOfWork())> ]
+"35" [label = <(IDENTIFIER,$obj0,&lt;empty&gt;)> ]
+"36" [label = <(RETURN,return processor.process(exchange, new AsyncCallback() {\012\012    public void done(boolean sync) {\012        callback.done(sync);\012        exchange.getUnitOfWork().done(exchange);\012        exchange.setUnitOfWork(null);\012    }\012});,return processor.process(exchange, new AsyncCallback() {\012\012    public void done(boolean sync) {\012        callback.done(sync);\012        exchange.getUnitOfWork().done(exchange);\012        exchange.setUnitOfWork(null);\012    }\012});)<SUB>40</SUB>> ]
+"37" [label = <(process,process(exchange, new AsyncCallback() {\012\012    public void done(boolean sync) {\012        callback.done(sync);\012        exchange.getUnitOfWork().done(exchange);\012        exchange.setUnitOfWork(null);\012    }\012}))<SUB>40</SUB>> ]
+"38" [label = <(IDENTIFIER,processor,process(exchange, new AsyncCallback() {\012\012    public void done(boolean sync) {\012        callback.done(sync);\012        exchange.getUnitOfWork().done(exchange);\012        exchange.setUnitOfWork(null);\012    }\012}))<SUB>40</SUB>> ]
+"39" [label = <(IDENTIFIER,exchange,process(exchange, new AsyncCallback() {\012\012    public void done(boolean sync) {\012        callback.done(sync);\012        exchange.getUnitOfWork().done(exchange);\012        exchange.setUnitOfWork(null);\012    }\012}))<SUB>40</SUB>> ]
+"40" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>40</SUB>> ]
+"41" [label = <(&lt;operator&gt;.assignment,&lt;empty&gt;)> ]
+"42" [label = <(IDENTIFIER,$obj1,&lt;empty&gt;)> ]
+"43" [label = <(&lt;operator&gt;.alloc,new AsyncCallback() {\012\012    public void done(boolean sync) {\012        callback.done(sync);\012        exchange.getUnitOfWork().done(exchange);\012        exchange.setUnitOfWork(null);\012    }\012})<SUB>40</SUB>> ]
+"44" [label = <(&lt;init&gt;,new AsyncCallback() {\012\012    public void done(boolean sync) {\012        callback.done(sync);\012        exchange.getUnitOfWork().done(exchange);\012        exchange.setUnitOfWork(null);\012    }\012})<SUB>40</SUB>> ]
+"45" [label = <(IDENTIFIER,$obj1,new AsyncCallback() {\012\012    public void done(boolean sync) {\012        callback.done(sync);\012        exchange.getUnitOfWork().done(exchange);\012        exchange.setUnitOfWork(null);\012    }\012})> ]
+"46" [label = <(IDENTIFIER,$obj1,&lt;empty&gt;)> ]
+"47" [label = <(CONTROL_STRUCTURE,else,else)<SUB>50</SUB>> ]
+"48" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>50</SUB>> ]
+"49" [label = <(RETURN,return processor.process(exchange, callback);,return processor.process(exchange, callback);)<SUB>53</SUB>> ]
+"50" [label = <(process,process(exchange, callback))<SUB>53</SUB>> ]
+"51" [label = <(IDENTIFIER,processor,process(exchange, callback))<SUB>53</SUB>> ]
+"52" [label = <(IDENTIFIER,exchange,process(exchange, callback))<SUB>53</SUB>> ]
+"53" [label = <(IDENTIFIER,callback,process(exchange, callback))<SUB>53</SUB>> ]
+"54" [label = <(MODIFIER,PUBLIC)> ]
+"55" [label = <(MODIFIER,VIRTUAL)> ]
+"56" [label = <(METHOD_RETURN,boolean)<SUB>35</SUB>> ]
+  "16" -> "17" 
+  "16" -> "18" 
+  "16" -> "19" 
+  "16" -> "20" 
+  "16" -> "54" 
+  "16" -> "55" 
+  "16" -> "56" 
+  "20" -> "21" 
+  "21" -> "22" 
+  "21" -> "26" 
+  "21" -> "47" 
+  "22" -> "23" 
+  "22" -> "25" 
+  "23" -> "24" 
+  "26" -> "27" 
+  "26" -> "36" 
+  "27" -> "28" 
+  "27" -> "29" 
+  "29" -> "30" 
+  "29" -> "33" 
+  "29" -> "35" 
+  "30" -> "31" 
+  "30" -> "32" 
+  "33" -> "34" 
+  "36" -> "37" 
+  "37" -> "38" 
+  "37" -> "39" 
+  "37" -> "40" 
+  "40" -> "41" 
+  "40" -> "44" 
+  "40" -> "46" 
+  "41" -> "42" 
+  "41" -> "43" 
+  "44" -> "45" 
+  "47" -> "48" 
+  "48" -> "49" 
+  "49" -> "50" 
+  "50" -> "51" 
+  "50" -> "52" 
+  "50" -> "53" 
+}

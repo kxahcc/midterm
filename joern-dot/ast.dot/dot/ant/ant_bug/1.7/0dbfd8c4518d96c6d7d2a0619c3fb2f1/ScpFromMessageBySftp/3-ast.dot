@@ -1,0 +1,245 @@
+digraph "getDir" {  
+"167" [label = <(METHOD,getDir)<SUB>104</SUB>> ]
+"16" [label = <(PARAM,this)<SUB>104</SUB>> ]
+"168" [label = <(PARAM,ChannelSftp channel)<SUB>104</SUB>> ]
+"169" [label = <(PARAM,String remoteFile)<SUB>105</SUB>> ]
+"170" [label = <(PARAM,File localFile)<SUB>106</SUB>> ]
+"171" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>106</SUB>> ]
+"172" [label = <(LOCAL,String pwd: java.lang.String)> ]
+"173" [label = <(&lt;operator&gt;.assignment,String pwd = remoteFile)<SUB>107</SUB>> ]
+"174" [label = <(IDENTIFIER,pwd,String pwd = remoteFile)<SUB>107</SUB>> ]
+"175" [label = <(IDENTIFIER,remoteFile,String pwd = remoteFile)<SUB>107</SUB>> ]
+"176" [label = <(CONTROL_STRUCTURE,if (remoteFile.lastIndexOf('/') != -1),if (remoteFile.lastIndexOf('/') != -1))<SUB>108</SUB>> ]
+"177" [label = <(&lt;operator&gt;.notEquals,remoteFile.lastIndexOf('/') != -1)<SUB>108</SUB>> ]
+"178" [label = <(lastIndexOf,remoteFile.lastIndexOf('/'))<SUB>108</SUB>> ]
+"179" [label = <(IDENTIFIER,remoteFile,remoteFile.lastIndexOf('/'))<SUB>108</SUB>> ]
+"180" [label = <(LITERAL,'/',remoteFile.lastIndexOf('/'))<SUB>108</SUB>> ]
+"181" [label = <(&lt;operator&gt;.minus,-1)<SUB>108</SUB>> ]
+"182" [label = <(LITERAL,1,-1)<SUB>108</SUB>> ]
+"183" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>108</SUB>> ]
+"184" [label = <(CONTROL_STRUCTURE,if (remoteFile.length() &gt; 1),if (remoteFile.length() &gt; 1))<SUB>109</SUB>> ]
+"185" [label = <(&lt;operator&gt;.greaterThan,remoteFile.length() &gt; 1)<SUB>109</SUB>> ]
+"186" [label = <(length,remoteFile.length())<SUB>109</SUB>> ]
+"187" [label = <(IDENTIFIER,remoteFile,remoteFile.length())<SUB>109</SUB>> ]
+"188" [label = <(LITERAL,1,remoteFile.length() &gt; 1)<SUB>109</SUB>> ]
+"189" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>109</SUB>> ]
+"190" [label = <(&lt;operator&gt;.assignment,pwd = remoteFile.substring(0, remoteFile.lastIndexOf('/')))<SUB>110</SUB>> ]
+"191" [label = <(IDENTIFIER,pwd,pwd = remoteFile.substring(0, remoteFile.lastIndexOf('/')))<SUB>110</SUB>> ]
+"192" [label = <(substring,remoteFile.substring(0, remoteFile.lastIndexOf('/')))<SUB>110</SUB>> ]
+"193" [label = <(IDENTIFIER,remoteFile,remoteFile.substring(0, remoteFile.lastIndexOf('/')))<SUB>110</SUB>> ]
+"194" [label = <(LITERAL,0,remoteFile.substring(0, remoteFile.lastIndexOf('/')))<SUB>110</SUB>> ]
+"195" [label = <(lastIndexOf,remoteFile.lastIndexOf('/'))<SUB>110</SUB>> ]
+"196" [label = <(IDENTIFIER,remoteFile,remoteFile.lastIndexOf('/'))<SUB>110</SUB>> ]
+"197" [label = <(LITERAL,'/',remoteFile.lastIndexOf('/'))<SUB>110</SUB>> ]
+"198" [label = <(cd,cd(pwd))<SUB>113</SUB>> ]
+"199" [label = <(IDENTIFIER,channel,cd(pwd))<SUB>113</SUB>> ]
+"200" [label = <(IDENTIFIER,pwd,cd(pwd))<SUB>113</SUB>> ]
+"201" [label = <(CONTROL_STRUCTURE,if (!localFile.exists()),if (!localFile.exists()))<SUB>114</SUB>> ]
+"202" [label = <(&lt;operator&gt;.logicalNot,!localFile.exists())<SUB>114</SUB>> ]
+"203" [label = <(exists,localFile.exists())<SUB>114</SUB>> ]
+"204" [label = <(IDENTIFIER,localFile,localFile.exists())<SUB>114</SUB>> ]
+"205" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>114</SUB>> ]
+"206" [label = <(mkdirs,localFile.mkdirs())<SUB>115</SUB>> ]
+"207" [label = <(IDENTIFIER,localFile,localFile.mkdirs())<SUB>115</SUB>> ]
+"208" [label = <(LOCAL,java.util.Vector files: java.util.Vector)> ]
+"209" [label = <(&lt;operator&gt;.assignment,Vector files = ls(remoteFile))<SUB>117</SUB>> ]
+"210" [label = <(IDENTIFIER,files,Vector files = ls(remoteFile))<SUB>117</SUB>> ]
+"211" [label = <(ls,ls(remoteFile))<SUB>117</SUB>> ]
+"212" [label = <(IDENTIFIER,channel,ls(remoteFile))<SUB>117</SUB>> ]
+"213" [label = <(IDENTIFIER,remoteFile,ls(remoteFile))<SUB>117</SUB>> ]
+"214" [label = <(CONTROL_STRUCTURE,for (int i = 0; Some(i &lt; files.size()); i++),for (int i = 0; Some(i &lt; files.size()); i++))<SUB>118</SUB>> ]
+"215" [label = <(LOCAL,int i: int)> ]
+"216" [label = <(&lt;operator&gt;.assignment,int i = 0)<SUB>118</SUB>> ]
+"217" [label = <(IDENTIFIER,i,int i = 0)<SUB>118</SUB>> ]
+"218" [label = <(LITERAL,0,int i = 0)<SUB>118</SUB>> ]
+"219" [label = <(&lt;operator&gt;.lessThan,i &lt; files.size())<SUB>118</SUB>> ]
+"220" [label = <(IDENTIFIER,i,i &lt; files.size())<SUB>118</SUB>> ]
+"221" [label = <(size,files.size())<SUB>118</SUB>> ]
+"222" [label = <(IDENTIFIER,files,files.size())<SUB>118</SUB>> ]
+"223" [label = <(&lt;operator&gt;.postIncrement,i++)<SUB>118</SUB>> ]
+"224" [label = <(IDENTIFIER,i,i++)<SUB>118</SUB>> ]
+"225" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>118</SUB>> ]
+"226" [label = <(LOCAL,ChannelSftp.LsEntry le: ANY)> ]
+"227" [label = <(&lt;operator&gt;.assignment,ANY le = (ChannelSftp.LsEntry) files.elementAt(i))<SUB>119</SUB>> ]
+"228" [label = <(IDENTIFIER,le,ANY le = (ChannelSftp.LsEntry) files.elementAt(i))<SUB>119</SUB>> ]
+"229" [label = <(&lt;operator&gt;.cast,(ChannelSftp.LsEntry) files.elementAt(i))<SUB>119</SUB>> ]
+"230" [label = <(TYPE_REF,ChannelSftp.LsEntry,ChannelSftp.LsEntry)<SUB>119</SUB>> ]
+"231" [label = <(elementAt,files.elementAt(i))<SUB>119</SUB>> ]
+"232" [label = <(IDENTIFIER,files,files.elementAt(i))<SUB>119</SUB>> ]
+"233" [label = <(IDENTIFIER,i,files.elementAt(i))<SUB>119</SUB>> ]
+"234" [label = <(LOCAL,String name: java.lang.String)> ]
+"235" [label = <(&lt;operator&gt;.assignment,String name = getFilename())<SUB>120</SUB>> ]
+"236" [label = <(IDENTIFIER,name,String name = getFilename())<SUB>120</SUB>> ]
+"237" [label = <(getFilename,getFilename())<SUB>120</SUB>> ]
+"238" [label = <(IDENTIFIER,le,getFilename())<SUB>120</SUB>> ]
+"239" [label = <(CONTROL_STRUCTURE,if (le.getAttrs().isDir()),if (le.getAttrs().isDir()))<SUB>121</SUB>> ]
+"240" [label = <(isDir,isDir())<SUB>121</SUB>> ]
+"241" [label = <(getAttrs,getAttrs())<SUB>121</SUB>> ]
+"242" [label = <(IDENTIFIER,le,getAttrs())<SUB>121</SUB>> ]
+"243" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>121</SUB>> ]
+"244" [label = <(CONTROL_STRUCTURE,if (name.equals(&quot;.&quot;) || name.equals(&quot;..&quot;)),if (name.equals(&quot;.&quot;) || name.equals(&quot;..&quot;)))<SUB>122</SUB>> ]
+"245" [label = <(&lt;operator&gt;.logicalOr,name.equals(&quot;.&quot;) || name.equals(&quot;..&quot;))<SUB>122</SUB>> ]
+"246" [label = <(equals,name.equals(&quot;.&quot;))<SUB>122</SUB>> ]
+"247" [label = <(IDENTIFIER,name,name.equals(&quot;.&quot;))<SUB>122</SUB>> ]
+"248" [label = <(LITERAL,&quot;.&quot;,name.equals(&quot;.&quot;))<SUB>122</SUB>> ]
+"249" [label = <(equals,name.equals(&quot;..&quot;))<SUB>122</SUB>> ]
+"250" [label = <(IDENTIFIER,name,name.equals(&quot;..&quot;))<SUB>122</SUB>> ]
+"251" [label = <(LITERAL,&quot;..&quot;,name.equals(&quot;..&quot;))<SUB>122</SUB>> ]
+"252" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>122</SUB>> ]
+"253" [label = <(CONTROL_STRUCTURE,continue;,continue;)<SUB>123</SUB>> ]
+"254" [label = <(getDir,getDir(channel, channel.pwd() + &quot;/&quot; + name + &quot;/&quot;, new File(localFile, le.getFilename())))<SUB>125</SUB>> ]
+"15" [label = <(IDENTIFIER,this,getDir(channel, channel.pwd() + &quot;/&quot; + name + &quot;/&quot;, new File(localFile, le.getFilename())))<SUB>125</SUB>> ]
+"255" [label = <(IDENTIFIER,channel,getDir(channel, channel.pwd() + &quot;/&quot; + name + &quot;/&quot;, new File(localFile, le.getFilename())))<SUB>125</SUB>> ]
+"256" [label = <(&lt;operator&gt;.addition,channel.pwd() + &quot;/&quot; + name + &quot;/&quot;)<SUB>126</SUB>> ]
+"257" [label = <(&lt;operator&gt;.addition,channel.pwd() + &quot;/&quot; + name)<SUB>126</SUB>> ]
+"258" [label = <(&lt;operator&gt;.addition,channel.pwd() + &quot;/&quot;)<SUB>126</SUB>> ]
+"259" [label = <(pwd,pwd())<SUB>126</SUB>> ]
+"260" [label = <(IDENTIFIER,channel,pwd())<SUB>126</SUB>> ]
+"261" [label = <(LITERAL,&quot;/&quot;,channel.pwd() + &quot;/&quot;)<SUB>126</SUB>> ]
+"262" [label = <(IDENTIFIER,name,channel.pwd() + &quot;/&quot; + name)<SUB>126</SUB>> ]
+"263" [label = <(LITERAL,&quot;/&quot;,channel.pwd() + &quot;/&quot; + name + &quot;/&quot;)<SUB>126</SUB>> ]
+"264" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>127</SUB>> ]
+"265" [label = <(&lt;operator&gt;.assignment,&lt;empty&gt;)> ]
+"266" [label = <(IDENTIFIER,$obj1,&lt;empty&gt;)> ]
+"267" [label = <(&lt;operator&gt;.alloc,new File(localFile, le.getFilename()))<SUB>127</SUB>> ]
+"268" [label = <(&lt;init&gt;,new File(localFile, le.getFilename()))<SUB>127</SUB>> ]
+"269" [label = <(IDENTIFIER,$obj1,new File(localFile, le.getFilename()))> ]
+"270" [label = <(IDENTIFIER,localFile,new File(localFile, le.getFilename()))<SUB>127</SUB>> ]
+"271" [label = <(getFilename,getFilename())<SUB>127</SUB>> ]
+"272" [label = <(IDENTIFIER,le,getFilename())<SUB>127</SUB>> ]
+"273" [label = <(IDENTIFIER,$obj1,&lt;empty&gt;)> ]
+"274" [label = <(CONTROL_STRUCTURE,else,else)<SUB>128</SUB>> ]
+"275" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>128</SUB>> ]
+"276" [label = <(getFile,getFile(channel, le, localFile))<SUB>129</SUB>> ]
+"17" [label = <(IDENTIFIER,this,getFile(channel, le, localFile))<SUB>129</SUB>> ]
+"277" [label = <(IDENTIFIER,channel,getFile(channel, le, localFile))<SUB>129</SUB>> ]
+"278" [label = <(IDENTIFIER,le,getFile(channel, le, localFile))<SUB>129</SUB>> ]
+"279" [label = <(IDENTIFIER,localFile,getFile(channel, le, localFile))<SUB>129</SUB>> ]
+"280" [label = <(cd,cd(&quot;..&quot;))<SUB>132</SUB>> ]
+"281" [label = <(IDENTIFIER,channel,cd(&quot;..&quot;))<SUB>132</SUB>> ]
+"282" [label = <(LITERAL,&quot;..&quot;,cd(&quot;..&quot;))<SUB>132</SUB>> ]
+"283" [label = <(MODIFIER,PRIVATE)> ]
+"284" [label = <(MODIFIER,VIRTUAL)> ]
+"285" [label = <(METHOD_RETURN,void)<SUB>104</SUB>> ]
+  "167" -> "16" 
+  "167" -> "168" 
+  "167" -> "169" 
+  "167" -> "170" 
+  "167" -> "171" 
+  "167" -> "283" 
+  "167" -> "284" 
+  "167" -> "285" 
+  "171" -> "172" 
+  "171" -> "173" 
+  "171" -> "176" 
+  "171" -> "198" 
+  "171" -> "201" 
+  "171" -> "208" 
+  "171" -> "209" 
+  "171" -> "214" 
+  "171" -> "280" 
+  "173" -> "174" 
+  "173" -> "175" 
+  "176" -> "177" 
+  "176" -> "183" 
+  "177" -> "178" 
+  "177" -> "181" 
+  "178" -> "179" 
+  "178" -> "180" 
+  "181" -> "182" 
+  "183" -> "184" 
+  "184" -> "185" 
+  "184" -> "189" 
+  "185" -> "186" 
+  "185" -> "188" 
+  "186" -> "187" 
+  "189" -> "190" 
+  "190" -> "191" 
+  "190" -> "192" 
+  "192" -> "193" 
+  "192" -> "194" 
+  "192" -> "195" 
+  "195" -> "196" 
+  "195" -> "197" 
+  "198" -> "199" 
+  "198" -> "200" 
+  "201" -> "202" 
+  "201" -> "205" 
+  "202" -> "203" 
+  "203" -> "204" 
+  "205" -> "206" 
+  "206" -> "207" 
+  "209" -> "210" 
+  "209" -> "211" 
+  "211" -> "212" 
+  "211" -> "213" 
+  "214" -> "215" 
+  "214" -> "216" 
+  "214" -> "219" 
+  "214" -> "223" 
+  "214" -> "225" 
+  "216" -> "217" 
+  "216" -> "218" 
+  "219" -> "220" 
+  "219" -> "221" 
+  "221" -> "222" 
+  "223" -> "224" 
+  "225" -> "226" 
+  "225" -> "227" 
+  "225" -> "234" 
+  "225" -> "235" 
+  "225" -> "239" 
+  "227" -> "228" 
+  "227" -> "229" 
+  "229" -> "230" 
+  "229" -> "231" 
+  "231" -> "232" 
+  "231" -> "233" 
+  "235" -> "236" 
+  "235" -> "237" 
+  "237" -> "238" 
+  "239" -> "240" 
+  "239" -> "243" 
+  "239" -> "274" 
+  "240" -> "241" 
+  "241" -> "242" 
+  "243" -> "244" 
+  "243" -> "254" 
+  "244" -> "245" 
+  "244" -> "252" 
+  "245" -> "246" 
+  "245" -> "249" 
+  "246" -> "247" 
+  "246" -> "248" 
+  "249" -> "250" 
+  "249" -> "251" 
+  "252" -> "253" 
+  "254" -> "15" 
+  "254" -> "255" 
+  "254" -> "256" 
+  "254" -> "264" 
+  "256" -> "257" 
+  "256" -> "263" 
+  "257" -> "258" 
+  "257" -> "262" 
+  "258" -> "259" 
+  "258" -> "261" 
+  "259" -> "260" 
+  "264" -> "265" 
+  "264" -> "268" 
+  "264" -> "273" 
+  "265" -> "266" 
+  "265" -> "267" 
+  "268" -> "269" 
+  "268" -> "270" 
+  "268" -> "271" 
+  "271" -> "272" 
+  "274" -> "275" 
+  "275" -> "276" 
+  "276" -> "17" 
+  "276" -> "277" 
+  "276" -> "278" 
+  "276" -> "279" 
+  "280" -> "281" 
+  "280" -> "282" 
+}

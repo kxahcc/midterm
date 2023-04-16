@@ -1,0 +1,95 @@
+digraph "loadClass" {  
+"520" [label = <(METHOD,loadClass)<SUB>260</SUB>> ]
+"521" [label = <(PARAM,String name)<SUB>260</SUB>> ]
+"522" [label = <(PARAM,ClassLoader loader)<SUB>260</SUB>> ]
+"523" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>260</SUB>> ]
+"524" [label = <(LOCAL,ClassLoader contextClassLoader: java.lang.ClassLoader)> ]
+"525" [label = <(&lt;operator&gt;.assignment,ClassLoader contextClassLoader = Thread.currentThread().getContextClassLoader())<SUB>261</SUB>> ]
+"526" [label = <(IDENTIFIER,contextClassLoader,ClassLoader contextClassLoader = Thread.currentThread().getContextClassLoader())<SUB>261</SUB>> ]
+"527" [label = <(getContextClassLoader,Thread.currentThread().getContextClassLoader())<SUB>261</SUB>> ]
+"528" [label = <(currentThread,Thread.currentThread())<SUB>261</SUB>> ]
+"529" [label = <(IDENTIFIER,Thread,Thread.currentThread())<SUB>261</SUB>> ]
+"530" [label = <(CONTROL_STRUCTURE,if (contextClassLoader != null),if (contextClassLoader != null))<SUB>262</SUB>> ]
+"531" [label = <(&lt;operator&gt;.notEquals,contextClassLoader != null)<SUB>262</SUB>> ]
+"532" [label = <(IDENTIFIER,contextClassLoader,contextClassLoader != null)<SUB>262</SUB>> ]
+"533" [label = <(LITERAL,null,contextClassLoader != null)<SUB>262</SUB>> ]
+"534" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>262</SUB>> ]
+"535" [label = <(CONTROL_STRUCTURE,try,try)<SUB>263</SUB>> ]
+"536" [label = <(BLOCK,try,try)<SUB>263</SUB>> ]
+"537" [label = <(RETURN,return contextClassLoader.loadClass(name);,return contextClassLoader.loadClass(name);)<SUB>264</SUB>> ]
+"538" [label = <(loadClass,contextClassLoader.loadClass(name))<SUB>264</SUB>> ]
+"539" [label = <(IDENTIFIER,contextClassLoader,contextClassLoader.loadClass(name))<SUB>264</SUB>> ]
+"540" [label = <(IDENTIFIER,name,contextClassLoader.loadClass(name))<SUB>264</SUB>> ]
+"541" [label = <(BLOCK,catch,catch)> ]
+"542" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>265</SUB>> ]
+"543" [label = <(CONTROL_STRUCTURE,try,try)<SUB>266</SUB>> ]
+"544" [label = <(BLOCK,try,try)<SUB>266</SUB>> ]
+"545" [label = <(RETURN,return loader.loadClass(name);,return loader.loadClass(name);)<SUB>267</SUB>> ]
+"546" [label = <(loadClass,loader.loadClass(name))<SUB>267</SUB>> ]
+"547" [label = <(IDENTIFIER,loader,loader.loadClass(name))<SUB>267</SUB>> ]
+"548" [label = <(IDENTIFIER,name,loader.loadClass(name))<SUB>267</SUB>> ]
+"549" [label = <(BLOCK,catch,catch)> ]
+"550" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>268</SUB>> ]
+"551" [label = <(debug,debug(&quot;Could not find class: &quot; + name + &quot;. Reason: &quot; + e))<SUB>269</SUB>> ]
+"552" [label = <(&lt;operator&gt;.fieldAccess,ObjectHelper.LOG)<SUB>269</SUB>> ]
+"553" [label = <(IDENTIFIER,ObjectHelper,debug(&quot;Could not find class: &quot; + name + &quot;. Reason: &quot; + e))<SUB>269</SUB>> ]
+"554" [label = <(FIELD_IDENTIFIER,LOG,LOG)<SUB>269</SUB>> ]
+"555" [label = <(&lt;operator&gt;.addition,&quot;Could not find class: &quot; + name + &quot;. Reason: &quot; + e)<SUB>269</SUB>> ]
+"556" [label = <(&lt;operator&gt;.addition,&quot;Could not find class: &quot; + name + &quot;. Reason: &quot;)<SUB>269</SUB>> ]
+"557" [label = <(&lt;operator&gt;.addition,&quot;Could not find class: &quot; + name)<SUB>269</SUB>> ]
+"558" [label = <(LITERAL,&quot;Could not find class: &quot;,&quot;Could not find class: &quot; + name)<SUB>269</SUB>> ]
+"559" [label = <(IDENTIFIER,name,&quot;Could not find class: &quot; + name)<SUB>269</SUB>> ]
+"560" [label = <(LITERAL,&quot;. Reason: &quot;,&quot;Could not find class: &quot; + name + &quot;. Reason: &quot;)<SUB>269</SUB>> ]
+"561" [label = <(IDENTIFIER,e,&quot;Could not find class: &quot; + name + &quot;. Reason: &quot; + e)<SUB>269</SUB>> ]
+"562" [label = <(RETURN,return null;,return null;)<SUB>273</SUB>> ]
+"563" [label = <(LITERAL,null,return null;)<SUB>273</SUB>> ]
+"564" [label = <(MODIFIER,PUBLIC)> ]
+"565" [label = <(MODIFIER,STATIC)> ]
+"566" [label = <(METHOD_RETURN,java.lang.Class)<SUB>260</SUB>> ]
+  "520" -> "521" 
+  "520" -> "522" 
+  "520" -> "523" 
+  "520" -> "564" 
+  "520" -> "565" 
+  "520" -> "566" 
+  "523" -> "524" 
+  "523" -> "525" 
+  "523" -> "530" 
+  "523" -> "562" 
+  "525" -> "526" 
+  "525" -> "527" 
+  "527" -> "528" 
+  "528" -> "529" 
+  "530" -> "531" 
+  "530" -> "534" 
+  "531" -> "532" 
+  "531" -> "533" 
+  "534" -> "535" 
+  "535" -> "536" 
+  "535" -> "541" 
+  "536" -> "537" 
+  "537" -> "538" 
+  "538" -> "539" 
+  "538" -> "540" 
+  "541" -> "542" 
+  "542" -> "543" 
+  "543" -> "544" 
+  "543" -> "549" 
+  "544" -> "545" 
+  "545" -> "546" 
+  "546" -> "547" 
+  "546" -> "548" 
+  "549" -> "550" 
+  "550" -> "551" 
+  "551" -> "552" 
+  "551" -> "555" 
+  "552" -> "553" 
+  "552" -> "554" 
+  "555" -> "556" 
+  "555" -> "561" 
+  "556" -> "557" 
+  "556" -> "560" 
+  "557" -> "558" 
+  "557" -> "559" 
+  "562" -> "563" 
+}

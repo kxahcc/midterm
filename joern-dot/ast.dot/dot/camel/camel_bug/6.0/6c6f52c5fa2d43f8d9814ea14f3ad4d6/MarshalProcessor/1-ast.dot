@@ -1,0 +1,95 @@
+digraph "process" {  
+"33" [label = <(METHOD,process)<SUB>39</SUB>> ]
+"34" [label = <(PARAM,this)<SUB>39</SUB>> ]
+"35" [label = <(PARAM,Exchange exchange)<SUB>39</SUB>> ]
+"36" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>39</SUB>> ]
+"6" [label = <(LOCAL,ByteArrayOutputStream buffer: java.io.ByteArrayOutputStream)> ]
+"37" [label = <(&lt;operator&gt;.assignment,ByteArrayOutputStream buffer = new ByteArrayOutputStream())<SUB>40</SUB>> ]
+"38" [label = <(IDENTIFIER,buffer,ByteArrayOutputStream buffer = new ByteArrayOutputStream())<SUB>40</SUB>> ]
+"39" [label = <(&lt;operator&gt;.alloc,new ByteArrayOutputStream())<SUB>40</SUB>> ]
+"40" [label = <(&lt;init&gt;,new ByteArrayOutputStream())<SUB>40</SUB>> ]
+"5" [label = <(IDENTIFIER,buffer,new ByteArrayOutputStream())<SUB>40</SUB>> ]
+"41" [label = <(LOCAL,Message in: org.apache.camel.Message)> ]
+"42" [label = <(&lt;operator&gt;.assignment,Message in = getIn())<SUB>41</SUB>> ]
+"43" [label = <(IDENTIFIER,in,Message in = getIn())<SUB>41</SUB>> ]
+"44" [label = <(getIn,getIn())<SUB>41</SUB>> ]
+"45" [label = <(IDENTIFIER,exchange,getIn())<SUB>41</SUB>> ]
+"46" [label = <(LOCAL,Object body: java.lang.Object)> ]
+"47" [label = <(&lt;operator&gt;.assignment,Object body = getBody())<SUB>42</SUB>> ]
+"48" [label = <(IDENTIFIER,body,Object body = getBody())<SUB>42</SUB>> ]
+"49" [label = <(getBody,getBody())<SUB>42</SUB>> ]
+"50" [label = <(IDENTIFIER,in,getBody())<SUB>42</SUB>> ]
+"51" [label = <(LOCAL,Message out: org.apache.camel.Message)> ]
+"52" [label = <(&lt;operator&gt;.assignment,Message out = getOut(true))<SUB>46</SUB>> ]
+"53" [label = <(IDENTIFIER,out,Message out = getOut(true))<SUB>46</SUB>> ]
+"54" [label = <(getOut,getOut(true))<SUB>46</SUB>> ]
+"55" [label = <(IDENTIFIER,exchange,getOut(true))<SUB>46</SUB>> ]
+"56" [label = <(LITERAL,true,getOut(true))<SUB>46</SUB>> ]
+"57" [label = <(copyFrom,copyFrom(in))<SUB>47</SUB>> ]
+"58" [label = <(IDENTIFIER,out,copyFrom(in))<SUB>47</SUB>> ]
+"59" [label = <(IDENTIFIER,in,copyFrom(in))<SUB>47</SUB>> ]
+"60" [label = <(marshal,marshal(exchange, body, buffer))<SUB>49</SUB>> ]
+"61" [label = <(&lt;operator&gt;.fieldAccess,this.dataFormat)<SUB>49</SUB>> ]
+"62" [label = <(IDENTIFIER,this,marshal(exchange, body, buffer))<SUB>49</SUB>> ]
+"63" [label = <(FIELD_IDENTIFIER,dataFormat,dataFormat)<SUB>49</SUB>> ]
+"64" [label = <(IDENTIFIER,exchange,marshal(exchange, body, buffer))<SUB>49</SUB>> ]
+"65" [label = <(IDENTIFIER,body,marshal(exchange, body, buffer))<SUB>49</SUB>> ]
+"66" [label = <(IDENTIFIER,buffer,marshal(exchange, body, buffer))<SUB>49</SUB>> ]
+"67" [label = <(LOCAL,byte[] data: byte[])> ]
+"68" [label = <(&lt;operator&gt;.assignment,byte[] data = buffer.toByteArray())<SUB>50</SUB>> ]
+"69" [label = <(IDENTIFIER,data,byte[] data = buffer.toByteArray())<SUB>50</SUB>> ]
+"70" [label = <(toByteArray,buffer.toByteArray())<SUB>50</SUB>> ]
+"71" [label = <(IDENTIFIER,buffer,buffer.toByteArray())<SUB>50</SUB>> ]
+"72" [label = <(setBody,setBody(data))<SUB>51</SUB>> ]
+"73" [label = <(IDENTIFIER,out,setBody(data))<SUB>51</SUB>> ]
+"74" [label = <(IDENTIFIER,data,setBody(data))<SUB>51</SUB>> ]
+"75" [label = <(MODIFIER,PUBLIC)> ]
+"76" [label = <(MODIFIER,VIRTUAL)> ]
+"77" [label = <(METHOD_RETURN,void)<SUB>39</SUB>> ]
+  "33" -> "34" 
+  "33" -> "35" 
+  "33" -> "36" 
+  "33" -> "75" 
+  "33" -> "76" 
+  "33" -> "77" 
+  "36" -> "6" 
+  "36" -> "37" 
+  "36" -> "40" 
+  "36" -> "41" 
+  "36" -> "42" 
+  "36" -> "46" 
+  "36" -> "47" 
+  "36" -> "51" 
+  "36" -> "52" 
+  "36" -> "57" 
+  "36" -> "60" 
+  "36" -> "67" 
+  "36" -> "68" 
+  "36" -> "72" 
+  "37" -> "38" 
+  "37" -> "39" 
+  "40" -> "5" 
+  "42" -> "43" 
+  "42" -> "44" 
+  "44" -> "45" 
+  "47" -> "48" 
+  "47" -> "49" 
+  "49" -> "50" 
+  "52" -> "53" 
+  "52" -> "54" 
+  "54" -> "55" 
+  "54" -> "56" 
+  "57" -> "58" 
+  "57" -> "59" 
+  "60" -> "61" 
+  "60" -> "64" 
+  "60" -> "65" 
+  "60" -> "66" 
+  "61" -> "62" 
+  "61" -> "63" 
+  "68" -> "69" 
+  "68" -> "70" 
+  "70" -> "71" 
+  "72" -> "73" 
+  "72" -> "74" 
+}

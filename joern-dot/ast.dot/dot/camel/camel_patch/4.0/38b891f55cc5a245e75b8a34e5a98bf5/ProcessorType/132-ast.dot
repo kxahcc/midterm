@@ -1,0 +1,89 @@
+digraph "wrapInErrorHandler" {  
+"3000" [label = <(METHOD,wrapInErrorHandler)<SUB>1580</SUB>> ]
+"433" [label = <(PARAM,this)<SUB>1580</SUB>> ]
+"3001" [label = <(PARAM,RouteContext routeContext)<SUB>1580</SUB>> ]
+"3002" [label = <(PARAM,Processor target)<SUB>1580</SUB>> ]
+"3003" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>1580</SUB>> ]
+"3004" [label = <(CONTROL_STRUCTURE,if (target == null),if (target == null))<SUB>1582</SUB>> ]
+"3005" [label = <(&lt;operator&gt;.equals,target == null)<SUB>1582</SUB>> ]
+"3006" [label = <(IDENTIFIER,target,target == null)<SUB>1582</SUB>> ]
+"3007" [label = <(LITERAL,null,target == null)<SUB>1582</SUB>> ]
+"3008" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>1582</SUB>> ]
+"3009" [label = <(&lt;operator&gt;.throw,throw new RuntimeCamelException(&quot;target not provided.&quot;);)<SUB>1583</SUB>> ]
+"3010" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>1583</SUB>> ]
+"3011" [label = <(&lt;operator&gt;.assignment,&lt;empty&gt;)> ]
+"3012" [label = <(IDENTIFIER,$obj98,&lt;empty&gt;)> ]
+"3013" [label = <(&lt;operator&gt;.alloc,new RuntimeCamelException(&quot;target not provided.&quot;))<SUB>1583</SUB>> ]
+"3014" [label = <(&lt;init&gt;,new RuntimeCamelException(&quot;target not provided.&quot;))<SUB>1583</SUB>> ]
+"3015" [label = <(IDENTIFIER,$obj98,new RuntimeCamelException(&quot;target not provided.&quot;))> ]
+"3016" [label = <(LITERAL,&quot;target not provided.&quot;,new RuntimeCamelException(&quot;target not provided.&quot;))<SUB>1583</SUB>> ]
+"3017" [label = <(IDENTIFIER,$obj98,&lt;empty&gt;)> ]
+"3018" [label = <(LOCAL,ErrorHandlerWrappingStrategy strategy: org.apache.camel.spi.ErrorHandlerWrappingStrategy)> ]
+"3019" [label = <(&lt;operator&gt;.assignment,ErrorHandlerWrappingStrategy strategy = getErrorHandlerWrappingStrategy())<SUB>1586</SUB>> ]
+"3020" [label = <(IDENTIFIER,strategy,ErrorHandlerWrappingStrategy strategy = getErrorHandlerWrappingStrategy())<SUB>1586</SUB>> ]
+"3021" [label = <(getErrorHandlerWrappingStrategy,getErrorHandlerWrappingStrategy())<SUB>1586</SUB>> ]
+"3022" [label = <(IDENTIFIER,routeContext,getErrorHandlerWrappingStrategy())<SUB>1586</SUB>> ]
+"3023" [label = <(CONTROL_STRUCTURE,if (strategy != null),if (strategy != null))<SUB>1588</SUB>> ]
+"3024" [label = <(&lt;operator&gt;.notEquals,strategy != null)<SUB>1588</SUB>> ]
+"3025" [label = <(IDENTIFIER,strategy,strategy != null)<SUB>1588</SUB>> ]
+"3026" [label = <(LITERAL,null,strategy != null)<SUB>1588</SUB>> ]
+"3027" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>1588</SUB>> ]
+"3028" [label = <(RETURN,return strategy.wrapProcessorInErrorHandler(routeContext, this, target);,return strategy.wrapProcessorInErrorHandler(routeContext, this, target);)<SUB>1589</SUB>> ]
+"3029" [label = <(wrapProcessorInErrorHandler,wrapProcessorInErrorHandler(routeContext, this, target))<SUB>1589</SUB>> ]
+"3030" [label = <(IDENTIFIER,strategy,wrapProcessorInErrorHandler(routeContext, this, target))<SUB>1589</SUB>> ]
+"3031" [label = <(IDENTIFIER,routeContext,wrapProcessorInErrorHandler(routeContext, this, target))<SUB>1589</SUB>> ]
+"432" [label = <(IDENTIFIER,this,wrapProcessorInErrorHandler(routeContext, this, target))<SUB>1589</SUB>> ]
+"3032" [label = <(IDENTIFIER,target,wrapProcessorInErrorHandler(routeContext, this, target))<SUB>1589</SUB>> ]
+"3033" [label = <(RETURN,return getErrorHandlerBuilder().createErrorHandler(routeContext, target);,return getErrorHandlerBuilder().createErrorHandler(routeContext, target);)<SUB>1592</SUB>> ]
+"3034" [label = <(createErrorHandler,createErrorHandler(routeContext, target))<SUB>1592</SUB>> ]
+"3035" [label = <(getErrorHandlerBuilder,this.getErrorHandlerBuilder())<SUB>1592</SUB>> ]
+"434" [label = <(IDENTIFIER,this,this.getErrorHandlerBuilder())<SUB>1592</SUB>> ]
+"3036" [label = <(IDENTIFIER,routeContext,createErrorHandler(routeContext, target))<SUB>1592</SUB>> ]
+"3037" [label = <(IDENTIFIER,target,createErrorHandler(routeContext, target))<SUB>1592</SUB>> ]
+"3038" [label = <(MODIFIER,PROTECTED)> ]
+"3039" [label = <(MODIFIER,VIRTUAL)> ]
+"3040" [label = <(METHOD_RETURN,org.apache.camel.Processor)<SUB>1580</SUB>> ]
+  "3000" -> "433" 
+  "3000" -> "3001" 
+  "3000" -> "3002" 
+  "3000" -> "3003" 
+  "3000" -> "3038" 
+  "3000" -> "3039" 
+  "3000" -> "3040" 
+  "3003" -> "3004" 
+  "3003" -> "3018" 
+  "3003" -> "3019" 
+  "3003" -> "3023" 
+  "3003" -> "3033" 
+  "3004" -> "3005" 
+  "3004" -> "3008" 
+  "3005" -> "3006" 
+  "3005" -> "3007" 
+  "3008" -> "3009" 
+  "3009" -> "3010" 
+  "3010" -> "3011" 
+  "3010" -> "3014" 
+  "3010" -> "3017" 
+  "3011" -> "3012" 
+  "3011" -> "3013" 
+  "3014" -> "3015" 
+  "3014" -> "3016" 
+  "3019" -> "3020" 
+  "3019" -> "3021" 
+  "3021" -> "3022" 
+  "3023" -> "3024" 
+  "3023" -> "3027" 
+  "3024" -> "3025" 
+  "3024" -> "3026" 
+  "3027" -> "3028" 
+  "3028" -> "3029" 
+  "3029" -> "3030" 
+  "3029" -> "3031" 
+  "3029" -> "432" 
+  "3029" -> "3032" 
+  "3033" -> "3034" 
+  "3034" -> "3035" 
+  "3034" -> "3036" 
+  "3034" -> "3037" 
+  "3035" -> "434" 
+}

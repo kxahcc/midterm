@@ -1,0 +1,259 @@
+digraph "resolveEntity" {  
+"540" [label = <(METHOD,resolveEntity)<SUB>293</SUB>> ]
+"541" [label = <(PARAM,this)<SUB>293</SUB>> ]
+"542" [label = <(PARAM,String publicId)<SUB>293</SUB>> ]
+"543" [label = <(PARAM,String systemId)<SUB>294</SUB>> ]
+"544" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>294</SUB>> ]
+"545" [label = <(log,log(&quot;resolving systemId: &quot; + systemId, Project.MSG_VERBOSE))<SUB>296</SUB>> ]
+"546" [label = <(&lt;operator&gt;.fieldAccess,helperImpl.project)<SUB>296</SUB>> ]
+"547" [label = <(&lt;operator&gt;.fieldAccess,this.helperImpl)<SUB>296</SUB>> ]
+"548" [label = <(IDENTIFIER,this,log(&quot;resolving systemId: &quot; + systemId, Project.MSG_VERBOSE))<SUB>296</SUB>> ]
+"549" [label = <(FIELD_IDENTIFIER,helperImpl,helperImpl)<SUB>296</SUB>> ]
+"550" [label = <(FIELD_IDENTIFIER,project,project)<SUB>296</SUB>> ]
+"551" [label = <(&lt;operator&gt;.addition,&quot;resolving systemId: &quot; + systemId)<SUB>296</SUB>> ]
+"552" [label = <(LITERAL,&quot;resolving systemId: &quot;,&quot;resolving systemId: &quot; + systemId)<SUB>296</SUB>> ]
+"553" [label = <(IDENTIFIER,systemId,&quot;resolving systemId: &quot; + systemId)<SUB>296</SUB>> ]
+"554" [label = <(&lt;operator&gt;.fieldAccess,Project.MSG_VERBOSE)<SUB>296</SUB>> ]
+"555" [label = <(IDENTIFIER,Project,log(&quot;resolving systemId: &quot; + systemId, Project.MSG_VERBOSE))<SUB>296</SUB>> ]
+"556" [label = <(FIELD_IDENTIFIER,MSG_VERBOSE,MSG_VERBOSE)<SUB>296</SUB>> ]
+"557" [label = <(CONTROL_STRUCTURE,if (systemId.startsWith(&quot;file:&quot;)),if (systemId.startsWith(&quot;file:&quot;)))<SUB>298</SUB>> ]
+"558" [label = <(startsWith,systemId.startsWith(&quot;file:&quot;))<SUB>298</SUB>> ]
+"559" [label = <(IDENTIFIER,systemId,systemId.startsWith(&quot;file:&quot;))<SUB>298</SUB>> ]
+"560" [label = <(LITERAL,&quot;file:&quot;,systemId.startsWith(&quot;file:&quot;))<SUB>298</SUB>> ]
+"561" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>298</SUB>> ]
+"562" [label = <(LOCAL,String path: java.lang.String)> ]
+"563" [label = <(&lt;operator&gt;.assignment,String path = fromURI(systemId))<SUB>299</SUB>> ]
+"564" [label = <(IDENTIFIER,path,String path = fromURI(systemId))<SUB>299</SUB>> ]
+"565" [label = <(fromURI,fromURI(systemId))<SUB>299</SUB>> ]
+"566" [label = <(&lt;operator&gt;.fieldAccess,ProjectHelperImpl$RootHandler.FILE_UTILS)<SUB>299</SUB>> ]
+"567" [label = <(IDENTIFIER,ProjectHelperImpl$RootHandler,fromURI(systemId))<SUB>299</SUB>> ]
+"568" [label = <(FIELD_IDENTIFIER,FILE_UTILS,FILE_UTILS)<SUB>299</SUB>> ]
+"569" [label = <(IDENTIFIER,systemId,fromURI(systemId))<SUB>299</SUB>> ]
+"27" [label = <(LOCAL,File file: java.io.File)> ]
+"570" [label = <(&lt;operator&gt;.assignment,File file = new File(path))<SUB>301</SUB>> ]
+"571" [label = <(IDENTIFIER,file,File file = new File(path))<SUB>301</SUB>> ]
+"572" [label = <(&lt;operator&gt;.alloc,new File(path))<SUB>301</SUB>> ]
+"573" [label = <(&lt;init&gt;,new File(path))<SUB>301</SUB>> ]
+"26" [label = <(IDENTIFIER,file,new File(path))<SUB>301</SUB>> ]
+"574" [label = <(IDENTIFIER,path,new File(path))<SUB>301</SUB>> ]
+"575" [label = <(CONTROL_STRUCTURE,if (!file.isAbsolute()),if (!file.isAbsolute()))<SUB>302</SUB>> ]
+"576" [label = <(&lt;operator&gt;.logicalNot,!file.isAbsolute())<SUB>302</SUB>> ]
+"577" [label = <(isAbsolute,file.isAbsolute())<SUB>302</SUB>> ]
+"578" [label = <(IDENTIFIER,file,file.isAbsolute())<SUB>302</SUB>> ]
+"579" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>302</SUB>> ]
+"580" [label = <(&lt;operator&gt;.assignment,file = resolveFile(helperImpl.buildFileParent, path))<SUB>303</SUB>> ]
+"581" [label = <(IDENTIFIER,file,file = resolveFile(helperImpl.buildFileParent, path))<SUB>303</SUB>> ]
+"582" [label = <(resolveFile,resolveFile(helperImpl.buildFileParent, path))<SUB>303</SUB>> ]
+"583" [label = <(&lt;operator&gt;.fieldAccess,ProjectHelperImpl$RootHandler.FILE_UTILS)<SUB>303</SUB>> ]
+"584" [label = <(IDENTIFIER,ProjectHelperImpl$RootHandler,resolveFile(helperImpl.buildFileParent, path))<SUB>303</SUB>> ]
+"585" [label = <(FIELD_IDENTIFIER,FILE_UTILS,FILE_UTILS)<SUB>303</SUB>> ]
+"586" [label = <(&lt;operator&gt;.fieldAccess,helperImpl.buildFileParent)<SUB>303</SUB>> ]
+"587" [label = <(&lt;operator&gt;.fieldAccess,this.helperImpl)<SUB>303</SUB>> ]
+"588" [label = <(IDENTIFIER,this,resolveFile(helperImpl.buildFileParent, path))<SUB>303</SUB>> ]
+"589" [label = <(FIELD_IDENTIFIER,helperImpl,helperImpl)<SUB>303</SUB>> ]
+"590" [label = <(FIELD_IDENTIFIER,buildFileParent,buildFileParent)<SUB>303</SUB>> ]
+"591" [label = <(IDENTIFIER,path,resolveFile(helperImpl.buildFileParent, path))<SUB>303</SUB>> ]
+"592" [label = <(log,log(&quot;Warning: '&quot; + systemId + &quot;' in &quot; + helperImpl.buildFile + &quot; should be expressed simply as '&quot; + path.replace('\\', '/') + &quot;' for compliance with other XML tools&quot;, Project.MSG_WARN))<SUB>304</SUB>> ]
+"593" [label = <(&lt;operator&gt;.fieldAccess,helperImpl.project)<SUB>304</SUB>> ]
+"594" [label = <(&lt;operator&gt;.fieldAccess,this.helperImpl)<SUB>304</SUB>> ]
+"595" [label = <(IDENTIFIER,this,log(&quot;Warning: '&quot; + systemId + &quot;' in &quot; + helperImpl.buildFile + &quot; should be expressed simply as '&quot; + path.replace('\\', '/') + &quot;' for compliance with other XML tools&quot;, Project.MSG_WARN))<SUB>304</SUB>> ]
+"596" [label = <(FIELD_IDENTIFIER,helperImpl,helperImpl)<SUB>304</SUB>> ]
+"597" [label = <(FIELD_IDENTIFIER,project,project)<SUB>304</SUB>> ]
+"598" [label = <(&lt;operator&gt;.addition,&quot;Warning: '&quot; + systemId + &quot;' in &quot; + helperImpl.buildFile + &quot; should be expressed simply as '&quot; + path.replace('\\', '/') + &quot;' for compliance with other XML tools&quot;)<SUB>305</SUB>> ]
+"599" [label = <(&lt;operator&gt;.addition,&quot;Warning: '&quot; + systemId + &quot;' in &quot; + helperImpl.buildFile + &quot; should be expressed simply as '&quot; + path.replace('\\', '/'))<SUB>305</SUB>> ]
+"600" [label = <(&lt;operator&gt;.addition,&quot;Warning: '&quot; + systemId + &quot;' in &quot; + helperImpl.buildFile + &quot; should be expressed simply as '&quot;)<SUB>305</SUB>> ]
+"601" [label = <(&lt;operator&gt;.addition,&quot;Warning: '&quot; + systemId + &quot;' in &quot; + helperImpl.buildFile)<SUB>305</SUB>> ]
+"602" [label = <(&lt;operator&gt;.addition,&quot;Warning: '&quot; + systemId + &quot;' in &quot;)<SUB>305</SUB>> ]
+"603" [label = <(&lt;operator&gt;.addition,&quot;Warning: '&quot; + systemId)<SUB>305</SUB>> ]
+"604" [label = <(LITERAL,&quot;Warning: '&quot;,&quot;Warning: '&quot; + systemId)<SUB>305</SUB>> ]
+"605" [label = <(IDENTIFIER,systemId,&quot;Warning: '&quot; + systemId)<SUB>305</SUB>> ]
+"606" [label = <(LITERAL,&quot;' in &quot;,&quot;Warning: '&quot; + systemId + &quot;' in &quot;)<SUB>305</SUB>> ]
+"607" [label = <(&lt;operator&gt;.fieldAccess,helperImpl.buildFile)<SUB>305</SUB>> ]
+"608" [label = <(&lt;operator&gt;.fieldAccess,this.helperImpl)<SUB>305</SUB>> ]
+"609" [label = <(IDENTIFIER,this,&quot;Warning: '&quot; + systemId + &quot;' in &quot; + helperImpl.buildFile)<SUB>305</SUB>> ]
+"610" [label = <(FIELD_IDENTIFIER,helperImpl,helperImpl)<SUB>305</SUB>> ]
+"611" [label = <(FIELD_IDENTIFIER,buildFile,buildFile)<SUB>305</SUB>> ]
+"612" [label = <(LITERAL,&quot; should be expressed simply as '&quot;,&quot;Warning: '&quot; + systemId + &quot;' in &quot; + helperImpl.buildFile + &quot; should be expressed simply as '&quot;)<SUB>306</SUB>> ]
+"613" [label = <(replace,path.replace('\\', '/'))<SUB>306</SUB>> ]
+"614" [label = <(IDENTIFIER,path,path.replace('\\', '/'))<SUB>306</SUB>> ]
+"615" [label = <(LITERAL,'\\',path.replace('\\', '/'))<SUB>306</SUB>> ]
+"616" [label = <(LITERAL,'/',path.replace('\\', '/'))<SUB>306</SUB>> ]
+"617" [label = <(LITERAL,&quot;' for compliance with other XML tools&quot;,&quot;Warning: '&quot; + systemId + &quot;' in &quot; + helperImpl.buildFile + &quot; should be expressed simply as '&quot; + path.replace('\\', '/') + &quot;' for compliance with other XML tools&quot;)<SUB>307</SUB>> ]
+"618" [label = <(&lt;operator&gt;.fieldAccess,Project.MSG_WARN)<SUB>308</SUB>> ]
+"619" [label = <(IDENTIFIER,Project,log(&quot;Warning: '&quot; + systemId + &quot;' in &quot; + helperImpl.buildFile + &quot; should be expressed simply as '&quot; + path.replace('\\', '/') + &quot;' for compliance with other XML tools&quot;, Project.MSG_WARN))<SUB>308</SUB>> ]
+"620" [label = <(FIELD_IDENTIFIER,MSG_WARN,MSG_WARN)<SUB>308</SUB>> ]
+"621" [label = <(CONTROL_STRUCTURE,try,try)<SUB>310</SUB>> ]
+"622" [label = <(BLOCK,try,try)<SUB>310</SUB>> ]
+"29" [label = <(LOCAL,InputSource inputSource: org.xml.sax.InputSource)> ]
+"623" [label = <(&lt;operator&gt;.assignment,InputSource inputSource = new InputSource(new FileInputStream(file)))<SUB>311</SUB>> ]
+"624" [label = <(IDENTIFIER,inputSource,InputSource inputSource = new InputSource(new FileInputStream(file)))<SUB>311</SUB>> ]
+"625" [label = <(&lt;operator&gt;.alloc,new InputSource(new FileInputStream(file)))<SUB>311</SUB>> ]
+"626" [label = <(&lt;init&gt;,new InputSource(new FileInputStream(file)))<SUB>311</SUB>> ]
+"28" [label = <(IDENTIFIER,inputSource,new InputSource(new FileInputStream(file)))<SUB>311</SUB>> ]
+"627" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>311</SUB>> ]
+"628" [label = <(&lt;operator&gt;.assignment,&lt;empty&gt;)> ]
+"629" [label = <(IDENTIFIER,$obj18,&lt;empty&gt;)> ]
+"630" [label = <(&lt;operator&gt;.alloc,new FileInputStream(file))<SUB>311</SUB>> ]
+"631" [label = <(&lt;init&gt;,new FileInputStream(file))<SUB>311</SUB>> ]
+"632" [label = <(IDENTIFIER,$obj18,new FileInputStream(file))> ]
+"633" [label = <(IDENTIFIER,file,new FileInputStream(file))<SUB>311</SUB>> ]
+"634" [label = <(IDENTIFIER,$obj18,&lt;empty&gt;)> ]
+"635" [label = <(setSystemId,setSystemId(FILE_UTILS.toURI(file.getAbsolutePath())))<SUB>312</SUB>> ]
+"636" [label = <(IDENTIFIER,inputSource,setSystemId(FILE_UTILS.toURI(file.getAbsolutePath())))<SUB>312</SUB>> ]
+"637" [label = <(toURI,toURI(file.getAbsolutePath()))<SUB>312</SUB>> ]
+"638" [label = <(&lt;operator&gt;.fieldAccess,ProjectHelperImpl$RootHandler.FILE_UTILS)<SUB>312</SUB>> ]
+"639" [label = <(IDENTIFIER,ProjectHelperImpl$RootHandler,toURI(file.getAbsolutePath()))<SUB>312</SUB>> ]
+"640" [label = <(FIELD_IDENTIFIER,FILE_UTILS,FILE_UTILS)<SUB>312</SUB>> ]
+"641" [label = <(getAbsolutePath,file.getAbsolutePath())<SUB>312</SUB>> ]
+"642" [label = <(IDENTIFIER,file,file.getAbsolutePath())<SUB>312</SUB>> ]
+"643" [label = <(RETURN,return inputSource;,return inputSource;)<SUB>313</SUB>> ]
+"644" [label = <(IDENTIFIER,inputSource,return inputSource;)<SUB>313</SUB>> ]
+"645" [label = <(BLOCK,catch,catch)> ]
+"646" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>314</SUB>> ]
+"647" [label = <(log,log(file.getAbsolutePath() + &quot; could not be found&quot;, Project.MSG_WARN))<SUB>315</SUB>> ]
+"648" [label = <(&lt;operator&gt;.fieldAccess,helperImpl.project)<SUB>315</SUB>> ]
+"649" [label = <(&lt;operator&gt;.fieldAccess,this.helperImpl)<SUB>315</SUB>> ]
+"650" [label = <(IDENTIFIER,this,log(file.getAbsolutePath() + &quot; could not be found&quot;, Project.MSG_WARN))<SUB>315</SUB>> ]
+"651" [label = <(FIELD_IDENTIFIER,helperImpl,helperImpl)<SUB>315</SUB>> ]
+"652" [label = <(FIELD_IDENTIFIER,project,project)<SUB>315</SUB>> ]
+"653" [label = <(&lt;operator&gt;.addition,file.getAbsolutePath() + &quot; could not be found&quot;)<SUB>315</SUB>> ]
+"654" [label = <(getAbsolutePath,file.getAbsolutePath())<SUB>315</SUB>> ]
+"655" [label = <(IDENTIFIER,file,file.getAbsolutePath())<SUB>315</SUB>> ]
+"656" [label = <(LITERAL,&quot; could not be found&quot;,file.getAbsolutePath() + &quot; could not be found&quot;)<SUB>315</SUB>> ]
+"657" [label = <(&lt;operator&gt;.fieldAccess,Project.MSG_WARN)<SUB>316</SUB>> ]
+"658" [label = <(IDENTIFIER,Project,log(file.getAbsolutePath() + &quot; could not be found&quot;, Project.MSG_WARN))<SUB>316</SUB>> ]
+"659" [label = <(FIELD_IDENTIFIER,MSG_WARN,MSG_WARN)<SUB>316</SUB>> ]
+"660" [label = <(RETURN,return null;,return null;)<SUB>320</SUB>> ]
+"661" [label = <(LITERAL,null,return null;)<SUB>320</SUB>> ]
+"662" [label = <(MODIFIER,PUBLIC)> ]
+"663" [label = <(MODIFIER,VIRTUAL)> ]
+"664" [label = <(METHOD_RETURN,org.xml.sax.InputSource)<SUB>293</SUB>> ]
+  "540" -> "541" 
+  "540" -> "542" 
+  "540" -> "543" 
+  "540" -> "544" 
+  "540" -> "662" 
+  "540" -> "663" 
+  "540" -> "664" 
+  "544" -> "545" 
+  "544" -> "557" 
+  "544" -> "660" 
+  "545" -> "546" 
+  "545" -> "551" 
+  "545" -> "554" 
+  "546" -> "547" 
+  "546" -> "550" 
+  "547" -> "548" 
+  "547" -> "549" 
+  "551" -> "552" 
+  "551" -> "553" 
+  "554" -> "555" 
+  "554" -> "556" 
+  "557" -> "558" 
+  "557" -> "561" 
+  "558" -> "559" 
+  "558" -> "560" 
+  "561" -> "562" 
+  "561" -> "563" 
+  "561" -> "27" 
+  "561" -> "570" 
+  "561" -> "573" 
+  "561" -> "575" 
+  "561" -> "621" 
+  "563" -> "564" 
+  "563" -> "565" 
+  "565" -> "566" 
+  "565" -> "569" 
+  "566" -> "567" 
+  "566" -> "568" 
+  "570" -> "571" 
+  "570" -> "572" 
+  "573" -> "26" 
+  "573" -> "574" 
+  "575" -> "576" 
+  "575" -> "579" 
+  "576" -> "577" 
+  "577" -> "578" 
+  "579" -> "580" 
+  "579" -> "592" 
+  "580" -> "581" 
+  "580" -> "582" 
+  "582" -> "583" 
+  "582" -> "586" 
+  "582" -> "591" 
+  "583" -> "584" 
+  "583" -> "585" 
+  "586" -> "587" 
+  "586" -> "590" 
+  "587" -> "588" 
+  "587" -> "589" 
+  "592" -> "593" 
+  "592" -> "598" 
+  "592" -> "618" 
+  "593" -> "594" 
+  "593" -> "597" 
+  "594" -> "595" 
+  "594" -> "596" 
+  "598" -> "599" 
+  "598" -> "617" 
+  "599" -> "600" 
+  "599" -> "613" 
+  "600" -> "601" 
+  "600" -> "612" 
+  "601" -> "602" 
+  "601" -> "607" 
+  "602" -> "603" 
+  "602" -> "606" 
+  "603" -> "604" 
+  "603" -> "605" 
+  "607" -> "608" 
+  "607" -> "611" 
+  "608" -> "609" 
+  "608" -> "610" 
+  "613" -> "614" 
+  "613" -> "615" 
+  "613" -> "616" 
+  "618" -> "619" 
+  "618" -> "620" 
+  "621" -> "622" 
+  "621" -> "645" 
+  "622" -> "29" 
+  "622" -> "623" 
+  "622" -> "626" 
+  "622" -> "635" 
+  "622" -> "643" 
+  "623" -> "624" 
+  "623" -> "625" 
+  "626" -> "28" 
+  "626" -> "627" 
+  "627" -> "628" 
+  "627" -> "631" 
+  "627" -> "634" 
+  "628" -> "629" 
+  "628" -> "630" 
+  "631" -> "632" 
+  "631" -> "633" 
+  "635" -> "636" 
+  "635" -> "637" 
+  "637" -> "638" 
+  "637" -> "641" 
+  "638" -> "639" 
+  "638" -> "640" 
+  "641" -> "642" 
+  "643" -> "644" 
+  "645" -> "646" 
+  "646" -> "647" 
+  "647" -> "648" 
+  "647" -> "653" 
+  "647" -> "657" 
+  "648" -> "649" 
+  "648" -> "652" 
+  "649" -> "650" 
+  "649" -> "651" 
+  "653" -> "654" 
+  "653" -> "656" 
+  "654" -> "655" 
+  "657" -> "658" 
+  "657" -> "659" 
+  "660" -> "661" 
+}

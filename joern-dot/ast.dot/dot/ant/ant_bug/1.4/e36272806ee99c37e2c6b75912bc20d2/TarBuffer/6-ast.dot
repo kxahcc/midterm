@@ -1,0 +1,149 @@
+digraph "initialize" {  
+"276" [label = <(METHOD,initialize)<SUB>126</SUB>> ]
+"20" [label = <(PARAM,this)<SUB>126</SUB>> ]
+"277" [label = <(PARAM,int blockSize)<SUB>126</SUB>> ]
+"278" [label = <(PARAM,int recordSize)<SUB>126</SUB>> ]
+"279" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>126</SUB>> ]
+"280" [label = <(&lt;operator&gt;.assignment,this.debug = false)<SUB>127</SUB>> ]
+"281" [label = <(&lt;operator&gt;.fieldAccess,this.debug)<SUB>127</SUB>> ]
+"19" [label = <(IDENTIFIER,this,this.debug = false)<SUB>127</SUB>> ]
+"282" [label = <(FIELD_IDENTIFIER,debug,debug)<SUB>127</SUB>> ]
+"283" [label = <(LITERAL,false,this.debug = false)<SUB>127</SUB>> ]
+"284" [label = <(&lt;operator&gt;.assignment,this.blockSize = blockSize)<SUB>128</SUB>> ]
+"285" [label = <(&lt;operator&gt;.fieldAccess,this.blockSize)<SUB>128</SUB>> ]
+"21" [label = <(IDENTIFIER,this,this.blockSize = blockSize)<SUB>128</SUB>> ]
+"286" [label = <(FIELD_IDENTIFIER,blockSize,blockSize)<SUB>128</SUB>> ]
+"287" [label = <(IDENTIFIER,blockSize,this.blockSize = blockSize)<SUB>128</SUB>> ]
+"288" [label = <(&lt;operator&gt;.assignment,this.recordSize = recordSize)<SUB>129</SUB>> ]
+"289" [label = <(&lt;operator&gt;.fieldAccess,this.recordSize)<SUB>129</SUB>> ]
+"22" [label = <(IDENTIFIER,this,this.recordSize = recordSize)<SUB>129</SUB>> ]
+"290" [label = <(FIELD_IDENTIFIER,recordSize,recordSize)<SUB>129</SUB>> ]
+"291" [label = <(IDENTIFIER,recordSize,this.recordSize = recordSize)<SUB>129</SUB>> ]
+"292" [label = <(&lt;operator&gt;.assignment,this.recsPerBlock = this.blockSize / this.recordSize)<SUB>130</SUB>> ]
+"293" [label = <(&lt;operator&gt;.fieldAccess,this.recsPerBlock)<SUB>130</SUB>> ]
+"23" [label = <(IDENTIFIER,this,this.recsPerBlock = this.blockSize / this.recordSize)<SUB>130</SUB>> ]
+"294" [label = <(FIELD_IDENTIFIER,recsPerBlock,recsPerBlock)<SUB>130</SUB>> ]
+"295" [label = <(&lt;operator&gt;.division,this.blockSize / this.recordSize)<SUB>130</SUB>> ]
+"296" [label = <(&lt;operator&gt;.fieldAccess,this.blockSize)<SUB>130</SUB>> ]
+"24" [label = <(IDENTIFIER,this,this.blockSize / this.recordSize)<SUB>130</SUB>> ]
+"297" [label = <(FIELD_IDENTIFIER,blockSize,blockSize)<SUB>130</SUB>> ]
+"298" [label = <(&lt;operator&gt;.fieldAccess,this.recordSize)<SUB>130</SUB>> ]
+"25" [label = <(IDENTIFIER,this,this.blockSize / this.recordSize)<SUB>130</SUB>> ]
+"299" [label = <(FIELD_IDENTIFIER,recordSize,recordSize)<SUB>130</SUB>> ]
+"300" [label = <(&lt;operator&gt;.assignment,this.blockBuffer = new byte[this.blockSize])<SUB>131</SUB>> ]
+"301" [label = <(&lt;operator&gt;.fieldAccess,this.blockBuffer)<SUB>131</SUB>> ]
+"26" [label = <(IDENTIFIER,this,this.blockBuffer = new byte[this.blockSize])<SUB>131</SUB>> ]
+"302" [label = <(FIELD_IDENTIFIER,blockBuffer,blockBuffer)<SUB>131</SUB>> ]
+"303" [label = <(&lt;operator&gt;.alloc,new byte[this.blockSize])> ]
+"304" [label = <(&lt;operator&gt;.fieldAccess,this.blockSize)<SUB>131</SUB>> ]
+"27" [label = <(IDENTIFIER,this,new byte[this.blockSize])<SUB>131</SUB>> ]
+"305" [label = <(FIELD_IDENTIFIER,blockSize,blockSize)<SUB>131</SUB>> ]
+"306" [label = <(CONTROL_STRUCTURE,if (this.inStream != null),if (this.inStream != null))<SUB>133</SUB>> ]
+"307" [label = <(&lt;operator&gt;.notEquals,this.inStream != null)<SUB>133</SUB>> ]
+"308" [label = <(&lt;operator&gt;.fieldAccess,this.inStream)<SUB>133</SUB>> ]
+"28" [label = <(IDENTIFIER,this,this.inStream != null)<SUB>133</SUB>> ]
+"309" [label = <(FIELD_IDENTIFIER,inStream,inStream)<SUB>133</SUB>> ]
+"310" [label = <(LITERAL,null,this.inStream != null)<SUB>133</SUB>> ]
+"311" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>133</SUB>> ]
+"312" [label = <(&lt;operator&gt;.assignment,this.currBlkIdx = -1)<SUB>134</SUB>> ]
+"313" [label = <(&lt;operator&gt;.fieldAccess,this.currBlkIdx)<SUB>134</SUB>> ]
+"29" [label = <(IDENTIFIER,this,this.currBlkIdx = -1)<SUB>134</SUB>> ]
+"314" [label = <(FIELD_IDENTIFIER,currBlkIdx,currBlkIdx)<SUB>134</SUB>> ]
+"315" [label = <(&lt;operator&gt;.minus,-1)<SUB>134</SUB>> ]
+"316" [label = <(LITERAL,1,-1)<SUB>134</SUB>> ]
+"317" [label = <(&lt;operator&gt;.assignment,this.currRecIdx = this.recsPerBlock)<SUB>135</SUB>> ]
+"318" [label = <(&lt;operator&gt;.fieldAccess,this.currRecIdx)<SUB>135</SUB>> ]
+"30" [label = <(IDENTIFIER,this,this.currRecIdx = this.recsPerBlock)<SUB>135</SUB>> ]
+"319" [label = <(FIELD_IDENTIFIER,currRecIdx,currRecIdx)<SUB>135</SUB>> ]
+"320" [label = <(&lt;operator&gt;.fieldAccess,this.recsPerBlock)<SUB>135</SUB>> ]
+"31" [label = <(IDENTIFIER,this,this.currRecIdx = this.recsPerBlock)<SUB>135</SUB>> ]
+"321" [label = <(FIELD_IDENTIFIER,recsPerBlock,recsPerBlock)<SUB>135</SUB>> ]
+"322" [label = <(CONTROL_STRUCTURE,else,else)<SUB>136</SUB>> ]
+"323" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>136</SUB>> ]
+"324" [label = <(&lt;operator&gt;.assignment,this.currBlkIdx = 0)<SUB>137</SUB>> ]
+"325" [label = <(&lt;operator&gt;.fieldAccess,this.currBlkIdx)<SUB>137</SUB>> ]
+"32" [label = <(IDENTIFIER,this,this.currBlkIdx = 0)<SUB>137</SUB>> ]
+"326" [label = <(FIELD_IDENTIFIER,currBlkIdx,currBlkIdx)<SUB>137</SUB>> ]
+"327" [label = <(LITERAL,0,this.currBlkIdx = 0)<SUB>137</SUB>> ]
+"328" [label = <(&lt;operator&gt;.assignment,this.currRecIdx = 0)<SUB>138</SUB>> ]
+"329" [label = <(&lt;operator&gt;.fieldAccess,this.currRecIdx)<SUB>138</SUB>> ]
+"33" [label = <(IDENTIFIER,this,this.currRecIdx = 0)<SUB>138</SUB>> ]
+"330" [label = <(FIELD_IDENTIFIER,currRecIdx,currRecIdx)<SUB>138</SUB>> ]
+"331" [label = <(LITERAL,0,this.currRecIdx = 0)<SUB>138</SUB>> ]
+"332" [label = <(MODIFIER,PRIVATE)> ]
+"333" [label = <(MODIFIER,VIRTUAL)> ]
+"334" [label = <(METHOD_RETURN,void)<SUB>126</SUB>> ]
+  "276" -> "20" 
+  "276" -> "277" 
+  "276" -> "278" 
+  "276" -> "279" 
+  "276" -> "332" 
+  "276" -> "333" 
+  "276" -> "334" 
+  "279" -> "280" 
+  "279" -> "284" 
+  "279" -> "288" 
+  "279" -> "292" 
+  "279" -> "300" 
+  "279" -> "306" 
+  "280" -> "281" 
+  "280" -> "283" 
+  "281" -> "19" 
+  "281" -> "282" 
+  "284" -> "285" 
+  "284" -> "287" 
+  "285" -> "21" 
+  "285" -> "286" 
+  "288" -> "289" 
+  "288" -> "291" 
+  "289" -> "22" 
+  "289" -> "290" 
+  "292" -> "293" 
+  "292" -> "295" 
+  "293" -> "23" 
+  "293" -> "294" 
+  "295" -> "296" 
+  "295" -> "298" 
+  "296" -> "24" 
+  "296" -> "297" 
+  "298" -> "25" 
+  "298" -> "299" 
+  "300" -> "301" 
+  "300" -> "303" 
+  "301" -> "26" 
+  "301" -> "302" 
+  "303" -> "304" 
+  "304" -> "27" 
+  "304" -> "305" 
+  "306" -> "307" 
+  "306" -> "311" 
+  "306" -> "322" 
+  "307" -> "308" 
+  "307" -> "310" 
+  "308" -> "28" 
+  "308" -> "309" 
+  "311" -> "312" 
+  "311" -> "317" 
+  "312" -> "313" 
+  "312" -> "315" 
+  "313" -> "29" 
+  "313" -> "314" 
+  "315" -> "316" 
+  "317" -> "318" 
+  "317" -> "320" 
+  "318" -> "30" 
+  "318" -> "319" 
+  "320" -> "31" 
+  "320" -> "321" 
+  "322" -> "323" 
+  "323" -> "324" 
+  "323" -> "328" 
+  "324" -> "325" 
+  "324" -> "327" 
+  "325" -> "32" 
+  "325" -> "326" 
+  "328" -> "329" 
+  "328" -> "331" 
+  "329" -> "33" 
+  "329" -> "330" 
+}

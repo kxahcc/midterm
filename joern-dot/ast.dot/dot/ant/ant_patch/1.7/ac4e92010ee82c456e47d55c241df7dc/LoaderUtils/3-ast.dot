@@ -1,0 +1,51 @@
+digraph "normalizeSource" {  
+"54" [label = <(METHOD,normalizeSource)<SUB>75</SUB>> ]
+"55" [label = <(PARAM,File source)<SUB>75</SUB>> ]
+"56" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>75</SUB>> ]
+"57" [label = <(CONTROL_STRUCTURE,if (source != null),if (source != null))<SUB>76</SUB>> ]
+"58" [label = <(&lt;operator&gt;.notEquals,source != null)<SUB>76</SUB>> ]
+"59" [label = <(IDENTIFIER,source,source != null)<SUB>76</SUB>> ]
+"60" [label = <(LITERAL,null,source != null)<SUB>76</SUB>> ]
+"61" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>76</SUB>> ]
+"62" [label = <(CONTROL_STRUCTURE,try,try)<SUB>77</SUB>> ]
+"63" [label = <(BLOCK,try,try)<SUB>77</SUB>> ]
+"64" [label = <(&lt;operator&gt;.assignment,source = normalize(source.getAbsolutePath()))<SUB>78</SUB>> ]
+"65" [label = <(IDENTIFIER,source,source = normalize(source.getAbsolutePath()))<SUB>78</SUB>> ]
+"66" [label = <(normalize,normalize(source.getAbsolutePath()))<SUB>78</SUB>> ]
+"67" [label = <(&lt;operator&gt;.fieldAccess,LoaderUtils.FILE_UTILS)<SUB>78</SUB>> ]
+"68" [label = <(IDENTIFIER,LoaderUtils,normalize(source.getAbsolutePath()))<SUB>78</SUB>> ]
+"69" [label = <(FIELD_IDENTIFIER,FILE_UTILS,FILE_UTILS)<SUB>78</SUB>> ]
+"70" [label = <(getAbsolutePath,source.getAbsolutePath())<SUB>78</SUB>> ]
+"71" [label = <(IDENTIFIER,source,source.getAbsolutePath())<SUB>78</SUB>> ]
+"72" [label = <(BLOCK,catch,catch)> ]
+"73" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>79</SUB>> ]
+"74" [label = <(RETURN,return source;,return source;)<SUB>84</SUB>> ]
+"75" [label = <(IDENTIFIER,source,return source;)<SUB>84</SUB>> ]
+"76" [label = <(MODIFIER,PRIVATE)> ]
+"77" [label = <(MODIFIER,STATIC)> ]
+"78" [label = <(METHOD_RETURN,java.io.File)<SUB>75</SUB>> ]
+  "54" -> "55" 
+  "54" -> "56" 
+  "54" -> "76" 
+  "54" -> "77" 
+  "54" -> "78" 
+  "56" -> "57" 
+  "56" -> "74" 
+  "57" -> "58" 
+  "57" -> "61" 
+  "58" -> "59" 
+  "58" -> "60" 
+  "61" -> "62" 
+  "62" -> "63" 
+  "62" -> "72" 
+  "63" -> "64" 
+  "64" -> "65" 
+  "64" -> "66" 
+  "66" -> "67" 
+  "66" -> "70" 
+  "67" -> "68" 
+  "67" -> "69" 
+  "70" -> "71" 
+  "72" -> "73" 
+  "74" -> "75" 
+}

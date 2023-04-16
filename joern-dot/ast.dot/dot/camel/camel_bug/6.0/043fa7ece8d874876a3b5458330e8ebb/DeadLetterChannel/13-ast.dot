@@ -1,0 +1,47 @@
+digraph "isFailureHandled" {  
+"801" [label = <(METHOD,isFailureHandled)<SUB>339</SUB>> ]
+"802" [label = <(PARAM,Exchange exchange)<SUB>339</SUB>> ]
+"803" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>339</SUB>> ]
+"804" [label = <(RETURN,return exchange.getProperty(FAILURE_HANDLED_PROPERTY) != null || exchange.getIn().getHeader(CAUGHT_EXCEPTION_HEADER) != null;,return exchange.getProperty(FAILURE_HANDLED_PROPERTY) != null || exchange.getIn().getHeader(CAUGHT_EXCEPTION_HEADER) != null;)<SUB>340</SUB>> ]
+"805" [label = <(&lt;operator&gt;.logicalOr,exchange.getProperty(FAILURE_HANDLED_PROPERTY) != null || exchange.getIn().getHeader(CAUGHT_EXCEPTION_HEADER) != null)<SUB>340</SUB>> ]
+"806" [label = <(&lt;operator&gt;.notEquals,exchange.getProperty(FAILURE_HANDLED_PROPERTY) != null)<SUB>340</SUB>> ]
+"807" [label = <(getProperty,getProperty(FAILURE_HANDLED_PROPERTY))<SUB>340</SUB>> ]
+"808" [label = <(IDENTIFIER,exchange,getProperty(FAILURE_HANDLED_PROPERTY))<SUB>340</SUB>> ]
+"809" [label = <(&lt;operator&gt;.fieldAccess,DeadLetterChannel.FAILURE_HANDLED_PROPERTY)<SUB>340</SUB>> ]
+"810" [label = <(IDENTIFIER,DeadLetterChannel,getProperty(FAILURE_HANDLED_PROPERTY))<SUB>340</SUB>> ]
+"811" [label = <(FIELD_IDENTIFIER,FAILURE_HANDLED_PROPERTY,FAILURE_HANDLED_PROPERTY)<SUB>340</SUB>> ]
+"812" [label = <(LITERAL,null,exchange.getProperty(FAILURE_HANDLED_PROPERTY) != null)<SUB>340</SUB>> ]
+"813" [label = <(&lt;operator&gt;.notEquals,exchange.getIn().getHeader(CAUGHT_EXCEPTION_HEADER) != null)<SUB>341</SUB>> ]
+"814" [label = <(getHeader,getHeader(CAUGHT_EXCEPTION_HEADER))<SUB>341</SUB>> ]
+"815" [label = <(getIn,getIn())<SUB>341</SUB>> ]
+"816" [label = <(IDENTIFIER,exchange,getIn())<SUB>341</SUB>> ]
+"817" [label = <(&lt;operator&gt;.fieldAccess,DeadLetterChannel.CAUGHT_EXCEPTION_HEADER)<SUB>341</SUB>> ]
+"818" [label = <(IDENTIFIER,DeadLetterChannel,getHeader(CAUGHT_EXCEPTION_HEADER))<SUB>341</SUB>> ]
+"819" [label = <(FIELD_IDENTIFIER,CAUGHT_EXCEPTION_HEADER,CAUGHT_EXCEPTION_HEADER)<SUB>341</SUB>> ]
+"820" [label = <(LITERAL,null,exchange.getIn().getHeader(CAUGHT_EXCEPTION_HEADER) != null)<SUB>341</SUB>> ]
+"821" [label = <(MODIFIER,PUBLIC)> ]
+"822" [label = <(MODIFIER,STATIC)> ]
+"823" [label = <(METHOD_RETURN,boolean)<SUB>339</SUB>> ]
+  "801" -> "802" 
+  "801" -> "803" 
+  "801" -> "821" 
+  "801" -> "822" 
+  "801" -> "823" 
+  "803" -> "804" 
+  "804" -> "805" 
+  "805" -> "806" 
+  "805" -> "813" 
+  "806" -> "807" 
+  "806" -> "812" 
+  "807" -> "808" 
+  "807" -> "809" 
+  "809" -> "810" 
+  "809" -> "811" 
+  "813" -> "814" 
+  "813" -> "820" 
+  "814" -> "815" 
+  "814" -> "817" 
+  "815" -> "816" 
+  "817" -> "818" 
+  "817" -> "819" 
+}

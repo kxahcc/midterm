@@ -1,0 +1,177 @@
+digraph "scanDir" {  
+"1038" [label = <(METHOD,scanDir)<SUB>552</SUB>> ]
+"53" [label = <(PARAM,this)<SUB>552</SUB>> ]
+"1039" [label = <(PARAM,File srcDir)<SUB>552</SUB>> ]
+"1040" [label = <(PARAM,File destDir)<SUB>552</SUB>> ]
+"1041" [label = <(PARAM,String[] files)<SUB>552</SUB>> ]
+"1042" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>552</SUB>> ]
+"51" [label = <(LOCAL,GlobPatternMapper m: ANY)> ]
+"1043" [label = <(&lt;operator&gt;.assignment,ANY m = new GlobPatternMapper())<SUB>553</SUB>> ]
+"1044" [label = <(IDENTIFIER,m,ANY m = new GlobPatternMapper())<SUB>553</SUB>> ]
+"1045" [label = <(&lt;operator&gt;.alloc,new GlobPatternMapper())<SUB>553</SUB>> ]
+"1046" [label = <(&lt;init&gt;,new GlobPatternMapper())<SUB>553</SUB>> ]
+"50" [label = <(IDENTIFIER,m,new GlobPatternMapper())<SUB>553</SUB>> ]
+"1047" [label = <(setFrom,setFrom(&quot;*.java&quot;))<SUB>554</SUB>> ]
+"1048" [label = <(IDENTIFIER,m,setFrom(&quot;*.java&quot;))<SUB>554</SUB>> ]
+"1049" [label = <(LITERAL,&quot;*.java&quot;,setFrom(&quot;*.java&quot;))<SUB>554</SUB>> ]
+"1050" [label = <(setTo,setTo(&quot;*.class&quot;))<SUB>555</SUB>> ]
+"1051" [label = <(IDENTIFIER,m,setTo(&quot;*.class&quot;))<SUB>555</SUB>> ]
+"1052" [label = <(LITERAL,&quot;*.class&quot;,setTo(&quot;*.class&quot;))<SUB>555</SUB>> ]
+"55" [label = <(LOCAL,SourceFileScanner sfs: ANY)> ]
+"1053" [label = <(&lt;operator&gt;.assignment,ANY sfs = new SourceFileScanner(this))<SUB>556</SUB>> ]
+"1054" [label = <(IDENTIFIER,sfs,ANY sfs = new SourceFileScanner(this))<SUB>556</SUB>> ]
+"1055" [label = <(&lt;operator&gt;.alloc,new SourceFileScanner(this))<SUB>556</SUB>> ]
+"1056" [label = <(&lt;init&gt;,new SourceFileScanner(this))<SUB>556</SUB>> ]
+"54" [label = <(IDENTIFIER,sfs,new SourceFileScanner(this))<SUB>556</SUB>> ]
+"52" [label = <(IDENTIFIER,this,new SourceFileScanner(this))<SUB>556</SUB>> ]
+"1057" [label = <(LOCAL,File[] newFiles: java.io.File[])> ]
+"1058" [label = <(&lt;operator&gt;.assignment,File[] newFiles = restrictAsFiles(files, srcDir, destDir, m))<SUB>557</SUB>> ]
+"1059" [label = <(IDENTIFIER,newFiles,File[] newFiles = restrictAsFiles(files, srcDir, destDir, m))<SUB>557</SUB>> ]
+"1060" [label = <(restrictAsFiles,restrictAsFiles(files, srcDir, destDir, m))<SUB>557</SUB>> ]
+"1061" [label = <(IDENTIFIER,sfs,restrictAsFiles(files, srcDir, destDir, m))<SUB>557</SUB>> ]
+"1062" [label = <(IDENTIFIER,files,restrictAsFiles(files, srcDir, destDir, m))<SUB>557</SUB>> ]
+"1063" [label = <(IDENTIFIER,srcDir,restrictAsFiles(files, srcDir, destDir, m))<SUB>557</SUB>> ]
+"1064" [label = <(IDENTIFIER,destDir,restrictAsFiles(files, srcDir, destDir, m))<SUB>557</SUB>> ]
+"1065" [label = <(IDENTIFIER,m,restrictAsFiles(files, srcDir, destDir, m))<SUB>557</SUB>> ]
+"1066" [label = <(CONTROL_STRUCTURE,if (newFiles.length &gt; 0),if (newFiles.length &gt; 0))<SUB>559</SUB>> ]
+"1067" [label = <(&lt;operator&gt;.greaterThan,newFiles.length &gt; 0)<SUB>559</SUB>> ]
+"1068" [label = <(&lt;operator&gt;.fieldAccess,newFiles.length)<SUB>559</SUB>> ]
+"1069" [label = <(IDENTIFIER,newFiles,newFiles.length &gt; 0)<SUB>559</SUB>> ]
+"1070" [label = <(FIELD_IDENTIFIER,length,length)<SUB>559</SUB>> ]
+"1071" [label = <(LITERAL,0,newFiles.length &gt; 0)<SUB>559</SUB>> ]
+"1072" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>559</SUB>> ]
+"1073" [label = <(LOCAL,File[] newCompileList: java.io.File[])> ]
+"1074" [label = <(&lt;operator&gt;.assignment,File[] newCompileList = new File[compileList.length + newFiles.length])<SUB>560</SUB>> ]
+"1075" [label = <(IDENTIFIER,newCompileList,File[] newCompileList = new File[compileList.length + newFiles.length])<SUB>560</SUB>> ]
+"1076" [label = <(&lt;operator&gt;.alloc,new File[compileList.length + newFiles.length])> ]
+"1077" [label = <(&lt;operator&gt;.addition,compileList.length + newFiles.length)<SUB>560</SUB>> ]
+"1078" [label = <(&lt;operator&gt;.fieldAccess,compileList.length)<SUB>560</SUB>> ]
+"1079" [label = <(&lt;operator&gt;.fieldAccess,this.compileList)<SUB>560</SUB>> ]
+"1080" [label = <(IDENTIFIER,this,compileList.length + newFiles.length)<SUB>560</SUB>> ]
+"1081" [label = <(FIELD_IDENTIFIER,compileList,compileList)<SUB>560</SUB>> ]
+"1082" [label = <(FIELD_IDENTIFIER,length,length)<SUB>560</SUB>> ]
+"1083" [label = <(&lt;operator&gt;.fieldAccess,newFiles.length)<SUB>561</SUB>> ]
+"1084" [label = <(IDENTIFIER,newFiles,compileList.length + newFiles.length)<SUB>561</SUB>> ]
+"1085" [label = <(FIELD_IDENTIFIER,length,length)<SUB>561</SUB>> ]
+"1086" [label = <(arraycopy,System.arraycopy(compileList, 0, newCompileList, 0, compileList.length))<SUB>562</SUB>> ]
+"1087" [label = <(IDENTIFIER,System,System.arraycopy(compileList, 0, newCompileList, 0, compileList.length))<SUB>562</SUB>> ]
+"1088" [label = <(&lt;operator&gt;.fieldAccess,this.compileList)<SUB>562</SUB>> ]
+"1089" [label = <(IDENTIFIER,this,System.arraycopy(compileList, 0, newCompileList, 0, compileList.length))<SUB>562</SUB>> ]
+"1090" [label = <(FIELD_IDENTIFIER,compileList,compileList)<SUB>562</SUB>> ]
+"1091" [label = <(LITERAL,0,System.arraycopy(compileList, 0, newCompileList, 0, compileList.length))<SUB>562</SUB>> ]
+"1092" [label = <(IDENTIFIER,newCompileList,System.arraycopy(compileList, 0, newCompileList, 0, compileList.length))<SUB>562</SUB>> ]
+"1093" [label = <(LITERAL,0,System.arraycopy(compileList, 0, newCompileList, 0, compileList.length))<SUB>562</SUB>> ]
+"1094" [label = <(&lt;operator&gt;.fieldAccess,compileList.length)<SUB>563</SUB>> ]
+"1095" [label = <(&lt;operator&gt;.fieldAccess,this.compileList)<SUB>563</SUB>> ]
+"1096" [label = <(IDENTIFIER,this,System.arraycopy(compileList, 0, newCompileList, 0, compileList.length))<SUB>563</SUB>> ]
+"1097" [label = <(FIELD_IDENTIFIER,compileList,compileList)<SUB>563</SUB>> ]
+"1098" [label = <(FIELD_IDENTIFIER,length,length)<SUB>563</SUB>> ]
+"1099" [label = <(arraycopy,System.arraycopy(newFiles, 0, newCompileList, compileList.length, newFiles.length))<SUB>564</SUB>> ]
+"1100" [label = <(IDENTIFIER,System,System.arraycopy(newFiles, 0, newCompileList, compileList.length, newFiles.length))<SUB>564</SUB>> ]
+"1101" [label = <(IDENTIFIER,newFiles,System.arraycopy(newFiles, 0, newCompileList, compileList.length, newFiles.length))<SUB>564</SUB>> ]
+"1102" [label = <(LITERAL,0,System.arraycopy(newFiles, 0, newCompileList, compileList.length, newFiles.length))<SUB>564</SUB>> ]
+"1103" [label = <(IDENTIFIER,newCompileList,System.arraycopy(newFiles, 0, newCompileList, compileList.length, newFiles.length))<SUB>564</SUB>> ]
+"1104" [label = <(&lt;operator&gt;.fieldAccess,compileList.length)<SUB>565</SUB>> ]
+"1105" [label = <(&lt;operator&gt;.fieldAccess,this.compileList)<SUB>565</SUB>> ]
+"1106" [label = <(IDENTIFIER,this,System.arraycopy(newFiles, 0, newCompileList, compileList.length, newFiles.length))<SUB>565</SUB>> ]
+"1107" [label = <(FIELD_IDENTIFIER,compileList,compileList)<SUB>565</SUB>> ]
+"1108" [label = <(FIELD_IDENTIFIER,length,length)<SUB>565</SUB>> ]
+"1109" [label = <(&lt;operator&gt;.fieldAccess,newFiles.length)<SUB>565</SUB>> ]
+"1110" [label = <(IDENTIFIER,newFiles,System.arraycopy(newFiles, 0, newCompileList, compileList.length, newFiles.length))<SUB>565</SUB>> ]
+"1111" [label = <(FIELD_IDENTIFIER,length,length)<SUB>565</SUB>> ]
+"1112" [label = <(&lt;operator&gt;.assignment,this.compileList = newCompileList)<SUB>566</SUB>> ]
+"1113" [label = <(&lt;operator&gt;.fieldAccess,this.compileList)<SUB>566</SUB>> ]
+"1114" [label = <(IDENTIFIER,this,this.compileList = newCompileList)<SUB>566</SUB>> ]
+"1115" [label = <(FIELD_IDENTIFIER,compileList,compileList)<SUB>566</SUB>> ]
+"1116" [label = <(IDENTIFIER,newCompileList,this.compileList = newCompileList)<SUB>566</SUB>> ]
+"1117" [label = <(MODIFIER,PROTECTED)> ]
+"1118" [label = <(MODIFIER,VIRTUAL)> ]
+"1119" [label = <(METHOD_RETURN,void)<SUB>552</SUB>> ]
+  "1038" -> "53" 
+  "1038" -> "1039" 
+  "1038" -> "1040" 
+  "1038" -> "1041" 
+  "1038" -> "1042" 
+  "1038" -> "1117" 
+  "1038" -> "1118" 
+  "1038" -> "1119" 
+  "1042" -> "51" 
+  "1042" -> "1043" 
+  "1042" -> "1046" 
+  "1042" -> "1047" 
+  "1042" -> "1050" 
+  "1042" -> "55" 
+  "1042" -> "1053" 
+  "1042" -> "1056" 
+  "1042" -> "1057" 
+  "1042" -> "1058" 
+  "1042" -> "1066" 
+  "1043" -> "1044" 
+  "1043" -> "1045" 
+  "1046" -> "50" 
+  "1047" -> "1048" 
+  "1047" -> "1049" 
+  "1050" -> "1051" 
+  "1050" -> "1052" 
+  "1053" -> "1054" 
+  "1053" -> "1055" 
+  "1056" -> "54" 
+  "1056" -> "52" 
+  "1058" -> "1059" 
+  "1058" -> "1060" 
+  "1060" -> "1061" 
+  "1060" -> "1062" 
+  "1060" -> "1063" 
+  "1060" -> "1064" 
+  "1060" -> "1065" 
+  "1066" -> "1067" 
+  "1066" -> "1072" 
+  "1067" -> "1068" 
+  "1067" -> "1071" 
+  "1068" -> "1069" 
+  "1068" -> "1070" 
+  "1072" -> "1073" 
+  "1072" -> "1074" 
+  "1072" -> "1086" 
+  "1072" -> "1099" 
+  "1072" -> "1112" 
+  "1074" -> "1075" 
+  "1074" -> "1076" 
+  "1076" -> "1077" 
+  "1077" -> "1078" 
+  "1077" -> "1083" 
+  "1078" -> "1079" 
+  "1078" -> "1082" 
+  "1079" -> "1080" 
+  "1079" -> "1081" 
+  "1083" -> "1084" 
+  "1083" -> "1085" 
+  "1086" -> "1087" 
+  "1086" -> "1088" 
+  "1086" -> "1091" 
+  "1086" -> "1092" 
+  "1086" -> "1093" 
+  "1086" -> "1094" 
+  "1088" -> "1089" 
+  "1088" -> "1090" 
+  "1094" -> "1095" 
+  "1094" -> "1098" 
+  "1095" -> "1096" 
+  "1095" -> "1097" 
+  "1099" -> "1100" 
+  "1099" -> "1101" 
+  "1099" -> "1102" 
+  "1099" -> "1103" 
+  "1099" -> "1104" 
+  "1099" -> "1109" 
+  "1104" -> "1105" 
+  "1104" -> "1108" 
+  "1105" -> "1106" 
+  "1105" -> "1107" 
+  "1109" -> "1110" 
+  "1109" -> "1111" 
+  "1112" -> "1113" 
+  "1112" -> "1116" 
+  "1113" -> "1114" 
+  "1113" -> "1115" 
+}

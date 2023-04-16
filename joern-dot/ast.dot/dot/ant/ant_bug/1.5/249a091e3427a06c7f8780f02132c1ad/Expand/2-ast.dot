@@ -1,0 +1,549 @@
+digraph "extractFile" {  
+"335" [label = <(METHOD,extractFile)<SUB>175</SUB>> ]
+"16" [label = <(PARAM,this)<SUB>175</SUB>> ]
+"336" [label = <(PARAM,FileUtils fileUtils)<SUB>175</SUB>> ]
+"337" [label = <(PARAM,File srcF)<SUB>175</SUB>> ]
+"338" [label = <(PARAM,File dir)<SUB>175</SUB>> ]
+"339" [label = <(PARAM,InputStream compressedInputStream)<SUB>176</SUB>> ]
+"340" [label = <(PARAM,String entryName)<SUB>177</SUB>> ]
+"341" [label = <(PARAM,Date entryDate)<SUB>178</SUB>> ]
+"342" [label = <(PARAM,boolean isDirectory)<SUB>178</SUB>> ]
+"343" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>179</SUB>> ]
+"344" [label = <(CONTROL_STRUCTURE,if (patternsets != null &amp;&amp; patternsets.size() &gt; 0),if (patternsets != null &amp;&amp; patternsets.size() &gt; 0))<SUB>181</SUB>> ]
+"345" [label = <(&lt;operator&gt;.logicalAnd,patternsets != null &amp;&amp; patternsets.size() &gt; 0)<SUB>181</SUB>> ]
+"346" [label = <(&lt;operator&gt;.notEquals,patternsets != null)<SUB>181</SUB>> ]
+"347" [label = <(&lt;operator&gt;.fieldAccess,this.patternsets)<SUB>181</SUB>> ]
+"348" [label = <(IDENTIFIER,this,patternsets != null)<SUB>181</SUB>> ]
+"349" [label = <(FIELD_IDENTIFIER,patternsets,patternsets)<SUB>181</SUB>> ]
+"350" [label = <(LITERAL,null,patternsets != null)<SUB>181</SUB>> ]
+"351" [label = <(&lt;operator&gt;.greaterThan,patternsets.size() &gt; 0)<SUB>181</SUB>> ]
+"352" [label = <(size,patternsets.size())<SUB>181</SUB>> ]
+"353" [label = <(&lt;operator&gt;.fieldAccess,this.patternsets)<SUB>181</SUB>> ]
+"354" [label = <(IDENTIFIER,this,patternsets.size())<SUB>181</SUB>> ]
+"355" [label = <(FIELD_IDENTIFIER,patternsets,patternsets)<SUB>181</SUB>> ]
+"356" [label = <(LITERAL,0,patternsets.size() &gt; 0)<SUB>181</SUB>> ]
+"357" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>181</SUB>> ]
+"358" [label = <(LOCAL,String name: java.lang.String)> ]
+"359" [label = <(&lt;operator&gt;.assignment,String name = entryName)<SUB>182</SUB>> ]
+"360" [label = <(IDENTIFIER,name,String name = entryName)<SUB>182</SUB>> ]
+"361" [label = <(IDENTIFIER,entryName,String name = entryName)<SUB>182</SUB>> ]
+"362" [label = <(LOCAL,boolean included: boolean)> ]
+"363" [label = <(&lt;operator&gt;.assignment,boolean included = false)<SUB>183</SUB>> ]
+"364" [label = <(IDENTIFIER,included,boolean included = false)<SUB>183</SUB>> ]
+"365" [label = <(LITERAL,false,boolean included = false)<SUB>183</SUB>> ]
+"366" [label = <(CONTROL_STRUCTURE,for (int v = 0; Some(v &lt; patternsets.size()); v++),for (int v = 0; Some(v &lt; patternsets.size()); v++))<SUB>184</SUB>> ]
+"367" [label = <(LOCAL,int v: int)> ]
+"368" [label = <(&lt;operator&gt;.assignment,int v = 0)<SUB>184</SUB>> ]
+"369" [label = <(IDENTIFIER,v,int v = 0)<SUB>184</SUB>> ]
+"370" [label = <(LITERAL,0,int v = 0)<SUB>184</SUB>> ]
+"371" [label = <(&lt;operator&gt;.lessThan,v &lt; patternsets.size())<SUB>184</SUB>> ]
+"372" [label = <(IDENTIFIER,v,v &lt; patternsets.size())<SUB>184</SUB>> ]
+"373" [label = <(size,patternsets.size())<SUB>184</SUB>> ]
+"374" [label = <(&lt;operator&gt;.fieldAccess,this.patternsets)<SUB>184</SUB>> ]
+"375" [label = <(IDENTIFIER,this,patternsets.size())<SUB>184</SUB>> ]
+"376" [label = <(FIELD_IDENTIFIER,patternsets,patternsets)<SUB>184</SUB>> ]
+"377" [label = <(&lt;operator&gt;.postIncrement,v++)<SUB>184</SUB>> ]
+"378" [label = <(IDENTIFIER,v,v++)<SUB>184</SUB>> ]
+"379" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>184</SUB>> ]
+"380" [label = <(LOCAL,PatternSet p: org.apache.tools.ant.types.PatternSet)> ]
+"381" [label = <(&lt;operator&gt;.assignment,PatternSet p = (PatternSet) patternsets.elementAt(v))<SUB>185</SUB>> ]
+"382" [label = <(IDENTIFIER,p,PatternSet p = (PatternSet) patternsets.elementAt(v))<SUB>185</SUB>> ]
+"383" [label = <(&lt;operator&gt;.cast,(PatternSet) patternsets.elementAt(v))<SUB>185</SUB>> ]
+"384" [label = <(TYPE_REF,PatternSet,PatternSet)<SUB>185</SUB>> ]
+"385" [label = <(elementAt,patternsets.elementAt(v))<SUB>185</SUB>> ]
+"386" [label = <(&lt;operator&gt;.fieldAccess,this.patternsets)<SUB>185</SUB>> ]
+"387" [label = <(IDENTIFIER,this,patternsets.elementAt(v))<SUB>185</SUB>> ]
+"388" [label = <(FIELD_IDENTIFIER,patternsets,patternsets)<SUB>185</SUB>> ]
+"389" [label = <(IDENTIFIER,v,patternsets.elementAt(v))<SUB>185</SUB>> ]
+"390" [label = <(LOCAL,String[] incls: java.lang.String[])> ]
+"391" [label = <(&lt;operator&gt;.assignment,String[] incls = getIncludePatterns(project))<SUB>186</SUB>> ]
+"392" [label = <(IDENTIFIER,incls,String[] incls = getIncludePatterns(project))<SUB>186</SUB>> ]
+"393" [label = <(getIncludePatterns,getIncludePatterns(project))<SUB>186</SUB>> ]
+"394" [label = <(IDENTIFIER,p,getIncludePatterns(project))<SUB>186</SUB>> ]
+"395" [label = <(IDENTIFIER,project,getIncludePatterns(project))<SUB>186</SUB>> ]
+"396" [label = <(CONTROL_STRUCTURE,if (incls != null),if (incls != null))<SUB>187</SUB>> ]
+"397" [label = <(&lt;operator&gt;.notEquals,incls != null)<SUB>187</SUB>> ]
+"398" [label = <(IDENTIFIER,incls,incls != null)<SUB>187</SUB>> ]
+"399" [label = <(LITERAL,null,incls != null)<SUB>187</SUB>> ]
+"400" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>187</SUB>> ]
+"401" [label = <(CONTROL_STRUCTURE,for (int w = 0; Some(w &lt; incls.length); w++),for (int w = 0; Some(w &lt; incls.length); w++))<SUB>188</SUB>> ]
+"402" [label = <(LOCAL,int w: int)> ]
+"403" [label = <(&lt;operator&gt;.assignment,int w = 0)<SUB>188</SUB>> ]
+"404" [label = <(IDENTIFIER,w,int w = 0)<SUB>188</SUB>> ]
+"405" [label = <(LITERAL,0,int w = 0)<SUB>188</SUB>> ]
+"406" [label = <(&lt;operator&gt;.lessThan,w &lt; incls.length)<SUB>188</SUB>> ]
+"407" [label = <(IDENTIFIER,w,w &lt; incls.length)<SUB>188</SUB>> ]
+"408" [label = <(&lt;operator&gt;.fieldAccess,incls.length)<SUB>188</SUB>> ]
+"409" [label = <(IDENTIFIER,incls,w &lt; incls.length)<SUB>188</SUB>> ]
+"410" [label = <(FIELD_IDENTIFIER,length,length)<SUB>188</SUB>> ]
+"411" [label = <(&lt;operator&gt;.postIncrement,w++)<SUB>188</SUB>> ]
+"412" [label = <(IDENTIFIER,w,w++)<SUB>188</SUB>> ]
+"413" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>188</SUB>> ]
+"414" [label = <(LOCAL,boolean isIncl: boolean)> ]
+"415" [label = <(&lt;operator&gt;.assignment,boolean isIncl = match(incls[w], name))<SUB>189</SUB>> ]
+"416" [label = <(IDENTIFIER,isIncl,boolean isIncl = match(incls[w], name))<SUB>189</SUB>> ]
+"417" [label = <(match,match(incls[w], name))<SUB>190</SUB>> ]
+"418" [label = <(IDENTIFIER,DirectoryScanner,match(incls[w], name))<SUB>190</SUB>> ]
+"419" [label = <(&lt;operator&gt;.indexAccess,incls[w])<SUB>190</SUB>> ]
+"420" [label = <(IDENTIFIER,incls,match(incls[w], name))<SUB>190</SUB>> ]
+"421" [label = <(IDENTIFIER,w,match(incls[w], name))<SUB>190</SUB>> ]
+"422" [label = <(IDENTIFIER,name,match(incls[w], name))<SUB>190</SUB>> ]
+"423" [label = <(CONTROL_STRUCTURE,if (isIncl),if (isIncl))<SUB>191</SUB>> ]
+"424" [label = <(IDENTIFIER,isIncl,if (isIncl))<SUB>191</SUB>> ]
+"425" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>191</SUB>> ]
+"426" [label = <(&lt;operator&gt;.assignment,included = true)<SUB>192</SUB>> ]
+"427" [label = <(IDENTIFIER,included,included = true)<SUB>192</SUB>> ]
+"428" [label = <(LITERAL,true,included = true)<SUB>192</SUB>> ]
+"429" [label = <(CONTROL_STRUCTURE,break;,break;)<SUB>193</SUB>> ]
+"430" [label = <(LOCAL,String[] excls: java.lang.String[])> ]
+"431" [label = <(&lt;operator&gt;.assignment,String[] excls = getExcludePatterns(project))<SUB>197</SUB>> ]
+"432" [label = <(IDENTIFIER,excls,String[] excls = getExcludePatterns(project))<SUB>197</SUB>> ]
+"433" [label = <(getExcludePatterns,getExcludePatterns(project))<SUB>197</SUB>> ]
+"434" [label = <(IDENTIFIER,p,getExcludePatterns(project))<SUB>197</SUB>> ]
+"435" [label = <(IDENTIFIER,project,getExcludePatterns(project))<SUB>197</SUB>> ]
+"436" [label = <(CONTROL_STRUCTURE,if (excls != null),if (excls != null))<SUB>198</SUB>> ]
+"437" [label = <(&lt;operator&gt;.notEquals,excls != null)<SUB>198</SUB>> ]
+"438" [label = <(IDENTIFIER,excls,excls != null)<SUB>198</SUB>> ]
+"439" [label = <(LITERAL,null,excls != null)<SUB>198</SUB>> ]
+"440" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>198</SUB>> ]
+"441" [label = <(CONTROL_STRUCTURE,for (int w = 0; Some(w &lt; excls.length); w++),for (int w = 0; Some(w &lt; excls.length); w++))<SUB>199</SUB>> ]
+"442" [label = <(LOCAL,int w: int)> ]
+"443" [label = <(&lt;operator&gt;.assignment,int w = 0)<SUB>199</SUB>> ]
+"444" [label = <(IDENTIFIER,w,int w = 0)<SUB>199</SUB>> ]
+"445" [label = <(LITERAL,0,int w = 0)<SUB>199</SUB>> ]
+"446" [label = <(&lt;operator&gt;.lessThan,w &lt; excls.length)<SUB>199</SUB>> ]
+"447" [label = <(IDENTIFIER,w,w &lt; excls.length)<SUB>199</SUB>> ]
+"448" [label = <(&lt;operator&gt;.fieldAccess,excls.length)<SUB>199</SUB>> ]
+"449" [label = <(IDENTIFIER,excls,w &lt; excls.length)<SUB>199</SUB>> ]
+"450" [label = <(FIELD_IDENTIFIER,length,length)<SUB>199</SUB>> ]
+"451" [label = <(&lt;operator&gt;.postIncrement,w++)<SUB>199</SUB>> ]
+"452" [label = <(IDENTIFIER,w,w++)<SUB>199</SUB>> ]
+"453" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>199</SUB>> ]
+"454" [label = <(LOCAL,boolean isExcl: boolean)> ]
+"455" [label = <(&lt;operator&gt;.assignment,boolean isExcl = match(excls[w], name))<SUB>200</SUB>> ]
+"456" [label = <(IDENTIFIER,isExcl,boolean isExcl = match(excls[w], name))<SUB>200</SUB>> ]
+"457" [label = <(match,match(excls[w], name))<SUB>201</SUB>> ]
+"458" [label = <(IDENTIFIER,DirectoryScanner,match(excls[w], name))<SUB>201</SUB>> ]
+"459" [label = <(&lt;operator&gt;.indexAccess,excls[w])<SUB>201</SUB>> ]
+"460" [label = <(IDENTIFIER,excls,match(excls[w], name))<SUB>201</SUB>> ]
+"461" [label = <(IDENTIFIER,w,match(excls[w], name))<SUB>201</SUB>> ]
+"462" [label = <(IDENTIFIER,name,match(excls[w], name))<SUB>201</SUB>> ]
+"463" [label = <(CONTROL_STRUCTURE,if (isExcl),if (isExcl))<SUB>202</SUB>> ]
+"464" [label = <(IDENTIFIER,isExcl,if (isExcl))<SUB>202</SUB>> ]
+"465" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>202</SUB>> ]
+"466" [label = <(&lt;operator&gt;.assignment,included = false)<SUB>203</SUB>> ]
+"467" [label = <(IDENTIFIER,included,included = false)<SUB>203</SUB>> ]
+"468" [label = <(LITERAL,false,included = false)<SUB>203</SUB>> ]
+"469" [label = <(CONTROL_STRUCTURE,break;,break;)<SUB>204</SUB>> ]
+"470" [label = <(CONTROL_STRUCTURE,if (!included),if (!included))<SUB>209</SUB>> ]
+"471" [label = <(&lt;operator&gt;.logicalNot,!included)<SUB>209</SUB>> ]
+"472" [label = <(IDENTIFIER,included,!included)<SUB>209</SUB>> ]
+"473" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>209</SUB>> ]
+"474" [label = <(RETURN,return;,return;)<SUB>211</SUB>> ]
+"475" [label = <(LOCAL,File f: java.io.File)> ]
+"476" [label = <(&lt;operator&gt;.assignment,File f = resolveFile(dir, entryName))<SUB>215</SUB>> ]
+"477" [label = <(IDENTIFIER,f,File f = resolveFile(dir, entryName))<SUB>215</SUB>> ]
+"478" [label = <(resolveFile,resolveFile(dir, entryName))<SUB>215</SUB>> ]
+"479" [label = <(IDENTIFIER,fileUtils,resolveFile(dir, entryName))<SUB>215</SUB>> ]
+"480" [label = <(IDENTIFIER,dir,resolveFile(dir, entryName))<SUB>215</SUB>> ]
+"481" [label = <(IDENTIFIER,entryName,resolveFile(dir, entryName))<SUB>215</SUB>> ]
+"482" [label = <(CONTROL_STRUCTURE,try,try)<SUB>216</SUB>> ]
+"483" [label = <(BLOCK,try,try)<SUB>216</SUB>> ]
+"484" [label = <(CONTROL_STRUCTURE,if (!overwrite &amp;&amp; f.exists() &amp;&amp; f.lastModified() &gt;= entryDate.getTime()),if (!overwrite &amp;&amp; f.exists() &amp;&amp; f.lastModified() &gt;= entryDate.getTime()))<SUB>217</SUB>> ]
+"485" [label = <(&lt;operator&gt;.logicalAnd,!overwrite &amp;&amp; f.exists() &amp;&amp; f.lastModified() &gt;= entryDate.getTime())<SUB>217</SUB>> ]
+"486" [label = <(&lt;operator&gt;.logicalAnd,!overwrite &amp;&amp; f.exists())<SUB>217</SUB>> ]
+"487" [label = <(&lt;operator&gt;.logicalNot,!overwrite)<SUB>217</SUB>> ]
+"488" [label = <(&lt;operator&gt;.fieldAccess,this.overwrite)<SUB>217</SUB>> ]
+"489" [label = <(IDENTIFIER,this,!overwrite)<SUB>217</SUB>> ]
+"490" [label = <(FIELD_IDENTIFIER,overwrite,overwrite)<SUB>217</SUB>> ]
+"491" [label = <(exists,f.exists())<SUB>217</SUB>> ]
+"492" [label = <(IDENTIFIER,f,f.exists())<SUB>217</SUB>> ]
+"493" [label = <(&lt;operator&gt;.greaterEqualsThan,f.lastModified() &gt;= entryDate.getTime())<SUB>218</SUB>> ]
+"494" [label = <(lastModified,f.lastModified())<SUB>218</SUB>> ]
+"495" [label = <(IDENTIFIER,f,f.lastModified())<SUB>218</SUB>> ]
+"496" [label = <(getTime,entryDate.getTime())<SUB>218</SUB>> ]
+"497" [label = <(IDENTIFIER,entryDate,entryDate.getTime())<SUB>218</SUB>> ]
+"498" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>218</SUB>> ]
+"499" [label = <(log,log(&quot;Skipping &quot; + f + &quot; as it is up-to-date&quot;, Project.MSG_DEBUG))<SUB>219</SUB>> ]
+"15" [label = <(IDENTIFIER,this,log(&quot;Skipping &quot; + f + &quot; as it is up-to-date&quot;, Project.MSG_DEBUG))<SUB>219</SUB>> ]
+"500" [label = <(&lt;operator&gt;.addition,&quot;Skipping &quot; + f + &quot; as it is up-to-date&quot;)<SUB>219</SUB>> ]
+"501" [label = <(&lt;operator&gt;.addition,&quot;Skipping &quot; + f)<SUB>219</SUB>> ]
+"502" [label = <(LITERAL,&quot;Skipping &quot;,&quot;Skipping &quot; + f)<SUB>219</SUB>> ]
+"503" [label = <(IDENTIFIER,f,&quot;Skipping &quot; + f)<SUB>219</SUB>> ]
+"504" [label = <(LITERAL,&quot; as it is up-to-date&quot;,&quot;Skipping &quot; + f + &quot; as it is up-to-date&quot;)<SUB>219</SUB>> ]
+"505" [label = <(&lt;operator&gt;.fieldAccess,Project.MSG_DEBUG)<SUB>220</SUB>> ]
+"506" [label = <(IDENTIFIER,Project,log(&quot;Skipping &quot; + f + &quot; as it is up-to-date&quot;, Project.MSG_DEBUG))<SUB>220</SUB>> ]
+"507" [label = <(FIELD_IDENTIFIER,MSG_DEBUG,MSG_DEBUG)<SUB>220</SUB>> ]
+"508" [label = <(RETURN,return;,return;)<SUB>221</SUB>> ]
+"509" [label = <(log,log(&quot;expanding &quot; + entryName + &quot; to &quot; + f, Project.MSG_VERBOSE))<SUB>224</SUB>> ]
+"17" [label = <(IDENTIFIER,this,log(&quot;expanding &quot; + entryName + &quot; to &quot; + f, Project.MSG_VERBOSE))<SUB>224</SUB>> ]
+"510" [label = <(&lt;operator&gt;.addition,&quot;expanding &quot; + entryName + &quot; to &quot; + f)<SUB>224</SUB>> ]
+"511" [label = <(&lt;operator&gt;.addition,&quot;expanding &quot; + entryName + &quot; to &quot;)<SUB>224</SUB>> ]
+"512" [label = <(&lt;operator&gt;.addition,&quot;expanding &quot; + entryName)<SUB>224</SUB>> ]
+"513" [label = <(LITERAL,&quot;expanding &quot;,&quot;expanding &quot; + entryName)<SUB>224</SUB>> ]
+"514" [label = <(IDENTIFIER,entryName,&quot;expanding &quot; + entryName)<SUB>224</SUB>> ]
+"515" [label = <(LITERAL,&quot; to &quot;,&quot;expanding &quot; + entryName + &quot; to &quot;)<SUB>224</SUB>> ]
+"516" [label = <(IDENTIFIER,f,&quot;expanding &quot; + entryName + &quot; to &quot; + f)<SUB>224</SUB>> ]
+"517" [label = <(&lt;operator&gt;.fieldAccess,Project.MSG_VERBOSE)<SUB>225</SUB>> ]
+"518" [label = <(IDENTIFIER,Project,log(&quot;expanding &quot; + entryName + &quot; to &quot; + f, Project.MSG_VERBOSE))<SUB>225</SUB>> ]
+"519" [label = <(FIELD_IDENTIFIER,MSG_VERBOSE,MSG_VERBOSE)<SUB>225</SUB>> ]
+"520" [label = <(LOCAL,File dirF: java.io.File)> ]
+"521" [label = <(&lt;operator&gt;.assignment,File dirF = getParentFile(f))<SUB>227</SUB>> ]
+"522" [label = <(IDENTIFIER,dirF,File dirF = getParentFile(f))<SUB>227</SUB>> ]
+"523" [label = <(getParentFile,getParentFile(f))<SUB>227</SUB>> ]
+"524" [label = <(IDENTIFIER,fileUtils,getParentFile(f))<SUB>227</SUB>> ]
+"525" [label = <(IDENTIFIER,f,getParentFile(f))<SUB>227</SUB>> ]
+"526" [label = <(mkdirs,dirF.mkdirs())<SUB>228</SUB>> ]
+"527" [label = <(IDENTIFIER,dirF,dirF.mkdirs())<SUB>228</SUB>> ]
+"528" [label = <(CONTROL_STRUCTURE,if (isDirectory),if (isDirectory))<SUB>230</SUB>> ]
+"529" [label = <(IDENTIFIER,isDirectory,if (isDirectory))<SUB>230</SUB>> ]
+"530" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>230</SUB>> ]
+"531" [label = <(mkdirs,f.mkdirs())<SUB>231</SUB>> ]
+"532" [label = <(IDENTIFIER,f,f.mkdirs())<SUB>231</SUB>> ]
+"533" [label = <(CONTROL_STRUCTURE,else,else)<SUB>232</SUB>> ]
+"534" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>232</SUB>> ]
+"535" [label = <(LOCAL,byte[] buffer: byte[])> ]
+"536" [label = <(&lt;operator&gt;.assignment,byte[] buffer = new byte[1024])<SUB>233</SUB>> ]
+"537" [label = <(IDENTIFIER,buffer,byte[] buffer = new byte[1024])<SUB>233</SUB>> ]
+"538" [label = <(&lt;operator&gt;.alloc,new byte[1024])> ]
+"539" [label = <(LITERAL,1024,new byte[1024])<SUB>233</SUB>> ]
+"540" [label = <(LOCAL,int length: int)> ]
+"541" [label = <(&lt;operator&gt;.assignment,int length = 0)<SUB>234</SUB>> ]
+"542" [label = <(IDENTIFIER,length,int length = 0)<SUB>234</SUB>> ]
+"543" [label = <(LITERAL,0,int length = 0)<SUB>234</SUB>> ]
+"19" [label = <(LOCAL,FileOutputStream fos: java.io.FileOutputStream)> ]
+"544" [label = <(&lt;operator&gt;.assignment,FileOutputStream fos = null)<SUB>235</SUB>> ]
+"545" [label = <(IDENTIFIER,fos,FileOutputStream fos = null)<SUB>235</SUB>> ]
+"546" [label = <(LITERAL,null,FileOutputStream fos = null)<SUB>235</SUB>> ]
+"547" [label = <(CONTROL_STRUCTURE,try,try)<SUB>236</SUB>> ]
+"548" [label = <(BLOCK,try,try)<SUB>236</SUB>> ]
+"549" [label = <(&lt;operator&gt;.assignment,fos = new FileOutputStream(f))<SUB>237</SUB>> ]
+"550" [label = <(IDENTIFIER,fos,fos = new FileOutputStream(f))<SUB>237</SUB>> ]
+"551" [label = <(&lt;operator&gt;.alloc,new FileOutputStream(f))<SUB>237</SUB>> ]
+"552" [label = <(&lt;init&gt;,new FileOutputStream(f))<SUB>237</SUB>> ]
+"18" [label = <(IDENTIFIER,fos,new FileOutputStream(f))<SUB>237</SUB>> ]
+"553" [label = <(IDENTIFIER,f,new FileOutputStream(f))<SUB>237</SUB>> ]
+"554" [label = <(CONTROL_STRUCTURE,while ((length = compressedInputStream.read(buffer)) &gt;= 0),while ((length = compressedInputStream.read(buffer)) &gt;= 0))<SUB>239</SUB>> ]
+"555" [label = <(&lt;operator&gt;.greaterEqualsThan,(length = compressedInputStream.read(buffer)) &gt;= 0)<SUB>239</SUB>> ]
+"556" [label = <(&lt;operator&gt;.assignment,length = compressedInputStream.read(buffer))<SUB>239</SUB>> ]
+"557" [label = <(IDENTIFIER,length,length = compressedInputStream.read(buffer))<SUB>239</SUB>> ]
+"558" [label = <(read,compressedInputStream.read(buffer))<SUB>240</SUB>> ]
+"559" [label = <(IDENTIFIER,compressedInputStream,compressedInputStream.read(buffer))<SUB>240</SUB>> ]
+"560" [label = <(IDENTIFIER,buffer,compressedInputStream.read(buffer))<SUB>240</SUB>> ]
+"561" [label = <(LITERAL,0,(length = compressedInputStream.read(buffer)) &gt;= 0)<SUB>240</SUB>> ]
+"562" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>240</SUB>> ]
+"563" [label = <(write,fos.write(buffer, 0, length))<SUB>241</SUB>> ]
+"564" [label = <(IDENTIFIER,fos,fos.write(buffer, 0, length))<SUB>241</SUB>> ]
+"565" [label = <(IDENTIFIER,buffer,fos.write(buffer, 0, length))<SUB>241</SUB>> ]
+"566" [label = <(LITERAL,0,fos.write(buffer, 0, length))<SUB>241</SUB>> ]
+"567" [label = <(IDENTIFIER,length,fos.write(buffer, 0, length))<SUB>241</SUB>> ]
+"568" [label = <(close,fos.close())<SUB>244</SUB>> ]
+"569" [label = <(IDENTIFIER,fos,fos.close())<SUB>244</SUB>> ]
+"570" [label = <(&lt;operator&gt;.assignment,fos = null)<SUB>245</SUB>> ]
+"571" [label = <(IDENTIFIER,fos,fos = null)<SUB>245</SUB>> ]
+"572" [label = <(LITERAL,null,fos = null)<SUB>245</SUB>> ]
+"573" [label = <(BLOCK,finally,finally)<SUB>246</SUB>> ]
+"574" [label = <(CONTROL_STRUCTURE,if (fos != null),if (fos != null))<SUB>247</SUB>> ]
+"575" [label = <(&lt;operator&gt;.notEquals,fos != null)<SUB>247</SUB>> ]
+"576" [label = <(IDENTIFIER,fos,fos != null)<SUB>247</SUB>> ]
+"577" [label = <(LITERAL,null,fos != null)<SUB>247</SUB>> ]
+"578" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>247</SUB>> ]
+"579" [label = <(CONTROL_STRUCTURE,try,try)<SUB>248</SUB>> ]
+"580" [label = <(BLOCK,try,try)<SUB>248</SUB>> ]
+"581" [label = <(close,fos.close())<SUB>249</SUB>> ]
+"582" [label = <(IDENTIFIER,fos,fos.close())<SUB>249</SUB>> ]
+"583" [label = <(BLOCK,catch,catch)> ]
+"584" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>250</SUB>> ]
+"585" [label = <(setFileLastModified,setFileLastModified(f, entryDate.getTime()))<SUB>255</SUB>> ]
+"586" [label = <(IDENTIFIER,fileUtils,setFileLastModified(f, entryDate.getTime()))<SUB>255</SUB>> ]
+"587" [label = <(IDENTIFIER,f,setFileLastModified(f, entryDate.getTime()))<SUB>255</SUB>> ]
+"588" [label = <(getTime,entryDate.getTime())<SUB>255</SUB>> ]
+"589" [label = <(IDENTIFIER,entryDate,entryDate.getTime())<SUB>255</SUB>> ]
+"590" [label = <(BLOCK,catch,catch)> ]
+"591" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>256</SUB>> ]
+"592" [label = <(log,log(&quot;Unable to expand to file &quot; + f.getPath(), Project.MSG_WARN))<SUB>257</SUB>> ]
+"20" [label = <(IDENTIFIER,this,log(&quot;Unable to expand to file &quot; + f.getPath(), Project.MSG_WARN))<SUB>257</SUB>> ]
+"593" [label = <(&lt;operator&gt;.addition,&quot;Unable to expand to file &quot; + f.getPath())<SUB>257</SUB>> ]
+"594" [label = <(LITERAL,&quot;Unable to expand to file &quot;,&quot;Unable to expand to file &quot; + f.getPath())<SUB>257</SUB>> ]
+"595" [label = <(getPath,f.getPath())<SUB>257</SUB>> ]
+"596" [label = <(IDENTIFIER,f,f.getPath())<SUB>257</SUB>> ]
+"597" [label = <(&lt;operator&gt;.fieldAccess,Project.MSG_WARN)<SUB>257</SUB>> ]
+"598" [label = <(IDENTIFIER,Project,log(&quot;Unable to expand to file &quot; + f.getPath(), Project.MSG_WARN))<SUB>257</SUB>> ]
+"599" [label = <(FIELD_IDENTIFIER,MSG_WARN,MSG_WARN)<SUB>257</SUB>> ]
+"600" [label = <(MODIFIER,PROTECTED)> ]
+"601" [label = <(MODIFIER,VIRTUAL)> ]
+"602" [label = <(METHOD_RETURN,void)<SUB>175</SUB>> ]
+  "335" -> "16" 
+  "335" -> "336" 
+  "335" -> "337" 
+  "335" -> "338" 
+  "335" -> "339" 
+  "335" -> "340" 
+  "335" -> "341" 
+  "335" -> "342" 
+  "335" -> "343" 
+  "335" -> "600" 
+  "335" -> "601" 
+  "335" -> "602" 
+  "343" -> "344" 
+  "343" -> "475" 
+  "343" -> "476" 
+  "343" -> "482" 
+  "344" -> "345" 
+  "344" -> "357" 
+  "345" -> "346" 
+  "345" -> "351" 
+  "346" -> "347" 
+  "346" -> "350" 
+  "347" -> "348" 
+  "347" -> "349" 
+  "351" -> "352" 
+  "351" -> "356" 
+  "352" -> "353" 
+  "353" -> "354" 
+  "353" -> "355" 
+  "357" -> "358" 
+  "357" -> "359" 
+  "357" -> "362" 
+  "357" -> "363" 
+  "357" -> "366" 
+  "357" -> "470" 
+  "359" -> "360" 
+  "359" -> "361" 
+  "363" -> "364" 
+  "363" -> "365" 
+  "366" -> "367" 
+  "366" -> "368" 
+  "366" -> "371" 
+  "366" -> "377" 
+  "366" -> "379" 
+  "368" -> "369" 
+  "368" -> "370" 
+  "371" -> "372" 
+  "371" -> "373" 
+  "373" -> "374" 
+  "374" -> "375" 
+  "374" -> "376" 
+  "377" -> "378" 
+  "379" -> "380" 
+  "379" -> "381" 
+  "379" -> "390" 
+  "379" -> "391" 
+  "379" -> "396" 
+  "379" -> "430" 
+  "379" -> "431" 
+  "379" -> "436" 
+  "381" -> "382" 
+  "381" -> "383" 
+  "383" -> "384" 
+  "383" -> "385" 
+  "385" -> "386" 
+  "385" -> "389" 
+  "386" -> "387" 
+  "386" -> "388" 
+  "391" -> "392" 
+  "391" -> "393" 
+  "393" -> "394" 
+  "393" -> "395" 
+  "396" -> "397" 
+  "396" -> "400" 
+  "397" -> "398" 
+  "397" -> "399" 
+  "400" -> "401" 
+  "401" -> "402" 
+  "401" -> "403" 
+  "401" -> "406" 
+  "401" -> "411" 
+  "401" -> "413" 
+  "403" -> "404" 
+  "403" -> "405" 
+  "406" -> "407" 
+  "406" -> "408" 
+  "408" -> "409" 
+  "408" -> "410" 
+  "411" -> "412" 
+  "413" -> "414" 
+  "413" -> "415" 
+  "413" -> "423" 
+  "415" -> "416" 
+  "415" -> "417" 
+  "417" -> "418" 
+  "417" -> "419" 
+  "417" -> "422" 
+  "419" -> "420" 
+  "419" -> "421" 
+  "423" -> "424" 
+  "423" -> "425" 
+  "425" -> "426" 
+  "425" -> "429" 
+  "426" -> "427" 
+  "426" -> "428" 
+  "431" -> "432" 
+  "431" -> "433" 
+  "433" -> "434" 
+  "433" -> "435" 
+  "436" -> "437" 
+  "436" -> "440" 
+  "437" -> "438" 
+  "437" -> "439" 
+  "440" -> "441" 
+  "441" -> "442" 
+  "441" -> "443" 
+  "441" -> "446" 
+  "441" -> "451" 
+  "441" -> "453" 
+  "443" -> "444" 
+  "443" -> "445" 
+  "446" -> "447" 
+  "446" -> "448" 
+  "448" -> "449" 
+  "448" -> "450" 
+  "451" -> "452" 
+  "453" -> "454" 
+  "453" -> "455" 
+  "453" -> "463" 
+  "455" -> "456" 
+  "455" -> "457" 
+  "457" -> "458" 
+  "457" -> "459" 
+  "457" -> "462" 
+  "459" -> "460" 
+  "459" -> "461" 
+  "463" -> "464" 
+  "463" -> "465" 
+  "465" -> "466" 
+  "465" -> "469" 
+  "466" -> "467" 
+  "466" -> "468" 
+  "470" -> "471" 
+  "470" -> "473" 
+  "471" -> "472" 
+  "473" -> "474" 
+  "476" -> "477" 
+  "476" -> "478" 
+  "478" -> "479" 
+  "478" -> "480" 
+  "478" -> "481" 
+  "482" -> "483" 
+  "482" -> "590" 
+  "483" -> "484" 
+  "483" -> "509" 
+  "483" -> "520" 
+  "483" -> "521" 
+  "483" -> "526" 
+  "483" -> "528" 
+  "483" -> "585" 
+  "484" -> "485" 
+  "484" -> "498" 
+  "485" -> "486" 
+  "485" -> "493" 
+  "486" -> "487" 
+  "486" -> "491" 
+  "487" -> "488" 
+  "488" -> "489" 
+  "488" -> "490" 
+  "491" -> "492" 
+  "493" -> "494" 
+  "493" -> "496" 
+  "494" -> "495" 
+  "496" -> "497" 
+  "498" -> "499" 
+  "498" -> "508" 
+  "499" -> "15" 
+  "499" -> "500" 
+  "499" -> "505" 
+  "500" -> "501" 
+  "500" -> "504" 
+  "501" -> "502" 
+  "501" -> "503" 
+  "505" -> "506" 
+  "505" -> "507" 
+  "509" -> "17" 
+  "509" -> "510" 
+  "509" -> "517" 
+  "510" -> "511" 
+  "510" -> "516" 
+  "511" -> "512" 
+  "511" -> "515" 
+  "512" -> "513" 
+  "512" -> "514" 
+  "517" -> "518" 
+  "517" -> "519" 
+  "521" -> "522" 
+  "521" -> "523" 
+  "523" -> "524" 
+  "523" -> "525" 
+  "526" -> "527" 
+  "528" -> "529" 
+  "528" -> "530" 
+  "528" -> "533" 
+  "530" -> "531" 
+  "531" -> "532" 
+  "533" -> "534" 
+  "534" -> "535" 
+  "534" -> "536" 
+  "534" -> "540" 
+  "534" -> "541" 
+  "534" -> "19" 
+  "534" -> "544" 
+  "534" -> "547" 
+  "536" -> "537" 
+  "536" -> "538" 
+  "538" -> "539" 
+  "541" -> "542" 
+  "541" -> "543" 
+  "544" -> "545" 
+  "544" -> "546" 
+  "547" -> "548" 
+  "547" -> "573" 
+  "548" -> "549" 
+  "548" -> "552" 
+  "548" -> "554" 
+  "548" -> "568" 
+  "548" -> "570" 
+  "549" -> "550" 
+  "549" -> "551" 
+  "552" -> "18" 
+  "552" -> "553" 
+  "554" -> "555" 
+  "554" -> "562" 
+  "555" -> "556" 
+  "555" -> "561" 
+  "556" -> "557" 
+  "556" -> "558" 
+  "558" -> "559" 
+  "558" -> "560" 
+  "562" -> "563" 
+  "563" -> "564" 
+  "563" -> "565" 
+  "563" -> "566" 
+  "563" -> "567" 
+  "568" -> "569" 
+  "570" -> "571" 
+  "570" -> "572" 
+  "573" -> "574" 
+  "574" -> "575" 
+  "574" -> "578" 
+  "575" -> "576" 
+  "575" -> "577" 
+  "578" -> "579" 
+  "579" -> "580" 
+  "579" -> "583" 
+  "580" -> "581" 
+  "581" -> "582" 
+  "583" -> "584" 
+  "585" -> "586" 
+  "585" -> "587" 
+  "585" -> "588" 
+  "588" -> "589" 
+  "590" -> "591" 
+  "591" -> "592" 
+  "592" -> "20" 
+  "592" -> "593" 
+  "592" -> "597" 
+  "593" -> "594" 
+  "593" -> "595" 
+  "595" -> "596" 
+  "597" -> "598" 
+  "597" -> "599" 
+}

@@ -1,0 +1,109 @@
+digraph "incrementRedeliveryCounter" {  
+"1036" [label = <(METHOD,incrementRedeliveryCounter)<SUB>428</SUB>> ]
+"1037" [label = <(PARAM,this)<SUB>428</SUB>> ]
+"1038" [label = <(PARAM,Exchange exchange)<SUB>428</SUB>> ]
+"1039" [label = <(PARAM,Throwable e)<SUB>428</SUB>> ]
+"1040" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>428</SUB>> ]
+"1041" [label = <(LOCAL,Message in: org.apache.camel.Message)> ]
+"1042" [label = <(&lt;operator&gt;.assignment,Message in = getIn())<SUB>429</SUB>> ]
+"1043" [label = <(IDENTIFIER,in,Message in = getIn())<SUB>429</SUB>> ]
+"1044" [label = <(getIn,getIn())<SUB>429</SUB>> ]
+"1045" [label = <(IDENTIFIER,exchange,getIn())<SUB>429</SUB>> ]
+"1046" [label = <(LOCAL,Integer counter: java.lang.Integer)> ]
+"1047" [label = <(&lt;operator&gt;.assignment,Integer counter = getHeader(REDELIVERY_COUNTER, Integer.class))<SUB>430</SUB>> ]
+"1048" [label = <(IDENTIFIER,counter,Integer counter = getHeader(REDELIVERY_COUNTER, Integer.class))<SUB>430</SUB>> ]
+"1049" [label = <(getHeader,getHeader(REDELIVERY_COUNTER, Integer.class))<SUB>430</SUB>> ]
+"1050" [label = <(IDENTIFIER,in,getHeader(REDELIVERY_COUNTER, Integer.class))<SUB>430</SUB>> ]
+"1051" [label = <(&lt;operator&gt;.fieldAccess,DeadLetterChannel.REDELIVERY_COUNTER)<SUB>430</SUB>> ]
+"1052" [label = <(IDENTIFIER,DeadLetterChannel,getHeader(REDELIVERY_COUNTER, Integer.class))<SUB>430</SUB>> ]
+"1053" [label = <(FIELD_IDENTIFIER,REDELIVERY_COUNTER,REDELIVERY_COUNTER)<SUB>430</SUB>> ]
+"1054" [label = <(&lt;operator&gt;.fieldAccess,Integer.class)<SUB>430</SUB>> ]
+"1055" [label = <(IDENTIFIER,Integer,getHeader(REDELIVERY_COUNTER, Integer.class))<SUB>430</SUB>> ]
+"1056" [label = <(FIELD_IDENTIFIER,class,class)<SUB>430</SUB>> ]
+"1057" [label = <(LOCAL,int next: int)> ]
+"1058" [label = <(&lt;operator&gt;.assignment,int next = 1)<SUB>431</SUB>> ]
+"1059" [label = <(IDENTIFIER,next,int next = 1)<SUB>431</SUB>> ]
+"1060" [label = <(LITERAL,1,int next = 1)<SUB>431</SUB>> ]
+"1061" [label = <(CONTROL_STRUCTURE,if (counter != null),if (counter != null))<SUB>432</SUB>> ]
+"1062" [label = <(&lt;operator&gt;.notEquals,counter != null)<SUB>432</SUB>> ]
+"1063" [label = <(IDENTIFIER,counter,counter != null)<SUB>432</SUB>> ]
+"1064" [label = <(LITERAL,null,counter != null)<SUB>432</SUB>> ]
+"1065" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>432</SUB>> ]
+"1066" [label = <(&lt;operator&gt;.assignment,next = counter + 1)<SUB>433</SUB>> ]
+"1067" [label = <(IDENTIFIER,next,next = counter + 1)<SUB>433</SUB>> ]
+"1068" [label = <(&lt;operator&gt;.addition,counter + 1)<SUB>433</SUB>> ]
+"1069" [label = <(IDENTIFIER,counter,counter + 1)<SUB>433</SUB>> ]
+"1070" [label = <(LITERAL,1,counter + 1)<SUB>433</SUB>> ]
+"1071" [label = <(setHeader,setHeader(REDELIVERY_COUNTER, next))<SUB>435</SUB>> ]
+"1072" [label = <(IDENTIFIER,in,setHeader(REDELIVERY_COUNTER, next))<SUB>435</SUB>> ]
+"1073" [label = <(&lt;operator&gt;.fieldAccess,DeadLetterChannel.REDELIVERY_COUNTER)<SUB>435</SUB>> ]
+"1074" [label = <(IDENTIFIER,DeadLetterChannel,setHeader(REDELIVERY_COUNTER, next))<SUB>435</SUB>> ]
+"1075" [label = <(FIELD_IDENTIFIER,REDELIVERY_COUNTER,REDELIVERY_COUNTER)<SUB>435</SUB>> ]
+"1076" [label = <(IDENTIFIER,next,setHeader(REDELIVERY_COUNTER, next))<SUB>435</SUB>> ]
+"1077" [label = <(setHeader,setHeader(REDELIVERED, Boolean.TRUE))<SUB>436</SUB>> ]
+"1078" [label = <(IDENTIFIER,in,setHeader(REDELIVERED, Boolean.TRUE))<SUB>436</SUB>> ]
+"1079" [label = <(&lt;operator&gt;.fieldAccess,DeadLetterChannel.REDELIVERED)<SUB>436</SUB>> ]
+"1080" [label = <(IDENTIFIER,DeadLetterChannel,setHeader(REDELIVERED, Boolean.TRUE))<SUB>436</SUB>> ]
+"1081" [label = <(FIELD_IDENTIFIER,REDELIVERED,REDELIVERED)<SUB>436</SUB>> ]
+"1082" [label = <(&lt;operator&gt;.fieldAccess,Boolean.TRUE)<SUB>436</SUB>> ]
+"1083" [label = <(IDENTIFIER,Boolean,setHeader(REDELIVERED, Boolean.TRUE))<SUB>436</SUB>> ]
+"1084" [label = <(FIELD_IDENTIFIER,TRUE,TRUE)<SUB>436</SUB>> ]
+"1085" [label = <(RETURN,return next;,return next;)<SUB>437</SUB>> ]
+"1086" [label = <(IDENTIFIER,next,return next;)<SUB>437</SUB>> ]
+"1087" [label = <(MODIFIER,PROTECTED)> ]
+"1088" [label = <(MODIFIER,VIRTUAL)> ]
+"1089" [label = <(METHOD_RETURN,int)<SUB>428</SUB>> ]
+  "1036" -> "1037" 
+  "1036" -> "1038" 
+  "1036" -> "1039" 
+  "1036" -> "1040" 
+  "1036" -> "1087" 
+  "1036" -> "1088" 
+  "1036" -> "1089" 
+  "1040" -> "1041" 
+  "1040" -> "1042" 
+  "1040" -> "1046" 
+  "1040" -> "1047" 
+  "1040" -> "1057" 
+  "1040" -> "1058" 
+  "1040" -> "1061" 
+  "1040" -> "1071" 
+  "1040" -> "1077" 
+  "1040" -> "1085" 
+  "1042" -> "1043" 
+  "1042" -> "1044" 
+  "1044" -> "1045" 
+  "1047" -> "1048" 
+  "1047" -> "1049" 
+  "1049" -> "1050" 
+  "1049" -> "1051" 
+  "1049" -> "1054" 
+  "1051" -> "1052" 
+  "1051" -> "1053" 
+  "1054" -> "1055" 
+  "1054" -> "1056" 
+  "1058" -> "1059" 
+  "1058" -> "1060" 
+  "1061" -> "1062" 
+  "1061" -> "1065" 
+  "1062" -> "1063" 
+  "1062" -> "1064" 
+  "1065" -> "1066" 
+  "1066" -> "1067" 
+  "1066" -> "1068" 
+  "1068" -> "1069" 
+  "1068" -> "1070" 
+  "1071" -> "1072" 
+  "1071" -> "1073" 
+  "1071" -> "1076" 
+  "1073" -> "1074" 
+  "1073" -> "1075" 
+  "1077" -> "1078" 
+  "1077" -> "1079" 
+  "1077" -> "1082" 
+  "1079" -> "1080" 
+  "1079" -> "1081" 
+  "1082" -> "1083" 
+  "1082" -> "1084" 
+  "1085" -> "1086" 
+}

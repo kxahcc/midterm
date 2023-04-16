@@ -1,0 +1,173 @@
+digraph "expandStream" {  
+"158" [label = <(METHOD,expandStream)<SUB>131</SUB>> ]
+"17" [label = <(PARAM,this)<SUB>131</SUB>> ]
+"159" [label = <(PARAM,String name)<SUB>131</SUB>> ]
+"160" [label = <(PARAM,InputStream stream)<SUB>131</SUB>> ]
+"161" [label = <(PARAM,File dir)<SUB>131</SUB>> ]
+"162" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>132</SUB>> ]
+"15" [label = <(LOCAL,TarInputStream tis: org.apache.tools.tar.TarInputStream)> ]
+"163" [label = <(&lt;operator&gt;.assignment,TarInputStream tis = null)<SUB>133</SUB>> ]
+"164" [label = <(IDENTIFIER,tis,TarInputStream tis = null)<SUB>133</SUB>> ]
+"165" [label = <(LITERAL,null,TarInputStream tis = null)<SUB>133</SUB>> ]
+"166" [label = <(CONTROL_STRUCTURE,try,try)<SUB>134</SUB>> ]
+"167" [label = <(BLOCK,try,try)<SUB>134</SUB>> ]
+"168" [label = <(&lt;operator&gt;.assignment,tis = new TarInputStream(compression.decompress(name, new BufferedInputStream(stream))))<SUB>135</SUB>> ]
+"169" [label = <(IDENTIFIER,tis,tis = new TarInputStream(compression.decompress(name, new BufferedInputStream(stream))))<SUB>135</SUB>> ]
+"170" [label = <(&lt;operator&gt;.alloc,new TarInputStream(compression.decompress(name, new BufferedInputStream(stream))))<SUB>136</SUB>> ]
+"171" [label = <(&lt;init&gt;,new TarInputStream(compression.decompress(name, new BufferedInputStream(stream))))<SUB>136</SUB>> ]
+"14" [label = <(IDENTIFIER,tis,new TarInputStream(compression.decompress(name, new BufferedInputStream(stream))))<SUB>135</SUB>> ]
+"172" [label = <(decompress,compression.decompress(name, new BufferedInputStream(stream)))<SUB>136</SUB>> ]
+"173" [label = <(&lt;operator&gt;.fieldAccess,this.compression)<SUB>136</SUB>> ]
+"174" [label = <(IDENTIFIER,this,compression.decompress(name, new BufferedInputStream(stream)))<SUB>136</SUB>> ]
+"175" [label = <(FIELD_IDENTIFIER,compression,compression)<SUB>136</SUB>> ]
+"176" [label = <(IDENTIFIER,name,compression.decompress(name, new BufferedInputStream(stream)))<SUB>136</SUB>> ]
+"177" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>137</SUB>> ]
+"178" [label = <(&lt;operator&gt;.assignment,&lt;empty&gt;)> ]
+"179" [label = <(IDENTIFIER,$obj5,&lt;empty&gt;)> ]
+"180" [label = <(&lt;operator&gt;.alloc,new BufferedInputStream(stream))<SUB>137</SUB>> ]
+"181" [label = <(&lt;init&gt;,new BufferedInputStream(stream))<SUB>137</SUB>> ]
+"182" [label = <(IDENTIFIER,$obj5,new BufferedInputStream(stream))> ]
+"183" [label = <(IDENTIFIER,stream,new BufferedInputStream(stream))<SUB>137</SUB>> ]
+"184" [label = <(IDENTIFIER,$obj5,&lt;empty&gt;)> ]
+"185" [label = <(log,log(&quot;Expanding: &quot; + name + &quot; into &quot; + dir, Project.MSG_INFO))<SUB>138</SUB>> ]
+"16" [label = <(IDENTIFIER,this,log(&quot;Expanding: &quot; + name + &quot; into &quot; + dir, Project.MSG_INFO))<SUB>138</SUB>> ]
+"186" [label = <(&lt;operator&gt;.addition,&quot;Expanding: &quot; + name + &quot; into &quot; + dir)<SUB>138</SUB>> ]
+"187" [label = <(&lt;operator&gt;.addition,&quot;Expanding: &quot; + name + &quot; into &quot;)<SUB>138</SUB>> ]
+"188" [label = <(&lt;operator&gt;.addition,&quot;Expanding: &quot; + name)<SUB>138</SUB>> ]
+"189" [label = <(LITERAL,&quot;Expanding: &quot;,&quot;Expanding: &quot; + name)<SUB>138</SUB>> ]
+"190" [label = <(IDENTIFIER,name,&quot;Expanding: &quot; + name)<SUB>138</SUB>> ]
+"191" [label = <(LITERAL,&quot; into &quot;,&quot;Expanding: &quot; + name + &quot; into &quot;)<SUB>138</SUB>> ]
+"192" [label = <(IDENTIFIER,dir,&quot;Expanding: &quot; + name + &quot; into &quot; + dir)<SUB>138</SUB>> ]
+"193" [label = <(&lt;operator&gt;.fieldAccess,Project.MSG_INFO)<SUB>138</SUB>> ]
+"194" [label = <(IDENTIFIER,Project,log(&quot;Expanding: &quot; + name + &quot; into &quot; + dir, Project.MSG_INFO))<SUB>138</SUB>> ]
+"195" [label = <(FIELD_IDENTIFIER,MSG_INFO,MSG_INFO)<SUB>138</SUB>> ]
+"196" [label = <(LOCAL,TarEntry te: org.apache.tools.tar.TarEntry)> ]
+"197" [label = <(&lt;operator&gt;.assignment,TarEntry te = null)<SUB>139</SUB>> ]
+"198" [label = <(IDENTIFIER,te,TarEntry te = null)<SUB>139</SUB>> ]
+"199" [label = <(LITERAL,null,TarEntry te = null)<SUB>139</SUB>> ]
+"200" [label = <(LOCAL,FileNameMapper mapper: org.apache.tools.ant.util.FileNameMapper)> ]
+"201" [label = <(&lt;operator&gt;.assignment,FileNameMapper mapper = getMapper())<SUB>140</SUB>> ]
+"202" [label = <(IDENTIFIER,mapper,FileNameMapper mapper = getMapper())<SUB>140</SUB>> ]
+"203" [label = <(getMapper,getMapper())<SUB>140</SUB>> ]
+"18" [label = <(IDENTIFIER,this,getMapper())<SUB>140</SUB>> ]
+"204" [label = <(CONTROL_STRUCTURE,while ((te = tis.getNextEntry()) != null),while ((te = tis.getNextEntry()) != null))<SUB>141</SUB>> ]
+"205" [label = <(&lt;operator&gt;.notEquals,(te = tis.getNextEntry()) != null)<SUB>141</SUB>> ]
+"206" [label = <(&lt;operator&gt;.assignment,te = getNextEntry())<SUB>141</SUB>> ]
+"207" [label = <(IDENTIFIER,te,te = getNextEntry())<SUB>141</SUB>> ]
+"208" [label = <(getNextEntry,getNextEntry())<SUB>141</SUB>> ]
+"209" [label = <(IDENTIFIER,tis,getNextEntry())<SUB>141</SUB>> ]
+"210" [label = <(LITERAL,null,(te = tis.getNextEntry()) != null)<SUB>141</SUB>> ]
+"211" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>141</SUB>> ]
+"212" [label = <(extractFile,extractFile(FileUtils.getFileUtils(), null, dir, tis, te.getName(), te.getModTime(), te.isDirectory(), mapper))<SUB>142</SUB>> ]
+"19" [label = <(IDENTIFIER,this,extractFile(FileUtils.getFileUtils(), null, dir, tis, te.getName(), te.getModTime(), te.isDirectory(), mapper))<SUB>142</SUB>> ]
+"213" [label = <(getFileUtils,getFileUtils())<SUB>142</SUB>> ]
+"214" [label = <(IDENTIFIER,FileUtils,getFileUtils())<SUB>142</SUB>> ]
+"215" [label = <(LITERAL,null,extractFile(FileUtils.getFileUtils(), null, dir, tis, te.getName(), te.getModTime(), te.isDirectory(), mapper))<SUB>142</SUB>> ]
+"216" [label = <(IDENTIFIER,dir,extractFile(FileUtils.getFileUtils(), null, dir, tis, te.getName(), te.getModTime(), te.isDirectory(), mapper))<SUB>142</SUB>> ]
+"217" [label = <(IDENTIFIER,tis,extractFile(FileUtils.getFileUtils(), null, dir, tis, te.getName(), te.getModTime(), te.isDirectory(), mapper))<SUB>142</SUB>> ]
+"218" [label = <(getName,getName())<SUB>143</SUB>> ]
+"219" [label = <(IDENTIFIER,te,getName())<SUB>143</SUB>> ]
+"220" [label = <(getModTime,getModTime())<SUB>143</SUB>> ]
+"221" [label = <(IDENTIFIER,te,getModTime())<SUB>143</SUB>> ]
+"222" [label = <(isDirectory,isDirectory())<SUB>144</SUB>> ]
+"223" [label = <(IDENTIFIER,te,isDirectory())<SUB>144</SUB>> ]
+"224" [label = <(IDENTIFIER,mapper,extractFile(FileUtils.getFileUtils(), null, dir, tis, te.getName(), te.getModTime(), te.isDirectory(), mapper))<SUB>144</SUB>> ]
+"225" [label = <(log,log(&quot;expand complete&quot;, Project.MSG_VERBOSE))<SUB>146</SUB>> ]
+"20" [label = <(IDENTIFIER,this,log(&quot;expand complete&quot;, Project.MSG_VERBOSE))<SUB>146</SUB>> ]
+"226" [label = <(LITERAL,&quot;expand complete&quot;,log(&quot;expand complete&quot;, Project.MSG_VERBOSE))<SUB>146</SUB>> ]
+"227" [label = <(&lt;operator&gt;.fieldAccess,Project.MSG_VERBOSE)<SUB>146</SUB>> ]
+"228" [label = <(IDENTIFIER,Project,log(&quot;expand complete&quot;, Project.MSG_VERBOSE))<SUB>146</SUB>> ]
+"229" [label = <(FIELD_IDENTIFIER,MSG_VERBOSE,MSG_VERBOSE)<SUB>146</SUB>> ]
+"230" [label = <(BLOCK,finally,finally)<SUB>147</SUB>> ]
+"231" [label = <(close,close(tis))<SUB>148</SUB>> ]
+"232" [label = <(IDENTIFIER,FileUtils,close(tis))<SUB>148</SUB>> ]
+"233" [label = <(IDENTIFIER,tis,close(tis))<SUB>148</SUB>> ]
+"234" [label = <(MODIFIER,PRIVATE)> ]
+"235" [label = <(MODIFIER,VIRTUAL)> ]
+"236" [label = <(METHOD_RETURN,void)<SUB>131</SUB>> ]
+  "158" -> "17" 
+  "158" -> "159" 
+  "158" -> "160" 
+  "158" -> "161" 
+  "158" -> "162" 
+  "158" -> "234" 
+  "158" -> "235" 
+  "158" -> "236" 
+  "162" -> "15" 
+  "162" -> "163" 
+  "162" -> "166" 
+  "163" -> "164" 
+  "163" -> "165" 
+  "166" -> "167" 
+  "166" -> "230" 
+  "167" -> "168" 
+  "167" -> "171" 
+  "167" -> "185" 
+  "167" -> "196" 
+  "167" -> "197" 
+  "167" -> "200" 
+  "167" -> "201" 
+  "167" -> "204" 
+  "167" -> "225" 
+  "168" -> "169" 
+  "168" -> "170" 
+  "171" -> "14" 
+  "171" -> "172" 
+  "172" -> "173" 
+  "172" -> "176" 
+  "172" -> "177" 
+  "173" -> "174" 
+  "173" -> "175" 
+  "177" -> "178" 
+  "177" -> "181" 
+  "177" -> "184" 
+  "178" -> "179" 
+  "178" -> "180" 
+  "181" -> "182" 
+  "181" -> "183" 
+  "185" -> "16" 
+  "185" -> "186" 
+  "185" -> "193" 
+  "186" -> "187" 
+  "186" -> "192" 
+  "187" -> "188" 
+  "187" -> "191" 
+  "188" -> "189" 
+  "188" -> "190" 
+  "193" -> "194" 
+  "193" -> "195" 
+  "197" -> "198" 
+  "197" -> "199" 
+  "201" -> "202" 
+  "201" -> "203" 
+  "203" -> "18" 
+  "204" -> "205" 
+  "204" -> "211" 
+  "205" -> "206" 
+  "205" -> "210" 
+  "206" -> "207" 
+  "206" -> "208" 
+  "208" -> "209" 
+  "211" -> "212" 
+  "212" -> "19" 
+  "212" -> "213" 
+  "212" -> "215" 
+  "212" -> "216" 
+  "212" -> "217" 
+  "212" -> "218" 
+  "212" -> "220" 
+  "212" -> "222" 
+  "212" -> "224" 
+  "213" -> "214" 
+  "218" -> "219" 
+  "220" -> "221" 
+  "222" -> "223" 
+  "225" -> "20" 
+  "225" -> "226" 
+  "225" -> "227" 
+  "227" -> "228" 
+  "227" -> "229" 
+  "230" -> "231" 
+  "231" -> "232" 
+  "231" -> "233" 
+}

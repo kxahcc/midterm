@@ -1,0 +1,101 @@
+digraph "perform" {  
+"268" [label = <(METHOD,perform)<SUB>213</SUB>> ]
+"25" [label = <(PARAM,this)<SUB>213</SUB>> ]
+"269" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>213</SUB>> ]
+"270" [label = <(CONTROL_STRUCTURE,try,try)<SUB>214</SUB>> ]
+"271" [label = <(BLOCK,try,try)<SUB>214</SUB>> ]
+"272" [label = <(fireTaskStarted,fireTaskStarted(this))<SUB>215</SUB>> ]
+"273" [label = <(IDENTIFIER,project,fireTaskStarted(this))<SUB>215</SUB>> ]
+"24" [label = <(IDENTIFIER,this,fireTaskStarted(this))<SUB>215</SUB>> ]
+"274" [label = <(maybeConfigure,this.maybeConfigure())<SUB>216</SUB>> ]
+"26" [label = <(IDENTIFIER,this,this.maybeConfigure())<SUB>216</SUB>> ]
+"275" [label = <(execute,this.execute())<SUB>217</SUB>> ]
+"27" [label = <(IDENTIFIER,this,this.execute())<SUB>217</SUB>> ]
+"276" [label = <(fireTaskFinished,fireTaskFinished(this, null))<SUB>218</SUB>> ]
+"277" [label = <(IDENTIFIER,project,fireTaskFinished(this, null))<SUB>218</SUB>> ]
+"28" [label = <(IDENTIFIER,this,fireTaskFinished(this, null))<SUB>218</SUB>> ]
+"278" [label = <(LITERAL,null,fireTaskFinished(this, null))<SUB>218</SUB>> ]
+"279" [label = <(BLOCK,catch,catch)> ]
+"280" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>220</SUB>> ]
+"281" [label = <(CONTROL_STRUCTURE,if (exc instanceof BuildException),if (exc instanceof BuildException))<SUB>221</SUB>> ]
+"282" [label = <(&lt;operator&gt;.instanceOf,exc instanceof BuildException)<SUB>221</SUB>> ]
+"283" [label = <(IDENTIFIER,exc,exc instanceof BuildException)<SUB>221</SUB>> ]
+"284" [label = <(TYPE_REF,BuildException,BuildException)<SUB>221</SUB>> ]
+"285" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>221</SUB>> ]
+"286" [label = <(LOCAL,BuildException be: ANY)> ]
+"287" [label = <(&lt;operator&gt;.assignment,ANY be = (BuildException) exc)<SUB>222</SUB>> ]
+"288" [label = <(IDENTIFIER,be,ANY be = (BuildException) exc)<SUB>222</SUB>> ]
+"289" [label = <(&lt;operator&gt;.cast,(BuildException) exc)<SUB>222</SUB>> ]
+"290" [label = <(TYPE_REF,BuildException,BuildException)<SUB>222</SUB>> ]
+"291" [label = <(IDENTIFIER,exc,(BuildException) exc)<SUB>222</SUB>> ]
+"292" [label = <(CONTROL_STRUCTURE,if (be.getLocation() == Location.UNKNOWN_LOCATION),if (be.getLocation() == Location.UNKNOWN_LOCATION))<SUB>223</SUB>> ]
+"293" [label = <(&lt;operator&gt;.equals,be.getLocation() == Location.UNKNOWN_LOCATION)<SUB>223</SUB>> ]
+"294" [label = <(getLocation,getLocation())<SUB>223</SUB>> ]
+"295" [label = <(IDENTIFIER,be,getLocation())<SUB>223</SUB>> ]
+"296" [label = <(&lt;operator&gt;.fieldAccess,Location.UNKNOWN_LOCATION)<SUB>223</SUB>> ]
+"297" [label = <(IDENTIFIER,Location,be.getLocation() == Location.UNKNOWN_LOCATION)<SUB>223</SUB>> ]
+"298" [label = <(FIELD_IDENTIFIER,UNKNOWN_LOCATION,UNKNOWN_LOCATION)<SUB>223</SUB>> ]
+"299" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>223</SUB>> ]
+"300" [label = <(setLocation,setLocation(getLocation()))<SUB>224</SUB>> ]
+"301" [label = <(IDENTIFIER,be,setLocation(getLocation()))<SUB>224</SUB>> ]
+"302" [label = <(getLocation,this.getLocation())<SUB>224</SUB>> ]
+"29" [label = <(IDENTIFIER,this,this.getLocation())<SUB>224</SUB>> ]
+"303" [label = <(fireTaskFinished,fireTaskFinished(this, exc))<SUB>227</SUB>> ]
+"304" [label = <(IDENTIFIER,project,fireTaskFinished(this, exc))<SUB>227</SUB>> ]
+"30" [label = <(IDENTIFIER,this,fireTaskFinished(this, exc))<SUB>227</SUB>> ]
+"305" [label = <(IDENTIFIER,exc,fireTaskFinished(this, exc))<SUB>227</SUB>> ]
+"306" [label = <(&lt;operator&gt;.throw,throw exc;)<SUB>228</SUB>> ]
+"307" [label = <(IDENTIFIER,exc,throw exc;)<SUB>228</SUB>> ]
+"308" [label = <(MODIFIER,PUBLIC)> ]
+"309" [label = <(MODIFIER,VIRTUAL)> ]
+"310" [label = <(METHOD_RETURN,void)<SUB>213</SUB>> ]
+  "268" -> "25" 
+  "268" -> "269" 
+  "268" -> "308" 
+  "268" -> "309" 
+  "268" -> "310" 
+  "269" -> "270" 
+  "270" -> "271" 
+  "270" -> "279" 
+  "271" -> "272" 
+  "271" -> "274" 
+  "271" -> "275" 
+  "271" -> "276" 
+  "272" -> "273" 
+  "272" -> "24" 
+  "274" -> "26" 
+  "275" -> "27" 
+  "276" -> "277" 
+  "276" -> "28" 
+  "276" -> "278" 
+  "279" -> "280" 
+  "280" -> "281" 
+  "280" -> "303" 
+  "280" -> "306" 
+  "281" -> "282" 
+  "281" -> "285" 
+  "282" -> "283" 
+  "282" -> "284" 
+  "285" -> "286" 
+  "285" -> "287" 
+  "285" -> "292" 
+  "287" -> "288" 
+  "287" -> "289" 
+  "289" -> "290" 
+  "289" -> "291" 
+  "292" -> "293" 
+  "292" -> "299" 
+  "293" -> "294" 
+  "293" -> "296" 
+  "294" -> "295" 
+  "296" -> "297" 
+  "296" -> "298" 
+  "299" -> "300" 
+  "300" -> "301" 
+  "300" -> "302" 
+  "302" -> "29" 
+  "303" -> "304" 
+  "303" -> "30" 
+  "303" -> "305" 
+  "306" -> "307" 
+}

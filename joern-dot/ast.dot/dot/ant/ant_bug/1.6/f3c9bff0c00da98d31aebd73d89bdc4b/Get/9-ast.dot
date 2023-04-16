@@ -1,0 +1,575 @@
+digraph "encode" {  
+"693" [label = <(METHOD,encode)<SUB>383</SUB>> ]
+"694" [label = <(PARAM,this)<SUB>383</SUB>> ]
+"695" [label = <(PARAM,byte[] octetString)<SUB>383</SUB>> ]
+"696" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>383</SUB>> ]
+"697" [label = <(LOCAL,int bits24: int)> ]
+"698" [label = <(LOCAL,int bits6: int)> ]
+"699" [label = <(LOCAL,char[] out: char[])> ]
+"700" [label = <(&lt;operator&gt;.assignment,char[] out = new char[((octetString.length - 1) / 3 + 1) * 4])<SUB>387</SUB>> ]
+"701" [label = <(IDENTIFIER,out,char[] out = new char[((octetString.length - 1) / 3 + 1) * 4])<SUB>387</SUB>> ]
+"702" [label = <(&lt;operator&gt;.alloc,new char[((octetString.length - 1) / 3 + 1) * 4])> ]
+"703" [label = <(&lt;operator&gt;.multiplication,((octetString.length - 1) / 3 + 1) * 4)<SUB>388</SUB>> ]
+"704" [label = <(&lt;operator&gt;.addition,(octetString.length - 1) / 3 + 1)<SUB>388</SUB>> ]
+"705" [label = <(&lt;operator&gt;.division,(octetString.length - 1) / 3)<SUB>388</SUB>> ]
+"706" [label = <(&lt;operator&gt;.subtraction,octetString.length - 1)<SUB>388</SUB>> ]
+"707" [label = <(&lt;operator&gt;.fieldAccess,octetString.length)<SUB>388</SUB>> ]
+"708" [label = <(IDENTIFIER,octetString,octetString.length - 1)<SUB>388</SUB>> ]
+"709" [label = <(FIELD_IDENTIFIER,length,length)<SUB>388</SUB>> ]
+"710" [label = <(LITERAL,1,octetString.length - 1)<SUB>388</SUB>> ]
+"711" [label = <(LITERAL,3,(octetString.length - 1) / 3)<SUB>388</SUB>> ]
+"712" [label = <(LITERAL,1,(octetString.length - 1) / 3 + 1)<SUB>388</SUB>> ]
+"713" [label = <(LITERAL,4,((octetString.length - 1) / 3 + 1) * 4)<SUB>388</SUB>> ]
+"714" [label = <(LOCAL,int outIndex: int)> ]
+"715" [label = <(&lt;operator&gt;.assignment,int outIndex = 0)<SUB>390</SUB>> ]
+"716" [label = <(IDENTIFIER,outIndex,int outIndex = 0)<SUB>390</SUB>> ]
+"717" [label = <(LITERAL,0,int outIndex = 0)<SUB>390</SUB>> ]
+"718" [label = <(LOCAL,int i: int)> ]
+"719" [label = <(&lt;operator&gt;.assignment,int i = 0)<SUB>391</SUB>> ]
+"720" [label = <(IDENTIFIER,i,int i = 0)<SUB>391</SUB>> ]
+"721" [label = <(LITERAL,0,int i = 0)<SUB>391</SUB>> ]
+"722" [label = <(CONTROL_STRUCTURE,while ((i + 3) &lt;= octetString.length),while ((i + 3) &lt;= octetString.length))<SUB>393</SUB>> ]
+"723" [label = <(&lt;operator&gt;.lessEqualsThan,(i + 3) &lt;= octetString.length)<SUB>393</SUB>> ]
+"724" [label = <(&lt;operator&gt;.addition,i + 3)<SUB>393</SUB>> ]
+"725" [label = <(IDENTIFIER,i,i + 3)<SUB>393</SUB>> ]
+"726" [label = <(LITERAL,3,i + 3)<SUB>393</SUB>> ]
+"727" [label = <(&lt;operator&gt;.fieldAccess,octetString.length)<SUB>393</SUB>> ]
+"728" [label = <(IDENTIFIER,octetString,(i + 3) &lt;= octetString.length)<SUB>393</SUB>> ]
+"729" [label = <(FIELD_IDENTIFIER,length,length)<SUB>393</SUB>> ]
+"730" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>393</SUB>> ]
+"731" [label = <(&lt;operator&gt;.assignment,bits24 = (octetString[i++] &amp; 0xFF) &lt;&lt; 16)<SUB>395</SUB>> ]
+"732" [label = <(IDENTIFIER,bits24,bits24 = (octetString[i++] &amp; 0xFF) &lt;&lt; 16)<SUB>395</SUB>> ]
+"733" [label = <(&lt;operator&gt;.shiftLeft,(octetString[i++] &amp; 0xFF) &lt;&lt; 16)<SUB>395</SUB>> ]
+"734" [label = <(&lt;operator&gt;.and,octetString[i++] &amp; 0xFF)<SUB>395</SUB>> ]
+"735" [label = <(&lt;operator&gt;.indexAccess,octetString[i++])<SUB>395</SUB>> ]
+"736" [label = <(IDENTIFIER,octetString,octetString[i++] &amp; 0xFF)<SUB>395</SUB>> ]
+"737" [label = <(&lt;operator&gt;.postIncrement,i++)<SUB>395</SUB>> ]
+"738" [label = <(IDENTIFIER,i,i++)<SUB>395</SUB>> ]
+"739" [label = <(LITERAL,0xFF,octetString[i++] &amp; 0xFF)<SUB>395</SUB>> ]
+"740" [label = <(LITERAL,16,(octetString[i++] &amp; 0xFF) &lt;&lt; 16)<SUB>395</SUB>> ]
+"741" [label = <(&lt;operators&gt;.assignmentOr,bits24 |= (octetString[i++] &amp; 0xFF) &lt;&lt; 8)<SUB>396</SUB>> ]
+"742" [label = <(IDENTIFIER,bits24,bits24 |= (octetString[i++] &amp; 0xFF) &lt;&lt; 8)<SUB>396</SUB>> ]
+"743" [label = <(&lt;operator&gt;.shiftLeft,(octetString[i++] &amp; 0xFF) &lt;&lt; 8)<SUB>396</SUB>> ]
+"744" [label = <(&lt;operator&gt;.and,octetString[i++] &amp; 0xFF)<SUB>396</SUB>> ]
+"745" [label = <(&lt;operator&gt;.indexAccess,octetString[i++])<SUB>396</SUB>> ]
+"746" [label = <(IDENTIFIER,octetString,octetString[i++] &amp; 0xFF)<SUB>396</SUB>> ]
+"747" [label = <(&lt;operator&gt;.postIncrement,i++)<SUB>396</SUB>> ]
+"748" [label = <(IDENTIFIER,i,i++)<SUB>396</SUB>> ]
+"749" [label = <(LITERAL,0xFF,octetString[i++] &amp; 0xFF)<SUB>396</SUB>> ]
+"750" [label = <(LITERAL,8,(octetString[i++] &amp; 0xFF) &lt;&lt; 8)<SUB>396</SUB>> ]
+"751" [label = <(&lt;operator&gt;.assignment,bits6 = (bits24 &amp; 0x00FC0000) &gt;&gt; 18)<SUB>398</SUB>> ]
+"752" [label = <(IDENTIFIER,bits6,bits6 = (bits24 &amp; 0x00FC0000) &gt;&gt; 18)<SUB>398</SUB>> ]
+"753" [label = <(&lt;operator&gt;.logicalShiftRight,(bits24 &amp; 0x00FC0000) &gt;&gt; 18)<SUB>398</SUB>> ]
+"754" [label = <(&lt;operator&gt;.and,bits24 &amp; 0x00FC0000)<SUB>398</SUB>> ]
+"755" [label = <(IDENTIFIER,bits24,bits24 &amp; 0x00FC0000)<SUB>398</SUB>> ]
+"756" [label = <(LITERAL,0x00FC0000,bits24 &amp; 0x00FC0000)<SUB>398</SUB>> ]
+"757" [label = <(LITERAL,18,(bits24 &amp; 0x00FC0000) &gt;&gt; 18)<SUB>398</SUB>> ]
+"758" [label = <(&lt;operator&gt;.assignment,out[outIndex++] = alphabet[bits6])<SUB>399</SUB>> ]
+"759" [label = <(&lt;operator&gt;.indexAccess,out[outIndex++])<SUB>399</SUB>> ]
+"760" [label = <(IDENTIFIER,out,out[outIndex++] = alphabet[bits6])<SUB>399</SUB>> ]
+"761" [label = <(&lt;operator&gt;.postIncrement,outIndex++)<SUB>399</SUB>> ]
+"762" [label = <(IDENTIFIER,outIndex,outIndex++)<SUB>399</SUB>> ]
+"763" [label = <(&lt;operator&gt;.indexAccess,alphabet[bits6])<SUB>399</SUB>> ]
+"764" [label = <(&lt;operator&gt;.fieldAccess,this.alphabet)<SUB>399</SUB>> ]
+"765" [label = <(IDENTIFIER,this,out[outIndex++] = alphabet[bits6])<SUB>399</SUB>> ]
+"766" [label = <(FIELD_IDENTIFIER,alphabet,alphabet)<SUB>399</SUB>> ]
+"767" [label = <(IDENTIFIER,bits6,out[outIndex++] = alphabet[bits6])<SUB>399</SUB>> ]
+"768" [label = <(&lt;operator&gt;.assignment,bits6 = (bits24 &amp; 0x0003F000) &gt;&gt; 12)<SUB>400</SUB>> ]
+"769" [label = <(IDENTIFIER,bits6,bits6 = (bits24 &amp; 0x0003F000) &gt;&gt; 12)<SUB>400</SUB>> ]
+"770" [label = <(&lt;operator&gt;.logicalShiftRight,(bits24 &amp; 0x0003F000) &gt;&gt; 12)<SUB>400</SUB>> ]
+"771" [label = <(&lt;operator&gt;.and,bits24 &amp; 0x0003F000)<SUB>400</SUB>> ]
+"772" [label = <(IDENTIFIER,bits24,bits24 &amp; 0x0003F000)<SUB>400</SUB>> ]
+"773" [label = <(LITERAL,0x0003F000,bits24 &amp; 0x0003F000)<SUB>400</SUB>> ]
+"774" [label = <(LITERAL,12,(bits24 &amp; 0x0003F000) &gt;&gt; 12)<SUB>400</SUB>> ]
+"775" [label = <(&lt;operator&gt;.assignment,out[outIndex++] = alphabet[bits6])<SUB>401</SUB>> ]
+"776" [label = <(&lt;operator&gt;.indexAccess,out[outIndex++])<SUB>401</SUB>> ]
+"777" [label = <(IDENTIFIER,out,out[outIndex++] = alphabet[bits6])<SUB>401</SUB>> ]
+"778" [label = <(&lt;operator&gt;.postIncrement,outIndex++)<SUB>401</SUB>> ]
+"779" [label = <(IDENTIFIER,outIndex,outIndex++)<SUB>401</SUB>> ]
+"780" [label = <(&lt;operator&gt;.indexAccess,alphabet[bits6])<SUB>401</SUB>> ]
+"781" [label = <(&lt;operator&gt;.fieldAccess,this.alphabet)<SUB>401</SUB>> ]
+"782" [label = <(IDENTIFIER,this,out[outIndex++] = alphabet[bits6])<SUB>401</SUB>> ]
+"783" [label = <(FIELD_IDENTIFIER,alphabet,alphabet)<SUB>401</SUB>> ]
+"784" [label = <(IDENTIFIER,bits6,out[outIndex++] = alphabet[bits6])<SUB>401</SUB>> ]
+"785" [label = <(&lt;operator&gt;.assignment,bits6 = (bits24 &amp; 0x00000FC0) &gt;&gt; 6)<SUB>402</SUB>> ]
+"786" [label = <(IDENTIFIER,bits6,bits6 = (bits24 &amp; 0x00000FC0) &gt;&gt; 6)<SUB>402</SUB>> ]
+"787" [label = <(&lt;operator&gt;.logicalShiftRight,(bits24 &amp; 0x00000FC0) &gt;&gt; 6)<SUB>402</SUB>> ]
+"788" [label = <(&lt;operator&gt;.and,bits24 &amp; 0x00000FC0)<SUB>402</SUB>> ]
+"789" [label = <(IDENTIFIER,bits24,bits24 &amp; 0x00000FC0)<SUB>402</SUB>> ]
+"790" [label = <(LITERAL,0x00000FC0,bits24 &amp; 0x00000FC0)<SUB>402</SUB>> ]
+"791" [label = <(LITERAL,6,(bits24 &amp; 0x00000FC0) &gt;&gt; 6)<SUB>402</SUB>> ]
+"792" [label = <(&lt;operator&gt;.assignment,out[outIndex++] = alphabet[bits6])<SUB>403</SUB>> ]
+"793" [label = <(&lt;operator&gt;.indexAccess,out[outIndex++])<SUB>403</SUB>> ]
+"794" [label = <(IDENTIFIER,out,out[outIndex++] = alphabet[bits6])<SUB>403</SUB>> ]
+"795" [label = <(&lt;operator&gt;.postIncrement,outIndex++)<SUB>403</SUB>> ]
+"796" [label = <(IDENTIFIER,outIndex,outIndex++)<SUB>403</SUB>> ]
+"797" [label = <(&lt;operator&gt;.indexAccess,alphabet[bits6])<SUB>403</SUB>> ]
+"798" [label = <(&lt;operator&gt;.fieldAccess,this.alphabet)<SUB>403</SUB>> ]
+"799" [label = <(IDENTIFIER,this,out[outIndex++] = alphabet[bits6])<SUB>403</SUB>> ]
+"800" [label = <(FIELD_IDENTIFIER,alphabet,alphabet)<SUB>403</SUB>> ]
+"801" [label = <(IDENTIFIER,bits6,out[outIndex++] = alphabet[bits6])<SUB>403</SUB>> ]
+"802" [label = <(&lt;operator&gt;.assignment,bits6 = bits24 &amp; 0x0000003F)<SUB>404</SUB>> ]
+"803" [label = <(IDENTIFIER,bits6,bits6 = bits24 &amp; 0x0000003F)<SUB>404</SUB>> ]
+"804" [label = <(&lt;operator&gt;.and,bits24 &amp; 0x0000003F)<SUB>404</SUB>> ]
+"805" [label = <(IDENTIFIER,bits24,bits24 &amp; 0x0000003F)<SUB>404</SUB>> ]
+"806" [label = <(LITERAL,0x0000003F,bits24 &amp; 0x0000003F)<SUB>404</SUB>> ]
+"807" [label = <(&lt;operator&gt;.assignment,out[outIndex++] = alphabet[bits6])<SUB>405</SUB>> ]
+"808" [label = <(&lt;operator&gt;.indexAccess,out[outIndex++])<SUB>405</SUB>> ]
+"809" [label = <(IDENTIFIER,out,out[outIndex++] = alphabet[bits6])<SUB>405</SUB>> ]
+"810" [label = <(&lt;operator&gt;.postIncrement,outIndex++)<SUB>405</SUB>> ]
+"811" [label = <(IDENTIFIER,outIndex,outIndex++)<SUB>405</SUB>> ]
+"812" [label = <(&lt;operator&gt;.indexAccess,alphabet[bits6])<SUB>405</SUB>> ]
+"813" [label = <(&lt;operator&gt;.fieldAccess,this.alphabet)<SUB>405</SUB>> ]
+"814" [label = <(IDENTIFIER,this,out[outIndex++] = alphabet[bits6])<SUB>405</SUB>> ]
+"815" [label = <(FIELD_IDENTIFIER,alphabet,alphabet)<SUB>405</SUB>> ]
+"816" [label = <(IDENTIFIER,bits6,out[outIndex++] = alphabet[bits6])<SUB>405</SUB>> ]
+"817" [label = <(CONTROL_STRUCTURE,if (octetString.length - i == 2),if (octetString.length - i == 2))<SUB>408</SUB>> ]
+"818" [label = <(&lt;operator&gt;.equals,octetString.length - i == 2)<SUB>408</SUB>> ]
+"819" [label = <(&lt;operator&gt;.subtraction,octetString.length - i)<SUB>408</SUB>> ]
+"820" [label = <(&lt;operator&gt;.fieldAccess,octetString.length)<SUB>408</SUB>> ]
+"821" [label = <(IDENTIFIER,octetString,octetString.length - i)<SUB>408</SUB>> ]
+"822" [label = <(FIELD_IDENTIFIER,length,length)<SUB>408</SUB>> ]
+"823" [label = <(IDENTIFIER,i,octetString.length - i)<SUB>408</SUB>> ]
+"824" [label = <(LITERAL,2,octetString.length - i == 2)<SUB>408</SUB>> ]
+"825" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>408</SUB>> ]
+"826" [label = <(&lt;operator&gt;.assignment,bits24 = (octetString[i] &amp; 0xFF) &lt;&lt; 16)<SUB>410</SUB>> ]
+"827" [label = <(IDENTIFIER,bits24,bits24 = (octetString[i] &amp; 0xFF) &lt;&lt; 16)<SUB>410</SUB>> ]
+"828" [label = <(&lt;operator&gt;.shiftLeft,(octetString[i] &amp; 0xFF) &lt;&lt; 16)<SUB>410</SUB>> ]
+"829" [label = <(&lt;operator&gt;.and,octetString[i] &amp; 0xFF)<SUB>410</SUB>> ]
+"830" [label = <(&lt;operator&gt;.indexAccess,octetString[i])<SUB>410</SUB>> ]
+"831" [label = <(IDENTIFIER,octetString,octetString[i] &amp; 0xFF)<SUB>410</SUB>> ]
+"832" [label = <(IDENTIFIER,i,octetString[i] &amp; 0xFF)<SUB>410</SUB>> ]
+"833" [label = <(LITERAL,0xFF,octetString[i] &amp; 0xFF)<SUB>410</SUB>> ]
+"834" [label = <(LITERAL,16,(octetString[i] &amp; 0xFF) &lt;&lt; 16)<SUB>410</SUB>> ]
+"835" [label = <(&lt;operators&gt;.assignmentOr,bits24 |= (octetString[i + 1] &amp; 0xFF) &lt;&lt; 8)<SUB>411</SUB>> ]
+"836" [label = <(IDENTIFIER,bits24,bits24 |= (octetString[i + 1] &amp; 0xFF) &lt;&lt; 8)<SUB>411</SUB>> ]
+"837" [label = <(&lt;operator&gt;.shiftLeft,(octetString[i + 1] &amp; 0xFF) &lt;&lt; 8)<SUB>411</SUB>> ]
+"838" [label = <(&lt;operator&gt;.and,octetString[i + 1] &amp; 0xFF)<SUB>411</SUB>> ]
+"839" [label = <(&lt;operator&gt;.indexAccess,octetString[i + 1])<SUB>411</SUB>> ]
+"840" [label = <(IDENTIFIER,octetString,octetString[i + 1] &amp; 0xFF)<SUB>411</SUB>> ]
+"841" [label = <(&lt;operator&gt;.addition,i + 1)<SUB>411</SUB>> ]
+"842" [label = <(IDENTIFIER,i,i + 1)<SUB>411</SUB>> ]
+"843" [label = <(LITERAL,1,i + 1)<SUB>411</SUB>> ]
+"844" [label = <(LITERAL,0xFF,octetString[i + 1] &amp; 0xFF)<SUB>411</SUB>> ]
+"845" [label = <(LITERAL,8,(octetString[i + 1] &amp; 0xFF) &lt;&lt; 8)<SUB>411</SUB>> ]
+"846" [label = <(&lt;operator&gt;.assignment,bits6 = (bits24 &amp; 0x00FC0000) &gt;&gt; 18)<SUB>412</SUB>> ]
+"847" [label = <(IDENTIFIER,bits6,bits6 = (bits24 &amp; 0x00FC0000) &gt;&gt; 18)<SUB>412</SUB>> ]
+"848" [label = <(&lt;operator&gt;.logicalShiftRight,(bits24 &amp; 0x00FC0000) &gt;&gt; 18)<SUB>412</SUB>> ]
+"849" [label = <(&lt;operator&gt;.and,bits24 &amp; 0x00FC0000)<SUB>412</SUB>> ]
+"850" [label = <(IDENTIFIER,bits24,bits24 &amp; 0x00FC0000)<SUB>412</SUB>> ]
+"851" [label = <(LITERAL,0x00FC0000,bits24 &amp; 0x00FC0000)<SUB>412</SUB>> ]
+"852" [label = <(LITERAL,18,(bits24 &amp; 0x00FC0000) &gt;&gt; 18)<SUB>412</SUB>> ]
+"853" [label = <(&lt;operator&gt;.assignment,out[outIndex++] = alphabet[bits6])<SUB>413</SUB>> ]
+"854" [label = <(&lt;operator&gt;.indexAccess,out[outIndex++])<SUB>413</SUB>> ]
+"855" [label = <(IDENTIFIER,out,out[outIndex++] = alphabet[bits6])<SUB>413</SUB>> ]
+"856" [label = <(&lt;operator&gt;.postIncrement,outIndex++)<SUB>413</SUB>> ]
+"857" [label = <(IDENTIFIER,outIndex,outIndex++)<SUB>413</SUB>> ]
+"858" [label = <(&lt;operator&gt;.indexAccess,alphabet[bits6])<SUB>413</SUB>> ]
+"859" [label = <(&lt;operator&gt;.fieldAccess,this.alphabet)<SUB>413</SUB>> ]
+"860" [label = <(IDENTIFIER,this,out[outIndex++] = alphabet[bits6])<SUB>413</SUB>> ]
+"861" [label = <(FIELD_IDENTIFIER,alphabet,alphabet)<SUB>413</SUB>> ]
+"862" [label = <(IDENTIFIER,bits6,out[outIndex++] = alphabet[bits6])<SUB>413</SUB>> ]
+"863" [label = <(&lt;operator&gt;.assignment,bits6 = (bits24 &amp; 0x0003F000) &gt;&gt; 12)<SUB>414</SUB>> ]
+"864" [label = <(IDENTIFIER,bits6,bits6 = (bits24 &amp; 0x0003F000) &gt;&gt; 12)<SUB>414</SUB>> ]
+"865" [label = <(&lt;operator&gt;.logicalShiftRight,(bits24 &amp; 0x0003F000) &gt;&gt; 12)<SUB>414</SUB>> ]
+"866" [label = <(&lt;operator&gt;.and,bits24 &amp; 0x0003F000)<SUB>414</SUB>> ]
+"867" [label = <(IDENTIFIER,bits24,bits24 &amp; 0x0003F000)<SUB>414</SUB>> ]
+"868" [label = <(LITERAL,0x0003F000,bits24 &amp; 0x0003F000)<SUB>414</SUB>> ]
+"869" [label = <(LITERAL,12,(bits24 &amp; 0x0003F000) &gt;&gt; 12)<SUB>414</SUB>> ]
+"870" [label = <(&lt;operator&gt;.assignment,out[outIndex++] = alphabet[bits6])<SUB>415</SUB>> ]
+"871" [label = <(&lt;operator&gt;.indexAccess,out[outIndex++])<SUB>415</SUB>> ]
+"872" [label = <(IDENTIFIER,out,out[outIndex++] = alphabet[bits6])<SUB>415</SUB>> ]
+"873" [label = <(&lt;operator&gt;.postIncrement,outIndex++)<SUB>415</SUB>> ]
+"874" [label = <(IDENTIFIER,outIndex,outIndex++)<SUB>415</SUB>> ]
+"875" [label = <(&lt;operator&gt;.indexAccess,alphabet[bits6])<SUB>415</SUB>> ]
+"876" [label = <(&lt;operator&gt;.fieldAccess,this.alphabet)<SUB>415</SUB>> ]
+"877" [label = <(IDENTIFIER,this,out[outIndex++] = alphabet[bits6])<SUB>415</SUB>> ]
+"878" [label = <(FIELD_IDENTIFIER,alphabet,alphabet)<SUB>415</SUB>> ]
+"879" [label = <(IDENTIFIER,bits6,out[outIndex++] = alphabet[bits6])<SUB>415</SUB>> ]
+"880" [label = <(&lt;operator&gt;.assignment,bits6 = (bits24 &amp; 0x00000FC0) &gt;&gt; 6)<SUB>416</SUB>> ]
+"881" [label = <(IDENTIFIER,bits6,bits6 = (bits24 &amp; 0x00000FC0) &gt;&gt; 6)<SUB>416</SUB>> ]
+"882" [label = <(&lt;operator&gt;.logicalShiftRight,(bits24 &amp; 0x00000FC0) &gt;&gt; 6)<SUB>416</SUB>> ]
+"883" [label = <(&lt;operator&gt;.and,bits24 &amp; 0x00000FC0)<SUB>416</SUB>> ]
+"884" [label = <(IDENTIFIER,bits24,bits24 &amp; 0x00000FC0)<SUB>416</SUB>> ]
+"885" [label = <(LITERAL,0x00000FC0,bits24 &amp; 0x00000FC0)<SUB>416</SUB>> ]
+"886" [label = <(LITERAL,6,(bits24 &amp; 0x00000FC0) &gt;&gt; 6)<SUB>416</SUB>> ]
+"887" [label = <(&lt;operator&gt;.assignment,out[outIndex++] = alphabet[bits6])<SUB>417</SUB>> ]
+"888" [label = <(&lt;operator&gt;.indexAccess,out[outIndex++])<SUB>417</SUB>> ]
+"889" [label = <(IDENTIFIER,out,out[outIndex++] = alphabet[bits6])<SUB>417</SUB>> ]
+"890" [label = <(&lt;operator&gt;.postIncrement,outIndex++)<SUB>417</SUB>> ]
+"891" [label = <(IDENTIFIER,outIndex,outIndex++)<SUB>417</SUB>> ]
+"892" [label = <(&lt;operator&gt;.indexAccess,alphabet[bits6])<SUB>417</SUB>> ]
+"893" [label = <(&lt;operator&gt;.fieldAccess,this.alphabet)<SUB>417</SUB>> ]
+"894" [label = <(IDENTIFIER,this,out[outIndex++] = alphabet[bits6])<SUB>417</SUB>> ]
+"895" [label = <(FIELD_IDENTIFIER,alphabet,alphabet)<SUB>417</SUB>> ]
+"896" [label = <(IDENTIFIER,bits6,out[outIndex++] = alphabet[bits6])<SUB>417</SUB>> ]
+"897" [label = <(&lt;operator&gt;.assignment,out[outIndex++] = '=')<SUB>420</SUB>> ]
+"898" [label = <(&lt;operator&gt;.indexAccess,out[outIndex++])<SUB>420</SUB>> ]
+"899" [label = <(IDENTIFIER,out,out[outIndex++] = '=')<SUB>420</SUB>> ]
+"900" [label = <(&lt;operator&gt;.postIncrement,outIndex++)<SUB>420</SUB>> ]
+"901" [label = <(IDENTIFIER,outIndex,outIndex++)<SUB>420</SUB>> ]
+"902" [label = <(LITERAL,'=',out[outIndex++] = '=')<SUB>420</SUB>> ]
+"903" [label = <(CONTROL_STRUCTURE,else,else)<SUB>421</SUB>> ]
+"904" [label = <(CONTROL_STRUCTURE,if (octetString.length - i == 1),if (octetString.length - i == 1))<SUB>421</SUB>> ]
+"905" [label = <(&lt;operator&gt;.equals,octetString.length - i == 1)<SUB>421</SUB>> ]
+"906" [label = <(&lt;operator&gt;.subtraction,octetString.length - i)<SUB>421</SUB>> ]
+"907" [label = <(&lt;operator&gt;.fieldAccess,octetString.length)<SUB>421</SUB>> ]
+"908" [label = <(IDENTIFIER,octetString,octetString.length - i)<SUB>421</SUB>> ]
+"909" [label = <(FIELD_IDENTIFIER,length,length)<SUB>421</SUB>> ]
+"910" [label = <(IDENTIFIER,i,octetString.length - i)<SUB>421</SUB>> ]
+"911" [label = <(LITERAL,1,octetString.length - i == 1)<SUB>421</SUB>> ]
+"912" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>421</SUB>> ]
+"913" [label = <(&lt;operator&gt;.assignment,bits24 = (octetString[i] &amp; 0xFF) &lt;&lt; 16)<SUB>423</SUB>> ]
+"914" [label = <(IDENTIFIER,bits24,bits24 = (octetString[i] &amp; 0xFF) &lt;&lt; 16)<SUB>423</SUB>> ]
+"915" [label = <(&lt;operator&gt;.shiftLeft,(octetString[i] &amp; 0xFF) &lt;&lt; 16)<SUB>423</SUB>> ]
+"916" [label = <(&lt;operator&gt;.and,octetString[i] &amp; 0xFF)<SUB>423</SUB>> ]
+"917" [label = <(&lt;operator&gt;.indexAccess,octetString[i])<SUB>423</SUB>> ]
+"918" [label = <(IDENTIFIER,octetString,octetString[i] &amp; 0xFF)<SUB>423</SUB>> ]
+"919" [label = <(IDENTIFIER,i,octetString[i] &amp; 0xFF)<SUB>423</SUB>> ]
+"920" [label = <(LITERAL,0xFF,octetString[i] &amp; 0xFF)<SUB>423</SUB>> ]
+"921" [label = <(LITERAL,16,(octetString[i] &amp; 0xFF) &lt;&lt; 16)<SUB>423</SUB>> ]
+"922" [label = <(&lt;operator&gt;.assignment,bits6 = (bits24 &amp; 0x00FC0000) &gt;&gt; 18)<SUB>424</SUB>> ]
+"923" [label = <(IDENTIFIER,bits6,bits6 = (bits24 &amp; 0x00FC0000) &gt;&gt; 18)<SUB>424</SUB>> ]
+"924" [label = <(&lt;operator&gt;.logicalShiftRight,(bits24 &amp; 0x00FC0000) &gt;&gt; 18)<SUB>424</SUB>> ]
+"925" [label = <(&lt;operator&gt;.and,bits24 &amp; 0x00FC0000)<SUB>424</SUB>> ]
+"926" [label = <(IDENTIFIER,bits24,bits24 &amp; 0x00FC0000)<SUB>424</SUB>> ]
+"927" [label = <(LITERAL,0x00FC0000,bits24 &amp; 0x00FC0000)<SUB>424</SUB>> ]
+"928" [label = <(LITERAL,18,(bits24 &amp; 0x00FC0000) &gt;&gt; 18)<SUB>424</SUB>> ]
+"929" [label = <(&lt;operator&gt;.assignment,out[outIndex++] = alphabet[bits6])<SUB>425</SUB>> ]
+"930" [label = <(&lt;operator&gt;.indexAccess,out[outIndex++])<SUB>425</SUB>> ]
+"931" [label = <(IDENTIFIER,out,out[outIndex++] = alphabet[bits6])<SUB>425</SUB>> ]
+"932" [label = <(&lt;operator&gt;.postIncrement,outIndex++)<SUB>425</SUB>> ]
+"933" [label = <(IDENTIFIER,outIndex,outIndex++)<SUB>425</SUB>> ]
+"934" [label = <(&lt;operator&gt;.indexAccess,alphabet[bits6])<SUB>425</SUB>> ]
+"935" [label = <(&lt;operator&gt;.fieldAccess,this.alphabet)<SUB>425</SUB>> ]
+"936" [label = <(IDENTIFIER,this,out[outIndex++] = alphabet[bits6])<SUB>425</SUB>> ]
+"937" [label = <(FIELD_IDENTIFIER,alphabet,alphabet)<SUB>425</SUB>> ]
+"938" [label = <(IDENTIFIER,bits6,out[outIndex++] = alphabet[bits6])<SUB>425</SUB>> ]
+"939" [label = <(&lt;operator&gt;.assignment,bits6 = (bits24 &amp; 0x0003F000) &gt;&gt; 12)<SUB>426</SUB>> ]
+"940" [label = <(IDENTIFIER,bits6,bits6 = (bits24 &amp; 0x0003F000) &gt;&gt; 12)<SUB>426</SUB>> ]
+"941" [label = <(&lt;operator&gt;.logicalShiftRight,(bits24 &amp; 0x0003F000) &gt;&gt; 12)<SUB>426</SUB>> ]
+"942" [label = <(&lt;operator&gt;.and,bits24 &amp; 0x0003F000)<SUB>426</SUB>> ]
+"943" [label = <(IDENTIFIER,bits24,bits24 &amp; 0x0003F000)<SUB>426</SUB>> ]
+"944" [label = <(LITERAL,0x0003F000,bits24 &amp; 0x0003F000)<SUB>426</SUB>> ]
+"945" [label = <(LITERAL,12,(bits24 &amp; 0x0003F000) &gt;&gt; 12)<SUB>426</SUB>> ]
+"946" [label = <(&lt;operator&gt;.assignment,out[outIndex++] = alphabet[bits6])<SUB>427</SUB>> ]
+"947" [label = <(&lt;operator&gt;.indexAccess,out[outIndex++])<SUB>427</SUB>> ]
+"948" [label = <(IDENTIFIER,out,out[outIndex++] = alphabet[bits6])<SUB>427</SUB>> ]
+"949" [label = <(&lt;operator&gt;.postIncrement,outIndex++)<SUB>427</SUB>> ]
+"950" [label = <(IDENTIFIER,outIndex,outIndex++)<SUB>427</SUB>> ]
+"951" [label = <(&lt;operator&gt;.indexAccess,alphabet[bits6])<SUB>427</SUB>> ]
+"952" [label = <(&lt;operator&gt;.fieldAccess,this.alphabet)<SUB>427</SUB>> ]
+"953" [label = <(IDENTIFIER,this,out[outIndex++] = alphabet[bits6])<SUB>427</SUB>> ]
+"954" [label = <(FIELD_IDENTIFIER,alphabet,alphabet)<SUB>427</SUB>> ]
+"955" [label = <(IDENTIFIER,bits6,out[outIndex++] = alphabet[bits6])<SUB>427</SUB>> ]
+"956" [label = <(&lt;operator&gt;.assignment,out[outIndex++] = '=')<SUB>430</SUB>> ]
+"957" [label = <(&lt;operator&gt;.indexAccess,out[outIndex++])<SUB>430</SUB>> ]
+"958" [label = <(IDENTIFIER,out,out[outIndex++] = '=')<SUB>430</SUB>> ]
+"959" [label = <(&lt;operator&gt;.postIncrement,outIndex++)<SUB>430</SUB>> ]
+"960" [label = <(IDENTIFIER,outIndex,outIndex++)<SUB>430</SUB>> ]
+"961" [label = <(LITERAL,'=',out[outIndex++] = '=')<SUB>430</SUB>> ]
+"962" [label = <(&lt;operator&gt;.assignment,out[outIndex++] = '=')<SUB>431</SUB>> ]
+"963" [label = <(&lt;operator&gt;.indexAccess,out[outIndex++])<SUB>431</SUB>> ]
+"964" [label = <(IDENTIFIER,out,out[outIndex++] = '=')<SUB>431</SUB>> ]
+"965" [label = <(&lt;operator&gt;.postIncrement,outIndex++)<SUB>431</SUB>> ]
+"966" [label = <(IDENTIFIER,outIndex,outIndex++)<SUB>431</SUB>> ]
+"967" [label = <(LITERAL,'=',out[outIndex++] = '=')<SUB>431</SUB>> ]
+"968" [label = <(RETURN,return new String(out);,return new String(out);)<SUB>434</SUB>> ]
+"969" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>434</SUB>> ]
+"970" [label = <(&lt;operator&gt;.assignment,&lt;empty&gt;)> ]
+"971" [label = <(IDENTIFIER,$obj11,&lt;empty&gt;)> ]
+"972" [label = <(&lt;operator&gt;.alloc,new String(out))<SUB>434</SUB>> ]
+"973" [label = <(&lt;init&gt;,new String(out))<SUB>434</SUB>> ]
+"974" [label = <(IDENTIFIER,$obj11,new String(out))> ]
+"975" [label = <(IDENTIFIER,out,new String(out))<SUB>434</SUB>> ]
+"976" [label = <(IDENTIFIER,$obj11,&lt;empty&gt;)> ]
+"977" [label = <(MODIFIER,PUBLIC)> ]
+"978" [label = <(MODIFIER,VIRTUAL)> ]
+"979" [label = <(METHOD_RETURN,java.lang.String)<SUB>383</SUB>> ]
+  "693" -> "694" 
+  "693" -> "695" 
+  "693" -> "696" 
+  "693" -> "977" 
+  "693" -> "978" 
+  "693" -> "979" 
+  "696" -> "697" 
+  "696" -> "698" 
+  "696" -> "699" 
+  "696" -> "700" 
+  "696" -> "714" 
+  "696" -> "715" 
+  "696" -> "718" 
+  "696" -> "719" 
+  "696" -> "722" 
+  "696" -> "817" 
+  "696" -> "968" 
+  "700" -> "701" 
+  "700" -> "702" 
+  "702" -> "703" 
+  "703" -> "704" 
+  "703" -> "713" 
+  "704" -> "705" 
+  "704" -> "712" 
+  "705" -> "706" 
+  "705" -> "711" 
+  "706" -> "707" 
+  "706" -> "710" 
+  "707" -> "708" 
+  "707" -> "709" 
+  "715" -> "716" 
+  "715" -> "717" 
+  "719" -> "720" 
+  "719" -> "721" 
+  "722" -> "723" 
+  "722" -> "730" 
+  "723" -> "724" 
+  "723" -> "727" 
+  "724" -> "725" 
+  "724" -> "726" 
+  "727" -> "728" 
+  "727" -> "729" 
+  "730" -> "731" 
+  "730" -> "741" 
+  "730" -> "751" 
+  "730" -> "758" 
+  "730" -> "768" 
+  "730" -> "775" 
+  "730" -> "785" 
+  "730" -> "792" 
+  "730" -> "802" 
+  "730" -> "807" 
+  "731" -> "732" 
+  "731" -> "733" 
+  "733" -> "734" 
+  "733" -> "740" 
+  "734" -> "735" 
+  "734" -> "739" 
+  "735" -> "736" 
+  "735" -> "737" 
+  "737" -> "738" 
+  "741" -> "742" 
+  "741" -> "743" 
+  "743" -> "744" 
+  "743" -> "750" 
+  "744" -> "745" 
+  "744" -> "749" 
+  "745" -> "746" 
+  "745" -> "747" 
+  "747" -> "748" 
+  "751" -> "752" 
+  "751" -> "753" 
+  "753" -> "754" 
+  "753" -> "757" 
+  "754" -> "755" 
+  "754" -> "756" 
+  "758" -> "759" 
+  "758" -> "763" 
+  "759" -> "760" 
+  "759" -> "761" 
+  "761" -> "762" 
+  "763" -> "764" 
+  "763" -> "767" 
+  "764" -> "765" 
+  "764" -> "766" 
+  "768" -> "769" 
+  "768" -> "770" 
+  "770" -> "771" 
+  "770" -> "774" 
+  "771" -> "772" 
+  "771" -> "773" 
+  "775" -> "776" 
+  "775" -> "780" 
+  "776" -> "777" 
+  "776" -> "778" 
+  "778" -> "779" 
+  "780" -> "781" 
+  "780" -> "784" 
+  "781" -> "782" 
+  "781" -> "783" 
+  "785" -> "786" 
+  "785" -> "787" 
+  "787" -> "788" 
+  "787" -> "791" 
+  "788" -> "789" 
+  "788" -> "790" 
+  "792" -> "793" 
+  "792" -> "797" 
+  "793" -> "794" 
+  "793" -> "795" 
+  "795" -> "796" 
+  "797" -> "798" 
+  "797" -> "801" 
+  "798" -> "799" 
+  "798" -> "800" 
+  "802" -> "803" 
+  "802" -> "804" 
+  "804" -> "805" 
+  "804" -> "806" 
+  "807" -> "808" 
+  "807" -> "812" 
+  "808" -> "809" 
+  "808" -> "810" 
+  "810" -> "811" 
+  "812" -> "813" 
+  "812" -> "816" 
+  "813" -> "814" 
+  "813" -> "815" 
+  "817" -> "818" 
+  "817" -> "825" 
+  "817" -> "903" 
+  "818" -> "819" 
+  "818" -> "824" 
+  "819" -> "820" 
+  "819" -> "823" 
+  "820" -> "821" 
+  "820" -> "822" 
+  "825" -> "826" 
+  "825" -> "835" 
+  "825" -> "846" 
+  "825" -> "853" 
+  "825" -> "863" 
+  "825" -> "870" 
+  "825" -> "880" 
+  "825" -> "887" 
+  "825" -> "897" 
+  "826" -> "827" 
+  "826" -> "828" 
+  "828" -> "829" 
+  "828" -> "834" 
+  "829" -> "830" 
+  "829" -> "833" 
+  "830" -> "831" 
+  "830" -> "832" 
+  "835" -> "836" 
+  "835" -> "837" 
+  "837" -> "838" 
+  "837" -> "845" 
+  "838" -> "839" 
+  "838" -> "844" 
+  "839" -> "840" 
+  "839" -> "841" 
+  "841" -> "842" 
+  "841" -> "843" 
+  "846" -> "847" 
+  "846" -> "848" 
+  "848" -> "849" 
+  "848" -> "852" 
+  "849" -> "850" 
+  "849" -> "851" 
+  "853" -> "854" 
+  "853" -> "858" 
+  "854" -> "855" 
+  "854" -> "856" 
+  "856" -> "857" 
+  "858" -> "859" 
+  "858" -> "862" 
+  "859" -> "860" 
+  "859" -> "861" 
+  "863" -> "864" 
+  "863" -> "865" 
+  "865" -> "866" 
+  "865" -> "869" 
+  "866" -> "867" 
+  "866" -> "868" 
+  "870" -> "871" 
+  "870" -> "875" 
+  "871" -> "872" 
+  "871" -> "873" 
+  "873" -> "874" 
+  "875" -> "876" 
+  "875" -> "879" 
+  "876" -> "877" 
+  "876" -> "878" 
+  "880" -> "881" 
+  "880" -> "882" 
+  "882" -> "883" 
+  "882" -> "886" 
+  "883" -> "884" 
+  "883" -> "885" 
+  "887" -> "888" 
+  "887" -> "892" 
+  "888" -> "889" 
+  "888" -> "890" 
+  "890" -> "891" 
+  "892" -> "893" 
+  "892" -> "896" 
+  "893" -> "894" 
+  "893" -> "895" 
+  "897" -> "898" 
+  "897" -> "902" 
+  "898" -> "899" 
+  "898" -> "900" 
+  "900" -> "901" 
+  "903" -> "904" 
+  "904" -> "905" 
+  "904" -> "912" 
+  "905" -> "906" 
+  "905" -> "911" 
+  "906" -> "907" 
+  "906" -> "910" 
+  "907" -> "908" 
+  "907" -> "909" 
+  "912" -> "913" 
+  "912" -> "922" 
+  "912" -> "929" 
+  "912" -> "939" 
+  "912" -> "946" 
+  "912" -> "956" 
+  "912" -> "962" 
+  "913" -> "914" 
+  "913" -> "915" 
+  "915" -> "916" 
+  "915" -> "921" 
+  "916" -> "917" 
+  "916" -> "920" 
+  "917" -> "918" 
+  "917" -> "919" 
+  "922" -> "923" 
+  "922" -> "924" 
+  "924" -> "925" 
+  "924" -> "928" 
+  "925" -> "926" 
+  "925" -> "927" 
+  "929" -> "930" 
+  "929" -> "934" 
+  "930" -> "931" 
+  "930" -> "932" 
+  "932" -> "933" 
+  "934" -> "935" 
+  "934" -> "938" 
+  "935" -> "936" 
+  "935" -> "937" 
+  "939" -> "940" 
+  "939" -> "941" 
+  "941" -> "942" 
+  "941" -> "945" 
+  "942" -> "943" 
+  "942" -> "944" 
+  "946" -> "947" 
+  "946" -> "951" 
+  "947" -> "948" 
+  "947" -> "949" 
+  "949" -> "950" 
+  "951" -> "952" 
+  "951" -> "955" 
+  "952" -> "953" 
+  "952" -> "954" 
+  "956" -> "957" 
+  "956" -> "961" 
+  "957" -> "958" 
+  "957" -> "959" 
+  "959" -> "960" 
+  "962" -> "963" 
+  "962" -> "967" 
+  "963" -> "964" 
+  "963" -> "965" 
+  "965" -> "966" 
+  "968" -> "969" 
+  "969" -> "970" 
+  "969" -> "973" 
+  "969" -> "976" 
+  "970" -> "971" 
+  "970" -> "972" 
+  "973" -> "974" 
+  "973" -> "975" 
+}

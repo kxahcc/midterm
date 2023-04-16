@@ -1,0 +1,179 @@
+digraph "scanOneFileset" {  
+"736" [label = <(METHOD,scanOneFileset)<SUB>382</SUB>> ]
+"737" [label = <(PARAM,this)<SUB>382</SUB>> ]
+"738" [label = <(PARAM,DirectoryScanner scanner)<SUB>382</SUB>> ]
+"739" [label = <(PARAM,Hashtable filesToBuild)<SUB>382</SUB>> ]
+"740" [label = <(PARAM,long outputTimestamp)<SUB>383</SUB>> ]
+"741" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>383</SUB>> ]
+"742" [label = <(LOCAL,int filesOutOfDate: int)> ]
+"743" [label = <(&lt;operator&gt;.assignment,int filesOutOfDate = 0)<SUB>384</SUB>> ]
+"744" [label = <(IDENTIFIER,filesOutOfDate,int filesOutOfDate = 0)<SUB>384</SUB>> ]
+"745" [label = <(LITERAL,0,int filesOutOfDate = 0)<SUB>384</SUB>> ]
+"746" [label = <(LOCAL,String[] dependencies: java.lang.String[])> ]
+"747" [label = <(&lt;operator&gt;.assignment,String[] dependencies = getIncludedFiles())<SUB>385</SUB>> ]
+"748" [label = <(IDENTIFIER,dependencies,String[] dependencies = getIncludedFiles())<SUB>385</SUB>> ]
+"749" [label = <(getIncludedFiles,getIncludedFiles())<SUB>385</SUB>> ]
+"750" [label = <(IDENTIFIER,scanner,getIncludedFiles())<SUB>385</SUB>> ]
+"751" [label = <(LOCAL,File base: java.io.File)> ]
+"752" [label = <(&lt;operator&gt;.assignment,File base = getBasedir())<SUB>386</SUB>> ]
+"753" [label = <(IDENTIFIER,base,File base = getBasedir())<SUB>386</SUB>> ]
+"754" [label = <(getBasedir,getBasedir())<SUB>386</SUB>> ]
+"755" [label = <(IDENTIFIER,scanner,getBasedir())<SUB>386</SUB>> ]
+"756" [label = <(CONTROL_STRUCTURE,for (int i = 0; Some(i &lt; dependencies.length); i++),for (int i = 0; Some(i &lt; dependencies.length); i++))<SUB>388</SUB>> ]
+"757" [label = <(LOCAL,int i: int)> ]
+"758" [label = <(&lt;operator&gt;.assignment,int i = 0)<SUB>388</SUB>> ]
+"759" [label = <(IDENTIFIER,i,int i = 0)<SUB>388</SUB>> ]
+"760" [label = <(LITERAL,0,int i = 0)<SUB>388</SUB>> ]
+"761" [label = <(&lt;operator&gt;.lessThan,i &lt; dependencies.length)<SUB>388</SUB>> ]
+"762" [label = <(IDENTIFIER,i,i &lt; dependencies.length)<SUB>388</SUB>> ]
+"763" [label = <(&lt;operator&gt;.fieldAccess,dependencies.length)<SUB>388</SUB>> ]
+"764" [label = <(IDENTIFIER,dependencies,i &lt; dependencies.length)<SUB>388</SUB>> ]
+"765" [label = <(FIELD_IDENTIFIER,length,length)<SUB>388</SUB>> ]
+"766" [label = <(&lt;operator&gt;.postIncrement,i++)<SUB>388</SUB>> ]
+"767" [label = <(IDENTIFIER,i,i++)<SUB>388</SUB>> ]
+"768" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>388</SUB>> ]
+"29" [label = <(LOCAL,File targetFile: java.io.File)> ]
+"769" [label = <(&lt;operator&gt;.assignment,File targetFile = new File(base, dependencies[i]))<SUB>389</SUB>> ]
+"770" [label = <(IDENTIFIER,targetFile,File targetFile = new File(base, dependencies[i]))<SUB>389</SUB>> ]
+"771" [label = <(&lt;operator&gt;.alloc,new File(base, dependencies[i]))<SUB>389</SUB>> ]
+"772" [label = <(&lt;init&gt;,new File(base, dependencies[i]))<SUB>389</SUB>> ]
+"28" [label = <(IDENTIFIER,targetFile,new File(base, dependencies[i]))<SUB>389</SUB>> ]
+"773" [label = <(IDENTIFIER,base,new File(base, dependencies[i]))<SUB>389</SUB>> ]
+"774" [label = <(&lt;operator&gt;.indexAccess,dependencies[i])<SUB>389</SUB>> ]
+"775" [label = <(IDENTIFIER,dependencies,new File(base, dependencies[i]))<SUB>389</SUB>> ]
+"776" [label = <(IDENTIFIER,i,new File(base, dependencies[i]))<SUB>389</SUB>> ]
+"777" [label = <(CONTROL_STRUCTURE,if (filesToBuild.get(targetFile) == null),if (filesToBuild.get(targetFile) == null))<SUB>390</SUB>> ]
+"778" [label = <(&lt;operator&gt;.equals,filesToBuild.get(targetFile) == null)<SUB>390</SUB>> ]
+"779" [label = <(get,filesToBuild.get(targetFile))<SUB>390</SUB>> ]
+"780" [label = <(IDENTIFIER,filesToBuild,filesToBuild.get(targetFile))<SUB>390</SUB>> ]
+"781" [label = <(IDENTIFIER,targetFile,filesToBuild.get(targetFile))<SUB>390</SUB>> ]
+"782" [label = <(LITERAL,null,filesToBuild.get(targetFile) == null)<SUB>390</SUB>> ]
+"783" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>390</SUB>> ]
+"784" [label = <(put,filesToBuild.put(targetFile, targetFile))<SUB>391</SUB>> ]
+"785" [label = <(IDENTIFIER,filesToBuild,filesToBuild.put(targetFile, targetFile))<SUB>391</SUB>> ]
+"786" [label = <(IDENTIFIER,targetFile,filesToBuild.put(targetFile, targetFile))<SUB>391</SUB>> ]
+"787" [label = <(IDENTIFIER,targetFile,filesToBuild.put(targetFile, targetFile))<SUB>391</SUB>> ]
+"788" [label = <(CONTROL_STRUCTURE,if (targetFile.lastModified() &gt; outputTimestamp),if (targetFile.lastModified() &gt; outputTimestamp))<SUB>392</SUB>> ]
+"789" [label = <(&lt;operator&gt;.greaterThan,targetFile.lastModified() &gt; outputTimestamp)<SUB>392</SUB>> ]
+"790" [label = <(lastModified,targetFile.lastModified())<SUB>392</SUB>> ]
+"791" [label = <(IDENTIFIER,targetFile,targetFile.lastModified())<SUB>392</SUB>> ]
+"792" [label = <(IDENTIFIER,outputTimestamp,targetFile.lastModified() &gt; outputTimestamp)<SUB>392</SUB>> ]
+"793" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>392</SUB>> ]
+"794" [label = <(&lt;operator&gt;.postIncrement,filesOutOfDate++)<SUB>393</SUB>> ]
+"795" [label = <(IDENTIFIER,filesOutOfDate,filesOutOfDate++)<SUB>393</SUB>> ]
+"796" [label = <(log,log(targetFile.toString() + &quot; is out of date&quot;, Project.MSG_VERBOSE))<SUB>394</SUB>> ]
+"797" [label = <(&lt;operator&gt;.fieldAccess,this.owner)<SUB>394</SUB>> ]
+"798" [label = <(IDENTIFIER,this,log(targetFile.toString() + &quot; is out of date&quot;, Project.MSG_VERBOSE))<SUB>394</SUB>> ]
+"799" [label = <(FIELD_IDENTIFIER,owner,owner)<SUB>394</SUB>> ]
+"800" [label = <(&lt;operator&gt;.addition,targetFile.toString() + &quot; is out of date&quot;)<SUB>394</SUB>> ]
+"801" [label = <(toString,targetFile.toString())<SUB>394</SUB>> ]
+"802" [label = <(IDENTIFIER,targetFile,targetFile.toString())<SUB>394</SUB>> ]
+"803" [label = <(LITERAL,&quot; is out of date&quot;,targetFile.toString() + &quot; is out of date&quot;)<SUB>394</SUB>> ]
+"804" [label = <(&lt;operator&gt;.fieldAccess,Project.MSG_VERBOSE)<SUB>395</SUB>> ]
+"805" [label = <(IDENTIFIER,Project,log(targetFile.toString() + &quot; is out of date&quot;, Project.MSG_VERBOSE))<SUB>395</SUB>> ]
+"806" [label = <(FIELD_IDENTIFIER,MSG_VERBOSE,MSG_VERBOSE)<SUB>395</SUB>> ]
+"807" [label = <(CONTROL_STRUCTURE,else,else)<SUB>396</SUB>> ]
+"808" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>396</SUB>> ]
+"809" [label = <(log,log(targetFile.toString(), Project.MSG_VERBOSE))<SUB>397</SUB>> ]
+"810" [label = <(&lt;operator&gt;.fieldAccess,this.owner)<SUB>397</SUB>> ]
+"811" [label = <(IDENTIFIER,this,log(targetFile.toString(), Project.MSG_VERBOSE))<SUB>397</SUB>> ]
+"812" [label = <(FIELD_IDENTIFIER,owner,owner)<SUB>397</SUB>> ]
+"813" [label = <(toString,targetFile.toString())<SUB>397</SUB>> ]
+"814" [label = <(IDENTIFIER,targetFile,targetFile.toString())<SUB>397</SUB>> ]
+"815" [label = <(&lt;operator&gt;.fieldAccess,Project.MSG_VERBOSE)<SUB>398</SUB>> ]
+"816" [label = <(IDENTIFIER,Project,log(targetFile.toString(), Project.MSG_VERBOSE))<SUB>398</SUB>> ]
+"817" [label = <(FIELD_IDENTIFIER,MSG_VERBOSE,MSG_VERBOSE)<SUB>398</SUB>> ]
+"818" [label = <(RETURN,return filesOutOfDate;,return filesOutOfDate;)<SUB>402</SUB>> ]
+"819" [label = <(IDENTIFIER,filesOutOfDate,return filesOutOfDate;)<SUB>402</SUB>> ]
+"820" [label = <(MODIFIER,PUBLIC)> ]
+"821" [label = <(MODIFIER,VIRTUAL)> ]
+"822" [label = <(METHOD_RETURN,int)<SUB>382</SUB>> ]
+  "736" -> "737" 
+  "736" -> "738" 
+  "736" -> "739" 
+  "736" -> "740" 
+  "736" -> "741" 
+  "736" -> "820" 
+  "736" -> "821" 
+  "736" -> "822" 
+  "741" -> "742" 
+  "741" -> "743" 
+  "741" -> "746" 
+  "741" -> "747" 
+  "741" -> "751" 
+  "741" -> "752" 
+  "741" -> "756" 
+  "741" -> "818" 
+  "743" -> "744" 
+  "743" -> "745" 
+  "747" -> "748" 
+  "747" -> "749" 
+  "749" -> "750" 
+  "752" -> "753" 
+  "752" -> "754" 
+  "754" -> "755" 
+  "756" -> "757" 
+  "756" -> "758" 
+  "756" -> "761" 
+  "756" -> "766" 
+  "756" -> "768" 
+  "758" -> "759" 
+  "758" -> "760" 
+  "761" -> "762" 
+  "761" -> "763" 
+  "763" -> "764" 
+  "763" -> "765" 
+  "766" -> "767" 
+  "768" -> "29" 
+  "768" -> "769" 
+  "768" -> "772" 
+  "768" -> "777" 
+  "769" -> "770" 
+  "769" -> "771" 
+  "772" -> "28" 
+  "772" -> "773" 
+  "772" -> "774" 
+  "774" -> "775" 
+  "774" -> "776" 
+  "777" -> "778" 
+  "777" -> "783" 
+  "778" -> "779" 
+  "778" -> "782" 
+  "779" -> "780" 
+  "779" -> "781" 
+  "783" -> "784" 
+  "783" -> "788" 
+  "784" -> "785" 
+  "784" -> "786" 
+  "784" -> "787" 
+  "788" -> "789" 
+  "788" -> "793" 
+  "788" -> "807" 
+  "789" -> "790" 
+  "789" -> "792" 
+  "790" -> "791" 
+  "793" -> "794" 
+  "793" -> "796" 
+  "794" -> "795" 
+  "796" -> "797" 
+  "796" -> "800" 
+  "796" -> "804" 
+  "797" -> "798" 
+  "797" -> "799" 
+  "800" -> "801" 
+  "800" -> "803" 
+  "801" -> "802" 
+  "804" -> "805" 
+  "804" -> "806" 
+  "807" -> "808" 
+  "808" -> "809" 
+  "809" -> "810" 
+  "809" -> "813" 
+  "809" -> "815" 
+  "810" -> "811" 
+  "810" -> "812" 
+  "813" -> "814" 
+  "815" -> "816" 
+  "815" -> "817" 
+  "818" -> "819" 
+}

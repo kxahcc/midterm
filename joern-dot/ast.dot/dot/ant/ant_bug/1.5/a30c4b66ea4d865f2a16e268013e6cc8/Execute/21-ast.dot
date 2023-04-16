@@ -1,0 +1,185 @@
+digraph "runCommand" {  
+"1003" [label = <(METHOD,runCommand)<SUB>527</SUB>> ]
+"1004" [label = <(PARAM,Task task)<SUB>527</SUB>> ]
+"1005" [label = <(PARAM,String[] cmdline)<SUB>527</SUB>> ]
+"1006" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>528</SUB>> ]
+"1007" [label = <(CONTROL_STRUCTURE,try,try)<SUB>529</SUB>> ]
+"1008" [label = <(BLOCK,try,try)<SUB>529</SUB>> ]
+"1009" [label = <(log,log(Commandline.describeCommand(cmdline), Project.MSG_VERBOSE))<SUB>530</SUB>> ]
+"1010" [label = <(IDENTIFIER,task,log(Commandline.describeCommand(cmdline), Project.MSG_VERBOSE))<SUB>530</SUB>> ]
+"1011" [label = <(describeCommand,describeCommand(cmdline))<SUB>530</SUB>> ]
+"1012" [label = <(IDENTIFIER,Commandline,describeCommand(cmdline))<SUB>530</SUB>> ]
+"1013" [label = <(IDENTIFIER,cmdline,describeCommand(cmdline))<SUB>530</SUB>> ]
+"1014" [label = <(&lt;operator&gt;.fieldAccess,Project.MSG_VERBOSE)<SUB>531</SUB>> ]
+"1015" [label = <(IDENTIFIER,Project,log(Commandline.describeCommand(cmdline), Project.MSG_VERBOSE))<SUB>531</SUB>> ]
+"1016" [label = <(FIELD_IDENTIFIER,MSG_VERBOSE,MSG_VERBOSE)<SUB>531</SUB>> ]
+"41" [label = <(LOCAL,Execute exe: org.apache.tools.ant.taskdefs.Execute)> ]
+"1017" [label = <(&lt;operator&gt;.assignment,Execute exe = new Execute(new LogStreamHandler(task, Project.MSG_INFO, Project.MSG_ERR)))<SUB>532</SUB>> ]
+"1018" [label = <(IDENTIFIER,exe,Execute exe = new Execute(new LogStreamHandler(task, Project.MSG_INFO, Project.MSG_ERR)))<SUB>532</SUB>> ]
+"1019" [label = <(&lt;operator&gt;.alloc,new Execute(new LogStreamHandler(task, Project.MSG_INFO, Project.MSG_ERR)))<SUB>532</SUB>> ]
+"1020" [label = <(&lt;init&gt;,new Execute(new LogStreamHandler(task, Project.MSG_INFO, Project.MSG_ERR)))<SUB>532</SUB>> ]
+"40" [label = <(IDENTIFIER,exe,new Execute(new LogStreamHandler(task, Project.MSG_INFO, Project.MSG_ERR)))<SUB>532</SUB>> ]
+"1021" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>532</SUB>> ]
+"1022" [label = <(&lt;operator&gt;.assignment,&lt;empty&gt;)> ]
+"1023" [label = <(IDENTIFIER,$obj22,&lt;empty&gt;)> ]
+"1024" [label = <(&lt;operator&gt;.alloc,new LogStreamHandler(task, Project.MSG_INFO, Project.MSG_ERR))<SUB>532</SUB>> ]
+"1025" [label = <(&lt;init&gt;,new LogStreamHandler(task, Project.MSG_INFO, Project.MSG_ERR))<SUB>532</SUB>> ]
+"1026" [label = <(IDENTIFIER,$obj22,new LogStreamHandler(task, Project.MSG_INFO, Project.MSG_ERR))> ]
+"1027" [label = <(IDENTIFIER,task,new LogStreamHandler(task, Project.MSG_INFO, Project.MSG_ERR))<SUB>532</SUB>> ]
+"1028" [label = <(&lt;operator&gt;.fieldAccess,Project.MSG_INFO)<SUB>533</SUB>> ]
+"1029" [label = <(IDENTIFIER,Project,new LogStreamHandler(task, Project.MSG_INFO, Project.MSG_ERR))<SUB>533</SUB>> ]
+"1030" [label = <(FIELD_IDENTIFIER,MSG_INFO,MSG_INFO)<SUB>533</SUB>> ]
+"1031" [label = <(&lt;operator&gt;.fieldAccess,Project.MSG_ERR)<SUB>534</SUB>> ]
+"1032" [label = <(IDENTIFIER,Project,new LogStreamHandler(task, Project.MSG_INFO, Project.MSG_ERR))<SUB>534</SUB>> ]
+"1033" [label = <(FIELD_IDENTIFIER,MSG_ERR,MSG_ERR)<SUB>534</SUB>> ]
+"1034" [label = <(IDENTIFIER,$obj22,&lt;empty&gt;)> ]
+"1035" [label = <(setAntRun,setAntRun(task.getProject()))<SUB>535</SUB>> ]
+"1036" [label = <(IDENTIFIER,exe,setAntRun(task.getProject()))<SUB>535</SUB>> ]
+"1037" [label = <(getProject,getProject())<SUB>535</SUB>> ]
+"1038" [label = <(IDENTIFIER,task,getProject())<SUB>535</SUB>> ]
+"1039" [label = <(setCommandline,exe.setCommandline(cmdline))<SUB>536</SUB>> ]
+"1040" [label = <(IDENTIFIER,exe,exe.setCommandline(cmdline))<SUB>536</SUB>> ]
+"1041" [label = <(IDENTIFIER,cmdline,exe.setCommandline(cmdline))<SUB>536</SUB>> ]
+"1042" [label = <(LOCAL,int retval: int)> ]
+"1043" [label = <(&lt;operator&gt;.assignment,int retval = exe.execute())<SUB>537</SUB>> ]
+"1044" [label = <(IDENTIFIER,retval,int retval = exe.execute())<SUB>537</SUB>> ]
+"1045" [label = <(execute,exe.execute())<SUB>537</SUB>> ]
+"1046" [label = <(IDENTIFIER,exe,exe.execute())<SUB>537</SUB>> ]
+"1047" [label = <(CONTROL_STRUCTURE,if (retval != 0),if (retval != 0))<SUB>538</SUB>> ]
+"1048" [label = <(&lt;operator&gt;.notEquals,retval != 0)<SUB>538</SUB>> ]
+"1049" [label = <(IDENTIFIER,retval,retval != 0)<SUB>538</SUB>> ]
+"1050" [label = <(LITERAL,0,retval != 0)<SUB>538</SUB>> ]
+"1051" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>538</SUB>> ]
+"1052" [label = <(&lt;operator&gt;.throw,throw new BuildException(cmdline[0] + &quot; failed with return code &quot; + retval, task.getLocation());)<SUB>539</SUB>> ]
+"1053" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>539</SUB>> ]
+"1054" [label = <(&lt;operator&gt;.assignment,&lt;empty&gt;)> ]
+"1055" [label = <(IDENTIFIER,$obj24,&lt;empty&gt;)> ]
+"1056" [label = <(&lt;operator&gt;.alloc,new BuildException(cmdline[0] + &quot; failed with return code &quot; + retval, task.getLocation()))<SUB>539</SUB>> ]
+"1057" [label = <(&lt;init&gt;,new BuildException(cmdline[0] + &quot; failed with return code &quot; + retval, task.getLocation()))<SUB>539</SUB>> ]
+"1058" [label = <(IDENTIFIER,$obj24,new BuildException(cmdline[0] + &quot; failed with return code &quot; + retval, task.getLocation()))> ]
+"1059" [label = <(&lt;operator&gt;.addition,cmdline[0] + &quot; failed with return code &quot; + retval)<SUB>539</SUB>> ]
+"1060" [label = <(&lt;operator&gt;.addition,cmdline[0] + &quot; failed with return code &quot;)<SUB>539</SUB>> ]
+"1061" [label = <(&lt;operator&gt;.indexAccess,cmdline[0])<SUB>539</SUB>> ]
+"1062" [label = <(IDENTIFIER,cmdline,cmdline[0] + &quot; failed with return code &quot;)<SUB>539</SUB>> ]
+"1063" [label = <(LITERAL,0,cmdline[0] + &quot; failed with return code &quot;)<SUB>539</SUB>> ]
+"1064" [label = <(LITERAL,&quot; failed with return code &quot;,cmdline[0] + &quot; failed with return code &quot;)<SUB>540</SUB>> ]
+"1065" [label = <(IDENTIFIER,retval,cmdline[0] + &quot; failed with return code &quot; + retval)<SUB>540</SUB>> ]
+"1066" [label = <(getLocation,getLocation())<SUB>540</SUB>> ]
+"1067" [label = <(IDENTIFIER,task,getLocation())<SUB>540</SUB>> ]
+"1068" [label = <(IDENTIFIER,$obj24,&lt;empty&gt;)> ]
+"1069" [label = <(BLOCK,catch,catch)> ]
+"1070" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>542</SUB>> ]
+"1071" [label = <(&lt;operator&gt;.throw,throw new BuildException(&quot;Could not launch &quot; + cmdline[0] + &quot;: &quot; + exc, task.getLocation());)<SUB>543</SUB>> ]
+"1072" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>543</SUB>> ]
+"1073" [label = <(&lt;operator&gt;.assignment,&lt;empty&gt;)> ]
+"1074" [label = <(IDENTIFIER,$obj25,&lt;empty&gt;)> ]
+"1075" [label = <(&lt;operator&gt;.alloc,new BuildException(&quot;Could not launch &quot; + cmdline[0] + &quot;: &quot; + exc, task.getLocation()))<SUB>543</SUB>> ]
+"1076" [label = <(&lt;init&gt;,new BuildException(&quot;Could not launch &quot; + cmdline[0] + &quot;: &quot; + exc, task.getLocation()))<SUB>543</SUB>> ]
+"1077" [label = <(IDENTIFIER,$obj25,new BuildException(&quot;Could not launch &quot; + cmdline[0] + &quot;: &quot; + exc, task.getLocation()))> ]
+"1078" [label = <(&lt;operator&gt;.addition,&quot;Could not launch &quot; + cmdline[0] + &quot;: &quot; + exc)<SUB>543</SUB>> ]
+"1079" [label = <(&lt;operator&gt;.addition,&quot;Could not launch &quot; + cmdline[0] + &quot;: &quot;)<SUB>543</SUB>> ]
+"1080" [label = <(&lt;operator&gt;.addition,&quot;Could not launch &quot; + cmdline[0])<SUB>543</SUB>> ]
+"1081" [label = <(LITERAL,&quot;Could not launch &quot;,&quot;Could not launch &quot; + cmdline[0])<SUB>543</SUB>> ]
+"1082" [label = <(&lt;operator&gt;.indexAccess,cmdline[0])<SUB>543</SUB>> ]
+"1083" [label = <(IDENTIFIER,cmdline,&quot;Could not launch &quot; + cmdline[0])<SUB>543</SUB>> ]
+"1084" [label = <(LITERAL,0,&quot;Could not launch &quot; + cmdline[0])<SUB>543</SUB>> ]
+"1085" [label = <(LITERAL,&quot;: &quot;,&quot;Could not launch &quot; + cmdline[0] + &quot;: &quot;)<SUB>543</SUB>> ]
+"1086" [label = <(IDENTIFIER,exc,&quot;Could not launch &quot; + cmdline[0] + &quot;: &quot; + exc)<SUB>544</SUB>> ]
+"1087" [label = <(getLocation,getLocation())<SUB>544</SUB>> ]
+"1088" [label = <(IDENTIFIER,task,getLocation())<SUB>544</SUB>> ]
+"1089" [label = <(IDENTIFIER,$obj25,&lt;empty&gt;)> ]
+"1090" [label = <(MODIFIER,PUBLIC)> ]
+"1091" [label = <(MODIFIER,STATIC)> ]
+"1092" [label = <(METHOD_RETURN,void)<SUB>527</SUB>> ]
+  "1003" -> "1004" 
+  "1003" -> "1005" 
+  "1003" -> "1006" 
+  "1003" -> "1090" 
+  "1003" -> "1091" 
+  "1003" -> "1092" 
+  "1006" -> "1007" 
+  "1007" -> "1008" 
+  "1007" -> "1069" 
+  "1008" -> "1009" 
+  "1008" -> "41" 
+  "1008" -> "1017" 
+  "1008" -> "1020" 
+  "1008" -> "1035" 
+  "1008" -> "1039" 
+  "1008" -> "1042" 
+  "1008" -> "1043" 
+  "1008" -> "1047" 
+  "1009" -> "1010" 
+  "1009" -> "1011" 
+  "1009" -> "1014" 
+  "1011" -> "1012" 
+  "1011" -> "1013" 
+  "1014" -> "1015" 
+  "1014" -> "1016" 
+  "1017" -> "1018" 
+  "1017" -> "1019" 
+  "1020" -> "40" 
+  "1020" -> "1021" 
+  "1021" -> "1022" 
+  "1021" -> "1025" 
+  "1021" -> "1034" 
+  "1022" -> "1023" 
+  "1022" -> "1024" 
+  "1025" -> "1026" 
+  "1025" -> "1027" 
+  "1025" -> "1028" 
+  "1025" -> "1031" 
+  "1028" -> "1029" 
+  "1028" -> "1030" 
+  "1031" -> "1032" 
+  "1031" -> "1033" 
+  "1035" -> "1036" 
+  "1035" -> "1037" 
+  "1037" -> "1038" 
+  "1039" -> "1040" 
+  "1039" -> "1041" 
+  "1043" -> "1044" 
+  "1043" -> "1045" 
+  "1045" -> "1046" 
+  "1047" -> "1048" 
+  "1047" -> "1051" 
+  "1048" -> "1049" 
+  "1048" -> "1050" 
+  "1051" -> "1052" 
+  "1052" -> "1053" 
+  "1053" -> "1054" 
+  "1053" -> "1057" 
+  "1053" -> "1068" 
+  "1054" -> "1055" 
+  "1054" -> "1056" 
+  "1057" -> "1058" 
+  "1057" -> "1059" 
+  "1057" -> "1066" 
+  "1059" -> "1060" 
+  "1059" -> "1065" 
+  "1060" -> "1061" 
+  "1060" -> "1064" 
+  "1061" -> "1062" 
+  "1061" -> "1063" 
+  "1066" -> "1067" 
+  "1069" -> "1070" 
+  "1070" -> "1071" 
+  "1071" -> "1072" 
+  "1072" -> "1073" 
+  "1072" -> "1076" 
+  "1072" -> "1089" 
+  "1073" -> "1074" 
+  "1073" -> "1075" 
+  "1076" -> "1077" 
+  "1076" -> "1078" 
+  "1076" -> "1087" 
+  "1078" -> "1079" 
+  "1078" -> "1086" 
+  "1079" -> "1080" 
+  "1079" -> "1085" 
+  "1080" -> "1081" 
+  "1080" -> "1082" 
+  "1082" -> "1083" 
+  "1082" -> "1084" 
+  "1087" -> "1088" 
+}

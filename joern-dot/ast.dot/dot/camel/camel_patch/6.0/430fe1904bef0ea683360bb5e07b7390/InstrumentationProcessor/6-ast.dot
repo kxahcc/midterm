@@ -1,0 +1,93 @@
+digraph "recordTime" {  
+"141" [label = <(METHOD,recordTime)<SUB>93</SUB>> ]
+"142" [label = <(PARAM,this)<SUB>93</SUB>> ]
+"143" [label = <(PARAM,Exchange exchange)<SUB>93</SUB>> ]
+"144" [label = <(PARAM,double duration)<SUB>93</SUB>> ]
+"145" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>93</SUB>> ]
+"146" [label = <(CONTROL_STRUCTURE,if (LOG.isTraceEnabled()),if (LOG.isTraceEnabled()))<SUB>94</SUB>> ]
+"147" [label = <(isTraceEnabled,isTraceEnabled())<SUB>94</SUB>> ]
+"148" [label = <(&lt;operator&gt;.fieldAccess,InstrumentationProcessor.LOG)<SUB>94</SUB>> ]
+"149" [label = <(IDENTIFIER,InstrumentationProcessor,isTraceEnabled())<SUB>94</SUB>> ]
+"150" [label = <(FIELD_IDENTIFIER,LOG,LOG)<SUB>94</SUB>> ]
+"151" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>94</SUB>> ]
+"152" [label = <(trace,trace(&quot;Recording duration: &quot; + duration + &quot; millis for exchange: &quot; + exchange))<SUB>95</SUB>> ]
+"153" [label = <(&lt;operator&gt;.fieldAccess,InstrumentationProcessor.LOG)<SUB>95</SUB>> ]
+"154" [label = <(IDENTIFIER,InstrumentationProcessor,trace(&quot;Recording duration: &quot; + duration + &quot; millis for exchange: &quot; + exchange))<SUB>95</SUB>> ]
+"155" [label = <(FIELD_IDENTIFIER,LOG,LOG)<SUB>95</SUB>> ]
+"156" [label = <(&lt;operator&gt;.addition,&quot;Recording duration: &quot; + duration + &quot; millis for exchange: &quot; + exchange)<SUB>95</SUB>> ]
+"157" [label = <(&lt;operator&gt;.addition,&quot;Recording duration: &quot; + duration + &quot; millis for exchange: &quot;)<SUB>95</SUB>> ]
+"158" [label = <(&lt;operator&gt;.addition,&quot;Recording duration: &quot; + duration)<SUB>95</SUB>> ]
+"159" [label = <(LITERAL,&quot;Recording duration: &quot;,&quot;Recording duration: &quot; + duration)<SUB>95</SUB>> ]
+"160" [label = <(IDENTIFIER,duration,&quot;Recording duration: &quot; + duration)<SUB>95</SUB>> ]
+"161" [label = <(LITERAL,&quot; millis for exchange: &quot;,&quot;Recording duration: &quot; + duration + &quot; millis for exchange: &quot;)<SUB>95</SUB>> ]
+"162" [label = <(IDENTIFIER,exchange,&quot;Recording duration: &quot; + duration + &quot; millis for exchange: &quot; + exchange)<SUB>95</SUB>> ]
+"163" [label = <(CONTROL_STRUCTURE,if (!exchange.isFailed() &amp;&amp; exchange.getException() == null),if (!exchange.isFailed() &amp;&amp; exchange.getException() == null))<SUB>98</SUB>> ]
+"164" [label = <(&lt;operator&gt;.logicalAnd,!exchange.isFailed() &amp;&amp; exchange.getException() == null)<SUB>98</SUB>> ]
+"165" [label = <(&lt;operator&gt;.logicalNot,!exchange.isFailed())<SUB>98</SUB>> ]
+"166" [label = <(isFailed,isFailed())<SUB>98</SUB>> ]
+"167" [label = <(IDENTIFIER,exchange,isFailed())<SUB>98</SUB>> ]
+"168" [label = <(&lt;operator&gt;.equals,exchange.getException() == null)<SUB>98</SUB>> ]
+"169" [label = <(getException,getException())<SUB>98</SUB>> ]
+"170" [label = <(IDENTIFIER,exchange,getException())<SUB>98</SUB>> ]
+"171" [label = <(LITERAL,null,exchange.getException() == null)<SUB>98</SUB>> ]
+"172" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>98</SUB>> ]
+"173" [label = <(completedExchange,completedExchange(duration))<SUB>99</SUB>> ]
+"174" [label = <(&lt;operator&gt;.fieldAccess,this.counter)<SUB>99</SUB>> ]
+"175" [label = <(IDENTIFIER,this,completedExchange(duration))<SUB>99</SUB>> ]
+"176" [label = <(FIELD_IDENTIFIER,counter,counter)<SUB>99</SUB>> ]
+"177" [label = <(IDENTIFIER,duration,completedExchange(duration))<SUB>99</SUB>> ]
+"178" [label = <(CONTROL_STRUCTURE,else,else)<SUB>100</SUB>> ]
+"179" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>100</SUB>> ]
+"180" [label = <(failedExchange,failedExchange())<SUB>101</SUB>> ]
+"181" [label = <(&lt;operator&gt;.fieldAccess,this.counter)<SUB>101</SUB>> ]
+"182" [label = <(IDENTIFIER,this,failedExchange())<SUB>101</SUB>> ]
+"183" [label = <(FIELD_IDENTIFIER,counter,counter)<SUB>101</SUB>> ]
+"184" [label = <(MODIFIER,PROTECTED)> ]
+"185" [label = <(MODIFIER,VIRTUAL)> ]
+"186" [label = <(METHOD_RETURN,void)<SUB>93</SUB>> ]
+  "141" -> "142" 
+  "141" -> "143" 
+  "141" -> "144" 
+  "141" -> "145" 
+  "141" -> "184" 
+  "141" -> "185" 
+  "141" -> "186" 
+  "145" -> "146" 
+  "145" -> "163" 
+  "146" -> "147" 
+  "146" -> "151" 
+  "147" -> "148" 
+  "148" -> "149" 
+  "148" -> "150" 
+  "151" -> "152" 
+  "152" -> "153" 
+  "152" -> "156" 
+  "153" -> "154" 
+  "153" -> "155" 
+  "156" -> "157" 
+  "156" -> "162" 
+  "157" -> "158" 
+  "157" -> "161" 
+  "158" -> "159" 
+  "158" -> "160" 
+  "163" -> "164" 
+  "163" -> "172" 
+  "163" -> "178" 
+  "164" -> "165" 
+  "164" -> "168" 
+  "165" -> "166" 
+  "166" -> "167" 
+  "168" -> "169" 
+  "168" -> "171" 
+  "169" -> "170" 
+  "172" -> "173" 
+  "173" -> "174" 
+  "173" -> "177" 
+  "174" -> "175" 
+  "174" -> "176" 
+  "178" -> "179" 
+  "179" -> "180" 
+  "180" -> "181" 
+  "181" -> "182" 
+  "181" -> "183" 
+}

@@ -1,0 +1,43 @@
+digraph "start" {  
+"211" [label = <(METHOD,start)<SUB>86</SUB>> ]
+"25" [label = <(PARAM,this)<SUB>86</SUB>> ]
+"212" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>86</SUB>> ]
+"213" [label = <(set,shutdown.set(false))<SUB>87</SUB>> ]
+"214" [label = <(&lt;operator&gt;.fieldAccess,this.shutdown)<SUB>87</SUB>> ]
+"215" [label = <(IDENTIFIER,this,shutdown.set(false))<SUB>87</SUB>> ]
+"216" [label = <(FIELD_IDENTIFIER,shutdown,shutdown)<SUB>87</SUB>> ]
+"217" [label = <(LITERAL,false,shutdown.set(false))<SUB>87</SUB>> ]
+"218" [label = <(setRejectedExecutionHandler,this.getExecutor().setRejectedExecutionHandler(new RejectedExecutionHandler() {\012\012    public void rejectedExecution(Runnable runnable, ThreadPoolExecutor executor) {\012        ProcessCall call = (ProcessCall) runnable;\012        call.exchange.setException(new RejectedExecutionException());\012        call.callback.done(false);\012    }\012}))<SUB>88</SUB>> ]
+"219" [label = <(getExecutor,this.getExecutor())<SUB>88</SUB>> ]
+"24" [label = <(IDENTIFIER,this,this.getExecutor())<SUB>88</SUB>> ]
+"220" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>88</SUB>> ]
+"221" [label = <(&lt;operator&gt;.assignment,&lt;empty&gt;)> ]
+"222" [label = <(IDENTIFIER,$obj4,&lt;empty&gt;)> ]
+"223" [label = <(&lt;operator&gt;.alloc,new RejectedExecutionHandler() {\012\012    public void rejectedExecution(Runnable runnable, ThreadPoolExecutor executor) {\012        ProcessCall call = (ProcessCall) runnable;\012        call.exchange.setException(new RejectedExecutionException());\012        call.callback.done(false);\012    }\012})<SUB>88</SUB>> ]
+"224" [label = <(&lt;init&gt;,new RejectedExecutionHandler() {\012\012    public void rejectedExecution(Runnable runnable, ThreadPoolExecutor executor) {\012        ProcessCall call = (ProcessCall) runnable;\012        call.exchange.setException(new RejectedExecutionException());\012        call.callback.done(false);\012    }\012})<SUB>88</SUB>> ]
+"225" [label = <(IDENTIFIER,$obj4,new RejectedExecutionHandler() {\012\012    public void rejectedExecution(Runnable runnable, ThreadPoolExecutor executor) {\012        ProcessCall call = (ProcessCall) runnable;\012        call.exchange.setException(new RejectedExecutionException());\012        call.callback.done(false);\012    }\012})> ]
+"226" [label = <(IDENTIFIER,$obj4,&lt;empty&gt;)> ]
+"227" [label = <(MODIFIER,PUBLIC)> ]
+"228" [label = <(MODIFIER,VIRTUAL)> ]
+"229" [label = <(METHOD_RETURN,void)<SUB>86</SUB>> ]
+  "211" -> "25" 
+  "211" -> "212" 
+  "211" -> "227" 
+  "211" -> "228" 
+  "211" -> "229" 
+  "212" -> "213" 
+  "212" -> "218" 
+  "213" -> "214" 
+  "213" -> "217" 
+  "214" -> "215" 
+  "214" -> "216" 
+  "218" -> "219" 
+  "218" -> "220" 
+  "219" -> "24" 
+  "220" -> "221" 
+  "220" -> "224" 
+  "220" -> "226" 
+  "221" -> "222" 
+  "221" -> "223" 
+  "224" -> "225" 
+}

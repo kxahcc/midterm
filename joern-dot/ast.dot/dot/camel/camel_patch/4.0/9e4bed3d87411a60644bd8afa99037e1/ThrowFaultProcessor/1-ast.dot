@@ -1,0 +1,35 @@
+digraph "process" {  
+"32" [label = <(METHOD,process)<SUB>38</SUB>> ]
+"33" [label = <(PARAM,this)<SUB>38</SUB>> ]
+"34" [label = <(PARAM,Exchange exchange)<SUB>38</SUB>> ]
+"35" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>38</SUB>> ]
+"36" [label = <(LOCAL,Message message: org.apache.camel.Message)> ]
+"37" [label = <(&lt;operator&gt;.assignment,Message message = getFault())<SUB>39</SUB>> ]
+"38" [label = <(IDENTIFIER,message,Message message = getFault())<SUB>39</SUB>> ]
+"39" [label = <(getFault,getFault())<SUB>39</SUB>> ]
+"40" [label = <(IDENTIFIER,exchange,getFault())<SUB>39</SUB>> ]
+"41" [label = <(setBody,setBody(fault))<SUB>40</SUB>> ]
+"42" [label = <(IDENTIFIER,message,setBody(fault))<SUB>40</SUB>> ]
+"43" [label = <(&lt;operator&gt;.fieldAccess,this.fault)<SUB>40</SUB>> ]
+"44" [label = <(IDENTIFIER,this,setBody(fault))<SUB>40</SUB>> ]
+"45" [label = <(FIELD_IDENTIFIER,fault,fault)<SUB>40</SUB>> ]
+"46" [label = <(MODIFIER,PUBLIC)> ]
+"47" [label = <(MODIFIER,VIRTUAL)> ]
+"48" [label = <(METHOD_RETURN,void)<SUB>38</SUB>> ]
+  "32" -> "33" 
+  "32" -> "34" 
+  "32" -> "35" 
+  "32" -> "46" 
+  "32" -> "47" 
+  "32" -> "48" 
+  "35" -> "36" 
+  "35" -> "37" 
+  "35" -> "41" 
+  "37" -> "38" 
+  "37" -> "39" 
+  "39" -> "40" 
+  "41" -> "42" 
+  "41" -> "43" 
+  "43" -> "44" 
+  "43" -> "45" 
+}

@@ -1,0 +1,323 @@
+digraph "runParallel" {  
+"1679" [label = <(METHOD,runParallel)<SUB>681</SUB>> ]
+"73" [label = <(PARAM,this)<SUB>681</SUB>> ]
+"1680" [label = <(PARAM,Execute exe)<SUB>681</SUB>> ]
+"1681" [label = <(PARAM,Vector fileNames)<SUB>681</SUB>> ]
+"1682" [label = <(PARAM,Vector baseDirs)<SUB>682</SUB>> ]
+"1683" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>683</SUB>> ]
+"1684" [label = <(LOCAL,String[] s: java.lang.String[])> ]
+"1685" [label = <(&lt;operator&gt;.assignment,String[] s = new String[fileNames.size()])<SUB>684</SUB>> ]
+"1686" [label = <(IDENTIFIER,s,String[] s = new String[fileNames.size()])<SUB>684</SUB>> ]
+"1687" [label = <(&lt;operator&gt;.alloc,new String[fileNames.size()])> ]
+"1688" [label = <(size,fileNames.size())<SUB>684</SUB>> ]
+"1689" [label = <(IDENTIFIER,fileNames,fileNames.size())<SUB>684</SUB>> ]
+"1690" [label = <(copyInto,fileNames.copyInto(s))<SUB>685</SUB>> ]
+"1691" [label = <(IDENTIFIER,fileNames,fileNames.copyInto(s))<SUB>685</SUB>> ]
+"1692" [label = <(IDENTIFIER,s,fileNames.copyInto(s))<SUB>685</SUB>> ]
+"1693" [label = <(LOCAL,File[] b: java.io.File[])> ]
+"1694" [label = <(&lt;operator&gt;.assignment,File[] b = new File[baseDirs.size()])<SUB>686</SUB>> ]
+"1695" [label = <(IDENTIFIER,b,File[] b = new File[baseDirs.size()])<SUB>686</SUB>> ]
+"1696" [label = <(&lt;operator&gt;.alloc,new File[baseDirs.size()])> ]
+"1697" [label = <(size,baseDirs.size())<SUB>686</SUB>> ]
+"1698" [label = <(IDENTIFIER,baseDirs,baseDirs.size())<SUB>686</SUB>> ]
+"1699" [label = <(copyInto,baseDirs.copyInto(b))<SUB>687</SUB>> ]
+"1700" [label = <(IDENTIFIER,baseDirs,baseDirs.copyInto(b))<SUB>687</SUB>> ]
+"1701" [label = <(IDENTIFIER,b,baseDirs.copyInto(b))<SUB>687</SUB>> ]
+"1702" [label = <(CONTROL_STRUCTURE,if (maxParallel &lt;= 0 || s.length == 0),if (maxParallel &lt;= 0 || s.length == 0))<SUB>689</SUB>> ]
+"1703" [label = <(&lt;operator&gt;.logicalOr,maxParallel &lt;= 0 || s.length == 0)<SUB>689</SUB>> ]
+"1704" [label = <(&lt;operator&gt;.lessEqualsThan,maxParallel &lt;= 0)<SUB>689</SUB>> ]
+"1705" [label = <(&lt;operator&gt;.fieldAccess,this.maxParallel)<SUB>689</SUB>> ]
+"1706" [label = <(IDENTIFIER,this,maxParallel &lt;= 0)<SUB>689</SUB>> ]
+"1707" [label = <(FIELD_IDENTIFIER,maxParallel,maxParallel)<SUB>689</SUB>> ]
+"1708" [label = <(LITERAL,0,maxParallel &lt;= 0)<SUB>689</SUB>> ]
+"1709" [label = <(&lt;operator&gt;.equals,s.length == 0)<SUB>690</SUB>> ]
+"1710" [label = <(&lt;operator&gt;.fieldAccess,s.length)<SUB>690</SUB>> ]
+"1711" [label = <(IDENTIFIER,s,s.length == 0)<SUB>690</SUB>> ]
+"1712" [label = <(FIELD_IDENTIFIER,length,length)<SUB>690</SUB>> ]
+"1713" [label = <(LITERAL,0,s.length == 0)<SUB>690</SUB>> ]
+"1714" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>690</SUB>> ]
+"1715" [label = <(LOCAL,String[] command: java.lang.String[])> ]
+"1716" [label = <(&lt;operator&gt;.assignment,String[] command = this.getCommandline(s, b))<SUB>691</SUB>> ]
+"1717" [label = <(IDENTIFIER,command,String[] command = this.getCommandline(s, b))<SUB>691</SUB>> ]
+"1718" [label = <(getCommandline,this.getCommandline(s, b))<SUB>691</SUB>> ]
+"72" [label = <(IDENTIFIER,this,this.getCommandline(s, b))<SUB>691</SUB>> ]
+"1719" [label = <(IDENTIFIER,s,this.getCommandline(s, b))<SUB>691</SUB>> ]
+"1720" [label = <(IDENTIFIER,b,this.getCommandline(s, b))<SUB>691</SUB>> ]
+"1721" [label = <(log,log(Commandline.describeCommand(command), Project.MSG_VERBOSE))<SUB>692</SUB>> ]
+"74" [label = <(IDENTIFIER,this,log(Commandline.describeCommand(command), Project.MSG_VERBOSE))<SUB>692</SUB>> ]
+"1722" [label = <(describeCommand,describeCommand(command))<SUB>692</SUB>> ]
+"1723" [label = <(IDENTIFIER,Commandline,describeCommand(command))<SUB>692</SUB>> ]
+"1724" [label = <(IDENTIFIER,command,describeCommand(command))<SUB>692</SUB>> ]
+"1725" [label = <(&lt;operator&gt;.fieldAccess,Project.MSG_VERBOSE)<SUB>692</SUB>> ]
+"1726" [label = <(IDENTIFIER,Project,log(Commandline.describeCommand(command), Project.MSG_VERBOSE))<SUB>692</SUB>> ]
+"1727" [label = <(FIELD_IDENTIFIER,MSG_VERBOSE,MSG_VERBOSE)<SUB>692</SUB>> ]
+"1728" [label = <(setCommandline,setCommandline(command))<SUB>693</SUB>> ]
+"1729" [label = <(IDENTIFIER,exe,setCommandline(command))<SUB>693</SUB>> ]
+"1730" [label = <(IDENTIFIER,command,setCommandline(command))<SUB>693</SUB>> ]
+"1731" [label = <(runExecute,runExecute(exe))<SUB>694</SUB>> ]
+"75" [label = <(IDENTIFIER,this,runExecute(exe))<SUB>694</SUB>> ]
+"1732" [label = <(IDENTIFIER,exe,runExecute(exe))<SUB>694</SUB>> ]
+"1733" [label = <(CONTROL_STRUCTURE,else,else)<SUB>695</SUB>> ]
+"1734" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>695</SUB>> ]
+"1735" [label = <(LOCAL,int stillToDo: int)> ]
+"1736" [label = <(&lt;operator&gt;.assignment,int stillToDo = fileNames.size())<SUB>696</SUB>> ]
+"1737" [label = <(IDENTIFIER,stillToDo,int stillToDo = fileNames.size())<SUB>696</SUB>> ]
+"1738" [label = <(size,fileNames.size())<SUB>696</SUB>> ]
+"1739" [label = <(IDENTIFIER,fileNames,fileNames.size())<SUB>696</SUB>> ]
+"1740" [label = <(LOCAL,int currentOffset: int)> ]
+"1741" [label = <(&lt;operator&gt;.assignment,int currentOffset = 0)<SUB>697</SUB>> ]
+"1742" [label = <(IDENTIFIER,currentOffset,int currentOffset = 0)<SUB>697</SUB>> ]
+"1743" [label = <(LITERAL,0,int currentOffset = 0)<SUB>697</SUB>> ]
+"1744" [label = <(CONTROL_STRUCTURE,while (stillToDo &gt; 0),while (stillToDo &gt; 0))<SUB>698</SUB>> ]
+"1745" [label = <(&lt;operator&gt;.greaterThan,stillToDo &gt; 0)<SUB>698</SUB>> ]
+"1746" [label = <(IDENTIFIER,stillToDo,stillToDo &gt; 0)<SUB>698</SUB>> ]
+"1747" [label = <(LITERAL,0,stillToDo &gt; 0)<SUB>698</SUB>> ]
+"1748" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>698</SUB>> ]
+"1749" [label = <(LOCAL,int currentAmount: int)> ]
+"1750" [label = <(&lt;operator&gt;.assignment,int currentAmount = Math.min(stillToDo, maxParallel))<SUB>699</SUB>> ]
+"1751" [label = <(IDENTIFIER,currentAmount,int currentAmount = Math.min(stillToDo, maxParallel))<SUB>699</SUB>> ]
+"1752" [label = <(min,Math.min(stillToDo, maxParallel))<SUB>699</SUB>> ]
+"1753" [label = <(IDENTIFIER,Math,Math.min(stillToDo, maxParallel))<SUB>699</SUB>> ]
+"1754" [label = <(IDENTIFIER,stillToDo,Math.min(stillToDo, maxParallel))<SUB>699</SUB>> ]
+"1755" [label = <(&lt;operator&gt;.fieldAccess,this.maxParallel)<SUB>699</SUB>> ]
+"1756" [label = <(IDENTIFIER,this,Math.min(stillToDo, maxParallel))<SUB>699</SUB>> ]
+"1757" [label = <(FIELD_IDENTIFIER,maxParallel,maxParallel)<SUB>699</SUB>> ]
+"1758" [label = <(LOCAL,String[] cs: java.lang.String[])> ]
+"1759" [label = <(&lt;operator&gt;.assignment,String[] cs = new String[currentAmount])<SUB>700</SUB>> ]
+"1760" [label = <(IDENTIFIER,cs,String[] cs = new String[currentAmount])<SUB>700</SUB>> ]
+"1761" [label = <(&lt;operator&gt;.alloc,new String[currentAmount])> ]
+"1762" [label = <(IDENTIFIER,currentAmount,new String[currentAmount])<SUB>700</SUB>> ]
+"1763" [label = <(arraycopy,System.arraycopy(s, currentOffset, cs, 0, currentAmount))<SUB>701</SUB>> ]
+"1764" [label = <(IDENTIFIER,System,System.arraycopy(s, currentOffset, cs, 0, currentAmount))<SUB>701</SUB>> ]
+"1765" [label = <(IDENTIFIER,s,System.arraycopy(s, currentOffset, cs, 0, currentAmount))<SUB>701</SUB>> ]
+"1766" [label = <(IDENTIFIER,currentOffset,System.arraycopy(s, currentOffset, cs, 0, currentAmount))<SUB>701</SUB>> ]
+"1767" [label = <(IDENTIFIER,cs,System.arraycopy(s, currentOffset, cs, 0, currentAmount))<SUB>701</SUB>> ]
+"1768" [label = <(LITERAL,0,System.arraycopy(s, currentOffset, cs, 0, currentAmount))<SUB>701</SUB>> ]
+"1769" [label = <(IDENTIFIER,currentAmount,System.arraycopy(s, currentOffset, cs, 0, currentAmount))<SUB>701</SUB>> ]
+"1770" [label = <(LOCAL,File[] cb: java.io.File[])> ]
+"1771" [label = <(&lt;operator&gt;.assignment,File[] cb = new File[currentAmount])<SUB>702</SUB>> ]
+"1772" [label = <(IDENTIFIER,cb,File[] cb = new File[currentAmount])<SUB>702</SUB>> ]
+"1773" [label = <(&lt;operator&gt;.alloc,new File[currentAmount])> ]
+"1774" [label = <(IDENTIFIER,currentAmount,new File[currentAmount])<SUB>702</SUB>> ]
+"1775" [label = <(arraycopy,System.arraycopy(b, currentOffset, cb, 0, currentAmount))<SUB>703</SUB>> ]
+"1776" [label = <(IDENTIFIER,System,System.arraycopy(b, currentOffset, cb, 0, currentAmount))<SUB>703</SUB>> ]
+"1777" [label = <(IDENTIFIER,b,System.arraycopy(b, currentOffset, cb, 0, currentAmount))<SUB>703</SUB>> ]
+"1778" [label = <(IDENTIFIER,currentOffset,System.arraycopy(b, currentOffset, cb, 0, currentAmount))<SUB>703</SUB>> ]
+"1779" [label = <(IDENTIFIER,cb,System.arraycopy(b, currentOffset, cb, 0, currentAmount))<SUB>703</SUB>> ]
+"1780" [label = <(LITERAL,0,System.arraycopy(b, currentOffset, cb, 0, currentAmount))<SUB>703</SUB>> ]
+"1781" [label = <(IDENTIFIER,currentAmount,System.arraycopy(b, currentOffset, cb, 0, currentAmount))<SUB>703</SUB>> ]
+"1782" [label = <(LOCAL,String[] command: java.lang.String[])> ]
+"1783" [label = <(&lt;operator&gt;.assignment,String[] command = this.getCommandline(cs, cb))<SUB>704</SUB>> ]
+"1784" [label = <(IDENTIFIER,command,String[] command = this.getCommandline(cs, cb))<SUB>704</SUB>> ]
+"1785" [label = <(getCommandline,this.getCommandline(cs, cb))<SUB>704</SUB>> ]
+"76" [label = <(IDENTIFIER,this,this.getCommandline(cs, cb))<SUB>704</SUB>> ]
+"1786" [label = <(IDENTIFIER,cs,this.getCommandline(cs, cb))<SUB>704</SUB>> ]
+"1787" [label = <(IDENTIFIER,cb,this.getCommandline(cs, cb))<SUB>704</SUB>> ]
+"1788" [label = <(log,log(Commandline.describeCommand(command), Project.MSG_VERBOSE))<SUB>705</SUB>> ]
+"77" [label = <(IDENTIFIER,this,log(Commandline.describeCommand(command), Project.MSG_VERBOSE))<SUB>705</SUB>> ]
+"1789" [label = <(describeCommand,describeCommand(command))<SUB>705</SUB>> ]
+"1790" [label = <(IDENTIFIER,Commandline,describeCommand(command))<SUB>705</SUB>> ]
+"1791" [label = <(IDENTIFIER,command,describeCommand(command))<SUB>705</SUB>> ]
+"1792" [label = <(&lt;operator&gt;.fieldAccess,Project.MSG_VERBOSE)<SUB>705</SUB>> ]
+"1793" [label = <(IDENTIFIER,Project,log(Commandline.describeCommand(command), Project.MSG_VERBOSE))<SUB>705</SUB>> ]
+"1794" [label = <(FIELD_IDENTIFIER,MSG_VERBOSE,MSG_VERBOSE)<SUB>705</SUB>> ]
+"1795" [label = <(setCommandline,setCommandline(command))<SUB>706</SUB>> ]
+"1796" [label = <(IDENTIFIER,exe,setCommandline(command))<SUB>706</SUB>> ]
+"1797" [label = <(IDENTIFIER,command,setCommandline(command))<SUB>706</SUB>> ]
+"1798" [label = <(CONTROL_STRUCTURE,if (redirectorElement != null),if (redirectorElement != null))<SUB>707</SUB>> ]
+"1799" [label = <(&lt;operator&gt;.notEquals,redirectorElement != null)<SUB>707</SUB>> ]
+"1800" [label = <(IDENTIFIER,redirectorElement,redirectorElement != null)<SUB>707</SUB>> ]
+"1801" [label = <(LITERAL,null,redirectorElement != null)<SUB>707</SUB>> ]
+"1802" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>707</SUB>> ]
+"1803" [label = <(setupRedirector,this.setupRedirector())<SUB>708</SUB>> ]
+"78" [label = <(IDENTIFIER,this,this.setupRedirector())<SUB>708</SUB>> ]
+"1804" [label = <(configure,configure(redirector, null))<SUB>709</SUB>> ]
+"1805" [label = <(IDENTIFIER,redirectorElement,configure(redirector, null))<SUB>709</SUB>> ]
+"1806" [label = <(IDENTIFIER,redirector,configure(redirector, null))<SUB>709</SUB>> ]
+"1807" [label = <(LITERAL,null,configure(redirector, null))<SUB>709</SUB>> ]
+"1808" [label = <(CONTROL_STRUCTURE,if (redirectorElement != null || currentOffset &gt; 0),if (redirectorElement != null || currentOffset &gt; 0))<SUB>711</SUB>> ]
+"1809" [label = <(&lt;operator&gt;.logicalOr,redirectorElement != null || currentOffset &gt; 0)<SUB>711</SUB>> ]
+"1810" [label = <(&lt;operator&gt;.notEquals,redirectorElement != null)<SUB>711</SUB>> ]
+"1811" [label = <(IDENTIFIER,redirectorElement,redirectorElement != null)<SUB>711</SUB>> ]
+"1812" [label = <(LITERAL,null,redirectorElement != null)<SUB>711</SUB>> ]
+"1813" [label = <(&lt;operator&gt;.greaterThan,currentOffset &gt; 0)<SUB>711</SUB>> ]
+"1814" [label = <(IDENTIFIER,currentOffset,currentOffset &gt; 0)<SUB>711</SUB>> ]
+"1815" [label = <(LITERAL,0,currentOffset &gt; 0)<SUB>711</SUB>> ]
+"1816" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>711</SUB>> ]
+"1817" [label = <(setStreamHandler,setStreamHandler(redirector.createHandler()))<SUB>715</SUB>> ]
+"1818" [label = <(IDENTIFIER,exe,setStreamHandler(redirector.createHandler()))<SUB>715</SUB>> ]
+"1819" [label = <(createHandler,createHandler())<SUB>715</SUB>> ]
+"1820" [label = <(IDENTIFIER,redirector,createHandler())<SUB>715</SUB>> ]
+"1821" [label = <(runExecute,runExecute(exe))<SUB>717</SUB>> ]
+"79" [label = <(IDENTIFIER,this,runExecute(exe))<SUB>717</SUB>> ]
+"1822" [label = <(IDENTIFIER,exe,runExecute(exe))<SUB>717</SUB>> ]
+"1823" [label = <(&lt;operator&gt;.assignmentMinus,stillToDo -= currentAmount)<SUB>719</SUB>> ]
+"1824" [label = <(IDENTIFIER,stillToDo,stillToDo -= currentAmount)<SUB>719</SUB>> ]
+"1825" [label = <(IDENTIFIER,currentAmount,stillToDo -= currentAmount)<SUB>719</SUB>> ]
+"1826" [label = <(&lt;operator&gt;.assignmentPlus,currentOffset += currentAmount)<SUB>720</SUB>> ]
+"1827" [label = <(IDENTIFIER,currentOffset,currentOffset += currentAmount)<SUB>720</SUB>> ]
+"1828" [label = <(IDENTIFIER,currentAmount,currentOffset += currentAmount)<SUB>720</SUB>> ]
+"1829" [label = <(MODIFIER,PROTECTED)> ]
+"1830" [label = <(MODIFIER,VIRTUAL)> ]
+"1831" [label = <(METHOD_RETURN,void)<SUB>681</SUB>> ]
+  "1679" -> "73" 
+  "1679" -> "1680" 
+  "1679" -> "1681" 
+  "1679" -> "1682" 
+  "1679" -> "1683" 
+  "1679" -> "1829" 
+  "1679" -> "1830" 
+  "1679" -> "1831" 
+  "1683" -> "1684" 
+  "1683" -> "1685" 
+  "1683" -> "1690" 
+  "1683" -> "1693" 
+  "1683" -> "1694" 
+  "1683" -> "1699" 
+  "1683" -> "1702" 
+  "1685" -> "1686" 
+  "1685" -> "1687" 
+  "1687" -> "1688" 
+  "1688" -> "1689" 
+  "1690" -> "1691" 
+  "1690" -> "1692" 
+  "1694" -> "1695" 
+  "1694" -> "1696" 
+  "1696" -> "1697" 
+  "1697" -> "1698" 
+  "1699" -> "1700" 
+  "1699" -> "1701" 
+  "1702" -> "1703" 
+  "1702" -> "1714" 
+  "1702" -> "1733" 
+  "1703" -> "1704" 
+  "1703" -> "1709" 
+  "1704" -> "1705" 
+  "1704" -> "1708" 
+  "1705" -> "1706" 
+  "1705" -> "1707" 
+  "1709" -> "1710" 
+  "1709" -> "1713" 
+  "1710" -> "1711" 
+  "1710" -> "1712" 
+  "1714" -> "1715" 
+  "1714" -> "1716" 
+  "1714" -> "1721" 
+  "1714" -> "1728" 
+  "1714" -> "1731" 
+  "1716" -> "1717" 
+  "1716" -> "1718" 
+  "1718" -> "72" 
+  "1718" -> "1719" 
+  "1718" -> "1720" 
+  "1721" -> "74" 
+  "1721" -> "1722" 
+  "1721" -> "1725" 
+  "1722" -> "1723" 
+  "1722" -> "1724" 
+  "1725" -> "1726" 
+  "1725" -> "1727" 
+  "1728" -> "1729" 
+  "1728" -> "1730" 
+  "1731" -> "75" 
+  "1731" -> "1732" 
+  "1733" -> "1734" 
+  "1734" -> "1735" 
+  "1734" -> "1736" 
+  "1734" -> "1740" 
+  "1734" -> "1741" 
+  "1734" -> "1744" 
+  "1736" -> "1737" 
+  "1736" -> "1738" 
+  "1738" -> "1739" 
+  "1741" -> "1742" 
+  "1741" -> "1743" 
+  "1744" -> "1745" 
+  "1744" -> "1748" 
+  "1745" -> "1746" 
+  "1745" -> "1747" 
+  "1748" -> "1749" 
+  "1748" -> "1750" 
+  "1748" -> "1758" 
+  "1748" -> "1759" 
+  "1748" -> "1763" 
+  "1748" -> "1770" 
+  "1748" -> "1771" 
+  "1748" -> "1775" 
+  "1748" -> "1782" 
+  "1748" -> "1783" 
+  "1748" -> "1788" 
+  "1748" -> "1795" 
+  "1748" -> "1798" 
+  "1748" -> "1808" 
+  "1748" -> "1821" 
+  "1748" -> "1823" 
+  "1748" -> "1826" 
+  "1750" -> "1751" 
+  "1750" -> "1752" 
+  "1752" -> "1753" 
+  "1752" -> "1754" 
+  "1752" -> "1755" 
+  "1755" -> "1756" 
+  "1755" -> "1757" 
+  "1759" -> "1760" 
+  "1759" -> "1761" 
+  "1761" -> "1762" 
+  "1763" -> "1764" 
+  "1763" -> "1765" 
+  "1763" -> "1766" 
+  "1763" -> "1767" 
+  "1763" -> "1768" 
+  "1763" -> "1769" 
+  "1771" -> "1772" 
+  "1771" -> "1773" 
+  "1773" -> "1774" 
+  "1775" -> "1776" 
+  "1775" -> "1777" 
+  "1775" -> "1778" 
+  "1775" -> "1779" 
+  "1775" -> "1780" 
+  "1775" -> "1781" 
+  "1783" -> "1784" 
+  "1783" -> "1785" 
+  "1785" -> "76" 
+  "1785" -> "1786" 
+  "1785" -> "1787" 
+  "1788" -> "77" 
+  "1788" -> "1789" 
+  "1788" -> "1792" 
+  "1789" -> "1790" 
+  "1789" -> "1791" 
+  "1792" -> "1793" 
+  "1792" -> "1794" 
+  "1795" -> "1796" 
+  "1795" -> "1797" 
+  "1798" -> "1799" 
+  "1798" -> "1802" 
+  "1799" -> "1800" 
+  "1799" -> "1801" 
+  "1802" -> "1803" 
+  "1802" -> "1804" 
+  "1803" -> "78" 
+  "1804" -> "1805" 
+  "1804" -> "1806" 
+  "1804" -> "1807" 
+  "1808" -> "1809" 
+  "1808" -> "1816" 
+  "1809" -> "1810" 
+  "1809" -> "1813" 
+  "1810" -> "1811" 
+  "1810" -> "1812" 
+  "1813" -> "1814" 
+  "1813" -> "1815" 
+  "1816" -> "1817" 
+  "1817" -> "1818" 
+  "1817" -> "1819" 
+  "1819" -> "1820" 
+  "1821" -> "79" 
+  "1821" -> "1822" 
+  "1823" -> "1824" 
+  "1823" -> "1825" 
+  "1826" -> "1827" 
+  "1826" -> "1828" 
+}

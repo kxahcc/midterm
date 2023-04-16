@@ -1,0 +1,173 @@
+digraph "download" {  
+"453" [label = <(METHOD,download)<SUB>222</SUB>> ]
+"44" [label = <(PARAM,this)<SUB>222</SUB>> ]
+"454" [label = <(PARAM,String fromSshUri)<SUB>222</SUB>> ]
+"455" [label = <(PARAM,String toPath)<SUB>222</SUB>> ]
+"456" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>223</SUB>> ]
+"457" [label = <(LOCAL,String file: java.lang.String)> ]
+"458" [label = <(&lt;operator&gt;.assignment,String file = this.parseUri(fromSshUri))<SUB>224</SUB>> ]
+"459" [label = <(IDENTIFIER,file,String file = this.parseUri(fromSshUri))<SUB>224</SUB>> ]
+"460" [label = <(parseUri,this.parseUri(fromSshUri))<SUB>224</SUB>> ]
+"43" [label = <(IDENTIFIER,this,this.parseUri(fromSshUri))<SUB>224</SUB>> ]
+"461" [label = <(IDENTIFIER,fromSshUri,this.parseUri(fromSshUri))<SUB>224</SUB>> ]
+"462" [label = <(LOCAL,Session session: com.jcraft.jsch.Session)> ]
+"463" [label = <(&lt;operator&gt;.assignment,Session session = null)<SUB>226</SUB>> ]
+"464" [label = <(IDENTIFIER,session,Session session = null)<SUB>226</SUB>> ]
+"465" [label = <(LITERAL,null,Session session = null)<SUB>226</SUB>> ]
+"466" [label = <(CONTROL_STRUCTURE,try,try)<SUB>227</SUB>> ]
+"467" [label = <(BLOCK,try,try)<SUB>227</SUB>> ]
+"468" [label = <(&lt;operator&gt;.assignment,session = openSession())<SUB>228</SUB>> ]
+"469" [label = <(IDENTIFIER,session,session = openSession())<SUB>228</SUB>> ]
+"470" [label = <(openSession,openSession())<SUB>228</SUB>> ]
+"45" [label = <(IDENTIFIER,this,openSession())<SUB>228</SUB>> ]
+"49" [label = <(LOCAL,ScpFromMessage message: ANY)> ]
+"471" [label = <(&lt;operator&gt;.assignment,ANY message = null)<SUB>229</SUB>> ]
+"472" [label = <(IDENTIFIER,message,ANY message = null)<SUB>229</SUB>> ]
+"473" [label = <(LITERAL,null,ANY message = null)<SUB>229</SUB>> ]
+"474" [label = <(CONTROL_STRUCTURE,if (!isSftp),if (!isSftp))<SUB>230</SUB>> ]
+"475" [label = <(&lt;operator&gt;.logicalNot,!isSftp)<SUB>230</SUB>> ]
+"476" [label = <(&lt;operator&gt;.fieldAccess,this.isSftp)<SUB>230</SUB>> ]
+"477" [label = <(IDENTIFIER,this,!isSftp)<SUB>230</SUB>> ]
+"478" [label = <(FIELD_IDENTIFIER,isSftp,isSftp)<SUB>230</SUB>> ]
+"479" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>230</SUB>> ]
+"480" [label = <(&lt;operator&gt;.assignment,message = new ScpFromMessage(getVerbose(), session, file, getProject().resolveFile(toPath), fromSshUri.endsWith(&quot;*&quot;)))<SUB>231</SUB>> ]
+"481" [label = <(IDENTIFIER,message,message = new ScpFromMessage(getVerbose(), session, file, getProject().resolveFile(toPath), fromSshUri.endsWith(&quot;*&quot;)))<SUB>231</SUB>> ]
+"482" [label = <(&lt;operator&gt;.alloc,new ScpFromMessage(getVerbose(), session, file, getProject().resolveFile(toPath), fromSshUri.endsWith(&quot;*&quot;)))<SUB>232</SUB>> ]
+"483" [label = <(&lt;init&gt;,new ScpFromMessage(getVerbose(), session, file, getProject().resolveFile(toPath), fromSshUri.endsWith(&quot;*&quot;)))<SUB>232</SUB>> ]
+"48" [label = <(IDENTIFIER,message,new ScpFromMessage(getVerbose(), session, file, getProject().resolveFile(toPath), fromSshUri.endsWith(&quot;*&quot;)))<SUB>231</SUB>> ]
+"484" [label = <(getVerbose,getVerbose())<SUB>232</SUB>> ]
+"46" [label = <(IDENTIFIER,this,getVerbose())<SUB>232</SUB>> ]
+"485" [label = <(IDENTIFIER,session,new ScpFromMessage(getVerbose(), session, file, getProject().resolveFile(toPath), fromSshUri.endsWith(&quot;*&quot;)))<SUB>232</SUB>> ]
+"486" [label = <(IDENTIFIER,file,new ScpFromMessage(getVerbose(), session, file, getProject().resolveFile(toPath), fromSshUri.endsWith(&quot;*&quot;)))<SUB>232</SUB>> ]
+"487" [label = <(resolveFile,resolveFile(toPath))<SUB>233</SUB>> ]
+"488" [label = <(getProject,getProject())<SUB>233</SUB>> ]
+"47" [label = <(IDENTIFIER,this,getProject())<SUB>233</SUB>> ]
+"489" [label = <(IDENTIFIER,toPath,resolveFile(toPath))<SUB>233</SUB>> ]
+"490" [label = <(endsWith,fromSshUri.endsWith(&quot;*&quot;))<SUB>234</SUB>> ]
+"491" [label = <(IDENTIFIER,fromSshUri,fromSshUri.endsWith(&quot;*&quot;))<SUB>234</SUB>> ]
+"492" [label = <(LITERAL,&quot;*&quot;,fromSshUri.endsWith(&quot;*&quot;))<SUB>234</SUB>> ]
+"493" [label = <(CONTROL_STRUCTURE,else,else)<SUB>235</SUB>> ]
+"494" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>235</SUB>> ]
+"495" [label = <(&lt;operator&gt;.assignment,message = new ScpFromMessageBySftp(getVerbose(), session, file, getProject().resolveFile(toPath), fromSshUri.endsWith(&quot;*&quot;)))<SUB>236</SUB>> ]
+"496" [label = <(IDENTIFIER,message,message = new ScpFromMessageBySftp(getVerbose(), session, file, getProject().resolveFile(toPath), fromSshUri.endsWith(&quot;*&quot;)))<SUB>236</SUB>> ]
+"497" [label = <(&lt;operator&gt;.alloc,new ScpFromMessageBySftp(getVerbose(), session, file, getProject().resolveFile(toPath), fromSshUri.endsWith(&quot;*&quot;)))<SUB>237</SUB>> ]
+"498" [label = <(&lt;init&gt;,new ScpFromMessageBySftp(getVerbose(), session, file, getProject().resolveFile(toPath), fromSshUri.endsWith(&quot;*&quot;)))<SUB>237</SUB>> ]
+"52" [label = <(IDENTIFIER,message,new ScpFromMessageBySftp(getVerbose(), session, file, getProject().resolveFile(toPath), fromSshUri.endsWith(&quot;*&quot;)))<SUB>236</SUB>> ]
+"499" [label = <(getVerbose,getVerbose())<SUB>237</SUB>> ]
+"50" [label = <(IDENTIFIER,this,getVerbose())<SUB>237</SUB>> ]
+"500" [label = <(IDENTIFIER,session,new ScpFromMessageBySftp(getVerbose(), session, file, getProject().resolveFile(toPath), fromSshUri.endsWith(&quot;*&quot;)))<SUB>237</SUB>> ]
+"501" [label = <(IDENTIFIER,file,new ScpFromMessageBySftp(getVerbose(), session, file, getProject().resolveFile(toPath), fromSshUri.endsWith(&quot;*&quot;)))<SUB>237</SUB>> ]
+"502" [label = <(resolveFile,resolveFile(toPath))<SUB>238</SUB>> ]
+"503" [label = <(getProject,getProject())<SUB>238</SUB>> ]
+"51" [label = <(IDENTIFIER,this,getProject())<SUB>238</SUB>> ]
+"504" [label = <(IDENTIFIER,toPath,resolveFile(toPath))<SUB>238</SUB>> ]
+"505" [label = <(endsWith,fromSshUri.endsWith(&quot;*&quot;))<SUB>239</SUB>> ]
+"506" [label = <(IDENTIFIER,fromSshUri,fromSshUri.endsWith(&quot;*&quot;))<SUB>239</SUB>> ]
+"507" [label = <(LITERAL,&quot;*&quot;,fromSshUri.endsWith(&quot;*&quot;))<SUB>239</SUB>> ]
+"508" [label = <(log,log(&quot;Receiving file: &quot; + file))<SUB>241</SUB>> ]
+"53" [label = <(IDENTIFIER,this,log(&quot;Receiving file: &quot; + file))<SUB>241</SUB>> ]
+"509" [label = <(&lt;operator&gt;.addition,&quot;Receiving file: &quot; + file)<SUB>241</SUB>> ]
+"510" [label = <(LITERAL,&quot;Receiving file: &quot;,&quot;Receiving file: &quot; + file)<SUB>241</SUB>> ]
+"511" [label = <(IDENTIFIER,file,&quot;Receiving file: &quot; + file)<SUB>241</SUB>> ]
+"512" [label = <(setLogListener,setLogListener(this))<SUB>242</SUB>> ]
+"513" [label = <(IDENTIFIER,message,setLogListener(this))<SUB>242</SUB>> ]
+"54" [label = <(IDENTIFIER,this,setLogListener(this))<SUB>242</SUB>> ]
+"514" [label = <(execute,execute())<SUB>243</SUB>> ]
+"515" [label = <(IDENTIFIER,message,execute())<SUB>243</SUB>> ]
+"516" [label = <(BLOCK,finally,finally)<SUB>244</SUB>> ]
+"517" [label = <(CONTROL_STRUCTURE,if (session != null),if (session != null))<SUB>245</SUB>> ]
+"518" [label = <(&lt;operator&gt;.notEquals,session != null)<SUB>245</SUB>> ]
+"519" [label = <(IDENTIFIER,session,session != null)<SUB>245</SUB>> ]
+"520" [label = <(LITERAL,null,session != null)<SUB>245</SUB>> ]
+"521" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>245</SUB>> ]
+"522" [label = <(disconnect,disconnect())<SUB>246</SUB>> ]
+"523" [label = <(IDENTIFIER,session,disconnect())<SUB>246</SUB>> ]
+"524" [label = <(MODIFIER,PRIVATE)> ]
+"525" [label = <(MODIFIER,VIRTUAL)> ]
+"526" [label = <(METHOD_RETURN,void)<SUB>222</SUB>> ]
+  "453" -> "44" 
+  "453" -> "454" 
+  "453" -> "455" 
+  "453" -> "456" 
+  "453" -> "524" 
+  "453" -> "525" 
+  "453" -> "526" 
+  "456" -> "457" 
+  "456" -> "458" 
+  "456" -> "462" 
+  "456" -> "463" 
+  "456" -> "466" 
+  "458" -> "459" 
+  "458" -> "460" 
+  "460" -> "43" 
+  "460" -> "461" 
+  "463" -> "464" 
+  "463" -> "465" 
+  "466" -> "467" 
+  "466" -> "516" 
+  "467" -> "468" 
+  "467" -> "49" 
+  "467" -> "471" 
+  "467" -> "474" 
+  "467" -> "508" 
+  "467" -> "512" 
+  "467" -> "514" 
+  "468" -> "469" 
+  "468" -> "470" 
+  "470" -> "45" 
+  "471" -> "472" 
+  "471" -> "473" 
+  "474" -> "475" 
+  "474" -> "479" 
+  "474" -> "493" 
+  "475" -> "476" 
+  "476" -> "477" 
+  "476" -> "478" 
+  "479" -> "480" 
+  "479" -> "483" 
+  "480" -> "481" 
+  "480" -> "482" 
+  "483" -> "48" 
+  "483" -> "484" 
+  "483" -> "485" 
+  "483" -> "486" 
+  "483" -> "487" 
+  "483" -> "490" 
+  "484" -> "46" 
+  "487" -> "488" 
+  "487" -> "489" 
+  "488" -> "47" 
+  "490" -> "491" 
+  "490" -> "492" 
+  "493" -> "494" 
+  "494" -> "495" 
+  "494" -> "498" 
+  "495" -> "496" 
+  "495" -> "497" 
+  "498" -> "52" 
+  "498" -> "499" 
+  "498" -> "500" 
+  "498" -> "501" 
+  "498" -> "502" 
+  "498" -> "505" 
+  "499" -> "50" 
+  "502" -> "503" 
+  "502" -> "504" 
+  "503" -> "51" 
+  "505" -> "506" 
+  "505" -> "507" 
+  "508" -> "53" 
+  "508" -> "509" 
+  "509" -> "510" 
+  "509" -> "511" 
+  "512" -> "513" 
+  "512" -> "54" 
+  "514" -> "515" 
+  "516" -> "517" 
+  "517" -> "518" 
+  "517" -> "521" 
+  "518" -> "519" 
+  "518" -> "520" 
+  "521" -> "522" 
+  "522" -> "523" 
+}

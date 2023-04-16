@@ -1,0 +1,187 @@
+digraph "getVersion" {  
+"184" [label = <(METHOD,getVersion)<SUB>70</SUB>> ]
+"185" [label = <(PARAM,this)<SUB>70</SUB>> ]
+"186" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>70</SUB>> ]
+"7" [label = <(LOCAL,Project p: org.apache.tools.ant.Project)> ]
+"187" [label = <(&lt;operator&gt;.assignment,Project p = new Project())<SUB>71</SUB>> ]
+"188" [label = <(IDENTIFIER,p,Project p = new Project())<SUB>71</SUB>> ]
+"189" [label = <(&lt;operator&gt;.alloc,new Project())<SUB>71</SUB>> ]
+"190" [label = <(&lt;init&gt;,new Project())<SUB>71</SUB>> ]
+"6" [label = <(IDENTIFIER,p,new Project())<SUB>71</SUB>> ]
+"191" [label = <(init,init())<SUB>72</SUB>> ]
+"192" [label = <(IDENTIFIER,p,init())<SUB>72</SUB>> ]
+"193" [label = <(LOCAL,char[] versionString: char[])> ]
+"194" [label = <(&lt;operator&gt;.assignment,char[] versionString = toCharArray())<SUB>73</SUB>> ]
+"195" [label = <(IDENTIFIER,versionString,char[] versionString = toCharArray())<SUB>73</SUB>> ]
+"196" [label = <(toCharArray,toCharArray())<SUB>73</SUB>> ]
+"197" [label = <(getProperty,getProperty(&quot;ant.version&quot;))<SUB>73</SUB>> ]
+"198" [label = <(IDENTIFIER,p,getProperty(&quot;ant.version&quot;))<SUB>73</SUB>> ]
+"199" [label = <(LITERAL,&quot;ant.version&quot;,getProperty(&quot;ant.version&quot;))<SUB>73</SUB>> ]
+"9" [label = <(LOCAL,StringBuffer sb: java.lang.StringBuffer)> ]
+"200" [label = <(&lt;operator&gt;.assignment,StringBuffer sb = new StringBuffer())<SUB>74</SUB>> ]
+"201" [label = <(IDENTIFIER,sb,StringBuffer sb = new StringBuffer())<SUB>74</SUB>> ]
+"202" [label = <(&lt;operator&gt;.alloc,new StringBuffer())<SUB>74</SUB>> ]
+"203" [label = <(&lt;init&gt;,new StringBuffer())<SUB>74</SUB>> ]
+"8" [label = <(IDENTIFIER,sb,new StringBuffer())<SUB>74</SUB>> ]
+"204" [label = <(LOCAL,boolean foundFirstDigit: boolean)> ]
+"205" [label = <(&lt;operator&gt;.assignment,boolean foundFirstDigit = false)<SUB>75</SUB>> ]
+"206" [label = <(IDENTIFIER,foundFirstDigit,boolean foundFirstDigit = false)<SUB>75</SUB>> ]
+"207" [label = <(LITERAL,false,boolean foundFirstDigit = false)<SUB>75</SUB>> ]
+"208" [label = <(CONTROL_STRUCTURE,for (int i = 0; Some(i &lt; versionString.length); i++),for (int i = 0; Some(i &lt; versionString.length); i++))<SUB>76</SUB>> ]
+"209" [label = <(LOCAL,int i: int)> ]
+"210" [label = <(&lt;operator&gt;.assignment,int i = 0)<SUB>76</SUB>> ]
+"211" [label = <(IDENTIFIER,i,int i = 0)<SUB>76</SUB>> ]
+"212" [label = <(LITERAL,0,int i = 0)<SUB>76</SUB>> ]
+"213" [label = <(&lt;operator&gt;.lessThan,i &lt; versionString.length)<SUB>76</SUB>> ]
+"214" [label = <(IDENTIFIER,i,i &lt; versionString.length)<SUB>76</SUB>> ]
+"215" [label = <(&lt;operator&gt;.fieldAccess,versionString.length)<SUB>76</SUB>> ]
+"216" [label = <(IDENTIFIER,versionString,i &lt; versionString.length)<SUB>76</SUB>> ]
+"217" [label = <(FIELD_IDENTIFIER,length,length)<SUB>76</SUB>> ]
+"218" [label = <(&lt;operator&gt;.postIncrement,i++)<SUB>76</SUB>> ]
+"219" [label = <(IDENTIFIER,i,i++)<SUB>76</SUB>> ]
+"220" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>76</SUB>> ]
+"221" [label = <(CONTROL_STRUCTURE,if (Character.isDigit(versionString[i])),if (Character.isDigit(versionString[i])))<SUB>77</SUB>> ]
+"222" [label = <(isDigit,Character.isDigit(versionString[i]))<SUB>77</SUB>> ]
+"223" [label = <(IDENTIFIER,Character,Character.isDigit(versionString[i]))<SUB>77</SUB>> ]
+"224" [label = <(&lt;operator&gt;.indexAccess,versionString[i])<SUB>77</SUB>> ]
+"225" [label = <(IDENTIFIER,versionString,Character.isDigit(versionString[i]))<SUB>77</SUB>> ]
+"226" [label = <(IDENTIFIER,i,Character.isDigit(versionString[i]))<SUB>77</SUB>> ]
+"227" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>77</SUB>> ]
+"228" [label = <(append,sb.append(versionString[i]))<SUB>78</SUB>> ]
+"229" [label = <(IDENTIFIER,sb,sb.append(versionString[i]))<SUB>78</SUB>> ]
+"230" [label = <(&lt;operator&gt;.indexAccess,versionString[i])<SUB>78</SUB>> ]
+"231" [label = <(IDENTIFIER,versionString,sb.append(versionString[i]))<SUB>78</SUB>> ]
+"232" [label = <(IDENTIFIER,i,sb.append(versionString[i]))<SUB>78</SUB>> ]
+"233" [label = <(&lt;operator&gt;.assignment,foundFirstDigit = true)<SUB>79</SUB>> ]
+"234" [label = <(IDENTIFIER,foundFirstDigit,foundFirstDigit = true)<SUB>79</SUB>> ]
+"235" [label = <(LITERAL,true,foundFirstDigit = true)<SUB>79</SUB>> ]
+"236" [label = <(CONTROL_STRUCTURE,if (versionString[i] == '.' &amp;&amp; foundFirstDigit),if (versionString[i] == '.' &amp;&amp; foundFirstDigit))<SUB>81</SUB>> ]
+"237" [label = <(&lt;operator&gt;.logicalAnd,versionString[i] == '.' &amp;&amp; foundFirstDigit)<SUB>81</SUB>> ]
+"238" [label = <(&lt;operator&gt;.equals,versionString[i] == '.')<SUB>81</SUB>> ]
+"239" [label = <(&lt;operator&gt;.indexAccess,versionString[i])<SUB>81</SUB>> ]
+"240" [label = <(IDENTIFIER,versionString,versionString[i] == '.')<SUB>81</SUB>> ]
+"241" [label = <(IDENTIFIER,i,versionString[i] == '.')<SUB>81</SUB>> ]
+"242" [label = <(LITERAL,'.',versionString[i] == '.')<SUB>81</SUB>> ]
+"243" [label = <(IDENTIFIER,foundFirstDigit,versionString[i] == '.' &amp;&amp; foundFirstDigit)<SUB>81</SUB>> ]
+"244" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>81</SUB>> ]
+"245" [label = <(append,sb.append(versionString[i]))<SUB>82</SUB>> ]
+"246" [label = <(IDENTIFIER,sb,sb.append(versionString[i]))<SUB>82</SUB>> ]
+"247" [label = <(&lt;operator&gt;.indexAccess,versionString[i])<SUB>82</SUB>> ]
+"248" [label = <(IDENTIFIER,versionString,sb.append(versionString[i]))<SUB>82</SUB>> ]
+"249" [label = <(IDENTIFIER,i,sb.append(versionString[i]))<SUB>82</SUB>> ]
+"250" [label = <(CONTROL_STRUCTURE,if (Character.isLetter(versionString[i]) &amp;&amp; foundFirstDigit),if (Character.isLetter(versionString[i]) &amp;&amp; foundFirstDigit))<SUB>84</SUB>> ]
+"251" [label = <(&lt;operator&gt;.logicalAnd,Character.isLetter(versionString[i]) &amp;&amp; foundFirstDigit)<SUB>84</SUB>> ]
+"252" [label = <(isLetter,Character.isLetter(versionString[i]))<SUB>84</SUB>> ]
+"253" [label = <(IDENTIFIER,Character,Character.isLetter(versionString[i]))<SUB>84</SUB>> ]
+"254" [label = <(&lt;operator&gt;.indexAccess,versionString[i])<SUB>84</SUB>> ]
+"255" [label = <(IDENTIFIER,versionString,Character.isLetter(versionString[i]))<SUB>84</SUB>> ]
+"256" [label = <(IDENTIFIER,i,Character.isLetter(versionString[i]))<SUB>84</SUB>> ]
+"257" [label = <(IDENTIFIER,foundFirstDigit,Character.isLetter(versionString[i]) &amp;&amp; foundFirstDigit)<SUB>84</SUB>> ]
+"258" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>84</SUB>> ]
+"259" [label = <(CONTROL_STRUCTURE,break;,break;)<SUB>85</SUB>> ]
+"260" [label = <(RETURN,return new DeweyDecimal(sb.toString());,return new DeweyDecimal(sb.toString());)<SUB>88</SUB>> ]
+"261" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>88</SUB>> ]
+"262" [label = <(&lt;operator&gt;.assignment,&lt;empty&gt;)> ]
+"263" [label = <(IDENTIFIER,$obj9,&lt;empty&gt;)> ]
+"264" [label = <(&lt;operator&gt;.alloc,new DeweyDecimal(sb.toString()))<SUB>88</SUB>> ]
+"265" [label = <(&lt;init&gt;,new DeweyDecimal(sb.toString()))<SUB>88</SUB>> ]
+"266" [label = <(IDENTIFIER,$obj9,new DeweyDecimal(sb.toString()))> ]
+"267" [label = <(toString,sb.toString())<SUB>88</SUB>> ]
+"268" [label = <(IDENTIFIER,sb,sb.toString())<SUB>88</SUB>> ]
+"269" [label = <(IDENTIFIER,$obj9,&lt;empty&gt;)> ]
+"270" [label = <(MODIFIER,PRIVATE)> ]
+"271" [label = <(MODIFIER,VIRTUAL)> ]
+"272" [label = <(METHOD_RETURN,org.apache.tools.ant.util.DeweyDecimal)<SUB>70</SUB>> ]
+  "184" -> "185" 
+  "184" -> "186" 
+  "184" -> "270" 
+  "184" -> "271" 
+  "184" -> "272" 
+  "186" -> "7" 
+  "186" -> "187" 
+  "186" -> "190" 
+  "186" -> "191" 
+  "186" -> "193" 
+  "186" -> "194" 
+  "186" -> "9" 
+  "186" -> "200" 
+  "186" -> "203" 
+  "186" -> "204" 
+  "186" -> "205" 
+  "186" -> "208" 
+  "186" -> "260" 
+  "187" -> "188" 
+  "187" -> "189" 
+  "190" -> "6" 
+  "191" -> "192" 
+  "194" -> "195" 
+  "194" -> "196" 
+  "196" -> "197" 
+  "197" -> "198" 
+  "197" -> "199" 
+  "200" -> "201" 
+  "200" -> "202" 
+  "203" -> "8" 
+  "205" -> "206" 
+  "205" -> "207" 
+  "208" -> "209" 
+  "208" -> "210" 
+  "208" -> "213" 
+  "208" -> "218" 
+  "208" -> "220" 
+  "210" -> "211" 
+  "210" -> "212" 
+  "213" -> "214" 
+  "213" -> "215" 
+  "215" -> "216" 
+  "215" -> "217" 
+  "218" -> "219" 
+  "220" -> "221" 
+  "220" -> "236" 
+  "220" -> "250" 
+  "221" -> "222" 
+  "221" -> "227" 
+  "222" -> "223" 
+  "222" -> "224" 
+  "224" -> "225" 
+  "224" -> "226" 
+  "227" -> "228" 
+  "227" -> "233" 
+  "228" -> "229" 
+  "228" -> "230" 
+  "230" -> "231" 
+  "230" -> "232" 
+  "233" -> "234" 
+  "233" -> "235" 
+  "236" -> "237" 
+  "236" -> "244" 
+  "237" -> "238" 
+  "237" -> "243" 
+  "238" -> "239" 
+  "238" -> "242" 
+  "239" -> "240" 
+  "239" -> "241" 
+  "244" -> "245" 
+  "245" -> "246" 
+  "245" -> "247" 
+  "247" -> "248" 
+  "247" -> "249" 
+  "250" -> "251" 
+  "250" -> "258" 
+  "251" -> "252" 
+  "251" -> "257" 
+  "252" -> "253" 
+  "252" -> "254" 
+  "254" -> "255" 
+  "254" -> "256" 
+  "258" -> "259" 
+  "260" -> "261" 
+  "261" -> "262" 
+  "261" -> "265" 
+  "261" -> "269" 
+  "262" -> "263" 
+  "262" -> "264" 
+  "265" -> "266" 
+  "265" -> "267" 
+  "267" -> "268" 
+}

@@ -1,0 +1,27 @@
+digraph "checkChildrenAllowed" {  
+"301" [label = <(METHOD,checkChildrenAllowed)<SUB>259</SUB>> ]
+"21" [label = <(PARAM,this)<SUB>259</SUB>> ]
+"302" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>259</SUB>> ]
+"303" [label = <(CONTROL_STRUCTURE,if (isReference()),if (isReference()))<SUB>260</SUB>> ]
+"304" [label = <(isReference,this.isReference())<SUB>260</SUB>> ]
+"20" [label = <(IDENTIFIER,this,this.isReference())<SUB>260</SUB>> ]
+"305" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>260</SUB>> ]
+"306" [label = <(&lt;operator&gt;.throw,throw noChildrenAllowed();)<SUB>261</SUB>> ]
+"307" [label = <(noChildrenAllowed,this.noChildrenAllowed())<SUB>261</SUB>> ]
+"22" [label = <(IDENTIFIER,this,this.noChildrenAllowed())<SUB>261</SUB>> ]
+"308" [label = <(MODIFIER,PROTECTED)> ]
+"309" [label = <(MODIFIER,VIRTUAL)> ]
+"310" [label = <(METHOD_RETURN,void)<SUB>259</SUB>> ]
+  "301" -> "21" 
+  "301" -> "302" 
+  "301" -> "308" 
+  "301" -> "309" 
+  "301" -> "310" 
+  "302" -> "303" 
+  "303" -> "304" 
+  "303" -> "305" 
+  "304" -> "20" 
+  "305" -> "306" 
+  "306" -> "307" 
+  "307" -> "22" 
+}

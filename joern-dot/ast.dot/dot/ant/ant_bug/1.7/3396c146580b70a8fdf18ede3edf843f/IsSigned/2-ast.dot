@@ -1,0 +1,233 @@
+digraph "isSigned" {  
+"52" [label = <(METHOD,isSigned)<SUB>71</SUB>> ]
+"53" [label = <(PARAM,File zipFile)<SUB>71</SUB>> ]
+"54" [label = <(PARAM,String name)<SUB>71</SUB>> ]
+"55" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>72</SUB>> ]
+"8" [label = <(LOCAL,ZipFile jarFile: org.apache.tools.zip.ZipFile)> ]
+"56" [label = <(&lt;operator&gt;.assignment,ZipFile jarFile = null)<SUB>73</SUB>> ]
+"57" [label = <(IDENTIFIER,jarFile,ZipFile jarFile = null)<SUB>73</SUB>> ]
+"58" [label = <(LITERAL,null,ZipFile jarFile = null)<SUB>73</SUB>> ]
+"59" [label = <(CONTROL_STRUCTURE,try,try)<SUB>74</SUB>> ]
+"60" [label = <(BLOCK,try,try)<SUB>74</SUB>> ]
+"61" [label = <(&lt;operator&gt;.assignment,jarFile = new ZipFile(zipFile))<SUB>75</SUB>> ]
+"62" [label = <(IDENTIFIER,jarFile,jarFile = new ZipFile(zipFile))<SUB>75</SUB>> ]
+"63" [label = <(&lt;operator&gt;.alloc,new ZipFile(zipFile))<SUB>75</SUB>> ]
+"64" [label = <(&lt;init&gt;,new ZipFile(zipFile))<SUB>75</SUB>> ]
+"7" [label = <(IDENTIFIER,jarFile,new ZipFile(zipFile))<SUB>75</SUB>> ]
+"65" [label = <(IDENTIFIER,zipFile,new ZipFile(zipFile))<SUB>75</SUB>> ]
+"66" [label = <(CONTROL_STRUCTURE,if (null == name),if (null == name))<SUB>76</SUB>> ]
+"67" [label = <(&lt;operator&gt;.equals,null == name)<SUB>76</SUB>> ]
+"68" [label = <(LITERAL,null,null == name)<SUB>76</SUB>> ]
+"69" [label = <(IDENTIFIER,name,null == name)<SUB>76</SUB>> ]
+"70" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>76</SUB>> ]
+"71" [label = <(LOCAL,Enumeration entries: java.util.Enumeration)> ]
+"72" [label = <(&lt;operator&gt;.assignment,Enumeration entries = getEntries())<SUB>77</SUB>> ]
+"73" [label = <(IDENTIFIER,entries,Enumeration entries = getEntries())<SUB>77</SUB>> ]
+"74" [label = <(getEntries,getEntries())<SUB>77</SUB>> ]
+"75" [label = <(IDENTIFIER,jarFile,getEntries())<SUB>77</SUB>> ]
+"76" [label = <(CONTROL_STRUCTURE,while (entries.hasMoreElements()),while (entries.hasMoreElements()))<SUB>78</SUB>> ]
+"77" [label = <(hasMoreElements,entries.hasMoreElements())<SUB>78</SUB>> ]
+"78" [label = <(IDENTIFIER,entries,entries.hasMoreElements())<SUB>78</SUB>> ]
+"79" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>78</SUB>> ]
+"80" [label = <(LOCAL,String eName: java.lang.String)> ]
+"81" [label = <(&lt;operator&gt;.assignment,String eName = getName())<SUB>79</SUB>> ]
+"82" [label = <(IDENTIFIER,eName,String eName = getName())<SUB>79</SUB>> ]
+"83" [label = <(getName,getName())<SUB>79</SUB>> ]
+"84" [label = <(&lt;operator&gt;.cast,(ZipEntry) entries.nextElement())<SUB>79</SUB>> ]
+"85" [label = <(TYPE_REF,ZipEntry,ZipEntry)<SUB>79</SUB>> ]
+"86" [label = <(nextElement,entries.nextElement())<SUB>79</SUB>> ]
+"87" [label = <(IDENTIFIER,entries,entries.nextElement())<SUB>79</SUB>> ]
+"88" [label = <(CONTROL_STRUCTURE,if (eName.startsWith(SIG_START) &amp;&amp; eName.endsWith(SIG_END)),if (eName.startsWith(SIG_START) &amp;&amp; eName.endsWith(SIG_END)))<SUB>80</SUB>> ]
+"89" [label = <(&lt;operator&gt;.logicalAnd,eName.startsWith(SIG_START) &amp;&amp; eName.endsWith(SIG_END))<SUB>80</SUB>> ]
+"90" [label = <(startsWith,eName.startsWith(SIG_START))<SUB>80</SUB>> ]
+"91" [label = <(IDENTIFIER,eName,eName.startsWith(SIG_START))<SUB>80</SUB>> ]
+"92" [label = <(&lt;operator&gt;.fieldAccess,IsSigned.SIG_START)<SUB>80</SUB>> ]
+"93" [label = <(IDENTIFIER,IsSigned,eName.startsWith(SIG_START))<SUB>80</SUB>> ]
+"94" [label = <(FIELD_IDENTIFIER,SIG_START,SIG_START)<SUB>80</SUB>> ]
+"95" [label = <(endsWith,eName.endsWith(SIG_END))<SUB>81</SUB>> ]
+"96" [label = <(IDENTIFIER,eName,eName.endsWith(SIG_END))<SUB>81</SUB>> ]
+"97" [label = <(&lt;operator&gt;.fieldAccess,IsSigned.SIG_END)<SUB>81</SUB>> ]
+"98" [label = <(IDENTIFIER,IsSigned,eName.endsWith(SIG_END))<SUB>81</SUB>> ]
+"99" [label = <(FIELD_IDENTIFIER,SIG_END,SIG_END)<SUB>81</SUB>> ]
+"100" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>81</SUB>> ]
+"101" [label = <(RETURN,return true;,return true;)<SUB>82</SUB>> ]
+"102" [label = <(LITERAL,true,return true;)<SUB>82</SUB>> ]
+"103" [label = <(RETURN,return false;,return false;)<SUB>85</SUB>> ]
+"104" [label = <(LITERAL,false,return false;)<SUB>85</SUB>> ]
+"105" [label = <(LOCAL,boolean shortSig: boolean)> ]
+"106" [label = <(&lt;operator&gt;.assignment,boolean shortSig = jarFile.getEntry(SIG_START + name.toUpperCase() + SIG_END) != null)<SUB>87</SUB>> ]
+"107" [label = <(IDENTIFIER,shortSig,boolean shortSig = jarFile.getEntry(SIG_START + name.toUpperCase() + SIG_END) != null)<SUB>87</SUB>> ]
+"108" [label = <(&lt;operator&gt;.notEquals,jarFile.getEntry(SIG_START + name.toUpperCase() + SIG_END) != null)<SUB>87</SUB>> ]
+"109" [label = <(getEntry,getEntry(SIG_START + name.toUpperCase() + SIG_END))<SUB>87</SUB>> ]
+"110" [label = <(IDENTIFIER,jarFile,getEntry(SIG_START + name.toUpperCase() + SIG_END))<SUB>87</SUB>> ]
+"111" [label = <(&lt;operator&gt;.addition,SIG_START + name.toUpperCase() + SIG_END)<SUB>87</SUB>> ]
+"112" [label = <(&lt;operator&gt;.addition,SIG_START + name.toUpperCase())<SUB>87</SUB>> ]
+"113" [label = <(&lt;operator&gt;.fieldAccess,IsSigned.SIG_START)<SUB>87</SUB>> ]
+"114" [label = <(IDENTIFIER,IsSigned,SIG_START + name.toUpperCase())<SUB>87</SUB>> ]
+"115" [label = <(FIELD_IDENTIFIER,SIG_START,SIG_START)<SUB>87</SUB>> ]
+"116" [label = <(toUpperCase,name.toUpperCase())<SUB>88</SUB>> ]
+"117" [label = <(IDENTIFIER,name,name.toUpperCase())<SUB>88</SUB>> ]
+"118" [label = <(&lt;operator&gt;.fieldAccess,IsSigned.SIG_END)<SUB>89</SUB>> ]
+"119" [label = <(IDENTIFIER,IsSigned,SIG_START + name.toUpperCase() + SIG_END)<SUB>89</SUB>> ]
+"120" [label = <(FIELD_IDENTIFIER,SIG_END,SIG_END)<SUB>89</SUB>> ]
+"121" [label = <(LITERAL,null,jarFile.getEntry(SIG_START + name.toUpperCase() + SIG_END) != null)<SUB>89</SUB>> ]
+"122" [label = <(LOCAL,boolean longSig: boolean)> ]
+"123" [label = <(&lt;operator&gt;.assignment,boolean longSig = false)<SUB>90</SUB>> ]
+"124" [label = <(IDENTIFIER,longSig,boolean longSig = false)<SUB>90</SUB>> ]
+"125" [label = <(LITERAL,false,boolean longSig = false)<SUB>90</SUB>> ]
+"126" [label = <(CONTROL_STRUCTURE,if (name.length() &gt; SHORT_SIG_LIMIT),if (name.length() &gt; SHORT_SIG_LIMIT))<SUB>91</SUB>> ]
+"127" [label = <(&lt;operator&gt;.greaterThan,name.length() &gt; SHORT_SIG_LIMIT)<SUB>91</SUB>> ]
+"128" [label = <(length,name.length())<SUB>91</SUB>> ]
+"129" [label = <(IDENTIFIER,name,name.length())<SUB>91</SUB>> ]
+"130" [label = <(&lt;operator&gt;.fieldAccess,IsSigned.SHORT_SIG_LIMIT)<SUB>91</SUB>> ]
+"131" [label = <(IDENTIFIER,IsSigned,name.length() &gt; SHORT_SIG_LIMIT)<SUB>91</SUB>> ]
+"132" [label = <(FIELD_IDENTIFIER,SHORT_SIG_LIMIT,SHORT_SIG_LIMIT)<SUB>91</SUB>> ]
+"133" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>91</SUB>> ]
+"134" [label = <(&lt;operator&gt;.assignment,longSig = jarFile.getEntry(SIG_START + name.substring(0, SHORT_SIG_LIMIT).toUpperCase() + SIG_END) != null)<SUB>92</SUB>> ]
+"135" [label = <(IDENTIFIER,longSig,longSig = jarFile.getEntry(SIG_START + name.substring(0, SHORT_SIG_LIMIT).toUpperCase() + SIG_END) != null)<SUB>92</SUB>> ]
+"136" [label = <(&lt;operator&gt;.notEquals,jarFile.getEntry(SIG_START + name.substring(0, SHORT_SIG_LIMIT).toUpperCase() + SIG_END) != null)<SUB>92</SUB>> ]
+"137" [label = <(getEntry,getEntry(SIG_START + name.substring(0, SHORT_SIG_LIMIT).toUpperCase() + SIG_END))<SUB>92</SUB>> ]
+"138" [label = <(IDENTIFIER,jarFile,getEntry(SIG_START + name.substring(0, SHORT_SIG_LIMIT).toUpperCase() + SIG_END))<SUB>92</SUB>> ]
+"139" [label = <(&lt;operator&gt;.addition,SIG_START + name.substring(0, SHORT_SIG_LIMIT).toUpperCase() + SIG_END)<SUB>93</SUB>> ]
+"140" [label = <(&lt;operator&gt;.addition,SIG_START + name.substring(0, SHORT_SIG_LIMIT).toUpperCase())<SUB>93</SUB>> ]
+"141" [label = <(&lt;operator&gt;.fieldAccess,IsSigned.SIG_START)<SUB>93</SUB>> ]
+"142" [label = <(IDENTIFIER,IsSigned,SIG_START + name.substring(0, SHORT_SIG_LIMIT).toUpperCase())<SUB>93</SUB>> ]
+"143" [label = <(FIELD_IDENTIFIER,SIG_START,SIG_START)<SUB>93</SUB>> ]
+"144" [label = <(toUpperCase,name.substring(0, SHORT_SIG_LIMIT).toUpperCase())<SUB>94</SUB>> ]
+"145" [label = <(substring,name.substring(0, SHORT_SIG_LIMIT))<SUB>94</SUB>> ]
+"146" [label = <(IDENTIFIER,name,name.substring(0, SHORT_SIG_LIMIT))<SUB>94</SUB>> ]
+"147" [label = <(LITERAL,0,name.substring(0, SHORT_SIG_LIMIT))<SUB>94</SUB>> ]
+"148" [label = <(&lt;operator&gt;.fieldAccess,IsSigned.SHORT_SIG_LIMIT)<SUB>94</SUB>> ]
+"149" [label = <(IDENTIFIER,IsSigned,name.substring(0, SHORT_SIG_LIMIT))<SUB>94</SUB>> ]
+"150" [label = <(FIELD_IDENTIFIER,SHORT_SIG_LIMIT,SHORT_SIG_LIMIT)<SUB>94</SUB>> ]
+"151" [label = <(&lt;operator&gt;.fieldAccess,IsSigned.SIG_END)<SUB>95</SUB>> ]
+"152" [label = <(IDENTIFIER,IsSigned,SIG_START + name.substring(0, SHORT_SIG_LIMIT).toUpperCase() + SIG_END)<SUB>95</SUB>> ]
+"153" [label = <(FIELD_IDENTIFIER,SIG_END,SIG_END)<SUB>95</SUB>> ]
+"154" [label = <(LITERAL,null,jarFile.getEntry(SIG_START + name.substring(0, SHORT_SIG_LIMIT).toUpperCase() + SIG_END) != null)<SUB>95</SUB>> ]
+"155" [label = <(RETURN,return shortSig || longSig;,return shortSig || longSig;)<SUB>98</SUB>> ]
+"156" [label = <(&lt;operator&gt;.logicalOr,shortSig || longSig)<SUB>98</SUB>> ]
+"157" [label = <(IDENTIFIER,shortSig,shortSig || longSig)<SUB>98</SUB>> ]
+"158" [label = <(IDENTIFIER,longSig,shortSig || longSig)<SUB>98</SUB>> ]
+"159" [label = <(BLOCK,finally,finally)<SUB>99</SUB>> ]
+"160" [label = <(closeQuietly,closeQuietly(jarFile))<SUB>100</SUB>> ]
+"161" [label = <(IDENTIFIER,ZipFile,closeQuietly(jarFile))<SUB>100</SUB>> ]
+"162" [label = <(IDENTIFIER,jarFile,closeQuietly(jarFile))<SUB>100</SUB>> ]
+"163" [label = <(MODIFIER,PUBLIC)> ]
+"164" [label = <(MODIFIER,STATIC)> ]
+"165" [label = <(METHOD_RETURN,boolean)<SUB>71</SUB>> ]
+  "52" -> "53" 
+  "52" -> "54" 
+  "52" -> "55" 
+  "52" -> "163" 
+  "52" -> "164" 
+  "52" -> "165" 
+  "55" -> "8" 
+  "55" -> "56" 
+  "55" -> "59" 
+  "56" -> "57" 
+  "56" -> "58" 
+  "59" -> "60" 
+  "59" -> "159" 
+  "60" -> "61" 
+  "60" -> "64" 
+  "60" -> "66" 
+  "60" -> "105" 
+  "60" -> "106" 
+  "60" -> "122" 
+  "60" -> "123" 
+  "60" -> "126" 
+  "60" -> "155" 
+  "61" -> "62" 
+  "61" -> "63" 
+  "64" -> "7" 
+  "64" -> "65" 
+  "66" -> "67" 
+  "66" -> "70" 
+  "67" -> "68" 
+  "67" -> "69" 
+  "70" -> "71" 
+  "70" -> "72" 
+  "70" -> "76" 
+  "70" -> "103" 
+  "72" -> "73" 
+  "72" -> "74" 
+  "74" -> "75" 
+  "76" -> "77" 
+  "76" -> "79" 
+  "77" -> "78" 
+  "79" -> "80" 
+  "79" -> "81" 
+  "79" -> "88" 
+  "81" -> "82" 
+  "81" -> "83" 
+  "83" -> "84" 
+  "84" -> "85" 
+  "84" -> "86" 
+  "86" -> "87" 
+  "88" -> "89" 
+  "88" -> "100" 
+  "89" -> "90" 
+  "89" -> "95" 
+  "90" -> "91" 
+  "90" -> "92" 
+  "92" -> "93" 
+  "92" -> "94" 
+  "95" -> "96" 
+  "95" -> "97" 
+  "97" -> "98" 
+  "97" -> "99" 
+  "100" -> "101" 
+  "101" -> "102" 
+  "103" -> "104" 
+  "106" -> "107" 
+  "106" -> "108" 
+  "108" -> "109" 
+  "108" -> "121" 
+  "109" -> "110" 
+  "109" -> "111" 
+  "111" -> "112" 
+  "111" -> "118" 
+  "112" -> "113" 
+  "112" -> "116" 
+  "113" -> "114" 
+  "113" -> "115" 
+  "116" -> "117" 
+  "118" -> "119" 
+  "118" -> "120" 
+  "123" -> "124" 
+  "123" -> "125" 
+  "126" -> "127" 
+  "126" -> "133" 
+  "127" -> "128" 
+  "127" -> "130" 
+  "128" -> "129" 
+  "130" -> "131" 
+  "130" -> "132" 
+  "133" -> "134" 
+  "134" -> "135" 
+  "134" -> "136" 
+  "136" -> "137" 
+  "136" -> "154" 
+  "137" -> "138" 
+  "137" -> "139" 
+  "139" -> "140" 
+  "139" -> "151" 
+  "140" -> "141" 
+  "140" -> "144" 
+  "141" -> "142" 
+  "141" -> "143" 
+  "144" -> "145" 
+  "145" -> "146" 
+  "145" -> "147" 
+  "145" -> "148" 
+  "148" -> "149" 
+  "148" -> "150" 
+  "151" -> "152" 
+  "151" -> "153" 
+  "155" -> "156" 
+  "156" -> "157" 
+  "156" -> "158" 
+  "159" -> "160" 
+  "160" -> "161" 
+  "160" -> "162" 
+}

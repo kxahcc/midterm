@@ -1,0 +1,93 @@
+digraph "execute" {  
+"77" [label = <(METHOD,execute)<SUB>85</SUB>> ]
+"4" [label = <(PARAM,this)<SUB>85</SUB>> ]
+"78" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>85</SUB>> ]
+"79" [label = <(LOCAL,int err: int)> ]
+"80" [label = <(&lt;operator&gt;.assignment,int err = -1)<SUB>86</SUB>> ]
+"81" [label = <(IDENTIFIER,err,int err = -1)<SUB>86</SUB>> ]
+"82" [label = <(&lt;operator&gt;.minus,-1)<SUB>86</SUB>> ]
+"83" [label = <(LITERAL,1,-1)<SUB>86</SUB>> ]
+"84" [label = <(CONTROL_STRUCTURE,if ((err = executeJava()) != 0),if ((err = executeJava()) != 0))<SUB>87</SUB>> ]
+"85" [label = <(&lt;operator&gt;.notEquals,(err = executeJava()) != 0)<SUB>87</SUB>> ]
+"86" [label = <(&lt;operator&gt;.assignment,err = this.executeJava())<SUB>87</SUB>> ]
+"87" [label = <(IDENTIFIER,err,err = this.executeJava())<SUB>87</SUB>> ]
+"88" [label = <(executeJava,this.executeJava())<SUB>87</SUB>> ]
+"3" [label = <(IDENTIFIER,this,this.executeJava())<SUB>87</SUB>> ]
+"89" [label = <(LITERAL,0,(err = executeJava()) != 0)<SUB>87</SUB>> ]
+"90" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>87</SUB>> ]
+"91" [label = <(CONTROL_STRUCTURE,if (failOnError),if (failOnError))<SUB>88</SUB>> ]
+"92" [label = <(&lt;operator&gt;.fieldAccess,this.failOnError)<SUB>88</SUB>> ]
+"93" [label = <(IDENTIFIER,this,if (failOnError))<SUB>88</SUB>> ]
+"94" [label = <(FIELD_IDENTIFIER,failOnError,failOnError)<SUB>88</SUB>> ]
+"95" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>88</SUB>> ]
+"96" [label = <(&lt;operator&gt;.throw,throw new BuildException(&quot;Java returned: &quot; + err, location);)<SUB>89</SUB>> ]
+"97" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>89</SUB>> ]
+"98" [label = <(&lt;operator&gt;.assignment,&lt;empty&gt;)> ]
+"99" [label = <(IDENTIFIER,$obj1,&lt;empty&gt;)> ]
+"100" [label = <(&lt;operator&gt;.alloc,new BuildException(&quot;Java returned: &quot; + err, location))<SUB>89</SUB>> ]
+"101" [label = <(&lt;init&gt;,new BuildException(&quot;Java returned: &quot; + err, location))<SUB>89</SUB>> ]
+"102" [label = <(IDENTIFIER,$obj1,new BuildException(&quot;Java returned: &quot; + err, location))> ]
+"103" [label = <(&lt;operator&gt;.addition,&quot;Java returned: &quot; + err)<SUB>89</SUB>> ]
+"104" [label = <(LITERAL,&quot;Java returned: &quot;,&quot;Java returned: &quot; + err)<SUB>89</SUB>> ]
+"105" [label = <(IDENTIFIER,err,&quot;Java returned: &quot; + err)<SUB>89</SUB>> ]
+"106" [label = <(IDENTIFIER,location,new BuildException(&quot;Java returned: &quot; + err, location))<SUB>89</SUB>> ]
+"107" [label = <(IDENTIFIER,$obj1,&lt;empty&gt;)> ]
+"108" [label = <(CONTROL_STRUCTURE,else,else)<SUB>90</SUB>> ]
+"109" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>90</SUB>> ]
+"110" [label = <(log,log(&quot;Java Result: &quot; + err, Project.MSG_ERR))<SUB>91</SUB>> ]
+"5" [label = <(IDENTIFIER,this,log(&quot;Java Result: &quot; + err, Project.MSG_ERR))<SUB>91</SUB>> ]
+"111" [label = <(&lt;operator&gt;.addition,&quot;Java Result: &quot; + err)<SUB>91</SUB>> ]
+"112" [label = <(LITERAL,&quot;Java Result: &quot;,&quot;Java Result: &quot; + err)<SUB>91</SUB>> ]
+"113" [label = <(IDENTIFIER,err,&quot;Java Result: &quot; + err)<SUB>91</SUB>> ]
+"114" [label = <(&lt;operator&gt;.fieldAccess,Project.MSG_ERR)<SUB>91</SUB>> ]
+"115" [label = <(IDENTIFIER,Project,log(&quot;Java Result: &quot; + err, Project.MSG_ERR))<SUB>91</SUB>> ]
+"116" [label = <(FIELD_IDENTIFIER,MSG_ERR,MSG_ERR)<SUB>91</SUB>> ]
+"117" [label = <(MODIFIER,PUBLIC)> ]
+"118" [label = <(MODIFIER,VIRTUAL)> ]
+"119" [label = <(METHOD_RETURN,void)<SUB>85</SUB>> ]
+  "77" -> "4" 
+  "77" -> "78" 
+  "77" -> "117" 
+  "77" -> "118" 
+  "77" -> "119" 
+  "78" -> "79" 
+  "78" -> "80" 
+  "78" -> "84" 
+  "80" -> "81" 
+  "80" -> "82" 
+  "82" -> "83" 
+  "84" -> "85" 
+  "84" -> "90" 
+  "85" -> "86" 
+  "85" -> "89" 
+  "86" -> "87" 
+  "86" -> "88" 
+  "88" -> "3" 
+  "90" -> "91" 
+  "91" -> "92" 
+  "91" -> "95" 
+  "91" -> "108" 
+  "92" -> "93" 
+  "92" -> "94" 
+  "95" -> "96" 
+  "96" -> "97" 
+  "97" -> "98" 
+  "97" -> "101" 
+  "97" -> "107" 
+  "98" -> "99" 
+  "98" -> "100" 
+  "101" -> "102" 
+  "101" -> "103" 
+  "101" -> "106" 
+  "103" -> "104" 
+  "103" -> "105" 
+  "108" -> "109" 
+  "109" -> "110" 
+  "110" -> "5" 
+  "110" -> "111" 
+  "110" -> "114" 
+  "111" -> "112" 
+  "111" -> "113" 
+  "114" -> "115" 
+  "114" -> "116" 
+}

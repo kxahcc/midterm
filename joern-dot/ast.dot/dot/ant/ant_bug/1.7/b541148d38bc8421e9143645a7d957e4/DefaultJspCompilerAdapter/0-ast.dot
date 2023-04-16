@@ -1,0 +1,161 @@
+digraph "logAndAddFilesToCompile" {  
+"34" [label = <(METHOD,logAndAddFilesToCompile)<SUB>46</SUB>> ]
+"35" [label = <(PARAM,this)<SUB>46</SUB>> ]
+"36" [label = <(PARAM,JspC jspc)<SUB>46</SUB>> ]
+"37" [label = <(PARAM,Vector compileList)<SUB>47</SUB>> ]
+"38" [label = <(PARAM,CommandlineJava cmd)<SUB>48</SUB>> ]
+"39" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>48</SUB>> ]
+"40" [label = <(log,log(&quot;Compilation &quot; + cmd.describeJavaCommand(), Project.MSG_VERBOSE))<SUB>49</SUB>> ]
+"41" [label = <(IDENTIFIER,jspc,log(&quot;Compilation &quot; + cmd.describeJavaCommand(), Project.MSG_VERBOSE))<SUB>49</SUB>> ]
+"42" [label = <(&lt;operator&gt;.addition,&quot;Compilation &quot; + cmd.describeJavaCommand())<SUB>49</SUB>> ]
+"43" [label = <(LITERAL,&quot;Compilation &quot;,&quot;Compilation &quot; + cmd.describeJavaCommand())<SUB>49</SUB>> ]
+"44" [label = <(describeJavaCommand,describeJavaCommand())<SUB>49</SUB>> ]
+"45" [label = <(IDENTIFIER,cmd,describeJavaCommand())<SUB>49</SUB>> ]
+"46" [label = <(&lt;operator&gt;.fieldAccess,Project.MSG_VERBOSE)<SUB>50</SUB>> ]
+"47" [label = <(IDENTIFIER,Project,log(&quot;Compilation &quot; + cmd.describeJavaCommand(), Project.MSG_VERBOSE))<SUB>50</SUB>> ]
+"48" [label = <(FIELD_IDENTIFIER,MSG_VERBOSE,MSG_VERBOSE)<SUB>50</SUB>> ]
+"4" [label = <(LOCAL,StringBuffer niceSourceList: java.lang.StringBuffer)> ]
+"49" [label = <(&lt;operator&gt;.assignment,StringBuffer niceSourceList = new StringBuffer(&quot;File&quot;))<SUB>52</SUB>> ]
+"50" [label = <(IDENTIFIER,niceSourceList,StringBuffer niceSourceList = new StringBuffer(&quot;File&quot;))<SUB>52</SUB>> ]
+"51" [label = <(&lt;operator&gt;.alloc,new StringBuffer(&quot;File&quot;))<SUB>52</SUB>> ]
+"52" [label = <(&lt;init&gt;,new StringBuffer(&quot;File&quot;))<SUB>52</SUB>> ]
+"3" [label = <(IDENTIFIER,niceSourceList,new StringBuffer(&quot;File&quot;))<SUB>52</SUB>> ]
+"53" [label = <(LITERAL,&quot;File&quot;,new StringBuffer(&quot;File&quot;))<SUB>52</SUB>> ]
+"54" [label = <(CONTROL_STRUCTURE,if (compileList.size() != 1),if (compileList.size() != 1))<SUB>53</SUB>> ]
+"55" [label = <(&lt;operator&gt;.notEquals,compileList.size() != 1)<SUB>53</SUB>> ]
+"56" [label = <(size,compileList.size())<SUB>53</SUB>> ]
+"57" [label = <(IDENTIFIER,compileList,compileList.size())<SUB>53</SUB>> ]
+"58" [label = <(LITERAL,1,compileList.size() != 1)<SUB>53</SUB>> ]
+"59" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>53</SUB>> ]
+"60" [label = <(append,niceSourceList.append(&quot;s&quot;))<SUB>54</SUB>> ]
+"61" [label = <(IDENTIFIER,niceSourceList,niceSourceList.append(&quot;s&quot;))<SUB>54</SUB>> ]
+"62" [label = <(LITERAL,&quot;s&quot;,niceSourceList.append(&quot;s&quot;))<SUB>54</SUB>> ]
+"63" [label = <(append,niceSourceList.append(&quot; to be compiled:&quot;))<SUB>56</SUB>> ]
+"64" [label = <(IDENTIFIER,niceSourceList,niceSourceList.append(&quot; to be compiled:&quot;))<SUB>56</SUB>> ]
+"65" [label = <(LITERAL,&quot; to be compiled:&quot;,niceSourceList.append(&quot; to be compiled:&quot;))<SUB>56</SUB>> ]
+"66" [label = <(append,niceSourceList.append(lSep))<SUB>58</SUB>> ]
+"67" [label = <(IDENTIFIER,niceSourceList,niceSourceList.append(lSep))<SUB>58</SUB>> ]
+"68" [label = <(&lt;operator&gt;.fieldAccess,DefaultJspCompilerAdapter.lSep)<SUB>58</SUB>> ]
+"69" [label = <(IDENTIFIER,DefaultJspCompilerAdapter,niceSourceList.append(lSep))<SUB>58</SUB>> ]
+"70" [label = <(FIELD_IDENTIFIER,lSep,lSep)<SUB>58</SUB>> ]
+"71" [label = <(LOCAL,Enumeration e: java.util.Enumeration)> ]
+"72" [label = <(&lt;operator&gt;.assignment,Enumeration e = compileList.elements())<SUB>60</SUB>> ]
+"73" [label = <(IDENTIFIER,e,Enumeration e = compileList.elements())<SUB>60</SUB>> ]
+"74" [label = <(elements,compileList.elements())<SUB>60</SUB>> ]
+"75" [label = <(IDENTIFIER,compileList,compileList.elements())<SUB>60</SUB>> ]
+"76" [label = <(CONTROL_STRUCTURE,while (e.hasMoreElements()),while (e.hasMoreElements()))<SUB>61</SUB>> ]
+"77" [label = <(hasMoreElements,e.hasMoreElements())<SUB>61</SUB>> ]
+"78" [label = <(IDENTIFIER,e,e.hasMoreElements())<SUB>61</SUB>> ]
+"79" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>61</SUB>> ]
+"80" [label = <(LOCAL,String arg: java.lang.String)> ]
+"81" [label = <(&lt;operator&gt;.assignment,String arg = (String) e.nextElement())<SUB>62</SUB>> ]
+"82" [label = <(IDENTIFIER,arg,String arg = (String) e.nextElement())<SUB>62</SUB>> ]
+"83" [label = <(&lt;operator&gt;.cast,(String) e.nextElement())<SUB>62</SUB>> ]
+"84" [label = <(TYPE_REF,String,String)<SUB>62</SUB>> ]
+"85" [label = <(nextElement,e.nextElement())<SUB>62</SUB>> ]
+"86" [label = <(IDENTIFIER,e,e.nextElement())<SUB>62</SUB>> ]
+"87" [label = <(setValue,setValue(arg))<SUB>63</SUB>> ]
+"88" [label = <(createArgument,createArgument())<SUB>63</SUB>> ]
+"89" [label = <(IDENTIFIER,cmd,createArgument())<SUB>63</SUB>> ]
+"90" [label = <(IDENTIFIER,arg,setValue(arg))<SUB>63</SUB>> ]
+"91" [label = <(append,niceSourceList.append(&quot;    &quot;))<SUB>64</SUB>> ]
+"92" [label = <(IDENTIFIER,niceSourceList,niceSourceList.append(&quot;    &quot;))<SUB>64</SUB>> ]
+"93" [label = <(LITERAL,&quot;    &quot;,niceSourceList.append(&quot;    &quot;))<SUB>64</SUB>> ]
+"94" [label = <(append,niceSourceList.append(arg))<SUB>65</SUB>> ]
+"95" [label = <(IDENTIFIER,niceSourceList,niceSourceList.append(arg))<SUB>65</SUB>> ]
+"96" [label = <(IDENTIFIER,arg,niceSourceList.append(arg))<SUB>65</SUB>> ]
+"97" [label = <(append,niceSourceList.append(lSep))<SUB>66</SUB>> ]
+"98" [label = <(IDENTIFIER,niceSourceList,niceSourceList.append(lSep))<SUB>66</SUB>> ]
+"99" [label = <(&lt;operator&gt;.fieldAccess,DefaultJspCompilerAdapter.lSep)<SUB>66</SUB>> ]
+"100" [label = <(IDENTIFIER,DefaultJspCompilerAdapter,niceSourceList.append(lSep))<SUB>66</SUB>> ]
+"101" [label = <(FIELD_IDENTIFIER,lSep,lSep)<SUB>66</SUB>> ]
+"102" [label = <(log,log(niceSourceList.toString(), Project.MSG_VERBOSE))<SUB>69</SUB>> ]
+"103" [label = <(IDENTIFIER,jspc,log(niceSourceList.toString(), Project.MSG_VERBOSE))<SUB>69</SUB>> ]
+"104" [label = <(toString,niceSourceList.toString())<SUB>69</SUB>> ]
+"105" [label = <(IDENTIFIER,niceSourceList,niceSourceList.toString())<SUB>69</SUB>> ]
+"106" [label = <(&lt;operator&gt;.fieldAccess,Project.MSG_VERBOSE)<SUB>69</SUB>> ]
+"107" [label = <(IDENTIFIER,Project,log(niceSourceList.toString(), Project.MSG_VERBOSE))<SUB>69</SUB>> ]
+"108" [label = <(FIELD_IDENTIFIER,MSG_VERBOSE,MSG_VERBOSE)<SUB>69</SUB>> ]
+"109" [label = <(MODIFIER,PROTECTED)> ]
+"110" [label = <(MODIFIER,VIRTUAL)> ]
+"111" [label = <(METHOD_RETURN,void)<SUB>46</SUB>> ]
+  "34" -> "35" 
+  "34" -> "36" 
+  "34" -> "37" 
+  "34" -> "38" 
+  "34" -> "39" 
+  "34" -> "109" 
+  "34" -> "110" 
+  "34" -> "111" 
+  "39" -> "40" 
+  "39" -> "4" 
+  "39" -> "49" 
+  "39" -> "52" 
+  "39" -> "54" 
+  "39" -> "63" 
+  "39" -> "66" 
+  "39" -> "71" 
+  "39" -> "72" 
+  "39" -> "76" 
+  "39" -> "102" 
+  "40" -> "41" 
+  "40" -> "42" 
+  "40" -> "46" 
+  "42" -> "43" 
+  "42" -> "44" 
+  "44" -> "45" 
+  "46" -> "47" 
+  "46" -> "48" 
+  "49" -> "50" 
+  "49" -> "51" 
+  "52" -> "3" 
+  "52" -> "53" 
+  "54" -> "55" 
+  "54" -> "59" 
+  "55" -> "56" 
+  "55" -> "58" 
+  "56" -> "57" 
+  "59" -> "60" 
+  "60" -> "61" 
+  "60" -> "62" 
+  "63" -> "64" 
+  "63" -> "65" 
+  "66" -> "67" 
+  "66" -> "68" 
+  "68" -> "69" 
+  "68" -> "70" 
+  "72" -> "73" 
+  "72" -> "74" 
+  "74" -> "75" 
+  "76" -> "77" 
+  "76" -> "79" 
+  "77" -> "78" 
+  "79" -> "80" 
+  "79" -> "81" 
+  "79" -> "87" 
+  "79" -> "91" 
+  "79" -> "94" 
+  "79" -> "97" 
+  "81" -> "82" 
+  "81" -> "83" 
+  "83" -> "84" 
+  "83" -> "85" 
+  "85" -> "86" 
+  "87" -> "88" 
+  "87" -> "90" 
+  "88" -> "89" 
+  "91" -> "92" 
+  "91" -> "93" 
+  "94" -> "95" 
+  "94" -> "96" 
+  "97" -> "98" 
+  "97" -> "99" 
+  "99" -> "100" 
+  "99" -> "101" 
+  "102" -> "103" 
+  "102" -> "104" 
+  "102" -> "106" 
+  "104" -> "105" 
+  "106" -> "107" 
+  "106" -> "108" 
+}

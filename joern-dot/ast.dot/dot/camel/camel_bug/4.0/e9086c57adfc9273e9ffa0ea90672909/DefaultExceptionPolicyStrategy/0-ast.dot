@@ -1,0 +1,271 @@
+digraph "getExceptionPolicy" {  
+"21" [label = <(METHOD,getExceptionPolicy)<SUB>43</SUB>> ]
+"22" [label = <(PARAM,this)<SUB>43</SUB>> ]
+"23" [label = <(PARAM,Map&lt;Class, ExceptionType&gt; exceptionPolicices)<SUB>43</SUB>> ]
+"24" [label = <(PARAM,Exchange exchange)<SUB>43</SUB>> ]
+"25" [label = <(PARAM,Throwable exception)<SUB>44</SUB>> ]
+"26" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>44</SUB>> ]
+"27" [label = <(CONTROL_STRUCTURE,if (LOG.isDebugEnabled()),if (LOG.isDebugEnabled()))<SUB>45</SUB>> ]
+"28" [label = <(isDebugEnabled,isDebugEnabled())<SUB>45</SUB>> ]
+"29" [label = <(&lt;operator&gt;.fieldAccess,DefaultExceptionPolicyStrategy.LOG)<SUB>45</SUB>> ]
+"30" [label = <(IDENTIFIER,DefaultExceptionPolicyStrategy,isDebugEnabled())<SUB>45</SUB>> ]
+"31" [label = <(FIELD_IDENTIFIER,LOG,LOG)<SUB>45</SUB>> ]
+"32" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>45</SUB>> ]
+"33" [label = <(debug,debug(&quot;Finding best suited exception policy for thrown exception &quot; + exception.getClass().getName()))<SUB>46</SUB>> ]
+"34" [label = <(&lt;operator&gt;.fieldAccess,DefaultExceptionPolicyStrategy.LOG)<SUB>46</SUB>> ]
+"35" [label = <(IDENTIFIER,DefaultExceptionPolicyStrategy,debug(&quot;Finding best suited exception policy for thrown exception &quot; + exception.getClass().getName()))<SUB>46</SUB>> ]
+"36" [label = <(FIELD_IDENTIFIER,LOG,LOG)<SUB>46</SUB>> ]
+"37" [label = <(&lt;operator&gt;.addition,&quot;Finding best suited exception policy for thrown exception &quot; + exception.getClass().getName())<SUB>46</SUB>> ]
+"38" [label = <(LITERAL,&quot;Finding best suited exception policy for thrown exception &quot;,&quot;Finding best suited exception policy for thrown exception &quot; + exception.getClass().getName())<SUB>46</SUB>> ]
+"39" [label = <(getName,exception.getClass().getName())<SUB>46</SUB>> ]
+"40" [label = <(getClass,exception.getClass())<SUB>46</SUB>> ]
+"41" [label = <(IDENTIFIER,exception,exception.getClass())<SUB>46</SUB>> ]
+"42" [label = <(LOCAL,int targetLevel: int)> ]
+"43" [label = <(&lt;operator&gt;.assignment,int targetLevel = getInheritanceLevel(exception.getClass()))<SUB>50</SUB>> ]
+"44" [label = <(IDENTIFIER,targetLevel,int targetLevel = getInheritanceLevel(exception.getClass()))<SUB>50</SUB>> ]
+"45" [label = <(getInheritanceLevel,getInheritanceLevel(exception.getClass()))<SUB>50</SUB>> ]
+"46" [label = <(getClass,exception.getClass())<SUB>50</SUB>> ]
+"47" [label = <(IDENTIFIER,exception,exception.getClass())<SUB>50</SUB>> ]
+"48" [label = <(LOCAL,ExceptionType candidate: org.apache.camel.model.ExceptionType)> ]
+"49" [label = <(&lt;operator&gt;.assignment,ExceptionType candidate = null)<SUB>52</SUB>> ]
+"50" [label = <(IDENTIFIER,candidate,ExceptionType candidate = null)<SUB>52</SUB>> ]
+"51" [label = <(LITERAL,null,ExceptionType candidate = null)<SUB>52</SUB>> ]
+"52" [label = <(LOCAL,int candidateDiff: int)> ]
+"53" [label = <(&lt;operator&gt;.assignment,int candidateDiff = Integer.MAX_VALUE)<SUB>54</SUB>> ]
+"54" [label = <(IDENTIFIER,candidateDiff,int candidateDiff = Integer.MAX_VALUE)<SUB>54</SUB>> ]
+"55" [label = <(&lt;operator&gt;.fieldAccess,Integer.MAX_VALUE)<SUB>54</SUB>> ]
+"56" [label = <(IDENTIFIER,Integer,int candidateDiff = Integer.MAX_VALUE)<SUB>54</SUB>> ]
+"57" [label = <(FIELD_IDENTIFIER,MAX_VALUE,MAX_VALUE)<SUB>54</SUB>> ]
+"58" [label = <(LOCAL,Set&lt;Map.Entry&lt;Class, ExceptionType&gt;&gt; entries: ANY)> ]
+"59" [label = <(&lt;operator&gt;.assignment,ANY entries = entrySet())<SUB>57</SUB>> ]
+"60" [label = <(IDENTIFIER,entries,ANY entries = entrySet())<SUB>57</SUB>> ]
+"61" [label = <(entrySet,entrySet())<SUB>57</SUB>> ]
+"62" [label = <(IDENTIFIER,exceptionPolicices,entrySet())<SUB>57</SUB>> ]
+"63" [label = <(LOCAL,$iterLocal0: java.util.Iterator)<SUB>58</SUB>> ]
+"64" [label = <(&lt;operator&gt;.assignment,)<SUB>58</SUB>> ]
+"65" [label = <(IDENTIFIER,$iterLocal0,)<SUB>58</SUB>> ]
+"66" [label = <(iterator,&lt;empty&gt;)<SUB>58</SUB>> ]
+"67" [label = <(IDENTIFIER,entries,&lt;empty&gt;)<SUB>58</SUB>> ]
+"68" [label = <(CONTROL_STRUCTURE,FOR,FOR)<SUB>58</SUB>> ]
+"69" [label = <(hasNext,&lt;empty&gt;)<SUB>58</SUB>> ]
+"70" [label = <(IDENTIFIER,$iterLocal0,&lt;empty&gt;)<SUB>58</SUB>> ]
+"71" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>58</SUB>> ]
+"72" [label = <(LOCAL,entry: ANY)<SUB>58</SUB>> ]
+"73" [label = <(&lt;operator&gt;.assignment,&lt;empty&gt;)<SUB>58</SUB>> ]
+"74" [label = <(IDENTIFIER,entry,&lt;empty&gt;)<SUB>58</SUB>> ]
+"75" [label = <(next,&lt;empty&gt;)<SUB>58</SUB>> ]
+"76" [label = <(IDENTIFIER,$iterLocal0,&lt;empty&gt;)<SUB>58</SUB>> ]
+"77" [label = <(LOCAL,Class clazz: java.lang.Class)> ]
+"78" [label = <(&lt;operator&gt;.assignment,Class clazz = getKey())<SUB>59</SUB>> ]
+"79" [label = <(IDENTIFIER,clazz,Class clazz = getKey())<SUB>59</SUB>> ]
+"80" [label = <(getKey,getKey())<SUB>59</SUB>> ]
+"81" [label = <(IDENTIFIER,entry,getKey())<SUB>59</SUB>> ]
+"82" [label = <(LOCAL,ExceptionType type: org.apache.camel.model.ExceptionType)> ]
+"83" [label = <(&lt;operator&gt;.assignment,ExceptionType type = getValue())<SUB>60</SUB>> ]
+"84" [label = <(IDENTIFIER,type,ExceptionType type = getValue())<SUB>60</SUB>> ]
+"85" [label = <(getValue,getValue())<SUB>60</SUB>> ]
+"86" [label = <(IDENTIFIER,entry,getValue())<SUB>60</SUB>> ]
+"87" [label = <(CONTROL_STRUCTURE,if (clazz.isInstance(exception)),if (clazz.isInstance(exception)))<SUB>63</SUB>> ]
+"88" [label = <(isInstance,clazz.isInstance(exception))<SUB>63</SUB>> ]
+"89" [label = <(IDENTIFIER,clazz,clazz.isInstance(exception))<SUB>63</SUB>> ]
+"90" [label = <(IDENTIFIER,exception,clazz.isInstance(exception))<SUB>63</SUB>> ]
+"91" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>63</SUB>> ]
+"92" [label = <(CONTROL_STRUCTURE,if (clazz.equals(exception.getClass())),if (clazz.equals(exception.getClass())))<SUB>66</SUB>> ]
+"93" [label = <(equals,clazz.equals(exception.getClass()))<SUB>66</SUB>> ]
+"94" [label = <(IDENTIFIER,clazz,clazz.equals(exception.getClass()))<SUB>66</SUB>> ]
+"95" [label = <(getClass,exception.getClass())<SUB>66</SUB>> ]
+"96" [label = <(IDENTIFIER,exception,exception.getClass())<SUB>66</SUB>> ]
+"97" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>66</SUB>> ]
+"98" [label = <(&lt;operator&gt;.assignment,candidate = type)<SUB>67</SUB>> ]
+"99" [label = <(IDENTIFIER,candidate,candidate = type)<SUB>67</SUB>> ]
+"100" [label = <(IDENTIFIER,type,candidate = type)<SUB>67</SUB>> ]
+"101" [label = <(CONTROL_STRUCTURE,break;,break;)<SUB>68</SUB>> ]
+"102" [label = <(LOCAL,int level: int)> ]
+"103" [label = <(&lt;operator&gt;.assignment,int level = getInheritanceLevel(clazz))<SUB>72</SUB>> ]
+"104" [label = <(IDENTIFIER,level,int level = getInheritanceLevel(clazz))<SUB>72</SUB>> ]
+"105" [label = <(getInheritanceLevel,getInheritanceLevel(clazz))<SUB>72</SUB>> ]
+"106" [label = <(IDENTIFIER,clazz,getInheritanceLevel(clazz))<SUB>72</SUB>> ]
+"107" [label = <(LOCAL,int diff: int)> ]
+"108" [label = <(&lt;operator&gt;.assignment,int diff = targetLevel - level)<SUB>73</SUB>> ]
+"109" [label = <(IDENTIFIER,diff,int diff = targetLevel - level)<SUB>73</SUB>> ]
+"110" [label = <(&lt;operator&gt;.subtraction,targetLevel - level)<SUB>73</SUB>> ]
+"111" [label = <(IDENTIFIER,targetLevel,targetLevel - level)<SUB>73</SUB>> ]
+"112" [label = <(IDENTIFIER,level,targetLevel - level)<SUB>73</SUB>> ]
+"113" [label = <(CONTROL_STRUCTURE,if (diff &lt; candidateDiff),if (diff &lt; candidateDiff))<SUB>75</SUB>> ]
+"114" [label = <(&lt;operator&gt;.lessThan,diff &lt; candidateDiff)<SUB>75</SUB>> ]
+"115" [label = <(IDENTIFIER,diff,diff &lt; candidateDiff)<SUB>75</SUB>> ]
+"116" [label = <(IDENTIFIER,candidateDiff,diff &lt; candidateDiff)<SUB>75</SUB>> ]
+"117" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>75</SUB>> ]
+"118" [label = <(&lt;operator&gt;.assignment,candidate = type)<SUB>77</SUB>> ]
+"119" [label = <(IDENTIFIER,candidate,candidate = type)<SUB>77</SUB>> ]
+"120" [label = <(IDENTIFIER,type,candidate = type)<SUB>77</SUB>> ]
+"121" [label = <(&lt;operator&gt;.assignment,candidateDiff = diff)<SUB>78</SUB>> ]
+"122" [label = <(IDENTIFIER,candidateDiff,candidateDiff = diff)<SUB>78</SUB>> ]
+"123" [label = <(IDENTIFIER,diff,candidateDiff = diff)<SUB>78</SUB>> ]
+"124" [label = <(CONTROL_STRUCTURE,if (LOG.isDebugEnabled()),if (LOG.isDebugEnabled()))<SUB>83</SUB>> ]
+"125" [label = <(isDebugEnabled,isDebugEnabled())<SUB>83</SUB>> ]
+"126" [label = <(&lt;operator&gt;.fieldAccess,DefaultExceptionPolicyStrategy.LOG)<SUB>83</SUB>> ]
+"127" [label = <(IDENTIFIER,DefaultExceptionPolicyStrategy,isDebugEnabled())<SUB>83</SUB>> ]
+"128" [label = <(FIELD_IDENTIFIER,LOG,LOG)<SUB>83</SUB>> ]
+"129" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>83</SUB>> ]
+"130" [label = <(CONTROL_STRUCTURE,if (candidate != null),if (candidate != null))<SUB>84</SUB>> ]
+"131" [label = <(&lt;operator&gt;.notEquals,candidate != null)<SUB>84</SUB>> ]
+"132" [label = <(IDENTIFIER,candidate,candidate != null)<SUB>84</SUB>> ]
+"133" [label = <(LITERAL,null,candidate != null)<SUB>84</SUB>> ]
+"134" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>84</SUB>> ]
+"135" [label = <(debug,debug(&quot;Using &quot; + candidate + &quot; as the exception policy&quot;))<SUB>85</SUB>> ]
+"136" [label = <(&lt;operator&gt;.fieldAccess,DefaultExceptionPolicyStrategy.LOG)<SUB>85</SUB>> ]
+"137" [label = <(IDENTIFIER,DefaultExceptionPolicyStrategy,debug(&quot;Using &quot; + candidate + &quot; as the exception policy&quot;))<SUB>85</SUB>> ]
+"138" [label = <(FIELD_IDENTIFIER,LOG,LOG)<SUB>85</SUB>> ]
+"139" [label = <(&lt;operator&gt;.addition,&quot;Using &quot; + candidate + &quot; as the exception policy&quot;)<SUB>85</SUB>> ]
+"140" [label = <(&lt;operator&gt;.addition,&quot;Using &quot; + candidate)<SUB>85</SUB>> ]
+"141" [label = <(LITERAL,&quot;Using &quot;,&quot;Using &quot; + candidate)<SUB>85</SUB>> ]
+"142" [label = <(IDENTIFIER,candidate,&quot;Using &quot; + candidate)<SUB>85</SUB>> ]
+"143" [label = <(LITERAL,&quot; as the exception policy&quot;,&quot;Using &quot; + candidate + &quot; as the exception policy&quot;)<SUB>85</SUB>> ]
+"144" [label = <(CONTROL_STRUCTURE,else,else)<SUB>86</SUB>> ]
+"145" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>86</SUB>> ]
+"146" [label = <(debug,debug(&quot;No candidate found to be used as exception policy&quot;))<SUB>87</SUB>> ]
+"147" [label = <(&lt;operator&gt;.fieldAccess,DefaultExceptionPolicyStrategy.LOG)<SUB>87</SUB>> ]
+"148" [label = <(IDENTIFIER,DefaultExceptionPolicyStrategy,debug(&quot;No candidate found to be used as exception policy&quot;))<SUB>87</SUB>> ]
+"149" [label = <(FIELD_IDENTIFIER,LOG,LOG)<SUB>87</SUB>> ]
+"150" [label = <(LITERAL,&quot;No candidate found to be used as exception policy&quot;,debug(&quot;No candidate found to be used as exception policy&quot;))<SUB>87</SUB>> ]
+"151" [label = <(RETURN,return candidate;,return candidate;)<SUB>91</SUB>> ]
+"152" [label = <(IDENTIFIER,candidate,return candidate;)<SUB>91</SUB>> ]
+"153" [label = <(MODIFIER,PUBLIC)> ]
+"154" [label = <(MODIFIER,VIRTUAL)> ]
+"155" [label = <(METHOD_RETURN,org.apache.camel.model.ExceptionType)<SUB>43</SUB>> ]
+  "21" -> "22" 
+  "21" -> "23" 
+  "21" -> "24" 
+  "21" -> "25" 
+  "21" -> "26" 
+  "21" -> "153" 
+  "21" -> "154" 
+  "21" -> "155" 
+  "26" -> "27" 
+  "26" -> "42" 
+  "26" -> "43" 
+  "26" -> "48" 
+  "26" -> "49" 
+  "26" -> "52" 
+  "26" -> "53" 
+  "26" -> "58" 
+  "26" -> "59" 
+  "26" -> "63" 
+  "26" -> "64" 
+  "26" -> "68" 
+  "26" -> "124" 
+  "26" -> "151" 
+  "27" -> "28" 
+  "27" -> "32" 
+  "28" -> "29" 
+  "29" -> "30" 
+  "29" -> "31" 
+  "32" -> "33" 
+  "33" -> "34" 
+  "33" -> "37" 
+  "34" -> "35" 
+  "34" -> "36" 
+  "37" -> "38" 
+  "37" -> "39" 
+  "39" -> "40" 
+  "40" -> "41" 
+  "43" -> "44" 
+  "43" -> "45" 
+  "45" -> "46" 
+  "46" -> "47" 
+  "49" -> "50" 
+  "49" -> "51" 
+  "53" -> "54" 
+  "53" -> "55" 
+  "55" -> "56" 
+  "55" -> "57" 
+  "59" -> "60" 
+  "59" -> "61" 
+  "61" -> "62" 
+  "64" -> "65" 
+  "64" -> "66" 
+  "66" -> "67" 
+  "68" -> "69" 
+  "68" -> "71" 
+  "69" -> "70" 
+  "71" -> "72" 
+  "71" -> "73" 
+  "71" -> "77" 
+  "71" -> "78" 
+  "71" -> "82" 
+  "71" -> "83" 
+  "71" -> "87" 
+  "73" -> "74" 
+  "73" -> "75" 
+  "75" -> "76" 
+  "78" -> "79" 
+  "78" -> "80" 
+  "80" -> "81" 
+  "83" -> "84" 
+  "83" -> "85" 
+  "85" -> "86" 
+  "87" -> "88" 
+  "87" -> "91" 
+  "88" -> "89" 
+  "88" -> "90" 
+  "91" -> "92" 
+  "91" -> "102" 
+  "91" -> "103" 
+  "91" -> "107" 
+  "91" -> "108" 
+  "91" -> "113" 
+  "92" -> "93" 
+  "92" -> "97" 
+  "93" -> "94" 
+  "93" -> "95" 
+  "95" -> "96" 
+  "97" -> "98" 
+  "97" -> "101" 
+  "98" -> "99" 
+  "98" -> "100" 
+  "103" -> "104" 
+  "103" -> "105" 
+  "105" -> "106" 
+  "108" -> "109" 
+  "108" -> "110" 
+  "110" -> "111" 
+  "110" -> "112" 
+  "113" -> "114" 
+  "113" -> "117" 
+  "114" -> "115" 
+  "114" -> "116" 
+  "117" -> "118" 
+  "117" -> "121" 
+  "118" -> "119" 
+  "118" -> "120" 
+  "121" -> "122" 
+  "121" -> "123" 
+  "124" -> "125" 
+  "124" -> "129" 
+  "125" -> "126" 
+  "126" -> "127" 
+  "126" -> "128" 
+  "129" -> "130" 
+  "130" -> "131" 
+  "130" -> "134" 
+  "130" -> "144" 
+  "131" -> "132" 
+  "131" -> "133" 
+  "134" -> "135" 
+  "135" -> "136" 
+  "135" -> "139" 
+  "136" -> "137" 
+  "136" -> "138" 
+  "139" -> "140" 
+  "139" -> "143" 
+  "140" -> "141" 
+  "140" -> "142" 
+  "144" -> "145" 
+  "145" -> "146" 
+  "146" -> "147" 
+  "146" -> "150" 
+  "147" -> "148" 
+  "147" -> "149" 
+  "151" -> "152" 
+}

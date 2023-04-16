@@ -1,0 +1,97 @@
+digraph "createEndpoint" {  
+"14" [label = <(METHOD,createEndpoint)<SUB>34</SUB>> ]
+"4" [label = <(PARAM,this)<SUB>34</SUB>> ]
+"15" [label = <(PARAM,String uri)<SUB>35</SUB>> ]
+"16" [label = <(PARAM,String remaining)<SUB>35</SUB>> ]
+"17" [label = <(PARAM,Map parameters)<SUB>35</SUB>> ]
+"18" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>35</SUB>> ]
+"6" [label = <(LOCAL,MockEndpoint endpoint: ANY)> ]
+"19" [label = <(&lt;operator&gt;.assignment,ANY endpoint = new MockEndpoint(uri, this))<SUB>36</SUB>> ]
+"20" [label = <(IDENTIFIER,endpoint,ANY endpoint = new MockEndpoint(uri, this))<SUB>36</SUB>> ]
+"21" [label = <(&lt;operator&gt;.alloc,new MockEndpoint(uri, this))<SUB>36</SUB>> ]
+"22" [label = <(&lt;init&gt;,new MockEndpoint(uri, this))<SUB>36</SUB>> ]
+"5" [label = <(IDENTIFIER,endpoint,new MockEndpoint(uri, this))<SUB>36</SUB>> ]
+"23" [label = <(IDENTIFIER,uri,new MockEndpoint(uri, this))<SUB>36</SUB>> ]
+"3" [label = <(IDENTIFIER,this,new MockEndpoint(uri, this))<SUB>36</SUB>> ]
+"24" [label = <(LOCAL,Integer value: java.lang.Integer)> ]
+"25" [label = <(&lt;operator&gt;.assignment,Integer value = getAndRemoveParameter(parameters, &quot;reportGroup&quot;, Integer.class))<SUB>37</SUB>> ]
+"26" [label = <(IDENTIFIER,value,Integer value = getAndRemoveParameter(parameters, &quot;reportGroup&quot;, Integer.class))<SUB>37</SUB>> ]
+"27" [label = <(getAndRemoveParameter,getAndRemoveParameter(parameters, &quot;reportGroup&quot;, Integer.class))<SUB>37</SUB>> ]
+"7" [label = <(IDENTIFIER,this,getAndRemoveParameter(parameters, &quot;reportGroup&quot;, Integer.class))<SUB>37</SUB>> ]
+"28" [label = <(IDENTIFIER,parameters,getAndRemoveParameter(parameters, &quot;reportGroup&quot;, Integer.class))<SUB>37</SUB>> ]
+"29" [label = <(LITERAL,&quot;reportGroup&quot;,getAndRemoveParameter(parameters, &quot;reportGroup&quot;, Integer.class))<SUB>37</SUB>> ]
+"30" [label = <(&lt;operator&gt;.fieldAccess,Integer.class)<SUB>37</SUB>> ]
+"31" [label = <(IDENTIFIER,Integer,getAndRemoveParameter(parameters, &quot;reportGroup&quot;, Integer.class))<SUB>37</SUB>> ]
+"32" [label = <(FIELD_IDENTIFIER,class,class)<SUB>37</SUB>> ]
+"33" [label = <(CONTROL_STRUCTURE,if (value != null),if (value != null))<SUB>38</SUB>> ]
+"34" [label = <(&lt;operator&gt;.notEquals,value != null)<SUB>38</SUB>> ]
+"35" [label = <(IDENTIFIER,value,value != null)<SUB>38</SUB>> ]
+"36" [label = <(LITERAL,null,value != null)<SUB>38</SUB>> ]
+"37" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>38</SUB>> ]
+"9" [label = <(LOCAL,Processor reporter: org.apache.camel.Processor)> ]
+"38" [label = <(&lt;operator&gt;.assignment,Processor reporter = new ThroughputLogger(&quot;org.apache.camel.mock:&quot; + remaining, value))<SUB>39</SUB>> ]
+"39" [label = <(IDENTIFIER,reporter,Processor reporter = new ThroughputLogger(&quot;org.apache.camel.mock:&quot; + remaining, value))<SUB>39</SUB>> ]
+"40" [label = <(&lt;operator&gt;.alloc,new ThroughputLogger(&quot;org.apache.camel.mock:&quot; + remaining, value))<SUB>39</SUB>> ]
+"41" [label = <(&lt;init&gt;,new ThroughputLogger(&quot;org.apache.camel.mock:&quot; + remaining, value))<SUB>39</SUB>> ]
+"8" [label = <(IDENTIFIER,reporter,new ThroughputLogger(&quot;org.apache.camel.mock:&quot; + remaining, value))<SUB>39</SUB>> ]
+"42" [label = <(&lt;operator&gt;.addition,&quot;org.apache.camel.mock:&quot; + remaining)<SUB>39</SUB>> ]
+"43" [label = <(LITERAL,&quot;org.apache.camel.mock:&quot;,&quot;org.apache.camel.mock:&quot; + remaining)<SUB>39</SUB>> ]
+"44" [label = <(IDENTIFIER,remaining,&quot;org.apache.camel.mock:&quot; + remaining)<SUB>39</SUB>> ]
+"45" [label = <(IDENTIFIER,value,new ThroughputLogger(&quot;org.apache.camel.mock:&quot; + remaining, value))<SUB>39</SUB>> ]
+"46" [label = <(setReporter,setReporter(reporter))<SUB>40</SUB>> ]
+"47" [label = <(IDENTIFIER,endpoint,setReporter(reporter))<SUB>40</SUB>> ]
+"48" [label = <(IDENTIFIER,reporter,setReporter(reporter))<SUB>40</SUB>> ]
+"49" [label = <(RETURN,return endpoint;,return endpoint;)<SUB>42</SUB>> ]
+"50" [label = <(IDENTIFIER,endpoint,return endpoint;)<SUB>42</SUB>> ]
+"51" [label = <(MODIFIER,PROTECTED)> ]
+"52" [label = <(MODIFIER,VIRTUAL)> ]
+"53" [label = <(ANNOTATION,@Override,@Override)<SUB>34</SUB>> ]
+"54" [label = <(METHOD_RETURN,ANY)<SUB>35</SUB>> ]
+  "14" -> "4" 
+  "14" -> "15" 
+  "14" -> "16" 
+  "14" -> "17" 
+  "14" -> "18" 
+  "14" -> "51" 
+  "14" -> "52" 
+  "14" -> "53" 
+  "14" -> "54" 
+  "18" -> "6" 
+  "18" -> "19" 
+  "18" -> "22" 
+  "18" -> "24" 
+  "18" -> "25" 
+  "18" -> "33" 
+  "18" -> "49" 
+  "19" -> "20" 
+  "19" -> "21" 
+  "22" -> "5" 
+  "22" -> "23" 
+  "22" -> "3" 
+  "25" -> "26" 
+  "25" -> "27" 
+  "27" -> "7" 
+  "27" -> "28" 
+  "27" -> "29" 
+  "27" -> "30" 
+  "30" -> "31" 
+  "30" -> "32" 
+  "33" -> "34" 
+  "33" -> "37" 
+  "34" -> "35" 
+  "34" -> "36" 
+  "37" -> "9" 
+  "37" -> "38" 
+  "37" -> "41" 
+  "37" -> "46" 
+  "38" -> "39" 
+  "38" -> "40" 
+  "41" -> "8" 
+  "41" -> "42" 
+  "41" -> "45" 
+  "42" -> "43" 
+  "42" -> "44" 
+  "46" -> "47" 
+  "46" -> "48" 
+  "49" -> "50" 
+}

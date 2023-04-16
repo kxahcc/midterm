@@ -1,0 +1,185 @@
+digraph "execute" {  
+"18" [label = <(METHOD,execute)<SUB>78</SUB>> ]
+"4" [label = <(PARAM,this)<SUB>78</SUB>> ]
+"19" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>78</SUB>> ]
+"20" [label = <(log,log(&quot;Using kjc compiler&quot;, Project.MSG_VERBOSE))<SUB>79</SUB>> ]
+"21" [label = <(IDENTIFIER,attributes,log(&quot;Using kjc compiler&quot;, Project.MSG_VERBOSE))<SUB>79</SUB>> ]
+"22" [label = <(LITERAL,&quot;Using kjc compiler&quot;,log(&quot;Using kjc compiler&quot;, Project.MSG_VERBOSE))<SUB>79</SUB>> ]
+"23" [label = <(&lt;operator&gt;.fieldAccess,Project.MSG_VERBOSE)<SUB>79</SUB>> ]
+"24" [label = <(IDENTIFIER,Project,log(&quot;Using kjc compiler&quot;, Project.MSG_VERBOSE))<SUB>79</SUB>> ]
+"25" [label = <(FIELD_IDENTIFIER,MSG_VERBOSE,MSG_VERBOSE)<SUB>79</SUB>> ]
+"26" [label = <(LOCAL,Commandline cmd: org.apache.tools.ant.types.Commandline)> ]
+"27" [label = <(&lt;operator&gt;.assignment,Commandline cmd = this.setupKjcCommand())<SUB>80</SUB>> ]
+"28" [label = <(IDENTIFIER,cmd,Commandline cmd = this.setupKjcCommand())<SUB>80</SUB>> ]
+"29" [label = <(setupKjcCommand,this.setupKjcCommand())<SUB>80</SUB>> ]
+"3" [label = <(IDENTIFIER,this,this.setupKjcCommand())<SUB>80</SUB>> ]
+"30" [label = <(CONTROL_STRUCTURE,try,try)<SUB>82</SUB>> ]
+"31" [label = <(BLOCK,try,try)<SUB>82</SUB>> ]
+"32" [label = <(LOCAL,Class c: java.lang.Class)> ]
+"33" [label = <(&lt;operator&gt;.assignment,Class c = Class.forName(&quot;at.dms.kjc.Main&quot;))<SUB>83</SUB>> ]
+"34" [label = <(IDENTIFIER,c,Class c = Class.forName(&quot;at.dms.kjc.Main&quot;))<SUB>83</SUB>> ]
+"35" [label = <(forName,Class.forName(&quot;at.dms.kjc.Main&quot;))<SUB>83</SUB>> ]
+"36" [label = <(IDENTIFIER,Class,Class.forName(&quot;at.dms.kjc.Main&quot;))<SUB>83</SUB>> ]
+"37" [label = <(LITERAL,&quot;at.dms.kjc.Main&quot;,Class.forName(&quot;at.dms.kjc.Main&quot;))<SUB>83</SUB>> ]
+"38" [label = <(LOCAL,Method compile: java.lang.reflect.Method)> ]
+"39" [label = <(&lt;operator&gt;.assignment,Method compile = c.getMethod(&quot;compile&quot;, new Class[] { String[].class }))<SUB>86</SUB>> ]
+"40" [label = <(IDENTIFIER,compile,Method compile = c.getMethod(&quot;compile&quot;, new Class[] { String[].class }))<SUB>86</SUB>> ]
+"41" [label = <(getMethod,c.getMethod(&quot;compile&quot;, new Class[] { String[].class }))<SUB>86</SUB>> ]
+"42" [label = <(IDENTIFIER,c,c.getMethod(&quot;compile&quot;, new Class[] { String[].class }))<SUB>86</SUB>> ]
+"43" [label = <(LITERAL,&quot;compile&quot;,c.getMethod(&quot;compile&quot;, new Class[] { String[].class }))<SUB>86</SUB>> ]
+"44" [label = <(&lt;operator&gt;.arrayInitializer,&lt;operator&gt;.arrayInitializer)<SUB>86</SUB>> ]
+"45" [label = <(&lt;operator&gt;.arrayInitializer,new Class[] { String[].class })<SUB>87</SUB>> ]
+"46" [label = <(&lt;operator&gt;.fieldAccess,String[].class)<SUB>87</SUB>> ]
+"47" [label = <(IDENTIFIER,String[],new Class[] { String[].class })<SUB>87</SUB>> ]
+"48" [label = <(FIELD_IDENTIFIER,class,class)<SUB>87</SUB>> ]
+"49" [label = <(LOCAL,Boolean ok: java.lang.Boolean)> ]
+"50" [label = <(&lt;operator&gt;.assignment,Boolean ok = (Boolean) compile.invoke(null, new Object[] { cmd.getArguments() }))<SUB>88</SUB>> ]
+"51" [label = <(IDENTIFIER,ok,Boolean ok = (Boolean) compile.invoke(null, new Object[] { cmd.getArguments() }))<SUB>88</SUB>> ]
+"52" [label = <(&lt;operator&gt;.cast,(Boolean) compile.invoke(null, new Object[] { cmd.getArguments() }))<SUB>89</SUB>> ]
+"53" [label = <(TYPE_REF,Boolean,Boolean)<SUB>89</SUB>> ]
+"54" [label = <(invoke,compile.invoke(null, new Object[] { cmd.getArguments() }))<SUB>89</SUB>> ]
+"55" [label = <(IDENTIFIER,compile,compile.invoke(null, new Object[] { cmd.getArguments() }))<SUB>89</SUB>> ]
+"56" [label = <(LITERAL,null,compile.invoke(null, new Object[] { cmd.getArguments() }))<SUB>89</SUB>> ]
+"57" [label = <(&lt;operator&gt;.arrayInitializer,&lt;operator&gt;.arrayInitializer)<SUB>89</SUB>> ]
+"58" [label = <(&lt;operator&gt;.arrayInitializer,new Object[] { cmd.getArguments() })<SUB>90</SUB>> ]
+"59" [label = <(getArguments,getArguments())<SUB>90</SUB>> ]
+"60" [label = <(IDENTIFIER,cmd,getArguments())<SUB>90</SUB>> ]
+"61" [label = <(RETURN,return ok.booleanValue();,return ok.booleanValue();)<SUB>91</SUB>> ]
+"62" [label = <(booleanValue,ok.booleanValue())<SUB>91</SUB>> ]
+"63" [label = <(IDENTIFIER,ok,ok.booleanValue())<SUB>91</SUB>> ]
+"64" [label = <(BLOCK,catch,catch)> ]
+"65" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>92</SUB>> ]
+"66" [label = <(&lt;operator&gt;.throw,throw new BuildException(&quot;Cannot use kjc compiler, as it is not &quot; + &quot;available. A common solution is to &quot; + &quot;set the environment variable CLASSPATH &quot; + &quot;to your kjc archive (kjc.jar).&quot;, location);)<SUB>93</SUB>> ]
+"67" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>93</SUB>> ]
+"68" [label = <(&lt;operator&gt;.assignment,&lt;empty&gt;)> ]
+"69" [label = <(IDENTIFIER,$obj0,&lt;empty&gt;)> ]
+"70" [label = <(&lt;operator&gt;.alloc,new BuildException(&quot;Cannot use kjc compiler, as it is not &quot; + &quot;available. A common solution is to &quot; + &quot;set the environment variable CLASSPATH &quot; + &quot;to your kjc archive (kjc.jar).&quot;, location))<SUB>93</SUB>> ]
+"71" [label = <(&lt;init&gt;,new BuildException(&quot;Cannot use kjc compiler, as it is not &quot; + &quot;available. A common solution is to &quot; + &quot;set the environment variable CLASSPATH &quot; + &quot;to your kjc archive (kjc.jar).&quot;, location))<SUB>93</SUB>> ]
+"72" [label = <(IDENTIFIER,$obj0,new BuildException(&quot;Cannot use kjc compiler, as it is not &quot; + &quot;available. A common solution is to &quot; + &quot;set the environment variable CLASSPATH &quot; + &quot;to your kjc archive (kjc.jar).&quot;, location))> ]
+"73" [label = <(&lt;operator&gt;.addition,&quot;Cannot use kjc compiler, as it is not &quot; + &quot;available. A common solution is to &quot; + &quot;set the environment variable CLASSPATH &quot; + &quot;to your kjc archive (kjc.jar).&quot;)<SUB>93</SUB>> ]
+"74" [label = <(&lt;operator&gt;.addition,&quot;Cannot use kjc compiler, as it is not &quot; + &quot;available. A common solution is to &quot; + &quot;set the environment variable CLASSPATH &quot;)<SUB>93</SUB>> ]
+"75" [label = <(&lt;operator&gt;.addition,&quot;Cannot use kjc compiler, as it is not &quot; + &quot;available. A common solution is to &quot;)<SUB>93</SUB>> ]
+"76" [label = <(LITERAL,&quot;Cannot use kjc compiler, as it is not &quot;,&quot;Cannot use kjc compiler, as it is not &quot; + &quot;available. A common solution is to &quot;)<SUB>93</SUB>> ]
+"77" [label = <(LITERAL,&quot;available. A common solution is to &quot;,&quot;Cannot use kjc compiler, as it is not &quot; + &quot;available. A common solution is to &quot;)<SUB>94</SUB>> ]
+"78" [label = <(LITERAL,&quot;set the environment variable CLASSPATH &quot;,&quot;Cannot use kjc compiler, as it is not &quot; + &quot;available. A common solution is to &quot; + &quot;set the environment variable CLASSPATH &quot;)<SUB>95</SUB>> ]
+"79" [label = <(LITERAL,&quot;to your kjc archive (kjc.jar).&quot;,&quot;Cannot use kjc compiler, as it is not &quot; + &quot;available. A common solution is to &quot; + &quot;set the environment variable CLASSPATH &quot; + &quot;to your kjc archive (kjc.jar).&quot;)<SUB>96</SUB>> ]
+"80" [label = <(IDENTIFIER,location,new BuildException(&quot;Cannot use kjc compiler, as it is not &quot; + &quot;available. A common solution is to &quot; + &quot;set the environment variable CLASSPATH &quot; + &quot;to your kjc archive (kjc.jar).&quot;, location))<SUB>97</SUB>> ]
+"81" [label = <(IDENTIFIER,$obj0,&lt;empty&gt;)> ]
+"82" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>98</SUB>> ]
+"83" [label = <(CONTROL_STRUCTURE,if (ex instanceof BuildException),if (ex instanceof BuildException))<SUB>99</SUB>> ]
+"84" [label = <(&lt;operator&gt;.instanceOf,ex instanceof BuildException)<SUB>99</SUB>> ]
+"85" [label = <(IDENTIFIER,ex,ex instanceof BuildException)<SUB>99</SUB>> ]
+"86" [label = <(TYPE_REF,BuildException,BuildException)<SUB>99</SUB>> ]
+"87" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>99</SUB>> ]
+"88" [label = <(&lt;operator&gt;.throw,throw (BuildException) ex;)<SUB>100</SUB>> ]
+"89" [label = <(&lt;operator&gt;.cast,(BuildException) ex)<SUB>100</SUB>> ]
+"90" [label = <(TYPE_REF,BuildException,BuildException)<SUB>100</SUB>> ]
+"91" [label = <(IDENTIFIER,ex,(BuildException) ex)<SUB>100</SUB>> ]
+"92" [label = <(CONTROL_STRUCTURE,else,else)<SUB>101</SUB>> ]
+"93" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>101</SUB>> ]
+"94" [label = <(&lt;operator&gt;.throw,throw new BuildException(&quot;Error starting kjc compiler: &quot;, ex, location);)<SUB>102</SUB>> ]
+"95" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>102</SUB>> ]
+"96" [label = <(&lt;operator&gt;.assignment,&lt;empty&gt;)> ]
+"97" [label = <(IDENTIFIER,$obj1,&lt;empty&gt;)> ]
+"98" [label = <(&lt;operator&gt;.alloc,new BuildException(&quot;Error starting kjc compiler: &quot;, ex, location))<SUB>102</SUB>> ]
+"99" [label = <(&lt;init&gt;,new BuildException(&quot;Error starting kjc compiler: &quot;, ex, location))<SUB>102</SUB>> ]
+"100" [label = <(IDENTIFIER,$obj1,new BuildException(&quot;Error starting kjc compiler: &quot;, ex, location))> ]
+"101" [label = <(LITERAL,&quot;Error starting kjc compiler: &quot;,new BuildException(&quot;Error starting kjc compiler: &quot;, ex, location))<SUB>102</SUB>> ]
+"102" [label = <(IDENTIFIER,ex,new BuildException(&quot;Error starting kjc compiler: &quot;, ex, location))<SUB>103</SUB>> ]
+"103" [label = <(IDENTIFIER,location,new BuildException(&quot;Error starting kjc compiler: &quot;, ex, location))<SUB>103</SUB>> ]
+"104" [label = <(IDENTIFIER,$obj1,&lt;empty&gt;)> ]
+"105" [label = <(MODIFIER,PUBLIC)> ]
+"106" [label = <(MODIFIER,VIRTUAL)> ]
+"107" [label = <(METHOD_RETURN,boolean)<SUB>78</SUB>> ]
+  "18" -> "4" 
+  "18" -> "19" 
+  "18" -> "105" 
+  "18" -> "106" 
+  "18" -> "107" 
+  "19" -> "20" 
+  "19" -> "26" 
+  "19" -> "27" 
+  "19" -> "30" 
+  "20" -> "21" 
+  "20" -> "22" 
+  "20" -> "23" 
+  "23" -> "24" 
+  "23" -> "25" 
+  "27" -> "28" 
+  "27" -> "29" 
+  "29" -> "3" 
+  "30" -> "31" 
+  "30" -> "64" 
+  "31" -> "32" 
+  "31" -> "33" 
+  "31" -> "38" 
+  "31" -> "39" 
+  "31" -> "49" 
+  "31" -> "50" 
+  "31" -> "61" 
+  "33" -> "34" 
+  "33" -> "35" 
+  "35" -> "36" 
+  "35" -> "37" 
+  "39" -> "40" 
+  "39" -> "41" 
+  "41" -> "42" 
+  "41" -> "43" 
+  "41" -> "44" 
+  "44" -> "45" 
+  "45" -> "46" 
+  "46" -> "47" 
+  "46" -> "48" 
+  "50" -> "51" 
+  "50" -> "52" 
+  "52" -> "53" 
+  "52" -> "54" 
+  "54" -> "55" 
+  "54" -> "56" 
+  "54" -> "57" 
+  "57" -> "58" 
+  "58" -> "59" 
+  "59" -> "60" 
+  "61" -> "62" 
+  "62" -> "63" 
+  "64" -> "65" 
+  "64" -> "82" 
+  "65" -> "66" 
+  "66" -> "67" 
+  "67" -> "68" 
+  "67" -> "71" 
+  "67" -> "81" 
+  "68" -> "69" 
+  "68" -> "70" 
+  "71" -> "72" 
+  "71" -> "73" 
+  "71" -> "80" 
+  "73" -> "74" 
+  "73" -> "79" 
+  "74" -> "75" 
+  "74" -> "78" 
+  "75" -> "76" 
+  "75" -> "77" 
+  "82" -> "83" 
+  "83" -> "84" 
+  "83" -> "87" 
+  "83" -> "92" 
+  "84" -> "85" 
+  "84" -> "86" 
+  "87" -> "88" 
+  "88" -> "89" 
+  "89" -> "90" 
+  "89" -> "91" 
+  "92" -> "93" 
+  "93" -> "94" 
+  "94" -> "95" 
+  "95" -> "96" 
+  "95" -> "99" 
+  "95" -> "104" 
+  "96" -> "97" 
+  "96" -> "98" 
+  "99" -> "100" 
+  "99" -> "101" 
+  "99" -> "102" 
+  "99" -> "103" 
+}

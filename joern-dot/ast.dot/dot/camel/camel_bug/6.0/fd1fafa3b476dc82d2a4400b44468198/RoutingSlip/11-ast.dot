@@ -1,0 +1,83 @@
+digraph "copyOutToIn" {  
+"320" [label = <(METHOD,copyOutToIn)<SUB>142</SUB>> ]
+"22" [label = <(PARAM,this)<SUB>142</SUB>> ]
+"321" [label = <(PARAM,Exchange result)<SUB>142</SUB>> ]
+"322" [label = <(PARAM,Exchange source)<SUB>142</SUB>> ]
+"323" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>142</SUB>> ]
+"324" [label = <(setException,setException(source.getException()))<SUB>143</SUB>> ]
+"325" [label = <(IDENTIFIER,result,setException(source.getException()))<SUB>143</SUB>> ]
+"326" [label = <(getException,getException())<SUB>143</SUB>> ]
+"327" [label = <(IDENTIFIER,source,getException())<SUB>143</SUB>> ]
+"328" [label = <(LOCAL,Message fault: org.apache.camel.Message)> ]
+"329" [label = <(&lt;operator&gt;.assignment,Message fault = getFault(false))<SUB>145</SUB>> ]
+"330" [label = <(IDENTIFIER,fault,Message fault = getFault(false))<SUB>145</SUB>> ]
+"331" [label = <(getFault,getFault(false))<SUB>145</SUB>> ]
+"332" [label = <(IDENTIFIER,source,getFault(false))<SUB>145</SUB>> ]
+"333" [label = <(LITERAL,false,getFault(false))<SUB>145</SUB>> ]
+"334" [label = <(CONTROL_STRUCTURE,if (fault != null),if (fault != null))<SUB>146</SUB>> ]
+"335" [label = <(&lt;operator&gt;.notEquals,fault != null)<SUB>146</SUB>> ]
+"336" [label = <(IDENTIFIER,fault,fault != null)<SUB>146</SUB>> ]
+"337" [label = <(LITERAL,null,fault != null)<SUB>146</SUB>> ]
+"338" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>146</SUB>> ]
+"339" [label = <(copyFrom,copyFrom(fault))<SUB>147</SUB>> ]
+"340" [label = <(getFault,getFault(true))<SUB>147</SUB>> ]
+"341" [label = <(IDENTIFIER,result,getFault(true))<SUB>147</SUB>> ]
+"342" [label = <(LITERAL,true,getFault(true))<SUB>147</SUB>> ]
+"343" [label = <(IDENTIFIER,fault,copyFrom(fault))<SUB>147</SUB>> ]
+"344" [label = <(setIn,setIn(getResultMessage(source)))<SUB>150</SUB>> ]
+"345" [label = <(IDENTIFIER,result,setIn(getResultMessage(source)))<SUB>150</SUB>> ]
+"346" [label = <(getResultMessage,getResultMessage(source))<SUB>150</SUB>> ]
+"21" [label = <(IDENTIFIER,this,getResultMessage(source))<SUB>150</SUB>> ]
+"347" [label = <(IDENTIFIER,source,getResultMessage(source))<SUB>150</SUB>> ]
+"348" [label = <(clear,clear())<SUB>152</SUB>> ]
+"349" [label = <(getProperties,getProperties())<SUB>152</SUB>> ]
+"350" [label = <(IDENTIFIER,result,getProperties())<SUB>152</SUB>> ]
+"351" [label = <(putAll,putAll(source.getProperties()))<SUB>153</SUB>> ]
+"352" [label = <(getProperties,getProperties())<SUB>153</SUB>> ]
+"353" [label = <(IDENTIFIER,result,getProperties())<SUB>153</SUB>> ]
+"354" [label = <(getProperties,getProperties())<SUB>153</SUB>> ]
+"355" [label = <(IDENTIFIER,source,getProperties())<SUB>153</SUB>> ]
+"356" [label = <(MODIFIER,PRIVATE)> ]
+"357" [label = <(MODIFIER,VIRTUAL)> ]
+"358" [label = <(METHOD_RETURN,void)<SUB>142</SUB>> ]
+  "320" -> "22" 
+  "320" -> "321" 
+  "320" -> "322" 
+  "320" -> "323" 
+  "320" -> "356" 
+  "320" -> "357" 
+  "320" -> "358" 
+  "323" -> "324" 
+  "323" -> "328" 
+  "323" -> "329" 
+  "323" -> "334" 
+  "323" -> "344" 
+  "323" -> "348" 
+  "323" -> "351" 
+  "324" -> "325" 
+  "324" -> "326" 
+  "326" -> "327" 
+  "329" -> "330" 
+  "329" -> "331" 
+  "331" -> "332" 
+  "331" -> "333" 
+  "334" -> "335" 
+  "334" -> "338" 
+  "335" -> "336" 
+  "335" -> "337" 
+  "338" -> "339" 
+  "339" -> "340" 
+  "339" -> "343" 
+  "340" -> "341" 
+  "340" -> "342" 
+  "344" -> "345" 
+  "344" -> "346" 
+  "346" -> "21" 
+  "346" -> "347" 
+  "348" -> "349" 
+  "349" -> "350" 
+  "351" -> "352" 
+  "351" -> "354" 
+  "352" -> "353" 
+  "354" -> "355" 
+}

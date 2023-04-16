@@ -1,0 +1,95 @@
+digraph "run" {  
+"58" [label = <(METHOD,run)<SUB>52</SUB>> ]
+"7" [label = <(PARAM,this)<SUB>52</SUB>> ]
+"59" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>52</SUB>> ]
+"60" [label = <(CONTROL_STRUCTURE,while (isRunAllowed()),while (isRunAllowed()))<SUB>53</SUB>> ]
+"61" [label = <(isRunAllowed,isRunAllowed())<SUB>53</SUB>> ]
+"6" [label = <(IDENTIFIER,this,isRunAllowed())<SUB>53</SUB>> ]
+"62" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>53</SUB>> ]
+"63" [label = <(LOCAL,Exchange exchange: org.apache.camel.Exchange)> ]
+"64" [label = <(CONTROL_STRUCTURE,try,try)<SUB>55</SUB>> ]
+"65" [label = <(BLOCK,try,try)<SUB>55</SUB>> ]
+"66" [label = <(&lt;operator&gt;.assignment,exchange = poll(1000, TimeUnit.MILLISECONDS))<SUB>56</SUB>> ]
+"67" [label = <(IDENTIFIER,exchange,exchange = poll(1000, TimeUnit.MILLISECONDS))<SUB>56</SUB>> ]
+"68" [label = <(poll,poll(1000, TimeUnit.MILLISECONDS))<SUB>56</SUB>> ]
+"69" [label = <(getQueue,getQueue())<SUB>56</SUB>> ]
+"70" [label = <(&lt;operator&gt;.fieldAccess,this.endpoint)<SUB>56</SUB>> ]
+"71" [label = <(IDENTIFIER,this,getQueue())<SUB>56</SUB>> ]
+"72" [label = <(FIELD_IDENTIFIER,endpoint,endpoint)<SUB>56</SUB>> ]
+"73" [label = <(LITERAL,1000,poll(1000, TimeUnit.MILLISECONDS))<SUB>56</SUB>> ]
+"74" [label = <(&lt;operator&gt;.fieldAccess,TimeUnit.MILLISECONDS)<SUB>56</SUB>> ]
+"75" [label = <(IDENTIFIER,TimeUnit,poll(1000, TimeUnit.MILLISECONDS))<SUB>56</SUB>> ]
+"76" [label = <(FIELD_IDENTIFIER,MILLISECONDS,MILLISECONDS)<SUB>56</SUB>> ]
+"77" [label = <(BLOCK,catch,catch)> ]
+"78" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>57</SUB>> ]
+"79" [label = <(CONTROL_STRUCTURE,break;,break;)<SUB>58</SUB>> ]
+"80" [label = <(CONTROL_STRUCTURE,if (exchange != null &amp;&amp; isRunAllowed()),if (exchange != null &amp;&amp; isRunAllowed()))<SUB>60</SUB>> ]
+"81" [label = <(&lt;operator&gt;.logicalAnd,exchange != null &amp;&amp; isRunAllowed())<SUB>60</SUB>> ]
+"82" [label = <(&lt;operator&gt;.notEquals,exchange != null)<SUB>60</SUB>> ]
+"83" [label = <(IDENTIFIER,exchange,exchange != null)<SUB>60</SUB>> ]
+"84" [label = <(LITERAL,null,exchange != null)<SUB>60</SUB>> ]
+"85" [label = <(isRunAllowed,isRunAllowed())<SUB>60</SUB>> ]
+"8" [label = <(IDENTIFIER,this,isRunAllowed())<SUB>60</SUB>> ]
+"86" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>60</SUB>> ]
+"87" [label = <(process,process(exchange, new AsyncCallback() {\012\012    public void done(boolean sync) {\012    }\012}))<SUB>61</SUB>> ]
+"88" [label = <(&lt;operator&gt;.fieldAccess,this.processor)<SUB>61</SUB>> ]
+"89" [label = <(IDENTIFIER,this,process(exchange, new AsyncCallback() {\012\012    public void done(boolean sync) {\012    }\012}))<SUB>61</SUB>> ]
+"90" [label = <(FIELD_IDENTIFIER,processor,processor)<SUB>61</SUB>> ]
+"91" [label = <(IDENTIFIER,exchange,process(exchange, new AsyncCallback() {\012\012    public void done(boolean sync) {\012    }\012}))<SUB>61</SUB>> ]
+"92" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>61</SUB>> ]
+"93" [label = <(&lt;operator&gt;.assignment,&lt;empty&gt;)> ]
+"94" [label = <(IDENTIFIER,$obj0,&lt;empty&gt;)> ]
+"95" [label = <(&lt;operator&gt;.alloc,new AsyncCallback() {\012\012    public void done(boolean sync) {\012    }\012})<SUB>61</SUB>> ]
+"96" [label = <(&lt;init&gt;,new AsyncCallback() {\012\012    public void done(boolean sync) {\012    }\012})<SUB>61</SUB>> ]
+"97" [label = <(IDENTIFIER,$obj0,new AsyncCallback() {\012\012    public void done(boolean sync) {\012    }\012})> ]
+"98" [label = <(IDENTIFIER,$obj0,&lt;empty&gt;)> ]
+"99" [label = <(MODIFIER,PUBLIC)> ]
+"100" [label = <(MODIFIER,VIRTUAL)> ]
+"101" [label = <(METHOD_RETURN,void)<SUB>52</SUB>> ]
+  "58" -> "7" 
+  "58" -> "59" 
+  "58" -> "99" 
+  "58" -> "100" 
+  "58" -> "101" 
+  "59" -> "60" 
+  "60" -> "61" 
+  "60" -> "62" 
+  "61" -> "6" 
+  "62" -> "63" 
+  "62" -> "64" 
+  "62" -> "80" 
+  "64" -> "65" 
+  "64" -> "77" 
+  "65" -> "66" 
+  "66" -> "67" 
+  "66" -> "68" 
+  "68" -> "69" 
+  "68" -> "73" 
+  "68" -> "74" 
+  "69" -> "70" 
+  "70" -> "71" 
+  "70" -> "72" 
+  "74" -> "75" 
+  "74" -> "76" 
+  "77" -> "78" 
+  "78" -> "79" 
+  "80" -> "81" 
+  "80" -> "86" 
+  "81" -> "82" 
+  "81" -> "85" 
+  "82" -> "83" 
+  "82" -> "84" 
+  "85" -> "8" 
+  "86" -> "87" 
+  "87" -> "88" 
+  "87" -> "91" 
+  "87" -> "92" 
+  "88" -> "89" 
+  "88" -> "90" 
+  "92" -> "93" 
+  "92" -> "96" 
+  "92" -> "98" 
+  "93" -> "94" 
+  "93" -> "95" 
+  "96" -> "97" 
+}

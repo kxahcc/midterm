@@ -1,0 +1,169 @@
+digraph "waitForCompleteLatch" {  
+"1701" [label = <(METHOD,waitForCompleteLatch)<SUB>693</SUB>> ]
+"118" [label = <(PARAM,this)<SUB>693</SUB>> ]
+"1702" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>693</SUB>> ]
+"1703" [label = <(CONTROL_STRUCTURE,if (latch == null),if (latch == null))<SUB>694</SUB>> ]
+"1704" [label = <(&lt;operator&gt;.equals,latch == null)<SUB>694</SUB>> ]
+"1705" [label = <(&lt;operator&gt;.fieldAccess,this.latch)<SUB>694</SUB>> ]
+"1706" [label = <(IDENTIFIER,this,latch == null)<SUB>694</SUB>> ]
+"1707" [label = <(FIELD_IDENTIFIER,latch,latch)<SUB>694</SUB>> ]
+"1708" [label = <(LITERAL,null,latch == null)<SUB>694</SUB>> ]
+"1709" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>694</SUB>> ]
+"1710" [label = <(fail,this.fail(&quot;Should have a latch!&quot;))<SUB>695</SUB>> ]
+"117" [label = <(IDENTIFIER,this,this.fail(&quot;Should have a latch!&quot;))<SUB>695</SUB>> ]
+"1711" [label = <(LITERAL,&quot;Should have a latch!&quot;,this.fail(&quot;Should have a latch!&quot;))<SUB>695</SUB>> ]
+"1712" [label = <(debug,debug(&quot;Waiting on the latch for: &quot; + resultWaitTime + &quot; millis&quot;))<SUB>699</SUB>> ]
+"1713" [label = <(&lt;operator&gt;.fieldAccess,MockEndpoint.LOG)<SUB>699</SUB>> ]
+"1714" [label = <(IDENTIFIER,MockEndpoint,debug(&quot;Waiting on the latch for: &quot; + resultWaitTime + &quot; millis&quot;))<SUB>699</SUB>> ]
+"1715" [label = <(FIELD_IDENTIFIER,LOG,LOG)<SUB>699</SUB>> ]
+"1716" [label = <(&lt;operator&gt;.addition,&quot;Waiting on the latch for: &quot; + resultWaitTime + &quot; millis&quot;)<SUB>699</SUB>> ]
+"1717" [label = <(&lt;operator&gt;.addition,&quot;Waiting on the latch for: &quot; + resultWaitTime)<SUB>699</SUB>> ]
+"1718" [label = <(LITERAL,&quot;Waiting on the latch for: &quot;,&quot;Waiting on the latch for: &quot; + resultWaitTime)<SUB>699</SUB>> ]
+"1719" [label = <(&lt;operator&gt;.fieldAccess,this.resultWaitTime)<SUB>699</SUB>> ]
+"1720" [label = <(IDENTIFIER,this,&quot;Waiting on the latch for: &quot; + resultWaitTime)<SUB>699</SUB>> ]
+"1721" [label = <(FIELD_IDENTIFIER,resultWaitTime,resultWaitTime)<SUB>699</SUB>> ]
+"1722" [label = <(LITERAL,&quot; millis&quot;,&quot;Waiting on the latch for: &quot; + resultWaitTime + &quot; millis&quot;)<SUB>699</SUB>> ]
+"1723" [label = <(LOCAL,long start: long)> ]
+"1724" [label = <(&lt;operator&gt;.assignment,long start = System.currentTimeMillis())<SUB>700</SUB>> ]
+"1725" [label = <(IDENTIFIER,start,long start = System.currentTimeMillis())<SUB>700</SUB>> ]
+"1726" [label = <(currentTimeMillis,System.currentTimeMillis())<SUB>700</SUB>> ]
+"1727" [label = <(IDENTIFIER,System,System.currentTimeMillis())<SUB>700</SUB>> ]
+"1728" [label = <(await,latch.await(resultWaitTime, TimeUnit.MILLISECONDS))<SUB>701</SUB>> ]
+"1729" [label = <(&lt;operator&gt;.fieldAccess,this.latch)<SUB>701</SUB>> ]
+"1730" [label = <(IDENTIFIER,this,latch.await(resultWaitTime, TimeUnit.MILLISECONDS))<SUB>701</SUB>> ]
+"1731" [label = <(FIELD_IDENTIFIER,latch,latch)<SUB>701</SUB>> ]
+"1732" [label = <(&lt;operator&gt;.fieldAccess,this.resultWaitTime)<SUB>701</SUB>> ]
+"1733" [label = <(IDENTIFIER,this,latch.await(resultWaitTime, TimeUnit.MILLISECONDS))<SUB>701</SUB>> ]
+"1734" [label = <(FIELD_IDENTIFIER,resultWaitTime,resultWaitTime)<SUB>701</SUB>> ]
+"1735" [label = <(&lt;operator&gt;.fieldAccess,TimeUnit.MILLISECONDS)<SUB>701</SUB>> ]
+"1736" [label = <(IDENTIFIER,TimeUnit,latch.await(resultWaitTime, TimeUnit.MILLISECONDS))<SUB>701</SUB>> ]
+"1737" [label = <(FIELD_IDENTIFIER,MILLISECONDS,MILLISECONDS)<SUB>701</SUB>> ]
+"1738" [label = <(LOCAL,long delta: long)> ]
+"1739" [label = <(&lt;operator&gt;.assignment,long delta = System.currentTimeMillis() - start)<SUB>702</SUB>> ]
+"1740" [label = <(IDENTIFIER,delta,long delta = System.currentTimeMillis() - start)<SUB>702</SUB>> ]
+"1741" [label = <(&lt;operator&gt;.subtraction,System.currentTimeMillis() - start)<SUB>702</SUB>> ]
+"1742" [label = <(currentTimeMillis,System.currentTimeMillis())<SUB>702</SUB>> ]
+"1743" [label = <(IDENTIFIER,System,System.currentTimeMillis())<SUB>702</SUB>> ]
+"1744" [label = <(IDENTIFIER,start,System.currentTimeMillis() - start)<SUB>702</SUB>> ]
+"1745" [label = <(debug,debug(&quot;Took &quot; + delta + &quot; millis to complete latch&quot;))<SUB>703</SUB>> ]
+"1746" [label = <(&lt;operator&gt;.fieldAccess,MockEndpoint.LOG)<SUB>703</SUB>> ]
+"1747" [label = <(IDENTIFIER,MockEndpoint,debug(&quot;Took &quot; + delta + &quot; millis to complete latch&quot;))<SUB>703</SUB>> ]
+"1748" [label = <(FIELD_IDENTIFIER,LOG,LOG)<SUB>703</SUB>> ]
+"1749" [label = <(&lt;operator&gt;.addition,&quot;Took &quot; + delta + &quot; millis to complete latch&quot;)<SUB>703</SUB>> ]
+"1750" [label = <(&lt;operator&gt;.addition,&quot;Took &quot; + delta)<SUB>703</SUB>> ]
+"1751" [label = <(LITERAL,&quot;Took &quot;,&quot;Took &quot; + delta)<SUB>703</SUB>> ]
+"1752" [label = <(IDENTIFIER,delta,&quot;Took &quot; + delta)<SUB>703</SUB>> ]
+"1753" [label = <(LITERAL,&quot; millis to complete latch&quot;,&quot;Took &quot; + delta + &quot; millis to complete latch&quot;)<SUB>703</SUB>> ]
+"1754" [label = <(CONTROL_STRUCTURE,if (resultMinimumWaitTime &gt; 0 &amp;&amp; delta &lt; resultMinimumWaitTime),if (resultMinimumWaitTime &gt; 0 &amp;&amp; delta &lt; resultMinimumWaitTime))<SUB>705</SUB>> ]
+"1755" [label = <(&lt;operator&gt;.logicalAnd,resultMinimumWaitTime &gt; 0 &amp;&amp; delta &lt; resultMinimumWaitTime)<SUB>705</SUB>> ]
+"1756" [label = <(&lt;operator&gt;.greaterThan,resultMinimumWaitTime &gt; 0)<SUB>705</SUB>> ]
+"1757" [label = <(&lt;operator&gt;.fieldAccess,this.resultMinimumWaitTime)<SUB>705</SUB>> ]
+"1758" [label = <(IDENTIFIER,this,resultMinimumWaitTime &gt; 0)<SUB>705</SUB>> ]
+"1759" [label = <(FIELD_IDENTIFIER,resultMinimumWaitTime,resultMinimumWaitTime)<SUB>705</SUB>> ]
+"1760" [label = <(LITERAL,0,resultMinimumWaitTime &gt; 0)<SUB>705</SUB>> ]
+"1761" [label = <(&lt;operator&gt;.lessThan,delta &lt; resultMinimumWaitTime)<SUB>705</SUB>> ]
+"1762" [label = <(IDENTIFIER,delta,delta &lt; resultMinimumWaitTime)<SUB>705</SUB>> ]
+"1763" [label = <(&lt;operator&gt;.fieldAccess,this.resultMinimumWaitTime)<SUB>705</SUB>> ]
+"1764" [label = <(IDENTIFIER,this,delta &lt; resultMinimumWaitTime)<SUB>705</SUB>> ]
+"1765" [label = <(FIELD_IDENTIFIER,resultMinimumWaitTime,resultMinimumWaitTime)<SUB>705</SUB>> ]
+"1766" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>705</SUB>> ]
+"1767" [label = <(fail,this.fail(&quot;Expected minimum &quot; + resultWaitTime + &quot; millis waiting on the result, but was faster with &quot; + delta + &quot; millis.&quot;))<SUB>706</SUB>> ]
+"119" [label = <(IDENTIFIER,this,this.fail(&quot;Expected minimum &quot; + resultWaitTime + &quot; millis waiting on the result, but was faster with &quot; + delta + &quot; millis.&quot;))<SUB>706</SUB>> ]
+"1768" [label = <(&lt;operator&gt;.addition,&quot;Expected minimum &quot; + resultWaitTime + &quot; millis waiting on the result, but was faster with &quot; + delta + &quot; millis.&quot;)<SUB>706</SUB>> ]
+"1769" [label = <(&lt;operator&gt;.addition,&quot;Expected minimum &quot; + resultWaitTime + &quot; millis waiting on the result, but was faster with &quot; + delta)<SUB>706</SUB>> ]
+"1770" [label = <(&lt;operator&gt;.addition,&quot;Expected minimum &quot; + resultWaitTime + &quot; millis waiting on the result, but was faster with &quot;)<SUB>706</SUB>> ]
+"1771" [label = <(&lt;operator&gt;.addition,&quot;Expected minimum &quot; + resultWaitTime)<SUB>706</SUB>> ]
+"1772" [label = <(LITERAL,&quot;Expected minimum &quot;,&quot;Expected minimum &quot; + resultWaitTime)<SUB>706</SUB>> ]
+"1773" [label = <(&lt;operator&gt;.fieldAccess,this.resultWaitTime)<SUB>706</SUB>> ]
+"1774" [label = <(IDENTIFIER,this,&quot;Expected minimum &quot; + resultWaitTime)<SUB>706</SUB>> ]
+"1775" [label = <(FIELD_IDENTIFIER,resultWaitTime,resultWaitTime)<SUB>706</SUB>> ]
+"1776" [label = <(LITERAL,&quot; millis waiting on the result, but was faster with &quot;,&quot;Expected minimum &quot; + resultWaitTime + &quot; millis waiting on the result, but was faster with &quot;)<SUB>707</SUB>> ]
+"1777" [label = <(IDENTIFIER,delta,&quot;Expected minimum &quot; + resultWaitTime + &quot; millis waiting on the result, but was faster with &quot; + delta)<SUB>707</SUB>> ]
+"1778" [label = <(LITERAL,&quot; millis.&quot;,&quot;Expected minimum &quot; + resultWaitTime + &quot; millis waiting on the result, but was faster with &quot; + delta + &quot; millis.&quot;)<SUB>707</SUB>> ]
+"1779" [label = <(MODIFIER,PROTECTED)> ]
+"1780" [label = <(MODIFIER,VIRTUAL)> ]
+"1781" [label = <(METHOD_RETURN,void)<SUB>693</SUB>> ]
+  "1701" -> "118" 
+  "1701" -> "1702" 
+  "1701" -> "1779" 
+  "1701" -> "1780" 
+  "1701" -> "1781" 
+  "1702" -> "1703" 
+  "1702" -> "1712" 
+  "1702" -> "1723" 
+  "1702" -> "1724" 
+  "1702" -> "1728" 
+  "1702" -> "1738" 
+  "1702" -> "1739" 
+  "1702" -> "1745" 
+  "1702" -> "1754" 
+  "1703" -> "1704" 
+  "1703" -> "1709" 
+  "1704" -> "1705" 
+  "1704" -> "1708" 
+  "1705" -> "1706" 
+  "1705" -> "1707" 
+  "1709" -> "1710" 
+  "1710" -> "117" 
+  "1710" -> "1711" 
+  "1712" -> "1713" 
+  "1712" -> "1716" 
+  "1713" -> "1714" 
+  "1713" -> "1715" 
+  "1716" -> "1717" 
+  "1716" -> "1722" 
+  "1717" -> "1718" 
+  "1717" -> "1719" 
+  "1719" -> "1720" 
+  "1719" -> "1721" 
+  "1724" -> "1725" 
+  "1724" -> "1726" 
+  "1726" -> "1727" 
+  "1728" -> "1729" 
+  "1728" -> "1732" 
+  "1728" -> "1735" 
+  "1729" -> "1730" 
+  "1729" -> "1731" 
+  "1732" -> "1733" 
+  "1732" -> "1734" 
+  "1735" -> "1736" 
+  "1735" -> "1737" 
+  "1739" -> "1740" 
+  "1739" -> "1741" 
+  "1741" -> "1742" 
+  "1741" -> "1744" 
+  "1742" -> "1743" 
+  "1745" -> "1746" 
+  "1745" -> "1749" 
+  "1746" -> "1747" 
+  "1746" -> "1748" 
+  "1749" -> "1750" 
+  "1749" -> "1753" 
+  "1750" -> "1751" 
+  "1750" -> "1752" 
+  "1754" -> "1755" 
+  "1754" -> "1766" 
+  "1755" -> "1756" 
+  "1755" -> "1761" 
+  "1756" -> "1757" 
+  "1756" -> "1760" 
+  "1757" -> "1758" 
+  "1757" -> "1759" 
+  "1761" -> "1762" 
+  "1761" -> "1763" 
+  "1763" -> "1764" 
+  "1763" -> "1765" 
+  "1766" -> "1767" 
+  "1767" -> "119" 
+  "1767" -> "1768" 
+  "1768" -> "1769" 
+  "1768" -> "1778" 
+  "1769" -> "1770" 
+  "1769" -> "1777" 
+  "1770" -> "1771" 
+  "1770" -> "1776" 
+  "1771" -> "1772" 
+  "1771" -> "1773" 
+  "1773" -> "1774" 
+  "1773" -> "1775" 
+}

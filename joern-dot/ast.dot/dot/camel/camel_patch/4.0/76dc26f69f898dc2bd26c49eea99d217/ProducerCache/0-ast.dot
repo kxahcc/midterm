@@ -1,0 +1,107 @@
+digraph "getProducer" {  
+"30" [label = <(METHOD,getProducer)<SUB>45</SUB>> ]
+"31" [label = <(PARAM,this)<SUB>45</SUB>> ]
+"32" [label = <(PARAM,Endpoint&lt;E&gt; endpoint)<SUB>45</SUB>> ]
+"33" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>45</SUB>> ]
+"34" [label = <(LOCAL,String key: java.lang.String)> ]
+"35" [label = <(&lt;operator&gt;.assignment,String key = getEndpointUri())<SUB>46</SUB>> ]
+"36" [label = <(IDENTIFIER,key,String key = getEndpointUri())<SUB>46</SUB>> ]
+"37" [label = <(getEndpointUri,getEndpointUri())<SUB>46</SUB>> ]
+"38" [label = <(IDENTIFIER,endpoint,getEndpointUri())<SUB>46</SUB>> ]
+"39" [label = <(LOCAL,Producer&lt;E&gt; answer: ANY)> ]
+"40" [label = <(&lt;operator&gt;.assignment,ANY answer = get(key))<SUB>47</SUB>> ]
+"41" [label = <(IDENTIFIER,answer,ANY answer = get(key))<SUB>47</SUB>> ]
+"42" [label = <(get,get(key))<SUB>47</SUB>> ]
+"43" [label = <(&lt;operator&gt;.fieldAccess,this.producers)<SUB>47</SUB>> ]
+"44" [label = <(IDENTIFIER,this,get(key))<SUB>47</SUB>> ]
+"45" [label = <(FIELD_IDENTIFIER,producers,producers)<SUB>47</SUB>> ]
+"46" [label = <(IDENTIFIER,key,get(key))<SUB>47</SUB>> ]
+"47" [label = <(CONTROL_STRUCTURE,if (answer == null),if (answer == null))<SUB>48</SUB>> ]
+"48" [label = <(&lt;operator&gt;.equals,answer == null)<SUB>48</SUB>> ]
+"49" [label = <(IDENTIFIER,answer,answer == null)<SUB>48</SUB>> ]
+"50" [label = <(LITERAL,null,answer == null)<SUB>48</SUB>> ]
+"51" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>48</SUB>> ]
+"52" [label = <(CONTROL_STRUCTURE,try,try)<SUB>49</SUB>> ]
+"53" [label = <(BLOCK,try,try)<SUB>49</SUB>> ]
+"54" [label = <(&lt;operator&gt;.assignment,answer = createProducer())<SUB>50</SUB>> ]
+"55" [label = <(IDENTIFIER,answer,answer = createProducer())<SUB>50</SUB>> ]
+"56" [label = <(createProducer,createProducer())<SUB>50</SUB>> ]
+"57" [label = <(IDENTIFIER,endpoint,createProducer())<SUB>50</SUB>> ]
+"58" [label = <(start,start())<SUB>51</SUB>> ]
+"59" [label = <(IDENTIFIER,answer,start())<SUB>51</SUB>> ]
+"60" [label = <(BLOCK,catch,catch)> ]
+"61" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>52</SUB>> ]
+"62" [label = <(&lt;operator&gt;.throw,throw new FailedToCreateProducerException(endpoint, e);)<SUB>53</SUB>> ]
+"63" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>53</SUB>> ]
+"64" [label = <(&lt;operator&gt;.assignment,&lt;empty&gt;)> ]
+"65" [label = <(IDENTIFIER,$obj1,&lt;empty&gt;)> ]
+"66" [label = <(&lt;operator&gt;.alloc,new FailedToCreateProducerException(endpoint, e))<SUB>53</SUB>> ]
+"67" [label = <(&lt;init&gt;,new FailedToCreateProducerException(endpoint, e))<SUB>53</SUB>> ]
+"68" [label = <(IDENTIFIER,$obj1,new FailedToCreateProducerException(endpoint, e))> ]
+"69" [label = <(IDENTIFIER,endpoint,new FailedToCreateProducerException(endpoint, e))<SUB>53</SUB>> ]
+"70" [label = <(IDENTIFIER,e,new FailedToCreateProducerException(endpoint, e))<SUB>53</SUB>> ]
+"71" [label = <(IDENTIFIER,$obj1,&lt;empty&gt;)> ]
+"72" [label = <(put,put(key, answer))<SUB>55</SUB>> ]
+"73" [label = <(&lt;operator&gt;.fieldAccess,this.producers)<SUB>55</SUB>> ]
+"74" [label = <(IDENTIFIER,this,put(key, answer))<SUB>55</SUB>> ]
+"75" [label = <(FIELD_IDENTIFIER,producers,producers)<SUB>55</SUB>> ]
+"76" [label = <(IDENTIFIER,key,put(key, answer))<SUB>55</SUB>> ]
+"77" [label = <(IDENTIFIER,answer,put(key, answer))<SUB>55</SUB>> ]
+"78" [label = <(RETURN,return answer;,return answer;)<SUB>57</SUB>> ]
+"79" [label = <(IDENTIFIER,answer,return answer;)<SUB>57</SUB>> ]
+"80" [label = <(MODIFIER,PUBLIC)> ]
+"81" [label = <(MODIFIER,VIRTUAL)> ]
+"82" [label = <(METHOD_RETURN,ANY)<SUB>45</SUB>> ]
+  "30" -> "31" 
+  "30" -> "32" 
+  "30" -> "33" 
+  "30" -> "80" 
+  "30" -> "81" 
+  "30" -> "82" 
+  "33" -> "34" 
+  "33" -> "35" 
+  "33" -> "39" 
+  "33" -> "40" 
+  "33" -> "47" 
+  "33" -> "78" 
+  "35" -> "36" 
+  "35" -> "37" 
+  "37" -> "38" 
+  "40" -> "41" 
+  "40" -> "42" 
+  "42" -> "43" 
+  "42" -> "46" 
+  "43" -> "44" 
+  "43" -> "45" 
+  "47" -> "48" 
+  "47" -> "51" 
+  "48" -> "49" 
+  "48" -> "50" 
+  "51" -> "52" 
+  "51" -> "72" 
+  "52" -> "53" 
+  "52" -> "60" 
+  "53" -> "54" 
+  "53" -> "58" 
+  "54" -> "55" 
+  "54" -> "56" 
+  "56" -> "57" 
+  "58" -> "59" 
+  "60" -> "61" 
+  "61" -> "62" 
+  "62" -> "63" 
+  "63" -> "64" 
+  "63" -> "67" 
+  "63" -> "71" 
+  "64" -> "65" 
+  "64" -> "66" 
+  "67" -> "68" 
+  "67" -> "69" 
+  "67" -> "70" 
+  "72" -> "73" 
+  "72" -> "76" 
+  "72" -> "77" 
+  "73" -> "74" 
+  "73" -> "75" 
+  "78" -> "79" 
+}

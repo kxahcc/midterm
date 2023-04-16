@@ -1,0 +1,129 @@
+digraph "addDirContents" {  
+"529" [label = <(METHOD,addDirContents)<SUB>280</SUB>> ]
+"31" [label = <(PARAM,this)<SUB>280</SUB>> ]
+"530" [label = <(PARAM,ZipOutputStream output)<SUB>280</SUB>> ]
+"531" [label = <(PARAM,File dir)<SUB>280</SUB>> ]
+"532" [label = <(PARAM,String prefix)<SUB>280</SUB>> ]
+"533" [label = <(PARAM,boolean compress)<SUB>281</SUB>> ]
+"534" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>281</SUB>> ]
+"535" [label = <(LOCAL,String[] contents: java.lang.String[])> ]
+"536" [label = <(&lt;operator&gt;.assignment,String[] contents = dir.list())<SUB>282</SUB>> ]
+"537" [label = <(IDENTIFIER,contents,String[] contents = dir.list())<SUB>282</SUB>> ]
+"538" [label = <(list,dir.list())<SUB>282</SUB>> ]
+"539" [label = <(IDENTIFIER,dir,dir.list())<SUB>282</SUB>> ]
+"540" [label = <(CONTROL_STRUCTURE,for (int i = 0; Some(i &lt; contents.length); ++i),for (int i = 0; Some(i &lt; contents.length); ++i))<SUB>284</SUB>> ]
+"541" [label = <(LOCAL,int i: int)> ]
+"542" [label = <(&lt;operator&gt;.assignment,int i = 0)<SUB>284</SUB>> ]
+"543" [label = <(IDENTIFIER,i,int i = 0)<SUB>284</SUB>> ]
+"544" [label = <(LITERAL,0,int i = 0)<SUB>284</SUB>> ]
+"545" [label = <(&lt;operator&gt;.lessThan,i &lt; contents.length)<SUB>284</SUB>> ]
+"546" [label = <(IDENTIFIER,i,i &lt; contents.length)<SUB>284</SUB>> ]
+"547" [label = <(&lt;operator&gt;.fieldAccess,contents.length)<SUB>284</SUB>> ]
+"548" [label = <(IDENTIFIER,contents,i &lt; contents.length)<SUB>284</SUB>> ]
+"549" [label = <(FIELD_IDENTIFIER,length,length)<SUB>284</SUB>> ]
+"550" [label = <(&lt;operator&gt;.preIncrement,++i)<SUB>284</SUB>> ]
+"551" [label = <(IDENTIFIER,i,++i)<SUB>284</SUB>> ]
+"552" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>284</SUB>> ]
+"553" [label = <(LOCAL,String name: java.lang.String)> ]
+"554" [label = <(&lt;operator&gt;.assignment,String name = contents[i])<SUB>285</SUB>> ]
+"555" [label = <(IDENTIFIER,name,String name = contents[i])<SUB>285</SUB>> ]
+"556" [label = <(&lt;operator&gt;.indexAccess,contents[i])<SUB>285</SUB>> ]
+"557" [label = <(IDENTIFIER,contents,String name = contents[i])<SUB>285</SUB>> ]
+"558" [label = <(IDENTIFIER,i,String name = contents[i])<SUB>285</SUB>> ]
+"29" [label = <(LOCAL,File file: java.io.File)> ]
+"559" [label = <(&lt;operator&gt;.assignment,File file = new File(dir, name))<SUB>286</SUB>> ]
+"560" [label = <(IDENTIFIER,file,File file = new File(dir, name))<SUB>286</SUB>> ]
+"561" [label = <(&lt;operator&gt;.alloc,new File(dir, name))<SUB>286</SUB>> ]
+"562" [label = <(&lt;init&gt;,new File(dir, name))<SUB>286</SUB>> ]
+"28" [label = <(IDENTIFIER,file,new File(dir, name))<SUB>286</SUB>> ]
+"563" [label = <(IDENTIFIER,dir,new File(dir, name))<SUB>286</SUB>> ]
+"564" [label = <(IDENTIFIER,name,new File(dir, name))<SUB>286</SUB>> ]
+"565" [label = <(CONTROL_STRUCTURE,if (file.isDirectory()),if (file.isDirectory()))<SUB>288</SUB>> ]
+"566" [label = <(isDirectory,file.isDirectory())<SUB>288</SUB>> ]
+"567" [label = <(IDENTIFIER,file,file.isDirectory())<SUB>288</SUB>> ]
+"568" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>288</SUB>> ]
+"569" [label = <(addDirContents,this.addDirContents(output, file, prefix + name + '/', compress))<SUB>289</SUB>> ]
+"30" [label = <(IDENTIFIER,this,this.addDirContents(output, file, prefix + name + '/', compress))<SUB>289</SUB>> ]
+"570" [label = <(IDENTIFIER,output,this.addDirContents(output, file, prefix + name + '/', compress))<SUB>289</SUB>> ]
+"571" [label = <(IDENTIFIER,file,this.addDirContents(output, file, prefix + name + '/', compress))<SUB>289</SUB>> ]
+"572" [label = <(&lt;operator&gt;.addition,prefix + name + '/')<SUB>289</SUB>> ]
+"573" [label = <(&lt;operator&gt;.addition,prefix + name)<SUB>289</SUB>> ]
+"574" [label = <(IDENTIFIER,prefix,prefix + name)<SUB>289</SUB>> ]
+"575" [label = <(IDENTIFIER,name,prefix + name)<SUB>289</SUB>> ]
+"576" [label = <(LITERAL,'/',prefix + name + '/')<SUB>289</SUB>> ]
+"577" [label = <(IDENTIFIER,compress,this.addDirContents(output, file, prefix + name + '/', compress))<SUB>289</SUB>> ]
+"578" [label = <(CONTROL_STRUCTURE,else,else)<SUB>290</SUB>> ]
+"579" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>290</SUB>> ]
+"580" [label = <(addFile,this.addFile(output, file, prefix, compress))<SUB>291</SUB>> ]
+"32" [label = <(IDENTIFIER,this,this.addFile(output, file, prefix, compress))<SUB>291</SUB>> ]
+"581" [label = <(IDENTIFIER,output,this.addFile(output, file, prefix, compress))<SUB>291</SUB>> ]
+"582" [label = <(IDENTIFIER,file,this.addFile(output, file, prefix, compress))<SUB>291</SUB>> ]
+"583" [label = <(IDENTIFIER,prefix,this.addFile(output, file, prefix, compress))<SUB>291</SUB>> ]
+"584" [label = <(IDENTIFIER,compress,this.addFile(output, file, prefix, compress))<SUB>291</SUB>> ]
+"585" [label = <(MODIFIER,PRIVATE)> ]
+"586" [label = <(MODIFIER,VIRTUAL)> ]
+"587" [label = <(METHOD_RETURN,void)<SUB>280</SUB>> ]
+  "529" -> "31" 
+  "529" -> "530" 
+  "529" -> "531" 
+  "529" -> "532" 
+  "529" -> "533" 
+  "529" -> "534" 
+  "529" -> "585" 
+  "529" -> "586" 
+  "529" -> "587" 
+  "534" -> "535" 
+  "534" -> "536" 
+  "534" -> "540" 
+  "536" -> "537" 
+  "536" -> "538" 
+  "538" -> "539" 
+  "540" -> "541" 
+  "540" -> "542" 
+  "540" -> "545" 
+  "540" -> "550" 
+  "540" -> "552" 
+  "542" -> "543" 
+  "542" -> "544" 
+  "545" -> "546" 
+  "545" -> "547" 
+  "547" -> "548" 
+  "547" -> "549" 
+  "550" -> "551" 
+  "552" -> "553" 
+  "552" -> "554" 
+  "552" -> "29" 
+  "552" -> "559" 
+  "552" -> "562" 
+  "552" -> "565" 
+  "554" -> "555" 
+  "554" -> "556" 
+  "556" -> "557" 
+  "556" -> "558" 
+  "559" -> "560" 
+  "559" -> "561" 
+  "562" -> "28" 
+  "562" -> "563" 
+  "562" -> "564" 
+  "565" -> "566" 
+  "565" -> "568" 
+  "565" -> "578" 
+  "566" -> "567" 
+  "568" -> "569" 
+  "569" -> "30" 
+  "569" -> "570" 
+  "569" -> "571" 
+  "569" -> "572" 
+  "569" -> "577" 
+  "572" -> "573" 
+  "572" -> "576" 
+  "573" -> "574" 
+  "573" -> "575" 
+  "578" -> "579" 
+  "579" -> "580" 
+  "580" -> "32" 
+  "580" -> "581" 
+  "580" -> "582" 
+  "580" -> "583" 
+  "580" -> "584" 
+}

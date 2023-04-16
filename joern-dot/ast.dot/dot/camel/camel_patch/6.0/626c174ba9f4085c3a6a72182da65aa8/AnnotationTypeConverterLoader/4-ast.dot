@@ -1,0 +1,177 @@
+digraph "findPackages" {  
+"221" [label = <(METHOD,findPackages)<SUB>99</SUB>> ]
+"19" [label = <(PARAM,this)<SUB>99</SUB>> ]
+"222" [label = <(PARAM,Set&lt;String&gt; packages)<SUB>99</SUB>> ]
+"223" [label = <(PARAM,ClassLoader classLoader)<SUB>99</SUB>> ]
+"224" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>99</SUB>> ]
+"225" [label = <(LOCAL,Enumeration&lt;URL&gt; resources: java.util.Enumeration)> ]
+"226" [label = <(&lt;operator&gt;.assignment,Enumeration resources = classLoader.getResources(META_INF_SERVICES))<SUB>100</SUB>> ]
+"227" [label = <(IDENTIFIER,resources,Enumeration resources = classLoader.getResources(META_INF_SERVICES))<SUB>100</SUB>> ]
+"228" [label = <(getResources,classLoader.getResources(META_INF_SERVICES))<SUB>100</SUB>> ]
+"229" [label = <(IDENTIFIER,classLoader,classLoader.getResources(META_INF_SERVICES))<SUB>100</SUB>> ]
+"230" [label = <(&lt;operator&gt;.fieldAccess,AnnotationTypeConverterLoader.META_INF_SERVICES)<SUB>100</SUB>> ]
+"231" [label = <(IDENTIFIER,AnnotationTypeConverterLoader,classLoader.getResources(META_INF_SERVICES))<SUB>100</SUB>> ]
+"232" [label = <(FIELD_IDENTIFIER,META_INF_SERVICES,META_INF_SERVICES)<SUB>100</SUB>> ]
+"233" [label = <(CONTROL_STRUCTURE,while (resources.hasMoreElements()),while (resources.hasMoreElements()))<SUB>101</SUB>> ]
+"234" [label = <(hasMoreElements,resources.hasMoreElements())<SUB>101</SUB>> ]
+"235" [label = <(IDENTIFIER,resources,resources.hasMoreElements())<SUB>101</SUB>> ]
+"236" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>101</SUB>> ]
+"237" [label = <(LOCAL,URL url: java.net.URL)> ]
+"238" [label = <(&lt;operator&gt;.assignment,URL url = resources.nextElement())<SUB>102</SUB>> ]
+"239" [label = <(IDENTIFIER,url,URL url = resources.nextElement())<SUB>102</SUB>> ]
+"240" [label = <(nextElement,resources.nextElement())<SUB>102</SUB>> ]
+"241" [label = <(IDENTIFIER,resources,resources.nextElement())<SUB>102</SUB>> ]
+"242" [label = <(CONTROL_STRUCTURE,if (url != null),if (url != null))<SUB>103</SUB>> ]
+"243" [label = <(&lt;operator&gt;.notEquals,url != null)<SUB>103</SUB>> ]
+"244" [label = <(IDENTIFIER,url,url != null)<SUB>103</SUB>> ]
+"245" [label = <(LITERAL,null,url != null)<SUB>103</SUB>> ]
+"246" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>103</SUB>> ]
+"17" [label = <(LOCAL,BufferedReader reader: java.io.BufferedReader)> ]
+"247" [label = <(&lt;operator&gt;.assignment,BufferedReader reader = new BufferedReader(new InputStreamReader(url.openStream())))<SUB>104</SUB>> ]
+"248" [label = <(IDENTIFIER,reader,BufferedReader reader = new BufferedReader(new InputStreamReader(url.openStream())))<SUB>104</SUB>> ]
+"249" [label = <(&lt;operator&gt;.alloc,new BufferedReader(new InputStreamReader(url.openStream())))<SUB>104</SUB>> ]
+"250" [label = <(&lt;init&gt;,new BufferedReader(new InputStreamReader(url.openStream())))<SUB>104</SUB>> ]
+"16" [label = <(IDENTIFIER,reader,new BufferedReader(new InputStreamReader(url.openStream())))<SUB>104</SUB>> ]
+"251" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>104</SUB>> ]
+"252" [label = <(&lt;operator&gt;.assignment,&lt;empty&gt;)> ]
+"253" [label = <(IDENTIFIER,$obj4,&lt;empty&gt;)> ]
+"254" [label = <(&lt;operator&gt;.alloc,new InputStreamReader(url.openStream()))<SUB>104</SUB>> ]
+"255" [label = <(&lt;init&gt;,new InputStreamReader(url.openStream()))<SUB>104</SUB>> ]
+"256" [label = <(IDENTIFIER,$obj4,new InputStreamReader(url.openStream()))> ]
+"257" [label = <(openStream,url.openStream())<SUB>104</SUB>> ]
+"258" [label = <(IDENTIFIER,url,url.openStream())<SUB>104</SUB>> ]
+"259" [label = <(IDENTIFIER,$obj4,&lt;empty&gt;)> ]
+"260" [label = <(CONTROL_STRUCTURE,try,try)<SUB>105</SUB>> ]
+"261" [label = <(BLOCK,try,try)<SUB>105</SUB>> ]
+"262" [label = <(CONTROL_STRUCTURE,while (true),while (true))<SUB>106</SUB>> ]
+"263" [label = <(LITERAL,true,while (true))<SUB>106</SUB>> ]
+"264" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>106</SUB>> ]
+"265" [label = <(LOCAL,String line: java.lang.String)> ]
+"266" [label = <(&lt;operator&gt;.assignment,String line = reader.readLine())<SUB>107</SUB>> ]
+"267" [label = <(IDENTIFIER,line,String line = reader.readLine())<SUB>107</SUB>> ]
+"268" [label = <(readLine,reader.readLine())<SUB>107</SUB>> ]
+"269" [label = <(IDENTIFIER,reader,reader.readLine())<SUB>107</SUB>> ]
+"270" [label = <(CONTROL_STRUCTURE,if (line == null),if (line == null))<SUB>108</SUB>> ]
+"271" [label = <(&lt;operator&gt;.equals,line == null)<SUB>108</SUB>> ]
+"272" [label = <(IDENTIFIER,line,line == null)<SUB>108</SUB>> ]
+"273" [label = <(LITERAL,null,line == null)<SUB>108</SUB>> ]
+"274" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>108</SUB>> ]
+"275" [label = <(CONTROL_STRUCTURE,break;,break;)<SUB>109</SUB>> ]
+"276" [label = <(&lt;operator&gt;.assignment,line = line.trim())<SUB>111</SUB>> ]
+"277" [label = <(IDENTIFIER,line,line = line.trim())<SUB>111</SUB>> ]
+"278" [label = <(trim,line.trim())<SUB>111</SUB>> ]
+"279" [label = <(IDENTIFIER,line,line.trim())<SUB>111</SUB>> ]
+"280" [label = <(CONTROL_STRUCTURE,if (line.startsWith(&quot;#&quot;) || line.length() == 0),if (line.startsWith(&quot;#&quot;) || line.length() == 0))<SUB>112</SUB>> ]
+"281" [label = <(&lt;operator&gt;.logicalOr,line.startsWith(&quot;#&quot;) || line.length() == 0)<SUB>112</SUB>> ]
+"282" [label = <(startsWith,line.startsWith(&quot;#&quot;))<SUB>112</SUB>> ]
+"283" [label = <(IDENTIFIER,line,line.startsWith(&quot;#&quot;))<SUB>112</SUB>> ]
+"284" [label = <(LITERAL,&quot;#&quot;,line.startsWith(&quot;#&quot;))<SUB>112</SUB>> ]
+"285" [label = <(&lt;operator&gt;.equals,line.length() == 0)<SUB>112</SUB>> ]
+"286" [label = <(length,line.length())<SUB>112</SUB>> ]
+"287" [label = <(IDENTIFIER,line,line.length())<SUB>112</SUB>> ]
+"288" [label = <(LITERAL,0,line.length() == 0)<SUB>112</SUB>> ]
+"289" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>112</SUB>> ]
+"290" [label = <(CONTROL_STRUCTURE,continue;,continue;)<SUB>113</SUB>> ]
+"291" [label = <(tokenize,this.tokenize(packages, line))<SUB>115</SUB>> ]
+"18" [label = <(IDENTIFIER,this,this.tokenize(packages, line))<SUB>115</SUB>> ]
+"292" [label = <(IDENTIFIER,packages,this.tokenize(packages, line))<SUB>115</SUB>> ]
+"293" [label = <(IDENTIFIER,line,this.tokenize(packages, line))<SUB>115</SUB>> ]
+"294" [label = <(BLOCK,finally,finally)<SUB>117</SUB>> ]
+"295" [label = <(close,close(reader, null, LOG))<SUB>118</SUB>> ]
+"296" [label = <(IDENTIFIER,ObjectHelper,close(reader, null, LOG))<SUB>118</SUB>> ]
+"297" [label = <(IDENTIFIER,reader,close(reader, null, LOG))<SUB>118</SUB>> ]
+"298" [label = <(LITERAL,null,close(reader, null, LOG))<SUB>118</SUB>> ]
+"299" [label = <(&lt;operator&gt;.fieldAccess,AnnotationTypeConverterLoader.LOG)<SUB>118</SUB>> ]
+"300" [label = <(IDENTIFIER,AnnotationTypeConverterLoader,close(reader, null, LOG))<SUB>118</SUB>> ]
+"301" [label = <(FIELD_IDENTIFIER,LOG,LOG)<SUB>118</SUB>> ]
+"302" [label = <(MODIFIER,PROTECTED)> ]
+"303" [label = <(MODIFIER,VIRTUAL)> ]
+"304" [label = <(METHOD_RETURN,void)<SUB>99</SUB>> ]
+  "221" -> "19" 
+  "221" -> "222" 
+  "221" -> "223" 
+  "221" -> "224" 
+  "221" -> "302" 
+  "221" -> "303" 
+  "221" -> "304" 
+  "224" -> "225" 
+  "224" -> "226" 
+  "224" -> "233" 
+  "226" -> "227" 
+  "226" -> "228" 
+  "228" -> "229" 
+  "228" -> "230" 
+  "230" -> "231" 
+  "230" -> "232" 
+  "233" -> "234" 
+  "233" -> "236" 
+  "234" -> "235" 
+  "236" -> "237" 
+  "236" -> "238" 
+  "236" -> "242" 
+  "238" -> "239" 
+  "238" -> "240" 
+  "240" -> "241" 
+  "242" -> "243" 
+  "242" -> "246" 
+  "243" -> "244" 
+  "243" -> "245" 
+  "246" -> "17" 
+  "246" -> "247" 
+  "246" -> "250" 
+  "246" -> "260" 
+  "247" -> "248" 
+  "247" -> "249" 
+  "250" -> "16" 
+  "250" -> "251" 
+  "251" -> "252" 
+  "251" -> "255" 
+  "251" -> "259" 
+  "252" -> "253" 
+  "252" -> "254" 
+  "255" -> "256" 
+  "255" -> "257" 
+  "257" -> "258" 
+  "260" -> "261" 
+  "260" -> "294" 
+  "261" -> "262" 
+  "262" -> "263" 
+  "262" -> "264" 
+  "264" -> "265" 
+  "264" -> "266" 
+  "264" -> "270" 
+  "264" -> "276" 
+  "264" -> "280" 
+  "264" -> "291" 
+  "266" -> "267" 
+  "266" -> "268" 
+  "268" -> "269" 
+  "270" -> "271" 
+  "270" -> "274" 
+  "271" -> "272" 
+  "271" -> "273" 
+  "274" -> "275" 
+  "276" -> "277" 
+  "276" -> "278" 
+  "278" -> "279" 
+  "280" -> "281" 
+  "280" -> "289" 
+  "281" -> "282" 
+  "281" -> "285" 
+  "282" -> "283" 
+  "282" -> "284" 
+  "285" -> "286" 
+  "285" -> "288" 
+  "286" -> "287" 
+  "289" -> "290" 
+  "291" -> "18" 
+  "291" -> "292" 
+  "291" -> "293" 
+  "294" -> "295" 
+  "295" -> "296" 
+  "295" -> "297" 
+  "295" -> "298" 
+  "295" -> "299" 
+  "299" -> "300" 
+  "299" -> "301" 
+}

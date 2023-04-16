@@ -1,0 +1,169 @@
+digraph "removeEmptyDirectories" {  
+"406" [label = <(METHOD,removeEmptyDirectories)<SUB>252</SUB>> ]
+"27" [label = <(PARAM,this)<SUB>252</SUB>> ]
+"407" [label = <(PARAM,File dir)<SUB>252</SUB>> ]
+"408" [label = <(PARAM,boolean removeIfEmpty)<SUB>252</SUB>> ]
+"409" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>252</SUB>> ]
+"410" [label = <(LOCAL,int removedCount: int)> ]
+"411" [label = <(&lt;operator&gt;.assignment,int removedCount = 0)<SUB>253</SUB>> ]
+"412" [label = <(IDENTIFIER,removedCount,int removedCount = 0)<SUB>253</SUB>> ]
+"413" [label = <(LITERAL,0,int removedCount = 0)<SUB>253</SUB>> ]
+"414" [label = <(CONTROL_STRUCTURE,if (dir.isDirectory()),if (dir.isDirectory()))<SUB>254</SUB>> ]
+"415" [label = <(isDirectory,dir.isDirectory())<SUB>254</SUB>> ]
+"416" [label = <(IDENTIFIER,dir,dir.isDirectory())<SUB>254</SUB>> ]
+"417" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>254</SUB>> ]
+"418" [label = <(LOCAL,File[] children: java.io.File[])> ]
+"419" [label = <(&lt;operator&gt;.assignment,File[] children = dir.listFiles())<SUB>255</SUB>> ]
+"420" [label = <(IDENTIFIER,children,File[] children = dir.listFiles())<SUB>255</SUB>> ]
+"421" [label = <(listFiles,dir.listFiles())<SUB>255</SUB>> ]
+"422" [label = <(IDENTIFIER,dir,dir.listFiles())<SUB>255</SUB>> ]
+"423" [label = <(CONTROL_STRUCTURE,for (int i = 0; Some(i &lt; children.length); ++i),for (int i = 0; Some(i &lt; children.length); ++i))<SUB>256</SUB>> ]
+"424" [label = <(LOCAL,int i: int)> ]
+"425" [label = <(&lt;operator&gt;.assignment,int i = 0)<SUB>256</SUB>> ]
+"426" [label = <(IDENTIFIER,i,int i = 0)<SUB>256</SUB>> ]
+"427" [label = <(LITERAL,0,int i = 0)<SUB>256</SUB>> ]
+"428" [label = <(&lt;operator&gt;.lessThan,i &lt; children.length)<SUB>256</SUB>> ]
+"429" [label = <(IDENTIFIER,i,i &lt; children.length)<SUB>256</SUB>> ]
+"430" [label = <(&lt;operator&gt;.fieldAccess,children.length)<SUB>256</SUB>> ]
+"431" [label = <(IDENTIFIER,children,i &lt; children.length)<SUB>256</SUB>> ]
+"432" [label = <(FIELD_IDENTIFIER,length,length)<SUB>256</SUB>> ]
+"433" [label = <(&lt;operator&gt;.preIncrement,++i)<SUB>256</SUB>> ]
+"434" [label = <(IDENTIFIER,i,++i)<SUB>256</SUB>> ]
+"435" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>256</SUB>> ]
+"436" [label = <(LOCAL,File file: java.io.File)> ]
+"437" [label = <(&lt;operator&gt;.assignment,File file = children[i])<SUB>257</SUB>> ]
+"438" [label = <(IDENTIFIER,file,File file = children[i])<SUB>257</SUB>> ]
+"439" [label = <(&lt;operator&gt;.indexAccess,children[i])<SUB>257</SUB>> ]
+"440" [label = <(IDENTIFIER,children,File file = children[i])<SUB>257</SUB>> ]
+"441" [label = <(IDENTIFIER,i,File file = children[i])<SUB>257</SUB>> ]
+"442" [label = <(CONTROL_STRUCTURE,if (file.isDirectory()),if (file.isDirectory()))<SUB>259</SUB>> ]
+"443" [label = <(isDirectory,file.isDirectory())<SUB>259</SUB>> ]
+"444" [label = <(IDENTIFIER,file,file.isDirectory())<SUB>259</SUB>> ]
+"445" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>259</SUB>> ]
+"446" [label = <(&lt;operator&gt;.assignmentPlus,removedCount += this.removeEmptyDirectories(file, true))<SUB>260</SUB>> ]
+"447" [label = <(IDENTIFIER,removedCount,removedCount += this.removeEmptyDirectories(file, true))<SUB>260</SUB>> ]
+"448" [label = <(removeEmptyDirectories,this.removeEmptyDirectories(file, true))<SUB>260</SUB>> ]
+"26" [label = <(IDENTIFIER,this,this.removeEmptyDirectories(file, true))<SUB>260</SUB>> ]
+"449" [label = <(IDENTIFIER,file,this.removeEmptyDirectories(file, true))<SUB>260</SUB>> ]
+"450" [label = <(LITERAL,true,this.removeEmptyDirectories(file, true))<SUB>260</SUB>> ]
+"451" [label = <(CONTROL_STRUCTURE,if (children.length &gt; 0),if (children.length &gt; 0))<SUB>263</SUB>> ]
+"452" [label = <(&lt;operator&gt;.greaterThan,children.length &gt; 0)<SUB>263</SUB>> ]
+"453" [label = <(&lt;operator&gt;.fieldAccess,children.length)<SUB>263</SUB>> ]
+"454" [label = <(IDENTIFIER,children,children.length &gt; 0)<SUB>263</SUB>> ]
+"455" [label = <(FIELD_IDENTIFIER,length,length)<SUB>263</SUB>> ]
+"456" [label = <(LITERAL,0,children.length &gt; 0)<SUB>263</SUB>> ]
+"457" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>263</SUB>> ]
+"458" [label = <(&lt;operator&gt;.assignment,children = dir.listFiles())<SUB>266</SUB>> ]
+"459" [label = <(IDENTIFIER,children,children = dir.listFiles())<SUB>266</SUB>> ]
+"460" [label = <(listFiles,dir.listFiles())<SUB>266</SUB>> ]
+"461" [label = <(IDENTIFIER,dir,dir.listFiles())<SUB>266</SUB>> ]
+"462" [label = <(CONTROL_STRUCTURE,if (children.length &lt; 1 &amp;&amp; removeIfEmpty),if (children.length &lt; 1 &amp;&amp; removeIfEmpty))<SUB>268</SUB>> ]
+"463" [label = <(&lt;operator&gt;.logicalAnd,children.length &lt; 1 &amp;&amp; removeIfEmpty)<SUB>268</SUB>> ]
+"464" [label = <(&lt;operator&gt;.lessThan,children.length &lt; 1)<SUB>268</SUB>> ]
+"465" [label = <(&lt;operator&gt;.fieldAccess,children.length)<SUB>268</SUB>> ]
+"466" [label = <(IDENTIFIER,children,children.length &lt; 1)<SUB>268</SUB>> ]
+"467" [label = <(FIELD_IDENTIFIER,length,length)<SUB>268</SUB>> ]
+"468" [label = <(LITERAL,1,children.length &lt; 1)<SUB>268</SUB>> ]
+"469" [label = <(IDENTIFIER,removeIfEmpty,children.length &lt; 1 &amp;&amp; removeIfEmpty)<SUB>268</SUB>> ]
+"470" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>268</SUB>> ]
+"471" [label = <(log,log(&quot;Removing empty directory: &quot; + dir, Project.MSG_DEBUG))<SUB>269</SUB>> ]
+"28" [label = <(IDENTIFIER,this,log(&quot;Removing empty directory: &quot; + dir, Project.MSG_DEBUG))<SUB>269</SUB>> ]
+"472" [label = <(&lt;operator&gt;.addition,&quot;Removing empty directory: &quot; + dir)<SUB>269</SUB>> ]
+"473" [label = <(LITERAL,&quot;Removing empty directory: &quot;,&quot;Removing empty directory: &quot; + dir)<SUB>269</SUB>> ]
+"474" [label = <(IDENTIFIER,dir,&quot;Removing empty directory: &quot; + dir)<SUB>269</SUB>> ]
+"475" [label = <(&lt;operator&gt;.fieldAccess,Project.MSG_DEBUG)<SUB>269</SUB>> ]
+"476" [label = <(IDENTIFIER,Project,log(&quot;Removing empty directory: &quot; + dir, Project.MSG_DEBUG))<SUB>269</SUB>> ]
+"477" [label = <(FIELD_IDENTIFIER,MSG_DEBUG,MSG_DEBUG)<SUB>269</SUB>> ]
+"478" [label = <(delete,dir.delete())<SUB>270</SUB>> ]
+"479" [label = <(IDENTIFIER,dir,dir.delete())<SUB>270</SUB>> ]
+"480" [label = <(&lt;operator&gt;.preIncrement,++removedCount)<SUB>271</SUB>> ]
+"481" [label = <(IDENTIFIER,removedCount,++removedCount)<SUB>271</SUB>> ]
+"482" [label = <(RETURN,return removedCount;,return removedCount;)<SUB>274</SUB>> ]
+"483" [label = <(IDENTIFIER,removedCount,return removedCount;)<SUB>274</SUB>> ]
+"484" [label = <(MODIFIER,PRIVATE)> ]
+"485" [label = <(MODIFIER,VIRTUAL)> ]
+"486" [label = <(METHOD_RETURN,int)<SUB>252</SUB>> ]
+  "406" -> "27" 
+  "406" -> "407" 
+  "406" -> "408" 
+  "406" -> "409" 
+  "406" -> "484" 
+  "406" -> "485" 
+  "406" -> "486" 
+  "409" -> "410" 
+  "409" -> "411" 
+  "409" -> "414" 
+  "409" -> "482" 
+  "411" -> "412" 
+  "411" -> "413" 
+  "414" -> "415" 
+  "414" -> "417" 
+  "415" -> "416" 
+  "417" -> "418" 
+  "417" -> "419" 
+  "417" -> "423" 
+  "417" -> "451" 
+  "417" -> "462" 
+  "419" -> "420" 
+  "419" -> "421" 
+  "421" -> "422" 
+  "423" -> "424" 
+  "423" -> "425" 
+  "423" -> "428" 
+  "423" -> "433" 
+  "423" -> "435" 
+  "425" -> "426" 
+  "425" -> "427" 
+  "428" -> "429" 
+  "428" -> "430" 
+  "430" -> "431" 
+  "430" -> "432" 
+  "433" -> "434" 
+  "435" -> "436" 
+  "435" -> "437" 
+  "435" -> "442" 
+  "437" -> "438" 
+  "437" -> "439" 
+  "439" -> "440" 
+  "439" -> "441" 
+  "442" -> "443" 
+  "442" -> "445" 
+  "443" -> "444" 
+  "445" -> "446" 
+  "446" -> "447" 
+  "446" -> "448" 
+  "448" -> "26" 
+  "448" -> "449" 
+  "448" -> "450" 
+  "451" -> "452" 
+  "451" -> "457" 
+  "452" -> "453" 
+  "452" -> "456" 
+  "453" -> "454" 
+  "453" -> "455" 
+  "457" -> "458" 
+  "458" -> "459" 
+  "458" -> "460" 
+  "460" -> "461" 
+  "462" -> "463" 
+  "462" -> "470" 
+  "463" -> "464" 
+  "463" -> "469" 
+  "464" -> "465" 
+  "464" -> "468" 
+  "465" -> "466" 
+  "465" -> "467" 
+  "470" -> "471" 
+  "470" -> "478" 
+  "470" -> "480" 
+  "471" -> "28" 
+  "471" -> "472" 
+  "471" -> "475" 
+  "472" -> "473" 
+  "472" -> "474" 
+  "475" -> "476" 
+  "475" -> "477" 
+  "478" -> "479" 
+  "480" -> "481" 
+  "482" -> "483" 
+}

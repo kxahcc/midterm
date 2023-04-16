@@ -1,0 +1,213 @@
+digraph "processBatch" {  
+"240" [label = <(METHOD,processBatch)<SUB>116</SUB>> ]
+"21" [label = <(PARAM,this)<SUB>116</SUB>> ]
+"241" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>116</SUB>> ]
+"242" [label = <(LOCAL,long start: long)> ]
+"243" [label = <(&lt;operator&gt;.assignment,long start = System.currentTimeMillis())<SUB>117</SUB>> ]
+"244" [label = <(IDENTIFIER,start,long start = System.currentTimeMillis())<SUB>117</SUB>> ]
+"245" [label = <(currentTimeMillis,System.currentTimeMillis())<SUB>117</SUB>> ]
+"246" [label = <(IDENTIFIER,System,System.currentTimeMillis())<SUB>117</SUB>> ]
+"247" [label = <(LOCAL,long end: long)> ]
+"248" [label = <(&lt;operator&gt;.assignment,long end = start + batchTimeout)<SUB>118</SUB>> ]
+"249" [label = <(IDENTIFIER,end,long end = start + batchTimeout)<SUB>118</SUB>> ]
+"250" [label = <(&lt;operator&gt;.addition,start + batchTimeout)<SUB>118</SUB>> ]
+"251" [label = <(IDENTIFIER,start,start + batchTimeout)<SUB>118</SUB>> ]
+"252" [label = <(&lt;operator&gt;.fieldAccess,this.batchTimeout)<SUB>118</SUB>> ]
+"253" [label = <(IDENTIFIER,this,start + batchTimeout)<SUB>118</SUB>> ]
+"254" [label = <(FIELD_IDENTIFIER,batchTimeout,batchTimeout)<SUB>118</SUB>> ]
+"255" [label = <(CONTROL_STRUCTURE,for (int i = 0; Some(i &lt; batchSize); i++),for (int i = 0; Some(i &lt; batchSize); i++))<SUB>119</SUB>> ]
+"256" [label = <(LOCAL,int i: int)> ]
+"257" [label = <(&lt;operator&gt;.assignment,int i = 0)<SUB>119</SUB>> ]
+"258" [label = <(IDENTIFIER,i,int i = 0)<SUB>119</SUB>> ]
+"259" [label = <(LITERAL,0,int i = 0)<SUB>119</SUB>> ]
+"260" [label = <(&lt;operator&gt;.lessThan,i &lt; batchSize)<SUB>119</SUB>> ]
+"261" [label = <(IDENTIFIER,i,i &lt; batchSize)<SUB>119</SUB>> ]
+"262" [label = <(&lt;operator&gt;.fieldAccess,this.batchSize)<SUB>119</SUB>> ]
+"263" [label = <(IDENTIFIER,this,i &lt; batchSize)<SUB>119</SUB>> ]
+"264" [label = <(FIELD_IDENTIFIER,batchSize,batchSize)<SUB>119</SUB>> ]
+"265" [label = <(&lt;operator&gt;.postIncrement,i++)<SUB>119</SUB>> ]
+"266" [label = <(IDENTIFIER,i,i++)<SUB>119</SUB>> ]
+"267" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>119</SUB>> ]
+"268" [label = <(LOCAL,long timeout: long)> ]
+"269" [label = <(&lt;operator&gt;.assignment,long timeout = end - System.currentTimeMillis())<SUB>120</SUB>> ]
+"270" [label = <(IDENTIFIER,timeout,long timeout = end - System.currentTimeMillis())<SUB>120</SUB>> ]
+"271" [label = <(&lt;operator&gt;.subtraction,end - System.currentTimeMillis())<SUB>120</SUB>> ]
+"272" [label = <(IDENTIFIER,end,end - System.currentTimeMillis())<SUB>120</SUB>> ]
+"273" [label = <(currentTimeMillis,System.currentTimeMillis())<SUB>120</SUB>> ]
+"274" [label = <(IDENTIFIER,System,System.currentTimeMillis())<SUB>120</SUB>> ]
+"275" [label = <(LOCAL,Exchange exchange: org.apache.camel.Exchange)> ]
+"276" [label = <(&lt;operator&gt;.assignment,Exchange exchange = receive(timeout))<SUB>122</SUB>> ]
+"277" [label = <(IDENTIFIER,exchange,Exchange exchange = receive(timeout))<SUB>122</SUB>> ]
+"278" [label = <(receive,receive(timeout))<SUB>122</SUB>> ]
+"279" [label = <(&lt;operator&gt;.fieldAccess,this.consumer)<SUB>122</SUB>> ]
+"280" [label = <(IDENTIFIER,this,receive(timeout))<SUB>122</SUB>> ]
+"281" [label = <(FIELD_IDENTIFIER,consumer,consumer)<SUB>122</SUB>> ]
+"282" [label = <(IDENTIFIER,timeout,receive(timeout))<SUB>122</SUB>> ]
+"283" [label = <(CONTROL_STRUCTURE,if (exchange == null),if (exchange == null))<SUB>123</SUB>> ]
+"284" [label = <(&lt;operator&gt;.equals,exchange == null)<SUB>123</SUB>> ]
+"285" [label = <(IDENTIFIER,exchange,exchange == null)<SUB>123</SUB>> ]
+"286" [label = <(LITERAL,null,exchange == null)<SUB>123</SUB>> ]
+"287" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>123</SUB>> ]
+"288" [label = <(CONTROL_STRUCTURE,break;,break;)<SUB>124</SUB>> ]
+"289" [label = <(add,add(exchange))<SUB>126</SUB>> ]
+"290" [label = <(&lt;operator&gt;.fieldAccess,this.collection)<SUB>126</SUB>> ]
+"291" [label = <(IDENTIFIER,this,add(exchange))<SUB>126</SUB>> ]
+"292" [label = <(FIELD_IDENTIFIER,collection,collection)<SUB>126</SUB>> ]
+"293" [label = <(IDENTIFIER,exchange,add(exchange))<SUB>126</SUB>> ]
+"294" [label = <(CONTROL_STRUCTURE,if (LOG.isDebugEnabled()),if (LOG.isDebugEnabled()))<SUB>129</SUB>> ]
+"295" [label = <(isDebugEnabled,isDebugEnabled())<SUB>129</SUB>> ]
+"296" [label = <(&lt;operator&gt;.fieldAccess,BatchProcessor.LOG)<SUB>129</SUB>> ]
+"297" [label = <(IDENTIFIER,BatchProcessor,isDebugEnabled())<SUB>129</SUB>> ]
+"298" [label = <(FIELD_IDENTIFIER,LOG,LOG)<SUB>129</SUB>> ]
+"299" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>129</SUB>> ]
+"300" [label = <(debug,debug(&quot;Finsihed batch size: &quot; + batchSize + &quot; timeout: &quot; + batchTimeout + &quot; so sending set: &quot; + collection))<SUB>130</SUB>> ]
+"301" [label = <(&lt;operator&gt;.fieldAccess,BatchProcessor.LOG)<SUB>130</SUB>> ]
+"302" [label = <(IDENTIFIER,BatchProcessor,debug(&quot;Finsihed batch size: &quot; + batchSize + &quot; timeout: &quot; + batchTimeout + &quot; so sending set: &quot; + collection))<SUB>130</SUB>> ]
+"303" [label = <(FIELD_IDENTIFIER,LOG,LOG)<SUB>130</SUB>> ]
+"304" [label = <(&lt;operator&gt;.addition,&quot;Finsihed batch size: &quot; + batchSize + &quot; timeout: &quot; + batchTimeout + &quot; so sending set: &quot; + collection)<SUB>130</SUB>> ]
+"305" [label = <(&lt;operator&gt;.addition,&quot;Finsihed batch size: &quot; + batchSize + &quot; timeout: &quot; + batchTimeout + &quot; so sending set: &quot;)<SUB>130</SUB>> ]
+"306" [label = <(&lt;operator&gt;.addition,&quot;Finsihed batch size: &quot; + batchSize + &quot; timeout: &quot; + batchTimeout)<SUB>130</SUB>> ]
+"307" [label = <(&lt;operator&gt;.addition,&quot;Finsihed batch size: &quot; + batchSize + &quot; timeout: &quot;)<SUB>130</SUB>> ]
+"308" [label = <(&lt;operator&gt;.addition,&quot;Finsihed batch size: &quot; + batchSize)<SUB>130</SUB>> ]
+"309" [label = <(LITERAL,&quot;Finsihed batch size: &quot;,&quot;Finsihed batch size: &quot; + batchSize)<SUB>130</SUB>> ]
+"310" [label = <(&lt;operator&gt;.fieldAccess,this.batchSize)<SUB>130</SUB>> ]
+"311" [label = <(IDENTIFIER,this,&quot;Finsihed batch size: &quot; + batchSize)<SUB>130</SUB>> ]
+"312" [label = <(FIELD_IDENTIFIER,batchSize,batchSize)<SUB>130</SUB>> ]
+"313" [label = <(LITERAL,&quot; timeout: &quot;,&quot;Finsihed batch size: &quot; + batchSize + &quot; timeout: &quot;)<SUB>130</SUB>> ]
+"314" [label = <(&lt;operator&gt;.fieldAccess,this.batchTimeout)<SUB>130</SUB>> ]
+"315" [label = <(IDENTIFIER,this,&quot;Finsihed batch size: &quot; + batchSize + &quot; timeout: &quot; + batchTimeout)<SUB>130</SUB>> ]
+"316" [label = <(FIELD_IDENTIFIER,batchTimeout,batchTimeout)<SUB>130</SUB>> ]
+"317" [label = <(LITERAL,&quot; so sending set: &quot;,&quot;Finsihed batch size: &quot; + batchSize + &quot; timeout: &quot; + batchTimeout + &quot; so sending set: &quot;)<SUB>130</SUB>> ]
+"318" [label = <(&lt;operator&gt;.fieldAccess,this.collection)<SUB>131</SUB>> ]
+"319" [label = <(IDENTIFIER,this,&quot;Finsihed batch size: &quot; + batchSize + &quot; timeout: &quot; + batchTimeout + &quot; so sending set: &quot; + collection)<SUB>131</SUB>> ]
+"320" [label = <(FIELD_IDENTIFIER,collection,collection)<SUB>131</SUB>> ]
+"321" [label = <(LOCAL,Iterator&lt;Exchange&gt; iter: ANY)> ]
+"322" [label = <(&lt;operator&gt;.assignment,ANY iter = iterator())<SUB>135</SUB>> ]
+"323" [label = <(IDENTIFIER,iter,ANY iter = iterator())<SUB>135</SUB>> ]
+"324" [label = <(iterator,iterator())<SUB>135</SUB>> ]
+"325" [label = <(&lt;operator&gt;.fieldAccess,this.collection)<SUB>135</SUB>> ]
+"326" [label = <(IDENTIFIER,this,iterator())<SUB>135</SUB>> ]
+"327" [label = <(FIELD_IDENTIFIER,collection,collection)<SUB>135</SUB>> ]
+"328" [label = <(CONTROL_STRUCTURE,while (iter.hasNext()),while (iter.hasNext()))<SUB>136</SUB>> ]
+"329" [label = <(hasNext,hasNext())<SUB>136</SUB>> ]
+"330" [label = <(IDENTIFIER,iter,hasNext())<SUB>136</SUB>> ]
+"331" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>136</SUB>> ]
+"332" [label = <(LOCAL,Exchange exchange: org.apache.camel.Exchange)> ]
+"333" [label = <(&lt;operator&gt;.assignment,Exchange exchange = next())<SUB>137</SUB>> ]
+"334" [label = <(IDENTIFIER,exchange,Exchange exchange = next())<SUB>137</SUB>> ]
+"335" [label = <(next,next())<SUB>137</SUB>> ]
+"336" [label = <(IDENTIFIER,iter,next())<SUB>137</SUB>> ]
+"337" [label = <(remove,remove())<SUB>138</SUB>> ]
+"338" [label = <(IDENTIFIER,iter,remove())<SUB>138</SUB>> ]
+"339" [label = <(processExchange,processExchange(exchange))<SUB>139</SUB>> ]
+"20" [label = <(IDENTIFIER,this,processExchange(exchange))<SUB>139</SUB>> ]
+"340" [label = <(IDENTIFIER,exchange,processExchange(exchange))<SUB>139</SUB>> ]
+"341" [label = <(MODIFIER,PROTECTED)> ]
+"342" [label = <(MODIFIER,VIRTUAL)> ]
+"343" [label = <(METHOD_RETURN,void)<SUB>116</SUB>> ]
+  "240" -> "21" 
+  "240" -> "241" 
+  "240" -> "341" 
+  "240" -> "342" 
+  "240" -> "343" 
+  "241" -> "242" 
+  "241" -> "243" 
+  "241" -> "247" 
+  "241" -> "248" 
+  "241" -> "255" 
+  "241" -> "294" 
+  "241" -> "321" 
+  "241" -> "322" 
+  "241" -> "328" 
+  "243" -> "244" 
+  "243" -> "245" 
+  "245" -> "246" 
+  "248" -> "249" 
+  "248" -> "250" 
+  "250" -> "251" 
+  "250" -> "252" 
+  "252" -> "253" 
+  "252" -> "254" 
+  "255" -> "256" 
+  "255" -> "257" 
+  "255" -> "260" 
+  "255" -> "265" 
+  "255" -> "267" 
+  "257" -> "258" 
+  "257" -> "259" 
+  "260" -> "261" 
+  "260" -> "262" 
+  "262" -> "263" 
+  "262" -> "264" 
+  "265" -> "266" 
+  "267" -> "268" 
+  "267" -> "269" 
+  "267" -> "275" 
+  "267" -> "276" 
+  "267" -> "283" 
+  "267" -> "289" 
+  "269" -> "270" 
+  "269" -> "271" 
+  "271" -> "272" 
+  "271" -> "273" 
+  "273" -> "274" 
+  "276" -> "277" 
+  "276" -> "278" 
+  "278" -> "279" 
+  "278" -> "282" 
+  "279" -> "280" 
+  "279" -> "281" 
+  "283" -> "284" 
+  "283" -> "287" 
+  "284" -> "285" 
+  "284" -> "286" 
+  "287" -> "288" 
+  "289" -> "290" 
+  "289" -> "293" 
+  "290" -> "291" 
+  "290" -> "292" 
+  "294" -> "295" 
+  "294" -> "299" 
+  "295" -> "296" 
+  "296" -> "297" 
+  "296" -> "298" 
+  "299" -> "300" 
+  "300" -> "301" 
+  "300" -> "304" 
+  "301" -> "302" 
+  "301" -> "303" 
+  "304" -> "305" 
+  "304" -> "318" 
+  "305" -> "306" 
+  "305" -> "317" 
+  "306" -> "307" 
+  "306" -> "314" 
+  "307" -> "308" 
+  "307" -> "313" 
+  "308" -> "309" 
+  "308" -> "310" 
+  "310" -> "311" 
+  "310" -> "312" 
+  "314" -> "315" 
+  "314" -> "316" 
+  "318" -> "319" 
+  "318" -> "320" 
+  "322" -> "323" 
+  "322" -> "324" 
+  "324" -> "325" 
+  "325" -> "326" 
+  "325" -> "327" 
+  "328" -> "329" 
+  "328" -> "331" 
+  "329" -> "330" 
+  "331" -> "332" 
+  "331" -> "333" 
+  "331" -> "337" 
+  "331" -> "339" 
+  "333" -> "334" 
+  "333" -> "335" 
+  "335" -> "336" 
+  "337" -> "338" 
+  "339" -> "20" 
+  "339" -> "340" 
+}

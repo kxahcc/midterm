@@ -1,0 +1,231 @@
+digraph "toString" {  
+"74" [label = <(METHOD,toString)<SUB>76</SUB>> ]
+"75" [label = <(PARAM,this)<SUB>76</SUB>> ]
+"76" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>76</SUB>> ]
+"77" [label = <(LOCAL,ProxySelector selector: java.net.ProxySelector)> ]
+"78" [label = <(&lt;operator&gt;.assignment,ProxySelector selector = ProxySelector.getDefault())<SUB>77</SUB>> ]
+"79" [label = <(IDENTIFIER,selector,ProxySelector selector = ProxySelector.getDefault())<SUB>77</SUB>> ]
+"80" [label = <(getDefault,ProxySelector.getDefault())<SUB>77</SUB>> ]
+"81" [label = <(IDENTIFIER,ProxySelector,ProxySelector.getDefault())<SUB>77</SUB>> ]
+"82" [label = <(LOCAL,List list: java.util.List)> ]
+"83" [label = <(&lt;operator&gt;.assignment,List list = selector.select(destURI))<SUB>78</SUB>> ]
+"84" [label = <(IDENTIFIER,list,List list = selector.select(destURI))<SUB>78</SUB>> ]
+"85" [label = <(select,selector.select(destURI))<SUB>78</SUB>> ]
+"86" [label = <(IDENTIFIER,selector,selector.select(destURI))<SUB>78</SUB>> ]
+"87" [label = <(&lt;operator&gt;.fieldAccess,this.destURI)<SUB>78</SUB>> ]
+"88" [label = <(IDENTIFIER,this,selector.select(destURI))<SUB>78</SUB>> ]
+"89" [label = <(FIELD_IDENTIFIER,destURI,destURI)<SUB>78</SUB>> ]
+"9" [label = <(LOCAL,StringBuffer result: java.lang.StringBuffer)> ]
+"90" [label = <(&lt;operator&gt;.assignment,StringBuffer result = new StringBuffer())<SUB>79</SUB>> ]
+"91" [label = <(IDENTIFIER,result,StringBuffer result = new StringBuffer())<SUB>79</SUB>> ]
+"92" [label = <(&lt;operator&gt;.alloc,new StringBuffer())<SUB>79</SUB>> ]
+"93" [label = <(&lt;init&gt;,new StringBuffer())<SUB>79</SUB>> ]
+"8" [label = <(IDENTIFIER,result,new StringBuffer())<SUB>79</SUB>> ]
+"94" [label = <(LOCAL,Iterator proxies: java.util.Iterator)> ]
+"95" [label = <(&lt;operator&gt;.assignment,Iterator proxies = list.listIterator())<SUB>80</SUB>> ]
+"96" [label = <(IDENTIFIER,proxies,Iterator proxies = list.listIterator())<SUB>80</SUB>> ]
+"97" [label = <(listIterator,list.listIterator())<SUB>80</SUB>> ]
+"98" [label = <(IDENTIFIER,list,list.listIterator())<SUB>80</SUB>> ]
+"99" [label = <(CONTROL_STRUCTURE,while (proxies.hasNext()),while (proxies.hasNext()))<SUB>81</SUB>> ]
+"100" [label = <(hasNext,proxies.hasNext())<SUB>81</SUB>> ]
+"101" [label = <(IDENTIFIER,proxies,proxies.hasNext())<SUB>81</SUB>> ]
+"102" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>81</SUB>> ]
+"103" [label = <(LOCAL,Proxy proxy: java.net.Proxy)> ]
+"104" [label = <(&lt;operator&gt;.assignment,Proxy proxy = (Proxy) proxies.next())<SUB>82</SUB>> ]
+"105" [label = <(IDENTIFIER,proxy,Proxy proxy = (Proxy) proxies.next())<SUB>82</SUB>> ]
+"106" [label = <(&lt;operator&gt;.cast,(Proxy) proxies.next())<SUB>82</SUB>> ]
+"107" [label = <(TYPE_REF,Proxy,Proxy)<SUB>82</SUB>> ]
+"108" [label = <(next,proxies.next())<SUB>82</SUB>> ]
+"109" [label = <(IDENTIFIER,proxies,proxies.next())<SUB>82</SUB>> ]
+"110" [label = <(LOCAL,SocketAddress address: java.net.SocketAddress)> ]
+"111" [label = <(&lt;operator&gt;.assignment,SocketAddress address = proxy.address())<SUB>83</SUB>> ]
+"112" [label = <(IDENTIFIER,address,SocketAddress address = proxy.address())<SUB>83</SUB>> ]
+"113" [label = <(address,proxy.address())<SUB>83</SUB>> ]
+"114" [label = <(IDENTIFIER,proxy,proxy.address())<SUB>83</SUB>> ]
+"115" [label = <(CONTROL_STRUCTURE,if (address == null),if (address == null))<SUB>84</SUB>> ]
+"116" [label = <(&lt;operator&gt;.equals,address == null)<SUB>84</SUB>> ]
+"117" [label = <(IDENTIFIER,address,address == null)<SUB>84</SUB>> ]
+"118" [label = <(LITERAL,null,address == null)<SUB>84</SUB>> ]
+"119" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>84</SUB>> ]
+"120" [label = <(append,result.append(&quot;Direct connection\n&quot;))<SUB>85</SUB>> ]
+"121" [label = <(IDENTIFIER,result,result.append(&quot;Direct connection\n&quot;))<SUB>85</SUB>> ]
+"122" [label = <(LITERAL,&quot;Direct connection\n&quot;,result.append(&quot;Direct connection\n&quot;))<SUB>85</SUB>> ]
+"123" [label = <(CONTROL_STRUCTURE,else,else)<SUB>86</SUB>> ]
+"124" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>86</SUB>> ]
+"125" [label = <(append,result.append(proxy.toString()))<SUB>87</SUB>> ]
+"126" [label = <(IDENTIFIER,result,result.append(proxy.toString()))<SUB>87</SUB>> ]
+"127" [label = <(toString,proxy.toString())<SUB>87</SUB>> ]
+"128" [label = <(IDENTIFIER,proxy,proxy.toString())<SUB>87</SUB>> ]
+"129" [label = <(CONTROL_STRUCTURE,if (address instanceof InetSocketAddress),if (address instanceof InetSocketAddress))<SUB>88</SUB>> ]
+"130" [label = <(&lt;operator&gt;.instanceOf,address instanceof InetSocketAddress)<SUB>88</SUB>> ]
+"131" [label = <(IDENTIFIER,address,address instanceof InetSocketAddress)<SUB>88</SUB>> ]
+"132" [label = <(TYPE_REF,InetSocketAddress,InetSocketAddress)<SUB>88</SUB>> ]
+"133" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>88</SUB>> ]
+"134" [label = <(LOCAL,InetSocketAddress ina: java.net.InetSocketAddress)> ]
+"135" [label = <(&lt;operator&gt;.assignment,InetSocketAddress ina = (InetSocketAddress) address)<SUB>89</SUB>> ]
+"136" [label = <(IDENTIFIER,ina,InetSocketAddress ina = (InetSocketAddress) address)<SUB>89</SUB>> ]
+"137" [label = <(&lt;operator&gt;.cast,(InetSocketAddress) address)<SUB>89</SUB>> ]
+"138" [label = <(TYPE_REF,InetSocketAddress,InetSocketAddress)<SUB>89</SUB>> ]
+"139" [label = <(IDENTIFIER,address,(InetSocketAddress) address)<SUB>89</SUB>> ]
+"140" [label = <(append,result.append(' '))<SUB>90</SUB>> ]
+"141" [label = <(IDENTIFIER,result,result.append(' '))<SUB>90</SUB>> ]
+"142" [label = <(LITERAL,' ',result.append(' '))<SUB>90</SUB>> ]
+"143" [label = <(append,result.append(ina.getHostName()))<SUB>91</SUB>> ]
+"144" [label = <(IDENTIFIER,result,result.append(ina.getHostName()))<SUB>91</SUB>> ]
+"145" [label = <(getHostName,ina.getHostName())<SUB>91</SUB>> ]
+"146" [label = <(IDENTIFIER,ina,ina.getHostName())<SUB>91</SUB>> ]
+"147" [label = <(append,result.append(':'))<SUB>92</SUB>> ]
+"148" [label = <(IDENTIFIER,result,result.append(':'))<SUB>92</SUB>> ]
+"149" [label = <(LITERAL,':',result.append(':'))<SUB>92</SUB>> ]
+"150" [label = <(append,result.append(ina.getPort()))<SUB>93</SUB>> ]
+"151" [label = <(IDENTIFIER,result,result.append(ina.getPort()))<SUB>93</SUB>> ]
+"152" [label = <(getPort,ina.getPort())<SUB>93</SUB>> ]
+"153" [label = <(IDENTIFIER,ina,ina.getPort())<SUB>93</SUB>> ]
+"154" [label = <(CONTROL_STRUCTURE,if (ina.isUnresolved()),if (ina.isUnresolved()))<SUB>94</SUB>> ]
+"155" [label = <(isUnresolved,ina.isUnresolved())<SUB>94</SUB>> ]
+"156" [label = <(IDENTIFIER,ina,ina.isUnresolved())<SUB>94</SUB>> ]
+"157" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>94</SUB>> ]
+"158" [label = <(append,result.append(&quot; [unresolved]&quot;))<SUB>95</SUB>> ]
+"159" [label = <(IDENTIFIER,result,result.append(&quot; [unresolved]&quot;))<SUB>95</SUB>> ]
+"160" [label = <(LITERAL,&quot; [unresolved]&quot;,result.append(&quot; [unresolved]&quot;))<SUB>95</SUB>> ]
+"161" [label = <(CONTROL_STRUCTURE,else,else)<SUB>96</SUB>> ]
+"162" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>96</SUB>> ]
+"163" [label = <(LOCAL,InetAddress addr: java.net.InetAddress)> ]
+"164" [label = <(&lt;operator&gt;.assignment,InetAddress addr = ina.getAddress())<SUB>97</SUB>> ]
+"165" [label = <(IDENTIFIER,addr,InetAddress addr = ina.getAddress())<SUB>97</SUB>> ]
+"166" [label = <(getAddress,ina.getAddress())<SUB>97</SUB>> ]
+"167" [label = <(IDENTIFIER,ina,ina.getAddress())<SUB>97</SUB>> ]
+"168" [label = <(append,result.append(&quot; [&quot;))<SUB>98</SUB>> ]
+"169" [label = <(IDENTIFIER,result,result.append(&quot; [&quot;))<SUB>98</SUB>> ]
+"170" [label = <(LITERAL,&quot; [&quot;,result.append(&quot; [&quot;))<SUB>98</SUB>> ]
+"171" [label = <(append,result.append(addr.getHostAddress()))<SUB>99</SUB>> ]
+"172" [label = <(IDENTIFIER,result,result.append(addr.getHostAddress()))<SUB>99</SUB>> ]
+"173" [label = <(getHostAddress,addr.getHostAddress())<SUB>99</SUB>> ]
+"174" [label = <(IDENTIFIER,addr,addr.getHostAddress())<SUB>99</SUB>> ]
+"175" [label = <(append,result.append(']'))<SUB>100</SUB>> ]
+"176" [label = <(IDENTIFIER,result,result.append(']'))<SUB>100</SUB>> ]
+"177" [label = <(LITERAL,']',result.append(']'))<SUB>100</SUB>> ]
+"178" [label = <(append,result.append('\n'))<SUB>103</SUB>> ]
+"179" [label = <(IDENTIFIER,result,result.append('\n'))<SUB>103</SUB>> ]
+"180" [label = <(LITERAL,'\n',result.append('\n'))<SUB>103</SUB>> ]
+"181" [label = <(RETURN,return result.toString();,return result.toString();)<SUB>106</SUB>> ]
+"182" [label = <(toString,result.toString())<SUB>106</SUB>> ]
+"183" [label = <(IDENTIFIER,result,result.toString())<SUB>106</SUB>> ]
+"184" [label = <(MODIFIER,PUBLIC)> ]
+"185" [label = <(MODIFIER,VIRTUAL)> ]
+"186" [label = <(METHOD_RETURN,java.lang.String)<SUB>76</SUB>> ]
+  "74" -> "75" 
+  "74" -> "76" 
+  "74" -> "184" 
+  "74" -> "185" 
+  "74" -> "186" 
+  "76" -> "77" 
+  "76" -> "78" 
+  "76" -> "82" 
+  "76" -> "83" 
+  "76" -> "9" 
+  "76" -> "90" 
+  "76" -> "93" 
+  "76" -> "94" 
+  "76" -> "95" 
+  "76" -> "99" 
+  "76" -> "181" 
+  "78" -> "79" 
+  "78" -> "80" 
+  "80" -> "81" 
+  "83" -> "84" 
+  "83" -> "85" 
+  "85" -> "86" 
+  "85" -> "87" 
+  "87" -> "88" 
+  "87" -> "89" 
+  "90" -> "91" 
+  "90" -> "92" 
+  "93" -> "8" 
+  "95" -> "96" 
+  "95" -> "97" 
+  "97" -> "98" 
+  "99" -> "100" 
+  "99" -> "102" 
+  "100" -> "101" 
+  "102" -> "103" 
+  "102" -> "104" 
+  "102" -> "110" 
+  "102" -> "111" 
+  "102" -> "115" 
+  "104" -> "105" 
+  "104" -> "106" 
+  "106" -> "107" 
+  "106" -> "108" 
+  "108" -> "109" 
+  "111" -> "112" 
+  "111" -> "113" 
+  "113" -> "114" 
+  "115" -> "116" 
+  "115" -> "119" 
+  "115" -> "123" 
+  "116" -> "117" 
+  "116" -> "118" 
+  "119" -> "120" 
+  "120" -> "121" 
+  "120" -> "122" 
+  "123" -> "124" 
+  "124" -> "125" 
+  "124" -> "129" 
+  "124" -> "178" 
+  "125" -> "126" 
+  "125" -> "127" 
+  "127" -> "128" 
+  "129" -> "130" 
+  "129" -> "133" 
+  "130" -> "131" 
+  "130" -> "132" 
+  "133" -> "134" 
+  "133" -> "135" 
+  "133" -> "140" 
+  "133" -> "143" 
+  "133" -> "147" 
+  "133" -> "150" 
+  "133" -> "154" 
+  "135" -> "136" 
+  "135" -> "137" 
+  "137" -> "138" 
+  "137" -> "139" 
+  "140" -> "141" 
+  "140" -> "142" 
+  "143" -> "144" 
+  "143" -> "145" 
+  "145" -> "146" 
+  "147" -> "148" 
+  "147" -> "149" 
+  "150" -> "151" 
+  "150" -> "152" 
+  "152" -> "153" 
+  "154" -> "155" 
+  "154" -> "157" 
+  "154" -> "161" 
+  "155" -> "156" 
+  "157" -> "158" 
+  "158" -> "159" 
+  "158" -> "160" 
+  "161" -> "162" 
+  "162" -> "163" 
+  "162" -> "164" 
+  "162" -> "168" 
+  "162" -> "171" 
+  "162" -> "175" 
+  "164" -> "165" 
+  "164" -> "166" 
+  "166" -> "167" 
+  "168" -> "169" 
+  "168" -> "170" 
+  "171" -> "172" 
+  "171" -> "173" 
+  "173" -> "174" 
+  "175" -> "176" 
+  "175" -> "177" 
+  "178" -> "179" 
+  "178" -> "180" 
+  "181" -> "182" 
+  "182" -> "183" 
+}

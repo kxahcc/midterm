@@ -1,0 +1,47 @@
+digraph "process" {  
+"30" [label = <(METHOD,process)<SUB>42</SUB>> ]
+"31" [label = <(PARAM,this)<SUB>42</SUB>> ]
+"32" [label = <(PARAM,Exchange exchange)<SUB>42</SUB>> ]
+"33" [label = <(PARAM,AsyncCallback callback)<SUB>42</SUB>> ]
+"34" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>42</SUB>> ]
+"35" [label = <(CONTROL_STRUCTURE,try,try)<SUB>43</SUB>> ]
+"36" [label = <(BLOCK,try,try)<SUB>43</SUB>> ]
+"37" [label = <(process,process(exchange))<SUB>44</SUB>> ]
+"38" [label = <(IDENTIFIER,processor,process(exchange))<SUB>44</SUB>> ]
+"39" [label = <(IDENTIFIER,exchange,process(exchange))<SUB>44</SUB>> ]
+"40" [label = <(BLOCK,catch,catch)> ]
+"41" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>45</SUB>> ]
+"42" [label = <(setException,setException(e))<SUB>46</SUB>> ]
+"43" [label = <(IDENTIFIER,exchange,setException(e))<SUB>46</SUB>> ]
+"44" [label = <(IDENTIFIER,e,setException(e))<SUB>46</SUB>> ]
+"45" [label = <(done,done(true))<SUB>49</SUB>> ]
+"46" [label = <(IDENTIFIER,callback,done(true))<SUB>49</SUB>> ]
+"47" [label = <(LITERAL,true,done(true))<SUB>49</SUB>> ]
+"48" [label = <(RETURN,return true;,return true;)<SUB>50</SUB>> ]
+"49" [label = <(LITERAL,true,return true;)<SUB>50</SUB>> ]
+"50" [label = <(MODIFIER,PUBLIC)> ]
+"51" [label = <(MODIFIER,VIRTUAL)> ]
+"52" [label = <(METHOD_RETURN,boolean)<SUB>42</SUB>> ]
+  "30" -> "31" 
+  "30" -> "32" 
+  "30" -> "33" 
+  "30" -> "34" 
+  "30" -> "50" 
+  "30" -> "51" 
+  "30" -> "52" 
+  "34" -> "35" 
+  "34" -> "45" 
+  "34" -> "48" 
+  "35" -> "36" 
+  "35" -> "40" 
+  "36" -> "37" 
+  "37" -> "38" 
+  "37" -> "39" 
+  "40" -> "41" 
+  "41" -> "42" 
+  "42" -> "43" 
+  "42" -> "44" 
+  "45" -> "46" 
+  "45" -> "47" 
+  "48" -> "49" 
+}

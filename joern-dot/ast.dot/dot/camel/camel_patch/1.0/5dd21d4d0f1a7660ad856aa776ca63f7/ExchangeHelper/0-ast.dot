@@ -1,0 +1,109 @@
+digraph "resolveEndpoint" {  
+"18" [label = <(METHOD,resolveEndpoint)<SUB>41</SUB>> ]
+"19" [label = <(PARAM,E exchange)<SUB>42</SUB>> ]
+"20" [label = <(PARAM,Object value)<SUB>42</SUB>> ]
+"21" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>42</SUB>> ]
+"22" [label = <(LOCAL,Endpoint&lt;E&gt; endpoint: ANY)> ]
+"23" [label = <(CONTROL_STRUCTURE,if (value instanceof Endpoint),if (value instanceof Endpoint))<SUB>44</SUB>> ]
+"24" [label = <(&lt;operator&gt;.instanceOf,value instanceof Endpoint)<SUB>44</SUB>> ]
+"25" [label = <(IDENTIFIER,value,value instanceof Endpoint)<SUB>44</SUB>> ]
+"26" [label = <(TYPE_REF,Endpoint,Endpoint)<SUB>44</SUB>> ]
+"27" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>44</SUB>> ]
+"28" [label = <(&lt;operator&gt;.assignment,endpoint = (Endpoint&lt;E&gt;) value)<SUB>45</SUB>> ]
+"29" [label = <(IDENTIFIER,endpoint,endpoint = (Endpoint&lt;E&gt;) value)<SUB>45</SUB>> ]
+"30" [label = <(&lt;operator&gt;.cast,(Endpoint&lt;E&gt;) value)<SUB>45</SUB>> ]
+"31" [label = <(TYPE_REF,Endpoint&lt;E&gt;,Endpoint&lt;E&gt;)<SUB>45</SUB>> ]
+"32" [label = <(IDENTIFIER,value,(Endpoint&lt;E&gt;) value)<SUB>45</SUB>> ]
+"33" [label = <(CONTROL_STRUCTURE,else,else)<SUB>47</SUB>> ]
+"34" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>47</SUB>> ]
+"35" [label = <(LOCAL,String uri: java.lang.String)> ]
+"36" [label = <(&lt;operator&gt;.assignment,String uri = value.toString())<SUB>48</SUB>> ]
+"37" [label = <(IDENTIFIER,uri,String uri = value.toString())<SUB>48</SUB>> ]
+"38" [label = <(toString,value.toString())<SUB>48</SUB>> ]
+"39" [label = <(IDENTIFIER,value,value.toString())<SUB>48</SUB>> ]
+"40" [label = <(&lt;operator&gt;.assignment,endpoint = (Endpoint&lt;E&gt;) exchange.getContext().getEndpoint(uri))<SUB>49</SUB>> ]
+"41" [label = <(IDENTIFIER,endpoint,endpoint = (Endpoint&lt;E&gt;) exchange.getContext().getEndpoint(uri))<SUB>49</SUB>> ]
+"42" [label = <(&lt;operator&gt;.cast,(Endpoint&lt;E&gt;) exchange.getContext().getEndpoint(uri))<SUB>49</SUB>> ]
+"43" [label = <(TYPE_REF,Endpoint&lt;E&gt;,Endpoint&lt;E&gt;)<SUB>49</SUB>> ]
+"44" [label = <(getEndpoint,getEndpoint(uri))<SUB>49</SUB>> ]
+"45" [label = <(getContext,getContext())<SUB>49</SUB>> ]
+"46" [label = <(IDENTIFIER,exchange,getContext())<SUB>49</SUB>> ]
+"47" [label = <(IDENTIFIER,uri,getEndpoint(uri))<SUB>49</SUB>> ]
+"48" [label = <(CONTROL_STRUCTURE,if (endpoint == null),if (endpoint == null))<SUB>50</SUB>> ]
+"49" [label = <(&lt;operator&gt;.equals,endpoint == null)<SUB>50</SUB>> ]
+"50" [label = <(IDENTIFIER,endpoint,endpoint == null)<SUB>50</SUB>> ]
+"51" [label = <(LITERAL,null,endpoint == null)<SUB>50</SUB>> ]
+"52" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>50</SUB>> ]
+"53" [label = <(&lt;operator&gt;.throw,throw new NoSuchEndpointException(uri);)<SUB>51</SUB>> ]
+"54" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>51</SUB>> ]
+"55" [label = <(&lt;operator&gt;.assignment,&lt;empty&gt;)> ]
+"56" [label = <(IDENTIFIER,$obj0,&lt;empty&gt;)> ]
+"57" [label = <(&lt;operator&gt;.alloc,new NoSuchEndpointException(uri))<SUB>51</SUB>> ]
+"58" [label = <(&lt;init&gt;,new NoSuchEndpointException(uri))<SUB>51</SUB>> ]
+"59" [label = <(IDENTIFIER,$obj0,new NoSuchEndpointException(uri))> ]
+"60" [label = <(IDENTIFIER,uri,new NoSuchEndpointException(uri))<SUB>51</SUB>> ]
+"61" [label = <(IDENTIFIER,$obj0,&lt;empty&gt;)> ]
+"62" [label = <(RETURN,return endpoint;,return endpoint;)<SUB>54</SUB>> ]
+"63" [label = <(IDENTIFIER,endpoint,return endpoint;)<SUB>54</SUB>> ]
+"64" [label = <(MODIFIER,PUBLIC)> ]
+"65" [label = <(MODIFIER,STATIC)> ]
+"66" [label = <(ANNOTATION,@SuppressWarnings({ &quot;unchecked&quot; }),@SuppressWarnings({ &quot;unchecked&quot; }))<SUB>41</SUB>> ]
+"67" [label = <(ANNOTATION_PARAMETER_ASSIGN,{ &quot;unchecked&quot; })> ]
+"68" [label = <(ANNOTATION_PARAMETER,value)> ]
+"69" [label = <(ARRAY_INITIALIZER,{ &quot;unchecked&quot; },{ &quot;unchecked&quot; })> ]
+"70" [label = <(ANNOTATION_LITERAL,unchecked,unchecked)> ]
+"71" [label = <(METHOD_RETURN,ANY)<SUB>42</SUB>> ]
+  "18" -> "19" 
+  "18" -> "20" 
+  "18" -> "21" 
+  "18" -> "64" 
+  "18" -> "65" 
+  "18" -> "66" 
+  "18" -> "71" 
+  "21" -> "22" 
+  "21" -> "23" 
+  "21" -> "62" 
+  "23" -> "24" 
+  "23" -> "27" 
+  "23" -> "33" 
+  "24" -> "25" 
+  "24" -> "26" 
+  "27" -> "28" 
+  "28" -> "29" 
+  "28" -> "30" 
+  "30" -> "31" 
+  "30" -> "32" 
+  "33" -> "34" 
+  "34" -> "35" 
+  "34" -> "36" 
+  "34" -> "40" 
+  "34" -> "48" 
+  "36" -> "37" 
+  "36" -> "38" 
+  "38" -> "39" 
+  "40" -> "41" 
+  "40" -> "42" 
+  "42" -> "43" 
+  "42" -> "44" 
+  "44" -> "45" 
+  "44" -> "47" 
+  "45" -> "46" 
+  "48" -> "49" 
+  "48" -> "52" 
+  "49" -> "50" 
+  "49" -> "51" 
+  "52" -> "53" 
+  "53" -> "54" 
+  "54" -> "55" 
+  "54" -> "58" 
+  "54" -> "61" 
+  "55" -> "56" 
+  "55" -> "57" 
+  "58" -> "59" 
+  "58" -> "60" 
+  "62" -> "63" 
+  "66" -> "67" 
+  "67" -> "68" 
+  "67" -> "69" 
+  "69" -> "70" 
+}

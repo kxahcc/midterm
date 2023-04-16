@@ -1,0 +1,115 @@
+digraph "getAsStream" {  
+"81" [label = <(METHOD,getAsStream)<SUB>86</SUB>> ]
+"82" [label = <(PARAM,this)<SUB>86</SUB>> ]
+"83" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>86</SUB>> ]
+"8" [label = <(LOCAL,ByteArrayOutputStream arrayOut: java.io.ByteArrayOutputStream)> ]
+"10" [label = <(LOCAL,Writer writer: java.io.Writer)> ]
+"84" [label = <(LOCAL,Iterator providerIterator: java.util.Iterator)> ]
+"85" [label = <(LOCAL,Provider provider: ANY)> ]
+"86" [label = <(&lt;operator&gt;.assignment,arrayOut = new ByteArrayOutputStream())<SUB>92</SUB>> ]
+"87" [label = <(IDENTIFIER,arrayOut,arrayOut = new ByteArrayOutputStream())<SUB>92</SUB>> ]
+"88" [label = <(&lt;operator&gt;.alloc,new ByteArrayOutputStream())<SUB>92</SUB>> ]
+"89" [label = <(&lt;init&gt;,new ByteArrayOutputStream())<SUB>92</SUB>> ]
+"7" [label = <(IDENTIFIER,arrayOut,new ByteArrayOutputStream())<SUB>92</SUB>> ]
+"90" [label = <(&lt;operator&gt;.assignment,writer = new OutputStreamWriter(arrayOut, &quot;UTF-8&quot;))<SUB>93</SUB>> ]
+"91" [label = <(IDENTIFIER,writer,writer = new OutputStreamWriter(arrayOut, &quot;UTF-8&quot;))<SUB>93</SUB>> ]
+"92" [label = <(&lt;operator&gt;.alloc,new OutputStreamWriter(arrayOut, &quot;UTF-8&quot;))<SUB>93</SUB>> ]
+"93" [label = <(&lt;init&gt;,new OutputStreamWriter(arrayOut, &quot;UTF-8&quot;))<SUB>93</SUB>> ]
+"9" [label = <(IDENTIFIER,writer,new OutputStreamWriter(arrayOut, &quot;UTF-8&quot;))<SUB>93</SUB>> ]
+"94" [label = <(IDENTIFIER,arrayOut,new OutputStreamWriter(arrayOut, &quot;UTF-8&quot;))<SUB>93</SUB>> ]
+"95" [label = <(LITERAL,&quot;UTF-8&quot;,new OutputStreamWriter(arrayOut, &quot;UTF-8&quot;))<SUB>93</SUB>> ]
+"96" [label = <(&lt;operator&gt;.assignment,providerIterator = providerList.iterator())<SUB>94</SUB>> ]
+"97" [label = <(IDENTIFIER,providerIterator,providerIterator = providerList.iterator())<SUB>94</SUB>> ]
+"98" [label = <(iterator,providerList.iterator())<SUB>94</SUB>> ]
+"99" [label = <(&lt;operator&gt;.fieldAccess,this.providerList)<SUB>94</SUB>> ]
+"100" [label = <(IDENTIFIER,this,providerList.iterator())<SUB>94</SUB>> ]
+"101" [label = <(FIELD_IDENTIFIER,providerList,providerList)<SUB>94</SUB>> ]
+"102" [label = <(CONTROL_STRUCTURE,while (providerIterator.hasNext()),while (providerIterator.hasNext()))<SUB>95</SUB>> ]
+"103" [label = <(hasNext,providerIterator.hasNext())<SUB>95</SUB>> ]
+"104" [label = <(IDENTIFIER,providerIterator,providerIterator.hasNext())<SUB>95</SUB>> ]
+"105" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>95</SUB>> ]
+"106" [label = <(&lt;operator&gt;.assignment,provider = (Provider) providerIterator.next())<SUB>96</SUB>> ]
+"107" [label = <(IDENTIFIER,provider,provider = (Provider) providerIterator.next())<SUB>96</SUB>> ]
+"108" [label = <(&lt;operator&gt;.cast,(Provider) providerIterator.next())<SUB>96</SUB>> ]
+"109" [label = <(TYPE_REF,Provider,Provider)<SUB>96</SUB>> ]
+"110" [label = <(next,providerIterator.next())<SUB>96</SUB>> ]
+"111" [label = <(IDENTIFIER,providerIterator,providerIterator.next())<SUB>96</SUB>> ]
+"112" [label = <(write,write(provider.getClassName()))<SUB>97</SUB>> ]
+"113" [label = <(IDENTIFIER,writer,write(provider.getClassName()))<SUB>97</SUB>> ]
+"114" [label = <(getClassName,getClassName())<SUB>97</SUB>> ]
+"115" [label = <(IDENTIFIER,provider,getClassName())<SUB>97</SUB>> ]
+"116" [label = <(write,writer.write(&quot;\n&quot;))<SUB>98</SUB>> ]
+"117" [label = <(IDENTIFIER,writer,writer.write(&quot;\n&quot;))<SUB>98</SUB>> ]
+"118" [label = <(LITERAL,&quot;\n&quot;,writer.write(&quot;\n&quot;))<SUB>98</SUB>> ]
+"119" [label = <(close,writer.close())<SUB>100</SUB>> ]
+"120" [label = <(IDENTIFIER,writer,writer.close())<SUB>100</SUB>> ]
+"121" [label = <(RETURN,return new ByteArrayInputStream(arrayOut.toByteArray());,return new ByteArrayInputStream(arrayOut.toByteArray());)<SUB>101</SUB>> ]
+"122" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>101</SUB>> ]
+"123" [label = <(&lt;operator&gt;.assignment,&lt;empty&gt;)> ]
+"124" [label = <(IDENTIFIER,$obj4,&lt;empty&gt;)> ]
+"125" [label = <(&lt;operator&gt;.alloc,new ByteArrayInputStream(arrayOut.toByteArray()))<SUB>101</SUB>> ]
+"126" [label = <(&lt;init&gt;,new ByteArrayInputStream(arrayOut.toByteArray()))<SUB>101</SUB>> ]
+"127" [label = <(IDENTIFIER,$obj4,new ByteArrayInputStream(arrayOut.toByteArray()))> ]
+"128" [label = <(toByteArray,arrayOut.toByteArray())<SUB>101</SUB>> ]
+"129" [label = <(IDENTIFIER,arrayOut,arrayOut.toByteArray())<SUB>101</SUB>> ]
+"130" [label = <(IDENTIFIER,$obj4,&lt;empty&gt;)> ]
+"131" [label = <(MODIFIER,PUBLIC)> ]
+"132" [label = <(MODIFIER,VIRTUAL)> ]
+"133" [label = <(METHOD_RETURN,java.io.InputStream)<SUB>86</SUB>> ]
+  "81" -> "82" 
+  "81" -> "83" 
+  "81" -> "131" 
+  "81" -> "132" 
+  "81" -> "133" 
+  "83" -> "8" 
+  "83" -> "10" 
+  "83" -> "84" 
+  "83" -> "85" 
+  "83" -> "86" 
+  "83" -> "89" 
+  "83" -> "90" 
+  "83" -> "93" 
+  "83" -> "96" 
+  "83" -> "102" 
+  "83" -> "119" 
+  "83" -> "121" 
+  "86" -> "87" 
+  "86" -> "88" 
+  "89" -> "7" 
+  "90" -> "91" 
+  "90" -> "92" 
+  "93" -> "9" 
+  "93" -> "94" 
+  "93" -> "95" 
+  "96" -> "97" 
+  "96" -> "98" 
+  "98" -> "99" 
+  "99" -> "100" 
+  "99" -> "101" 
+  "102" -> "103" 
+  "102" -> "105" 
+  "103" -> "104" 
+  "105" -> "106" 
+  "105" -> "112" 
+  "105" -> "116" 
+  "106" -> "107" 
+  "106" -> "108" 
+  "108" -> "109" 
+  "108" -> "110" 
+  "110" -> "111" 
+  "112" -> "113" 
+  "112" -> "114" 
+  "114" -> "115" 
+  "116" -> "117" 
+  "116" -> "118" 
+  "119" -> "120" 
+  "121" -> "122" 
+  "122" -> "123" 
+  "122" -> "126" 
+  "122" -> "130" 
+  "123" -> "124" 
+  "123" -> "125" 
+  "126" -> "127" 
+  "126" -> "128" 
+  "128" -> "129" 
+}

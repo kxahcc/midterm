@@ -1,0 +1,47 @@
+digraph "delay" {  
+"150" [label = <(METHOD,delay)<SUB>80</SUB>> ]
+"16" [label = <(PARAM,this)<SUB>80</SUB>> ]
+"151" [label = <(PARAM,Exchange exchange)<SUB>80</SUB>> ]
+"152" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>80</SUB>> ]
+"153" [label = <(LOCAL,TimeSlot slot: org.apache.camel.processor.Throttler$TimeSlot)> ]
+"154" [label = <(&lt;operator&gt;.assignment,Throttler$TimeSlot slot = this.nextSlot())<SUB>81</SUB>> ]
+"155" [label = <(IDENTIFIER,slot,Throttler$TimeSlot slot = this.nextSlot())<SUB>81</SUB>> ]
+"156" [label = <(nextSlot,this.nextSlot())<SUB>81</SUB>> ]
+"15" [label = <(IDENTIFIER,this,this.nextSlot())<SUB>81</SUB>> ]
+"157" [label = <(CONTROL_STRUCTURE,if (!slot.isActive()),if (!slot.isActive()))<SUB>82</SUB>> ]
+"158" [label = <(&lt;operator&gt;.logicalNot,!slot.isActive())<SUB>82</SUB>> ]
+"159" [label = <(isActive,slot.isActive())<SUB>82</SUB>> ]
+"160" [label = <(IDENTIFIER,slot,slot.isActive())<SUB>82</SUB>> ]
+"161" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>82</SUB>> ]
+"162" [label = <(waitUntil,waitUntil(slot.startTime, exchange))<SUB>83</SUB>> ]
+"17" [label = <(IDENTIFIER,this,waitUntil(slot.startTime, exchange))<SUB>83</SUB>> ]
+"163" [label = <(&lt;operator&gt;.fieldAccess,slot.startTime)<SUB>83</SUB>> ]
+"164" [label = <(IDENTIFIER,slot,waitUntil(slot.startTime, exchange))<SUB>83</SUB>> ]
+"165" [label = <(FIELD_IDENTIFIER,startTime,startTime)<SUB>83</SUB>> ]
+"166" [label = <(IDENTIFIER,exchange,waitUntil(slot.startTime, exchange))<SUB>83</SUB>> ]
+"167" [label = <(MODIFIER,PROTECTED)> ]
+"168" [label = <(MODIFIER,VIRTUAL)> ]
+"169" [label = <(METHOD_RETURN,void)<SUB>80</SUB>> ]
+  "150" -> "16" 
+  "150" -> "151" 
+  "150" -> "152" 
+  "150" -> "167" 
+  "150" -> "168" 
+  "150" -> "169" 
+  "152" -> "153" 
+  "152" -> "154" 
+  "152" -> "157" 
+  "154" -> "155" 
+  "154" -> "156" 
+  "156" -> "15" 
+  "157" -> "158" 
+  "157" -> "161" 
+  "158" -> "159" 
+  "159" -> "160" 
+  "161" -> "162" 
+  "162" -> "17" 
+  "162" -> "163" 
+  "162" -> "166" 
+  "163" -> "164" 
+  "163" -> "165" 
+}

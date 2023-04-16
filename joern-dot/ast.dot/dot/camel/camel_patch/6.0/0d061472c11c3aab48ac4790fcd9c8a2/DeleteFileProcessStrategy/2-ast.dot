@@ -1,0 +1,97 @@
+digraph "commit" {  
+"25" [label = <(METHOD,commit)<SUB>42</SUB>> ]
+"26" [label = <(PARAM,this)<SUB>42</SUB>> ]
+"27" [label = <(PARAM,FileEndpoint endpoint)<SUB>43</SUB>> ]
+"28" [label = <(PARAM,FileExchange exchange)<SUB>43</SUB>> ]
+"29" [label = <(PARAM,File file)<SUB>43</SUB>> ]
+"30" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>43</SUB>> ]
+"31" [label = <(CONTROL_STRUCTURE,if (LOG.isDebugEnabled()),if (LOG.isDebugEnabled()))<SUB>44</SUB>> ]
+"32" [label = <(isDebugEnabled,isDebugEnabled())<SUB>44</SUB>> ]
+"33" [label = <(&lt;operator&gt;.fieldAccess,DeleteFileProcessStrategy.LOG)<SUB>44</SUB>> ]
+"34" [label = <(IDENTIFIER,DeleteFileProcessStrategy,isDebugEnabled())<SUB>44</SUB>> ]
+"35" [label = <(FIELD_IDENTIFIER,LOG,LOG)<SUB>44</SUB>> ]
+"36" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>44</SUB>> ]
+"37" [label = <(debug,debug(&quot;Deleting file: &quot; + file))<SUB>45</SUB>> ]
+"38" [label = <(&lt;operator&gt;.fieldAccess,DeleteFileProcessStrategy.LOG)<SUB>45</SUB>> ]
+"39" [label = <(IDENTIFIER,DeleteFileProcessStrategy,debug(&quot;Deleting file: &quot; + file))<SUB>45</SUB>> ]
+"40" [label = <(FIELD_IDENTIFIER,LOG,LOG)<SUB>45</SUB>> ]
+"41" [label = <(&lt;operator&gt;.addition,&quot;Deleting file: &quot; + file)<SUB>45</SUB>> ]
+"42" [label = <(LITERAL,&quot;Deleting file: &quot;,&quot;Deleting file: &quot; + file)<SUB>45</SUB>> ]
+"43" [label = <(IDENTIFIER,file,&quot;Deleting file: &quot; + file)<SUB>45</SUB>> ]
+"44" [label = <(LOCAL,boolean deleted: boolean)> ]
+"45" [label = <(&lt;operator&gt;.assignment,boolean deleted = file.delete())<SUB>47</SUB>> ]
+"46" [label = <(IDENTIFIER,deleted,boolean deleted = file.delete())<SUB>47</SUB>> ]
+"47" [label = <(delete,file.delete())<SUB>47</SUB>> ]
+"48" [label = <(IDENTIFIER,file,file.delete())<SUB>47</SUB>> ]
+"49" [label = <(CONTROL_STRUCTURE,if (!deleted),if (!deleted))<SUB>48</SUB>> ]
+"50" [label = <(&lt;operator&gt;.logicalNot,!deleted)<SUB>48</SUB>> ]
+"51" [label = <(IDENTIFIER,deleted,!deleted)<SUB>48</SUB>> ]
+"52" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>48</SUB>> ]
+"53" [label = <(&lt;operator&gt;.throw,throw new IOException(&quot;Can not delete file: &quot; + file);)<SUB>49</SUB>> ]
+"54" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>49</SUB>> ]
+"55" [label = <(&lt;operator&gt;.assignment,&lt;empty&gt;)> ]
+"56" [label = <(IDENTIFIER,$obj0,&lt;empty&gt;)> ]
+"57" [label = <(&lt;operator&gt;.alloc,new IOException(&quot;Can not delete file: &quot; + file))<SUB>49</SUB>> ]
+"58" [label = <(&lt;init&gt;,new IOException(&quot;Can not delete file: &quot; + file))<SUB>49</SUB>> ]
+"59" [label = <(IDENTIFIER,$obj0,new IOException(&quot;Can not delete file: &quot; + file))> ]
+"60" [label = <(&lt;operator&gt;.addition,&quot;Can not delete file: &quot; + file)<SUB>49</SUB>> ]
+"61" [label = <(LITERAL,&quot;Can not delete file: &quot;,&quot;Can not delete file: &quot; + file)<SUB>49</SUB>> ]
+"62" [label = <(IDENTIFIER,file,&quot;Can not delete file: &quot; + file)<SUB>49</SUB>> ]
+"63" [label = <(IDENTIFIER,$obj0,&lt;empty&gt;)> ]
+"64" [label = <(commit,commit(endpoint, exchange, file))<SUB>53</SUB>> ]
+"65" [label = <(IDENTIFIER,super,commit(endpoint, exchange, file))<SUB>53</SUB>> ]
+"66" [label = <(IDENTIFIER,endpoint,commit(endpoint, exchange, file))<SUB>53</SUB>> ]
+"67" [label = <(IDENTIFIER,exchange,commit(endpoint, exchange, file))<SUB>53</SUB>> ]
+"68" [label = <(IDENTIFIER,file,commit(endpoint, exchange, file))<SUB>53</SUB>> ]
+"69" [label = <(MODIFIER,PUBLIC)> ]
+"70" [label = <(MODIFIER,VIRTUAL)> ]
+"71" [label = <(ANNOTATION,@Override,@Override)<SUB>42</SUB>> ]
+"72" [label = <(METHOD_RETURN,void)<SUB>43</SUB>> ]
+  "25" -> "26" 
+  "25" -> "27" 
+  "25" -> "28" 
+  "25" -> "29" 
+  "25" -> "30" 
+  "25" -> "69" 
+  "25" -> "70" 
+  "25" -> "71" 
+  "25" -> "72" 
+  "30" -> "31" 
+  "30" -> "44" 
+  "30" -> "45" 
+  "30" -> "49" 
+  "30" -> "64" 
+  "31" -> "32" 
+  "31" -> "36" 
+  "32" -> "33" 
+  "33" -> "34" 
+  "33" -> "35" 
+  "36" -> "37" 
+  "37" -> "38" 
+  "37" -> "41" 
+  "38" -> "39" 
+  "38" -> "40" 
+  "41" -> "42" 
+  "41" -> "43" 
+  "45" -> "46" 
+  "45" -> "47" 
+  "47" -> "48" 
+  "49" -> "50" 
+  "49" -> "52" 
+  "50" -> "51" 
+  "52" -> "53" 
+  "53" -> "54" 
+  "54" -> "55" 
+  "54" -> "58" 
+  "54" -> "63" 
+  "55" -> "56" 
+  "55" -> "57" 
+  "58" -> "59" 
+  "58" -> "60" 
+  "60" -> "61" 
+  "60" -> "62" 
+  "64" -> "65" 
+  "64" -> "66" 
+  "64" -> "67" 
+  "64" -> "68" 
+}

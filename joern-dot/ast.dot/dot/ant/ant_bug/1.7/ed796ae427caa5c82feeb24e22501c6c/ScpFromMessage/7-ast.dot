@@ -1,0 +1,181 @@
+digraph "parseAndFetchFile" {  
+"360" [label = <(METHOD,parseAndFetchFile)<SUB>177</SUB>> ]
+"31" [label = <(PARAM,this)<SUB>177</SUB>> ]
+"361" [label = <(PARAM,String serverResponse)<SUB>177</SUB>> ]
+"362" [label = <(PARAM,File localFile)<SUB>178</SUB>> ]
+"363" [label = <(PARAM,OutputStream out)<SUB>179</SUB>> ]
+"364" [label = <(PARAM,InputStream in)<SUB>180</SUB>> ]
+"365" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>180</SUB>> ]
+"366" [label = <(LOCAL,int start: int)> ]
+"367" [label = <(&lt;operator&gt;.assignment,int start = 0)<SUB>181</SUB>> ]
+"368" [label = <(IDENTIFIER,start,int start = 0)<SUB>181</SUB>> ]
+"369" [label = <(LITERAL,0,int start = 0)<SUB>181</SUB>> ]
+"370" [label = <(LOCAL,int end: int)> ]
+"371" [label = <(&lt;operator&gt;.assignment,int end = serverResponse.indexOf(&quot; &quot;, start + 1))<SUB>182</SUB>> ]
+"372" [label = <(IDENTIFIER,end,int end = serverResponse.indexOf(&quot; &quot;, start + 1))<SUB>182</SUB>> ]
+"373" [label = <(indexOf,serverResponse.indexOf(&quot; &quot;, start + 1))<SUB>182</SUB>> ]
+"374" [label = <(IDENTIFIER,serverResponse,serverResponse.indexOf(&quot; &quot;, start + 1))<SUB>182</SUB>> ]
+"375" [label = <(LITERAL,&quot; &quot;,serverResponse.indexOf(&quot; &quot;, start + 1))<SUB>182</SUB>> ]
+"376" [label = <(&lt;operator&gt;.addition,start + 1)<SUB>182</SUB>> ]
+"377" [label = <(IDENTIFIER,start,start + 1)<SUB>182</SUB>> ]
+"378" [label = <(LITERAL,1,start + 1)<SUB>182</SUB>> ]
+"379" [label = <(&lt;operator&gt;.assignment,start = end + 1)<SUB>183</SUB>> ]
+"380" [label = <(IDENTIFIER,start,start = end + 1)<SUB>183</SUB>> ]
+"381" [label = <(&lt;operator&gt;.addition,end + 1)<SUB>183</SUB>> ]
+"382" [label = <(IDENTIFIER,end,end + 1)<SUB>183</SUB>> ]
+"383" [label = <(LITERAL,1,end + 1)<SUB>183</SUB>> ]
+"384" [label = <(&lt;operator&gt;.assignment,end = serverResponse.indexOf(&quot; &quot;, start + 1))<SUB>184</SUB>> ]
+"385" [label = <(IDENTIFIER,end,end = serverResponse.indexOf(&quot; &quot;, start + 1))<SUB>184</SUB>> ]
+"386" [label = <(indexOf,serverResponse.indexOf(&quot; &quot;, start + 1))<SUB>184</SUB>> ]
+"387" [label = <(IDENTIFIER,serverResponse,serverResponse.indexOf(&quot; &quot;, start + 1))<SUB>184</SUB>> ]
+"388" [label = <(LITERAL,&quot; &quot;,serverResponse.indexOf(&quot; &quot;, start + 1))<SUB>184</SUB>> ]
+"389" [label = <(&lt;operator&gt;.addition,start + 1)<SUB>184</SUB>> ]
+"390" [label = <(IDENTIFIER,start,start + 1)<SUB>184</SUB>> ]
+"391" [label = <(LITERAL,1,start + 1)<SUB>184</SUB>> ]
+"392" [label = <(LOCAL,long filesize: long)> ]
+"393" [label = <(&lt;operator&gt;.assignment,long filesize = Long.parseLong(serverResponse.substring(start, end)))<SUB>185</SUB>> ]
+"394" [label = <(IDENTIFIER,filesize,long filesize = Long.parseLong(serverResponse.substring(start, end)))<SUB>185</SUB>> ]
+"395" [label = <(parseLong,Long.parseLong(serverResponse.substring(start, end)))<SUB>185</SUB>> ]
+"396" [label = <(IDENTIFIER,Long,Long.parseLong(serverResponse.substring(start, end)))<SUB>185</SUB>> ]
+"397" [label = <(substring,serverResponse.substring(start, end))<SUB>185</SUB>> ]
+"398" [label = <(IDENTIFIER,serverResponse,serverResponse.substring(start, end))<SUB>185</SUB>> ]
+"399" [label = <(IDENTIFIER,start,serverResponse.substring(start, end))<SUB>185</SUB>> ]
+"400" [label = <(IDENTIFIER,end,serverResponse.substring(start, end))<SUB>185</SUB>> ]
+"401" [label = <(LOCAL,String filename: java.lang.String)> ]
+"402" [label = <(&lt;operator&gt;.assignment,String filename = serverResponse.substring(end + 1))<SUB>186</SUB>> ]
+"403" [label = <(IDENTIFIER,filename,String filename = serverResponse.substring(end + 1))<SUB>186</SUB>> ]
+"404" [label = <(substring,serverResponse.substring(end + 1))<SUB>186</SUB>> ]
+"405" [label = <(IDENTIFIER,serverResponse,serverResponse.substring(end + 1))<SUB>186</SUB>> ]
+"406" [label = <(&lt;operator&gt;.addition,end + 1)<SUB>186</SUB>> ]
+"407" [label = <(IDENTIFIER,end,end + 1)<SUB>186</SUB>> ]
+"408" [label = <(LITERAL,1,end + 1)<SUB>186</SUB>> ]
+"409" [label = <(log,log(&quot;Receiving: &quot; + filename + &quot; : &quot; + filesize))<SUB>187</SUB>> ]
+"30" [label = <(IDENTIFIER,this,log(&quot;Receiving: &quot; + filename + &quot; : &quot; + filesize))<SUB>187</SUB>> ]
+"410" [label = <(&lt;operator&gt;.addition,&quot;Receiving: &quot; + filename + &quot; : &quot; + filesize)<SUB>187</SUB>> ]
+"411" [label = <(&lt;operator&gt;.addition,&quot;Receiving: &quot; + filename + &quot; : &quot;)<SUB>187</SUB>> ]
+"412" [label = <(&lt;operator&gt;.addition,&quot;Receiving: &quot; + filename)<SUB>187</SUB>> ]
+"413" [label = <(LITERAL,&quot;Receiving: &quot;,&quot;Receiving: &quot; + filename)<SUB>187</SUB>> ]
+"414" [label = <(IDENTIFIER,filename,&quot;Receiving: &quot; + filename)<SUB>187</SUB>> ]
+"415" [label = <(LITERAL,&quot; : &quot;,&quot;Receiving: &quot; + filename + &quot; : &quot;)<SUB>187</SUB>> ]
+"416" [label = <(IDENTIFIER,filesize,&quot;Receiving: &quot; + filename + &quot; : &quot; + filesize)<SUB>187</SUB>> ]
+"417" [label = <(LOCAL,File transferFile: java.io.File)> ]
+"418" [label = <(&lt;operator&gt;.assignment,File transferFile = (localFile.isDirectory()) ? new File(localFile, filename) : localFile)<SUB>188</SUB>> ]
+"419" [label = <(IDENTIFIER,transferFile,File transferFile = (localFile.isDirectory()) ? new File(localFile, filename) : localFile)<SUB>188</SUB>> ]
+"420" [label = <(&lt;operator&gt;.conditional,(localFile.isDirectory()) ? new File(localFile, filename) : localFile)<SUB>188</SUB>> ]
+"421" [label = <(isDirectory,localFile.isDirectory())<SUB>188</SUB>> ]
+"422" [label = <(IDENTIFIER,localFile,localFile.isDirectory())<SUB>188</SUB>> ]
+"423" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>189</SUB>> ]
+"424" [label = <(&lt;operator&gt;.assignment,&lt;empty&gt;)> ]
+"425" [label = <(IDENTIFIER,$obj3,&lt;empty&gt;)> ]
+"426" [label = <(&lt;operator&gt;.alloc,new File(localFile, filename))<SUB>189</SUB>> ]
+"427" [label = <(&lt;init&gt;,new File(localFile, filename))<SUB>189</SUB>> ]
+"428" [label = <(IDENTIFIER,$obj3,new File(localFile, filename))> ]
+"429" [label = <(IDENTIFIER,localFile,new File(localFile, filename))<SUB>189</SUB>> ]
+"430" [label = <(IDENTIFIER,filename,new File(localFile, filename))<SUB>189</SUB>> ]
+"431" [label = <(IDENTIFIER,$obj3,&lt;empty&gt;)> ]
+"432" [label = <(IDENTIFIER,localFile,(localFile.isDirectory()) ? new File(localFile, filename) : localFile)<SUB>190</SUB>> ]
+"433" [label = <(fetchFile,this.fetchFile(transferFile, filesize, out, in))<SUB>191</SUB>> ]
+"32" [label = <(IDENTIFIER,this,this.fetchFile(transferFile, filesize, out, in))<SUB>191</SUB>> ]
+"434" [label = <(IDENTIFIER,transferFile,this.fetchFile(transferFile, filesize, out, in))<SUB>191</SUB>> ]
+"435" [label = <(IDENTIFIER,filesize,this.fetchFile(transferFile, filesize, out, in))<SUB>191</SUB>> ]
+"436" [label = <(IDENTIFIER,out,this.fetchFile(transferFile, filesize, out, in))<SUB>191</SUB>> ]
+"437" [label = <(IDENTIFIER,in,this.fetchFile(transferFile, filesize, out, in))<SUB>191</SUB>> ]
+"438" [label = <(waitForAck,waitForAck(in))<SUB>192</SUB>> ]
+"33" [label = <(IDENTIFIER,this,waitForAck(in))<SUB>192</SUB>> ]
+"439" [label = <(IDENTIFIER,in,waitForAck(in))<SUB>192</SUB>> ]
+"440" [label = <(sendAck,sendAck(out))<SUB>193</SUB>> ]
+"34" [label = <(IDENTIFIER,this,sendAck(out))<SUB>193</SUB>> ]
+"441" [label = <(IDENTIFIER,out,sendAck(out))<SUB>193</SUB>> ]
+"442" [label = <(MODIFIER,PRIVATE)> ]
+"443" [label = <(MODIFIER,VIRTUAL)> ]
+"444" [label = <(METHOD_RETURN,void)<SUB>177</SUB>> ]
+  "360" -> "31" 
+  "360" -> "361" 
+  "360" -> "362" 
+  "360" -> "363" 
+  "360" -> "364" 
+  "360" -> "365" 
+  "360" -> "442" 
+  "360" -> "443" 
+  "360" -> "444" 
+  "365" -> "366" 
+  "365" -> "367" 
+  "365" -> "370" 
+  "365" -> "371" 
+  "365" -> "379" 
+  "365" -> "384" 
+  "365" -> "392" 
+  "365" -> "393" 
+  "365" -> "401" 
+  "365" -> "402" 
+  "365" -> "409" 
+  "365" -> "417" 
+  "365" -> "418" 
+  "365" -> "433" 
+  "365" -> "438" 
+  "365" -> "440" 
+  "367" -> "368" 
+  "367" -> "369" 
+  "371" -> "372" 
+  "371" -> "373" 
+  "373" -> "374" 
+  "373" -> "375" 
+  "373" -> "376" 
+  "376" -> "377" 
+  "376" -> "378" 
+  "379" -> "380" 
+  "379" -> "381" 
+  "381" -> "382" 
+  "381" -> "383" 
+  "384" -> "385" 
+  "384" -> "386" 
+  "386" -> "387" 
+  "386" -> "388" 
+  "386" -> "389" 
+  "389" -> "390" 
+  "389" -> "391" 
+  "393" -> "394" 
+  "393" -> "395" 
+  "395" -> "396" 
+  "395" -> "397" 
+  "397" -> "398" 
+  "397" -> "399" 
+  "397" -> "400" 
+  "402" -> "403" 
+  "402" -> "404" 
+  "404" -> "405" 
+  "404" -> "406" 
+  "406" -> "407" 
+  "406" -> "408" 
+  "409" -> "30" 
+  "409" -> "410" 
+  "410" -> "411" 
+  "410" -> "416" 
+  "411" -> "412" 
+  "411" -> "415" 
+  "412" -> "413" 
+  "412" -> "414" 
+  "418" -> "419" 
+  "418" -> "420" 
+  "420" -> "421" 
+  "420" -> "423" 
+  "420" -> "432" 
+  "421" -> "422" 
+  "423" -> "424" 
+  "423" -> "427" 
+  "423" -> "431" 
+  "424" -> "425" 
+  "424" -> "426" 
+  "427" -> "428" 
+  "427" -> "429" 
+  "427" -> "430" 
+  "433" -> "32" 
+  "433" -> "434" 
+  "433" -> "435" 
+  "433" -> "436" 
+  "433" -> "437" 
+  "438" -> "33" 
+  "438" -> "439" 
+  "440" -> "34" 
+  "440" -> "441" 
+}

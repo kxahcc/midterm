@@ -1,0 +1,147 @@
+digraph "process" {  
+"80" [label = <(METHOD,process)<SUB>65</SUB>> ]
+"9" [label = <(PARAM,this)<SUB>65</SUB>> ]
+"81" [label = <(PARAM,FileExchange exchange)<SUB>65</SUB>> ]
+"82" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>65</SUB>> ]
+"83" [label = <(LOCAL,boolean fileSource: boolean)> ]
+"84" [label = <(&lt;operator&gt;.assignment,boolean fileSource = exchange.getIn().getBody() instanceof File)<SUB>66</SUB>> ]
+"85" [label = <(IDENTIFIER,fileSource,boolean fileSource = exchange.getIn().getBody() instanceof File)<SUB>66</SUB>> ]
+"86" [label = <(&lt;operator&gt;.instanceOf,exchange.getIn().getBody() instanceof File)<SUB>66</SUB>> ]
+"87" [label = <(getBody,getBody())<SUB>66</SUB>> ]
+"88" [label = <(getIn,getIn())<SUB>66</SUB>> ]
+"89" [label = <(IDENTIFIER,exchange,getIn())<SUB>66</SUB>> ]
+"90" [label = <(TYPE_REF,File,File)<SUB>66</SUB>> ]
+"91" [label = <(LOCAL,File target: java.io.File)> ]
+"92" [label = <(&lt;operator&gt;.assignment,File target = createFileName(exchange.getIn()))<SUB>67</SUB>> ]
+"93" [label = <(IDENTIFIER,target,File target = createFileName(exchange.getIn()))<SUB>67</SUB>> ]
+"94" [label = <(createFileName,createFileName(exchange.getIn()))<SUB>67</SUB>> ]
+"8" [label = <(IDENTIFIER,this,createFileName(exchange.getIn()))<SUB>67</SUB>> ]
+"95" [label = <(getIn,getIn())<SUB>67</SUB>> ]
+"96" [label = <(IDENTIFIER,exchange,getIn())<SUB>67</SUB>> ]
+"97" [label = <(buildDirectory,this.buildDirectory(target))<SUB>68</SUB>> ]
+"10" [label = <(IDENTIFIER,this,this.buildDirectory(target))<SUB>68</SUB>> ]
+"98" [label = <(IDENTIFIER,target,this.buildDirectory(target))<SUB>68</SUB>> ]
+"99" [label = <(CONTROL_STRUCTURE,if (LOG.isDebugEnabled()),if (LOG.isDebugEnabled()))<SUB>70</SUB>> ]
+"100" [label = <(isDebugEnabled,isDebugEnabled())<SUB>70</SUB>> ]
+"101" [label = <(&lt;operator&gt;.fieldAccess,FileProducer.LOG)<SUB>70</SUB>> ]
+"102" [label = <(IDENTIFIER,FileProducer,isDebugEnabled())<SUB>70</SUB>> ]
+"103" [label = <(FIELD_IDENTIFIER,LOG,LOG)<SUB>70</SUB>> ]
+"104" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>70</SUB>> ]
+"105" [label = <(debug,debug(&quot;About to write to: &quot; + target + &quot; from exchange: &quot; + exchange))<SUB>71</SUB>> ]
+"106" [label = <(&lt;operator&gt;.fieldAccess,FileProducer.LOG)<SUB>71</SUB>> ]
+"107" [label = <(IDENTIFIER,FileProducer,debug(&quot;About to write to: &quot; + target + &quot; from exchange: &quot; + exchange))<SUB>71</SUB>> ]
+"108" [label = <(FIELD_IDENTIFIER,LOG,LOG)<SUB>71</SUB>> ]
+"109" [label = <(&lt;operator&gt;.addition,&quot;About to write to: &quot; + target + &quot; from exchange: &quot; + exchange)<SUB>71</SUB>> ]
+"110" [label = <(&lt;operator&gt;.addition,&quot;About to write to: &quot; + target + &quot; from exchange: &quot;)<SUB>71</SUB>> ]
+"111" [label = <(&lt;operator&gt;.addition,&quot;About to write to: &quot; + target)<SUB>71</SUB>> ]
+"112" [label = <(LITERAL,&quot;About to write to: &quot;,&quot;About to write to: &quot; + target)<SUB>71</SUB>> ]
+"113" [label = <(IDENTIFIER,target,&quot;About to write to: &quot; + target)<SUB>71</SUB>> ]
+"114" [label = <(LITERAL,&quot; from exchange: &quot;,&quot;About to write to: &quot; + target + &quot; from exchange: &quot;)<SUB>71</SUB>> ]
+"115" [label = <(IDENTIFIER,exchange,&quot;About to write to: &quot; + target + &quot; from exchange: &quot; + exchange)<SUB>71</SUB>> ]
+"116" [label = <(CONTROL_STRUCTURE,if (fileSource),if (fileSource))<SUB>74</SUB>> ]
+"117" [label = <(IDENTIFIER,fileSource,if (fileSource))<SUB>74</SUB>> ]
+"118" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>74</SUB>> ]
+"119" [label = <(LOCAL,File source: java.io.File)> ]
+"120" [label = <(&lt;operator&gt;.assignment,File source = getMandatoryInBody(exchange, File.class))<SUB>75</SUB>> ]
+"121" [label = <(IDENTIFIER,source,File source = getMandatoryInBody(exchange, File.class))<SUB>75</SUB>> ]
+"122" [label = <(getMandatoryInBody,getMandatoryInBody(exchange, File.class))<SUB>75</SUB>> ]
+"123" [label = <(IDENTIFIER,ExchangeHelper,getMandatoryInBody(exchange, File.class))<SUB>75</SUB>> ]
+"124" [label = <(IDENTIFIER,exchange,getMandatoryInBody(exchange, File.class))<SUB>75</SUB>> ]
+"125" [label = <(&lt;operator&gt;.fieldAccess,File.class)<SUB>75</SUB>> ]
+"126" [label = <(IDENTIFIER,File,getMandatoryInBody(exchange, File.class))<SUB>75</SUB>> ]
+"127" [label = <(FIELD_IDENTIFIER,class,class)<SUB>75</SUB>> ]
+"128" [label = <(writeFileByFile,this.writeFileByFile(source, target))<SUB>76</SUB>> ]
+"11" [label = <(IDENTIFIER,this,this.writeFileByFile(source, target))<SUB>76</SUB>> ]
+"129" [label = <(IDENTIFIER,source,this.writeFileByFile(source, target))<SUB>76</SUB>> ]
+"130" [label = <(IDENTIFIER,target,this.writeFileByFile(source, target))<SUB>76</SUB>> ]
+"131" [label = <(CONTROL_STRUCTURE,else,else)<SUB>77</SUB>> ]
+"132" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>77</SUB>> ]
+"133" [label = <(LOCAL,InputStream in: java.io.InputStream)> ]
+"134" [label = <(&lt;operator&gt;.assignment,InputStream in = getMandatoryInBody(exchange, InputStream.class))<SUB>78</SUB>> ]
+"135" [label = <(IDENTIFIER,in,InputStream in = getMandatoryInBody(exchange, InputStream.class))<SUB>78</SUB>> ]
+"136" [label = <(getMandatoryInBody,getMandatoryInBody(exchange, InputStream.class))<SUB>78</SUB>> ]
+"137" [label = <(IDENTIFIER,ExchangeHelper,getMandatoryInBody(exchange, InputStream.class))<SUB>78</SUB>> ]
+"138" [label = <(IDENTIFIER,exchange,getMandatoryInBody(exchange, InputStream.class))<SUB>78</SUB>> ]
+"139" [label = <(&lt;operator&gt;.fieldAccess,InputStream.class)<SUB>78</SUB>> ]
+"140" [label = <(IDENTIFIER,InputStream,getMandatoryInBody(exchange, InputStream.class))<SUB>78</SUB>> ]
+"141" [label = <(FIELD_IDENTIFIER,class,class)<SUB>78</SUB>> ]
+"142" [label = <(writeFileByStream,this.writeFileByStream(in, target))<SUB>79</SUB>> ]
+"12" [label = <(IDENTIFIER,this,this.writeFileByStream(in, target))<SUB>79</SUB>> ]
+"143" [label = <(IDENTIFIER,in,this.writeFileByStream(in, target))<SUB>79</SUB>> ]
+"144" [label = <(IDENTIFIER,target,this.writeFileByStream(in, target))<SUB>79</SUB>> ]
+"145" [label = <(MODIFIER,PUBLIC)> ]
+"146" [label = <(MODIFIER,VIRTUAL)> ]
+"147" [label = <(METHOD_RETURN,void)<SUB>65</SUB>> ]
+  "80" -> "9" 
+  "80" -> "81" 
+  "80" -> "82" 
+  "80" -> "145" 
+  "80" -> "146" 
+  "80" -> "147" 
+  "82" -> "83" 
+  "82" -> "84" 
+  "82" -> "91" 
+  "82" -> "92" 
+  "82" -> "97" 
+  "82" -> "99" 
+  "82" -> "116" 
+  "84" -> "85" 
+  "84" -> "86" 
+  "86" -> "87" 
+  "86" -> "90" 
+  "87" -> "88" 
+  "88" -> "89" 
+  "92" -> "93" 
+  "92" -> "94" 
+  "94" -> "8" 
+  "94" -> "95" 
+  "95" -> "96" 
+  "97" -> "10" 
+  "97" -> "98" 
+  "99" -> "100" 
+  "99" -> "104" 
+  "100" -> "101" 
+  "101" -> "102" 
+  "101" -> "103" 
+  "104" -> "105" 
+  "105" -> "106" 
+  "105" -> "109" 
+  "106" -> "107" 
+  "106" -> "108" 
+  "109" -> "110" 
+  "109" -> "115" 
+  "110" -> "111" 
+  "110" -> "114" 
+  "111" -> "112" 
+  "111" -> "113" 
+  "116" -> "117" 
+  "116" -> "118" 
+  "116" -> "131" 
+  "118" -> "119" 
+  "118" -> "120" 
+  "118" -> "128" 
+  "120" -> "121" 
+  "120" -> "122" 
+  "122" -> "123" 
+  "122" -> "124" 
+  "122" -> "125" 
+  "125" -> "126" 
+  "125" -> "127" 
+  "128" -> "11" 
+  "128" -> "129" 
+  "128" -> "130" 
+  "131" -> "132" 
+  "132" -> "133" 
+  "132" -> "134" 
+  "132" -> "142" 
+  "134" -> "135" 
+  "134" -> "136" 
+  "136" -> "137" 
+  "136" -> "138" 
+  "136" -> "139" 
+  "139" -> "140" 
+  "139" -> "141" 
+  "142" -> "12" 
+  "142" -> "143" 
+  "142" -> "144" 
+}

@@ -1,0 +1,213 @@
+digraph "expandFile" {  
+"252" [label = <(METHOD,expandFile)<SUB>154</SUB>> ]
+"15" [label = <(PARAM,this)<SUB>154</SUB>> ]
+"253" [label = <(PARAM,FileUtils fileUtils)<SUB>154</SUB>> ]
+"254" [label = <(PARAM,File srcF)<SUB>154</SUB>> ]
+"255" [label = <(PARAM,File dir)<SUB>154</SUB>> ]
+"256" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>154</SUB>> ]
+"257" [label = <(log,log(&quot;Expanding: &quot; + srcF + &quot; into &quot; + dir, Project.MSG_INFO))<SUB>155</SUB>> ]
+"14" [label = <(IDENTIFIER,this,log(&quot;Expanding: &quot; + srcF + &quot; into &quot; + dir, Project.MSG_INFO))<SUB>155</SUB>> ]
+"258" [label = <(&lt;operator&gt;.addition,&quot;Expanding: &quot; + srcF + &quot; into &quot; + dir)<SUB>155</SUB>> ]
+"259" [label = <(&lt;operator&gt;.addition,&quot;Expanding: &quot; + srcF + &quot; into &quot;)<SUB>155</SUB>> ]
+"260" [label = <(&lt;operator&gt;.addition,&quot;Expanding: &quot; + srcF)<SUB>155</SUB>> ]
+"261" [label = <(LITERAL,&quot;Expanding: &quot;,&quot;Expanding: &quot; + srcF)<SUB>155</SUB>> ]
+"262" [label = <(IDENTIFIER,srcF,&quot;Expanding: &quot; + srcF)<SUB>155</SUB>> ]
+"263" [label = <(LITERAL,&quot; into &quot;,&quot;Expanding: &quot; + srcF + &quot; into &quot;)<SUB>155</SUB>> ]
+"264" [label = <(IDENTIFIER,dir,&quot;Expanding: &quot; + srcF + &quot; into &quot; + dir)<SUB>155</SUB>> ]
+"265" [label = <(&lt;operator&gt;.fieldAccess,Project.MSG_INFO)<SUB>155</SUB>> ]
+"266" [label = <(IDENTIFIER,Project,log(&quot;Expanding: &quot; + srcF + &quot; into &quot; + dir, Project.MSG_INFO))<SUB>155</SUB>> ]
+"267" [label = <(FIELD_IDENTIFIER,MSG_INFO,MSG_INFO)<SUB>155</SUB>> ]
+"17" [label = <(LOCAL,ZipFile zf: org.apache.tools.zip.ZipFile)> ]
+"268" [label = <(&lt;operator&gt;.assignment,ZipFile zf = null)<SUB>156</SUB>> ]
+"269" [label = <(IDENTIFIER,zf,ZipFile zf = null)<SUB>156</SUB>> ]
+"270" [label = <(LITERAL,null,ZipFile zf = null)<SUB>156</SUB>> ]
+"271" [label = <(CONTROL_STRUCTURE,try,try)<SUB>157</SUB>> ]
+"272" [label = <(BLOCK,try,try)<SUB>157</SUB>> ]
+"273" [label = <(&lt;operator&gt;.assignment,zf = new ZipFile(srcF, encoding))<SUB>158</SUB>> ]
+"274" [label = <(IDENTIFIER,zf,zf = new ZipFile(srcF, encoding))<SUB>158</SUB>> ]
+"275" [label = <(&lt;operator&gt;.alloc,new ZipFile(srcF, encoding))<SUB>158</SUB>> ]
+"276" [label = <(&lt;init&gt;,new ZipFile(srcF, encoding))<SUB>158</SUB>> ]
+"16" [label = <(IDENTIFIER,zf,new ZipFile(srcF, encoding))<SUB>158</SUB>> ]
+"277" [label = <(IDENTIFIER,srcF,new ZipFile(srcF, encoding))<SUB>158</SUB>> ]
+"278" [label = <(&lt;operator&gt;.fieldAccess,this.encoding)<SUB>158</SUB>> ]
+"279" [label = <(IDENTIFIER,this,new ZipFile(srcF, encoding))<SUB>158</SUB>> ]
+"280" [label = <(FIELD_IDENTIFIER,encoding,encoding)<SUB>158</SUB>> ]
+"281" [label = <(LOCAL,Enumeration e: java.util.Enumeration)> ]
+"282" [label = <(&lt;operator&gt;.assignment,Enumeration e = getEntries())<SUB>159</SUB>> ]
+"283" [label = <(IDENTIFIER,e,Enumeration e = getEntries())<SUB>159</SUB>> ]
+"284" [label = <(getEntries,getEntries())<SUB>159</SUB>> ]
+"285" [label = <(IDENTIFIER,zf,getEntries())<SUB>159</SUB>> ]
+"286" [label = <(CONTROL_STRUCTURE,while (e.hasMoreElements()),while (e.hasMoreElements()))<SUB>160</SUB>> ]
+"287" [label = <(hasMoreElements,e.hasMoreElements())<SUB>160</SUB>> ]
+"288" [label = <(IDENTIFIER,e,e.hasMoreElements())<SUB>160</SUB>> ]
+"289" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>160</SUB>> ]
+"290" [label = <(LOCAL,ZipEntry ze: org.apache.tools.zip.ZipEntry)> ]
+"291" [label = <(&lt;operator&gt;.assignment,ZipEntry ze = (ZipEntry) e.nextElement())<SUB>161</SUB>> ]
+"292" [label = <(IDENTIFIER,ze,ZipEntry ze = (ZipEntry) e.nextElement())<SUB>161</SUB>> ]
+"293" [label = <(&lt;operator&gt;.cast,(ZipEntry) e.nextElement())<SUB>161</SUB>> ]
+"294" [label = <(TYPE_REF,ZipEntry,ZipEntry)<SUB>161</SUB>> ]
+"295" [label = <(nextElement,e.nextElement())<SUB>161</SUB>> ]
+"296" [label = <(IDENTIFIER,e,e.nextElement())<SUB>161</SUB>> ]
+"297" [label = <(extractFile,extractFile(fileUtils, srcF, dir, zf.getInputStream(ze), ze.getName(), new Date(ze.getTime()), ze.isDirectory()))<SUB>162</SUB>> ]
+"18" [label = <(IDENTIFIER,this,extractFile(fileUtils, srcF, dir, zf.getInputStream(ze), ze.getName(), new Date(ze.getTime()), ze.isDirectory()))<SUB>162</SUB>> ]
+"298" [label = <(IDENTIFIER,fileUtils,extractFile(fileUtils, srcF, dir, zf.getInputStream(ze), ze.getName(), new Date(ze.getTime()), ze.isDirectory()))<SUB>162</SUB>> ]
+"299" [label = <(IDENTIFIER,srcF,extractFile(fileUtils, srcF, dir, zf.getInputStream(ze), ze.getName(), new Date(ze.getTime()), ze.isDirectory()))<SUB>162</SUB>> ]
+"300" [label = <(IDENTIFIER,dir,extractFile(fileUtils, srcF, dir, zf.getInputStream(ze), ze.getName(), new Date(ze.getTime()), ze.isDirectory()))<SUB>162</SUB>> ]
+"301" [label = <(getInputStream,getInputStream(ze))<SUB>162</SUB>> ]
+"302" [label = <(IDENTIFIER,zf,getInputStream(ze))<SUB>162</SUB>> ]
+"303" [label = <(IDENTIFIER,ze,getInputStream(ze))<SUB>162</SUB>> ]
+"304" [label = <(getName,getName())<SUB>163</SUB>> ]
+"305" [label = <(IDENTIFIER,ze,getName())<SUB>163</SUB>> ]
+"306" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>163</SUB>> ]
+"307" [label = <(&lt;operator&gt;.assignment,&lt;empty&gt;)> ]
+"308" [label = <(IDENTIFIER,$obj8,&lt;empty&gt;)> ]
+"309" [label = <(&lt;operator&gt;.alloc,new Date(ze.getTime()))<SUB>163</SUB>> ]
+"310" [label = <(&lt;init&gt;,new Date(ze.getTime()))<SUB>163</SUB>> ]
+"311" [label = <(IDENTIFIER,$obj8,new Date(ze.getTime()))> ]
+"312" [label = <(getTime,getTime())<SUB>163</SUB>> ]
+"313" [label = <(IDENTIFIER,ze,getTime())<SUB>163</SUB>> ]
+"314" [label = <(IDENTIFIER,$obj8,&lt;empty&gt;)> ]
+"315" [label = <(isDirectory,isDirectory())<SUB>164</SUB>> ]
+"316" [label = <(IDENTIFIER,ze,isDirectory())<SUB>164</SUB>> ]
+"317" [label = <(log,log(&quot;expand complete&quot;, Project.MSG_VERBOSE))<SUB>167</SUB>> ]
+"19" [label = <(IDENTIFIER,this,log(&quot;expand complete&quot;, Project.MSG_VERBOSE))<SUB>167</SUB>> ]
+"318" [label = <(LITERAL,&quot;expand complete&quot;,log(&quot;expand complete&quot;, Project.MSG_VERBOSE))<SUB>167</SUB>> ]
+"319" [label = <(&lt;operator&gt;.fieldAccess,Project.MSG_VERBOSE)<SUB>167</SUB>> ]
+"320" [label = <(IDENTIFIER,Project,log(&quot;expand complete&quot;, Project.MSG_VERBOSE))<SUB>167</SUB>> ]
+"321" [label = <(FIELD_IDENTIFIER,MSG_VERBOSE,MSG_VERBOSE)<SUB>167</SUB>> ]
+"322" [label = <(BLOCK,catch,catch)> ]
+"323" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>168</SUB>> ]
+"324" [label = <(&lt;operator&gt;.throw,throw new BuildException(&quot;Error while expanding &quot; + srcF.getPath(), ioe);)<SUB>169</SUB>> ]
+"325" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>169</SUB>> ]
+"326" [label = <(&lt;operator&gt;.assignment,&lt;empty&gt;)> ]
+"327" [label = <(IDENTIFIER,$obj9,&lt;empty&gt;)> ]
+"328" [label = <(&lt;operator&gt;.alloc,new BuildException(&quot;Error while expanding &quot; + srcF.getPath(), ioe))<SUB>169</SUB>> ]
+"329" [label = <(&lt;init&gt;,new BuildException(&quot;Error while expanding &quot; + srcF.getPath(), ioe))<SUB>169</SUB>> ]
+"330" [label = <(IDENTIFIER,$obj9,new BuildException(&quot;Error while expanding &quot; + srcF.getPath(), ioe))> ]
+"331" [label = <(&lt;operator&gt;.addition,&quot;Error while expanding &quot; + srcF.getPath())<SUB>169</SUB>> ]
+"332" [label = <(LITERAL,&quot;Error while expanding &quot;,&quot;Error while expanding &quot; + srcF.getPath())<SUB>169</SUB>> ]
+"333" [label = <(getPath,srcF.getPath())<SUB>169</SUB>> ]
+"334" [label = <(IDENTIFIER,srcF,srcF.getPath())<SUB>169</SUB>> ]
+"335" [label = <(IDENTIFIER,ioe,new BuildException(&quot;Error while expanding &quot; + srcF.getPath(), ioe))<SUB>170</SUB>> ]
+"336" [label = <(IDENTIFIER,$obj9,&lt;empty&gt;)> ]
+"337" [label = <(BLOCK,finally,finally)<SUB>171</SUB>> ]
+"338" [label = <(CONTROL_STRUCTURE,if (zf != null),if (zf != null))<SUB>172</SUB>> ]
+"339" [label = <(&lt;operator&gt;.notEquals,zf != null)<SUB>172</SUB>> ]
+"340" [label = <(IDENTIFIER,zf,zf != null)<SUB>172</SUB>> ]
+"341" [label = <(LITERAL,null,zf != null)<SUB>172</SUB>> ]
+"342" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>172</SUB>> ]
+"343" [label = <(CONTROL_STRUCTURE,try,try)<SUB>173</SUB>> ]
+"344" [label = <(BLOCK,try,try)<SUB>173</SUB>> ]
+"345" [label = <(close,close())<SUB>174</SUB>> ]
+"346" [label = <(IDENTIFIER,zf,close())<SUB>174</SUB>> ]
+"347" [label = <(BLOCK,catch,catch)> ]
+"348" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>175</SUB>> ]
+"349" [label = <(MODIFIER,PROTECTED)> ]
+"350" [label = <(MODIFIER,VIRTUAL)> ]
+"351" [label = <(METHOD_RETURN,void)<SUB>154</SUB>> ]
+  "252" -> "15" 
+  "252" -> "253" 
+  "252" -> "254" 
+  "252" -> "255" 
+  "252" -> "256" 
+  "252" -> "349" 
+  "252" -> "350" 
+  "252" -> "351" 
+  "256" -> "257" 
+  "256" -> "17" 
+  "256" -> "268" 
+  "256" -> "271" 
+  "257" -> "14" 
+  "257" -> "258" 
+  "257" -> "265" 
+  "258" -> "259" 
+  "258" -> "264" 
+  "259" -> "260" 
+  "259" -> "263" 
+  "260" -> "261" 
+  "260" -> "262" 
+  "265" -> "266" 
+  "265" -> "267" 
+  "268" -> "269" 
+  "268" -> "270" 
+  "271" -> "272" 
+  "271" -> "322" 
+  "271" -> "337" 
+  "272" -> "273" 
+  "272" -> "276" 
+  "272" -> "281" 
+  "272" -> "282" 
+  "272" -> "286" 
+  "272" -> "317" 
+  "273" -> "274" 
+  "273" -> "275" 
+  "276" -> "16" 
+  "276" -> "277" 
+  "276" -> "278" 
+  "278" -> "279" 
+  "278" -> "280" 
+  "282" -> "283" 
+  "282" -> "284" 
+  "284" -> "285" 
+  "286" -> "287" 
+  "286" -> "289" 
+  "287" -> "288" 
+  "289" -> "290" 
+  "289" -> "291" 
+  "289" -> "297" 
+  "291" -> "292" 
+  "291" -> "293" 
+  "293" -> "294" 
+  "293" -> "295" 
+  "295" -> "296" 
+  "297" -> "18" 
+  "297" -> "298" 
+  "297" -> "299" 
+  "297" -> "300" 
+  "297" -> "301" 
+  "297" -> "304" 
+  "297" -> "306" 
+  "297" -> "315" 
+  "301" -> "302" 
+  "301" -> "303" 
+  "304" -> "305" 
+  "306" -> "307" 
+  "306" -> "310" 
+  "306" -> "314" 
+  "307" -> "308" 
+  "307" -> "309" 
+  "310" -> "311" 
+  "310" -> "312" 
+  "312" -> "313" 
+  "315" -> "316" 
+  "317" -> "19" 
+  "317" -> "318" 
+  "317" -> "319" 
+  "319" -> "320" 
+  "319" -> "321" 
+  "322" -> "323" 
+  "323" -> "324" 
+  "324" -> "325" 
+  "325" -> "326" 
+  "325" -> "329" 
+  "325" -> "336" 
+  "326" -> "327" 
+  "326" -> "328" 
+  "329" -> "330" 
+  "329" -> "331" 
+  "329" -> "335" 
+  "331" -> "332" 
+  "331" -> "333" 
+  "333" -> "334" 
+  "337" -> "338" 
+  "338" -> "339" 
+  "338" -> "342" 
+  "339" -> "340" 
+  "339" -> "341" 
+  "342" -> "343" 
+  "343" -> "344" 
+  "343" -> "347" 
+  "344" -> "345" 
+  "345" -> "346" 
+  "347" -> "348" 
+}

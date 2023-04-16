@@ -1,0 +1,579 @@
+digraph "tarFile" {  
+"699" [label = <(METHOD,tarFile)<SUB>344</SUB>> ]
+"42" [label = <(PARAM,this)<SUB>344</SUB>> ]
+"700" [label = <(PARAM,File file)<SUB>344</SUB>> ]
+"701" [label = <(PARAM,TarOutputStream tOut)<SUB>344</SUB>> ]
+"702" [label = <(PARAM,String vPath)<SUB>344</SUB>> ]
+"703" [label = <(PARAM,TarFileSet tarFileSet)<SUB>345</SUB>> ]
+"704" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>346</SUB>> ]
+"49" [label = <(LOCAL,FileInputStream fIn: java.io.FileInputStream)> ]
+"705" [label = <(&lt;operator&gt;.assignment,FileInputStream fIn = null)<SUB>347</SUB>> ]
+"706" [label = <(IDENTIFIER,fIn,FileInputStream fIn = null)<SUB>347</SUB>> ]
+"707" [label = <(LITERAL,null,FileInputStream fIn = null)<SUB>347</SUB>> ]
+"708" [label = <(LOCAL,String fullpath: java.lang.String)> ]
+"709" [label = <(&lt;operator&gt;.assignment,String fullpath = tarFileSet.getFullpath())<SUB>349</SUB>> ]
+"710" [label = <(IDENTIFIER,fullpath,String fullpath = tarFileSet.getFullpath())<SUB>349</SUB>> ]
+"711" [label = <(getFullpath,tarFileSet.getFullpath())<SUB>349</SUB>> ]
+"712" [label = <(IDENTIFIER,tarFileSet,tarFileSet.getFullpath())<SUB>349</SUB>> ]
+"713" [label = <(CONTROL_STRUCTURE,if (fullpath.length() &gt; 0),if (fullpath.length() &gt; 0))<SUB>350</SUB>> ]
+"714" [label = <(&lt;operator&gt;.greaterThan,fullpath.length() &gt; 0)<SUB>350</SUB>> ]
+"715" [label = <(length,fullpath.length())<SUB>350</SUB>> ]
+"716" [label = <(IDENTIFIER,fullpath,fullpath.length())<SUB>350</SUB>> ]
+"717" [label = <(LITERAL,0,fullpath.length() &gt; 0)<SUB>350</SUB>> ]
+"718" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>350</SUB>> ]
+"719" [label = <(&lt;operator&gt;.assignment,vPath = fullpath)<SUB>351</SUB>> ]
+"720" [label = <(IDENTIFIER,vPath,vPath = fullpath)<SUB>351</SUB>> ]
+"721" [label = <(IDENTIFIER,fullpath,vPath = fullpath)<SUB>351</SUB>> ]
+"722" [label = <(CONTROL_STRUCTURE,else,else)<SUB>352</SUB>> ]
+"723" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>352</SUB>> ]
+"724" [label = <(CONTROL_STRUCTURE,if (vPath.length() &lt;= 0),if (vPath.length() &lt;= 0))<SUB>354</SUB>> ]
+"725" [label = <(&lt;operator&gt;.lessEqualsThan,vPath.length() &lt;= 0)<SUB>354</SUB>> ]
+"726" [label = <(length,vPath.length())<SUB>354</SUB>> ]
+"727" [label = <(IDENTIFIER,vPath,vPath.length())<SUB>354</SUB>> ]
+"728" [label = <(LITERAL,0,vPath.length() &lt;= 0)<SUB>354</SUB>> ]
+"729" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>354</SUB>> ]
+"730" [label = <(RETURN,return;,return;)<SUB>355</SUB>> ]
+"731" [label = <(CONTROL_STRUCTURE,if (file.isDirectory() &amp;&amp; !vPath.endsWith(&quot;/&quot;)),if (file.isDirectory() &amp;&amp; !vPath.endsWith(&quot;/&quot;)))<SUB>358</SUB>> ]
+"732" [label = <(&lt;operator&gt;.logicalAnd,file.isDirectory() &amp;&amp; !vPath.endsWith(&quot;/&quot;))<SUB>358</SUB>> ]
+"733" [label = <(isDirectory,file.isDirectory())<SUB>358</SUB>> ]
+"734" [label = <(IDENTIFIER,file,file.isDirectory())<SUB>358</SUB>> ]
+"735" [label = <(&lt;operator&gt;.logicalNot,!vPath.endsWith(&quot;/&quot;))<SUB>358</SUB>> ]
+"736" [label = <(endsWith,vPath.endsWith(&quot;/&quot;))<SUB>358</SUB>> ]
+"737" [label = <(IDENTIFIER,vPath,vPath.endsWith(&quot;/&quot;))<SUB>358</SUB>> ]
+"738" [label = <(LITERAL,&quot;/&quot;,vPath.endsWith(&quot;/&quot;))<SUB>358</SUB>> ]
+"739" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>358</SUB>> ]
+"740" [label = <(&lt;operator&gt;.assignmentPlus,vPath += &quot;/&quot;)<SUB>359</SUB>> ]
+"741" [label = <(IDENTIFIER,vPath,vPath += &quot;/&quot;)<SUB>359</SUB>> ]
+"742" [label = <(LITERAL,&quot;/&quot;,vPath += &quot;/&quot;)<SUB>359</SUB>> ]
+"743" [label = <(LOCAL,String prefix: java.lang.String)> ]
+"744" [label = <(&lt;operator&gt;.assignment,String prefix = tarFileSet.getPrefix())<SUB>362</SUB>> ]
+"745" [label = <(IDENTIFIER,prefix,String prefix = tarFileSet.getPrefix())<SUB>362</SUB>> ]
+"746" [label = <(getPrefix,tarFileSet.getPrefix())<SUB>362</SUB>> ]
+"747" [label = <(IDENTIFIER,tarFileSet,tarFileSet.getPrefix())<SUB>362</SUB>> ]
+"748" [label = <(CONTROL_STRUCTURE,if (prefix.length() &gt; 0 &amp;&amp; !prefix.endsWith(&quot;/&quot;)),if (prefix.length() &gt; 0 &amp;&amp; !prefix.endsWith(&quot;/&quot;)))<SUB>364</SUB>> ]
+"749" [label = <(&lt;operator&gt;.logicalAnd,prefix.length() &gt; 0 &amp;&amp; !prefix.endsWith(&quot;/&quot;))<SUB>364</SUB>> ]
+"750" [label = <(&lt;operator&gt;.greaterThan,prefix.length() &gt; 0)<SUB>364</SUB>> ]
+"751" [label = <(length,prefix.length())<SUB>364</SUB>> ]
+"752" [label = <(IDENTIFIER,prefix,prefix.length())<SUB>364</SUB>> ]
+"753" [label = <(LITERAL,0,prefix.length() &gt; 0)<SUB>364</SUB>> ]
+"754" [label = <(&lt;operator&gt;.logicalNot,!prefix.endsWith(&quot;/&quot;))<SUB>364</SUB>> ]
+"755" [label = <(endsWith,prefix.endsWith(&quot;/&quot;))<SUB>364</SUB>> ]
+"756" [label = <(IDENTIFIER,prefix,prefix.endsWith(&quot;/&quot;))<SUB>364</SUB>> ]
+"757" [label = <(LITERAL,&quot;/&quot;,prefix.endsWith(&quot;/&quot;))<SUB>364</SUB>> ]
+"758" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>364</SUB>> ]
+"759" [label = <(&lt;operator&gt;.assignment,prefix = prefix + &quot;/&quot;)<SUB>365</SUB>> ]
+"760" [label = <(IDENTIFIER,prefix,prefix = prefix + &quot;/&quot;)<SUB>365</SUB>> ]
+"761" [label = <(&lt;operator&gt;.addition,prefix + &quot;/&quot;)<SUB>365</SUB>> ]
+"762" [label = <(IDENTIFIER,prefix,prefix + &quot;/&quot;)<SUB>365</SUB>> ]
+"763" [label = <(LITERAL,&quot;/&quot;,prefix + &quot;/&quot;)<SUB>365</SUB>> ]
+"764" [label = <(&lt;operator&gt;.assignment,vPath = prefix + vPath)<SUB>367</SUB>> ]
+"765" [label = <(IDENTIFIER,vPath,vPath = prefix + vPath)<SUB>367</SUB>> ]
+"766" [label = <(&lt;operator&gt;.addition,prefix + vPath)<SUB>367</SUB>> ]
+"767" [label = <(IDENTIFIER,prefix,prefix + vPath)<SUB>367</SUB>> ]
+"768" [label = <(IDENTIFIER,vPath,prefix + vPath)<SUB>367</SUB>> ]
+"769" [label = <(CONTROL_STRUCTURE,if (vPath.startsWith(&quot;/&quot;) &amp;&amp; !tarFileSet.getPreserveLeadingSlashes()),if (vPath.startsWith(&quot;/&quot;) &amp;&amp; !tarFileSet.getPreserveLeadingSlashes()))<SUB>370</SUB>> ]
+"770" [label = <(&lt;operator&gt;.logicalAnd,vPath.startsWith(&quot;/&quot;) &amp;&amp; !tarFileSet.getPreserveLeadingSlashes())<SUB>370</SUB>> ]
+"771" [label = <(startsWith,vPath.startsWith(&quot;/&quot;))<SUB>370</SUB>> ]
+"772" [label = <(IDENTIFIER,vPath,vPath.startsWith(&quot;/&quot;))<SUB>370</SUB>> ]
+"773" [label = <(LITERAL,&quot;/&quot;,vPath.startsWith(&quot;/&quot;))<SUB>370</SUB>> ]
+"774" [label = <(&lt;operator&gt;.logicalNot,!tarFileSet.getPreserveLeadingSlashes())<SUB>370</SUB>> ]
+"775" [label = <(getPreserveLeadingSlashes,tarFileSet.getPreserveLeadingSlashes())<SUB>370</SUB>> ]
+"776" [label = <(IDENTIFIER,tarFileSet,tarFileSet.getPreserveLeadingSlashes())<SUB>370</SUB>> ]
+"777" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>370</SUB>> ]
+"778" [label = <(LOCAL,int l: int)> ]
+"779" [label = <(&lt;operator&gt;.assignment,int l = vPath.length())<SUB>371</SUB>> ]
+"780" [label = <(IDENTIFIER,l,int l = vPath.length())<SUB>371</SUB>> ]
+"781" [label = <(length,vPath.length())<SUB>371</SUB>> ]
+"782" [label = <(IDENTIFIER,vPath,vPath.length())<SUB>371</SUB>> ]
+"783" [label = <(CONTROL_STRUCTURE,if (l &lt;= 1),if (l &lt;= 1))<SUB>372</SUB>> ]
+"784" [label = <(&lt;operator&gt;.lessEqualsThan,l &lt;= 1)<SUB>372</SUB>> ]
+"785" [label = <(IDENTIFIER,l,l &lt;= 1)<SUB>372</SUB>> ]
+"786" [label = <(LITERAL,1,l &lt;= 1)<SUB>372</SUB>> ]
+"787" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>372</SUB>> ]
+"788" [label = <(RETURN,return;,return;)<SUB>374</SUB>> ]
+"789" [label = <(&lt;operator&gt;.assignment,vPath = vPath.substring(1, l))<SUB>376</SUB>> ]
+"790" [label = <(IDENTIFIER,vPath,vPath = vPath.substring(1, l))<SUB>376</SUB>> ]
+"791" [label = <(substring,vPath.substring(1, l))<SUB>376</SUB>> ]
+"792" [label = <(IDENTIFIER,vPath,vPath.substring(1, l))<SUB>376</SUB>> ]
+"793" [label = <(LITERAL,1,vPath.substring(1, l))<SUB>376</SUB>> ]
+"794" [label = <(IDENTIFIER,l,vPath.substring(1, l))<SUB>376</SUB>> ]
+"795" [label = <(CONTROL_STRUCTURE,try,try)<SUB>379</SUB>> ]
+"796" [label = <(BLOCK,try,try)<SUB>379</SUB>> ]
+"797" [label = <(CONTROL_STRUCTURE,if (vPath.length() &gt;= TarConstants.NAMELEN),if (vPath.length() &gt;= TarConstants.NAMELEN))<SUB>380</SUB>> ]
+"798" [label = <(&lt;operator&gt;.greaterEqualsThan,vPath.length() &gt;= TarConstants.NAMELEN)<SUB>380</SUB>> ]
+"799" [label = <(length,vPath.length())<SUB>380</SUB>> ]
+"800" [label = <(IDENTIFIER,vPath,vPath.length())<SUB>380</SUB>> ]
+"801" [label = <(&lt;operator&gt;.fieldAccess,TarConstants.NAMELEN)<SUB>380</SUB>> ]
+"802" [label = <(IDENTIFIER,TarConstants,vPath.length() &gt;= TarConstants.NAMELEN)<SUB>380</SUB>> ]
+"803" [label = <(FIELD_IDENTIFIER,NAMELEN,NAMELEN)<SUB>380</SUB>> ]
+"804" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>380</SUB>> ]
+"805" [label = <(CONTROL_STRUCTURE,if (longFileMode.isOmitMode()),if (longFileMode.isOmitMode()))<SUB>381</SUB>> ]
+"806" [label = <(isOmitMode,longFileMode.isOmitMode())<SUB>381</SUB>> ]
+"807" [label = <(&lt;operator&gt;.fieldAccess,this.longFileMode)<SUB>381</SUB>> ]
+"808" [label = <(IDENTIFIER,this,longFileMode.isOmitMode())<SUB>381</SUB>> ]
+"809" [label = <(FIELD_IDENTIFIER,longFileMode,longFileMode)<SUB>381</SUB>> ]
+"810" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>381</SUB>> ]
+"811" [label = <(log,log(&quot;Omitting: &quot; + vPath, Project.MSG_INFO))<SUB>382</SUB>> ]
+"41" [label = <(IDENTIFIER,this,log(&quot;Omitting: &quot; + vPath, Project.MSG_INFO))<SUB>382</SUB>> ]
+"812" [label = <(&lt;operator&gt;.addition,&quot;Omitting: &quot; + vPath)<SUB>382</SUB>> ]
+"813" [label = <(LITERAL,&quot;Omitting: &quot;,&quot;Omitting: &quot; + vPath)<SUB>382</SUB>> ]
+"814" [label = <(IDENTIFIER,vPath,&quot;Omitting: &quot; + vPath)<SUB>382</SUB>> ]
+"815" [label = <(&lt;operator&gt;.fieldAccess,Project.MSG_INFO)<SUB>382</SUB>> ]
+"816" [label = <(IDENTIFIER,Project,log(&quot;Omitting: &quot; + vPath, Project.MSG_INFO))<SUB>382</SUB>> ]
+"817" [label = <(FIELD_IDENTIFIER,MSG_INFO,MSG_INFO)<SUB>382</SUB>> ]
+"818" [label = <(RETURN,return;,return;)<SUB>383</SUB>> ]
+"819" [label = <(CONTROL_STRUCTURE,else,else)<SUB>384</SUB>> ]
+"820" [label = <(CONTROL_STRUCTURE,if (longFileMode.isWarnMode()),if (longFileMode.isWarnMode()))<SUB>384</SUB>> ]
+"821" [label = <(isWarnMode,longFileMode.isWarnMode())<SUB>384</SUB>> ]
+"822" [label = <(&lt;operator&gt;.fieldAccess,this.longFileMode)<SUB>384</SUB>> ]
+"823" [label = <(IDENTIFIER,this,longFileMode.isWarnMode())<SUB>384</SUB>> ]
+"824" [label = <(FIELD_IDENTIFIER,longFileMode,longFileMode)<SUB>384</SUB>> ]
+"825" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>384</SUB>> ]
+"826" [label = <(log,log(&quot;Entry: &quot; + vPath + &quot; longer than &quot; + TarConstants.NAMELEN + &quot; characters.&quot;, Project.MSG_WARN))<SUB>385</SUB>> ]
+"43" [label = <(IDENTIFIER,this,log(&quot;Entry: &quot; + vPath + &quot; longer than &quot; + TarConstants.NAMELEN + &quot; characters.&quot;, Project.MSG_WARN))<SUB>385</SUB>> ]
+"827" [label = <(&lt;operator&gt;.addition,&quot;Entry: &quot; + vPath + &quot; longer than &quot; + TarConstants.NAMELEN + &quot; characters.&quot;)<SUB>385</SUB>> ]
+"828" [label = <(&lt;operator&gt;.addition,&quot;Entry: &quot; + vPath + &quot; longer than &quot; + TarConstants.NAMELEN)<SUB>385</SUB>> ]
+"829" [label = <(&lt;operator&gt;.addition,&quot;Entry: &quot; + vPath + &quot; longer than &quot;)<SUB>385</SUB>> ]
+"830" [label = <(&lt;operator&gt;.addition,&quot;Entry: &quot; + vPath)<SUB>385</SUB>> ]
+"831" [label = <(LITERAL,&quot;Entry: &quot;,&quot;Entry: &quot; + vPath)<SUB>385</SUB>> ]
+"832" [label = <(IDENTIFIER,vPath,&quot;Entry: &quot; + vPath)<SUB>385</SUB>> ]
+"833" [label = <(LITERAL,&quot; longer than &quot;,&quot;Entry: &quot; + vPath + &quot; longer than &quot;)<SUB>385</SUB>> ]
+"834" [label = <(&lt;operator&gt;.fieldAccess,TarConstants.NAMELEN)<SUB>386</SUB>> ]
+"835" [label = <(IDENTIFIER,TarConstants,&quot;Entry: &quot; + vPath + &quot; longer than &quot; + TarConstants.NAMELEN)<SUB>386</SUB>> ]
+"836" [label = <(FIELD_IDENTIFIER,NAMELEN,NAMELEN)<SUB>386</SUB>> ]
+"837" [label = <(LITERAL,&quot; characters.&quot;,&quot;Entry: &quot; + vPath + &quot; longer than &quot; + TarConstants.NAMELEN + &quot; characters.&quot;)<SUB>386</SUB>> ]
+"838" [label = <(&lt;operator&gt;.fieldAccess,Project.MSG_WARN)<SUB>387</SUB>> ]
+"839" [label = <(IDENTIFIER,Project,log(&quot;Entry: &quot; + vPath + &quot; longer than &quot; + TarConstants.NAMELEN + &quot; characters.&quot;, Project.MSG_WARN))<SUB>387</SUB>> ]
+"840" [label = <(FIELD_IDENTIFIER,MSG_WARN,MSG_WARN)<SUB>387</SUB>> ]
+"841" [label = <(CONTROL_STRUCTURE,if (!longWarningGiven),if (!longWarningGiven))<SUB>388</SUB>> ]
+"842" [label = <(&lt;operator&gt;.logicalNot,!longWarningGiven)<SUB>388</SUB>> ]
+"843" [label = <(&lt;operator&gt;.fieldAccess,this.longWarningGiven)<SUB>388</SUB>> ]
+"844" [label = <(IDENTIFIER,this,!longWarningGiven)<SUB>388</SUB>> ]
+"845" [label = <(FIELD_IDENTIFIER,longWarningGiven,longWarningGiven)<SUB>388</SUB>> ]
+"846" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>388</SUB>> ]
+"847" [label = <(log,log(&quot;Resulting tar file can only be processed &quot; + &quot;successfully by GNU compatible tar commands&quot;, Project.MSG_WARN))<SUB>389</SUB>> ]
+"44" [label = <(IDENTIFIER,this,log(&quot;Resulting tar file can only be processed &quot; + &quot;successfully by GNU compatible tar commands&quot;, Project.MSG_WARN))<SUB>389</SUB>> ]
+"848" [label = <(&lt;operator&gt;.addition,&quot;Resulting tar file can only be processed &quot; + &quot;successfully by GNU compatible tar commands&quot;)<SUB>389</SUB>> ]
+"849" [label = <(LITERAL,&quot;Resulting tar file can only be processed &quot;,&quot;Resulting tar file can only be processed &quot; + &quot;successfully by GNU compatible tar commands&quot;)<SUB>389</SUB>> ]
+"850" [label = <(LITERAL,&quot;successfully by GNU compatible tar commands&quot;,&quot;Resulting tar file can only be processed &quot; + &quot;successfully by GNU compatible tar commands&quot;)<SUB>390</SUB>> ]
+"851" [label = <(&lt;operator&gt;.fieldAccess,Project.MSG_WARN)<SUB>391</SUB>> ]
+"852" [label = <(IDENTIFIER,Project,log(&quot;Resulting tar file can only be processed &quot; + &quot;successfully by GNU compatible tar commands&quot;, Project.MSG_WARN))<SUB>391</SUB>> ]
+"853" [label = <(FIELD_IDENTIFIER,MSG_WARN,MSG_WARN)<SUB>391</SUB>> ]
+"854" [label = <(&lt;operator&gt;.assignment,this.longWarningGiven = true)<SUB>392</SUB>> ]
+"855" [label = <(&lt;operator&gt;.fieldAccess,this.longWarningGiven)<SUB>392</SUB>> ]
+"856" [label = <(IDENTIFIER,this,this.longWarningGiven = true)<SUB>392</SUB>> ]
+"857" [label = <(FIELD_IDENTIFIER,longWarningGiven,longWarningGiven)<SUB>392</SUB>> ]
+"858" [label = <(LITERAL,true,this.longWarningGiven = true)<SUB>392</SUB>> ]
+"859" [label = <(CONTROL_STRUCTURE,else,else)<SUB>394</SUB>> ]
+"860" [label = <(CONTROL_STRUCTURE,if (longFileMode.isFailMode()),if (longFileMode.isFailMode()))<SUB>394</SUB>> ]
+"861" [label = <(isFailMode,longFileMode.isFailMode())<SUB>394</SUB>> ]
+"862" [label = <(&lt;operator&gt;.fieldAccess,this.longFileMode)<SUB>394</SUB>> ]
+"863" [label = <(IDENTIFIER,this,longFileMode.isFailMode())<SUB>394</SUB>> ]
+"864" [label = <(FIELD_IDENTIFIER,longFileMode,longFileMode)<SUB>394</SUB>> ]
+"865" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>394</SUB>> ]
+"866" [label = <(&lt;operator&gt;.throw,throw new BuildException(&quot;Entry: &quot; + vPath + &quot; longer than &quot; + TarConstants.NAMELEN + &quot;characters.&quot;, getLocation());)<SUB>395</SUB>> ]
+"867" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>395</SUB>> ]
+"868" [label = <(&lt;operator&gt;.assignment,&lt;empty&gt;)> ]
+"869" [label = <(IDENTIFIER,$obj20,&lt;empty&gt;)> ]
+"870" [label = <(&lt;operator&gt;.alloc,new BuildException(&quot;Entry: &quot; + vPath + &quot; longer than &quot; + TarConstants.NAMELEN + &quot;characters.&quot;, getLocation()))<SUB>395</SUB>> ]
+"871" [label = <(&lt;init&gt;,new BuildException(&quot;Entry: &quot; + vPath + &quot; longer than &quot; + TarConstants.NAMELEN + &quot;characters.&quot;, getLocation()))<SUB>395</SUB>> ]
+"872" [label = <(IDENTIFIER,$obj20,new BuildException(&quot;Entry: &quot; + vPath + &quot; longer than &quot; + TarConstants.NAMELEN + &quot;characters.&quot;, getLocation()))> ]
+"873" [label = <(&lt;operator&gt;.addition,&quot;Entry: &quot; + vPath + &quot; longer than &quot; + TarConstants.NAMELEN + &quot;characters.&quot;)<SUB>395</SUB>> ]
+"874" [label = <(&lt;operator&gt;.addition,&quot;Entry: &quot; + vPath + &quot; longer than &quot; + TarConstants.NAMELEN)<SUB>395</SUB>> ]
+"875" [label = <(&lt;operator&gt;.addition,&quot;Entry: &quot; + vPath + &quot; longer than &quot;)<SUB>395</SUB>> ]
+"876" [label = <(&lt;operator&gt;.addition,&quot;Entry: &quot; + vPath)<SUB>395</SUB>> ]
+"877" [label = <(LITERAL,&quot;Entry: &quot;,&quot;Entry: &quot; + vPath)<SUB>395</SUB>> ]
+"878" [label = <(IDENTIFIER,vPath,&quot;Entry: &quot; + vPath)<SUB>395</SUB>> ]
+"879" [label = <(LITERAL,&quot; longer than &quot;,&quot;Entry: &quot; + vPath + &quot; longer than &quot;)<SUB>396</SUB>> ]
+"880" [label = <(&lt;operator&gt;.fieldAccess,TarConstants.NAMELEN)<SUB>396</SUB>> ]
+"881" [label = <(IDENTIFIER,TarConstants,&quot;Entry: &quot; + vPath + &quot; longer than &quot; + TarConstants.NAMELEN)<SUB>396</SUB>> ]
+"882" [label = <(FIELD_IDENTIFIER,NAMELEN,NAMELEN)<SUB>396</SUB>> ]
+"883" [label = <(LITERAL,&quot;characters.&quot;,&quot;Entry: &quot; + vPath + &quot; longer than &quot; + TarConstants.NAMELEN + &quot;characters.&quot;)<SUB>397</SUB>> ]
+"884" [label = <(getLocation,getLocation())<SUB>397</SUB>> ]
+"45" [label = <(IDENTIFIER,this,getLocation())<SUB>397</SUB>> ]
+"885" [label = <(IDENTIFIER,$obj20,&lt;empty&gt;)> ]
+"47" [label = <(LOCAL,TarEntry te: org.apache.tools.tar.TarEntry)> ]
+"886" [label = <(&lt;operator&gt;.assignment,TarEntry te = new TarEntry(vPath))<SUB>401</SUB>> ]
+"887" [label = <(IDENTIFIER,te,TarEntry te = new TarEntry(vPath))<SUB>401</SUB>> ]
+"888" [label = <(&lt;operator&gt;.alloc,new TarEntry(vPath))<SUB>401</SUB>> ]
+"889" [label = <(&lt;init&gt;,new TarEntry(vPath))<SUB>401</SUB>> ]
+"46" [label = <(IDENTIFIER,te,new TarEntry(vPath))<SUB>401</SUB>> ]
+"890" [label = <(IDENTIFIER,vPath,new TarEntry(vPath))<SUB>401</SUB>> ]
+"891" [label = <(setModTime,setModTime(file.lastModified()))<SUB>402</SUB>> ]
+"892" [label = <(IDENTIFIER,te,setModTime(file.lastModified()))<SUB>402</SUB>> ]
+"893" [label = <(lastModified,file.lastModified())<SUB>402</SUB>> ]
+"894" [label = <(IDENTIFIER,file,file.lastModified())<SUB>402</SUB>> ]
+"895" [label = <(CONTROL_STRUCTURE,if (!file.isDirectory()),if (!file.isDirectory()))<SUB>403</SUB>> ]
+"896" [label = <(&lt;operator&gt;.logicalNot,!file.isDirectory())<SUB>403</SUB>> ]
+"897" [label = <(isDirectory,file.isDirectory())<SUB>403</SUB>> ]
+"898" [label = <(IDENTIFIER,file,file.isDirectory())<SUB>403</SUB>> ]
+"899" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>403</SUB>> ]
+"900" [label = <(setSize,setSize(file.length()))<SUB>404</SUB>> ]
+"901" [label = <(IDENTIFIER,te,setSize(file.length()))<SUB>404</SUB>> ]
+"902" [label = <(length,file.length())<SUB>404</SUB>> ]
+"903" [label = <(IDENTIFIER,file,file.length())<SUB>404</SUB>> ]
+"904" [label = <(setMode,setMode(tarFileSet.getMode()))<SUB>405</SUB>> ]
+"905" [label = <(IDENTIFIER,te,setMode(tarFileSet.getMode()))<SUB>405</SUB>> ]
+"906" [label = <(getMode,tarFileSet.getMode())<SUB>405</SUB>> ]
+"907" [label = <(IDENTIFIER,tarFileSet,tarFileSet.getMode())<SUB>405</SUB>> ]
+"908" [label = <(CONTROL_STRUCTURE,else,else)<SUB>406</SUB>> ]
+"909" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>406</SUB>> ]
+"910" [label = <(setMode,setMode(tarFileSet.getDirMode()))<SUB>407</SUB>> ]
+"911" [label = <(IDENTIFIER,te,setMode(tarFileSet.getDirMode()))<SUB>407</SUB>> ]
+"912" [label = <(getDirMode,tarFileSet.getDirMode())<SUB>407</SUB>> ]
+"913" [label = <(IDENTIFIER,tarFileSet,tarFileSet.getDirMode())<SUB>407</SUB>> ]
+"914" [label = <(setUserName,setUserName(tarFileSet.getUserName()))<SUB>409</SUB>> ]
+"915" [label = <(IDENTIFIER,te,setUserName(tarFileSet.getUserName()))<SUB>409</SUB>> ]
+"916" [label = <(getUserName,tarFileSet.getUserName())<SUB>409</SUB>> ]
+"917" [label = <(IDENTIFIER,tarFileSet,tarFileSet.getUserName())<SUB>409</SUB>> ]
+"918" [label = <(setGroupName,setGroupName(tarFileSet.getGroup()))<SUB>410</SUB>> ]
+"919" [label = <(IDENTIFIER,te,setGroupName(tarFileSet.getGroup()))<SUB>410</SUB>> ]
+"920" [label = <(getGroup,tarFileSet.getGroup())<SUB>410</SUB>> ]
+"921" [label = <(IDENTIFIER,tarFileSet,tarFileSet.getGroup())<SUB>410</SUB>> ]
+"922" [label = <(putNextEntry,putNextEntry(te))<SUB>412</SUB>> ]
+"923" [label = <(IDENTIFIER,tOut,putNextEntry(te))<SUB>412</SUB>> ]
+"924" [label = <(IDENTIFIER,te,putNextEntry(te))<SUB>412</SUB>> ]
+"925" [label = <(CONTROL_STRUCTURE,if (!file.isDirectory()),if (!file.isDirectory()))<SUB>414</SUB>> ]
+"926" [label = <(&lt;operator&gt;.logicalNot,!file.isDirectory())<SUB>414</SUB>> ]
+"927" [label = <(isDirectory,file.isDirectory())<SUB>414</SUB>> ]
+"928" [label = <(IDENTIFIER,file,file.isDirectory())<SUB>414</SUB>> ]
+"929" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>414</SUB>> ]
+"930" [label = <(&lt;operator&gt;.assignment,fIn = new FileInputStream(file))<SUB>415</SUB>> ]
+"931" [label = <(IDENTIFIER,fIn,fIn = new FileInputStream(file))<SUB>415</SUB>> ]
+"932" [label = <(&lt;operator&gt;.alloc,new FileInputStream(file))<SUB>415</SUB>> ]
+"933" [label = <(&lt;init&gt;,new FileInputStream(file))<SUB>415</SUB>> ]
+"48" [label = <(IDENTIFIER,fIn,new FileInputStream(file))<SUB>415</SUB>> ]
+"934" [label = <(IDENTIFIER,file,new FileInputStream(file))<SUB>415</SUB>> ]
+"935" [label = <(LOCAL,byte[] buffer: byte[])> ]
+"936" [label = <(&lt;operator&gt;.assignment,byte[] buffer = new byte[8 * 1024])<SUB>417</SUB>> ]
+"937" [label = <(IDENTIFIER,buffer,byte[] buffer = new byte[8 * 1024])<SUB>417</SUB>> ]
+"938" [label = <(&lt;operator&gt;.alloc,new byte[8 * 1024])> ]
+"939" [label = <(&lt;operator&gt;.multiplication,8 * 1024)<SUB>417</SUB>> ]
+"940" [label = <(LITERAL,8,8 * 1024)<SUB>417</SUB>> ]
+"941" [label = <(LITERAL,1024,8 * 1024)<SUB>417</SUB>> ]
+"942" [label = <(LOCAL,int count: int)> ]
+"943" [label = <(&lt;operator&gt;.assignment,int count = 0)<SUB>418</SUB>> ]
+"944" [label = <(IDENTIFIER,count,int count = 0)<SUB>418</SUB>> ]
+"945" [label = <(LITERAL,0,int count = 0)<SUB>418</SUB>> ]
+"946" [label = <(CONTROL_STRUCTURE,do {...} while (count != -1),do {...} while (count != -1))<SUB>419</SUB>> ]
+"947" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>419</SUB>> ]
+"948" [label = <(write,write(buffer, 0, count))<SUB>420</SUB>> ]
+"949" [label = <(IDENTIFIER,tOut,write(buffer, 0, count))<SUB>420</SUB>> ]
+"950" [label = <(IDENTIFIER,buffer,write(buffer, 0, count))<SUB>420</SUB>> ]
+"951" [label = <(LITERAL,0,write(buffer, 0, count))<SUB>420</SUB>> ]
+"952" [label = <(IDENTIFIER,count,write(buffer, 0, count))<SUB>420</SUB>> ]
+"953" [label = <(&lt;operator&gt;.assignment,count = fIn.read(buffer, 0, buffer.length))<SUB>421</SUB>> ]
+"954" [label = <(IDENTIFIER,count,count = fIn.read(buffer, 0, buffer.length))<SUB>421</SUB>> ]
+"955" [label = <(read,fIn.read(buffer, 0, buffer.length))<SUB>421</SUB>> ]
+"956" [label = <(IDENTIFIER,fIn,fIn.read(buffer, 0, buffer.length))<SUB>421</SUB>> ]
+"957" [label = <(IDENTIFIER,buffer,fIn.read(buffer, 0, buffer.length))<SUB>421</SUB>> ]
+"958" [label = <(LITERAL,0,fIn.read(buffer, 0, buffer.length))<SUB>421</SUB>> ]
+"959" [label = <(&lt;operator&gt;.fieldAccess,buffer.length)<SUB>421</SUB>> ]
+"960" [label = <(IDENTIFIER,buffer,fIn.read(buffer, 0, buffer.length))<SUB>421</SUB>> ]
+"961" [label = <(FIELD_IDENTIFIER,length,length)<SUB>421</SUB>> ]
+"962" [label = <(&lt;operator&gt;.notEquals,count != -1)<SUB>422</SUB>> ]
+"963" [label = <(IDENTIFIER,count,count != -1)<SUB>422</SUB>> ]
+"964" [label = <(&lt;operator&gt;.minus,-1)<SUB>422</SUB>> ]
+"965" [label = <(LITERAL,1,-1)<SUB>422</SUB>> ]
+"966" [label = <(closeEntry,closeEntry())<SUB>425</SUB>> ]
+"967" [label = <(IDENTIFIER,tOut,closeEntry())<SUB>425</SUB>> ]
+"968" [label = <(BLOCK,finally,finally)<SUB>426</SUB>> ]
+"969" [label = <(CONTROL_STRUCTURE,if (fIn != null),if (fIn != null))<SUB>427</SUB>> ]
+"970" [label = <(&lt;operator&gt;.notEquals,fIn != null)<SUB>427</SUB>> ]
+"971" [label = <(IDENTIFIER,fIn,fIn != null)<SUB>427</SUB>> ]
+"972" [label = <(LITERAL,null,fIn != null)<SUB>427</SUB>> ]
+"973" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>427</SUB>> ]
+"974" [label = <(close,fIn.close())<SUB>428</SUB>> ]
+"975" [label = <(IDENTIFIER,fIn,fIn.close())<SUB>428</SUB>> ]
+"976" [label = <(MODIFIER,PROTECTED)> ]
+"977" [label = <(MODIFIER,VIRTUAL)> ]
+"978" [label = <(METHOD_RETURN,void)<SUB>344</SUB>> ]
+  "699" -> "42" 
+  "699" -> "700" 
+  "699" -> "701" 
+  "699" -> "702" 
+  "699" -> "703" 
+  "699" -> "704" 
+  "699" -> "976" 
+  "699" -> "977" 
+  "699" -> "978" 
+  "704" -> "49" 
+  "704" -> "705" 
+  "704" -> "708" 
+  "704" -> "709" 
+  "704" -> "713" 
+  "704" -> "769" 
+  "704" -> "795" 
+  "705" -> "706" 
+  "705" -> "707" 
+  "709" -> "710" 
+  "709" -> "711" 
+  "711" -> "712" 
+  "713" -> "714" 
+  "713" -> "718" 
+  "713" -> "722" 
+  "714" -> "715" 
+  "714" -> "717" 
+  "715" -> "716" 
+  "718" -> "719" 
+  "719" -> "720" 
+  "719" -> "721" 
+  "722" -> "723" 
+  "723" -> "724" 
+  "723" -> "731" 
+  "723" -> "743" 
+  "723" -> "744" 
+  "723" -> "748" 
+  "723" -> "764" 
+  "724" -> "725" 
+  "724" -> "729" 
+  "725" -> "726" 
+  "725" -> "728" 
+  "726" -> "727" 
+  "729" -> "730" 
+  "731" -> "732" 
+  "731" -> "739" 
+  "732" -> "733" 
+  "732" -> "735" 
+  "733" -> "734" 
+  "735" -> "736" 
+  "736" -> "737" 
+  "736" -> "738" 
+  "739" -> "740" 
+  "740" -> "741" 
+  "740" -> "742" 
+  "744" -> "745" 
+  "744" -> "746" 
+  "746" -> "747" 
+  "748" -> "749" 
+  "748" -> "758" 
+  "749" -> "750" 
+  "749" -> "754" 
+  "750" -> "751" 
+  "750" -> "753" 
+  "751" -> "752" 
+  "754" -> "755" 
+  "755" -> "756" 
+  "755" -> "757" 
+  "758" -> "759" 
+  "759" -> "760" 
+  "759" -> "761" 
+  "761" -> "762" 
+  "761" -> "763" 
+  "764" -> "765" 
+  "764" -> "766" 
+  "766" -> "767" 
+  "766" -> "768" 
+  "769" -> "770" 
+  "769" -> "777" 
+  "770" -> "771" 
+  "770" -> "774" 
+  "771" -> "772" 
+  "771" -> "773" 
+  "774" -> "775" 
+  "775" -> "776" 
+  "777" -> "778" 
+  "777" -> "779" 
+  "777" -> "783" 
+  "777" -> "789" 
+  "779" -> "780" 
+  "779" -> "781" 
+  "781" -> "782" 
+  "783" -> "784" 
+  "783" -> "787" 
+  "784" -> "785" 
+  "784" -> "786" 
+  "787" -> "788" 
+  "789" -> "790" 
+  "789" -> "791" 
+  "791" -> "792" 
+  "791" -> "793" 
+  "791" -> "794" 
+  "795" -> "796" 
+  "795" -> "968" 
+  "796" -> "797" 
+  "796" -> "47" 
+  "796" -> "886" 
+  "796" -> "889" 
+  "796" -> "891" 
+  "796" -> "895" 
+  "796" -> "914" 
+  "796" -> "918" 
+  "796" -> "922" 
+  "796" -> "925" 
+  "796" -> "966" 
+  "797" -> "798" 
+  "797" -> "804" 
+  "798" -> "799" 
+  "798" -> "801" 
+  "799" -> "800" 
+  "801" -> "802" 
+  "801" -> "803" 
+  "804" -> "805" 
+  "805" -> "806" 
+  "805" -> "810" 
+  "805" -> "819" 
+  "806" -> "807" 
+  "807" -> "808" 
+  "807" -> "809" 
+  "810" -> "811" 
+  "810" -> "818" 
+  "811" -> "41" 
+  "811" -> "812" 
+  "811" -> "815" 
+  "812" -> "813" 
+  "812" -> "814" 
+  "815" -> "816" 
+  "815" -> "817" 
+  "819" -> "820" 
+  "820" -> "821" 
+  "820" -> "825" 
+  "820" -> "859" 
+  "821" -> "822" 
+  "822" -> "823" 
+  "822" -> "824" 
+  "825" -> "826" 
+  "825" -> "841" 
+  "826" -> "43" 
+  "826" -> "827" 
+  "826" -> "838" 
+  "827" -> "828" 
+  "827" -> "837" 
+  "828" -> "829" 
+  "828" -> "834" 
+  "829" -> "830" 
+  "829" -> "833" 
+  "830" -> "831" 
+  "830" -> "832" 
+  "834" -> "835" 
+  "834" -> "836" 
+  "838" -> "839" 
+  "838" -> "840" 
+  "841" -> "842" 
+  "841" -> "846" 
+  "842" -> "843" 
+  "843" -> "844" 
+  "843" -> "845" 
+  "846" -> "847" 
+  "846" -> "854" 
+  "847" -> "44" 
+  "847" -> "848" 
+  "847" -> "851" 
+  "848" -> "849" 
+  "848" -> "850" 
+  "851" -> "852" 
+  "851" -> "853" 
+  "854" -> "855" 
+  "854" -> "858" 
+  "855" -> "856" 
+  "855" -> "857" 
+  "859" -> "860" 
+  "860" -> "861" 
+  "860" -> "865" 
+  "861" -> "862" 
+  "862" -> "863" 
+  "862" -> "864" 
+  "865" -> "866" 
+  "866" -> "867" 
+  "867" -> "868" 
+  "867" -> "871" 
+  "867" -> "885" 
+  "868" -> "869" 
+  "868" -> "870" 
+  "871" -> "872" 
+  "871" -> "873" 
+  "871" -> "884" 
+  "873" -> "874" 
+  "873" -> "883" 
+  "874" -> "875" 
+  "874" -> "880" 
+  "875" -> "876" 
+  "875" -> "879" 
+  "876" -> "877" 
+  "876" -> "878" 
+  "880" -> "881" 
+  "880" -> "882" 
+  "884" -> "45" 
+  "886" -> "887" 
+  "886" -> "888" 
+  "889" -> "46" 
+  "889" -> "890" 
+  "891" -> "892" 
+  "891" -> "893" 
+  "893" -> "894" 
+  "895" -> "896" 
+  "895" -> "899" 
+  "895" -> "908" 
+  "896" -> "897" 
+  "897" -> "898" 
+  "899" -> "900" 
+  "899" -> "904" 
+  "900" -> "901" 
+  "900" -> "902" 
+  "902" -> "903" 
+  "904" -> "905" 
+  "904" -> "906" 
+  "906" -> "907" 
+  "908" -> "909" 
+  "909" -> "910" 
+  "910" -> "911" 
+  "910" -> "912" 
+  "912" -> "913" 
+  "914" -> "915" 
+  "914" -> "916" 
+  "916" -> "917" 
+  "918" -> "919" 
+  "918" -> "920" 
+  "920" -> "921" 
+  "922" -> "923" 
+  "922" -> "924" 
+  "925" -> "926" 
+  "925" -> "929" 
+  "926" -> "927" 
+  "927" -> "928" 
+  "929" -> "930" 
+  "929" -> "933" 
+  "929" -> "935" 
+  "929" -> "936" 
+  "929" -> "942" 
+  "929" -> "943" 
+  "929" -> "946" 
+  "930" -> "931" 
+  "930" -> "932" 
+  "933" -> "48" 
+  "933" -> "934" 
+  "936" -> "937" 
+  "936" -> "938" 
+  "938" -> "939" 
+  "939" -> "940" 
+  "939" -> "941" 
+  "943" -> "944" 
+  "943" -> "945" 
+  "946" -> "947" 
+  "946" -> "962" 
+  "947" -> "948" 
+  "947" -> "953" 
+  "948" -> "949" 
+  "948" -> "950" 
+  "948" -> "951" 
+  "948" -> "952" 
+  "953" -> "954" 
+  "953" -> "955" 
+  "955" -> "956" 
+  "955" -> "957" 
+  "955" -> "958" 
+  "955" -> "959" 
+  "959" -> "960" 
+  "959" -> "961" 
+  "962" -> "963" 
+  "962" -> "964" 
+  "964" -> "965" 
+  "966" -> "967" 
+  "968" -> "969" 
+  "969" -> "970" 
+  "969" -> "973" 
+  "970" -> "971" 
+  "970" -> "972" 
+  "973" -> "974" 
+  "974" -> "975" 
+}

@@ -1,0 +1,105 @@
+digraph "getTimer" {  
+"18" [label = <(METHOD,getTimer)<SUB>37</SUB>> ]
+"19" [label = <(PARAM,this)<SUB>37</SUB>> ]
+"20" [label = <(PARAM,TimerEndpoint endpoint)<SUB>37</SUB>> ]
+"21" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>37</SUB>> ]
+"22" [label = <(LOCAL,String key: java.lang.String)> ]
+"23" [label = <(&lt;operator&gt;.assignment,String key = getTimerName())<SUB>38</SUB>> ]
+"24" [label = <(IDENTIFIER,key,String key = getTimerName())<SUB>38</SUB>> ]
+"25" [label = <(getTimerName,getTimerName())<SUB>38</SUB>> ]
+"26" [label = <(IDENTIFIER,endpoint,getTimerName())<SUB>38</SUB>> ]
+"27" [label = <(CONTROL_STRUCTURE,if (!endpoint.isDaemon()),if (!endpoint.isDaemon()))<SUB>39</SUB>> ]
+"28" [label = <(&lt;operator&gt;.logicalNot,!endpoint.isDaemon())<SUB>39</SUB>> ]
+"29" [label = <(isDaemon,isDaemon())<SUB>39</SUB>> ]
+"30" [label = <(IDENTIFIER,endpoint,isDaemon())<SUB>39</SUB>> ]
+"31" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>39</SUB>> ]
+"32" [label = <(&lt;operator&gt;.assignment,key = &quot;nonDaemon:&quot; + key)<SUB>40</SUB>> ]
+"33" [label = <(IDENTIFIER,key,key = &quot;nonDaemon:&quot; + key)<SUB>40</SUB>> ]
+"34" [label = <(&lt;operator&gt;.addition,&quot;nonDaemon:&quot; + key)<SUB>40</SUB>> ]
+"35" [label = <(LITERAL,&quot;nonDaemon:&quot;,&quot;nonDaemon:&quot; + key)<SUB>40</SUB>> ]
+"36" [label = <(IDENTIFIER,key,&quot;nonDaemon:&quot; + key)<SUB>40</SUB>> ]
+"4" [label = <(LOCAL,Timer answer: java.util.Timer)> ]
+"37" [label = <(&lt;operator&gt;.assignment,Timer answer = timers.get(key))<SUB>43</SUB>> ]
+"38" [label = <(IDENTIFIER,answer,Timer answer = timers.get(key))<SUB>43</SUB>> ]
+"39" [label = <(get,timers.get(key))<SUB>43</SUB>> ]
+"40" [label = <(&lt;operator&gt;.fieldAccess,this.timers)<SUB>43</SUB>> ]
+"41" [label = <(IDENTIFIER,this,timers.get(key))<SUB>43</SUB>> ]
+"42" [label = <(FIELD_IDENTIFIER,timers,timers)<SUB>43</SUB>> ]
+"43" [label = <(IDENTIFIER,key,timers.get(key))<SUB>43</SUB>> ]
+"44" [label = <(CONTROL_STRUCTURE,if (answer == null),if (answer == null))<SUB>44</SUB>> ]
+"45" [label = <(&lt;operator&gt;.equals,answer == null)<SUB>44</SUB>> ]
+"46" [label = <(IDENTIFIER,answer,answer == null)<SUB>44</SUB>> ]
+"47" [label = <(LITERAL,null,answer == null)<SUB>44</SUB>> ]
+"48" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>44</SUB>> ]
+"49" [label = <(&lt;operator&gt;.assignment,answer = new Timer(endpoint.getTimerName(), endpoint.isDaemon()))<SUB>45</SUB>> ]
+"50" [label = <(IDENTIFIER,answer,answer = new Timer(endpoint.getTimerName(), endpoint.isDaemon()))<SUB>45</SUB>> ]
+"51" [label = <(&lt;operator&gt;.alloc,new Timer(endpoint.getTimerName(), endpoint.isDaemon()))<SUB>45</SUB>> ]
+"52" [label = <(&lt;init&gt;,new Timer(endpoint.getTimerName(), endpoint.isDaemon()))<SUB>45</SUB>> ]
+"3" [label = <(IDENTIFIER,answer,new Timer(endpoint.getTimerName(), endpoint.isDaemon()))<SUB>45</SUB>> ]
+"53" [label = <(getTimerName,getTimerName())<SUB>45</SUB>> ]
+"54" [label = <(IDENTIFIER,endpoint,getTimerName())<SUB>45</SUB>> ]
+"55" [label = <(isDaemon,isDaemon())<SUB>45</SUB>> ]
+"56" [label = <(IDENTIFIER,endpoint,isDaemon())<SUB>45</SUB>> ]
+"57" [label = <(put,timers.put(key, answer))<SUB>46</SUB>> ]
+"58" [label = <(&lt;operator&gt;.fieldAccess,this.timers)<SUB>46</SUB>> ]
+"59" [label = <(IDENTIFIER,this,timers.put(key, answer))<SUB>46</SUB>> ]
+"60" [label = <(FIELD_IDENTIFIER,timers,timers)<SUB>46</SUB>> ]
+"61" [label = <(IDENTIFIER,key,timers.put(key, answer))<SUB>46</SUB>> ]
+"62" [label = <(IDENTIFIER,answer,timers.put(key, answer))<SUB>46</SUB>> ]
+"63" [label = <(RETURN,return answer;,return answer;)<SUB>48</SUB>> ]
+"64" [label = <(IDENTIFIER,answer,return answer;)<SUB>48</SUB>> ]
+"65" [label = <(MODIFIER,PUBLIC)> ]
+"66" [label = <(MODIFIER,VIRTUAL)> ]
+"67" [label = <(METHOD_RETURN,java.util.Timer)<SUB>37</SUB>> ]
+  "18" -> "19" 
+  "18" -> "20" 
+  "18" -> "21" 
+  "18" -> "65" 
+  "18" -> "66" 
+  "18" -> "67" 
+  "21" -> "22" 
+  "21" -> "23" 
+  "21" -> "27" 
+  "21" -> "4" 
+  "21" -> "37" 
+  "21" -> "44" 
+  "21" -> "63" 
+  "23" -> "24" 
+  "23" -> "25" 
+  "25" -> "26" 
+  "27" -> "28" 
+  "27" -> "31" 
+  "28" -> "29" 
+  "29" -> "30" 
+  "31" -> "32" 
+  "32" -> "33" 
+  "32" -> "34" 
+  "34" -> "35" 
+  "34" -> "36" 
+  "37" -> "38" 
+  "37" -> "39" 
+  "39" -> "40" 
+  "39" -> "43" 
+  "40" -> "41" 
+  "40" -> "42" 
+  "44" -> "45" 
+  "44" -> "48" 
+  "45" -> "46" 
+  "45" -> "47" 
+  "48" -> "49" 
+  "48" -> "52" 
+  "48" -> "57" 
+  "49" -> "50" 
+  "49" -> "51" 
+  "52" -> "3" 
+  "52" -> "53" 
+  "52" -> "55" 
+  "53" -> "54" 
+  "55" -> "56" 
+  "57" -> "58" 
+  "57" -> "61" 
+  "57" -> "62" 
+  "58" -> "59" 
+  "58" -> "60" 
+  "63" -> "64" 
+}

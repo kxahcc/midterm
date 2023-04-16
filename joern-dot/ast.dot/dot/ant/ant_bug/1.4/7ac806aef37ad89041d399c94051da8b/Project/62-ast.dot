@@ -1,0 +1,105 @@
+digraph "makeCircularException" {  
+"2301" [label = <(METHOD,makeCircularException)<SUB>897</SUB>> ]
+"2302" [label = <(PARAM,String end)<SUB>897</SUB>> ]
+"2303" [label = <(PARAM,Stack stk)<SUB>897</SUB>> ]
+"2304" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>897</SUB>> ]
+"108" [label = <(LOCAL,StringBuffer sb: java.lang.StringBuffer)> ]
+"2305" [label = <(&lt;operator&gt;.assignment,StringBuffer sb = new StringBuffer(&quot;Circular dependency: &quot;))<SUB>898</SUB>> ]
+"2306" [label = <(IDENTIFIER,sb,StringBuffer sb = new StringBuffer(&quot;Circular dependency: &quot;))<SUB>898</SUB>> ]
+"2307" [label = <(&lt;operator&gt;.alloc,new StringBuffer(&quot;Circular dependency: &quot;))<SUB>898</SUB>> ]
+"2308" [label = <(&lt;init&gt;,new StringBuffer(&quot;Circular dependency: &quot;))<SUB>898</SUB>> ]
+"107" [label = <(IDENTIFIER,sb,new StringBuffer(&quot;Circular dependency: &quot;))<SUB>898</SUB>> ]
+"2309" [label = <(LITERAL,&quot;Circular dependency: &quot;,new StringBuffer(&quot;Circular dependency: &quot;))<SUB>898</SUB>> ]
+"2310" [label = <(append,sb.append(end))<SUB>899</SUB>> ]
+"2311" [label = <(IDENTIFIER,sb,sb.append(end))<SUB>899</SUB>> ]
+"2312" [label = <(IDENTIFIER,end,sb.append(end))<SUB>899</SUB>> ]
+"2313" [label = <(LOCAL,String c: java.lang.String)> ]
+"2314" [label = <(CONTROL_STRUCTURE,do {...} while (!c.equals(end)),do {...} while (!c.equals(end)))<SUB>901</SUB>> ]
+"2315" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>901</SUB>> ]
+"2316" [label = <(&lt;operator&gt;.assignment,c = (String) stk.pop())<SUB>902</SUB>> ]
+"2317" [label = <(IDENTIFIER,c,c = (String) stk.pop())<SUB>902</SUB>> ]
+"2318" [label = <(&lt;operator&gt;.cast,(String) stk.pop())<SUB>902</SUB>> ]
+"2319" [label = <(TYPE_REF,String,String)<SUB>902</SUB>> ]
+"2320" [label = <(pop,stk.pop())<SUB>902</SUB>> ]
+"2321" [label = <(IDENTIFIER,stk,stk.pop())<SUB>902</SUB>> ]
+"2322" [label = <(append,sb.append(&quot; &lt;- &quot;))<SUB>903</SUB>> ]
+"2323" [label = <(IDENTIFIER,sb,sb.append(&quot; &lt;- &quot;))<SUB>903</SUB>> ]
+"2324" [label = <(LITERAL,&quot; &lt;- &quot;,sb.append(&quot; &lt;- &quot;))<SUB>903</SUB>> ]
+"2325" [label = <(append,sb.append(c))<SUB>904</SUB>> ]
+"2326" [label = <(IDENTIFIER,sb,sb.append(c))<SUB>904</SUB>> ]
+"2327" [label = <(IDENTIFIER,c,sb.append(c))<SUB>904</SUB>> ]
+"2328" [label = <(&lt;operator&gt;.logicalNot,!c.equals(end))<SUB>905</SUB>> ]
+"2329" [label = <(equals,c.equals(end))<SUB>905</SUB>> ]
+"2330" [label = <(IDENTIFIER,c,c.equals(end))<SUB>905</SUB>> ]
+"2331" [label = <(IDENTIFIER,end,c.equals(end))<SUB>905</SUB>> ]
+"2332" [label = <(RETURN,return new BuildException(new String(sb));,return new BuildException(new String(sb));)<SUB>906</SUB>> ]
+"2333" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>906</SUB>> ]
+"2334" [label = <(&lt;operator&gt;.assignment,&lt;empty&gt;)> ]
+"2335" [label = <(IDENTIFIER,$obj40,&lt;empty&gt;)> ]
+"2336" [label = <(&lt;operator&gt;.alloc,new BuildException(new String(sb)))<SUB>906</SUB>> ]
+"2337" [label = <(&lt;init&gt;,new BuildException(new String(sb)))<SUB>906</SUB>> ]
+"2338" [label = <(IDENTIFIER,$obj40,new BuildException(new String(sb)))> ]
+"2339" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>906</SUB>> ]
+"2340" [label = <(&lt;operator&gt;.assignment,&lt;empty&gt;)> ]
+"2341" [label = <(IDENTIFIER,$obj39,&lt;empty&gt;)> ]
+"2342" [label = <(&lt;operator&gt;.alloc,new String(sb))<SUB>906</SUB>> ]
+"2343" [label = <(&lt;init&gt;,new String(sb))<SUB>906</SUB>> ]
+"2344" [label = <(IDENTIFIER,$obj39,new String(sb))> ]
+"2345" [label = <(IDENTIFIER,sb,new String(sb))<SUB>906</SUB>> ]
+"2346" [label = <(IDENTIFIER,$obj39,&lt;empty&gt;)> ]
+"2347" [label = <(IDENTIFIER,$obj40,&lt;empty&gt;)> ]
+"2348" [label = <(MODIFIER,PRIVATE)> ]
+"2349" [label = <(MODIFIER,STATIC)> ]
+"2350" [label = <(METHOD_RETURN,ANY)<SUB>897</SUB>> ]
+  "2301" -> "2302" 
+  "2301" -> "2303" 
+  "2301" -> "2304" 
+  "2301" -> "2348" 
+  "2301" -> "2349" 
+  "2301" -> "2350" 
+  "2304" -> "108" 
+  "2304" -> "2305" 
+  "2304" -> "2308" 
+  "2304" -> "2310" 
+  "2304" -> "2313" 
+  "2304" -> "2314" 
+  "2304" -> "2332" 
+  "2305" -> "2306" 
+  "2305" -> "2307" 
+  "2308" -> "107" 
+  "2308" -> "2309" 
+  "2310" -> "2311" 
+  "2310" -> "2312" 
+  "2314" -> "2315" 
+  "2314" -> "2328" 
+  "2315" -> "2316" 
+  "2315" -> "2322" 
+  "2315" -> "2325" 
+  "2316" -> "2317" 
+  "2316" -> "2318" 
+  "2318" -> "2319" 
+  "2318" -> "2320" 
+  "2320" -> "2321" 
+  "2322" -> "2323" 
+  "2322" -> "2324" 
+  "2325" -> "2326" 
+  "2325" -> "2327" 
+  "2328" -> "2329" 
+  "2329" -> "2330" 
+  "2329" -> "2331" 
+  "2332" -> "2333" 
+  "2333" -> "2334" 
+  "2333" -> "2337" 
+  "2333" -> "2347" 
+  "2334" -> "2335" 
+  "2334" -> "2336" 
+  "2337" -> "2338" 
+  "2337" -> "2339" 
+  "2339" -> "2340" 
+  "2339" -> "2343" 
+  "2339" -> "2346" 
+  "2340" -> "2341" 
+  "2340" -> "2342" 
+  "2343" -> "2344" 
+  "2343" -> "2345" 
+}

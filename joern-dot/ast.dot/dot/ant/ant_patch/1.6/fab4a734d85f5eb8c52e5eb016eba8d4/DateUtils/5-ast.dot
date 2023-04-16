@@ -1,0 +1,135 @@
+digraph "getPhaseOfMoon" {  
+"165" [label = <(METHOD,getPhaseOfMoon)<SUB>219</SUB>> ]
+"166" [label = <(PARAM,Calendar cal)<SUB>219</SUB>> ]
+"167" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>219</SUB>> ]
+"168" [label = <(LOCAL,int dayOfTheYear: int)> ]
+"169" [label = <(&lt;operator&gt;.assignment,int dayOfTheYear = cal.get(Calendar.DAY_OF_YEAR))<SUB>220</SUB>> ]
+"170" [label = <(IDENTIFIER,dayOfTheYear,int dayOfTheYear = cal.get(Calendar.DAY_OF_YEAR))<SUB>220</SUB>> ]
+"171" [label = <(get,cal.get(Calendar.DAY_OF_YEAR))<SUB>220</SUB>> ]
+"172" [label = <(IDENTIFIER,cal,cal.get(Calendar.DAY_OF_YEAR))<SUB>220</SUB>> ]
+"173" [label = <(&lt;operator&gt;.fieldAccess,Calendar.DAY_OF_YEAR)<SUB>220</SUB>> ]
+"174" [label = <(IDENTIFIER,Calendar,cal.get(Calendar.DAY_OF_YEAR))<SUB>220</SUB>> ]
+"175" [label = <(FIELD_IDENTIFIER,DAY_OF_YEAR,DAY_OF_YEAR)<SUB>220</SUB>> ]
+"176" [label = <(LOCAL,int yearInMetonicCycle: int)> ]
+"177" [label = <(&lt;operator&gt;.assignment,int yearInMetonicCycle = ((cal.get(Calendar.YEAR) - 1900) % 19) + 1)<SUB>221</SUB>> ]
+"178" [label = <(IDENTIFIER,yearInMetonicCycle,int yearInMetonicCycle = ((cal.get(Calendar.YEAR) - 1900) % 19) + 1)<SUB>221</SUB>> ]
+"179" [label = <(&lt;operator&gt;.addition,((cal.get(Calendar.YEAR) - 1900) % 19) + 1)<SUB>221</SUB>> ]
+"180" [label = <(&lt;operator&gt;.modulo,(cal.get(Calendar.YEAR) - 1900) % 19)<SUB>221</SUB>> ]
+"181" [label = <(&lt;operator&gt;.subtraction,cal.get(Calendar.YEAR) - 1900)<SUB>221</SUB>> ]
+"182" [label = <(get,cal.get(Calendar.YEAR))<SUB>221</SUB>> ]
+"183" [label = <(IDENTIFIER,cal,cal.get(Calendar.YEAR))<SUB>221</SUB>> ]
+"184" [label = <(&lt;operator&gt;.fieldAccess,Calendar.YEAR)<SUB>221</SUB>> ]
+"185" [label = <(IDENTIFIER,Calendar,cal.get(Calendar.YEAR))<SUB>221</SUB>> ]
+"186" [label = <(FIELD_IDENTIFIER,YEAR,YEAR)<SUB>221</SUB>> ]
+"187" [label = <(LITERAL,1900,cal.get(Calendar.YEAR) - 1900)<SUB>221</SUB>> ]
+"188" [label = <(LITERAL,19,(cal.get(Calendar.YEAR) - 1900) % 19)<SUB>221</SUB>> ]
+"189" [label = <(LITERAL,1,((cal.get(Calendar.YEAR) - 1900) % 19) + 1)<SUB>221</SUB>> ]
+"190" [label = <(LOCAL,int epact: int)> ]
+"191" [label = <(&lt;operator&gt;.assignment,int epact = (11 * yearInMetonicCycle + 18) % 30)<SUB>222</SUB>> ]
+"192" [label = <(IDENTIFIER,epact,int epact = (11 * yearInMetonicCycle + 18) % 30)<SUB>222</SUB>> ]
+"193" [label = <(&lt;operator&gt;.modulo,(11 * yearInMetonicCycle + 18) % 30)<SUB>222</SUB>> ]
+"194" [label = <(&lt;operator&gt;.addition,11 * yearInMetonicCycle + 18)<SUB>222</SUB>> ]
+"195" [label = <(&lt;operator&gt;.multiplication,11 * yearInMetonicCycle)<SUB>222</SUB>> ]
+"196" [label = <(LITERAL,11,11 * yearInMetonicCycle)<SUB>222</SUB>> ]
+"197" [label = <(IDENTIFIER,yearInMetonicCycle,11 * yearInMetonicCycle)<SUB>222</SUB>> ]
+"198" [label = <(LITERAL,18,11 * yearInMetonicCycle + 18)<SUB>222</SUB>> ]
+"199" [label = <(LITERAL,30,(11 * yearInMetonicCycle + 18) % 30)<SUB>222</SUB>> ]
+"200" [label = <(CONTROL_STRUCTURE,if ((epact == 25 &amp;&amp; yearInMetonicCycle &gt; 11) || epact == 24),if ((epact == 25 &amp;&amp; yearInMetonicCycle &gt; 11) || epact == 24))<SUB>223</SUB>> ]
+"201" [label = <(&lt;operator&gt;.logicalOr,(epact == 25 &amp;&amp; yearInMetonicCycle &gt; 11) || epact == 24)<SUB>223</SUB>> ]
+"202" [label = <(&lt;operator&gt;.logicalAnd,epact == 25 &amp;&amp; yearInMetonicCycle &gt; 11)<SUB>223</SUB>> ]
+"203" [label = <(&lt;operator&gt;.equals,epact == 25)<SUB>223</SUB>> ]
+"204" [label = <(IDENTIFIER,epact,epact == 25)<SUB>223</SUB>> ]
+"205" [label = <(LITERAL,25,epact == 25)<SUB>223</SUB>> ]
+"206" [label = <(&lt;operator&gt;.greaterThan,yearInMetonicCycle &gt; 11)<SUB>223</SUB>> ]
+"207" [label = <(IDENTIFIER,yearInMetonicCycle,yearInMetonicCycle &gt; 11)<SUB>223</SUB>> ]
+"208" [label = <(LITERAL,11,yearInMetonicCycle &gt; 11)<SUB>223</SUB>> ]
+"209" [label = <(&lt;operator&gt;.equals,epact == 24)<SUB>223</SUB>> ]
+"210" [label = <(IDENTIFIER,epact,epact == 24)<SUB>223</SUB>> ]
+"211" [label = <(LITERAL,24,epact == 24)<SUB>223</SUB>> ]
+"212" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>223</SUB>> ]
+"213" [label = <(&lt;operator&gt;.postIncrement,epact++)<SUB>224</SUB>> ]
+"214" [label = <(IDENTIFIER,epact,epact++)<SUB>224</SUB>> ]
+"215" [label = <(RETURN,return (((((dayOfTheYear + epact) * 6) + 11) % 177) / 22) &amp; 7;,return (((((dayOfTheYear + epact) * 6) + 11) % 177) / 22) &amp; 7;)<SUB>226</SUB>> ]
+"216" [label = <(&lt;operator&gt;.and,(((((dayOfTheYear + epact) * 6) + 11) % 177) / 22) &amp; 7)<SUB>226</SUB>> ]
+"217" [label = <(&lt;operator&gt;.division,((((dayOfTheYear + epact) * 6) + 11) % 177) / 22)<SUB>226</SUB>> ]
+"218" [label = <(&lt;operator&gt;.modulo,(((dayOfTheYear + epact) * 6) + 11) % 177)<SUB>226</SUB>> ]
+"219" [label = <(&lt;operator&gt;.addition,((dayOfTheYear + epact) * 6) + 11)<SUB>226</SUB>> ]
+"220" [label = <(&lt;operator&gt;.multiplication,(dayOfTheYear + epact) * 6)<SUB>226</SUB>> ]
+"221" [label = <(&lt;operator&gt;.addition,dayOfTheYear + epact)<SUB>226</SUB>> ]
+"222" [label = <(IDENTIFIER,dayOfTheYear,dayOfTheYear + epact)<SUB>226</SUB>> ]
+"223" [label = <(IDENTIFIER,epact,dayOfTheYear + epact)<SUB>226</SUB>> ]
+"224" [label = <(LITERAL,6,(dayOfTheYear + epact) * 6)<SUB>226</SUB>> ]
+"225" [label = <(LITERAL,11,((dayOfTheYear + epact) * 6) + 11)<SUB>226</SUB>> ]
+"226" [label = <(LITERAL,177,(((dayOfTheYear + epact) * 6) + 11) % 177)<SUB>226</SUB>> ]
+"227" [label = <(LITERAL,22,((((dayOfTheYear + epact) * 6) + 11) % 177) / 22)<SUB>226</SUB>> ]
+"228" [label = <(LITERAL,7,(((((dayOfTheYear + epact) * 6) + 11) % 177) / 22) &amp; 7)<SUB>226</SUB>> ]
+"229" [label = <(MODIFIER,PUBLIC)> ]
+"230" [label = <(MODIFIER,STATIC)> ]
+"231" [label = <(METHOD_RETURN,int)<SUB>219</SUB>> ]
+  "165" -> "166" 
+  "165" -> "167" 
+  "165" -> "229" 
+  "165" -> "230" 
+  "165" -> "231" 
+  "167" -> "168" 
+  "167" -> "169" 
+  "167" -> "176" 
+  "167" -> "177" 
+  "167" -> "190" 
+  "167" -> "191" 
+  "167" -> "200" 
+  "167" -> "215" 
+  "169" -> "170" 
+  "169" -> "171" 
+  "171" -> "172" 
+  "171" -> "173" 
+  "173" -> "174" 
+  "173" -> "175" 
+  "177" -> "178" 
+  "177" -> "179" 
+  "179" -> "180" 
+  "179" -> "189" 
+  "180" -> "181" 
+  "180" -> "188" 
+  "181" -> "182" 
+  "181" -> "187" 
+  "182" -> "183" 
+  "182" -> "184" 
+  "184" -> "185" 
+  "184" -> "186" 
+  "191" -> "192" 
+  "191" -> "193" 
+  "193" -> "194" 
+  "193" -> "199" 
+  "194" -> "195" 
+  "194" -> "198" 
+  "195" -> "196" 
+  "195" -> "197" 
+  "200" -> "201" 
+  "200" -> "212" 
+  "201" -> "202" 
+  "201" -> "209" 
+  "202" -> "203" 
+  "202" -> "206" 
+  "203" -> "204" 
+  "203" -> "205" 
+  "206" -> "207" 
+  "206" -> "208" 
+  "209" -> "210" 
+  "209" -> "211" 
+  "212" -> "213" 
+  "213" -> "214" 
+  "215" -> "216" 
+  "216" -> "217" 
+  "216" -> "228" 
+  "217" -> "218" 
+  "217" -> "227" 
+  "218" -> "219" 
+  "218" -> "226" 
+  "219" -> "220" 
+  "219" -> "225" 
+  "220" -> "221" 
+  "220" -> "224" 
+  "221" -> "222" 
+  "221" -> "223" 
+}

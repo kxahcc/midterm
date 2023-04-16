@@ -1,0 +1,155 @@
+digraph "getSpecifications" {  
+"105" [label = <(METHOD,getSpecifications)<SUB>166</SUB>> ]
+"106" [label = <(PARAM,final Manifest manifest)<SUB>166</SUB>> ]
+"107" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>167</SUB>> ]
+"108" [label = <(CONTROL_STRUCTURE,if (null == manifest),if (null == manifest))<SUB>168</SUB>> ]
+"109" [label = <(&lt;operator&gt;.equals,null == manifest)<SUB>168</SUB>> ]
+"110" [label = <(LITERAL,null,null == manifest)<SUB>168</SUB>> ]
+"111" [label = <(IDENTIFIER,manifest,null == manifest)<SUB>168</SUB>> ]
+"112" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>168</SUB>> ]
+"113" [label = <(RETURN,return new Specification[0];,return new Specification[0];)<SUB>169</SUB>> ]
+"114" [label = <(&lt;operator&gt;.alloc,new Specification[0])> ]
+"115" [label = <(LITERAL,0,new Specification[0])<SUB>169</SUB>> ]
+"14" [label = <(LOCAL,ArrayList results: java.util.ArrayList)> ]
+"116" [label = <(&lt;operator&gt;.assignment,ArrayList results = new ArrayList())<SUB>172</SUB>> ]
+"117" [label = <(IDENTIFIER,results,ArrayList results = new ArrayList())<SUB>172</SUB>> ]
+"118" [label = <(&lt;operator&gt;.alloc,new ArrayList())<SUB>172</SUB>> ]
+"119" [label = <(&lt;init&gt;,new ArrayList())<SUB>172</SUB>> ]
+"13" [label = <(IDENTIFIER,results,new ArrayList())<SUB>172</SUB>> ]
+"120" [label = <(LOCAL,Map entries: java.util.Map)> ]
+"121" [label = <(&lt;operator&gt;.assignment,Map entries = manifest.getEntries())<SUB>174</SUB>> ]
+"122" [label = <(IDENTIFIER,entries,Map entries = manifest.getEntries())<SUB>174</SUB>> ]
+"123" [label = <(getEntries,manifest.getEntries())<SUB>174</SUB>> ]
+"124" [label = <(IDENTIFIER,manifest,manifest.getEntries())<SUB>174</SUB>> ]
+"125" [label = <(LOCAL,Iterator keys: java.util.Iterator)> ]
+"126" [label = <(&lt;operator&gt;.assignment,Iterator keys = entries.keySet().iterator())<SUB>175</SUB>> ]
+"127" [label = <(IDENTIFIER,keys,Iterator keys = entries.keySet().iterator())<SUB>175</SUB>> ]
+"128" [label = <(iterator,entries.keySet().iterator())<SUB>175</SUB>> ]
+"129" [label = <(keySet,entries.keySet())<SUB>175</SUB>> ]
+"130" [label = <(IDENTIFIER,entries,entries.keySet())<SUB>175</SUB>> ]
+"131" [label = <(CONTROL_STRUCTURE,while (keys.hasNext()),while (keys.hasNext()))<SUB>176</SUB>> ]
+"132" [label = <(hasNext,keys.hasNext())<SUB>176</SUB>> ]
+"133" [label = <(IDENTIFIER,keys,keys.hasNext())<SUB>176</SUB>> ]
+"134" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>176</SUB>> ]
+"135" [label = <(LOCAL,String key: java.lang.String)> ]
+"136" [label = <(&lt;operator&gt;.assignment,String key = (String) keys.next())<SUB>177</SUB>> ]
+"137" [label = <(IDENTIFIER,key,String key = (String) keys.next())<SUB>177</SUB>> ]
+"138" [label = <(&lt;operator&gt;.cast,(String) keys.next())<SUB>177</SUB>> ]
+"139" [label = <(TYPE_REF,String,String)<SUB>177</SUB>> ]
+"140" [label = <(next,keys.next())<SUB>177</SUB>> ]
+"141" [label = <(IDENTIFIER,keys,keys.next())<SUB>177</SUB>> ]
+"142" [label = <(LOCAL,Attributes attributes: java.util.jar.Attributes)> ]
+"143" [label = <(&lt;operator&gt;.assignment,Attributes attributes = (Attributes) entries.get(key))<SUB>178</SUB>> ]
+"144" [label = <(IDENTIFIER,attributes,Attributes attributes = (Attributes) entries.get(key))<SUB>178</SUB>> ]
+"145" [label = <(&lt;operator&gt;.cast,(Attributes) entries.get(key))<SUB>178</SUB>> ]
+"146" [label = <(TYPE_REF,Attributes,Attributes)<SUB>178</SUB>> ]
+"147" [label = <(get,entries.get(key))<SUB>178</SUB>> ]
+"148" [label = <(IDENTIFIER,entries,entries.get(key))<SUB>178</SUB>> ]
+"149" [label = <(IDENTIFIER,key,entries.get(key))<SUB>178</SUB>> ]
+"150" [label = <(LOCAL,Specification specification: org.apache.tools.ant.taskdefs.optional.extension.Specification)> ]
+"151" [label = <(&lt;operator&gt;.assignment,Specification specification = getSpecification(key, attributes))<SUB>179</SUB>> ]
+"152" [label = <(IDENTIFIER,specification,Specification specification = getSpecification(key, attributes))<SUB>179</SUB>> ]
+"153" [label = <(getSpecification,getSpecification(key, attributes))<SUB>180</SUB>> ]
+"154" [label = <(IDENTIFIER,key,getSpecification(key, attributes))<SUB>180</SUB>> ]
+"155" [label = <(IDENTIFIER,attributes,getSpecification(key, attributes))<SUB>180</SUB>> ]
+"156" [label = <(CONTROL_STRUCTURE,if (null != specification),if (null != specification))<SUB>181</SUB>> ]
+"157" [label = <(&lt;operator&gt;.notEquals,null != specification)<SUB>181</SUB>> ]
+"158" [label = <(LITERAL,null,null != specification)<SUB>181</SUB>> ]
+"159" [label = <(IDENTIFIER,specification,null != specification)<SUB>181</SUB>> ]
+"160" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>181</SUB>> ]
+"161" [label = <(add,results.add(specification))<SUB>182</SUB>> ]
+"162" [label = <(IDENTIFIER,results,results.add(specification))<SUB>182</SUB>> ]
+"163" [label = <(IDENTIFIER,specification,results.add(specification))<SUB>182</SUB>> ]
+"164" [label = <(LOCAL,ArrayList trimmedResults: java.util.ArrayList)> ]
+"165" [label = <(&lt;operator&gt;.assignment,ArrayList trimmedResults = removeDuplicates(results))<SUB>186</SUB>> ]
+"166" [label = <(IDENTIFIER,trimmedResults,ArrayList trimmedResults = removeDuplicates(results))<SUB>186</SUB>> ]
+"167" [label = <(removeDuplicates,removeDuplicates(results))<SUB>186</SUB>> ]
+"168" [label = <(IDENTIFIER,results,removeDuplicates(results))<SUB>186</SUB>> ]
+"169" [label = <(RETURN,return (Specification[]) trimmedResults.toArray(new Specification[trimmedResults.size()]);,return (Specification[]) trimmedResults.toArray(new Specification[trimmedResults.size()]);)<SUB>187</SUB>> ]
+"170" [label = <(&lt;operator&gt;.cast,(Specification[]) trimmedResults.toArray(new Specification[trimmedResults.size()]))<SUB>187</SUB>> ]
+"171" [label = <(TYPE_REF,Specification[],Specification[])<SUB>187</SUB>> ]
+"172" [label = <(toArray,trimmedResults.toArray(new Specification[trimmedResults.size()]))<SUB>187</SUB>> ]
+"173" [label = <(IDENTIFIER,trimmedResults,trimmedResults.toArray(new Specification[trimmedResults.size()]))<SUB>187</SUB>> ]
+"174" [label = <(&lt;operator&gt;.alloc,new Specification[trimmedResults.size()])> ]
+"175" [label = <(size,trimmedResults.size())<SUB>187</SUB>> ]
+"176" [label = <(IDENTIFIER,trimmedResults,trimmedResults.size())<SUB>187</SUB>> ]
+"177" [label = <(MODIFIER,PUBLIC)> ]
+"178" [label = <(MODIFIER,STATIC)> ]
+"179" [label = <(METHOD_RETURN,org.apache.tools.ant.taskdefs.optional.extension.Specification[])<SUB>166</SUB>> ]
+  "105" -> "106" 
+  "105" -> "107" 
+  "105" -> "177" 
+  "105" -> "178" 
+  "105" -> "179" 
+  "107" -> "108" 
+  "107" -> "14" 
+  "107" -> "116" 
+  "107" -> "119" 
+  "107" -> "120" 
+  "107" -> "121" 
+  "107" -> "125" 
+  "107" -> "126" 
+  "107" -> "131" 
+  "107" -> "164" 
+  "107" -> "165" 
+  "107" -> "169" 
+  "108" -> "109" 
+  "108" -> "112" 
+  "109" -> "110" 
+  "109" -> "111" 
+  "112" -> "113" 
+  "113" -> "114" 
+  "114" -> "115" 
+  "116" -> "117" 
+  "116" -> "118" 
+  "119" -> "13" 
+  "121" -> "122" 
+  "121" -> "123" 
+  "123" -> "124" 
+  "126" -> "127" 
+  "126" -> "128" 
+  "128" -> "129" 
+  "129" -> "130" 
+  "131" -> "132" 
+  "131" -> "134" 
+  "132" -> "133" 
+  "134" -> "135" 
+  "134" -> "136" 
+  "134" -> "142" 
+  "134" -> "143" 
+  "134" -> "150" 
+  "134" -> "151" 
+  "134" -> "156" 
+  "136" -> "137" 
+  "136" -> "138" 
+  "138" -> "139" 
+  "138" -> "140" 
+  "140" -> "141" 
+  "143" -> "144" 
+  "143" -> "145" 
+  "145" -> "146" 
+  "145" -> "147" 
+  "147" -> "148" 
+  "147" -> "149" 
+  "151" -> "152" 
+  "151" -> "153" 
+  "153" -> "154" 
+  "153" -> "155" 
+  "156" -> "157" 
+  "156" -> "160" 
+  "157" -> "158" 
+  "157" -> "159" 
+  "160" -> "161" 
+  "161" -> "162" 
+  "161" -> "163" 
+  "165" -> "166" 
+  "165" -> "167" 
+  "167" -> "168" 
+  "169" -> "170" 
+  "170" -> "171" 
+  "170" -> "172" 
+  "172" -> "173" 
+  "172" -> "174" 
+  "174" -> "175" 
+  "175" -> "176" 
+}

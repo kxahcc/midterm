@@ -1,0 +1,295 @@
+digraph "getEndpoint" {  
+"768" [label = <(METHOD,getEndpoint)<SUB>254</SUB>> ]
+"28" [label = <(PARAM,this)<SUB>254</SUB>> ]
+"769" [label = <(PARAM,String uri)<SUB>254</SUB>> ]
+"770" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>254</SUB>> ]
+"771" [label = <(LOCAL,Endpoint answer: org.apache.camel.Endpoint)> ]
+"772" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>256</SUB>> ]
+"773" [label = <(MODIFIER,SYNCHRONIZED)> ]
+"774" [label = <(&lt;operator&gt;.fieldAccess,this.endpoints)<SUB>256</SUB>> ]
+"775" [label = <(IDENTIFIER,this,&lt;empty&gt;)<SUB>256</SUB>> ]
+"776" [label = <(FIELD_IDENTIFIER,endpoints,endpoints)<SUB>256</SUB>> ]
+"777" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>256</SUB>> ]
+"778" [label = <(&lt;operator&gt;.assignment,answer = get(uri))<SUB>257</SUB>> ]
+"779" [label = <(IDENTIFIER,answer,answer = get(uri))<SUB>257</SUB>> ]
+"780" [label = <(get,get(uri))<SUB>257</SUB>> ]
+"781" [label = <(&lt;operator&gt;.fieldAccess,this.endpoints)<SUB>257</SUB>> ]
+"782" [label = <(IDENTIFIER,this,get(uri))<SUB>257</SUB>> ]
+"783" [label = <(FIELD_IDENTIFIER,endpoints,endpoints)<SUB>257</SUB>> ]
+"784" [label = <(IDENTIFIER,uri,get(uri))<SUB>257</SUB>> ]
+"785" [label = <(CONTROL_STRUCTURE,if (answer == null),if (answer == null))<SUB>258</SUB>> ]
+"786" [label = <(&lt;operator&gt;.equals,answer == null)<SUB>258</SUB>> ]
+"787" [label = <(IDENTIFIER,answer,answer == null)<SUB>258</SUB>> ]
+"788" [label = <(LITERAL,null,answer == null)<SUB>258</SUB>> ]
+"789" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>258</SUB>> ]
+"790" [label = <(CONTROL_STRUCTURE,try,try)<SUB>259</SUB>> ]
+"791" [label = <(BLOCK,try,try)<SUB>259</SUB>> ]
+"792" [label = <(LOCAL,String[] splitURI: java.lang.String[])> ]
+"793" [label = <(&lt;operator&gt;.assignment,String[] splitURI = splitOnCharacter(uri, &quot;:&quot;, 2))<SUB>262</SUB>> ]
+"794" [label = <(IDENTIFIER,splitURI,String[] splitURI = splitOnCharacter(uri, &quot;:&quot;, 2))<SUB>262</SUB>> ]
+"795" [label = <(splitOnCharacter,splitOnCharacter(uri, &quot;:&quot;, 2))<SUB>262</SUB>> ]
+"796" [label = <(IDENTIFIER,ObjectHelper,splitOnCharacter(uri, &quot;:&quot;, 2))<SUB>262</SUB>> ]
+"797" [label = <(IDENTIFIER,uri,splitOnCharacter(uri, &quot;:&quot;, 2))<SUB>262</SUB>> ]
+"798" [label = <(LITERAL,&quot;:&quot;,splitOnCharacter(uri, &quot;:&quot;, 2))<SUB>262</SUB>> ]
+"799" [label = <(LITERAL,2,splitOnCharacter(uri, &quot;:&quot;, 2))<SUB>262</SUB>> ]
+"800" [label = <(CONTROL_STRUCTURE,if (splitURI[1] != null),if (splitURI[1] != null))<SUB>263</SUB>> ]
+"801" [label = <(&lt;operator&gt;.notEquals,splitURI[1] != null)<SUB>263</SUB>> ]
+"802" [label = <(&lt;operator&gt;.indexAccess,splitURI[1])<SUB>263</SUB>> ]
+"803" [label = <(IDENTIFIER,splitURI,splitURI[1] != null)<SUB>263</SUB>> ]
+"804" [label = <(LITERAL,1,splitURI[1] != null)<SUB>263</SUB>> ]
+"805" [label = <(LITERAL,null,splitURI[1] != null)<SUB>263</SUB>> ]
+"806" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>263</SUB>> ]
+"807" [label = <(LOCAL,String scheme: java.lang.String)> ]
+"808" [label = <(&lt;operator&gt;.assignment,String scheme = splitURI[0])<SUB>264</SUB>> ]
+"809" [label = <(IDENTIFIER,scheme,String scheme = splitURI[0])<SUB>264</SUB>> ]
+"810" [label = <(&lt;operator&gt;.indexAccess,splitURI[0])<SUB>264</SUB>> ]
+"811" [label = <(IDENTIFIER,splitURI,String scheme = splitURI[0])<SUB>264</SUB>> ]
+"812" [label = <(LITERAL,0,String scheme = splitURI[0])<SUB>264</SUB>> ]
+"813" [label = <(LOCAL,Component component: org.apache.camel.Component)> ]
+"814" [label = <(&lt;operator&gt;.assignment,Component component = this.getComponent(scheme))<SUB>265</SUB>> ]
+"815" [label = <(IDENTIFIER,component,Component component = this.getComponent(scheme))<SUB>265</SUB>> ]
+"816" [label = <(getComponent,this.getComponent(scheme))<SUB>265</SUB>> ]
+"27" [label = <(IDENTIFIER,this,this.getComponent(scheme))<SUB>265</SUB>> ]
+"817" [label = <(IDENTIFIER,scheme,this.getComponent(scheme))<SUB>265</SUB>> ]
+"818" [label = <(CONTROL_STRUCTURE,if (component != null),if (component != null))<SUB>268</SUB>> ]
+"819" [label = <(&lt;operator&gt;.notEquals,component != null)<SUB>268</SUB>> ]
+"820" [label = <(IDENTIFIER,component,component != null)<SUB>268</SUB>> ]
+"821" [label = <(LITERAL,null,component != null)<SUB>268</SUB>> ]
+"822" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>268</SUB>> ]
+"823" [label = <(&lt;operator&gt;.assignment,answer = createEndpoint(uri))<SUB>270</SUB>> ]
+"824" [label = <(IDENTIFIER,answer,answer = createEndpoint(uri))<SUB>270</SUB>> ]
+"825" [label = <(createEndpoint,createEndpoint(uri))<SUB>270</SUB>> ]
+"826" [label = <(IDENTIFIER,component,createEndpoint(uri))<SUB>270</SUB>> ]
+"827" [label = <(IDENTIFIER,uri,createEndpoint(uri))<SUB>270</SUB>> ]
+"828" [label = <(CONTROL_STRUCTURE,if (answer != null &amp;&amp; LOG.isDebugEnabled()),if (answer != null &amp;&amp; LOG.isDebugEnabled()))<SUB>272</SUB>> ]
+"829" [label = <(&lt;operator&gt;.logicalAnd,answer != null &amp;&amp; LOG.isDebugEnabled())<SUB>272</SUB>> ]
+"830" [label = <(&lt;operator&gt;.notEquals,answer != null)<SUB>272</SUB>> ]
+"831" [label = <(IDENTIFIER,answer,answer != null)<SUB>272</SUB>> ]
+"832" [label = <(LITERAL,null,answer != null)<SUB>272</SUB>> ]
+"833" [label = <(isDebugEnabled,isDebugEnabled())<SUB>272</SUB>> ]
+"834" [label = <(&lt;operator&gt;.fieldAccess,DefaultCamelContext.LOG)<SUB>272</SUB>> ]
+"835" [label = <(IDENTIFIER,DefaultCamelContext,isDebugEnabled())<SUB>272</SUB>> ]
+"836" [label = <(FIELD_IDENTIFIER,LOG,LOG)<SUB>272</SUB>> ]
+"837" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>272</SUB>> ]
+"838" [label = <(debug,debug(uri + &quot; converted to endpoint: &quot; + answer + &quot; by component: &quot; + component))<SUB>273</SUB>> ]
+"839" [label = <(&lt;operator&gt;.fieldAccess,DefaultCamelContext.LOG)<SUB>273</SUB>> ]
+"840" [label = <(IDENTIFIER,DefaultCamelContext,debug(uri + &quot; converted to endpoint: &quot; + answer + &quot; by component: &quot; + component))<SUB>273</SUB>> ]
+"841" [label = <(FIELD_IDENTIFIER,LOG,LOG)<SUB>273</SUB>> ]
+"842" [label = <(&lt;operator&gt;.addition,uri + &quot; converted to endpoint: &quot; + answer + &quot; by component: &quot; + component)<SUB>273</SUB>> ]
+"843" [label = <(&lt;operator&gt;.addition,uri + &quot; converted to endpoint: &quot; + answer + &quot; by component: &quot;)<SUB>273</SUB>> ]
+"844" [label = <(&lt;operator&gt;.addition,uri + &quot; converted to endpoint: &quot; + answer)<SUB>273</SUB>> ]
+"845" [label = <(&lt;operator&gt;.addition,uri + &quot; converted to endpoint: &quot;)<SUB>273</SUB>> ]
+"846" [label = <(IDENTIFIER,uri,uri + &quot; converted to endpoint: &quot;)<SUB>273</SUB>> ]
+"847" [label = <(LITERAL,&quot; converted to endpoint: &quot;,uri + &quot; converted to endpoint: &quot;)<SUB>273</SUB>> ]
+"848" [label = <(IDENTIFIER,answer,uri + &quot; converted to endpoint: &quot; + answer)<SUB>273</SUB>> ]
+"849" [label = <(LITERAL,&quot; by component: &quot;,uri + &quot; converted to endpoint: &quot; + answer + &quot; by component: &quot;)<SUB>273</SUB>> ]
+"850" [label = <(IDENTIFIER,component,uri + &quot; converted to endpoint: &quot; + answer + &quot; by component: &quot; + component)<SUB>273</SUB>> ]
+"851" [label = <(CONTROL_STRUCTURE,if (answer == null),if (answer == null))<SUB>277</SUB>> ]
+"852" [label = <(&lt;operator&gt;.equals,answer == null)<SUB>277</SUB>> ]
+"853" [label = <(IDENTIFIER,answer,answer == null)<SUB>277</SUB>> ]
+"854" [label = <(LITERAL,null,answer == null)<SUB>277</SUB>> ]
+"855" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>277</SUB>> ]
+"856" [label = <(&lt;operator&gt;.assignment,answer = this.createEndpoint(uri))<SUB>278</SUB>> ]
+"857" [label = <(IDENTIFIER,answer,answer = this.createEndpoint(uri))<SUB>278</SUB>> ]
+"858" [label = <(createEndpoint,this.createEndpoint(uri))<SUB>278</SUB>> ]
+"29" [label = <(IDENTIFIER,this,this.createEndpoint(uri))<SUB>278</SUB>> ]
+"859" [label = <(IDENTIFIER,uri,this.createEndpoint(uri))<SUB>278</SUB>> ]
+"860" [label = <(CONTROL_STRUCTURE,if (answer != null),if (answer != null))<SUB>282</SUB>> ]
+"861" [label = <(&lt;operator&gt;.notEquals,answer != null)<SUB>282</SUB>> ]
+"862" [label = <(IDENTIFIER,answer,answer != null)<SUB>282</SUB>> ]
+"863" [label = <(LITERAL,null,answer != null)<SUB>282</SUB>> ]
+"864" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>282</SUB>> ]
+"865" [label = <(addService,addService(answer))<SUB>283</SUB>> ]
+"30" [label = <(IDENTIFIER,this,addService(answer))<SUB>283</SUB>> ]
+"866" [label = <(IDENTIFIER,answer,addService(answer))<SUB>283</SUB>> ]
+"867" [label = <(CONTROL_STRUCTURE,if (answer.isSingleton()),if (answer.isSingleton()))<SUB>285</SUB>> ]
+"868" [label = <(isSingleton,isSingleton())<SUB>285</SUB>> ]
+"869" [label = <(IDENTIFIER,answer,isSingleton())<SUB>285</SUB>> ]
+"870" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>285</SUB>> ]
+"871" [label = <(put,put(uri, answer))<SUB>286</SUB>> ]
+"872" [label = <(&lt;operator&gt;.fieldAccess,this.endpoints)<SUB>286</SUB>> ]
+"873" [label = <(IDENTIFIER,this,put(uri, answer))<SUB>286</SUB>> ]
+"874" [label = <(FIELD_IDENTIFIER,endpoints,endpoints)<SUB>286</SUB>> ]
+"875" [label = <(IDENTIFIER,uri,put(uri, answer))<SUB>286</SUB>> ]
+"876" [label = <(IDENTIFIER,answer,put(uri, answer))<SUB>286</SUB>> ]
+"877" [label = <(onEndpointAdd,onEndpointAdd(answer))<SUB>289</SUB>> ]
+"878" [label = <(&lt;operator&gt;.fieldAccess,this.lifecycleStrategy)<SUB>289</SUB>> ]
+"879" [label = <(IDENTIFIER,this,onEndpointAdd(answer))<SUB>289</SUB>> ]
+"880" [label = <(FIELD_IDENTIFIER,lifecycleStrategy,lifecycleStrategy)<SUB>289</SUB>> ]
+"881" [label = <(IDENTIFIER,answer,onEndpointAdd(answer))<SUB>289</SUB>> ]
+"882" [label = <(BLOCK,catch,catch)> ]
+"883" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>292</SUB>> ]
+"884" [label = <(debug,debug(&quot;Failed to resolve endpoint &quot; + uri + &quot;. Reason: &quot; + e, e))<SUB>293</SUB>> ]
+"885" [label = <(&lt;operator&gt;.fieldAccess,DefaultCamelContext.LOG)<SUB>293</SUB>> ]
+"886" [label = <(IDENTIFIER,DefaultCamelContext,debug(&quot;Failed to resolve endpoint &quot; + uri + &quot;. Reason: &quot; + e, e))<SUB>293</SUB>> ]
+"887" [label = <(FIELD_IDENTIFIER,LOG,LOG)<SUB>293</SUB>> ]
+"888" [label = <(&lt;operator&gt;.addition,&quot;Failed to resolve endpoint &quot; + uri + &quot;. Reason: &quot; + e)<SUB>293</SUB>> ]
+"889" [label = <(&lt;operator&gt;.addition,&quot;Failed to resolve endpoint &quot; + uri + &quot;. Reason: &quot;)<SUB>293</SUB>> ]
+"890" [label = <(&lt;operator&gt;.addition,&quot;Failed to resolve endpoint &quot; + uri)<SUB>293</SUB>> ]
+"891" [label = <(LITERAL,&quot;Failed to resolve endpoint &quot;,&quot;Failed to resolve endpoint &quot; + uri)<SUB>293</SUB>> ]
+"892" [label = <(IDENTIFIER,uri,&quot;Failed to resolve endpoint &quot; + uri)<SUB>293</SUB>> ]
+"893" [label = <(LITERAL,&quot;. Reason: &quot;,&quot;Failed to resolve endpoint &quot; + uri + &quot;. Reason: &quot;)<SUB>293</SUB>> ]
+"894" [label = <(IDENTIFIER,e,&quot;Failed to resolve endpoint &quot; + uri + &quot;. Reason: &quot; + e)<SUB>293</SUB>> ]
+"895" [label = <(IDENTIFIER,e,debug(&quot;Failed to resolve endpoint &quot; + uri + &quot;. Reason: &quot; + e, e))<SUB>293</SUB>> ]
+"896" [label = <(&lt;operator&gt;.throw,throw new ResolveEndpointFailedException(uri, e);)<SUB>294</SUB>> ]
+"897" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>294</SUB>> ]
+"898" [label = <(&lt;operator&gt;.assignment,&lt;empty&gt;)> ]
+"899" [label = <(IDENTIFIER,$obj17,&lt;empty&gt;)> ]
+"900" [label = <(&lt;operator&gt;.alloc,new ResolveEndpointFailedException(uri, e))<SUB>294</SUB>> ]
+"901" [label = <(&lt;init&gt;,new ResolveEndpointFailedException(uri, e))<SUB>294</SUB>> ]
+"902" [label = <(IDENTIFIER,$obj17,new ResolveEndpointFailedException(uri, e))> ]
+"903" [label = <(IDENTIFIER,uri,new ResolveEndpointFailedException(uri, e))<SUB>294</SUB>> ]
+"904" [label = <(IDENTIFIER,e,new ResolveEndpointFailedException(uri, e))<SUB>294</SUB>> ]
+"905" [label = <(IDENTIFIER,$obj17,&lt;empty&gt;)> ]
+"906" [label = <(RETURN,return answer;,return answer;)<SUB>298</SUB>> ]
+"907" [label = <(IDENTIFIER,answer,return answer;)<SUB>298</SUB>> ]
+"908" [label = <(MODIFIER,PUBLIC)> ]
+"909" [label = <(MODIFIER,VIRTUAL)> ]
+"910" [label = <(METHOD_RETURN,org.apache.camel.Endpoint)<SUB>254</SUB>> ]
+  "768" -> "28" 
+  "768" -> "769" 
+  "768" -> "770" 
+  "768" -> "908" 
+  "768" -> "909" 
+  "768" -> "910" 
+  "770" -> "771" 
+  "770" -> "772" 
+  "770" -> "906" 
+  "772" -> "773" 
+  "772" -> "774" 
+  "772" -> "777" 
+  "774" -> "775" 
+  "774" -> "776" 
+  "777" -> "778" 
+  "777" -> "785" 
+  "778" -> "779" 
+  "778" -> "780" 
+  "780" -> "781" 
+  "780" -> "784" 
+  "781" -> "782" 
+  "781" -> "783" 
+  "785" -> "786" 
+  "785" -> "789" 
+  "786" -> "787" 
+  "786" -> "788" 
+  "789" -> "790" 
+  "790" -> "791" 
+  "790" -> "882" 
+  "791" -> "792" 
+  "791" -> "793" 
+  "791" -> "800" 
+  "791" -> "851" 
+  "791" -> "860" 
+  "793" -> "794" 
+  "793" -> "795" 
+  "795" -> "796" 
+  "795" -> "797" 
+  "795" -> "798" 
+  "795" -> "799" 
+  "800" -> "801" 
+  "800" -> "806" 
+  "801" -> "802" 
+  "801" -> "805" 
+  "802" -> "803" 
+  "802" -> "804" 
+  "806" -> "807" 
+  "806" -> "808" 
+  "806" -> "813" 
+  "806" -> "814" 
+  "806" -> "818" 
+  "808" -> "809" 
+  "808" -> "810" 
+  "810" -> "811" 
+  "810" -> "812" 
+  "814" -> "815" 
+  "814" -> "816" 
+  "816" -> "27" 
+  "816" -> "817" 
+  "818" -> "819" 
+  "818" -> "822" 
+  "819" -> "820" 
+  "819" -> "821" 
+  "822" -> "823" 
+  "822" -> "828" 
+  "823" -> "824" 
+  "823" -> "825" 
+  "825" -> "826" 
+  "825" -> "827" 
+  "828" -> "829" 
+  "828" -> "837" 
+  "829" -> "830" 
+  "829" -> "833" 
+  "830" -> "831" 
+  "830" -> "832" 
+  "833" -> "834" 
+  "834" -> "835" 
+  "834" -> "836" 
+  "837" -> "838" 
+  "838" -> "839" 
+  "838" -> "842" 
+  "839" -> "840" 
+  "839" -> "841" 
+  "842" -> "843" 
+  "842" -> "850" 
+  "843" -> "844" 
+  "843" -> "849" 
+  "844" -> "845" 
+  "844" -> "848" 
+  "845" -> "846" 
+  "845" -> "847" 
+  "851" -> "852" 
+  "851" -> "855" 
+  "852" -> "853" 
+  "852" -> "854" 
+  "855" -> "856" 
+  "856" -> "857" 
+  "856" -> "858" 
+  "858" -> "29" 
+  "858" -> "859" 
+  "860" -> "861" 
+  "860" -> "864" 
+  "861" -> "862" 
+  "861" -> "863" 
+  "864" -> "865" 
+  "864" -> "867" 
+  "865" -> "30" 
+  "865" -> "866" 
+  "867" -> "868" 
+  "867" -> "870" 
+  "868" -> "869" 
+  "870" -> "871" 
+  "870" -> "877" 
+  "871" -> "872" 
+  "871" -> "875" 
+  "871" -> "876" 
+  "872" -> "873" 
+  "872" -> "874" 
+  "877" -> "878" 
+  "877" -> "881" 
+  "878" -> "879" 
+  "878" -> "880" 
+  "882" -> "883" 
+  "883" -> "884" 
+  "883" -> "896" 
+  "884" -> "885" 
+  "884" -> "888" 
+  "884" -> "895" 
+  "885" -> "886" 
+  "885" -> "887" 
+  "888" -> "889" 
+  "888" -> "894" 
+  "889" -> "890" 
+  "889" -> "893" 
+  "890" -> "891" 
+  "890" -> "892" 
+  "896" -> "897" 
+  "897" -> "898" 
+  "897" -> "901" 
+  "897" -> "905" 
+  "898" -> "899" 
+  "898" -> "900" 
+  "901" -> "902" 
+  "901" -> "903" 
+  "901" -> "904" 
+  "906" -> "907" 
+}

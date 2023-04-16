@@ -1,0 +1,223 @@
+digraph "play" {  
+"134" [label = <(METHOD,play)<SUB>96</SUB>> ]
+"14" [label = <(PARAM,this)<SUB>96</SUB>> ]
+"135" [label = <(PARAM,Project project)<SUB>96</SUB>> ]
+"136" [label = <(PARAM,File file)<SUB>96</SUB>> ]
+"137" [label = <(PARAM,int loops)<SUB>96</SUB>> ]
+"138" [label = <(PARAM,Long duration)<SUB>96</SUB>> ]
+"139" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>96</SUB>> ]
+"140" [label = <(LOCAL,Clip audioClip: javax.sound.sampled.Clip)> ]
+"141" [label = <(&lt;operator&gt;.assignment,Clip audioClip = null)<SUB>98</SUB>> ]
+"142" [label = <(IDENTIFIER,audioClip,Clip audioClip = null)<SUB>98</SUB>> ]
+"143" [label = <(LITERAL,null,Clip audioClip = null)<SUB>98</SUB>> ]
+"144" [label = <(LOCAL,AudioInputStream audioInputStream: javax.sound.sampled.AudioInputStream)> ]
+"145" [label = <(&lt;operator&gt;.assignment,AudioInputStream audioInputStream = null)<SUB>100</SUB>> ]
+"146" [label = <(IDENTIFIER,audioInputStream,AudioInputStream audioInputStream = null)<SUB>100</SUB>> ]
+"147" [label = <(LITERAL,null,AudioInputStream audioInputStream = null)<SUB>100</SUB>> ]
+"148" [label = <(CONTROL_STRUCTURE,try,try)<SUB>103</SUB>> ]
+"149" [label = <(BLOCK,try,try)<SUB>103</SUB>> ]
+"150" [label = <(&lt;operator&gt;.assignment,audioInputStream = AudioSystem.getAudioInputStream(file))<SUB>104</SUB>> ]
+"151" [label = <(IDENTIFIER,audioInputStream,audioInputStream = AudioSystem.getAudioInputStream(file))<SUB>104</SUB>> ]
+"152" [label = <(getAudioInputStream,AudioSystem.getAudioInputStream(file))<SUB>104</SUB>> ]
+"153" [label = <(IDENTIFIER,AudioSystem,AudioSystem.getAudioInputStream(file))<SUB>104</SUB>> ]
+"154" [label = <(IDENTIFIER,file,AudioSystem.getAudioInputStream(file))<SUB>104</SUB>> ]
+"155" [label = <(BLOCK,catch,catch)> ]
+"156" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>105</SUB>> ]
+"157" [label = <(log,log(&quot;Audio format is not yet supported: &quot; + uafe.getMessage()))<SUB>106</SUB>> ]
+"158" [label = <(IDENTIFIER,project,log(&quot;Audio format is not yet supported: &quot; + uafe.getMessage()))<SUB>106</SUB>> ]
+"159" [label = <(&lt;operator&gt;.addition,&quot;Audio format is not yet supported: &quot; + uafe.getMessage())<SUB>106</SUB>> ]
+"160" [label = <(LITERAL,&quot;Audio format is not yet supported: &quot;,&quot;Audio format is not yet supported: &quot; + uafe.getMessage())<SUB>106</SUB>> ]
+"161" [label = <(getMessage,uafe.getMessage())<SUB>107</SUB>> ]
+"162" [label = <(IDENTIFIER,uafe,uafe.getMessage())<SUB>107</SUB>> ]
+"163" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>108</SUB>> ]
+"164" [label = <(printStackTrace,ioe.printStackTrace())<SUB>109</SUB>> ]
+"165" [label = <(IDENTIFIER,ioe,ioe.printStackTrace())<SUB>109</SUB>> ]
+"166" [label = <(CONTROL_STRUCTURE,if (audioInputStream != null),if (audioInputStream != null))<SUB>112</SUB>> ]
+"167" [label = <(&lt;operator&gt;.notEquals,audioInputStream != null)<SUB>112</SUB>> ]
+"168" [label = <(IDENTIFIER,audioInputStream,audioInputStream != null)<SUB>112</SUB>> ]
+"169" [label = <(LITERAL,null,audioInputStream != null)<SUB>112</SUB>> ]
+"170" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>112</SUB>> ]
+"171" [label = <(LOCAL,AudioFormat format: javax.sound.sampled.AudioFormat)> ]
+"172" [label = <(&lt;operator&gt;.assignment,AudioFormat format = audioInputStream.getFormat())<SUB>113</SUB>> ]
+"173" [label = <(IDENTIFIER,format,AudioFormat format = audioInputStream.getFormat())<SUB>113</SUB>> ]
+"174" [label = <(getFormat,audioInputStream.getFormat())<SUB>113</SUB>> ]
+"175" [label = <(IDENTIFIER,audioInputStream,audioInputStream.getFormat())<SUB>113</SUB>> ]
+"12" [label = <(LOCAL,DataLine.Info info: javax.sound.sampled.DataLine$Info)> ]
+"176" [label = <(&lt;operator&gt;.assignment,DataLine$Info info = new DataLine.Info(Clip.class, format, AudioSystem.NOT_SPECIFIED))<SUB>114</SUB>> ]
+"177" [label = <(IDENTIFIER,info,DataLine$Info info = new DataLine.Info(Clip.class, format, AudioSystem.NOT_SPECIFIED))<SUB>114</SUB>> ]
+"178" [label = <(&lt;operator&gt;.alloc,new DataLine.Info(Clip.class, format, AudioSystem.NOT_SPECIFIED))<SUB>114</SUB>> ]
+"179" [label = <(&lt;init&gt;,new DataLine.Info(Clip.class, format, AudioSystem.NOT_SPECIFIED))<SUB>114</SUB>> ]
+"11" [label = <(IDENTIFIER,info,new DataLine.Info(Clip.class, format, AudioSystem.NOT_SPECIFIED))<SUB>114</SUB>> ]
+"180" [label = <(&lt;operator&gt;.fieldAccess,Clip.class)<SUB>114</SUB>> ]
+"181" [label = <(IDENTIFIER,Clip,new DataLine.Info(Clip.class, format, AudioSystem.NOT_SPECIFIED))<SUB>114</SUB>> ]
+"182" [label = <(FIELD_IDENTIFIER,class,class)<SUB>114</SUB>> ]
+"183" [label = <(IDENTIFIER,format,new DataLine.Info(Clip.class, format, AudioSystem.NOT_SPECIFIED))<SUB>114</SUB>> ]
+"184" [label = <(&lt;operator&gt;.fieldAccess,AudioSystem.NOT_SPECIFIED)<SUB>115</SUB>> ]
+"185" [label = <(IDENTIFIER,AudioSystem,new DataLine.Info(Clip.class, format, AudioSystem.NOT_SPECIFIED))<SUB>115</SUB>> ]
+"186" [label = <(FIELD_IDENTIFIER,NOT_SPECIFIED,NOT_SPECIFIED)<SUB>115</SUB>> ]
+"187" [label = <(CONTROL_STRUCTURE,try,try)<SUB>116</SUB>> ]
+"188" [label = <(BLOCK,try,try)<SUB>116</SUB>> ]
+"189" [label = <(&lt;operator&gt;.assignment,audioClip = (Clip) AudioSystem.getLine(info))<SUB>117</SUB>> ]
+"190" [label = <(IDENTIFIER,audioClip,audioClip = (Clip) AudioSystem.getLine(info))<SUB>117</SUB>> ]
+"191" [label = <(&lt;operator&gt;.cast,(Clip) AudioSystem.getLine(info))<SUB>117</SUB>> ]
+"192" [label = <(TYPE_REF,Clip,Clip)<SUB>117</SUB>> ]
+"193" [label = <(getLine,AudioSystem.getLine(info))<SUB>117</SUB>> ]
+"194" [label = <(IDENTIFIER,AudioSystem,AudioSystem.getLine(info))<SUB>117</SUB>> ]
+"195" [label = <(IDENTIFIER,info,AudioSystem.getLine(info))<SUB>117</SUB>> ]
+"196" [label = <(addLineListener,addLineListener(this))<SUB>118</SUB>> ]
+"197" [label = <(IDENTIFIER,audioClip,addLineListener(this))<SUB>118</SUB>> ]
+"13" [label = <(IDENTIFIER,this,addLineListener(this))<SUB>118</SUB>> ]
+"198" [label = <(open,audioClip.open(audioInputStream))<SUB>119</SUB>> ]
+"199" [label = <(IDENTIFIER,audioClip,audioClip.open(audioInputStream))<SUB>119</SUB>> ]
+"200" [label = <(IDENTIFIER,audioInputStream,audioClip.open(audioInputStream))<SUB>119</SUB>> ]
+"201" [label = <(BLOCK,catch,catch)> ]
+"202" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>120</SUB>> ]
+"203" [label = <(log,log(&quot;The sound device is currently unavailable&quot;))<SUB>121</SUB>> ]
+"204" [label = <(IDENTIFIER,project,log(&quot;The sound device is currently unavailable&quot;))<SUB>121</SUB>> ]
+"205" [label = <(LITERAL,&quot;The sound device is currently unavailable&quot;,log(&quot;The sound device is currently unavailable&quot;))<SUB>121</SUB>> ]
+"206" [label = <(RETURN,return;,return;)<SUB>122</SUB>> ]
+"207" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>123</SUB>> ]
+"208" [label = <(printStackTrace,e.printStackTrace())<SUB>124</SUB>> ]
+"209" [label = <(IDENTIFIER,e,e.printStackTrace())<SUB>124</SUB>> ]
+"210" [label = <(CONTROL_STRUCTURE,if (duration != null),if (duration != null))<SUB>127</SUB>> ]
+"211" [label = <(&lt;operator&gt;.notEquals,duration != null)<SUB>127</SUB>> ]
+"212" [label = <(IDENTIFIER,duration,duration != null)<SUB>127</SUB>> ]
+"213" [label = <(LITERAL,null,duration != null)<SUB>127</SUB>> ]
+"214" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>127</SUB>> ]
+"215" [label = <(playClip,this.playClip(audioClip, duration.longValue()))<SUB>128</SUB>> ]
+"15" [label = <(IDENTIFIER,this,this.playClip(audioClip, duration.longValue()))<SUB>128</SUB>> ]
+"216" [label = <(IDENTIFIER,audioClip,this.playClip(audioClip, duration.longValue()))<SUB>128</SUB>> ]
+"217" [label = <(longValue,duration.longValue())<SUB>128</SUB>> ]
+"218" [label = <(IDENTIFIER,duration,duration.longValue())<SUB>128</SUB>> ]
+"219" [label = <(CONTROL_STRUCTURE,else,else)<SUB>129</SUB>> ]
+"220" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>129</SUB>> ]
+"221" [label = <(playClip,this.playClip(audioClip, loops))<SUB>130</SUB>> ]
+"16" [label = <(IDENTIFIER,this,this.playClip(audioClip, loops))<SUB>130</SUB>> ]
+"222" [label = <(IDENTIFIER,audioClip,this.playClip(audioClip, loops))<SUB>130</SUB>> ]
+"223" [label = <(IDENTIFIER,loops,this.playClip(audioClip, loops))<SUB>130</SUB>> ]
+"224" [label = <(drain,audioClip.drain())<SUB>132</SUB>> ]
+"225" [label = <(IDENTIFIER,audioClip,audioClip.drain())<SUB>132</SUB>> ]
+"226" [label = <(close,audioClip.close())<SUB>133</SUB>> ]
+"227" [label = <(IDENTIFIER,audioClip,audioClip.close())<SUB>133</SUB>> ]
+"228" [label = <(CONTROL_STRUCTURE,else,else)<SUB>134</SUB>> ]
+"229" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>134</SUB>> ]
+"230" [label = <(log,log(&quot;Can't get data from file &quot; + file.getName()))<SUB>135</SUB>> ]
+"231" [label = <(IDENTIFIER,project,log(&quot;Can't get data from file &quot; + file.getName()))<SUB>135</SUB>> ]
+"232" [label = <(&lt;operator&gt;.addition,&quot;Can't get data from file &quot; + file.getName())<SUB>135</SUB>> ]
+"233" [label = <(LITERAL,&quot;Can't get data from file &quot;,&quot;Can't get data from file &quot; + file.getName())<SUB>135</SUB>> ]
+"234" [label = <(getName,file.getName())<SUB>135</SUB>> ]
+"235" [label = <(IDENTIFIER,file,file.getName())<SUB>135</SUB>> ]
+"236" [label = <(MODIFIER,PRIVATE)> ]
+"237" [label = <(MODIFIER,VIRTUAL)> ]
+"238" [label = <(METHOD_RETURN,void)<SUB>96</SUB>> ]
+  "134" -> "14" 
+  "134" -> "135" 
+  "134" -> "136" 
+  "134" -> "137" 
+  "134" -> "138" 
+  "134" -> "139" 
+  "134" -> "236" 
+  "134" -> "237" 
+  "134" -> "238" 
+  "139" -> "140" 
+  "139" -> "141" 
+  "139" -> "144" 
+  "139" -> "145" 
+  "139" -> "148" 
+  "139" -> "166" 
+  "141" -> "142" 
+  "141" -> "143" 
+  "145" -> "146" 
+  "145" -> "147" 
+  "148" -> "149" 
+  "148" -> "155" 
+  "149" -> "150" 
+  "150" -> "151" 
+  "150" -> "152" 
+  "152" -> "153" 
+  "152" -> "154" 
+  "155" -> "156" 
+  "155" -> "163" 
+  "156" -> "157" 
+  "157" -> "158" 
+  "157" -> "159" 
+  "159" -> "160" 
+  "159" -> "161" 
+  "161" -> "162" 
+  "163" -> "164" 
+  "164" -> "165" 
+  "166" -> "167" 
+  "166" -> "170" 
+  "166" -> "228" 
+  "167" -> "168" 
+  "167" -> "169" 
+  "170" -> "171" 
+  "170" -> "172" 
+  "170" -> "12" 
+  "170" -> "176" 
+  "170" -> "179" 
+  "170" -> "187" 
+  "170" -> "210" 
+  "170" -> "224" 
+  "170" -> "226" 
+  "172" -> "173" 
+  "172" -> "174" 
+  "174" -> "175" 
+  "176" -> "177" 
+  "176" -> "178" 
+  "179" -> "11" 
+  "179" -> "180" 
+  "179" -> "183" 
+  "179" -> "184" 
+  "180" -> "181" 
+  "180" -> "182" 
+  "184" -> "185" 
+  "184" -> "186" 
+  "187" -> "188" 
+  "187" -> "201" 
+  "188" -> "189" 
+  "188" -> "196" 
+  "188" -> "198" 
+  "189" -> "190" 
+  "189" -> "191" 
+  "191" -> "192" 
+  "191" -> "193" 
+  "193" -> "194" 
+  "193" -> "195" 
+  "196" -> "197" 
+  "196" -> "13" 
+  "198" -> "199" 
+  "198" -> "200" 
+  "201" -> "202" 
+  "201" -> "207" 
+  "202" -> "203" 
+  "202" -> "206" 
+  "203" -> "204" 
+  "203" -> "205" 
+  "207" -> "208" 
+  "208" -> "209" 
+  "210" -> "211" 
+  "210" -> "214" 
+  "210" -> "219" 
+  "211" -> "212" 
+  "211" -> "213" 
+  "214" -> "215" 
+  "215" -> "15" 
+  "215" -> "216" 
+  "215" -> "217" 
+  "217" -> "218" 
+  "219" -> "220" 
+  "220" -> "221" 
+  "221" -> "16" 
+  "221" -> "222" 
+  "221" -> "223" 
+  "224" -> "225" 
+  "226" -> "227" 
+  "228" -> "229" 
+  "229" -> "230" 
+  "230" -> "231" 
+  "230" -> "232" 
+  "232" -> "233" 
+  "232" -> "234" 
+  "234" -> "235" 
+}

@@ -1,0 +1,153 @@
+digraph "filesystemLookup" {  
+"690" [label = <(METHOD,filesystemLookup)<SUB>496</SUB>> ]
+"66" [label = <(PARAM,this)<SUB>496</SUB>> ]
+"691" [label = <(PARAM,DTDLocation matchingEntry)<SUB>496</SUB>> ]
+"692" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>496</SUB>> ]
+"693" [label = <(LOCAL,String uri: java.lang.String)> ]
+"694" [label = <(&lt;operator&gt;.assignment,String uri = getLocation())<SUB>498</SUB>> ]
+"695" [label = <(IDENTIFIER,uri,String uri = getLocation())<SUB>498</SUB>> ]
+"696" [label = <(getLocation,getLocation())<SUB>498</SUB>> ]
+"697" [label = <(IDENTIFIER,matchingEntry,getLocation())<SUB>498</SUB>> ]
+"698" [label = <(LOCAL,File resFile: java.io.File)> ]
+"699" [label = <(&lt;operator&gt;.assignment,File resFile = resolveFile(uri))<SUB>505</SUB>> ]
+"700" [label = <(IDENTIFIER,resFile,File resFile = resolveFile(uri))<SUB>505</SUB>> ]
+"701" [label = <(resolveFile,resolveFile(uri))<SUB>505</SUB>> ]
+"702" [label = <(IDENTIFIER,project,resolveFile(uri))<SUB>505</SUB>> ]
+"703" [label = <(IDENTIFIER,uri,resolveFile(uri))<SUB>505</SUB>> ]
+"64" [label = <(LOCAL,InputSource source: org.xml.sax.InputSource)> ]
+"704" [label = <(&lt;operator&gt;.assignment,InputSource source = null)<SUB>506</SUB>> ]
+"705" [label = <(IDENTIFIER,source,InputSource source = null)<SUB>506</SUB>> ]
+"706" [label = <(LITERAL,null,InputSource source = null)<SUB>506</SUB>> ]
+"707" [label = <(CONTROL_STRUCTURE,if (resFile.exists() &amp;&amp; resFile.canRead()),if (resFile.exists() &amp;&amp; resFile.canRead()))<SUB>508</SUB>> ]
+"708" [label = <(&lt;operator&gt;.logicalAnd,resFile.exists() &amp;&amp; resFile.canRead())<SUB>508</SUB>> ]
+"709" [label = <(exists,resFile.exists())<SUB>508</SUB>> ]
+"710" [label = <(IDENTIFIER,resFile,resFile.exists())<SUB>508</SUB>> ]
+"711" [label = <(canRead,resFile.canRead())<SUB>508</SUB>> ]
+"712" [label = <(IDENTIFIER,resFile,resFile.canRead())<SUB>508</SUB>> ]
+"713" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>508</SUB>> ]
+"714" [label = <(CONTROL_STRUCTURE,try,try)<SUB>509</SUB>> ]
+"715" [label = <(BLOCK,try,try)<SUB>509</SUB>> ]
+"716" [label = <(&lt;operator&gt;.assignment,source = new InputSource(new FileInputStream(resFile)))<SUB>510</SUB>> ]
+"717" [label = <(IDENTIFIER,source,source = new InputSource(new FileInputStream(resFile)))<SUB>510</SUB>> ]
+"718" [label = <(&lt;operator&gt;.alloc,new InputSource(new FileInputStream(resFile)))<SUB>510</SUB>> ]
+"719" [label = <(&lt;init&gt;,new InputSource(new FileInputStream(resFile)))<SUB>510</SUB>> ]
+"63" [label = <(IDENTIFIER,source,new InputSource(new FileInputStream(resFile)))<SUB>510</SUB>> ]
+"720" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>510</SUB>> ]
+"721" [label = <(&lt;operator&gt;.assignment,&lt;empty&gt;)> ]
+"722" [label = <(IDENTIFIER,$obj12,&lt;empty&gt;)> ]
+"723" [label = <(&lt;operator&gt;.alloc,new FileInputStream(resFile))<SUB>510</SUB>> ]
+"724" [label = <(&lt;init&gt;,new FileInputStream(resFile))<SUB>510</SUB>> ]
+"725" [label = <(IDENTIFIER,$obj12,new FileInputStream(resFile))> ]
+"726" [label = <(IDENTIFIER,resFile,new FileInputStream(resFile))<SUB>510</SUB>> ]
+"727" [label = <(IDENTIFIER,$obj12,&lt;empty&gt;)> ]
+"728" [label = <(LOCAL,URL resFileURL: java.net.URL)> ]
+"729" [label = <(&lt;operator&gt;.assignment,URL resFileURL = getFileURL(resFile))<SUB>511</SUB>> ]
+"730" [label = <(IDENTIFIER,resFileURL,URL resFileURL = getFileURL(resFile))<SUB>511</SUB>> ]
+"731" [label = <(getFileURL,getFileURL(resFile))<SUB>511</SUB>> ]
+"732" [label = <(&lt;operator&gt;.fieldAccess,this.fileUtils)<SUB>511</SUB>> ]
+"733" [label = <(IDENTIFIER,this,getFileURL(resFile))<SUB>511</SUB>> ]
+"734" [label = <(FIELD_IDENTIFIER,fileUtils,fileUtils)<SUB>511</SUB>> ]
+"735" [label = <(IDENTIFIER,resFile,getFileURL(resFile))<SUB>511</SUB>> ]
+"736" [label = <(LOCAL,String sysid: java.lang.String)> ]
+"737" [label = <(&lt;operator&gt;.assignment,String sysid = resFileURL.toExternalForm())<SUB>512</SUB>> ]
+"738" [label = <(IDENTIFIER,sysid,String sysid = resFileURL.toExternalForm())<SUB>512</SUB>> ]
+"739" [label = <(toExternalForm,resFileURL.toExternalForm())<SUB>512</SUB>> ]
+"740" [label = <(IDENTIFIER,resFileURL,resFileURL.toExternalForm())<SUB>512</SUB>> ]
+"741" [label = <(setSystemId,setSystemId(sysid))<SUB>513</SUB>> ]
+"742" [label = <(IDENTIFIER,source,setSystemId(sysid))<SUB>513</SUB>> ]
+"743" [label = <(IDENTIFIER,sysid,setSystemId(sysid))<SUB>513</SUB>> ]
+"744" [label = <(log,log(&quot;catalog entry matched a readable file: '&quot; + sysid + &quot;'&quot;, Project.MSG_DEBUG))<SUB>514</SUB>> ]
+"65" [label = <(IDENTIFIER,this,log(&quot;catalog entry matched a readable file: '&quot; + sysid + &quot;'&quot;, Project.MSG_DEBUG))<SUB>514</SUB>> ]
+"745" [label = <(&lt;operator&gt;.addition,&quot;catalog entry matched a readable file: '&quot; + sysid + &quot;'&quot;)<SUB>514</SUB>> ]
+"746" [label = <(&lt;operator&gt;.addition,&quot;catalog entry matched a readable file: '&quot; + sysid)<SUB>514</SUB>> ]
+"747" [label = <(LITERAL,&quot;catalog entry matched a readable file: '&quot;,&quot;catalog entry matched a readable file: '&quot; + sysid)<SUB>514</SUB>> ]
+"748" [label = <(IDENTIFIER,sysid,&quot;catalog entry matched a readable file: '&quot; + sysid)<SUB>515</SUB>> ]
+"749" [label = <(LITERAL,&quot;'&quot;,&quot;catalog entry matched a readable file: '&quot; + sysid + &quot;'&quot;)<SUB>515</SUB>> ]
+"750" [label = <(&lt;operator&gt;.fieldAccess,Project.MSG_DEBUG)<SUB>515</SUB>> ]
+"751" [label = <(IDENTIFIER,Project,log(&quot;catalog entry matched a readable file: '&quot; + sysid + &quot;'&quot;, Project.MSG_DEBUG))<SUB>515</SUB>> ]
+"752" [label = <(FIELD_IDENTIFIER,MSG_DEBUG,MSG_DEBUG)<SUB>515</SUB>> ]
+"753" [label = <(BLOCK,catch,catch)> ]
+"754" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>516</SUB>> ]
+"755" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>518</SUB>> ]
+"756" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>520</SUB>> ]
+"757" [label = <(RETURN,return source;,return source;)<SUB>525</SUB>> ]
+"758" [label = <(IDENTIFIER,source,return source;)<SUB>525</SUB>> ]
+"759" [label = <(MODIFIER,PRIVATE)> ]
+"760" [label = <(MODIFIER,VIRTUAL)> ]
+"761" [label = <(METHOD_RETURN,org.xml.sax.InputSource)<SUB>496</SUB>> ]
+  "690" -> "66" 
+  "690" -> "691" 
+  "690" -> "692" 
+  "690" -> "759" 
+  "690" -> "760" 
+  "690" -> "761" 
+  "692" -> "693" 
+  "692" -> "694" 
+  "692" -> "698" 
+  "692" -> "699" 
+  "692" -> "64" 
+  "692" -> "704" 
+  "692" -> "707" 
+  "692" -> "757" 
+  "694" -> "695" 
+  "694" -> "696" 
+  "696" -> "697" 
+  "699" -> "700" 
+  "699" -> "701" 
+  "701" -> "702" 
+  "701" -> "703" 
+  "704" -> "705" 
+  "704" -> "706" 
+  "707" -> "708" 
+  "707" -> "713" 
+  "708" -> "709" 
+  "708" -> "711" 
+  "709" -> "710" 
+  "711" -> "712" 
+  "713" -> "714" 
+  "714" -> "715" 
+  "714" -> "753" 
+  "715" -> "716" 
+  "715" -> "719" 
+  "715" -> "728" 
+  "715" -> "729" 
+  "715" -> "736" 
+  "715" -> "737" 
+  "715" -> "741" 
+  "715" -> "744" 
+  "716" -> "717" 
+  "716" -> "718" 
+  "719" -> "63" 
+  "719" -> "720" 
+  "720" -> "721" 
+  "720" -> "724" 
+  "720" -> "727" 
+  "721" -> "722" 
+  "721" -> "723" 
+  "724" -> "725" 
+  "724" -> "726" 
+  "729" -> "730" 
+  "729" -> "731" 
+  "731" -> "732" 
+  "731" -> "735" 
+  "732" -> "733" 
+  "732" -> "734" 
+  "737" -> "738" 
+  "737" -> "739" 
+  "739" -> "740" 
+  "741" -> "742" 
+  "741" -> "743" 
+  "744" -> "65" 
+  "744" -> "745" 
+  "744" -> "750" 
+  "745" -> "746" 
+  "745" -> "749" 
+  "746" -> "747" 
+  "746" -> "748" 
+  "750" -> "751" 
+  "750" -> "752" 
+  "753" -> "754" 
+  "753" -> "755" 
+  "753" -> "756" 
+  "757" -> "758" 
+}

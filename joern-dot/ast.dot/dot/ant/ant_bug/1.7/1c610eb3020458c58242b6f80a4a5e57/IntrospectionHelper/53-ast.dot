@@ -1,0 +1,183 @@
+digraph "findMatchingMethod" {  
+"2952" [label = <(METHOD,findMatchingMethod)<SUB>1445</SUB>> ]
+"2953" [label = <(PARAM,this)<SUB>1445</SUB>> ]
+"2954" [label = <(PARAM,Class paramClass)<SUB>1445</SUB>> ]
+"2955" [label = <(PARAM,List methods)<SUB>1445</SUB>> ]
+"2956" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>1445</SUB>> ]
+"2957" [label = <(LOCAL,Class matchedClass: java.lang.Class)> ]
+"2958" [label = <(&lt;operator&gt;.assignment,Class matchedClass = null)<SUB>1446</SUB>> ]
+"2959" [label = <(IDENTIFIER,matchedClass,Class matchedClass = null)<SUB>1446</SUB>> ]
+"2960" [label = <(LITERAL,null,Class matchedClass = null)<SUB>1446</SUB>> ]
+"2961" [label = <(LOCAL,Method matchedMethod: java.lang.reflect.Method)> ]
+"2962" [label = <(&lt;operator&gt;.assignment,Method matchedMethod = null)<SUB>1447</SUB>> ]
+"2963" [label = <(IDENTIFIER,matchedMethod,Method matchedMethod = null)<SUB>1447</SUB>> ]
+"2964" [label = <(LITERAL,null,Method matchedMethod = null)<SUB>1447</SUB>> ]
+"2965" [label = <(CONTROL_STRUCTURE,for (int i = 0; Some(i &lt; methods.size()); ++i),for (int i = 0; Some(i &lt; methods.size()); ++i))<SUB>1449</SUB>> ]
+"2966" [label = <(LOCAL,int i: int)> ]
+"2967" [label = <(&lt;operator&gt;.assignment,int i = 0)<SUB>1449</SUB>> ]
+"2968" [label = <(IDENTIFIER,i,int i = 0)<SUB>1449</SUB>> ]
+"2969" [label = <(LITERAL,0,int i = 0)<SUB>1449</SUB>> ]
+"2970" [label = <(&lt;operator&gt;.lessThan,i &lt; methods.size())<SUB>1449</SUB>> ]
+"2971" [label = <(IDENTIFIER,i,i &lt; methods.size())<SUB>1449</SUB>> ]
+"2972" [label = <(size,methods.size())<SUB>1449</SUB>> ]
+"2973" [label = <(IDENTIFIER,methods,methods.size())<SUB>1449</SUB>> ]
+"2974" [label = <(&lt;operator&gt;.preIncrement,++i)<SUB>1449</SUB>> ]
+"2975" [label = <(IDENTIFIER,i,++i)<SUB>1449</SUB>> ]
+"2976" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>1449</SUB>> ]
+"2977" [label = <(LOCAL,Method method: java.lang.reflect.Method)> ]
+"2978" [label = <(&lt;operator&gt;.assignment,Method method = (Method) methods.get(i))<SUB>1450</SUB>> ]
+"2979" [label = <(IDENTIFIER,method,Method method = (Method) methods.get(i))<SUB>1450</SUB>> ]
+"2980" [label = <(&lt;operator&gt;.cast,(Method) methods.get(i))<SUB>1450</SUB>> ]
+"2981" [label = <(TYPE_REF,Method,Method)<SUB>1450</SUB>> ]
+"2982" [label = <(get,methods.get(i))<SUB>1450</SUB>> ]
+"2983" [label = <(IDENTIFIER,methods,methods.get(i))<SUB>1450</SUB>> ]
+"2984" [label = <(IDENTIFIER,i,methods.get(i))<SUB>1450</SUB>> ]
+"2985" [label = <(LOCAL,Class methodClass: java.lang.Class)> ]
+"2986" [label = <(&lt;operator&gt;.assignment,Class methodClass = method.getParameterTypes()[0])<SUB>1451</SUB>> ]
+"2987" [label = <(IDENTIFIER,methodClass,Class methodClass = method.getParameterTypes()[0])<SUB>1451</SUB>> ]
+"2988" [label = <(&lt;operator&gt;.indexAccess,method.getParameterTypes()[0])<SUB>1451</SUB>> ]
+"2989" [label = <(getParameterTypes,method.getParameterTypes())<SUB>1451</SUB>> ]
+"2990" [label = <(IDENTIFIER,method,method.getParameterTypes())<SUB>1451</SUB>> ]
+"2991" [label = <(LITERAL,0,Class methodClass = method.getParameterTypes()[0])<SUB>1451</SUB>> ]
+"2992" [label = <(CONTROL_STRUCTURE,if (methodClass.isAssignableFrom(paramClass)),if (methodClass.isAssignableFrom(paramClass)))<SUB>1452</SUB>> ]
+"2993" [label = <(isAssignableFrom,methodClass.isAssignableFrom(paramClass))<SUB>1452</SUB>> ]
+"2994" [label = <(IDENTIFIER,methodClass,methodClass.isAssignableFrom(paramClass))<SUB>1452</SUB>> ]
+"2995" [label = <(IDENTIFIER,paramClass,methodClass.isAssignableFrom(paramClass))<SUB>1452</SUB>> ]
+"2996" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>1452</SUB>> ]
+"2997" [label = <(CONTROL_STRUCTURE,if (matchedClass == null),if (matchedClass == null))<SUB>1453</SUB>> ]
+"2998" [label = <(&lt;operator&gt;.equals,matchedClass == null)<SUB>1453</SUB>> ]
+"2999" [label = <(IDENTIFIER,matchedClass,matchedClass == null)<SUB>1453</SUB>> ]
+"3000" [label = <(LITERAL,null,matchedClass == null)<SUB>1453</SUB>> ]
+"3001" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>1453</SUB>> ]
+"3002" [label = <(&lt;operator&gt;.assignment,matchedClass = methodClass)<SUB>1454</SUB>> ]
+"3003" [label = <(IDENTIFIER,matchedClass,matchedClass = methodClass)<SUB>1454</SUB>> ]
+"3004" [label = <(IDENTIFIER,methodClass,matchedClass = methodClass)<SUB>1454</SUB>> ]
+"3005" [label = <(&lt;operator&gt;.assignment,matchedMethod = method)<SUB>1455</SUB>> ]
+"3006" [label = <(IDENTIFIER,matchedMethod,matchedMethod = method)<SUB>1455</SUB>> ]
+"3007" [label = <(IDENTIFIER,method,matchedMethod = method)<SUB>1455</SUB>> ]
+"3008" [label = <(CONTROL_STRUCTURE,else,else)<SUB>1456</SUB>> ]
+"3009" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>1456</SUB>> ]
+"3010" [label = <(CONTROL_STRUCTURE,if (!methodClass.isAssignableFrom(matchedClass)),if (!methodClass.isAssignableFrom(matchedClass)))<SUB>1457</SUB>> ]
+"3011" [label = <(&lt;operator&gt;.logicalNot,!methodClass.isAssignableFrom(matchedClass))<SUB>1457</SUB>> ]
+"3012" [label = <(isAssignableFrom,methodClass.isAssignableFrom(matchedClass))<SUB>1457</SUB>> ]
+"3013" [label = <(IDENTIFIER,methodClass,methodClass.isAssignableFrom(matchedClass))<SUB>1457</SUB>> ]
+"3014" [label = <(IDENTIFIER,matchedClass,methodClass.isAssignableFrom(matchedClass))<SUB>1457</SUB>> ]
+"3015" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>1457</SUB>> ]
+"3016" [label = <(&lt;operator&gt;.throw,throw new BuildException(&quot;ambiguous: types &quot; + matchedClass.getName() + &quot; and &quot; + methodClass.getName() + &quot; match &quot; + paramClass.getName());)<SUB>1458</SUB>> ]
+"3017" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>1458</SUB>> ]
+"3018" [label = <(&lt;operator&gt;.assignment,&lt;empty&gt;)> ]
+"3019" [label = <(IDENTIFIER,$obj52,&lt;empty&gt;)> ]
+"3020" [label = <(&lt;operator&gt;.alloc,new BuildException(&quot;ambiguous: types &quot; + matchedClass.getName() + &quot; and &quot; + methodClass.getName() + &quot; match &quot; + paramClass.getName()))<SUB>1458</SUB>> ]
+"3021" [label = <(&lt;init&gt;,new BuildException(&quot;ambiguous: types &quot; + matchedClass.getName() + &quot; and &quot; + methodClass.getName() + &quot; match &quot; + paramClass.getName()))<SUB>1458</SUB>> ]
+"3022" [label = <(IDENTIFIER,$obj52,new BuildException(&quot;ambiguous: types &quot; + matchedClass.getName() + &quot; and &quot; + methodClass.getName() + &quot; match &quot; + paramClass.getName()))> ]
+"3023" [label = <(&lt;operator&gt;.addition,&quot;ambiguous: types &quot; + matchedClass.getName() + &quot; and &quot; + methodClass.getName() + &quot; match &quot; + paramClass.getName())<SUB>1458</SUB>> ]
+"3024" [label = <(&lt;operator&gt;.addition,&quot;ambiguous: types &quot; + matchedClass.getName() + &quot; and &quot; + methodClass.getName() + &quot; match &quot;)<SUB>1458</SUB>> ]
+"3025" [label = <(&lt;operator&gt;.addition,&quot;ambiguous: types &quot; + matchedClass.getName() + &quot; and &quot; + methodClass.getName())<SUB>1458</SUB>> ]
+"3026" [label = <(&lt;operator&gt;.addition,&quot;ambiguous: types &quot; + matchedClass.getName() + &quot; and &quot;)<SUB>1458</SUB>> ]
+"3027" [label = <(&lt;operator&gt;.addition,&quot;ambiguous: types &quot; + matchedClass.getName())<SUB>1458</SUB>> ]
+"3028" [label = <(LITERAL,&quot;ambiguous: types &quot;,&quot;ambiguous: types &quot; + matchedClass.getName())<SUB>1458</SUB>> ]
+"3029" [label = <(getName,matchedClass.getName())<SUB>1459</SUB>> ]
+"3030" [label = <(IDENTIFIER,matchedClass,matchedClass.getName())<SUB>1459</SUB>> ]
+"3031" [label = <(LITERAL,&quot; and &quot;,&quot;ambiguous: types &quot; + matchedClass.getName() + &quot; and &quot;)<SUB>1459</SUB>> ]
+"3032" [label = <(getName,methodClass.getName())<SUB>1460</SUB>> ]
+"3033" [label = <(IDENTIFIER,methodClass,methodClass.getName())<SUB>1460</SUB>> ]
+"3034" [label = <(LITERAL,&quot; match &quot;,&quot;ambiguous: types &quot; + matchedClass.getName() + &quot; and &quot; + methodClass.getName() + &quot; match &quot;)<SUB>1460</SUB>> ]
+"3035" [label = <(getName,paramClass.getName())<SUB>1461</SUB>> ]
+"3036" [label = <(IDENTIFIER,paramClass,paramClass.getName())<SUB>1461</SUB>> ]
+"3037" [label = <(IDENTIFIER,$obj52,&lt;empty&gt;)> ]
+"3038" [label = <(RETURN,return matchedMethod;,return matchedMethod;)<SUB>1466</SUB>> ]
+"3039" [label = <(IDENTIFIER,matchedMethod,return matchedMethod;)<SUB>1466</SUB>> ]
+"3040" [label = <(MODIFIER,PRIVATE)> ]
+"3041" [label = <(MODIFIER,VIRTUAL)> ]
+"3042" [label = <(METHOD_RETURN,java.lang.reflect.Method)<SUB>1445</SUB>> ]
+  "2952" -> "2953" 
+  "2952" -> "2954" 
+  "2952" -> "2955" 
+  "2952" -> "2956" 
+  "2952" -> "3040" 
+  "2952" -> "3041" 
+  "2952" -> "3042" 
+  "2956" -> "2957" 
+  "2956" -> "2958" 
+  "2956" -> "2961" 
+  "2956" -> "2962" 
+  "2956" -> "2965" 
+  "2956" -> "3038" 
+  "2958" -> "2959" 
+  "2958" -> "2960" 
+  "2962" -> "2963" 
+  "2962" -> "2964" 
+  "2965" -> "2966" 
+  "2965" -> "2967" 
+  "2965" -> "2970" 
+  "2965" -> "2974" 
+  "2965" -> "2976" 
+  "2967" -> "2968" 
+  "2967" -> "2969" 
+  "2970" -> "2971" 
+  "2970" -> "2972" 
+  "2972" -> "2973" 
+  "2974" -> "2975" 
+  "2976" -> "2977" 
+  "2976" -> "2978" 
+  "2976" -> "2985" 
+  "2976" -> "2986" 
+  "2976" -> "2992" 
+  "2978" -> "2979" 
+  "2978" -> "2980" 
+  "2980" -> "2981" 
+  "2980" -> "2982" 
+  "2982" -> "2983" 
+  "2982" -> "2984" 
+  "2986" -> "2987" 
+  "2986" -> "2988" 
+  "2988" -> "2989" 
+  "2988" -> "2991" 
+  "2989" -> "2990" 
+  "2992" -> "2993" 
+  "2992" -> "2996" 
+  "2993" -> "2994" 
+  "2993" -> "2995" 
+  "2996" -> "2997" 
+  "2997" -> "2998" 
+  "2997" -> "3001" 
+  "2997" -> "3008" 
+  "2998" -> "2999" 
+  "2998" -> "3000" 
+  "3001" -> "3002" 
+  "3001" -> "3005" 
+  "3002" -> "3003" 
+  "3002" -> "3004" 
+  "3005" -> "3006" 
+  "3005" -> "3007" 
+  "3008" -> "3009" 
+  "3009" -> "3010" 
+  "3010" -> "3011" 
+  "3010" -> "3015" 
+  "3011" -> "3012" 
+  "3012" -> "3013" 
+  "3012" -> "3014" 
+  "3015" -> "3016" 
+  "3016" -> "3017" 
+  "3017" -> "3018" 
+  "3017" -> "3021" 
+  "3017" -> "3037" 
+  "3018" -> "3019" 
+  "3018" -> "3020" 
+  "3021" -> "3022" 
+  "3021" -> "3023" 
+  "3023" -> "3024" 
+  "3023" -> "3035" 
+  "3024" -> "3025" 
+  "3024" -> "3034" 
+  "3025" -> "3026" 
+  "3025" -> "3032" 
+  "3026" -> "3027" 
+  "3026" -> "3031" 
+  "3027" -> "3028" 
+  "3027" -> "3029" 
+  "3029" -> "3030" 
+  "3032" -> "3033" 
+  "3035" -> "3036" 
+  "3038" -> "3039" 
+}

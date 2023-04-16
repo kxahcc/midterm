@@ -1,0 +1,123 @@
+digraph "getRef" {  
+"412" [label = <(METHOD,getRef)<SUB>227</SUB>> ]
+"47" [label = <(PARAM,this)<SUB>227</SUB>> ]
+"413" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>227</SUB>> ]
+"414" [label = <(CONTROL_STRUCTURE,if (!checked),if (!checked))<SUB>228</SUB>> ]
+"415" [label = <(&lt;operator&gt;.logicalNot,!checked)<SUB>228</SUB>> ]
+"416" [label = <(IDENTIFIER,checked,!checked)<SUB>228</SUB>> ]
+"417" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>228</SUB>> ]
+"45" [label = <(LOCAL,Stack stk: java.util.Stack)> ]
+"418" [label = <(&lt;operator&gt;.assignment,Stack stk = new Stack())<SUB>229</SUB>> ]
+"419" [label = <(IDENTIFIER,stk,Stack stk = new Stack())<SUB>229</SUB>> ]
+"420" [label = <(&lt;operator&gt;.alloc,new Stack())<SUB>229</SUB>> ]
+"421" [label = <(&lt;init&gt;,new Stack())<SUB>229</SUB>> ]
+"44" [label = <(IDENTIFIER,stk,new Stack())<SUB>229</SUB>> ]
+"422" [label = <(push,stk.push(this))<SUB>230</SUB>> ]
+"423" [label = <(IDENTIFIER,stk,stk.push(this))<SUB>230</SUB>> ]
+"46" [label = <(IDENTIFIER,this,stk.push(this))<SUB>230</SUB>> ]
+"424" [label = <(dieOnCircularReference,dieOnCircularReference(stk, p))<SUB>231</SUB>> ]
+"48" [label = <(IDENTIFIER,this,dieOnCircularReference(stk, p))<SUB>231</SUB>> ]
+"425" [label = <(IDENTIFIER,stk,dieOnCircularReference(stk, p))<SUB>231</SUB>> ]
+"426" [label = <(&lt;operator&gt;.fieldAccess,this.p)<SUB>231</SUB>> ]
+"427" [label = <(IDENTIFIER,this,dieOnCircularReference(stk, p))<SUB>231</SUB>> ]
+"428" [label = <(FIELD_IDENTIFIER,p,p)<SUB>231</SUB>> ]
+"429" [label = <(LOCAL,Object o: java.lang.Object)> ]
+"430" [label = <(&lt;operator&gt;.assignment,Object o = getReferencedObject(p))<SUB>234</SUB>> ]
+"431" [label = <(IDENTIFIER,o,Object o = getReferencedObject(p))<SUB>234</SUB>> ]
+"432" [label = <(getReferencedObject,getReferencedObject(p))<SUB>234</SUB>> ]
+"433" [label = <(IDENTIFIER,ref,getReferencedObject(p))<SUB>234</SUB>> ]
+"434" [label = <(&lt;operator&gt;.fieldAccess,this.p)<SUB>234</SUB>> ]
+"435" [label = <(IDENTIFIER,this,getReferencedObject(p))<SUB>234</SUB>> ]
+"436" [label = <(FIELD_IDENTIFIER,p,p)<SUB>234</SUB>> ]
+"437" [label = <(CONTROL_STRUCTURE,if (!(o instanceof Mapper)),if (!(o instanceof Mapper)))<SUB>235</SUB>> ]
+"438" [label = <(&lt;operator&gt;.logicalNot,!(o instanceof Mapper))<SUB>235</SUB>> ]
+"439" [label = <(&lt;operator&gt;.instanceOf,o instanceof Mapper)<SUB>235</SUB>> ]
+"440" [label = <(IDENTIFIER,o,o instanceof Mapper)<SUB>235</SUB>> ]
+"441" [label = <(TYPE_REF,Mapper,Mapper)<SUB>235</SUB>> ]
+"442" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>235</SUB>> ]
+"443" [label = <(LOCAL,String msg: java.lang.String)> ]
+"444" [label = <(&lt;operator&gt;.assignment,String msg = ref.getRefId() + &quot; doesn\'t denote a mapper&quot;)<SUB>236</SUB>> ]
+"445" [label = <(IDENTIFIER,msg,String msg = ref.getRefId() + &quot; doesn\'t denote a mapper&quot;)<SUB>236</SUB>> ]
+"446" [label = <(&lt;operator&gt;.addition,ref.getRefId() + &quot; doesn\'t denote a mapper&quot;)<SUB>236</SUB>> ]
+"447" [label = <(getRefId,getRefId())<SUB>236</SUB>> ]
+"448" [label = <(IDENTIFIER,ref,getRefId())<SUB>236</SUB>> ]
+"449" [label = <(LITERAL,&quot; doesn\'t denote a mapper&quot;,ref.getRefId() + &quot; doesn\'t denote a mapper&quot;)<SUB>236</SUB>> ]
+"450" [label = <(&lt;operator&gt;.throw,throw new BuildException(msg);)<SUB>237</SUB>> ]
+"451" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>237</SUB>> ]
+"452" [label = <(&lt;operator&gt;.assignment,&lt;empty&gt;)> ]
+"453" [label = <(IDENTIFIER,$obj6,&lt;empty&gt;)> ]
+"454" [label = <(&lt;operator&gt;.alloc,new BuildException(msg))<SUB>237</SUB>> ]
+"455" [label = <(&lt;init&gt;,new BuildException(msg))<SUB>237</SUB>> ]
+"456" [label = <(IDENTIFIER,$obj6,new BuildException(msg))> ]
+"457" [label = <(IDENTIFIER,msg,new BuildException(msg))<SUB>237</SUB>> ]
+"458" [label = <(IDENTIFIER,$obj6,&lt;empty&gt;)> ]
+"459" [label = <(CONTROL_STRUCTURE,else,else)<SUB>238</SUB>> ]
+"460" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>238</SUB>> ]
+"461" [label = <(RETURN,return (Mapper) o;,return (Mapper) o;)<SUB>239</SUB>> ]
+"462" [label = <(&lt;operator&gt;.cast,(Mapper) o)<SUB>239</SUB>> ]
+"463" [label = <(TYPE_REF,Mapper,Mapper)<SUB>239</SUB>> ]
+"464" [label = <(IDENTIFIER,o,(Mapper) o)<SUB>239</SUB>> ]
+"465" [label = <(MODIFIER,PROTECTED)> ]
+"466" [label = <(MODIFIER,VIRTUAL)> ]
+"467" [label = <(METHOD_RETURN,org.apache.tools.ant.types.Mapper)<SUB>227</SUB>> ]
+  "412" -> "47" 
+  "412" -> "413" 
+  "412" -> "465" 
+  "412" -> "466" 
+  "412" -> "467" 
+  "413" -> "414" 
+  "413" -> "429" 
+  "413" -> "430" 
+  "413" -> "437" 
+  "414" -> "415" 
+  "414" -> "417" 
+  "415" -> "416" 
+  "417" -> "45" 
+  "417" -> "418" 
+  "417" -> "421" 
+  "417" -> "422" 
+  "417" -> "424" 
+  "418" -> "419" 
+  "418" -> "420" 
+  "421" -> "44" 
+  "422" -> "423" 
+  "422" -> "46" 
+  "424" -> "48" 
+  "424" -> "425" 
+  "424" -> "426" 
+  "426" -> "427" 
+  "426" -> "428" 
+  "430" -> "431" 
+  "430" -> "432" 
+  "432" -> "433" 
+  "432" -> "434" 
+  "434" -> "435" 
+  "434" -> "436" 
+  "437" -> "438" 
+  "437" -> "442" 
+  "437" -> "459" 
+  "438" -> "439" 
+  "439" -> "440" 
+  "439" -> "441" 
+  "442" -> "443" 
+  "442" -> "444" 
+  "442" -> "450" 
+  "444" -> "445" 
+  "444" -> "446" 
+  "446" -> "447" 
+  "446" -> "449" 
+  "447" -> "448" 
+  "450" -> "451" 
+  "451" -> "452" 
+  "451" -> "455" 
+  "451" -> "458" 
+  "452" -> "453" 
+  "452" -> "454" 
+  "455" -> "456" 
+  "455" -> "457" 
+  "459" -> "460" 
+  "460" -> "461" 
+  "461" -> "462" 
+  "462" -> "463" 
+  "462" -> "464" 
+}

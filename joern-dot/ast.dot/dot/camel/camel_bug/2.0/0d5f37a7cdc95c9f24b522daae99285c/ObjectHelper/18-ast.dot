@@ -1,0 +1,117 @@
+digraph "findMethodsWithAnnotation" {  
+"604" [label = <(METHOD,findMethodsWithAnnotation)<SUB>302</SUB>> ]
+"605" [label = <(PARAM,Class&lt;?&gt; type)<SUB>302</SUB>> ]
+"606" [label = <(PARAM,Class&lt;? extends Annotation&gt; annotationType)<SUB>303</SUB>> ]
+"607" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>303</SUB>> ]
+"4" [label = <(LOCAL,List&lt;Method&gt; answer: java.util.List)> ]
+"608" [label = <(&lt;operator&gt;.assignment,List answer = new ArrayList&lt;Method&gt;())<SUB>304</SUB>> ]
+"609" [label = <(IDENTIFIER,answer,List answer = new ArrayList&lt;Method&gt;())<SUB>304</SUB>> ]
+"610" [label = <(&lt;operator&gt;.alloc,new ArrayList&lt;Method&gt;())<SUB>304</SUB>> ]
+"611" [label = <(&lt;init&gt;,new ArrayList&lt;Method&gt;())<SUB>304</SUB>> ]
+"3" [label = <(IDENTIFIER,answer,new ArrayList&lt;Method&gt;())<SUB>304</SUB>> ]
+"612" [label = <(CONTROL_STRUCTURE,do {...} while (type != null),do {...} while (type != null))<SUB>305</SUB>> ]
+"613" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>305</SUB>> ]
+"614" [label = <(LOCAL,Method[] methods: java.lang.reflect.Method[])> ]
+"615" [label = <(&lt;operator&gt;.assignment,Method[] methods = type.getDeclaredMethods())<SUB>306</SUB>> ]
+"616" [label = <(IDENTIFIER,methods,Method[] methods = type.getDeclaredMethods())<SUB>306</SUB>> ]
+"617" [label = <(getDeclaredMethods,type.getDeclaredMethods())<SUB>306</SUB>> ]
+"618" [label = <(IDENTIFIER,type,type.getDeclaredMethods())<SUB>306</SUB>> ]
+"619" [label = <(CONTROL_STRUCTURE,&lt;empty&gt;,&lt;empty&gt;)> ]
+"620" [label = <(LOCAL,$idx1: int)<SUB>307</SUB>> ]
+"621" [label = <(&lt;operator&gt;.assignment,int $idx1 = 0)<SUB>307</SUB>> ]
+"622" [label = <(IDENTIFIER,$idx1,int $idx1 = 0)<SUB>307</SUB>> ]
+"623" [label = <(LITERAL,0,int $idx1 = 0)<SUB>307</SUB>> ]
+"624" [label = <(&lt;operator&gt;.lessThan,$idx1 &lt; methods.length)<SUB>307</SUB>> ]
+"625" [label = <(IDENTIFIER,$idx1,$idx1 &lt; methods.length)<SUB>307</SUB>> ]
+"626" [label = <(&lt;operator&gt;.fieldAccess,methods.length)<SUB>307</SUB>> ]
+"627" [label = <(IDENTIFIER,methods,$idx1 &lt; methods.length)<SUB>307</SUB>> ]
+"628" [label = <(FIELD_IDENTIFIER,length,length)<SUB>307</SUB>> ]
+"629" [label = <(&lt;operator&gt;.postIncrement,$idx1++)<SUB>307</SUB>> ]
+"630" [label = <(IDENTIFIER,$idx1,$idx1++)<SUB>307</SUB>> ]
+"631" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>307</SUB>> ]
+"632" [label = <(LOCAL,method: java.lang.reflect.Method)<SUB>307</SUB>> ]
+"633" [label = <(&lt;operator&gt;.assignment,&lt;empty&gt;)<SUB>307</SUB>> ]
+"634" [label = <(IDENTIFIER,method,&lt;empty&gt;)<SUB>307</SUB>> ]
+"635" [label = <(&lt;operator&gt;.indexAccess,&lt;empty&gt;)<SUB>307</SUB>> ]
+"636" [label = <(IDENTIFIER,methods,&lt;empty&gt;)<SUB>307</SUB>> ]
+"637" [label = <(IDENTIFIER,$idx1,&lt;empty&gt;)<SUB>307</SUB>> ]
+"638" [label = <(CONTROL_STRUCTURE,if (method.getAnnotation(annotationType) != null),if (method.getAnnotation(annotationType) != null))<SUB>308</SUB>> ]
+"639" [label = <(&lt;operator&gt;.notEquals,method.getAnnotation(annotationType) != null)<SUB>308</SUB>> ]
+"640" [label = <(getAnnotation,method.getAnnotation(annotationType))<SUB>308</SUB>> ]
+"641" [label = <(IDENTIFIER,method,method.getAnnotation(annotationType))<SUB>308</SUB>> ]
+"642" [label = <(IDENTIFIER,annotationType,method.getAnnotation(annotationType))<SUB>308</SUB>> ]
+"643" [label = <(LITERAL,null,method.getAnnotation(annotationType) != null)<SUB>308</SUB>> ]
+"644" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>308</SUB>> ]
+"645" [label = <(add,answer.add(method))<SUB>309</SUB>> ]
+"646" [label = <(IDENTIFIER,answer,answer.add(method))<SUB>309</SUB>> ]
+"647" [label = <(IDENTIFIER,method,answer.add(method))<SUB>309</SUB>> ]
+"648" [label = <(&lt;operator&gt;.assignment,type = type.getSuperclass())<SUB>312</SUB>> ]
+"649" [label = <(IDENTIFIER,type,type = type.getSuperclass())<SUB>312</SUB>> ]
+"650" [label = <(getSuperclass,type.getSuperclass())<SUB>312</SUB>> ]
+"651" [label = <(IDENTIFIER,type,type.getSuperclass())<SUB>312</SUB>> ]
+"652" [label = <(&lt;operator&gt;.notEquals,type != null)<SUB>313</SUB>> ]
+"653" [label = <(IDENTIFIER,type,type != null)<SUB>313</SUB>> ]
+"654" [label = <(LITERAL,null,type != null)<SUB>313</SUB>> ]
+"655" [label = <(RETURN,return answer;,return answer;)<SUB>314</SUB>> ]
+"656" [label = <(IDENTIFIER,answer,return answer;)<SUB>314</SUB>> ]
+"657" [label = <(MODIFIER,PUBLIC)> ]
+"658" [label = <(MODIFIER,STATIC)> ]
+"659" [label = <(METHOD_RETURN,java.util.List)<SUB>302</SUB>> ]
+  "604" -> "605" 
+  "604" -> "606" 
+  "604" -> "607" 
+  "604" -> "657" 
+  "604" -> "658" 
+  "604" -> "659" 
+  "607" -> "4" 
+  "607" -> "608" 
+  "607" -> "611" 
+  "607" -> "612" 
+  "607" -> "655" 
+  "608" -> "609" 
+  "608" -> "610" 
+  "611" -> "3" 
+  "612" -> "613" 
+  "612" -> "652" 
+  "613" -> "614" 
+  "613" -> "615" 
+  "613" -> "619" 
+  "613" -> "648" 
+  "615" -> "616" 
+  "615" -> "617" 
+  "617" -> "618" 
+  "619" -> "620" 
+  "619" -> "621" 
+  "619" -> "624" 
+  "619" -> "629" 
+  "619" -> "631" 
+  "621" -> "622" 
+  "621" -> "623" 
+  "624" -> "625" 
+  "624" -> "626" 
+  "626" -> "627" 
+  "626" -> "628" 
+  "629" -> "630" 
+  "631" -> "632" 
+  "631" -> "633" 
+  "631" -> "638" 
+  "633" -> "634" 
+  "633" -> "635" 
+  "635" -> "636" 
+  "635" -> "637" 
+  "638" -> "639" 
+  "638" -> "644" 
+  "639" -> "640" 
+  "639" -> "643" 
+  "640" -> "641" 
+  "640" -> "642" 
+  "644" -> "645" 
+  "645" -> "646" 
+  "645" -> "647" 
+  "648" -> "649" 
+  "648" -> "650" 
+  "650" -> "651" 
+  "652" -> "653" 
+  "652" -> "654" 
+  "655" -> "656" 
+}

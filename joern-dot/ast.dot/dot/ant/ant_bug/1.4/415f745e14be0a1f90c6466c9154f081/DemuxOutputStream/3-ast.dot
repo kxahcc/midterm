@@ -1,0 +1,115 @@
+digraph "write" {  
+"123" [label = <(METHOD,write)<SUB>110</SUB>> ]
+"9" [label = <(PARAM,this)<SUB>110</SUB>> ]
+"124" [label = <(PARAM,int cc)<SUB>110</SUB>> ]
+"125" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>110</SUB>> ]
+"126" [label = <(LOCAL,byte c: byte)> ]
+"127" [label = <(&lt;operator&gt;.assignment,byte c = (byte) cc)<SUB>111</SUB>> ]
+"128" [label = <(IDENTIFIER,c,byte c = (byte) cc)<SUB>111</SUB>> ]
+"129" [label = <(&lt;operator&gt;.cast,(byte) cc)<SUB>111</SUB>> ]
+"130" [label = <(TYPE_REF,byte,byte)<SUB>111</SUB>> ]
+"131" [label = <(IDENTIFIER,cc,(byte) cc)<SUB>111</SUB>> ]
+"132" [label = <(CONTROL_STRUCTURE,if ((c == '\n') || (c == '\r')),if ((c == '\n') || (c == '\r')))<SUB>112</SUB>> ]
+"133" [label = <(&lt;operator&gt;.logicalOr,(c == '\n') || (c == '\r'))<SUB>112</SUB>> ]
+"134" [label = <(&lt;operator&gt;.equals,c == '\n')<SUB>112</SUB>> ]
+"135" [label = <(IDENTIFIER,c,c == '\n')<SUB>112</SUB>> ]
+"136" [label = <(LITERAL,'\n',c == '\n')<SUB>112</SUB>> ]
+"137" [label = <(&lt;operator&gt;.equals,c == '\r')<SUB>112</SUB>> ]
+"138" [label = <(IDENTIFIER,c,c == '\r')<SUB>112</SUB>> ]
+"139" [label = <(LITERAL,'\r',c == '\r')<SUB>112</SUB>> ]
+"140" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>112</SUB>> ]
+"141" [label = <(CONTROL_STRUCTURE,if (!skip),if (!skip))<SUB>113</SUB>> ]
+"142" [label = <(&lt;operator&gt;.logicalNot,!skip)<SUB>113</SUB>> ]
+"143" [label = <(&lt;operator&gt;.fieldAccess,this.skip)<SUB>113</SUB>> ]
+"144" [label = <(IDENTIFIER,this,!skip)<SUB>113</SUB>> ]
+"145" [label = <(FIELD_IDENTIFIER,skip,skip)<SUB>113</SUB>> ]
+"146" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>113</SUB>> ]
+"147" [label = <(processBuffer,this.processBuffer())<SUB>114</SUB>> ]
+"8" [label = <(IDENTIFIER,this,this.processBuffer())<SUB>114</SUB>> ]
+"148" [label = <(CONTROL_STRUCTURE,else,else)<SUB>116</SUB>> ]
+"149" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>116</SUB>> ]
+"150" [label = <(LOCAL,ByteArrayOutputStream buffer: java.io.ByteArrayOutputStream)> ]
+"151" [label = <(&lt;operator&gt;.assignment,ByteArrayOutputStream buffer = this.getBuffer())<SUB>117</SUB>> ]
+"152" [label = <(IDENTIFIER,buffer,ByteArrayOutputStream buffer = this.getBuffer())<SUB>117</SUB>> ]
+"153" [label = <(getBuffer,this.getBuffer())<SUB>117</SUB>> ]
+"10" [label = <(IDENTIFIER,this,this.getBuffer())<SUB>117</SUB>> ]
+"154" [label = <(write,buffer.write(cc))<SUB>118</SUB>> ]
+"155" [label = <(IDENTIFIER,buffer,buffer.write(cc))<SUB>118</SUB>> ]
+"156" [label = <(IDENTIFIER,cc,buffer.write(cc))<SUB>118</SUB>> ]
+"157" [label = <(CONTROL_STRUCTURE,if (buffer.size() &gt; MAX_SIZE),if (buffer.size() &gt; MAX_SIZE))<SUB>119</SUB>> ]
+"158" [label = <(&lt;operator&gt;.greaterThan,buffer.size() &gt; MAX_SIZE)<SUB>119</SUB>> ]
+"159" [label = <(size,buffer.size())<SUB>119</SUB>> ]
+"160" [label = <(IDENTIFIER,buffer,buffer.size())<SUB>119</SUB>> ]
+"161" [label = <(&lt;operator&gt;.fieldAccess,DemuxOutputStream.MAX_SIZE)<SUB>119</SUB>> ]
+"162" [label = <(IDENTIFIER,DemuxOutputStream,buffer.size() &gt; MAX_SIZE)<SUB>119</SUB>> ]
+"163" [label = <(FIELD_IDENTIFIER,MAX_SIZE,MAX_SIZE)<SUB>119</SUB>> ]
+"164" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>119</SUB>> ]
+"165" [label = <(processBuffer,this.processBuffer())<SUB>120</SUB>> ]
+"11" [label = <(IDENTIFIER,this,this.processBuffer())<SUB>120</SUB>> ]
+"166" [label = <(&lt;operator&gt;.assignment,this.skip = c == '\r')<SUB>123</SUB>> ]
+"167" [label = <(&lt;operator&gt;.fieldAccess,this.skip)<SUB>123</SUB>> ]
+"168" [label = <(IDENTIFIER,this,this.skip = c == '\r')<SUB>123</SUB>> ]
+"169" [label = <(FIELD_IDENTIFIER,skip,skip)<SUB>123</SUB>> ]
+"170" [label = <(&lt;operator&gt;.equals,c == '\r')<SUB>123</SUB>> ]
+"171" [label = <(IDENTIFIER,c,c == '\r')<SUB>123</SUB>> ]
+"172" [label = <(LITERAL,'\r',c == '\r')<SUB>123</SUB>> ]
+"173" [label = <(MODIFIER,PUBLIC)> ]
+"174" [label = <(MODIFIER,VIRTUAL)> ]
+"175" [label = <(METHOD_RETURN,void)<SUB>110</SUB>> ]
+  "123" -> "9" 
+  "123" -> "124" 
+  "123" -> "125" 
+  "123" -> "173" 
+  "123" -> "174" 
+  "123" -> "175" 
+  "125" -> "126" 
+  "125" -> "127" 
+  "125" -> "132" 
+  "125" -> "166" 
+  "127" -> "128" 
+  "127" -> "129" 
+  "129" -> "130" 
+  "129" -> "131" 
+  "132" -> "133" 
+  "132" -> "140" 
+  "132" -> "148" 
+  "133" -> "134" 
+  "133" -> "137" 
+  "134" -> "135" 
+  "134" -> "136" 
+  "137" -> "138" 
+  "137" -> "139" 
+  "140" -> "141" 
+  "141" -> "142" 
+  "141" -> "146" 
+  "142" -> "143" 
+  "143" -> "144" 
+  "143" -> "145" 
+  "146" -> "147" 
+  "147" -> "8" 
+  "148" -> "149" 
+  "149" -> "150" 
+  "149" -> "151" 
+  "149" -> "154" 
+  "149" -> "157" 
+  "151" -> "152" 
+  "151" -> "153" 
+  "153" -> "10" 
+  "154" -> "155" 
+  "154" -> "156" 
+  "157" -> "158" 
+  "157" -> "164" 
+  "158" -> "159" 
+  "158" -> "161" 
+  "159" -> "160" 
+  "161" -> "162" 
+  "161" -> "163" 
+  "164" -> "165" 
+  "165" -> "11" 
+  "166" -> "167" 
+  "166" -> "170" 
+  "167" -> "168" 
+  "167" -> "169" 
+  "170" -> "171" 
+  "170" -> "172" 
+}

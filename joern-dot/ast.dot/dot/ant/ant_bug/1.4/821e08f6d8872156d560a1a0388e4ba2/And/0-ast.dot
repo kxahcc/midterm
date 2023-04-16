@@ -1,0 +1,63 @@
+digraph "eval" {  
+"9" [label = <(METHOD,eval)<SUB>72</SUB>> ]
+"4" [label = <(PARAM,this)<SUB>72</SUB>> ]
+"10" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>72</SUB>> ]
+"11" [label = <(LOCAL,Enumeration enum: java.util.Enumeration)> ]
+"12" [label = <(&lt;operator&gt;.assignment,Enumeration enum = getConditions())<SUB>73</SUB>> ]
+"13" [label = <(IDENTIFIER,enum,Enumeration enum = getConditions())<SUB>73</SUB>> ]
+"14" [label = <(getConditions,getConditions())<SUB>73</SUB>> ]
+"3" [label = <(IDENTIFIER,this,getConditions())<SUB>73</SUB>> ]
+"15" [label = <(CONTROL_STRUCTURE,while (enum.hasMoreElements()),while (enum.hasMoreElements()))<SUB>74</SUB>> ]
+"16" [label = <(hasMoreElements,enum.hasMoreElements())<SUB>74</SUB>> ]
+"17" [label = <(IDENTIFIER,enum,enum.hasMoreElements())<SUB>74</SUB>> ]
+"18" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>74</SUB>> ]
+"19" [label = <(LOCAL,Condition c: ANY)> ]
+"20" [label = <(&lt;operator&gt;.assignment,ANY c = (Condition) enum.nextElement())<SUB>75</SUB>> ]
+"21" [label = <(IDENTIFIER,c,ANY c = (Condition) enum.nextElement())<SUB>75</SUB>> ]
+"22" [label = <(&lt;operator&gt;.cast,(Condition) enum.nextElement())<SUB>75</SUB>> ]
+"23" [label = <(TYPE_REF,Condition,Condition)<SUB>75</SUB>> ]
+"24" [label = <(nextElement,enum.nextElement())<SUB>75</SUB>> ]
+"25" [label = <(IDENTIFIER,enum,enum.nextElement())<SUB>75</SUB>> ]
+"26" [label = <(CONTROL_STRUCTURE,if (!c.eval()),if (!c.eval()))<SUB>76</SUB>> ]
+"27" [label = <(&lt;operator&gt;.logicalNot,!c.eval())<SUB>76</SUB>> ]
+"28" [label = <(eval,eval())<SUB>76</SUB>> ]
+"29" [label = <(IDENTIFIER,c,eval())<SUB>76</SUB>> ]
+"30" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>76</SUB>> ]
+"31" [label = <(RETURN,return false;,return false;)<SUB>77</SUB>> ]
+"32" [label = <(LITERAL,false,return false;)<SUB>77</SUB>> ]
+"33" [label = <(RETURN,return true;,return true;)<SUB>80</SUB>> ]
+"34" [label = <(LITERAL,true,return true;)<SUB>80</SUB>> ]
+"35" [label = <(MODIFIER,PUBLIC)> ]
+"36" [label = <(MODIFIER,VIRTUAL)> ]
+"37" [label = <(METHOD_RETURN,boolean)<SUB>72</SUB>> ]
+  "9" -> "4" 
+  "9" -> "10" 
+  "9" -> "35" 
+  "9" -> "36" 
+  "9" -> "37" 
+  "10" -> "11" 
+  "10" -> "12" 
+  "10" -> "15" 
+  "10" -> "33" 
+  "12" -> "13" 
+  "12" -> "14" 
+  "14" -> "3" 
+  "15" -> "16" 
+  "15" -> "18" 
+  "16" -> "17" 
+  "18" -> "19" 
+  "18" -> "20" 
+  "18" -> "26" 
+  "20" -> "21" 
+  "20" -> "22" 
+  "22" -> "23" 
+  "22" -> "24" 
+  "24" -> "25" 
+  "26" -> "27" 
+  "26" -> "30" 
+  "27" -> "28" 
+  "28" -> "29" 
+  "30" -> "31" 
+  "31" -> "32" 
+  "33" -> "34" 
+}

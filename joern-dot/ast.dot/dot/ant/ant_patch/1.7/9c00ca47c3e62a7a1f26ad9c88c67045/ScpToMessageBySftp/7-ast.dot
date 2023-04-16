@@ -1,0 +1,129 @@
+digraph "doMultipleTransfer" {  
+"195" [label = <(METHOD,doMultipleTransfer)<SUB>144</SUB>> ]
+"24" [label = <(PARAM,this)<SUB>144</SUB>> ]
+"196" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>144</SUB>> ]
+"197" [label = <(LOCAL,ChannelSftp channel: com.jcraft.jsch.ChannelSftp)> ]
+"198" [label = <(&lt;operator&gt;.assignment,ChannelSftp channel = openSftpChannel())<SUB>145</SUB>> ]
+"199" [label = <(IDENTIFIER,channel,ChannelSftp channel = openSftpChannel())<SUB>145</SUB>> ]
+"200" [label = <(openSftpChannel,openSftpChannel())<SUB>145</SUB>> ]
+"23" [label = <(IDENTIFIER,this,openSftpChannel())<SUB>145</SUB>> ]
+"201" [label = <(CONTROL_STRUCTURE,try,try)<SUB>146</SUB>> ]
+"202" [label = <(BLOCK,try,try)<SUB>146</SUB>> ]
+"203" [label = <(connect,connect())<SUB>147</SUB>> ]
+"204" [label = <(IDENTIFIER,channel,connect())<SUB>147</SUB>> ]
+"205" [label = <(CONTROL_STRUCTURE,try,try)<SUB>149</SUB>> ]
+"206" [label = <(BLOCK,try,try)<SUB>149</SUB>> ]
+"207" [label = <(cd,cd(remotePath))<SUB>150</SUB>> ]
+"208" [label = <(IDENTIFIER,channel,cd(remotePath))<SUB>150</SUB>> ]
+"209" [label = <(&lt;operator&gt;.fieldAccess,this.remotePath)<SUB>150</SUB>> ]
+"210" [label = <(IDENTIFIER,this,cd(remotePath))<SUB>150</SUB>> ]
+"211" [label = <(FIELD_IDENTIFIER,remotePath,remotePath)<SUB>150</SUB>> ]
+"212" [label = <(CONTROL_STRUCTURE,for (Iterator i = directoryList.iterator(); Some(i.hasNext()); ),for (Iterator i = directoryList.iterator(); Some(i.hasNext()); ))<SUB>151</SUB>> ]
+"213" [label = <(LOCAL,Iterator i: java.util.Iterator)> ]
+"214" [label = <(&lt;operator&gt;.assignment,Iterator i = directoryList.iterator())<SUB>151</SUB>> ]
+"215" [label = <(IDENTIFIER,i,Iterator i = directoryList.iterator())<SUB>151</SUB>> ]
+"216" [label = <(iterator,directoryList.iterator())<SUB>151</SUB>> ]
+"217" [label = <(&lt;operator&gt;.fieldAccess,this.directoryList)<SUB>151</SUB>> ]
+"218" [label = <(IDENTIFIER,this,directoryList.iterator())<SUB>151</SUB>> ]
+"219" [label = <(FIELD_IDENTIFIER,directoryList,directoryList)<SUB>151</SUB>> ]
+"220" [label = <(hasNext,i.hasNext())<SUB>151</SUB>> ]
+"221" [label = <(IDENTIFIER,i,i.hasNext())<SUB>151</SUB>> ]
+"222" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>151</SUB>> ]
+"223" [label = <(LOCAL,Directory current: ANY)> ]
+"224" [label = <(&lt;operator&gt;.assignment,ANY current = (Directory) i.next())<SUB>152</SUB>> ]
+"225" [label = <(IDENTIFIER,current,ANY current = (Directory) i.next())<SUB>152</SUB>> ]
+"226" [label = <(&lt;operator&gt;.cast,(Directory) i.next())<SUB>152</SUB>> ]
+"227" [label = <(TYPE_REF,Directory,Directory)<SUB>152</SUB>> ]
+"228" [label = <(next,i.next())<SUB>152</SUB>> ]
+"229" [label = <(IDENTIFIER,i,i.next())<SUB>152</SUB>> ]
+"230" [label = <(sendDirectory,sendDirectory(channel, current))<SUB>153</SUB>> ]
+"25" [label = <(IDENTIFIER,this,sendDirectory(channel, current))<SUB>153</SUB>> ]
+"231" [label = <(IDENTIFIER,channel,sendDirectory(channel, current))<SUB>153</SUB>> ]
+"232" [label = <(IDENTIFIER,current,sendDirectory(channel, current))<SUB>153</SUB>> ]
+"233" [label = <(BLOCK,catch,catch)> ]
+"234" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>155</SUB>> ]
+"235" [label = <(&lt;operator&gt;.throw,throw new JSchException(e.toString());)<SUB>156</SUB>> ]
+"236" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>156</SUB>> ]
+"237" [label = <(&lt;operator&gt;.assignment,&lt;empty&gt;)> ]
+"238" [label = <(IDENTIFIER,$obj1,&lt;empty&gt;)> ]
+"239" [label = <(&lt;operator&gt;.alloc,new JSchException(e.toString()))<SUB>156</SUB>> ]
+"240" [label = <(&lt;init&gt;,new JSchException(e.toString()))<SUB>156</SUB>> ]
+"241" [label = <(IDENTIFIER,$obj1,new JSchException(e.toString()))> ]
+"242" [label = <(toString,toString())<SUB>156</SUB>> ]
+"243" [label = <(IDENTIFIER,e,toString())<SUB>156</SUB>> ]
+"244" [label = <(IDENTIFIER,$obj1,&lt;empty&gt;)> ]
+"245" [label = <(BLOCK,finally,finally)<SUB>158</SUB>> ]
+"246" [label = <(CONTROL_STRUCTURE,if (channel != null),if (channel != null))<SUB>159</SUB>> ]
+"247" [label = <(&lt;operator&gt;.notEquals,channel != null)<SUB>159</SUB>> ]
+"248" [label = <(IDENTIFIER,channel,channel != null)<SUB>159</SUB>> ]
+"249" [label = <(LITERAL,null,channel != null)<SUB>159</SUB>> ]
+"250" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>159</SUB>> ]
+"251" [label = <(disconnect,disconnect())<SUB>160</SUB>> ]
+"252" [label = <(IDENTIFIER,channel,disconnect())<SUB>160</SUB>> ]
+"253" [label = <(MODIFIER,PRIVATE)> ]
+"254" [label = <(MODIFIER,VIRTUAL)> ]
+"255" [label = <(METHOD_RETURN,void)<SUB>144</SUB>> ]
+  "195" -> "24" 
+  "195" -> "196" 
+  "195" -> "253" 
+  "195" -> "254" 
+  "195" -> "255" 
+  "196" -> "197" 
+  "196" -> "198" 
+  "196" -> "201" 
+  "198" -> "199" 
+  "198" -> "200" 
+  "200" -> "23" 
+  "201" -> "202" 
+  "201" -> "245" 
+  "202" -> "203" 
+  "202" -> "205" 
+  "203" -> "204" 
+  "205" -> "206" 
+  "205" -> "233" 
+  "206" -> "207" 
+  "206" -> "212" 
+  "207" -> "208" 
+  "207" -> "209" 
+  "209" -> "210" 
+  "209" -> "211" 
+  "212" -> "213" 
+  "212" -> "214" 
+  "212" -> "220" 
+  "212" -> "222" 
+  "214" -> "215" 
+  "214" -> "216" 
+  "216" -> "217" 
+  "217" -> "218" 
+  "217" -> "219" 
+  "220" -> "221" 
+  "222" -> "223" 
+  "222" -> "224" 
+  "222" -> "230" 
+  "224" -> "225" 
+  "224" -> "226" 
+  "226" -> "227" 
+  "226" -> "228" 
+  "228" -> "229" 
+  "230" -> "25" 
+  "230" -> "231" 
+  "230" -> "232" 
+  "233" -> "234" 
+  "234" -> "235" 
+  "235" -> "236" 
+  "236" -> "237" 
+  "236" -> "240" 
+  "236" -> "244" 
+  "237" -> "238" 
+  "237" -> "239" 
+  "240" -> "241" 
+  "240" -> "242" 
+  "242" -> "243" 
+  "245" -> "246" 
+  "246" -> "247" 
+  "246" -> "250" 
+  "247" -> "248" 
+  "247" -> "249" 
+  "250" -> "251" 
+  "251" -> "252" 
+}

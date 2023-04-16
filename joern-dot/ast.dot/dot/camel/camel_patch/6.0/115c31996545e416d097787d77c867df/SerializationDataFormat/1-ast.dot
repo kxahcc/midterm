@@ -1,0 +1,53 @@
+digraph "unmarshal" {  
+"49" [label = <(METHOD,unmarshal)<SUB>51</SUB>> ]
+"50" [label = <(PARAM,this)<SUB>51</SUB>> ]
+"51" [label = <(PARAM,Exchange exchange)<SUB>51</SUB>> ]
+"52" [label = <(PARAM,InputStream stream)<SUB>51</SUB>> ]
+"53" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>51</SUB>> ]
+"54" [label = <(LOCAL,ObjectInput in: java.io.ObjectInput)> ]
+"55" [label = <(&lt;operator&gt;.assignment,ObjectInput in = toObjectInput(stream))<SUB>52</SUB>> ]
+"56" [label = <(IDENTIFIER,in,ObjectInput in = toObjectInput(stream))<SUB>52</SUB>> ]
+"57" [label = <(toObjectInput,toObjectInput(stream))<SUB>52</SUB>> ]
+"58" [label = <(IDENTIFIER,IOConverter,toObjectInput(stream))<SUB>52</SUB>> ]
+"59" [label = <(IDENTIFIER,stream,toObjectInput(stream))<SUB>52</SUB>> ]
+"60" [label = <(CONTROL_STRUCTURE,try,try)<SUB>53</SUB>> ]
+"61" [label = <(BLOCK,try,try)<SUB>53</SUB>> ]
+"62" [label = <(RETURN,return in.readObject();,return in.readObject();)<SUB>54</SUB>> ]
+"63" [label = <(readObject,in.readObject())<SUB>54</SUB>> ]
+"64" [label = <(IDENTIFIER,in,in.readObject())<SUB>54</SUB>> ]
+"65" [label = <(BLOCK,finally,finally)<SUB>55</SUB>> ]
+"66" [label = <(CONTROL_STRUCTURE,try,try)<SUB>56</SUB>> ]
+"67" [label = <(BLOCK,try,try)<SUB>56</SUB>> ]
+"68" [label = <(close,in.close())<SUB>57</SUB>> ]
+"69" [label = <(IDENTIFIER,in,in.close())<SUB>57</SUB>> ]
+"70" [label = <(BLOCK,catch,catch)> ]
+"71" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>58</SUB>> ]
+"72" [label = <(MODIFIER,PUBLIC)> ]
+"73" [label = <(MODIFIER,VIRTUAL)> ]
+"74" [label = <(METHOD_RETURN,java.lang.Object)<SUB>51</SUB>> ]
+  "49" -> "50" 
+  "49" -> "51" 
+  "49" -> "52" 
+  "49" -> "53" 
+  "49" -> "72" 
+  "49" -> "73" 
+  "49" -> "74" 
+  "53" -> "54" 
+  "53" -> "55" 
+  "53" -> "60" 
+  "55" -> "56" 
+  "55" -> "57" 
+  "57" -> "58" 
+  "57" -> "59" 
+  "60" -> "61" 
+  "60" -> "65" 
+  "61" -> "62" 
+  "62" -> "63" 
+  "63" -> "64" 
+  "65" -> "66" 
+  "66" -> "67" 
+  "66" -> "70" 
+  "67" -> "68" 
+  "68" -> "69" 
+  "70" -> "71" 
+}

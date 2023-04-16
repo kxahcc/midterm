@@ -1,0 +1,133 @@
+digraph "createOutputsProcessor" {  
+"1896" [label = <(METHOD,createOutputsProcessor)<SUB>963</SUB>> ]
+"257" [label = <(PARAM,this)<SUB>963</SUB>> ]
+"1897" [label = <(PARAM,RouteContext routeContext)<SUB>963</SUB>> ]
+"1898" [label = <(PARAM,Collection&lt;ProcessorType&lt;?&gt;&gt; outputs)<SUB>963</SUB>> ]
+"1899" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>964</SUB>> ]
+"255" [label = <(LOCAL,List&lt;Processor&gt; list: ANY)> ]
+"1900" [label = <(&lt;operator&gt;.assignment,ANY list = new ArrayList&lt;Processor&gt;())<SUB>965</SUB>> ]
+"1901" [label = <(IDENTIFIER,list,ANY list = new ArrayList&lt;Processor&gt;())<SUB>965</SUB>> ]
+"1902" [label = <(&lt;operator&gt;.alloc,new ArrayList&lt;Processor&gt;())<SUB>965</SUB>> ]
+"1903" [label = <(&lt;init&gt;,new ArrayList&lt;Processor&gt;())<SUB>965</SUB>> ]
+"254" [label = <(IDENTIFIER,list,new ArrayList&lt;Processor&gt;())<SUB>965</SUB>> ]
+"1904" [label = <(LOCAL,$iterLocal3: java.util.Iterator)<SUB>966</SUB>> ]
+"1905" [label = <(&lt;operator&gt;.assignment,)<SUB>966</SUB>> ]
+"1906" [label = <(IDENTIFIER,$iterLocal3,)<SUB>966</SUB>> ]
+"1907" [label = <(iterator,&lt;empty&gt;)<SUB>966</SUB>> ]
+"1908" [label = <(IDENTIFIER,outputs,&lt;empty&gt;)<SUB>966</SUB>> ]
+"1909" [label = <(CONTROL_STRUCTURE,FOR,FOR)<SUB>966</SUB>> ]
+"1910" [label = <(hasNext,&lt;empty&gt;)<SUB>966</SUB>> ]
+"1911" [label = <(IDENTIFIER,$iterLocal3,&lt;empty&gt;)<SUB>966</SUB>> ]
+"1912" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>966</SUB>> ]
+"1913" [label = <(LOCAL,output: org.apache.camel.model.ProcessorType)<SUB>966</SUB>> ]
+"1914" [label = <(&lt;operator&gt;.assignment,&lt;empty&gt;)<SUB>966</SUB>> ]
+"1915" [label = <(IDENTIFIER,output,&lt;empty&gt;)<SUB>966</SUB>> ]
+"1916" [label = <(next,&lt;empty&gt;)<SUB>966</SUB>> ]
+"1917" [label = <(IDENTIFIER,$iterLocal3,&lt;empty&gt;)<SUB>966</SUB>> ]
+"1918" [label = <(LOCAL,Processor processor: org.apache.camel.Processor)> ]
+"1919" [label = <(&lt;operator&gt;.assignment,Processor processor = createProcessor(routeContext))<SUB>967</SUB>> ]
+"1920" [label = <(IDENTIFIER,processor,Processor processor = createProcessor(routeContext))<SUB>967</SUB>> ]
+"1921" [label = <(createProcessor,createProcessor(routeContext))<SUB>967</SUB>> ]
+"1922" [label = <(IDENTIFIER,output,createProcessor(routeContext))<SUB>967</SUB>> ]
+"1923" [label = <(IDENTIFIER,routeContext,createProcessor(routeContext))<SUB>967</SUB>> ]
+"1924" [label = <(add,add(processor))<SUB>968</SUB>> ]
+"1925" [label = <(IDENTIFIER,list,add(processor))<SUB>968</SUB>> ]
+"1926" [label = <(IDENTIFIER,processor,add(processor))<SUB>968</SUB>> ]
+"1927" [label = <(LOCAL,Processor processor: org.apache.camel.Processor)> ]
+"1928" [label = <(&lt;operator&gt;.assignment,Processor processor = null)<SUB>970</SUB>> ]
+"1929" [label = <(IDENTIFIER,processor,Processor processor = null)<SUB>970</SUB>> ]
+"1930" [label = <(LITERAL,null,Processor processor = null)<SUB>970</SUB>> ]
+"1931" [label = <(CONTROL_STRUCTURE,if (!list.isEmpty()),if (!list.isEmpty()))<SUB>971</SUB>> ]
+"1932" [label = <(&lt;operator&gt;.logicalNot,!list.isEmpty())<SUB>971</SUB>> ]
+"1933" [label = <(isEmpty,isEmpty())<SUB>971</SUB>> ]
+"1934" [label = <(IDENTIFIER,list,isEmpty())<SUB>971</SUB>> ]
+"1935" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>971</SUB>> ]
+"1936" [label = <(CONTROL_STRUCTURE,if (list.size() == 1),if (list.size() == 1))<SUB>972</SUB>> ]
+"1937" [label = <(&lt;operator&gt;.equals,list.size() == 1)<SUB>972</SUB>> ]
+"1938" [label = <(size,size())<SUB>972</SUB>> ]
+"1939" [label = <(IDENTIFIER,list,size())<SUB>972</SUB>> ]
+"1940" [label = <(LITERAL,1,list.size() == 1)<SUB>972</SUB>> ]
+"1941" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>972</SUB>> ]
+"1942" [label = <(&lt;operator&gt;.assignment,processor = get(0))<SUB>973</SUB>> ]
+"1943" [label = <(IDENTIFIER,processor,processor = get(0))<SUB>973</SUB>> ]
+"1944" [label = <(get,get(0))<SUB>973</SUB>> ]
+"1945" [label = <(IDENTIFIER,list,get(0))<SUB>973</SUB>> ]
+"1946" [label = <(LITERAL,0,get(0))<SUB>973</SUB>> ]
+"1947" [label = <(CONTROL_STRUCTURE,else,else)<SUB>974</SUB>> ]
+"1948" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>974</SUB>> ]
+"1949" [label = <(&lt;operator&gt;.assignment,processor = createCompositeProcessor(list))<SUB>975</SUB>> ]
+"1950" [label = <(IDENTIFIER,processor,processor = createCompositeProcessor(list))<SUB>975</SUB>> ]
+"1951" [label = <(createCompositeProcessor,createCompositeProcessor(list))<SUB>975</SUB>> ]
+"256" [label = <(IDENTIFIER,this,createCompositeProcessor(list))<SUB>975</SUB>> ]
+"1952" [label = <(IDENTIFIER,list,createCompositeProcessor(list))<SUB>975</SUB>> ]
+"1953" [label = <(RETURN,return processor;,return processor;)<SUB>978</SUB>> ]
+"1954" [label = <(IDENTIFIER,processor,return processor;)<SUB>978</SUB>> ]
+"1955" [label = <(MODIFIER,PROTECTED)> ]
+"1956" [label = <(MODIFIER,VIRTUAL)> ]
+"1957" [label = <(METHOD_RETURN,org.apache.camel.Processor)<SUB>963</SUB>> ]
+  "1896" -> "257" 
+  "1896" -> "1897" 
+  "1896" -> "1898" 
+  "1896" -> "1899" 
+  "1896" -> "1955" 
+  "1896" -> "1956" 
+  "1896" -> "1957" 
+  "1899" -> "255" 
+  "1899" -> "1900" 
+  "1899" -> "1903" 
+  "1899" -> "1904" 
+  "1899" -> "1905" 
+  "1899" -> "1909" 
+  "1899" -> "1927" 
+  "1899" -> "1928" 
+  "1899" -> "1931" 
+  "1899" -> "1953" 
+  "1900" -> "1901" 
+  "1900" -> "1902" 
+  "1903" -> "254" 
+  "1905" -> "1906" 
+  "1905" -> "1907" 
+  "1907" -> "1908" 
+  "1909" -> "1910" 
+  "1909" -> "1912" 
+  "1910" -> "1911" 
+  "1912" -> "1913" 
+  "1912" -> "1914" 
+  "1912" -> "1918" 
+  "1912" -> "1919" 
+  "1912" -> "1924" 
+  "1914" -> "1915" 
+  "1914" -> "1916" 
+  "1916" -> "1917" 
+  "1919" -> "1920" 
+  "1919" -> "1921" 
+  "1921" -> "1922" 
+  "1921" -> "1923" 
+  "1924" -> "1925" 
+  "1924" -> "1926" 
+  "1928" -> "1929" 
+  "1928" -> "1930" 
+  "1931" -> "1932" 
+  "1931" -> "1935" 
+  "1932" -> "1933" 
+  "1933" -> "1934" 
+  "1935" -> "1936" 
+  "1936" -> "1937" 
+  "1936" -> "1941" 
+  "1936" -> "1947" 
+  "1937" -> "1938" 
+  "1937" -> "1940" 
+  "1938" -> "1939" 
+  "1941" -> "1942" 
+  "1942" -> "1943" 
+  "1942" -> "1944" 
+  "1944" -> "1945" 
+  "1944" -> "1946" 
+  "1947" -> "1948" 
+  "1948" -> "1949" 
+  "1949" -> "1950" 
+  "1949" -> "1951" 
+  "1951" -> "256" 
+  "1951" -> "1952" 
+  "1953" -> "1954" 
+}

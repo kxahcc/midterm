@@ -1,0 +1,107 @@
+digraph "onServiceAdd" {  
+"307" [label = <(METHOD,onServiceAdd)<SUB>135</SUB>> ]
+"25" [label = <(PARAM,this)<SUB>135</SUB>> ]
+"308" [label = <(PARAM,CamelContext context)<SUB>135</SUB>> ]
+"309" [label = <(PARAM,Service service)<SUB>135</SUB>> ]
+"310" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>135</SUB>> ]
+"311" [label = <(CONTROL_STRUCTURE,if (!initialized),if (!initialized))<SUB>137</SUB>> ]
+"312" [label = <(&lt;operator&gt;.logicalNot,!initialized)<SUB>137</SUB>> ]
+"313" [label = <(&lt;operator&gt;.fieldAccess,this.initialized)<SUB>137</SUB>> ]
+"314" [label = <(IDENTIFIER,this,!initialized)<SUB>137</SUB>> ]
+"315" [label = <(FIELD_IDENTIFIER,initialized,initialized)<SUB>137</SUB>> ]
+"316" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>137</SUB>> ]
+"317" [label = <(RETURN,return;,return;)<SUB>138</SUB>> ]
+"318" [label = <(CONTROL_STRUCTURE,if (service instanceof ServiceSupport &amp;&amp; service instanceof Consumer),if (service instanceof ServiceSupport &amp;&amp; service instanceof Consumer))<SUB>140</SUB>> ]
+"319" [label = <(&lt;operator&gt;.logicalAnd,service instanceof ServiceSupport &amp;&amp; service instanceof Consumer)<SUB>140</SUB>> ]
+"320" [label = <(&lt;operator&gt;.instanceOf,service instanceof ServiceSupport)<SUB>140</SUB>> ]
+"321" [label = <(IDENTIFIER,service,service instanceof ServiceSupport)<SUB>140</SUB>> ]
+"322" [label = <(TYPE_REF,ServiceSupport,ServiceSupport)<SUB>140</SUB>> ]
+"323" [label = <(&lt;operator&gt;.instanceOf,service instanceof Consumer)<SUB>140</SUB>> ]
+"324" [label = <(IDENTIFIER,service,service instanceof Consumer)<SUB>140</SUB>> ]
+"325" [label = <(TYPE_REF,Consumer,Consumer)<SUB>140</SUB>> ]
+"326" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>140</SUB>> ]
+"327" [label = <(CONTROL_STRUCTURE,try,try)<SUB>142</SUB>> ]
+"328" [label = <(BLOCK,try,try)<SUB>142</SUB>> ]
+"23" [label = <(LOCAL,ManagedService ms: ANY)> ]
+"329" [label = <(&lt;operator&gt;.assignment,ANY ms = new ManagedService((ServiceSupport) service))<SUB>143</SUB>> ]
+"330" [label = <(IDENTIFIER,ms,ANY ms = new ManagedService((ServiceSupport) service))<SUB>143</SUB>> ]
+"331" [label = <(&lt;operator&gt;.alloc,new ManagedService((ServiceSupport) service))<SUB>143</SUB>> ]
+"332" [label = <(&lt;init&gt;,new ManagedService((ServiceSupport) service))<SUB>143</SUB>> ]
+"22" [label = <(IDENTIFIER,ms,new ManagedService((ServiceSupport) service))<SUB>143</SUB>> ]
+"333" [label = <(&lt;operator&gt;.cast,(ServiceSupport) service)<SUB>143</SUB>> ]
+"334" [label = <(TYPE_REF,ServiceSupport,ServiceSupport)<SUB>143</SUB>> ]
+"335" [label = <(IDENTIFIER,service,(ServiceSupport) service)<SUB>143</SUB>> ]
+"336" [label = <(register,register(ms, getNamingStrategy().getObjectName(context, ms)))<SUB>144</SUB>> ]
+"337" [label = <(&lt;operator&gt;.fieldAccess,this.agent)<SUB>144</SUB>> ]
+"338" [label = <(IDENTIFIER,this,register(ms, getNamingStrategy().getObjectName(context, ms)))<SUB>144</SUB>> ]
+"339" [label = <(FIELD_IDENTIFIER,agent,agent)<SUB>144</SUB>> ]
+"340" [label = <(IDENTIFIER,ms,register(ms, getNamingStrategy().getObjectName(context, ms)))<SUB>144</SUB>> ]
+"341" [label = <(getObjectName,getObjectName(context, ms))<SUB>144</SUB>> ]
+"342" [label = <(getNamingStrategy,this.getNamingStrategy())<SUB>144</SUB>> ]
+"24" [label = <(IDENTIFIER,this,this.getNamingStrategy())<SUB>144</SUB>> ]
+"343" [label = <(IDENTIFIER,context,getObjectName(context, ms))<SUB>144</SUB>> ]
+"344" [label = <(IDENTIFIER,ms,getObjectName(context, ms))<SUB>144</SUB>> ]
+"345" [label = <(BLOCK,catch,catch)> ]
+"346" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>145</SUB>> ]
+"347" [label = <(warn,warn(&quot;Could not register Service MBean&quot;, e))<SUB>146</SUB>> ]
+"348" [label = <(&lt;operator&gt;.fieldAccess,InstrumentationLifecycleStrategy.LOG)<SUB>146</SUB>> ]
+"349" [label = <(IDENTIFIER,InstrumentationLifecycleStrategy,warn(&quot;Could not register Service MBean&quot;, e))<SUB>146</SUB>> ]
+"350" [label = <(FIELD_IDENTIFIER,LOG,LOG)<SUB>146</SUB>> ]
+"351" [label = <(LITERAL,&quot;Could not register Service MBean&quot;,warn(&quot;Could not register Service MBean&quot;, e))<SUB>146</SUB>> ]
+"352" [label = <(IDENTIFIER,e,warn(&quot;Could not register Service MBean&quot;, e))<SUB>146</SUB>> ]
+"353" [label = <(MODIFIER,PUBLIC)> ]
+"354" [label = <(MODIFIER,VIRTUAL)> ]
+"355" [label = <(METHOD_RETURN,void)<SUB>135</SUB>> ]
+  "307" -> "25" 
+  "307" -> "308" 
+  "307" -> "309" 
+  "307" -> "310" 
+  "307" -> "353" 
+  "307" -> "354" 
+  "307" -> "355" 
+  "310" -> "311" 
+  "310" -> "318" 
+  "311" -> "312" 
+  "311" -> "316" 
+  "312" -> "313" 
+  "313" -> "314" 
+  "313" -> "315" 
+  "316" -> "317" 
+  "318" -> "319" 
+  "318" -> "326" 
+  "319" -> "320" 
+  "319" -> "323" 
+  "320" -> "321" 
+  "320" -> "322" 
+  "323" -> "324" 
+  "323" -> "325" 
+  "326" -> "327" 
+  "327" -> "328" 
+  "327" -> "345" 
+  "328" -> "23" 
+  "328" -> "329" 
+  "328" -> "332" 
+  "328" -> "336" 
+  "329" -> "330" 
+  "329" -> "331" 
+  "332" -> "22" 
+  "332" -> "333" 
+  "333" -> "334" 
+  "333" -> "335" 
+  "336" -> "337" 
+  "336" -> "340" 
+  "336" -> "341" 
+  "337" -> "338" 
+  "337" -> "339" 
+  "341" -> "342" 
+  "341" -> "343" 
+  "341" -> "344" 
+  "342" -> "24" 
+  "345" -> "346" 
+  "346" -> "347" 
+  "347" -> "348" 
+  "347" -> "351" 
+  "347" -> "352" 
+  "348" -> "349" 
+  "348" -> "350" 
+}

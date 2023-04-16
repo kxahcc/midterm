@@ -1,0 +1,195 @@
+digraph "resolveEntity" {  
+"842" [label = <(METHOD,resolveEntity)<SUB>443</SUB>> ]
+"843" [label = <(PARAM,this)<SUB>443</SUB>> ]
+"844" [label = <(PARAM,String publicId)<SUB>443</SUB>> ]
+"845" [label = <(PARAM,String systemId)<SUB>444</SUB>> ]
+"846" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>444</SUB>> ]
+"847" [label = <(log,log(&quot;resolving systemId: &quot; + systemId, Project.MSG_VERBOSE))<SUB>446</SUB>> ]
+"848" [label = <(getProject,getProject())<SUB>446</SUB>> ]
+"849" [label = <(&lt;operator&gt;.fieldAccess,this.context)<SUB>446</SUB>> ]
+"850" [label = <(IDENTIFIER,this,getProject())<SUB>446</SUB>> ]
+"851" [label = <(FIELD_IDENTIFIER,context,context)<SUB>446</SUB>> ]
+"852" [label = <(&lt;operator&gt;.addition,&quot;resolving systemId: &quot; + systemId)<SUB>446</SUB>> ]
+"853" [label = <(LITERAL,&quot;resolving systemId: &quot;,&quot;resolving systemId: &quot; + systemId)<SUB>446</SUB>> ]
+"854" [label = <(IDENTIFIER,systemId,&quot;resolving systemId: &quot; + systemId)<SUB>447</SUB>> ]
+"855" [label = <(&lt;operator&gt;.fieldAccess,Project.MSG_VERBOSE)<SUB>447</SUB>> ]
+"856" [label = <(IDENTIFIER,Project,log(&quot;resolving systemId: &quot; + systemId, Project.MSG_VERBOSE))<SUB>447</SUB>> ]
+"857" [label = <(FIELD_IDENTIFIER,MSG_VERBOSE,MSG_VERBOSE)<SUB>447</SUB>> ]
+"858" [label = <(CONTROL_STRUCTURE,if (systemId.startsWith(&quot;file:&quot;)),if (systemId.startsWith(&quot;file:&quot;)))<SUB>449</SUB>> ]
+"859" [label = <(startsWith,systemId.startsWith(&quot;file:&quot;))<SUB>449</SUB>> ]
+"860" [label = <(IDENTIFIER,systemId,systemId.startsWith(&quot;file:&quot;))<SUB>449</SUB>> ]
+"861" [label = <(LITERAL,&quot;file:&quot;,systemId.startsWith(&quot;file:&quot;))<SUB>449</SUB>> ]
+"862" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>449</SUB>> ]
+"863" [label = <(LOCAL,String path: java.lang.String)> ]
+"864" [label = <(&lt;operator&gt;.assignment,String path = fromURI(systemId))<SUB>450</SUB>> ]
+"865" [label = <(IDENTIFIER,path,String path = fromURI(systemId))<SUB>450</SUB>> ]
+"866" [label = <(fromURI,fromURI(systemId))<SUB>450</SUB>> ]
+"867" [label = <(&lt;operator&gt;.fieldAccess,ProjectHelper2$RootHandler.fu)<SUB>450</SUB>> ]
+"868" [label = <(IDENTIFIER,ProjectHelper2$RootHandler,fromURI(systemId))<SUB>450</SUB>> ]
+"869" [label = <(FIELD_IDENTIFIER,fu,fu)<SUB>450</SUB>> ]
+"870" [label = <(IDENTIFIER,systemId,fromURI(systemId))<SUB>450</SUB>> ]
+"56" [label = <(LOCAL,File file: java.io.File)> ]
+"871" [label = <(&lt;operator&gt;.assignment,File file = new File(path))<SUB>452</SUB>> ]
+"872" [label = <(IDENTIFIER,file,File file = new File(path))<SUB>452</SUB>> ]
+"873" [label = <(&lt;operator&gt;.alloc,new File(path))<SUB>452</SUB>> ]
+"874" [label = <(&lt;init&gt;,new File(path))<SUB>452</SUB>> ]
+"55" [label = <(IDENTIFIER,file,new File(path))<SUB>452</SUB>> ]
+"875" [label = <(IDENTIFIER,path,new File(path))<SUB>452</SUB>> ]
+"876" [label = <(CONTROL_STRUCTURE,if (!file.isAbsolute()),if (!file.isAbsolute()))<SUB>453</SUB>> ]
+"877" [label = <(&lt;operator&gt;.logicalNot,!file.isAbsolute())<SUB>453</SUB>> ]
+"878" [label = <(isAbsolute,file.isAbsolute())<SUB>453</SUB>> ]
+"879" [label = <(IDENTIFIER,file,file.isAbsolute())<SUB>453</SUB>> ]
+"880" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>453</SUB>> ]
+"881" [label = <(&lt;operator&gt;.assignment,file = resolveFile(context.getBuildFileParent(), path))<SUB>454</SUB>> ]
+"882" [label = <(IDENTIFIER,file,file = resolveFile(context.getBuildFileParent(), path))<SUB>454</SUB>> ]
+"883" [label = <(resolveFile,resolveFile(context.getBuildFileParent(), path))<SUB>454</SUB>> ]
+"884" [label = <(&lt;operator&gt;.fieldAccess,ProjectHelper2$RootHandler.fu)<SUB>454</SUB>> ]
+"885" [label = <(IDENTIFIER,ProjectHelper2$RootHandler,resolveFile(context.getBuildFileParent(), path))<SUB>454</SUB>> ]
+"886" [label = <(FIELD_IDENTIFIER,fu,fu)<SUB>454</SUB>> ]
+"887" [label = <(getBuildFileParent,getBuildFileParent())<SUB>454</SUB>> ]
+"888" [label = <(&lt;operator&gt;.fieldAccess,this.context)<SUB>454</SUB>> ]
+"889" [label = <(IDENTIFIER,this,getBuildFileParent())<SUB>454</SUB>> ]
+"890" [label = <(FIELD_IDENTIFIER,context,context)<SUB>454</SUB>> ]
+"891" [label = <(IDENTIFIER,path,resolveFile(context.getBuildFileParent(), path))<SUB>454</SUB>> ]
+"892" [label = <(CONTROL_STRUCTURE,try,try)<SUB>456</SUB>> ]
+"893" [label = <(BLOCK,try,try)<SUB>456</SUB>> ]
+"58" [label = <(LOCAL,InputSource inputSource: org.xml.sax.InputSource)> ]
+"894" [label = <(&lt;operator&gt;.assignment,InputSource inputSource = new InputSource(new FileInputStream(file)))<SUB>457</SUB>> ]
+"895" [label = <(IDENTIFIER,inputSource,InputSource inputSource = new InputSource(new FileInputStream(file)))<SUB>457</SUB>> ]
+"896" [label = <(&lt;operator&gt;.alloc,new InputSource(new FileInputStream(file)))<SUB>458</SUB>> ]
+"897" [label = <(&lt;init&gt;,new InputSource(new FileInputStream(file)))<SUB>458</SUB>> ]
+"57" [label = <(IDENTIFIER,inputSource,new InputSource(new FileInputStream(file)))<SUB>457</SUB>> ]
+"898" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>458</SUB>> ]
+"899" [label = <(&lt;operator&gt;.assignment,&lt;empty&gt;)> ]
+"900" [label = <(IDENTIFIER,$obj28,&lt;empty&gt;)> ]
+"901" [label = <(&lt;operator&gt;.alloc,new FileInputStream(file))<SUB>458</SUB>> ]
+"902" [label = <(&lt;init&gt;,new FileInputStream(file))<SUB>458</SUB>> ]
+"903" [label = <(IDENTIFIER,$obj28,new FileInputStream(file))> ]
+"904" [label = <(IDENTIFIER,file,new FileInputStream(file))<SUB>458</SUB>> ]
+"905" [label = <(IDENTIFIER,$obj28,&lt;empty&gt;)> ]
+"906" [label = <(setSystemId,setSystemId(fu.toURI(file.getAbsolutePath())))<SUB>459</SUB>> ]
+"907" [label = <(IDENTIFIER,inputSource,setSystemId(fu.toURI(file.getAbsolutePath())))<SUB>459</SUB>> ]
+"908" [label = <(toURI,toURI(file.getAbsolutePath()))<SUB>459</SUB>> ]
+"909" [label = <(&lt;operator&gt;.fieldAccess,ProjectHelper2$RootHandler.fu)<SUB>459</SUB>> ]
+"910" [label = <(IDENTIFIER,ProjectHelper2$RootHandler,toURI(file.getAbsolutePath()))<SUB>459</SUB>> ]
+"911" [label = <(FIELD_IDENTIFIER,fu,fu)<SUB>459</SUB>> ]
+"912" [label = <(getAbsolutePath,file.getAbsolutePath())<SUB>459</SUB>> ]
+"913" [label = <(IDENTIFIER,file,file.getAbsolutePath())<SUB>459</SUB>> ]
+"914" [label = <(RETURN,return inputSource;,return inputSource;)<SUB>460</SUB>> ]
+"915" [label = <(IDENTIFIER,inputSource,return inputSource;)<SUB>460</SUB>> ]
+"916" [label = <(BLOCK,catch,catch)> ]
+"917" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>461</SUB>> ]
+"918" [label = <(log,log(file.getAbsolutePath() + &quot; could not be found&quot;, Project.MSG_WARN))<SUB>462</SUB>> ]
+"919" [label = <(getProject,getProject())<SUB>462</SUB>> ]
+"920" [label = <(&lt;operator&gt;.fieldAccess,this.context)<SUB>462</SUB>> ]
+"921" [label = <(IDENTIFIER,this,getProject())<SUB>462</SUB>> ]
+"922" [label = <(FIELD_IDENTIFIER,context,context)<SUB>462</SUB>> ]
+"923" [label = <(&lt;operator&gt;.addition,file.getAbsolutePath() + &quot; could not be found&quot;)<SUB>462</SUB>> ]
+"924" [label = <(getAbsolutePath,file.getAbsolutePath())<SUB>462</SUB>> ]
+"925" [label = <(IDENTIFIER,file,file.getAbsolutePath())<SUB>462</SUB>> ]
+"926" [label = <(LITERAL,&quot; could not be found&quot;,file.getAbsolutePath() + &quot; could not be found&quot;)<SUB>463</SUB>> ]
+"927" [label = <(&lt;operator&gt;.fieldAccess,Project.MSG_WARN)<SUB>463</SUB>> ]
+"928" [label = <(IDENTIFIER,Project,log(file.getAbsolutePath() + &quot; could not be found&quot;, Project.MSG_WARN))<SUB>463</SUB>> ]
+"929" [label = <(FIELD_IDENTIFIER,MSG_WARN,MSG_WARN)<SUB>463</SUB>> ]
+"930" [label = <(RETURN,return null;,return null;)<SUB>468</SUB>> ]
+"931" [label = <(LITERAL,null,return null;)<SUB>468</SUB>> ]
+"932" [label = <(MODIFIER,PUBLIC)> ]
+"933" [label = <(MODIFIER,VIRTUAL)> ]
+"934" [label = <(METHOD_RETURN,org.xml.sax.InputSource)<SUB>443</SUB>> ]
+  "842" -> "843" 
+  "842" -> "844" 
+  "842" -> "845" 
+  "842" -> "846" 
+  "842" -> "932" 
+  "842" -> "933" 
+  "842" -> "934" 
+  "846" -> "847" 
+  "846" -> "858" 
+  "846" -> "930" 
+  "847" -> "848" 
+  "847" -> "852" 
+  "847" -> "855" 
+  "848" -> "849" 
+  "849" -> "850" 
+  "849" -> "851" 
+  "852" -> "853" 
+  "852" -> "854" 
+  "855" -> "856" 
+  "855" -> "857" 
+  "858" -> "859" 
+  "858" -> "862" 
+  "859" -> "860" 
+  "859" -> "861" 
+  "862" -> "863" 
+  "862" -> "864" 
+  "862" -> "56" 
+  "862" -> "871" 
+  "862" -> "874" 
+  "862" -> "876" 
+  "862" -> "892" 
+  "864" -> "865" 
+  "864" -> "866" 
+  "866" -> "867" 
+  "866" -> "870" 
+  "867" -> "868" 
+  "867" -> "869" 
+  "871" -> "872" 
+  "871" -> "873" 
+  "874" -> "55" 
+  "874" -> "875" 
+  "876" -> "877" 
+  "876" -> "880" 
+  "877" -> "878" 
+  "878" -> "879" 
+  "880" -> "881" 
+  "881" -> "882" 
+  "881" -> "883" 
+  "883" -> "884" 
+  "883" -> "887" 
+  "883" -> "891" 
+  "884" -> "885" 
+  "884" -> "886" 
+  "887" -> "888" 
+  "888" -> "889" 
+  "888" -> "890" 
+  "892" -> "893" 
+  "892" -> "916" 
+  "893" -> "58" 
+  "893" -> "894" 
+  "893" -> "897" 
+  "893" -> "906" 
+  "893" -> "914" 
+  "894" -> "895" 
+  "894" -> "896" 
+  "897" -> "57" 
+  "897" -> "898" 
+  "898" -> "899" 
+  "898" -> "902" 
+  "898" -> "905" 
+  "899" -> "900" 
+  "899" -> "901" 
+  "902" -> "903" 
+  "902" -> "904" 
+  "906" -> "907" 
+  "906" -> "908" 
+  "908" -> "909" 
+  "908" -> "912" 
+  "909" -> "910" 
+  "909" -> "911" 
+  "912" -> "913" 
+  "914" -> "915" 
+  "916" -> "917" 
+  "917" -> "918" 
+  "918" -> "919" 
+  "918" -> "923" 
+  "918" -> "927" 
+  "919" -> "920" 
+  "920" -> "921" 
+  "920" -> "922" 
+  "923" -> "924" 
+  "923" -> "926" 
+  "924" -> "925" 
+  "927" -> "928" 
+  "927" -> "929" 
+  "930" -> "931" 
+}

@@ -1,0 +1,121 @@
+digraph "process" {  
+"35" [label = <(METHOD,process)<SUB>39</SUB>> ]
+"36" [label = <(PARAM,this)<SUB>39</SUB>> ]
+"37" [label = <(PARAM,Exchange exchange)<SUB>39</SUB>> ]
+"38" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>39</SUB>> ]
+"39" [label = <(LOCAL,Message in: org.apache.camel.Message)> ]
+"40" [label = <(&lt;operator&gt;.assignment,Message in = getIn())<SUB>40</SUB>> ]
+"41" [label = <(IDENTIFIER,in,Message in = getIn())<SUB>40</SUB>> ]
+"42" [label = <(getIn,getIn())<SUB>40</SUB>> ]
+"43" [label = <(IDENTIFIER,exchange,getIn())<SUB>40</SUB>> ]
+"44" [label = <(LOCAL,Object value: java.lang.Object)> ]
+"45" [label = <(&lt;operator&gt;.assignment,Object value = getBody(type))<SUB>41</SUB>> ]
+"46" [label = <(IDENTIFIER,value,Object value = getBody(type))<SUB>41</SUB>> ]
+"47" [label = <(getBody,getBody(type))<SUB>41</SUB>> ]
+"48" [label = <(IDENTIFIER,in,getBody(type))<SUB>41</SUB>> ]
+"49" [label = <(&lt;operator&gt;.fieldAccess,this.type)<SUB>41</SUB>> ]
+"50" [label = <(IDENTIFIER,this,getBody(type))<SUB>41</SUB>> ]
+"51" [label = <(FIELD_IDENTIFIER,type,type)<SUB>41</SUB>> ]
+"52" [label = <(CONTROL_STRUCTURE,if (value == null),if (value == null))<SUB>42</SUB>> ]
+"53" [label = <(&lt;operator&gt;.equals,value == null)<SUB>42</SUB>> ]
+"54" [label = <(IDENTIFIER,value,value == null)<SUB>42</SUB>> ]
+"55" [label = <(LITERAL,null,value == null)<SUB>42</SUB>> ]
+"56" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>42</SUB>> ]
+"57" [label = <(warn,warn(&quot;Could not convert body of IN message: &quot; + in + &quot; to type: &quot; + type.getName()))<SUB>43</SUB>> ]
+"58" [label = <(&lt;operator&gt;.fieldAccess,ConvertBodyProcessor.LOG)<SUB>43</SUB>> ]
+"59" [label = <(IDENTIFIER,ConvertBodyProcessor,warn(&quot;Could not convert body of IN message: &quot; + in + &quot; to type: &quot; + type.getName()))<SUB>43</SUB>> ]
+"60" [label = <(FIELD_IDENTIFIER,LOG,LOG)<SUB>43</SUB>> ]
+"61" [label = <(&lt;operator&gt;.addition,&quot;Could not convert body of IN message: &quot; + in + &quot; to type: &quot; + type.getName())<SUB>43</SUB>> ]
+"62" [label = <(&lt;operator&gt;.addition,&quot;Could not convert body of IN message: &quot; + in + &quot; to type: &quot;)<SUB>43</SUB>> ]
+"63" [label = <(&lt;operator&gt;.addition,&quot;Could not convert body of IN message: &quot; + in)<SUB>43</SUB>> ]
+"64" [label = <(LITERAL,&quot;Could not convert body of IN message: &quot;,&quot;Could not convert body of IN message: &quot; + in)<SUB>43</SUB>> ]
+"65" [label = <(IDENTIFIER,in,&quot;Could not convert body of IN message: &quot; + in)<SUB>43</SUB>> ]
+"66" [label = <(LITERAL,&quot; to type: &quot;,&quot;Could not convert body of IN message: &quot; + in + &quot; to type: &quot;)<SUB>43</SUB>> ]
+"67" [label = <(getName,type.getName())<SUB>43</SUB>> ]
+"68" [label = <(&lt;operator&gt;.fieldAccess,this.type)<SUB>43</SUB>> ]
+"69" [label = <(IDENTIFIER,this,type.getName())<SUB>43</SUB>> ]
+"70" [label = <(FIELD_IDENTIFIER,type,type)<SUB>43</SUB>> ]
+"71" [label = <(CONTROL_STRUCTURE,if (exchange.getPattern().isOutCapable()),if (exchange.getPattern().isOutCapable()))<SUB>45</SUB>> ]
+"72" [label = <(isOutCapable,isOutCapable())<SUB>45</SUB>> ]
+"73" [label = <(getPattern,getPattern())<SUB>45</SUB>> ]
+"74" [label = <(IDENTIFIER,exchange,getPattern())<SUB>45</SUB>> ]
+"75" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>45</SUB>> ]
+"76" [label = <(LOCAL,Message out: org.apache.camel.Message)> ]
+"77" [label = <(&lt;operator&gt;.assignment,Message out = getOut())<SUB>46</SUB>> ]
+"78" [label = <(IDENTIFIER,out,Message out = getOut())<SUB>46</SUB>> ]
+"79" [label = <(getOut,getOut())<SUB>46</SUB>> ]
+"80" [label = <(IDENTIFIER,exchange,getOut())<SUB>46</SUB>> ]
+"81" [label = <(copyFrom,copyFrom(in))<SUB>47</SUB>> ]
+"82" [label = <(IDENTIFIER,out,copyFrom(in))<SUB>47</SUB>> ]
+"83" [label = <(IDENTIFIER,in,copyFrom(in))<SUB>47</SUB>> ]
+"84" [label = <(setBody,setBody(value))<SUB>48</SUB>> ]
+"85" [label = <(IDENTIFIER,out,setBody(value))<SUB>48</SUB>> ]
+"86" [label = <(IDENTIFIER,value,setBody(value))<SUB>48</SUB>> ]
+"87" [label = <(CONTROL_STRUCTURE,else,else)<SUB>49</SUB>> ]
+"88" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>49</SUB>> ]
+"89" [label = <(setBody,setBody(value))<SUB>50</SUB>> ]
+"90" [label = <(IDENTIFIER,in,setBody(value))<SUB>50</SUB>> ]
+"91" [label = <(IDENTIFIER,value,setBody(value))<SUB>50</SUB>> ]
+"92" [label = <(MODIFIER,PUBLIC)> ]
+"93" [label = <(MODIFIER,VIRTUAL)> ]
+"94" [label = <(METHOD_RETURN,void)<SUB>39</SUB>> ]
+  "35" -> "36" 
+  "35" -> "37" 
+  "35" -> "38" 
+  "35" -> "92" 
+  "35" -> "93" 
+  "35" -> "94" 
+  "38" -> "39" 
+  "38" -> "40" 
+  "38" -> "44" 
+  "38" -> "45" 
+  "38" -> "52" 
+  "38" -> "71" 
+  "40" -> "41" 
+  "40" -> "42" 
+  "42" -> "43" 
+  "45" -> "46" 
+  "45" -> "47" 
+  "47" -> "48" 
+  "47" -> "49" 
+  "49" -> "50" 
+  "49" -> "51" 
+  "52" -> "53" 
+  "52" -> "56" 
+  "53" -> "54" 
+  "53" -> "55" 
+  "56" -> "57" 
+  "57" -> "58" 
+  "57" -> "61" 
+  "58" -> "59" 
+  "58" -> "60" 
+  "61" -> "62" 
+  "61" -> "67" 
+  "62" -> "63" 
+  "62" -> "66" 
+  "63" -> "64" 
+  "63" -> "65" 
+  "67" -> "68" 
+  "68" -> "69" 
+  "68" -> "70" 
+  "71" -> "72" 
+  "71" -> "75" 
+  "71" -> "87" 
+  "72" -> "73" 
+  "73" -> "74" 
+  "75" -> "76" 
+  "75" -> "77" 
+  "75" -> "81" 
+  "75" -> "84" 
+  "77" -> "78" 
+  "77" -> "79" 
+  "79" -> "80" 
+  "81" -> "82" 
+  "81" -> "83" 
+  "84" -> "85" 
+  "84" -> "86" 
+  "87" -> "88" 
+  "88" -> "89" 
+  "89" -> "90" 
+  "89" -> "91" 
+}

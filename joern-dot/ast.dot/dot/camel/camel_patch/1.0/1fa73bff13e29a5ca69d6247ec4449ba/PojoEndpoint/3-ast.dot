@@ -1,0 +1,93 @@
+digraph "invoke" {  
+"85" [label = <(METHOD,invoke)<SUB>69</SUB>> ]
+"86" [label = <(PARAM,Object pojo)<SUB>69</SUB>> ]
+"87" [label = <(PARAM,PojoExchange exchange)<SUB>69</SUB>> ]
+"88" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>69</SUB>> ]
+"89" [label = <(LOCAL,PojoInvocation invocation: ANY)> ]
+"90" [label = <(&lt;operator&gt;.assignment,ANY invocation = getInvocation())<SUB>70</SUB>> ]
+"91" [label = <(IDENTIFIER,invocation,ANY invocation = getInvocation())<SUB>70</SUB>> ]
+"92" [label = <(getInvocation,getInvocation())<SUB>70</SUB>> ]
+"93" [label = <(IDENTIFIER,exchange,getInvocation())<SUB>70</SUB>> ]
+"94" [label = <(CONTROL_STRUCTURE,try,try)<SUB>71</SUB>> ]
+"95" [label = <(BLOCK,try,try)<SUB>71</SUB>> ]
+"96" [label = <(LOCAL,Object response: java.lang.Object)> ]
+"97" [label = <(&lt;operator&gt;.assignment,Object response = invoke(pojo, invocation.getArgs()))<SUB>72</SUB>> ]
+"98" [label = <(IDENTIFIER,response,Object response = invoke(pojo, invocation.getArgs()))<SUB>72</SUB>> ]
+"99" [label = <(invoke,invoke(pojo, invocation.getArgs()))<SUB>72</SUB>> ]
+"100" [label = <(getMethod,getMethod())<SUB>72</SUB>> ]
+"101" [label = <(IDENTIFIER,invocation,getMethod())<SUB>72</SUB>> ]
+"102" [label = <(IDENTIFIER,pojo,invoke(pojo, invocation.getArgs()))<SUB>72</SUB>> ]
+"103" [label = <(getArgs,getArgs())<SUB>72</SUB>> ]
+"104" [label = <(IDENTIFIER,invocation,getArgs())<SUB>72</SUB>> ]
+"105" [label = <(setBody,setBody(response))<SUB>73</SUB>> ]
+"106" [label = <(getOut,getOut())<SUB>73</SUB>> ]
+"107" [label = <(IDENTIFIER,exchange,getOut())<SUB>73</SUB>> ]
+"108" [label = <(IDENTIFIER,response,setBody(response))<SUB>73</SUB>> ]
+"109" [label = <(BLOCK,catch,catch)> ]
+"110" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>75</SUB>> ]
+"111" [label = <(setException,setException(e.getCause()))<SUB>76</SUB>> ]
+"112" [label = <(IDENTIFIER,exchange,setException(e.getCause()))<SUB>76</SUB>> ]
+"113" [label = <(getCause,e.getCause())<SUB>76</SUB>> ]
+"114" [label = <(IDENTIFIER,e,e.getCause())<SUB>76</SUB>> ]
+"115" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>78</SUB>> ]
+"116" [label = <(&lt;operator&gt;.throw,throw e;)<SUB>79</SUB>> ]
+"117" [label = <(IDENTIFIER,e,throw e;)<SUB>79</SUB>> ]
+"118" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>81</SUB>> ]
+"119" [label = <(&lt;operator&gt;.throw,throw new RuntimeException(e);)<SUB>82</SUB>> ]
+"120" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>82</SUB>> ]
+"121" [label = <(&lt;operator&gt;.assignment,&lt;empty&gt;)> ]
+"122" [label = <(IDENTIFIER,$obj3,&lt;empty&gt;)> ]
+"123" [label = <(&lt;operator&gt;.alloc,new RuntimeException(e))<SUB>82</SUB>> ]
+"124" [label = <(&lt;init&gt;,new RuntimeException(e))<SUB>82</SUB>> ]
+"125" [label = <(IDENTIFIER,$obj3,new RuntimeException(e))> ]
+"126" [label = <(IDENTIFIER,e,new RuntimeException(e))<SUB>82</SUB>> ]
+"127" [label = <(IDENTIFIER,$obj3,&lt;empty&gt;)> ]
+"128" [label = <(MODIFIER,PUBLIC)> ]
+"129" [label = <(MODIFIER,STATIC)> ]
+"130" [label = <(METHOD_RETURN,void)<SUB>69</SUB>> ]
+  "85" -> "86" 
+  "85" -> "87" 
+  "85" -> "88" 
+  "85" -> "128" 
+  "85" -> "129" 
+  "85" -> "130" 
+  "88" -> "89" 
+  "88" -> "90" 
+  "88" -> "94" 
+  "90" -> "91" 
+  "90" -> "92" 
+  "92" -> "93" 
+  "94" -> "95" 
+  "94" -> "109" 
+  "95" -> "96" 
+  "95" -> "97" 
+  "95" -> "105" 
+  "97" -> "98" 
+  "97" -> "99" 
+  "99" -> "100" 
+  "99" -> "102" 
+  "99" -> "103" 
+  "100" -> "101" 
+  "103" -> "104" 
+  "105" -> "106" 
+  "105" -> "108" 
+  "106" -> "107" 
+  "109" -> "110" 
+  "109" -> "115" 
+  "109" -> "118" 
+  "110" -> "111" 
+  "111" -> "112" 
+  "111" -> "113" 
+  "113" -> "114" 
+  "115" -> "116" 
+  "116" -> "117" 
+  "118" -> "119" 
+  "119" -> "120" 
+  "120" -> "121" 
+  "120" -> "124" 
+  "120" -> "127" 
+  "121" -> "122" 
+  "121" -> "123" 
+  "124" -> "125" 
+  "124" -> "126" 
+}

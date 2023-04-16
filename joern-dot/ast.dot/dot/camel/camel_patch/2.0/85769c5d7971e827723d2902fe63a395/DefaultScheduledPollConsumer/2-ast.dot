@@ -1,0 +1,53 @@
+digraph "poll" {  
+"40" [label = <(METHOD,poll)<SUB>44</SUB>> ]
+"8" [label = <(PARAM,this)<SUB>44</SUB>> ]
+"41" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>44</SUB>> ]
+"42" [label = <(CONTROL_STRUCTURE,while (true),while (true))<SUB>45</SUB>> ]
+"43" [label = <(LITERAL,true,while (true))<SUB>45</SUB>> ]
+"44" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>45</SUB>> ]
+"45" [label = <(LOCAL,E exchange: java.lang.Object)> ]
+"46" [label = <(&lt;operator&gt;.assignment,Object exchange = receiveNoWait())<SUB>46</SUB>> ]
+"47" [label = <(IDENTIFIER,exchange,Object exchange = receiveNoWait())<SUB>46</SUB>> ]
+"48" [label = <(receiveNoWait,receiveNoWait())<SUB>46</SUB>> ]
+"49" [label = <(&lt;operator&gt;.fieldAccess,this.pollingConsumer)<SUB>46</SUB>> ]
+"50" [label = <(IDENTIFIER,this,receiveNoWait())<SUB>46</SUB>> ]
+"51" [label = <(FIELD_IDENTIFIER,pollingConsumer,pollingConsumer)<SUB>46</SUB>> ]
+"52" [label = <(CONTROL_STRUCTURE,if (exchange == null),if (exchange == null))<SUB>47</SUB>> ]
+"53" [label = <(&lt;operator&gt;.equals,exchange == null)<SUB>47</SUB>> ]
+"54" [label = <(IDENTIFIER,exchange,exchange == null)<SUB>47</SUB>> ]
+"55" [label = <(LITERAL,null,exchange == null)<SUB>47</SUB>> ]
+"56" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>47</SUB>> ]
+"57" [label = <(CONTROL_STRUCTURE,break;,break;)<SUB>48</SUB>> ]
+"58" [label = <(process,process(exchange))<SUB>50</SUB>> ]
+"59" [label = <(getProcessor,getProcessor())<SUB>50</SUB>> ]
+"7" [label = <(IDENTIFIER,this,getProcessor())<SUB>50</SUB>> ]
+"60" [label = <(IDENTIFIER,exchange,process(exchange))<SUB>50</SUB>> ]
+"61" [label = <(MODIFIER,PROTECTED)> ]
+"62" [label = <(MODIFIER,VIRTUAL)> ]
+"63" [label = <(METHOD_RETURN,void)<SUB>44</SUB>> ]
+  "40" -> "8" 
+  "40" -> "41" 
+  "40" -> "61" 
+  "40" -> "62" 
+  "40" -> "63" 
+  "41" -> "42" 
+  "42" -> "43" 
+  "42" -> "44" 
+  "44" -> "45" 
+  "44" -> "46" 
+  "44" -> "52" 
+  "44" -> "58" 
+  "46" -> "47" 
+  "46" -> "48" 
+  "48" -> "49" 
+  "49" -> "50" 
+  "49" -> "51" 
+  "52" -> "53" 
+  "52" -> "56" 
+  "53" -> "54" 
+  "53" -> "55" 
+  "56" -> "57" 
+  "58" -> "59" 
+  "58" -> "60" 
+  "59" -> "7" 
+}

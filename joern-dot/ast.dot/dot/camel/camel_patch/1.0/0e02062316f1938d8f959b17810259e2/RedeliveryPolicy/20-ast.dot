@@ -1,0 +1,153 @@
+digraph "getRedeliveryDelay" {  
+"341" [label = <(METHOD,getRedeliveryDelay)<SUB>175</SUB>> ]
+"342" [label = <(PARAM,this)<SUB>175</SUB>> ]
+"343" [label = <(PARAM,long previousDelay)<SUB>175</SUB>> ]
+"344" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>175</SUB>> ]
+"345" [label = <(LOCAL,long redeliveryDelay: long)> ]
+"346" [label = <(CONTROL_STRUCTURE,if (previousDelay == 0),if (previousDelay == 0))<SUB>178</SUB>> ]
+"347" [label = <(&lt;operator&gt;.equals,previousDelay == 0)<SUB>178</SUB>> ]
+"348" [label = <(IDENTIFIER,previousDelay,previousDelay == 0)<SUB>178</SUB>> ]
+"349" [label = <(LITERAL,0,previousDelay == 0)<SUB>178</SUB>> ]
+"350" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>178</SUB>> ]
+"351" [label = <(&lt;operator&gt;.assignment,redeliveryDelay = this.initialRedeliveryDelay)<SUB>179</SUB>> ]
+"352" [label = <(IDENTIFIER,redeliveryDelay,redeliveryDelay = this.initialRedeliveryDelay)<SUB>179</SUB>> ]
+"353" [label = <(&lt;operator&gt;.fieldAccess,this.initialRedeliveryDelay)<SUB>179</SUB>> ]
+"354" [label = <(IDENTIFIER,this,redeliveryDelay = this.initialRedeliveryDelay)<SUB>179</SUB>> ]
+"355" [label = <(FIELD_IDENTIFIER,initialRedeliveryDelay,initialRedeliveryDelay)<SUB>179</SUB>> ]
+"356" [label = <(CONTROL_STRUCTURE,else,else)<SUB>181</SUB>> ]
+"357" [label = <(CONTROL_STRUCTURE,if (useExponentialBackOff &amp;&amp; backOffMultiplier &gt; 1),if (useExponentialBackOff &amp;&amp; backOffMultiplier &gt; 1))<SUB>181</SUB>> ]
+"358" [label = <(&lt;operator&gt;.logicalAnd,useExponentialBackOff &amp;&amp; backOffMultiplier &gt; 1)<SUB>181</SUB>> ]
+"359" [label = <(&lt;operator&gt;.fieldAccess,this.useExponentialBackOff)<SUB>181</SUB>> ]
+"360" [label = <(IDENTIFIER,this,useExponentialBackOff &amp;&amp; backOffMultiplier &gt; 1)<SUB>181</SUB>> ]
+"361" [label = <(FIELD_IDENTIFIER,useExponentialBackOff,useExponentialBackOff)<SUB>181</SUB>> ]
+"362" [label = <(&lt;operator&gt;.greaterThan,backOffMultiplier &gt; 1)<SUB>181</SUB>> ]
+"363" [label = <(&lt;operator&gt;.fieldAccess,this.backOffMultiplier)<SUB>181</SUB>> ]
+"364" [label = <(IDENTIFIER,this,backOffMultiplier &gt; 1)<SUB>181</SUB>> ]
+"365" [label = <(FIELD_IDENTIFIER,backOffMultiplier,backOffMultiplier)<SUB>181</SUB>> ]
+"366" [label = <(LITERAL,1,backOffMultiplier &gt; 1)<SUB>181</SUB>> ]
+"367" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>181</SUB>> ]
+"368" [label = <(&lt;operator&gt;.assignment,redeliveryDelay = Math.round(backOffMultiplier * previousDelay))<SUB>182</SUB>> ]
+"369" [label = <(IDENTIFIER,redeliveryDelay,redeliveryDelay = Math.round(backOffMultiplier * previousDelay))<SUB>182</SUB>> ]
+"370" [label = <(round,Math.round(backOffMultiplier * previousDelay))<SUB>182</SUB>> ]
+"371" [label = <(IDENTIFIER,Math,Math.round(backOffMultiplier * previousDelay))<SUB>182</SUB>> ]
+"372" [label = <(&lt;operator&gt;.multiplication,backOffMultiplier * previousDelay)<SUB>182</SUB>> ]
+"373" [label = <(&lt;operator&gt;.fieldAccess,this.backOffMultiplier)<SUB>182</SUB>> ]
+"374" [label = <(IDENTIFIER,this,backOffMultiplier * previousDelay)<SUB>182</SUB>> ]
+"375" [label = <(FIELD_IDENTIFIER,backOffMultiplier,backOffMultiplier)<SUB>182</SUB>> ]
+"376" [label = <(IDENTIFIER,previousDelay,backOffMultiplier * previousDelay)<SUB>182</SUB>> ]
+"377" [label = <(CONTROL_STRUCTURE,else,else)<SUB>184</SUB>> ]
+"378" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>184</SUB>> ]
+"379" [label = <(&lt;operator&gt;.assignment,redeliveryDelay = previousDelay)<SUB>185</SUB>> ]
+"380" [label = <(IDENTIFIER,redeliveryDelay,redeliveryDelay = previousDelay)<SUB>185</SUB>> ]
+"381" [label = <(IDENTIFIER,previousDelay,redeliveryDelay = previousDelay)<SUB>185</SUB>> ]
+"382" [label = <(CONTROL_STRUCTURE,if (useCollisionAvoidance),if (useCollisionAvoidance))<SUB>188</SUB>> ]
+"383" [label = <(&lt;operator&gt;.fieldAccess,this.useCollisionAvoidance)<SUB>188</SUB>> ]
+"384" [label = <(IDENTIFIER,this,if (useCollisionAvoidance))<SUB>188</SUB>> ]
+"385" [label = <(FIELD_IDENTIFIER,useCollisionAvoidance,useCollisionAvoidance)<SUB>188</SUB>> ]
+"386" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>188</SUB>> ]
+"387" [label = <(LOCAL,Random random: java.util.Random)> ]
+"388" [label = <(&lt;operator&gt;.assignment,Random random = getRandomNumberGenerator())<SUB>194</SUB>> ]
+"389" [label = <(IDENTIFIER,random,Random random = getRandomNumberGenerator())<SUB>194</SUB>> ]
+"390" [label = <(getRandomNumberGenerator,getRandomNumberGenerator())<SUB>194</SUB>> ]
+"391" [label = <(LOCAL,double variance: double)> ]
+"392" [label = <(&lt;operator&gt;.assignment,double variance = (random.nextBoolean() ? collisionAvoidanceFactor : -collisionAvoidanceFactor) * random.nextDouble())<SUB>195</SUB>> ]
+"393" [label = <(IDENTIFIER,variance,double variance = (random.nextBoolean() ? collisionAvoidanceFactor : -collisionAvoidanceFactor) * random.nextDouble())<SUB>195</SUB>> ]
+"394" [label = <(&lt;operator&gt;.multiplication,(random.nextBoolean() ? collisionAvoidanceFactor : -collisionAvoidanceFactor) * random.nextDouble())<SUB>195</SUB>> ]
+"395" [label = <(&lt;operator&gt;.conditional,random.nextBoolean() ? collisionAvoidanceFactor : -collisionAvoidanceFactor)<SUB>195</SUB>> ]
+"396" [label = <(nextBoolean,random.nextBoolean())<SUB>195</SUB>> ]
+"397" [label = <(IDENTIFIER,random,random.nextBoolean())<SUB>195</SUB>> ]
+"398" [label = <(&lt;operator&gt;.fieldAccess,this.collisionAvoidanceFactor)<SUB>195</SUB>> ]
+"399" [label = <(IDENTIFIER,this,random.nextBoolean() ? collisionAvoidanceFactor : -collisionAvoidanceFactor)<SUB>195</SUB>> ]
+"400" [label = <(FIELD_IDENTIFIER,collisionAvoidanceFactor,collisionAvoidanceFactor)<SUB>195</SUB>> ]
+"401" [label = <(&lt;operator&gt;.minus,-collisionAvoidanceFactor)<SUB>195</SUB>> ]
+"402" [label = <(&lt;operator&gt;.fieldAccess,this.collisionAvoidanceFactor)<SUB>195</SUB>> ]
+"403" [label = <(IDENTIFIER,this,-collisionAvoidanceFactor)<SUB>195</SUB>> ]
+"404" [label = <(FIELD_IDENTIFIER,collisionAvoidanceFactor,collisionAvoidanceFactor)<SUB>195</SUB>> ]
+"405" [label = <(nextDouble,random.nextDouble())<SUB>195</SUB>> ]
+"406" [label = <(IDENTIFIER,random,random.nextDouble())<SUB>195</SUB>> ]
+"407" [label = <(&lt;operator&gt;.assignmentPlus,redeliveryDelay += redeliveryDelay * variance)<SUB>196</SUB>> ]
+"408" [label = <(IDENTIFIER,redeliveryDelay,redeliveryDelay += redeliveryDelay * variance)<SUB>196</SUB>> ]
+"409" [label = <(&lt;operator&gt;.multiplication,redeliveryDelay * variance)<SUB>196</SUB>> ]
+"410" [label = <(IDENTIFIER,redeliveryDelay,redeliveryDelay * variance)<SUB>196</SUB>> ]
+"411" [label = <(IDENTIFIER,variance,redeliveryDelay * variance)<SUB>196</SUB>> ]
+"412" [label = <(RETURN,return redeliveryDelay;,return redeliveryDelay;)<SUB>199</SUB>> ]
+"413" [label = <(IDENTIFIER,redeliveryDelay,return redeliveryDelay;)<SUB>199</SUB>> ]
+"414" [label = <(MODIFIER,PUBLIC)> ]
+"415" [label = <(MODIFIER,VIRTUAL)> ]
+"416" [label = <(METHOD_RETURN,long)<SUB>175</SUB>> ]
+  "341" -> "342" 
+  "341" -> "343" 
+  "341" -> "344" 
+  "341" -> "414" 
+  "341" -> "415" 
+  "341" -> "416" 
+  "344" -> "345" 
+  "344" -> "346" 
+  "344" -> "382" 
+  "344" -> "412" 
+  "346" -> "347" 
+  "346" -> "350" 
+  "346" -> "356" 
+  "347" -> "348" 
+  "347" -> "349" 
+  "350" -> "351" 
+  "351" -> "352" 
+  "351" -> "353" 
+  "353" -> "354" 
+  "353" -> "355" 
+  "356" -> "357" 
+  "357" -> "358" 
+  "357" -> "367" 
+  "357" -> "377" 
+  "358" -> "359" 
+  "358" -> "362" 
+  "359" -> "360" 
+  "359" -> "361" 
+  "362" -> "363" 
+  "362" -> "366" 
+  "363" -> "364" 
+  "363" -> "365" 
+  "367" -> "368" 
+  "368" -> "369" 
+  "368" -> "370" 
+  "370" -> "371" 
+  "370" -> "372" 
+  "372" -> "373" 
+  "372" -> "376" 
+  "373" -> "374" 
+  "373" -> "375" 
+  "377" -> "378" 
+  "378" -> "379" 
+  "379" -> "380" 
+  "379" -> "381" 
+  "382" -> "383" 
+  "382" -> "386" 
+  "383" -> "384" 
+  "383" -> "385" 
+  "386" -> "387" 
+  "386" -> "388" 
+  "386" -> "391" 
+  "386" -> "392" 
+  "386" -> "407" 
+  "388" -> "389" 
+  "388" -> "390" 
+  "392" -> "393" 
+  "392" -> "394" 
+  "394" -> "395" 
+  "394" -> "405" 
+  "395" -> "396" 
+  "395" -> "398" 
+  "395" -> "401" 
+  "396" -> "397" 
+  "398" -> "399" 
+  "398" -> "400" 
+  "401" -> "402" 
+  "402" -> "403" 
+  "402" -> "404" 
+  "405" -> "406" 
+  "407" -> "408" 
+  "407" -> "409" 
+  "409" -> "410" 
+  "409" -> "411" 
+  "412" -> "413" 
+}

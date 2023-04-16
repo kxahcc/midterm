@@ -1,0 +1,55 @@
+digraph "sendRcpt" {  
+"858" [label = <(METHOD,sendRcpt)<SUB>417</SUB>> ]
+"63" [label = <(PARAM,this)<SUB>417</SUB>> ]
+"859" [label = <(PARAM,String rcpt)<SUB>417</SUB>> ]
+"860" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>417</SUB>> ]
+"861" [label = <(LOCAL,int[] ok: int[])> ]
+"862" [label = <(&lt;operator&gt;.assignment,int[] ok = { OK_RCPT_1, OK_RCPT_2 })<SUB>418</SUB>> ]
+"863" [label = <(IDENTIFIER,ok,int[] ok = { OK_RCPT_1, OK_RCPT_2 })<SUB>418</SUB>> ]
+"864" [label = <(&lt;operator&gt;.arrayInitializer,{ OK_RCPT_1, OK_RCPT_2 })<SUB>418</SUB>> ]
+"865" [label = <(&lt;operator&gt;.fieldAccess,MailMessage.OK_RCPT_1)<SUB>418</SUB>> ]
+"866" [label = <(IDENTIFIER,MailMessage,{ OK_RCPT_1, OK_RCPT_2 })<SUB>418</SUB>> ]
+"867" [label = <(FIELD_IDENTIFIER,OK_RCPT_1,OK_RCPT_1)<SUB>418</SUB>> ]
+"868" [label = <(&lt;operator&gt;.fieldAccess,MailMessage.OK_RCPT_2)<SUB>418</SUB>> ]
+"869" [label = <(IDENTIFIER,MailMessage,{ OK_RCPT_1, OK_RCPT_2 })<SUB>418</SUB>> ]
+"870" [label = <(FIELD_IDENTIFIER,OK_RCPT_2,OK_RCPT_2)<SUB>418</SUB>> ]
+"871" [label = <(send,this.send(&quot;RCPT TO: &quot; + &quot;&lt;&quot; + sanitizeAddress(rcpt) + &quot;&gt;&quot;, ok))<SUB>419</SUB>> ]
+"62" [label = <(IDENTIFIER,this,this.send(&quot;RCPT TO: &quot; + &quot;&lt;&quot; + sanitizeAddress(rcpt) + &quot;&gt;&quot;, ok))<SUB>419</SUB>> ]
+"872" [label = <(&lt;operator&gt;.addition,&quot;RCPT TO: &quot; + &quot;&lt;&quot; + sanitizeAddress(rcpt) + &quot;&gt;&quot;)<SUB>419</SUB>> ]
+"873" [label = <(&lt;operator&gt;.addition,&quot;RCPT TO: &quot; + &quot;&lt;&quot; + sanitizeAddress(rcpt))<SUB>419</SUB>> ]
+"874" [label = <(&lt;operator&gt;.addition,&quot;RCPT TO: &quot; + &quot;&lt;&quot;)<SUB>419</SUB>> ]
+"875" [label = <(LITERAL,&quot;RCPT TO: &quot;,&quot;RCPT TO: &quot; + &quot;&lt;&quot;)<SUB>419</SUB>> ]
+"876" [label = <(LITERAL,&quot;&lt;&quot;,&quot;RCPT TO: &quot; + &quot;&lt;&quot;)<SUB>419</SUB>> ]
+"877" [label = <(sanitizeAddress,sanitizeAddress(rcpt))<SUB>419</SUB>> ]
+"878" [label = <(IDENTIFIER,rcpt,sanitizeAddress(rcpt))<SUB>419</SUB>> ]
+"879" [label = <(LITERAL,&quot;&gt;&quot;,&quot;RCPT TO: &quot; + &quot;&lt;&quot; + sanitizeAddress(rcpt) + &quot;&gt;&quot;)<SUB>419</SUB>> ]
+"880" [label = <(IDENTIFIER,ok,this.send(&quot;RCPT TO: &quot; + &quot;&lt;&quot; + sanitizeAddress(rcpt) + &quot;&gt;&quot;, ok))<SUB>419</SUB>> ]
+"881" [label = <(MODIFIER,VIRTUAL)> ]
+"882" [label = <(METHOD_RETURN,void)<SUB>417</SUB>> ]
+  "858" -> "63" 
+  "858" -> "859" 
+  "858" -> "860" 
+  "858" -> "881" 
+  "858" -> "882" 
+  "860" -> "861" 
+  "860" -> "862" 
+  "860" -> "871" 
+  "862" -> "863" 
+  "862" -> "864" 
+  "864" -> "865" 
+  "864" -> "868" 
+  "865" -> "866" 
+  "865" -> "867" 
+  "868" -> "869" 
+  "868" -> "870" 
+  "871" -> "62" 
+  "871" -> "872" 
+  "871" -> "880" 
+  "872" -> "873" 
+  "872" -> "879" 
+  "873" -> "874" 
+  "873" -> "877" 
+  "874" -> "875" 
+  "874" -> "876" 
+  "877" -> "878" 
+}

@@ -1,0 +1,31 @@
+digraph "circularReference" {  
+"172" [label = <(METHOD,circularReference)<SUB>185</SUB>> ]
+"173" [label = <(PARAM,this)<SUB>185</SUB>> ]
+"174" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>185</SUB>> ]
+"175" [label = <(RETURN,return new BuildException(&quot;This data type contains a circular reference.&quot;);,return new BuildException(&quot;This data type contains a circular reference.&quot;);)<SUB>186</SUB>> ]
+"176" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>186</SUB>> ]
+"177" [label = <(&lt;operator&gt;.assignment,&lt;empty&gt;)> ]
+"178" [label = <(IDENTIFIER,$obj2,&lt;empty&gt;)> ]
+"179" [label = <(&lt;operator&gt;.alloc,new BuildException(&quot;This data type contains a circular reference.&quot;))<SUB>186</SUB>> ]
+"180" [label = <(&lt;init&gt;,new BuildException(&quot;This data type contains a circular reference.&quot;))<SUB>186</SUB>> ]
+"181" [label = <(IDENTIFIER,$obj2,new BuildException(&quot;This data type contains a circular reference.&quot;))> ]
+"182" [label = <(LITERAL,&quot;This data type contains a circular reference.&quot;,new BuildException(&quot;This data type contains a circular reference.&quot;))<SUB>186</SUB>> ]
+"183" [label = <(IDENTIFIER,$obj2,&lt;empty&gt;)> ]
+"184" [label = <(MODIFIER,PROTECTED)> ]
+"185" [label = <(MODIFIER,VIRTUAL)> ]
+"186" [label = <(METHOD_RETURN,org.apache.tools.ant.BuildException)<SUB>185</SUB>> ]
+  "172" -> "173" 
+  "172" -> "174" 
+  "172" -> "184" 
+  "172" -> "185" 
+  "172" -> "186" 
+  "174" -> "175" 
+  "175" -> "176" 
+  "176" -> "177" 
+  "176" -> "180" 
+  "176" -> "183" 
+  "177" -> "178" 
+  "177" -> "179" 
+  "180" -> "181" 
+  "180" -> "182" 
+}

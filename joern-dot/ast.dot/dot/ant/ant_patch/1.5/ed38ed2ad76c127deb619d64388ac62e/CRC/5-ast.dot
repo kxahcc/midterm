@@ -1,0 +1,83 @@
+digraph "updateCRC" {  
+"73" [label = <(METHOD,updateCRC)<SUB>157</SUB>> ]
+"74" [label = <(PARAM,this)<SUB>157</SUB>> ]
+"75" [label = <(PARAM,int inCh)<SUB>157</SUB>> ]
+"76" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>157</SUB>> ]
+"77" [label = <(LOCAL,int temp: int)> ]
+"78" [label = <(&lt;operator&gt;.assignment,int temp = (globalCrc &gt;&gt; 24) ^ inCh)<SUB>158</SUB>> ]
+"79" [label = <(IDENTIFIER,temp,int temp = (globalCrc &gt;&gt; 24) ^ inCh)<SUB>158</SUB>> ]
+"80" [label = <(&lt;operator&gt;.xor,(globalCrc &gt;&gt; 24) ^ inCh)<SUB>158</SUB>> ]
+"81" [label = <(&lt;operator&gt;.logicalShiftRight,globalCrc &gt;&gt; 24)<SUB>158</SUB>> ]
+"82" [label = <(&lt;operator&gt;.fieldAccess,this.globalCrc)<SUB>158</SUB>> ]
+"83" [label = <(IDENTIFIER,this,globalCrc &gt;&gt; 24)<SUB>158</SUB>> ]
+"84" [label = <(FIELD_IDENTIFIER,globalCrc,globalCrc)<SUB>158</SUB>> ]
+"85" [label = <(LITERAL,24,globalCrc &gt;&gt; 24)<SUB>158</SUB>> ]
+"86" [label = <(IDENTIFIER,inCh,(globalCrc &gt;&gt; 24) ^ inCh)<SUB>158</SUB>> ]
+"87" [label = <(CONTROL_STRUCTURE,if (temp &lt; 0),if (temp &lt; 0))<SUB>159</SUB>> ]
+"88" [label = <(&lt;operator&gt;.lessThan,temp &lt; 0)<SUB>159</SUB>> ]
+"89" [label = <(IDENTIFIER,temp,temp &lt; 0)<SUB>159</SUB>> ]
+"90" [label = <(LITERAL,0,temp &lt; 0)<SUB>159</SUB>> ]
+"91" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>159</SUB>> ]
+"92" [label = <(&lt;operator&gt;.assignment,temp = 256 + temp)<SUB>160</SUB>> ]
+"93" [label = <(IDENTIFIER,temp,temp = 256 + temp)<SUB>160</SUB>> ]
+"94" [label = <(&lt;operator&gt;.addition,256 + temp)<SUB>160</SUB>> ]
+"95" [label = <(LITERAL,256,256 + temp)<SUB>160</SUB>> ]
+"96" [label = <(IDENTIFIER,temp,256 + temp)<SUB>160</SUB>> ]
+"97" [label = <(&lt;operator&gt;.assignment,this.globalCrc = (globalCrc &lt;&lt; 8) ^ CRC.crc32Table[temp])<SUB>162</SUB>> ]
+"98" [label = <(&lt;operator&gt;.fieldAccess,this.globalCrc)<SUB>162</SUB>> ]
+"99" [label = <(IDENTIFIER,this,this.globalCrc = (globalCrc &lt;&lt; 8) ^ CRC.crc32Table[temp])<SUB>162</SUB>> ]
+"100" [label = <(FIELD_IDENTIFIER,globalCrc,globalCrc)<SUB>162</SUB>> ]
+"101" [label = <(&lt;operator&gt;.xor,(globalCrc &lt;&lt; 8) ^ CRC.crc32Table[temp])<SUB>162</SUB>> ]
+"102" [label = <(&lt;operator&gt;.shiftLeft,globalCrc &lt;&lt; 8)<SUB>162</SUB>> ]
+"103" [label = <(&lt;operator&gt;.fieldAccess,this.globalCrc)<SUB>162</SUB>> ]
+"104" [label = <(IDENTIFIER,this,globalCrc &lt;&lt; 8)<SUB>162</SUB>> ]
+"105" [label = <(FIELD_IDENTIFIER,globalCrc,globalCrc)<SUB>162</SUB>> ]
+"106" [label = <(LITERAL,8,globalCrc &lt;&lt; 8)<SUB>162</SUB>> ]
+"107" [label = <(&lt;operator&gt;.indexAccess,CRC.crc32Table[temp])<SUB>162</SUB>> ]
+"108" [label = <(&lt;operator&gt;.fieldAccess,CRC.crc32Table)<SUB>162</SUB>> ]
+"109" [label = <(IDENTIFIER,CRC,(globalCrc &lt;&lt; 8) ^ CRC.crc32Table[temp])<SUB>162</SUB>> ]
+"110" [label = <(FIELD_IDENTIFIER,crc32Table,crc32Table)<SUB>162</SUB>> ]
+"111" [label = <(IDENTIFIER,temp,(globalCrc &lt;&lt; 8) ^ CRC.crc32Table[temp])<SUB>162</SUB>> ]
+"112" [label = <(MODIFIER,VIRTUAL)> ]
+"113" [label = <(METHOD_RETURN,void)<SUB>157</SUB>> ]
+  "73" -> "74" 
+  "73" -> "75" 
+  "73" -> "76" 
+  "73" -> "112" 
+  "73" -> "113" 
+  "76" -> "77" 
+  "76" -> "78" 
+  "76" -> "87" 
+  "76" -> "97" 
+  "78" -> "79" 
+  "78" -> "80" 
+  "80" -> "81" 
+  "80" -> "86" 
+  "81" -> "82" 
+  "81" -> "85" 
+  "82" -> "83" 
+  "82" -> "84" 
+  "87" -> "88" 
+  "87" -> "91" 
+  "88" -> "89" 
+  "88" -> "90" 
+  "91" -> "92" 
+  "92" -> "93" 
+  "92" -> "94" 
+  "94" -> "95" 
+  "94" -> "96" 
+  "97" -> "98" 
+  "97" -> "101" 
+  "98" -> "99" 
+  "98" -> "100" 
+  "101" -> "102" 
+  "101" -> "107" 
+  "102" -> "103" 
+  "102" -> "106" 
+  "103" -> "104" 
+  "103" -> "105" 
+  "107" -> "108" 
+  "107" -> "111" 
+  "108" -> "109" 
+  "108" -> "110" 
+}

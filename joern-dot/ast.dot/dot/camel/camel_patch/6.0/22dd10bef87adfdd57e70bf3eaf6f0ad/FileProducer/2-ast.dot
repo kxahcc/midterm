@@ -1,0 +1,45 @@
+digraph "process" {  
+"60" [label = <(METHOD,process)<SUB>59</SUB>> ]
+"7" [label = <(PARAM,this)<SUB>59</SUB>> ]
+"61" [label = <(PARAM,Exchange exchange)<SUB>59</SUB>> ]
+"62" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>59</SUB>> ]
+"63" [label = <(LOCAL,FileExchange fileExchange: ANY)> ]
+"64" [label = <(&lt;operator&gt;.assignment,ANY fileExchange = createExchange(exchange))<SUB>60</SUB>> ]
+"65" [label = <(IDENTIFIER,fileExchange,ANY fileExchange = createExchange(exchange))<SUB>60</SUB>> ]
+"66" [label = <(createExchange,createExchange(exchange))<SUB>60</SUB>> ]
+"67" [label = <(&lt;operator&gt;.fieldAccess,this.endpoint)<SUB>60</SUB>> ]
+"68" [label = <(IDENTIFIER,this,createExchange(exchange))<SUB>60</SUB>> ]
+"69" [label = <(FIELD_IDENTIFIER,endpoint,endpoint)<SUB>60</SUB>> ]
+"70" [label = <(IDENTIFIER,exchange,createExchange(exchange))<SUB>60</SUB>> ]
+"71" [label = <(process,process(fileExchange))<SUB>61</SUB>> ]
+"6" [label = <(IDENTIFIER,this,process(fileExchange))<SUB>61</SUB>> ]
+"72" [label = <(IDENTIFIER,fileExchange,process(fileExchange))<SUB>61</SUB>> ]
+"73" [label = <(copyResults,copyResults(exchange, fileExchange))<SUB>62</SUB>> ]
+"74" [label = <(IDENTIFIER,ExchangeHelper,copyResults(exchange, fileExchange))<SUB>62</SUB>> ]
+"75" [label = <(IDENTIFIER,exchange,copyResults(exchange, fileExchange))<SUB>62</SUB>> ]
+"76" [label = <(IDENTIFIER,fileExchange,copyResults(exchange, fileExchange))<SUB>62</SUB>> ]
+"77" [label = <(MODIFIER,PUBLIC)> ]
+"78" [label = <(MODIFIER,VIRTUAL)> ]
+"79" [label = <(METHOD_RETURN,void)<SUB>59</SUB>> ]
+  "60" -> "7" 
+  "60" -> "61" 
+  "60" -> "62" 
+  "60" -> "77" 
+  "60" -> "78" 
+  "60" -> "79" 
+  "62" -> "63" 
+  "62" -> "64" 
+  "62" -> "71" 
+  "62" -> "73" 
+  "64" -> "65" 
+  "64" -> "66" 
+  "66" -> "67" 
+  "66" -> "70" 
+  "67" -> "68" 
+  "67" -> "69" 
+  "71" -> "6" 
+  "71" -> "72" 
+  "73" -> "74" 
+  "73" -> "75" 
+  "73" -> "76" 
+}

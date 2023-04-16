@@ -1,0 +1,149 @@
+digraph "resolveLanguage" {  
+"29" [label = <(METHOD,resolveLanguage)<SUB>36</SUB>> ]
+"8" [label = <(PARAM,this)<SUB>36</SUB>> ]
+"30" [label = <(PARAM,String name)<SUB>36</SUB>> ]
+"31" [label = <(PARAM,CamelContext context)<SUB>36</SUB>> ]
+"32" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>36</SUB>> ]
+"33" [label = <(LOCAL,Class type: java.lang.Class)> ]
+"34" [label = <(&lt;operator&gt;.assignment,Class type = null)<SUB>37</SUB>> ]
+"35" [label = <(IDENTIFIER,type,Class type = null)<SUB>37</SUB>> ]
+"36" [label = <(LITERAL,null,Class type = null)<SUB>37</SUB>> ]
+"37" [label = <(CONTROL_STRUCTURE,try,try)<SUB>38</SUB>> ]
+"38" [label = <(BLOCK,try,try)<SUB>38</SUB>> ]
+"39" [label = <(&lt;operator&gt;.assignment,type = findClass(name))<SUB>39</SUB>> ]
+"40" [label = <(IDENTIFIER,type,type = findClass(name))<SUB>39</SUB>> ]
+"41" [label = <(findClass,findClass(name))<SUB>39</SUB>> ]
+"42" [label = <(&lt;operator&gt;.fieldAccess,DefaultLanguageResolver.LANGUAGE_FACTORY)<SUB>39</SUB>> ]
+"43" [label = <(IDENTIFIER,DefaultLanguageResolver,findClass(name))<SUB>39</SUB>> ]
+"44" [label = <(FIELD_IDENTIFIER,LANGUAGE_FACTORY,LANGUAGE_FACTORY)<SUB>39</SUB>> ]
+"45" [label = <(IDENTIFIER,name,findClass(name))<SUB>39</SUB>> ]
+"46" [label = <(BLOCK,catch,catch)> ]
+"47" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>40</SUB>> ]
+"48" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>42</SUB>> ]
+"49" [label = <(&lt;operator&gt;.throw,throw new IllegalArgumentException(&quot;Invalid URI, no Language registered for scheme : &quot; + name, e);)<SUB>43</SUB>> ]
+"50" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>43</SUB>> ]
+"51" [label = <(&lt;operator&gt;.assignment,&lt;empty&gt;)> ]
+"52" [label = <(IDENTIFIER,$obj2,&lt;empty&gt;)> ]
+"53" [label = <(&lt;operator&gt;.alloc,new IllegalArgumentException(&quot;Invalid URI, no Language registered for scheme : &quot; + name, e))<SUB>43</SUB>> ]
+"54" [label = <(&lt;init&gt;,new IllegalArgumentException(&quot;Invalid URI, no Language registered for scheme : &quot; + name, e))<SUB>43</SUB>> ]
+"55" [label = <(IDENTIFIER,$obj2,new IllegalArgumentException(&quot;Invalid URI, no Language registered for scheme : &quot; + name, e))> ]
+"56" [label = <(&lt;operator&gt;.addition,&quot;Invalid URI, no Language registered for scheme : &quot; + name)<SUB>43</SUB>> ]
+"57" [label = <(LITERAL,&quot;Invalid URI, no Language registered for scheme : &quot;,&quot;Invalid URI, no Language registered for scheme : &quot; + name)<SUB>43</SUB>> ]
+"58" [label = <(IDENTIFIER,name,&quot;Invalid URI, no Language registered for scheme : &quot; + name)<SUB>43</SUB>> ]
+"59" [label = <(IDENTIFIER,e,new IllegalArgumentException(&quot;Invalid URI, no Language registered for scheme : &quot; + name, e))<SUB>43</SUB>> ]
+"60" [label = <(IDENTIFIER,$obj2,&lt;empty&gt;)> ]
+"61" [label = <(CONTROL_STRUCTURE,if (type != null),if (type != null))<SUB>45</SUB>> ]
+"62" [label = <(&lt;operator&gt;.notEquals,type != null)<SUB>45</SUB>> ]
+"63" [label = <(IDENTIFIER,type,type != null)<SUB>45</SUB>> ]
+"64" [label = <(LITERAL,null,type != null)<SUB>45</SUB>> ]
+"65" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>45</SUB>> ]
+"66" [label = <(CONTROL_STRUCTURE,if (Language.class.isAssignableFrom(type)),if (Language.class.isAssignableFrom(type)))<SUB>46</SUB>> ]
+"67" [label = <(isAssignableFrom,isAssignableFrom(type))<SUB>46</SUB>> ]
+"68" [label = <(&lt;operator&gt;.fieldAccess,Language.class)<SUB>46</SUB>> ]
+"69" [label = <(IDENTIFIER,Language,isAssignableFrom(type))<SUB>46</SUB>> ]
+"70" [label = <(FIELD_IDENTIFIER,class,class)<SUB>46</SUB>> ]
+"71" [label = <(IDENTIFIER,type,isAssignableFrom(type))<SUB>46</SUB>> ]
+"72" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>46</SUB>> ]
+"73" [label = <(RETURN,return (Language) context.getInjector().newInstance(type);,return (Language) context.getInjector().newInstance(type);)<SUB>47</SUB>> ]
+"74" [label = <(&lt;operator&gt;.cast,(Language) context.getInjector().newInstance(type))<SUB>47</SUB>> ]
+"75" [label = <(TYPE_REF,Language,Language)<SUB>47</SUB>> ]
+"76" [label = <(newInstance,newInstance(type))<SUB>47</SUB>> ]
+"77" [label = <(getInjector,getInjector())<SUB>47</SUB>> ]
+"78" [label = <(IDENTIFIER,context,getInjector())<SUB>47</SUB>> ]
+"79" [label = <(IDENTIFIER,type,newInstance(type))<SUB>47</SUB>> ]
+"80" [label = <(CONTROL_STRUCTURE,else,else)<SUB>48</SUB>> ]
+"81" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>48</SUB>> ]
+"82" [label = <(&lt;operator&gt;.throw,throw new IllegalArgumentException(&quot;Type is not a Language implementation. Found: &quot; + type.getName());)<SUB>49</SUB>> ]
+"83" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>49</SUB>> ]
+"84" [label = <(&lt;operator&gt;.assignment,&lt;empty&gt;)> ]
+"85" [label = <(IDENTIFIER,$obj3,&lt;empty&gt;)> ]
+"86" [label = <(&lt;operator&gt;.alloc,new IllegalArgumentException(&quot;Type is not a Language implementation. Found: &quot; + type.getName()))<SUB>49</SUB>> ]
+"87" [label = <(&lt;init&gt;,new IllegalArgumentException(&quot;Type is not a Language implementation. Found: &quot; + type.getName()))<SUB>49</SUB>> ]
+"88" [label = <(IDENTIFIER,$obj3,new IllegalArgumentException(&quot;Type is not a Language implementation. Found: &quot; + type.getName()))> ]
+"89" [label = <(&lt;operator&gt;.addition,&quot;Type is not a Language implementation. Found: &quot; + type.getName())<SUB>49</SUB>> ]
+"90" [label = <(LITERAL,&quot;Type is not a Language implementation. Found: &quot;,&quot;Type is not a Language implementation. Found: &quot; + type.getName())<SUB>49</SUB>> ]
+"91" [label = <(getName,type.getName())<SUB>49</SUB>> ]
+"92" [label = <(IDENTIFIER,type,type.getName())<SUB>49</SUB>> ]
+"93" [label = <(IDENTIFIER,$obj3,&lt;empty&gt;)> ]
+"94" [label = <(RETURN,return noSpecificLanguageFound(name, context);,return noSpecificLanguageFound(name, context);)<SUB>52</SUB>> ]
+"95" [label = <(noSpecificLanguageFound,noSpecificLanguageFound(name, context))<SUB>52</SUB>> ]
+"7" [label = <(IDENTIFIER,this,noSpecificLanguageFound(name, context))<SUB>52</SUB>> ]
+"96" [label = <(IDENTIFIER,name,noSpecificLanguageFound(name, context))<SUB>52</SUB>> ]
+"97" [label = <(IDENTIFIER,context,noSpecificLanguageFound(name, context))<SUB>52</SUB>> ]
+"98" [label = <(MODIFIER,PUBLIC)> ]
+"99" [label = <(MODIFIER,VIRTUAL)> ]
+"100" [label = <(METHOD_RETURN,org.apache.camel.spi.Language)<SUB>36</SUB>> ]
+  "29" -> "8" 
+  "29" -> "30" 
+  "29" -> "31" 
+  "29" -> "32" 
+  "29" -> "98" 
+  "29" -> "99" 
+  "29" -> "100" 
+  "32" -> "33" 
+  "32" -> "34" 
+  "32" -> "37" 
+  "32" -> "61" 
+  "32" -> "94" 
+  "34" -> "35" 
+  "34" -> "36" 
+  "37" -> "38" 
+  "37" -> "46" 
+  "38" -> "39" 
+  "39" -> "40" 
+  "39" -> "41" 
+  "41" -> "42" 
+  "41" -> "45" 
+  "42" -> "43" 
+  "42" -> "44" 
+  "46" -> "47" 
+  "46" -> "48" 
+  "48" -> "49" 
+  "49" -> "50" 
+  "50" -> "51" 
+  "50" -> "54" 
+  "50" -> "60" 
+  "51" -> "52" 
+  "51" -> "53" 
+  "54" -> "55" 
+  "54" -> "56" 
+  "54" -> "59" 
+  "56" -> "57" 
+  "56" -> "58" 
+  "61" -> "62" 
+  "61" -> "65" 
+  "62" -> "63" 
+  "62" -> "64" 
+  "65" -> "66" 
+  "66" -> "67" 
+  "66" -> "72" 
+  "66" -> "80" 
+  "67" -> "68" 
+  "67" -> "71" 
+  "68" -> "69" 
+  "68" -> "70" 
+  "72" -> "73" 
+  "73" -> "74" 
+  "74" -> "75" 
+  "74" -> "76" 
+  "76" -> "77" 
+  "76" -> "79" 
+  "77" -> "78" 
+  "80" -> "81" 
+  "81" -> "82" 
+  "82" -> "83" 
+  "83" -> "84" 
+  "83" -> "87" 
+  "83" -> "93" 
+  "84" -> "85" 
+  "84" -> "86" 
+  "87" -> "88" 
+  "87" -> "89" 
+  "89" -> "90" 
+  "89" -> "91" 
+  "91" -> "92" 
+  "94" -> "95" 
+  "95" -> "7" 
+  "95" -> "96" 
+  "95" -> "97" 
+}

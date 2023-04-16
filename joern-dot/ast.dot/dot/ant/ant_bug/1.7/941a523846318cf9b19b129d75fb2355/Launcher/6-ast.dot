@@ -1,0 +1,179 @@
+digraph "getJarArray" {  
+"795" [label = <(METHOD,getJarArray)<SUB>332</SUB>> ]
+"796" [label = <(PARAM,this)<SUB>332</SUB>> ]
+"797" [label = <(PARAM,URL[] libJars)<SUB>333</SUB>> ]
+"798" [label = <(PARAM,URL[] userJars)<SUB>333</SUB>> ]
+"799" [label = <(PARAM,URL[] systemJars)<SUB>333</SUB>> ]
+"800" [label = <(PARAM,File toolsJar)<SUB>333</SUB>> ]
+"801" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>334</SUB>> ]
+"802" [label = <(LOCAL,int numJars: int)> ]
+"803" [label = <(&lt;operator&gt;.assignment,int numJars = libJars.length + userJars.length + systemJars.length)<SUB>335</SUB>> ]
+"804" [label = <(IDENTIFIER,numJars,int numJars = libJars.length + userJars.length + systemJars.length)<SUB>335</SUB>> ]
+"805" [label = <(&lt;operator&gt;.addition,libJars.length + userJars.length + systemJars.length)<SUB>335</SUB>> ]
+"806" [label = <(&lt;operator&gt;.addition,libJars.length + userJars.length)<SUB>335</SUB>> ]
+"807" [label = <(&lt;operator&gt;.fieldAccess,libJars.length)<SUB>335</SUB>> ]
+"808" [label = <(IDENTIFIER,libJars,libJars.length + userJars.length)<SUB>335</SUB>> ]
+"809" [label = <(FIELD_IDENTIFIER,length,length)<SUB>335</SUB>> ]
+"810" [label = <(&lt;operator&gt;.fieldAccess,userJars.length)<SUB>335</SUB>> ]
+"811" [label = <(IDENTIFIER,userJars,libJars.length + userJars.length)<SUB>335</SUB>> ]
+"812" [label = <(FIELD_IDENTIFIER,length,length)<SUB>335</SUB>> ]
+"813" [label = <(&lt;operator&gt;.fieldAccess,systemJars.length)<SUB>335</SUB>> ]
+"814" [label = <(IDENTIFIER,systemJars,libJars.length + userJars.length + systemJars.length)<SUB>335</SUB>> ]
+"815" [label = <(FIELD_IDENTIFIER,length,length)<SUB>335</SUB>> ]
+"816" [label = <(CONTROL_STRUCTURE,if (toolsJar != null),if (toolsJar != null))<SUB>336</SUB>> ]
+"817" [label = <(&lt;operator&gt;.notEquals,toolsJar != null)<SUB>336</SUB>> ]
+"818" [label = <(IDENTIFIER,toolsJar,toolsJar != null)<SUB>336</SUB>> ]
+"819" [label = <(LITERAL,null,toolsJar != null)<SUB>336</SUB>> ]
+"820" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>336</SUB>> ]
+"821" [label = <(&lt;operator&gt;.postIncrement,numJars++)<SUB>337</SUB>> ]
+"822" [label = <(IDENTIFIER,numJars,numJars++)<SUB>337</SUB>> ]
+"823" [label = <(LOCAL,URL[] jars: java.net.URL[])> ]
+"824" [label = <(&lt;operator&gt;.assignment,URL[] jars = new URL[numJars])<SUB>339</SUB>> ]
+"825" [label = <(IDENTIFIER,jars,URL[] jars = new URL[numJars])<SUB>339</SUB>> ]
+"826" [label = <(&lt;operator&gt;.alloc,new URL[numJars])> ]
+"827" [label = <(IDENTIFIER,numJars,new URL[numJars])<SUB>339</SUB>> ]
+"828" [label = <(arraycopy,System.arraycopy(libJars, 0, jars, 0, libJars.length))<SUB>340</SUB>> ]
+"829" [label = <(IDENTIFIER,System,System.arraycopy(libJars, 0, jars, 0, libJars.length))<SUB>340</SUB>> ]
+"830" [label = <(IDENTIFIER,libJars,System.arraycopy(libJars, 0, jars, 0, libJars.length))<SUB>340</SUB>> ]
+"831" [label = <(LITERAL,0,System.arraycopy(libJars, 0, jars, 0, libJars.length))<SUB>340</SUB>> ]
+"832" [label = <(IDENTIFIER,jars,System.arraycopy(libJars, 0, jars, 0, libJars.length))<SUB>340</SUB>> ]
+"833" [label = <(LITERAL,0,System.arraycopy(libJars, 0, jars, 0, libJars.length))<SUB>340</SUB>> ]
+"834" [label = <(&lt;operator&gt;.fieldAccess,libJars.length)<SUB>340</SUB>> ]
+"835" [label = <(IDENTIFIER,libJars,System.arraycopy(libJars, 0, jars, 0, libJars.length))<SUB>340</SUB>> ]
+"836" [label = <(FIELD_IDENTIFIER,length,length)<SUB>340</SUB>> ]
+"837" [label = <(arraycopy,System.arraycopy(userJars, 0, jars, libJars.length, userJars.length))<SUB>341</SUB>> ]
+"838" [label = <(IDENTIFIER,System,System.arraycopy(userJars, 0, jars, libJars.length, userJars.length))<SUB>341</SUB>> ]
+"839" [label = <(IDENTIFIER,userJars,System.arraycopy(userJars, 0, jars, libJars.length, userJars.length))<SUB>341</SUB>> ]
+"840" [label = <(LITERAL,0,System.arraycopy(userJars, 0, jars, libJars.length, userJars.length))<SUB>341</SUB>> ]
+"841" [label = <(IDENTIFIER,jars,System.arraycopy(userJars, 0, jars, libJars.length, userJars.length))<SUB>341</SUB>> ]
+"842" [label = <(&lt;operator&gt;.fieldAccess,libJars.length)<SUB>341</SUB>> ]
+"843" [label = <(IDENTIFIER,libJars,System.arraycopy(userJars, 0, jars, libJars.length, userJars.length))<SUB>341</SUB>> ]
+"844" [label = <(FIELD_IDENTIFIER,length,length)<SUB>341</SUB>> ]
+"845" [label = <(&lt;operator&gt;.fieldAccess,userJars.length)<SUB>341</SUB>> ]
+"846" [label = <(IDENTIFIER,userJars,System.arraycopy(userJars, 0, jars, libJars.length, userJars.length))<SUB>341</SUB>> ]
+"847" [label = <(FIELD_IDENTIFIER,length,length)<SUB>341</SUB>> ]
+"848" [label = <(arraycopy,System.arraycopy(systemJars, 0, jars, userJars.length + libJars.length, systemJars.length))<SUB>342</SUB>> ]
+"849" [label = <(IDENTIFIER,System,System.arraycopy(systemJars, 0, jars, userJars.length + libJars.length, systemJars.length))<SUB>342</SUB>> ]
+"850" [label = <(IDENTIFIER,systemJars,System.arraycopy(systemJars, 0, jars, userJars.length + libJars.length, systemJars.length))<SUB>342</SUB>> ]
+"851" [label = <(LITERAL,0,System.arraycopy(systemJars, 0, jars, userJars.length + libJars.length, systemJars.length))<SUB>342</SUB>> ]
+"852" [label = <(IDENTIFIER,jars,System.arraycopy(systemJars, 0, jars, userJars.length + libJars.length, systemJars.length))<SUB>342</SUB>> ]
+"853" [label = <(&lt;operator&gt;.addition,userJars.length + libJars.length)<SUB>342</SUB>> ]
+"854" [label = <(&lt;operator&gt;.fieldAccess,userJars.length)<SUB>342</SUB>> ]
+"855" [label = <(IDENTIFIER,userJars,userJars.length + libJars.length)<SUB>342</SUB>> ]
+"856" [label = <(FIELD_IDENTIFIER,length,length)<SUB>342</SUB>> ]
+"857" [label = <(&lt;operator&gt;.fieldAccess,libJars.length)<SUB>342</SUB>> ]
+"858" [label = <(IDENTIFIER,libJars,userJars.length + libJars.length)<SUB>342</SUB>> ]
+"859" [label = <(FIELD_IDENTIFIER,length,length)<SUB>342</SUB>> ]
+"860" [label = <(&lt;operator&gt;.fieldAccess,systemJars.length)<SUB>343</SUB>> ]
+"861" [label = <(IDENTIFIER,systemJars,System.arraycopy(systemJars, 0, jars, userJars.length + libJars.length, systemJars.length))<SUB>343</SUB>> ]
+"862" [label = <(FIELD_IDENTIFIER,length,length)<SUB>343</SUB>> ]
+"863" [label = <(CONTROL_STRUCTURE,if (toolsJar != null),if (toolsJar != null))<SUB>345</SUB>> ]
+"864" [label = <(&lt;operator&gt;.notEquals,toolsJar != null)<SUB>345</SUB>> ]
+"865" [label = <(IDENTIFIER,toolsJar,toolsJar != null)<SUB>345</SUB>> ]
+"866" [label = <(LITERAL,null,toolsJar != null)<SUB>345</SUB>> ]
+"867" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>345</SUB>> ]
+"868" [label = <(&lt;operator&gt;.assignment,jars[jars.length - 1] = fileToURL(toolsJar))<SUB>346</SUB>> ]
+"869" [label = <(&lt;operator&gt;.indexAccess,jars[jars.length - 1])<SUB>346</SUB>> ]
+"870" [label = <(IDENTIFIER,jars,jars[jars.length - 1] = fileToURL(toolsJar))<SUB>346</SUB>> ]
+"871" [label = <(&lt;operator&gt;.subtraction,jars.length - 1)<SUB>346</SUB>> ]
+"872" [label = <(&lt;operator&gt;.fieldAccess,jars.length)<SUB>346</SUB>> ]
+"873" [label = <(IDENTIFIER,jars,jars.length - 1)<SUB>346</SUB>> ]
+"874" [label = <(FIELD_IDENTIFIER,length,length)<SUB>346</SUB>> ]
+"875" [label = <(LITERAL,1,jars.length - 1)<SUB>346</SUB>> ]
+"876" [label = <(fileToURL,fileToURL(toolsJar))<SUB>346</SUB>> ]
+"877" [label = <(IDENTIFIER,Locator,fileToURL(toolsJar))<SUB>346</SUB>> ]
+"878" [label = <(IDENTIFIER,toolsJar,fileToURL(toolsJar))<SUB>346</SUB>> ]
+"879" [label = <(RETURN,return jars;,return jars;)<SUB>348</SUB>> ]
+"880" [label = <(IDENTIFIER,jars,return jars;)<SUB>348</SUB>> ]
+"881" [label = <(MODIFIER,PRIVATE)> ]
+"882" [label = <(MODIFIER,VIRTUAL)> ]
+"883" [label = <(METHOD_RETURN,java.net.URL[])<SUB>332</SUB>> ]
+  "795" -> "796" 
+  "795" -> "797" 
+  "795" -> "798" 
+  "795" -> "799" 
+  "795" -> "800" 
+  "795" -> "801" 
+  "795" -> "881" 
+  "795" -> "882" 
+  "795" -> "883" 
+  "801" -> "802" 
+  "801" -> "803" 
+  "801" -> "816" 
+  "801" -> "823" 
+  "801" -> "824" 
+  "801" -> "828" 
+  "801" -> "837" 
+  "801" -> "848" 
+  "801" -> "863" 
+  "801" -> "879" 
+  "803" -> "804" 
+  "803" -> "805" 
+  "805" -> "806" 
+  "805" -> "813" 
+  "806" -> "807" 
+  "806" -> "810" 
+  "807" -> "808" 
+  "807" -> "809" 
+  "810" -> "811" 
+  "810" -> "812" 
+  "813" -> "814" 
+  "813" -> "815" 
+  "816" -> "817" 
+  "816" -> "820" 
+  "817" -> "818" 
+  "817" -> "819" 
+  "820" -> "821" 
+  "821" -> "822" 
+  "824" -> "825" 
+  "824" -> "826" 
+  "826" -> "827" 
+  "828" -> "829" 
+  "828" -> "830" 
+  "828" -> "831" 
+  "828" -> "832" 
+  "828" -> "833" 
+  "828" -> "834" 
+  "834" -> "835" 
+  "834" -> "836" 
+  "837" -> "838" 
+  "837" -> "839" 
+  "837" -> "840" 
+  "837" -> "841" 
+  "837" -> "842" 
+  "837" -> "845" 
+  "842" -> "843" 
+  "842" -> "844" 
+  "845" -> "846" 
+  "845" -> "847" 
+  "848" -> "849" 
+  "848" -> "850" 
+  "848" -> "851" 
+  "848" -> "852" 
+  "848" -> "853" 
+  "848" -> "860" 
+  "853" -> "854" 
+  "853" -> "857" 
+  "854" -> "855" 
+  "854" -> "856" 
+  "857" -> "858" 
+  "857" -> "859" 
+  "860" -> "861" 
+  "860" -> "862" 
+  "863" -> "864" 
+  "863" -> "867" 
+  "864" -> "865" 
+  "864" -> "866" 
+  "867" -> "868" 
+  "868" -> "869" 
+  "868" -> "876" 
+  "869" -> "870" 
+  "869" -> "871" 
+  "871" -> "872" 
+  "871" -> "875" 
+  "872" -> "873" 
+  "872" -> "874" 
+  "876" -> "877" 
+  "876" -> "878" 
+  "879" -> "880" 
+}

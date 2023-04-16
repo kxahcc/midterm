@@ -1,0 +1,69 @@
+digraph "createProducer" {  
+"39" [label = <(METHOD,createProducer)<SUB>45</SUB>> ]
+"7" [label = <(PARAM,this)<SUB>45</SUB>> ]
+"40" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>45</SUB>> ]
+"41" [label = <(LOCAL,Object pojo: java.lang.Object)> ]
+"42" [label = <(&lt;operator&gt;.assignment,Object pojo = this.getPojo())<SUB>46</SUB>> ]
+"43" [label = <(IDENTIFIER,pojo,Object pojo = this.getPojo())<SUB>46</SUB>> ]
+"44" [label = <(getPojo,this.getPojo())<SUB>46</SUB>> ]
+"6" [label = <(IDENTIFIER,this,this.getPojo())<SUB>46</SUB>> ]
+"45" [label = <(CONTROL_STRUCTURE,if (pojo == null),if (pojo == null))<SUB>47</SUB>> ]
+"46" [label = <(&lt;operator&gt;.equals,pojo == null)<SUB>47</SUB>> ]
+"47" [label = <(IDENTIFIER,pojo,pojo == null)<SUB>47</SUB>> ]
+"48" [label = <(LITERAL,null,pojo == null)<SUB>47</SUB>> ]
+"49" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>47</SUB>> ]
+"50" [label = <(&lt;operator&gt;.throw,throw new NoPojoAvailableException(this);)<SUB>48</SUB>> ]
+"51" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>48</SUB>> ]
+"52" [label = <(&lt;operator&gt;.assignment,&lt;empty&gt;)> ]
+"53" [label = <(IDENTIFIER,$obj0,&lt;empty&gt;)> ]
+"54" [label = <(&lt;operator&gt;.alloc,new NoPojoAvailableException(this))<SUB>48</SUB>> ]
+"55" [label = <(&lt;init&gt;,new NoPojoAvailableException(this))<SUB>48</SUB>> ]
+"56" [label = <(IDENTIFIER,$obj0,new NoPojoAvailableException(this))> ]
+"8" [label = <(IDENTIFIER,this,new NoPojoAvailableException(this))<SUB>48</SUB>> ]
+"57" [label = <(IDENTIFIER,$obj0,&lt;empty&gt;)> ]
+"58" [label = <(RETURN,return new DefaultProducer(this) {\012\012    public void process(Exchange exchange) {\012        PojoExchange pojoExchange = toExchangeType(exchange);\012        invoke(pojo, pojoExchange);\012        exchange.copyFrom(pojoExchange);\012    }\012};,return new DefaultProducer(this) {\012\012    public void process(Exchange exchange) {\012        PojoExchange pojoExchange = toExchangeType(exchange);\012        invoke(pojo, pojoExchange);\012        exchange.copyFrom(pojoExchange);\012    }\012};)<SUB>51</SUB>> ]
+"59" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>51</SUB>> ]
+"60" [label = <(&lt;operator&gt;.assignment,&lt;empty&gt;)> ]
+"61" [label = <(IDENTIFIER,$obj1,&lt;empty&gt;)> ]
+"62" [label = <(&lt;operator&gt;.alloc,new DefaultProducer(this) {\012\012    public void process(Exchange exchange) {\012        PojoExchange pojoExchange = toExchangeType(exchange);\012        invoke(pojo, pojoExchange);\012        exchange.copyFrom(pojoExchange);\012    }\012})<SUB>51</SUB>> ]
+"63" [label = <(&lt;init&gt;,new DefaultProducer(this) {\012\012    public void process(Exchange exchange) {\012        PojoExchange pojoExchange = toExchangeType(exchange);\012        invoke(pojo, pojoExchange);\012        exchange.copyFrom(pojoExchange);\012    }\012})<SUB>51</SUB>> ]
+"64" [label = <(IDENTIFIER,$obj1,new DefaultProducer(this) {\012\012    public void process(Exchange exchange) {\012        PojoExchange pojoExchange = toExchangeType(exchange);\012        invoke(pojo, pojoExchange);\012        exchange.copyFrom(pojoExchange);\012    }\012})> ]
+"9" [label = <(IDENTIFIER,this,new DefaultProducer(this) {\012\012    public void process(Exchange exchange) {\012        PojoExchange pojoExchange = toExchangeType(exchange);\012        invoke(pojo, pojoExchange);\012        exchange.copyFrom(pojoExchange);\012    }\012})<SUB>51</SUB>> ]
+"65" [label = <(IDENTIFIER,$obj1,&lt;empty&gt;)> ]
+"66" [label = <(MODIFIER,PUBLIC)> ]
+"67" [label = <(MODIFIER,VIRTUAL)> ]
+"68" [label = <(METHOD_RETURN,ANY)<SUB>45</SUB>> ]
+  "39" -> "7" 
+  "39" -> "40" 
+  "39" -> "66" 
+  "39" -> "67" 
+  "39" -> "68" 
+  "40" -> "41" 
+  "40" -> "42" 
+  "40" -> "45" 
+  "40" -> "58" 
+  "42" -> "43" 
+  "42" -> "44" 
+  "44" -> "6" 
+  "45" -> "46" 
+  "45" -> "49" 
+  "46" -> "47" 
+  "46" -> "48" 
+  "49" -> "50" 
+  "50" -> "51" 
+  "51" -> "52" 
+  "51" -> "55" 
+  "51" -> "57" 
+  "52" -> "53" 
+  "52" -> "54" 
+  "55" -> "56" 
+  "55" -> "8" 
+  "58" -> "59" 
+  "59" -> "60" 
+  "59" -> "63" 
+  "59" -> "65" 
+  "60" -> "61" 
+  "60" -> "62" 
+  "63" -> "64" 
+  "63" -> "9" 
+}

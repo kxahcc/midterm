@@ -1,0 +1,305 @@
+digraph "parseFromLocalFileData" {  
+"416" [label = <(METHOD,parseFromLocalFileData)<SUB>286</SUB>> ]
+"34" [label = <(PARAM,this)<SUB>286</SUB>> ]
+"417" [label = <(PARAM,byte[] data)<SUB>286</SUB>> ]
+"418" [label = <(PARAM,int offset)<SUB>286</SUB>> ]
+"419" [label = <(PARAM,int length)<SUB>286</SUB>> ]
+"420" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>287</SUB>> ]
+"421" [label = <(LOCAL,long givenChecksum: long)> ]
+"422" [label = <(&lt;operator&gt;.assignment,long givenChecksum = getValue(data, offset))<SUB>289</SUB>> ]
+"423" [label = <(IDENTIFIER,givenChecksum,long givenChecksum = getValue(data, offset))<SUB>289</SUB>> ]
+"424" [label = <(getValue,getValue(data, offset))<SUB>289</SUB>> ]
+"425" [label = <(IDENTIFIER,ZipLong,getValue(data, offset))<SUB>289</SUB>> ]
+"426" [label = <(IDENTIFIER,data,getValue(data, offset))<SUB>289</SUB>> ]
+"427" [label = <(IDENTIFIER,offset,getValue(data, offset))<SUB>289</SUB>> ]
+"428" [label = <(LOCAL,byte[] tmp: byte[])> ]
+"429" [label = <(&lt;operator&gt;.assignment,byte[] tmp = new byte[length - 4])<SUB>290</SUB>> ]
+"430" [label = <(IDENTIFIER,tmp,byte[] tmp = new byte[length - 4])<SUB>290</SUB>> ]
+"431" [label = <(&lt;operator&gt;.alloc,new byte[length - 4])> ]
+"432" [label = <(&lt;operator&gt;.subtraction,length - 4)<SUB>290</SUB>> ]
+"433" [label = <(IDENTIFIER,length,length - 4)<SUB>290</SUB>> ]
+"434" [label = <(LITERAL,4,length - 4)<SUB>290</SUB>> ]
+"435" [label = <(arraycopy,System.arraycopy(data, offset + 4, tmp, 0, length - 4))<SUB>291</SUB>> ]
+"436" [label = <(IDENTIFIER,System,System.arraycopy(data, offset + 4, tmp, 0, length - 4))<SUB>291</SUB>> ]
+"437" [label = <(IDENTIFIER,data,System.arraycopy(data, offset + 4, tmp, 0, length - 4))<SUB>291</SUB>> ]
+"438" [label = <(&lt;operator&gt;.addition,offset + 4)<SUB>291</SUB>> ]
+"439" [label = <(IDENTIFIER,offset,offset + 4)<SUB>291</SUB>> ]
+"440" [label = <(LITERAL,4,offset + 4)<SUB>291</SUB>> ]
+"441" [label = <(IDENTIFIER,tmp,System.arraycopy(data, offset + 4, tmp, 0, length - 4))<SUB>291</SUB>> ]
+"442" [label = <(LITERAL,0,System.arraycopy(data, offset + 4, tmp, 0, length - 4))<SUB>291</SUB>> ]
+"443" [label = <(&lt;operator&gt;.subtraction,length - 4)<SUB>291</SUB>> ]
+"444" [label = <(IDENTIFIER,length,length - 4)<SUB>291</SUB>> ]
+"445" [label = <(LITERAL,4,length - 4)<SUB>291</SUB>> ]
+"446" [label = <(reset,crc.reset())<SUB>292</SUB>> ]
+"447" [label = <(&lt;operator&gt;.fieldAccess,this.crc)<SUB>292</SUB>> ]
+"448" [label = <(IDENTIFIER,this,crc.reset())<SUB>292</SUB>> ]
+"449" [label = <(FIELD_IDENTIFIER,crc,crc)<SUB>292</SUB>> ]
+"450" [label = <(update,crc.update(tmp))<SUB>293</SUB>> ]
+"451" [label = <(&lt;operator&gt;.fieldAccess,this.crc)<SUB>293</SUB>> ]
+"452" [label = <(IDENTIFIER,this,crc.update(tmp))<SUB>293</SUB>> ]
+"453" [label = <(FIELD_IDENTIFIER,crc,crc)<SUB>293</SUB>> ]
+"454" [label = <(IDENTIFIER,tmp,crc.update(tmp))<SUB>293</SUB>> ]
+"455" [label = <(LOCAL,long realChecksum: long)> ]
+"456" [label = <(&lt;operator&gt;.assignment,long realChecksum = crc.getValue())<SUB>294</SUB>> ]
+"457" [label = <(IDENTIFIER,realChecksum,long realChecksum = crc.getValue())<SUB>294</SUB>> ]
+"458" [label = <(getValue,crc.getValue())<SUB>294</SUB>> ]
+"459" [label = <(&lt;operator&gt;.fieldAccess,this.crc)<SUB>294</SUB>> ]
+"460" [label = <(IDENTIFIER,this,crc.getValue())<SUB>294</SUB>> ]
+"461" [label = <(FIELD_IDENTIFIER,crc,crc)<SUB>294</SUB>> ]
+"462" [label = <(CONTROL_STRUCTURE,if (givenChecksum != realChecksum),if (givenChecksum != realChecksum))<SUB>295</SUB>> ]
+"463" [label = <(&lt;operator&gt;.notEquals,givenChecksum != realChecksum)<SUB>295</SUB>> ]
+"464" [label = <(IDENTIFIER,givenChecksum,givenChecksum != realChecksum)<SUB>295</SUB>> ]
+"465" [label = <(IDENTIFIER,realChecksum,givenChecksum != realChecksum)<SUB>295</SUB>> ]
+"466" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>295</SUB>> ]
+"467" [label = <(&lt;operator&gt;.throw,throw new ZipException(&quot;bad CRC checksum &quot; + Long.toHexString(givenChecksum) + &quot; instead of &quot; + Long.toHexString(realChecksum));)<SUB>296</SUB>> ]
+"468" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>296</SUB>> ]
+"469" [label = <(&lt;operator&gt;.assignment,&lt;empty&gt;)> ]
+"470" [label = <(IDENTIFIER,$obj3,&lt;empty&gt;)> ]
+"471" [label = <(&lt;operator&gt;.alloc,new ZipException(&quot;bad CRC checksum &quot; + Long.toHexString(givenChecksum) + &quot; instead of &quot; + Long.toHexString(realChecksum)))<SUB>296</SUB>> ]
+"472" [label = <(&lt;init&gt;,new ZipException(&quot;bad CRC checksum &quot; + Long.toHexString(givenChecksum) + &quot; instead of &quot; + Long.toHexString(realChecksum)))<SUB>296</SUB>> ]
+"473" [label = <(IDENTIFIER,$obj3,new ZipException(&quot;bad CRC checksum &quot; + Long.toHexString(givenChecksum) + &quot; instead of &quot; + Long.toHexString(realChecksum)))> ]
+"474" [label = <(&lt;operator&gt;.addition,&quot;bad CRC checksum &quot; + Long.toHexString(givenChecksum) + &quot; instead of &quot; + Long.toHexString(realChecksum))<SUB>296</SUB>> ]
+"475" [label = <(&lt;operator&gt;.addition,&quot;bad CRC checksum &quot; + Long.toHexString(givenChecksum) + &quot; instead of &quot;)<SUB>296</SUB>> ]
+"476" [label = <(&lt;operator&gt;.addition,&quot;bad CRC checksum &quot; + Long.toHexString(givenChecksum))<SUB>296</SUB>> ]
+"477" [label = <(LITERAL,&quot;bad CRC checksum &quot;,&quot;bad CRC checksum &quot; + Long.toHexString(givenChecksum))<SUB>296</SUB>> ]
+"478" [label = <(toHexString,Long.toHexString(givenChecksum))<SUB>297</SUB>> ]
+"479" [label = <(IDENTIFIER,Long,Long.toHexString(givenChecksum))<SUB>297</SUB>> ]
+"480" [label = <(IDENTIFIER,givenChecksum,Long.toHexString(givenChecksum))<SUB>297</SUB>> ]
+"481" [label = <(LITERAL,&quot; instead of &quot;,&quot;bad CRC checksum &quot; + Long.toHexString(givenChecksum) + &quot; instead of &quot;)<SUB>298</SUB>> ]
+"482" [label = <(toHexString,Long.toHexString(realChecksum))<SUB>299</SUB>> ]
+"483" [label = <(IDENTIFIER,Long,Long.toHexString(realChecksum))<SUB>299</SUB>> ]
+"484" [label = <(IDENTIFIER,realChecksum,Long.toHexString(realChecksum))<SUB>299</SUB>> ]
+"485" [label = <(IDENTIFIER,$obj3,&lt;empty&gt;)> ]
+"486" [label = <(LOCAL,int newMode: int)> ]
+"487" [label = <(&lt;operator&gt;.assignment,int newMode = getValue(tmp, 0))<SUB>302</SUB>> ]
+"488" [label = <(IDENTIFIER,newMode,int newMode = getValue(tmp, 0))<SUB>302</SUB>> ]
+"489" [label = <(getValue,getValue(tmp, 0))<SUB>302</SUB>> ]
+"490" [label = <(IDENTIFIER,ZipShort,getValue(tmp, 0))<SUB>302</SUB>> ]
+"491" [label = <(IDENTIFIER,tmp,getValue(tmp, 0))<SUB>302</SUB>> ]
+"492" [label = <(LITERAL,0,getValue(tmp, 0))<SUB>302</SUB>> ]
+"493" [label = <(LOCAL,byte[] linkArray: byte[])> ]
+"494" [label = <(&lt;operator&gt;.assignment,byte[] linkArray = new byte[(int) ZipLong.getValue(tmp, 2)])<SUB>303</SUB>> ]
+"495" [label = <(IDENTIFIER,linkArray,byte[] linkArray = new byte[(int) ZipLong.getValue(tmp, 2)])<SUB>303</SUB>> ]
+"496" [label = <(&lt;operator&gt;.alloc,new byte[(int) ZipLong.getValue(tmp, 2)])> ]
+"497" [label = <(&lt;operator&gt;.cast,(int) ZipLong.getValue(tmp, 2))<SUB>303</SUB>> ]
+"498" [label = <(TYPE_REF,int,int)<SUB>303</SUB>> ]
+"499" [label = <(getValue,getValue(tmp, 2))<SUB>303</SUB>> ]
+"500" [label = <(IDENTIFIER,ZipLong,getValue(tmp, 2))<SUB>303</SUB>> ]
+"501" [label = <(IDENTIFIER,tmp,getValue(tmp, 2))<SUB>303</SUB>> ]
+"502" [label = <(LITERAL,2,getValue(tmp, 2))<SUB>303</SUB>> ]
+"503" [label = <(&lt;operator&gt;.assignment,this.uid = getValue(tmp, 6))<SUB>304</SUB>> ]
+"504" [label = <(&lt;operator&gt;.fieldAccess,this.uid)<SUB>304</SUB>> ]
+"505" [label = <(IDENTIFIER,this,this.uid = getValue(tmp, 6))<SUB>304</SUB>> ]
+"506" [label = <(FIELD_IDENTIFIER,uid,uid)<SUB>304</SUB>> ]
+"507" [label = <(getValue,getValue(tmp, 6))<SUB>304</SUB>> ]
+"508" [label = <(IDENTIFIER,ZipShort,getValue(tmp, 6))<SUB>304</SUB>> ]
+"509" [label = <(IDENTIFIER,tmp,getValue(tmp, 6))<SUB>304</SUB>> ]
+"510" [label = <(LITERAL,6,getValue(tmp, 6))<SUB>304</SUB>> ]
+"511" [label = <(&lt;operator&gt;.assignment,this.gid = getValue(tmp, 8))<SUB>305</SUB>> ]
+"512" [label = <(&lt;operator&gt;.fieldAccess,this.gid)<SUB>305</SUB>> ]
+"513" [label = <(IDENTIFIER,this,this.gid = getValue(tmp, 8))<SUB>305</SUB>> ]
+"514" [label = <(FIELD_IDENTIFIER,gid,gid)<SUB>305</SUB>> ]
+"515" [label = <(getValue,getValue(tmp, 8))<SUB>305</SUB>> ]
+"516" [label = <(IDENTIFIER,ZipShort,getValue(tmp, 8))<SUB>305</SUB>> ]
+"517" [label = <(IDENTIFIER,tmp,getValue(tmp, 8))<SUB>305</SUB>> ]
+"518" [label = <(LITERAL,8,getValue(tmp, 8))<SUB>305</SUB>> ]
+"519" [label = <(CONTROL_STRUCTURE,if (linkArray.length == 0),if (linkArray.length == 0))<SUB>307</SUB>> ]
+"520" [label = <(&lt;operator&gt;.equals,linkArray.length == 0)<SUB>307</SUB>> ]
+"521" [label = <(&lt;operator&gt;.fieldAccess,linkArray.length)<SUB>307</SUB>> ]
+"522" [label = <(IDENTIFIER,linkArray,linkArray.length == 0)<SUB>307</SUB>> ]
+"523" [label = <(FIELD_IDENTIFIER,length,length)<SUB>307</SUB>> ]
+"524" [label = <(LITERAL,0,linkArray.length == 0)<SUB>307</SUB>> ]
+"525" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>307</SUB>> ]
+"526" [label = <(&lt;operator&gt;.assignment,this.link = &quot;&quot;)<SUB>308</SUB>> ]
+"527" [label = <(&lt;operator&gt;.fieldAccess,this.link)<SUB>308</SUB>> ]
+"528" [label = <(IDENTIFIER,this,this.link = &quot;&quot;)<SUB>308</SUB>> ]
+"529" [label = <(FIELD_IDENTIFIER,link,link)<SUB>308</SUB>> ]
+"530" [label = <(LITERAL,&quot;&quot;,this.link = &quot;&quot;)<SUB>308</SUB>> ]
+"531" [label = <(CONTROL_STRUCTURE,else,else)<SUB>309</SUB>> ]
+"532" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>309</SUB>> ]
+"533" [label = <(arraycopy,System.arraycopy(tmp, 10, linkArray, 0, linkArray.length))<SUB>310</SUB>> ]
+"534" [label = <(IDENTIFIER,System,System.arraycopy(tmp, 10, linkArray, 0, linkArray.length))<SUB>310</SUB>> ]
+"535" [label = <(IDENTIFIER,tmp,System.arraycopy(tmp, 10, linkArray, 0, linkArray.length))<SUB>310</SUB>> ]
+"536" [label = <(LITERAL,10,System.arraycopy(tmp, 10, linkArray, 0, linkArray.length))<SUB>310</SUB>> ]
+"537" [label = <(IDENTIFIER,linkArray,System.arraycopy(tmp, 10, linkArray, 0, linkArray.length))<SUB>310</SUB>> ]
+"538" [label = <(LITERAL,0,System.arraycopy(tmp, 10, linkArray, 0, linkArray.length))<SUB>310</SUB>> ]
+"539" [label = <(&lt;operator&gt;.fieldAccess,linkArray.length)<SUB>310</SUB>> ]
+"540" [label = <(IDENTIFIER,linkArray,System.arraycopy(tmp, 10, linkArray, 0, linkArray.length))<SUB>310</SUB>> ]
+"541" [label = <(FIELD_IDENTIFIER,length,length)<SUB>310</SUB>> ]
+"542" [label = <(&lt;operator&gt;.assignment,this.link = new String(linkArray))<SUB>311</SUB>> ]
+"543" [label = <(&lt;operator&gt;.fieldAccess,this.link)<SUB>311</SUB>> ]
+"544" [label = <(IDENTIFIER,this,this.link = new String(linkArray))<SUB>311</SUB>> ]
+"545" [label = <(FIELD_IDENTIFIER,link,link)<SUB>311</SUB>> ]
+"546" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>311</SUB>> ]
+"547" [label = <(&lt;operator&gt;.assignment,&lt;empty&gt;)> ]
+"548" [label = <(IDENTIFIER,$obj4,&lt;empty&gt;)> ]
+"549" [label = <(&lt;operator&gt;.alloc,new String(linkArray))<SUB>311</SUB>> ]
+"550" [label = <(&lt;init&gt;,new String(linkArray))<SUB>311</SUB>> ]
+"551" [label = <(IDENTIFIER,$obj4,new String(linkArray))> ]
+"552" [label = <(IDENTIFIER,linkArray,new String(linkArray))<SUB>311</SUB>> ]
+"553" [label = <(IDENTIFIER,$obj4,&lt;empty&gt;)> ]
+"554" [label = <(setDirectory,this.setDirectory((newMode &amp; DIR_FLAG) != 0))<SUB>313</SUB>> ]
+"33" [label = <(IDENTIFIER,this,this.setDirectory((newMode &amp; DIR_FLAG) != 0))<SUB>313</SUB>> ]
+"555" [label = <(&lt;operator&gt;.notEquals,(newMode &amp; DIR_FLAG) != 0)<SUB>313</SUB>> ]
+"556" [label = <(&lt;operator&gt;.and,newMode &amp; DIR_FLAG)<SUB>313</SUB>> ]
+"557" [label = <(IDENTIFIER,newMode,newMode &amp; DIR_FLAG)<SUB>313</SUB>> ]
+"558" [label = <(IDENTIFIER,DIR_FLAG,newMode &amp; DIR_FLAG)<SUB>313</SUB>> ]
+"559" [label = <(LITERAL,0,(newMode &amp; DIR_FLAG) != 0)<SUB>313</SUB>> ]
+"560" [label = <(setMode,this.setMode(newMode))<SUB>314</SUB>> ]
+"35" [label = <(IDENTIFIER,this,this.setMode(newMode))<SUB>314</SUB>> ]
+"561" [label = <(IDENTIFIER,newMode,this.setMode(newMode))<SUB>314</SUB>> ]
+"562" [label = <(MODIFIER,PUBLIC)> ]
+"563" [label = <(MODIFIER,VIRTUAL)> ]
+"564" [label = <(METHOD_RETURN,void)<SUB>286</SUB>> ]
+  "416" -> "34" 
+  "416" -> "417" 
+  "416" -> "418" 
+  "416" -> "419" 
+  "416" -> "420" 
+  "416" -> "562" 
+  "416" -> "563" 
+  "416" -> "564" 
+  "420" -> "421" 
+  "420" -> "422" 
+  "420" -> "428" 
+  "420" -> "429" 
+  "420" -> "435" 
+  "420" -> "446" 
+  "420" -> "450" 
+  "420" -> "455" 
+  "420" -> "456" 
+  "420" -> "462" 
+  "420" -> "486" 
+  "420" -> "487" 
+  "420" -> "493" 
+  "420" -> "494" 
+  "420" -> "503" 
+  "420" -> "511" 
+  "420" -> "519" 
+  "420" -> "554" 
+  "420" -> "560" 
+  "422" -> "423" 
+  "422" -> "424" 
+  "424" -> "425" 
+  "424" -> "426" 
+  "424" -> "427" 
+  "429" -> "430" 
+  "429" -> "431" 
+  "431" -> "432" 
+  "432" -> "433" 
+  "432" -> "434" 
+  "435" -> "436" 
+  "435" -> "437" 
+  "435" -> "438" 
+  "435" -> "441" 
+  "435" -> "442" 
+  "435" -> "443" 
+  "438" -> "439" 
+  "438" -> "440" 
+  "443" -> "444" 
+  "443" -> "445" 
+  "446" -> "447" 
+  "447" -> "448" 
+  "447" -> "449" 
+  "450" -> "451" 
+  "450" -> "454" 
+  "451" -> "452" 
+  "451" -> "453" 
+  "456" -> "457" 
+  "456" -> "458" 
+  "458" -> "459" 
+  "459" -> "460" 
+  "459" -> "461" 
+  "462" -> "463" 
+  "462" -> "466" 
+  "463" -> "464" 
+  "463" -> "465" 
+  "466" -> "467" 
+  "467" -> "468" 
+  "468" -> "469" 
+  "468" -> "472" 
+  "468" -> "485" 
+  "469" -> "470" 
+  "469" -> "471" 
+  "472" -> "473" 
+  "472" -> "474" 
+  "474" -> "475" 
+  "474" -> "482" 
+  "475" -> "476" 
+  "475" -> "481" 
+  "476" -> "477" 
+  "476" -> "478" 
+  "478" -> "479" 
+  "478" -> "480" 
+  "482" -> "483" 
+  "482" -> "484" 
+  "487" -> "488" 
+  "487" -> "489" 
+  "489" -> "490" 
+  "489" -> "491" 
+  "489" -> "492" 
+  "494" -> "495" 
+  "494" -> "496" 
+  "496" -> "497" 
+  "497" -> "498" 
+  "497" -> "499" 
+  "499" -> "500" 
+  "499" -> "501" 
+  "499" -> "502" 
+  "503" -> "504" 
+  "503" -> "507" 
+  "504" -> "505" 
+  "504" -> "506" 
+  "507" -> "508" 
+  "507" -> "509" 
+  "507" -> "510" 
+  "511" -> "512" 
+  "511" -> "515" 
+  "512" -> "513" 
+  "512" -> "514" 
+  "515" -> "516" 
+  "515" -> "517" 
+  "515" -> "518" 
+  "519" -> "520" 
+  "519" -> "525" 
+  "519" -> "531" 
+  "520" -> "521" 
+  "520" -> "524" 
+  "521" -> "522" 
+  "521" -> "523" 
+  "525" -> "526" 
+  "526" -> "527" 
+  "526" -> "530" 
+  "527" -> "528" 
+  "527" -> "529" 
+  "531" -> "532" 
+  "532" -> "533" 
+  "532" -> "542" 
+  "533" -> "534" 
+  "533" -> "535" 
+  "533" -> "536" 
+  "533" -> "537" 
+  "533" -> "538" 
+  "533" -> "539" 
+  "539" -> "540" 
+  "539" -> "541" 
+  "542" -> "543" 
+  "542" -> "546" 
+  "543" -> "544" 
+  "543" -> "545" 
+  "546" -> "547" 
+  "546" -> "550" 
+  "546" -> "553" 
+  "547" -> "548" 
+  "547" -> "549" 
+  "550" -> "551" 
+  "550" -> "552" 
+  "554" -> "33" 
+  "554" -> "555" 
+  "555" -> "556" 
+  "555" -> "559" 
+  "556" -> "557" 
+  "556" -> "558" 
+  "560" -> "35" 
+  "560" -> "561" 
+}

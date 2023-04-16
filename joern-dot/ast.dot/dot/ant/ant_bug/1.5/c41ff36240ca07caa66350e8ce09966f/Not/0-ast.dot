@@ -1,0 +1,89 @@
+digraph "eval" {  
+"11" [label = <(METHOD,eval)<SUB>71</SUB>> ]
+"4" [label = <(PARAM,this)<SUB>71</SUB>> ]
+"12" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>71</SUB>> ]
+"13" [label = <(CONTROL_STRUCTURE,if (countConditions() &gt; 1),if (countConditions() &gt; 1))<SUB>72</SUB>> ]
+"14" [label = <(&lt;operator&gt;.greaterThan,countConditions() &gt; 1)<SUB>72</SUB>> ]
+"15" [label = <(countConditions,countConditions())<SUB>72</SUB>> ]
+"3" [label = <(IDENTIFIER,this,countConditions())<SUB>72</SUB>> ]
+"16" [label = <(LITERAL,1,countConditions() &gt; 1)<SUB>72</SUB>> ]
+"17" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>72</SUB>> ]
+"18" [label = <(&lt;operator&gt;.throw,throw new BuildException(&quot;You must not nest more than one condition into &lt;not&gt;&quot;);)<SUB>73</SUB>> ]
+"19" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>73</SUB>> ]
+"20" [label = <(&lt;operator&gt;.assignment,&lt;empty&gt;)> ]
+"21" [label = <(IDENTIFIER,$obj0,&lt;empty&gt;)> ]
+"22" [label = <(&lt;operator&gt;.alloc,new BuildException(&quot;You must not nest more than one condition into &lt;not&gt;&quot;))<SUB>73</SUB>> ]
+"23" [label = <(&lt;init&gt;,new BuildException(&quot;You must not nest more than one condition into &lt;not&gt;&quot;))<SUB>73</SUB>> ]
+"24" [label = <(IDENTIFIER,$obj0,new BuildException(&quot;You must not nest more than one condition into &lt;not&gt;&quot;))> ]
+"25" [label = <(LITERAL,&quot;You must not nest more than one condition into &lt;not&gt;&quot;,new BuildException(&quot;You must not nest more than one condition into &lt;not&gt;&quot;))<SUB>73</SUB>> ]
+"26" [label = <(IDENTIFIER,$obj0,&lt;empty&gt;)> ]
+"27" [label = <(CONTROL_STRUCTURE,if (countConditions() &lt; 1),if (countConditions() &lt; 1))<SUB>75</SUB>> ]
+"28" [label = <(&lt;operator&gt;.lessThan,countConditions() &lt; 1)<SUB>75</SUB>> ]
+"29" [label = <(countConditions,countConditions())<SUB>75</SUB>> ]
+"5" [label = <(IDENTIFIER,this,countConditions())<SUB>75</SUB>> ]
+"30" [label = <(LITERAL,1,countConditions() &lt; 1)<SUB>75</SUB>> ]
+"31" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>75</SUB>> ]
+"32" [label = <(&lt;operator&gt;.throw,throw new BuildException(&quot;You must nest a condition into &lt;not&gt;&quot;);)<SUB>76</SUB>> ]
+"33" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>76</SUB>> ]
+"34" [label = <(&lt;operator&gt;.assignment,&lt;empty&gt;)> ]
+"35" [label = <(IDENTIFIER,$obj1,&lt;empty&gt;)> ]
+"36" [label = <(&lt;operator&gt;.alloc,new BuildException(&quot;You must nest a condition into &lt;not&gt;&quot;))<SUB>76</SUB>> ]
+"37" [label = <(&lt;init&gt;,new BuildException(&quot;You must nest a condition into &lt;not&gt;&quot;))<SUB>76</SUB>> ]
+"38" [label = <(IDENTIFIER,$obj1,new BuildException(&quot;You must nest a condition into &lt;not&gt;&quot;))> ]
+"39" [label = <(LITERAL,&quot;You must nest a condition into &lt;not&gt;&quot;,new BuildException(&quot;You must nest a condition into &lt;not&gt;&quot;))<SUB>76</SUB>> ]
+"40" [label = <(IDENTIFIER,$obj1,&lt;empty&gt;)> ]
+"41" [label = <(RETURN,return !((Condition) getConditions().nextElement()).eval();,return !((Condition) getConditions().nextElement()).eval();)<SUB>78</SUB>> ]
+"42" [label = <(&lt;operator&gt;.logicalNot,!((Condition) getConditions().nextElement()).eval())<SUB>78</SUB>> ]
+"43" [label = <(eval,eval())<SUB>78</SUB>> ]
+"44" [label = <(&lt;operator&gt;.cast,(Condition) getConditions().nextElement())<SUB>78</SUB>> ]
+"45" [label = <(TYPE_REF,Condition,Condition)<SUB>78</SUB>> ]
+"46" [label = <(nextElement,nextElement())<SUB>78</SUB>> ]
+"47" [label = <(getConditions,getConditions())<SUB>78</SUB>> ]
+"6" [label = <(IDENTIFIER,this,getConditions())<SUB>78</SUB>> ]
+"48" [label = <(MODIFIER,PUBLIC)> ]
+"49" [label = <(MODIFIER,VIRTUAL)> ]
+"50" [label = <(METHOD_RETURN,boolean)<SUB>71</SUB>> ]
+  "11" -> "4" 
+  "11" -> "12" 
+  "11" -> "48" 
+  "11" -> "49" 
+  "11" -> "50" 
+  "12" -> "13" 
+  "12" -> "27" 
+  "12" -> "41" 
+  "13" -> "14" 
+  "13" -> "17" 
+  "14" -> "15" 
+  "14" -> "16" 
+  "15" -> "3" 
+  "17" -> "18" 
+  "18" -> "19" 
+  "19" -> "20" 
+  "19" -> "23" 
+  "19" -> "26" 
+  "20" -> "21" 
+  "20" -> "22" 
+  "23" -> "24" 
+  "23" -> "25" 
+  "27" -> "28" 
+  "27" -> "31" 
+  "28" -> "29" 
+  "28" -> "30" 
+  "29" -> "5" 
+  "31" -> "32" 
+  "32" -> "33" 
+  "33" -> "34" 
+  "33" -> "37" 
+  "33" -> "40" 
+  "34" -> "35" 
+  "34" -> "36" 
+  "37" -> "38" 
+  "37" -> "39" 
+  "41" -> "42" 
+  "42" -> "43" 
+  "43" -> "44" 
+  "44" -> "45" 
+  "44" -> "46" 
+  "46" -> "47" 
+  "47" -> "6" 
+}

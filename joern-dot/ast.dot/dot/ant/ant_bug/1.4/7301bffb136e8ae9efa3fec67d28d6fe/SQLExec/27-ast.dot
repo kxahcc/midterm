@@ -1,0 +1,283 @@
+digraph "printResults" {  
+"1492" [label = <(METHOD,printResults)<SUB>607</SUB>> ]
+"81" [label = <(PARAM,this)<SUB>607</SUB>> ]
+"1493" [label = <(PARAM,PrintStream out)<SUB>607</SUB>> ]
+"1494" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>607</SUB>> ]
+"1495" [label = <(LOCAL,ResultSet rs: java.sql.ResultSet)> ]
+"1496" [label = <(&lt;operator&gt;.assignment,ResultSet rs = null)<SUB>608</SUB>> ]
+"1497" [label = <(IDENTIFIER,rs,ResultSet rs = null)<SUB>608</SUB>> ]
+"1498" [label = <(LITERAL,null,ResultSet rs = null)<SUB>608</SUB>> ]
+"1499" [label = <(CONTROL_STRUCTURE,do {...} while (statement.getMoreResults()),do {...} while (statement.getMoreResults()))<SUB>609</SUB>> ]
+"1500" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>609</SUB>> ]
+"1501" [label = <(&lt;operator&gt;.assignment,rs = statement.getResultSet())<SUB>610</SUB>> ]
+"1502" [label = <(IDENTIFIER,rs,rs = statement.getResultSet())<SUB>610</SUB>> ]
+"1503" [label = <(getResultSet,statement.getResultSet())<SUB>610</SUB>> ]
+"1504" [label = <(&lt;operator&gt;.fieldAccess,this.statement)<SUB>610</SUB>> ]
+"1505" [label = <(IDENTIFIER,this,statement.getResultSet())<SUB>610</SUB>> ]
+"1506" [label = <(FIELD_IDENTIFIER,statement,statement)<SUB>610</SUB>> ]
+"1507" [label = <(CONTROL_STRUCTURE,if (rs != null),if (rs != null))<SUB>611</SUB>> ]
+"1508" [label = <(&lt;operator&gt;.notEquals,rs != null)<SUB>611</SUB>> ]
+"1509" [label = <(IDENTIFIER,rs,rs != null)<SUB>611</SUB>> ]
+"1510" [label = <(LITERAL,null,rs != null)<SUB>611</SUB>> ]
+"1511" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>611</SUB>> ]
+"1512" [label = <(log,log(&quot;Processing new result set.&quot;, Project.MSG_VERBOSE))<SUB>612</SUB>> ]
+"80" [label = <(IDENTIFIER,this,log(&quot;Processing new result set.&quot;, Project.MSG_VERBOSE))<SUB>612</SUB>> ]
+"1513" [label = <(LITERAL,&quot;Processing new result set.&quot;,log(&quot;Processing new result set.&quot;, Project.MSG_VERBOSE))<SUB>612</SUB>> ]
+"1514" [label = <(&lt;operator&gt;.fieldAccess,Project.MSG_VERBOSE)<SUB>612</SUB>> ]
+"1515" [label = <(IDENTIFIER,Project,log(&quot;Processing new result set.&quot;, Project.MSG_VERBOSE))<SUB>612</SUB>> ]
+"1516" [label = <(FIELD_IDENTIFIER,MSG_VERBOSE,MSG_VERBOSE)<SUB>612</SUB>> ]
+"1517" [label = <(LOCAL,ResultSetMetaData md: java.sql.ResultSetMetaData)> ]
+"1518" [label = <(&lt;operator&gt;.assignment,ResultSetMetaData md = rs.getMetaData())<SUB>613</SUB>> ]
+"1519" [label = <(IDENTIFIER,md,ResultSetMetaData md = rs.getMetaData())<SUB>613</SUB>> ]
+"1520" [label = <(getMetaData,rs.getMetaData())<SUB>613</SUB>> ]
+"1521" [label = <(IDENTIFIER,rs,rs.getMetaData())<SUB>613</SUB>> ]
+"1522" [label = <(LOCAL,int columnCount: int)> ]
+"1523" [label = <(&lt;operator&gt;.assignment,int columnCount = md.getColumnCount())<SUB>614</SUB>> ]
+"1524" [label = <(IDENTIFIER,columnCount,int columnCount = md.getColumnCount())<SUB>614</SUB>> ]
+"1525" [label = <(getColumnCount,md.getColumnCount())<SUB>614</SUB>> ]
+"1526" [label = <(IDENTIFIER,md,md.getColumnCount())<SUB>614</SUB>> ]
+"83" [label = <(LOCAL,StringBuffer line: java.lang.StringBuffer)> ]
+"1527" [label = <(&lt;operator&gt;.assignment,StringBuffer line = new StringBuffer())<SUB>615</SUB>> ]
+"1528" [label = <(IDENTIFIER,line,StringBuffer line = new StringBuffer())<SUB>615</SUB>> ]
+"1529" [label = <(&lt;operator&gt;.alloc,new StringBuffer())<SUB>615</SUB>> ]
+"1530" [label = <(&lt;init&gt;,new StringBuffer())<SUB>615</SUB>> ]
+"82" [label = <(IDENTIFIER,line,new StringBuffer())<SUB>615</SUB>> ]
+"1531" [label = <(CONTROL_STRUCTURE,if (showheaders),if (showheaders))<SUB>616</SUB>> ]
+"1532" [label = <(&lt;operator&gt;.fieldAccess,this.showheaders)<SUB>616</SUB>> ]
+"1533" [label = <(IDENTIFIER,this,if (showheaders))<SUB>616</SUB>> ]
+"1534" [label = <(FIELD_IDENTIFIER,showheaders,showheaders)<SUB>616</SUB>> ]
+"1535" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>616</SUB>> ]
+"1536" [label = <(CONTROL_STRUCTURE,for (int col = 1; Some(col &lt; columnCount); col++),for (int col = 1; Some(col &lt; columnCount); col++))<SUB>617</SUB>> ]
+"1537" [label = <(LOCAL,int col: int)> ]
+"1538" [label = <(&lt;operator&gt;.assignment,int col = 1)<SUB>617</SUB>> ]
+"1539" [label = <(IDENTIFIER,col,int col = 1)<SUB>617</SUB>> ]
+"1540" [label = <(LITERAL,1,int col = 1)<SUB>617</SUB>> ]
+"1541" [label = <(&lt;operator&gt;.lessThan,col &lt; columnCount)<SUB>617</SUB>> ]
+"1542" [label = <(IDENTIFIER,col,col &lt; columnCount)<SUB>617</SUB>> ]
+"1543" [label = <(IDENTIFIER,columnCount,col &lt; columnCount)<SUB>617</SUB>> ]
+"1544" [label = <(&lt;operator&gt;.postIncrement,col++)<SUB>617</SUB>> ]
+"1545" [label = <(IDENTIFIER,col,col++)<SUB>617</SUB>> ]
+"1546" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>617</SUB>> ]
+"1547" [label = <(append,line.append(md.getColumnName(col)))<SUB>618</SUB>> ]
+"1548" [label = <(IDENTIFIER,line,line.append(md.getColumnName(col)))<SUB>618</SUB>> ]
+"1549" [label = <(getColumnName,md.getColumnName(col))<SUB>618</SUB>> ]
+"1550" [label = <(IDENTIFIER,md,md.getColumnName(col))<SUB>618</SUB>> ]
+"1551" [label = <(IDENTIFIER,col,md.getColumnName(col))<SUB>618</SUB>> ]
+"1552" [label = <(append,line.append(&quot;,&quot;))<SUB>619</SUB>> ]
+"1553" [label = <(IDENTIFIER,line,line.append(&quot;,&quot;))<SUB>619</SUB>> ]
+"1554" [label = <(LITERAL,&quot;,&quot;,line.append(&quot;,&quot;))<SUB>619</SUB>> ]
+"1555" [label = <(append,line.append(md.getColumnName(columnCount)))<SUB>621</SUB>> ]
+"1556" [label = <(IDENTIFIER,line,line.append(md.getColumnName(columnCount)))<SUB>621</SUB>> ]
+"1557" [label = <(getColumnName,md.getColumnName(columnCount))<SUB>621</SUB>> ]
+"1558" [label = <(IDENTIFIER,md,md.getColumnName(columnCount))<SUB>621</SUB>> ]
+"1559" [label = <(IDENTIFIER,columnCount,md.getColumnName(columnCount))<SUB>621</SUB>> ]
+"1560" [label = <(println,out.println(line))<SUB>622</SUB>> ]
+"1561" [label = <(IDENTIFIER,out,out.println(line))<SUB>622</SUB>> ]
+"1562" [label = <(IDENTIFIER,line,out.println(line))<SUB>622</SUB>> ]
+"1563" [label = <(setLength,line.setLength(0))<SUB>623</SUB>> ]
+"1564" [label = <(IDENTIFIER,line,line.setLength(0))<SUB>623</SUB>> ]
+"1565" [label = <(LITERAL,0,line.setLength(0))<SUB>623</SUB>> ]
+"1566" [label = <(CONTROL_STRUCTURE,while (rs.next()),while (rs.next()))<SUB>625</SUB>> ]
+"1567" [label = <(next,rs.next())<SUB>625</SUB>> ]
+"1568" [label = <(IDENTIFIER,rs,rs.next())<SUB>625</SUB>> ]
+"1569" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>625</SUB>> ]
+"1570" [label = <(LOCAL,boolean first: boolean)> ]
+"1571" [label = <(&lt;operator&gt;.assignment,boolean first = true)<SUB>626</SUB>> ]
+"1572" [label = <(IDENTIFIER,first,boolean first = true)<SUB>626</SUB>> ]
+"1573" [label = <(LITERAL,true,boolean first = true)<SUB>626</SUB>> ]
+"1574" [label = <(CONTROL_STRUCTURE,for (int col = 1; Some(col &lt;= columnCount); col++),for (int col = 1; Some(col &lt;= columnCount); col++))<SUB>627</SUB>> ]
+"1575" [label = <(LOCAL,int col: int)> ]
+"1576" [label = <(&lt;operator&gt;.assignment,int col = 1)<SUB>627</SUB>> ]
+"1577" [label = <(IDENTIFIER,col,int col = 1)<SUB>627</SUB>> ]
+"1578" [label = <(LITERAL,1,int col = 1)<SUB>627</SUB>> ]
+"1579" [label = <(&lt;operator&gt;.lessEqualsThan,col &lt;= columnCount)<SUB>627</SUB>> ]
+"1580" [label = <(IDENTIFIER,col,col &lt;= columnCount)<SUB>627</SUB>> ]
+"1581" [label = <(IDENTIFIER,columnCount,col &lt;= columnCount)<SUB>627</SUB>> ]
+"1582" [label = <(&lt;operator&gt;.postIncrement,col++)<SUB>627</SUB>> ]
+"1583" [label = <(IDENTIFIER,col,col++)<SUB>627</SUB>> ]
+"1584" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>627</SUB>> ]
+"1585" [label = <(LOCAL,String columnValue: java.lang.String)> ]
+"1586" [label = <(&lt;operator&gt;.assignment,String columnValue = rs.getString(col))<SUB>628</SUB>> ]
+"1587" [label = <(IDENTIFIER,columnValue,String columnValue = rs.getString(col))<SUB>628</SUB>> ]
+"1588" [label = <(getString,rs.getString(col))<SUB>628</SUB>> ]
+"1589" [label = <(IDENTIFIER,rs,rs.getString(col))<SUB>628</SUB>> ]
+"1590" [label = <(IDENTIFIER,col,rs.getString(col))<SUB>628</SUB>> ]
+"1591" [label = <(CONTROL_STRUCTURE,if (columnValue != null),if (columnValue != null))<SUB>629</SUB>> ]
+"1592" [label = <(&lt;operator&gt;.notEquals,columnValue != null)<SUB>629</SUB>> ]
+"1593" [label = <(IDENTIFIER,columnValue,columnValue != null)<SUB>629</SUB>> ]
+"1594" [label = <(LITERAL,null,columnValue != null)<SUB>629</SUB>> ]
+"1595" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>629</SUB>> ]
+"1596" [label = <(&lt;operator&gt;.assignment,columnValue = columnValue.trim())<SUB>630</SUB>> ]
+"1597" [label = <(IDENTIFIER,columnValue,columnValue = columnValue.trim())<SUB>630</SUB>> ]
+"1598" [label = <(trim,columnValue.trim())<SUB>630</SUB>> ]
+"1599" [label = <(IDENTIFIER,columnValue,columnValue.trim())<SUB>630</SUB>> ]
+"1600" [label = <(CONTROL_STRUCTURE,if (first),if (first))<SUB>633</SUB>> ]
+"1601" [label = <(IDENTIFIER,first,if (first))<SUB>633</SUB>> ]
+"1602" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>633</SUB>> ]
+"1603" [label = <(&lt;operator&gt;.assignment,first = false)<SUB>634</SUB>> ]
+"1604" [label = <(IDENTIFIER,first,first = false)<SUB>634</SUB>> ]
+"1605" [label = <(LITERAL,false,first = false)<SUB>634</SUB>> ]
+"1606" [label = <(CONTROL_STRUCTURE,else,else)<SUB>636</SUB>> ]
+"1607" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>636</SUB>> ]
+"1608" [label = <(append,line.append(&quot;,&quot;))<SUB>637</SUB>> ]
+"1609" [label = <(IDENTIFIER,line,line.append(&quot;,&quot;))<SUB>637</SUB>> ]
+"1610" [label = <(LITERAL,&quot;,&quot;,line.append(&quot;,&quot;))<SUB>637</SUB>> ]
+"1611" [label = <(append,line.append(columnValue))<SUB>639</SUB>> ]
+"1612" [label = <(IDENTIFIER,line,line.append(columnValue))<SUB>639</SUB>> ]
+"1613" [label = <(IDENTIFIER,columnValue,line.append(columnValue))<SUB>639</SUB>> ]
+"1614" [label = <(println,out.println(line))<SUB>641</SUB>> ]
+"1615" [label = <(IDENTIFIER,out,out.println(line))<SUB>641</SUB>> ]
+"1616" [label = <(IDENTIFIER,line,out.println(line))<SUB>641</SUB>> ]
+"1617" [label = <(setLength,line.setLength(0))<SUB>642</SUB>> ]
+"1618" [label = <(IDENTIFIER,line,line.setLength(0))<SUB>642</SUB>> ]
+"1619" [label = <(LITERAL,0,line.setLength(0))<SUB>642</SUB>> ]
+"1620" [label = <(getMoreResults,statement.getMoreResults())<SUB>646</SUB>> ]
+"1621" [label = <(&lt;operator&gt;.fieldAccess,this.statement)<SUB>646</SUB>> ]
+"1622" [label = <(IDENTIFIER,this,statement.getMoreResults())<SUB>646</SUB>> ]
+"1623" [label = <(FIELD_IDENTIFIER,statement,statement)<SUB>646</SUB>> ]
+"1624" [label = <(println,out.println())<SUB>647</SUB>> ]
+"1625" [label = <(IDENTIFIER,out,out.println())<SUB>647</SUB>> ]
+"1626" [label = <(MODIFIER,PROTECTED)> ]
+"1627" [label = <(MODIFIER,VIRTUAL)> ]
+"1628" [label = <(METHOD_RETURN,void)<SUB>607</SUB>> ]
+  "1492" -> "81" 
+  "1492" -> "1493" 
+  "1492" -> "1494" 
+  "1492" -> "1626" 
+  "1492" -> "1627" 
+  "1492" -> "1628" 
+  "1494" -> "1495" 
+  "1494" -> "1496" 
+  "1494" -> "1499" 
+  "1494" -> "1624" 
+  "1496" -> "1497" 
+  "1496" -> "1498" 
+  "1499" -> "1500" 
+  "1499" -> "1620" 
+  "1500" -> "1501" 
+  "1500" -> "1507" 
+  "1501" -> "1502" 
+  "1501" -> "1503" 
+  "1503" -> "1504" 
+  "1504" -> "1505" 
+  "1504" -> "1506" 
+  "1507" -> "1508" 
+  "1507" -> "1511" 
+  "1508" -> "1509" 
+  "1508" -> "1510" 
+  "1511" -> "1512" 
+  "1511" -> "1517" 
+  "1511" -> "1518" 
+  "1511" -> "1522" 
+  "1511" -> "1523" 
+  "1511" -> "83" 
+  "1511" -> "1527" 
+  "1511" -> "1530" 
+  "1511" -> "1531" 
+  "1511" -> "1566" 
+  "1512" -> "80" 
+  "1512" -> "1513" 
+  "1512" -> "1514" 
+  "1514" -> "1515" 
+  "1514" -> "1516" 
+  "1518" -> "1519" 
+  "1518" -> "1520" 
+  "1520" -> "1521" 
+  "1523" -> "1524" 
+  "1523" -> "1525" 
+  "1525" -> "1526" 
+  "1527" -> "1528" 
+  "1527" -> "1529" 
+  "1530" -> "82" 
+  "1531" -> "1532" 
+  "1531" -> "1535" 
+  "1532" -> "1533" 
+  "1532" -> "1534" 
+  "1535" -> "1536" 
+  "1535" -> "1555" 
+  "1535" -> "1560" 
+  "1535" -> "1563" 
+  "1536" -> "1537" 
+  "1536" -> "1538" 
+  "1536" -> "1541" 
+  "1536" -> "1544" 
+  "1536" -> "1546" 
+  "1538" -> "1539" 
+  "1538" -> "1540" 
+  "1541" -> "1542" 
+  "1541" -> "1543" 
+  "1544" -> "1545" 
+  "1546" -> "1547" 
+  "1546" -> "1552" 
+  "1547" -> "1548" 
+  "1547" -> "1549" 
+  "1549" -> "1550" 
+  "1549" -> "1551" 
+  "1552" -> "1553" 
+  "1552" -> "1554" 
+  "1555" -> "1556" 
+  "1555" -> "1557" 
+  "1557" -> "1558" 
+  "1557" -> "1559" 
+  "1560" -> "1561" 
+  "1560" -> "1562" 
+  "1563" -> "1564" 
+  "1563" -> "1565" 
+  "1566" -> "1567" 
+  "1566" -> "1569" 
+  "1567" -> "1568" 
+  "1569" -> "1570" 
+  "1569" -> "1571" 
+  "1569" -> "1574" 
+  "1569" -> "1614" 
+  "1569" -> "1617" 
+  "1571" -> "1572" 
+  "1571" -> "1573" 
+  "1574" -> "1575" 
+  "1574" -> "1576" 
+  "1574" -> "1579" 
+  "1574" -> "1582" 
+  "1574" -> "1584" 
+  "1576" -> "1577" 
+  "1576" -> "1578" 
+  "1579" -> "1580" 
+  "1579" -> "1581" 
+  "1582" -> "1583" 
+  "1584" -> "1585" 
+  "1584" -> "1586" 
+  "1584" -> "1591" 
+  "1584" -> "1600" 
+  "1584" -> "1611" 
+  "1586" -> "1587" 
+  "1586" -> "1588" 
+  "1588" -> "1589" 
+  "1588" -> "1590" 
+  "1591" -> "1592" 
+  "1591" -> "1595" 
+  "1592" -> "1593" 
+  "1592" -> "1594" 
+  "1595" -> "1596" 
+  "1596" -> "1597" 
+  "1596" -> "1598" 
+  "1598" -> "1599" 
+  "1600" -> "1601" 
+  "1600" -> "1602" 
+  "1600" -> "1606" 
+  "1602" -> "1603" 
+  "1603" -> "1604" 
+  "1603" -> "1605" 
+  "1606" -> "1607" 
+  "1607" -> "1608" 
+  "1608" -> "1609" 
+  "1608" -> "1610" 
+  "1611" -> "1612" 
+  "1611" -> "1613" 
+  "1614" -> "1615" 
+  "1614" -> "1616" 
+  "1617" -> "1618" 
+  "1617" -> "1619" 
+  "1620" -> "1621" 
+  "1621" -> "1622" 
+  "1621" -> "1623" 
+  "1624" -> "1625" 
+}

@@ -1,0 +1,105 @@
+digraph "makeCircularException" {  
+"2900" [label = <(METHOD,makeCircularException)<SUB>1011</SUB>> ]
+"2901" [label = <(PARAM,String end)<SUB>1011</SUB>> ]
+"2902" [label = <(PARAM,Stack stk)<SUB>1011</SUB>> ]
+"2903" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>1011</SUB>> ]
+"148" [label = <(LOCAL,StringBuffer sb: java.lang.StringBuffer)> ]
+"2904" [label = <(&lt;operator&gt;.assignment,StringBuffer sb = new StringBuffer(&quot;Circular dependency: &quot;))<SUB>1012</SUB>> ]
+"2905" [label = <(IDENTIFIER,sb,StringBuffer sb = new StringBuffer(&quot;Circular dependency: &quot;))<SUB>1012</SUB>> ]
+"2906" [label = <(&lt;operator&gt;.alloc,new StringBuffer(&quot;Circular dependency: &quot;))<SUB>1012</SUB>> ]
+"2907" [label = <(&lt;init&gt;,new StringBuffer(&quot;Circular dependency: &quot;))<SUB>1012</SUB>> ]
+"147" [label = <(IDENTIFIER,sb,new StringBuffer(&quot;Circular dependency: &quot;))<SUB>1012</SUB>> ]
+"2908" [label = <(LITERAL,&quot;Circular dependency: &quot;,new StringBuffer(&quot;Circular dependency: &quot;))<SUB>1012</SUB>> ]
+"2909" [label = <(append,sb.append(end))<SUB>1013</SUB>> ]
+"2910" [label = <(IDENTIFIER,sb,sb.append(end))<SUB>1013</SUB>> ]
+"2911" [label = <(IDENTIFIER,end,sb.append(end))<SUB>1013</SUB>> ]
+"2912" [label = <(LOCAL,String c: java.lang.String)> ]
+"2913" [label = <(CONTROL_STRUCTURE,do {...} while (!c.equals(end)),do {...} while (!c.equals(end)))<SUB>1015</SUB>> ]
+"2914" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>1015</SUB>> ]
+"2915" [label = <(&lt;operator&gt;.assignment,c = (String) stk.pop())<SUB>1016</SUB>> ]
+"2916" [label = <(IDENTIFIER,c,c = (String) stk.pop())<SUB>1016</SUB>> ]
+"2917" [label = <(&lt;operator&gt;.cast,(String) stk.pop())<SUB>1016</SUB>> ]
+"2918" [label = <(TYPE_REF,String,String)<SUB>1016</SUB>> ]
+"2919" [label = <(pop,stk.pop())<SUB>1016</SUB>> ]
+"2920" [label = <(IDENTIFIER,stk,stk.pop())<SUB>1016</SUB>> ]
+"2921" [label = <(append,sb.append(&quot; &lt;- &quot;))<SUB>1017</SUB>> ]
+"2922" [label = <(IDENTIFIER,sb,sb.append(&quot; &lt;- &quot;))<SUB>1017</SUB>> ]
+"2923" [label = <(LITERAL,&quot; &lt;- &quot;,sb.append(&quot; &lt;- &quot;))<SUB>1017</SUB>> ]
+"2924" [label = <(append,sb.append(c))<SUB>1018</SUB>> ]
+"2925" [label = <(IDENTIFIER,sb,sb.append(c))<SUB>1018</SUB>> ]
+"2926" [label = <(IDENTIFIER,c,sb.append(c))<SUB>1018</SUB>> ]
+"2927" [label = <(&lt;operator&gt;.logicalNot,!c.equals(end))<SUB>1019</SUB>> ]
+"2928" [label = <(equals,c.equals(end))<SUB>1019</SUB>> ]
+"2929" [label = <(IDENTIFIER,c,c.equals(end))<SUB>1019</SUB>> ]
+"2930" [label = <(IDENTIFIER,end,c.equals(end))<SUB>1019</SUB>> ]
+"2931" [label = <(RETURN,return new BuildException(new String(sb));,return new BuildException(new String(sb));)<SUB>1020</SUB>> ]
+"2932" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>1020</SUB>> ]
+"2933" [label = <(&lt;operator&gt;.assignment,&lt;empty&gt;)> ]
+"2934" [label = <(IDENTIFIER,$obj71,&lt;empty&gt;)> ]
+"2935" [label = <(&lt;operator&gt;.alloc,new BuildException(new String(sb)))<SUB>1020</SUB>> ]
+"2936" [label = <(&lt;init&gt;,new BuildException(new String(sb)))<SUB>1020</SUB>> ]
+"2937" [label = <(IDENTIFIER,$obj71,new BuildException(new String(sb)))> ]
+"2938" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>1020</SUB>> ]
+"2939" [label = <(&lt;operator&gt;.assignment,&lt;empty&gt;)> ]
+"2940" [label = <(IDENTIFIER,$obj70,&lt;empty&gt;)> ]
+"2941" [label = <(&lt;operator&gt;.alloc,new String(sb))<SUB>1020</SUB>> ]
+"2942" [label = <(&lt;init&gt;,new String(sb))<SUB>1020</SUB>> ]
+"2943" [label = <(IDENTIFIER,$obj70,new String(sb))> ]
+"2944" [label = <(IDENTIFIER,sb,new String(sb))<SUB>1020</SUB>> ]
+"2945" [label = <(IDENTIFIER,$obj70,&lt;empty&gt;)> ]
+"2946" [label = <(IDENTIFIER,$obj71,&lt;empty&gt;)> ]
+"2947" [label = <(MODIFIER,PRIVATE)> ]
+"2948" [label = <(MODIFIER,STATIC)> ]
+"2949" [label = <(METHOD_RETURN,ANY)<SUB>1011</SUB>> ]
+  "2900" -> "2901" 
+  "2900" -> "2902" 
+  "2900" -> "2903" 
+  "2900" -> "2947" 
+  "2900" -> "2948" 
+  "2900" -> "2949" 
+  "2903" -> "148" 
+  "2903" -> "2904" 
+  "2903" -> "2907" 
+  "2903" -> "2909" 
+  "2903" -> "2912" 
+  "2903" -> "2913" 
+  "2903" -> "2931" 
+  "2904" -> "2905" 
+  "2904" -> "2906" 
+  "2907" -> "147" 
+  "2907" -> "2908" 
+  "2909" -> "2910" 
+  "2909" -> "2911" 
+  "2913" -> "2914" 
+  "2913" -> "2927" 
+  "2914" -> "2915" 
+  "2914" -> "2921" 
+  "2914" -> "2924" 
+  "2915" -> "2916" 
+  "2915" -> "2917" 
+  "2917" -> "2918" 
+  "2917" -> "2919" 
+  "2919" -> "2920" 
+  "2921" -> "2922" 
+  "2921" -> "2923" 
+  "2924" -> "2925" 
+  "2924" -> "2926" 
+  "2927" -> "2928" 
+  "2928" -> "2929" 
+  "2928" -> "2930" 
+  "2931" -> "2932" 
+  "2932" -> "2933" 
+  "2932" -> "2936" 
+  "2932" -> "2946" 
+  "2933" -> "2934" 
+  "2933" -> "2935" 
+  "2936" -> "2937" 
+  "2936" -> "2938" 
+  "2938" -> "2939" 
+  "2938" -> "2942" 
+  "2938" -> "2945" 
+  "2939" -> "2940" 
+  "2939" -> "2941" 
+  "2942" -> "2943" 
+  "2942" -> "2944" 
+}

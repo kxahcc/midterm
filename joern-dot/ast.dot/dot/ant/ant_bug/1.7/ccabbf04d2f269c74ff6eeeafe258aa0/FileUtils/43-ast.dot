@@ -1,0 +1,65 @@
+digraph "isUpToDate" {  
+"2260" [label = <(METHOD,isUpToDate)<SUB>1252</SUB>> ]
+"87" [label = <(PARAM,this)<SUB>1252</SUB>> ]
+"2261" [label = <(PARAM,File source)<SUB>1252</SUB>> ]
+"2262" [label = <(PARAM,File dest)<SUB>1252</SUB>> ]
+"2263" [label = <(PARAM,long granularity)<SUB>1252</SUB>> ]
+"2264" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>1252</SUB>> ]
+"2265" [label = <(CONTROL_STRUCTURE,if (!dest.exists()),if (!dest.exists()))<SUB>1254</SUB>> ]
+"2266" [label = <(&lt;operator&gt;.logicalNot,!dest.exists())<SUB>1254</SUB>> ]
+"2267" [label = <(exists,dest.exists())<SUB>1254</SUB>> ]
+"2268" [label = <(IDENTIFIER,dest,dest.exists())<SUB>1254</SUB>> ]
+"2269" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>1254</SUB>> ]
+"2270" [label = <(RETURN,return false;,return false;)<SUB>1256</SUB>> ]
+"2271" [label = <(LITERAL,false,return false;)<SUB>1256</SUB>> ]
+"2272" [label = <(LOCAL,long sourceTime: long)> ]
+"2273" [label = <(&lt;operator&gt;.assignment,long sourceTime = source.lastModified())<SUB>1258</SUB>> ]
+"2274" [label = <(IDENTIFIER,sourceTime,long sourceTime = source.lastModified())<SUB>1258</SUB>> ]
+"2275" [label = <(lastModified,source.lastModified())<SUB>1258</SUB>> ]
+"2276" [label = <(IDENTIFIER,source,source.lastModified())<SUB>1258</SUB>> ]
+"2277" [label = <(LOCAL,long destTime: long)> ]
+"2278" [label = <(&lt;operator&gt;.assignment,long destTime = dest.lastModified())<SUB>1259</SUB>> ]
+"2279" [label = <(IDENTIFIER,destTime,long destTime = dest.lastModified())<SUB>1259</SUB>> ]
+"2280" [label = <(lastModified,dest.lastModified())<SUB>1259</SUB>> ]
+"2281" [label = <(IDENTIFIER,dest,dest.lastModified())<SUB>1259</SUB>> ]
+"2282" [label = <(RETURN,return isUpToDate(sourceTime, destTime, granularity);,return isUpToDate(sourceTime, destTime, granularity);)<SUB>1260</SUB>> ]
+"2283" [label = <(isUpToDate,this.isUpToDate(sourceTime, destTime, granularity))<SUB>1260</SUB>> ]
+"86" [label = <(IDENTIFIER,this,this.isUpToDate(sourceTime, destTime, granularity))<SUB>1260</SUB>> ]
+"2284" [label = <(IDENTIFIER,sourceTime,this.isUpToDate(sourceTime, destTime, granularity))<SUB>1260</SUB>> ]
+"2285" [label = <(IDENTIFIER,destTime,this.isUpToDate(sourceTime, destTime, granularity))<SUB>1260</SUB>> ]
+"2286" [label = <(IDENTIFIER,granularity,this.isUpToDate(sourceTime, destTime, granularity))<SUB>1260</SUB>> ]
+"2287" [label = <(MODIFIER,PUBLIC)> ]
+"2288" [label = <(MODIFIER,VIRTUAL)> ]
+"2289" [label = <(METHOD_RETURN,boolean)<SUB>1252</SUB>> ]
+  "2260" -> "87" 
+  "2260" -> "2261" 
+  "2260" -> "2262" 
+  "2260" -> "2263" 
+  "2260" -> "2264" 
+  "2260" -> "2287" 
+  "2260" -> "2288" 
+  "2260" -> "2289" 
+  "2264" -> "2265" 
+  "2264" -> "2272" 
+  "2264" -> "2273" 
+  "2264" -> "2277" 
+  "2264" -> "2278" 
+  "2264" -> "2282" 
+  "2265" -> "2266" 
+  "2265" -> "2269" 
+  "2266" -> "2267" 
+  "2267" -> "2268" 
+  "2269" -> "2270" 
+  "2270" -> "2271" 
+  "2273" -> "2274" 
+  "2273" -> "2275" 
+  "2275" -> "2276" 
+  "2278" -> "2279" 
+  "2278" -> "2280" 
+  "2280" -> "2281" 
+  "2282" -> "2283" 
+  "2283" -> "86" 
+  "2283" -> "2284" 
+  "2283" -> "2285" 
+  "2283" -> "2286" 
+}

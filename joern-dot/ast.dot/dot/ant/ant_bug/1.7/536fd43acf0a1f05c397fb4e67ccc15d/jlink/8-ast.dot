@@ -1,0 +1,251 @@
+digraph "mergeZipJarContents" {  
+"409" [label = <(METHOD,mergeZipJarContents)<SUB>223</SUB>> ]
+"27" [label = <(PARAM,this)<SUB>223</SUB>> ]
+"410" [label = <(PARAM,ZipOutputStream output)<SUB>223</SUB>> ]
+"411" [label = <(PARAM,File f)<SUB>223</SUB>> ]
+"412" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>223</SUB>> ]
+"413" [label = <(CONTROL_STRUCTURE,if (!f.exists()),if (!f.exists()))<SUB>225</SUB>> ]
+"414" [label = <(&lt;operator&gt;.logicalNot,!f.exists())<SUB>225</SUB>> ]
+"415" [label = <(exists,f.exists())<SUB>225</SUB>> ]
+"416" [label = <(IDENTIFIER,f,f.exists())<SUB>225</SUB>> ]
+"417" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>225</SUB>> ]
+"418" [label = <(RETURN,return;,return;)<SUB>226</SUB>> ]
+"25" [label = <(LOCAL,ZipFile zipf: java.util.zip.ZipFile)> ]
+"419" [label = <(&lt;operator&gt;.assignment,ZipFile zipf = new ZipFile(f))<SUB>228</SUB>> ]
+"420" [label = <(IDENTIFIER,zipf,ZipFile zipf = new ZipFile(f))<SUB>228</SUB>> ]
+"421" [label = <(&lt;operator&gt;.alloc,new ZipFile(f))<SUB>228</SUB>> ]
+"422" [label = <(&lt;init&gt;,new ZipFile(f))<SUB>228</SUB>> ]
+"24" [label = <(IDENTIFIER,zipf,new ZipFile(f))<SUB>228</SUB>> ]
+"423" [label = <(IDENTIFIER,f,new ZipFile(f))<SUB>228</SUB>> ]
+"424" [label = <(LOCAL,Enumeration entries: java.util.Enumeration)> ]
+"425" [label = <(&lt;operator&gt;.assignment,Enumeration entries = zipf.entries())<SUB>229</SUB>> ]
+"426" [label = <(IDENTIFIER,entries,Enumeration entries = zipf.entries())<SUB>229</SUB>> ]
+"427" [label = <(entries,zipf.entries())<SUB>229</SUB>> ]
+"428" [label = <(IDENTIFIER,zipf,zipf.entries())<SUB>229</SUB>> ]
+"429" [label = <(CONTROL_STRUCTURE,while (entries.hasMoreElements()),while (entries.hasMoreElements()))<SUB>231</SUB>> ]
+"430" [label = <(hasMoreElements,entries.hasMoreElements())<SUB>231</SUB>> ]
+"431" [label = <(IDENTIFIER,entries,entries.hasMoreElements())<SUB>231</SUB>> ]
+"432" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>231</SUB>> ]
+"433" [label = <(LOCAL,ZipEntry inputEntry: java.util.zip.ZipEntry)> ]
+"434" [label = <(&lt;operator&gt;.assignment,ZipEntry inputEntry = (ZipEntry) entries.nextElement())<SUB>232</SUB>> ]
+"435" [label = <(IDENTIFIER,inputEntry,ZipEntry inputEntry = (ZipEntry) entries.nextElement())<SUB>232</SUB>> ]
+"436" [label = <(&lt;operator&gt;.cast,(ZipEntry) entries.nextElement())<SUB>232</SUB>> ]
+"437" [label = <(TYPE_REF,ZipEntry,ZipEntry)<SUB>232</SUB>> ]
+"438" [label = <(nextElement,entries.nextElement())<SUB>232</SUB>> ]
+"439" [label = <(IDENTIFIER,entries,entries.nextElement())<SUB>232</SUB>> ]
+"440" [label = <(LOCAL,String inputEntryName: java.lang.String)> ]
+"441" [label = <(&lt;operator&gt;.assignment,String inputEntryName = inputEntry.getName())<SUB>236</SUB>> ]
+"442" [label = <(IDENTIFIER,inputEntryName,String inputEntryName = inputEntry.getName())<SUB>236</SUB>> ]
+"443" [label = <(getName,inputEntry.getName())<SUB>236</SUB>> ]
+"444" [label = <(IDENTIFIER,inputEntry,inputEntry.getName())<SUB>236</SUB>> ]
+"445" [label = <(LOCAL,int index: int)> ]
+"446" [label = <(&lt;operator&gt;.assignment,int index = inputEntryName.indexOf(&quot;META-INF&quot;))<SUB>237</SUB>> ]
+"447" [label = <(IDENTIFIER,index,int index = inputEntryName.indexOf(&quot;META-INF&quot;))<SUB>237</SUB>> ]
+"448" [label = <(indexOf,inputEntryName.indexOf(&quot;META-INF&quot;))<SUB>237</SUB>> ]
+"449" [label = <(IDENTIFIER,inputEntryName,inputEntryName.indexOf(&quot;META-INF&quot;))<SUB>237</SUB>> ]
+"450" [label = <(LITERAL,&quot;META-INF&quot;,inputEntryName.indexOf(&quot;META-INF&quot;))<SUB>237</SUB>> ]
+"451" [label = <(CONTROL_STRUCTURE,if (index &lt; 0),if (index &lt; 0))<SUB>239</SUB>> ]
+"452" [label = <(&lt;operator&gt;.lessThan,index &lt; 0)<SUB>239</SUB>> ]
+"453" [label = <(IDENTIFIER,index,index &lt; 0)<SUB>239</SUB>> ]
+"454" [label = <(LITERAL,0,index &lt; 0)<SUB>239</SUB>> ]
+"455" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>239</SUB>> ]
+"456" [label = <(CONTROL_STRUCTURE,try,try)<SUB>241</SUB>> ]
+"457" [label = <(BLOCK,try,try)<SUB>241</SUB>> ]
+"458" [label = <(putNextEntry,output.putNextEntry(processEntry(zipf, inputEntry)))<SUB>242</SUB>> ]
+"459" [label = <(IDENTIFIER,output,output.putNextEntry(processEntry(zipf, inputEntry)))<SUB>242</SUB>> ]
+"460" [label = <(processEntry,this.processEntry(zipf, inputEntry))<SUB>242</SUB>> ]
+"26" [label = <(IDENTIFIER,this,this.processEntry(zipf, inputEntry))<SUB>242</SUB>> ]
+"461" [label = <(IDENTIFIER,zipf,this.processEntry(zipf, inputEntry))<SUB>242</SUB>> ]
+"462" [label = <(IDENTIFIER,inputEntry,this.processEntry(zipf, inputEntry))<SUB>242</SUB>> ]
+"463" [label = <(BLOCK,catch,catch)> ]
+"464" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>243</SUB>> ]
+"465" [label = <(LOCAL,String mess: java.lang.String)> ]
+"466" [label = <(&lt;operator&gt;.assignment,String mess = ex.getMessage())<SUB>250</SUB>> ]
+"467" [label = <(IDENTIFIER,mess,String mess = ex.getMessage())<SUB>250</SUB>> ]
+"468" [label = <(getMessage,ex.getMessage())<SUB>250</SUB>> ]
+"469" [label = <(IDENTIFIER,ex,ex.getMessage())<SUB>250</SUB>> ]
+"470" [label = <(CONTROL_STRUCTURE,if (mess.indexOf(&quot;duplicate&quot;) &gt;= 0),if (mess.indexOf(&quot;duplicate&quot;) &gt;= 0))<SUB>252</SUB>> ]
+"471" [label = <(&lt;operator&gt;.greaterEqualsThan,mess.indexOf(&quot;duplicate&quot;) &gt;= 0)<SUB>252</SUB>> ]
+"472" [label = <(indexOf,mess.indexOf(&quot;duplicate&quot;))<SUB>252</SUB>> ]
+"473" [label = <(IDENTIFIER,mess,mess.indexOf(&quot;duplicate&quot;))<SUB>252</SUB>> ]
+"474" [label = <(LITERAL,&quot;duplicate&quot;,mess.indexOf(&quot;duplicate&quot;))<SUB>252</SUB>> ]
+"475" [label = <(LITERAL,0,mess.indexOf(&quot;duplicate&quot;) &gt;= 0)<SUB>252</SUB>> ]
+"476" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>252</SUB>> ]
+"477" [label = <(CONTROL_STRUCTURE,continue;,continue;)<SUB>254</SUB>> ]
+"478" [label = <(CONTROL_STRUCTURE,else,else)<SUB>255</SUB>> ]
+"479" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>255</SUB>> ]
+"480" [label = <(&lt;operator&gt;.throw,throw ex;)<SUB>258</SUB>> ]
+"481" [label = <(IDENTIFIER,ex,throw ex;)<SUB>258</SUB>> ]
+"482" [label = <(LOCAL,InputStream in: java.io.InputStream)> ]
+"483" [label = <(&lt;operator&gt;.assignment,InputStream in = zipf.getInputStream(inputEntry))<SUB>262</SUB>> ]
+"484" [label = <(IDENTIFIER,in,InputStream in = zipf.getInputStream(inputEntry))<SUB>262</SUB>> ]
+"485" [label = <(getInputStream,zipf.getInputStream(inputEntry))<SUB>262</SUB>> ]
+"486" [label = <(IDENTIFIER,zipf,zipf.getInputStream(inputEntry))<SUB>262</SUB>> ]
+"487" [label = <(IDENTIFIER,inputEntry,zipf.getInputStream(inputEntry))<SUB>262</SUB>> ]
+"488" [label = <(LOCAL,int len: int)> ]
+"489" [label = <(&lt;operator&gt;.assignment,int len = buffer.length)<SUB>263</SUB>> ]
+"490" [label = <(IDENTIFIER,len,int len = buffer.length)<SUB>263</SUB>> ]
+"491" [label = <(&lt;operator&gt;.fieldAccess,buffer.length)<SUB>263</SUB>> ]
+"492" [label = <(&lt;operator&gt;.fieldAccess,this.buffer)<SUB>263</SUB>> ]
+"493" [label = <(IDENTIFIER,this,int len = buffer.length)<SUB>263</SUB>> ]
+"494" [label = <(FIELD_IDENTIFIER,buffer,buffer)<SUB>263</SUB>> ]
+"495" [label = <(FIELD_IDENTIFIER,length,length)<SUB>263</SUB>> ]
+"496" [label = <(LOCAL,int count: int)> ]
+"497" [label = <(&lt;operator&gt;.assignment,int count = -1)<SUB>264</SUB>> ]
+"498" [label = <(IDENTIFIER,count,int count = -1)<SUB>264</SUB>> ]
+"499" [label = <(&lt;operator&gt;.minus,-1)<SUB>264</SUB>> ]
+"500" [label = <(LITERAL,1,-1)<SUB>264</SUB>> ]
+"501" [label = <(CONTROL_STRUCTURE,while ((count = in.read(buffer, 0, len)) &gt; 0),while ((count = in.read(buffer, 0, len)) &gt; 0))<SUB>266</SUB>> ]
+"502" [label = <(&lt;operator&gt;.greaterThan,(count = in.read(buffer, 0, len)) &gt; 0)<SUB>266</SUB>> ]
+"503" [label = <(&lt;operator&gt;.assignment,count = in.read(buffer, 0, len))<SUB>266</SUB>> ]
+"504" [label = <(IDENTIFIER,count,count = in.read(buffer, 0, len))<SUB>266</SUB>> ]
+"505" [label = <(read,in.read(buffer, 0, len))<SUB>266</SUB>> ]
+"506" [label = <(IDENTIFIER,in,in.read(buffer, 0, len))<SUB>266</SUB>> ]
+"507" [label = <(&lt;operator&gt;.fieldAccess,this.buffer)<SUB>266</SUB>> ]
+"508" [label = <(IDENTIFIER,this,in.read(buffer, 0, len))<SUB>266</SUB>> ]
+"509" [label = <(FIELD_IDENTIFIER,buffer,buffer)<SUB>266</SUB>> ]
+"510" [label = <(LITERAL,0,in.read(buffer, 0, len))<SUB>266</SUB>> ]
+"511" [label = <(IDENTIFIER,len,in.read(buffer, 0, len))<SUB>266</SUB>> ]
+"512" [label = <(LITERAL,0,(count = in.read(buffer, 0, len)) &gt; 0)<SUB>266</SUB>> ]
+"513" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>266</SUB>> ]
+"514" [label = <(write,output.write(buffer, 0, count))<SUB>267</SUB>> ]
+"515" [label = <(IDENTIFIER,output,output.write(buffer, 0, count))<SUB>267</SUB>> ]
+"516" [label = <(&lt;operator&gt;.fieldAccess,this.buffer)<SUB>267</SUB>> ]
+"517" [label = <(IDENTIFIER,this,output.write(buffer, 0, count))<SUB>267</SUB>> ]
+"518" [label = <(FIELD_IDENTIFIER,buffer,buffer)<SUB>267</SUB>> ]
+"519" [label = <(LITERAL,0,output.write(buffer, 0, count))<SUB>267</SUB>> ]
+"520" [label = <(IDENTIFIER,count,output.write(buffer, 0, count))<SUB>267</SUB>> ]
+"521" [label = <(close,in.close())<SUB>269</SUB>> ]
+"522" [label = <(IDENTIFIER,in,in.close())<SUB>269</SUB>> ]
+"523" [label = <(closeEntry,output.closeEntry())<SUB>270</SUB>> ]
+"524" [label = <(IDENTIFIER,output,output.closeEntry())<SUB>270</SUB>> ]
+"525" [label = <(close,zipf.close())<SUB>273</SUB>> ]
+"526" [label = <(IDENTIFIER,zipf,zipf.close())<SUB>273</SUB>> ]
+"527" [label = <(MODIFIER,PRIVATE)> ]
+"528" [label = <(MODIFIER,VIRTUAL)> ]
+"529" [label = <(METHOD_RETURN,void)<SUB>223</SUB>> ]
+  "409" -> "27" 
+  "409" -> "410" 
+  "409" -> "411" 
+  "409" -> "412" 
+  "409" -> "527" 
+  "409" -> "528" 
+  "409" -> "529" 
+  "412" -> "413" 
+  "412" -> "25" 
+  "412" -> "419" 
+  "412" -> "422" 
+  "412" -> "424" 
+  "412" -> "425" 
+  "412" -> "429" 
+  "412" -> "525" 
+  "413" -> "414" 
+  "413" -> "417" 
+  "414" -> "415" 
+  "415" -> "416" 
+  "417" -> "418" 
+  "419" -> "420" 
+  "419" -> "421" 
+  "422" -> "24" 
+  "422" -> "423" 
+  "425" -> "426" 
+  "425" -> "427" 
+  "427" -> "428" 
+  "429" -> "430" 
+  "429" -> "432" 
+  "430" -> "431" 
+  "432" -> "433" 
+  "432" -> "434" 
+  "432" -> "440" 
+  "432" -> "441" 
+  "432" -> "445" 
+  "432" -> "446" 
+  "432" -> "451" 
+  "434" -> "435" 
+  "434" -> "436" 
+  "436" -> "437" 
+  "436" -> "438" 
+  "438" -> "439" 
+  "441" -> "442" 
+  "441" -> "443" 
+  "443" -> "444" 
+  "446" -> "447" 
+  "446" -> "448" 
+  "448" -> "449" 
+  "448" -> "450" 
+  "451" -> "452" 
+  "451" -> "455" 
+  "452" -> "453" 
+  "452" -> "454" 
+  "455" -> "456" 
+  "455" -> "482" 
+  "455" -> "483" 
+  "455" -> "488" 
+  "455" -> "489" 
+  "455" -> "496" 
+  "455" -> "497" 
+  "455" -> "501" 
+  "455" -> "521" 
+  "455" -> "523" 
+  "456" -> "457" 
+  "456" -> "463" 
+  "457" -> "458" 
+  "458" -> "459" 
+  "458" -> "460" 
+  "460" -> "26" 
+  "460" -> "461" 
+  "460" -> "462" 
+  "463" -> "464" 
+  "464" -> "465" 
+  "464" -> "466" 
+  "464" -> "470" 
+  "466" -> "467" 
+  "466" -> "468" 
+  "468" -> "469" 
+  "470" -> "471" 
+  "470" -> "476" 
+  "470" -> "478" 
+  "471" -> "472" 
+  "471" -> "475" 
+  "472" -> "473" 
+  "472" -> "474" 
+  "476" -> "477" 
+  "478" -> "479" 
+  "479" -> "480" 
+  "480" -> "481" 
+  "483" -> "484" 
+  "483" -> "485" 
+  "485" -> "486" 
+  "485" -> "487" 
+  "489" -> "490" 
+  "489" -> "491" 
+  "491" -> "492" 
+  "491" -> "495" 
+  "492" -> "493" 
+  "492" -> "494" 
+  "497" -> "498" 
+  "497" -> "499" 
+  "499" -> "500" 
+  "501" -> "502" 
+  "501" -> "513" 
+  "502" -> "503" 
+  "502" -> "512" 
+  "503" -> "504" 
+  "503" -> "505" 
+  "505" -> "506" 
+  "505" -> "507" 
+  "505" -> "510" 
+  "505" -> "511" 
+  "507" -> "508" 
+  "507" -> "509" 
+  "513" -> "514" 
+  "514" -> "515" 
+  "514" -> "516" 
+  "514" -> "519" 
+  "514" -> "520" 
+  "516" -> "517" 
+  "516" -> "518" 
+  "521" -> "522" 
+  "523" -> "524" 
+  "525" -> "526" 
+}

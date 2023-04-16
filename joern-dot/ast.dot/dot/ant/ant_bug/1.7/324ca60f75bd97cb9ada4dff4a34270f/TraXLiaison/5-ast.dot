@@ -1,0 +1,177 @@
+digraph "getSource" {  
+"401" [label = <(METHOD,getSource)<SUB>244</SUB>> ]
+"27" [label = <(PARAM,this)<SUB>244</SUB>> ]
+"402" [label = <(PARAM,InputStream is)<SUB>244</SUB>> ]
+"403" [label = <(PARAM,Resource resource)<SUB>244</SUB>> ]
+"404" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>245</SUB>> ]
+"29" [label = <(LOCAL,Source src: javax.xml.transform.Source)> ]
+"405" [label = <(&lt;operator&gt;.assignment,Source src = null)<SUB>249</SUB>> ]
+"406" [label = <(IDENTIFIER,src,Source src = null)<SUB>249</SUB>> ]
+"407" [label = <(LITERAL,null,Source src = null)<SUB>249</SUB>> ]
+"408" [label = <(CONTROL_STRUCTURE,if (entityResolver != null),if (entityResolver != null))<SUB>250</SUB>> ]
+"409" [label = <(&lt;operator&gt;.notEquals,entityResolver != null)<SUB>250</SUB>> ]
+"410" [label = <(&lt;operator&gt;.fieldAccess,this.entityResolver)<SUB>250</SUB>> ]
+"411" [label = <(IDENTIFIER,this,entityResolver != null)<SUB>250</SUB>> ]
+"412" [label = <(FIELD_IDENTIFIER,entityResolver,entityResolver)<SUB>250</SUB>> ]
+"413" [label = <(LITERAL,null,entityResolver != null)<SUB>250</SUB>> ]
+"414" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>250</SUB>> ]
+"415" [label = <(CONTROL_STRUCTURE,if (getFactory().getFeature(SAXSource.FEATURE)),if (getFactory().getFeature(SAXSource.FEATURE)))<SUB>251</SUB>> ]
+"416" [label = <(getFeature,getFeature(SAXSource.FEATURE))<SUB>251</SUB>> ]
+"417" [label = <(getFactory,this.getFactory())<SUB>251</SUB>> ]
+"26" [label = <(IDENTIFIER,this,this.getFactory())<SUB>251</SUB>> ]
+"418" [label = <(&lt;operator&gt;.fieldAccess,SAXSource.FEATURE)<SUB>251</SUB>> ]
+"419" [label = <(IDENTIFIER,SAXSource,getFeature(SAXSource.FEATURE))<SUB>251</SUB>> ]
+"420" [label = <(FIELD_IDENTIFIER,FEATURE,FEATURE)<SUB>251</SUB>> ]
+"421" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>251</SUB>> ]
+"422" [label = <(LOCAL,SAXParserFactory spFactory: javax.xml.parsers.SAXParserFactory)> ]
+"423" [label = <(&lt;operator&gt;.assignment,SAXParserFactory spFactory = SAXParserFactory.newInstance())<SUB>252</SUB>> ]
+"424" [label = <(IDENTIFIER,spFactory,SAXParserFactory spFactory = SAXParserFactory.newInstance())<SUB>252</SUB>> ]
+"425" [label = <(newInstance,SAXParserFactory.newInstance())<SUB>252</SUB>> ]
+"426" [label = <(IDENTIFIER,SAXParserFactory,SAXParserFactory.newInstance())<SUB>252</SUB>> ]
+"427" [label = <(setNamespaceAware,spFactory.setNamespaceAware(true))<SUB>253</SUB>> ]
+"428" [label = <(IDENTIFIER,spFactory,spFactory.setNamespaceAware(true))<SUB>253</SUB>> ]
+"429" [label = <(LITERAL,true,spFactory.setNamespaceAware(true))<SUB>253</SUB>> ]
+"430" [label = <(LOCAL,XMLReader reader: org.xml.sax.XMLReader)> ]
+"431" [label = <(&lt;operator&gt;.assignment,XMLReader reader = spFactory.newSAXParser().getXMLReader())<SUB>254</SUB>> ]
+"432" [label = <(IDENTIFIER,reader,XMLReader reader = spFactory.newSAXParser().getXMLReader())<SUB>254</SUB>> ]
+"433" [label = <(getXMLReader,spFactory.newSAXParser().getXMLReader())<SUB>254</SUB>> ]
+"434" [label = <(newSAXParser,spFactory.newSAXParser())<SUB>254</SUB>> ]
+"435" [label = <(IDENTIFIER,spFactory,spFactory.newSAXParser())<SUB>254</SUB>> ]
+"436" [label = <(setEntityResolver,setEntityResolver(entityResolver))<SUB>255</SUB>> ]
+"437" [label = <(IDENTIFIER,reader,setEntityResolver(entityResolver))<SUB>255</SUB>> ]
+"438" [label = <(&lt;operator&gt;.fieldAccess,this.entityResolver)<SUB>255</SUB>> ]
+"439" [label = <(IDENTIFIER,this,setEntityResolver(entityResolver))<SUB>255</SUB>> ]
+"440" [label = <(FIELD_IDENTIFIER,entityResolver,entityResolver)<SUB>255</SUB>> ]
+"441" [label = <(&lt;operator&gt;.assignment,src = new SAXSource(reader, new InputSource(is)))<SUB>256</SUB>> ]
+"442" [label = <(IDENTIFIER,src,src = new SAXSource(reader, new InputSource(is)))<SUB>256</SUB>> ]
+"443" [label = <(&lt;operator&gt;.alloc,new SAXSource(reader, new InputSource(is)))<SUB>256</SUB>> ]
+"444" [label = <(&lt;init&gt;,new SAXSource(reader, new InputSource(is)))<SUB>256</SUB>> ]
+"28" [label = <(IDENTIFIER,src,new SAXSource(reader, new InputSource(is)))<SUB>256</SUB>> ]
+"445" [label = <(IDENTIFIER,reader,new SAXSource(reader, new InputSource(is)))<SUB>256</SUB>> ]
+"446" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>256</SUB>> ]
+"447" [label = <(&lt;operator&gt;.assignment,&lt;empty&gt;)> ]
+"448" [label = <(IDENTIFIER,$obj13,&lt;empty&gt;)> ]
+"449" [label = <(&lt;operator&gt;.alloc,new InputSource(is))<SUB>256</SUB>> ]
+"450" [label = <(&lt;init&gt;,new InputSource(is))<SUB>256</SUB>> ]
+"451" [label = <(IDENTIFIER,$obj13,new InputSource(is))> ]
+"452" [label = <(IDENTIFIER,is,new InputSource(is))<SUB>256</SUB>> ]
+"453" [label = <(IDENTIFIER,$obj13,&lt;empty&gt;)> ]
+"454" [label = <(CONTROL_STRUCTURE,else,else)<SUB>257</SUB>> ]
+"455" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>257</SUB>> ]
+"456" [label = <(&lt;operator&gt;.throw,throw new IllegalStateException(&quot;xcatalog specified, but &quot; + &quot;parser doesn't support SAX&quot;);)<SUB>258</SUB>> ]
+"457" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>258</SUB>> ]
+"458" [label = <(&lt;operator&gt;.assignment,&lt;empty&gt;)> ]
+"459" [label = <(IDENTIFIER,$obj15,&lt;empty&gt;)> ]
+"460" [label = <(&lt;operator&gt;.alloc,new IllegalStateException(&quot;xcatalog specified, but &quot; + &quot;parser doesn't support SAX&quot;))<SUB>258</SUB>> ]
+"461" [label = <(&lt;init&gt;,new IllegalStateException(&quot;xcatalog specified, but &quot; + &quot;parser doesn't support SAX&quot;))<SUB>258</SUB>> ]
+"462" [label = <(IDENTIFIER,$obj15,new IllegalStateException(&quot;xcatalog specified, but &quot; + &quot;parser doesn't support SAX&quot;))> ]
+"463" [label = <(&lt;operator&gt;.addition,&quot;xcatalog specified, but &quot; + &quot;parser doesn't support SAX&quot;)<SUB>258</SUB>> ]
+"464" [label = <(LITERAL,&quot;xcatalog specified, but &quot;,&quot;xcatalog specified, but &quot; + &quot;parser doesn't support SAX&quot;)<SUB>258</SUB>> ]
+"465" [label = <(LITERAL,&quot;parser doesn't support SAX&quot;,&quot;xcatalog specified, but &quot; + &quot;parser doesn't support SAX&quot;)<SUB>259</SUB>> ]
+"466" [label = <(IDENTIFIER,$obj15,&lt;empty&gt;)> ]
+"467" [label = <(CONTROL_STRUCTURE,else,else)<SUB>261</SUB>> ]
+"468" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>261</SUB>> ]
+"469" [label = <(&lt;operator&gt;.assignment,src = new StreamSource(is))<SUB>264</SUB>> ]
+"470" [label = <(IDENTIFIER,src,src = new StreamSource(is))<SUB>264</SUB>> ]
+"471" [label = <(&lt;operator&gt;.alloc,new StreamSource(is))<SUB>264</SUB>> ]
+"472" [label = <(&lt;init&gt;,new StreamSource(is))<SUB>264</SUB>> ]
+"30" [label = <(IDENTIFIER,src,new StreamSource(is))<SUB>264</SUB>> ]
+"473" [label = <(IDENTIFIER,is,new StreamSource(is))<SUB>264</SUB>> ]
+"474" [label = <(setSystemId,setSystemId(resourceToURI(resource)))<SUB>269</SUB>> ]
+"475" [label = <(IDENTIFIER,src,setSystemId(resourceToURI(resource)))<SUB>269</SUB>> ]
+"476" [label = <(resourceToURI,resourceToURI(resource))<SUB>269</SUB>> ]
+"31" [label = <(IDENTIFIER,this,resourceToURI(resource))<SUB>269</SUB>> ]
+"477" [label = <(IDENTIFIER,resource,resourceToURI(resource))<SUB>269</SUB>> ]
+"478" [label = <(RETURN,return src;,return src;)<SUB>270</SUB>> ]
+"479" [label = <(IDENTIFIER,src,return src;)<SUB>270</SUB>> ]
+"480" [label = <(MODIFIER,PRIVATE)> ]
+"481" [label = <(MODIFIER,VIRTUAL)> ]
+"482" [label = <(METHOD_RETURN,javax.xml.transform.Source)<SUB>244</SUB>> ]
+  "401" -> "27" 
+  "401" -> "402" 
+  "401" -> "403" 
+  "401" -> "404" 
+  "401" -> "480" 
+  "401" -> "481" 
+  "401" -> "482" 
+  "404" -> "29" 
+  "404" -> "405" 
+  "404" -> "408" 
+  "404" -> "474" 
+  "404" -> "478" 
+  "405" -> "406" 
+  "405" -> "407" 
+  "408" -> "409" 
+  "408" -> "414" 
+  "408" -> "467" 
+  "409" -> "410" 
+  "409" -> "413" 
+  "410" -> "411" 
+  "410" -> "412" 
+  "414" -> "415" 
+  "415" -> "416" 
+  "415" -> "421" 
+  "415" -> "454" 
+  "416" -> "417" 
+  "416" -> "418" 
+  "417" -> "26" 
+  "418" -> "419" 
+  "418" -> "420" 
+  "421" -> "422" 
+  "421" -> "423" 
+  "421" -> "427" 
+  "421" -> "430" 
+  "421" -> "431" 
+  "421" -> "436" 
+  "421" -> "441" 
+  "421" -> "444" 
+  "423" -> "424" 
+  "423" -> "425" 
+  "425" -> "426" 
+  "427" -> "428" 
+  "427" -> "429" 
+  "431" -> "432" 
+  "431" -> "433" 
+  "433" -> "434" 
+  "434" -> "435" 
+  "436" -> "437" 
+  "436" -> "438" 
+  "438" -> "439" 
+  "438" -> "440" 
+  "441" -> "442" 
+  "441" -> "443" 
+  "444" -> "28" 
+  "444" -> "445" 
+  "444" -> "446" 
+  "446" -> "447" 
+  "446" -> "450" 
+  "446" -> "453" 
+  "447" -> "448" 
+  "447" -> "449" 
+  "450" -> "451" 
+  "450" -> "452" 
+  "454" -> "455" 
+  "455" -> "456" 
+  "456" -> "457" 
+  "457" -> "458" 
+  "457" -> "461" 
+  "457" -> "466" 
+  "458" -> "459" 
+  "458" -> "460" 
+  "461" -> "462" 
+  "461" -> "463" 
+  "463" -> "464" 
+  "463" -> "465" 
+  "467" -> "468" 
+  "468" -> "469" 
+  "468" -> "472" 
+  "469" -> "470" 
+  "469" -> "471" 
+  "472" -> "30" 
+  "472" -> "473" 
+  "474" -> "475" 
+  "474" -> "476" 
+  "476" -> "31" 
+  "476" -> "477" 
+  "478" -> "479" 
+}

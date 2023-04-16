@@ -1,0 +1,281 @@
+digraph "execute" {  
+"14" [label = <(METHOD,execute)<SUB>46</SUB>> ]
+"4" [label = <(PARAM,this)<SUB>46</SUB>> ]
+"15" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>46</SUB>> ]
+"16" [label = <(log,log(&quot;Using classic compiler&quot;, Project.MSG_VERBOSE))<SUB>47</SUB>> ]
+"17" [label = <(IDENTIFIER,attributes,log(&quot;Using classic compiler&quot;, Project.MSG_VERBOSE))<SUB>47</SUB>> ]
+"18" [label = <(LITERAL,&quot;Using classic compiler&quot;,log(&quot;Using classic compiler&quot;, Project.MSG_VERBOSE))<SUB>47</SUB>> ]
+"19" [label = <(&lt;operator&gt;.fieldAccess,Project.MSG_VERBOSE)<SUB>47</SUB>> ]
+"20" [label = <(IDENTIFIER,Project,log(&quot;Using classic compiler&quot;, Project.MSG_VERBOSE))<SUB>47</SUB>> ]
+"21" [label = <(FIELD_IDENTIFIER,MSG_VERBOSE,MSG_VERBOSE)<SUB>47</SUB>> ]
+"22" [label = <(LOCAL,Commandline cmd: org.apache.tools.ant.types.Commandline)> ]
+"23" [label = <(&lt;operator&gt;.assignment,Commandline cmd = setupJavacCommand(true))<SUB>48</SUB>> ]
+"24" [label = <(IDENTIFIER,cmd,Commandline cmd = setupJavacCommand(true))<SUB>48</SUB>> ]
+"25" [label = <(setupJavacCommand,setupJavacCommand(true))<SUB>48</SUB>> ]
+"3" [label = <(IDENTIFIER,this,setupJavacCommand(true))<SUB>48</SUB>> ]
+"26" [label = <(LITERAL,true,setupJavacCommand(true))<SUB>48</SUB>> ]
+"6" [label = <(LOCAL,OutputStream logstr: java.io.OutputStream)> ]
+"27" [label = <(&lt;operator&gt;.assignment,OutputStream logstr = new LogOutputStream(attributes, Project.MSG_WARN))<SUB>50</SUB>> ]
+"28" [label = <(IDENTIFIER,logstr,OutputStream logstr = new LogOutputStream(attributes, Project.MSG_WARN))<SUB>50</SUB>> ]
+"29" [label = <(&lt;operator&gt;.alloc,new LogOutputStream(attributes, Project.MSG_WARN))<SUB>50</SUB>> ]
+"30" [label = <(&lt;init&gt;,new LogOutputStream(attributes, Project.MSG_WARN))<SUB>50</SUB>> ]
+"5" [label = <(IDENTIFIER,logstr,new LogOutputStream(attributes, Project.MSG_WARN))<SUB>50</SUB>> ]
+"31" [label = <(IDENTIFIER,attributes,new LogOutputStream(attributes, Project.MSG_WARN))<SUB>50</SUB>> ]
+"32" [label = <(&lt;operator&gt;.fieldAccess,Project.MSG_WARN)<SUB>50</SUB>> ]
+"33" [label = <(IDENTIFIER,Project,new LogOutputStream(attributes, Project.MSG_WARN))<SUB>50</SUB>> ]
+"34" [label = <(FIELD_IDENTIFIER,MSG_WARN,MSG_WARN)<SUB>50</SUB>> ]
+"35" [label = <(CONTROL_STRUCTURE,try,try)<SUB>51</SUB>> ]
+"36" [label = <(BLOCK,try,try)<SUB>51</SUB>> ]
+"37" [label = <(LOCAL,Class c: java.lang.Class)> ]
+"38" [label = <(&lt;operator&gt;.assignment,Class c = Class.forName(CLASSIC_COMPILER_CLASSNAME))<SUB>54</SUB>> ]
+"39" [label = <(IDENTIFIER,c,Class c = Class.forName(CLASSIC_COMPILER_CLASSNAME))<SUB>54</SUB>> ]
+"40" [label = <(forName,Class.forName(CLASSIC_COMPILER_CLASSNAME))<SUB>54</SUB>> ]
+"41" [label = <(IDENTIFIER,Class,Class.forName(CLASSIC_COMPILER_CLASSNAME))<SUB>54</SUB>> ]
+"42" [label = <(&lt;operator&gt;.fieldAccess,Javac12.CLASSIC_COMPILER_CLASSNAME)<SUB>54</SUB>> ]
+"43" [label = <(IDENTIFIER,Javac12,Class.forName(CLASSIC_COMPILER_CLASSNAME))<SUB>54</SUB>> ]
+"44" [label = <(FIELD_IDENTIFIER,CLASSIC_COMPILER_CLASSNAME,CLASSIC_COMPILER_CLASSNAME)<SUB>54</SUB>> ]
+"45" [label = <(LOCAL,Constructor cons: java.lang.reflect.Constructor)> ]
+"46" [label = <(&lt;operator&gt;.assignment,Constructor cons = c.getConstructor(new Class[] { OutputStream.class, String.class }))<SUB>55</SUB>> ]
+"47" [label = <(IDENTIFIER,cons,Constructor cons = c.getConstructor(new Class[] { OutputStream.class, String.class }))<SUB>55</SUB>> ]
+"48" [label = <(getConstructor,c.getConstructor(new Class[] { OutputStream.class, String.class }))<SUB>56</SUB>> ]
+"49" [label = <(IDENTIFIER,c,c.getConstructor(new Class[] { OutputStream.class, String.class }))<SUB>56</SUB>> ]
+"50" [label = <(&lt;operator&gt;.arrayInitializer,&lt;operator&gt;.arrayInitializer)<SUB>56</SUB>> ]
+"51" [label = <(&lt;operator&gt;.arrayInitializer,new Class[] { OutputStream.class, String.class })<SUB>56</SUB>> ]
+"52" [label = <(&lt;operator&gt;.fieldAccess,OutputStream.class)<SUB>56</SUB>> ]
+"53" [label = <(IDENTIFIER,OutputStream,new Class[] { OutputStream.class, String.class })<SUB>56</SUB>> ]
+"54" [label = <(FIELD_IDENTIFIER,class,class)<SUB>56</SUB>> ]
+"55" [label = <(&lt;operator&gt;.fieldAccess,String.class)<SUB>57</SUB>> ]
+"56" [label = <(IDENTIFIER,String,new Class[] { OutputStream.class, String.class })<SUB>57</SUB>> ]
+"57" [label = <(FIELD_IDENTIFIER,class,class)<SUB>57</SUB>> ]
+"58" [label = <(LOCAL,Object compiler: java.lang.Object)> ]
+"59" [label = <(&lt;operator&gt;.assignment,Object compiler = cons.newInstance(new Object[] { logstr, &quot;javac&quot; }))<SUB>58</SUB>> ]
+"60" [label = <(IDENTIFIER,compiler,Object compiler = cons.newInstance(new Object[] { logstr, &quot;javac&quot; }))<SUB>58</SUB>> ]
+"61" [label = <(newInstance,cons.newInstance(new Object[] { logstr, &quot;javac&quot; }))<SUB>59</SUB>> ]
+"62" [label = <(IDENTIFIER,cons,cons.newInstance(new Object[] { logstr, &quot;javac&quot; }))<SUB>59</SUB>> ]
+"63" [label = <(&lt;operator&gt;.arrayInitializer,&lt;operator&gt;.arrayInitializer)<SUB>59</SUB>> ]
+"64" [label = <(&lt;operator&gt;.arrayInitializer,new Object[] { logstr, &quot;javac&quot; })<SUB>59</SUB>> ]
+"65" [label = <(IDENTIFIER,logstr,new Object[] { logstr, &quot;javac&quot; })<SUB>59</SUB>> ]
+"66" [label = <(LITERAL,&quot;javac&quot;,new Object[] { logstr, &quot;javac&quot; })<SUB>59</SUB>> ]
+"67" [label = <(LOCAL,Method compile: java.lang.reflect.Method)> ]
+"68" [label = <(&lt;operator&gt;.assignment,Method compile = c.getMethod(&quot;compile&quot;, new Class[] { String[].class }))<SUB>62</SUB>> ]
+"69" [label = <(IDENTIFIER,compile,Method compile = c.getMethod(&quot;compile&quot;, new Class[] { String[].class }))<SUB>62</SUB>> ]
+"70" [label = <(getMethod,c.getMethod(&quot;compile&quot;, new Class[] { String[].class }))<SUB>62</SUB>> ]
+"71" [label = <(IDENTIFIER,c,c.getMethod(&quot;compile&quot;, new Class[] { String[].class }))<SUB>62</SUB>> ]
+"72" [label = <(LITERAL,&quot;compile&quot;,c.getMethod(&quot;compile&quot;, new Class[] { String[].class }))<SUB>62</SUB>> ]
+"73" [label = <(&lt;operator&gt;.arrayInitializer,&lt;operator&gt;.arrayInitializer)<SUB>62</SUB>> ]
+"74" [label = <(&lt;operator&gt;.arrayInitializer,new Class[] { String[].class })<SUB>63</SUB>> ]
+"75" [label = <(&lt;operator&gt;.fieldAccess,String[].class)<SUB>63</SUB>> ]
+"76" [label = <(IDENTIFIER,String[],new Class[] { String[].class })<SUB>63</SUB>> ]
+"77" [label = <(FIELD_IDENTIFIER,class,class)<SUB>63</SUB>> ]
+"78" [label = <(LOCAL,Boolean ok: java.lang.Boolean)> ]
+"79" [label = <(&lt;operator&gt;.assignment,Boolean ok = (Boolean) compile.invoke(compiler, new Object[] { cmd.getArguments() }))<SUB>64</SUB>> ]
+"80" [label = <(IDENTIFIER,ok,Boolean ok = (Boolean) compile.invoke(compiler, new Object[] { cmd.getArguments() }))<SUB>64</SUB>> ]
+"81" [label = <(&lt;operator&gt;.cast,(Boolean) compile.invoke(compiler, new Object[] { cmd.getArguments() }))<SUB>65</SUB>> ]
+"82" [label = <(TYPE_REF,Boolean,Boolean)<SUB>65</SUB>> ]
+"83" [label = <(invoke,compile.invoke(compiler, new Object[] { cmd.getArguments() }))<SUB>65</SUB>> ]
+"84" [label = <(IDENTIFIER,compile,compile.invoke(compiler, new Object[] { cmd.getArguments() }))<SUB>65</SUB>> ]
+"85" [label = <(IDENTIFIER,compiler,compile.invoke(compiler, new Object[] { cmd.getArguments() }))<SUB>65</SUB>> ]
+"86" [label = <(&lt;operator&gt;.arrayInitializer,&lt;operator&gt;.arrayInitializer)<SUB>65</SUB>> ]
+"87" [label = <(&lt;operator&gt;.arrayInitializer,new Object[] { cmd.getArguments() })<SUB>66</SUB>> ]
+"88" [label = <(getArguments,getArguments())<SUB>66</SUB>> ]
+"89" [label = <(IDENTIFIER,cmd,getArguments())<SUB>66</SUB>> ]
+"90" [label = <(RETURN,return ok.booleanValue();,return ok.booleanValue();)<SUB>67</SUB>> ]
+"91" [label = <(booleanValue,ok.booleanValue())<SUB>67</SUB>> ]
+"92" [label = <(IDENTIFIER,ok,ok.booleanValue())<SUB>67</SUB>> ]
+"93" [label = <(BLOCK,catch,catch)> ]
+"94" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>68</SUB>> ]
+"95" [label = <(&lt;operator&gt;.throw,throw new BuildException(&quot;Cannot use classic compiler , as it is &quot; + &quot;not available. \n&quot; + &quot; A common solution is &quot; + &quot;to set the environment variable&quot; + &quot; JAVA_HOME to your jdk directory.\n&quot; + &quot;It is currently set to \&quot;&quot; + JavaEnvUtils.getJavaHome() + &quot;\&quot;&quot;, location);)<SUB>69</SUB>> ]
+"96" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>69</SUB>> ]
+"97" [label = <(&lt;operator&gt;.assignment,&lt;empty&gt;)> ]
+"98" [label = <(IDENTIFIER,$obj1,&lt;empty&gt;)> ]
+"99" [label = <(&lt;operator&gt;.alloc,new BuildException(&quot;Cannot use classic compiler , as it is &quot; + &quot;not available. \n&quot; + &quot; A common solution is &quot; + &quot;to set the environment variable&quot; + &quot; JAVA_HOME to your jdk directory.\n&quot; + &quot;It is currently set to \&quot;&quot; + JavaEnvUtils.getJavaHome() + &quot;\&quot;&quot;, location))<SUB>69</SUB>> ]
+"100" [label = <(&lt;init&gt;,new BuildException(&quot;Cannot use classic compiler , as it is &quot; + &quot;not available. \n&quot; + &quot; A common solution is &quot; + &quot;to set the environment variable&quot; + &quot; JAVA_HOME to your jdk directory.\n&quot; + &quot;It is currently set to \&quot;&quot; + JavaEnvUtils.getJavaHome() + &quot;\&quot;&quot;, location))<SUB>69</SUB>> ]
+"101" [label = <(IDENTIFIER,$obj1,new BuildException(&quot;Cannot use classic compiler , as it is &quot; + &quot;not available. \n&quot; + &quot; A common solution is &quot; + &quot;to set the environment variable&quot; + &quot; JAVA_HOME to your jdk directory.\n&quot; + &quot;It is currently set to \&quot;&quot; + JavaEnvUtils.getJavaHome() + &quot;\&quot;&quot;, location))> ]
+"102" [label = <(&lt;operator&gt;.addition,&quot;Cannot use classic compiler , as it is &quot; + &quot;not available. \n&quot; + &quot; A common solution is &quot; + &quot;to set the environment variable&quot; + &quot; JAVA_HOME to your jdk directory.\n&quot; + &quot;It is currently set to \&quot;&quot; + JavaEnvUtils.getJavaHome() + &quot;\&quot;&quot;)<SUB>69</SUB>> ]
+"103" [label = <(&lt;operator&gt;.addition,&quot;Cannot use classic compiler , as it is &quot; + &quot;not available. \n&quot; + &quot; A common solution is &quot; + &quot;to set the environment variable&quot; + &quot; JAVA_HOME to your jdk directory.\n&quot; + &quot;It is currently set to \&quot;&quot; + JavaEnvUtils.getJavaHome())<SUB>69</SUB>> ]
+"104" [label = <(&lt;operator&gt;.addition,&quot;Cannot use classic compiler , as it is &quot; + &quot;not available. \n&quot; + &quot; A common solution is &quot; + &quot;to set the environment variable&quot; + &quot; JAVA_HOME to your jdk directory.\n&quot; + &quot;It is currently set to \&quot;&quot;)<SUB>69</SUB>> ]
+"105" [label = <(&lt;operator&gt;.addition,&quot;Cannot use classic compiler , as it is &quot; + &quot;not available. \n&quot; + &quot; A common solution is &quot; + &quot;to set the environment variable&quot; + &quot; JAVA_HOME to your jdk directory.\n&quot;)<SUB>69</SUB>> ]
+"106" [label = <(&lt;operator&gt;.addition,&quot;Cannot use classic compiler , as it is &quot; + &quot;not available. \n&quot; + &quot; A common solution is &quot; + &quot;to set the environment variable&quot;)<SUB>69</SUB>> ]
+"107" [label = <(&lt;operator&gt;.addition,&quot;Cannot use classic compiler , as it is &quot; + &quot;not available. \n&quot; + &quot; A common solution is &quot;)<SUB>69</SUB>> ]
+"108" [label = <(&lt;operator&gt;.addition,&quot;Cannot use classic compiler , as it is &quot; + &quot;not available. \n&quot;)<SUB>69</SUB>> ]
+"109" [label = <(LITERAL,&quot;Cannot use classic compiler , as it is &quot;,&quot;Cannot use classic compiler , as it is &quot; + &quot;not available. \n&quot;)<SUB>69</SUB>> ]
+"110" [label = <(LITERAL,&quot;not available. \n&quot;,&quot;Cannot use classic compiler , as it is &quot; + &quot;not available. \n&quot;)<SUB>70</SUB>> ]
+"111" [label = <(LITERAL,&quot; A common solution is &quot;,&quot;Cannot use classic compiler , as it is &quot; + &quot;not available. \n&quot; + &quot; A common solution is &quot;)<SUB>71</SUB>> ]
+"112" [label = <(LITERAL,&quot;to set the environment variable&quot;,&quot;Cannot use classic compiler , as it is &quot; + &quot;not available. \n&quot; + &quot; A common solution is &quot; + &quot;to set the environment variable&quot;)<SUB>72</SUB>> ]
+"113" [label = <(LITERAL,&quot; JAVA_HOME to your jdk directory.\n&quot;,&quot;Cannot use classic compiler , as it is &quot; + &quot;not available. \n&quot; + &quot; A common solution is &quot; + &quot;to set the environment variable&quot; + &quot; JAVA_HOME to your jdk directory.\n&quot;)<SUB>73</SUB>> ]
+"114" [label = <(LITERAL,&quot;It is currently set to \&quot;&quot;,&quot;Cannot use classic compiler , as it is &quot; + &quot;not available. \n&quot; + &quot; A common solution is &quot; + &quot;to set the environment variable&quot; + &quot; JAVA_HOME to your jdk directory.\n&quot; + &quot;It is currently set to \&quot;&quot;)<SUB>74</SUB>> ]
+"115" [label = <(getJavaHome,getJavaHome())<SUB>75</SUB>> ]
+"116" [label = <(IDENTIFIER,JavaEnvUtils,getJavaHome())<SUB>75</SUB>> ]
+"117" [label = <(LITERAL,&quot;\&quot;&quot;,&quot;Cannot use classic compiler , as it is &quot; + &quot;not available. \n&quot; + &quot; A common solution is &quot; + &quot;to set the environment variable&quot; + &quot; JAVA_HOME to your jdk directory.\n&quot; + &quot;It is currently set to \&quot;&quot; + JavaEnvUtils.getJavaHome() + &quot;\&quot;&quot;)<SUB>76</SUB>> ]
+"118" [label = <(IDENTIFIER,location,new BuildException(&quot;Cannot use classic compiler , as it is &quot; + &quot;not available. \n&quot; + &quot; A common solution is &quot; + &quot;to set the environment variable&quot; + &quot; JAVA_HOME to your jdk directory.\n&quot; + &quot;It is currently set to \&quot;&quot; + JavaEnvUtils.getJavaHome() + &quot;\&quot;&quot;, location))<SUB>77</SUB>> ]
+"119" [label = <(IDENTIFIER,$obj1,&lt;empty&gt;)> ]
+"120" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>78</SUB>> ]
+"121" [label = <(CONTROL_STRUCTURE,if (ex instanceof BuildException),if (ex instanceof BuildException))<SUB>79</SUB>> ]
+"122" [label = <(&lt;operator&gt;.instanceOf,ex instanceof BuildException)<SUB>79</SUB>> ]
+"123" [label = <(IDENTIFIER,ex,ex instanceof BuildException)<SUB>79</SUB>> ]
+"124" [label = <(TYPE_REF,BuildException,BuildException)<SUB>79</SUB>> ]
+"125" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>79</SUB>> ]
+"126" [label = <(&lt;operator&gt;.throw,throw (BuildException) ex;)<SUB>80</SUB>> ]
+"127" [label = <(&lt;operator&gt;.cast,(BuildException) ex)<SUB>80</SUB>> ]
+"128" [label = <(TYPE_REF,BuildException,BuildException)<SUB>80</SUB>> ]
+"129" [label = <(IDENTIFIER,ex,(BuildException) ex)<SUB>80</SUB>> ]
+"130" [label = <(CONTROL_STRUCTURE,else,else)<SUB>81</SUB>> ]
+"131" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>81</SUB>> ]
+"132" [label = <(&lt;operator&gt;.throw,throw new BuildException(&quot;Error starting classic compiler: &quot;, ex, location);)<SUB>82</SUB>> ]
+"133" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>82</SUB>> ]
+"134" [label = <(&lt;operator&gt;.assignment,&lt;empty&gt;)> ]
+"135" [label = <(IDENTIFIER,$obj2,&lt;empty&gt;)> ]
+"136" [label = <(&lt;operator&gt;.alloc,new BuildException(&quot;Error starting classic compiler: &quot;, ex, location))<SUB>82</SUB>> ]
+"137" [label = <(&lt;init&gt;,new BuildException(&quot;Error starting classic compiler: &quot;, ex, location))<SUB>82</SUB>> ]
+"138" [label = <(IDENTIFIER,$obj2,new BuildException(&quot;Error starting classic compiler: &quot;, ex, location))> ]
+"139" [label = <(LITERAL,&quot;Error starting classic compiler: &quot;,new BuildException(&quot;Error starting classic compiler: &quot;, ex, location))<SUB>82</SUB>> ]
+"140" [label = <(IDENTIFIER,ex,new BuildException(&quot;Error starting classic compiler: &quot;, ex, location))<SUB>83</SUB>> ]
+"141" [label = <(IDENTIFIER,location,new BuildException(&quot;Error starting classic compiler: &quot;, ex, location))<SUB>83</SUB>> ]
+"142" [label = <(IDENTIFIER,$obj2,&lt;empty&gt;)> ]
+"143" [label = <(BLOCK,finally,finally)<SUB>85</SUB>> ]
+"144" [label = <(close,close(logstr))<SUB>86</SUB>> ]
+"145" [label = <(IDENTIFIER,FileUtils,close(logstr))<SUB>86</SUB>> ]
+"146" [label = <(IDENTIFIER,logstr,close(logstr))<SUB>86</SUB>> ]
+"147" [label = <(MODIFIER,PUBLIC)> ]
+"148" [label = <(MODIFIER,VIRTUAL)> ]
+"149" [label = <(METHOD_RETURN,boolean)<SUB>46</SUB>> ]
+  "14" -> "4" 
+  "14" -> "15" 
+  "14" -> "147" 
+  "14" -> "148" 
+  "14" -> "149" 
+  "15" -> "16" 
+  "15" -> "22" 
+  "15" -> "23" 
+  "15" -> "6" 
+  "15" -> "27" 
+  "15" -> "30" 
+  "15" -> "35" 
+  "16" -> "17" 
+  "16" -> "18" 
+  "16" -> "19" 
+  "19" -> "20" 
+  "19" -> "21" 
+  "23" -> "24" 
+  "23" -> "25" 
+  "25" -> "3" 
+  "25" -> "26" 
+  "27" -> "28" 
+  "27" -> "29" 
+  "30" -> "5" 
+  "30" -> "31" 
+  "30" -> "32" 
+  "32" -> "33" 
+  "32" -> "34" 
+  "35" -> "36" 
+  "35" -> "93" 
+  "35" -> "143" 
+  "36" -> "37" 
+  "36" -> "38" 
+  "36" -> "45" 
+  "36" -> "46" 
+  "36" -> "58" 
+  "36" -> "59" 
+  "36" -> "67" 
+  "36" -> "68" 
+  "36" -> "78" 
+  "36" -> "79" 
+  "36" -> "90" 
+  "38" -> "39" 
+  "38" -> "40" 
+  "40" -> "41" 
+  "40" -> "42" 
+  "42" -> "43" 
+  "42" -> "44" 
+  "46" -> "47" 
+  "46" -> "48" 
+  "48" -> "49" 
+  "48" -> "50" 
+  "50" -> "51" 
+  "51" -> "52" 
+  "51" -> "55" 
+  "52" -> "53" 
+  "52" -> "54" 
+  "55" -> "56" 
+  "55" -> "57" 
+  "59" -> "60" 
+  "59" -> "61" 
+  "61" -> "62" 
+  "61" -> "63" 
+  "63" -> "64" 
+  "64" -> "65" 
+  "64" -> "66" 
+  "68" -> "69" 
+  "68" -> "70" 
+  "70" -> "71" 
+  "70" -> "72" 
+  "70" -> "73" 
+  "73" -> "74" 
+  "74" -> "75" 
+  "75" -> "76" 
+  "75" -> "77" 
+  "79" -> "80" 
+  "79" -> "81" 
+  "81" -> "82" 
+  "81" -> "83" 
+  "83" -> "84" 
+  "83" -> "85" 
+  "83" -> "86" 
+  "86" -> "87" 
+  "87" -> "88" 
+  "88" -> "89" 
+  "90" -> "91" 
+  "91" -> "92" 
+  "93" -> "94" 
+  "93" -> "120" 
+  "94" -> "95" 
+  "95" -> "96" 
+  "96" -> "97" 
+  "96" -> "100" 
+  "96" -> "119" 
+  "97" -> "98" 
+  "97" -> "99" 
+  "100" -> "101" 
+  "100" -> "102" 
+  "100" -> "118" 
+  "102" -> "103" 
+  "102" -> "117" 
+  "103" -> "104" 
+  "103" -> "115" 
+  "104" -> "105" 
+  "104" -> "114" 
+  "105" -> "106" 
+  "105" -> "113" 
+  "106" -> "107" 
+  "106" -> "112" 
+  "107" -> "108" 
+  "107" -> "111" 
+  "108" -> "109" 
+  "108" -> "110" 
+  "115" -> "116" 
+  "120" -> "121" 
+  "121" -> "122" 
+  "121" -> "125" 
+  "121" -> "130" 
+  "122" -> "123" 
+  "122" -> "124" 
+  "125" -> "126" 
+  "126" -> "127" 
+  "127" -> "128" 
+  "127" -> "129" 
+  "130" -> "131" 
+  "131" -> "132" 
+  "132" -> "133" 
+  "133" -> "134" 
+  "133" -> "137" 
+  "133" -> "142" 
+  "134" -> "135" 
+  "134" -> "136" 
+  "137" -> "138" 
+  "137" -> "139" 
+  "137" -> "140" 
+  "137" -> "141" 
+  "143" -> "144" 
+  "144" -> "145" 
+  "144" -> "146" 
+}

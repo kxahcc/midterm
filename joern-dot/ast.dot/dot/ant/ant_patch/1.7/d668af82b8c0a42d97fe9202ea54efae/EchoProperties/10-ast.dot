@@ -1,0 +1,159 @@
+digraph "saveProperties" {  
+"676" [label = <(METHOD,saveProperties)<SUB>385</SUB>> ]
+"57" [label = <(PARAM,this)<SUB>385</SUB>> ]
+"677" [label = <(PARAM,Hashtable allProps)<SUB>385</SUB>> ]
+"678" [label = <(PARAM,OutputStream os)<SUB>385</SUB>> ]
+"679" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>386</SUB>> ]
+"53" [label = <(LOCAL,List keyList: java.util.List)> ]
+"680" [label = <(&lt;operator&gt;.assignment,List keyList = new ArrayList(allProps.keySet()))<SUB>387</SUB>> ]
+"681" [label = <(IDENTIFIER,keyList,List keyList = new ArrayList(allProps.keySet()))<SUB>387</SUB>> ]
+"682" [label = <(&lt;operator&gt;.alloc,new ArrayList(allProps.keySet()))<SUB>387</SUB>> ]
+"683" [label = <(&lt;init&gt;,new ArrayList(allProps.keySet()))<SUB>387</SUB>> ]
+"52" [label = <(IDENTIFIER,keyList,new ArrayList(allProps.keySet()))<SUB>387</SUB>> ]
+"684" [label = <(keySet,allProps.keySet())<SUB>387</SUB>> ]
+"685" [label = <(IDENTIFIER,allProps,allProps.keySet())<SUB>387</SUB>> ]
+"686" [label = <(sort,Collections.sort(keyList))<SUB>388</SUB>> ]
+"687" [label = <(IDENTIFIER,Collections,Collections.sort(keyList))<SUB>388</SUB>> ]
+"688" [label = <(IDENTIFIER,keyList,Collections.sort(keyList))<SUB>388</SUB>> ]
+"55" [label = <(LOCAL,Properties props: java.util.Properties)> ]
+"689" [label = <(&lt;operator&gt;.assignment,Properties props = new Properties() {\012\012    public Enumeration keys() {\012        return CollectionUtils.asEnumeration(keyList.iterator());\012    }\012\012    public Set entrySet() {\012        Set result = super.entrySet();\012        if (JavaEnvUtils.isKaffe()) {\012            TreeSet t = new TreeSet(new Comparator() {\012\012                public int compare(Object o1, Object o2) {\012                    String key1 = (String) ((Map.Entry) o1).getKey();\012                    String key2 = (String) ((Map.Entry) o2).getKey();\012                    return key1.compareTo(key2);\012                }\012            });\012            t.addAll(result);\012            result = t;\012        }\012        return result;\012    }\012})<SUB>389</SUB>> ]
+"690" [label = <(IDENTIFIER,props,Properties props = new Properties() {\012\012    public Enumeration keys() {\012        return CollectionUtils.asEnumeration(keyList.iterator());\012    }\012\012    public Set entrySet() {\012        Set result = super.entrySet();\012        if (JavaEnvUtils.isKaffe()) {\012            TreeSet t = new TreeSet(new Comparator() {\012\012                public int compare(Object o1, Object o2) {\012                    String key1 = (String) ((Map.Entry) o1).getKey();\012                    String key2 = (String) ((Map.Entry) o2).getKey();\012                    return key1.compareTo(key2);\012                }\012            });\012            t.addAll(result);\012            result = t;\012        }\012        return result;\012    }\012})<SUB>389</SUB>> ]
+"691" [label = <(&lt;operator&gt;.alloc,new Properties() {\012\012    public Enumeration keys() {\012        return CollectionUtils.asEnumeration(keyList.iterator());\012    }\012\012    public Set entrySet() {\012        Set result = super.entrySet();\012        if (JavaEnvUtils.isKaffe()) {\012            TreeSet t = new TreeSet(new Comparator() {\012\012                public int compare(Object o1, Object o2) {\012                    String key1 = (String) ((Map.Entry) o1).getKey();\012                    String key2 = (String) ((Map.Entry) o2).getKey();\012                    return key1.compareTo(key2);\012                }\012            });\012            t.addAll(result);\012            result = t;\012        }\012        return result;\012    }\012})<SUB>389</SUB>> ]
+"692" [label = <(&lt;init&gt;,new Properties() {\012\012    public Enumeration keys() {\012        return CollectionUtils.asEnumeration(keyList.iterator());\012    }\012\012    public Set entrySet() {\012        Set result = super.entrySet();\012        if (JavaEnvUtils.isKaffe()) {\012            TreeSet t = new TreeSet(new Comparator() {\012\012                public int compare(Object o1, Object o2) {\012                    String key1 = (String) ((Map.Entry) o1).getKey();\012                    String key2 = (String) ((Map.Entry) o2).getKey();\012                    return key1.compareTo(key2);\012                }\012            });\012            t.addAll(result);\012            result = t;\012        }\012        return result;\012    }\012})<SUB>389</SUB>> ]
+"54" [label = <(IDENTIFIER,props,new Properties() {\012\012    public Enumeration keys() {\012        return CollectionUtils.asEnumeration(keyList.iterator());\012    }\012\012    public Set entrySet() {\012        Set result = super.entrySet();\012        if (JavaEnvUtils.isKaffe()) {\012            TreeSet t = new TreeSet(new Comparator() {\012\012                public int compare(Object o1, Object o2) {\012                    String key1 = (String) ((Map.Entry) o1).getKey();\012                    String key2 = (String) ((Map.Entry) o2).getKey();\012                    return key1.compareTo(key2);\012                }\012            });\012            t.addAll(result);\012            result = t;\012        }\012        return result;\012    }\012})<SUB>389</SUB>> ]
+"693" [label = <(CONTROL_STRUCTURE,for (int i = 0; Some(i &lt; keyList.size()); i++),for (int i = 0; Some(i &lt; keyList.size()); i++))<SUB>409</SUB>> ]
+"694" [label = <(LOCAL,int i: int)> ]
+"695" [label = <(&lt;operator&gt;.assignment,int i = 0)<SUB>409</SUB>> ]
+"696" [label = <(IDENTIFIER,i,int i = 0)<SUB>409</SUB>> ]
+"697" [label = <(LITERAL,0,int i = 0)<SUB>409</SUB>> ]
+"698" [label = <(&lt;operator&gt;.lessThan,i &lt; keyList.size())<SUB>409</SUB>> ]
+"699" [label = <(IDENTIFIER,i,i &lt; keyList.size())<SUB>409</SUB>> ]
+"700" [label = <(size,keyList.size())<SUB>409</SUB>> ]
+"701" [label = <(IDENTIFIER,keyList,keyList.size())<SUB>409</SUB>> ]
+"702" [label = <(&lt;operator&gt;.postIncrement,i++)<SUB>409</SUB>> ]
+"703" [label = <(IDENTIFIER,i,i++)<SUB>409</SUB>> ]
+"704" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>409</SUB>> ]
+"705" [label = <(LOCAL,String name: java.lang.String)> ]
+"706" [label = <(&lt;operator&gt;.assignment,String name = keyList.get(i).toString())<SUB>410</SUB>> ]
+"707" [label = <(IDENTIFIER,name,String name = keyList.get(i).toString())<SUB>410</SUB>> ]
+"708" [label = <(toString,keyList.get(i).toString())<SUB>410</SUB>> ]
+"709" [label = <(get,keyList.get(i))<SUB>410</SUB>> ]
+"710" [label = <(IDENTIFIER,keyList,keyList.get(i))<SUB>410</SUB>> ]
+"711" [label = <(IDENTIFIER,i,keyList.get(i))<SUB>410</SUB>> ]
+"712" [label = <(LOCAL,String value: java.lang.String)> ]
+"713" [label = <(&lt;operator&gt;.assignment,String value = allProps.get(name).toString())<SUB>411</SUB>> ]
+"714" [label = <(IDENTIFIER,value,String value = allProps.get(name).toString())<SUB>411</SUB>> ]
+"715" [label = <(toString,allProps.get(name).toString())<SUB>411</SUB>> ]
+"716" [label = <(get,allProps.get(name))<SUB>411</SUB>> ]
+"717" [label = <(IDENTIFIER,allProps,allProps.get(name))<SUB>411</SUB>> ]
+"718" [label = <(IDENTIFIER,name,allProps.get(name))<SUB>411</SUB>> ]
+"719" [label = <(setProperty,props.setProperty(name, value))<SUB>412</SUB>> ]
+"720" [label = <(IDENTIFIER,props,props.setProperty(name, value))<SUB>412</SUB>> ]
+"721" [label = <(IDENTIFIER,name,props.setProperty(name, value))<SUB>412</SUB>> ]
+"722" [label = <(IDENTIFIER,value,props.setProperty(name, value))<SUB>412</SUB>> ]
+"723" [label = <(CONTROL_STRUCTURE,if (&quot;text&quot;.equals(format)),if (&quot;text&quot;.equals(format)))<SUB>414</SUB>> ]
+"724" [label = <(equals,this.equals(format))<SUB>414</SUB>> ]
+"725" [label = <(LITERAL,&quot;text&quot;,this.equals(format))<SUB>414</SUB>> ]
+"726" [label = <(&lt;operator&gt;.fieldAccess,this.format)<SUB>414</SUB>> ]
+"727" [label = <(IDENTIFIER,this,this.equals(format))<SUB>414</SUB>> ]
+"728" [label = <(FIELD_IDENTIFIER,format,format)<SUB>414</SUB>> ]
+"729" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>414</SUB>> ]
+"730" [label = <(jdkSaveProperties,this.jdkSaveProperties(props, os, &quot;Ant properties&quot;))<SUB>415</SUB>> ]
+"56" [label = <(IDENTIFIER,this,this.jdkSaveProperties(props, os, &quot;Ant properties&quot;))<SUB>415</SUB>> ]
+"731" [label = <(IDENTIFIER,props,this.jdkSaveProperties(props, os, &quot;Ant properties&quot;))<SUB>415</SUB>> ]
+"732" [label = <(IDENTIFIER,os,this.jdkSaveProperties(props, os, &quot;Ant properties&quot;))<SUB>415</SUB>> ]
+"733" [label = <(LITERAL,&quot;Ant properties&quot;,this.jdkSaveProperties(props, os, &quot;Ant properties&quot;))<SUB>415</SUB>> ]
+"734" [label = <(CONTROL_STRUCTURE,else,else)<SUB>416</SUB>> ]
+"735" [label = <(CONTROL_STRUCTURE,if (&quot;xml&quot;.equals(format)),if (&quot;xml&quot;.equals(format)))<SUB>416</SUB>> ]
+"736" [label = <(equals,this.equals(format))<SUB>416</SUB>> ]
+"737" [label = <(LITERAL,&quot;xml&quot;,this.equals(format))<SUB>416</SUB>> ]
+"738" [label = <(&lt;operator&gt;.fieldAccess,this.format)<SUB>416</SUB>> ]
+"739" [label = <(IDENTIFIER,this,this.equals(format))<SUB>416</SUB>> ]
+"740" [label = <(FIELD_IDENTIFIER,format,format)<SUB>416</SUB>> ]
+"741" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>416</SUB>> ]
+"742" [label = <(xmlSaveProperties,this.xmlSaveProperties(props, os))<SUB>417</SUB>> ]
+"58" [label = <(IDENTIFIER,this,this.xmlSaveProperties(props, os))<SUB>417</SUB>> ]
+"743" [label = <(IDENTIFIER,props,this.xmlSaveProperties(props, os))<SUB>417</SUB>> ]
+"744" [label = <(IDENTIFIER,os,this.xmlSaveProperties(props, os))<SUB>417</SUB>> ]
+"745" [label = <(MODIFIER,PROTECTED)> ]
+"746" [label = <(MODIFIER,VIRTUAL)> ]
+"747" [label = <(METHOD_RETURN,void)<SUB>385</SUB>> ]
+  "676" -> "57" 
+  "676" -> "677" 
+  "676" -> "678" 
+  "676" -> "679" 
+  "676" -> "745" 
+  "676" -> "746" 
+  "676" -> "747" 
+  "679" -> "53" 
+  "679" -> "680" 
+  "679" -> "683" 
+  "679" -> "686" 
+  "679" -> "55" 
+  "679" -> "689" 
+  "679" -> "692" 
+  "679" -> "693" 
+  "679" -> "723" 
+  "680" -> "681" 
+  "680" -> "682" 
+  "683" -> "52" 
+  "683" -> "684" 
+  "684" -> "685" 
+  "686" -> "687" 
+  "686" -> "688" 
+  "689" -> "690" 
+  "689" -> "691" 
+  "692" -> "54" 
+  "693" -> "694" 
+  "693" -> "695" 
+  "693" -> "698" 
+  "693" -> "702" 
+  "693" -> "704" 
+  "695" -> "696" 
+  "695" -> "697" 
+  "698" -> "699" 
+  "698" -> "700" 
+  "700" -> "701" 
+  "702" -> "703" 
+  "704" -> "705" 
+  "704" -> "706" 
+  "704" -> "712" 
+  "704" -> "713" 
+  "704" -> "719" 
+  "706" -> "707" 
+  "706" -> "708" 
+  "708" -> "709" 
+  "709" -> "710" 
+  "709" -> "711" 
+  "713" -> "714" 
+  "713" -> "715" 
+  "715" -> "716" 
+  "716" -> "717" 
+  "716" -> "718" 
+  "719" -> "720" 
+  "719" -> "721" 
+  "719" -> "722" 
+  "723" -> "724" 
+  "723" -> "729" 
+  "723" -> "734" 
+  "724" -> "725" 
+  "724" -> "726" 
+  "726" -> "727" 
+  "726" -> "728" 
+  "729" -> "730" 
+  "730" -> "56" 
+  "730" -> "731" 
+  "730" -> "732" 
+  "730" -> "733" 
+  "734" -> "735" 
+  "735" -> "736" 
+  "735" -> "741" 
+  "736" -> "737" 
+  "736" -> "738" 
+  "738" -> "739" 
+  "738" -> "740" 
+  "741" -> "742" 
+  "742" -> "58" 
+  "742" -> "743" 
+  "742" -> "744" 
+}

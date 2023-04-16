@@ -1,0 +1,141 @@
+digraph "dieOnCircularReference" {  
+"1133" [label = <(METHOD,dieOnCircularReference)<SUB>486</SUB>> ]
+"109" [label = <(PARAM,this)<SUB>486</SUB>> ]
+"1134" [label = <(PARAM,Stack stk)<SUB>486</SUB>> ]
+"1135" [label = <(PARAM,Project p)<SUB>486</SUB>> ]
+"1136" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>487</SUB>> ]
+"1137" [label = <(CONTROL_STRUCTURE,if (isChecked()),if (isChecked()))<SUB>489</SUB>> ]
+"1138" [label = <(isChecked,isChecked())<SUB>489</SUB>> ]
+"108" [label = <(IDENTIFIER,this,isChecked())<SUB>489</SUB>> ]
+"1139" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>489</SUB>> ]
+"1140" [label = <(RETURN,return;,return;)<SUB>490</SUB>> ]
+"1141" [label = <(LOCAL,Enumeration e: java.util.Enumeration)> ]
+"1142" [label = <(&lt;operator&gt;.assignment,Enumeration e = elements.elements())<SUB>493</SUB>> ]
+"1143" [label = <(IDENTIFIER,e,Enumeration e = elements.elements())<SUB>493</SUB>> ]
+"1144" [label = <(elements,elements.elements())<SUB>493</SUB>> ]
+"1145" [label = <(&lt;operator&gt;.fieldAccess,this.elements)<SUB>493</SUB>> ]
+"1146" [label = <(IDENTIFIER,this,elements.elements())<SUB>493</SUB>> ]
+"1147" [label = <(FIELD_IDENTIFIER,elements,elements)<SUB>493</SUB>> ]
+"1148" [label = <(CONTROL_STRUCTURE,while (e.hasMoreElements()),while (e.hasMoreElements()))<SUB>494</SUB>> ]
+"1149" [label = <(hasMoreElements,e.hasMoreElements())<SUB>494</SUB>> ]
+"1150" [label = <(IDENTIFIER,e,e.hasMoreElements())<SUB>494</SUB>> ]
+"1151" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>494</SUB>> ]
+"1152" [label = <(LOCAL,Object o: java.lang.Object)> ]
+"1153" [label = <(&lt;operator&gt;.assignment,Object o = e.nextElement())<SUB>495</SUB>> ]
+"1154" [label = <(IDENTIFIER,o,Object o = e.nextElement())<SUB>495</SUB>> ]
+"1155" [label = <(nextElement,e.nextElement())<SUB>495</SUB>> ]
+"1156" [label = <(IDENTIFIER,e,e.nextElement())<SUB>495</SUB>> ]
+"1157" [label = <(CONTROL_STRUCTURE,if (o instanceof Reference),if (o instanceof Reference))<SUB>496</SUB>> ]
+"1158" [label = <(&lt;operator&gt;.instanceOf,o instanceof Reference)<SUB>496</SUB>> ]
+"1159" [label = <(IDENTIFIER,o,o instanceof Reference)<SUB>496</SUB>> ]
+"1160" [label = <(TYPE_REF,Reference,Reference)<SUB>496</SUB>> ]
+"1161" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>496</SUB>> ]
+"1162" [label = <(&lt;operator&gt;.assignment,o = getReferencedObject(p))<SUB>497</SUB>> ]
+"1163" [label = <(IDENTIFIER,o,o = getReferencedObject(p))<SUB>497</SUB>> ]
+"1164" [label = <(getReferencedObject,getReferencedObject(p))<SUB>497</SUB>> ]
+"1165" [label = <(&lt;operator&gt;.cast,(Reference) o)<SUB>497</SUB>> ]
+"1166" [label = <(TYPE_REF,Reference,Reference)<SUB>497</SUB>> ]
+"1167" [label = <(IDENTIFIER,o,(Reference) o)<SUB>497</SUB>> ]
+"1168" [label = <(IDENTIFIER,p,getReferencedObject(p))<SUB>497</SUB>> ]
+"1169" [label = <(CONTROL_STRUCTURE,if (o instanceof DataType),if (o instanceof DataType))<SUB>500</SUB>> ]
+"1170" [label = <(&lt;operator&gt;.instanceOf,o instanceof DataType)<SUB>500</SUB>> ]
+"1171" [label = <(IDENTIFIER,o,o instanceof DataType)<SUB>500</SUB>> ]
+"1172" [label = <(TYPE_REF,DataType,DataType)<SUB>500</SUB>> ]
+"1173" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>500</SUB>> ]
+"1174" [label = <(CONTROL_STRUCTURE,if (stk.contains(o)),if (stk.contains(o)))<SUB>501</SUB>> ]
+"1175" [label = <(contains,stk.contains(o))<SUB>501</SUB>> ]
+"1176" [label = <(IDENTIFIER,stk,stk.contains(o))<SUB>501</SUB>> ]
+"1177" [label = <(IDENTIFIER,o,stk.contains(o))<SUB>501</SUB>> ]
+"1178" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>501</SUB>> ]
+"1179" [label = <(&lt;operator&gt;.throw,throw circularReference();)<SUB>502</SUB>> ]
+"1180" [label = <(circularReference,circularReference())<SUB>502</SUB>> ]
+"110" [label = <(IDENTIFIER,this,circularReference())<SUB>502</SUB>> ]
+"1181" [label = <(CONTROL_STRUCTURE,else,else)<SUB>503</SUB>> ]
+"1182" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>503</SUB>> ]
+"1183" [label = <(push,stk.push(o))<SUB>504</SUB>> ]
+"1184" [label = <(IDENTIFIER,stk,stk.push(o))<SUB>504</SUB>> ]
+"1185" [label = <(IDENTIFIER,o,stk.push(o))<SUB>504</SUB>> ]
+"1186" [label = <(dieOnCircularReference,dieOnCircularReference(stk, p))<SUB>505</SUB>> ]
+"1187" [label = <(&lt;operator&gt;.cast,(DataType) o)<SUB>505</SUB>> ]
+"1188" [label = <(TYPE_REF,DataType,DataType)<SUB>505</SUB>> ]
+"1189" [label = <(IDENTIFIER,o,(DataType) o)<SUB>505</SUB>> ]
+"1190" [label = <(IDENTIFIER,stk,dieOnCircularReference(stk, p))<SUB>505</SUB>> ]
+"1191" [label = <(IDENTIFIER,p,dieOnCircularReference(stk, p))<SUB>505</SUB>> ]
+"1192" [label = <(pop,stk.pop())<SUB>506</SUB>> ]
+"1193" [label = <(IDENTIFIER,stk,stk.pop())<SUB>506</SUB>> ]
+"1194" [label = <(setChecked,setChecked(true))<SUB>510</SUB>> ]
+"111" [label = <(IDENTIFIER,this,setChecked(true))<SUB>510</SUB>> ]
+"1195" [label = <(LITERAL,true,setChecked(true))<SUB>510</SUB>> ]
+"1196" [label = <(MODIFIER,PROTECTED)> ]
+"1197" [label = <(MODIFIER,VIRTUAL)> ]
+"1198" [label = <(METHOD_RETURN,void)<SUB>486</SUB>> ]
+  "1133" -> "109" 
+  "1133" -> "1134" 
+  "1133" -> "1135" 
+  "1133" -> "1136" 
+  "1133" -> "1196" 
+  "1133" -> "1197" 
+  "1133" -> "1198" 
+  "1136" -> "1137" 
+  "1136" -> "1141" 
+  "1136" -> "1142" 
+  "1136" -> "1148" 
+  "1136" -> "1194" 
+  "1137" -> "1138" 
+  "1137" -> "1139" 
+  "1138" -> "108" 
+  "1139" -> "1140" 
+  "1142" -> "1143" 
+  "1142" -> "1144" 
+  "1144" -> "1145" 
+  "1145" -> "1146" 
+  "1145" -> "1147" 
+  "1148" -> "1149" 
+  "1148" -> "1151" 
+  "1149" -> "1150" 
+  "1151" -> "1152" 
+  "1151" -> "1153" 
+  "1151" -> "1157" 
+  "1151" -> "1169" 
+  "1153" -> "1154" 
+  "1153" -> "1155" 
+  "1155" -> "1156" 
+  "1157" -> "1158" 
+  "1157" -> "1161" 
+  "1158" -> "1159" 
+  "1158" -> "1160" 
+  "1161" -> "1162" 
+  "1162" -> "1163" 
+  "1162" -> "1164" 
+  "1164" -> "1165" 
+  "1164" -> "1168" 
+  "1165" -> "1166" 
+  "1165" -> "1167" 
+  "1169" -> "1170" 
+  "1169" -> "1173" 
+  "1170" -> "1171" 
+  "1170" -> "1172" 
+  "1173" -> "1174" 
+  "1174" -> "1175" 
+  "1174" -> "1178" 
+  "1174" -> "1181" 
+  "1175" -> "1176" 
+  "1175" -> "1177" 
+  "1178" -> "1179" 
+  "1179" -> "1180" 
+  "1180" -> "110" 
+  "1181" -> "1182" 
+  "1182" -> "1183" 
+  "1182" -> "1186" 
+  "1182" -> "1192" 
+  "1183" -> "1184" 
+  "1183" -> "1185" 
+  "1186" -> "1187" 
+  "1186" -> "1190" 
+  "1186" -> "1191" 
+  "1187" -> "1188" 
+  "1187" -> "1189" 
+  "1192" -> "1193" 
+  "1194" -> "111" 
+  "1194" -> "1195" 
+}

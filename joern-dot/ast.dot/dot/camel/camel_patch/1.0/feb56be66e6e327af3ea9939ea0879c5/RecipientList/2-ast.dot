@@ -1,0 +1,89 @@
+digraph "process" {  
+"56" [label = <(METHOD,process)<SUB>52</SUB>> ]
+"7" [label = <(PARAM,this)<SUB>52</SUB>> ]
+"57" [label = <(PARAM,Exchange exchange)<SUB>52</SUB>> ]
+"58" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>52</SUB>> ]
+"59" [label = <(LOCAL,Object receipientList: java.lang.Object)> ]
+"60" [label = <(&lt;operator&gt;.assignment,Object receipientList = evaluate(exchange))<SUB>53</SUB>> ]
+"61" [label = <(IDENTIFIER,receipientList,Object receipientList = evaluate(exchange))<SUB>53</SUB>> ]
+"62" [label = <(evaluate,evaluate(exchange))<SUB>53</SUB>> ]
+"63" [label = <(&lt;operator&gt;.fieldAccess,this.expression)<SUB>53</SUB>> ]
+"64" [label = <(IDENTIFIER,this,evaluate(exchange))<SUB>53</SUB>> ]
+"65" [label = <(FIELD_IDENTIFIER,expression,expression)<SUB>53</SUB>> ]
+"66" [label = <(IDENTIFIER,exchange,evaluate(exchange))<SUB>53</SUB>> ]
+"67" [label = <(LOCAL,Iterator iter: java.util.Iterator)> ]
+"68" [label = <(&lt;operator&gt;.assignment,Iterator iter = iterator(receipientList))<SUB>54</SUB>> ]
+"69" [label = <(IDENTIFIER,iter,Iterator iter = iterator(receipientList))<SUB>54</SUB>> ]
+"70" [label = <(iterator,iterator(receipientList))<SUB>54</SUB>> ]
+"71" [label = <(IDENTIFIER,ObjectConverter,iterator(receipientList))<SUB>54</SUB>> ]
+"72" [label = <(IDENTIFIER,receipientList,iterator(receipientList))<SUB>54</SUB>> ]
+"73" [label = <(CONTROL_STRUCTURE,while (iter.hasNext()),while (iter.hasNext()))<SUB>55</SUB>> ]
+"74" [label = <(hasNext,iter.hasNext())<SUB>55</SUB>> ]
+"75" [label = <(IDENTIFIER,iter,iter.hasNext())<SUB>55</SUB>> ]
+"76" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>55</SUB>> ]
+"77" [label = <(LOCAL,Object recipient: java.lang.Object)> ]
+"78" [label = <(&lt;operator&gt;.assignment,Object recipient = iter.next())<SUB>56</SUB>> ]
+"79" [label = <(IDENTIFIER,recipient,Object recipient = iter.next())<SUB>56</SUB>> ]
+"80" [label = <(next,iter.next())<SUB>56</SUB>> ]
+"81" [label = <(IDENTIFIER,iter,iter.next())<SUB>56</SUB>> ]
+"82" [label = <(LOCAL,Endpoint&lt;Exchange&gt; endpoint: ANY)> ]
+"83" [label = <(&lt;operator&gt;.assignment,ANY endpoint = resolveEndpoint(exchange, recipient))<SUB>57</SUB>> ]
+"84" [label = <(IDENTIFIER,endpoint,ANY endpoint = resolveEndpoint(exchange, recipient))<SUB>57</SUB>> ]
+"85" [label = <(resolveEndpoint,resolveEndpoint(exchange, recipient))<SUB>57</SUB>> ]
+"6" [label = <(IDENTIFIER,this,resolveEndpoint(exchange, recipient))<SUB>57</SUB>> ]
+"86" [label = <(IDENTIFIER,exchange,resolveEndpoint(exchange, recipient))<SUB>57</SUB>> ]
+"87" [label = <(IDENTIFIER,recipient,resolveEndpoint(exchange, recipient))<SUB>57</SUB>> ]
+"88" [label = <(process,process(exchange))<SUB>58</SUB>> ]
+"89" [label = <(getProducer,getProducer(endpoint))<SUB>58</SUB>> ]
+"90" [label = <(&lt;operator&gt;.fieldAccess,this.producerCache)<SUB>58</SUB>> ]
+"91" [label = <(IDENTIFIER,this,getProducer(endpoint))<SUB>58</SUB>> ]
+"92" [label = <(FIELD_IDENTIFIER,producerCache,producerCache)<SUB>58</SUB>> ]
+"93" [label = <(IDENTIFIER,endpoint,getProducer(endpoint))<SUB>58</SUB>> ]
+"94" [label = <(IDENTIFIER,exchange,process(exchange))<SUB>58</SUB>> ]
+"95" [label = <(MODIFIER,PUBLIC)> ]
+"96" [label = <(MODIFIER,VIRTUAL)> ]
+"97" [label = <(METHOD_RETURN,void)<SUB>52</SUB>> ]
+  "56" -> "7" 
+  "56" -> "57" 
+  "56" -> "58" 
+  "56" -> "95" 
+  "56" -> "96" 
+  "56" -> "97" 
+  "58" -> "59" 
+  "58" -> "60" 
+  "58" -> "67" 
+  "58" -> "68" 
+  "58" -> "73" 
+  "60" -> "61" 
+  "60" -> "62" 
+  "62" -> "63" 
+  "62" -> "66" 
+  "63" -> "64" 
+  "63" -> "65" 
+  "68" -> "69" 
+  "68" -> "70" 
+  "70" -> "71" 
+  "70" -> "72" 
+  "73" -> "74" 
+  "73" -> "76" 
+  "74" -> "75" 
+  "76" -> "77" 
+  "76" -> "78" 
+  "76" -> "82" 
+  "76" -> "83" 
+  "76" -> "88" 
+  "78" -> "79" 
+  "78" -> "80" 
+  "80" -> "81" 
+  "83" -> "84" 
+  "83" -> "85" 
+  "85" -> "6" 
+  "85" -> "86" 
+  "85" -> "87" 
+  "88" -> "89" 
+  "88" -> "94" 
+  "89" -> "90" 
+  "89" -> "93" 
+  "90" -> "91" 
+  "90" -> "92" 
+}

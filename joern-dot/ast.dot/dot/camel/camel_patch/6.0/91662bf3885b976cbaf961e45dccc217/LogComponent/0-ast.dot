@@ -1,0 +1,153 @@
+digraph "createEndpoint" {  
+"19" [label = <(METHOD,createEndpoint)<SUB>39</SUB>> ]
+"4" [label = <(PARAM,this)<SUB>39</SUB>> ]
+"20" [label = <(PARAM,String uri)<SUB>39</SUB>> ]
+"21" [label = <(PARAM,String remaining)<SUB>39</SUB>> ]
+"22" [label = <(PARAM,Map parameters)<SUB>39</SUB>> ]
+"23" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>39</SUB>> ]
+"24" [label = <(LOCAL,LoggingLevel level: org.apache.camel.model.LoggingLevel)> ]
+"25" [label = <(&lt;operator&gt;.assignment,LoggingLevel level = this.getLoggingLevel(parameters))<SUB>40</SUB>> ]
+"26" [label = <(IDENTIFIER,level,LoggingLevel level = this.getLoggingLevel(parameters))<SUB>40</SUB>> ]
+"27" [label = <(getLoggingLevel,this.getLoggingLevel(parameters))<SUB>40</SUB>> ]
+"3" [label = <(IDENTIFIER,this,this.getLoggingLevel(parameters))<SUB>40</SUB>> ]
+"28" [label = <(IDENTIFIER,parameters,this.getLoggingLevel(parameters))<SUB>40</SUB>> ]
+"29" [label = <(LOCAL,Integer groupSize: java.lang.Integer)> ]
+"30" [label = <(&lt;operator&gt;.assignment,Integer groupSize = getAndRemoveParameter(parameters, &quot;groupSize&quot;, Integer.class))<SUB>41</SUB>> ]
+"31" [label = <(IDENTIFIER,groupSize,Integer groupSize = getAndRemoveParameter(parameters, &quot;groupSize&quot;, Integer.class))<SUB>41</SUB>> ]
+"32" [label = <(getAndRemoveParameter,getAndRemoveParameter(parameters, &quot;groupSize&quot;, Integer.class))<SUB>41</SUB>> ]
+"5" [label = <(IDENTIFIER,this,getAndRemoveParameter(parameters, &quot;groupSize&quot;, Integer.class))<SUB>41</SUB>> ]
+"33" [label = <(IDENTIFIER,parameters,getAndRemoveParameter(parameters, &quot;groupSize&quot;, Integer.class))<SUB>41</SUB>> ]
+"34" [label = <(LITERAL,&quot;groupSize&quot;,getAndRemoveParameter(parameters, &quot;groupSize&quot;, Integer.class))<SUB>41</SUB>> ]
+"35" [label = <(&lt;operator&gt;.fieldAccess,Integer.class)<SUB>41</SUB>> ]
+"36" [label = <(IDENTIFIER,Integer,getAndRemoveParameter(parameters, &quot;groupSize&quot;, Integer.class))<SUB>41</SUB>> ]
+"37" [label = <(FIELD_IDENTIFIER,class,class)<SUB>41</SUB>> ]
+"7" [label = <(LOCAL,Logger logger: org.apache.camel.processor.Logger)> ]
+"38" [label = <(CONTROL_STRUCTURE,if (groupSize != null),if (groupSize != null))<SUB>44</SUB>> ]
+"39" [label = <(&lt;operator&gt;.notEquals,groupSize != null)<SUB>44</SUB>> ]
+"40" [label = <(IDENTIFIER,groupSize,groupSize != null)<SUB>44</SUB>> ]
+"41" [label = <(LITERAL,null,groupSize != null)<SUB>44</SUB>> ]
+"42" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>44</SUB>> ]
+"43" [label = <(&lt;operator&gt;.assignment,logger = new ThroughputLogger(remaining, level, ObjectConverter.toInteger(groupSize)))<SUB>45</SUB>> ]
+"44" [label = <(IDENTIFIER,logger,logger = new ThroughputLogger(remaining, level, ObjectConverter.toInteger(groupSize)))<SUB>45</SUB>> ]
+"45" [label = <(&lt;operator&gt;.alloc,new ThroughputLogger(remaining, level, ObjectConverter.toInteger(groupSize)))<SUB>45</SUB>> ]
+"46" [label = <(&lt;init&gt;,new ThroughputLogger(remaining, level, ObjectConverter.toInteger(groupSize)))<SUB>45</SUB>> ]
+"6" [label = <(IDENTIFIER,logger,new ThroughputLogger(remaining, level, ObjectConverter.toInteger(groupSize)))<SUB>45</SUB>> ]
+"47" [label = <(IDENTIFIER,remaining,new ThroughputLogger(remaining, level, ObjectConverter.toInteger(groupSize)))<SUB>45</SUB>> ]
+"48" [label = <(IDENTIFIER,level,new ThroughputLogger(remaining, level, ObjectConverter.toInteger(groupSize)))<SUB>45</SUB>> ]
+"49" [label = <(toInteger,toInteger(groupSize))<SUB>45</SUB>> ]
+"50" [label = <(IDENTIFIER,ObjectConverter,toInteger(groupSize))<SUB>45</SUB>> ]
+"51" [label = <(IDENTIFIER,groupSize,toInteger(groupSize))<SUB>45</SUB>> ]
+"52" [label = <(CONTROL_STRUCTURE,else,else)<SUB>46</SUB>> ]
+"53" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>46</SUB>> ]
+"9" [label = <(LOCAL,LogFormatter formatter: ANY)> ]
+"54" [label = <(&lt;operator&gt;.assignment,ANY formatter = new LogFormatter())<SUB>47</SUB>> ]
+"55" [label = <(IDENTIFIER,formatter,ANY formatter = new LogFormatter())<SUB>47</SUB>> ]
+"56" [label = <(&lt;operator&gt;.alloc,new LogFormatter())<SUB>47</SUB>> ]
+"57" [label = <(&lt;init&gt;,new LogFormatter())<SUB>47</SUB>> ]
+"8" [label = <(IDENTIFIER,formatter,new LogFormatter())<SUB>47</SUB>> ]
+"58" [label = <(setProperties,setProperties(formatter, parameters))<SUB>48</SUB>> ]
+"59" [label = <(IDENTIFIER,IntrospectionSupport,setProperties(formatter, parameters))<SUB>48</SUB>> ]
+"60" [label = <(IDENTIFIER,formatter,setProperties(formatter, parameters))<SUB>48</SUB>> ]
+"61" [label = <(IDENTIFIER,parameters,setProperties(formatter, parameters))<SUB>48</SUB>> ]
+"62" [label = <(&lt;operator&gt;.assignment,logger = new Logger(remaining))<SUB>50</SUB>> ]
+"63" [label = <(IDENTIFIER,logger,logger = new Logger(remaining))<SUB>50</SUB>> ]
+"64" [label = <(&lt;operator&gt;.alloc,new Logger(remaining))<SUB>50</SUB>> ]
+"65" [label = <(&lt;init&gt;,new Logger(remaining))<SUB>50</SUB>> ]
+"10" [label = <(IDENTIFIER,logger,new Logger(remaining))<SUB>50</SUB>> ]
+"66" [label = <(IDENTIFIER,remaining,new Logger(remaining))<SUB>50</SUB>> ]
+"67" [label = <(setLevel,setLevel(level))<SUB>51</SUB>> ]
+"68" [label = <(IDENTIFIER,logger,setLevel(level))<SUB>51</SUB>> ]
+"69" [label = <(IDENTIFIER,level,setLevel(level))<SUB>51</SUB>> ]
+"70" [label = <(setFormatter,setFormatter(formatter))<SUB>52</SUB>> ]
+"71" [label = <(IDENTIFIER,logger,setFormatter(formatter))<SUB>52</SUB>> ]
+"72" [label = <(IDENTIFIER,formatter,setFormatter(formatter))<SUB>52</SUB>> ]
+"73" [label = <(RETURN,return new ProcessorEndpoint(uri, this, logger);,return new ProcessorEndpoint(uri, this, logger);)<SUB>55</SUB>> ]
+"74" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>55</SUB>> ]
+"75" [label = <(&lt;operator&gt;.assignment,&lt;empty&gt;)> ]
+"76" [label = <(IDENTIFIER,$obj3,&lt;empty&gt;)> ]
+"77" [label = <(&lt;operator&gt;.alloc,new ProcessorEndpoint(uri, this, logger))<SUB>55</SUB>> ]
+"78" [label = <(&lt;init&gt;,new ProcessorEndpoint(uri, this, logger))<SUB>55</SUB>> ]
+"79" [label = <(IDENTIFIER,$obj3,new ProcessorEndpoint(uri, this, logger))> ]
+"80" [label = <(IDENTIFIER,uri,new ProcessorEndpoint(uri, this, logger))<SUB>55</SUB>> ]
+"11" [label = <(IDENTIFIER,this,new ProcessorEndpoint(uri, this, logger))<SUB>55</SUB>> ]
+"81" [label = <(IDENTIFIER,logger,new ProcessorEndpoint(uri, this, logger))<SUB>55</SUB>> ]
+"82" [label = <(IDENTIFIER,$obj3,&lt;empty&gt;)> ]
+"83" [label = <(MODIFIER,PROTECTED)> ]
+"84" [label = <(MODIFIER,VIRTUAL)> ]
+"85" [label = <(METHOD_RETURN,ANY)<SUB>39</SUB>> ]
+  "19" -> "4" 
+  "19" -> "20" 
+  "19" -> "21" 
+  "19" -> "22" 
+  "19" -> "23" 
+  "19" -> "83" 
+  "19" -> "84" 
+  "19" -> "85" 
+  "23" -> "24" 
+  "23" -> "25" 
+  "23" -> "29" 
+  "23" -> "30" 
+  "23" -> "7" 
+  "23" -> "38" 
+  "23" -> "73" 
+  "25" -> "26" 
+  "25" -> "27" 
+  "27" -> "3" 
+  "27" -> "28" 
+  "30" -> "31" 
+  "30" -> "32" 
+  "32" -> "5" 
+  "32" -> "33" 
+  "32" -> "34" 
+  "32" -> "35" 
+  "35" -> "36" 
+  "35" -> "37" 
+  "38" -> "39" 
+  "38" -> "42" 
+  "38" -> "52" 
+  "39" -> "40" 
+  "39" -> "41" 
+  "42" -> "43" 
+  "42" -> "46" 
+  "43" -> "44" 
+  "43" -> "45" 
+  "46" -> "6" 
+  "46" -> "47" 
+  "46" -> "48" 
+  "46" -> "49" 
+  "49" -> "50" 
+  "49" -> "51" 
+  "52" -> "53" 
+  "53" -> "9" 
+  "53" -> "54" 
+  "53" -> "57" 
+  "53" -> "58" 
+  "53" -> "62" 
+  "53" -> "65" 
+  "53" -> "67" 
+  "53" -> "70" 
+  "54" -> "55" 
+  "54" -> "56" 
+  "57" -> "8" 
+  "58" -> "59" 
+  "58" -> "60" 
+  "58" -> "61" 
+  "62" -> "63" 
+  "62" -> "64" 
+  "65" -> "10" 
+  "65" -> "66" 
+  "67" -> "68" 
+  "67" -> "69" 
+  "70" -> "71" 
+  "70" -> "72" 
+  "73" -> "74" 
+  "74" -> "75" 
+  "74" -> "78" 
+  "74" -> "82" 
+  "75" -> "76" 
+  "75" -> "77" 
+  "78" -> "79" 
+  "78" -> "80" 
+  "78" -> "11" 
+  "78" -> "81" 
+}

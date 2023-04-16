@@ -1,0 +1,47 @@
+digraph "toInputStrean" {  
+"270" [label = <(METHOD,toInputStrean)<SUB>138</SUB>> ]
+"271" [label = <(PARAM,DOMSource source)<SUB>139</SUB>> ]
+"272" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>139</SUB>> ]
+"273" [label = <(LOCAL,XmlConverter xmlConverter: org.apache.camel.converter.jaxp.XmlConverter)> ]
+"274" [label = <(&lt;operator&gt;.assignment,XmlConverter xmlConverter = createXmlConverter())<SUB>140</SUB>> ]
+"275" [label = <(IDENTIFIER,xmlConverter,XmlConverter xmlConverter = createXmlConverter())<SUB>140</SUB>> ]
+"276" [label = <(createXmlConverter,createXmlConverter())<SUB>140</SUB>> ]
+"4" [label = <(LOCAL,ByteArrayInputStream bais: java.io.ByteArrayInputStream)> ]
+"277" [label = <(&lt;operator&gt;.assignment,ByteArrayInputStream bais = new ByteArrayInputStream(xmlConverter.toString(source).getBytes()))<SUB>141</SUB>> ]
+"278" [label = <(IDENTIFIER,bais,ByteArrayInputStream bais = new ByteArrayInputStream(xmlConverter.toString(source).getBytes()))<SUB>141</SUB>> ]
+"279" [label = <(&lt;operator&gt;.alloc,new ByteArrayInputStream(xmlConverter.toString(source).getBytes()))<SUB>141</SUB>> ]
+"280" [label = <(&lt;init&gt;,new ByteArrayInputStream(xmlConverter.toString(source).getBytes()))<SUB>141</SUB>> ]
+"3" [label = <(IDENTIFIER,bais,new ByteArrayInputStream(xmlConverter.toString(source).getBytes()))<SUB>141</SUB>> ]
+"281" [label = <(getBytes,getBytes())<SUB>141</SUB>> ]
+"282" [label = <(toString,toString(source))<SUB>141</SUB>> ]
+"283" [label = <(IDENTIFIER,xmlConverter,toString(source))<SUB>141</SUB>> ]
+"284" [label = <(IDENTIFIER,source,toString(source))<SUB>141</SUB>> ]
+"285" [label = <(RETURN,return bais;,return bais;)<SUB>142</SUB>> ]
+"286" [label = <(IDENTIFIER,bais,return bais;)<SUB>142</SUB>> ]
+"287" [label = <(MODIFIER,PUBLIC)> ]
+"288" [label = <(MODIFIER,STATIC)> ]
+"289" [label = <(ANNOTATION,@Converter,@Converter)<SUB>138</SUB>> ]
+"290" [label = <(METHOD_RETURN,java.io.InputStream)<SUB>139</SUB>> ]
+  "270" -> "271" 
+  "270" -> "272" 
+  "270" -> "287" 
+  "270" -> "288" 
+  "270" -> "289" 
+  "270" -> "290" 
+  "272" -> "273" 
+  "272" -> "274" 
+  "272" -> "4" 
+  "272" -> "277" 
+  "272" -> "280" 
+  "272" -> "285" 
+  "274" -> "275" 
+  "274" -> "276" 
+  "277" -> "278" 
+  "277" -> "279" 
+  "280" -> "3" 
+  "280" -> "281" 
+  "281" -> "282" 
+  "282" -> "283" 
+  "282" -> "284" 
+  "285" -> "286" 
+}

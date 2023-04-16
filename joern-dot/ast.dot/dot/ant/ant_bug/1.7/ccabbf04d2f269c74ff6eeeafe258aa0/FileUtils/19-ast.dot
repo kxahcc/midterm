@@ -1,0 +1,163 @@
+digraph "resolveFile" {  
+"626" [label = <(METHOD,resolveFile)<SUB>549</SUB>> ]
+"36" [label = <(PARAM,this)<SUB>549</SUB>> ]
+"627" [label = <(PARAM,File file)<SUB>549</SUB>> ]
+"628" [label = <(PARAM,String filename)<SUB>549</SUB>> ]
+"629" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>549</SUB>> ]
+"630" [label = <(CONTROL_STRUCTURE,if (!isAbsolutePath(filename)),if (!isAbsolutePath(filename)))<SUB>550</SUB>> ]
+"631" [label = <(&lt;operator&gt;.logicalNot,!isAbsolutePath(filename))<SUB>550</SUB>> ]
+"632" [label = <(isAbsolutePath,isAbsolutePath(filename))<SUB>550</SUB>> ]
+"633" [label = <(IDENTIFIER,filename,isAbsolutePath(filename))<SUB>550</SUB>> ]
+"634" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>550</SUB>> ]
+"635" [label = <(LOCAL,char sep: char)> ]
+"636" [label = <(&lt;operator&gt;.assignment,char sep = File.separatorChar)<SUB>551</SUB>> ]
+"637" [label = <(IDENTIFIER,sep,char sep = File.separatorChar)<SUB>551</SUB>> ]
+"638" [label = <(&lt;operator&gt;.fieldAccess,File.separatorChar)<SUB>551</SUB>> ]
+"639" [label = <(IDENTIFIER,File,char sep = File.separatorChar)<SUB>551</SUB>> ]
+"640" [label = <(FIELD_IDENTIFIER,separatorChar,separatorChar)<SUB>551</SUB>> ]
+"641" [label = <(&lt;operator&gt;.assignment,filename = filename.replace('/', sep).replace('\\', sep))<SUB>552</SUB>> ]
+"642" [label = <(IDENTIFIER,filename,filename = filename.replace('/', sep).replace('\\', sep))<SUB>552</SUB>> ]
+"643" [label = <(replace,filename.replace('/', sep).replace('\\', sep))<SUB>552</SUB>> ]
+"644" [label = <(replace,filename.replace('/', sep))<SUB>552</SUB>> ]
+"645" [label = <(IDENTIFIER,filename,filename.replace('/', sep))<SUB>552</SUB>> ]
+"646" [label = <(LITERAL,'/',filename.replace('/', sep))<SUB>552</SUB>> ]
+"647" [label = <(IDENTIFIER,sep,filename.replace('/', sep))<SUB>552</SUB>> ]
+"648" [label = <(LITERAL,'\\',filename.replace('/', sep).replace('\\', sep))<SUB>552</SUB>> ]
+"649" [label = <(IDENTIFIER,sep,filename.replace('/', sep).replace('\\', sep))<SUB>552</SUB>> ]
+"650" [label = <(CONTROL_STRUCTURE,if (isContextRelativePath(filename)),if (isContextRelativePath(filename)))<SUB>553</SUB>> ]
+"651" [label = <(isContextRelativePath,isContextRelativePath(filename))<SUB>553</SUB>> ]
+"652" [label = <(IDENTIFIER,filename,isContextRelativePath(filename))<SUB>553</SUB>> ]
+"653" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>553</SUB>> ]
+"654" [label = <(&lt;operator&gt;.assignment,file = null)<SUB>554</SUB>> ]
+"655" [label = <(IDENTIFIER,file,file = null)<SUB>554</SUB>> ]
+"656" [label = <(LITERAL,null,file = null)<SUB>554</SUB>> ]
+"657" [label = <(LOCAL,String udir: java.lang.String)> ]
+"658" [label = <(&lt;operator&gt;.assignment,String udir = System.getProperty(&quot;user.dir&quot;))<SUB>557</SUB>> ]
+"659" [label = <(IDENTIFIER,udir,String udir = System.getProperty(&quot;user.dir&quot;))<SUB>557</SUB>> ]
+"660" [label = <(getProperty,System.getProperty(&quot;user.dir&quot;))<SUB>557</SUB>> ]
+"661" [label = <(IDENTIFIER,System,System.getProperty(&quot;user.dir&quot;))<SUB>557</SUB>> ]
+"662" [label = <(LITERAL,&quot;user.dir&quot;,System.getProperty(&quot;user.dir&quot;))<SUB>557</SUB>> ]
+"663" [label = <(CONTROL_STRUCTURE,if (filename.charAt(0) == sep &amp;&amp; udir.charAt(0) == sep),if (filename.charAt(0) == sep &amp;&amp; udir.charAt(0) == sep))<SUB>558</SUB>> ]
+"664" [label = <(&lt;operator&gt;.logicalAnd,filename.charAt(0) == sep &amp;&amp; udir.charAt(0) == sep)<SUB>558</SUB>> ]
+"665" [label = <(&lt;operator&gt;.equals,filename.charAt(0) == sep)<SUB>558</SUB>> ]
+"666" [label = <(charAt,filename.charAt(0))<SUB>558</SUB>> ]
+"667" [label = <(IDENTIFIER,filename,filename.charAt(0))<SUB>558</SUB>> ]
+"668" [label = <(LITERAL,0,filename.charAt(0))<SUB>558</SUB>> ]
+"669" [label = <(IDENTIFIER,sep,filename.charAt(0) == sep)<SUB>558</SUB>> ]
+"670" [label = <(&lt;operator&gt;.equals,udir.charAt(0) == sep)<SUB>558</SUB>> ]
+"671" [label = <(charAt,udir.charAt(0))<SUB>558</SUB>> ]
+"672" [label = <(IDENTIFIER,udir,udir.charAt(0))<SUB>558</SUB>> ]
+"673" [label = <(LITERAL,0,udir.charAt(0))<SUB>558</SUB>> ]
+"674" [label = <(IDENTIFIER,sep,udir.charAt(0) == sep)<SUB>558</SUB>> ]
+"675" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>558</SUB>> ]
+"676" [label = <(&lt;operator&gt;.assignment,filename = dissect(udir)[0] + filename.substring(1))<SUB>559</SUB>> ]
+"677" [label = <(IDENTIFIER,filename,filename = dissect(udir)[0] + filename.substring(1))<SUB>559</SUB>> ]
+"678" [label = <(&lt;operator&gt;.addition,dissect(udir)[0] + filename.substring(1))<SUB>559</SUB>> ]
+"679" [label = <(&lt;operator&gt;.indexAccess,dissect(udir)[0])<SUB>559</SUB>> ]
+"680" [label = <(dissect,this.dissect(udir))<SUB>559</SUB>> ]
+"35" [label = <(IDENTIFIER,this,this.dissect(udir))<SUB>559</SUB>> ]
+"681" [label = <(IDENTIFIER,udir,this.dissect(udir))<SUB>559</SUB>> ]
+"682" [label = <(LITERAL,0,dissect(udir)[0] + filename.substring(1))<SUB>559</SUB>> ]
+"683" [label = <(substring,filename.substring(1))<SUB>559</SUB>> ]
+"684" [label = <(IDENTIFIER,filename,filename.substring(1))<SUB>559</SUB>> ]
+"685" [label = <(LITERAL,1,filename.substring(1))<SUB>559</SUB>> ]
+"686" [label = <(&lt;operator&gt;.assignment,filename = new File(file, filename).getAbsolutePath())<SUB>562</SUB>> ]
+"687" [label = <(IDENTIFIER,filename,filename = new File(file, filename).getAbsolutePath())<SUB>562</SUB>> ]
+"688" [label = <(getAbsolutePath,new File(file, filename).getAbsolutePath())<SUB>562</SUB>> ]
+"689" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>562</SUB>> ]
+"690" [label = <(&lt;operator&gt;.assignment,&lt;empty&gt;)> ]
+"691" [label = <(IDENTIFIER,$obj22,&lt;empty&gt;)> ]
+"692" [label = <(&lt;operator&gt;.alloc,new File(file, filename))<SUB>562</SUB>> ]
+"693" [label = <(&lt;init&gt;,new File(file, filename))<SUB>562</SUB>> ]
+"694" [label = <(IDENTIFIER,$obj22,new File(file, filename))> ]
+"695" [label = <(IDENTIFIER,file,new File(file, filename))<SUB>562</SUB>> ]
+"696" [label = <(IDENTIFIER,filename,new File(file, filename))<SUB>562</SUB>> ]
+"697" [label = <(IDENTIFIER,$obj22,&lt;empty&gt;)> ]
+"698" [label = <(RETURN,return normalize(filename);,return normalize(filename);)<SUB>564</SUB>> ]
+"699" [label = <(normalize,this.normalize(filename))<SUB>564</SUB>> ]
+"37" [label = <(IDENTIFIER,this,this.normalize(filename))<SUB>564</SUB>> ]
+"700" [label = <(IDENTIFIER,filename,this.normalize(filename))<SUB>564</SUB>> ]
+"701" [label = <(MODIFIER,PUBLIC)> ]
+"702" [label = <(MODIFIER,VIRTUAL)> ]
+"703" [label = <(METHOD_RETURN,java.io.File)<SUB>549</SUB>> ]
+  "626" -> "36" 
+  "626" -> "627" 
+  "626" -> "628" 
+  "626" -> "629" 
+  "626" -> "701" 
+  "626" -> "702" 
+  "626" -> "703" 
+  "629" -> "630" 
+  "629" -> "698" 
+  "630" -> "631" 
+  "630" -> "634" 
+  "631" -> "632" 
+  "632" -> "633" 
+  "634" -> "635" 
+  "634" -> "636" 
+  "634" -> "641" 
+  "634" -> "650" 
+  "634" -> "686" 
+  "636" -> "637" 
+  "636" -> "638" 
+  "638" -> "639" 
+  "638" -> "640" 
+  "641" -> "642" 
+  "641" -> "643" 
+  "643" -> "644" 
+  "643" -> "648" 
+  "643" -> "649" 
+  "644" -> "645" 
+  "644" -> "646" 
+  "644" -> "647" 
+  "650" -> "651" 
+  "650" -> "653" 
+  "651" -> "652" 
+  "653" -> "654" 
+  "653" -> "657" 
+  "653" -> "658" 
+  "653" -> "663" 
+  "654" -> "655" 
+  "654" -> "656" 
+  "658" -> "659" 
+  "658" -> "660" 
+  "660" -> "661" 
+  "660" -> "662" 
+  "663" -> "664" 
+  "663" -> "675" 
+  "664" -> "665" 
+  "664" -> "670" 
+  "665" -> "666" 
+  "665" -> "669" 
+  "666" -> "667" 
+  "666" -> "668" 
+  "670" -> "671" 
+  "670" -> "674" 
+  "671" -> "672" 
+  "671" -> "673" 
+  "675" -> "676" 
+  "676" -> "677" 
+  "676" -> "678" 
+  "678" -> "679" 
+  "678" -> "683" 
+  "679" -> "680" 
+  "679" -> "682" 
+  "680" -> "35" 
+  "680" -> "681" 
+  "683" -> "684" 
+  "683" -> "685" 
+  "686" -> "687" 
+  "686" -> "688" 
+  "688" -> "689" 
+  "689" -> "690" 
+  "689" -> "693" 
+  "689" -> "697" 
+  "690" -> "691" 
+  "690" -> "692" 
+  "693" -> "694" 
+  "693" -> "695" 
+  "693" -> "696" 
+  "698" -> "699" 
+  "699" -> "37" 
+  "699" -> "700" 
+}

@@ -1,0 +1,71 @@
+digraph "safeCopy" {  
+"321" [label = <(METHOD,safeCopy)<SUB>109</SUB>> ]
+"322" [label = <(PARAM,Exchange exchange)<SUB>109</SUB>> ]
+"323" [label = <(PARAM,Message message)<SUB>109</SUB>> ]
+"324" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>109</SUB>> ]
+"325" [label = <(CONTROL_STRUCTURE,if (message == null),if (message == null))<SUB>110</SUB>> ]
+"326" [label = <(&lt;operator&gt;.equals,message == null)<SUB>110</SUB>> ]
+"327" [label = <(IDENTIFIER,message,message == null)<SUB>110</SUB>> ]
+"328" [label = <(LITERAL,null,message == null)<SUB>110</SUB>> ]
+"329" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>110</SUB>> ]
+"330" [label = <(RETURN,return null;,return null;)<SUB>111</SUB>> ]
+"331" [label = <(LITERAL,null,return null;)<SUB>111</SUB>> ]
+"332" [label = <(LOCAL,Message answer: org.apache.camel.Message)> ]
+"333" [label = <(&lt;operator&gt;.assignment,Message answer = copy())<SUB>113</SUB>> ]
+"334" [label = <(IDENTIFIER,answer,Message answer = copy())<SUB>113</SUB>> ]
+"335" [label = <(copy,copy())<SUB>113</SUB>> ]
+"336" [label = <(IDENTIFIER,message,copy())<SUB>113</SUB>> ]
+"337" [label = <(CONTROL_STRUCTURE,if (answer instanceof MessageSupport),if (answer instanceof MessageSupport))<SUB>114</SUB>> ]
+"338" [label = <(&lt;operator&gt;.instanceOf,answer instanceof MessageSupport)<SUB>114</SUB>> ]
+"339" [label = <(IDENTIFIER,answer,answer instanceof MessageSupport)<SUB>114</SUB>> ]
+"340" [label = <(TYPE_REF,MessageSupport,MessageSupport)<SUB>114</SUB>> ]
+"341" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>114</SUB>> ]
+"342" [label = <(LOCAL,MessageSupport messageSupport: ANY)> ]
+"343" [label = <(&lt;operator&gt;.assignment,ANY messageSupport = (MessageSupport) answer)<SUB>115</SUB>> ]
+"344" [label = <(IDENTIFIER,messageSupport,ANY messageSupport = (MessageSupport) answer)<SUB>115</SUB>> ]
+"345" [label = <(&lt;operator&gt;.cast,(MessageSupport) answer)<SUB>115</SUB>> ]
+"346" [label = <(TYPE_REF,MessageSupport,MessageSupport)<SUB>115</SUB>> ]
+"347" [label = <(IDENTIFIER,answer,(MessageSupport) answer)<SUB>115</SUB>> ]
+"348" [label = <(setExchange,setExchange(exchange))<SUB>116</SUB>> ]
+"349" [label = <(IDENTIFIER,messageSupport,setExchange(exchange))<SUB>116</SUB>> ]
+"350" [label = <(IDENTIFIER,exchange,setExchange(exchange))<SUB>116</SUB>> ]
+"351" [label = <(RETURN,return answer;,return answer;)<SUB>118</SUB>> ]
+"352" [label = <(IDENTIFIER,answer,return answer;)<SUB>118</SUB>> ]
+"353" [label = <(MODIFIER,PRIVATE)> ]
+"354" [label = <(MODIFIER,STATIC)> ]
+"355" [label = <(METHOD_RETURN,org.apache.camel.Message)<SUB>109</SUB>> ]
+  "321" -> "322" 
+  "321" -> "323" 
+  "321" -> "324" 
+  "321" -> "353" 
+  "321" -> "354" 
+  "321" -> "355" 
+  "324" -> "325" 
+  "324" -> "332" 
+  "324" -> "333" 
+  "324" -> "337" 
+  "324" -> "351" 
+  "325" -> "326" 
+  "325" -> "329" 
+  "326" -> "327" 
+  "326" -> "328" 
+  "329" -> "330" 
+  "330" -> "331" 
+  "333" -> "334" 
+  "333" -> "335" 
+  "335" -> "336" 
+  "337" -> "338" 
+  "337" -> "341" 
+  "338" -> "339" 
+  "338" -> "340" 
+  "341" -> "342" 
+  "341" -> "343" 
+  "341" -> "348" 
+  "343" -> "344" 
+  "343" -> "345" 
+  "345" -> "346" 
+  "345" -> "347" 
+  "348" -> "349" 
+  "348" -> "350" 
+  "351" -> "352" 
+}

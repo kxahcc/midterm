@@ -1,0 +1,305 @@
+digraph "getClassFromStream" {  
+"650" [label = <(METHOD,getClassFromStream)<SUB>412</SUB>> ]
+"35" [label = <(PARAM,this)<SUB>412</SUB>> ]
+"651" [label = <(PARAM,InputStream stream)<SUB>412</SUB>> ]
+"652" [label = <(PARAM,String classname)<SUB>412</SUB>> ]
+"653" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>413</SUB>> ]
+"33" [label = <(LOCAL,ByteArrayOutputStream baos: java.io.ByteArrayOutputStream)> ]
+"654" [label = <(&lt;operator&gt;.assignment,ByteArrayOutputStream baos = new ByteArrayOutputStream())<SUB>414</SUB>> ]
+"655" [label = <(IDENTIFIER,baos,ByteArrayOutputStream baos = new ByteArrayOutputStream())<SUB>414</SUB>> ]
+"656" [label = <(&lt;operator&gt;.alloc,new ByteArrayOutputStream())<SUB>414</SUB>> ]
+"657" [label = <(&lt;init&gt;,new ByteArrayOutputStream())<SUB>414</SUB>> ]
+"32" [label = <(IDENTIFIER,baos,new ByteArrayOutputStream())<SUB>414</SUB>> ]
+"658" [label = <(LOCAL,int bytesRead: int)> ]
+"659" [label = <(&lt;operator&gt;.assignment,int bytesRead = -1)<SUB>415</SUB>> ]
+"660" [label = <(IDENTIFIER,bytesRead,int bytesRead = -1)<SUB>415</SUB>> ]
+"661" [label = <(&lt;operator&gt;.minus,-1)<SUB>415</SUB>> ]
+"662" [label = <(LITERAL,1,-1)<SUB>415</SUB>> ]
+"663" [label = <(LOCAL,byte[] buffer: byte[])> ]
+"664" [label = <(&lt;operator&gt;.assignment,byte[] buffer = new byte[1024])<SUB>416</SUB>> ]
+"665" [label = <(IDENTIFIER,buffer,byte[] buffer = new byte[1024])<SUB>416</SUB>> ]
+"666" [label = <(&lt;operator&gt;.alloc,new byte[1024])> ]
+"667" [label = <(LITERAL,1024,new byte[1024])<SUB>416</SUB>> ]
+"668" [label = <(CONTROL_STRUCTURE,while ((bytesRead = stream.read(buffer, 0, 1024)) != -1),while ((bytesRead = stream.read(buffer, 0, 1024)) != -1))<SUB>418</SUB>> ]
+"669" [label = <(&lt;operator&gt;.notEquals,(bytesRead = stream.read(buffer, 0, 1024)) != -1)<SUB>418</SUB>> ]
+"670" [label = <(&lt;operator&gt;.assignment,bytesRead = stream.read(buffer, 0, 1024))<SUB>418</SUB>> ]
+"671" [label = <(IDENTIFIER,bytesRead,bytesRead = stream.read(buffer, 0, 1024))<SUB>418</SUB>> ]
+"672" [label = <(read,stream.read(buffer, 0, 1024))<SUB>418</SUB>> ]
+"673" [label = <(IDENTIFIER,stream,stream.read(buffer, 0, 1024))<SUB>418</SUB>> ]
+"674" [label = <(IDENTIFIER,buffer,stream.read(buffer, 0, 1024))<SUB>418</SUB>> ]
+"675" [label = <(LITERAL,0,stream.read(buffer, 0, 1024))<SUB>418</SUB>> ]
+"676" [label = <(LITERAL,1024,stream.read(buffer, 0, 1024))<SUB>418</SUB>> ]
+"677" [label = <(&lt;operator&gt;.minus,-1)<SUB>418</SUB>> ]
+"678" [label = <(LITERAL,1,-1)<SUB>418</SUB>> ]
+"679" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>418</SUB>> ]
+"680" [label = <(write,baos.write(buffer, 0, bytesRead))<SUB>419</SUB>> ]
+"681" [label = <(IDENTIFIER,baos,baos.write(buffer, 0, bytesRead))<SUB>419</SUB>> ]
+"682" [label = <(IDENTIFIER,buffer,baos.write(buffer, 0, bytesRead))<SUB>419</SUB>> ]
+"683" [label = <(LITERAL,0,baos.write(buffer, 0, bytesRead))<SUB>419</SUB>> ]
+"684" [label = <(IDENTIFIER,bytesRead,baos.write(buffer, 0, bytesRead))<SUB>419</SUB>> ]
+"685" [label = <(LOCAL,byte[] classData: byte[])> ]
+"686" [label = <(&lt;operator&gt;.assignment,byte[] classData = baos.toByteArray())<SUB>422</SUB>> ]
+"687" [label = <(IDENTIFIER,classData,byte[] classData = baos.toByteArray())<SUB>422</SUB>> ]
+"688" [label = <(toByteArray,baos.toByteArray())<SUB>422</SUB>> ]
+"689" [label = <(IDENTIFIER,baos,baos.toByteArray())<SUB>422</SUB>> ]
+"690" [label = <(CONTROL_STRUCTURE,if (defineClassProtectionDomain != null),if (defineClassProtectionDomain != null))<SUB>427</SUB>> ]
+"691" [label = <(&lt;operator&gt;.notEquals,defineClassProtectionDomain != null)<SUB>427</SUB>> ]
+"692" [label = <(&lt;operator&gt;.fieldAccess,AntClassLoader.defineClassProtectionDomain)<SUB>427</SUB>> ]
+"693" [label = <(IDENTIFIER,AntClassLoader,defineClassProtectionDomain != null)<SUB>427</SUB>> ]
+"694" [label = <(FIELD_IDENTIFIER,defineClassProtectionDomain,defineClassProtectionDomain)<SUB>427</SUB>> ]
+"695" [label = <(LITERAL,null,defineClassProtectionDomain != null)<SUB>427</SUB>> ]
+"696" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>427</SUB>> ]
+"697" [label = <(CONTROL_STRUCTURE,try,try)<SUB>428</SUB>> ]
+"698" [label = <(BLOCK,try,try)<SUB>428</SUB>> ]
+"699" [label = <(LOCAL,Object domain: java.lang.Object)> ]
+"700" [label = <(&lt;operator&gt;.assignment,Object domain = invoke(Project.class, new Object[0]))<SUB>429</SUB>> ]
+"701" [label = <(IDENTIFIER,domain,Object domain = invoke(Project.class, new Object[0]))<SUB>429</SUB>> ]
+"702" [label = <(invoke,invoke(Project.class, new Object[0]))<SUB>429</SUB>> ]
+"703" [label = <(&lt;operator&gt;.fieldAccess,AntClassLoader.getProtectionDomain)<SUB>429</SUB>> ]
+"704" [label = <(IDENTIFIER,AntClassLoader,invoke(Project.class, new Object[0]))<SUB>429</SUB>> ]
+"705" [label = <(FIELD_IDENTIFIER,getProtectionDomain,getProtectionDomain)<SUB>429</SUB>> ]
+"706" [label = <(&lt;operator&gt;.fieldAccess,Project.class)<SUB>429</SUB>> ]
+"707" [label = <(IDENTIFIER,Project,invoke(Project.class, new Object[0]))<SUB>429</SUB>> ]
+"708" [label = <(FIELD_IDENTIFIER,class,class)<SUB>429</SUB>> ]
+"709" [label = <(&lt;operator&gt;.alloc,new Object[0])> ]
+"710" [label = <(LITERAL,0,new Object[0])<SUB>429</SUB>> ]
+"711" [label = <(LOCAL,Object[] args: java.lang.Object[])> ]
+"712" [label = <(&lt;operator&gt;.assignment,Object[] args = new Object[] { classname, classData, new Integer(0), new Integer(classData.length), domain })<SUB>430</SUB>> ]
+"713" [label = <(IDENTIFIER,args,Object[] args = new Object[] { classname, classData, new Integer(0), new Integer(classData.length), domain })<SUB>430</SUB>> ]
+"714" [label = <(&lt;operator&gt;.arrayInitializer,new Object[] { classname, classData, new Integer(0), new Integer(classData.length), domain })<SUB>430</SUB>> ]
+"715" [label = <(IDENTIFIER,classname,new Object[] { classname, classData, new Integer(0), new Integer(classData.length), domain })<SUB>430</SUB>> ]
+"716" [label = <(IDENTIFIER,classData,new Object[] { classname, classData, new Integer(0), new Integer(classData.length), domain })<SUB>430</SUB>> ]
+"717" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>430</SUB>> ]
+"718" [label = <(&lt;operator&gt;.assignment,&lt;empty&gt;)> ]
+"719" [label = <(IDENTIFIER,$obj8,&lt;empty&gt;)> ]
+"720" [label = <(&lt;operator&gt;.alloc,new Integer(0))<SUB>430</SUB>> ]
+"721" [label = <(&lt;init&gt;,new Integer(0))<SUB>430</SUB>> ]
+"722" [label = <(IDENTIFIER,$obj8,new Integer(0))> ]
+"723" [label = <(LITERAL,0,new Integer(0))<SUB>430</SUB>> ]
+"724" [label = <(IDENTIFIER,$obj8,&lt;empty&gt;)> ]
+"725" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>430</SUB>> ]
+"726" [label = <(&lt;operator&gt;.assignment,&lt;empty&gt;)> ]
+"727" [label = <(IDENTIFIER,$obj9,&lt;empty&gt;)> ]
+"728" [label = <(&lt;operator&gt;.alloc,new Integer(classData.length))<SUB>430</SUB>> ]
+"729" [label = <(&lt;init&gt;,new Integer(classData.length))<SUB>430</SUB>> ]
+"730" [label = <(IDENTIFIER,$obj9,new Integer(classData.length))> ]
+"731" [label = <(&lt;operator&gt;.fieldAccess,classData.length)<SUB>430</SUB>> ]
+"732" [label = <(IDENTIFIER,classData,new Integer(classData.length))<SUB>430</SUB>> ]
+"733" [label = <(FIELD_IDENTIFIER,length,length)<SUB>430</SUB>> ]
+"734" [label = <(IDENTIFIER,$obj9,&lt;empty&gt;)> ]
+"735" [label = <(IDENTIFIER,domain,new Object[] { classname, classData, new Integer(0), new Integer(classData.length), domain })<SUB>430</SUB>> ]
+"736" [label = <(RETURN,return (Class) defineClassProtectionDomain.invoke(this, args);,return (Class) defineClassProtectionDomain.invoke(this, args);)<SUB>431</SUB>> ]
+"737" [label = <(&lt;operator&gt;.cast,(Class) defineClassProtectionDomain.invoke(this, args))<SUB>431</SUB>> ]
+"738" [label = <(TYPE_REF,Class,Class)<SUB>431</SUB>> ]
+"739" [label = <(invoke,defineClassProtectionDomain.invoke(this, args))<SUB>431</SUB>> ]
+"740" [label = <(&lt;operator&gt;.fieldAccess,AntClassLoader.defineClassProtectionDomain)<SUB>431</SUB>> ]
+"741" [label = <(IDENTIFIER,AntClassLoader,defineClassProtectionDomain.invoke(this, args))<SUB>431</SUB>> ]
+"742" [label = <(FIELD_IDENTIFIER,defineClassProtectionDomain,defineClassProtectionDomain)<SUB>431</SUB>> ]
+"34" [label = <(IDENTIFIER,this,defineClassProtectionDomain.invoke(this, args))<SUB>431</SUB>> ]
+"743" [label = <(&lt;operator&gt;.arrayInitializer,&lt;operator&gt;.arrayInitializer)<SUB>431</SUB>> ]
+"744" [label = <(IDENTIFIER,args,&lt;operator&gt;.arrayInitializer)<SUB>431</SUB>> ]
+"745" [label = <(BLOCK,catch,catch)> ]
+"746" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>433</SUB>> ]
+"747" [label = <(LOCAL,Throwable t: java.lang.Throwable)> ]
+"748" [label = <(&lt;operator&gt;.assignment,Throwable t = ite.getTargetException())<SUB>434</SUB>> ]
+"749" [label = <(IDENTIFIER,t,Throwable t = ite.getTargetException())<SUB>434</SUB>> ]
+"750" [label = <(getTargetException,ite.getTargetException())<SUB>434</SUB>> ]
+"751" [label = <(IDENTIFIER,ite,ite.getTargetException())<SUB>434</SUB>> ]
+"752" [label = <(CONTROL_STRUCTURE,if (t instanceof ClassFormatError),if (t instanceof ClassFormatError))<SUB>435</SUB>> ]
+"753" [label = <(&lt;operator&gt;.instanceOf,t instanceof ClassFormatError)<SUB>435</SUB>> ]
+"754" [label = <(IDENTIFIER,t,t instanceof ClassFormatError)<SUB>435</SUB>> ]
+"755" [label = <(TYPE_REF,ClassFormatError,ClassFormatError)<SUB>435</SUB>> ]
+"756" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>435</SUB>> ]
+"757" [label = <(&lt;operator&gt;.throw,throw (ClassFormatError) t;)<SUB>436</SUB>> ]
+"758" [label = <(&lt;operator&gt;.cast,(ClassFormatError) t)<SUB>436</SUB>> ]
+"759" [label = <(TYPE_REF,ClassFormatError,ClassFormatError)<SUB>436</SUB>> ]
+"760" [label = <(IDENTIFIER,t,(ClassFormatError) t)<SUB>436</SUB>> ]
+"761" [label = <(CONTROL_STRUCTURE,else,else)<SUB>438</SUB>> ]
+"762" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>438</SUB>> ]
+"763" [label = <(&lt;operator&gt;.throw,throw new IOException(t.toString());)<SUB>439</SUB>> ]
+"764" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>439</SUB>> ]
+"765" [label = <(&lt;operator&gt;.assignment,&lt;empty&gt;)> ]
+"766" [label = <(IDENTIFIER,$obj10,&lt;empty&gt;)> ]
+"767" [label = <(&lt;operator&gt;.alloc,new IOException(t.toString()))<SUB>439</SUB>> ]
+"768" [label = <(&lt;init&gt;,new IOException(t.toString()))<SUB>439</SUB>> ]
+"769" [label = <(IDENTIFIER,$obj10,new IOException(t.toString()))> ]
+"770" [label = <(toString,t.toString())<SUB>439</SUB>> ]
+"771" [label = <(IDENTIFIER,t,t.toString())<SUB>439</SUB>> ]
+"772" [label = <(IDENTIFIER,$obj10,&lt;empty&gt;)> ]
+"773" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>442</SUB>> ]
+"774" [label = <(&lt;operator&gt;.throw,throw new IOException(e.toString());)<SUB>443</SUB>> ]
+"775" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>443</SUB>> ]
+"776" [label = <(&lt;operator&gt;.assignment,&lt;empty&gt;)> ]
+"777" [label = <(IDENTIFIER,$obj11,&lt;empty&gt;)> ]
+"778" [label = <(&lt;operator&gt;.alloc,new IOException(e.toString()))<SUB>443</SUB>> ]
+"779" [label = <(&lt;init&gt;,new IOException(e.toString()))<SUB>443</SUB>> ]
+"780" [label = <(IDENTIFIER,$obj11,new IOException(e.toString()))> ]
+"781" [label = <(toString,e.toString())<SUB>443</SUB>> ]
+"782" [label = <(IDENTIFIER,e,e.toString())<SUB>443</SUB>> ]
+"783" [label = <(IDENTIFIER,$obj11,&lt;empty&gt;)> ]
+"784" [label = <(CONTROL_STRUCTURE,else,else)<SUB>446</SUB>> ]
+"785" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>446</SUB>> ]
+"786" [label = <(RETURN,return defineClass(classname, classData, 0, classData.length);,return defineClass(classname, classData, 0, classData.length);)<SUB>447</SUB>> ]
+"787" [label = <(defineClass,this.defineClass(classname, classData, 0, classData.length))<SUB>447</SUB>> ]
+"36" [label = <(IDENTIFIER,this,this.defineClass(classname, classData, 0, classData.length))<SUB>447</SUB>> ]
+"788" [label = <(IDENTIFIER,classname,this.defineClass(classname, classData, 0, classData.length))<SUB>447</SUB>> ]
+"789" [label = <(IDENTIFIER,classData,this.defineClass(classname, classData, 0, classData.length))<SUB>447</SUB>> ]
+"790" [label = <(LITERAL,0,this.defineClass(classname, classData, 0, classData.length))<SUB>447</SUB>> ]
+"791" [label = <(&lt;operator&gt;.fieldAccess,classData.length)<SUB>447</SUB>> ]
+"792" [label = <(IDENTIFIER,classData,this.defineClass(classname, classData, 0, classData.length))<SUB>447</SUB>> ]
+"793" [label = <(FIELD_IDENTIFIER,length,length)<SUB>447</SUB>> ]
+"794" [label = <(MODIFIER,PRIVATE)> ]
+"795" [label = <(MODIFIER,VIRTUAL)> ]
+"796" [label = <(METHOD_RETURN,java.lang.Class)<SUB>412</SUB>> ]
+  "650" -> "35" 
+  "650" -> "651" 
+  "650" -> "652" 
+  "650" -> "653" 
+  "650" -> "794" 
+  "650" -> "795" 
+  "650" -> "796" 
+  "653" -> "33" 
+  "653" -> "654" 
+  "653" -> "657" 
+  "653" -> "658" 
+  "653" -> "659" 
+  "653" -> "663" 
+  "653" -> "664" 
+  "653" -> "668" 
+  "653" -> "685" 
+  "653" -> "686" 
+  "653" -> "690" 
+  "654" -> "655" 
+  "654" -> "656" 
+  "657" -> "32" 
+  "659" -> "660" 
+  "659" -> "661" 
+  "661" -> "662" 
+  "664" -> "665" 
+  "664" -> "666" 
+  "666" -> "667" 
+  "668" -> "669" 
+  "668" -> "679" 
+  "669" -> "670" 
+  "669" -> "677" 
+  "670" -> "671" 
+  "670" -> "672" 
+  "672" -> "673" 
+  "672" -> "674" 
+  "672" -> "675" 
+  "672" -> "676" 
+  "677" -> "678" 
+  "679" -> "680" 
+  "680" -> "681" 
+  "680" -> "682" 
+  "680" -> "683" 
+  "680" -> "684" 
+  "686" -> "687" 
+  "686" -> "688" 
+  "688" -> "689" 
+  "690" -> "691" 
+  "690" -> "696" 
+  "690" -> "784" 
+  "691" -> "692" 
+  "691" -> "695" 
+  "692" -> "693" 
+  "692" -> "694" 
+  "696" -> "697" 
+  "697" -> "698" 
+  "697" -> "745" 
+  "698" -> "699" 
+  "698" -> "700" 
+  "698" -> "711" 
+  "698" -> "712" 
+  "698" -> "736" 
+  "700" -> "701" 
+  "700" -> "702" 
+  "702" -> "703" 
+  "702" -> "706" 
+  "702" -> "709" 
+  "703" -> "704" 
+  "703" -> "705" 
+  "706" -> "707" 
+  "706" -> "708" 
+  "709" -> "710" 
+  "712" -> "713" 
+  "712" -> "714" 
+  "714" -> "715" 
+  "714" -> "716" 
+  "714" -> "717" 
+  "714" -> "725" 
+  "714" -> "735" 
+  "717" -> "718" 
+  "717" -> "721" 
+  "717" -> "724" 
+  "718" -> "719" 
+  "718" -> "720" 
+  "721" -> "722" 
+  "721" -> "723" 
+  "725" -> "726" 
+  "725" -> "729" 
+  "725" -> "734" 
+  "726" -> "727" 
+  "726" -> "728" 
+  "729" -> "730" 
+  "729" -> "731" 
+  "731" -> "732" 
+  "731" -> "733" 
+  "736" -> "737" 
+  "737" -> "738" 
+  "737" -> "739" 
+  "739" -> "740" 
+  "739" -> "34" 
+  "739" -> "743" 
+  "740" -> "741" 
+  "740" -> "742" 
+  "743" -> "744" 
+  "745" -> "746" 
+  "745" -> "773" 
+  "746" -> "747" 
+  "746" -> "748" 
+  "746" -> "752" 
+  "748" -> "749" 
+  "748" -> "750" 
+  "750" -> "751" 
+  "752" -> "753" 
+  "752" -> "756" 
+  "752" -> "761" 
+  "753" -> "754" 
+  "753" -> "755" 
+  "756" -> "757" 
+  "757" -> "758" 
+  "758" -> "759" 
+  "758" -> "760" 
+  "761" -> "762" 
+  "762" -> "763" 
+  "763" -> "764" 
+  "764" -> "765" 
+  "764" -> "768" 
+  "764" -> "772" 
+  "765" -> "766" 
+  "765" -> "767" 
+  "768" -> "769" 
+  "768" -> "770" 
+  "770" -> "771" 
+  "773" -> "774" 
+  "774" -> "775" 
+  "775" -> "776" 
+  "775" -> "779" 
+  "775" -> "783" 
+  "776" -> "777" 
+  "776" -> "778" 
+  "779" -> "780" 
+  "779" -> "781" 
+  "781" -> "782" 
+  "784" -> "785" 
+  "785" -> "786" 
+  "786" -> "787" 
+  "787" -> "36" 
+  "787" -> "788" 
+  "787" -> "789" 
+  "787" -> "790" 
+  "787" -> "791" 
+  "791" -> "792" 
+  "791" -> "793" 
+}

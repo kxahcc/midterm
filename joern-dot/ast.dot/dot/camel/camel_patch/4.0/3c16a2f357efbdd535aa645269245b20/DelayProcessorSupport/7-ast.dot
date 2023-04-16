@@ -1,0 +1,91 @@
+digraph "sleep" {  
+"155" [label = <(METHOD,sleep)<SUB>93</SUB>> ]
+"16" [label = <(PARAM,this)<SUB>93</SUB>> ]
+"156" [label = <(PARAM,long delay)<SUB>93</SUB>> ]
+"157" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>93</SUB>> ]
+"158" [label = <(CONTROL_STRUCTURE,if (delay &lt;= 0),if (delay &lt;= 0))<SUB>94</SUB>> ]
+"159" [label = <(&lt;operator&gt;.lessEqualsThan,delay &lt;= 0)<SUB>94</SUB>> ]
+"160" [label = <(IDENTIFIER,delay,delay &lt;= 0)<SUB>94</SUB>> ]
+"161" [label = <(LITERAL,0,delay &lt;= 0)<SUB>94</SUB>> ]
+"162" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>94</SUB>> ]
+"163" [label = <(RETURN,return;,return;)<SUB>95</SUB>> ]
+"164" [label = <(CONTROL_STRUCTURE,if (LOG.isDebugEnabled()),if (LOG.isDebugEnabled()))<SUB>97</SUB>> ]
+"165" [label = <(isDebugEnabled,isDebugEnabled())<SUB>97</SUB>> ]
+"166" [label = <(&lt;operator&gt;.fieldAccess,DelayProcessorSupport.LOG)<SUB>97</SUB>> ]
+"167" [label = <(IDENTIFIER,DelayProcessorSupport,isDebugEnabled())<SUB>97</SUB>> ]
+"168" [label = <(FIELD_IDENTIFIER,LOG,LOG)<SUB>97</SUB>> ]
+"169" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>97</SUB>> ]
+"170" [label = <(debug,debug(&quot;Sleeping for: &quot; + delay + &quot; millis&quot;))<SUB>98</SUB>> ]
+"171" [label = <(&lt;operator&gt;.fieldAccess,DelayProcessorSupport.LOG)<SUB>98</SUB>> ]
+"172" [label = <(IDENTIFIER,DelayProcessorSupport,debug(&quot;Sleeping for: &quot; + delay + &quot; millis&quot;))<SUB>98</SUB>> ]
+"173" [label = <(FIELD_IDENTIFIER,LOG,LOG)<SUB>98</SUB>> ]
+"174" [label = <(&lt;operator&gt;.addition,&quot;Sleeping for: &quot; + delay + &quot; millis&quot;)<SUB>98</SUB>> ]
+"175" [label = <(&lt;operator&gt;.addition,&quot;Sleeping for: &quot; + delay)<SUB>98</SUB>> ]
+"176" [label = <(LITERAL,&quot;Sleeping for: &quot;,&quot;Sleeping for: &quot; + delay)<SUB>98</SUB>> ]
+"177" [label = <(IDENTIFIER,delay,&quot;Sleeping for: &quot; + delay)<SUB>98</SUB>> ]
+"178" [label = <(LITERAL,&quot; millis&quot;,&quot;Sleeping for: &quot; + delay + &quot; millis&quot;)<SUB>98</SUB>> ]
+"179" [label = <(CONTROL_STRUCTURE,if (isFastStop()),if (isFastStop()))<SUB>100</SUB>> ]
+"180" [label = <(isFastStop,this.isFastStop())<SUB>100</SUB>> ]
+"15" [label = <(IDENTIFIER,this,this.isFastStop())<SUB>100</SUB>> ]
+"181" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>100</SUB>> ]
+"182" [label = <(await,stoppedLatch.await(delay, TimeUnit.MILLISECONDS))<SUB>101</SUB>> ]
+"183" [label = <(&lt;operator&gt;.fieldAccess,this.stoppedLatch)<SUB>101</SUB>> ]
+"184" [label = <(IDENTIFIER,this,stoppedLatch.await(delay, TimeUnit.MILLISECONDS))<SUB>101</SUB>> ]
+"185" [label = <(FIELD_IDENTIFIER,stoppedLatch,stoppedLatch)<SUB>101</SUB>> ]
+"186" [label = <(IDENTIFIER,delay,stoppedLatch.await(delay, TimeUnit.MILLISECONDS))<SUB>101</SUB>> ]
+"187" [label = <(&lt;operator&gt;.fieldAccess,TimeUnit.MILLISECONDS)<SUB>101</SUB>> ]
+"188" [label = <(IDENTIFIER,TimeUnit,stoppedLatch.await(delay, TimeUnit.MILLISECONDS))<SUB>101</SUB>> ]
+"189" [label = <(FIELD_IDENTIFIER,MILLISECONDS,MILLISECONDS)<SUB>101</SUB>> ]
+"190" [label = <(CONTROL_STRUCTURE,else,else)<SUB>102</SUB>> ]
+"191" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>102</SUB>> ]
+"192" [label = <(sleep,Thread.sleep(delay))<SUB>103</SUB>> ]
+"193" [label = <(IDENTIFIER,Thread,Thread.sleep(delay))<SUB>103</SUB>> ]
+"194" [label = <(IDENTIFIER,delay,Thread.sleep(delay))<SUB>103</SUB>> ]
+"195" [label = <(MODIFIER,PROTECTED)> ]
+"196" [label = <(MODIFIER,VIRTUAL)> ]
+"197" [label = <(METHOD_RETURN,void)<SUB>93</SUB>> ]
+  "155" -> "16" 
+  "155" -> "156" 
+  "155" -> "157" 
+  "155" -> "195" 
+  "155" -> "196" 
+  "155" -> "197" 
+  "157" -> "158" 
+  "157" -> "164" 
+  "157" -> "179" 
+  "158" -> "159" 
+  "158" -> "162" 
+  "159" -> "160" 
+  "159" -> "161" 
+  "162" -> "163" 
+  "164" -> "165" 
+  "164" -> "169" 
+  "165" -> "166" 
+  "166" -> "167" 
+  "166" -> "168" 
+  "169" -> "170" 
+  "170" -> "171" 
+  "170" -> "174" 
+  "171" -> "172" 
+  "171" -> "173" 
+  "174" -> "175" 
+  "174" -> "178" 
+  "175" -> "176" 
+  "175" -> "177" 
+  "179" -> "180" 
+  "179" -> "181" 
+  "179" -> "190" 
+  "180" -> "15" 
+  "181" -> "182" 
+  "182" -> "183" 
+  "182" -> "186" 
+  "182" -> "187" 
+  "183" -> "184" 
+  "183" -> "185" 
+  "187" -> "188" 
+  "187" -> "189" 
+  "190" -> "191" 
+  "191" -> "192" 
+  "192" -> "193" 
+  "192" -> "194" 
+}

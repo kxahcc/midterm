@@ -1,0 +1,135 @@
+digraph "acquireExclusiveReadLock" {  
+"448" [label = <(METHOD,acquireExclusiveReadLock)<SUB>199</SUB>> ]
+"449" [label = <(PARAM,this)<SUB>199</SUB>> ]
+"450" [label = <(PARAM,File file)<SUB>199</SUB>> ]
+"451" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>199</SUB>> ]
+"452" [label = <(CONTROL_STRUCTURE,if (LOG.isTraceEnabled()),if (LOG.isTraceEnabled()))<SUB>200</SUB>> ]
+"453" [label = <(isTraceEnabled,isTraceEnabled())<SUB>200</SUB>> ]
+"454" [label = <(&lt;operator&gt;.fieldAccess,FileConsumer.LOG)<SUB>200</SUB>> ]
+"455" [label = <(IDENTIFIER,FileConsumer,isTraceEnabled())<SUB>200</SUB>> ]
+"456" [label = <(FIELD_IDENTIFIER,LOG,LOG)<SUB>200</SUB>> ]
+"457" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>200</SUB>> ]
+"458" [label = <(trace,trace(&quot;Waiting for exclusive read lock to file: &quot; + file))<SUB>201</SUB>> ]
+"459" [label = <(&lt;operator&gt;.fieldAccess,FileConsumer.LOG)<SUB>201</SUB>> ]
+"460" [label = <(IDENTIFIER,FileConsumer,trace(&quot;Waiting for exclusive read lock to file: &quot; + file))<SUB>201</SUB>> ]
+"461" [label = <(FIELD_IDENTIFIER,LOG,LOG)<SUB>201</SUB>> ]
+"462" [label = <(&lt;operator&gt;.addition,&quot;Waiting for exclusive read lock to file: &quot; + file)<SUB>201</SUB>> ]
+"463" [label = <(LITERAL,&quot;Waiting for exclusive read lock to file: &quot;,&quot;Waiting for exclusive read lock to file: &quot; + file)<SUB>201</SUB>> ]
+"464" [label = <(IDENTIFIER,file,&quot;Waiting for exclusive read lock to file: &quot; + file)<SUB>201</SUB>> ]
+"465" [label = <(LOCAL,FileChannel channel: java.nio.channels.FileChannel)> ]
+"466" [label = <(&lt;operator&gt;.assignment,FileChannel channel = new RandomAccessFile(file, &quot;rw&quot;).getChannel())<SUB>205</SUB>> ]
+"467" [label = <(IDENTIFIER,channel,FileChannel channel = new RandomAccessFile(file, &quot;rw&quot;).getChannel())<SUB>205</SUB>> ]
+"468" [label = <(getChannel,new RandomAccessFile(file, &quot;rw&quot;).getChannel())<SUB>205</SUB>> ]
+"469" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>205</SUB>> ]
+"470" [label = <(&lt;operator&gt;.assignment,&lt;empty&gt;)> ]
+"471" [label = <(IDENTIFIER,$obj7,&lt;empty&gt;)> ]
+"472" [label = <(&lt;operator&gt;.alloc,new RandomAccessFile(file, &quot;rw&quot;))<SUB>205</SUB>> ]
+"473" [label = <(&lt;init&gt;,new RandomAccessFile(file, &quot;rw&quot;))<SUB>205</SUB>> ]
+"474" [label = <(IDENTIFIER,$obj7,new RandomAccessFile(file, &quot;rw&quot;))> ]
+"475" [label = <(IDENTIFIER,file,new RandomAccessFile(file, &quot;rw&quot;))<SUB>205</SUB>> ]
+"476" [label = <(LITERAL,&quot;rw&quot;,new RandomAccessFile(file, &quot;rw&quot;))<SUB>205</SUB>> ]
+"477" [label = <(IDENTIFIER,$obj7,&lt;empty&gt;)> ]
+"478" [label = <(CONTROL_STRUCTURE,try,try)<SUB>206</SUB>> ]
+"479" [label = <(BLOCK,try,try)<SUB>206</SUB>> ]
+"480" [label = <(LOCAL,FileLock lock: java.nio.channels.FileLock)> ]
+"481" [label = <(&lt;operator&gt;.assignment,FileLock lock = channel.lock())<SUB>207</SUB>> ]
+"482" [label = <(IDENTIFIER,lock,FileLock lock = channel.lock())<SUB>207</SUB>> ]
+"483" [label = <(lock,channel.lock())<SUB>207</SUB>> ]
+"484" [label = <(IDENTIFIER,channel,channel.lock())<SUB>207</SUB>> ]
+"485" [label = <(CONTROL_STRUCTURE,if (LOG.isTraceEnabled()),if (LOG.isTraceEnabled()))<SUB>208</SUB>> ]
+"486" [label = <(isTraceEnabled,isTraceEnabled())<SUB>208</SUB>> ]
+"487" [label = <(&lt;operator&gt;.fieldAccess,FileConsumer.LOG)<SUB>208</SUB>> ]
+"488" [label = <(IDENTIFIER,FileConsumer,isTraceEnabled())<SUB>208</SUB>> ]
+"489" [label = <(FIELD_IDENTIFIER,LOG,LOG)<SUB>208</SUB>> ]
+"490" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>208</SUB>> ]
+"491" [label = <(trace,trace(&quot;Acquired exclusive read lock: &quot; + lock + &quot; to file: &quot; + file))<SUB>209</SUB>> ]
+"492" [label = <(&lt;operator&gt;.fieldAccess,FileConsumer.LOG)<SUB>209</SUB>> ]
+"493" [label = <(IDENTIFIER,FileConsumer,trace(&quot;Acquired exclusive read lock: &quot; + lock + &quot; to file: &quot; + file))<SUB>209</SUB>> ]
+"494" [label = <(FIELD_IDENTIFIER,LOG,LOG)<SUB>209</SUB>> ]
+"495" [label = <(&lt;operator&gt;.addition,&quot;Acquired exclusive read lock: &quot; + lock + &quot; to file: &quot; + file)<SUB>209</SUB>> ]
+"496" [label = <(&lt;operator&gt;.addition,&quot;Acquired exclusive read lock: &quot; + lock + &quot; to file: &quot;)<SUB>209</SUB>> ]
+"497" [label = <(&lt;operator&gt;.addition,&quot;Acquired exclusive read lock: &quot; + lock)<SUB>209</SUB>> ]
+"498" [label = <(LITERAL,&quot;Acquired exclusive read lock: &quot;,&quot;Acquired exclusive read lock: &quot; + lock)<SUB>209</SUB>> ]
+"499" [label = <(IDENTIFIER,lock,&quot;Acquired exclusive read lock: &quot; + lock)<SUB>209</SUB>> ]
+"500" [label = <(LITERAL,&quot; to file: &quot;,&quot;Acquired exclusive read lock: &quot; + lock + &quot; to file: &quot;)<SUB>209</SUB>> ]
+"501" [label = <(IDENTIFIER,file,&quot;Acquired exclusive read lock: &quot; + lock + &quot; to file: &quot; + file)<SUB>209</SUB>> ]
+"502" [label = <(release,lock.release())<SUB>212</SUB>> ]
+"503" [label = <(IDENTIFIER,lock,lock.release())<SUB>212</SUB>> ]
+"504" [label = <(BLOCK,finally,finally)<SUB>213</SUB>> ]
+"505" [label = <(close,close(channel, &quot;FileConsumer during acquiring of exclusive read lock&quot;, LOG))<SUB>215</SUB>> ]
+"506" [label = <(IDENTIFIER,ObjectHelper,close(channel, &quot;FileConsumer during acquiring of exclusive read lock&quot;, LOG))<SUB>215</SUB>> ]
+"507" [label = <(IDENTIFIER,channel,close(channel, &quot;FileConsumer during acquiring of exclusive read lock&quot;, LOG))<SUB>215</SUB>> ]
+"508" [label = <(LITERAL,&quot;FileConsumer during acquiring of exclusive read lock&quot;,close(channel, &quot;FileConsumer during acquiring of exclusive read lock&quot;, LOG))<SUB>215</SUB>> ]
+"509" [label = <(&lt;operator&gt;.fieldAccess,FileConsumer.LOG)<SUB>215</SUB>> ]
+"510" [label = <(IDENTIFIER,FileConsumer,close(channel, &quot;FileConsumer during acquiring of exclusive read lock&quot;, LOG))<SUB>215</SUB>> ]
+"511" [label = <(FIELD_IDENTIFIER,LOG,LOG)<SUB>215</SUB>> ]
+"512" [label = <(MODIFIER,PROTECTED)> ]
+"513" [label = <(MODIFIER,VIRTUAL)> ]
+"514" [label = <(METHOD_RETURN,void)<SUB>199</SUB>> ]
+  "448" -> "449" 
+  "448" -> "450" 
+  "448" -> "451" 
+  "448" -> "512" 
+  "448" -> "513" 
+  "448" -> "514" 
+  "451" -> "452" 
+  "451" -> "465" 
+  "451" -> "466" 
+  "451" -> "478" 
+  "452" -> "453" 
+  "452" -> "457" 
+  "453" -> "454" 
+  "454" -> "455" 
+  "454" -> "456" 
+  "457" -> "458" 
+  "458" -> "459" 
+  "458" -> "462" 
+  "459" -> "460" 
+  "459" -> "461" 
+  "462" -> "463" 
+  "462" -> "464" 
+  "466" -> "467" 
+  "466" -> "468" 
+  "468" -> "469" 
+  "469" -> "470" 
+  "469" -> "473" 
+  "469" -> "477" 
+  "470" -> "471" 
+  "470" -> "472" 
+  "473" -> "474" 
+  "473" -> "475" 
+  "473" -> "476" 
+  "478" -> "479" 
+  "478" -> "504" 
+  "479" -> "480" 
+  "479" -> "481" 
+  "479" -> "485" 
+  "479" -> "502" 
+  "481" -> "482" 
+  "481" -> "483" 
+  "483" -> "484" 
+  "485" -> "486" 
+  "485" -> "490" 
+  "486" -> "487" 
+  "487" -> "488" 
+  "487" -> "489" 
+  "490" -> "491" 
+  "491" -> "492" 
+  "491" -> "495" 
+  "492" -> "493" 
+  "492" -> "494" 
+  "495" -> "496" 
+  "495" -> "501" 
+  "496" -> "497" 
+  "496" -> "500" 
+  "497" -> "498" 
+  "497" -> "499" 
+  "502" -> "503" 
+  "504" -> "505" 
+  "505" -> "506" 
+  "505" -> "507" 
+  "505" -> "508" 
+  "505" -> "509" 
+  "509" -> "510" 
+  "509" -> "511" 
+}

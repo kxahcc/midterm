@@ -1,0 +1,605 @@
+digraph "determineDependencies" {  
+"33" [label = <(METHOD,determineDependencies)<SUB>51</SUB>> ]
+"10" [label = <(PARAM,this)<SUB>51</SUB>> ]
+"34" [label = <(PARAM,Vector files)<SUB>51</SUB>> ]
+"35" [label = <(PARAM,Vector classes)<SUB>51</SUB>> ]
+"36" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>51</SUB>> ]
+"4" [label = <(LOCAL,Hashtable dependencies: java.util.Hashtable)> ]
+"37" [label = <(&lt;operator&gt;.assignment,Hashtable dependencies = new Hashtable())<SUB>54</SUB>> ]
+"38" [label = <(IDENTIFIER,dependencies,Hashtable dependencies = new Hashtable())<SUB>54</SUB>> ]
+"39" [label = <(&lt;operator&gt;.alloc,new Hashtable())<SUB>54</SUB>> ]
+"40" [label = <(&lt;init&gt;,new Hashtable())<SUB>54</SUB>> ]
+"3" [label = <(IDENTIFIER,dependencies,new Hashtable())<SUB>54</SUB>> ]
+"6" [label = <(LOCAL,Hashtable containers: java.util.Hashtable)> ]
+"41" [label = <(&lt;operator&gt;.assignment,Hashtable containers = new Hashtable())<SUB>55</SUB>> ]
+"42" [label = <(IDENTIFIER,containers,Hashtable containers = new Hashtable())<SUB>55</SUB>> ]
+"43" [label = <(&lt;operator&gt;.alloc,new Hashtable())<SUB>55</SUB>> ]
+"44" [label = <(&lt;init&gt;,new Hashtable())<SUB>55</SUB>> ]
+"5" [label = <(IDENTIFIER,containers,new Hashtable())<SUB>55</SUB>> ]
+"8" [label = <(LOCAL,Hashtable toAnalyze: java.util.Hashtable)> ]
+"45" [label = <(&lt;operator&gt;.assignment,Hashtable toAnalyze = new Hashtable())<SUB>56</SUB>> ]
+"46" [label = <(IDENTIFIER,toAnalyze,Hashtable toAnalyze = new Hashtable())<SUB>56</SUB>> ]
+"47" [label = <(&lt;operator&gt;.alloc,new Hashtable())<SUB>56</SUB>> ]
+"48" [label = <(&lt;init&gt;,new Hashtable())<SUB>56</SUB>> ]
+"7" [label = <(IDENTIFIER,toAnalyze,new Hashtable())<SUB>56</SUB>> ]
+"49" [label = <(CONTROL_STRUCTURE,for (Enumeration e = getRootClasses(); Some(e.hasMoreElements()); ),for (Enumeration e = getRootClasses(); Some(e.hasMoreElements()); ))<SUB>57</SUB>> ]
+"50" [label = <(LOCAL,Enumeration e: java.util.Enumeration)> ]
+"51" [label = <(&lt;operator&gt;.assignment,Enumeration e = getRootClasses())<SUB>57</SUB>> ]
+"52" [label = <(IDENTIFIER,e,Enumeration e = getRootClasses())<SUB>57</SUB>> ]
+"53" [label = <(getRootClasses,getRootClasses())<SUB>57</SUB>> ]
+"9" [label = <(IDENTIFIER,this,getRootClasses())<SUB>57</SUB>> ]
+"54" [label = <(hasMoreElements,e.hasMoreElements())<SUB>57</SUB>> ]
+"55" [label = <(IDENTIFIER,e,e.hasMoreElements())<SUB>57</SUB>> ]
+"56" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>57</SUB>> ]
+"57" [label = <(LOCAL,String classname: java.lang.String)> ]
+"58" [label = <(&lt;operator&gt;.assignment,String classname = (String) e.nextElement())<SUB>58</SUB>> ]
+"59" [label = <(IDENTIFIER,classname,String classname = (String) e.nextElement())<SUB>58</SUB>> ]
+"60" [label = <(&lt;operator&gt;.cast,(String) e.nextElement())<SUB>58</SUB>> ]
+"61" [label = <(TYPE_REF,String,String)<SUB>58</SUB>> ]
+"62" [label = <(nextElement,e.nextElement())<SUB>58</SUB>> ]
+"63" [label = <(IDENTIFIER,e,e.nextElement())<SUB>58</SUB>> ]
+"64" [label = <(put,toAnalyze.put(classname, classname))<SUB>59</SUB>> ]
+"65" [label = <(IDENTIFIER,toAnalyze,toAnalyze.put(classname, classname))<SUB>59</SUB>> ]
+"66" [label = <(IDENTIFIER,classname,toAnalyze.put(classname, classname))<SUB>59</SUB>> ]
+"67" [label = <(IDENTIFIER,classname,toAnalyze.put(classname, classname))<SUB>59</SUB>> ]
+"68" [label = <(LOCAL,int count: int)> ]
+"69" [label = <(&lt;operator&gt;.assignment,int count = 0)<SUB>62</SUB>> ]
+"70" [label = <(IDENTIFIER,count,int count = 0)<SUB>62</SUB>> ]
+"71" [label = <(LITERAL,0,int count = 0)<SUB>62</SUB>> ]
+"72" [label = <(LOCAL,int maxCount: int)> ]
+"73" [label = <(&lt;operator&gt;.assignment,int maxCount = isClosureRequired() ? MAX_LOOPS : 1)<SUB>63</SUB>> ]
+"74" [label = <(IDENTIFIER,maxCount,int maxCount = isClosureRequired() ? MAX_LOOPS : 1)<SUB>63</SUB>> ]
+"75" [label = <(&lt;operator&gt;.conditional,isClosureRequired() ? MAX_LOOPS : 1)<SUB>63</SUB>> ]
+"76" [label = <(isClosureRequired,isClosureRequired())<SUB>63</SUB>> ]
+"11" [label = <(IDENTIFIER,this,isClosureRequired())<SUB>63</SUB>> ]
+"77" [label = <(IDENTIFIER,MAX_LOOPS,isClosureRequired() ? MAX_LOOPS : 1)<SUB>63</SUB>> ]
+"78" [label = <(LITERAL,1,isClosureRequired() ? MAX_LOOPS : 1)<SUB>63</SUB>> ]
+"13" [label = <(LOCAL,Hashtable analyzedDeps: java.util.Hashtable)> ]
+"79" [label = <(&lt;operator&gt;.assignment,Hashtable analyzedDeps = null)<SUB>64</SUB>> ]
+"80" [label = <(IDENTIFIER,analyzedDeps,Hashtable analyzedDeps = null)<SUB>64</SUB>> ]
+"81" [label = <(LITERAL,null,Hashtable analyzedDeps = null)<SUB>64</SUB>> ]
+"82" [label = <(CONTROL_STRUCTURE,while (toAnalyze.size() != 0 &amp;&amp; count++ &lt; maxCount),while (toAnalyze.size() != 0 &amp;&amp; count++ &lt; maxCount))<SUB>65</SUB>> ]
+"83" [label = <(&lt;operator&gt;.logicalAnd,toAnalyze.size() != 0 &amp;&amp; count++ &lt; maxCount)<SUB>65</SUB>> ]
+"84" [label = <(&lt;operator&gt;.notEquals,toAnalyze.size() != 0)<SUB>65</SUB>> ]
+"85" [label = <(size,toAnalyze.size())<SUB>65</SUB>> ]
+"86" [label = <(IDENTIFIER,toAnalyze,toAnalyze.size())<SUB>65</SUB>> ]
+"87" [label = <(LITERAL,0,toAnalyze.size() != 0)<SUB>65</SUB>> ]
+"88" [label = <(&lt;operator&gt;.lessThan,count++ &lt; maxCount)<SUB>65</SUB>> ]
+"89" [label = <(&lt;operator&gt;.postIncrement,count++)<SUB>65</SUB>> ]
+"90" [label = <(IDENTIFIER,count,count++)<SUB>65</SUB>> ]
+"91" [label = <(IDENTIFIER,maxCount,count++ &lt; maxCount)<SUB>65</SUB>> ]
+"92" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>65</SUB>> ]
+"93" [label = <(&lt;operator&gt;.assignment,analyzedDeps = new Hashtable())<SUB>66</SUB>> ]
+"94" [label = <(IDENTIFIER,analyzedDeps,analyzedDeps = new Hashtable())<SUB>66</SUB>> ]
+"95" [label = <(&lt;operator&gt;.alloc,new Hashtable())<SUB>66</SUB>> ]
+"96" [label = <(&lt;init&gt;,new Hashtable())<SUB>66</SUB>> ]
+"12" [label = <(IDENTIFIER,analyzedDeps,new Hashtable())<SUB>66</SUB>> ]
+"97" [label = <(CONTROL_STRUCTURE,for (Enumeration e = toAnalyze.keys(); Some(e.hasMoreElements()); ),for (Enumeration e = toAnalyze.keys(); Some(e.hasMoreElements()); ))<SUB>67</SUB>> ]
+"98" [label = <(LOCAL,Enumeration e: java.util.Enumeration)> ]
+"99" [label = <(&lt;operator&gt;.assignment,Enumeration e = toAnalyze.keys())<SUB>67</SUB>> ]
+"100" [label = <(IDENTIFIER,e,Enumeration e = toAnalyze.keys())<SUB>67</SUB>> ]
+"101" [label = <(keys,toAnalyze.keys())<SUB>67</SUB>> ]
+"102" [label = <(IDENTIFIER,toAnalyze,toAnalyze.keys())<SUB>67</SUB>> ]
+"103" [label = <(hasMoreElements,e.hasMoreElements())<SUB>67</SUB>> ]
+"104" [label = <(IDENTIFIER,e,e.hasMoreElements())<SUB>67</SUB>> ]
+"105" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>67</SUB>> ]
+"106" [label = <(LOCAL,String classname: java.lang.String)> ]
+"107" [label = <(&lt;operator&gt;.assignment,String classname = (String) e.nextElement())<SUB>68</SUB>> ]
+"108" [label = <(IDENTIFIER,classname,String classname = (String) e.nextElement())<SUB>68</SUB>> ]
+"109" [label = <(&lt;operator&gt;.cast,(String) e.nextElement())<SUB>68</SUB>> ]
+"110" [label = <(TYPE_REF,String,String)<SUB>68</SUB>> ]
+"111" [label = <(nextElement,e.nextElement())<SUB>68</SUB>> ]
+"112" [label = <(IDENTIFIER,e,e.nextElement())<SUB>68</SUB>> ]
+"113" [label = <(put,dependencies.put(classname, classname))<SUB>69</SUB>> ]
+"114" [label = <(IDENTIFIER,dependencies,dependencies.put(classname, classname))<SUB>69</SUB>> ]
+"115" [label = <(IDENTIFIER,classname,dependencies.put(classname, classname))<SUB>69</SUB>> ]
+"116" [label = <(IDENTIFIER,classname,dependencies.put(classname, classname))<SUB>69</SUB>> ]
+"117" [label = <(CONTROL_STRUCTURE,try,try)<SUB>70</SUB>> ]
+"118" [label = <(BLOCK,try,try)<SUB>70</SUB>> ]
+"119" [label = <(LOCAL,File container: java.io.File)> ]
+"120" [label = <(&lt;operator&gt;.assignment,File container = getClassContainer(classname))<SUB>71</SUB>> ]
+"121" [label = <(IDENTIFIER,container,File container = getClassContainer(classname))<SUB>71</SUB>> ]
+"122" [label = <(getClassContainer,getClassContainer(classname))<SUB>71</SUB>> ]
+"14" [label = <(IDENTIFIER,this,getClassContainer(classname))<SUB>71</SUB>> ]
+"123" [label = <(IDENTIFIER,classname,getClassContainer(classname))<SUB>71</SUB>> ]
+"124" [label = <(CONTROL_STRUCTURE,if (container == null),if (container == null))<SUB>72</SUB>> ]
+"125" [label = <(&lt;operator&gt;.equals,container == null)<SUB>72</SUB>> ]
+"126" [label = <(IDENTIFIER,container,container == null)<SUB>72</SUB>> ]
+"127" [label = <(LITERAL,null,container == null)<SUB>72</SUB>> ]
+"128" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>72</SUB>> ]
+"129" [label = <(CONTROL_STRUCTURE,continue;,continue;)<SUB>73</SUB>> ]
+"130" [label = <(put,containers.put(container, container))<SUB>75</SUB>> ]
+"131" [label = <(IDENTIFIER,containers,containers.put(container, container))<SUB>75</SUB>> ]
+"132" [label = <(IDENTIFIER,container,containers.put(container, container))<SUB>75</SUB>> ]
+"133" [label = <(IDENTIFIER,container,containers.put(container, container))<SUB>75</SUB>> ]
+"18" [label = <(LOCAL,ZipFile zipFile: java.util.zip.ZipFile)> ]
+"134" [label = <(&lt;operator&gt;.assignment,ZipFile zipFile = null)<SUB>77</SUB>> ]
+"135" [label = <(IDENTIFIER,zipFile,ZipFile zipFile = null)<SUB>77</SUB>> ]
+"136" [label = <(LITERAL,null,ZipFile zipFile = null)<SUB>77</SUB>> ]
+"16" [label = <(LOCAL,InputStream inStream: java.io.InputStream)> ]
+"137" [label = <(&lt;operator&gt;.assignment,InputStream inStream = null)<SUB>78</SUB>> ]
+"138" [label = <(IDENTIFIER,inStream,InputStream inStream = null)<SUB>78</SUB>> ]
+"139" [label = <(LITERAL,null,InputStream inStream = null)<SUB>78</SUB>> ]
+"140" [label = <(CONTROL_STRUCTURE,try,try)<SUB>79</SUB>> ]
+"141" [label = <(BLOCK,try,try)<SUB>79</SUB>> ]
+"142" [label = <(CONTROL_STRUCTURE,if (container.getName().endsWith(&quot;.class&quot;)),if (container.getName().endsWith(&quot;.class&quot;)))<SUB>80</SUB>> ]
+"143" [label = <(endsWith,container.getName().endsWith(&quot;.class&quot;))<SUB>80</SUB>> ]
+"144" [label = <(getName,container.getName())<SUB>80</SUB>> ]
+"145" [label = <(IDENTIFIER,container,container.getName())<SUB>80</SUB>> ]
+"146" [label = <(LITERAL,&quot;.class&quot;,container.getName().endsWith(&quot;.class&quot;))<SUB>80</SUB>> ]
+"147" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>80</SUB>> ]
+"148" [label = <(&lt;operator&gt;.assignment,inStream = new FileInputStream(container.getPath()))<SUB>81</SUB>> ]
+"149" [label = <(IDENTIFIER,inStream,inStream = new FileInputStream(container.getPath()))<SUB>81</SUB>> ]
+"150" [label = <(&lt;operator&gt;.alloc,new FileInputStream(container.getPath()))<SUB>81</SUB>> ]
+"151" [label = <(&lt;init&gt;,new FileInputStream(container.getPath()))<SUB>81</SUB>> ]
+"15" [label = <(IDENTIFIER,inStream,new FileInputStream(container.getPath()))<SUB>81</SUB>> ]
+"152" [label = <(getPath,container.getPath())<SUB>81</SUB>> ]
+"153" [label = <(IDENTIFIER,container,container.getPath())<SUB>81</SUB>> ]
+"154" [label = <(CONTROL_STRUCTURE,else,else)<SUB>82</SUB>> ]
+"155" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>82</SUB>> ]
+"156" [label = <(&lt;operator&gt;.assignment,zipFile = new ZipFile(container.getPath()))<SUB>83</SUB>> ]
+"157" [label = <(IDENTIFIER,zipFile,zipFile = new ZipFile(container.getPath()))<SUB>83</SUB>> ]
+"158" [label = <(&lt;operator&gt;.alloc,new ZipFile(container.getPath()))<SUB>83</SUB>> ]
+"159" [label = <(&lt;init&gt;,new ZipFile(container.getPath()))<SUB>83</SUB>> ]
+"17" [label = <(IDENTIFIER,zipFile,new ZipFile(container.getPath()))<SUB>83</SUB>> ]
+"160" [label = <(getPath,container.getPath())<SUB>83</SUB>> ]
+"161" [label = <(IDENTIFIER,container,container.getPath())<SUB>83</SUB>> ]
+"162" [label = <(LOCAL,String entryName: java.lang.String)> ]
+"163" [label = <(&lt;operator&gt;.assignment,String entryName = classname.replace('.', '/') + &quot;.class&quot;)<SUB>84</SUB>> ]
+"164" [label = <(IDENTIFIER,entryName,String entryName = classname.replace('.', '/') + &quot;.class&quot;)<SUB>84</SUB>> ]
+"165" [label = <(&lt;operator&gt;.addition,classname.replace('.', '/') + &quot;.class&quot;)<SUB>85</SUB>> ]
+"166" [label = <(replace,classname.replace('.', '/'))<SUB>85</SUB>> ]
+"167" [label = <(IDENTIFIER,classname,classname.replace('.', '/'))<SUB>85</SUB>> ]
+"168" [label = <(LITERAL,'.',classname.replace('.', '/'))<SUB>85</SUB>> ]
+"169" [label = <(LITERAL,'/',classname.replace('.', '/'))<SUB>85</SUB>> ]
+"170" [label = <(LITERAL,&quot;.class&quot;,classname.replace('.', '/') + &quot;.class&quot;)<SUB>85</SUB>> ]
+"20" [label = <(LOCAL,ZipEntry entry: java.util.zip.ZipEntry)> ]
+"171" [label = <(&lt;operator&gt;.assignment,ZipEntry entry = new ZipEntry(entryName))<SUB>86</SUB>> ]
+"172" [label = <(IDENTIFIER,entry,ZipEntry entry = new ZipEntry(entryName))<SUB>86</SUB>> ]
+"173" [label = <(&lt;operator&gt;.alloc,new ZipEntry(entryName))<SUB>86</SUB>> ]
+"174" [label = <(&lt;init&gt;,new ZipEntry(entryName))<SUB>86</SUB>> ]
+"19" [label = <(IDENTIFIER,entry,new ZipEntry(entryName))<SUB>86</SUB>> ]
+"175" [label = <(IDENTIFIER,entryName,new ZipEntry(entryName))<SUB>86</SUB>> ]
+"176" [label = <(&lt;operator&gt;.assignment,inStream = zipFile.getInputStream(entry))<SUB>87</SUB>> ]
+"177" [label = <(IDENTIFIER,inStream,inStream = zipFile.getInputStream(entry))<SUB>87</SUB>> ]
+"178" [label = <(getInputStream,zipFile.getInputStream(entry))<SUB>88</SUB>> ]
+"179" [label = <(IDENTIFIER,zipFile,zipFile.getInputStream(entry))<SUB>88</SUB>> ]
+"180" [label = <(IDENTIFIER,entry,zipFile.getInputStream(entry))<SUB>88</SUB>> ]
+"22" [label = <(LOCAL,ClassFile classFile: ANY)> ]
+"181" [label = <(&lt;operator&gt;.assignment,ANY classFile = new ClassFile())<SUB>90</SUB>> ]
+"182" [label = <(IDENTIFIER,classFile,ANY classFile = new ClassFile())<SUB>90</SUB>> ]
+"183" [label = <(&lt;operator&gt;.alloc,new ClassFile())<SUB>90</SUB>> ]
+"184" [label = <(&lt;init&gt;,new ClassFile())<SUB>90</SUB>> ]
+"21" [label = <(IDENTIFIER,classFile,new ClassFile())<SUB>90</SUB>> ]
+"185" [label = <(read,read(inStream))<SUB>91</SUB>> ]
+"186" [label = <(IDENTIFIER,classFile,read(inStream))<SUB>91</SUB>> ]
+"187" [label = <(IDENTIFIER,inStream,read(inStream))<SUB>91</SUB>> ]
+"188" [label = <(LOCAL,Vector dependencyList: java.util.Vector)> ]
+"189" [label = <(&lt;operator&gt;.assignment,Vector dependencyList = getClassRefs())<SUB>92</SUB>> ]
+"190" [label = <(IDENTIFIER,dependencyList,Vector dependencyList = getClassRefs())<SUB>92</SUB>> ]
+"191" [label = <(getClassRefs,getClassRefs())<SUB>92</SUB>> ]
+"192" [label = <(IDENTIFIER,classFile,getClassRefs())<SUB>92</SUB>> ]
+"193" [label = <(LOCAL,Enumeration depEnum: java.util.Enumeration)> ]
+"194" [label = <(&lt;operator&gt;.assignment,Enumeration depEnum = dependencyList.elements())<SUB>93</SUB>> ]
+"195" [label = <(IDENTIFIER,depEnum,Enumeration depEnum = dependencyList.elements())<SUB>93</SUB>> ]
+"196" [label = <(elements,dependencyList.elements())<SUB>93</SUB>> ]
+"197" [label = <(IDENTIFIER,dependencyList,dependencyList.elements())<SUB>93</SUB>> ]
+"198" [label = <(CONTROL_STRUCTURE,while (depEnum.hasMoreElements()),while (depEnum.hasMoreElements()))<SUB>94</SUB>> ]
+"199" [label = <(hasMoreElements,depEnum.hasMoreElements())<SUB>94</SUB>> ]
+"200" [label = <(IDENTIFIER,depEnum,depEnum.hasMoreElements())<SUB>94</SUB>> ]
+"201" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>94</SUB>> ]
+"202" [label = <(LOCAL,String dependency: java.lang.String)> ]
+"203" [label = <(&lt;operator&gt;.assignment,String dependency = (String) depEnum.nextElement())<SUB>95</SUB>> ]
+"204" [label = <(IDENTIFIER,dependency,String dependency = (String) depEnum.nextElement())<SUB>95</SUB>> ]
+"205" [label = <(&lt;operator&gt;.cast,(String) depEnum.nextElement())<SUB>95</SUB>> ]
+"206" [label = <(TYPE_REF,String,String)<SUB>95</SUB>> ]
+"207" [label = <(nextElement,depEnum.nextElement())<SUB>95</SUB>> ]
+"208" [label = <(IDENTIFIER,depEnum,depEnum.nextElement())<SUB>95</SUB>> ]
+"209" [label = <(put,analyzedDeps.put(dependency, dependency))<SUB>96</SUB>> ]
+"210" [label = <(IDENTIFIER,analyzedDeps,analyzedDeps.put(dependency, dependency))<SUB>96</SUB>> ]
+"211" [label = <(IDENTIFIER,dependency,analyzedDeps.put(dependency, dependency))<SUB>96</SUB>> ]
+"212" [label = <(IDENTIFIER,dependency,analyzedDeps.put(dependency, dependency))<SUB>96</SUB>> ]
+"213" [label = <(BLOCK,finally,finally)<SUB>98</SUB>> ]
+"214" [label = <(CONTROL_STRUCTURE,if (inStream != null),if (inStream != null))<SUB>99</SUB>> ]
+"215" [label = <(&lt;operator&gt;.notEquals,inStream != null)<SUB>99</SUB>> ]
+"216" [label = <(IDENTIFIER,inStream,inStream != null)<SUB>99</SUB>> ]
+"217" [label = <(LITERAL,null,inStream != null)<SUB>99</SUB>> ]
+"218" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>99</SUB>> ]
+"219" [label = <(close,inStream.close())<SUB>100</SUB>> ]
+"220" [label = <(IDENTIFIER,inStream,inStream.close())<SUB>100</SUB>> ]
+"221" [label = <(CONTROL_STRUCTURE,if (zipFile != null),if (zipFile != null))<SUB>102</SUB>> ]
+"222" [label = <(&lt;operator&gt;.notEquals,zipFile != null)<SUB>102</SUB>> ]
+"223" [label = <(IDENTIFIER,zipFile,zipFile != null)<SUB>102</SUB>> ]
+"224" [label = <(LITERAL,null,zipFile != null)<SUB>102</SUB>> ]
+"225" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>102</SUB>> ]
+"226" [label = <(close,zipFile.close())<SUB>103</SUB>> ]
+"227" [label = <(IDENTIFIER,zipFile,zipFile.close())<SUB>103</SUB>> ]
+"228" [label = <(BLOCK,catch,catch)> ]
+"229" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>106</SUB>> ]
+"230" [label = <(clear,toAnalyze.clear())<SUB>111</SUB>> ]
+"231" [label = <(IDENTIFIER,toAnalyze,toAnalyze.clear())<SUB>111</SUB>> ]
+"232" [label = <(LOCAL,Enumeration depsEnum: java.util.Enumeration)> ]
+"233" [label = <(&lt;operator&gt;.assignment,Enumeration depsEnum = analyzedDeps.elements())<SUB>114</SUB>> ]
+"234" [label = <(IDENTIFIER,depsEnum,Enumeration depsEnum = analyzedDeps.elements())<SUB>114</SUB>> ]
+"235" [label = <(elements,analyzedDeps.elements())<SUB>114</SUB>> ]
+"236" [label = <(IDENTIFIER,analyzedDeps,analyzedDeps.elements())<SUB>114</SUB>> ]
+"237" [label = <(CONTROL_STRUCTURE,while (depsEnum.hasMoreElements()),while (depsEnum.hasMoreElements()))<SUB>115</SUB>> ]
+"238" [label = <(hasMoreElements,depsEnum.hasMoreElements())<SUB>115</SUB>> ]
+"239" [label = <(IDENTIFIER,depsEnum,depsEnum.hasMoreElements())<SUB>115</SUB>> ]
+"240" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>115</SUB>> ]
+"241" [label = <(LOCAL,String className: java.lang.String)> ]
+"242" [label = <(&lt;operator&gt;.assignment,String className = (String) depsEnum.nextElement())<SUB>116</SUB>> ]
+"243" [label = <(IDENTIFIER,className,String className = (String) depsEnum.nextElement())<SUB>116</SUB>> ]
+"244" [label = <(&lt;operator&gt;.cast,(String) depsEnum.nextElement())<SUB>116</SUB>> ]
+"245" [label = <(TYPE_REF,String,String)<SUB>116</SUB>> ]
+"246" [label = <(nextElement,depsEnum.nextElement())<SUB>116</SUB>> ]
+"247" [label = <(IDENTIFIER,depsEnum,depsEnum.nextElement())<SUB>116</SUB>> ]
+"248" [label = <(CONTROL_STRUCTURE,if (!dependencies.containsKey(className)),if (!dependencies.containsKey(className)))<SUB>117</SUB>> ]
+"249" [label = <(&lt;operator&gt;.logicalNot,!dependencies.containsKey(className))<SUB>117</SUB>> ]
+"250" [label = <(containsKey,dependencies.containsKey(className))<SUB>117</SUB>> ]
+"251" [label = <(IDENTIFIER,dependencies,dependencies.containsKey(className))<SUB>117</SUB>> ]
+"252" [label = <(IDENTIFIER,className,dependencies.containsKey(className))<SUB>117</SUB>> ]
+"253" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>117</SUB>> ]
+"254" [label = <(put,toAnalyze.put(className, className))<SUB>118</SUB>> ]
+"255" [label = <(IDENTIFIER,toAnalyze,toAnalyze.put(className, className))<SUB>118</SUB>> ]
+"256" [label = <(IDENTIFIER,className,toAnalyze.put(className, className))<SUB>118</SUB>> ]
+"257" [label = <(IDENTIFIER,className,toAnalyze.put(className, className))<SUB>118</SUB>> ]
+"258" [label = <(LOCAL,Enumeration depsEnum: java.util.Enumeration)> ]
+"259" [label = <(&lt;operator&gt;.assignment,Enumeration depsEnum = analyzedDeps.elements())<SUB>124</SUB>> ]
+"260" [label = <(IDENTIFIER,depsEnum,Enumeration depsEnum = analyzedDeps.elements())<SUB>124</SUB>> ]
+"261" [label = <(elements,analyzedDeps.elements())<SUB>124</SUB>> ]
+"262" [label = <(IDENTIFIER,analyzedDeps,analyzedDeps.elements())<SUB>124</SUB>> ]
+"263" [label = <(CONTROL_STRUCTURE,while (depsEnum.hasMoreElements()),while (depsEnum.hasMoreElements()))<SUB>125</SUB>> ]
+"264" [label = <(hasMoreElements,depsEnum.hasMoreElements())<SUB>125</SUB>> ]
+"265" [label = <(IDENTIFIER,depsEnum,depsEnum.hasMoreElements())<SUB>125</SUB>> ]
+"266" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>125</SUB>> ]
+"267" [label = <(LOCAL,String className: java.lang.String)> ]
+"268" [label = <(&lt;operator&gt;.assignment,String className = (String) depsEnum.nextElement())<SUB>126</SUB>> ]
+"269" [label = <(IDENTIFIER,className,String className = (String) depsEnum.nextElement())<SUB>126</SUB>> ]
+"270" [label = <(&lt;operator&gt;.cast,(String) depsEnum.nextElement())<SUB>126</SUB>> ]
+"271" [label = <(TYPE_REF,String,String)<SUB>126</SUB>> ]
+"272" [label = <(nextElement,depsEnum.nextElement())<SUB>126</SUB>> ]
+"273" [label = <(IDENTIFIER,depsEnum,depsEnum.nextElement())<SUB>126</SUB>> ]
+"274" [label = <(put,dependencies.put(className, className))<SUB>127</SUB>> ]
+"275" [label = <(IDENTIFIER,dependencies,dependencies.put(className, className))<SUB>127</SUB>> ]
+"276" [label = <(IDENTIFIER,className,dependencies.put(className, className))<SUB>127</SUB>> ]
+"277" [label = <(IDENTIFIER,className,dependencies.put(className, className))<SUB>127</SUB>> ]
+"278" [label = <(removeAllElements,files.removeAllElements())<SUB>130</SUB>> ]
+"279" [label = <(IDENTIFIER,files,files.removeAllElements())<SUB>130</SUB>> ]
+"280" [label = <(CONTROL_STRUCTURE,for (Enumeration e = containers.keys(); Some(e.hasMoreElements()); ),for (Enumeration e = containers.keys(); Some(e.hasMoreElements()); ))<SUB>131</SUB>> ]
+"281" [label = <(LOCAL,Enumeration e: java.util.Enumeration)> ]
+"282" [label = <(&lt;operator&gt;.assignment,Enumeration e = containers.keys())<SUB>131</SUB>> ]
+"283" [label = <(IDENTIFIER,e,Enumeration e = containers.keys())<SUB>131</SUB>> ]
+"284" [label = <(keys,containers.keys())<SUB>131</SUB>> ]
+"285" [label = <(IDENTIFIER,containers,containers.keys())<SUB>131</SUB>> ]
+"286" [label = <(hasMoreElements,e.hasMoreElements())<SUB>131</SUB>> ]
+"287" [label = <(IDENTIFIER,e,e.hasMoreElements())<SUB>131</SUB>> ]
+"288" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>131</SUB>> ]
+"289" [label = <(addElement,files.addElement((File) e.nextElement()))<SUB>132</SUB>> ]
+"290" [label = <(IDENTIFIER,files,files.addElement((File) e.nextElement()))<SUB>132</SUB>> ]
+"291" [label = <(&lt;operator&gt;.cast,(File) e.nextElement())<SUB>132</SUB>> ]
+"292" [label = <(TYPE_REF,File,File)<SUB>132</SUB>> ]
+"293" [label = <(nextElement,e.nextElement())<SUB>132</SUB>> ]
+"294" [label = <(IDENTIFIER,e,e.nextElement())<SUB>132</SUB>> ]
+"295" [label = <(removeAllElements,classes.removeAllElements())<SUB>135</SUB>> ]
+"296" [label = <(IDENTIFIER,classes,classes.removeAllElements())<SUB>135</SUB>> ]
+"297" [label = <(CONTROL_STRUCTURE,for (Enumeration e = dependencies.keys(); Some(e.hasMoreElements()); ),for (Enumeration e = dependencies.keys(); Some(e.hasMoreElements()); ))<SUB>136</SUB>> ]
+"298" [label = <(LOCAL,Enumeration e: java.util.Enumeration)> ]
+"299" [label = <(&lt;operator&gt;.assignment,Enumeration e = dependencies.keys())<SUB>136</SUB>> ]
+"300" [label = <(IDENTIFIER,e,Enumeration e = dependencies.keys())<SUB>136</SUB>> ]
+"301" [label = <(keys,dependencies.keys())<SUB>136</SUB>> ]
+"302" [label = <(IDENTIFIER,dependencies,dependencies.keys())<SUB>136</SUB>> ]
+"303" [label = <(hasMoreElements,e.hasMoreElements())<SUB>136</SUB>> ]
+"304" [label = <(IDENTIFIER,e,e.hasMoreElements())<SUB>136</SUB>> ]
+"305" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>136</SUB>> ]
+"306" [label = <(addElement,classes.addElement((String) e.nextElement()))<SUB>137</SUB>> ]
+"307" [label = <(IDENTIFIER,classes,classes.addElement((String) e.nextElement()))<SUB>137</SUB>> ]
+"308" [label = <(&lt;operator&gt;.cast,(String) e.nextElement())<SUB>137</SUB>> ]
+"309" [label = <(TYPE_REF,String,String)<SUB>137</SUB>> ]
+"310" [label = <(nextElement,e.nextElement())<SUB>137</SUB>> ]
+"311" [label = <(IDENTIFIER,e,e.nextElement())<SUB>137</SUB>> ]
+"312" [label = <(MODIFIER,PROTECTED)> ]
+"313" [label = <(MODIFIER,VIRTUAL)> ]
+"314" [label = <(METHOD_RETURN,void)<SUB>51</SUB>> ]
+  "33" -> "10" 
+  "33" -> "34" 
+  "33" -> "35" 
+  "33" -> "36" 
+  "33" -> "312" 
+  "33" -> "313" 
+  "33" -> "314" 
+  "36" -> "4" 
+  "36" -> "37" 
+  "36" -> "40" 
+  "36" -> "6" 
+  "36" -> "41" 
+  "36" -> "44" 
+  "36" -> "8" 
+  "36" -> "45" 
+  "36" -> "48" 
+  "36" -> "49" 
+  "36" -> "68" 
+  "36" -> "69" 
+  "36" -> "72" 
+  "36" -> "73" 
+  "36" -> "13" 
+  "36" -> "79" 
+  "36" -> "82" 
+  "36" -> "258" 
+  "36" -> "259" 
+  "36" -> "263" 
+  "36" -> "278" 
+  "36" -> "280" 
+  "36" -> "295" 
+  "36" -> "297" 
+  "37" -> "38" 
+  "37" -> "39" 
+  "40" -> "3" 
+  "41" -> "42" 
+  "41" -> "43" 
+  "44" -> "5" 
+  "45" -> "46" 
+  "45" -> "47" 
+  "48" -> "7" 
+  "49" -> "50" 
+  "49" -> "51" 
+  "49" -> "54" 
+  "49" -> "56" 
+  "51" -> "52" 
+  "51" -> "53" 
+  "53" -> "9" 
+  "54" -> "55" 
+  "56" -> "57" 
+  "56" -> "58" 
+  "56" -> "64" 
+  "58" -> "59" 
+  "58" -> "60" 
+  "60" -> "61" 
+  "60" -> "62" 
+  "62" -> "63" 
+  "64" -> "65" 
+  "64" -> "66" 
+  "64" -> "67" 
+  "69" -> "70" 
+  "69" -> "71" 
+  "73" -> "74" 
+  "73" -> "75" 
+  "75" -> "76" 
+  "75" -> "77" 
+  "75" -> "78" 
+  "76" -> "11" 
+  "79" -> "80" 
+  "79" -> "81" 
+  "82" -> "83" 
+  "82" -> "92" 
+  "83" -> "84" 
+  "83" -> "88" 
+  "84" -> "85" 
+  "84" -> "87" 
+  "85" -> "86" 
+  "88" -> "89" 
+  "88" -> "91" 
+  "89" -> "90" 
+  "92" -> "93" 
+  "92" -> "96" 
+  "92" -> "97" 
+  "92" -> "230" 
+  "92" -> "232" 
+  "92" -> "233" 
+  "92" -> "237" 
+  "93" -> "94" 
+  "93" -> "95" 
+  "96" -> "12" 
+  "97" -> "98" 
+  "97" -> "99" 
+  "97" -> "103" 
+  "97" -> "105" 
+  "99" -> "100" 
+  "99" -> "101" 
+  "101" -> "102" 
+  "103" -> "104" 
+  "105" -> "106" 
+  "105" -> "107" 
+  "105" -> "113" 
+  "105" -> "117" 
+  "107" -> "108" 
+  "107" -> "109" 
+  "109" -> "110" 
+  "109" -> "111" 
+  "111" -> "112" 
+  "113" -> "114" 
+  "113" -> "115" 
+  "113" -> "116" 
+  "117" -> "118" 
+  "117" -> "228" 
+  "118" -> "119" 
+  "118" -> "120" 
+  "118" -> "124" 
+  "118" -> "130" 
+  "118" -> "18" 
+  "118" -> "134" 
+  "118" -> "16" 
+  "118" -> "137" 
+  "118" -> "140" 
+  "120" -> "121" 
+  "120" -> "122" 
+  "122" -> "14" 
+  "122" -> "123" 
+  "124" -> "125" 
+  "124" -> "128" 
+  "125" -> "126" 
+  "125" -> "127" 
+  "128" -> "129" 
+  "130" -> "131" 
+  "130" -> "132" 
+  "130" -> "133" 
+  "134" -> "135" 
+  "134" -> "136" 
+  "137" -> "138" 
+  "137" -> "139" 
+  "140" -> "141" 
+  "140" -> "213" 
+  "141" -> "142" 
+  "141" -> "22" 
+  "141" -> "181" 
+  "141" -> "184" 
+  "141" -> "185" 
+  "141" -> "188" 
+  "141" -> "189" 
+  "141" -> "193" 
+  "141" -> "194" 
+  "141" -> "198" 
+  "142" -> "143" 
+  "142" -> "147" 
+  "142" -> "154" 
+  "143" -> "144" 
+  "143" -> "146" 
+  "144" -> "145" 
+  "147" -> "148" 
+  "147" -> "151" 
+  "148" -> "149" 
+  "148" -> "150" 
+  "151" -> "15" 
+  "151" -> "152" 
+  "152" -> "153" 
+  "154" -> "155" 
+  "155" -> "156" 
+  "155" -> "159" 
+  "155" -> "162" 
+  "155" -> "163" 
+  "155" -> "20" 
+  "155" -> "171" 
+  "155" -> "174" 
+  "155" -> "176" 
+  "156" -> "157" 
+  "156" -> "158" 
+  "159" -> "17" 
+  "159" -> "160" 
+  "160" -> "161" 
+  "163" -> "164" 
+  "163" -> "165" 
+  "165" -> "166" 
+  "165" -> "170" 
+  "166" -> "167" 
+  "166" -> "168" 
+  "166" -> "169" 
+  "171" -> "172" 
+  "171" -> "173" 
+  "174" -> "19" 
+  "174" -> "175" 
+  "176" -> "177" 
+  "176" -> "178" 
+  "178" -> "179" 
+  "178" -> "180" 
+  "181" -> "182" 
+  "181" -> "183" 
+  "184" -> "21" 
+  "185" -> "186" 
+  "185" -> "187" 
+  "189" -> "190" 
+  "189" -> "191" 
+  "191" -> "192" 
+  "194" -> "195" 
+  "194" -> "196" 
+  "196" -> "197" 
+  "198" -> "199" 
+  "198" -> "201" 
+  "199" -> "200" 
+  "201" -> "202" 
+  "201" -> "203" 
+  "201" -> "209" 
+  "203" -> "204" 
+  "203" -> "205" 
+  "205" -> "206" 
+  "205" -> "207" 
+  "207" -> "208" 
+  "209" -> "210" 
+  "209" -> "211" 
+  "209" -> "212" 
+  "213" -> "214" 
+  "213" -> "221" 
+  "214" -> "215" 
+  "214" -> "218" 
+  "215" -> "216" 
+  "215" -> "217" 
+  "218" -> "219" 
+  "219" -> "220" 
+  "221" -> "222" 
+  "221" -> "225" 
+  "222" -> "223" 
+  "222" -> "224" 
+  "225" -> "226" 
+  "226" -> "227" 
+  "228" -> "229" 
+  "230" -> "231" 
+  "233" -> "234" 
+  "233" -> "235" 
+  "235" -> "236" 
+  "237" -> "238" 
+  "237" -> "240" 
+  "238" -> "239" 
+  "240" -> "241" 
+  "240" -> "242" 
+  "240" -> "248" 
+  "242" -> "243" 
+  "242" -> "244" 
+  "244" -> "245" 
+  "244" -> "246" 
+  "246" -> "247" 
+  "248" -> "249" 
+  "248" -> "253" 
+  "249" -> "250" 
+  "250" -> "251" 
+  "250" -> "252" 
+  "253" -> "254" 
+  "254" -> "255" 
+  "254" -> "256" 
+  "254" -> "257" 
+  "259" -> "260" 
+  "259" -> "261" 
+  "261" -> "262" 
+  "263" -> "264" 
+  "263" -> "266" 
+  "264" -> "265" 
+  "266" -> "267" 
+  "266" -> "268" 
+  "266" -> "274" 
+  "268" -> "269" 
+  "268" -> "270" 
+  "270" -> "271" 
+  "270" -> "272" 
+  "272" -> "273" 
+  "274" -> "275" 
+  "274" -> "276" 
+  "274" -> "277" 
+  "278" -> "279" 
+  "280" -> "281" 
+  "280" -> "282" 
+  "280" -> "286" 
+  "280" -> "288" 
+  "282" -> "283" 
+  "282" -> "284" 
+  "284" -> "285" 
+  "286" -> "287" 
+  "288" -> "289" 
+  "289" -> "290" 
+  "289" -> "291" 
+  "291" -> "292" 
+  "291" -> "293" 
+  "293" -> "294" 
+  "295" -> "296" 
+  "297" -> "298" 
+  "297" -> "299" 
+  "297" -> "303" 
+  "297" -> "305" 
+  "299" -> "300" 
+  "299" -> "301" 
+  "301" -> "302" 
+  "303" -> "304" 
+  "305" -> "306" 
+  "306" -> "307" 
+  "306" -> "308" 
+  "308" -> "309" 
+  "308" -> "310" 
+  "310" -> "311" 
+}

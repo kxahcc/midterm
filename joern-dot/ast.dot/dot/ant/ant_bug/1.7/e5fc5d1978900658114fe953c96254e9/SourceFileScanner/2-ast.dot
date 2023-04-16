@@ -1,0 +1,231 @@
+digraph "restrict" {  
+"71" [label = <(METHOD,restrict)<SUB>88</SUB>> ]
+"8" [label = <(PARAM,this)<SUB>88</SUB>> ]
+"72" [label = <(PARAM,String[] files)<SUB>88</SUB>> ]
+"73" [label = <(PARAM,File srcDir)<SUB>88</SUB>> ]
+"74" [label = <(PARAM,File destDir)<SUB>88</SUB>> ]
+"75" [label = <(PARAM,FileNameMapper mapper)<SUB>89</SUB>> ]
+"76" [label = <(PARAM,long granularity)<SUB>89</SUB>> ]
+"77" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>89</SUB>> ]
+"78" [label = <(&lt;operator&gt;.assignment,this.destDir = destDir)<SUB>91</SUB>> ]
+"79" [label = <(&lt;operator&gt;.fieldAccess,this.destDir)<SUB>91</SUB>> ]
+"7" [label = <(IDENTIFIER,this,this.destDir = destDir)<SUB>91</SUB>> ]
+"80" [label = <(FIELD_IDENTIFIER,destDir,destDir)<SUB>91</SUB>> ]
+"81" [label = <(IDENTIFIER,destDir,this.destDir = destDir)<SUB>91</SUB>> ]
+"10" [label = <(LOCAL,Vector v: java.util.Vector)> ]
+"82" [label = <(&lt;operator&gt;.assignment,Vector v = new Vector())<SUB>92</SUB>> ]
+"83" [label = <(IDENTIFIER,v,Vector v = new Vector())<SUB>92</SUB>> ]
+"84" [label = <(&lt;operator&gt;.alloc,new Vector())<SUB>92</SUB>> ]
+"85" [label = <(&lt;init&gt;,new Vector())<SUB>92</SUB>> ]
+"9" [label = <(IDENTIFIER,v,new Vector())<SUB>92</SUB>> ]
+"86" [label = <(CONTROL_STRUCTURE,for (int i = 0; Some(i &lt; files.length); i++),for (int i = 0; Some(i &lt; files.length); i++))<SUB>93</SUB>> ]
+"87" [label = <(LOCAL,int i: int)> ]
+"88" [label = <(&lt;operator&gt;.assignment,int i = 0)<SUB>93</SUB>> ]
+"89" [label = <(IDENTIFIER,i,int i = 0)<SUB>93</SUB>> ]
+"90" [label = <(LITERAL,0,int i = 0)<SUB>93</SUB>> ]
+"91" [label = <(&lt;operator&gt;.lessThan,i &lt; files.length)<SUB>93</SUB>> ]
+"92" [label = <(IDENTIFIER,i,i &lt; files.length)<SUB>93</SUB>> ]
+"93" [label = <(&lt;operator&gt;.fieldAccess,files.length)<SUB>93</SUB>> ]
+"94" [label = <(IDENTIFIER,files,i &lt; files.length)<SUB>93</SUB>> ]
+"95" [label = <(FIELD_IDENTIFIER,length,length)<SUB>93</SUB>> ]
+"96" [label = <(&lt;operator&gt;.postIncrement,i++)<SUB>93</SUB>> ]
+"97" [label = <(IDENTIFIER,i,i++)<SUB>93</SUB>> ]
+"98" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>93</SUB>> ]
+"99" [label = <(LOCAL,File src: java.io.File)> ]
+"100" [label = <(&lt;operator&gt;.assignment,File src = resolveFile(srcDir, files[i]))<SUB>94</SUB>> ]
+"101" [label = <(IDENTIFIER,src,File src = resolveFile(srcDir, files[i]))<SUB>94</SUB>> ]
+"102" [label = <(resolveFile,resolveFile(srcDir, files[i]))<SUB>94</SUB>> ]
+"103" [label = <(&lt;operator&gt;.fieldAccess,SourceFileScanner.FILE_UTILS)<SUB>94</SUB>> ]
+"104" [label = <(IDENTIFIER,SourceFileScanner,resolveFile(srcDir, files[i]))<SUB>94</SUB>> ]
+"105" [label = <(FIELD_IDENTIFIER,FILE_UTILS,FILE_UTILS)<SUB>94</SUB>> ]
+"106" [label = <(IDENTIFIER,srcDir,resolveFile(srcDir, files[i]))<SUB>94</SUB>> ]
+"107" [label = <(&lt;operator&gt;.indexAccess,files[i])<SUB>94</SUB>> ]
+"108" [label = <(IDENTIFIER,files,resolveFile(srcDir, files[i]))<SUB>94</SUB>> ]
+"109" [label = <(IDENTIFIER,i,resolveFile(srcDir, files[i]))<SUB>94</SUB>> ]
+"110" [label = <(addElement,addElement(new Resource(files[i], src.exists(), src.lastModified(), src.isDirectory())))<SUB>95</SUB>> ]
+"111" [label = <(IDENTIFIER,v,addElement(new Resource(files[i], src.exists(), src.lastModified(), src.isDirectory())))<SUB>95</SUB>> ]
+"112" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>95</SUB>> ]
+"113" [label = <(&lt;operator&gt;.assignment,&lt;empty&gt;)> ]
+"114" [label = <(IDENTIFIER,$obj1,&lt;empty&gt;)> ]
+"115" [label = <(&lt;operator&gt;.alloc,new Resource(files[i], src.exists(), src.lastModified(), src.isDirectory()))<SUB>95</SUB>> ]
+"116" [label = <(&lt;init&gt;,new Resource(files[i], src.exists(), src.lastModified(), src.isDirectory()))<SUB>95</SUB>> ]
+"117" [label = <(IDENTIFIER,$obj1,new Resource(files[i], src.exists(), src.lastModified(), src.isDirectory()))> ]
+"118" [label = <(&lt;operator&gt;.indexAccess,files[i])<SUB>95</SUB>> ]
+"119" [label = <(IDENTIFIER,files,new Resource(files[i], src.exists(), src.lastModified(), src.isDirectory()))<SUB>95</SUB>> ]
+"120" [label = <(IDENTIFIER,i,new Resource(files[i], src.exists(), src.lastModified(), src.isDirectory()))<SUB>95</SUB>> ]
+"121" [label = <(exists,src.exists())<SUB>95</SUB>> ]
+"122" [label = <(IDENTIFIER,src,src.exists())<SUB>95</SUB>> ]
+"123" [label = <(lastModified,src.lastModified())<SUB>96</SUB>> ]
+"124" [label = <(IDENTIFIER,src,src.lastModified())<SUB>96</SUB>> ]
+"125" [label = <(isDirectory,src.isDirectory())<SUB>96</SUB>> ]
+"126" [label = <(IDENTIFIER,src,src.isDirectory())<SUB>96</SUB>> ]
+"127" [label = <(IDENTIFIER,$obj1,&lt;empty&gt;)> ]
+"128" [label = <(LOCAL,Resource[] sourceresources: ANY)> ]
+"129" [label = <(&lt;operator&gt;.assignment,ANY sourceresources = new Resource[v.size()])<SUB>98</SUB>> ]
+"130" [label = <(IDENTIFIER,sourceresources,ANY sourceresources = new Resource[v.size()])<SUB>98</SUB>> ]
+"131" [label = <(&lt;operator&gt;.alloc,new Resource[v.size()])> ]
+"132" [label = <(size,v.size())<SUB>98</SUB>> ]
+"133" [label = <(IDENTIFIER,v,v.size())<SUB>98</SUB>> ]
+"134" [label = <(copyInto,copyInto(sourceresources))<SUB>99</SUB>> ]
+"135" [label = <(IDENTIFIER,v,copyInto(sourceresources))<SUB>99</SUB>> ]
+"136" [label = <(IDENTIFIER,sourceresources,copyInto(sourceresources))<SUB>99</SUB>> ]
+"137" [label = <(LOCAL,Resource[] outofdate: ANY)> ]
+"138" [label = <(&lt;operator&gt;.assignment,ANY outofdate = selectOutOfDateSources(task, sourceresources, mapper, this, granularity))<SUB>103</SUB>> ]
+"139" [label = <(IDENTIFIER,outofdate,ANY outofdate = selectOutOfDateSources(task, sourceresources, mapper, this, granularity))<SUB>103</SUB>> ]
+"140" [label = <(selectOutOfDateSources,selectOutOfDateSources(task, sourceresources, mapper, this, granularity))<SUB>104</SUB>> ]
+"141" [label = <(IDENTIFIER,ResourceUtils,selectOutOfDateSources(task, sourceresources, mapper, this, granularity))<SUB>104</SUB>> ]
+"142" [label = <(&lt;operator&gt;.fieldAccess,this.task)<SUB>104</SUB>> ]
+"143" [label = <(IDENTIFIER,this,selectOutOfDateSources(task, sourceresources, mapper, this, granularity))<SUB>104</SUB>> ]
+"144" [label = <(FIELD_IDENTIFIER,task,task)<SUB>104</SUB>> ]
+"145" [label = <(IDENTIFIER,sourceresources,selectOutOfDateSources(task, sourceresources, mapper, this, granularity))<SUB>104</SUB>> ]
+"146" [label = <(IDENTIFIER,mapper,selectOutOfDateSources(task, sourceresources, mapper, this, granularity))<SUB>105</SUB>> ]
+"11" [label = <(IDENTIFIER,this,selectOutOfDateSources(task, sourceresources, mapper, this, granularity))<SUB>105</SUB>> ]
+"147" [label = <(IDENTIFIER,granularity,selectOutOfDateSources(task, sourceresources, mapper, this, granularity))<SUB>105</SUB>> ]
+"148" [label = <(LOCAL,String[] result: java.lang.String[])> ]
+"149" [label = <(&lt;operator&gt;.assignment,String[] result = new String[outofdate.length])<SUB>106</SUB>> ]
+"150" [label = <(IDENTIFIER,result,String[] result = new String[outofdate.length])<SUB>106</SUB>> ]
+"151" [label = <(&lt;operator&gt;.alloc,new String[outofdate.length])> ]
+"152" [label = <(&lt;operator&gt;.fieldAccess,outofdate.length)<SUB>106</SUB>> ]
+"153" [label = <(IDENTIFIER,outofdate,new String[outofdate.length])<SUB>106</SUB>> ]
+"154" [label = <(FIELD_IDENTIFIER,length,length)<SUB>106</SUB>> ]
+"155" [label = <(CONTROL_STRUCTURE,for (int counter = 0; Some(counter &lt; outofdate.length); counter++),for (int counter = 0; Some(counter &lt; outofdate.length); counter++))<SUB>107</SUB>> ]
+"156" [label = <(LOCAL,int counter: int)> ]
+"157" [label = <(&lt;operator&gt;.assignment,int counter = 0)<SUB>107</SUB>> ]
+"158" [label = <(IDENTIFIER,counter,int counter = 0)<SUB>107</SUB>> ]
+"159" [label = <(LITERAL,0,int counter = 0)<SUB>107</SUB>> ]
+"160" [label = <(&lt;operator&gt;.lessThan,counter &lt; outofdate.length)<SUB>107</SUB>> ]
+"161" [label = <(IDENTIFIER,counter,counter &lt; outofdate.length)<SUB>107</SUB>> ]
+"162" [label = <(&lt;operator&gt;.fieldAccess,outofdate.length)<SUB>107</SUB>> ]
+"163" [label = <(IDENTIFIER,outofdate,counter &lt; outofdate.length)<SUB>107</SUB>> ]
+"164" [label = <(FIELD_IDENTIFIER,length,length)<SUB>107</SUB>> ]
+"165" [label = <(&lt;operator&gt;.postIncrement,counter++)<SUB>107</SUB>> ]
+"166" [label = <(IDENTIFIER,counter,counter++)<SUB>107</SUB>> ]
+"167" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>107</SUB>> ]
+"168" [label = <(&lt;operator&gt;.assignment,result[counter] = getName())<SUB>108</SUB>> ]
+"169" [label = <(&lt;operator&gt;.indexAccess,result[counter])<SUB>108</SUB>> ]
+"170" [label = <(IDENTIFIER,result,result[counter] = getName())<SUB>108</SUB>> ]
+"171" [label = <(IDENTIFIER,counter,result[counter] = getName())<SUB>108</SUB>> ]
+"172" [label = <(getName,getName())<SUB>108</SUB>> ]
+"173" [label = <(&lt;operator&gt;.indexAccess,outofdate[counter])<SUB>108</SUB>> ]
+"174" [label = <(IDENTIFIER,outofdate,getName())<SUB>108</SUB>> ]
+"175" [label = <(IDENTIFIER,counter,getName())<SUB>108</SUB>> ]
+"176" [label = <(RETURN,return result;,return result;)<SUB>110</SUB>> ]
+"177" [label = <(IDENTIFIER,result,return result;)<SUB>110</SUB>> ]
+"178" [label = <(MODIFIER,PUBLIC)> ]
+"179" [label = <(MODIFIER,VIRTUAL)> ]
+"180" [label = <(METHOD_RETURN,java.lang.String[])<SUB>88</SUB>> ]
+  "71" -> "8" 
+  "71" -> "72" 
+  "71" -> "73" 
+  "71" -> "74" 
+  "71" -> "75" 
+  "71" -> "76" 
+  "71" -> "77" 
+  "71" -> "178" 
+  "71" -> "179" 
+  "71" -> "180" 
+  "77" -> "78" 
+  "77" -> "10" 
+  "77" -> "82" 
+  "77" -> "85" 
+  "77" -> "86" 
+  "77" -> "128" 
+  "77" -> "129" 
+  "77" -> "134" 
+  "77" -> "137" 
+  "77" -> "138" 
+  "77" -> "148" 
+  "77" -> "149" 
+  "77" -> "155" 
+  "77" -> "176" 
+  "78" -> "79" 
+  "78" -> "81" 
+  "79" -> "7" 
+  "79" -> "80" 
+  "82" -> "83" 
+  "82" -> "84" 
+  "85" -> "9" 
+  "86" -> "87" 
+  "86" -> "88" 
+  "86" -> "91" 
+  "86" -> "96" 
+  "86" -> "98" 
+  "88" -> "89" 
+  "88" -> "90" 
+  "91" -> "92" 
+  "91" -> "93" 
+  "93" -> "94" 
+  "93" -> "95" 
+  "96" -> "97" 
+  "98" -> "99" 
+  "98" -> "100" 
+  "98" -> "110" 
+  "100" -> "101" 
+  "100" -> "102" 
+  "102" -> "103" 
+  "102" -> "106" 
+  "102" -> "107" 
+  "103" -> "104" 
+  "103" -> "105" 
+  "107" -> "108" 
+  "107" -> "109" 
+  "110" -> "111" 
+  "110" -> "112" 
+  "112" -> "113" 
+  "112" -> "116" 
+  "112" -> "127" 
+  "113" -> "114" 
+  "113" -> "115" 
+  "116" -> "117" 
+  "116" -> "118" 
+  "116" -> "121" 
+  "116" -> "123" 
+  "116" -> "125" 
+  "118" -> "119" 
+  "118" -> "120" 
+  "121" -> "122" 
+  "123" -> "124" 
+  "125" -> "126" 
+  "129" -> "130" 
+  "129" -> "131" 
+  "131" -> "132" 
+  "132" -> "133" 
+  "134" -> "135" 
+  "134" -> "136" 
+  "138" -> "139" 
+  "138" -> "140" 
+  "140" -> "141" 
+  "140" -> "142" 
+  "140" -> "145" 
+  "140" -> "146" 
+  "140" -> "11" 
+  "140" -> "147" 
+  "142" -> "143" 
+  "142" -> "144" 
+  "149" -> "150" 
+  "149" -> "151" 
+  "151" -> "152" 
+  "152" -> "153" 
+  "152" -> "154" 
+  "155" -> "156" 
+  "155" -> "157" 
+  "155" -> "160" 
+  "155" -> "165" 
+  "155" -> "167" 
+  "157" -> "158" 
+  "157" -> "159" 
+  "160" -> "161" 
+  "160" -> "162" 
+  "162" -> "163" 
+  "162" -> "164" 
+  "165" -> "166" 
+  "167" -> "168" 
+  "168" -> "169" 
+  "168" -> "172" 
+  "169" -> "170" 
+  "169" -> "171" 
+  "172" -> "173" 
+  "173" -> "174" 
+  "173" -> "175" 
+  "176" -> "177" 
+}

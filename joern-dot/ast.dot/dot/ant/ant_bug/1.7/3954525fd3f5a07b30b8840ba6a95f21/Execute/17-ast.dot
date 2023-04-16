@@ -1,0 +1,109 @@
+digraph "launch" {  
+"884" [label = <(METHOD,launch)<SUB>437</SUB>> ]
+"885" [label = <(PARAM,Project project)<SUB>437</SUB>> ]
+"886" [label = <(PARAM,String[] command)<SUB>437</SUB>> ]
+"887" [label = <(PARAM,String[] env)<SUB>438</SUB>> ]
+"888" [label = <(PARAM,File dir)<SUB>438</SUB>> ]
+"889" [label = <(PARAM,boolean useVM)<SUB>438</SUB>> ]
+"890" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>439</SUB>> ]
+"891" [label = <(CONTROL_STRUCTURE,if (dir != null &amp;&amp; !dir.exists()),if (dir != null &amp;&amp; !dir.exists()))<SUB>440</SUB>> ]
+"892" [label = <(&lt;operator&gt;.logicalAnd,dir != null &amp;&amp; !dir.exists())<SUB>440</SUB>> ]
+"893" [label = <(&lt;operator&gt;.notEquals,dir != null)<SUB>440</SUB>> ]
+"894" [label = <(IDENTIFIER,dir,dir != null)<SUB>440</SUB>> ]
+"895" [label = <(LITERAL,null,dir != null)<SUB>440</SUB>> ]
+"896" [label = <(&lt;operator&gt;.logicalNot,!dir.exists())<SUB>440</SUB>> ]
+"897" [label = <(exists,dir.exists())<SUB>440</SUB>> ]
+"898" [label = <(IDENTIFIER,dir,dir.exists())<SUB>440</SUB>> ]
+"899" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>440</SUB>> ]
+"900" [label = <(&lt;operator&gt;.throw,throw new BuildException(dir + &quot; doesn't exist.&quot;);)<SUB>441</SUB>> ]
+"901" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>441</SUB>> ]
+"902" [label = <(&lt;operator&gt;.assignment,&lt;empty&gt;)> ]
+"903" [label = <(IDENTIFIER,$obj24,&lt;empty&gt;)> ]
+"904" [label = <(&lt;operator&gt;.alloc,new BuildException(dir + &quot; doesn't exist.&quot;))<SUB>441</SUB>> ]
+"905" [label = <(&lt;init&gt;,new BuildException(dir + &quot; doesn't exist.&quot;))<SUB>441</SUB>> ]
+"906" [label = <(IDENTIFIER,$obj24,new BuildException(dir + &quot; doesn't exist.&quot;))> ]
+"907" [label = <(&lt;operator&gt;.addition,dir + &quot; doesn't exist.&quot;)<SUB>441</SUB>> ]
+"908" [label = <(IDENTIFIER,dir,dir + &quot; doesn't exist.&quot;)<SUB>441</SUB>> ]
+"909" [label = <(LITERAL,&quot; doesn't exist.&quot;,dir + &quot; doesn't exist.&quot;)<SUB>441</SUB>> ]
+"910" [label = <(IDENTIFIER,$obj24,&lt;empty&gt;)> ]
+"911" [label = <(LOCAL,CommandLauncher launcher: org.apache.tools.ant.taskdefs.Execute$CommandLauncher)> ]
+"912" [label = <(&lt;operator&gt;.assignment,Execute$CommandLauncher launcher = (useVM &amp;&amp; vmLauncher != null) ? vmLauncher : shellLauncher)<SUB>443</SUB>> ]
+"913" [label = <(IDENTIFIER,launcher,Execute$CommandLauncher launcher = (useVM &amp;&amp; vmLauncher != null) ? vmLauncher : shellLauncher)<SUB>443</SUB>> ]
+"914" [label = <(&lt;operator&gt;.conditional,(useVM &amp;&amp; vmLauncher != null) ? vmLauncher : shellLauncher)<SUB>444</SUB>> ]
+"915" [label = <(&lt;operator&gt;.logicalAnd,useVM &amp;&amp; vmLauncher != null)<SUB>444</SUB>> ]
+"916" [label = <(IDENTIFIER,useVM,useVM &amp;&amp; vmLauncher != null)<SUB>444</SUB>> ]
+"917" [label = <(&lt;operator&gt;.notEquals,vmLauncher != null)<SUB>444</SUB>> ]
+"918" [label = <(&lt;operator&gt;.fieldAccess,Execute.vmLauncher)<SUB>444</SUB>> ]
+"919" [label = <(IDENTIFIER,Execute,vmLauncher != null)<SUB>444</SUB>> ]
+"920" [label = <(FIELD_IDENTIFIER,vmLauncher,vmLauncher)<SUB>444</SUB>> ]
+"921" [label = <(LITERAL,null,vmLauncher != null)<SUB>444</SUB>> ]
+"922" [label = <(&lt;operator&gt;.fieldAccess,Execute.vmLauncher)<SUB>444</SUB>> ]
+"923" [label = <(IDENTIFIER,Execute,(useVM &amp;&amp; vmLauncher != null) ? vmLauncher : shellLauncher)<SUB>444</SUB>> ]
+"924" [label = <(FIELD_IDENTIFIER,vmLauncher,vmLauncher)<SUB>444</SUB>> ]
+"925" [label = <(&lt;operator&gt;.fieldAccess,Execute.shellLauncher)<SUB>444</SUB>> ]
+"926" [label = <(IDENTIFIER,Execute,(useVM &amp;&amp; vmLauncher != null) ? vmLauncher : shellLauncher)<SUB>444</SUB>> ]
+"927" [label = <(FIELD_IDENTIFIER,shellLauncher,shellLauncher)<SUB>444</SUB>> ]
+"928" [label = <(RETURN,return launcher.exec(project, command, env, dir);,return launcher.exec(project, command, env, dir);)<SUB>445</SUB>> ]
+"929" [label = <(exec,exec(project, command, env, dir))<SUB>445</SUB>> ]
+"930" [label = <(IDENTIFIER,launcher,exec(project, command, env, dir))<SUB>445</SUB>> ]
+"931" [label = <(IDENTIFIER,project,exec(project, command, env, dir))<SUB>445</SUB>> ]
+"932" [label = <(IDENTIFIER,command,exec(project, command, env, dir))<SUB>445</SUB>> ]
+"933" [label = <(IDENTIFIER,env,exec(project, command, env, dir))<SUB>445</SUB>> ]
+"934" [label = <(IDENTIFIER,dir,exec(project, command, env, dir))<SUB>445</SUB>> ]
+"935" [label = <(MODIFIER,PUBLIC)> ]
+"936" [label = <(MODIFIER,STATIC)> ]
+"937" [label = <(METHOD_RETURN,java.lang.Process)<SUB>437</SUB>> ]
+  "884" -> "885" 
+  "884" -> "886" 
+  "884" -> "887" 
+  "884" -> "888" 
+  "884" -> "889" 
+  "884" -> "890" 
+  "884" -> "935" 
+  "884" -> "936" 
+  "884" -> "937" 
+  "890" -> "891" 
+  "890" -> "911" 
+  "890" -> "912" 
+  "890" -> "928" 
+  "891" -> "892" 
+  "891" -> "899" 
+  "892" -> "893" 
+  "892" -> "896" 
+  "893" -> "894" 
+  "893" -> "895" 
+  "896" -> "897" 
+  "897" -> "898" 
+  "899" -> "900" 
+  "900" -> "901" 
+  "901" -> "902" 
+  "901" -> "905" 
+  "901" -> "910" 
+  "902" -> "903" 
+  "902" -> "904" 
+  "905" -> "906" 
+  "905" -> "907" 
+  "907" -> "908" 
+  "907" -> "909" 
+  "912" -> "913" 
+  "912" -> "914" 
+  "914" -> "915" 
+  "914" -> "922" 
+  "914" -> "925" 
+  "915" -> "916" 
+  "915" -> "917" 
+  "917" -> "918" 
+  "917" -> "921" 
+  "918" -> "919" 
+  "918" -> "920" 
+  "922" -> "923" 
+  "922" -> "924" 
+  "925" -> "926" 
+  "925" -> "927" 
+  "928" -> "929" 
+  "929" -> "930" 
+  "929" -> "931" 
+  "929" -> "932" 
+  "929" -> "933" 
+  "929" -> "934" 
+}

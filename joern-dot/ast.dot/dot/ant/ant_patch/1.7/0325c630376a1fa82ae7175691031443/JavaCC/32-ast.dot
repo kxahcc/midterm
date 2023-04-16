@@ -1,0 +1,165 @@
+digraph "getOutputJavaFile" {  
+"1292" [label = <(METHOD,getOutputJavaFile)<SUB>532</SUB>> ]
+"1293" [label = <(PARAM,this)<SUB>532</SUB>> ]
+"1294" [label = <(PARAM,File outputdir)<SUB>532</SUB>> ]
+"1295" [label = <(PARAM,File srcfile)<SUB>532</SUB>> ]
+"1296" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>532</SUB>> ]
+"1297" [label = <(LOCAL,String path: java.lang.String)> ]
+"1298" [label = <(&lt;operator&gt;.assignment,String path = srcfile.getPath())<SUB>533</SUB>> ]
+"1299" [label = <(IDENTIFIER,path,String path = srcfile.getPath())<SUB>533</SUB>> ]
+"1300" [label = <(getPath,srcfile.getPath())<SUB>533</SUB>> ]
+"1301" [label = <(IDENTIFIER,srcfile,srcfile.getPath())<SUB>533</SUB>> ]
+"1302" [label = <(LOCAL,int startBasename: int)> ]
+"1303" [label = <(&lt;operator&gt;.assignment,int startBasename = path.lastIndexOf(File.separator))<SUB>536</SUB>> ]
+"1304" [label = <(IDENTIFIER,startBasename,int startBasename = path.lastIndexOf(File.separator))<SUB>536</SUB>> ]
+"1305" [label = <(lastIndexOf,path.lastIndexOf(File.separator))<SUB>536</SUB>> ]
+"1306" [label = <(IDENTIFIER,path,path.lastIndexOf(File.separator))<SUB>536</SUB>> ]
+"1307" [label = <(&lt;operator&gt;.fieldAccess,File.separator)<SUB>536</SUB>> ]
+"1308" [label = <(IDENTIFIER,File,path.lastIndexOf(File.separator))<SUB>536</SUB>> ]
+"1309" [label = <(FIELD_IDENTIFIER,separator,separator)<SUB>536</SUB>> ]
+"1310" [label = <(CONTROL_STRUCTURE,if (startBasename != -1),if (startBasename != -1))<SUB>537</SUB>> ]
+"1311" [label = <(&lt;operator&gt;.notEquals,startBasename != -1)<SUB>537</SUB>> ]
+"1312" [label = <(IDENTIFIER,startBasename,startBasename != -1)<SUB>537</SUB>> ]
+"1313" [label = <(&lt;operator&gt;.minus,-1)<SUB>537</SUB>> ]
+"1314" [label = <(LITERAL,1,-1)<SUB>537</SUB>> ]
+"1315" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>537</SUB>> ]
+"1316" [label = <(&lt;operator&gt;.assignment,path = path.substring(startBasename + 1))<SUB>538</SUB>> ]
+"1317" [label = <(IDENTIFIER,path,path = path.substring(startBasename + 1))<SUB>538</SUB>> ]
+"1318" [label = <(substring,path.substring(startBasename + 1))<SUB>538</SUB>> ]
+"1319" [label = <(IDENTIFIER,path,path.substring(startBasename + 1))<SUB>538</SUB>> ]
+"1320" [label = <(&lt;operator&gt;.addition,startBasename + 1)<SUB>538</SUB>> ]
+"1321" [label = <(IDENTIFIER,startBasename,startBasename + 1)<SUB>538</SUB>> ]
+"1322" [label = <(LITERAL,1,startBasename + 1)<SUB>538</SUB>> ]
+"1323" [label = <(LOCAL,int startExtn: int)> ]
+"1324" [label = <(&lt;operator&gt;.assignment,int startExtn = path.lastIndexOf('.'))<SUB>542</SUB>> ]
+"1325" [label = <(IDENTIFIER,startExtn,int startExtn = path.lastIndexOf('.'))<SUB>542</SUB>> ]
+"1326" [label = <(lastIndexOf,path.lastIndexOf('.'))<SUB>542</SUB>> ]
+"1327" [label = <(IDENTIFIER,path,path.lastIndexOf('.'))<SUB>542</SUB>> ]
+"1328" [label = <(LITERAL,'.',path.lastIndexOf('.'))<SUB>542</SUB>> ]
+"1329" [label = <(CONTROL_STRUCTURE,if (startExtn != -1),if (startExtn != -1))<SUB>543</SUB>> ]
+"1330" [label = <(&lt;operator&gt;.notEquals,startExtn != -1)<SUB>543</SUB>> ]
+"1331" [label = <(IDENTIFIER,startExtn,startExtn != -1)<SUB>543</SUB>> ]
+"1332" [label = <(&lt;operator&gt;.minus,-1)<SUB>543</SUB>> ]
+"1333" [label = <(LITERAL,1,-1)<SUB>543</SUB>> ]
+"1334" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>543</SUB>> ]
+"1335" [label = <(&lt;operator&gt;.assignment,path = path.substring(0, startExtn) + &quot;.java&quot;)<SUB>544</SUB>> ]
+"1336" [label = <(IDENTIFIER,path,path = path.substring(0, startExtn) + &quot;.java&quot;)<SUB>544</SUB>> ]
+"1337" [label = <(&lt;operator&gt;.addition,path.substring(0, startExtn) + &quot;.java&quot;)<SUB>544</SUB>> ]
+"1338" [label = <(substring,path.substring(0, startExtn))<SUB>544</SUB>> ]
+"1339" [label = <(IDENTIFIER,path,path.substring(0, startExtn))<SUB>544</SUB>> ]
+"1340" [label = <(LITERAL,0,path.substring(0, startExtn))<SUB>544</SUB>> ]
+"1341" [label = <(IDENTIFIER,startExtn,path.substring(0, startExtn))<SUB>544</SUB>> ]
+"1342" [label = <(LITERAL,&quot;.java&quot;,path.substring(0, startExtn) + &quot;.java&quot;)<SUB>544</SUB>> ]
+"1343" [label = <(CONTROL_STRUCTURE,else,else)<SUB>545</SUB>> ]
+"1344" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>545</SUB>> ]
+"1345" [label = <(&lt;operator&gt;.assignmentPlus,path += &quot;.java&quot;)<SUB>546</SUB>> ]
+"1346" [label = <(IDENTIFIER,path,path += &quot;.java&quot;)<SUB>546</SUB>> ]
+"1347" [label = <(LITERAL,&quot;.java&quot;,path += &quot;.java&quot;)<SUB>546</SUB>> ]
+"1348" [label = <(CONTROL_STRUCTURE,if (outputdir != null),if (outputdir != null))<SUB>550</SUB>> ]
+"1349" [label = <(&lt;operator&gt;.notEquals,outputdir != null)<SUB>550</SUB>> ]
+"1350" [label = <(IDENTIFIER,outputdir,outputdir != null)<SUB>550</SUB>> ]
+"1351" [label = <(LITERAL,null,outputdir != null)<SUB>550</SUB>> ]
+"1352" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>550</SUB>> ]
+"1353" [label = <(&lt;operator&gt;.assignment,path = outputdir + File.separator + path)<SUB>551</SUB>> ]
+"1354" [label = <(IDENTIFIER,path,path = outputdir + File.separator + path)<SUB>551</SUB>> ]
+"1355" [label = <(&lt;operator&gt;.addition,outputdir + File.separator + path)<SUB>551</SUB>> ]
+"1356" [label = <(&lt;operator&gt;.addition,outputdir + File.separator)<SUB>551</SUB>> ]
+"1357" [label = <(IDENTIFIER,outputdir,outputdir + File.separator)<SUB>551</SUB>> ]
+"1358" [label = <(&lt;operator&gt;.fieldAccess,File.separator)<SUB>551</SUB>> ]
+"1359" [label = <(IDENTIFIER,File,outputdir + File.separator)<SUB>551</SUB>> ]
+"1360" [label = <(FIELD_IDENTIFIER,separator,separator)<SUB>551</SUB>> ]
+"1361" [label = <(IDENTIFIER,path,outputdir + File.separator + path)<SUB>551</SUB>> ]
+"1362" [label = <(RETURN,return new File(path);,return new File(path);)<SUB>554</SUB>> ]
+"1363" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>554</SUB>> ]
+"1364" [label = <(&lt;operator&gt;.assignment,&lt;empty&gt;)> ]
+"1365" [label = <(IDENTIFIER,$obj16,&lt;empty&gt;)> ]
+"1366" [label = <(&lt;operator&gt;.alloc,new File(path))<SUB>554</SUB>> ]
+"1367" [label = <(&lt;init&gt;,new File(path))<SUB>554</SUB>> ]
+"1368" [label = <(IDENTIFIER,$obj16,new File(path))> ]
+"1369" [label = <(IDENTIFIER,path,new File(path))<SUB>554</SUB>> ]
+"1370" [label = <(IDENTIFIER,$obj16,&lt;empty&gt;)> ]
+"1371" [label = <(MODIFIER,PRIVATE)> ]
+"1372" [label = <(MODIFIER,VIRTUAL)> ]
+"1373" [label = <(METHOD_RETURN,java.io.File)<SUB>532</SUB>> ]
+  "1292" -> "1293" 
+  "1292" -> "1294" 
+  "1292" -> "1295" 
+  "1292" -> "1296" 
+  "1292" -> "1371" 
+  "1292" -> "1372" 
+  "1292" -> "1373" 
+  "1296" -> "1297" 
+  "1296" -> "1298" 
+  "1296" -> "1302" 
+  "1296" -> "1303" 
+  "1296" -> "1310" 
+  "1296" -> "1323" 
+  "1296" -> "1324" 
+  "1296" -> "1329" 
+  "1296" -> "1348" 
+  "1296" -> "1362" 
+  "1298" -> "1299" 
+  "1298" -> "1300" 
+  "1300" -> "1301" 
+  "1303" -> "1304" 
+  "1303" -> "1305" 
+  "1305" -> "1306" 
+  "1305" -> "1307" 
+  "1307" -> "1308" 
+  "1307" -> "1309" 
+  "1310" -> "1311" 
+  "1310" -> "1315" 
+  "1311" -> "1312" 
+  "1311" -> "1313" 
+  "1313" -> "1314" 
+  "1315" -> "1316" 
+  "1316" -> "1317" 
+  "1316" -> "1318" 
+  "1318" -> "1319" 
+  "1318" -> "1320" 
+  "1320" -> "1321" 
+  "1320" -> "1322" 
+  "1324" -> "1325" 
+  "1324" -> "1326" 
+  "1326" -> "1327" 
+  "1326" -> "1328" 
+  "1329" -> "1330" 
+  "1329" -> "1334" 
+  "1329" -> "1343" 
+  "1330" -> "1331" 
+  "1330" -> "1332" 
+  "1332" -> "1333" 
+  "1334" -> "1335" 
+  "1335" -> "1336" 
+  "1335" -> "1337" 
+  "1337" -> "1338" 
+  "1337" -> "1342" 
+  "1338" -> "1339" 
+  "1338" -> "1340" 
+  "1338" -> "1341" 
+  "1343" -> "1344" 
+  "1344" -> "1345" 
+  "1345" -> "1346" 
+  "1345" -> "1347" 
+  "1348" -> "1349" 
+  "1348" -> "1352" 
+  "1349" -> "1350" 
+  "1349" -> "1351" 
+  "1352" -> "1353" 
+  "1353" -> "1354" 
+  "1353" -> "1355" 
+  "1355" -> "1356" 
+  "1355" -> "1361" 
+  "1356" -> "1357" 
+  "1356" -> "1358" 
+  "1358" -> "1359" 
+  "1358" -> "1360" 
+  "1362" -> "1363" 
+  "1363" -> "1364" 
+  "1363" -> "1367" 
+  "1363" -> "1370" 
+  "1364" -> "1365" 
+  "1364" -> "1366" 
+  "1367" -> "1368" 
+  "1367" -> "1369" 
+}

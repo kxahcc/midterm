@@ -1,0 +1,183 @@
+digraph "invoke" {  
+"51" [label = <(METHOD,invoke)<SUB>44</SUB>> ]
+"52" [label = <(PARAM,this)<SUB>44</SUB>> ]
+"53" [label = <(PARAM,Object proxy)<SUB>44</SUB>> ]
+"54" [label = <(PARAM,Method method)<SUB>44</SUB>> ]
+"55" [label = <(PARAM,Object[] args)<SUB>44</SUB>> ]
+"56" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>44</SUB>> ]
+"8" [label = <(LOCAL,BeanInvocation invocation: ANY)> ]
+"57" [label = <(&lt;operator&gt;.assignment,ANY invocation = new BeanInvocation(method, args))<SUB>45</SUB>> ]
+"58" [label = <(IDENTIFIER,invocation,ANY invocation = new BeanInvocation(method, args))<SUB>45</SUB>> ]
+"59" [label = <(&lt;operator&gt;.alloc,new BeanInvocation(method, args))<SUB>45</SUB>> ]
+"60" [label = <(&lt;init&gt;,new BeanInvocation(method, args))<SUB>45</SUB>> ]
+"7" [label = <(IDENTIFIER,invocation,new BeanInvocation(method, args))<SUB>45</SUB>> ]
+"61" [label = <(IDENTIFIER,method,new BeanInvocation(method, args))<SUB>45</SUB>> ]
+"62" [label = <(IDENTIFIER,args,new BeanInvocation(method, args))<SUB>45</SUB>> ]
+"63" [label = <(LOCAL,ExchangePattern pattern: org.apache.camel.ExchangePattern)> ]
+"64" [label = <(&lt;operator&gt;.assignment,ExchangePattern pattern = ExchangePattern.InOut)<SUB>46</SUB>> ]
+"65" [label = <(IDENTIFIER,pattern,ExchangePattern pattern = ExchangePattern.InOut)<SUB>46</SUB>> ]
+"66" [label = <(&lt;operator&gt;.fieldAccess,ExchangePattern.InOut)<SUB>46</SUB>> ]
+"67" [label = <(IDENTIFIER,ExchangePattern,ExchangePattern pattern = ExchangePattern.InOut)<SUB>46</SUB>> ]
+"68" [label = <(FIELD_IDENTIFIER,InOut,InOut)<SUB>46</SUB>> ]
+"69" [label = <(LOCAL,MethodInfo methodInfo: ANY)> ]
+"70" [label = <(&lt;operator&gt;.assignment,ANY methodInfo = getMethodInfo(method))<SUB>47</SUB>> ]
+"71" [label = <(IDENTIFIER,methodInfo,ANY methodInfo = getMethodInfo(method))<SUB>47</SUB>> ]
+"72" [label = <(getMethodInfo,getMethodInfo(method))<SUB>47</SUB>> ]
+"73" [label = <(&lt;operator&gt;.fieldAccess,this.methodInfoCache)<SUB>47</SUB>> ]
+"74" [label = <(IDENTIFIER,this,getMethodInfo(method))<SUB>47</SUB>> ]
+"75" [label = <(FIELD_IDENTIFIER,methodInfoCache,methodInfoCache)<SUB>47</SUB>> ]
+"76" [label = <(IDENTIFIER,method,getMethodInfo(method))<SUB>47</SUB>> ]
+"77" [label = <(CONTROL_STRUCTURE,if (methodInfo != null),if (methodInfo != null))<SUB>48</SUB>> ]
+"78" [label = <(&lt;operator&gt;.notEquals,methodInfo != null)<SUB>48</SUB>> ]
+"79" [label = <(IDENTIFIER,methodInfo,methodInfo != null)<SUB>48</SUB>> ]
+"80" [label = <(LITERAL,null,methodInfo != null)<SUB>48</SUB>> ]
+"81" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>48</SUB>> ]
+"82" [label = <(&lt;operator&gt;.assignment,pattern = getPattern())<SUB>49</SUB>> ]
+"83" [label = <(IDENTIFIER,pattern,pattern = getPattern())<SUB>49</SUB>> ]
+"84" [label = <(getPattern,getPattern())<SUB>49</SUB>> ]
+"85" [label = <(IDENTIFIER,methodInfo,getPattern())<SUB>49</SUB>> ]
+"10" [label = <(LOCAL,BeanExchange exchange: ANY)> ]
+"86" [label = <(&lt;operator&gt;.assignment,ANY exchange = new BeanExchange(endpoint.getCamelContext(), pattern))<SUB>51</SUB>> ]
+"87" [label = <(IDENTIFIER,exchange,ANY exchange = new BeanExchange(endpoint.getCamelContext(), pattern))<SUB>51</SUB>> ]
+"88" [label = <(&lt;operator&gt;.alloc,new BeanExchange(endpoint.getCamelContext(), pattern))<SUB>51</SUB>> ]
+"89" [label = <(&lt;init&gt;,new BeanExchange(endpoint.getCamelContext(), pattern))<SUB>51</SUB>> ]
+"9" [label = <(IDENTIFIER,exchange,new BeanExchange(endpoint.getCamelContext(), pattern))<SUB>51</SUB>> ]
+"90" [label = <(getCamelContext,getCamelContext())<SUB>51</SUB>> ]
+"91" [label = <(&lt;operator&gt;.fieldAccess,this.endpoint)<SUB>51</SUB>> ]
+"92" [label = <(IDENTIFIER,this,getCamelContext())<SUB>51</SUB>> ]
+"93" [label = <(FIELD_IDENTIFIER,endpoint,endpoint)<SUB>51</SUB>> ]
+"94" [label = <(IDENTIFIER,pattern,new BeanExchange(endpoint.getCamelContext(), pattern))<SUB>51</SUB>> ]
+"95" [label = <(setInvocation,setInvocation(invocation))<SUB>52</SUB>> ]
+"96" [label = <(IDENTIFIER,exchange,setInvocation(invocation))<SUB>52</SUB>> ]
+"97" [label = <(IDENTIFIER,invocation,setInvocation(invocation))<SUB>52</SUB>> ]
+"98" [label = <(process,process(exchange))<SUB>54</SUB>> ]
+"99" [label = <(&lt;operator&gt;.fieldAccess,this.producer)<SUB>54</SUB>> ]
+"100" [label = <(IDENTIFIER,this,process(exchange))<SUB>54</SUB>> ]
+"101" [label = <(FIELD_IDENTIFIER,producer,producer)<SUB>54</SUB>> ]
+"102" [label = <(IDENTIFIER,exchange,process(exchange))<SUB>54</SUB>> ]
+"103" [label = <(LOCAL,Throwable fault: java.lang.Throwable)> ]
+"104" [label = <(&lt;operator&gt;.assignment,Throwable fault = getException())<SUB>55</SUB>> ]
+"105" [label = <(IDENTIFIER,fault,Throwable fault = getException())<SUB>55</SUB>> ]
+"106" [label = <(getException,getException())<SUB>55</SUB>> ]
+"107" [label = <(IDENTIFIER,exchange,getException())<SUB>55</SUB>> ]
+"108" [label = <(CONTROL_STRUCTURE,if (fault != null),if (fault != null))<SUB>56</SUB>> ]
+"109" [label = <(&lt;operator&gt;.notEquals,fault != null)<SUB>56</SUB>> ]
+"110" [label = <(IDENTIFIER,fault,fault != null)<SUB>56</SUB>> ]
+"111" [label = <(LITERAL,null,fault != null)<SUB>56</SUB>> ]
+"112" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>56</SUB>> ]
+"113" [label = <(&lt;operator&gt;.throw,throw new InvocationTargetException(fault);)<SUB>57</SUB>> ]
+"114" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>57</SUB>> ]
+"115" [label = <(&lt;operator&gt;.assignment,&lt;empty&gt;)> ]
+"116" [label = <(IDENTIFIER,$obj2,&lt;empty&gt;)> ]
+"117" [label = <(&lt;operator&gt;.alloc,new InvocationTargetException(fault))<SUB>57</SUB>> ]
+"118" [label = <(&lt;init&gt;,new InvocationTargetException(fault))<SUB>57</SUB>> ]
+"119" [label = <(IDENTIFIER,$obj2,new InvocationTargetException(fault))> ]
+"120" [label = <(IDENTIFIER,fault,new InvocationTargetException(fault))<SUB>57</SUB>> ]
+"121" [label = <(IDENTIFIER,$obj2,&lt;empty&gt;)> ]
+"122" [label = <(CONTROL_STRUCTURE,if (pattern.isOutCapable()),if (pattern.isOutCapable()))<SUB>59</SUB>> ]
+"123" [label = <(isOutCapable,isOutCapable())<SUB>59</SUB>> ]
+"124" [label = <(IDENTIFIER,pattern,isOutCapable())<SUB>59</SUB>> ]
+"125" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>59</SUB>> ]
+"126" [label = <(RETURN,return exchange.getOut(true).getBody();,return exchange.getOut(true).getBody();)<SUB>60</SUB>> ]
+"127" [label = <(getBody,getBody())<SUB>60</SUB>> ]
+"128" [label = <(getOut,getOut(true))<SUB>60</SUB>> ]
+"129" [label = <(IDENTIFIER,exchange,getOut(true))<SUB>60</SUB>> ]
+"130" [label = <(LITERAL,true,getOut(true))<SUB>60</SUB>> ]
+"131" [label = <(CONTROL_STRUCTURE,else,else)<SUB>61</SUB>> ]
+"132" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>61</SUB>> ]
+"133" [label = <(RETURN,return null;,return null;)<SUB>62</SUB>> ]
+"134" [label = <(LITERAL,null,return null;)<SUB>62</SUB>> ]
+"135" [label = <(MODIFIER,PUBLIC)> ]
+"136" [label = <(MODIFIER,VIRTUAL)> ]
+"137" [label = <(METHOD_RETURN,java.lang.Object)<SUB>44</SUB>> ]
+  "51" -> "52" 
+  "51" -> "53" 
+  "51" -> "54" 
+  "51" -> "55" 
+  "51" -> "56" 
+  "51" -> "135" 
+  "51" -> "136" 
+  "51" -> "137" 
+  "56" -> "8" 
+  "56" -> "57" 
+  "56" -> "60" 
+  "56" -> "63" 
+  "56" -> "64" 
+  "56" -> "69" 
+  "56" -> "70" 
+  "56" -> "77" 
+  "56" -> "10" 
+  "56" -> "86" 
+  "56" -> "89" 
+  "56" -> "95" 
+  "56" -> "98" 
+  "56" -> "103" 
+  "56" -> "104" 
+  "56" -> "108" 
+  "56" -> "122" 
+  "57" -> "58" 
+  "57" -> "59" 
+  "60" -> "7" 
+  "60" -> "61" 
+  "60" -> "62" 
+  "64" -> "65" 
+  "64" -> "66" 
+  "66" -> "67" 
+  "66" -> "68" 
+  "70" -> "71" 
+  "70" -> "72" 
+  "72" -> "73" 
+  "72" -> "76" 
+  "73" -> "74" 
+  "73" -> "75" 
+  "77" -> "78" 
+  "77" -> "81" 
+  "78" -> "79" 
+  "78" -> "80" 
+  "81" -> "82" 
+  "82" -> "83" 
+  "82" -> "84" 
+  "84" -> "85" 
+  "86" -> "87" 
+  "86" -> "88" 
+  "89" -> "9" 
+  "89" -> "90" 
+  "89" -> "94" 
+  "90" -> "91" 
+  "91" -> "92" 
+  "91" -> "93" 
+  "95" -> "96" 
+  "95" -> "97" 
+  "98" -> "99" 
+  "98" -> "102" 
+  "99" -> "100" 
+  "99" -> "101" 
+  "104" -> "105" 
+  "104" -> "106" 
+  "106" -> "107" 
+  "108" -> "109" 
+  "108" -> "112" 
+  "109" -> "110" 
+  "109" -> "111" 
+  "112" -> "113" 
+  "113" -> "114" 
+  "114" -> "115" 
+  "114" -> "118" 
+  "114" -> "121" 
+  "115" -> "116" 
+  "115" -> "117" 
+  "118" -> "119" 
+  "118" -> "120" 
+  "122" -> "123" 
+  "122" -> "125" 
+  "122" -> "131" 
+  "123" -> "124" 
+  "125" -> "126" 
+  "126" -> "127" 
+  "127" -> "128" 
+  "128" -> "129" 
+  "128" -> "130" 
+  "131" -> "132" 
+  "132" -> "133" 
+  "133" -> "134" 
+}

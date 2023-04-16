@@ -1,0 +1,139 @@
+digraph "wrapProcessorInInterceptors" {  
+"241" [label = <(METHOD,wrapProcessorInInterceptors)<SUB>122</SUB>> ]
+"10" [label = <(PARAM,this)<SUB>122</SUB>> ]
+"242" [label = <(PARAM,ProcessorType processorType)<SUB>122</SUB>> ]
+"243" [label = <(PARAM,Processor target)<SUB>122</SUB>> ]
+"244" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>122</SUB>> ]
+"245" [label = <(LOCAL,String id: java.lang.String)> ]
+"246" [label = <(&lt;operator&gt;.assignment,String id = idOrCreate())<SUB>123</SUB>> ]
+"247" [label = <(IDENTIFIER,id,String id = idOrCreate())<SUB>123</SUB>> ]
+"248" [label = <(idOrCreate,idOrCreate())<SUB>123</SUB>> ]
+"249" [label = <(IDENTIFIER,processorType,idOrCreate())<SUB>123</SUB>> ]
+"250" [label = <(CONTROL_STRUCTURE,if (logExchanges),if (logExchanges))<SUB>124</SUB>> ]
+"251" [label = <(&lt;operator&gt;.fieldAccess,this.logExchanges)<SUB>124</SUB>> ]
+"252" [label = <(IDENTIFIER,this,if (logExchanges))<SUB>124</SUB>> ]
+"253" [label = <(FIELD_IDENTIFIER,logExchanges,logExchanges)<SUB>124</SUB>> ]
+"254" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>124</SUB>> ]
+"8" [label = <(LOCAL,TraceInterceptor traceInterceptor: ANY)> ]
+"255" [label = <(&lt;operator&gt;.assignment,ANY traceInterceptor = new TraceInterceptor(processorType, target, tracer))<SUB>125</SUB>> ]
+"256" [label = <(IDENTIFIER,traceInterceptor,ANY traceInterceptor = new TraceInterceptor(processorType, target, tracer))<SUB>125</SUB>> ]
+"257" [label = <(&lt;operator&gt;.alloc,new TraceInterceptor(processorType, target, tracer))<SUB>125</SUB>> ]
+"258" [label = <(&lt;init&gt;,new TraceInterceptor(processorType, target, tracer))<SUB>125</SUB>> ]
+"7" [label = <(IDENTIFIER,traceInterceptor,new TraceInterceptor(processorType, target, tracer))<SUB>125</SUB>> ]
+"259" [label = <(IDENTIFIER,processorType,new TraceInterceptor(processorType, target, tracer))<SUB>125</SUB>> ]
+"260" [label = <(IDENTIFIER,target,new TraceInterceptor(processorType, target, tracer))<SUB>125</SUB>> ]
+"261" [label = <(&lt;operator&gt;.fieldAccess,this.tracer)<SUB>125</SUB>> ]
+"262" [label = <(IDENTIFIER,this,new TraceInterceptor(processorType, target, tracer))<SUB>125</SUB>> ]
+"263" [label = <(FIELD_IDENTIFIER,tracer,tracer)<SUB>125</SUB>> ]
+"264" [label = <(&lt;operator&gt;.assignment,target = traceInterceptor)<SUB>126</SUB>> ]
+"265" [label = <(IDENTIFIER,target,target = traceInterceptor)<SUB>126</SUB>> ]
+"266" [label = <(IDENTIFIER,traceInterceptor,target = traceInterceptor)<SUB>126</SUB>> ]
+"13" [label = <(LOCAL,DebugInterceptor interceptor: ANY)> ]
+"267" [label = <(&lt;operator&gt;.assignment,ANY interceptor = new DebugInterceptor(processorType, target, createExchangeList(), createExceptionsList()))<SUB>128</SUB>> ]
+"268" [label = <(IDENTIFIER,interceptor,ANY interceptor = new DebugInterceptor(processorType, target, createExchangeList(), createExceptionsList()))<SUB>128</SUB>> ]
+"269" [label = <(&lt;operator&gt;.alloc,new DebugInterceptor(processorType, target, createExchangeList(), createExceptionsList()))<SUB>128</SUB>> ]
+"270" [label = <(&lt;init&gt;,new DebugInterceptor(processorType, target, createExchangeList(), createExceptionsList()))<SUB>128</SUB>> ]
+"12" [label = <(IDENTIFIER,interceptor,new DebugInterceptor(processorType, target, createExchangeList(), createExceptionsList()))<SUB>128</SUB>> ]
+"271" [label = <(IDENTIFIER,processorType,new DebugInterceptor(processorType, target, createExchangeList(), createExceptionsList()))<SUB>128</SUB>> ]
+"272" [label = <(IDENTIFIER,target,new DebugInterceptor(processorType, target, createExchangeList(), createExceptionsList()))<SUB>128</SUB>> ]
+"273" [label = <(createExchangeList,this.createExchangeList())<SUB>128</SUB>> ]
+"9" [label = <(IDENTIFIER,this,this.createExchangeList())<SUB>128</SUB>> ]
+"274" [label = <(createExceptionsList,this.createExceptionsList())<SUB>128</SUB>> ]
+"11" [label = <(IDENTIFIER,this,this.createExceptionsList())<SUB>128</SUB>> ]
+"275" [label = <(put,put(id, interceptor))<SUB>129</SUB>> ]
+"276" [label = <(&lt;operator&gt;.fieldAccess,this.interceptors)<SUB>129</SUB>> ]
+"277" [label = <(IDENTIFIER,this,put(id, interceptor))<SUB>129</SUB>> ]
+"278" [label = <(FIELD_IDENTIFIER,interceptors,interceptors)<SUB>129</SUB>> ]
+"279" [label = <(IDENTIFIER,id,put(id, interceptor))<SUB>129</SUB>> ]
+"280" [label = <(IDENTIFIER,interceptor,put(id, interceptor))<SUB>129</SUB>> ]
+"281" [label = <(CONTROL_STRUCTURE,if (LOG.isDebugEnabled()),if (LOG.isDebugEnabled()))<SUB>130</SUB>> ]
+"282" [label = <(isDebugEnabled,isDebugEnabled())<SUB>130</SUB>> ]
+"283" [label = <(&lt;operator&gt;.fieldAccess,Debugger.LOG)<SUB>130</SUB>> ]
+"284" [label = <(IDENTIFIER,Debugger,isDebugEnabled())<SUB>130</SUB>> ]
+"285" [label = <(FIELD_IDENTIFIER,LOG,LOG)<SUB>130</SUB>> ]
+"286" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>130</SUB>> ]
+"287" [label = <(debug,debug(&quot;Adding &quot; + id + &quot; interceptor: &quot; + interceptor))<SUB>131</SUB>> ]
+"288" [label = <(&lt;operator&gt;.fieldAccess,Debugger.LOG)<SUB>131</SUB>> ]
+"289" [label = <(IDENTIFIER,Debugger,debug(&quot;Adding &quot; + id + &quot; interceptor: &quot; + interceptor))<SUB>131</SUB>> ]
+"290" [label = <(FIELD_IDENTIFIER,LOG,LOG)<SUB>131</SUB>> ]
+"291" [label = <(&lt;operator&gt;.addition,&quot;Adding &quot; + id + &quot; interceptor: &quot; + interceptor)<SUB>131</SUB>> ]
+"292" [label = <(&lt;operator&gt;.addition,&quot;Adding &quot; + id + &quot; interceptor: &quot;)<SUB>131</SUB>> ]
+"293" [label = <(&lt;operator&gt;.addition,&quot;Adding &quot; + id)<SUB>131</SUB>> ]
+"294" [label = <(LITERAL,&quot;Adding &quot;,&quot;Adding &quot; + id)<SUB>131</SUB>> ]
+"295" [label = <(IDENTIFIER,id,&quot;Adding &quot; + id)<SUB>131</SUB>> ]
+"296" [label = <(LITERAL,&quot; interceptor: &quot;,&quot;Adding &quot; + id + &quot; interceptor: &quot;)<SUB>131</SUB>> ]
+"297" [label = <(IDENTIFIER,interceptor,&quot;Adding &quot; + id + &quot; interceptor: &quot; + interceptor)<SUB>131</SUB>> ]
+"298" [label = <(RETURN,return interceptor;,return interceptor;)<SUB>133</SUB>> ]
+"299" [label = <(IDENTIFIER,interceptor,return interceptor;)<SUB>133</SUB>> ]
+"300" [label = <(MODIFIER,PUBLIC)> ]
+"301" [label = <(MODIFIER,VIRTUAL)> ]
+"302" [label = <(METHOD_RETURN,org.apache.camel.Processor)<SUB>122</SUB>> ]
+  "241" -> "10" 
+  "241" -> "242" 
+  "241" -> "243" 
+  "241" -> "244" 
+  "241" -> "300" 
+  "241" -> "301" 
+  "241" -> "302" 
+  "244" -> "245" 
+  "244" -> "246" 
+  "244" -> "250" 
+  "244" -> "13" 
+  "244" -> "267" 
+  "244" -> "270" 
+  "244" -> "275" 
+  "244" -> "281" 
+  "244" -> "298" 
+  "246" -> "247" 
+  "246" -> "248" 
+  "248" -> "249" 
+  "250" -> "251" 
+  "250" -> "254" 
+  "251" -> "252" 
+  "251" -> "253" 
+  "254" -> "8" 
+  "254" -> "255" 
+  "254" -> "258" 
+  "254" -> "264" 
+  "255" -> "256" 
+  "255" -> "257" 
+  "258" -> "7" 
+  "258" -> "259" 
+  "258" -> "260" 
+  "258" -> "261" 
+  "261" -> "262" 
+  "261" -> "263" 
+  "264" -> "265" 
+  "264" -> "266" 
+  "267" -> "268" 
+  "267" -> "269" 
+  "270" -> "12" 
+  "270" -> "271" 
+  "270" -> "272" 
+  "270" -> "273" 
+  "270" -> "274" 
+  "273" -> "9" 
+  "274" -> "11" 
+  "275" -> "276" 
+  "275" -> "279" 
+  "275" -> "280" 
+  "276" -> "277" 
+  "276" -> "278" 
+  "281" -> "282" 
+  "281" -> "286" 
+  "282" -> "283" 
+  "283" -> "284" 
+  "283" -> "285" 
+  "286" -> "287" 
+  "287" -> "288" 
+  "287" -> "291" 
+  "288" -> "289" 
+  "288" -> "290" 
+  "291" -> "292" 
+  "291" -> "297" 
+  "292" -> "293" 
+  "292" -> "296" 
+  "293" -> "294" 
+  "293" -> "295" 
+  "298" -> "299" 
+}

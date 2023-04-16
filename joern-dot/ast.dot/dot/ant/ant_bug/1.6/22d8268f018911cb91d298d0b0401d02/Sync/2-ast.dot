@@ -1,0 +1,235 @@
+digraph "execute" {  
+"104" [label = <(METHOD,execute)<SUB>117</SUB>> ]
+"10" [label = <(PARAM,this)<SUB>117</SUB>> ]
+"105" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>118</SUB>> ]
+"106" [label = <(LOCAL,File toDir: java.io.File)> ]
+"107" [label = <(&lt;operator&gt;.assignment,File toDir = _copy.getToDir())<SUB>120</SUB>> ]
+"108" [label = <(IDENTIFIER,toDir,File toDir = _copy.getToDir())<SUB>120</SUB>> ]
+"109" [label = <(getToDir,_copy.getToDir())<SUB>120</SUB>> ]
+"110" [label = <(&lt;operator&gt;.fieldAccess,this._copy)<SUB>120</SUB>> ]
+"111" [label = <(IDENTIFIER,this,_copy.getToDir())<SUB>120</SUB>> ]
+"112" [label = <(FIELD_IDENTIFIER,_copy,_copy)<SUB>120</SUB>> ]
+"113" [label = <(LOCAL,Hashtable allFiles: java.util.Hashtable)> ]
+"114" [label = <(&lt;operator&gt;.assignment,Hashtable allFiles = _copy._dest2src)<SUB>123</SUB>> ]
+"115" [label = <(IDENTIFIER,allFiles,Hashtable allFiles = _copy._dest2src)<SUB>123</SUB>> ]
+"116" [label = <(&lt;operator&gt;.fieldAccess,_copy._dest2src)<SUB>123</SUB>> ]
+"117" [label = <(&lt;operator&gt;.fieldAccess,this._copy)<SUB>123</SUB>> ]
+"118" [label = <(IDENTIFIER,this,Hashtable allFiles = _copy._dest2src)<SUB>123</SUB>> ]
+"119" [label = <(FIELD_IDENTIFIER,_copy,_copy)<SUB>123</SUB>> ]
+"120" [label = <(FIELD_IDENTIFIER,_dest2src,_dest2src)<SUB>123</SUB>> ]
+"121" [label = <(LOCAL,boolean noRemovalNecessary: boolean)> ]
+"122" [label = <(&lt;operator&gt;.assignment,boolean noRemovalNecessary = !toDir.exists() || toDir.list().length &lt; 1)<SUB>127</SUB>> ]
+"123" [label = <(IDENTIFIER,noRemovalNecessary,boolean noRemovalNecessary = !toDir.exists() || toDir.list().length &lt; 1)<SUB>127</SUB>> ]
+"124" [label = <(&lt;operator&gt;.logicalOr,!toDir.exists() || toDir.list().length &lt; 1)<SUB>127</SUB>> ]
+"125" [label = <(&lt;operator&gt;.logicalNot,!toDir.exists())<SUB>127</SUB>> ]
+"126" [label = <(exists,toDir.exists())<SUB>127</SUB>> ]
+"127" [label = <(IDENTIFIER,toDir,toDir.exists())<SUB>127</SUB>> ]
+"128" [label = <(&lt;operator&gt;.lessThan,toDir.list().length &lt; 1)<SUB>127</SUB>> ]
+"129" [label = <(&lt;operator&gt;.fieldAccess,toDir.list().length)<SUB>127</SUB>> ]
+"130" [label = <(list,toDir.list())<SUB>127</SUB>> ]
+"131" [label = <(IDENTIFIER,toDir,toDir.list())<SUB>127</SUB>> ]
+"132" [label = <(FIELD_IDENTIFIER,length,length)<SUB>127</SUB>> ]
+"133" [label = <(LITERAL,1,toDir.list().length &lt; 1)<SUB>127</SUB>> ]
+"134" [label = <(log,log(&quot;PASS#1: Copying files to &quot; + toDir, Project.MSG_DEBUG))<SUB>130</SUB>> ]
+"9" [label = <(IDENTIFIER,this,log(&quot;PASS#1: Copying files to &quot; + toDir, Project.MSG_DEBUG))<SUB>130</SUB>> ]
+"135" [label = <(&lt;operator&gt;.addition,&quot;PASS#1: Copying files to &quot; + toDir)<SUB>130</SUB>> ]
+"136" [label = <(LITERAL,&quot;PASS#1: Copying files to &quot;,&quot;PASS#1: Copying files to &quot; + toDir)<SUB>130</SUB>> ]
+"137" [label = <(IDENTIFIER,toDir,&quot;PASS#1: Copying files to &quot; + toDir)<SUB>130</SUB>> ]
+"138" [label = <(&lt;operator&gt;.fieldAccess,Project.MSG_DEBUG)<SUB>130</SUB>> ]
+"139" [label = <(IDENTIFIER,Project,log(&quot;PASS#1: Copying files to &quot; + toDir, Project.MSG_DEBUG))<SUB>130</SUB>> ]
+"140" [label = <(FIELD_IDENTIFIER,MSG_DEBUG,MSG_DEBUG)<SUB>130</SUB>> ]
+"141" [label = <(execute,_copy.execute())<SUB>131</SUB>> ]
+"142" [label = <(&lt;operator&gt;.fieldAccess,this._copy)<SUB>131</SUB>> ]
+"143" [label = <(IDENTIFIER,this,_copy.execute())<SUB>131</SUB>> ]
+"144" [label = <(FIELD_IDENTIFIER,_copy,_copy)<SUB>131</SUB>> ]
+"145" [label = <(CONTROL_STRUCTURE,if (noRemovalNecessary),if (noRemovalNecessary))<SUB>134</SUB>> ]
+"146" [label = <(IDENTIFIER,noRemovalNecessary,if (noRemovalNecessary))<SUB>134</SUB>> ]
+"147" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>134</SUB>> ]
+"148" [label = <(log,log(&quot;NO removing necessary in &quot; + toDir, Project.MSG_DEBUG))<SUB>135</SUB>> ]
+"11" [label = <(IDENTIFIER,this,log(&quot;NO removing necessary in &quot; + toDir, Project.MSG_DEBUG))<SUB>135</SUB>> ]
+"149" [label = <(&lt;operator&gt;.addition,&quot;NO removing necessary in &quot; + toDir)<SUB>135</SUB>> ]
+"150" [label = <(LITERAL,&quot;NO removing necessary in &quot;,&quot;NO removing necessary in &quot; + toDir)<SUB>135</SUB>> ]
+"151" [label = <(IDENTIFIER,toDir,&quot;NO removing necessary in &quot; + toDir)<SUB>135</SUB>> ]
+"152" [label = <(&lt;operator&gt;.fieldAccess,Project.MSG_DEBUG)<SUB>135</SUB>> ]
+"153" [label = <(IDENTIFIER,Project,log(&quot;NO removing necessary in &quot; + toDir, Project.MSG_DEBUG))<SUB>135</SUB>> ]
+"154" [label = <(FIELD_IDENTIFIER,MSG_DEBUG,MSG_DEBUG)<SUB>135</SUB>> ]
+"155" [label = <(RETURN,return;,return;)<SUB>136</SUB>> ]
+"156" [label = <(log,log(&quot;PASS#2: Removing orphan files from &quot; + toDir, Project.MSG_DEBUG))<SUB>140</SUB>> ]
+"12" [label = <(IDENTIFIER,this,log(&quot;PASS#2: Removing orphan files from &quot; + toDir, Project.MSG_DEBUG))<SUB>140</SUB>> ]
+"157" [label = <(&lt;operator&gt;.addition,&quot;PASS#2: Removing orphan files from &quot; + toDir)<SUB>140</SUB>> ]
+"158" [label = <(LITERAL,&quot;PASS#2: Removing orphan files from &quot;,&quot;PASS#2: Removing orphan files from &quot; + toDir)<SUB>140</SUB>> ]
+"159" [label = <(IDENTIFIER,toDir,&quot;PASS#2: Removing orphan files from &quot; + toDir)<SUB>140</SUB>> ]
+"160" [label = <(&lt;operator&gt;.fieldAccess,Project.MSG_DEBUG)<SUB>140</SUB>> ]
+"161" [label = <(IDENTIFIER,Project,log(&quot;PASS#2: Removing orphan files from &quot; + toDir, Project.MSG_DEBUG))<SUB>140</SUB>> ]
+"162" [label = <(FIELD_IDENTIFIER,MSG_DEBUG,MSG_DEBUG)<SUB>140</SUB>> ]
+"163" [label = <(LOCAL,int[] removedFileCount: int[])> ]
+"164" [label = <(&lt;operator&gt;.assignment,int[] removedFileCount = this.removeOrphanFiles(allFiles, toDir))<SUB>141</SUB>> ]
+"165" [label = <(IDENTIFIER,removedFileCount,int[] removedFileCount = this.removeOrphanFiles(allFiles, toDir))<SUB>141</SUB>> ]
+"166" [label = <(removeOrphanFiles,this.removeOrphanFiles(allFiles, toDir))<SUB>141</SUB>> ]
+"13" [label = <(IDENTIFIER,this,this.removeOrphanFiles(allFiles, toDir))<SUB>141</SUB>> ]
+"167" [label = <(IDENTIFIER,allFiles,this.removeOrphanFiles(allFiles, toDir))<SUB>141</SUB>> ]
+"168" [label = <(IDENTIFIER,toDir,this.removeOrphanFiles(allFiles, toDir))<SUB>141</SUB>> ]
+"169" [label = <(logRemovedCount,this.logRemovedCount(removedFileCount[0], &quot;dangling director&quot;, &quot;y&quot;, &quot;ies&quot;))<SUB>142</SUB>> ]
+"14" [label = <(IDENTIFIER,this,this.logRemovedCount(removedFileCount[0], &quot;dangling director&quot;, &quot;y&quot;, &quot;ies&quot;))<SUB>142</SUB>> ]
+"170" [label = <(&lt;operator&gt;.indexAccess,removedFileCount[0])<SUB>142</SUB>> ]
+"171" [label = <(IDENTIFIER,removedFileCount,this.logRemovedCount(removedFileCount[0], &quot;dangling director&quot;, &quot;y&quot;, &quot;ies&quot;))<SUB>142</SUB>> ]
+"172" [label = <(LITERAL,0,this.logRemovedCount(removedFileCount[0], &quot;dangling director&quot;, &quot;y&quot;, &quot;ies&quot;))<SUB>142</SUB>> ]
+"173" [label = <(LITERAL,&quot;dangling director&quot;,this.logRemovedCount(removedFileCount[0], &quot;dangling director&quot;, &quot;y&quot;, &quot;ies&quot;))<SUB>142</SUB>> ]
+"174" [label = <(LITERAL,&quot;y&quot;,this.logRemovedCount(removedFileCount[0], &quot;dangling director&quot;, &quot;y&quot;, &quot;ies&quot;))<SUB>142</SUB>> ]
+"175" [label = <(LITERAL,&quot;ies&quot;,this.logRemovedCount(removedFileCount[0], &quot;dangling director&quot;, &quot;y&quot;, &quot;ies&quot;))<SUB>142</SUB>> ]
+"176" [label = <(logRemovedCount,this.logRemovedCount(removedFileCount[1], &quot;dangling file&quot;, &quot;&quot;, &quot;s&quot;))<SUB>143</SUB>> ]
+"15" [label = <(IDENTIFIER,this,this.logRemovedCount(removedFileCount[1], &quot;dangling file&quot;, &quot;&quot;, &quot;s&quot;))<SUB>143</SUB>> ]
+"177" [label = <(&lt;operator&gt;.indexAccess,removedFileCount[1])<SUB>143</SUB>> ]
+"178" [label = <(IDENTIFIER,removedFileCount,this.logRemovedCount(removedFileCount[1], &quot;dangling file&quot;, &quot;&quot;, &quot;s&quot;))<SUB>143</SUB>> ]
+"179" [label = <(LITERAL,1,this.logRemovedCount(removedFileCount[1], &quot;dangling file&quot;, &quot;&quot;, &quot;s&quot;))<SUB>143</SUB>> ]
+"180" [label = <(LITERAL,&quot;dangling file&quot;,this.logRemovedCount(removedFileCount[1], &quot;dangling file&quot;, &quot;&quot;, &quot;s&quot;))<SUB>143</SUB>> ]
+"181" [label = <(LITERAL,&quot;&quot;,this.logRemovedCount(removedFileCount[1], &quot;dangling file&quot;, &quot;&quot;, &quot;s&quot;))<SUB>143</SUB>> ]
+"182" [label = <(LITERAL,&quot;s&quot;,this.logRemovedCount(removedFileCount[1], &quot;dangling file&quot;, &quot;&quot;, &quot;s&quot;))<SUB>143</SUB>> ]
+"183" [label = <(CONTROL_STRUCTURE,if (!_copy.getIncludeEmptyDirs()),if (!_copy.getIncludeEmptyDirs()))<SUB>146</SUB>> ]
+"184" [label = <(&lt;operator&gt;.logicalNot,!_copy.getIncludeEmptyDirs())<SUB>146</SUB>> ]
+"185" [label = <(getIncludeEmptyDirs,_copy.getIncludeEmptyDirs())<SUB>146</SUB>> ]
+"186" [label = <(&lt;operator&gt;.fieldAccess,this._copy)<SUB>146</SUB>> ]
+"187" [label = <(IDENTIFIER,this,_copy.getIncludeEmptyDirs())<SUB>146</SUB>> ]
+"188" [label = <(FIELD_IDENTIFIER,_copy,_copy)<SUB>146</SUB>> ]
+"189" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>146</SUB>> ]
+"190" [label = <(log,log(&quot;PASS#3: Removing empty directories from &quot; + toDir, Project.MSG_DEBUG))<SUB>147</SUB>> ]
+"16" [label = <(IDENTIFIER,this,log(&quot;PASS#3: Removing empty directories from &quot; + toDir, Project.MSG_DEBUG))<SUB>147</SUB>> ]
+"191" [label = <(&lt;operator&gt;.addition,&quot;PASS#3: Removing empty directories from &quot; + toDir)<SUB>147</SUB>> ]
+"192" [label = <(LITERAL,&quot;PASS#3: Removing empty directories from &quot;,&quot;PASS#3: Removing empty directories from &quot; + toDir)<SUB>147</SUB>> ]
+"193" [label = <(IDENTIFIER,toDir,&quot;PASS#3: Removing empty directories from &quot; + toDir)<SUB>147</SUB>> ]
+"194" [label = <(&lt;operator&gt;.fieldAccess,Project.MSG_DEBUG)<SUB>148</SUB>> ]
+"195" [label = <(IDENTIFIER,Project,log(&quot;PASS#3: Removing empty directories from &quot; + toDir, Project.MSG_DEBUG))<SUB>148</SUB>> ]
+"196" [label = <(FIELD_IDENTIFIER,MSG_DEBUG,MSG_DEBUG)<SUB>148</SUB>> ]
+"197" [label = <(LOCAL,int removedDirCount: int)> ]
+"198" [label = <(&lt;operator&gt;.assignment,int removedDirCount = this.removeEmptyDirectories(toDir, false))<SUB>149</SUB>> ]
+"199" [label = <(IDENTIFIER,removedDirCount,int removedDirCount = this.removeEmptyDirectories(toDir, false))<SUB>149</SUB>> ]
+"200" [label = <(removeEmptyDirectories,this.removeEmptyDirectories(toDir, false))<SUB>149</SUB>> ]
+"17" [label = <(IDENTIFIER,this,this.removeEmptyDirectories(toDir, false))<SUB>149</SUB>> ]
+"201" [label = <(IDENTIFIER,toDir,this.removeEmptyDirectories(toDir, false))<SUB>149</SUB>> ]
+"202" [label = <(LITERAL,false,this.removeEmptyDirectories(toDir, false))<SUB>149</SUB>> ]
+"203" [label = <(logRemovedCount,this.logRemovedCount(removedDirCount, &quot;empty director&quot;, &quot;y&quot;, &quot;ies&quot;))<SUB>150</SUB>> ]
+"18" [label = <(IDENTIFIER,this,this.logRemovedCount(removedDirCount, &quot;empty director&quot;, &quot;y&quot;, &quot;ies&quot;))<SUB>150</SUB>> ]
+"204" [label = <(IDENTIFIER,removedDirCount,this.logRemovedCount(removedDirCount, &quot;empty director&quot;, &quot;y&quot;, &quot;ies&quot;))<SUB>150</SUB>> ]
+"205" [label = <(LITERAL,&quot;empty director&quot;,this.logRemovedCount(removedDirCount, &quot;empty director&quot;, &quot;y&quot;, &quot;ies&quot;))<SUB>150</SUB>> ]
+"206" [label = <(LITERAL,&quot;y&quot;,this.logRemovedCount(removedDirCount, &quot;empty director&quot;, &quot;y&quot;, &quot;ies&quot;))<SUB>150</SUB>> ]
+"207" [label = <(LITERAL,&quot;ies&quot;,this.logRemovedCount(removedDirCount, &quot;empty director&quot;, &quot;y&quot;, &quot;ies&quot;))<SUB>150</SUB>> ]
+"208" [label = <(MODIFIER,PUBLIC)> ]
+"209" [label = <(MODIFIER,VIRTUAL)> ]
+"210" [label = <(METHOD_RETURN,void)<SUB>117</SUB>> ]
+  "104" -> "10" 
+  "104" -> "105" 
+  "104" -> "208" 
+  "104" -> "209" 
+  "104" -> "210" 
+  "105" -> "106" 
+  "105" -> "107" 
+  "105" -> "113" 
+  "105" -> "114" 
+  "105" -> "121" 
+  "105" -> "122" 
+  "105" -> "134" 
+  "105" -> "141" 
+  "105" -> "145" 
+  "105" -> "156" 
+  "105" -> "163" 
+  "105" -> "164" 
+  "105" -> "169" 
+  "105" -> "176" 
+  "105" -> "183" 
+  "107" -> "108" 
+  "107" -> "109" 
+  "109" -> "110" 
+  "110" -> "111" 
+  "110" -> "112" 
+  "114" -> "115" 
+  "114" -> "116" 
+  "116" -> "117" 
+  "116" -> "120" 
+  "117" -> "118" 
+  "117" -> "119" 
+  "122" -> "123" 
+  "122" -> "124" 
+  "124" -> "125" 
+  "124" -> "128" 
+  "125" -> "126" 
+  "126" -> "127" 
+  "128" -> "129" 
+  "128" -> "133" 
+  "129" -> "130" 
+  "129" -> "132" 
+  "130" -> "131" 
+  "134" -> "9" 
+  "134" -> "135" 
+  "134" -> "138" 
+  "135" -> "136" 
+  "135" -> "137" 
+  "138" -> "139" 
+  "138" -> "140" 
+  "141" -> "142" 
+  "142" -> "143" 
+  "142" -> "144" 
+  "145" -> "146" 
+  "145" -> "147" 
+  "147" -> "148" 
+  "147" -> "155" 
+  "148" -> "11" 
+  "148" -> "149" 
+  "148" -> "152" 
+  "149" -> "150" 
+  "149" -> "151" 
+  "152" -> "153" 
+  "152" -> "154" 
+  "156" -> "12" 
+  "156" -> "157" 
+  "156" -> "160" 
+  "157" -> "158" 
+  "157" -> "159" 
+  "160" -> "161" 
+  "160" -> "162" 
+  "164" -> "165" 
+  "164" -> "166" 
+  "166" -> "13" 
+  "166" -> "167" 
+  "166" -> "168" 
+  "169" -> "14" 
+  "169" -> "170" 
+  "169" -> "173" 
+  "169" -> "174" 
+  "169" -> "175" 
+  "170" -> "171" 
+  "170" -> "172" 
+  "176" -> "15" 
+  "176" -> "177" 
+  "176" -> "180" 
+  "176" -> "181" 
+  "176" -> "182" 
+  "177" -> "178" 
+  "177" -> "179" 
+  "183" -> "184" 
+  "183" -> "189" 
+  "184" -> "185" 
+  "185" -> "186" 
+  "186" -> "187" 
+  "186" -> "188" 
+  "189" -> "190" 
+  "189" -> "197" 
+  "189" -> "198" 
+  "189" -> "203" 
+  "190" -> "16" 
+  "190" -> "191" 
+  "190" -> "194" 
+  "191" -> "192" 
+  "191" -> "193" 
+  "194" -> "195" 
+  "194" -> "196" 
+  "198" -> "199" 
+  "198" -> "200" 
+  "200" -> "17" 
+  "200" -> "201" 
+  "200" -> "202" 
+  "203" -> "18" 
+  "203" -> "204" 
+  "203" -> "205" 
+  "203" -> "206" 
+  "203" -> "207" 
+}

@@ -1,0 +1,103 @@
+digraph "createParametersExpression" {  
+"245" [label = <(METHOD,createParametersExpression)<SUB>122</SUB>> ]
+"246" [label = <(PARAM,this)<SUB>122</SUB>> ]
+"247" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>122</SUB>> ]
+"248" [label = <(LOCAL,int size: int)> ]
+"249" [label = <(&lt;operator&gt;.assignment,int size = size())<SUB>123</SUB>> ]
+"250" [label = <(IDENTIFIER,size,int size = size())<SUB>123</SUB>> ]
+"251" [label = <(size,size())<SUB>123</SUB>> ]
+"252" [label = <(&lt;operator&gt;.fieldAccess,this.parameters)<SUB>123</SUB>> ]
+"253" [label = <(IDENTIFIER,this,size())<SUB>123</SUB>> ]
+"254" [label = <(FIELD_IDENTIFIER,parameters,parameters)<SUB>123</SUB>> ]
+"255" [label = <(LOCAL,Expression[] expressions: ANY)> ]
+"256" [label = <(&lt;operator&gt;.assignment,ANY expressions = new Expression[size])<SUB>124</SUB>> ]
+"257" [label = <(IDENTIFIER,expressions,ANY expressions = new Expression[size])<SUB>124</SUB>> ]
+"258" [label = <(&lt;operator&gt;.alloc,new Expression[size])> ]
+"259" [label = <(IDENTIFIER,size,new Expression[size])<SUB>124</SUB>> ]
+"260" [label = <(CONTROL_STRUCTURE,for (int i = 0; Some(i &lt; size); i++),for (int i = 0; Some(i &lt; size); i++))<SUB>125</SUB>> ]
+"261" [label = <(LOCAL,int i: int)> ]
+"262" [label = <(&lt;operator&gt;.assignment,int i = 0)<SUB>125</SUB>> ]
+"263" [label = <(IDENTIFIER,i,int i = 0)<SUB>125</SUB>> ]
+"264" [label = <(LITERAL,0,int i = 0)<SUB>125</SUB>> ]
+"265" [label = <(&lt;operator&gt;.lessThan,i &lt; size)<SUB>125</SUB>> ]
+"266" [label = <(IDENTIFIER,i,i &lt; size)<SUB>125</SUB>> ]
+"267" [label = <(IDENTIFIER,size,i &lt; size)<SUB>125</SUB>> ]
+"268" [label = <(&lt;operator&gt;.postIncrement,i++)<SUB>125</SUB>> ]
+"269" [label = <(IDENTIFIER,i,i++)<SUB>125</SUB>> ]
+"270" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>125</SUB>> ]
+"271" [label = <(LOCAL,Expression parameterExpression: org.apache.camel.Expression)> ]
+"272" [label = <(&lt;operator&gt;.assignment,Expression parameterExpression = getExpression())<SUB>126</SUB>> ]
+"273" [label = <(IDENTIFIER,parameterExpression,Expression parameterExpression = getExpression())<SUB>126</SUB>> ]
+"274" [label = <(getExpression,getExpression())<SUB>126</SUB>> ]
+"275" [label = <(get,get(i))<SUB>126</SUB>> ]
+"276" [label = <(&lt;operator&gt;.fieldAccess,this.parameters)<SUB>126</SUB>> ]
+"277" [label = <(IDENTIFIER,this,get(i))<SUB>126</SUB>> ]
+"278" [label = <(FIELD_IDENTIFIER,parameters,parameters)<SUB>126</SUB>> ]
+"279" [label = <(IDENTIFIER,i,get(i))<SUB>126</SUB>> ]
+"280" [label = <(&lt;operator&gt;.assignment,expressions[i] = parameterExpression)<SUB>127</SUB>> ]
+"281" [label = <(&lt;operator&gt;.indexAccess,expressions[i])<SUB>127</SUB>> ]
+"282" [label = <(IDENTIFIER,expressions,expressions[i] = parameterExpression)<SUB>127</SUB>> ]
+"283" [label = <(IDENTIFIER,i,expressions[i] = parameterExpression)<SUB>127</SUB>> ]
+"284" [label = <(IDENTIFIER,parameterExpression,expressions[i] = parameterExpression)<SUB>127</SUB>> ]
+"285" [label = <(RETURN,return new Expression&lt;Exchange&gt;() {\012\012    public Object evaluate(Exchange exchange) {\012        Object[] answer = new Object[size];\012        for (int i = 0; i &lt; size; i++) {\012            Object value = expressions[i].evaluate(exchange);\012            value = ExchangeHelper.convertToType(exchange, parameters.get(i).getType(), value);\012            answer[i] = value;\012        }\012        return answer;\012    }\012\012    @Override\012    public String toString() {\012        return &quot;ParametersExpression: &quot; + Arrays.asList(expressions);\012    }\012};,return new Expression&lt;Exchange&gt;() {\012\012    public Object evaluate(Exchange exchange) {\012        Object[] answer = new Object[size];\012        for (int i = 0; i &lt; size; i++) {\012            Object value = expressions[i].evaluate(exchange);\012            value = ExchangeHelper.convertToType(exchange, parameters.get(i).getType(), value);\012            answer[i] = value;\012        }\012        return answer;\012    }\012\012    @Override\012    public String toString() {\012        return &quot;ParametersExpression: &quot; + Arrays.asList(expressions);\012    }\012};)<SUB>129</SUB>> ]
+"286" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>129</SUB>> ]
+"287" [label = <(&lt;operator&gt;.assignment,&lt;empty&gt;)> ]
+"288" [label = <(IDENTIFIER,$obj1,&lt;empty&gt;)> ]
+"289" [label = <(&lt;operator&gt;.alloc,new Expression&lt;Exchange&gt;() {\012\012    public Object evaluate(Exchange exchange) {\012        Object[] answer = new Object[size];\012        for (int i = 0; i &lt; size; i++) {\012            Object value = expressions[i].evaluate(exchange);\012            value = ExchangeHelper.convertToType(exchange, parameters.get(i).getType(), value);\012            answer[i] = value;\012        }\012        return answer;\012    }\012\012    @Override\012    public String toString() {\012        return &quot;ParametersExpression: &quot; + Arrays.asList(expressions);\012    }\012})<SUB>129</SUB>> ]
+"290" [label = <(&lt;init&gt;,new Expression&lt;Exchange&gt;() {\012\012    public Object evaluate(Exchange exchange) {\012        Object[] answer = new Object[size];\012        for (int i = 0; i &lt; size; i++) {\012            Object value = expressions[i].evaluate(exchange);\012            value = ExchangeHelper.convertToType(exchange, parameters.get(i).getType(), value);\012            answer[i] = value;\012        }\012        return answer;\012    }\012\012    @Override\012    public String toString() {\012        return &quot;ParametersExpression: &quot; + Arrays.asList(expressions);\012    }\012})<SUB>129</SUB>> ]
+"291" [label = <(IDENTIFIER,$obj1,new Expression&lt;Exchange&gt;() {\012\012    public Object evaluate(Exchange exchange) {\012        Object[] answer = new Object[size];\012        for (int i = 0; i &lt; size; i++) {\012            Object value = expressions[i].evaluate(exchange);\012            value = ExchangeHelper.convertToType(exchange, parameters.get(i).getType(), value);\012            answer[i] = value;\012        }\012        return answer;\012    }\012\012    @Override\012    public String toString() {\012        return &quot;ParametersExpression: &quot; + Arrays.asList(expressions);\012    }\012})> ]
+"292" [label = <(IDENTIFIER,$obj1,&lt;empty&gt;)> ]
+"293" [label = <(MODIFIER,PROTECTED)> ]
+"294" [label = <(MODIFIER,VIRTUAL)> ]
+"295" [label = <(METHOD_RETURN,org.apache.camel.Expression)<SUB>122</SUB>> ]
+  "245" -> "246" 
+  "245" -> "247" 
+  "245" -> "293" 
+  "245" -> "294" 
+  "245" -> "295" 
+  "247" -> "248" 
+  "247" -> "249" 
+  "247" -> "255" 
+  "247" -> "256" 
+  "247" -> "260" 
+  "247" -> "285" 
+  "249" -> "250" 
+  "249" -> "251" 
+  "251" -> "252" 
+  "252" -> "253" 
+  "252" -> "254" 
+  "256" -> "257" 
+  "256" -> "258" 
+  "258" -> "259" 
+  "260" -> "261" 
+  "260" -> "262" 
+  "260" -> "265" 
+  "260" -> "268" 
+  "260" -> "270" 
+  "262" -> "263" 
+  "262" -> "264" 
+  "265" -> "266" 
+  "265" -> "267" 
+  "268" -> "269" 
+  "270" -> "271" 
+  "270" -> "272" 
+  "270" -> "280" 
+  "272" -> "273" 
+  "272" -> "274" 
+  "274" -> "275" 
+  "275" -> "276" 
+  "275" -> "279" 
+  "276" -> "277" 
+  "276" -> "278" 
+  "280" -> "281" 
+  "280" -> "284" 
+  "281" -> "282" 
+  "281" -> "283" 
+  "285" -> "286" 
+  "286" -> "287" 
+  "286" -> "290" 
+  "286" -> "292" 
+  "287" -> "288" 
+  "287" -> "289" 
+  "290" -> "291" 
+}

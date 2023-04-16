@@ -1,0 +1,81 @@
+digraph "process" {  
+"205" [label = <(METHOD,process)<SUB>110</SUB>> ]
+"206" [label = <(PARAM,this)<SUB>110</SUB>> ]
+"207" [label = <(PARAM,final Exchange original)<SUB>110</SUB>> ]
+"208" [label = <(PARAM,final Exchange exchange)<SUB>110</SUB>> ]
+"209" [label = <(PARAM,final AsyncCallback callback)<SUB>110</SUB>> ]
+"210" [label = <(PARAM,final Iterator&lt;Processor&gt; processors)<SUB>110</SUB>> ]
+"211" [label = <(PARAM,AsyncProcessor processor)<SUB>110</SUB>> ]
+"212" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>110</SUB>> ]
+"213" [label = <(CONTROL_STRUCTURE,if (LOG.isTraceEnabled()),if (LOG.isTraceEnabled()))<SUB>111</SUB>> ]
+"214" [label = <(isTraceEnabled,isTraceEnabled())<SUB>111</SUB>> ]
+"215" [label = <(&lt;operator&gt;.fieldAccess,Pipeline.LOG)<SUB>111</SUB>> ]
+"216" [label = <(IDENTIFIER,Pipeline,isTraceEnabled())<SUB>111</SUB>> ]
+"217" [label = <(FIELD_IDENTIFIER,LOG,LOG)<SUB>111</SUB>> ]
+"218" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>111</SUB>> ]
+"219" [label = <(trace,trace(&quot;Processing exchangeId: &quot; + exchange.getExchangeId() + &quot; &gt;&gt;&gt; &quot; + exchange))<SUB>113</SUB>> ]
+"220" [label = <(&lt;operator&gt;.fieldAccess,Pipeline.LOG)<SUB>113</SUB>> ]
+"221" [label = <(IDENTIFIER,Pipeline,trace(&quot;Processing exchangeId: &quot; + exchange.getExchangeId() + &quot; &gt;&gt;&gt; &quot; + exchange))<SUB>113</SUB>> ]
+"222" [label = <(FIELD_IDENTIFIER,LOG,LOG)<SUB>113</SUB>> ]
+"223" [label = <(&lt;operator&gt;.addition,&quot;Processing exchangeId: &quot; + exchange.getExchangeId() + &quot; &gt;&gt;&gt; &quot; + exchange)<SUB>113</SUB>> ]
+"224" [label = <(&lt;operator&gt;.addition,&quot;Processing exchangeId: &quot; + exchange.getExchangeId() + &quot; &gt;&gt;&gt; &quot;)<SUB>113</SUB>> ]
+"225" [label = <(&lt;operator&gt;.addition,&quot;Processing exchangeId: &quot; + exchange.getExchangeId())<SUB>113</SUB>> ]
+"226" [label = <(LITERAL,&quot;Processing exchangeId: &quot;,&quot;Processing exchangeId: &quot; + exchange.getExchangeId())<SUB>113</SUB>> ]
+"227" [label = <(getExchangeId,getExchangeId())<SUB>113</SUB>> ]
+"228" [label = <(IDENTIFIER,exchange,getExchangeId())<SUB>113</SUB>> ]
+"229" [label = <(LITERAL,&quot; &gt;&gt;&gt; &quot;,&quot;Processing exchangeId: &quot; + exchange.getExchangeId() + &quot; &gt;&gt;&gt; &quot;)<SUB>113</SUB>> ]
+"230" [label = <(IDENTIFIER,exchange,&quot;Processing exchangeId: &quot; + exchange.getExchangeId() + &quot; &gt;&gt;&gt; &quot; + exchange)<SUB>113</SUB>> ]
+"231" [label = <(RETURN,return processor.process(exchange, new AsyncCallback() {\012\012    public void done(boolean sync) {\012        if (sync) {\012            return;\012        }\012        Exchange nextExchange = exchange;\012        while (processors.hasNext()) {\012            AsyncProcessor processor = AsyncProcessorTypeConverter.convert(processors.next());\012            boolean exceptionHandled = hasExceptionBeenHandled(nextExchange);\012            if (nextExchange.isFailed() || exceptionHandled) {\012                if (LOG.isDebugEnabled()) {\012                    LOG.debug(&quot;Message exchange has failed so breaking out of pipeline: &quot; + nextExchange + &quot; exception: &quot; + nextExchange.getException() + &quot; fault: &quot; + nextExchange.getFault(false) + (exceptionHandled ? &quot; handled by the error handler&quot; : &quot;&quot;));\012                }\012                break;\012            }\012            nextExchange = createNextExchange(processor, nextExchange);\012            sync = process(original, nextExchange, callback, processors, processor);\012            if (!sync) {\012                return;\012            }\012        }\012        ExchangeHelper.copyResults(original, nextExchange);\012        callback.done(false);\012    }\012});,return processor.process(exchange, new AsyncCallback() {\012\012    public void done(boolean sync) {\012        if (sync) {\012            return;\012        }\012        Exchange nextExchange = exchange;\012        while (processors.hasNext()) {\012            AsyncProcessor processor = AsyncProcessorTypeConverter.convert(processors.next());\012            boolean exceptionHandled = hasExceptionBeenHandled(nextExchange);\012            if (nextExchange.isFailed() || exceptionHandled) {\012                if (LOG.isDebugEnabled()) {\012                    LOG.debug(&quot;Message exchange has failed so breaking out of pipeline: &quot; + nextExchange + &quot; exception: &quot; + nextExchange.getException() + &quot; fault: &quot; + nextExchange.getFault(false) + (exceptionHandled ? &quot; handled by the error handler&quot; : &quot;&quot;));\012                }\012                break;\012            }\012            nextExchange = createNextExchange(processor, nextExchange);\012            sync = process(original, nextExchange, callback, processors, processor);\012            if (!sync) {\012                return;\012            }\012        }\012        ExchangeHelper.copyResults(original, nextExchange);\012        callback.done(false);\012    }\012});)<SUB>115</SUB>> ]
+"232" [label = <(process,process(exchange, new AsyncCallback() {\012\012    public void done(boolean sync) {\012        if (sync) {\012            return;\012        }\012        Exchange nextExchange = exchange;\012        while (processors.hasNext()) {\012            AsyncProcessor processor = AsyncProcessorTypeConverter.convert(processors.next());\012            boolean exceptionHandled = hasExceptionBeenHandled(nextExchange);\012            if (nextExchange.isFailed() || exceptionHandled) {\012                if (LOG.isDebugEnabled()) {\012                    LOG.debug(&quot;Message exchange has failed so breaking out of pipeline: &quot; + nextExchange + &quot; exception: &quot; + nextExchange.getException() + &quot; fault: &quot; + nextExchange.getFault(false) + (exceptionHandled ? &quot; handled by the error handler&quot; : &quot;&quot;));\012                }\012                break;\012            }\012            nextExchange = createNextExchange(processor, nextExchange);\012            sync = process(original, nextExchange, callback, processors, processor);\012            if (!sync) {\012                return;\012            }\012        }\012        ExchangeHelper.copyResults(original, nextExchange);\012        callback.done(false);\012    }\012}))<SUB>115</SUB>> ]
+"233" [label = <(IDENTIFIER,processor,process(exchange, new AsyncCallback() {\012\012    public void done(boolean sync) {\012        if (sync) {\012            return;\012        }\012        Exchange nextExchange = exchange;\012        while (processors.hasNext()) {\012            AsyncProcessor processor = AsyncProcessorTypeConverter.convert(processors.next());\012            boolean exceptionHandled = hasExceptionBeenHandled(nextExchange);\012            if (nextExchange.isFailed() || exceptionHandled) {\012                if (LOG.isDebugEnabled()) {\012                    LOG.debug(&quot;Message exchange has failed so breaking out of pipeline: &quot; + nextExchange + &quot; exception: &quot; + nextExchange.getException() + &quot; fault: &quot; + nextExchange.getFault(false) + (exceptionHandled ? &quot; handled by the error handler&quot; : &quot;&quot;));\012                }\012                break;\012            }\012            nextExchange = createNextExchange(processor, nextExchange);\012            sync = process(original, nextExchange, callback, processors, processor);\012            if (!sync) {\012                return;\012            }\012        }\012        ExchangeHelper.copyResults(original, nextExchange);\012        callback.done(false);\012    }\012}))<SUB>115</SUB>> ]
+"234" [label = <(IDENTIFIER,exchange,process(exchange, new AsyncCallback() {\012\012    public void done(boolean sync) {\012        if (sync) {\012            return;\012        }\012        Exchange nextExchange = exchange;\012        while (processors.hasNext()) {\012            AsyncProcessor processor = AsyncProcessorTypeConverter.convert(processors.next());\012            boolean exceptionHandled = hasExceptionBeenHandled(nextExchange);\012            if (nextExchange.isFailed() || exceptionHandled) {\012                if (LOG.isDebugEnabled()) {\012                    LOG.debug(&quot;Message exchange has failed so breaking out of pipeline: &quot; + nextExchange + &quot; exception: &quot; + nextExchange.getException() + &quot; fault: &quot; + nextExchange.getFault(false) + (exceptionHandled ? &quot; handled by the error handler&quot; : &quot;&quot;));\012                }\012                break;\012            }\012            nextExchange = createNextExchange(processor, nextExchange);\012            sync = process(original, nextExchange, callback, processors, processor);\012            if (!sync) {\012                return;\012            }\012        }\012        ExchangeHelper.copyResults(original, nextExchange);\012        callback.done(false);\012    }\012}))<SUB>115</SUB>> ]
+"235" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>115</SUB>> ]
+"236" [label = <(&lt;operator&gt;.assignment,&lt;empty&gt;)> ]
+"237" [label = <(IDENTIFIER,$obj1,&lt;empty&gt;)> ]
+"238" [label = <(&lt;operator&gt;.alloc,new AsyncCallback() {\012\012    public void done(boolean sync) {\012        if (sync) {\012            return;\012        }\012        Exchange nextExchange = exchange;\012        while (processors.hasNext()) {\012            AsyncProcessor processor = AsyncProcessorTypeConverter.convert(processors.next());\012            boolean exceptionHandled = hasExceptionBeenHandled(nextExchange);\012            if (nextExchange.isFailed() || exceptionHandled) {\012                if (LOG.isDebugEnabled()) {\012                    LOG.debug(&quot;Message exchange has failed so breaking out of pipeline: &quot; + nextExchange + &quot; exception: &quot; + nextExchange.getException() + &quot; fault: &quot; + nextExchange.getFault(false) + (exceptionHandled ? &quot; handled by the error handler&quot; : &quot;&quot;));\012                }\012                break;\012            }\012            nextExchange = createNextExchange(processor, nextExchange);\012            sync = process(original, nextExchange, callback, processors, processor);\012            if (!sync) {\012                return;\012            }\012        }\012        ExchangeHelper.copyResults(original, nextExchange);\012        callback.done(false);\012    }\012})<SUB>115</SUB>> ]
+"239" [label = <(&lt;init&gt;,new AsyncCallback() {\012\012    public void done(boolean sync) {\012        if (sync) {\012            return;\012        }\012        Exchange nextExchange = exchange;\012        while (processors.hasNext()) {\012            AsyncProcessor processor = AsyncProcessorTypeConverter.convert(processors.next());\012            boolean exceptionHandled = hasExceptionBeenHandled(nextExchange);\012            if (nextExchange.isFailed() || exceptionHandled) {\012                if (LOG.isDebugEnabled()) {\012                    LOG.debug(&quot;Message exchange has failed so breaking out of pipeline: &quot; + nextExchange + &quot; exception: &quot; + nextExchange.getException() + &quot; fault: &quot; + nextExchange.getFault(false) + (exceptionHandled ? &quot; handled by the error handler&quot; : &quot;&quot;));\012                }\012                break;\012            }\012            nextExchange = createNextExchange(processor, nextExchange);\012            sync = process(original, nextExchange, callback, processors, processor);\012            if (!sync) {\012                return;\012            }\012        }\012        ExchangeHelper.copyResults(original, nextExchange);\012        callback.done(false);\012    }\012})<SUB>115</SUB>> ]
+"240" [label = <(IDENTIFIER,$obj1,new AsyncCallback() {\012\012    public void done(boolean sync) {\012        if (sync) {\012            return;\012        }\012        Exchange nextExchange = exchange;\012        while (processors.hasNext()) {\012            AsyncProcessor processor = AsyncProcessorTypeConverter.convert(processors.next());\012            boolean exceptionHandled = hasExceptionBeenHandled(nextExchange);\012            if (nextExchange.isFailed() || exceptionHandled) {\012                if (LOG.isDebugEnabled()) {\012                    LOG.debug(&quot;Message exchange has failed so breaking out of pipeline: &quot; + nextExchange + &quot; exception: &quot; + nextExchange.getException() + &quot; fault: &quot; + nextExchange.getFault(false) + (exceptionHandled ? &quot; handled by the error handler&quot; : &quot;&quot;));\012                }\012                break;\012            }\012            nextExchange = createNextExchange(processor, nextExchange);\012            sync = process(original, nextExchange, callback, processors, processor);\012            if (!sync) {\012                return;\012            }\012        }\012        ExchangeHelper.copyResults(original, nextExchange);\012        callback.done(false);\012    }\012})> ]
+"241" [label = <(IDENTIFIER,$obj1,&lt;empty&gt;)> ]
+"242" [label = <(MODIFIER,PRIVATE)> ]
+"243" [label = <(MODIFIER,VIRTUAL)> ]
+"244" [label = <(METHOD_RETURN,boolean)<SUB>110</SUB>> ]
+  "205" -> "206" 
+  "205" -> "207" 
+  "205" -> "208" 
+  "205" -> "209" 
+  "205" -> "210" 
+  "205" -> "211" 
+  "205" -> "212" 
+  "205" -> "242" 
+  "205" -> "243" 
+  "205" -> "244" 
+  "212" -> "213" 
+  "212" -> "231" 
+  "213" -> "214" 
+  "213" -> "218" 
+  "214" -> "215" 
+  "215" -> "216" 
+  "215" -> "217" 
+  "218" -> "219" 
+  "219" -> "220" 
+  "219" -> "223" 
+  "220" -> "221" 
+  "220" -> "222" 
+  "223" -> "224" 
+  "223" -> "230" 
+  "224" -> "225" 
+  "224" -> "229" 
+  "225" -> "226" 
+  "225" -> "227" 
+  "227" -> "228" 
+  "231" -> "232" 
+  "232" -> "233" 
+  "232" -> "234" 
+  "232" -> "235" 
+  "235" -> "236" 
+  "235" -> "239" 
+  "235" -> "241" 
+  "236" -> "237" 
+  "236" -> "238" 
+  "239" -> "240" 
+}

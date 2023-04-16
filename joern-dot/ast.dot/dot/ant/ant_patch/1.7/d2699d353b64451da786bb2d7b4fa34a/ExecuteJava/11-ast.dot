@@ -1,0 +1,135 @@
+digraph "setupCommandLineForVMS" {  
+"680" [label = <(METHOD,setupCommandLineForVMS)<SUB>310</SUB>> ]
+"681" [label = <(PARAM,Execute exe)<SUB>310</SUB>> ]
+"682" [label = <(PARAM,String[] command)<SUB>310</SUB>> ]
+"683" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>310</SUB>> ]
+"684" [label = <(setVMLauncher,setVMLauncher(true))<SUB>312</SUB>> ]
+"685" [label = <(IDENTIFIER,exe,setVMLauncher(true))<SUB>312</SUB>> ]
+"686" [label = <(LITERAL,true,setVMLauncher(true))<SUB>312</SUB>> ]
+"687" [label = <(LOCAL,File vmsJavaOptionFile: java.io.File)> ]
+"688" [label = <(&lt;operator&gt;.assignment,File vmsJavaOptionFile = null)<SUB>313</SUB>> ]
+"689" [label = <(IDENTIFIER,vmsJavaOptionFile,File vmsJavaOptionFile = null)<SUB>313</SUB>> ]
+"690" [label = <(LITERAL,null,File vmsJavaOptionFile = null)<SUB>313</SUB>> ]
+"691" [label = <(CONTROL_STRUCTURE,try,try)<SUB>314</SUB>> ]
+"692" [label = <(BLOCK,try,try)<SUB>314</SUB>> ]
+"693" [label = <(LOCAL,String[] args: java.lang.String[])> ]
+"694" [label = <(&lt;operator&gt;.assignment,String[] args = new String[command.length - 1])<SUB>315</SUB>> ]
+"695" [label = <(IDENTIFIER,args,String[] args = new String[command.length - 1])<SUB>315</SUB>> ]
+"696" [label = <(&lt;operator&gt;.alloc,new String[command.length - 1])> ]
+"697" [label = <(&lt;operator&gt;.subtraction,command.length - 1)<SUB>315</SUB>> ]
+"698" [label = <(&lt;operator&gt;.fieldAccess,command.length)<SUB>315</SUB>> ]
+"699" [label = <(IDENTIFIER,command,command.length - 1)<SUB>315</SUB>> ]
+"700" [label = <(FIELD_IDENTIFIER,length,length)<SUB>315</SUB>> ]
+"701" [label = <(LITERAL,1,command.length - 1)<SUB>315</SUB>> ]
+"702" [label = <(arraycopy,System.arraycopy(command, 1, args, 0, command.length - 1))<SUB>316</SUB>> ]
+"703" [label = <(IDENTIFIER,System,System.arraycopy(command, 1, args, 0, command.length - 1))<SUB>316</SUB>> ]
+"704" [label = <(IDENTIFIER,command,System.arraycopy(command, 1, args, 0, command.length - 1))<SUB>316</SUB>> ]
+"705" [label = <(LITERAL,1,System.arraycopy(command, 1, args, 0, command.length - 1))<SUB>316</SUB>> ]
+"706" [label = <(IDENTIFIER,args,System.arraycopy(command, 1, args, 0, command.length - 1))<SUB>316</SUB>> ]
+"707" [label = <(LITERAL,0,System.arraycopy(command, 1, args, 0, command.length - 1))<SUB>316</SUB>> ]
+"708" [label = <(&lt;operator&gt;.subtraction,command.length - 1)<SUB>316</SUB>> ]
+"709" [label = <(&lt;operator&gt;.fieldAccess,command.length)<SUB>316</SUB>> ]
+"710" [label = <(IDENTIFIER,command,command.length - 1)<SUB>316</SUB>> ]
+"711" [label = <(FIELD_IDENTIFIER,length,length)<SUB>316</SUB>> ]
+"712" [label = <(LITERAL,1,command.length - 1)<SUB>316</SUB>> ]
+"713" [label = <(&lt;operator&gt;.assignment,vmsJavaOptionFile = createVmsJavaOptionFile(args))<SUB>317</SUB>> ]
+"714" [label = <(IDENTIFIER,vmsJavaOptionFile,vmsJavaOptionFile = createVmsJavaOptionFile(args))<SUB>317</SUB>> ]
+"715" [label = <(createVmsJavaOptionFile,createVmsJavaOptionFile(args))<SUB>317</SUB>> ]
+"716" [label = <(IDENTIFIER,JavaEnvUtils,createVmsJavaOptionFile(args))<SUB>317</SUB>> ]
+"717" [label = <(IDENTIFIER,args,createVmsJavaOptionFile(args))<SUB>317</SUB>> ]
+"718" [label = <(deleteOnExit,vmsJavaOptionFile.deleteOnExit())<SUB>322</SUB>> ]
+"719" [label = <(IDENTIFIER,vmsJavaOptionFile,vmsJavaOptionFile.deleteOnExit())<SUB>322</SUB>> ]
+"720" [label = <(LOCAL,String[] vmsCmd: java.lang.String[])> ]
+"721" [label = <(&lt;operator&gt;.assignment,String[] vmsCmd = { command[0], &quot;-V&quot;, vmsJavaOptionFile.getPath() })<SUB>323</SUB>> ]
+"722" [label = <(IDENTIFIER,vmsCmd,String[] vmsCmd = { command[0], &quot;-V&quot;, vmsJavaOptionFile.getPath() })<SUB>323</SUB>> ]
+"723" [label = <(&lt;operator&gt;.arrayInitializer,{ command[0], &quot;-V&quot;, vmsJavaOptionFile.getPath() })<SUB>323</SUB>> ]
+"724" [label = <(&lt;operator&gt;.indexAccess,command[0])<SUB>323</SUB>> ]
+"725" [label = <(IDENTIFIER,command,{ command[0], &quot;-V&quot;, vmsJavaOptionFile.getPath() })<SUB>323</SUB>> ]
+"726" [label = <(LITERAL,0,{ command[0], &quot;-V&quot;, vmsJavaOptionFile.getPath() })<SUB>323</SUB>> ]
+"727" [label = <(LITERAL,&quot;-V&quot;,{ command[0], &quot;-V&quot;, vmsJavaOptionFile.getPath() })<SUB>323</SUB>> ]
+"728" [label = <(getPath,vmsJavaOptionFile.getPath())<SUB>323</SUB>> ]
+"729" [label = <(IDENTIFIER,vmsJavaOptionFile,vmsJavaOptionFile.getPath())<SUB>323</SUB>> ]
+"730" [label = <(setCommandline,setCommandline(vmsCmd))<SUB>324</SUB>> ]
+"731" [label = <(IDENTIFIER,exe,setCommandline(vmsCmd))<SUB>324</SUB>> ]
+"732" [label = <(IDENTIFIER,vmsCmd,setCommandline(vmsCmd))<SUB>324</SUB>> ]
+"733" [label = <(BLOCK,catch,catch)> ]
+"734" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>325</SUB>> ]
+"735" [label = <(&lt;operator&gt;.throw,throw new BuildException(&quot;Failed to create a temporary file for \&quot;-V\&quot; switch&quot;);)<SUB>326</SUB>> ]
+"736" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>326</SUB>> ]
+"737" [label = <(&lt;operator&gt;.assignment,&lt;empty&gt;)> ]
+"738" [label = <(IDENTIFIER,$obj11,&lt;empty&gt;)> ]
+"739" [label = <(&lt;operator&gt;.alloc,new BuildException(&quot;Failed to create a temporary file for \&quot;-V\&quot; switch&quot;))<SUB>326</SUB>> ]
+"740" [label = <(&lt;init&gt;,new BuildException(&quot;Failed to create a temporary file for \&quot;-V\&quot; switch&quot;))<SUB>326</SUB>> ]
+"741" [label = <(IDENTIFIER,$obj11,new BuildException(&quot;Failed to create a temporary file for \&quot;-V\&quot; switch&quot;))> ]
+"742" [label = <(LITERAL,&quot;Failed to create a temporary file for \&quot;-V\&quot; switch&quot;,new BuildException(&quot;Failed to create a temporary file for \&quot;-V\&quot; switch&quot;))<SUB>326</SUB>> ]
+"743" [label = <(IDENTIFIER,$obj11,&lt;empty&gt;)> ]
+"744" [label = <(MODIFIER,PUBLIC)> ]
+"745" [label = <(MODIFIER,STATIC)> ]
+"746" [label = <(METHOD_RETURN,void)<SUB>310</SUB>> ]
+  "680" -> "681" 
+  "680" -> "682" 
+  "680" -> "683" 
+  "680" -> "744" 
+  "680" -> "745" 
+  "680" -> "746" 
+  "683" -> "684" 
+  "683" -> "687" 
+  "683" -> "688" 
+  "683" -> "691" 
+  "684" -> "685" 
+  "684" -> "686" 
+  "688" -> "689" 
+  "688" -> "690" 
+  "691" -> "692" 
+  "691" -> "733" 
+  "692" -> "693" 
+  "692" -> "694" 
+  "692" -> "702" 
+  "692" -> "713" 
+  "692" -> "718" 
+  "692" -> "720" 
+  "692" -> "721" 
+  "692" -> "730" 
+  "694" -> "695" 
+  "694" -> "696" 
+  "696" -> "697" 
+  "697" -> "698" 
+  "697" -> "701" 
+  "698" -> "699" 
+  "698" -> "700" 
+  "702" -> "703" 
+  "702" -> "704" 
+  "702" -> "705" 
+  "702" -> "706" 
+  "702" -> "707" 
+  "702" -> "708" 
+  "708" -> "709" 
+  "708" -> "712" 
+  "709" -> "710" 
+  "709" -> "711" 
+  "713" -> "714" 
+  "713" -> "715" 
+  "715" -> "716" 
+  "715" -> "717" 
+  "718" -> "719" 
+  "721" -> "722" 
+  "721" -> "723" 
+  "723" -> "724" 
+  "723" -> "727" 
+  "723" -> "728" 
+  "724" -> "725" 
+  "724" -> "726" 
+  "728" -> "729" 
+  "730" -> "731" 
+  "730" -> "732" 
+  "733" -> "734" 
+  "734" -> "735" 
+  "735" -> "736" 
+  "736" -> "737" 
+  "736" -> "740" 
+  "736" -> "743" 
+  "737" -> "738" 
+  "737" -> "739" 
+  "740" -> "741" 
+  "740" -> "742" 
+}

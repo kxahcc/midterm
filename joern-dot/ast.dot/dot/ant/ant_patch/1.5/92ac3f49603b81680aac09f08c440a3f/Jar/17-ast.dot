@@ -1,0 +1,271 @@
+digraph "isUpToDate" {  
+"951" [label = <(METHOD,isUpToDate)<SUB>480</SUB>> ]
+"65" [label = <(PARAM,this)<SUB>480</SUB>> ]
+"952" [label = <(PARAM,FileScanner[] scanners)<SUB>480</SUB>> ]
+"953" [label = <(PARAM,File zipFile)<SUB>480</SUB>> ]
+"954" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>481</SUB>> ]
+"955" [label = <(CONTROL_STRUCTURE,if (configuredManifest != null || manifestFile == null),if (configuredManifest != null || manifestFile == null))<SUB>483</SUB>> ]
+"956" [label = <(&lt;operator&gt;.logicalOr,configuredManifest != null || manifestFile == null)<SUB>483</SUB>> ]
+"957" [label = <(&lt;operator&gt;.notEquals,configuredManifest != null)<SUB>483</SUB>> ]
+"958" [label = <(&lt;operator&gt;.fieldAccess,this.configuredManifest)<SUB>483</SUB>> ]
+"959" [label = <(IDENTIFIER,this,configuredManifest != null)<SUB>483</SUB>> ]
+"960" [label = <(FIELD_IDENTIFIER,configuredManifest,configuredManifest)<SUB>483</SUB>> ]
+"961" [label = <(LITERAL,null,configuredManifest != null)<SUB>483</SUB>> ]
+"962" [label = <(&lt;operator&gt;.equals,manifestFile == null)<SUB>483</SUB>> ]
+"963" [label = <(&lt;operator&gt;.fieldAccess,this.manifestFile)<SUB>483</SUB>> ]
+"964" [label = <(IDENTIFIER,this,manifestFile == null)<SUB>483</SUB>> ]
+"965" [label = <(FIELD_IDENTIFIER,manifestFile,manifestFile)<SUB>483</SUB>> ]
+"966" [label = <(LITERAL,null,manifestFile == null)<SUB>483</SUB>> ]
+"967" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>483</SUB>> ]
+"63" [label = <(LOCAL,java.util.zip.ZipFile theZipFile: java.util.zip.ZipFile)> ]
+"968" [label = <(&lt;operator&gt;.assignment,ZipFile theZipFile = null)<SUB>484</SUB>> ]
+"969" [label = <(IDENTIFIER,theZipFile,ZipFile theZipFile = null)<SUB>484</SUB>> ]
+"970" [label = <(LITERAL,null,ZipFile theZipFile = null)<SUB>484</SUB>> ]
+"971" [label = <(CONTROL_STRUCTURE,try,try)<SUB>485</SUB>> ]
+"972" [label = <(BLOCK,try,try)<SUB>485</SUB>> ]
+"973" [label = <(&lt;operator&gt;.assignment,theZipFile = new java.util.zip.ZipFile(zipFile))<SUB>486</SUB>> ]
+"974" [label = <(IDENTIFIER,theZipFile,theZipFile = new java.util.zip.ZipFile(zipFile))<SUB>486</SUB>> ]
+"975" [label = <(&lt;operator&gt;.alloc,new java.util.zip.ZipFile(zipFile))<SUB>486</SUB>> ]
+"976" [label = <(&lt;init&gt;,new java.util.zip.ZipFile(zipFile))<SUB>486</SUB>> ]
+"62" [label = <(IDENTIFIER,theZipFile,new java.util.zip.ZipFile(zipFile))<SUB>486</SUB>> ]
+"977" [label = <(IDENTIFIER,zipFile,new java.util.zip.ZipFile(zipFile))<SUB>486</SUB>> ]
+"978" [label = <(LOCAL,java.util.zip.ZipEntry entry: java.util.zip.ZipEntry)> ]
+"979" [label = <(&lt;operator&gt;.assignment,ZipEntry entry = theZipFile.getEntry(&quot;META-INF/MANIFEST.MF&quot;))<SUB>487</SUB>> ]
+"980" [label = <(IDENTIFIER,entry,ZipEntry entry = theZipFile.getEntry(&quot;META-INF/MANIFEST.MF&quot;))<SUB>487</SUB>> ]
+"981" [label = <(getEntry,theZipFile.getEntry(&quot;META-INF/MANIFEST.MF&quot;))<SUB>488</SUB>> ]
+"982" [label = <(IDENTIFIER,theZipFile,theZipFile.getEntry(&quot;META-INF/MANIFEST.MF&quot;))<SUB>488</SUB>> ]
+"983" [label = <(LITERAL,&quot;META-INF/MANIFEST.MF&quot;,theZipFile.getEntry(&quot;META-INF/MANIFEST.MF&quot;))<SUB>488</SUB>> ]
+"984" [label = <(CONTROL_STRUCTURE,if (entry == null),if (entry == null))<SUB>489</SUB>> ]
+"985" [label = <(&lt;operator&gt;.equals,entry == null)<SUB>489</SUB>> ]
+"986" [label = <(IDENTIFIER,entry,entry == null)<SUB>489</SUB>> ]
+"987" [label = <(LITERAL,null,entry == null)<SUB>489</SUB>> ]
+"988" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>489</SUB>> ]
+"989" [label = <(log,log(&quot;Updating jar since the current jar has no manifest&quot;, Project.MSG_VERBOSE))<SUB>490</SUB>> ]
+"64" [label = <(IDENTIFIER,this,log(&quot;Updating jar since the current jar has no manifest&quot;, Project.MSG_VERBOSE))<SUB>490</SUB>> ]
+"990" [label = <(LITERAL,&quot;Updating jar since the current jar has no manifest&quot;,log(&quot;Updating jar since the current jar has no manifest&quot;, Project.MSG_VERBOSE))<SUB>490</SUB>> ]
+"991" [label = <(&lt;operator&gt;.fieldAccess,Project.MSG_VERBOSE)<SUB>491</SUB>> ]
+"992" [label = <(IDENTIFIER,Project,log(&quot;Updating jar since the current jar has no manifest&quot;, Project.MSG_VERBOSE))<SUB>491</SUB>> ]
+"993" [label = <(FIELD_IDENTIFIER,MSG_VERBOSE,MSG_VERBOSE)<SUB>491</SUB>> ]
+"994" [label = <(RETURN,return false;,return false;)<SUB>492</SUB>> ]
+"995" [label = <(LITERAL,false,return false;)<SUB>492</SUB>> ]
+"67" [label = <(LOCAL,Manifest currentManifest: ANY)> ]
+"996" [label = <(&lt;operator&gt;.assignment,ANY currentManifest = new Manifest(new InputStreamReader(theZipFile.getInputStream(entry))))<SUB>494</SUB>> ]
+"997" [label = <(IDENTIFIER,currentManifest,ANY currentManifest = new Manifest(new InputStreamReader(theZipFile.getInputStream(entry))))<SUB>494</SUB>> ]
+"998" [label = <(&lt;operator&gt;.alloc,new Manifest(new InputStreamReader(theZipFile.getInputStream(entry))))<SUB>495</SUB>> ]
+"999" [label = <(&lt;init&gt;,new Manifest(new InputStreamReader(theZipFile.getInputStream(entry))))<SUB>495</SUB>> ]
+"66" [label = <(IDENTIFIER,currentManifest,new Manifest(new InputStreamReader(theZipFile.getInputStream(entry))))<SUB>494</SUB>> ]
+"1000" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>495</SUB>> ]
+"1001" [label = <(&lt;operator&gt;.assignment,&lt;empty&gt;)> ]
+"1002" [label = <(IDENTIFIER,$obj18,&lt;empty&gt;)> ]
+"1003" [label = <(&lt;operator&gt;.alloc,new InputStreamReader(theZipFile.getInputStream(entry)))<SUB>495</SUB>> ]
+"1004" [label = <(&lt;init&gt;,new InputStreamReader(theZipFile.getInputStream(entry)))<SUB>495</SUB>> ]
+"1005" [label = <(IDENTIFIER,$obj18,new InputStreamReader(theZipFile.getInputStream(entry)))> ]
+"1006" [label = <(getInputStream,theZipFile.getInputStream(entry))<SUB>495</SUB>> ]
+"1007" [label = <(IDENTIFIER,theZipFile,theZipFile.getInputStream(entry))<SUB>495</SUB>> ]
+"1008" [label = <(IDENTIFIER,entry,theZipFile.getInputStream(entry))<SUB>496</SUB>> ]
+"1009" [label = <(IDENTIFIER,$obj18,&lt;empty&gt;)> ]
+"1010" [label = <(LOCAL,Manifest newManifest: ANY)> ]
+"1011" [label = <(&lt;operator&gt;.assignment,ANY newManifest = this.createManifest())<SUB>497</SUB>> ]
+"1012" [label = <(IDENTIFIER,newManifest,ANY newManifest = this.createManifest())<SUB>497</SUB>> ]
+"1013" [label = <(createManifest,this.createManifest())<SUB>497</SUB>> ]
+"68" [label = <(IDENTIFIER,this,this.createManifest())<SUB>497</SUB>> ]
+"1014" [label = <(CONTROL_STRUCTURE,if (!currentManifest.equals(newManifest)),if (!currentManifest.equals(newManifest)))<SUB>498</SUB>> ]
+"1015" [label = <(&lt;operator&gt;.logicalNot,!currentManifest.equals(newManifest))<SUB>498</SUB>> ]
+"1016" [label = <(equals,equals(newManifest))<SUB>498</SUB>> ]
+"1017" [label = <(IDENTIFIER,currentManifest,equals(newManifest))<SUB>498</SUB>> ]
+"1018" [label = <(IDENTIFIER,newManifest,equals(newManifest))<SUB>498</SUB>> ]
+"1019" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>498</SUB>> ]
+"1020" [label = <(log,log(&quot;Updating jar since jar manifest has changed&quot;, Project.MSG_VERBOSE))<SUB>499</SUB>> ]
+"69" [label = <(IDENTIFIER,this,log(&quot;Updating jar since jar manifest has changed&quot;, Project.MSG_VERBOSE))<SUB>499</SUB>> ]
+"1021" [label = <(LITERAL,&quot;Updating jar since jar manifest has changed&quot;,log(&quot;Updating jar since jar manifest has changed&quot;, Project.MSG_VERBOSE))<SUB>499</SUB>> ]
+"1022" [label = <(&lt;operator&gt;.fieldAccess,Project.MSG_VERBOSE)<SUB>500</SUB>> ]
+"1023" [label = <(IDENTIFIER,Project,log(&quot;Updating jar since jar manifest has changed&quot;, Project.MSG_VERBOSE))<SUB>500</SUB>> ]
+"1024" [label = <(FIELD_IDENTIFIER,MSG_VERBOSE,MSG_VERBOSE)<SUB>500</SUB>> ]
+"1025" [label = <(RETURN,return false;,return false;)<SUB>501</SUB>> ]
+"1026" [label = <(LITERAL,false,return false;)<SUB>501</SUB>> ]
+"1027" [label = <(BLOCK,catch,catch)> ]
+"1028" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>503</SUB>> ]
+"1029" [label = <(log,log(&quot;Updating jar since cannot read current jar manifest: &quot; + e.getClass().getName() + &quot; - &quot; + e.getMessage(), Project.MSG_VERBOSE))<SUB>505</SUB>> ]
+"70" [label = <(IDENTIFIER,this,log(&quot;Updating jar since cannot read current jar manifest: &quot; + e.getClass().getName() + &quot; - &quot; + e.getMessage(), Project.MSG_VERBOSE))<SUB>505</SUB>> ]
+"1030" [label = <(&lt;operator&gt;.addition,&quot;Updating jar since cannot read current jar manifest: &quot; + e.getClass().getName() + &quot; - &quot; + e.getMessage())<SUB>505</SUB>> ]
+"1031" [label = <(&lt;operator&gt;.addition,&quot;Updating jar since cannot read current jar manifest: &quot; + e.getClass().getName() + &quot; - &quot;)<SUB>505</SUB>> ]
+"1032" [label = <(&lt;operator&gt;.addition,&quot;Updating jar since cannot read current jar manifest: &quot; + e.getClass().getName())<SUB>505</SUB>> ]
+"1033" [label = <(LITERAL,&quot;Updating jar since cannot read current jar manifest: &quot;,&quot;Updating jar since cannot read current jar manifest: &quot; + e.getClass().getName())<SUB>505</SUB>> ]
+"1034" [label = <(getName,e.getClass().getName())<SUB>506</SUB>> ]
+"1035" [label = <(getClass,e.getClass())<SUB>506</SUB>> ]
+"1036" [label = <(IDENTIFIER,e,e.getClass())<SUB>506</SUB>> ]
+"1037" [label = <(LITERAL,&quot; - &quot;,&quot;Updating jar since cannot read current jar manifest: &quot; + e.getClass().getName() + &quot; - &quot;)<SUB>506</SUB>> ]
+"1038" [label = <(getMessage,e.getMessage())<SUB>506</SUB>> ]
+"1039" [label = <(IDENTIFIER,e,e.getMessage())<SUB>506</SUB>> ]
+"1040" [label = <(&lt;operator&gt;.fieldAccess,Project.MSG_VERBOSE)<SUB>507</SUB>> ]
+"1041" [label = <(IDENTIFIER,Project,log(&quot;Updating jar since cannot read current jar manifest: &quot; + e.getClass().getName() + &quot; - &quot; + e.getMessage(), Project.MSG_VERBOSE))<SUB>507</SUB>> ]
+"1042" [label = <(FIELD_IDENTIFIER,MSG_VERBOSE,MSG_VERBOSE)<SUB>507</SUB>> ]
+"1043" [label = <(RETURN,return false;,return false;)<SUB>508</SUB>> ]
+"1044" [label = <(LITERAL,false,return false;)<SUB>508</SUB>> ]
+"1045" [label = <(BLOCK,finally,finally)<SUB>509</SUB>> ]
+"1046" [label = <(CONTROL_STRUCTURE,if (theZipFile != null),if (theZipFile != null))<SUB>510</SUB>> ]
+"1047" [label = <(&lt;operator&gt;.notEquals,theZipFile != null)<SUB>510</SUB>> ]
+"1048" [label = <(IDENTIFIER,theZipFile,theZipFile != null)<SUB>510</SUB>> ]
+"1049" [label = <(LITERAL,null,theZipFile != null)<SUB>510</SUB>> ]
+"1050" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>510</SUB>> ]
+"1051" [label = <(CONTROL_STRUCTURE,try,try)<SUB>511</SUB>> ]
+"1052" [label = <(BLOCK,try,try)<SUB>511</SUB>> ]
+"1053" [label = <(close,theZipFile.close())<SUB>512</SUB>> ]
+"1054" [label = <(IDENTIFIER,theZipFile,theZipFile.close())<SUB>512</SUB>> ]
+"1055" [label = <(BLOCK,catch,catch)> ]
+"1056" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>513</SUB>> ]
+"1057" [label = <(CONTROL_STRUCTURE,else,else)<SUB>518</SUB>> ]
+"1058" [label = <(CONTROL_STRUCTURE,if (manifestFile.lastModified() &gt; zipFile.lastModified()),if (manifestFile.lastModified() &gt; zipFile.lastModified()))<SUB>518</SUB>> ]
+"1059" [label = <(&lt;operator&gt;.greaterThan,manifestFile.lastModified() &gt; zipFile.lastModified())<SUB>518</SUB>> ]
+"1060" [label = <(lastModified,manifestFile.lastModified())<SUB>518</SUB>> ]
+"1061" [label = <(&lt;operator&gt;.fieldAccess,this.manifestFile)<SUB>518</SUB>> ]
+"1062" [label = <(IDENTIFIER,this,manifestFile.lastModified())<SUB>518</SUB>> ]
+"1063" [label = <(FIELD_IDENTIFIER,manifestFile,manifestFile)<SUB>518</SUB>> ]
+"1064" [label = <(lastModified,zipFile.lastModified())<SUB>518</SUB>> ]
+"1065" [label = <(IDENTIFIER,zipFile,zipFile.lastModified())<SUB>518</SUB>> ]
+"1066" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>518</SUB>> ]
+"1067" [label = <(RETURN,return false;,return false;)<SUB>519</SUB>> ]
+"1068" [label = <(LITERAL,false,return false;)<SUB>519</SUB>> ]
+"1069" [label = <(RETURN,return super.isUpToDate(scanners, zipFile);,return super.isUpToDate(scanners, zipFile);)<SUB>521</SUB>> ]
+"1070" [label = <(isUpToDate,isUpToDate(scanners, zipFile))<SUB>521</SUB>> ]
+"1071" [label = <(IDENTIFIER,super,isUpToDate(scanners, zipFile))<SUB>521</SUB>> ]
+"1072" [label = <(IDENTIFIER,scanners,isUpToDate(scanners, zipFile))<SUB>521</SUB>> ]
+"1073" [label = <(IDENTIFIER,zipFile,isUpToDate(scanners, zipFile))<SUB>521</SUB>> ]
+"1074" [label = <(MODIFIER,PROTECTED)> ]
+"1075" [label = <(MODIFIER,VIRTUAL)> ]
+"1076" [label = <(METHOD_RETURN,boolean)<SUB>480</SUB>> ]
+  "951" -> "65" 
+  "951" -> "952" 
+  "951" -> "953" 
+  "951" -> "954" 
+  "951" -> "1074" 
+  "951" -> "1075" 
+  "951" -> "1076" 
+  "954" -> "955" 
+  "954" -> "1069" 
+  "955" -> "956" 
+  "955" -> "967" 
+  "955" -> "1057" 
+  "956" -> "957" 
+  "956" -> "962" 
+  "957" -> "958" 
+  "957" -> "961" 
+  "958" -> "959" 
+  "958" -> "960" 
+  "962" -> "963" 
+  "962" -> "966" 
+  "963" -> "964" 
+  "963" -> "965" 
+  "967" -> "63" 
+  "967" -> "968" 
+  "967" -> "971" 
+  "968" -> "969" 
+  "968" -> "970" 
+  "971" -> "972" 
+  "971" -> "1027" 
+  "971" -> "1045" 
+  "972" -> "973" 
+  "972" -> "976" 
+  "972" -> "978" 
+  "972" -> "979" 
+  "972" -> "984" 
+  "972" -> "67" 
+  "972" -> "996" 
+  "972" -> "999" 
+  "972" -> "1010" 
+  "972" -> "1011" 
+  "972" -> "1014" 
+  "973" -> "974" 
+  "973" -> "975" 
+  "976" -> "62" 
+  "976" -> "977" 
+  "979" -> "980" 
+  "979" -> "981" 
+  "981" -> "982" 
+  "981" -> "983" 
+  "984" -> "985" 
+  "984" -> "988" 
+  "985" -> "986" 
+  "985" -> "987" 
+  "988" -> "989" 
+  "988" -> "994" 
+  "989" -> "64" 
+  "989" -> "990" 
+  "989" -> "991" 
+  "991" -> "992" 
+  "991" -> "993" 
+  "994" -> "995" 
+  "996" -> "997" 
+  "996" -> "998" 
+  "999" -> "66" 
+  "999" -> "1000" 
+  "1000" -> "1001" 
+  "1000" -> "1004" 
+  "1000" -> "1009" 
+  "1001" -> "1002" 
+  "1001" -> "1003" 
+  "1004" -> "1005" 
+  "1004" -> "1006" 
+  "1006" -> "1007" 
+  "1006" -> "1008" 
+  "1011" -> "1012" 
+  "1011" -> "1013" 
+  "1013" -> "68" 
+  "1014" -> "1015" 
+  "1014" -> "1019" 
+  "1015" -> "1016" 
+  "1016" -> "1017" 
+  "1016" -> "1018" 
+  "1019" -> "1020" 
+  "1019" -> "1025" 
+  "1020" -> "69" 
+  "1020" -> "1021" 
+  "1020" -> "1022" 
+  "1022" -> "1023" 
+  "1022" -> "1024" 
+  "1025" -> "1026" 
+  "1027" -> "1028" 
+  "1028" -> "1029" 
+  "1028" -> "1043" 
+  "1029" -> "70" 
+  "1029" -> "1030" 
+  "1029" -> "1040" 
+  "1030" -> "1031" 
+  "1030" -> "1038" 
+  "1031" -> "1032" 
+  "1031" -> "1037" 
+  "1032" -> "1033" 
+  "1032" -> "1034" 
+  "1034" -> "1035" 
+  "1035" -> "1036" 
+  "1038" -> "1039" 
+  "1040" -> "1041" 
+  "1040" -> "1042" 
+  "1043" -> "1044" 
+  "1045" -> "1046" 
+  "1046" -> "1047" 
+  "1046" -> "1050" 
+  "1047" -> "1048" 
+  "1047" -> "1049" 
+  "1050" -> "1051" 
+  "1051" -> "1052" 
+  "1051" -> "1055" 
+  "1052" -> "1053" 
+  "1053" -> "1054" 
+  "1055" -> "1056" 
+  "1057" -> "1058" 
+  "1058" -> "1059" 
+  "1058" -> "1066" 
+  "1059" -> "1060" 
+  "1059" -> "1064" 
+  "1060" -> "1061" 
+  "1061" -> "1062" 
+  "1061" -> "1063" 
+  "1064" -> "1065" 
+  "1066" -> "1067" 
+  "1067" -> "1068" 
+  "1069" -> "1070" 
+  "1070" -> "1071" 
+  "1070" -> "1072" 
+  "1070" -> "1073" 
+}

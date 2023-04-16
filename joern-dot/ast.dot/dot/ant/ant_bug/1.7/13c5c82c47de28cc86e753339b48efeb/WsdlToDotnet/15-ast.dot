@@ -1,0 +1,51 @@
+digraph "isRebuildNeeded" {  
+"514" [label = <(METHOD,isRebuildNeeded)<SUB>354</SUB>> ]
+"515" [label = <(PARAM,this)<SUB>354</SUB>> ]
+"516" [label = <(PARAM,Schema schema)<SUB>354</SUB>> ]
+"517" [label = <(PARAM,long destLastModified)<SUB>354</SUB>> ]
+"518" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>354</SUB>> ]
+"519" [label = <(CONTROL_STRUCTURE,if (destLastModified == -1),if (destLastModified == -1))<SUB>355</SUB>> ]
+"520" [label = <(&lt;operator&gt;.equals,destLastModified == -1)<SUB>355</SUB>> ]
+"521" [label = <(IDENTIFIER,destLastModified,destLastModified == -1)<SUB>355</SUB>> ]
+"522" [label = <(&lt;operator&gt;.minus,-1)<SUB>355</SUB>> ]
+"523" [label = <(LITERAL,1,-1)<SUB>355</SUB>> ]
+"524" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>355</SUB>> ]
+"525" [label = <(RETURN,return true;,return true;)<SUB>356</SUB>> ]
+"526" [label = <(LITERAL,true,return true;)<SUB>356</SUB>> ]
+"527" [label = <(RETURN,return !FILE_UTILS.isUpToDate(schema.getTimestamp(), destLastModified);,return !FILE_UTILS.isUpToDate(schema.getTimestamp(), destLastModified);)<SUB>358</SUB>> ]
+"528" [label = <(&lt;operator&gt;.logicalNot,!FILE_UTILS.isUpToDate(schema.getTimestamp(), destLastModified))<SUB>358</SUB>> ]
+"529" [label = <(isUpToDate,isUpToDate(schema.getTimestamp(), destLastModified))<SUB>358</SUB>> ]
+"530" [label = <(&lt;operator&gt;.fieldAccess,WsdlToDotnet.FILE_UTILS)<SUB>358</SUB>> ]
+"531" [label = <(IDENTIFIER,WsdlToDotnet,isUpToDate(schema.getTimestamp(), destLastModified))<SUB>358</SUB>> ]
+"532" [label = <(FIELD_IDENTIFIER,FILE_UTILS,FILE_UTILS)<SUB>358</SUB>> ]
+"533" [label = <(getTimestamp,schema.getTimestamp())<SUB>358</SUB>> ]
+"534" [label = <(IDENTIFIER,schema,schema.getTimestamp())<SUB>358</SUB>> ]
+"535" [label = <(IDENTIFIER,destLastModified,isUpToDate(schema.getTimestamp(), destLastModified))<SUB>358</SUB>> ]
+"536" [label = <(MODIFIER,PRIVATE)> ]
+"537" [label = <(MODIFIER,VIRTUAL)> ]
+"538" [label = <(METHOD_RETURN,boolean)<SUB>354</SUB>> ]
+  "514" -> "515" 
+  "514" -> "516" 
+  "514" -> "517" 
+  "514" -> "518" 
+  "514" -> "536" 
+  "514" -> "537" 
+  "514" -> "538" 
+  "518" -> "519" 
+  "518" -> "527" 
+  "519" -> "520" 
+  "519" -> "524" 
+  "520" -> "521" 
+  "520" -> "522" 
+  "522" -> "523" 
+  "524" -> "525" 
+  "525" -> "526" 
+  "527" -> "528" 
+  "528" -> "529" 
+  "529" -> "530" 
+  "529" -> "533" 
+  "529" -> "535" 
+  "530" -> "531" 
+  "530" -> "532" 
+  "533" -> "534" 
+}

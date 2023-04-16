@@ -1,0 +1,191 @@
+digraph "findPackages" {  
+"133" [label = <(METHOD,findPackages)<SUB>76</SUB>> ]
+"15" [label = <(PARAM,this)<SUB>76</SUB>> ]
+"134" [label = <(PARAM,Set&lt;String&gt; packages)<SUB>76</SUB>> ]
+"135" [label = <(PARAM,ClassLoader classLoader)<SUB>76</SUB>> ]
+"136" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>76</SUB>> ]
+"137" [label = <(LOCAL,Enumeration&lt;URL&gt; resources: java.util.Enumeration)> ]
+"138" [label = <(&lt;operator&gt;.assignment,Enumeration resources = classLoader.getResources(META_INF_SERVICES))<SUB>77</SUB>> ]
+"139" [label = <(IDENTIFIER,resources,Enumeration resources = classLoader.getResources(META_INF_SERVICES))<SUB>77</SUB>> ]
+"140" [label = <(getResources,classLoader.getResources(META_INF_SERVICES))<SUB>77</SUB>> ]
+"141" [label = <(IDENTIFIER,classLoader,classLoader.getResources(META_INF_SERVICES))<SUB>77</SUB>> ]
+"142" [label = <(&lt;operator&gt;.fieldAccess,AnnotationTypeConverterLoader.META_INF_SERVICES)<SUB>77</SUB>> ]
+"143" [label = <(IDENTIFIER,AnnotationTypeConverterLoader,classLoader.getResources(META_INF_SERVICES))<SUB>77</SUB>> ]
+"144" [label = <(FIELD_IDENTIFIER,META_INF_SERVICES,META_INF_SERVICES)<SUB>77</SUB>> ]
+"145" [label = <(CONTROL_STRUCTURE,while (resources.hasMoreElements()),while (resources.hasMoreElements()))<SUB>78</SUB>> ]
+"146" [label = <(hasMoreElements,resources.hasMoreElements())<SUB>78</SUB>> ]
+"147" [label = <(IDENTIFIER,resources,resources.hasMoreElements())<SUB>78</SUB>> ]
+"148" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>78</SUB>> ]
+"149" [label = <(LOCAL,URL url: java.net.URL)> ]
+"150" [label = <(&lt;operator&gt;.assignment,URL url = resources.nextElement())<SUB>79</SUB>> ]
+"151" [label = <(IDENTIFIER,url,URL url = resources.nextElement())<SUB>79</SUB>> ]
+"152" [label = <(nextElement,resources.nextElement())<SUB>79</SUB>> ]
+"153" [label = <(IDENTIFIER,resources,resources.nextElement())<SUB>79</SUB>> ]
+"154" [label = <(CONTROL_STRUCTURE,if (url != null),if (url != null))<SUB>80</SUB>> ]
+"155" [label = <(&lt;operator&gt;.notEquals,url != null)<SUB>80</SUB>> ]
+"156" [label = <(IDENTIFIER,url,url != null)<SUB>80</SUB>> ]
+"157" [label = <(LITERAL,null,url != null)<SUB>80</SUB>> ]
+"158" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>80</SUB>> ]
+"13" [label = <(LOCAL,BufferedReader reader: java.io.BufferedReader)> ]
+"159" [label = <(&lt;operator&gt;.assignment,BufferedReader reader = new BufferedReader(new InputStreamReader(url.openStream())))<SUB>81</SUB>> ]
+"160" [label = <(IDENTIFIER,reader,BufferedReader reader = new BufferedReader(new InputStreamReader(url.openStream())))<SUB>81</SUB>> ]
+"161" [label = <(&lt;operator&gt;.alloc,new BufferedReader(new InputStreamReader(url.openStream())))<SUB>81</SUB>> ]
+"162" [label = <(&lt;init&gt;,new BufferedReader(new InputStreamReader(url.openStream())))<SUB>81</SUB>> ]
+"12" [label = <(IDENTIFIER,reader,new BufferedReader(new InputStreamReader(url.openStream())))<SUB>81</SUB>> ]
+"163" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>81</SUB>> ]
+"164" [label = <(&lt;operator&gt;.assignment,&lt;empty&gt;)> ]
+"165" [label = <(IDENTIFIER,$obj3,&lt;empty&gt;)> ]
+"166" [label = <(&lt;operator&gt;.alloc,new InputStreamReader(url.openStream()))<SUB>81</SUB>> ]
+"167" [label = <(&lt;init&gt;,new InputStreamReader(url.openStream()))<SUB>81</SUB>> ]
+"168" [label = <(IDENTIFIER,$obj3,new InputStreamReader(url.openStream()))> ]
+"169" [label = <(openStream,url.openStream())<SUB>81</SUB>> ]
+"170" [label = <(IDENTIFIER,url,url.openStream())<SUB>81</SUB>> ]
+"171" [label = <(IDENTIFIER,$obj3,&lt;empty&gt;)> ]
+"172" [label = <(CONTROL_STRUCTURE,try,try)<SUB>82</SUB>> ]
+"173" [label = <(BLOCK,try,try)<SUB>82</SUB>> ]
+"174" [label = <(CONTROL_STRUCTURE,while (true),while (true))<SUB>83</SUB>> ]
+"175" [label = <(LITERAL,true,while (true))<SUB>83</SUB>> ]
+"176" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>83</SUB>> ]
+"177" [label = <(LOCAL,String line: java.lang.String)> ]
+"178" [label = <(&lt;operator&gt;.assignment,String line = reader.readLine())<SUB>84</SUB>> ]
+"179" [label = <(IDENTIFIER,line,String line = reader.readLine())<SUB>84</SUB>> ]
+"180" [label = <(readLine,reader.readLine())<SUB>84</SUB>> ]
+"181" [label = <(IDENTIFIER,reader,reader.readLine())<SUB>84</SUB>> ]
+"182" [label = <(CONTROL_STRUCTURE,if (line == null),if (line == null))<SUB>85</SUB>> ]
+"183" [label = <(&lt;operator&gt;.equals,line == null)<SUB>85</SUB>> ]
+"184" [label = <(IDENTIFIER,line,line == null)<SUB>85</SUB>> ]
+"185" [label = <(LITERAL,null,line == null)<SUB>85</SUB>> ]
+"186" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>85</SUB>> ]
+"187" [label = <(CONTROL_STRUCTURE,break;,break;)<SUB>86</SUB>> ]
+"188" [label = <(&lt;operator&gt;.assignment,line = line.trim())<SUB>88</SUB>> ]
+"189" [label = <(IDENTIFIER,line,line = line.trim())<SUB>88</SUB>> ]
+"190" [label = <(trim,line.trim())<SUB>88</SUB>> ]
+"191" [label = <(IDENTIFIER,line,line.trim())<SUB>88</SUB>> ]
+"192" [label = <(CONTROL_STRUCTURE,if (line.startsWith(&quot;#&quot;) || line.length() == 0),if (line.startsWith(&quot;#&quot;) || line.length() == 0))<SUB>89</SUB>> ]
+"193" [label = <(&lt;operator&gt;.logicalOr,line.startsWith(&quot;#&quot;) || line.length() == 0)<SUB>89</SUB>> ]
+"194" [label = <(startsWith,line.startsWith(&quot;#&quot;))<SUB>89</SUB>> ]
+"195" [label = <(IDENTIFIER,line,line.startsWith(&quot;#&quot;))<SUB>89</SUB>> ]
+"196" [label = <(LITERAL,&quot;#&quot;,line.startsWith(&quot;#&quot;))<SUB>89</SUB>> ]
+"197" [label = <(&lt;operator&gt;.equals,line.length() == 0)<SUB>89</SUB>> ]
+"198" [label = <(length,line.length())<SUB>89</SUB>> ]
+"199" [label = <(IDENTIFIER,line,line.length())<SUB>89</SUB>> ]
+"200" [label = <(LITERAL,0,line.length() == 0)<SUB>89</SUB>> ]
+"201" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>89</SUB>> ]
+"202" [label = <(CONTROL_STRUCTURE,continue;,continue;)<SUB>90</SUB>> ]
+"203" [label = <(tokenize,this.tokenize(packages, line))<SUB>92</SUB>> ]
+"14" [label = <(IDENTIFIER,this,this.tokenize(packages, line))<SUB>92</SUB>> ]
+"204" [label = <(IDENTIFIER,packages,this.tokenize(packages, line))<SUB>92</SUB>> ]
+"205" [label = <(IDENTIFIER,line,this.tokenize(packages, line))<SUB>92</SUB>> ]
+"206" [label = <(BLOCK,finally,finally)<SUB>95</SUB>> ]
+"207" [label = <(CONTROL_STRUCTURE,try,try)<SUB>96</SUB>> ]
+"208" [label = <(BLOCK,try,try)<SUB>96</SUB>> ]
+"209" [label = <(close,reader.close())<SUB>97</SUB>> ]
+"210" [label = <(IDENTIFIER,reader,reader.close())<SUB>97</SUB>> ]
+"211" [label = <(BLOCK,catch,catch)> ]
+"212" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>99</SUB>> ]
+"213" [label = <(warn,warn(&quot;Caught exception closing stream: &quot; + e, e))<SUB>100</SUB>> ]
+"214" [label = <(&lt;operator&gt;.fieldAccess,AnnotationTypeConverterLoader.log)<SUB>100</SUB>> ]
+"215" [label = <(IDENTIFIER,AnnotationTypeConverterLoader,warn(&quot;Caught exception closing stream: &quot; + e, e))<SUB>100</SUB>> ]
+"216" [label = <(FIELD_IDENTIFIER,log,log)<SUB>100</SUB>> ]
+"217" [label = <(&lt;operator&gt;.addition,&quot;Caught exception closing stream: &quot; + e)<SUB>100</SUB>> ]
+"218" [label = <(LITERAL,&quot;Caught exception closing stream: &quot;,&quot;Caught exception closing stream: &quot; + e)<SUB>100</SUB>> ]
+"219" [label = <(IDENTIFIER,e,&quot;Caught exception closing stream: &quot; + e)<SUB>100</SUB>> ]
+"220" [label = <(IDENTIFIER,e,warn(&quot;Caught exception closing stream: &quot; + e, e))<SUB>100</SUB>> ]
+"221" [label = <(MODIFIER,PROTECTED)> ]
+"222" [label = <(MODIFIER,VIRTUAL)> ]
+"223" [label = <(METHOD_RETURN,void)<SUB>76</SUB>> ]
+  "133" -> "15" 
+  "133" -> "134" 
+  "133" -> "135" 
+  "133" -> "136" 
+  "133" -> "221" 
+  "133" -> "222" 
+  "133" -> "223" 
+  "136" -> "137" 
+  "136" -> "138" 
+  "136" -> "145" 
+  "138" -> "139" 
+  "138" -> "140" 
+  "140" -> "141" 
+  "140" -> "142" 
+  "142" -> "143" 
+  "142" -> "144" 
+  "145" -> "146" 
+  "145" -> "148" 
+  "146" -> "147" 
+  "148" -> "149" 
+  "148" -> "150" 
+  "148" -> "154" 
+  "150" -> "151" 
+  "150" -> "152" 
+  "152" -> "153" 
+  "154" -> "155" 
+  "154" -> "158" 
+  "155" -> "156" 
+  "155" -> "157" 
+  "158" -> "13" 
+  "158" -> "159" 
+  "158" -> "162" 
+  "158" -> "172" 
+  "159" -> "160" 
+  "159" -> "161" 
+  "162" -> "12" 
+  "162" -> "163" 
+  "163" -> "164" 
+  "163" -> "167" 
+  "163" -> "171" 
+  "164" -> "165" 
+  "164" -> "166" 
+  "167" -> "168" 
+  "167" -> "169" 
+  "169" -> "170" 
+  "172" -> "173" 
+  "172" -> "206" 
+  "173" -> "174" 
+  "174" -> "175" 
+  "174" -> "176" 
+  "176" -> "177" 
+  "176" -> "178" 
+  "176" -> "182" 
+  "176" -> "188" 
+  "176" -> "192" 
+  "176" -> "203" 
+  "178" -> "179" 
+  "178" -> "180" 
+  "180" -> "181" 
+  "182" -> "183" 
+  "182" -> "186" 
+  "183" -> "184" 
+  "183" -> "185" 
+  "186" -> "187" 
+  "188" -> "189" 
+  "188" -> "190" 
+  "190" -> "191" 
+  "192" -> "193" 
+  "192" -> "201" 
+  "193" -> "194" 
+  "193" -> "197" 
+  "194" -> "195" 
+  "194" -> "196" 
+  "197" -> "198" 
+  "197" -> "200" 
+  "198" -> "199" 
+  "201" -> "202" 
+  "203" -> "14" 
+  "203" -> "204" 
+  "203" -> "205" 
+  "206" -> "207" 
+  "207" -> "208" 
+  "207" -> "211" 
+  "208" -> "209" 
+  "209" -> "210" 
+  "211" -> "212" 
+  "212" -> "213" 
+  "213" -> "214" 
+  "213" -> "217" 
+  "213" -> "220" 
+  "214" -> "215" 
+  "214" -> "216" 
+  "217" -> "218" 
+  "217" -> "219" 
+}

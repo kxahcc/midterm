@@ -1,0 +1,121 @@
+digraph "skip" {  
+"236" [label = <(METHOD,skip)<SUB>155</SUB>> ]
+"26" [label = <(PARAM,this)<SUB>155</SUB>> ]
+"237" [label = <(PARAM,long numToSkip)<SUB>155</SUB>> ]
+"238" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>155</SUB>> ]
+"239" [label = <(LOCAL,byte[] skipBuf: byte[])> ]
+"240" [label = <(&lt;operator&gt;.assignment,byte[] skipBuf = new byte[8 * 1024])<SUB>160</SUB>> ]
+"241" [label = <(IDENTIFIER,skipBuf,byte[] skipBuf = new byte[8 * 1024])<SUB>160</SUB>> ]
+"242" [label = <(&lt;operator&gt;.alloc,new byte[8 * 1024])> ]
+"243" [label = <(&lt;operator&gt;.multiplication,8 * 1024)<SUB>160</SUB>> ]
+"244" [label = <(LITERAL,8,8 * 1024)<SUB>160</SUB>> ]
+"245" [label = <(LITERAL,1024,8 * 1024)<SUB>160</SUB>> ]
+"246" [label = <(LOCAL,long skip: long)> ]
+"247" [label = <(&lt;operator&gt;.assignment,long skip = numToSkip)<SUB>161</SUB>> ]
+"248" [label = <(IDENTIFIER,skip,long skip = numToSkip)<SUB>161</SUB>> ]
+"249" [label = <(IDENTIFIER,numToSkip,long skip = numToSkip)<SUB>161</SUB>> ]
+"250" [label = <(CONTROL_STRUCTURE,while (skip &gt; 0),while (skip &gt; 0))<SUB>162</SUB>> ]
+"251" [label = <(&lt;operator&gt;.greaterThan,skip &gt; 0)<SUB>162</SUB>> ]
+"252" [label = <(IDENTIFIER,skip,skip &gt; 0)<SUB>162</SUB>> ]
+"253" [label = <(LITERAL,0,skip &gt; 0)<SUB>162</SUB>> ]
+"254" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>162</SUB>> ]
+"255" [label = <(LOCAL,int realSkip: int)> ]
+"256" [label = <(&lt;operator&gt;.assignment,int realSkip = (int) (skip &gt; skipBuf.length ? skipBuf.length : skip))<SUB>163</SUB>> ]
+"257" [label = <(IDENTIFIER,realSkip,int realSkip = (int) (skip &gt; skipBuf.length ? skipBuf.length : skip))<SUB>163</SUB>> ]
+"258" [label = <(&lt;operator&gt;.cast,(int) (skip &gt; skipBuf.length ? skipBuf.length : skip))<SUB>163</SUB>> ]
+"259" [label = <(TYPE_REF,int,int)<SUB>163</SUB>> ]
+"260" [label = <(&lt;operator&gt;.conditional,skip &gt; skipBuf.length ? skipBuf.length : skip)<SUB>163</SUB>> ]
+"261" [label = <(&lt;operator&gt;.greaterThan,skip &gt; skipBuf.length)<SUB>163</SUB>> ]
+"262" [label = <(IDENTIFIER,skip,skip &gt; skipBuf.length)<SUB>163</SUB>> ]
+"263" [label = <(&lt;operator&gt;.fieldAccess,skipBuf.length)<SUB>163</SUB>> ]
+"264" [label = <(IDENTIFIER,skipBuf,skip &gt; skipBuf.length)<SUB>163</SUB>> ]
+"265" [label = <(FIELD_IDENTIFIER,length,length)<SUB>163</SUB>> ]
+"266" [label = <(&lt;operator&gt;.fieldAccess,skipBuf.length)<SUB>163</SUB>> ]
+"267" [label = <(IDENTIFIER,skipBuf,skip &gt; skipBuf.length ? skipBuf.length : skip)<SUB>163</SUB>> ]
+"268" [label = <(FIELD_IDENTIFIER,length,length)<SUB>163</SUB>> ]
+"269" [label = <(IDENTIFIER,skip,skip &gt; skipBuf.length ? skipBuf.length : skip)<SUB>163</SUB>> ]
+"270" [label = <(LOCAL,int numRead: int)> ]
+"271" [label = <(&lt;operator&gt;.assignment,int numRead = this.read(skipBuf, 0, realSkip))<SUB>164</SUB>> ]
+"272" [label = <(IDENTIFIER,numRead,int numRead = this.read(skipBuf, 0, realSkip))<SUB>164</SUB>> ]
+"273" [label = <(read,this.read(skipBuf, 0, realSkip))<SUB>164</SUB>> ]
+"25" [label = <(IDENTIFIER,this,this.read(skipBuf, 0, realSkip))<SUB>164</SUB>> ]
+"274" [label = <(IDENTIFIER,skipBuf,this.read(skipBuf, 0, realSkip))<SUB>164</SUB>> ]
+"275" [label = <(LITERAL,0,this.read(skipBuf, 0, realSkip))<SUB>164</SUB>> ]
+"276" [label = <(IDENTIFIER,realSkip,this.read(skipBuf, 0, realSkip))<SUB>164</SUB>> ]
+"277" [label = <(CONTROL_STRUCTURE,if (numRead == -1),if (numRead == -1))<SUB>165</SUB>> ]
+"278" [label = <(&lt;operator&gt;.equals,numRead == -1)<SUB>165</SUB>> ]
+"279" [label = <(IDENTIFIER,numRead,numRead == -1)<SUB>165</SUB>> ]
+"280" [label = <(&lt;operator&gt;.minus,-1)<SUB>165</SUB>> ]
+"281" [label = <(LITERAL,1,-1)<SUB>165</SUB>> ]
+"282" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>165</SUB>> ]
+"283" [label = <(CONTROL_STRUCTURE,break;,break;)<SUB>166</SUB>> ]
+"284" [label = <(&lt;operator&gt;.assignmentMinus,skip -= numRead)<SUB>168</SUB>> ]
+"285" [label = <(IDENTIFIER,skip,skip -= numRead)<SUB>168</SUB>> ]
+"286" [label = <(IDENTIFIER,numRead,skip -= numRead)<SUB>168</SUB>> ]
+"287" [label = <(RETURN,return (numToSkip - skip);,return (numToSkip - skip);)<SUB>170</SUB>> ]
+"288" [label = <(&lt;operator&gt;.subtraction,numToSkip - skip)<SUB>170</SUB>> ]
+"289" [label = <(IDENTIFIER,numToSkip,numToSkip - skip)<SUB>170</SUB>> ]
+"290" [label = <(IDENTIFIER,skip,numToSkip - skip)<SUB>170</SUB>> ]
+"291" [label = <(MODIFIER,PUBLIC)> ]
+"292" [label = <(MODIFIER,VIRTUAL)> ]
+"293" [label = <(METHOD_RETURN,long)<SUB>155</SUB>> ]
+  "236" -> "26" 
+  "236" -> "237" 
+  "236" -> "238" 
+  "236" -> "291" 
+  "236" -> "292" 
+  "236" -> "293" 
+  "238" -> "239" 
+  "238" -> "240" 
+  "238" -> "246" 
+  "238" -> "247" 
+  "238" -> "250" 
+  "238" -> "287" 
+  "240" -> "241" 
+  "240" -> "242" 
+  "242" -> "243" 
+  "243" -> "244" 
+  "243" -> "245" 
+  "247" -> "248" 
+  "247" -> "249" 
+  "250" -> "251" 
+  "250" -> "254" 
+  "251" -> "252" 
+  "251" -> "253" 
+  "254" -> "255" 
+  "254" -> "256" 
+  "254" -> "270" 
+  "254" -> "271" 
+  "254" -> "277" 
+  "254" -> "284" 
+  "256" -> "257" 
+  "256" -> "258" 
+  "258" -> "259" 
+  "258" -> "260" 
+  "260" -> "261" 
+  "260" -> "266" 
+  "260" -> "269" 
+  "261" -> "262" 
+  "261" -> "263" 
+  "263" -> "264" 
+  "263" -> "265" 
+  "266" -> "267" 
+  "266" -> "268" 
+  "271" -> "272" 
+  "271" -> "273" 
+  "273" -> "25" 
+  "273" -> "274" 
+  "273" -> "275" 
+  "273" -> "276" 
+  "277" -> "278" 
+  "277" -> "282" 
+  "278" -> "279" 
+  "278" -> "280" 
+  "280" -> "281" 
+  "282" -> "283" 
+  "284" -> "285" 
+  "284" -> "286" 
+  "287" -> "288" 
+  "288" -> "289" 
+  "288" -> "290" 
+}

@@ -1,0 +1,185 @@
+digraph "toDOMSourceFromStream" {  
+"608" [label = <(METHOD,toDOMSourceFromStream)<SUB>259</SUB>> ]
+"34" [label = <(PARAM,this)<SUB>259</SUB>> ]
+"609" [label = <(PARAM,StreamSource source)<SUB>260</SUB>> ]
+"610" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>260</SUB>> ]
+"611" [label = <(LOCAL,DocumentBuilder builder: javax.xml.parsers.DocumentBuilder)> ]
+"612" [label = <(&lt;operator&gt;.assignment,DocumentBuilder builder = this.createDocumentBuilder())<SUB>261</SUB>> ]
+"613" [label = <(IDENTIFIER,builder,DocumentBuilder builder = this.createDocumentBuilder())<SUB>261</SUB>> ]
+"614" [label = <(createDocumentBuilder,this.createDocumentBuilder())<SUB>261</SUB>> ]
+"33" [label = <(IDENTIFIER,this,this.createDocumentBuilder())<SUB>261</SUB>> ]
+"615" [label = <(LOCAL,String systemId: java.lang.String)> ]
+"616" [label = <(&lt;operator&gt;.assignment,String systemId = source.getSystemId())<SUB>262</SUB>> ]
+"617" [label = <(IDENTIFIER,systemId,String systemId = source.getSystemId())<SUB>262</SUB>> ]
+"618" [label = <(getSystemId,source.getSystemId())<SUB>262</SUB>> ]
+"619" [label = <(IDENTIFIER,source,source.getSystemId())<SUB>262</SUB>> ]
+"620" [label = <(LOCAL,Document document: org.w3c.dom.Document)> ]
+"621" [label = <(&lt;operator&gt;.assignment,Document document = null)<SUB>263</SUB>> ]
+"622" [label = <(IDENTIFIER,document,Document document = null)<SUB>263</SUB>> ]
+"623" [label = <(LITERAL,null,Document document = null)<SUB>263</SUB>> ]
+"624" [label = <(LOCAL,Reader reader: java.io.Reader)> ]
+"625" [label = <(&lt;operator&gt;.assignment,Reader reader = source.getReader())<SUB>264</SUB>> ]
+"626" [label = <(IDENTIFIER,reader,Reader reader = source.getReader())<SUB>264</SUB>> ]
+"627" [label = <(getReader,source.getReader())<SUB>264</SUB>> ]
+"628" [label = <(IDENTIFIER,source,source.getReader())<SUB>264</SUB>> ]
+"629" [label = <(CONTROL_STRUCTURE,if (reader != null),if (reader != null))<SUB>265</SUB>> ]
+"630" [label = <(&lt;operator&gt;.notEquals,reader != null)<SUB>265</SUB>> ]
+"631" [label = <(IDENTIFIER,reader,reader != null)<SUB>265</SUB>> ]
+"632" [label = <(LITERAL,null,reader != null)<SUB>265</SUB>> ]
+"633" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>265</SUB>> ]
+"634" [label = <(&lt;operator&gt;.assignment,document = parse(new InputSource(reader)))<SUB>266</SUB>> ]
+"635" [label = <(IDENTIFIER,document,document = parse(new InputSource(reader)))<SUB>266</SUB>> ]
+"636" [label = <(parse,parse(new InputSource(reader)))<SUB>266</SUB>> ]
+"637" [label = <(IDENTIFIER,builder,parse(new InputSource(reader)))<SUB>266</SUB>> ]
+"638" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>266</SUB>> ]
+"639" [label = <(&lt;operator&gt;.assignment,&lt;empty&gt;)> ]
+"640" [label = <(IDENTIFIER,$obj16,&lt;empty&gt;)> ]
+"641" [label = <(&lt;operator&gt;.alloc,new InputSource(reader))<SUB>266</SUB>> ]
+"642" [label = <(&lt;init&gt;,new InputSource(reader))<SUB>266</SUB>> ]
+"643" [label = <(IDENTIFIER,$obj16,new InputSource(reader))> ]
+"644" [label = <(IDENTIFIER,reader,new InputSource(reader))<SUB>266</SUB>> ]
+"645" [label = <(IDENTIFIER,$obj16,&lt;empty&gt;)> ]
+"646" [label = <(CONTROL_STRUCTURE,else,else)<SUB>267</SUB>> ]
+"647" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>267</SUB>> ]
+"648" [label = <(LOCAL,InputStream inputStream: java.io.InputStream)> ]
+"649" [label = <(&lt;operator&gt;.assignment,InputStream inputStream = source.getInputStream())<SUB>268</SUB>> ]
+"650" [label = <(IDENTIFIER,inputStream,InputStream inputStream = source.getInputStream())<SUB>268</SUB>> ]
+"651" [label = <(getInputStream,source.getInputStream())<SUB>268</SUB>> ]
+"652" [label = <(IDENTIFIER,source,source.getInputStream())<SUB>268</SUB>> ]
+"653" [label = <(CONTROL_STRUCTURE,if (inputStream != null),if (inputStream != null))<SUB>269</SUB>> ]
+"654" [label = <(&lt;operator&gt;.notEquals,inputStream != null)<SUB>269</SUB>> ]
+"655" [label = <(IDENTIFIER,inputStream,inputStream != null)<SUB>269</SUB>> ]
+"656" [label = <(LITERAL,null,inputStream != null)<SUB>269</SUB>> ]
+"657" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>269</SUB>> ]
+"36" [label = <(LOCAL,InputSource inputsource: org.xml.sax.InputSource)> ]
+"658" [label = <(&lt;operator&gt;.assignment,InputSource inputsource = new InputSource(inputStream))<SUB>270</SUB>> ]
+"659" [label = <(IDENTIFIER,inputsource,InputSource inputsource = new InputSource(inputStream))<SUB>270</SUB>> ]
+"660" [label = <(&lt;operator&gt;.alloc,new InputSource(inputStream))<SUB>270</SUB>> ]
+"661" [label = <(&lt;init&gt;,new InputSource(inputStream))<SUB>270</SUB>> ]
+"35" [label = <(IDENTIFIER,inputsource,new InputSource(inputStream))<SUB>270</SUB>> ]
+"662" [label = <(IDENTIFIER,inputStream,new InputSource(inputStream))<SUB>270</SUB>> ]
+"663" [label = <(setSystemId,setSystemId(systemId))<SUB>271</SUB>> ]
+"664" [label = <(IDENTIFIER,inputsource,setSystemId(systemId))<SUB>271</SUB>> ]
+"665" [label = <(IDENTIFIER,systemId,setSystemId(systemId))<SUB>271</SUB>> ]
+"666" [label = <(&lt;operator&gt;.assignment,document = parse(inputsource))<SUB>272</SUB>> ]
+"667" [label = <(IDENTIFIER,document,document = parse(inputsource))<SUB>272</SUB>> ]
+"668" [label = <(parse,parse(inputsource))<SUB>272</SUB>> ]
+"669" [label = <(IDENTIFIER,builder,parse(inputsource))<SUB>272</SUB>> ]
+"670" [label = <(IDENTIFIER,inputsource,parse(inputsource))<SUB>272</SUB>> ]
+"671" [label = <(CONTROL_STRUCTURE,else,else)<SUB>274</SUB>> ]
+"672" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>274</SUB>> ]
+"673" [label = <(&lt;operator&gt;.throw,throw new IOException(&quot;No input stream or reader available&quot;);)<SUB>275</SUB>> ]
+"674" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>275</SUB>> ]
+"675" [label = <(&lt;operator&gt;.assignment,&lt;empty&gt;)> ]
+"676" [label = <(IDENTIFIER,$obj18,&lt;empty&gt;)> ]
+"677" [label = <(&lt;operator&gt;.alloc,new IOException(&quot;No input stream or reader available&quot;))<SUB>275</SUB>> ]
+"678" [label = <(&lt;init&gt;,new IOException(&quot;No input stream or reader available&quot;))<SUB>275</SUB>> ]
+"679" [label = <(IDENTIFIER,$obj18,new IOException(&quot;No input stream or reader available&quot;))> ]
+"680" [label = <(LITERAL,&quot;No input stream or reader available&quot;,new IOException(&quot;No input stream or reader available&quot;))<SUB>275</SUB>> ]
+"681" [label = <(IDENTIFIER,$obj18,&lt;empty&gt;)> ]
+"682" [label = <(RETURN,return new DOMSource(document, systemId);,return new DOMSource(document, systemId);)<SUB>278</SUB>> ]
+"683" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>278</SUB>> ]
+"684" [label = <(&lt;operator&gt;.assignment,&lt;empty&gt;)> ]
+"685" [label = <(IDENTIFIER,$obj19,&lt;empty&gt;)> ]
+"686" [label = <(&lt;operator&gt;.alloc,new DOMSource(document, systemId))<SUB>278</SUB>> ]
+"687" [label = <(&lt;init&gt;,new DOMSource(document, systemId))<SUB>278</SUB>> ]
+"688" [label = <(IDENTIFIER,$obj19,new DOMSource(document, systemId))> ]
+"689" [label = <(IDENTIFIER,document,new DOMSource(document, systemId))<SUB>278</SUB>> ]
+"690" [label = <(IDENTIFIER,systemId,new DOMSource(document, systemId))<SUB>278</SUB>> ]
+"691" [label = <(IDENTIFIER,$obj19,&lt;empty&gt;)> ]
+"692" [label = <(MODIFIER,PUBLIC)> ]
+"693" [label = <(MODIFIER,VIRTUAL)> ]
+"694" [label = <(ANNOTATION,@Converter,@Converter)<SUB>259</SUB>> ]
+"695" [label = <(METHOD_RETURN,javax.xml.transform.dom.DOMSource)<SUB>260</SUB>> ]
+  "608" -> "34" 
+  "608" -> "609" 
+  "608" -> "610" 
+  "608" -> "692" 
+  "608" -> "693" 
+  "608" -> "694" 
+  "608" -> "695" 
+  "610" -> "611" 
+  "610" -> "612" 
+  "610" -> "615" 
+  "610" -> "616" 
+  "610" -> "620" 
+  "610" -> "621" 
+  "610" -> "624" 
+  "610" -> "625" 
+  "610" -> "629" 
+  "610" -> "682" 
+  "612" -> "613" 
+  "612" -> "614" 
+  "614" -> "33" 
+  "616" -> "617" 
+  "616" -> "618" 
+  "618" -> "619" 
+  "621" -> "622" 
+  "621" -> "623" 
+  "625" -> "626" 
+  "625" -> "627" 
+  "627" -> "628" 
+  "629" -> "630" 
+  "629" -> "633" 
+  "629" -> "646" 
+  "630" -> "631" 
+  "630" -> "632" 
+  "633" -> "634" 
+  "634" -> "635" 
+  "634" -> "636" 
+  "636" -> "637" 
+  "636" -> "638" 
+  "638" -> "639" 
+  "638" -> "642" 
+  "638" -> "645" 
+  "639" -> "640" 
+  "639" -> "641" 
+  "642" -> "643" 
+  "642" -> "644" 
+  "646" -> "647" 
+  "647" -> "648" 
+  "647" -> "649" 
+  "647" -> "653" 
+  "649" -> "650" 
+  "649" -> "651" 
+  "651" -> "652" 
+  "653" -> "654" 
+  "653" -> "657" 
+  "653" -> "671" 
+  "654" -> "655" 
+  "654" -> "656" 
+  "657" -> "36" 
+  "657" -> "658" 
+  "657" -> "661" 
+  "657" -> "663" 
+  "657" -> "666" 
+  "658" -> "659" 
+  "658" -> "660" 
+  "661" -> "35" 
+  "661" -> "662" 
+  "663" -> "664" 
+  "663" -> "665" 
+  "666" -> "667" 
+  "666" -> "668" 
+  "668" -> "669" 
+  "668" -> "670" 
+  "671" -> "672" 
+  "672" -> "673" 
+  "673" -> "674" 
+  "674" -> "675" 
+  "674" -> "678" 
+  "674" -> "681" 
+  "675" -> "676" 
+  "675" -> "677" 
+  "678" -> "679" 
+  "678" -> "680" 
+  "682" -> "683" 
+  "683" -> "684" 
+  "683" -> "687" 
+  "683" -> "691" 
+  "684" -> "685" 
+  "684" -> "686" 
+  "687" -> "688" 
+  "687" -> "689" 
+  "687" -> "690" 
+}

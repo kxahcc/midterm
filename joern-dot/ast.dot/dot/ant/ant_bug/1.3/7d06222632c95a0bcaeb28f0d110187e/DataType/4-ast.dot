@@ -1,0 +1,115 @@
+digraph "dieOnCircularReference" {  
+"85" [label = <(METHOD,dieOnCircularReference)<SUB>144</SUB>> ]
+"6" [label = <(PARAM,this)<SUB>144</SUB>> ]
+"86" [label = <(PARAM,Stack stk)<SUB>144</SUB>> ]
+"87" [label = <(PARAM,Project p)<SUB>144</SUB>> ]
+"88" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>145</SUB>> ]
+"89" [label = <(CONTROL_STRUCTURE,if (checked || !isReference()),if (checked || !isReference()))<SUB>147</SUB>> ]
+"90" [label = <(&lt;operator&gt;.logicalOr,checked || !isReference())<SUB>147</SUB>> ]
+"91" [label = <(&lt;operator&gt;.fieldAccess,this.checked)<SUB>147</SUB>> ]
+"92" [label = <(IDENTIFIER,this,checked || !isReference())<SUB>147</SUB>> ]
+"93" [label = <(FIELD_IDENTIFIER,checked,checked)<SUB>147</SUB>> ]
+"94" [label = <(&lt;operator&gt;.logicalNot,!isReference())<SUB>147</SUB>> ]
+"95" [label = <(isReference,this.isReference())<SUB>147</SUB>> ]
+"5" [label = <(IDENTIFIER,this,this.isReference())<SUB>147</SUB>> ]
+"96" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>147</SUB>> ]
+"97" [label = <(RETURN,return;,return;)<SUB>148</SUB>> ]
+"98" [label = <(LOCAL,Object o: java.lang.Object)> ]
+"99" [label = <(&lt;operator&gt;.assignment,Object o = getReferencedObject(p))<SUB>150</SUB>> ]
+"100" [label = <(IDENTIFIER,o,Object o = getReferencedObject(p))<SUB>150</SUB>> ]
+"101" [label = <(getReferencedObject,getReferencedObject(p))<SUB>150</SUB>> ]
+"102" [label = <(&lt;operator&gt;.fieldAccess,this.ref)<SUB>150</SUB>> ]
+"103" [label = <(IDENTIFIER,this,getReferencedObject(p))<SUB>150</SUB>> ]
+"104" [label = <(FIELD_IDENTIFIER,ref,ref)<SUB>150</SUB>> ]
+"105" [label = <(IDENTIFIER,p,getReferencedObject(p))<SUB>150</SUB>> ]
+"106" [label = <(CONTROL_STRUCTURE,if (o instanceof DataType),if (o instanceof DataType))<SUB>152</SUB>> ]
+"107" [label = <(&lt;operator&gt;.instanceOf,o instanceof DataType)<SUB>152</SUB>> ]
+"108" [label = <(IDENTIFIER,o,o instanceof DataType)<SUB>152</SUB>> ]
+"109" [label = <(TYPE_REF,DataType,DataType)<SUB>152</SUB>> ]
+"110" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>152</SUB>> ]
+"111" [label = <(CONTROL_STRUCTURE,if (stk.contains(o)),if (stk.contains(o)))<SUB>153</SUB>> ]
+"112" [label = <(contains,stk.contains(o))<SUB>153</SUB>> ]
+"113" [label = <(IDENTIFIER,stk,stk.contains(o))<SUB>153</SUB>> ]
+"114" [label = <(IDENTIFIER,o,stk.contains(o))<SUB>153</SUB>> ]
+"115" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>153</SUB>> ]
+"116" [label = <(&lt;operator&gt;.throw,throw circularReference();)<SUB>154</SUB>> ]
+"117" [label = <(circularReference,this.circularReference())<SUB>154</SUB>> ]
+"7" [label = <(IDENTIFIER,this,this.circularReference())<SUB>154</SUB>> ]
+"118" [label = <(CONTROL_STRUCTURE,else,else)<SUB>155</SUB>> ]
+"119" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>155</SUB>> ]
+"120" [label = <(push,stk.push(o))<SUB>156</SUB>> ]
+"121" [label = <(IDENTIFIER,stk,stk.push(o))<SUB>156</SUB>> ]
+"122" [label = <(IDENTIFIER,o,stk.push(o))<SUB>156</SUB>> ]
+"123" [label = <(dieOnCircularReference,dieOnCircularReference(stk, p))<SUB>157</SUB>> ]
+"124" [label = <(&lt;operator&gt;.cast,(DataType) o)<SUB>157</SUB>> ]
+"125" [label = <(TYPE_REF,DataType,DataType)<SUB>157</SUB>> ]
+"126" [label = <(IDENTIFIER,o,(DataType) o)<SUB>157</SUB>> ]
+"127" [label = <(IDENTIFIER,stk,dieOnCircularReference(stk, p))<SUB>157</SUB>> ]
+"128" [label = <(IDENTIFIER,p,dieOnCircularReference(stk, p))<SUB>157</SUB>> ]
+"129" [label = <(pop,stk.pop())<SUB>158</SUB>> ]
+"130" [label = <(IDENTIFIER,stk,stk.pop())<SUB>158</SUB>> ]
+"131" [label = <(&lt;operator&gt;.assignment,this.checked = true)<SUB>161</SUB>> ]
+"132" [label = <(&lt;operator&gt;.fieldAccess,this.checked)<SUB>161</SUB>> ]
+"133" [label = <(IDENTIFIER,this,this.checked = true)<SUB>161</SUB>> ]
+"134" [label = <(FIELD_IDENTIFIER,checked,checked)<SUB>161</SUB>> ]
+"135" [label = <(LITERAL,true,this.checked = true)<SUB>161</SUB>> ]
+"136" [label = <(MODIFIER,PROTECTED)> ]
+"137" [label = <(MODIFIER,VIRTUAL)> ]
+"138" [label = <(METHOD_RETURN,void)<SUB>144</SUB>> ]
+  "85" -> "6" 
+  "85" -> "86" 
+  "85" -> "87" 
+  "85" -> "88" 
+  "85" -> "136" 
+  "85" -> "137" 
+  "85" -> "138" 
+  "88" -> "89" 
+  "88" -> "98" 
+  "88" -> "99" 
+  "88" -> "106" 
+  "88" -> "131" 
+  "89" -> "90" 
+  "89" -> "96" 
+  "90" -> "91" 
+  "90" -> "94" 
+  "91" -> "92" 
+  "91" -> "93" 
+  "94" -> "95" 
+  "95" -> "5" 
+  "96" -> "97" 
+  "99" -> "100" 
+  "99" -> "101" 
+  "101" -> "102" 
+  "101" -> "105" 
+  "102" -> "103" 
+  "102" -> "104" 
+  "106" -> "107" 
+  "106" -> "110" 
+  "107" -> "108" 
+  "107" -> "109" 
+  "110" -> "111" 
+  "111" -> "112" 
+  "111" -> "115" 
+  "111" -> "118" 
+  "112" -> "113" 
+  "112" -> "114" 
+  "115" -> "116" 
+  "116" -> "117" 
+  "117" -> "7" 
+  "118" -> "119" 
+  "119" -> "120" 
+  "119" -> "123" 
+  "119" -> "129" 
+  "120" -> "121" 
+  "120" -> "122" 
+  "123" -> "124" 
+  "123" -> "127" 
+  "123" -> "128" 
+  "124" -> "125" 
+  "124" -> "126" 
+  "129" -> "130" 
+  "131" -> "132" 
+  "131" -> "135" 
+  "132" -> "133" 
+  "132" -> "134" 
+}

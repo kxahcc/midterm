@@ -1,0 +1,81 @@
+digraph "execute" {  
+"13" [label = <(METHOD,execute)<SUB>71</SUB>> ]
+"6" [label = <(PARAM,this)<SUB>71</SUB>> ]
+"14" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>71</SUB>> ]
+"15" [label = <(log,log(&quot;Using external javac compiler&quot;, Project.MSG_VERBOSE))<SUB>72</SUB>> ]
+"16" [label = <(IDENTIFIER,attributes,log(&quot;Using external javac compiler&quot;, Project.MSG_VERBOSE))<SUB>72</SUB>> ]
+"17" [label = <(LITERAL,&quot;Using external javac compiler&quot;,log(&quot;Using external javac compiler&quot;, Project.MSG_VERBOSE))<SUB>72</SUB>> ]
+"18" [label = <(&lt;operator&gt;.fieldAccess,Project.MSG_VERBOSE)<SUB>72</SUB>> ]
+"19" [label = <(IDENTIFIER,Project,log(&quot;Using external javac compiler&quot;, Project.MSG_VERBOSE))<SUB>72</SUB>> ]
+"20" [label = <(FIELD_IDENTIFIER,MSG_VERBOSE,MSG_VERBOSE)<SUB>72</SUB>> ]
+"4" [label = <(LOCAL,Commandline cmd: ANY)> ]
+"21" [label = <(&lt;operator&gt;.assignment,ANY cmd = new Commandline())<SUB>74</SUB>> ]
+"22" [label = <(IDENTIFIER,cmd,ANY cmd = new Commandline())<SUB>74</SUB>> ]
+"23" [label = <(&lt;operator&gt;.alloc,new Commandline())<SUB>74</SUB>> ]
+"24" [label = <(&lt;init&gt;,new Commandline())<SUB>74</SUB>> ]
+"3" [label = <(IDENTIFIER,cmd,new Commandline())<SUB>74</SUB>> ]
+"25" [label = <(setExecutable,setExecutable(&quot;javac&quot;))<SUB>75</SUB>> ]
+"26" [label = <(IDENTIFIER,cmd,setExecutable(&quot;javac&quot;))<SUB>75</SUB>> ]
+"27" [label = <(LITERAL,&quot;javac&quot;,setExecutable(&quot;javac&quot;))<SUB>75</SUB>> ]
+"28" [label = <(setupJavacCommandlineSwitches,setupJavacCommandlineSwitches(cmd))<SUB>76</SUB>> ]
+"5" [label = <(IDENTIFIER,this,setupJavacCommandlineSwitches(cmd))<SUB>76</SUB>> ]
+"29" [label = <(IDENTIFIER,cmd,setupJavacCommandlineSwitches(cmd))<SUB>76</SUB>> ]
+"30" [label = <(LOCAL,int firstFileName: int)> ]
+"31" [label = <(&lt;operator&gt;.assignment,int firstFileName = size())<SUB>77</SUB>> ]
+"32" [label = <(IDENTIFIER,firstFileName,int firstFileName = size())<SUB>77</SUB>> ]
+"33" [label = <(size,size())<SUB>77</SUB>> ]
+"34" [label = <(IDENTIFIER,cmd,size())<SUB>77</SUB>> ]
+"35" [label = <(logAndAddFilesToCompile,logAndAddFilesToCompile(cmd))<SUB>78</SUB>> ]
+"7" [label = <(IDENTIFIER,this,logAndAddFilesToCompile(cmd))<SUB>78</SUB>> ]
+"36" [label = <(IDENTIFIER,cmd,logAndAddFilesToCompile(cmd))<SUB>78</SUB>> ]
+"37" [label = <(RETURN,return executeExternalCompile(cmd.getCommandline(), firstFileName) == 0;,return executeExternalCompile(cmd.getCommandline(), firstFileName) == 0;)<SUB>80</SUB>> ]
+"38" [label = <(&lt;operator&gt;.equals,executeExternalCompile(cmd.getCommandline(), firstFileName) == 0)<SUB>80</SUB>> ]
+"39" [label = <(executeExternalCompile,executeExternalCompile(cmd.getCommandline(), firstFileName))<SUB>80</SUB>> ]
+"8" [label = <(IDENTIFIER,this,executeExternalCompile(cmd.getCommandline(), firstFileName))<SUB>80</SUB>> ]
+"40" [label = <(getCommandline,getCommandline())<SUB>80</SUB>> ]
+"41" [label = <(IDENTIFIER,cmd,getCommandline())<SUB>80</SUB>> ]
+"42" [label = <(IDENTIFIER,firstFileName,executeExternalCompile(cmd.getCommandline(), firstFileName))<SUB>80</SUB>> ]
+"43" [label = <(LITERAL,0,executeExternalCompile(cmd.getCommandline(), firstFileName) == 0)<SUB>80</SUB>> ]
+"44" [label = <(MODIFIER,PUBLIC)> ]
+"45" [label = <(MODIFIER,VIRTUAL)> ]
+"46" [label = <(METHOD_RETURN,boolean)<SUB>71</SUB>> ]
+  "13" -> "6" 
+  "13" -> "14" 
+  "13" -> "44" 
+  "13" -> "45" 
+  "13" -> "46" 
+  "14" -> "15" 
+  "14" -> "4" 
+  "14" -> "21" 
+  "14" -> "24" 
+  "14" -> "25" 
+  "14" -> "28" 
+  "14" -> "30" 
+  "14" -> "31" 
+  "14" -> "35" 
+  "14" -> "37" 
+  "15" -> "16" 
+  "15" -> "17" 
+  "15" -> "18" 
+  "18" -> "19" 
+  "18" -> "20" 
+  "21" -> "22" 
+  "21" -> "23" 
+  "24" -> "3" 
+  "25" -> "26" 
+  "25" -> "27" 
+  "28" -> "5" 
+  "28" -> "29" 
+  "31" -> "32" 
+  "31" -> "33" 
+  "33" -> "34" 
+  "35" -> "7" 
+  "35" -> "36" 
+  "37" -> "38" 
+  "38" -> "39" 
+  "38" -> "43" 
+  "39" -> "8" 
+  "39" -> "40" 
+  "39" -> "42" 
+  "40" -> "41" 
+}

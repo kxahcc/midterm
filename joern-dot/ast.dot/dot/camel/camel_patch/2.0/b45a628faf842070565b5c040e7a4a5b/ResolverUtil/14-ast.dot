@@ -1,0 +1,187 @@
+digraph "loadImplementationsInDirectory" {  
+"508" [label = <(METHOD,loadImplementationsInDirectory)<SUB>317</SUB>> ]
+"59" [label = <(PARAM,this)<SUB>317</SUB>> ]
+"509" [label = <(PARAM,Test test)<SUB>317</SUB>> ]
+"510" [label = <(PARAM,String parent)<SUB>317</SUB>> ]
+"511" [label = <(PARAM,File location)<SUB>317</SUB>> ]
+"512" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>317</SUB>> ]
+"513" [label = <(LOCAL,File[] files: java.io.File[])> ]
+"514" [label = <(&lt;operator&gt;.assignment,File[] files = location.listFiles())<SUB>318</SUB>> ]
+"515" [label = <(IDENTIFIER,files,File[] files = location.listFiles())<SUB>318</SUB>> ]
+"516" [label = <(listFiles,location.listFiles())<SUB>318</SUB>> ]
+"517" [label = <(IDENTIFIER,location,location.listFiles())<SUB>318</SUB>> ]
+"57" [label = <(LOCAL,StringBuilder builder: java.lang.StringBuilder)> ]
+"518" [label = <(&lt;operator&gt;.assignment,StringBuilder builder = null)<SUB>319</SUB>> ]
+"519" [label = <(IDENTIFIER,builder,StringBuilder builder = null)<SUB>319</SUB>> ]
+"520" [label = <(LITERAL,null,StringBuilder builder = null)<SUB>319</SUB>> ]
+"521" [label = <(CONTROL_STRUCTURE,&lt;empty&gt;,&lt;empty&gt;)> ]
+"522" [label = <(LOCAL,$idx2: int)<SUB>321</SUB>> ]
+"523" [label = <(&lt;operator&gt;.assignment,int $idx2 = 0)<SUB>321</SUB>> ]
+"524" [label = <(IDENTIFIER,$idx2,int $idx2 = 0)<SUB>321</SUB>> ]
+"525" [label = <(LITERAL,0,int $idx2 = 0)<SUB>321</SUB>> ]
+"526" [label = <(&lt;operator&gt;.lessThan,$idx2 &lt; files.length)<SUB>321</SUB>> ]
+"527" [label = <(IDENTIFIER,$idx2,$idx2 &lt; files.length)<SUB>321</SUB>> ]
+"528" [label = <(&lt;operator&gt;.fieldAccess,files.length)<SUB>321</SUB>> ]
+"529" [label = <(IDENTIFIER,files,$idx2 &lt; files.length)<SUB>321</SUB>> ]
+"530" [label = <(FIELD_IDENTIFIER,length,length)<SUB>321</SUB>> ]
+"531" [label = <(&lt;operator&gt;.postIncrement,$idx2++)<SUB>321</SUB>> ]
+"532" [label = <(IDENTIFIER,$idx2,$idx2++)<SUB>321</SUB>> ]
+"533" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>321</SUB>> ]
+"534" [label = <(LOCAL,file: java.io.File)<SUB>321</SUB>> ]
+"535" [label = <(&lt;operator&gt;.assignment,&lt;empty&gt;)<SUB>321</SUB>> ]
+"536" [label = <(IDENTIFIER,file,&lt;empty&gt;)<SUB>321</SUB>> ]
+"537" [label = <(&lt;operator&gt;.indexAccess,&lt;empty&gt;)<SUB>321</SUB>> ]
+"538" [label = <(IDENTIFIER,files,&lt;empty&gt;)<SUB>321</SUB>> ]
+"539" [label = <(IDENTIFIER,$idx2,&lt;empty&gt;)<SUB>321</SUB>> ]
+"540" [label = <(&lt;operator&gt;.assignment,builder = new StringBuilder(100))<SUB>322</SUB>> ]
+"541" [label = <(IDENTIFIER,builder,builder = new StringBuilder(100))<SUB>322</SUB>> ]
+"542" [label = <(&lt;operator&gt;.alloc,new StringBuilder(100))<SUB>322</SUB>> ]
+"543" [label = <(&lt;init&gt;,new StringBuilder(100))<SUB>322</SUB>> ]
+"56" [label = <(IDENTIFIER,builder,new StringBuilder(100))<SUB>322</SUB>> ]
+"544" [label = <(LITERAL,100,new StringBuilder(100))<SUB>322</SUB>> ]
+"545" [label = <(LOCAL,String name: java.lang.String)> ]
+"546" [label = <(&lt;operator&gt;.assignment,String name = file.getName())<SUB>323</SUB>> ]
+"547" [label = <(IDENTIFIER,name,String name = file.getName())<SUB>323</SUB>> ]
+"548" [label = <(getName,file.getName())<SUB>323</SUB>> ]
+"549" [label = <(IDENTIFIER,file,file.getName())<SUB>323</SUB>> ]
+"550" [label = <(CONTROL_STRUCTURE,if (name != null),if (name != null))<SUB>324</SUB>> ]
+"551" [label = <(&lt;operator&gt;.notEquals,name != null)<SUB>324</SUB>> ]
+"552" [label = <(IDENTIFIER,name,name != null)<SUB>324</SUB>> ]
+"553" [label = <(LITERAL,null,name != null)<SUB>324</SUB>> ]
+"554" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>324</SUB>> ]
+"555" [label = <(&lt;operator&gt;.assignment,name = name.trim())<SUB>325</SUB>> ]
+"556" [label = <(IDENTIFIER,name,name = name.trim())<SUB>325</SUB>> ]
+"557" [label = <(trim,name.trim())<SUB>325</SUB>> ]
+"558" [label = <(IDENTIFIER,name,name.trim())<SUB>325</SUB>> ]
+"559" [label = <(append,builder.append(parent).append(&quot;/&quot;).append(name))<SUB>327</SUB>> ]
+"560" [label = <(append,builder.append(parent).append(&quot;/&quot;))<SUB>327</SUB>> ]
+"561" [label = <(append,builder.append(parent))<SUB>327</SUB>> ]
+"562" [label = <(IDENTIFIER,builder,builder.append(parent))<SUB>327</SUB>> ]
+"563" [label = <(IDENTIFIER,parent,builder.append(parent))<SUB>327</SUB>> ]
+"564" [label = <(LITERAL,&quot;/&quot;,builder.append(parent).append(&quot;/&quot;))<SUB>327</SUB>> ]
+"565" [label = <(IDENTIFIER,name,builder.append(parent).append(&quot;/&quot;).append(name))<SUB>327</SUB>> ]
+"566" [label = <(LOCAL,String packageOrClass: java.lang.String)> ]
+"567" [label = <(&lt;operator&gt;.assignment,String packageOrClass = parent == null ? name : builder.toString())<SUB>328</SUB>> ]
+"568" [label = <(IDENTIFIER,packageOrClass,String packageOrClass = parent == null ? name : builder.toString())<SUB>328</SUB>> ]
+"569" [label = <(&lt;operator&gt;.conditional,parent == null ? name : builder.toString())<SUB>328</SUB>> ]
+"570" [label = <(&lt;operator&gt;.equals,parent == null)<SUB>328</SUB>> ]
+"571" [label = <(IDENTIFIER,parent,parent == null)<SUB>328</SUB>> ]
+"572" [label = <(LITERAL,null,parent == null)<SUB>328</SUB>> ]
+"573" [label = <(IDENTIFIER,name,parent == null ? name : builder.toString())<SUB>328</SUB>> ]
+"574" [label = <(toString,builder.toString())<SUB>328</SUB>> ]
+"575" [label = <(IDENTIFIER,builder,builder.toString())<SUB>328</SUB>> ]
+"576" [label = <(CONTROL_STRUCTURE,if (file.isDirectory()),if (file.isDirectory()))<SUB>330</SUB>> ]
+"577" [label = <(isDirectory,file.isDirectory())<SUB>330</SUB>> ]
+"578" [label = <(IDENTIFIER,file,file.isDirectory())<SUB>330</SUB>> ]
+"579" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>330</SUB>> ]
+"580" [label = <(loadImplementationsInDirectory,this.loadImplementationsInDirectory(test, packageOrClass, file))<SUB>331</SUB>> ]
+"58" [label = <(IDENTIFIER,this,this.loadImplementationsInDirectory(test, packageOrClass, file))<SUB>331</SUB>> ]
+"581" [label = <(IDENTIFIER,test,this.loadImplementationsInDirectory(test, packageOrClass, file))<SUB>331</SUB>> ]
+"582" [label = <(IDENTIFIER,packageOrClass,this.loadImplementationsInDirectory(test, packageOrClass, file))<SUB>331</SUB>> ]
+"583" [label = <(IDENTIFIER,file,this.loadImplementationsInDirectory(test, packageOrClass, file))<SUB>331</SUB>> ]
+"584" [label = <(CONTROL_STRUCTURE,else,else)<SUB>332</SUB>> ]
+"585" [label = <(CONTROL_STRUCTURE,if (name.endsWith(&quot;.class&quot;)),if (name.endsWith(&quot;.class&quot;)))<SUB>332</SUB>> ]
+"586" [label = <(endsWith,name.endsWith(&quot;.class&quot;))<SUB>332</SUB>> ]
+"587" [label = <(IDENTIFIER,name,name.endsWith(&quot;.class&quot;))<SUB>332</SUB>> ]
+"588" [label = <(LITERAL,&quot;.class&quot;,name.endsWith(&quot;.class&quot;))<SUB>332</SUB>> ]
+"589" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>332</SUB>> ]
+"590" [label = <(addIfMatching,this.addIfMatching(test, packageOrClass))<SUB>333</SUB>> ]
+"60" [label = <(IDENTIFIER,this,this.addIfMatching(test, packageOrClass))<SUB>333</SUB>> ]
+"591" [label = <(IDENTIFIER,test,this.addIfMatching(test, packageOrClass))<SUB>333</SUB>> ]
+"592" [label = <(IDENTIFIER,packageOrClass,this.addIfMatching(test, packageOrClass))<SUB>333</SUB>> ]
+"593" [label = <(MODIFIER,PRIVATE)> ]
+"594" [label = <(MODIFIER,VIRTUAL)> ]
+"595" [label = <(METHOD_RETURN,void)<SUB>317</SUB>> ]
+  "508" -> "59" 
+  "508" -> "509" 
+  "508" -> "510" 
+  "508" -> "511" 
+  "508" -> "512" 
+  "508" -> "593" 
+  "508" -> "594" 
+  "508" -> "595" 
+  "512" -> "513" 
+  "512" -> "514" 
+  "512" -> "57" 
+  "512" -> "518" 
+  "512" -> "521" 
+  "514" -> "515" 
+  "514" -> "516" 
+  "516" -> "517" 
+  "518" -> "519" 
+  "518" -> "520" 
+  "521" -> "522" 
+  "521" -> "523" 
+  "521" -> "526" 
+  "521" -> "531" 
+  "521" -> "533" 
+  "523" -> "524" 
+  "523" -> "525" 
+  "526" -> "527" 
+  "526" -> "528" 
+  "528" -> "529" 
+  "528" -> "530" 
+  "531" -> "532" 
+  "533" -> "534" 
+  "533" -> "535" 
+  "533" -> "540" 
+  "533" -> "543" 
+  "533" -> "545" 
+  "533" -> "546" 
+  "533" -> "550" 
+  "533" -> "559" 
+  "533" -> "566" 
+  "533" -> "567" 
+  "533" -> "576" 
+  "535" -> "536" 
+  "535" -> "537" 
+  "537" -> "538" 
+  "537" -> "539" 
+  "540" -> "541" 
+  "540" -> "542" 
+  "543" -> "56" 
+  "543" -> "544" 
+  "546" -> "547" 
+  "546" -> "548" 
+  "548" -> "549" 
+  "550" -> "551" 
+  "550" -> "554" 
+  "551" -> "552" 
+  "551" -> "553" 
+  "554" -> "555" 
+  "555" -> "556" 
+  "555" -> "557" 
+  "557" -> "558" 
+  "559" -> "560" 
+  "559" -> "565" 
+  "560" -> "561" 
+  "560" -> "564" 
+  "561" -> "562" 
+  "561" -> "563" 
+  "567" -> "568" 
+  "567" -> "569" 
+  "569" -> "570" 
+  "569" -> "573" 
+  "569" -> "574" 
+  "570" -> "571" 
+  "570" -> "572" 
+  "574" -> "575" 
+  "576" -> "577" 
+  "576" -> "579" 
+  "576" -> "584" 
+  "577" -> "578" 
+  "579" -> "580" 
+  "580" -> "58" 
+  "580" -> "581" 
+  "580" -> "582" 
+  "580" -> "583" 
+  "584" -> "585" 
+  "585" -> "586" 
+  "585" -> "589" 
+  "586" -> "587" 
+  "586" -> "588" 
+  "589" -> "590" 
+  "590" -> "60" 
+  "590" -> "591" 
+  "590" -> "592" 
+}

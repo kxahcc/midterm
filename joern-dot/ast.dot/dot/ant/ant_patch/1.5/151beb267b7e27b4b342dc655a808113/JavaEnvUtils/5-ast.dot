@@ -1,0 +1,83 @@
+digraph "findInDir" {  
+"213" [label = <(METHOD,findInDir)<SUB>258</SUB>> ]
+"214" [label = <(PARAM,String dirName)<SUB>258</SUB>> ]
+"215" [label = <(PARAM,String commandName)<SUB>258</SUB>> ]
+"216" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>258</SUB>> ]
+"217" [label = <(LOCAL,File dir: java.io.File)> ]
+"218" [label = <(&lt;operator&gt;.assignment,File dir = normalize(dirName))<SUB>259</SUB>> ]
+"219" [label = <(IDENTIFIER,dir,File dir = normalize(dirName))<SUB>259</SUB>> ]
+"220" [label = <(normalize,normalize(dirName))<SUB>259</SUB>> ]
+"221" [label = <(&lt;operator&gt;.fieldAccess,JavaEnvUtils.fileUtils)<SUB>259</SUB>> ]
+"222" [label = <(IDENTIFIER,JavaEnvUtils,normalize(dirName))<SUB>259</SUB>> ]
+"223" [label = <(FIELD_IDENTIFIER,fileUtils,fileUtils)<SUB>259</SUB>> ]
+"224" [label = <(IDENTIFIER,dirName,normalize(dirName))<SUB>259</SUB>> ]
+"4" [label = <(LOCAL,File executable: java.io.File)> ]
+"225" [label = <(&lt;operator&gt;.assignment,File executable = null)<SUB>260</SUB>> ]
+"226" [label = <(IDENTIFIER,executable,File executable = null)<SUB>260</SUB>> ]
+"227" [label = <(LITERAL,null,File executable = null)<SUB>260</SUB>> ]
+"228" [label = <(CONTROL_STRUCTURE,if (dir.exists()),if (dir.exists()))<SUB>261</SUB>> ]
+"229" [label = <(exists,dir.exists())<SUB>261</SUB>> ]
+"230" [label = <(IDENTIFIER,dir,dir.exists())<SUB>261</SUB>> ]
+"231" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>261</SUB>> ]
+"232" [label = <(&lt;operator&gt;.assignment,executable = new File(dir, addExtension(commandName)))<SUB>262</SUB>> ]
+"233" [label = <(IDENTIFIER,executable,executable = new File(dir, addExtension(commandName)))<SUB>262</SUB>> ]
+"234" [label = <(&lt;operator&gt;.alloc,new File(dir, addExtension(commandName)))<SUB>262</SUB>> ]
+"235" [label = <(&lt;init&gt;,new File(dir, addExtension(commandName)))<SUB>262</SUB>> ]
+"3" [label = <(IDENTIFIER,executable,new File(dir, addExtension(commandName)))<SUB>262</SUB>> ]
+"236" [label = <(IDENTIFIER,dir,new File(dir, addExtension(commandName)))<SUB>262</SUB>> ]
+"237" [label = <(addExtension,addExtension(commandName))<SUB>262</SUB>> ]
+"238" [label = <(IDENTIFIER,commandName,addExtension(commandName))<SUB>262</SUB>> ]
+"239" [label = <(CONTROL_STRUCTURE,if (!executable.exists()),if (!executable.exists()))<SUB>263</SUB>> ]
+"240" [label = <(&lt;operator&gt;.logicalNot,!executable.exists())<SUB>263</SUB>> ]
+"241" [label = <(exists,executable.exists())<SUB>263</SUB>> ]
+"242" [label = <(IDENTIFIER,executable,executable.exists())<SUB>263</SUB>> ]
+"243" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>263</SUB>> ]
+"244" [label = <(&lt;operator&gt;.assignment,executable = null)<SUB>264</SUB>> ]
+"245" [label = <(IDENTIFIER,executable,executable = null)<SUB>264</SUB>> ]
+"246" [label = <(LITERAL,null,executable = null)<SUB>264</SUB>> ]
+"247" [label = <(RETURN,return executable;,return executable;)<SUB>267</SUB>> ]
+"248" [label = <(IDENTIFIER,executable,return executable;)<SUB>267</SUB>> ]
+"249" [label = <(MODIFIER,PRIVATE)> ]
+"250" [label = <(MODIFIER,STATIC)> ]
+"251" [label = <(METHOD_RETURN,java.io.File)<SUB>258</SUB>> ]
+  "213" -> "214" 
+  "213" -> "215" 
+  "213" -> "216" 
+  "213" -> "249" 
+  "213" -> "250" 
+  "213" -> "251" 
+  "216" -> "217" 
+  "216" -> "218" 
+  "216" -> "4" 
+  "216" -> "225" 
+  "216" -> "228" 
+  "216" -> "247" 
+  "218" -> "219" 
+  "218" -> "220" 
+  "220" -> "221" 
+  "220" -> "224" 
+  "221" -> "222" 
+  "221" -> "223" 
+  "225" -> "226" 
+  "225" -> "227" 
+  "228" -> "229" 
+  "228" -> "231" 
+  "229" -> "230" 
+  "231" -> "232" 
+  "231" -> "235" 
+  "231" -> "239" 
+  "232" -> "233" 
+  "232" -> "234" 
+  "235" -> "3" 
+  "235" -> "236" 
+  "235" -> "237" 
+  "237" -> "238" 
+  "239" -> "240" 
+  "239" -> "243" 
+  "240" -> "241" 
+  "241" -> "242" 
+  "243" -> "244" 
+  "244" -> "245" 
+  "244" -> "246" 
+  "247" -> "248" 
+}

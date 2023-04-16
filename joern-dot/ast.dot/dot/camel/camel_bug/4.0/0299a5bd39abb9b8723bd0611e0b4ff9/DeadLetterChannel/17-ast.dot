@@ -1,0 +1,115 @@
+digraph "incrementRedeliveryCounter" {  
+"621" [label = <(METHOD,incrementRedeliveryCounter)<SUB>254</SUB>> ]
+"622" [label = <(PARAM,this)<SUB>254</SUB>> ]
+"623" [label = <(PARAM,Exchange exchange)<SUB>254</SUB>> ]
+"624" [label = <(PARAM,Throwable e)<SUB>254</SUB>> ]
+"625" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>254</SUB>> ]
+"626" [label = <(LOCAL,Message in: org.apache.camel.Message)> ]
+"627" [label = <(&lt;operator&gt;.assignment,Message in = getIn())<SUB>255</SUB>> ]
+"628" [label = <(IDENTIFIER,in,Message in = getIn())<SUB>255</SUB>> ]
+"629" [label = <(getIn,getIn())<SUB>255</SUB>> ]
+"630" [label = <(IDENTIFIER,exchange,getIn())<SUB>255</SUB>> ]
+"631" [label = <(LOCAL,Integer counter: java.lang.Integer)> ]
+"632" [label = <(&lt;operator&gt;.assignment,Integer counter = getHeader(REDELIVERY_COUNTER, Integer.class))<SUB>256</SUB>> ]
+"633" [label = <(IDENTIFIER,counter,Integer counter = getHeader(REDELIVERY_COUNTER, Integer.class))<SUB>256</SUB>> ]
+"634" [label = <(getHeader,getHeader(REDELIVERY_COUNTER, Integer.class))<SUB>256</SUB>> ]
+"635" [label = <(IDENTIFIER,in,getHeader(REDELIVERY_COUNTER, Integer.class))<SUB>256</SUB>> ]
+"636" [label = <(&lt;operator&gt;.fieldAccess,DeadLetterChannel.REDELIVERY_COUNTER)<SUB>256</SUB>> ]
+"637" [label = <(IDENTIFIER,DeadLetterChannel,getHeader(REDELIVERY_COUNTER, Integer.class))<SUB>256</SUB>> ]
+"638" [label = <(FIELD_IDENTIFIER,REDELIVERY_COUNTER,REDELIVERY_COUNTER)<SUB>256</SUB>> ]
+"639" [label = <(&lt;operator&gt;.fieldAccess,Integer.class)<SUB>256</SUB>> ]
+"640" [label = <(IDENTIFIER,Integer,getHeader(REDELIVERY_COUNTER, Integer.class))<SUB>256</SUB>> ]
+"641" [label = <(FIELD_IDENTIFIER,class,class)<SUB>256</SUB>> ]
+"642" [label = <(LOCAL,int next: int)> ]
+"643" [label = <(&lt;operator&gt;.assignment,int next = 1)<SUB>257</SUB>> ]
+"644" [label = <(IDENTIFIER,next,int next = 1)<SUB>257</SUB>> ]
+"645" [label = <(LITERAL,1,int next = 1)<SUB>257</SUB>> ]
+"646" [label = <(CONTROL_STRUCTURE,if (counter != null),if (counter != null))<SUB>258</SUB>> ]
+"647" [label = <(&lt;operator&gt;.notEquals,counter != null)<SUB>258</SUB>> ]
+"648" [label = <(IDENTIFIER,counter,counter != null)<SUB>258</SUB>> ]
+"649" [label = <(LITERAL,null,counter != null)<SUB>258</SUB>> ]
+"650" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>258</SUB>> ]
+"651" [label = <(&lt;operator&gt;.assignment,next = counter + 1)<SUB>259</SUB>> ]
+"652" [label = <(IDENTIFIER,next,next = counter + 1)<SUB>259</SUB>> ]
+"653" [label = <(&lt;operator&gt;.addition,counter + 1)<SUB>259</SUB>> ]
+"654" [label = <(IDENTIFIER,counter,counter + 1)<SUB>259</SUB>> ]
+"655" [label = <(LITERAL,1,counter + 1)<SUB>259</SUB>> ]
+"656" [label = <(setHeader,setHeader(REDELIVERY_COUNTER, next))<SUB>261</SUB>> ]
+"657" [label = <(IDENTIFIER,in,setHeader(REDELIVERY_COUNTER, next))<SUB>261</SUB>> ]
+"658" [label = <(&lt;operator&gt;.fieldAccess,DeadLetterChannel.REDELIVERY_COUNTER)<SUB>261</SUB>> ]
+"659" [label = <(IDENTIFIER,DeadLetterChannel,setHeader(REDELIVERY_COUNTER, next))<SUB>261</SUB>> ]
+"660" [label = <(FIELD_IDENTIFIER,REDELIVERY_COUNTER,REDELIVERY_COUNTER)<SUB>261</SUB>> ]
+"661" [label = <(IDENTIFIER,next,setHeader(REDELIVERY_COUNTER, next))<SUB>261</SUB>> ]
+"662" [label = <(setHeader,setHeader(REDELIVERED, Boolean.TRUE))<SUB>262</SUB>> ]
+"663" [label = <(IDENTIFIER,in,setHeader(REDELIVERED, Boolean.TRUE))<SUB>262</SUB>> ]
+"664" [label = <(&lt;operator&gt;.fieldAccess,DeadLetterChannel.REDELIVERED)<SUB>262</SUB>> ]
+"665" [label = <(IDENTIFIER,DeadLetterChannel,setHeader(REDELIVERED, Boolean.TRUE))<SUB>262</SUB>> ]
+"666" [label = <(FIELD_IDENTIFIER,REDELIVERED,REDELIVERED)<SUB>262</SUB>> ]
+"667" [label = <(&lt;operator&gt;.fieldAccess,Boolean.TRUE)<SUB>262</SUB>> ]
+"668" [label = <(IDENTIFIER,Boolean,setHeader(REDELIVERED, Boolean.TRUE))<SUB>262</SUB>> ]
+"669" [label = <(FIELD_IDENTIFIER,TRUE,TRUE)<SUB>262</SUB>> ]
+"670" [label = <(setException,setException(e))<SUB>263</SUB>> ]
+"671" [label = <(IDENTIFIER,exchange,setException(e))<SUB>263</SUB>> ]
+"672" [label = <(IDENTIFIER,e,setException(e))<SUB>263</SUB>> ]
+"673" [label = <(RETURN,return next;,return next;)<SUB>264</SUB>> ]
+"674" [label = <(IDENTIFIER,next,return next;)<SUB>264</SUB>> ]
+"675" [label = <(MODIFIER,PROTECTED)> ]
+"676" [label = <(MODIFIER,VIRTUAL)> ]
+"677" [label = <(METHOD_RETURN,int)<SUB>254</SUB>> ]
+  "621" -> "622" 
+  "621" -> "623" 
+  "621" -> "624" 
+  "621" -> "625" 
+  "621" -> "675" 
+  "621" -> "676" 
+  "621" -> "677" 
+  "625" -> "626" 
+  "625" -> "627" 
+  "625" -> "631" 
+  "625" -> "632" 
+  "625" -> "642" 
+  "625" -> "643" 
+  "625" -> "646" 
+  "625" -> "656" 
+  "625" -> "662" 
+  "625" -> "670" 
+  "625" -> "673" 
+  "627" -> "628" 
+  "627" -> "629" 
+  "629" -> "630" 
+  "632" -> "633" 
+  "632" -> "634" 
+  "634" -> "635" 
+  "634" -> "636" 
+  "634" -> "639" 
+  "636" -> "637" 
+  "636" -> "638" 
+  "639" -> "640" 
+  "639" -> "641" 
+  "643" -> "644" 
+  "643" -> "645" 
+  "646" -> "647" 
+  "646" -> "650" 
+  "647" -> "648" 
+  "647" -> "649" 
+  "650" -> "651" 
+  "651" -> "652" 
+  "651" -> "653" 
+  "653" -> "654" 
+  "653" -> "655" 
+  "656" -> "657" 
+  "656" -> "658" 
+  "656" -> "661" 
+  "658" -> "659" 
+  "658" -> "660" 
+  "662" -> "663" 
+  "662" -> "664" 
+  "662" -> "667" 
+  "664" -> "665" 
+  "664" -> "666" 
+  "667" -> "668" 
+  "667" -> "669" 
+  "670" -> "671" 
+  "670" -> "672" 
+  "673" -> "674" 
+}

@@ -1,0 +1,145 @@
+digraph "getArchiveLocationIndex" {  
+"1209" [label = <(METHOD,getArchiveLocationIndex)<SUB>493</SUB>> ]
+"1210" [label = <(PARAM,File home)<SUB>493</SUB>> ]
+"1211" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>494</SUB>> ]
+"1212" [label = <(CONTROL_STRUCTURE,if (home == null || !home.isDirectory()),if (home == null || !home.isDirectory()))<SUB>496</SUB>> ]
+"1213" [label = <(&lt;operator&gt;.logicalOr,home == null || !home.isDirectory())<SUB>496</SUB>> ]
+"1214" [label = <(&lt;operator&gt;.equals,home == null)<SUB>496</SUB>> ]
+"1215" [label = <(IDENTIFIER,home,home == null)<SUB>496</SUB>> ]
+"1216" [label = <(LITERAL,null,home == null)<SUB>496</SUB>> ]
+"1217" [label = <(&lt;operator&gt;.logicalNot,!home.isDirectory())<SUB>496</SUB>> ]
+"1218" [label = <(isDirectory,home.isDirectory())<SUB>496</SUB>> ]
+"1219" [label = <(IDENTIFIER,home,home.isDirectory())<SUB>496</SUB>> ]
+"1220" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>496</SUB>> ]
+"1221" [label = <(&lt;operator&gt;.throw,throw new BuildException(&quot;JavaCC home must be a valid directory.&quot;);)<SUB>497</SUB>> ]
+"1222" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>497</SUB>> ]
+"1223" [label = <(&lt;operator&gt;.assignment,&lt;empty&gt;)> ]
+"1224" [label = <(IDENTIFIER,$obj13,&lt;empty&gt;)> ]
+"1225" [label = <(&lt;operator&gt;.alloc,new BuildException(&quot;JavaCC home must be a valid directory.&quot;))<SUB>497</SUB>> ]
+"1226" [label = <(&lt;init&gt;,new BuildException(&quot;JavaCC home must be a valid directory.&quot;))<SUB>497</SUB>> ]
+"1227" [label = <(IDENTIFIER,$obj13,new BuildException(&quot;JavaCC home must be a valid directory.&quot;))> ]
+"1228" [label = <(LITERAL,&quot;JavaCC home must be a valid directory.&quot;,new BuildException(&quot;JavaCC home must be a valid directory.&quot;))<SUB>497</SUB>> ]
+"1229" [label = <(IDENTIFIER,$obj13,&lt;empty&gt;)> ]
+"1230" [label = <(CONTROL_STRUCTURE,for (int i = 0; Some(i &lt; ARCHIVE_LOCATIONS.length); i++),for (int i = 0; Some(i &lt; ARCHIVE_LOCATIONS.length); i++))<SUB>500</SUB>> ]
+"1231" [label = <(LOCAL,int i: int)> ]
+"1232" [label = <(&lt;operator&gt;.assignment,int i = 0)<SUB>500</SUB>> ]
+"1233" [label = <(IDENTIFIER,i,int i = 0)<SUB>500</SUB>> ]
+"1234" [label = <(LITERAL,0,int i = 0)<SUB>500</SUB>> ]
+"1235" [label = <(&lt;operator&gt;.lessThan,i &lt; ARCHIVE_LOCATIONS.length)<SUB>500</SUB>> ]
+"1236" [label = <(IDENTIFIER,i,i &lt; ARCHIVE_LOCATIONS.length)<SUB>500</SUB>> ]
+"1237" [label = <(&lt;operator&gt;.fieldAccess,ARCHIVE_LOCATIONS.length)<SUB>500</SUB>> ]
+"1238" [label = <(&lt;operator&gt;.fieldAccess,JavaCC.ARCHIVE_LOCATIONS)<SUB>500</SUB>> ]
+"1239" [label = <(IDENTIFIER,JavaCC,i &lt; ARCHIVE_LOCATIONS.length)<SUB>500</SUB>> ]
+"1240" [label = <(FIELD_IDENTIFIER,ARCHIVE_LOCATIONS,ARCHIVE_LOCATIONS)<SUB>500</SUB>> ]
+"1241" [label = <(FIELD_IDENTIFIER,length,length)<SUB>500</SUB>> ]
+"1242" [label = <(&lt;operator&gt;.postIncrement,i++)<SUB>500</SUB>> ]
+"1243" [label = <(IDENTIFIER,i,i++)<SUB>500</SUB>> ]
+"1244" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>500</SUB>> ]
+"19" [label = <(LOCAL,File f: java.io.File)> ]
+"1245" [label = <(&lt;operator&gt;.assignment,File f = new File(home, ARCHIVE_LOCATIONS[i]))<SUB>501</SUB>> ]
+"1246" [label = <(IDENTIFIER,f,File f = new File(home, ARCHIVE_LOCATIONS[i]))<SUB>501</SUB>> ]
+"1247" [label = <(&lt;operator&gt;.alloc,new File(home, ARCHIVE_LOCATIONS[i]))<SUB>501</SUB>> ]
+"1248" [label = <(&lt;init&gt;,new File(home, ARCHIVE_LOCATIONS[i]))<SUB>501</SUB>> ]
+"18" [label = <(IDENTIFIER,f,new File(home, ARCHIVE_LOCATIONS[i]))<SUB>501</SUB>> ]
+"1249" [label = <(IDENTIFIER,home,new File(home, ARCHIVE_LOCATIONS[i]))<SUB>501</SUB>> ]
+"1250" [label = <(&lt;operator&gt;.indexAccess,ARCHIVE_LOCATIONS[i])<SUB>501</SUB>> ]
+"1251" [label = <(&lt;operator&gt;.fieldAccess,JavaCC.ARCHIVE_LOCATIONS)<SUB>501</SUB>> ]
+"1252" [label = <(IDENTIFIER,JavaCC,new File(home, ARCHIVE_LOCATIONS[i]))<SUB>501</SUB>> ]
+"1253" [label = <(FIELD_IDENTIFIER,ARCHIVE_LOCATIONS,ARCHIVE_LOCATIONS)<SUB>501</SUB>> ]
+"1254" [label = <(IDENTIFIER,i,new File(home, ARCHIVE_LOCATIONS[i]))<SUB>501</SUB>> ]
+"1255" [label = <(CONTROL_STRUCTURE,if (f.exists()),if (f.exists()))<SUB>503</SUB>> ]
+"1256" [label = <(exists,f.exists())<SUB>503</SUB>> ]
+"1257" [label = <(IDENTIFIER,f,f.exists())<SUB>503</SUB>> ]
+"1258" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>503</SUB>> ]
+"1259" [label = <(RETURN,return i;,return i;)<SUB>504</SUB>> ]
+"1260" [label = <(IDENTIFIER,i,return i;)<SUB>504</SUB>> ]
+"1261" [label = <(&lt;operator&gt;.throw,throw new BuildException(&quot;Could not find a path to JavaCC.zip &quot; + &quot;or javacc.jar from '&quot; + home + &quot;'.&quot;);)<SUB>508</SUB>> ]
+"1262" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>508</SUB>> ]
+"1263" [label = <(&lt;operator&gt;.assignment,&lt;empty&gt;)> ]
+"1264" [label = <(IDENTIFIER,$obj15,&lt;empty&gt;)> ]
+"1265" [label = <(&lt;operator&gt;.alloc,new BuildException(&quot;Could not find a path to JavaCC.zip &quot; + &quot;or javacc.jar from '&quot; + home + &quot;'.&quot;))<SUB>508</SUB>> ]
+"1266" [label = <(&lt;init&gt;,new BuildException(&quot;Could not find a path to JavaCC.zip &quot; + &quot;or javacc.jar from '&quot; + home + &quot;'.&quot;))<SUB>508</SUB>> ]
+"1267" [label = <(IDENTIFIER,$obj15,new BuildException(&quot;Could not find a path to JavaCC.zip &quot; + &quot;or javacc.jar from '&quot; + home + &quot;'.&quot;))> ]
+"1268" [label = <(&lt;operator&gt;.addition,&quot;Could not find a path to JavaCC.zip &quot; + &quot;or javacc.jar from '&quot; + home + &quot;'.&quot;)<SUB>508</SUB>> ]
+"1269" [label = <(&lt;operator&gt;.addition,&quot;Could not find a path to JavaCC.zip &quot; + &quot;or javacc.jar from '&quot; + home)<SUB>508</SUB>> ]
+"1270" [label = <(&lt;operator&gt;.addition,&quot;Could not find a path to JavaCC.zip &quot; + &quot;or javacc.jar from '&quot;)<SUB>508</SUB>> ]
+"1271" [label = <(LITERAL,&quot;Could not find a path to JavaCC.zip &quot;,&quot;Could not find a path to JavaCC.zip &quot; + &quot;or javacc.jar from '&quot;)<SUB>508</SUB>> ]
+"1272" [label = <(LITERAL,&quot;or javacc.jar from '&quot;,&quot;Could not find a path to JavaCC.zip &quot; + &quot;or javacc.jar from '&quot;)<SUB>509</SUB>> ]
+"1273" [label = <(IDENTIFIER,home,&quot;Could not find a path to JavaCC.zip &quot; + &quot;or javacc.jar from '&quot; + home)<SUB>509</SUB>> ]
+"1274" [label = <(LITERAL,&quot;'.&quot;,&quot;Could not find a path to JavaCC.zip &quot; + &quot;or javacc.jar from '&quot; + home + &quot;'.&quot;)<SUB>509</SUB>> ]
+"1275" [label = <(IDENTIFIER,$obj15,&lt;empty&gt;)> ]
+"1276" [label = <(MODIFIER,PRIVATE)> ]
+"1277" [label = <(MODIFIER,STATIC)> ]
+"1278" [label = <(METHOD_RETURN,int)<SUB>493</SUB>> ]
+  "1209" -> "1210" 
+  "1209" -> "1211" 
+  "1209" -> "1276" 
+  "1209" -> "1277" 
+  "1209" -> "1278" 
+  "1211" -> "1212" 
+  "1211" -> "1230" 
+  "1211" -> "1261" 
+  "1212" -> "1213" 
+  "1212" -> "1220" 
+  "1213" -> "1214" 
+  "1213" -> "1217" 
+  "1214" -> "1215" 
+  "1214" -> "1216" 
+  "1217" -> "1218" 
+  "1218" -> "1219" 
+  "1220" -> "1221" 
+  "1221" -> "1222" 
+  "1222" -> "1223" 
+  "1222" -> "1226" 
+  "1222" -> "1229" 
+  "1223" -> "1224" 
+  "1223" -> "1225" 
+  "1226" -> "1227" 
+  "1226" -> "1228" 
+  "1230" -> "1231" 
+  "1230" -> "1232" 
+  "1230" -> "1235" 
+  "1230" -> "1242" 
+  "1230" -> "1244" 
+  "1232" -> "1233" 
+  "1232" -> "1234" 
+  "1235" -> "1236" 
+  "1235" -> "1237" 
+  "1237" -> "1238" 
+  "1237" -> "1241" 
+  "1238" -> "1239" 
+  "1238" -> "1240" 
+  "1242" -> "1243" 
+  "1244" -> "19" 
+  "1244" -> "1245" 
+  "1244" -> "1248" 
+  "1244" -> "1255" 
+  "1245" -> "1246" 
+  "1245" -> "1247" 
+  "1248" -> "18" 
+  "1248" -> "1249" 
+  "1248" -> "1250" 
+  "1250" -> "1251" 
+  "1250" -> "1254" 
+  "1251" -> "1252" 
+  "1251" -> "1253" 
+  "1255" -> "1256" 
+  "1255" -> "1258" 
+  "1256" -> "1257" 
+  "1258" -> "1259" 
+  "1259" -> "1260" 
+  "1261" -> "1262" 
+  "1262" -> "1263" 
+  "1262" -> "1266" 
+  "1262" -> "1275" 
+  "1263" -> "1264" 
+  "1263" -> "1265" 
+  "1266" -> "1267" 
+  "1266" -> "1268" 
+  "1268" -> "1269" 
+  "1268" -> "1274" 
+  "1269" -> "1270" 
+  "1269" -> "1273" 
+  "1270" -> "1271" 
+  "1270" -> "1272" 
+}

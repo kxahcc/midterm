@@ -1,0 +1,143 @@
+digraph "splitOnCharacter" {  
+"183" [label = <(METHOD,splitOnCharacter)<SUB>109</SUB>> ]
+"184" [label = <(PARAM,String value)<SUB>109</SUB>> ]
+"185" [label = <(PARAM,String needle)<SUB>109</SUB>> ]
+"186" [label = <(PARAM,int count)<SUB>109</SUB>> ]
+"187" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>109</SUB>> ]
+"188" [label = <(LOCAL,String[] rc: java.lang.String[])> ]
+"189" [label = <(&lt;operator&gt;.assignment,String[] rc = new String[count])<SUB>110</SUB>> ]
+"190" [label = <(IDENTIFIER,rc,String[] rc = new String[count])<SUB>110</SUB>> ]
+"191" [label = <(&lt;operator&gt;.alloc,new String[count])> ]
+"192" [label = <(IDENTIFIER,count,new String[count])<SUB>110</SUB>> ]
+"193" [label = <(&lt;operator&gt;.assignment,rc[0] = value)<SUB>111</SUB>> ]
+"194" [label = <(&lt;operator&gt;.indexAccess,rc[0])<SUB>111</SUB>> ]
+"195" [label = <(IDENTIFIER,rc,rc[0] = value)<SUB>111</SUB>> ]
+"196" [label = <(LITERAL,0,rc[0] = value)<SUB>111</SUB>> ]
+"197" [label = <(IDENTIFIER,value,rc[0] = value)<SUB>111</SUB>> ]
+"198" [label = <(CONTROL_STRUCTURE,for (int i = 1; Some(i &lt; count); i++),for (int i = 1; Some(i &lt; count); i++))<SUB>112</SUB>> ]
+"199" [label = <(LOCAL,int i: int)> ]
+"200" [label = <(&lt;operator&gt;.assignment,int i = 1)<SUB>112</SUB>> ]
+"201" [label = <(IDENTIFIER,i,int i = 1)<SUB>112</SUB>> ]
+"202" [label = <(LITERAL,1,int i = 1)<SUB>112</SUB>> ]
+"203" [label = <(&lt;operator&gt;.lessThan,i &lt; count)<SUB>112</SUB>> ]
+"204" [label = <(IDENTIFIER,i,i &lt; count)<SUB>112</SUB>> ]
+"205" [label = <(IDENTIFIER,count,i &lt; count)<SUB>112</SUB>> ]
+"206" [label = <(&lt;operator&gt;.postIncrement,i++)<SUB>112</SUB>> ]
+"207" [label = <(IDENTIFIER,i,i++)<SUB>112</SUB>> ]
+"208" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>112</SUB>> ]
+"209" [label = <(LOCAL,String v: java.lang.String)> ]
+"210" [label = <(&lt;operator&gt;.assignment,String v = rc[i - 1])<SUB>113</SUB>> ]
+"211" [label = <(IDENTIFIER,v,String v = rc[i - 1])<SUB>113</SUB>> ]
+"212" [label = <(&lt;operator&gt;.indexAccess,rc[i - 1])<SUB>113</SUB>> ]
+"213" [label = <(IDENTIFIER,rc,String v = rc[i - 1])<SUB>113</SUB>> ]
+"214" [label = <(&lt;operator&gt;.subtraction,i - 1)<SUB>113</SUB>> ]
+"215" [label = <(IDENTIFIER,i,i - 1)<SUB>113</SUB>> ]
+"216" [label = <(LITERAL,1,i - 1)<SUB>113</SUB>> ]
+"217" [label = <(LOCAL,int p: int)> ]
+"218" [label = <(&lt;operator&gt;.assignment,int p = v.indexOf(needle))<SUB>114</SUB>> ]
+"219" [label = <(IDENTIFIER,p,int p = v.indexOf(needle))<SUB>114</SUB>> ]
+"220" [label = <(indexOf,v.indexOf(needle))<SUB>114</SUB>> ]
+"221" [label = <(IDENTIFIER,v,v.indexOf(needle))<SUB>114</SUB>> ]
+"222" [label = <(IDENTIFIER,needle,v.indexOf(needle))<SUB>114</SUB>> ]
+"223" [label = <(CONTROL_STRUCTURE,if (p &lt; 0),if (p &lt; 0))<SUB>115</SUB>> ]
+"224" [label = <(&lt;operator&gt;.lessThan,p &lt; 0)<SUB>115</SUB>> ]
+"225" [label = <(IDENTIFIER,p,p &lt; 0)<SUB>115</SUB>> ]
+"226" [label = <(LITERAL,0,p &lt; 0)<SUB>115</SUB>> ]
+"227" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>115</SUB>> ]
+"228" [label = <(RETURN,return rc;,return rc;)<SUB>116</SUB>> ]
+"229" [label = <(IDENTIFIER,rc,return rc;)<SUB>116</SUB>> ]
+"230" [label = <(&lt;operator&gt;.assignment,rc[i - 1] = v.substring(0, p))<SUB>118</SUB>> ]
+"231" [label = <(&lt;operator&gt;.indexAccess,rc[i - 1])<SUB>118</SUB>> ]
+"232" [label = <(IDENTIFIER,rc,rc[i - 1] = v.substring(0, p))<SUB>118</SUB>> ]
+"233" [label = <(&lt;operator&gt;.subtraction,i - 1)<SUB>118</SUB>> ]
+"234" [label = <(IDENTIFIER,i,i - 1)<SUB>118</SUB>> ]
+"235" [label = <(LITERAL,1,i - 1)<SUB>118</SUB>> ]
+"236" [label = <(substring,v.substring(0, p))<SUB>118</SUB>> ]
+"237" [label = <(IDENTIFIER,v,v.substring(0, p))<SUB>118</SUB>> ]
+"238" [label = <(LITERAL,0,v.substring(0, p))<SUB>118</SUB>> ]
+"239" [label = <(IDENTIFIER,p,v.substring(0, p))<SUB>118</SUB>> ]
+"240" [label = <(&lt;operator&gt;.assignment,rc[i] = v.substring(p + 1))<SUB>119</SUB>> ]
+"241" [label = <(&lt;operator&gt;.indexAccess,rc[i])<SUB>119</SUB>> ]
+"242" [label = <(IDENTIFIER,rc,rc[i] = v.substring(p + 1))<SUB>119</SUB>> ]
+"243" [label = <(IDENTIFIER,i,rc[i] = v.substring(p + 1))<SUB>119</SUB>> ]
+"244" [label = <(substring,v.substring(p + 1))<SUB>119</SUB>> ]
+"245" [label = <(IDENTIFIER,v,v.substring(p + 1))<SUB>119</SUB>> ]
+"246" [label = <(&lt;operator&gt;.addition,p + 1)<SUB>119</SUB>> ]
+"247" [label = <(IDENTIFIER,p,p + 1)<SUB>119</SUB>> ]
+"248" [label = <(LITERAL,1,p + 1)<SUB>119</SUB>> ]
+"249" [label = <(RETURN,return rc;,return rc;)<SUB>121</SUB>> ]
+"250" [label = <(IDENTIFIER,rc,return rc;)<SUB>121</SUB>> ]
+"251" [label = <(MODIFIER,PUBLIC)> ]
+"252" [label = <(MODIFIER,STATIC)> ]
+"253" [label = <(METHOD_RETURN,java.lang.String[])<SUB>109</SUB>> ]
+  "183" -> "184" 
+  "183" -> "185" 
+  "183" -> "186" 
+  "183" -> "187" 
+  "183" -> "251" 
+  "183" -> "252" 
+  "183" -> "253" 
+  "187" -> "188" 
+  "187" -> "189" 
+  "187" -> "193" 
+  "187" -> "198" 
+  "187" -> "249" 
+  "189" -> "190" 
+  "189" -> "191" 
+  "191" -> "192" 
+  "193" -> "194" 
+  "193" -> "197" 
+  "194" -> "195" 
+  "194" -> "196" 
+  "198" -> "199" 
+  "198" -> "200" 
+  "198" -> "203" 
+  "198" -> "206" 
+  "198" -> "208" 
+  "200" -> "201" 
+  "200" -> "202" 
+  "203" -> "204" 
+  "203" -> "205" 
+  "206" -> "207" 
+  "208" -> "209" 
+  "208" -> "210" 
+  "208" -> "217" 
+  "208" -> "218" 
+  "208" -> "223" 
+  "208" -> "230" 
+  "208" -> "240" 
+  "210" -> "211" 
+  "210" -> "212" 
+  "212" -> "213" 
+  "212" -> "214" 
+  "214" -> "215" 
+  "214" -> "216" 
+  "218" -> "219" 
+  "218" -> "220" 
+  "220" -> "221" 
+  "220" -> "222" 
+  "223" -> "224" 
+  "223" -> "227" 
+  "224" -> "225" 
+  "224" -> "226" 
+  "227" -> "228" 
+  "228" -> "229" 
+  "230" -> "231" 
+  "230" -> "236" 
+  "231" -> "232" 
+  "231" -> "233" 
+  "233" -> "234" 
+  "233" -> "235" 
+  "236" -> "237" 
+  "236" -> "238" 
+  "236" -> "239" 
+  "240" -> "241" 
+  "240" -> "244" 
+  "241" -> "242" 
+  "241" -> "243" 
+  "244" -> "245" 
+  "244" -> "246" 
+  "246" -> "247" 
+  "246" -> "248" 
+  "249" -> "250" 
+}

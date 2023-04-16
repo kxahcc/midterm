@@ -1,0 +1,155 @@
+digraph "encode" {  
+"55" [label = <(METHOD,encode)<SUB>59</SUB>> ]
+"6" [label = <(PARAM,this)<SUB>59</SUB>> ]
+"56" [label = <(PARAM,InputStream is)<SUB>59</SUB>> ]
+"57" [label = <(PARAM,OutputStream out)<SUB>59</SUB>> ]
+"58" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>60</SUB>> ]
+"59" [label = <(&lt;operator&gt;.assignment,this.out = out)<SUB>61</SUB>> ]
+"60" [label = <(&lt;operator&gt;.fieldAccess,this.out)<SUB>61</SUB>> ]
+"5" [label = <(IDENTIFIER,this,this.out = out)<SUB>61</SUB>> ]
+"61" [label = <(FIELD_IDENTIFIER,out,out)<SUB>61</SUB>> ]
+"62" [label = <(IDENTIFIER,out,this.out = out)<SUB>61</SUB>> ]
+"63" [label = <(encodeBegin,this.encodeBegin())<SUB>62</SUB>> ]
+"7" [label = <(IDENTIFIER,this,this.encodeBegin())<SUB>62</SUB>> ]
+"64" [label = <(LOCAL,byte[] buffer: byte[])> ]
+"65" [label = <(&lt;operator&gt;.assignment,byte[] buffer = new byte[MAX_CHARS_PER_LINE * 100])<SUB>63</SUB>> ]
+"66" [label = <(IDENTIFIER,buffer,byte[] buffer = new byte[MAX_CHARS_PER_LINE * 100])<SUB>63</SUB>> ]
+"67" [label = <(&lt;operator&gt;.alloc,new byte[MAX_CHARS_PER_LINE * 100])> ]
+"68" [label = <(&lt;operator&gt;.multiplication,MAX_CHARS_PER_LINE * 100)<SUB>63</SUB>> ]
+"69" [label = <(&lt;operator&gt;.fieldAccess,UUEncoder.MAX_CHARS_PER_LINE)<SUB>63</SUB>> ]
+"70" [label = <(IDENTIFIER,UUEncoder,MAX_CHARS_PER_LINE * 100)<SUB>63</SUB>> ]
+"71" [label = <(FIELD_IDENTIFIER,MAX_CHARS_PER_LINE,MAX_CHARS_PER_LINE)<SUB>63</SUB>> ]
+"72" [label = <(LITERAL,100,MAX_CHARS_PER_LINE * 100)<SUB>63</SUB>> ]
+"73" [label = <(LOCAL,int count: int)> ]
+"74" [label = <(CONTROL_STRUCTURE,while ((count = is.read(buffer, 0, buffer.length)) != -1),while ((count = is.read(buffer, 0, buffer.length)) != -1))<SUB>65</SUB>> ]
+"75" [label = <(&lt;operator&gt;.notEquals,(count = is.read(buffer, 0, buffer.length)) != -1)<SUB>65</SUB>> ]
+"76" [label = <(&lt;operator&gt;.assignment,count = is.read(buffer, 0, buffer.length))<SUB>65</SUB>> ]
+"77" [label = <(IDENTIFIER,count,count = is.read(buffer, 0, buffer.length))<SUB>65</SUB>> ]
+"78" [label = <(read,is.read(buffer, 0, buffer.length))<SUB>65</SUB>> ]
+"79" [label = <(IDENTIFIER,is,is.read(buffer, 0, buffer.length))<SUB>65</SUB>> ]
+"80" [label = <(IDENTIFIER,buffer,is.read(buffer, 0, buffer.length))<SUB>65</SUB>> ]
+"81" [label = <(LITERAL,0,is.read(buffer, 0, buffer.length))<SUB>65</SUB>> ]
+"82" [label = <(&lt;operator&gt;.fieldAccess,buffer.length)<SUB>65</SUB>> ]
+"83" [label = <(IDENTIFIER,buffer,is.read(buffer, 0, buffer.length))<SUB>65</SUB>> ]
+"84" [label = <(FIELD_IDENTIFIER,length,length)<SUB>65</SUB>> ]
+"85" [label = <(&lt;operator&gt;.minus,-1)<SUB>65</SUB>> ]
+"86" [label = <(LITERAL,1,-1)<SUB>65</SUB>> ]
+"87" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>65</SUB>> ]
+"88" [label = <(LOCAL,int pos: int)> ]
+"89" [label = <(&lt;operator&gt;.assignment,int pos = 0)<SUB>66</SUB>> ]
+"90" [label = <(IDENTIFIER,pos,int pos = 0)<SUB>66</SUB>> ]
+"91" [label = <(LITERAL,0,int pos = 0)<SUB>66</SUB>> ]
+"92" [label = <(CONTROL_STRUCTURE,while (count &gt; 0),while (count &gt; 0))<SUB>67</SUB>> ]
+"93" [label = <(&lt;operator&gt;.greaterThan,count &gt; 0)<SUB>67</SUB>> ]
+"94" [label = <(IDENTIFIER,count,count &gt; 0)<SUB>67</SUB>> ]
+"95" [label = <(LITERAL,0,count &gt; 0)<SUB>67</SUB>> ]
+"96" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>67</SUB>> ]
+"97" [label = <(LOCAL,int num: int)> ]
+"98" [label = <(&lt;operator&gt;.assignment,int num = count &gt; MAX_CHARS_PER_LINE ? MAX_CHARS_PER_LINE : count)<SUB>68</SUB>> ]
+"99" [label = <(IDENTIFIER,num,int num = count &gt; MAX_CHARS_PER_LINE ? MAX_CHARS_PER_LINE : count)<SUB>68</SUB>> ]
+"100" [label = <(&lt;operator&gt;.conditional,count &gt; MAX_CHARS_PER_LINE ? MAX_CHARS_PER_LINE : count)<SUB>68</SUB>> ]
+"101" [label = <(&lt;operator&gt;.greaterThan,count &gt; MAX_CHARS_PER_LINE)<SUB>68</SUB>> ]
+"102" [label = <(IDENTIFIER,count,count &gt; MAX_CHARS_PER_LINE)<SUB>68</SUB>> ]
+"103" [label = <(&lt;operator&gt;.fieldAccess,UUEncoder.MAX_CHARS_PER_LINE)<SUB>68</SUB>> ]
+"104" [label = <(IDENTIFIER,UUEncoder,count &gt; MAX_CHARS_PER_LINE)<SUB>68</SUB>> ]
+"105" [label = <(FIELD_IDENTIFIER,MAX_CHARS_PER_LINE,MAX_CHARS_PER_LINE)<SUB>68</SUB>> ]
+"106" [label = <(&lt;operator&gt;.fieldAccess,UUEncoder.MAX_CHARS_PER_LINE)<SUB>69</SUB>> ]
+"107" [label = <(IDENTIFIER,UUEncoder,count &gt; MAX_CHARS_PER_LINE ? MAX_CHARS_PER_LINE : count)<SUB>69</SUB>> ]
+"108" [label = <(FIELD_IDENTIFIER,MAX_CHARS_PER_LINE,MAX_CHARS_PER_LINE)<SUB>69</SUB>> ]
+"109" [label = <(IDENTIFIER,count,count &gt; MAX_CHARS_PER_LINE ? MAX_CHARS_PER_LINE : count)<SUB>70</SUB>> ]
+"110" [label = <(encodeLine,this.encodeLine(buffer, pos, num, out))<SUB>71</SUB>> ]
+"8" [label = <(IDENTIFIER,this,this.encodeLine(buffer, pos, num, out))<SUB>71</SUB>> ]
+"111" [label = <(IDENTIFIER,buffer,this.encodeLine(buffer, pos, num, out))<SUB>71</SUB>> ]
+"112" [label = <(IDENTIFIER,pos,this.encodeLine(buffer, pos, num, out))<SUB>71</SUB>> ]
+"113" [label = <(IDENTIFIER,num,this.encodeLine(buffer, pos, num, out))<SUB>71</SUB>> ]
+"114" [label = <(IDENTIFIER,out,this.encodeLine(buffer, pos, num, out))<SUB>71</SUB>> ]
+"115" [label = <(&lt;operator&gt;.assignmentPlus,pos += num)<SUB>72</SUB>> ]
+"116" [label = <(IDENTIFIER,pos,pos += num)<SUB>72</SUB>> ]
+"117" [label = <(IDENTIFIER,num,pos += num)<SUB>72</SUB>> ]
+"118" [label = <(&lt;operator&gt;.assignmentMinus,count -= num)<SUB>73</SUB>> ]
+"119" [label = <(IDENTIFIER,count,count -= num)<SUB>73</SUB>> ]
+"120" [label = <(IDENTIFIER,num,count -= num)<SUB>73</SUB>> ]
+"121" [label = <(flush,out.flush())<SUB>76</SUB>> ]
+"122" [label = <(IDENTIFIER,out,out.flush())<SUB>76</SUB>> ]
+"123" [label = <(encodeEnd,this.encodeEnd())<SUB>77</SUB>> ]
+"9" [label = <(IDENTIFIER,this,this.encodeEnd())<SUB>77</SUB>> ]
+"124" [label = <(MODIFIER,PUBLIC)> ]
+"125" [label = <(MODIFIER,VIRTUAL)> ]
+"126" [label = <(METHOD_RETURN,void)<SUB>59</SUB>> ]
+  "55" -> "6" 
+  "55" -> "56" 
+  "55" -> "57" 
+  "55" -> "58" 
+  "55" -> "124" 
+  "55" -> "125" 
+  "55" -> "126" 
+  "58" -> "59" 
+  "58" -> "63" 
+  "58" -> "64" 
+  "58" -> "65" 
+  "58" -> "73" 
+  "58" -> "74" 
+  "58" -> "121" 
+  "58" -> "123" 
+  "59" -> "60" 
+  "59" -> "62" 
+  "60" -> "5" 
+  "60" -> "61" 
+  "63" -> "7" 
+  "65" -> "66" 
+  "65" -> "67" 
+  "67" -> "68" 
+  "68" -> "69" 
+  "68" -> "72" 
+  "69" -> "70" 
+  "69" -> "71" 
+  "74" -> "75" 
+  "74" -> "87" 
+  "75" -> "76" 
+  "75" -> "85" 
+  "76" -> "77" 
+  "76" -> "78" 
+  "78" -> "79" 
+  "78" -> "80" 
+  "78" -> "81" 
+  "78" -> "82" 
+  "82" -> "83" 
+  "82" -> "84" 
+  "85" -> "86" 
+  "87" -> "88" 
+  "87" -> "89" 
+  "87" -> "92" 
+  "89" -> "90" 
+  "89" -> "91" 
+  "92" -> "93" 
+  "92" -> "96" 
+  "93" -> "94" 
+  "93" -> "95" 
+  "96" -> "97" 
+  "96" -> "98" 
+  "96" -> "110" 
+  "96" -> "115" 
+  "96" -> "118" 
+  "98" -> "99" 
+  "98" -> "100" 
+  "100" -> "101" 
+  "100" -> "106" 
+  "100" -> "109" 
+  "101" -> "102" 
+  "101" -> "103" 
+  "103" -> "104" 
+  "103" -> "105" 
+  "106" -> "107" 
+  "106" -> "108" 
+  "110" -> "8" 
+  "110" -> "111" 
+  "110" -> "112" 
+  "110" -> "113" 
+  "110" -> "114" 
+  "115" -> "116" 
+  "115" -> "117" 
+  "118" -> "119" 
+  "118" -> "120" 
+  "121" -> "122" 
+  "123" -> "9" 
+}

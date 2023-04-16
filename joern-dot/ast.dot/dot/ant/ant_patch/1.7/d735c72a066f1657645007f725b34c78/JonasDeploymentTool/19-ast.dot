@@ -1,0 +1,201 @@
+digraph "getJarBaseName" {  
+"676" [label = <(METHOD,getJarBaseName)<SUB>459</SUB>> ]
+"24" [label = <(PARAM,this)<SUB>459</SUB>> ]
+"677" [label = <(PARAM,String descriptorFileName)<SUB>459</SUB>> ]
+"678" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>459</SUB>> ]
+"679" [label = <(LOCAL,String baseName: java.lang.String)> ]
+"680" [label = <(&lt;operator&gt;.assignment,String baseName = null)<SUB>461</SUB>> ]
+"681" [label = <(IDENTIFIER,baseName,String baseName = null)<SUB>461</SUB>> ]
+"682" [label = <(LITERAL,null,String baseName = null)<SUB>461</SUB>> ]
+"683" [label = <(CONTROL_STRUCTURE,if (getConfig().namingScheme.getValue().equals(EjbJar.NamingScheme.DESCRIPTOR)),if (getConfig().namingScheme.getValue().equals(EjbJar.NamingScheme.DESCRIPTOR)))<SUB>463</SUB>> ]
+"684" [label = <(equals,equals(EjbJar.NamingScheme.DESCRIPTOR))<SUB>463</SUB>> ]
+"685" [label = <(getValue,getValue())<SUB>463</SUB>> ]
+"686" [label = <(&lt;operator&gt;.fieldAccess,getConfig().namingScheme)<SUB>463</SUB>> ]
+"687" [label = <(getConfig,getConfig())<SUB>463</SUB>> ]
+"23" [label = <(IDENTIFIER,this,getConfig())<SUB>463</SUB>> ]
+"688" [label = <(FIELD_IDENTIFIER,namingScheme,namingScheme)<SUB>463</SUB>> ]
+"689" [label = <(&lt;operator&gt;.fieldAccess,EjbJar.NamingScheme.DESCRIPTOR)<SUB>463</SUB>> ]
+"690" [label = <(&lt;operator&gt;.fieldAccess,EjbJar.NamingScheme)<SUB>463</SUB>> ]
+"691" [label = <(IDENTIFIER,EjbJar,equals(EjbJar.NamingScheme.DESCRIPTOR))<SUB>463</SUB>> ]
+"692" [label = <(FIELD_IDENTIFIER,NamingScheme,NamingScheme)<SUB>463</SUB>> ]
+"693" [label = <(FIELD_IDENTIFIER,DESCRIPTOR,DESCRIPTOR)<SUB>463</SUB>> ]
+"694" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>463</SUB>> ]
+"695" [label = <(CONTROL_STRUCTURE,if (descriptorFileName.indexOf(getConfig().baseNameTerminator) == -1),if (descriptorFileName.indexOf(getConfig().baseNameTerminator) == -1))<SUB>466</SUB>> ]
+"696" [label = <(&lt;operator&gt;.equals,descriptorFileName.indexOf(getConfig().baseNameTerminator) == -1)<SUB>466</SUB>> ]
+"697" [label = <(indexOf,indexOf(getConfig().baseNameTerminator))<SUB>466</SUB>> ]
+"698" [label = <(IDENTIFIER,descriptorFileName,indexOf(getConfig().baseNameTerminator))<SUB>466</SUB>> ]
+"699" [label = <(&lt;operator&gt;.fieldAccess,getConfig().baseNameTerminator)<SUB>466</SUB>> ]
+"700" [label = <(getConfig,getConfig())<SUB>466</SUB>> ]
+"25" [label = <(IDENTIFIER,this,getConfig())<SUB>466</SUB>> ]
+"701" [label = <(FIELD_IDENTIFIER,baseNameTerminator,baseNameTerminator)<SUB>466</SUB>> ]
+"702" [label = <(&lt;operator&gt;.minus,-1)<SUB>466</SUB>> ]
+"703" [label = <(LITERAL,1,-1)<SUB>466</SUB>> ]
+"704" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>466</SUB>> ]
+"705" [label = <(LOCAL,String aCanonicalDescriptor: java.lang.String)> ]
+"706" [label = <(&lt;operator&gt;.assignment,String aCanonicalDescriptor = descriptorFileName.replace('\\', '/'))<SUB>473</SUB>> ]
+"707" [label = <(IDENTIFIER,aCanonicalDescriptor,String aCanonicalDescriptor = descriptorFileName.replace('\\', '/'))<SUB>473</SUB>> ]
+"708" [label = <(replace,descriptorFileName.replace('\\', '/'))<SUB>473</SUB>> ]
+"709" [label = <(IDENTIFIER,descriptorFileName,descriptorFileName.replace('\\', '/'))<SUB>473</SUB>> ]
+"710" [label = <(LITERAL,'\\',descriptorFileName.replace('\\', '/'))<SUB>473</SUB>> ]
+"711" [label = <(LITERAL,'/',descriptorFileName.replace('\\', '/'))<SUB>473</SUB>> ]
+"712" [label = <(LOCAL,int lastSeparatorIndex: int)> ]
+"713" [label = <(&lt;operator&gt;.assignment,int lastSeparatorIndex = aCanonicalDescriptor.lastIndexOf('/'))<SUB>474</SUB>> ]
+"714" [label = <(IDENTIFIER,lastSeparatorIndex,int lastSeparatorIndex = aCanonicalDescriptor.lastIndexOf('/'))<SUB>474</SUB>> ]
+"715" [label = <(lastIndexOf,aCanonicalDescriptor.lastIndexOf('/'))<SUB>474</SUB>> ]
+"716" [label = <(IDENTIFIER,aCanonicalDescriptor,aCanonicalDescriptor.lastIndexOf('/'))<SUB>474</SUB>> ]
+"717" [label = <(LITERAL,'/',aCanonicalDescriptor.lastIndexOf('/'))<SUB>474</SUB>> ]
+"718" [label = <(LOCAL,int endOfBaseName: int)> ]
+"719" [label = <(CONTROL_STRUCTURE,if (lastSeparatorIndex != -1),if (lastSeparatorIndex != -1))<SUB>477</SUB>> ]
+"720" [label = <(&lt;operator&gt;.notEquals,lastSeparatorIndex != -1)<SUB>477</SUB>> ]
+"721" [label = <(IDENTIFIER,lastSeparatorIndex,lastSeparatorIndex != -1)<SUB>477</SUB>> ]
+"722" [label = <(&lt;operator&gt;.minus,-1)<SUB>477</SUB>> ]
+"723" [label = <(LITERAL,1,-1)<SUB>477</SUB>> ]
+"724" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>477</SUB>> ]
+"725" [label = <(&lt;operator&gt;.assignment,endOfBaseName = descriptorFileName.indexOf(&quot;.xml&quot;, lastSeparatorIndex))<SUB>478</SUB>> ]
+"726" [label = <(IDENTIFIER,endOfBaseName,endOfBaseName = descriptorFileName.indexOf(&quot;.xml&quot;, lastSeparatorIndex))<SUB>478</SUB>> ]
+"727" [label = <(indexOf,descriptorFileName.indexOf(&quot;.xml&quot;, lastSeparatorIndex))<SUB>478</SUB>> ]
+"728" [label = <(IDENTIFIER,descriptorFileName,descriptorFileName.indexOf(&quot;.xml&quot;, lastSeparatorIndex))<SUB>478</SUB>> ]
+"729" [label = <(LITERAL,&quot;.xml&quot;,descriptorFileName.indexOf(&quot;.xml&quot;, lastSeparatorIndex))<SUB>478</SUB>> ]
+"730" [label = <(IDENTIFIER,lastSeparatorIndex,descriptorFileName.indexOf(&quot;.xml&quot;, lastSeparatorIndex))<SUB>478</SUB>> ]
+"731" [label = <(CONTROL_STRUCTURE,else,else)<SUB>479</SUB>> ]
+"732" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>479</SUB>> ]
+"733" [label = <(&lt;operator&gt;.assignment,endOfBaseName = descriptorFileName.indexOf(&quot;.xml&quot;))<SUB>480</SUB>> ]
+"734" [label = <(IDENTIFIER,endOfBaseName,endOfBaseName = descriptorFileName.indexOf(&quot;.xml&quot;))<SUB>480</SUB>> ]
+"735" [label = <(indexOf,descriptorFileName.indexOf(&quot;.xml&quot;))<SUB>480</SUB>> ]
+"736" [label = <(IDENTIFIER,descriptorFileName,descriptorFileName.indexOf(&quot;.xml&quot;))<SUB>480</SUB>> ]
+"737" [label = <(LITERAL,&quot;.xml&quot;,descriptorFileName.indexOf(&quot;.xml&quot;))<SUB>480</SUB>> ]
+"738" [label = <(CONTROL_STRUCTURE,if (endOfBaseName != -1),if (endOfBaseName != -1))<SUB>483</SUB>> ]
+"739" [label = <(&lt;operator&gt;.notEquals,endOfBaseName != -1)<SUB>483</SUB>> ]
+"740" [label = <(IDENTIFIER,endOfBaseName,endOfBaseName != -1)<SUB>483</SUB>> ]
+"741" [label = <(&lt;operator&gt;.minus,-1)<SUB>483</SUB>> ]
+"742" [label = <(LITERAL,1,-1)<SUB>483</SUB>> ]
+"743" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>483</SUB>> ]
+"744" [label = <(&lt;operator&gt;.assignment,baseName = descriptorFileName.substring(0, endOfBaseName))<SUB>484</SUB>> ]
+"745" [label = <(IDENTIFIER,baseName,baseName = descriptorFileName.substring(0, endOfBaseName))<SUB>484</SUB>> ]
+"746" [label = <(substring,descriptorFileName.substring(0, endOfBaseName))<SUB>484</SUB>> ]
+"747" [label = <(IDENTIFIER,descriptorFileName,descriptorFileName.substring(0, endOfBaseName))<SUB>484</SUB>> ]
+"748" [label = <(LITERAL,0,descriptorFileName.substring(0, endOfBaseName))<SUB>484</SUB>> ]
+"749" [label = <(IDENTIFIER,endOfBaseName,descriptorFileName.substring(0, endOfBaseName))<SUB>484</SUB>> ]
+"750" [label = <(CONTROL_STRUCTURE,if (baseName == null),if (baseName == null))<SUB>489</SUB>> ]
+"751" [label = <(&lt;operator&gt;.equals,baseName == null)<SUB>489</SUB>> ]
+"752" [label = <(IDENTIFIER,baseName,baseName == null)<SUB>489</SUB>> ]
+"753" [label = <(LITERAL,null,baseName == null)<SUB>489</SUB>> ]
+"754" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>489</SUB>> ]
+"755" [label = <(&lt;operator&gt;.assignment,baseName = getJarBaseName(descriptorFileName))<SUB>491</SUB>> ]
+"756" [label = <(IDENTIFIER,baseName,baseName = getJarBaseName(descriptorFileName))<SUB>491</SUB>> ]
+"757" [label = <(getJarBaseName,getJarBaseName(descriptorFileName))<SUB>491</SUB>> ]
+"758" [label = <(IDENTIFIER,super,getJarBaseName(descriptorFileName))<SUB>491</SUB>> ]
+"759" [label = <(IDENTIFIER,descriptorFileName,getJarBaseName(descriptorFileName))<SUB>491</SUB>> ]
+"760" [label = <(log,log(&quot;JAR base name: &quot; + baseName, Project.MSG_VERBOSE))<SUB>494</SUB>> ]
+"26" [label = <(IDENTIFIER,this,log(&quot;JAR base name: &quot; + baseName, Project.MSG_VERBOSE))<SUB>494</SUB>> ]
+"761" [label = <(&lt;operator&gt;.addition,&quot;JAR base name: &quot; + baseName)<SUB>494</SUB>> ]
+"762" [label = <(LITERAL,&quot;JAR base name: &quot;,&quot;JAR base name: &quot; + baseName)<SUB>494</SUB>> ]
+"763" [label = <(IDENTIFIER,baseName,&quot;JAR base name: &quot; + baseName)<SUB>494</SUB>> ]
+"764" [label = <(&lt;operator&gt;.fieldAccess,Project.MSG_VERBOSE)<SUB>494</SUB>> ]
+"765" [label = <(IDENTIFIER,Project,log(&quot;JAR base name: &quot; + baseName, Project.MSG_VERBOSE))<SUB>494</SUB>> ]
+"766" [label = <(FIELD_IDENTIFIER,MSG_VERBOSE,MSG_VERBOSE)<SUB>494</SUB>> ]
+"767" [label = <(RETURN,return baseName;,return baseName;)<SUB>496</SUB>> ]
+"768" [label = <(IDENTIFIER,baseName,return baseName;)<SUB>496</SUB>> ]
+"769" [label = <(MODIFIER,PROTECTED)> ]
+"770" [label = <(MODIFIER,VIRTUAL)> ]
+"771" [label = <(METHOD_RETURN,java.lang.String)<SUB>459</SUB>> ]
+  "676" -> "24" 
+  "676" -> "677" 
+  "676" -> "678" 
+  "676" -> "769" 
+  "676" -> "770" 
+  "676" -> "771" 
+  "678" -> "679" 
+  "678" -> "680" 
+  "678" -> "683" 
+  "678" -> "750" 
+  "678" -> "760" 
+  "678" -> "767" 
+  "680" -> "681" 
+  "680" -> "682" 
+  "683" -> "684" 
+  "683" -> "694" 
+  "684" -> "685" 
+  "684" -> "689" 
+  "685" -> "686" 
+  "686" -> "687" 
+  "686" -> "688" 
+  "687" -> "23" 
+  "689" -> "690" 
+  "689" -> "693" 
+  "690" -> "691" 
+  "690" -> "692" 
+  "694" -> "695" 
+  "695" -> "696" 
+  "695" -> "704" 
+  "696" -> "697" 
+  "696" -> "702" 
+  "697" -> "698" 
+  "697" -> "699" 
+  "699" -> "700" 
+  "699" -> "701" 
+  "700" -> "25" 
+  "702" -> "703" 
+  "704" -> "705" 
+  "704" -> "706" 
+  "704" -> "712" 
+  "704" -> "713" 
+  "704" -> "718" 
+  "704" -> "719" 
+  "704" -> "738" 
+  "706" -> "707" 
+  "706" -> "708" 
+  "708" -> "709" 
+  "708" -> "710" 
+  "708" -> "711" 
+  "713" -> "714" 
+  "713" -> "715" 
+  "715" -> "716" 
+  "715" -> "717" 
+  "719" -> "720" 
+  "719" -> "724" 
+  "719" -> "731" 
+  "720" -> "721" 
+  "720" -> "722" 
+  "722" -> "723" 
+  "724" -> "725" 
+  "725" -> "726" 
+  "725" -> "727" 
+  "727" -> "728" 
+  "727" -> "729" 
+  "727" -> "730" 
+  "731" -> "732" 
+  "732" -> "733" 
+  "733" -> "734" 
+  "733" -> "735" 
+  "735" -> "736" 
+  "735" -> "737" 
+  "738" -> "739" 
+  "738" -> "743" 
+  "739" -> "740" 
+  "739" -> "741" 
+  "741" -> "742" 
+  "743" -> "744" 
+  "744" -> "745" 
+  "744" -> "746" 
+  "746" -> "747" 
+  "746" -> "748" 
+  "746" -> "749" 
+  "750" -> "751" 
+  "750" -> "754" 
+  "751" -> "752" 
+  "751" -> "753" 
+  "754" -> "755" 
+  "755" -> "756" 
+  "755" -> "757" 
+  "757" -> "758" 
+  "757" -> "759" 
+  "760" -> "26" 
+  "760" -> "761" 
+  "760" -> "764" 
+  "761" -> "762" 
+  "761" -> "763" 
+  "764" -> "765" 
+  "764" -> "766" 
+  "767" -> "768" 
+}

@@ -1,0 +1,191 @@
+digraph "translatePath" {  
+"765" [label = <(METHOD,translatePath)<SUB>343</SUB>> ]
+"766" [label = <(PARAM,Project project)<SUB>343</SUB>> ]
+"767" [label = <(PARAM,String source)<SUB>343</SUB>> ]
+"768" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>343</SUB>> ]
+"70" [label = <(LOCAL,Vector result: java.util.Vector)> ]
+"769" [label = <(&lt;operator&gt;.assignment,Vector result = new Vector())<SUB>344</SUB>> ]
+"770" [label = <(IDENTIFIER,result,Vector result = new Vector())<SUB>344</SUB>> ]
+"771" [label = <(&lt;operator&gt;.alloc,new Vector())<SUB>344</SUB>> ]
+"772" [label = <(&lt;init&gt;,new Vector())<SUB>344</SUB>> ]
+"69" [label = <(IDENTIFIER,result,new Vector())<SUB>344</SUB>> ]
+"773" [label = <(CONTROL_STRUCTURE,if (source == null),if (source == null))<SUB>345</SUB>> ]
+"774" [label = <(&lt;operator&gt;.equals,source == null)<SUB>345</SUB>> ]
+"775" [label = <(IDENTIFIER,source,source == null)<SUB>345</SUB>> ]
+"776" [label = <(LITERAL,null,source == null)<SUB>345</SUB>> ]
+"777" [label = <(RETURN,return new String[0];,return new String[0];)<SUB>345</SUB>> ]
+"778" [label = <(&lt;operator&gt;.alloc,new String[0])> ]
+"779" [label = <(LITERAL,0,new String[0])<SUB>345</SUB>> ]
+"72" [label = <(LOCAL,PathTokenizer tok: org.apache.tools.ant.PathTokenizer)> ]
+"780" [label = <(&lt;operator&gt;.assignment,PathTokenizer tok = new PathTokenizer(source))<SUB>347</SUB>> ]
+"781" [label = <(IDENTIFIER,tok,PathTokenizer tok = new PathTokenizer(source))<SUB>347</SUB>> ]
+"782" [label = <(&lt;operator&gt;.alloc,new PathTokenizer(source))<SUB>347</SUB>> ]
+"783" [label = <(&lt;init&gt;,new PathTokenizer(source))<SUB>347</SUB>> ]
+"71" [label = <(IDENTIFIER,tok,new PathTokenizer(source))<SUB>347</SUB>> ]
+"784" [label = <(IDENTIFIER,source,new PathTokenizer(source))<SUB>347</SUB>> ]
+"74" [label = <(LOCAL,StringBuffer element: java.lang.StringBuffer)> ]
+"785" [label = <(&lt;operator&gt;.assignment,StringBuffer element = new StringBuffer())<SUB>348</SUB>> ]
+"786" [label = <(IDENTIFIER,element,StringBuffer element = new StringBuffer())<SUB>348</SUB>> ]
+"787" [label = <(&lt;operator&gt;.alloc,new StringBuffer())<SUB>348</SUB>> ]
+"788" [label = <(&lt;init&gt;,new StringBuffer())<SUB>348</SUB>> ]
+"73" [label = <(IDENTIFIER,element,new StringBuffer())<SUB>348</SUB>> ]
+"789" [label = <(CONTROL_STRUCTURE,while (tok.hasMoreTokens()),while (tok.hasMoreTokens()))<SUB>349</SUB>> ]
+"790" [label = <(hasMoreTokens,hasMoreTokens())<SUB>349</SUB>> ]
+"791" [label = <(IDENTIFIER,tok,hasMoreTokens())<SUB>349</SUB>> ]
+"792" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>349</SUB>> ]
+"793" [label = <(setLength,element.setLength(0))<SUB>350</SUB>> ]
+"794" [label = <(IDENTIFIER,element,element.setLength(0))<SUB>350</SUB>> ]
+"795" [label = <(LITERAL,0,element.setLength(0))<SUB>350</SUB>> ]
+"796" [label = <(LOCAL,String pathElement: java.lang.String)> ]
+"797" [label = <(&lt;operator&gt;.assignment,String pathElement = nextToken())<SUB>351</SUB>> ]
+"798" [label = <(IDENTIFIER,pathElement,String pathElement = nextToken())<SUB>351</SUB>> ]
+"799" [label = <(nextToken,nextToken())<SUB>351</SUB>> ]
+"800" [label = <(IDENTIFIER,tok,nextToken())<SUB>351</SUB>> ]
+"801" [label = <(CONTROL_STRUCTURE,try,try)<SUB>352</SUB>> ]
+"802" [label = <(BLOCK,try,try)<SUB>352</SUB>> ]
+"803" [label = <(append,append(resolveFile(project, pathElement)))<SUB>353</SUB>> ]
+"804" [label = <(IDENTIFIER,element,append(resolveFile(project, pathElement)))<SUB>353</SUB>> ]
+"805" [label = <(resolveFile,resolveFile(project, pathElement))<SUB>353</SUB>> ]
+"806" [label = <(IDENTIFIER,this,resolveFile(project, pathElement))<SUB>353</SUB>> ]
+"807" [label = <(IDENTIFIER,project,resolveFile(project, pathElement))<SUB>353</SUB>> ]
+"808" [label = <(IDENTIFIER,pathElement,resolveFile(project, pathElement))<SUB>353</SUB>> ]
+"809" [label = <(BLOCK,catch,catch)> ]
+"810" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>355</SUB>> ]
+"811" [label = <(log,log(&quot;Dropping path element &quot; + pathElement + &quot; as it is not valid relative to the project&quot;, Project.MSG_VERBOSE))<SUB>356</SUB>> ]
+"812" [label = <(IDENTIFIER,project,log(&quot;Dropping path element &quot; + pathElement + &quot; as it is not valid relative to the project&quot;, Project.MSG_VERBOSE))<SUB>356</SUB>> ]
+"813" [label = <(&lt;operator&gt;.addition,&quot;Dropping path element &quot; + pathElement + &quot; as it is not valid relative to the project&quot;)<SUB>356</SUB>> ]
+"814" [label = <(&lt;operator&gt;.addition,&quot;Dropping path element &quot; + pathElement)<SUB>356</SUB>> ]
+"815" [label = <(LITERAL,&quot;Dropping path element &quot;,&quot;Dropping path element &quot; + pathElement)<SUB>356</SUB>> ]
+"816" [label = <(IDENTIFIER,pathElement,&quot;Dropping path element &quot; + pathElement)<SUB>356</SUB>> ]
+"817" [label = <(LITERAL,&quot; as it is not valid relative to the project&quot;,&quot;Dropping path element &quot; + pathElement + &quot; as it is not valid relative to the project&quot;)<SUB>356</SUB>> ]
+"818" [label = <(&lt;operator&gt;.fieldAccess,Project.MSG_VERBOSE)<SUB>357</SUB>> ]
+"819" [label = <(IDENTIFIER,Project,log(&quot;Dropping path element &quot; + pathElement + &quot; as it is not valid relative to the project&quot;, Project.MSG_VERBOSE))<SUB>357</SUB>> ]
+"820" [label = <(FIELD_IDENTIFIER,MSG_VERBOSE,MSG_VERBOSE)<SUB>357</SUB>> ]
+"821" [label = <(CONTROL_STRUCTURE,for (int i = 0; Some(i &lt; element.length()); i++),for (int i = 0; Some(i &lt; element.length()); i++))<SUB>359</SUB>> ]
+"822" [label = <(LOCAL,int i: int)> ]
+"823" [label = <(&lt;operator&gt;.assignment,int i = 0)<SUB>359</SUB>> ]
+"824" [label = <(IDENTIFIER,i,int i = 0)<SUB>359</SUB>> ]
+"825" [label = <(LITERAL,0,int i = 0)<SUB>359</SUB>> ]
+"826" [label = <(&lt;operator&gt;.lessThan,i &lt; element.length())<SUB>359</SUB>> ]
+"827" [label = <(IDENTIFIER,i,i &lt; element.length())<SUB>359</SUB>> ]
+"828" [label = <(length,element.length())<SUB>359</SUB>> ]
+"829" [label = <(IDENTIFIER,element,element.length())<SUB>359</SUB>> ]
+"830" [label = <(&lt;operator&gt;.postIncrement,i++)<SUB>359</SUB>> ]
+"831" [label = <(IDENTIFIER,i,i++)<SUB>359</SUB>> ]
+"832" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>359</SUB>> ]
+"833" [label = <(translateFileSep,translateFileSep(element, i))<SUB>360</SUB>> ]
+"834" [label = <(IDENTIFIER,element,translateFileSep(element, i))<SUB>360</SUB>> ]
+"835" [label = <(IDENTIFIER,i,translateFileSep(element, i))<SUB>360</SUB>> ]
+"836" [label = <(addElement,result.addElement(element.toString()))<SUB>362</SUB>> ]
+"837" [label = <(IDENTIFIER,result,result.addElement(element.toString()))<SUB>362</SUB>> ]
+"838" [label = <(toString,element.toString())<SUB>362</SUB>> ]
+"839" [label = <(IDENTIFIER,element,element.toString())<SUB>362</SUB>> ]
+"840" [label = <(LOCAL,String[] res: java.lang.String[])> ]
+"841" [label = <(&lt;operator&gt;.assignment,String[] res = new String[result.size()])<SUB>364</SUB>> ]
+"842" [label = <(IDENTIFIER,res,String[] res = new String[result.size()])<SUB>364</SUB>> ]
+"843" [label = <(&lt;operator&gt;.alloc,new String[result.size()])> ]
+"844" [label = <(size,result.size())<SUB>364</SUB>> ]
+"845" [label = <(IDENTIFIER,result,result.size())<SUB>364</SUB>> ]
+"846" [label = <(copyInto,result.copyInto(res))<SUB>365</SUB>> ]
+"847" [label = <(IDENTIFIER,result,result.copyInto(res))<SUB>365</SUB>> ]
+"848" [label = <(IDENTIFIER,res,result.copyInto(res))<SUB>365</SUB>> ]
+"849" [label = <(RETURN,return res;,return res;)<SUB>366</SUB>> ]
+"850" [label = <(IDENTIFIER,res,return res;)<SUB>366</SUB>> ]
+"851" [label = <(MODIFIER,PUBLIC)> ]
+"852" [label = <(MODIFIER,STATIC)> ]
+"853" [label = <(METHOD_RETURN,java.lang.String[])<SUB>343</SUB>> ]
+  "765" -> "766" 
+  "765" -> "767" 
+  "765" -> "768" 
+  "765" -> "851" 
+  "765" -> "852" 
+  "765" -> "853" 
+  "768" -> "70" 
+  "768" -> "769" 
+  "768" -> "772" 
+  "768" -> "773" 
+  "768" -> "72" 
+  "768" -> "780" 
+  "768" -> "783" 
+  "768" -> "74" 
+  "768" -> "785" 
+  "768" -> "788" 
+  "768" -> "789" 
+  "768" -> "840" 
+  "768" -> "841" 
+  "768" -> "846" 
+  "768" -> "849" 
+  "769" -> "770" 
+  "769" -> "771" 
+  "772" -> "69" 
+  "773" -> "774" 
+  "773" -> "777" 
+  "774" -> "775" 
+  "774" -> "776" 
+  "777" -> "778" 
+  "778" -> "779" 
+  "780" -> "781" 
+  "780" -> "782" 
+  "783" -> "71" 
+  "783" -> "784" 
+  "785" -> "786" 
+  "785" -> "787" 
+  "788" -> "73" 
+  "789" -> "790" 
+  "789" -> "792" 
+  "790" -> "791" 
+  "792" -> "793" 
+  "792" -> "796" 
+  "792" -> "797" 
+  "792" -> "801" 
+  "792" -> "821" 
+  "792" -> "836" 
+  "793" -> "794" 
+  "793" -> "795" 
+  "797" -> "798" 
+  "797" -> "799" 
+  "799" -> "800" 
+  "801" -> "802" 
+  "801" -> "809" 
+  "802" -> "803" 
+  "803" -> "804" 
+  "803" -> "805" 
+  "805" -> "806" 
+  "805" -> "807" 
+  "805" -> "808" 
+  "809" -> "810" 
+  "810" -> "811" 
+  "811" -> "812" 
+  "811" -> "813" 
+  "811" -> "818" 
+  "813" -> "814" 
+  "813" -> "817" 
+  "814" -> "815" 
+  "814" -> "816" 
+  "818" -> "819" 
+  "818" -> "820" 
+  "821" -> "822" 
+  "821" -> "823" 
+  "821" -> "826" 
+  "821" -> "830" 
+  "821" -> "832" 
+  "823" -> "824" 
+  "823" -> "825" 
+  "826" -> "827" 
+  "826" -> "828" 
+  "828" -> "829" 
+  "830" -> "831" 
+  "832" -> "833" 
+  "833" -> "834" 
+  "833" -> "835" 
+  "836" -> "837" 
+  "836" -> "838" 
+  "838" -> "839" 
+  "841" -> "842" 
+  "841" -> "843" 
+  "843" -> "844" 
+  "844" -> "845" 
+  "846" -> "847" 
+  "846" -> "848" 
+  "849" -> "850" 
+}

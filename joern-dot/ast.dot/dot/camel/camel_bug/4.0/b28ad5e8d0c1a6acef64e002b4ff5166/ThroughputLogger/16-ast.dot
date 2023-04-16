@@ -1,0 +1,171 @@
+digraph "createLogMessage" {  
+"463" [label = <(METHOD,createLogMessage)<SUB>116</SUB>> ]
+"28" [label = <(PARAM,this)<SUB>116</SUB>> ]
+"464" [label = <(PARAM,Exchange exchange)<SUB>116</SUB>> ]
+"465" [label = <(PARAM,int receivedCount)<SUB>116</SUB>> ]
+"466" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>116</SUB>> ]
+"467" [label = <(LOCAL,long time: long)> ]
+"468" [label = <(&lt;operator&gt;.assignment,long time = System.currentTimeMillis())<SUB>117</SUB>> ]
+"469" [label = <(IDENTIFIER,time,long time = System.currentTimeMillis())<SUB>117</SUB>> ]
+"470" [label = <(currentTimeMillis,System.currentTimeMillis())<SUB>117</SUB>> ]
+"471" [label = <(IDENTIFIER,System,System.currentTimeMillis())<SUB>117</SUB>> ]
+"472" [label = <(CONTROL_STRUCTURE,if (groupStartTime == 0),if (groupStartTime == 0))<SUB>118</SUB>> ]
+"473" [label = <(&lt;operator&gt;.equals,groupStartTime == 0)<SUB>118</SUB>> ]
+"474" [label = <(&lt;operator&gt;.fieldAccess,this.groupStartTime)<SUB>118</SUB>> ]
+"475" [label = <(IDENTIFIER,this,groupStartTime == 0)<SUB>118</SUB>> ]
+"476" [label = <(FIELD_IDENTIFIER,groupStartTime,groupStartTime)<SUB>118</SUB>> ]
+"477" [label = <(LITERAL,0,groupStartTime == 0)<SUB>118</SUB>> ]
+"478" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>118</SUB>> ]
+"479" [label = <(&lt;operator&gt;.assignment,this.groupStartTime = this.startTime)<SUB>119</SUB>> ]
+"480" [label = <(&lt;operator&gt;.fieldAccess,this.groupStartTime)<SUB>119</SUB>> ]
+"481" [label = <(IDENTIFIER,this,this.groupStartTime = this.startTime)<SUB>119</SUB>> ]
+"482" [label = <(FIELD_IDENTIFIER,groupStartTime,groupStartTime)<SUB>119</SUB>> ]
+"483" [label = <(&lt;operator&gt;.fieldAccess,this.startTime)<SUB>119</SUB>> ]
+"484" [label = <(IDENTIFIER,this,this.groupStartTime = this.startTime)<SUB>119</SUB>> ]
+"485" [label = <(FIELD_IDENTIFIER,startTime,startTime)<SUB>119</SUB>> ]
+"486" [label = <(LOCAL,double rate: double)> ]
+"487" [label = <(&lt;operator&gt;.assignment,double rate = this.messagesPerSecond(groupSize, groupStartTime, time))<SUB>122</SUB>> ]
+"488" [label = <(IDENTIFIER,rate,double rate = this.messagesPerSecond(groupSize, groupStartTime, time))<SUB>122</SUB>> ]
+"489" [label = <(messagesPerSecond,this.messagesPerSecond(groupSize, groupStartTime, time))<SUB>122</SUB>> ]
+"27" [label = <(IDENTIFIER,this,this.messagesPerSecond(groupSize, groupStartTime, time))<SUB>122</SUB>> ]
+"490" [label = <(&lt;operator&gt;.fieldAccess,this.groupSize)<SUB>122</SUB>> ]
+"491" [label = <(IDENTIFIER,this,this.messagesPerSecond(groupSize, groupStartTime, time))<SUB>122</SUB>> ]
+"492" [label = <(FIELD_IDENTIFIER,groupSize,groupSize)<SUB>122</SUB>> ]
+"493" [label = <(&lt;operator&gt;.fieldAccess,this.groupStartTime)<SUB>122</SUB>> ]
+"494" [label = <(IDENTIFIER,this,this.messagesPerSecond(groupSize, groupStartTime, time))<SUB>122</SUB>> ]
+"495" [label = <(FIELD_IDENTIFIER,groupStartTime,groupStartTime)<SUB>122</SUB>> ]
+"496" [label = <(IDENTIFIER,time,this.messagesPerSecond(groupSize, groupStartTime, time))<SUB>122</SUB>> ]
+"497" [label = <(LOCAL,double average: double)> ]
+"498" [label = <(&lt;operator&gt;.assignment,double average = this.messagesPerSecond(receivedCount, startTime, time))<SUB>123</SUB>> ]
+"499" [label = <(IDENTIFIER,average,double average = this.messagesPerSecond(receivedCount, startTime, time))<SUB>123</SUB>> ]
+"500" [label = <(messagesPerSecond,this.messagesPerSecond(receivedCount, startTime, time))<SUB>123</SUB>> ]
+"29" [label = <(IDENTIFIER,this,this.messagesPerSecond(receivedCount, startTime, time))<SUB>123</SUB>> ]
+"501" [label = <(IDENTIFIER,receivedCount,this.messagesPerSecond(receivedCount, startTime, time))<SUB>123</SUB>> ]
+"502" [label = <(&lt;operator&gt;.fieldAccess,this.startTime)<SUB>123</SUB>> ]
+"503" [label = <(IDENTIFIER,this,this.messagesPerSecond(receivedCount, startTime, time))<SUB>123</SUB>> ]
+"504" [label = <(FIELD_IDENTIFIER,startTime,startTime)<SUB>123</SUB>> ]
+"505" [label = <(IDENTIFIER,time,this.messagesPerSecond(receivedCount, startTime, time))<SUB>123</SUB>> ]
+"506" [label = <(&lt;operator&gt;.assignment,this.groupStartTime = time)<SUB>125</SUB>> ]
+"507" [label = <(&lt;operator&gt;.fieldAccess,this.groupStartTime)<SUB>125</SUB>> ]
+"508" [label = <(IDENTIFIER,this,this.groupStartTime = time)<SUB>125</SUB>> ]
+"509" [label = <(FIELD_IDENTIFIER,groupStartTime,groupStartTime)<SUB>125</SUB>> ]
+"510" [label = <(IDENTIFIER,time,this.groupStartTime = time)<SUB>125</SUB>> ]
+"511" [label = <(RETURN,return getAction() + &quot;: &quot; + receivedCount + &quot; messages so far. Last group took: &quot; + (time - groupStartTime) + &quot; millis which is: &quot; + numberFormat.format(rate) + &quot; messages per second. average: &quot; + numberFormat.format(average);,return getAction() + &quot;: &quot; + receivedCount + &quot; messages so far. Last group took: &quot; + (time - groupStartTime) + &quot; millis which is: &quot; + numberFormat.format(rate) + &quot; messages per second. average: &quot; + numberFormat.format(average);)<SUB>127</SUB>> ]
+"512" [label = <(&lt;operator&gt;.addition,getAction() + &quot;: &quot; + receivedCount + &quot; messages so far. Last group took: &quot; + (time - groupStartTime) + &quot; millis which is: &quot; + numberFormat.format(rate) + &quot; messages per second. average: &quot; + numberFormat.format(average))<SUB>127</SUB>> ]
+"513" [label = <(&lt;operator&gt;.addition,getAction() + &quot;: &quot; + receivedCount + &quot; messages so far. Last group took: &quot; + (time - groupStartTime) + &quot; millis which is: &quot; + numberFormat.format(rate) + &quot; messages per second. average: &quot;)<SUB>127</SUB>> ]
+"514" [label = <(&lt;operator&gt;.addition,getAction() + &quot;: &quot; + receivedCount + &quot; messages so far. Last group took: &quot; + (time - groupStartTime) + &quot; millis which is: &quot; + numberFormat.format(rate))<SUB>127</SUB>> ]
+"515" [label = <(&lt;operator&gt;.addition,getAction() + &quot;: &quot; + receivedCount + &quot; messages so far. Last group took: &quot; + (time - groupStartTime) + &quot; millis which is: &quot;)<SUB>127</SUB>> ]
+"516" [label = <(&lt;operator&gt;.addition,getAction() + &quot;: &quot; + receivedCount + &quot; messages so far. Last group took: &quot; + (time - groupStartTime))<SUB>127</SUB>> ]
+"517" [label = <(&lt;operator&gt;.addition,getAction() + &quot;: &quot; + receivedCount + &quot; messages so far. Last group took: &quot;)<SUB>127</SUB>> ]
+"518" [label = <(&lt;operator&gt;.addition,getAction() + &quot;: &quot; + receivedCount)<SUB>127</SUB>> ]
+"519" [label = <(&lt;operator&gt;.addition,getAction() + &quot;: &quot;)<SUB>127</SUB>> ]
+"520" [label = <(getAction,this.getAction())<SUB>127</SUB>> ]
+"30" [label = <(IDENTIFIER,this,this.getAction())<SUB>127</SUB>> ]
+"521" [label = <(LITERAL,&quot;: &quot;,getAction() + &quot;: &quot;)<SUB>127</SUB>> ]
+"522" [label = <(IDENTIFIER,receivedCount,getAction() + &quot;: &quot; + receivedCount)<SUB>127</SUB>> ]
+"523" [label = <(LITERAL,&quot; messages so far. Last group took: &quot;,getAction() + &quot;: &quot; + receivedCount + &quot; messages so far. Last group took: &quot;)<SUB>127</SUB>> ]
+"524" [label = <(&lt;operator&gt;.subtraction,time - groupStartTime)<SUB>127</SUB>> ]
+"525" [label = <(IDENTIFIER,time,time - groupStartTime)<SUB>127</SUB>> ]
+"526" [label = <(&lt;operator&gt;.fieldAccess,this.groupStartTime)<SUB>127</SUB>> ]
+"527" [label = <(IDENTIFIER,this,time - groupStartTime)<SUB>127</SUB>> ]
+"528" [label = <(FIELD_IDENTIFIER,groupStartTime,groupStartTime)<SUB>127</SUB>> ]
+"529" [label = <(LITERAL,&quot; millis which is: &quot;,getAction() + &quot;: &quot; + receivedCount + &quot; messages so far. Last group took: &quot; + (time - groupStartTime) + &quot; millis which is: &quot;)<SUB>128</SUB>> ]
+"530" [label = <(format,numberFormat.format(rate))<SUB>128</SUB>> ]
+"531" [label = <(&lt;operator&gt;.fieldAccess,this.numberFormat)<SUB>128</SUB>> ]
+"532" [label = <(IDENTIFIER,this,numberFormat.format(rate))<SUB>128</SUB>> ]
+"533" [label = <(FIELD_IDENTIFIER,numberFormat,numberFormat)<SUB>128</SUB>> ]
+"534" [label = <(IDENTIFIER,rate,numberFormat.format(rate))<SUB>128</SUB>> ]
+"535" [label = <(LITERAL,&quot; messages per second. average: &quot;,getAction() + &quot;: &quot; + receivedCount + &quot; messages so far. Last group took: &quot; + (time - groupStartTime) + &quot; millis which is: &quot; + numberFormat.format(rate) + &quot; messages per second. average: &quot;)<SUB>129</SUB>> ]
+"536" [label = <(format,numberFormat.format(average))<SUB>129</SUB>> ]
+"537" [label = <(&lt;operator&gt;.fieldAccess,this.numberFormat)<SUB>129</SUB>> ]
+"538" [label = <(IDENTIFIER,this,numberFormat.format(average))<SUB>129</SUB>> ]
+"539" [label = <(FIELD_IDENTIFIER,numberFormat,numberFormat)<SUB>129</SUB>> ]
+"540" [label = <(IDENTIFIER,average,numberFormat.format(average))<SUB>129</SUB>> ]
+"541" [label = <(MODIFIER,PROTECTED)> ]
+"542" [label = <(MODIFIER,VIRTUAL)> ]
+"543" [label = <(METHOD_RETURN,java.lang.String)<SUB>116</SUB>> ]
+  "463" -> "28" 
+  "463" -> "464" 
+  "463" -> "465" 
+  "463" -> "466" 
+  "463" -> "541" 
+  "463" -> "542" 
+  "463" -> "543" 
+  "466" -> "467" 
+  "466" -> "468" 
+  "466" -> "472" 
+  "466" -> "486" 
+  "466" -> "487" 
+  "466" -> "497" 
+  "466" -> "498" 
+  "466" -> "506" 
+  "466" -> "511" 
+  "468" -> "469" 
+  "468" -> "470" 
+  "470" -> "471" 
+  "472" -> "473" 
+  "472" -> "478" 
+  "473" -> "474" 
+  "473" -> "477" 
+  "474" -> "475" 
+  "474" -> "476" 
+  "478" -> "479" 
+  "479" -> "480" 
+  "479" -> "483" 
+  "480" -> "481" 
+  "480" -> "482" 
+  "483" -> "484" 
+  "483" -> "485" 
+  "487" -> "488" 
+  "487" -> "489" 
+  "489" -> "27" 
+  "489" -> "490" 
+  "489" -> "493" 
+  "489" -> "496" 
+  "490" -> "491" 
+  "490" -> "492" 
+  "493" -> "494" 
+  "493" -> "495" 
+  "498" -> "499" 
+  "498" -> "500" 
+  "500" -> "29" 
+  "500" -> "501" 
+  "500" -> "502" 
+  "500" -> "505" 
+  "502" -> "503" 
+  "502" -> "504" 
+  "506" -> "507" 
+  "506" -> "510" 
+  "507" -> "508" 
+  "507" -> "509" 
+  "511" -> "512" 
+  "512" -> "513" 
+  "512" -> "536" 
+  "513" -> "514" 
+  "513" -> "535" 
+  "514" -> "515" 
+  "514" -> "530" 
+  "515" -> "516" 
+  "515" -> "529" 
+  "516" -> "517" 
+  "516" -> "524" 
+  "517" -> "518" 
+  "517" -> "523" 
+  "518" -> "519" 
+  "518" -> "522" 
+  "519" -> "520" 
+  "519" -> "521" 
+  "520" -> "30" 
+  "524" -> "525" 
+  "524" -> "526" 
+  "526" -> "527" 
+  "526" -> "528" 
+  "530" -> "531" 
+  "530" -> "534" 
+  "531" -> "532" 
+  "531" -> "533" 
+  "536" -> "537" 
+  "536" -> "540" 
+  "537" -> "538" 
+  "537" -> "539" 
+}

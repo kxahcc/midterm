@@ -1,0 +1,125 @@
+digraph "invoke" {  
+"43" [label = <(METHOD,invoke)<SUB>42</SUB>> ]
+"44" [label = <(PARAM,this)<SUB>42</SUB>> ]
+"45" [label = <(PARAM,Object proxy)<SUB>42</SUB>> ]
+"46" [label = <(PARAM,Method method)<SUB>42</SUB>> ]
+"47" [label = <(PARAM,Object[] args)<SUB>42</SUB>> ]
+"48" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>42</SUB>> ]
+"7" [label = <(LOCAL,BeanInvocation invocation: ANY)> ]
+"49" [label = <(&lt;operator&gt;.assignment,ANY invocation = new BeanInvocation(method, args))<SUB>43</SUB>> ]
+"50" [label = <(IDENTIFIER,invocation,ANY invocation = new BeanInvocation(method, args))<SUB>43</SUB>> ]
+"51" [label = <(&lt;operator&gt;.alloc,new BeanInvocation(method, args))<SUB>43</SUB>> ]
+"52" [label = <(&lt;init&gt;,new BeanInvocation(method, args))<SUB>43</SUB>> ]
+"6" [label = <(IDENTIFIER,invocation,new BeanInvocation(method, args))<SUB>43</SUB>> ]
+"53" [label = <(IDENTIFIER,method,new BeanInvocation(method, args))<SUB>43</SUB>> ]
+"54" [label = <(IDENTIFIER,args,new BeanInvocation(method, args))<SUB>43</SUB>> ]
+"9" [label = <(LOCAL,BeanExchange exchange: ANY)> ]
+"55" [label = <(&lt;operator&gt;.assignment,ANY exchange = new BeanExchange(endpoint.getCamelContext(), ExchangePattern.InOut))<SUB>44</SUB>> ]
+"56" [label = <(IDENTIFIER,exchange,ANY exchange = new BeanExchange(endpoint.getCamelContext(), ExchangePattern.InOut))<SUB>44</SUB>> ]
+"57" [label = <(&lt;operator&gt;.alloc,new BeanExchange(endpoint.getCamelContext(), ExchangePattern.InOut))<SUB>44</SUB>> ]
+"58" [label = <(&lt;init&gt;,new BeanExchange(endpoint.getCamelContext(), ExchangePattern.InOut))<SUB>44</SUB>> ]
+"8" [label = <(IDENTIFIER,exchange,new BeanExchange(endpoint.getCamelContext(), ExchangePattern.InOut))<SUB>44</SUB>> ]
+"59" [label = <(getCamelContext,getCamelContext())<SUB>44</SUB>> ]
+"60" [label = <(&lt;operator&gt;.fieldAccess,this.endpoint)<SUB>44</SUB>> ]
+"61" [label = <(IDENTIFIER,this,getCamelContext())<SUB>44</SUB>> ]
+"62" [label = <(FIELD_IDENTIFIER,endpoint,endpoint)<SUB>44</SUB>> ]
+"63" [label = <(&lt;operator&gt;.fieldAccess,ExchangePattern.InOut)<SUB>44</SUB>> ]
+"64" [label = <(IDENTIFIER,ExchangePattern,new BeanExchange(endpoint.getCamelContext(), ExchangePattern.InOut))<SUB>44</SUB>> ]
+"65" [label = <(FIELD_IDENTIFIER,InOut,InOut)<SUB>44</SUB>> ]
+"66" [label = <(setInvocation,setInvocation(invocation))<SUB>45</SUB>> ]
+"67" [label = <(IDENTIFIER,exchange,setInvocation(invocation))<SUB>45</SUB>> ]
+"68" [label = <(IDENTIFIER,invocation,setInvocation(invocation))<SUB>45</SUB>> ]
+"69" [label = <(process,process(exchange))<SUB>47</SUB>> ]
+"70" [label = <(&lt;operator&gt;.fieldAccess,this.producer)<SUB>47</SUB>> ]
+"71" [label = <(IDENTIFIER,this,process(exchange))<SUB>47</SUB>> ]
+"72" [label = <(FIELD_IDENTIFIER,producer,producer)<SUB>47</SUB>> ]
+"73" [label = <(IDENTIFIER,exchange,process(exchange))<SUB>47</SUB>> ]
+"74" [label = <(LOCAL,Throwable fault: java.lang.Throwable)> ]
+"75" [label = <(&lt;operator&gt;.assignment,Throwable fault = getException())<SUB>48</SUB>> ]
+"76" [label = <(IDENTIFIER,fault,Throwable fault = getException())<SUB>48</SUB>> ]
+"77" [label = <(getException,getException())<SUB>48</SUB>> ]
+"78" [label = <(IDENTIFIER,exchange,getException())<SUB>48</SUB>> ]
+"79" [label = <(CONTROL_STRUCTURE,if (fault != null),if (fault != null))<SUB>49</SUB>> ]
+"80" [label = <(&lt;operator&gt;.notEquals,fault != null)<SUB>49</SUB>> ]
+"81" [label = <(IDENTIFIER,fault,fault != null)<SUB>49</SUB>> ]
+"82" [label = <(LITERAL,null,fault != null)<SUB>49</SUB>> ]
+"83" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>49</SUB>> ]
+"84" [label = <(&lt;operator&gt;.throw,throw new InvocationTargetException(fault);)<SUB>50</SUB>> ]
+"85" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>50</SUB>> ]
+"86" [label = <(&lt;operator&gt;.assignment,&lt;empty&gt;)> ]
+"87" [label = <(IDENTIFIER,$obj2,&lt;empty&gt;)> ]
+"88" [label = <(&lt;operator&gt;.alloc,new InvocationTargetException(fault))<SUB>50</SUB>> ]
+"89" [label = <(&lt;init&gt;,new InvocationTargetException(fault))<SUB>50</SUB>> ]
+"90" [label = <(IDENTIFIER,$obj2,new InvocationTargetException(fault))> ]
+"91" [label = <(IDENTIFIER,fault,new InvocationTargetException(fault))<SUB>50</SUB>> ]
+"92" [label = <(IDENTIFIER,$obj2,&lt;empty&gt;)> ]
+"93" [label = <(RETURN,return exchange.getOut(true).getBody();,return exchange.getOut(true).getBody();)<SUB>52</SUB>> ]
+"94" [label = <(getBody,getBody())<SUB>52</SUB>> ]
+"95" [label = <(getOut,getOut(true))<SUB>52</SUB>> ]
+"96" [label = <(IDENTIFIER,exchange,getOut(true))<SUB>52</SUB>> ]
+"97" [label = <(LITERAL,true,getOut(true))<SUB>52</SUB>> ]
+"98" [label = <(MODIFIER,PUBLIC)> ]
+"99" [label = <(MODIFIER,VIRTUAL)> ]
+"100" [label = <(METHOD_RETURN,java.lang.Object)<SUB>42</SUB>> ]
+  "43" -> "44" 
+  "43" -> "45" 
+  "43" -> "46" 
+  "43" -> "47" 
+  "43" -> "48" 
+  "43" -> "98" 
+  "43" -> "99" 
+  "43" -> "100" 
+  "48" -> "7" 
+  "48" -> "49" 
+  "48" -> "52" 
+  "48" -> "9" 
+  "48" -> "55" 
+  "48" -> "58" 
+  "48" -> "66" 
+  "48" -> "69" 
+  "48" -> "74" 
+  "48" -> "75" 
+  "48" -> "79" 
+  "48" -> "93" 
+  "49" -> "50" 
+  "49" -> "51" 
+  "52" -> "6" 
+  "52" -> "53" 
+  "52" -> "54" 
+  "55" -> "56" 
+  "55" -> "57" 
+  "58" -> "8" 
+  "58" -> "59" 
+  "58" -> "63" 
+  "59" -> "60" 
+  "60" -> "61" 
+  "60" -> "62" 
+  "63" -> "64" 
+  "63" -> "65" 
+  "66" -> "67" 
+  "66" -> "68" 
+  "69" -> "70" 
+  "69" -> "73" 
+  "70" -> "71" 
+  "70" -> "72" 
+  "75" -> "76" 
+  "75" -> "77" 
+  "77" -> "78" 
+  "79" -> "80" 
+  "79" -> "83" 
+  "80" -> "81" 
+  "80" -> "82" 
+  "83" -> "84" 
+  "84" -> "85" 
+  "85" -> "86" 
+  "85" -> "89" 
+  "85" -> "92" 
+  "86" -> "87" 
+  "86" -> "88" 
+  "89" -> "90" 
+  "89" -> "91" 
+  "93" -> "94" 
+  "94" -> "95" 
+  "95" -> "96" 
+  "95" -> "97" 
+}

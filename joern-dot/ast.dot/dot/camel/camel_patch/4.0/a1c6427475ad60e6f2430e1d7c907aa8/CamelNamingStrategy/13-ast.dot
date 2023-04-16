@@ -1,0 +1,99 @@
+digraph "getEndpointId" {  
+"672" [label = <(METHOD,getEndpointId)<SUB>191</SUB>> ]
+"673" [label = <(PARAM,this)<SUB>191</SUB>> ]
+"674" [label = <(PARAM,Endpoint&lt;? extends Exchange&gt; ep)<SUB>191</SUB>> ]
+"675" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>191</SUB>> ]
+"676" [label = <(LOCAL,String uri: java.lang.String)> ]
+"677" [label = <(&lt;operator&gt;.assignment,String uri = getEndpointUri())<SUB>192</SUB>> ]
+"678" [label = <(IDENTIFIER,uri,String uri = getEndpointUri())<SUB>192</SUB>> ]
+"679" [label = <(getEndpointUri,getEndpointUri())<SUB>192</SUB>> ]
+"680" [label = <(IDENTIFIER,ep,getEndpointUri())<SUB>192</SUB>> ]
+"681" [label = <(LOCAL,int pos: int)> ]
+"682" [label = <(&lt;operator&gt;.assignment,int pos = uri.indexOf(':'))<SUB>193</SUB>> ]
+"683" [label = <(IDENTIFIER,pos,int pos = uri.indexOf(':'))<SUB>193</SUB>> ]
+"684" [label = <(indexOf,uri.indexOf(':'))<SUB>193</SUB>> ]
+"685" [label = <(IDENTIFIER,uri,uri.indexOf(':'))<SUB>193</SUB>> ]
+"686" [label = <(LITERAL,':',uri.indexOf(':'))<SUB>193</SUB>> ]
+"687" [label = <(LOCAL,String id: java.lang.String)> ]
+"688" [label = <(&lt;operator&gt;.assignment,String id = (pos == -1) ? uri : uri.substring(pos + 1))<SUB>194</SUB>> ]
+"689" [label = <(IDENTIFIER,id,String id = (pos == -1) ? uri : uri.substring(pos + 1))<SUB>194</SUB>> ]
+"690" [label = <(&lt;operator&gt;.conditional,(pos == -1) ? uri : uri.substring(pos + 1))<SUB>194</SUB>> ]
+"691" [label = <(&lt;operator&gt;.equals,pos == -1)<SUB>194</SUB>> ]
+"692" [label = <(IDENTIFIER,pos,pos == -1)<SUB>194</SUB>> ]
+"693" [label = <(&lt;operator&gt;.minus,-1)<SUB>194</SUB>> ]
+"694" [label = <(LITERAL,1,-1)<SUB>194</SUB>> ]
+"695" [label = <(IDENTIFIER,uri,(pos == -1) ? uri : uri.substring(pos + 1))<SUB>194</SUB>> ]
+"696" [label = <(substring,uri.substring(pos + 1))<SUB>194</SUB>> ]
+"697" [label = <(IDENTIFIER,uri,uri.substring(pos + 1))<SUB>194</SUB>> ]
+"698" [label = <(&lt;operator&gt;.addition,pos + 1)<SUB>194</SUB>> ]
+"699" [label = <(IDENTIFIER,pos,pos + 1)<SUB>194</SUB>> ]
+"700" [label = <(LITERAL,1,pos + 1)<SUB>194</SUB>> ]
+"701" [label = <(CONTROL_STRUCTURE,if (!ep.isSingleton()),if (!ep.isSingleton()))<SUB>195</SUB>> ]
+"702" [label = <(&lt;operator&gt;.logicalNot,!ep.isSingleton())<SUB>195</SUB>> ]
+"703" [label = <(isSingleton,isSingleton())<SUB>195</SUB>> ]
+"704" [label = <(IDENTIFIER,ep,isSingleton())<SUB>195</SUB>> ]
+"705" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>195</SUB>> ]
+"706" [label = <(&lt;operator&gt;.assignmentPlus,id += &quot;@&quot; + Integer.toString(ep.hashCode()))<SUB>196</SUB>> ]
+"707" [label = <(IDENTIFIER,id,id += &quot;@&quot; + Integer.toString(ep.hashCode()))<SUB>196</SUB>> ]
+"708" [label = <(&lt;operator&gt;.addition,&quot;@&quot; + Integer.toString(ep.hashCode()))<SUB>196</SUB>> ]
+"709" [label = <(LITERAL,&quot;@&quot;,&quot;@&quot; + Integer.toString(ep.hashCode()))<SUB>196</SUB>> ]
+"710" [label = <(toString,toString(ep.hashCode()))<SUB>196</SUB>> ]
+"711" [label = <(IDENTIFIER,Integer,toString(ep.hashCode()))<SUB>196</SUB>> ]
+"712" [label = <(hashCode,hashCode())<SUB>196</SUB>> ]
+"713" [label = <(IDENTIFIER,ep,hashCode())<SUB>196</SUB>> ]
+"714" [label = <(RETURN,return ObjectNameEncoder.encode(id);,return ObjectNameEncoder.encode(id);)<SUB>198</SUB>> ]
+"715" [label = <(encode,encode(id))<SUB>198</SUB>> ]
+"716" [label = <(IDENTIFIER,ObjectNameEncoder,encode(id))<SUB>198</SUB>> ]
+"717" [label = <(IDENTIFIER,id,encode(id))<SUB>198</SUB>> ]
+"718" [label = <(MODIFIER,PROTECTED)> ]
+"719" [label = <(MODIFIER,VIRTUAL)> ]
+"720" [label = <(METHOD_RETURN,java.lang.String)<SUB>191</SUB>> ]
+  "672" -> "673" 
+  "672" -> "674" 
+  "672" -> "675" 
+  "672" -> "718" 
+  "672" -> "719" 
+  "672" -> "720" 
+  "675" -> "676" 
+  "675" -> "677" 
+  "675" -> "681" 
+  "675" -> "682" 
+  "675" -> "687" 
+  "675" -> "688" 
+  "675" -> "701" 
+  "675" -> "714" 
+  "677" -> "678" 
+  "677" -> "679" 
+  "679" -> "680" 
+  "682" -> "683" 
+  "682" -> "684" 
+  "684" -> "685" 
+  "684" -> "686" 
+  "688" -> "689" 
+  "688" -> "690" 
+  "690" -> "691" 
+  "690" -> "695" 
+  "690" -> "696" 
+  "691" -> "692" 
+  "691" -> "693" 
+  "693" -> "694" 
+  "696" -> "697" 
+  "696" -> "698" 
+  "698" -> "699" 
+  "698" -> "700" 
+  "701" -> "702" 
+  "701" -> "705" 
+  "702" -> "703" 
+  "703" -> "704" 
+  "705" -> "706" 
+  "706" -> "707" 
+  "706" -> "708" 
+  "708" -> "709" 
+  "708" -> "710" 
+  "710" -> "711" 
+  "710" -> "712" 
+  "712" -> "713" 
+  "714" -> "715" 
+  "715" -> "716" 
+  "715" -> "717" 
+}

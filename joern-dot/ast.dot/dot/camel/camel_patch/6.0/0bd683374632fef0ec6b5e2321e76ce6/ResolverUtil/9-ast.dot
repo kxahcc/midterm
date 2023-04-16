@@ -1,0 +1,105 @@
+digraph "getClassLoaders" {  
+"237" [label = <(METHOD,getClassLoaders)<SUB>192</SUB>> ]
+"238" [label = <(PARAM,this)<SUB>192</SUB>> ]
+"239" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>192</SUB>> ]
+"240" [label = <(CONTROL_STRUCTURE,if (classLoaders == null),if (classLoaders == null))<SUB>193</SUB>> ]
+"241" [label = <(&lt;operator&gt;.equals,classLoaders == null)<SUB>193</SUB>> ]
+"242" [label = <(&lt;operator&gt;.fieldAccess,this.classLoaders)<SUB>193</SUB>> ]
+"243" [label = <(IDENTIFIER,this,classLoaders == null)<SUB>193</SUB>> ]
+"244" [label = <(FIELD_IDENTIFIER,classLoaders,classLoaders)<SUB>193</SUB>> ]
+"245" [label = <(LITERAL,null,classLoaders == null)<SUB>193</SUB>> ]
+"246" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>193</SUB>> ]
+"247" [label = <(&lt;operator&gt;.assignment,this.classLoaders = new HashSet&lt;ClassLoader&gt;())<SUB>194</SUB>> ]
+"248" [label = <(&lt;operator&gt;.fieldAccess,this.classLoaders)<SUB>194</SUB>> ]
+"249" [label = <(IDENTIFIER,this,this.classLoaders = new HashSet&lt;ClassLoader&gt;())<SUB>194</SUB>> ]
+"250" [label = <(FIELD_IDENTIFIER,classLoaders,classLoaders)<SUB>194</SUB>> ]
+"251" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>194</SUB>> ]
+"252" [label = <(&lt;operator&gt;.assignment,&lt;empty&gt;)> ]
+"253" [label = <(IDENTIFIER,$obj1,&lt;empty&gt;)> ]
+"254" [label = <(&lt;operator&gt;.alloc,new HashSet&lt;ClassLoader&gt;())<SUB>194</SUB>> ]
+"255" [label = <(&lt;init&gt;,new HashSet&lt;ClassLoader&gt;())<SUB>194</SUB>> ]
+"256" [label = <(IDENTIFIER,$obj1,new HashSet&lt;ClassLoader&gt;())> ]
+"257" [label = <(IDENTIFIER,$obj1,&lt;empty&gt;)> ]
+"258" [label = <(LOCAL,ClassLoader ccl: java.lang.ClassLoader)> ]
+"259" [label = <(&lt;operator&gt;.assignment,ClassLoader ccl = Thread.currentThread().getContextClassLoader())<SUB>195</SUB>> ]
+"260" [label = <(IDENTIFIER,ccl,ClassLoader ccl = Thread.currentThread().getContextClassLoader())<SUB>195</SUB>> ]
+"261" [label = <(getContextClassLoader,Thread.currentThread().getContextClassLoader())<SUB>195</SUB>> ]
+"262" [label = <(currentThread,Thread.currentThread())<SUB>195</SUB>> ]
+"263" [label = <(IDENTIFIER,Thread,Thread.currentThread())<SUB>195</SUB>> ]
+"264" [label = <(CONTROL_STRUCTURE,if (ccl != null),if (ccl != null))<SUB>196</SUB>> ]
+"265" [label = <(&lt;operator&gt;.notEquals,ccl != null)<SUB>196</SUB>> ]
+"266" [label = <(IDENTIFIER,ccl,ccl != null)<SUB>196</SUB>> ]
+"267" [label = <(LITERAL,null,ccl != null)<SUB>196</SUB>> ]
+"268" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>196</SUB>> ]
+"269" [label = <(add,classLoaders.add(ccl))<SUB>197</SUB>> ]
+"270" [label = <(&lt;operator&gt;.fieldAccess,this.classLoaders)<SUB>197</SUB>> ]
+"271" [label = <(IDENTIFIER,this,classLoaders.add(ccl))<SUB>197</SUB>> ]
+"272" [label = <(FIELD_IDENTIFIER,classLoaders,classLoaders)<SUB>197</SUB>> ]
+"273" [label = <(IDENTIFIER,ccl,classLoaders.add(ccl))<SUB>197</SUB>> ]
+"274" [label = <(add,classLoaders.add(ResolverUtil.class.getClassLoader()))<SUB>199</SUB>> ]
+"275" [label = <(&lt;operator&gt;.fieldAccess,this.classLoaders)<SUB>199</SUB>> ]
+"276" [label = <(IDENTIFIER,this,classLoaders.add(ResolverUtil.class.getClassLoader()))<SUB>199</SUB>> ]
+"277" [label = <(FIELD_IDENTIFIER,classLoaders,classLoaders)<SUB>199</SUB>> ]
+"278" [label = <(getClassLoader,this.getClassLoader())<SUB>199</SUB>> ]
+"279" [label = <(&lt;operator&gt;.fieldAccess,ResolverUtil.class)<SUB>199</SUB>> ]
+"280" [label = <(IDENTIFIER,ResolverUtil,this.getClassLoader())<SUB>199</SUB>> ]
+"281" [label = <(FIELD_IDENTIFIER,class,class)<SUB>199</SUB>> ]
+"282" [label = <(RETURN,return classLoaders;,return classLoaders;)<SUB>201</SUB>> ]
+"283" [label = <(&lt;operator&gt;.fieldAccess,this.classLoaders)<SUB>201</SUB>> ]
+"284" [label = <(IDENTIFIER,this,return classLoaders;)<SUB>201</SUB>> ]
+"285" [label = <(FIELD_IDENTIFIER,classLoaders,classLoaders)<SUB>201</SUB>> ]
+"286" [label = <(MODIFIER,PUBLIC)> ]
+"287" [label = <(MODIFIER,VIRTUAL)> ]
+"288" [label = <(METHOD_RETURN,java.util.Set)<SUB>192</SUB>> ]
+  "237" -> "238" 
+  "237" -> "239" 
+  "237" -> "286" 
+  "237" -> "287" 
+  "237" -> "288" 
+  "239" -> "240" 
+  "239" -> "282" 
+  "240" -> "241" 
+  "240" -> "246" 
+  "241" -> "242" 
+  "241" -> "245" 
+  "242" -> "243" 
+  "242" -> "244" 
+  "246" -> "247" 
+  "246" -> "258" 
+  "246" -> "259" 
+  "246" -> "264" 
+  "246" -> "274" 
+  "247" -> "248" 
+  "247" -> "251" 
+  "248" -> "249" 
+  "248" -> "250" 
+  "251" -> "252" 
+  "251" -> "255" 
+  "251" -> "257" 
+  "252" -> "253" 
+  "252" -> "254" 
+  "255" -> "256" 
+  "259" -> "260" 
+  "259" -> "261" 
+  "261" -> "262" 
+  "262" -> "263" 
+  "264" -> "265" 
+  "264" -> "268" 
+  "265" -> "266" 
+  "265" -> "267" 
+  "268" -> "269" 
+  "269" -> "270" 
+  "269" -> "273" 
+  "270" -> "271" 
+  "270" -> "272" 
+  "274" -> "275" 
+  "274" -> "278" 
+  "275" -> "276" 
+  "275" -> "277" 
+  "278" -> "279" 
+  "279" -> "280" 
+  "279" -> "281" 
+  "282" -> "283" 
+  "283" -> "284" 
+  "283" -> "285" 
+}

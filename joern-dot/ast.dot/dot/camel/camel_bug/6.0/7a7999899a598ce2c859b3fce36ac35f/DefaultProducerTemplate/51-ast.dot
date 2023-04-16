@@ -1,0 +1,151 @@
+digraph "extractResultBody" {  
+"1052" [label = <(METHOD,extractResultBody)<SUB>362</SUB>> ]
+"107" [label = <(PARAM,this)<SUB>362</SUB>> ]
+"1053" [label = <(PARAM,E result)<SUB>362</SUB>> ]
+"1054" [label = <(PARAM,ExchangePattern pattern)<SUB>362</SUB>> ]
+"1055" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>362</SUB>> ]
+"1056" [label = <(LOCAL,Object answer: java.lang.Object)> ]
+"1057" [label = <(&lt;operator&gt;.assignment,Object answer = null)<SUB>363</SUB>> ]
+"1058" [label = <(IDENTIFIER,answer,Object answer = null)<SUB>363</SUB>> ]
+"1059" [label = <(LITERAL,null,Object answer = null)<SUB>363</SUB>> ]
+"1060" [label = <(CONTROL_STRUCTURE,if (result != null),if (result != null))<SUB>364</SUB>> ]
+"1061" [label = <(&lt;operator&gt;.notEquals,result != null)<SUB>364</SUB>> ]
+"1062" [label = <(IDENTIFIER,result,result != null)<SUB>364</SUB>> ]
+"1063" [label = <(LITERAL,null,result != null)<SUB>364</SUB>> ]
+"1064" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>364</SUB>> ]
+"1065" [label = <(CONTROL_STRUCTURE,if (result.getException() != null),if (result.getException() != null))<SUB>366</SUB>> ]
+"1066" [label = <(&lt;operator&gt;.notEquals,result.getException() != null)<SUB>366</SUB>> ]
+"1067" [label = <(getException,getException())<SUB>366</SUB>> ]
+"1068" [label = <(IDENTIFIER,result,getException())<SUB>366</SUB>> ]
+"1069" [label = <(LITERAL,null,result.getException() != null)<SUB>366</SUB>> ]
+"1070" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>366</SUB>> ]
+"1071" [label = <(&lt;operator&gt;.throw,throw wrapRuntimeCamelException(result.getException());)<SUB>367</SUB>> ]
+"1072" [label = <(wrapRuntimeCamelException,wrapRuntimeCamelException(result.getException()))<SUB>367</SUB>> ]
+"106" [label = <(IDENTIFIER,this,wrapRuntimeCamelException(result.getException()))<SUB>367</SUB>> ]
+"1073" [label = <(getException,getException())<SUB>367</SUB>> ]
+"1074" [label = <(IDENTIFIER,result,getException())<SUB>367</SUB>> ]
+"1075" [label = <(CONTROL_STRUCTURE,if (hasFaultMessage(result)),if (hasFaultMessage(result)))<SUB>371</SUB>> ]
+"1076" [label = <(hasFaultMessage,this.hasFaultMessage(result))<SUB>371</SUB>> ]
+"108" [label = <(IDENTIFIER,this,this.hasFaultMessage(result))<SUB>371</SUB>> ]
+"1077" [label = <(IDENTIFIER,result,this.hasFaultMessage(result))<SUB>371</SUB>> ]
+"1078" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>371</SUB>> ]
+"1079" [label = <(RETURN,return result.getFault().getBody();,return result.getFault().getBody();)<SUB>372</SUB>> ]
+"1080" [label = <(getBody,getBody())<SUB>372</SUB>> ]
+"1081" [label = <(getFault,getFault())<SUB>372</SUB>> ]
+"1082" [label = <(IDENTIFIER,result,getFault())<SUB>372</SUB>> ]
+"1083" [label = <(LOCAL,boolean notOut: boolean)> ]
+"1084" [label = <(&lt;operator&gt;.assignment,boolean notOut = pattern != null &amp;&amp; !pattern.isOutCapable())<SUB>377</SUB>> ]
+"1085" [label = <(IDENTIFIER,notOut,boolean notOut = pattern != null &amp;&amp; !pattern.isOutCapable())<SUB>377</SUB>> ]
+"1086" [label = <(&lt;operator&gt;.logicalAnd,pattern != null &amp;&amp; !pattern.isOutCapable())<SUB>377</SUB>> ]
+"1087" [label = <(&lt;operator&gt;.notEquals,pattern != null)<SUB>377</SUB>> ]
+"1088" [label = <(IDENTIFIER,pattern,pattern != null)<SUB>377</SUB>> ]
+"1089" [label = <(LITERAL,null,pattern != null)<SUB>377</SUB>> ]
+"1090" [label = <(&lt;operator&gt;.logicalNot,!pattern.isOutCapable())<SUB>377</SUB>> ]
+"1091" [label = <(isOutCapable,isOutCapable())<SUB>377</SUB>> ]
+"1092" [label = <(IDENTIFIER,pattern,isOutCapable())<SUB>377</SUB>> ]
+"1093" [label = <(LOCAL,boolean hasOut: boolean)> ]
+"1094" [label = <(&lt;operator&gt;.assignment,boolean hasOut = result.getOut(false) != null)<SUB>378</SUB>> ]
+"1095" [label = <(IDENTIFIER,hasOut,boolean hasOut = result.getOut(false) != null)<SUB>378</SUB>> ]
+"1096" [label = <(&lt;operator&gt;.notEquals,result.getOut(false) != null)<SUB>378</SUB>> ]
+"1097" [label = <(getOut,getOut(false))<SUB>378</SUB>> ]
+"1098" [label = <(IDENTIFIER,result,getOut(false))<SUB>378</SUB>> ]
+"1099" [label = <(LITERAL,false,getOut(false))<SUB>378</SUB>> ]
+"1100" [label = <(LITERAL,null,result.getOut(false) != null)<SUB>378</SUB>> ]
+"1101" [label = <(CONTROL_STRUCTURE,if (hasOut &amp;&amp; !notOut),if (hasOut &amp;&amp; !notOut))<SUB>379</SUB>> ]
+"1102" [label = <(&lt;operator&gt;.logicalAnd,hasOut &amp;&amp; !notOut)<SUB>379</SUB>> ]
+"1103" [label = <(IDENTIFIER,hasOut,hasOut &amp;&amp; !notOut)<SUB>379</SUB>> ]
+"1104" [label = <(&lt;operator&gt;.logicalNot,!notOut)<SUB>379</SUB>> ]
+"1105" [label = <(IDENTIFIER,notOut,!notOut)<SUB>379</SUB>> ]
+"1106" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>379</SUB>> ]
+"1107" [label = <(&lt;operator&gt;.assignment,answer = getBody())<SUB>380</SUB>> ]
+"1108" [label = <(IDENTIFIER,answer,answer = getBody())<SUB>380</SUB>> ]
+"1109" [label = <(getBody,getBody())<SUB>380</SUB>> ]
+"1110" [label = <(getOut,getOut())<SUB>380</SUB>> ]
+"1111" [label = <(IDENTIFIER,result,getOut())<SUB>380</SUB>> ]
+"1112" [label = <(CONTROL_STRUCTURE,else,else)<SUB>381</SUB>> ]
+"1113" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>381</SUB>> ]
+"1114" [label = <(&lt;operator&gt;.assignment,answer = getBody())<SUB>382</SUB>> ]
+"1115" [label = <(IDENTIFIER,answer,answer = getBody())<SUB>382</SUB>> ]
+"1116" [label = <(getBody,getBody())<SUB>382</SUB>> ]
+"1117" [label = <(getIn,getIn())<SUB>382</SUB>> ]
+"1118" [label = <(IDENTIFIER,result,getIn())<SUB>382</SUB>> ]
+"1119" [label = <(RETURN,return answer;,return answer;)<SUB>385</SUB>> ]
+"1120" [label = <(IDENTIFIER,answer,return answer;)<SUB>385</SUB>> ]
+"1121" [label = <(MODIFIER,PROTECTED)> ]
+"1122" [label = <(MODIFIER,VIRTUAL)> ]
+"1123" [label = <(METHOD_RETURN,java.lang.Object)<SUB>362</SUB>> ]
+  "1052" -> "107" 
+  "1052" -> "1053" 
+  "1052" -> "1054" 
+  "1052" -> "1055" 
+  "1052" -> "1121" 
+  "1052" -> "1122" 
+  "1052" -> "1123" 
+  "1055" -> "1056" 
+  "1055" -> "1057" 
+  "1055" -> "1060" 
+  "1055" -> "1119" 
+  "1057" -> "1058" 
+  "1057" -> "1059" 
+  "1060" -> "1061" 
+  "1060" -> "1064" 
+  "1061" -> "1062" 
+  "1061" -> "1063" 
+  "1064" -> "1065" 
+  "1064" -> "1075" 
+  "1064" -> "1083" 
+  "1064" -> "1084" 
+  "1064" -> "1093" 
+  "1064" -> "1094" 
+  "1064" -> "1101" 
+  "1065" -> "1066" 
+  "1065" -> "1070" 
+  "1066" -> "1067" 
+  "1066" -> "1069" 
+  "1067" -> "1068" 
+  "1070" -> "1071" 
+  "1071" -> "1072" 
+  "1072" -> "106" 
+  "1072" -> "1073" 
+  "1073" -> "1074" 
+  "1075" -> "1076" 
+  "1075" -> "1078" 
+  "1076" -> "108" 
+  "1076" -> "1077" 
+  "1078" -> "1079" 
+  "1079" -> "1080" 
+  "1080" -> "1081" 
+  "1081" -> "1082" 
+  "1084" -> "1085" 
+  "1084" -> "1086" 
+  "1086" -> "1087" 
+  "1086" -> "1090" 
+  "1087" -> "1088" 
+  "1087" -> "1089" 
+  "1090" -> "1091" 
+  "1091" -> "1092" 
+  "1094" -> "1095" 
+  "1094" -> "1096" 
+  "1096" -> "1097" 
+  "1096" -> "1100" 
+  "1097" -> "1098" 
+  "1097" -> "1099" 
+  "1101" -> "1102" 
+  "1101" -> "1106" 
+  "1101" -> "1112" 
+  "1102" -> "1103" 
+  "1102" -> "1104" 
+  "1104" -> "1105" 
+  "1106" -> "1107" 
+  "1107" -> "1108" 
+  "1107" -> "1109" 
+  "1109" -> "1110" 
+  "1110" -> "1111" 
+  "1112" -> "1113" 
+  "1113" -> "1114" 
+  "1114" -> "1115" 
+  "1114" -> "1116" 
+  "1116" -> "1117" 
+  "1117" -> "1118" 
+  "1119" -> "1120" 
+}

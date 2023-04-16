@@ -1,0 +1,235 @@
+digraph "find" {  
+"396" [label = <(METHOD,find)<SUB>263</SUB>> ]
+"54" [label = <(PARAM,this)<SUB>263</SUB>> ]
+"397" [label = <(PARAM,Test test)<SUB>263</SUB>> ]
+"398" [label = <(PARAM,String packageName)<SUB>263</SUB>> ]
+"399" [label = <(PARAM,ClassLoader loader)<SUB>263</SUB>> ]
+"400" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>263</SUB>> ]
+"401" [label = <(LOCAL,Enumeration&lt;URL&gt; urls: java.util.Enumeration)> ]
+"402" [label = <(CONTROL_STRUCTURE,try,try)<SUB>266</SUB>> ]
+"403" [label = <(BLOCK,try,try)<SUB>266</SUB>> ]
+"404" [label = <(&lt;operator&gt;.assignment,urls = loader.getResources(packageName))<SUB>267</SUB>> ]
+"405" [label = <(IDENTIFIER,urls,urls = loader.getResources(packageName))<SUB>267</SUB>> ]
+"406" [label = <(getResources,loader.getResources(packageName))<SUB>267</SUB>> ]
+"407" [label = <(IDENTIFIER,loader,loader.getResources(packageName))<SUB>267</SUB>> ]
+"408" [label = <(IDENTIFIER,packageName,loader.getResources(packageName))<SUB>267</SUB>> ]
+"409" [label = <(BLOCK,catch,catch)> ]
+"410" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>268</SUB>> ]
+"411" [label = <(warn,warn(&quot;Could not read package: &quot; + packageName, ioe))<SUB>269</SUB>> ]
+"412" [label = <(&lt;operator&gt;.fieldAccess,ResolverUtil.LOG)<SUB>269</SUB>> ]
+"413" [label = <(IDENTIFIER,ResolverUtil,warn(&quot;Could not read package: &quot; + packageName, ioe))<SUB>269</SUB>> ]
+"414" [label = <(FIELD_IDENTIFIER,LOG,LOG)<SUB>269</SUB>> ]
+"415" [label = <(&lt;operator&gt;.addition,&quot;Could not read package: &quot; + packageName)<SUB>269</SUB>> ]
+"416" [label = <(LITERAL,&quot;Could not read package: &quot;,&quot;Could not read package: &quot; + packageName)<SUB>269</SUB>> ]
+"417" [label = <(IDENTIFIER,packageName,&quot;Could not read package: &quot; + packageName)<SUB>269</SUB>> ]
+"418" [label = <(IDENTIFIER,ioe,warn(&quot;Could not read package: &quot; + packageName, ioe))<SUB>269</SUB>> ]
+"419" [label = <(RETURN,return;,return;)<SUB>270</SUB>> ]
+"420" [label = <(CONTROL_STRUCTURE,while (urls.hasMoreElements()),while (urls.hasMoreElements()))<SUB>273</SUB>> ]
+"421" [label = <(hasMoreElements,urls.hasMoreElements())<SUB>273</SUB>> ]
+"422" [label = <(IDENTIFIER,urls,urls.hasMoreElements())<SUB>273</SUB>> ]
+"423" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>273</SUB>> ]
+"424" [label = <(CONTROL_STRUCTURE,try,try)<SUB>274</SUB>> ]
+"425" [label = <(BLOCK,try,try)<SUB>274</SUB>> ]
+"426" [label = <(LOCAL,URL url: java.net.URL)> ]
+"427" [label = <(&lt;operator&gt;.assignment,URL url = urls.nextElement())<SUB>275</SUB>> ]
+"428" [label = <(IDENTIFIER,url,URL url = urls.nextElement())<SUB>275</SUB>> ]
+"429" [label = <(nextElement,urls.nextElement())<SUB>275</SUB>> ]
+"430" [label = <(IDENTIFIER,urls,urls.nextElement())<SUB>275</SUB>> ]
+"431" [label = <(LOCAL,String urlPath: java.lang.String)> ]
+"432" [label = <(&lt;operator&gt;.assignment,String urlPath = url.getFile())<SUB>277</SUB>> ]
+"433" [label = <(IDENTIFIER,urlPath,String urlPath = url.getFile())<SUB>277</SUB>> ]
+"434" [label = <(getFile,url.getFile())<SUB>277</SUB>> ]
+"435" [label = <(IDENTIFIER,url,url.getFile())<SUB>277</SUB>> ]
+"436" [label = <(&lt;operator&gt;.assignment,urlPath = URLDecoder.decode(urlPath, &quot;UTF-8&quot;))<SUB>278</SUB>> ]
+"437" [label = <(IDENTIFIER,urlPath,urlPath = URLDecoder.decode(urlPath, &quot;UTF-8&quot;))<SUB>278</SUB>> ]
+"438" [label = <(decode,URLDecoder.decode(urlPath, &quot;UTF-8&quot;))<SUB>278</SUB>> ]
+"439" [label = <(IDENTIFIER,URLDecoder,URLDecoder.decode(urlPath, &quot;UTF-8&quot;))<SUB>278</SUB>> ]
+"440" [label = <(IDENTIFIER,urlPath,URLDecoder.decode(urlPath, &quot;UTF-8&quot;))<SUB>278</SUB>> ]
+"441" [label = <(LITERAL,&quot;UTF-8&quot;,URLDecoder.decode(urlPath, &quot;UTF-8&quot;))<SUB>278</SUB>> ]
+"442" [label = <(CONTROL_STRUCTURE,if (urlPath.startsWith(&quot;file:&quot;)),if (urlPath.startsWith(&quot;file:&quot;)))<SUB>281</SUB>> ]
+"443" [label = <(startsWith,urlPath.startsWith(&quot;file:&quot;))<SUB>281</SUB>> ]
+"444" [label = <(IDENTIFIER,urlPath,urlPath.startsWith(&quot;file:&quot;))<SUB>281</SUB>> ]
+"445" [label = <(LITERAL,&quot;file:&quot;,urlPath.startsWith(&quot;file:&quot;))<SUB>281</SUB>> ]
+"446" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>281</SUB>> ]
+"447" [label = <(&lt;operator&gt;.assignment,urlPath = urlPath.substring(5))<SUB>282</SUB>> ]
+"448" [label = <(IDENTIFIER,urlPath,urlPath = urlPath.substring(5))<SUB>282</SUB>> ]
+"449" [label = <(substring,urlPath.substring(5))<SUB>282</SUB>> ]
+"450" [label = <(IDENTIFIER,urlPath,urlPath.substring(5))<SUB>282</SUB>> ]
+"451" [label = <(LITERAL,5,urlPath.substring(5))<SUB>282</SUB>> ]
+"452" [label = <(CONTROL_STRUCTURE,if (urlPath.indexOf('!') &gt; 0),if (urlPath.indexOf('!') &gt; 0))<SUB>286</SUB>> ]
+"453" [label = <(&lt;operator&gt;.greaterThan,urlPath.indexOf('!') &gt; 0)<SUB>286</SUB>> ]
+"454" [label = <(indexOf,urlPath.indexOf('!'))<SUB>286</SUB>> ]
+"455" [label = <(IDENTIFIER,urlPath,urlPath.indexOf('!'))<SUB>286</SUB>> ]
+"456" [label = <(LITERAL,'!',urlPath.indexOf('!'))<SUB>286</SUB>> ]
+"457" [label = <(LITERAL,0,urlPath.indexOf('!') &gt; 0)<SUB>286</SUB>> ]
+"458" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>286</SUB>> ]
+"459" [label = <(&lt;operator&gt;.assignment,urlPath = urlPath.substring(0, urlPath.indexOf('!')))<SUB>287</SUB>> ]
+"460" [label = <(IDENTIFIER,urlPath,urlPath = urlPath.substring(0, urlPath.indexOf('!')))<SUB>287</SUB>> ]
+"461" [label = <(substring,urlPath.substring(0, urlPath.indexOf('!')))<SUB>287</SUB>> ]
+"462" [label = <(IDENTIFIER,urlPath,urlPath.substring(0, urlPath.indexOf('!')))<SUB>287</SUB>> ]
+"463" [label = <(LITERAL,0,urlPath.substring(0, urlPath.indexOf('!')))<SUB>287</SUB>> ]
+"464" [label = <(indexOf,urlPath.indexOf('!'))<SUB>287</SUB>> ]
+"465" [label = <(IDENTIFIER,urlPath,urlPath.indexOf('!'))<SUB>287</SUB>> ]
+"466" [label = <(LITERAL,'!',urlPath.indexOf('!'))<SUB>287</SUB>> ]
+"467" [label = <(debug,debug(&quot;Scanning for classes in [&quot; + urlPath + &quot;] matching criteria: &quot; + test))<SUB>290</SUB>> ]
+"468" [label = <(&lt;operator&gt;.fieldAccess,ResolverUtil.LOG)<SUB>290</SUB>> ]
+"469" [label = <(IDENTIFIER,ResolverUtil,debug(&quot;Scanning for classes in [&quot; + urlPath + &quot;] matching criteria: &quot; + test))<SUB>290</SUB>> ]
+"470" [label = <(FIELD_IDENTIFIER,LOG,LOG)<SUB>290</SUB>> ]
+"471" [label = <(&lt;operator&gt;.addition,&quot;Scanning for classes in [&quot; + urlPath + &quot;] matching criteria: &quot; + test)<SUB>290</SUB>> ]
+"472" [label = <(&lt;operator&gt;.addition,&quot;Scanning for classes in [&quot; + urlPath + &quot;] matching criteria: &quot;)<SUB>290</SUB>> ]
+"473" [label = <(&lt;operator&gt;.addition,&quot;Scanning for classes in [&quot; + urlPath)<SUB>290</SUB>> ]
+"474" [label = <(LITERAL,&quot;Scanning for classes in [&quot;,&quot;Scanning for classes in [&quot; + urlPath)<SUB>290</SUB>> ]
+"475" [label = <(IDENTIFIER,urlPath,&quot;Scanning for classes in [&quot; + urlPath)<SUB>290</SUB>> ]
+"476" [label = <(LITERAL,&quot;] matching criteria: &quot;,&quot;Scanning for classes in [&quot; + urlPath + &quot;] matching criteria: &quot;)<SUB>290</SUB>> ]
+"477" [label = <(IDENTIFIER,test,&quot;Scanning for classes in [&quot; + urlPath + &quot;] matching criteria: &quot; + test)<SUB>290</SUB>> ]
+"52" [label = <(LOCAL,File file: java.io.File)> ]
+"478" [label = <(&lt;operator&gt;.assignment,File file = new File(urlPath))<SUB>291</SUB>> ]
+"479" [label = <(IDENTIFIER,file,File file = new File(urlPath))<SUB>291</SUB>> ]
+"480" [label = <(&lt;operator&gt;.alloc,new File(urlPath))<SUB>291</SUB>> ]
+"481" [label = <(&lt;init&gt;,new File(urlPath))<SUB>291</SUB>> ]
+"51" [label = <(IDENTIFIER,file,new File(urlPath))<SUB>291</SUB>> ]
+"482" [label = <(IDENTIFIER,urlPath,new File(urlPath))<SUB>291</SUB>> ]
+"483" [label = <(CONTROL_STRUCTURE,if (file.isDirectory()),if (file.isDirectory()))<SUB>292</SUB>> ]
+"484" [label = <(isDirectory,file.isDirectory())<SUB>292</SUB>> ]
+"485" [label = <(IDENTIFIER,file,file.isDirectory())<SUB>292</SUB>> ]
+"486" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>292</SUB>> ]
+"487" [label = <(loadImplementationsInDirectory,this.loadImplementationsInDirectory(test, packageName, file))<SUB>293</SUB>> ]
+"53" [label = <(IDENTIFIER,this,this.loadImplementationsInDirectory(test, packageName, file))<SUB>293</SUB>> ]
+"488" [label = <(IDENTIFIER,test,this.loadImplementationsInDirectory(test, packageName, file))<SUB>293</SUB>> ]
+"489" [label = <(IDENTIFIER,packageName,this.loadImplementationsInDirectory(test, packageName, file))<SUB>293</SUB>> ]
+"490" [label = <(IDENTIFIER,file,this.loadImplementationsInDirectory(test, packageName, file))<SUB>293</SUB>> ]
+"491" [label = <(CONTROL_STRUCTURE,else,else)<SUB>294</SUB>> ]
+"492" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>294</SUB>> ]
+"493" [label = <(loadImplementationsInJar,this.loadImplementationsInJar(test, packageName, file))<SUB>295</SUB>> ]
+"55" [label = <(IDENTIFIER,this,this.loadImplementationsInJar(test, packageName, file))<SUB>295</SUB>> ]
+"494" [label = <(IDENTIFIER,test,this.loadImplementationsInJar(test, packageName, file))<SUB>295</SUB>> ]
+"495" [label = <(IDENTIFIER,packageName,this.loadImplementationsInJar(test, packageName, file))<SUB>295</SUB>> ]
+"496" [label = <(IDENTIFIER,file,this.loadImplementationsInJar(test, packageName, file))<SUB>295</SUB>> ]
+"497" [label = <(BLOCK,catch,catch)> ]
+"498" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>297</SUB>> ]
+"499" [label = <(warn,warn(&quot;could not read entries&quot;, ioe))<SUB>298</SUB>> ]
+"500" [label = <(&lt;operator&gt;.fieldAccess,ResolverUtil.LOG)<SUB>298</SUB>> ]
+"501" [label = <(IDENTIFIER,ResolverUtil,warn(&quot;could not read entries&quot;, ioe))<SUB>298</SUB>> ]
+"502" [label = <(FIELD_IDENTIFIER,LOG,LOG)<SUB>298</SUB>> ]
+"503" [label = <(LITERAL,&quot;could not read entries&quot;,warn(&quot;could not read entries&quot;, ioe))<SUB>298</SUB>> ]
+"504" [label = <(IDENTIFIER,ioe,warn(&quot;could not read entries&quot;, ioe))<SUB>298</SUB>> ]
+"505" [label = <(MODIFIER,PROTECTED)> ]
+"506" [label = <(MODIFIER,VIRTUAL)> ]
+"507" [label = <(METHOD_RETURN,void)<SUB>263</SUB>> ]
+  "396" -> "54" 
+  "396" -> "397" 
+  "396" -> "398" 
+  "396" -> "399" 
+  "396" -> "400" 
+  "396" -> "505" 
+  "396" -> "506" 
+  "396" -> "507" 
+  "400" -> "401" 
+  "400" -> "402" 
+  "400" -> "420" 
+  "402" -> "403" 
+  "402" -> "409" 
+  "403" -> "404" 
+  "404" -> "405" 
+  "404" -> "406" 
+  "406" -> "407" 
+  "406" -> "408" 
+  "409" -> "410" 
+  "410" -> "411" 
+  "410" -> "419" 
+  "411" -> "412" 
+  "411" -> "415" 
+  "411" -> "418" 
+  "412" -> "413" 
+  "412" -> "414" 
+  "415" -> "416" 
+  "415" -> "417" 
+  "420" -> "421" 
+  "420" -> "423" 
+  "421" -> "422" 
+  "423" -> "424" 
+  "424" -> "425" 
+  "424" -> "497" 
+  "425" -> "426" 
+  "425" -> "427" 
+  "425" -> "431" 
+  "425" -> "432" 
+  "425" -> "436" 
+  "425" -> "442" 
+  "425" -> "452" 
+  "425" -> "467" 
+  "425" -> "52" 
+  "425" -> "478" 
+  "425" -> "481" 
+  "425" -> "483" 
+  "427" -> "428" 
+  "427" -> "429" 
+  "429" -> "430" 
+  "432" -> "433" 
+  "432" -> "434" 
+  "434" -> "435" 
+  "436" -> "437" 
+  "436" -> "438" 
+  "438" -> "439" 
+  "438" -> "440" 
+  "438" -> "441" 
+  "442" -> "443" 
+  "442" -> "446" 
+  "443" -> "444" 
+  "443" -> "445" 
+  "446" -> "447" 
+  "447" -> "448" 
+  "447" -> "449" 
+  "449" -> "450" 
+  "449" -> "451" 
+  "452" -> "453" 
+  "452" -> "458" 
+  "453" -> "454" 
+  "453" -> "457" 
+  "454" -> "455" 
+  "454" -> "456" 
+  "458" -> "459" 
+  "459" -> "460" 
+  "459" -> "461" 
+  "461" -> "462" 
+  "461" -> "463" 
+  "461" -> "464" 
+  "464" -> "465" 
+  "464" -> "466" 
+  "467" -> "468" 
+  "467" -> "471" 
+  "468" -> "469" 
+  "468" -> "470" 
+  "471" -> "472" 
+  "471" -> "477" 
+  "472" -> "473" 
+  "472" -> "476" 
+  "473" -> "474" 
+  "473" -> "475" 
+  "478" -> "479" 
+  "478" -> "480" 
+  "481" -> "51" 
+  "481" -> "482" 
+  "483" -> "484" 
+  "483" -> "486" 
+  "483" -> "491" 
+  "484" -> "485" 
+  "486" -> "487" 
+  "487" -> "53" 
+  "487" -> "488" 
+  "487" -> "489" 
+  "487" -> "490" 
+  "491" -> "492" 
+  "492" -> "493" 
+  "493" -> "55" 
+  "493" -> "494" 
+  "493" -> "495" 
+  "493" -> "496" 
+  "497" -> "498" 
+  "498" -> "499" 
+  "499" -> "500" 
+  "499" -> "503" 
+  "499" -> "504" 
+  "500" -> "501" 
+  "500" -> "502" 
+}

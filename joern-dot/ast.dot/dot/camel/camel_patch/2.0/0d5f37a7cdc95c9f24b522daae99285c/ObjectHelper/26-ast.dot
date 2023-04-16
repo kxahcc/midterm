@@ -1,0 +1,145 @@
+digraph "cast" {  
+"953" [label = <(METHOD,cast)<SUB>432</SUB>> ]
+"954" [label = <(PARAM,Class&lt;T&gt; toType)<SUB>432</SUB>> ]
+"955" [label = <(PARAM,Object value)<SUB>432</SUB>> ]
+"956" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>432</SUB>> ]
+"957" [label = <(CONTROL_STRUCTURE,if (toType == boolean.class),if (toType == boolean.class))<SUB>433</SUB>> ]
+"958" [label = <(&lt;operator&gt;.equals,toType == boolean.class)<SUB>433</SUB>> ]
+"959" [label = <(IDENTIFIER,toType,toType == boolean.class)<SUB>433</SUB>> ]
+"960" [label = <(&lt;operator&gt;.fieldAccess,boolean.class)<SUB>433</SUB>> ]
+"961" [label = <(IDENTIFIER,boolean,toType == boolean.class)<SUB>433</SUB>> ]
+"962" [label = <(FIELD_IDENTIFIER,class,class)<SUB>433</SUB>> ]
+"963" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>433</SUB>> ]
+"964" [label = <(RETURN,return (T) cast(Boolean.class, value);,return (T) cast(Boolean.class, value);)<SUB>434</SUB>> ]
+"965" [label = <(&lt;operator&gt;.cast,(T) cast(Boolean.class, value))<SUB>434</SUB>> ]
+"966" [label = <(TYPE_REF,T,T)<SUB>434</SUB>> ]
+"967" [label = <(cast,cast(Boolean.class, value))<SUB>434</SUB>> ]
+"968" [label = <(&lt;operator&gt;.fieldAccess,Boolean.class)<SUB>434</SUB>> ]
+"969" [label = <(IDENTIFIER,Boolean,cast(Boolean.class, value))<SUB>434</SUB>> ]
+"970" [label = <(FIELD_IDENTIFIER,class,class)<SUB>434</SUB>> ]
+"971" [label = <(IDENTIFIER,value,cast(Boolean.class, value))<SUB>434</SUB>> ]
+"972" [label = <(CONTROL_STRUCTURE,else,else)<SUB>436</SUB>> ]
+"973" [label = <(CONTROL_STRUCTURE,if (toType.isPrimitive()),if (toType.isPrimitive()))<SUB>436</SUB>> ]
+"974" [label = <(isPrimitive,toType.isPrimitive())<SUB>436</SUB>> ]
+"975" [label = <(IDENTIFIER,toType,toType.isPrimitive())<SUB>436</SUB>> ]
+"976" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>436</SUB>> ]
+"977" [label = <(LOCAL,Class newType: java.lang.Class)> ]
+"978" [label = <(&lt;operator&gt;.assignment,Class newType = convertPrimitiveTypeToWrapperType(toType))<SUB>437</SUB>> ]
+"979" [label = <(IDENTIFIER,newType,Class newType = convertPrimitiveTypeToWrapperType(toType))<SUB>437</SUB>> ]
+"980" [label = <(convertPrimitiveTypeToWrapperType,convertPrimitiveTypeToWrapperType(toType))<SUB>437</SUB>> ]
+"981" [label = <(IDENTIFIER,toType,convertPrimitiveTypeToWrapperType(toType))<SUB>437</SUB>> ]
+"982" [label = <(CONTROL_STRUCTURE,if (newType != toType),if (newType != toType))<SUB>438</SUB>> ]
+"983" [label = <(&lt;operator&gt;.notEquals,newType != toType)<SUB>438</SUB>> ]
+"984" [label = <(IDENTIFIER,newType,newType != toType)<SUB>438</SUB>> ]
+"985" [label = <(IDENTIFIER,toType,newType != toType)<SUB>438</SUB>> ]
+"986" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>438</SUB>> ]
+"987" [label = <(RETURN,return (T) cast(newType, value);,return (T) cast(newType, value);)<SUB>439</SUB>> ]
+"988" [label = <(&lt;operator&gt;.cast,(T) cast(newType, value))<SUB>439</SUB>> ]
+"989" [label = <(TYPE_REF,T,T)<SUB>439</SUB>> ]
+"990" [label = <(cast,cast(newType, value))<SUB>439</SUB>> ]
+"991" [label = <(IDENTIFIER,newType,cast(newType, value))<SUB>439</SUB>> ]
+"992" [label = <(IDENTIFIER,value,cast(newType, value))<SUB>439</SUB>> ]
+"993" [label = <(CONTROL_STRUCTURE,try,try)<SUB>442</SUB>> ]
+"994" [label = <(BLOCK,try,try)<SUB>442</SUB>> ]
+"995" [label = <(RETURN,return toType.cast(value);,return toType.cast(value);)<SUB>443</SUB>> ]
+"996" [label = <(cast,toType.cast(value))<SUB>443</SUB>> ]
+"997" [label = <(IDENTIFIER,toType,toType.cast(value))<SUB>443</SUB>> ]
+"998" [label = <(IDENTIFIER,value,toType.cast(value))<SUB>443</SUB>> ]
+"999" [label = <(BLOCK,catch,catch)> ]
+"1000" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>445</SUB>> ]
+"1001" [label = <(&lt;operator&gt;.throw,throw new IllegalArgumentException(&quot;Failed to convert: &quot; + value + &quot; to type: &quot; + toType.getName() + &quot; due to: &quot; + e, e);)<SUB>446</SUB>> ]
+"1002" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>446</SUB>> ]
+"1003" [label = <(&lt;operator&gt;.assignment,&lt;empty&gt;)> ]
+"1004" [label = <(IDENTIFIER,$obj5,&lt;empty&gt;)> ]
+"1005" [label = <(&lt;operator&gt;.alloc,new IllegalArgumentException(&quot;Failed to convert: &quot; + value + &quot; to type: &quot; + toType.getName() + &quot; due to: &quot; + e, e))<SUB>446</SUB>> ]
+"1006" [label = <(&lt;init&gt;,new IllegalArgumentException(&quot;Failed to convert: &quot; + value + &quot; to type: &quot; + toType.getName() + &quot; due to: &quot; + e, e))<SUB>446</SUB>> ]
+"1007" [label = <(IDENTIFIER,$obj5,new IllegalArgumentException(&quot;Failed to convert: &quot; + value + &quot; to type: &quot; + toType.getName() + &quot; due to: &quot; + e, e))> ]
+"1008" [label = <(&lt;operator&gt;.addition,&quot;Failed to convert: &quot; + value + &quot; to type: &quot; + toType.getName() + &quot; due to: &quot; + e)<SUB>446</SUB>> ]
+"1009" [label = <(&lt;operator&gt;.addition,&quot;Failed to convert: &quot; + value + &quot; to type: &quot; + toType.getName() + &quot; due to: &quot;)<SUB>446</SUB>> ]
+"1010" [label = <(&lt;operator&gt;.addition,&quot;Failed to convert: &quot; + value + &quot; to type: &quot; + toType.getName())<SUB>446</SUB>> ]
+"1011" [label = <(&lt;operator&gt;.addition,&quot;Failed to convert: &quot; + value + &quot; to type: &quot;)<SUB>446</SUB>> ]
+"1012" [label = <(&lt;operator&gt;.addition,&quot;Failed to convert: &quot; + value)<SUB>446</SUB>> ]
+"1013" [label = <(LITERAL,&quot;Failed to convert: &quot;,&quot;Failed to convert: &quot; + value)<SUB>446</SUB>> ]
+"1014" [label = <(IDENTIFIER,value,&quot;Failed to convert: &quot; + value)<SUB>446</SUB>> ]
+"1015" [label = <(LITERAL,&quot; to type: &quot;,&quot;Failed to convert: &quot; + value + &quot; to type: &quot;)<SUB>446</SUB>> ]
+"1016" [label = <(getName,toType.getName())<SUB>446</SUB>> ]
+"1017" [label = <(IDENTIFIER,toType,toType.getName())<SUB>446</SUB>> ]
+"1018" [label = <(LITERAL,&quot; due to: &quot;,&quot;Failed to convert: &quot; + value + &quot; to type: &quot; + toType.getName() + &quot; due to: &quot;)<SUB>446</SUB>> ]
+"1019" [label = <(IDENTIFIER,e,&quot;Failed to convert: &quot; + value + &quot; to type: &quot; + toType.getName() + &quot; due to: &quot; + e)<SUB>446</SUB>> ]
+"1020" [label = <(IDENTIFIER,e,new IllegalArgumentException(&quot;Failed to convert: &quot; + value + &quot; to type: &quot; + toType.getName() + &quot; due to: &quot; + e, e))<SUB>446</SUB>> ]
+"1021" [label = <(IDENTIFIER,$obj5,&lt;empty&gt;)> ]
+"1022" [label = <(MODIFIER,PUBLIC)> ]
+"1023" [label = <(MODIFIER,STATIC)> ]
+"1024" [label = <(METHOD_RETURN,java.lang.Object)<SUB>432</SUB>> ]
+  "953" -> "954" 
+  "953" -> "955" 
+  "953" -> "956" 
+  "953" -> "1022" 
+  "953" -> "1023" 
+  "953" -> "1024" 
+  "956" -> "957" 
+  "956" -> "993" 
+  "957" -> "958" 
+  "957" -> "963" 
+  "957" -> "972" 
+  "958" -> "959" 
+  "958" -> "960" 
+  "960" -> "961" 
+  "960" -> "962" 
+  "963" -> "964" 
+  "964" -> "965" 
+  "965" -> "966" 
+  "965" -> "967" 
+  "967" -> "968" 
+  "967" -> "971" 
+  "968" -> "969" 
+  "968" -> "970" 
+  "972" -> "973" 
+  "973" -> "974" 
+  "973" -> "976" 
+  "974" -> "975" 
+  "976" -> "977" 
+  "976" -> "978" 
+  "976" -> "982" 
+  "978" -> "979" 
+  "978" -> "980" 
+  "980" -> "981" 
+  "982" -> "983" 
+  "982" -> "986" 
+  "983" -> "984" 
+  "983" -> "985" 
+  "986" -> "987" 
+  "987" -> "988" 
+  "988" -> "989" 
+  "988" -> "990" 
+  "990" -> "991" 
+  "990" -> "992" 
+  "993" -> "994" 
+  "993" -> "999" 
+  "994" -> "995" 
+  "995" -> "996" 
+  "996" -> "997" 
+  "996" -> "998" 
+  "999" -> "1000" 
+  "1000" -> "1001" 
+  "1001" -> "1002" 
+  "1002" -> "1003" 
+  "1002" -> "1006" 
+  "1002" -> "1021" 
+  "1003" -> "1004" 
+  "1003" -> "1005" 
+  "1006" -> "1007" 
+  "1006" -> "1008" 
+  "1006" -> "1020" 
+  "1008" -> "1009" 
+  "1008" -> "1019" 
+  "1009" -> "1010" 
+  "1009" -> "1018" 
+  "1010" -> "1011" 
+  "1010" -> "1016" 
+  "1011" -> "1012" 
+  "1011" -> "1015" 
+  "1012" -> "1013" 
+  "1012" -> "1014" 
+  "1016" -> "1017" 
+}

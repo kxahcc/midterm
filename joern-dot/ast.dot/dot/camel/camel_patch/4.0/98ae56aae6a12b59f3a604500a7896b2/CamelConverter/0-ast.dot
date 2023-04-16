@@ -1,0 +1,33 @@
+digraph "toProcessor" {  
+"19" [label = <(METHOD,toProcessor)<SUB>35</SUB>> ]
+"20" [label = <(PARAM,this)<SUB>35</SUB>> ]
+"21" [label = <(PARAM,final Predicate&lt;Exchange&gt; predicate)<SUB>36</SUB>> ]
+"22" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>36</SUB>> ]
+"23" [label = <(RETURN,return new Processor() {\012\012    public void process(Exchange exchange) throws Exception {\012        boolean answer = predicate.matches(exchange);\012        Message out = exchange.getOut();\012        out.copyFrom(exchange.getIn());\012        out.setBody(answer);\012    }\012};,return new Processor() {\012\012    public void process(Exchange exchange) throws Exception {\012        boolean answer = predicate.matches(exchange);\012        Message out = exchange.getOut();\012        out.copyFrom(exchange.getIn());\012        out.setBody(answer);\012    }\012};)<SUB>37</SUB>> ]
+"24" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>37</SUB>> ]
+"25" [label = <(&lt;operator&gt;.assignment,&lt;empty&gt;)> ]
+"26" [label = <(IDENTIFIER,$obj0,&lt;empty&gt;)> ]
+"27" [label = <(&lt;operator&gt;.alloc,new Processor() {\012\012    public void process(Exchange exchange) throws Exception {\012        boolean answer = predicate.matches(exchange);\012        Message out = exchange.getOut();\012        out.copyFrom(exchange.getIn());\012        out.setBody(answer);\012    }\012})<SUB>37</SUB>> ]
+"28" [label = <(&lt;init&gt;,new Processor() {\012\012    public void process(Exchange exchange) throws Exception {\012        boolean answer = predicate.matches(exchange);\012        Message out = exchange.getOut();\012        out.copyFrom(exchange.getIn());\012        out.setBody(answer);\012    }\012})<SUB>37</SUB>> ]
+"29" [label = <(IDENTIFIER,$obj0,new Processor() {\012\012    public void process(Exchange exchange) throws Exception {\012        boolean answer = predicate.matches(exchange);\012        Message out = exchange.getOut();\012        out.copyFrom(exchange.getIn());\012        out.setBody(answer);\012    }\012})> ]
+"30" [label = <(IDENTIFIER,$obj0,&lt;empty&gt;)> ]
+"31" [label = <(MODIFIER,PUBLIC)> ]
+"32" [label = <(MODIFIER,VIRTUAL)> ]
+"33" [label = <(ANNOTATION,@Converter,@Converter)<SUB>35</SUB>> ]
+"34" [label = <(METHOD_RETURN,org.apache.camel.Processor)<SUB>36</SUB>> ]
+  "19" -> "20" 
+  "19" -> "21" 
+  "19" -> "22" 
+  "19" -> "31" 
+  "19" -> "32" 
+  "19" -> "33" 
+  "19" -> "34" 
+  "22" -> "23" 
+  "23" -> "24" 
+  "24" -> "25" 
+  "24" -> "28" 
+  "24" -> "30" 
+  "25" -> "26" 
+  "25" -> "27" 
+  "28" -> "29" 
+}

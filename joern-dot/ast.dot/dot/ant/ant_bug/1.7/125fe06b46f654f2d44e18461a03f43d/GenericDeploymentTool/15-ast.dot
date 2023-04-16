@@ -1,0 +1,237 @@
+digraph "addFileToJar" {  
+"547" [label = <(METHOD,addFileToJar)<SUB>325</SUB>> ]
+"23" [label = <(PARAM,this)<SUB>325</SUB>> ]
+"548" [label = <(PARAM,JarOutputStream jStream)<SUB>325</SUB>> ]
+"549" [label = <(PARAM,File inputFile)<SUB>326</SUB>> ]
+"550" [label = <(PARAM,String logicalFilename)<SUB>327</SUB>> ]
+"551" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>328</SUB>> ]
+"19" [label = <(LOCAL,FileInputStream iStream: java.io.FileInputStream)> ]
+"552" [label = <(&lt;operator&gt;.assignment,FileInputStream iStream = null)<SUB>329</SUB>> ]
+"553" [label = <(IDENTIFIER,iStream,FileInputStream iStream = null)<SUB>329</SUB>> ]
+"554" [label = <(LITERAL,null,FileInputStream iStream = null)<SUB>329</SUB>> ]
+"555" [label = <(CONTROL_STRUCTURE,try,try)<SUB>330</SUB>> ]
+"556" [label = <(BLOCK,try,try)<SUB>330</SUB>> ]
+"557" [label = <(CONTROL_STRUCTURE,if (!addedfiles.contains(logicalFilename)),if (!addedfiles.contains(logicalFilename)))<SUB>331</SUB>> ]
+"558" [label = <(&lt;operator&gt;.logicalNot,!addedfiles.contains(logicalFilename))<SUB>331</SUB>> ]
+"559" [label = <(contains,addedfiles.contains(logicalFilename))<SUB>331</SUB>> ]
+"560" [label = <(&lt;operator&gt;.fieldAccess,this.addedfiles)<SUB>331</SUB>> ]
+"561" [label = <(IDENTIFIER,this,addedfiles.contains(logicalFilename))<SUB>331</SUB>> ]
+"562" [label = <(FIELD_IDENTIFIER,addedfiles,addedfiles)<SUB>331</SUB>> ]
+"563" [label = <(IDENTIFIER,logicalFilename,addedfiles.contains(logicalFilename))<SUB>331</SUB>> ]
+"564" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>331</SUB>> ]
+"565" [label = <(&lt;operator&gt;.assignment,iStream = new FileInputStream(inputFile))<SUB>332</SUB>> ]
+"566" [label = <(IDENTIFIER,iStream,iStream = new FileInputStream(inputFile))<SUB>332</SUB>> ]
+"567" [label = <(&lt;operator&gt;.alloc,new FileInputStream(inputFile))<SUB>332</SUB>> ]
+"568" [label = <(&lt;init&gt;,new FileInputStream(inputFile))<SUB>332</SUB>> ]
+"18" [label = <(IDENTIFIER,iStream,new FileInputStream(inputFile))<SUB>332</SUB>> ]
+"569" [label = <(IDENTIFIER,inputFile,new FileInputStream(inputFile))<SUB>332</SUB>> ]
+"21" [label = <(LOCAL,ZipEntry zipEntry: java.util.zip.ZipEntry)> ]
+"570" [label = <(&lt;operator&gt;.assignment,ZipEntry zipEntry = new ZipEntry(logicalFilename.replace('\\', '/')))<SUB>334</SUB>> ]
+"571" [label = <(IDENTIFIER,zipEntry,ZipEntry zipEntry = new ZipEntry(logicalFilename.replace('\\', '/')))<SUB>334</SUB>> ]
+"572" [label = <(&lt;operator&gt;.alloc,new ZipEntry(logicalFilename.replace('\\', '/')))<SUB>334</SUB>> ]
+"573" [label = <(&lt;init&gt;,new ZipEntry(logicalFilename.replace('\\', '/')))<SUB>334</SUB>> ]
+"20" [label = <(IDENTIFIER,zipEntry,new ZipEntry(logicalFilename.replace('\\', '/')))<SUB>334</SUB>> ]
+"574" [label = <(replace,logicalFilename.replace('\\', '/'))<SUB>334</SUB>> ]
+"575" [label = <(IDENTIFIER,logicalFilename,logicalFilename.replace('\\', '/'))<SUB>334</SUB>> ]
+"576" [label = <(LITERAL,'\\',logicalFilename.replace('\\', '/'))<SUB>334</SUB>> ]
+"577" [label = <(LITERAL,'/',logicalFilename.replace('\\', '/'))<SUB>334</SUB>> ]
+"578" [label = <(putNextEntry,jStream.putNextEntry(zipEntry))<SUB>335</SUB>> ]
+"579" [label = <(IDENTIFIER,jStream,jStream.putNextEntry(zipEntry))<SUB>335</SUB>> ]
+"580" [label = <(IDENTIFIER,zipEntry,jStream.putNextEntry(zipEntry))<SUB>335</SUB>> ]
+"581" [label = <(LOCAL,byte[] byteBuffer: byte[])> ]
+"582" [label = <(&lt;operator&gt;.assignment,byte[] byteBuffer = new byte[2 * DEFAULT_BUFFER_SIZE])<SUB>339</SUB>> ]
+"583" [label = <(IDENTIFIER,byteBuffer,byte[] byteBuffer = new byte[2 * DEFAULT_BUFFER_SIZE])<SUB>339</SUB>> ]
+"584" [label = <(&lt;operator&gt;.alloc,new byte[2 * DEFAULT_BUFFER_SIZE])> ]
+"585" [label = <(&lt;operator&gt;.multiplication,2 * DEFAULT_BUFFER_SIZE)<SUB>339</SUB>> ]
+"586" [label = <(LITERAL,2,2 * DEFAULT_BUFFER_SIZE)<SUB>339</SUB>> ]
+"587" [label = <(&lt;operator&gt;.fieldAccess,GenericDeploymentTool.DEFAULT_BUFFER_SIZE)<SUB>339</SUB>> ]
+"588" [label = <(IDENTIFIER,GenericDeploymentTool,2 * DEFAULT_BUFFER_SIZE)<SUB>339</SUB>> ]
+"589" [label = <(FIELD_IDENTIFIER,DEFAULT_BUFFER_SIZE,DEFAULT_BUFFER_SIZE)<SUB>339</SUB>> ]
+"590" [label = <(LOCAL,int count: int)> ]
+"591" [label = <(&lt;operator&gt;.assignment,int count = 0)<SUB>340</SUB>> ]
+"592" [label = <(IDENTIFIER,count,int count = 0)<SUB>340</SUB>> ]
+"593" [label = <(LITERAL,0,int count = 0)<SUB>340</SUB>> ]
+"594" [label = <(CONTROL_STRUCTURE,do {...} while (count != -1),do {...} while (count != -1))<SUB>341</SUB>> ]
+"595" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>341</SUB>> ]
+"596" [label = <(write,jStream.write(byteBuffer, 0, count))<SUB>342</SUB>> ]
+"597" [label = <(IDENTIFIER,jStream,jStream.write(byteBuffer, 0, count))<SUB>342</SUB>> ]
+"598" [label = <(IDENTIFIER,byteBuffer,jStream.write(byteBuffer, 0, count))<SUB>342</SUB>> ]
+"599" [label = <(LITERAL,0,jStream.write(byteBuffer, 0, count))<SUB>342</SUB>> ]
+"600" [label = <(IDENTIFIER,count,jStream.write(byteBuffer, 0, count))<SUB>342</SUB>> ]
+"601" [label = <(&lt;operator&gt;.assignment,count = iStream.read(byteBuffer, 0, byteBuffer.length))<SUB>343</SUB>> ]
+"602" [label = <(IDENTIFIER,count,count = iStream.read(byteBuffer, 0, byteBuffer.length))<SUB>343</SUB>> ]
+"603" [label = <(read,iStream.read(byteBuffer, 0, byteBuffer.length))<SUB>343</SUB>> ]
+"604" [label = <(IDENTIFIER,iStream,iStream.read(byteBuffer, 0, byteBuffer.length))<SUB>343</SUB>> ]
+"605" [label = <(IDENTIFIER,byteBuffer,iStream.read(byteBuffer, 0, byteBuffer.length))<SUB>343</SUB>> ]
+"606" [label = <(LITERAL,0,iStream.read(byteBuffer, 0, byteBuffer.length))<SUB>343</SUB>> ]
+"607" [label = <(&lt;operator&gt;.fieldAccess,byteBuffer.length)<SUB>343</SUB>> ]
+"608" [label = <(IDENTIFIER,byteBuffer,iStream.read(byteBuffer, 0, byteBuffer.length))<SUB>343</SUB>> ]
+"609" [label = <(FIELD_IDENTIFIER,length,length)<SUB>343</SUB>> ]
+"610" [label = <(&lt;operator&gt;.notEquals,count != -1)<SUB>344</SUB>> ]
+"611" [label = <(IDENTIFIER,count,count != -1)<SUB>344</SUB>> ]
+"612" [label = <(&lt;operator&gt;.minus,-1)<SUB>344</SUB>> ]
+"613" [label = <(LITERAL,1,-1)<SUB>344</SUB>> ]
+"614" [label = <(add,addedfiles.add(logicalFilename))<SUB>347</SUB>> ]
+"615" [label = <(&lt;operator&gt;.fieldAccess,this.addedfiles)<SUB>347</SUB>> ]
+"616" [label = <(IDENTIFIER,this,addedfiles.add(logicalFilename))<SUB>347</SUB>> ]
+"617" [label = <(FIELD_IDENTIFIER,addedfiles,addedfiles)<SUB>347</SUB>> ]
+"618" [label = <(IDENTIFIER,logicalFilename,addedfiles.add(logicalFilename))<SUB>347</SUB>> ]
+"619" [label = <(BLOCK,catch,catch)> ]
+"620" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>349</SUB>> ]
+"621" [label = <(log,log(&quot;WARNING: IOException while adding entry &quot; + logicalFilename + &quot; to jarfile from &quot; + inputFile.getPath() + &quot; &quot; + ioe.getClass().getName() + &quot;-&quot; + ioe.getMessage(), Project.MSG_WARN))<SUB>350</SUB>> ]
+"22" [label = <(IDENTIFIER,this,log(&quot;WARNING: IOException while adding entry &quot; + logicalFilename + &quot; to jarfile from &quot; + inputFile.getPath() + &quot; &quot; + ioe.getClass().getName() + &quot;-&quot; + ioe.getMessage(), Project.MSG_WARN))<SUB>350</SUB>> ]
+"622" [label = <(&lt;operator&gt;.addition,&quot;WARNING: IOException while adding entry &quot; + logicalFilename + &quot; to jarfile from &quot; + inputFile.getPath() + &quot; &quot; + ioe.getClass().getName() + &quot;-&quot; + ioe.getMessage())<SUB>350</SUB>> ]
+"623" [label = <(&lt;operator&gt;.addition,&quot;WARNING: IOException while adding entry &quot; + logicalFilename + &quot; to jarfile from &quot; + inputFile.getPath() + &quot; &quot; + ioe.getClass().getName() + &quot;-&quot;)<SUB>350</SUB>> ]
+"624" [label = <(&lt;operator&gt;.addition,&quot;WARNING: IOException while adding entry &quot; + logicalFilename + &quot; to jarfile from &quot; + inputFile.getPath() + &quot; &quot; + ioe.getClass().getName())<SUB>350</SUB>> ]
+"625" [label = <(&lt;operator&gt;.addition,&quot;WARNING: IOException while adding entry &quot; + logicalFilename + &quot; to jarfile from &quot; + inputFile.getPath() + &quot; &quot;)<SUB>350</SUB>> ]
+"626" [label = <(&lt;operator&gt;.addition,&quot;WARNING: IOException while adding entry &quot; + logicalFilename + &quot; to jarfile from &quot; + inputFile.getPath())<SUB>350</SUB>> ]
+"627" [label = <(&lt;operator&gt;.addition,&quot;WARNING: IOException while adding entry &quot; + logicalFilename + &quot; to jarfile from &quot;)<SUB>350</SUB>> ]
+"628" [label = <(&lt;operator&gt;.addition,&quot;WARNING: IOException while adding entry &quot; + logicalFilename)<SUB>350</SUB>> ]
+"629" [label = <(LITERAL,&quot;WARNING: IOException while adding entry &quot;,&quot;WARNING: IOException while adding entry &quot; + logicalFilename)<SUB>350</SUB>> ]
+"630" [label = <(IDENTIFIER,logicalFilename,&quot;WARNING: IOException while adding entry &quot; + logicalFilename)<SUB>351</SUB>> ]
+"631" [label = <(LITERAL,&quot; to jarfile from &quot;,&quot;WARNING: IOException while adding entry &quot; + logicalFilename + &quot; to jarfile from &quot;)<SUB>351</SUB>> ]
+"632" [label = <(getPath,inputFile.getPath())<SUB>352</SUB>> ]
+"633" [label = <(IDENTIFIER,inputFile,inputFile.getPath())<SUB>352</SUB>> ]
+"634" [label = <(LITERAL,&quot; &quot;,&quot;WARNING: IOException while adding entry &quot; + logicalFilename + &quot; to jarfile from &quot; + inputFile.getPath() + &quot; &quot;)<SUB>352</SUB>> ]
+"635" [label = <(getName,ioe.getClass().getName())<SUB>352</SUB>> ]
+"636" [label = <(getClass,ioe.getClass())<SUB>352</SUB>> ]
+"637" [label = <(IDENTIFIER,ioe,ioe.getClass())<SUB>352</SUB>> ]
+"638" [label = <(LITERAL,&quot;-&quot;,&quot;WARNING: IOException while adding entry &quot; + logicalFilename + &quot; to jarfile from &quot; + inputFile.getPath() + &quot; &quot; + ioe.getClass().getName() + &quot;-&quot;)<SUB>353</SUB>> ]
+"639" [label = <(getMessage,ioe.getMessage())<SUB>353</SUB>> ]
+"640" [label = <(IDENTIFIER,ioe,ioe.getMessage())<SUB>353</SUB>> ]
+"641" [label = <(&lt;operator&gt;.fieldAccess,Project.MSG_WARN)<SUB>353</SUB>> ]
+"642" [label = <(IDENTIFIER,Project,log(&quot;WARNING: IOException while adding entry &quot; + logicalFilename + &quot; to jarfile from &quot; + inputFile.getPath() + &quot; &quot; + ioe.getClass().getName() + &quot;-&quot; + ioe.getMessage(), Project.MSG_WARN))<SUB>353</SUB>> ]
+"643" [label = <(FIELD_IDENTIFIER,MSG_WARN,MSG_WARN)<SUB>353</SUB>> ]
+"644" [label = <(BLOCK,finally,finally)<SUB>354</SUB>> ]
+"645" [label = <(CONTROL_STRUCTURE,if (iStream != null),if (iStream != null))<SUB>356</SUB>> ]
+"646" [label = <(&lt;operator&gt;.notEquals,iStream != null)<SUB>356</SUB>> ]
+"647" [label = <(IDENTIFIER,iStream,iStream != null)<SUB>356</SUB>> ]
+"648" [label = <(LITERAL,null,iStream != null)<SUB>356</SUB>> ]
+"649" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>356</SUB>> ]
+"650" [label = <(CONTROL_STRUCTURE,try,try)<SUB>357</SUB>> ]
+"651" [label = <(BLOCK,try,try)<SUB>357</SUB>> ]
+"652" [label = <(close,iStream.close())<SUB>358</SUB>> ]
+"653" [label = <(IDENTIFIER,iStream,iStream.close())<SUB>358</SUB>> ]
+"654" [label = <(BLOCK,catch,catch)> ]
+"655" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>359</SUB>> ]
+"656" [label = <(MODIFIER,PROTECTED)> ]
+"657" [label = <(MODIFIER,VIRTUAL)> ]
+"658" [label = <(METHOD_RETURN,void)<SUB>325</SUB>> ]
+  "547" -> "23" 
+  "547" -> "548" 
+  "547" -> "549" 
+  "547" -> "550" 
+  "547" -> "551" 
+  "547" -> "656" 
+  "547" -> "657" 
+  "547" -> "658" 
+  "551" -> "19" 
+  "551" -> "552" 
+  "551" -> "555" 
+  "552" -> "553" 
+  "552" -> "554" 
+  "555" -> "556" 
+  "555" -> "619" 
+  "555" -> "644" 
+  "556" -> "557" 
+  "557" -> "558" 
+  "557" -> "564" 
+  "558" -> "559" 
+  "559" -> "560" 
+  "559" -> "563" 
+  "560" -> "561" 
+  "560" -> "562" 
+  "564" -> "565" 
+  "564" -> "568" 
+  "564" -> "21" 
+  "564" -> "570" 
+  "564" -> "573" 
+  "564" -> "578" 
+  "564" -> "581" 
+  "564" -> "582" 
+  "564" -> "590" 
+  "564" -> "591" 
+  "564" -> "594" 
+  "564" -> "614" 
+  "565" -> "566" 
+  "565" -> "567" 
+  "568" -> "18" 
+  "568" -> "569" 
+  "570" -> "571" 
+  "570" -> "572" 
+  "573" -> "20" 
+  "573" -> "574" 
+  "574" -> "575" 
+  "574" -> "576" 
+  "574" -> "577" 
+  "578" -> "579" 
+  "578" -> "580" 
+  "582" -> "583" 
+  "582" -> "584" 
+  "584" -> "585" 
+  "585" -> "586" 
+  "585" -> "587" 
+  "587" -> "588" 
+  "587" -> "589" 
+  "591" -> "592" 
+  "591" -> "593" 
+  "594" -> "595" 
+  "594" -> "610" 
+  "595" -> "596" 
+  "595" -> "601" 
+  "596" -> "597" 
+  "596" -> "598" 
+  "596" -> "599" 
+  "596" -> "600" 
+  "601" -> "602" 
+  "601" -> "603" 
+  "603" -> "604" 
+  "603" -> "605" 
+  "603" -> "606" 
+  "603" -> "607" 
+  "607" -> "608" 
+  "607" -> "609" 
+  "610" -> "611" 
+  "610" -> "612" 
+  "612" -> "613" 
+  "614" -> "615" 
+  "614" -> "618" 
+  "615" -> "616" 
+  "615" -> "617" 
+  "619" -> "620" 
+  "620" -> "621" 
+  "621" -> "22" 
+  "621" -> "622" 
+  "621" -> "641" 
+  "622" -> "623" 
+  "622" -> "639" 
+  "623" -> "624" 
+  "623" -> "638" 
+  "624" -> "625" 
+  "624" -> "635" 
+  "625" -> "626" 
+  "625" -> "634" 
+  "626" -> "627" 
+  "626" -> "632" 
+  "627" -> "628" 
+  "627" -> "631" 
+  "628" -> "629" 
+  "628" -> "630" 
+  "632" -> "633" 
+  "635" -> "636" 
+  "636" -> "637" 
+  "639" -> "640" 
+  "641" -> "642" 
+  "641" -> "643" 
+  "644" -> "645" 
+  "645" -> "646" 
+  "645" -> "649" 
+  "646" -> "647" 
+  "646" -> "648" 
+  "649" -> "650" 
+  "650" -> "651" 
+  "650" -> "654" 
+  "651" -> "652" 
+  "652" -> "653" 
+  "654" -> "655" 
+}

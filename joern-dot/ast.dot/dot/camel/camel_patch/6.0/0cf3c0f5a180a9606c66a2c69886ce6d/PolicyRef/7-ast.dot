@@ -1,0 +1,81 @@
+digraph "createProcessor" {  
+"128" [label = <(METHOD,createProcessor)<SUB>78</SUB>> ]
+"10" [label = <(PARAM,this)<SUB>78</SUB>> ]
+"129" [label = <(PARAM,RouteContext routeContext)<SUB>79</SUB>> ]
+"130" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>79</SUB>> ]
+"131" [label = <(LOCAL,Processor childProcessor: org.apache.camel.Processor)> ]
+"132" [label = <(&lt;operator&gt;.assignment,Processor childProcessor = createOutputsProcessor(routeContext))<SUB>80</SUB>> ]
+"133" [label = <(IDENTIFIER,childProcessor,Processor childProcessor = createOutputsProcessor(routeContext))<SUB>80</SUB>> ]
+"134" [label = <(createOutputsProcessor,createOutputsProcessor(routeContext))<SUB>80</SUB>> ]
+"9" [label = <(IDENTIFIER,this,createOutputsProcessor(routeContext))<SUB>80</SUB>> ]
+"135" [label = <(IDENTIFIER,routeContext,createOutputsProcessor(routeContext))<SUB>80</SUB>> ]
+"136" [label = <(LOCAL,Policy policy: org.apache.camel.spi.Policy)> ]
+"137" [label = <(&lt;operator&gt;.assignment,Policy policy = resolvePolicy(routeContext))<SUB>82</SUB>> ]
+"138" [label = <(IDENTIFIER,policy,Policy policy = resolvePolicy(routeContext))<SUB>82</SUB>> ]
+"139" [label = <(resolvePolicy,resolvePolicy(routeContext))<SUB>82</SUB>> ]
+"11" [label = <(IDENTIFIER,this,resolvePolicy(routeContext))<SUB>82</SUB>> ]
+"140" [label = <(IDENTIFIER,routeContext,resolvePolicy(routeContext))<SUB>82</SUB>> ]
+"141" [label = <(CONTROL_STRUCTURE,if (policy == null),if (policy == null))<SUB>83</SUB>> ]
+"142" [label = <(&lt;operator&gt;.equals,policy == null)<SUB>83</SUB>> ]
+"143" [label = <(IDENTIFIER,policy,policy == null)<SUB>83</SUB>> ]
+"144" [label = <(LITERAL,null,policy == null)<SUB>83</SUB>> ]
+"145" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>83</SUB>> ]
+"146" [label = <(&lt;operator&gt;.throw,throw new IllegalArgumentException(&quot;No policy configured: &quot; + this);)<SUB>84</SUB>> ]
+"147" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>84</SUB>> ]
+"148" [label = <(&lt;operator&gt;.assignment,&lt;empty&gt;)> ]
+"149" [label = <(IDENTIFIER,$obj0,&lt;empty&gt;)> ]
+"150" [label = <(&lt;operator&gt;.alloc,new IllegalArgumentException(&quot;No policy configured: &quot; + this))<SUB>84</SUB>> ]
+"151" [label = <(&lt;init&gt;,new IllegalArgumentException(&quot;No policy configured: &quot; + this))<SUB>84</SUB>> ]
+"152" [label = <(IDENTIFIER,$obj0,new IllegalArgumentException(&quot;No policy configured: &quot; + this))> ]
+"153" [label = <(&lt;operator&gt;.addition,&quot;No policy configured: &quot; + this)<SUB>84</SUB>> ]
+"154" [label = <(LITERAL,&quot;No policy configured: &quot;,&quot;No policy configured: &quot; + this)<SUB>84</SUB>> ]
+"12" [label = <(IDENTIFIER,this,&quot;No policy configured: &quot; + this)<SUB>84</SUB>> ]
+"155" [label = <(IDENTIFIER,$obj0,&lt;empty&gt;)> ]
+"156" [label = <(RETURN,return policy.wrap(childProcessor);,return policy.wrap(childProcessor);)<SUB>86</SUB>> ]
+"157" [label = <(wrap,wrap(childProcessor))<SUB>86</SUB>> ]
+"158" [label = <(IDENTIFIER,policy,wrap(childProcessor))<SUB>86</SUB>> ]
+"159" [label = <(IDENTIFIER,childProcessor,wrap(childProcessor))<SUB>86</SUB>> ]
+"160" [label = <(MODIFIER,PUBLIC)> ]
+"161" [label = <(MODIFIER,VIRTUAL)> ]
+"162" [label = <(ANNOTATION,@Override,@Override)<SUB>78</SUB>> ]
+"163" [label = <(METHOD_RETURN,org.apache.camel.Processor)<SUB>79</SUB>> ]
+  "128" -> "10" 
+  "128" -> "129" 
+  "128" -> "130" 
+  "128" -> "160" 
+  "128" -> "161" 
+  "128" -> "162" 
+  "128" -> "163" 
+  "130" -> "131" 
+  "130" -> "132" 
+  "130" -> "136" 
+  "130" -> "137" 
+  "130" -> "141" 
+  "130" -> "156" 
+  "132" -> "133" 
+  "132" -> "134" 
+  "134" -> "9" 
+  "134" -> "135" 
+  "137" -> "138" 
+  "137" -> "139" 
+  "139" -> "11" 
+  "139" -> "140" 
+  "141" -> "142" 
+  "141" -> "145" 
+  "142" -> "143" 
+  "142" -> "144" 
+  "145" -> "146" 
+  "146" -> "147" 
+  "147" -> "148" 
+  "147" -> "151" 
+  "147" -> "155" 
+  "148" -> "149" 
+  "148" -> "150" 
+  "151" -> "152" 
+  "151" -> "153" 
+  "153" -> "154" 
+  "153" -> "12" 
+  "156" -> "157" 
+  "157" -> "158" 
+  "157" -> "159" 
+}

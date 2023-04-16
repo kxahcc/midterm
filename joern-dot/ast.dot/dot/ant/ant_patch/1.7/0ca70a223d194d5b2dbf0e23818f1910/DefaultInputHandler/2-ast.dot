@@ -1,0 +1,217 @@
+digraph "getPrompt" {  
+"120" [label = <(METHOD,getPrompt)<SUB>84</SUB>> ]
+"121" [label = <(PARAM,this)<SUB>84</SUB>> ]
+"122" [label = <(PARAM,InputRequest request)<SUB>84</SUB>> ]
+"123" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>84</SUB>> ]
+"124" [label = <(LOCAL,String prompt: java.lang.String)> ]
+"125" [label = <(&lt;operator&gt;.assignment,String prompt = getPrompt())<SUB>85</SUB>> ]
+"126" [label = <(IDENTIFIER,prompt,String prompt = getPrompt())<SUB>85</SUB>> ]
+"127" [label = <(getPrompt,getPrompt())<SUB>85</SUB>> ]
+"128" [label = <(IDENTIFIER,request,getPrompt())<SUB>85</SUB>> ]
+"129" [label = <(LOCAL,String def: java.lang.String)> ]
+"130" [label = <(&lt;operator&gt;.assignment,String def = getDefaultValue())<SUB>86</SUB>> ]
+"131" [label = <(IDENTIFIER,def,String def = getDefaultValue())<SUB>86</SUB>> ]
+"132" [label = <(getDefaultValue,getDefaultValue())<SUB>86</SUB>> ]
+"133" [label = <(IDENTIFIER,request,getDefaultValue())<SUB>86</SUB>> ]
+"134" [label = <(CONTROL_STRUCTURE,if (request instanceof MultipleChoiceInputRequest),if (request instanceof MultipleChoiceInputRequest))<SUB>87</SUB>> ]
+"135" [label = <(&lt;operator&gt;.instanceOf,request instanceof MultipleChoiceInputRequest)<SUB>87</SUB>> ]
+"136" [label = <(IDENTIFIER,request,request instanceof MultipleChoiceInputRequest)<SUB>87</SUB>> ]
+"137" [label = <(TYPE_REF,MultipleChoiceInputRequest,MultipleChoiceInputRequest)<SUB>87</SUB>> ]
+"138" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>87</SUB>> ]
+"9" [label = <(LOCAL,StringBuffer sb: java.lang.StringBuffer)> ]
+"139" [label = <(&lt;operator&gt;.assignment,StringBuffer sb = new StringBuffer(prompt))<SUB>88</SUB>> ]
+"140" [label = <(IDENTIFIER,sb,StringBuffer sb = new StringBuffer(prompt))<SUB>88</SUB>> ]
+"141" [label = <(&lt;operator&gt;.alloc,new StringBuffer(prompt))<SUB>88</SUB>> ]
+"142" [label = <(&lt;init&gt;,new StringBuffer(prompt))<SUB>88</SUB>> ]
+"8" [label = <(IDENTIFIER,sb,new StringBuffer(prompt))<SUB>88</SUB>> ]
+"143" [label = <(IDENTIFIER,prompt,new StringBuffer(prompt))<SUB>88</SUB>> ]
+"144" [label = <(append,sb.append(&quot; (&quot;))<SUB>89</SUB>> ]
+"145" [label = <(IDENTIFIER,sb,sb.append(&quot; (&quot;))<SUB>89</SUB>> ]
+"146" [label = <(LITERAL,&quot; (&quot;,sb.append(&quot; (&quot;))<SUB>89</SUB>> ]
+"147" [label = <(LOCAL,Enumeration e: java.util.Enumeration)> ]
+"148" [label = <(&lt;operator&gt;.assignment,Enumeration e = elements())<SUB>90</SUB>> ]
+"149" [label = <(IDENTIFIER,e,Enumeration e = elements())<SUB>90</SUB>> ]
+"150" [label = <(elements,elements())<SUB>91</SUB>> ]
+"151" [label = <(getChoices,getChoices())<SUB>91</SUB>> ]
+"152" [label = <(&lt;operator&gt;.cast,(MultipleChoiceInputRequest) request)<SUB>91</SUB>> ]
+"153" [label = <(TYPE_REF,MultipleChoiceInputRequest,MultipleChoiceInputRequest)<SUB>91</SUB>> ]
+"154" [label = <(IDENTIFIER,request,(MultipleChoiceInputRequest) request)<SUB>91</SUB>> ]
+"155" [label = <(LOCAL,boolean first: boolean)> ]
+"156" [label = <(&lt;operator&gt;.assignment,boolean first = true)<SUB>92</SUB>> ]
+"157" [label = <(IDENTIFIER,first,boolean first = true)<SUB>92</SUB>> ]
+"158" [label = <(LITERAL,true,boolean first = true)<SUB>92</SUB>> ]
+"159" [label = <(CONTROL_STRUCTURE,while (e.hasMoreElements()),while (e.hasMoreElements()))<SUB>93</SUB>> ]
+"160" [label = <(hasMoreElements,e.hasMoreElements())<SUB>93</SUB>> ]
+"161" [label = <(IDENTIFIER,e,e.hasMoreElements())<SUB>93</SUB>> ]
+"162" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>93</SUB>> ]
+"163" [label = <(CONTROL_STRUCTURE,if (!first),if (!first))<SUB>94</SUB>> ]
+"164" [label = <(&lt;operator&gt;.logicalNot,!first)<SUB>94</SUB>> ]
+"165" [label = <(IDENTIFIER,first,!first)<SUB>94</SUB>> ]
+"166" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>94</SUB>> ]
+"167" [label = <(append,sb.append(&quot;, &quot;))<SUB>95</SUB>> ]
+"168" [label = <(IDENTIFIER,sb,sb.append(&quot;, &quot;))<SUB>95</SUB>> ]
+"169" [label = <(LITERAL,&quot;, &quot;,sb.append(&quot;, &quot;))<SUB>95</SUB>> ]
+"170" [label = <(LOCAL,String next: java.lang.String)> ]
+"171" [label = <(&lt;operator&gt;.assignment,String next = (String) e.nextElement())<SUB>97</SUB>> ]
+"172" [label = <(IDENTIFIER,next,String next = (String) e.nextElement())<SUB>97</SUB>> ]
+"173" [label = <(&lt;operator&gt;.cast,(String) e.nextElement())<SUB>97</SUB>> ]
+"174" [label = <(TYPE_REF,String,String)<SUB>97</SUB>> ]
+"175" [label = <(nextElement,e.nextElement())<SUB>97</SUB>> ]
+"176" [label = <(IDENTIFIER,e,e.nextElement())<SUB>97</SUB>> ]
+"177" [label = <(CONTROL_STRUCTURE,if (next.equals(def)),if (next.equals(def)))<SUB>98</SUB>> ]
+"178" [label = <(equals,next.equals(def))<SUB>98</SUB>> ]
+"179" [label = <(IDENTIFIER,next,next.equals(def))<SUB>98</SUB>> ]
+"180" [label = <(IDENTIFIER,def,next.equals(def))<SUB>98</SUB>> ]
+"181" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>98</SUB>> ]
+"182" [label = <(append,sb.append('['))<SUB>99</SUB>> ]
+"183" [label = <(IDENTIFIER,sb,sb.append('['))<SUB>99</SUB>> ]
+"184" [label = <(LITERAL,'[',sb.append('['))<SUB>99</SUB>> ]
+"185" [label = <(append,sb.append(next))<SUB>101</SUB>> ]
+"186" [label = <(IDENTIFIER,sb,sb.append(next))<SUB>101</SUB>> ]
+"187" [label = <(IDENTIFIER,next,sb.append(next))<SUB>101</SUB>> ]
+"188" [label = <(CONTROL_STRUCTURE,if (next.equals(def)),if (next.equals(def)))<SUB>102</SUB>> ]
+"189" [label = <(equals,next.equals(def))<SUB>102</SUB>> ]
+"190" [label = <(IDENTIFIER,next,next.equals(def))<SUB>102</SUB>> ]
+"191" [label = <(IDENTIFIER,def,next.equals(def))<SUB>102</SUB>> ]
+"192" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>102</SUB>> ]
+"193" [label = <(append,sb.append(']'))<SUB>103</SUB>> ]
+"194" [label = <(IDENTIFIER,sb,sb.append(']'))<SUB>103</SUB>> ]
+"195" [label = <(LITERAL,']',sb.append(']'))<SUB>103</SUB>> ]
+"196" [label = <(&lt;operator&gt;.assignment,first = false)<SUB>105</SUB>> ]
+"197" [label = <(IDENTIFIER,first,first = false)<SUB>105</SUB>> ]
+"198" [label = <(LITERAL,false,first = false)<SUB>105</SUB>> ]
+"199" [label = <(append,sb.append(&quot;)&quot;))<SUB>107</SUB>> ]
+"200" [label = <(IDENTIFIER,sb,sb.append(&quot;)&quot;))<SUB>107</SUB>> ]
+"201" [label = <(LITERAL,&quot;)&quot;,sb.append(&quot;)&quot;))<SUB>107</SUB>> ]
+"202" [label = <(RETURN,return sb.toString();,return sb.toString();)<SUB>108</SUB>> ]
+"203" [label = <(toString,sb.toString())<SUB>108</SUB>> ]
+"204" [label = <(IDENTIFIER,sb,sb.toString())<SUB>108</SUB>> ]
+"205" [label = <(CONTROL_STRUCTURE,else,else)<SUB>109</SUB>> ]
+"206" [label = <(CONTROL_STRUCTURE,if (def != null),if (def != null))<SUB>109</SUB>> ]
+"207" [label = <(&lt;operator&gt;.notEquals,def != null)<SUB>109</SUB>> ]
+"208" [label = <(IDENTIFIER,def,def != null)<SUB>109</SUB>> ]
+"209" [label = <(LITERAL,null,def != null)<SUB>109</SUB>> ]
+"210" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>109</SUB>> ]
+"211" [label = <(RETURN,return prompt + &quot; [&quot; + def + &quot;]&quot;;,return prompt + &quot; [&quot; + def + &quot;]&quot;;)<SUB>110</SUB>> ]
+"212" [label = <(&lt;operator&gt;.addition,prompt + &quot; [&quot; + def + &quot;]&quot;)<SUB>110</SUB>> ]
+"213" [label = <(&lt;operator&gt;.addition,prompt + &quot; [&quot; + def)<SUB>110</SUB>> ]
+"214" [label = <(&lt;operator&gt;.addition,prompt + &quot; [&quot;)<SUB>110</SUB>> ]
+"215" [label = <(IDENTIFIER,prompt,prompt + &quot; [&quot;)<SUB>110</SUB>> ]
+"216" [label = <(LITERAL,&quot; [&quot;,prompt + &quot; [&quot;)<SUB>110</SUB>> ]
+"217" [label = <(IDENTIFIER,def,prompt + &quot; [&quot; + def)<SUB>110</SUB>> ]
+"218" [label = <(LITERAL,&quot;]&quot;,prompt + &quot; [&quot; + def + &quot;]&quot;)<SUB>110</SUB>> ]
+"219" [label = <(CONTROL_STRUCTURE,else,else)<SUB>111</SUB>> ]
+"220" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>111</SUB>> ]
+"221" [label = <(RETURN,return prompt;,return prompt;)<SUB>112</SUB>> ]
+"222" [label = <(IDENTIFIER,prompt,return prompt;)<SUB>112</SUB>> ]
+"223" [label = <(MODIFIER,PROTECTED)> ]
+"224" [label = <(MODIFIER,VIRTUAL)> ]
+"225" [label = <(METHOD_RETURN,java.lang.String)<SUB>84</SUB>> ]
+  "120" -> "121" 
+  "120" -> "122" 
+  "120" -> "123" 
+  "120" -> "223" 
+  "120" -> "224" 
+  "120" -> "225" 
+  "123" -> "124" 
+  "123" -> "125" 
+  "123" -> "129" 
+  "123" -> "130" 
+  "123" -> "134" 
+  "125" -> "126" 
+  "125" -> "127" 
+  "127" -> "128" 
+  "130" -> "131" 
+  "130" -> "132" 
+  "132" -> "133" 
+  "134" -> "135" 
+  "134" -> "138" 
+  "134" -> "205" 
+  "135" -> "136" 
+  "135" -> "137" 
+  "138" -> "9" 
+  "138" -> "139" 
+  "138" -> "142" 
+  "138" -> "144" 
+  "138" -> "147" 
+  "138" -> "148" 
+  "138" -> "155" 
+  "138" -> "156" 
+  "138" -> "159" 
+  "138" -> "199" 
+  "138" -> "202" 
+  "139" -> "140" 
+  "139" -> "141" 
+  "142" -> "8" 
+  "142" -> "143" 
+  "144" -> "145" 
+  "144" -> "146" 
+  "148" -> "149" 
+  "148" -> "150" 
+  "150" -> "151" 
+  "151" -> "152" 
+  "152" -> "153" 
+  "152" -> "154" 
+  "156" -> "157" 
+  "156" -> "158" 
+  "159" -> "160" 
+  "159" -> "162" 
+  "160" -> "161" 
+  "162" -> "163" 
+  "162" -> "170" 
+  "162" -> "171" 
+  "162" -> "177" 
+  "162" -> "185" 
+  "162" -> "188" 
+  "162" -> "196" 
+  "163" -> "164" 
+  "163" -> "166" 
+  "164" -> "165" 
+  "166" -> "167" 
+  "167" -> "168" 
+  "167" -> "169" 
+  "171" -> "172" 
+  "171" -> "173" 
+  "173" -> "174" 
+  "173" -> "175" 
+  "175" -> "176" 
+  "177" -> "178" 
+  "177" -> "181" 
+  "178" -> "179" 
+  "178" -> "180" 
+  "181" -> "182" 
+  "182" -> "183" 
+  "182" -> "184" 
+  "185" -> "186" 
+  "185" -> "187" 
+  "188" -> "189" 
+  "188" -> "192" 
+  "189" -> "190" 
+  "189" -> "191" 
+  "192" -> "193" 
+  "193" -> "194" 
+  "193" -> "195" 
+  "196" -> "197" 
+  "196" -> "198" 
+  "199" -> "200" 
+  "199" -> "201" 
+  "202" -> "203" 
+  "203" -> "204" 
+  "205" -> "206" 
+  "206" -> "207" 
+  "206" -> "210" 
+  "206" -> "219" 
+  "207" -> "208" 
+  "207" -> "209" 
+  "210" -> "211" 
+  "211" -> "212" 
+  "212" -> "213" 
+  "212" -> "218" 
+  "213" -> "214" 
+  "213" -> "217" 
+  "214" -> "215" 
+  "214" -> "216" 
+  "219" -> "220" 
+  "220" -> "221" 
+  "221" -> "222" 
+}

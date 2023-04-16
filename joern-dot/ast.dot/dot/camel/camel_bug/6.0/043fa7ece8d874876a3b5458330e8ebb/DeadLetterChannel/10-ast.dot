@@ -1,0 +1,191 @@
+digraph "handleException" {  
+"598" [label = <(METHOD,handleException)<SUB>267</SUB>> ]
+"54" [label = <(PARAM,this)<SUB>267</SUB>> ]
+"599" [label = <(PARAM,Exchange exchange)<SUB>267</SUB>> ]
+"600" [label = <(PARAM,RedeliveryData data)<SUB>267</SUB>> ]
+"601" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>267</SUB>> ]
+"602" [label = <(LOCAL,Throwable e: java.lang.Throwable)> ]
+"603" [label = <(&lt;operator&gt;.assignment,Throwable e = getException())<SUB>268</SUB>> ]
+"604" [label = <(IDENTIFIER,e,Throwable e = getException())<SUB>268</SUB>> ]
+"605" [label = <(getException,getException())<SUB>268</SUB>> ]
+"606" [label = <(IDENTIFIER,exchange,getException())<SUB>268</SUB>> ]
+"607" [label = <(setProperty,setProperty(EXCEPTION_CAUSE_PROPERTY, e))<SUB>270</SUB>> ]
+"608" [label = <(IDENTIFIER,exchange,setProperty(EXCEPTION_CAUSE_PROPERTY, e))<SUB>270</SUB>> ]
+"609" [label = <(&lt;operator&gt;.fieldAccess,DeadLetterChannel.EXCEPTION_CAUSE_PROPERTY)<SUB>270</SUB>> ]
+"610" [label = <(IDENTIFIER,DeadLetterChannel,setProperty(EXCEPTION_CAUSE_PROPERTY, e))<SUB>270</SUB>> ]
+"611" [label = <(FIELD_IDENTIFIER,EXCEPTION_CAUSE_PROPERTY,EXCEPTION_CAUSE_PROPERTY)<SUB>270</SUB>> ]
+"612" [label = <(IDENTIFIER,e,setProperty(EXCEPTION_CAUSE_PROPERTY, e))<SUB>270</SUB>> ]
+"613" [label = <(LOCAL,ExceptionType exceptionPolicy: org.apache.camel.model.ExceptionType)> ]
+"614" [label = <(&lt;operator&gt;.assignment,ExceptionType exceptionPolicy = getExceptionPolicy(exchange, e))<SUB>273</SUB>> ]
+"615" [label = <(IDENTIFIER,exceptionPolicy,ExceptionType exceptionPolicy = getExceptionPolicy(exchange, e))<SUB>273</SUB>> ]
+"616" [label = <(getExceptionPolicy,getExceptionPolicy(exchange, e))<SUB>273</SUB>> ]
+"53" [label = <(IDENTIFIER,this,getExceptionPolicy(exchange, e))<SUB>273</SUB>> ]
+"617" [label = <(IDENTIFIER,exchange,getExceptionPolicy(exchange, e))<SUB>273</SUB>> ]
+"618" [label = <(IDENTIFIER,e,getExceptionPolicy(exchange, e))<SUB>273</SUB>> ]
+"619" [label = <(CONTROL_STRUCTURE,if (exceptionPolicy != null),if (exceptionPolicy != null))<SUB>274</SUB>> ]
+"620" [label = <(&lt;operator&gt;.notEquals,exceptionPolicy != null)<SUB>274</SUB>> ]
+"621" [label = <(IDENTIFIER,exceptionPolicy,exceptionPolicy != null)<SUB>274</SUB>> ]
+"622" [label = <(LITERAL,null,exceptionPolicy != null)<SUB>274</SUB>> ]
+"623" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>274</SUB>> ]
+"624" [label = <(&lt;operator&gt;.assignment,data.currentRedeliveryPolicy = createRedeliveryPolicy(exchange.getContext(), data.currentRedeliveryPolicy))<SUB>275</SUB>> ]
+"625" [label = <(&lt;operator&gt;.fieldAccess,data.currentRedeliveryPolicy)<SUB>275</SUB>> ]
+"626" [label = <(IDENTIFIER,data,data.currentRedeliveryPolicy = createRedeliveryPolicy(exchange.getContext(), data.currentRedeliveryPolicy))<SUB>275</SUB>> ]
+"627" [label = <(FIELD_IDENTIFIER,currentRedeliveryPolicy,currentRedeliveryPolicy)<SUB>275</SUB>> ]
+"628" [label = <(createRedeliveryPolicy,createRedeliveryPolicy(exchange.getContext(), data.currentRedeliveryPolicy))<SUB>275</SUB>> ]
+"629" [label = <(IDENTIFIER,exceptionPolicy,createRedeliveryPolicy(exchange.getContext(), data.currentRedeliveryPolicy))<SUB>275</SUB>> ]
+"630" [label = <(getContext,getContext())<SUB>275</SUB>> ]
+"631" [label = <(IDENTIFIER,exchange,getContext())<SUB>275</SUB>> ]
+"632" [label = <(&lt;operator&gt;.fieldAccess,data.currentRedeliveryPolicy)<SUB>275</SUB>> ]
+"633" [label = <(IDENTIFIER,data,createRedeliveryPolicy(exchange.getContext(), data.currentRedeliveryPolicy))<SUB>275</SUB>> ]
+"634" [label = <(FIELD_IDENTIFIER,currentRedeliveryPolicy,currentRedeliveryPolicy)<SUB>275</SUB>> ]
+"635" [label = <(&lt;operator&gt;.assignment,data.handledPredicate = getHandledPolicy())<SUB>276</SUB>> ]
+"636" [label = <(&lt;operator&gt;.fieldAccess,data.handledPredicate)<SUB>276</SUB>> ]
+"637" [label = <(IDENTIFIER,data,data.handledPredicate = getHandledPolicy())<SUB>276</SUB>> ]
+"638" [label = <(FIELD_IDENTIFIER,handledPredicate,handledPredicate)<SUB>276</SUB>> ]
+"639" [label = <(getHandledPolicy,getHandledPolicy())<SUB>276</SUB>> ]
+"640" [label = <(IDENTIFIER,exceptionPolicy,getHandledPolicy())<SUB>276</SUB>> ]
+"641" [label = <(LOCAL,Processor processor: org.apache.camel.Processor)> ]
+"642" [label = <(&lt;operator&gt;.assignment,Processor processor = getErrorHandler())<SUB>277</SUB>> ]
+"643" [label = <(IDENTIFIER,processor,Processor processor = getErrorHandler())<SUB>277</SUB>> ]
+"644" [label = <(getErrorHandler,getErrorHandler())<SUB>277</SUB>> ]
+"645" [label = <(IDENTIFIER,exceptionPolicy,getErrorHandler())<SUB>277</SUB>> ]
+"646" [label = <(CONTROL_STRUCTURE,if (processor != null),if (processor != null))<SUB>278</SUB>> ]
+"647" [label = <(&lt;operator&gt;.notEquals,processor != null)<SUB>278</SUB>> ]
+"648" [label = <(IDENTIFIER,processor,processor != null)<SUB>278</SUB>> ]
+"649" [label = <(LITERAL,null,processor != null)<SUB>278</SUB>> ]
+"650" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>278</SUB>> ]
+"651" [label = <(&lt;operator&gt;.assignment,data.failureProcessor = processor)<SUB>279</SUB>> ]
+"652" [label = <(&lt;operator&gt;.fieldAccess,data.failureProcessor)<SUB>279</SUB>> ]
+"653" [label = <(IDENTIFIER,data,data.failureProcessor = processor)<SUB>279</SUB>> ]
+"654" [label = <(FIELD_IDENTIFIER,failureProcessor,failureProcessor)<SUB>279</SUB>> ]
+"655" [label = <(IDENTIFIER,processor,data.failureProcessor = processor)<SUB>279</SUB>> ]
+"656" [label = <(LOCAL,String msg: java.lang.String)> ]
+"657" [label = <(&lt;operator&gt;.assignment,String msg = &quot;Failed delivery for exchangeId: &quot; + exchange.getExchangeId() + &quot;. On delivery attempt: &quot; + data.redeliveryCounter + &quot; caught: &quot; + e)<SUB>283</SUB>> ]
+"658" [label = <(IDENTIFIER,msg,String msg = &quot;Failed delivery for exchangeId: &quot; + exchange.getExchangeId() + &quot;. On delivery attempt: &quot; + data.redeliveryCounter + &quot; caught: &quot; + e)<SUB>283</SUB>> ]
+"659" [label = <(&lt;operator&gt;.addition,&quot;Failed delivery for exchangeId: &quot; + exchange.getExchangeId() + &quot;. On delivery attempt: &quot; + data.redeliveryCounter + &quot; caught: &quot; + e)<SUB>283</SUB>> ]
+"660" [label = <(&lt;operator&gt;.addition,&quot;Failed delivery for exchangeId: &quot; + exchange.getExchangeId() + &quot;. On delivery attempt: &quot; + data.redeliveryCounter + &quot; caught: &quot;)<SUB>283</SUB>> ]
+"661" [label = <(&lt;operator&gt;.addition,&quot;Failed delivery for exchangeId: &quot; + exchange.getExchangeId() + &quot;. On delivery attempt: &quot; + data.redeliveryCounter)<SUB>283</SUB>> ]
+"662" [label = <(&lt;operator&gt;.addition,&quot;Failed delivery for exchangeId: &quot; + exchange.getExchangeId() + &quot;. On delivery attempt: &quot;)<SUB>283</SUB>> ]
+"663" [label = <(&lt;operator&gt;.addition,&quot;Failed delivery for exchangeId: &quot; + exchange.getExchangeId())<SUB>283</SUB>> ]
+"664" [label = <(LITERAL,&quot;Failed delivery for exchangeId: &quot;,&quot;Failed delivery for exchangeId: &quot; + exchange.getExchangeId())<SUB>283</SUB>> ]
+"665" [label = <(getExchangeId,getExchangeId())<SUB>283</SUB>> ]
+"666" [label = <(IDENTIFIER,exchange,getExchangeId())<SUB>283</SUB>> ]
+"667" [label = <(LITERAL,&quot;. On delivery attempt: &quot;,&quot;Failed delivery for exchangeId: &quot; + exchange.getExchangeId() + &quot;. On delivery attempt: &quot;)<SUB>284</SUB>> ]
+"668" [label = <(&lt;operator&gt;.fieldAccess,data.redeliveryCounter)<SUB>284</SUB>> ]
+"669" [label = <(IDENTIFIER,data,&quot;Failed delivery for exchangeId: &quot; + exchange.getExchangeId() + &quot;. On delivery attempt: &quot; + data.redeliveryCounter)<SUB>284</SUB>> ]
+"670" [label = <(FIELD_IDENTIFIER,redeliveryCounter,redeliveryCounter)<SUB>284</SUB>> ]
+"671" [label = <(LITERAL,&quot; caught: &quot;,&quot;Failed delivery for exchangeId: &quot; + exchange.getExchangeId() + &quot;. On delivery attempt: &quot; + data.redeliveryCounter + &quot; caught: &quot;)<SUB>284</SUB>> ]
+"672" [label = <(IDENTIFIER,e,&quot;Failed delivery for exchangeId: &quot; + exchange.getExchangeId() + &quot;. On delivery attempt: &quot; + data.redeliveryCounter + &quot; caught: &quot; + e)<SUB>284</SUB>> ]
+"673" [label = <(logFailedDelivery,logFailedDelivery(true, exchange, msg, data, e))<SUB>285</SUB>> ]
+"55" [label = <(IDENTIFIER,this,logFailedDelivery(true, exchange, msg, data, e))<SUB>285</SUB>> ]
+"674" [label = <(LITERAL,true,logFailedDelivery(true, exchange, msg, data, e))<SUB>285</SUB>> ]
+"675" [label = <(IDENTIFIER,exchange,logFailedDelivery(true, exchange, msg, data, e))<SUB>285</SUB>> ]
+"676" [label = <(IDENTIFIER,msg,logFailedDelivery(true, exchange, msg, data, e))<SUB>285</SUB>> ]
+"677" [label = <(IDENTIFIER,data,logFailedDelivery(true, exchange, msg, data, e))<SUB>285</SUB>> ]
+"678" [label = <(IDENTIFIER,e,logFailedDelivery(true, exchange, msg, data, e))<SUB>285</SUB>> ]
+"679" [label = <(&lt;operator&gt;.assignment,data.redeliveryCounter = incrementRedeliveryCounter(exchange, e))<SUB>287</SUB>> ]
+"680" [label = <(&lt;operator&gt;.fieldAccess,data.redeliveryCounter)<SUB>287</SUB>> ]
+"681" [label = <(IDENTIFIER,data,data.redeliveryCounter = incrementRedeliveryCounter(exchange, e))<SUB>287</SUB>> ]
+"682" [label = <(FIELD_IDENTIFIER,redeliveryCounter,redeliveryCounter)<SUB>287</SUB>> ]
+"683" [label = <(incrementRedeliveryCounter,incrementRedeliveryCounter(exchange, e))<SUB>287</SUB>> ]
+"56" [label = <(IDENTIFIER,this,incrementRedeliveryCounter(exchange, e))<SUB>287</SUB>> ]
+"684" [label = <(IDENTIFIER,exchange,incrementRedeliveryCounter(exchange, e))<SUB>287</SUB>> ]
+"685" [label = <(IDENTIFIER,e,incrementRedeliveryCounter(exchange, e))<SUB>287</SUB>> ]
+"686" [label = <(MODIFIER,PRIVATE)> ]
+"687" [label = <(MODIFIER,VIRTUAL)> ]
+"688" [label = <(METHOD_RETURN,void)<SUB>267</SUB>> ]
+  "598" -> "54" 
+  "598" -> "599" 
+  "598" -> "600" 
+  "598" -> "601" 
+  "598" -> "686" 
+  "598" -> "687" 
+  "598" -> "688" 
+  "601" -> "602" 
+  "601" -> "603" 
+  "601" -> "607" 
+  "601" -> "613" 
+  "601" -> "614" 
+  "601" -> "619" 
+  "601" -> "656" 
+  "601" -> "657" 
+  "601" -> "673" 
+  "601" -> "679" 
+  "603" -> "604" 
+  "603" -> "605" 
+  "605" -> "606" 
+  "607" -> "608" 
+  "607" -> "609" 
+  "607" -> "612" 
+  "609" -> "610" 
+  "609" -> "611" 
+  "614" -> "615" 
+  "614" -> "616" 
+  "616" -> "53" 
+  "616" -> "617" 
+  "616" -> "618" 
+  "619" -> "620" 
+  "619" -> "623" 
+  "620" -> "621" 
+  "620" -> "622" 
+  "623" -> "624" 
+  "623" -> "635" 
+  "623" -> "641" 
+  "623" -> "642" 
+  "623" -> "646" 
+  "624" -> "625" 
+  "624" -> "628" 
+  "625" -> "626" 
+  "625" -> "627" 
+  "628" -> "629" 
+  "628" -> "630" 
+  "628" -> "632" 
+  "630" -> "631" 
+  "632" -> "633" 
+  "632" -> "634" 
+  "635" -> "636" 
+  "635" -> "639" 
+  "636" -> "637" 
+  "636" -> "638" 
+  "639" -> "640" 
+  "642" -> "643" 
+  "642" -> "644" 
+  "644" -> "645" 
+  "646" -> "647" 
+  "646" -> "650" 
+  "647" -> "648" 
+  "647" -> "649" 
+  "650" -> "651" 
+  "651" -> "652" 
+  "651" -> "655" 
+  "652" -> "653" 
+  "652" -> "654" 
+  "657" -> "658" 
+  "657" -> "659" 
+  "659" -> "660" 
+  "659" -> "672" 
+  "660" -> "661" 
+  "660" -> "671" 
+  "661" -> "662" 
+  "661" -> "668" 
+  "662" -> "663" 
+  "662" -> "667" 
+  "663" -> "664" 
+  "663" -> "665" 
+  "665" -> "666" 
+  "668" -> "669" 
+  "668" -> "670" 
+  "673" -> "55" 
+  "673" -> "674" 
+  "673" -> "675" 
+  "673" -> "676" 
+  "673" -> "677" 
+  "673" -> "678" 
+  "679" -> "680" 
+  "679" -> "683" 
+  "680" -> "681" 
+  "680" -> "682" 
+  "683" -> "56" 
+  "683" -> "684" 
+  "683" -> "685" 
+}

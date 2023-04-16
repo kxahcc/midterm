@@ -1,0 +1,265 @@
+digraph "checkAndAddDependants" {  
+"1908" [label = <(METHOD,checkAndAddDependants)<SUB>877</SUB>> ]
+"76" [label = <(PARAM,this)<SUB>877</SUB>> ]
+"1909" [label = <(PARAM,Hashtable checkEntries)<SUB>877</SUB>> ]
+"1910" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>878</SUB>> ]
+"1911" [label = <(CONTROL_STRUCTURE,if (dependencyAnalyzer == null),if (dependencyAnalyzer == null))<SUB>880</SUB>> ]
+"1912" [label = <(&lt;operator&gt;.equals,dependencyAnalyzer == null)<SUB>880</SUB>> ]
+"1913" [label = <(&lt;operator&gt;.fieldAccess,this.dependencyAnalyzer)<SUB>880</SUB>> ]
+"1914" [label = <(IDENTIFIER,this,dependencyAnalyzer == null)<SUB>880</SUB>> ]
+"1915" [label = <(FIELD_IDENTIFIER,dependencyAnalyzer,dependencyAnalyzer)<SUB>880</SUB>> ]
+"1916" [label = <(LITERAL,null,dependencyAnalyzer == null)<SUB>880</SUB>> ]
+"1917" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>880</SUB>> ]
+"1918" [label = <(RETURN,return;,return;)<SUB>881</SUB>> ]
+"1919" [label = <(reset,reset())<SUB>884</SUB>> ]
+"1920" [label = <(&lt;operator&gt;.fieldAccess,this.dependencyAnalyzer)<SUB>884</SUB>> ]
+"1921" [label = <(IDENTIFIER,this,reset())<SUB>884</SUB>> ]
+"1922" [label = <(FIELD_IDENTIFIER,dependencyAnalyzer,dependencyAnalyzer)<SUB>884</SUB>> ]
+"1923" [label = <(LOCAL,Iterator i: java.util.Iterator)> ]
+"1924" [label = <(&lt;operator&gt;.assignment,Iterator i = checkEntries.keySet().iterator())<SUB>886</SUB>> ]
+"1925" [label = <(IDENTIFIER,i,Iterator i = checkEntries.keySet().iterator())<SUB>886</SUB>> ]
+"1926" [label = <(iterator,checkEntries.keySet().iterator())<SUB>886</SUB>> ]
+"1927" [label = <(keySet,checkEntries.keySet())<SUB>886</SUB>> ]
+"1928" [label = <(IDENTIFIER,checkEntries,checkEntries.keySet())<SUB>886</SUB>> ]
+"1929" [label = <(CONTROL_STRUCTURE,while (i.hasNext()),while (i.hasNext()))<SUB>887</SUB>> ]
+"1930" [label = <(hasNext,i.hasNext())<SUB>887</SUB>> ]
+"1931" [label = <(IDENTIFIER,i,i.hasNext())<SUB>887</SUB>> ]
+"1932" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>887</SUB>> ]
+"1933" [label = <(LOCAL,String entryName: java.lang.String)> ]
+"1934" [label = <(&lt;operator&gt;.assignment,String entryName = (String) i.next())<SUB>888</SUB>> ]
+"1935" [label = <(IDENTIFIER,entryName,String entryName = (String) i.next())<SUB>888</SUB>> ]
+"1936" [label = <(&lt;operator&gt;.cast,(String) i.next())<SUB>888</SUB>> ]
+"1937" [label = <(TYPE_REF,String,String)<SUB>888</SUB>> ]
+"1938" [label = <(next,i.next())<SUB>888</SUB>> ]
+"1939" [label = <(IDENTIFIER,i,i.next())<SUB>888</SUB>> ]
+"1940" [label = <(CONTROL_STRUCTURE,if (entryName.endsWith(&quot;.class&quot;)),if (entryName.endsWith(&quot;.class&quot;)))<SUB>889</SUB>> ]
+"1941" [label = <(endsWith,entryName.endsWith(&quot;.class&quot;))<SUB>889</SUB>> ]
+"1942" [label = <(IDENTIFIER,entryName,entryName.endsWith(&quot;.class&quot;))<SUB>889</SUB>> ]
+"1943" [label = <(LITERAL,&quot;.class&quot;,entryName.endsWith(&quot;.class&quot;))<SUB>889</SUB>> ]
+"1944" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>889</SUB>> ]
+"1945" [label = <(LOCAL,String className: java.lang.String)> ]
+"1946" [label = <(&lt;operator&gt;.assignment,String className = entryName.substring(0, entryName.length() - &quot;.class&quot;.length()))<SUB>890</SUB>> ]
+"1947" [label = <(IDENTIFIER,className,String className = entryName.substring(0, entryName.length() - &quot;.class&quot;.length()))<SUB>890</SUB>> ]
+"1948" [label = <(substring,entryName.substring(0, entryName.length() - &quot;.class&quot;.length()))<SUB>890</SUB>> ]
+"1949" [label = <(IDENTIFIER,entryName,entryName.substring(0, entryName.length() - &quot;.class&quot;.length()))<SUB>890</SUB>> ]
+"1950" [label = <(LITERAL,0,entryName.substring(0, entryName.length() - &quot;.class&quot;.length()))<SUB>890</SUB>> ]
+"1951" [label = <(&lt;operator&gt;.subtraction,entryName.length() - &quot;.class&quot;.length())<SUB>891</SUB>> ]
+"1952" [label = <(length,entryName.length())<SUB>891</SUB>> ]
+"1953" [label = <(IDENTIFIER,entryName,entryName.length())<SUB>891</SUB>> ]
+"1954" [label = <(length,this.length())<SUB>891</SUB>> ]
+"1955" [label = <(LITERAL,&quot;.class&quot;,this.length())<SUB>891</SUB>> ]
+"1956" [label = <(&lt;operator&gt;.assignment,className = className.replace(File.separatorChar, '/'))<SUB>892</SUB>> ]
+"1957" [label = <(IDENTIFIER,className,className = className.replace(File.separatorChar, '/'))<SUB>892</SUB>> ]
+"1958" [label = <(replace,className.replace(File.separatorChar, '/'))<SUB>892</SUB>> ]
+"1959" [label = <(IDENTIFIER,className,className.replace(File.separatorChar, '/'))<SUB>892</SUB>> ]
+"1960" [label = <(&lt;operator&gt;.fieldAccess,File.separatorChar)<SUB>892</SUB>> ]
+"1961" [label = <(IDENTIFIER,File,className.replace(File.separatorChar, '/'))<SUB>892</SUB>> ]
+"1962" [label = <(FIELD_IDENTIFIER,separatorChar,separatorChar)<SUB>892</SUB>> ]
+"1963" [label = <(LITERAL,'/',className.replace(File.separatorChar, '/'))<SUB>892</SUB>> ]
+"1964" [label = <(&lt;operator&gt;.assignment,className = className.replace('/', '.'))<SUB>893</SUB>> ]
+"1965" [label = <(IDENTIFIER,className,className = className.replace('/', '.'))<SUB>893</SUB>> ]
+"1966" [label = <(replace,className.replace('/', '.'))<SUB>893</SUB>> ]
+"1967" [label = <(IDENTIFIER,className,className.replace('/', '.'))<SUB>893</SUB>> ]
+"1968" [label = <(LITERAL,'/',className.replace('/', '.'))<SUB>893</SUB>> ]
+"1969" [label = <(LITERAL,'.',className.replace('/', '.'))<SUB>893</SUB>> ]
+"1970" [label = <(addRootClass,addRootClass(className))<SUB>895</SUB>> ]
+"1971" [label = <(&lt;operator&gt;.fieldAccess,this.dependencyAnalyzer)<SUB>895</SUB>> ]
+"1972" [label = <(IDENTIFIER,this,addRootClass(className))<SUB>895</SUB>> ]
+"1973" [label = <(FIELD_IDENTIFIER,dependencyAnalyzer,dependencyAnalyzer)<SUB>895</SUB>> ]
+"1974" [label = <(IDENTIFIER,className,addRootClass(className))<SUB>895</SUB>> ]
+"1975" [label = <(LOCAL,Enumeration e: java.util.Enumeration)> ]
+"1976" [label = <(&lt;operator&gt;.assignment,Enumeration e = getClassDependencies())<SUB>899</SUB>> ]
+"1977" [label = <(IDENTIFIER,e,Enumeration e = getClassDependencies())<SUB>899</SUB>> ]
+"1978" [label = <(getClassDependencies,getClassDependencies())<SUB>899</SUB>> ]
+"1979" [label = <(&lt;operator&gt;.fieldAccess,this.dependencyAnalyzer)<SUB>899</SUB>> ]
+"1980" [label = <(IDENTIFIER,this,getClassDependencies())<SUB>899</SUB>> ]
+"1981" [label = <(FIELD_IDENTIFIER,dependencyAnalyzer,dependencyAnalyzer)<SUB>899</SUB>> ]
+"1982" [label = <(CONTROL_STRUCTURE,while (e.hasMoreElements()),while (e.hasMoreElements()))<SUB>901</SUB>> ]
+"1983" [label = <(hasMoreElements,e.hasMoreElements())<SUB>901</SUB>> ]
+"1984" [label = <(IDENTIFIER,e,e.hasMoreElements())<SUB>901</SUB>> ]
+"1985" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>901</SUB>> ]
+"1986" [label = <(LOCAL,String classname: java.lang.String)> ]
+"1987" [label = <(&lt;operator&gt;.assignment,String classname = (String) e.nextElement())<SUB>902</SUB>> ]
+"1988" [label = <(IDENTIFIER,classname,String classname = (String) e.nextElement())<SUB>902</SUB>> ]
+"1989" [label = <(&lt;operator&gt;.cast,(String) e.nextElement())<SUB>902</SUB>> ]
+"1990" [label = <(TYPE_REF,String,String)<SUB>902</SUB>> ]
+"1991" [label = <(nextElement,e.nextElement())<SUB>902</SUB>> ]
+"1992" [label = <(IDENTIFIER,e,e.nextElement())<SUB>902</SUB>> ]
+"1993" [label = <(LOCAL,String location: java.lang.String)> ]
+"1994" [label = <(&lt;operator&gt;.assignment,String location = classname.replace('.', File.separatorChar) + &quot;.class&quot;)<SUB>903</SUB>> ]
+"1995" [label = <(IDENTIFIER,location,String location = classname.replace('.', File.separatorChar) + &quot;.class&quot;)<SUB>903</SUB>> ]
+"1996" [label = <(&lt;operator&gt;.addition,classname.replace('.', File.separatorChar) + &quot;.class&quot;)<SUB>904</SUB>> ]
+"1997" [label = <(replace,classname.replace('.', File.separatorChar))<SUB>904</SUB>> ]
+"1998" [label = <(IDENTIFIER,classname,classname.replace('.', File.separatorChar))<SUB>904</SUB>> ]
+"1999" [label = <(LITERAL,'.',classname.replace('.', File.separatorChar))<SUB>904</SUB>> ]
+"2000" [label = <(&lt;operator&gt;.fieldAccess,File.separatorChar)<SUB>904</SUB>> ]
+"2001" [label = <(IDENTIFIER,File,classname.replace('.', File.separatorChar))<SUB>904</SUB>> ]
+"2002" [label = <(FIELD_IDENTIFIER,separatorChar,separatorChar)<SUB>904</SUB>> ]
+"2003" [label = <(LITERAL,&quot;.class&quot;,classname.replace('.', File.separatorChar) + &quot;.class&quot;)<SUB>904</SUB>> ]
+"74" [label = <(LOCAL,File classFile: java.io.File)> ]
+"2004" [label = <(&lt;operator&gt;.assignment,File classFile = new File(config.srcDir, location))<SUB>905</SUB>> ]
+"2005" [label = <(IDENTIFIER,classFile,File classFile = new File(config.srcDir, location))<SUB>905</SUB>> ]
+"2006" [label = <(&lt;operator&gt;.alloc,new File(config.srcDir, location))<SUB>905</SUB>> ]
+"2007" [label = <(&lt;init&gt;,new File(config.srcDir, location))<SUB>905</SUB>> ]
+"73" [label = <(IDENTIFIER,classFile,new File(config.srcDir, location))<SUB>905</SUB>> ]
+"2008" [label = <(&lt;operator&gt;.fieldAccess,config.srcDir)<SUB>905</SUB>> ]
+"2009" [label = <(&lt;operator&gt;.fieldAccess,this.config)<SUB>905</SUB>> ]
+"2010" [label = <(IDENTIFIER,this,new File(config.srcDir, location))<SUB>905</SUB>> ]
+"2011" [label = <(FIELD_IDENTIFIER,config,config)<SUB>905</SUB>> ]
+"2012" [label = <(FIELD_IDENTIFIER,srcDir,srcDir)<SUB>905</SUB>> ]
+"2013" [label = <(IDENTIFIER,location,new File(config.srcDir, location))<SUB>905</SUB>> ]
+"2014" [label = <(CONTROL_STRUCTURE,if (classFile.exists()),if (classFile.exists()))<SUB>906</SUB>> ]
+"2015" [label = <(exists,classFile.exists())<SUB>906</SUB>> ]
+"2016" [label = <(IDENTIFIER,classFile,classFile.exists())<SUB>906</SUB>> ]
+"2017" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>906</SUB>> ]
+"2018" [label = <(put,checkEntries.put(location, classFile))<SUB>907</SUB>> ]
+"2019" [label = <(IDENTIFIER,checkEntries,checkEntries.put(location, classFile))<SUB>907</SUB>> ]
+"2020" [label = <(IDENTIFIER,location,checkEntries.put(location, classFile))<SUB>907</SUB>> ]
+"2021" [label = <(IDENTIFIER,classFile,checkEntries.put(location, classFile))<SUB>907</SUB>> ]
+"2022" [label = <(log,log(&quot;dependent class: &quot; + classname + &quot; - &quot; + classFile, Project.MSG_VERBOSE))<SUB>908</SUB>> ]
+"75" [label = <(IDENTIFIER,this,log(&quot;dependent class: &quot; + classname + &quot; - &quot; + classFile, Project.MSG_VERBOSE))<SUB>908</SUB>> ]
+"2023" [label = <(&lt;operator&gt;.addition,&quot;dependent class: &quot; + classname + &quot; - &quot; + classFile)<SUB>908</SUB>> ]
+"2024" [label = <(&lt;operator&gt;.addition,&quot;dependent class: &quot; + classname + &quot; - &quot;)<SUB>908</SUB>> ]
+"2025" [label = <(&lt;operator&gt;.addition,&quot;dependent class: &quot; + classname)<SUB>908</SUB>> ]
+"2026" [label = <(LITERAL,&quot;dependent class: &quot;,&quot;dependent class: &quot; + classname)<SUB>908</SUB>> ]
+"2027" [label = <(IDENTIFIER,classname,&quot;dependent class: &quot; + classname)<SUB>908</SUB>> ]
+"2028" [label = <(LITERAL,&quot; - &quot;,&quot;dependent class: &quot; + classname + &quot; - &quot;)<SUB>908</SUB>> ]
+"2029" [label = <(IDENTIFIER,classFile,&quot;dependent class: &quot; + classname + &quot; - &quot; + classFile)<SUB>908</SUB>> ]
+"2030" [label = <(&lt;operator&gt;.fieldAccess,Project.MSG_VERBOSE)<SUB>909</SUB>> ]
+"2031" [label = <(IDENTIFIER,Project,log(&quot;dependent class: &quot; + classname + &quot; - &quot; + classFile, Project.MSG_VERBOSE))<SUB>909</SUB>> ]
+"2032" [label = <(FIELD_IDENTIFIER,MSG_VERBOSE,MSG_VERBOSE)<SUB>909</SUB>> ]
+"2033" [label = <(MODIFIER,PROTECTED)> ]
+"2034" [label = <(MODIFIER,VIRTUAL)> ]
+"2035" [label = <(METHOD_RETURN,void)<SUB>877</SUB>> ]
+  "1908" -> "76" 
+  "1908" -> "1909" 
+  "1908" -> "1910" 
+  "1908" -> "2033" 
+  "1908" -> "2034" 
+  "1908" -> "2035" 
+  "1910" -> "1911" 
+  "1910" -> "1919" 
+  "1910" -> "1923" 
+  "1910" -> "1924" 
+  "1910" -> "1929" 
+  "1910" -> "1975" 
+  "1910" -> "1976" 
+  "1910" -> "1982" 
+  "1911" -> "1912" 
+  "1911" -> "1917" 
+  "1912" -> "1913" 
+  "1912" -> "1916" 
+  "1913" -> "1914" 
+  "1913" -> "1915" 
+  "1917" -> "1918" 
+  "1919" -> "1920" 
+  "1920" -> "1921" 
+  "1920" -> "1922" 
+  "1924" -> "1925" 
+  "1924" -> "1926" 
+  "1926" -> "1927" 
+  "1927" -> "1928" 
+  "1929" -> "1930" 
+  "1929" -> "1932" 
+  "1930" -> "1931" 
+  "1932" -> "1933" 
+  "1932" -> "1934" 
+  "1932" -> "1940" 
+  "1934" -> "1935" 
+  "1934" -> "1936" 
+  "1936" -> "1937" 
+  "1936" -> "1938" 
+  "1938" -> "1939" 
+  "1940" -> "1941" 
+  "1940" -> "1944" 
+  "1941" -> "1942" 
+  "1941" -> "1943" 
+  "1944" -> "1945" 
+  "1944" -> "1946" 
+  "1944" -> "1956" 
+  "1944" -> "1964" 
+  "1944" -> "1970" 
+  "1946" -> "1947" 
+  "1946" -> "1948" 
+  "1948" -> "1949" 
+  "1948" -> "1950" 
+  "1948" -> "1951" 
+  "1951" -> "1952" 
+  "1951" -> "1954" 
+  "1952" -> "1953" 
+  "1954" -> "1955" 
+  "1956" -> "1957" 
+  "1956" -> "1958" 
+  "1958" -> "1959" 
+  "1958" -> "1960" 
+  "1958" -> "1963" 
+  "1960" -> "1961" 
+  "1960" -> "1962" 
+  "1964" -> "1965" 
+  "1964" -> "1966" 
+  "1966" -> "1967" 
+  "1966" -> "1968" 
+  "1966" -> "1969" 
+  "1970" -> "1971" 
+  "1970" -> "1974" 
+  "1971" -> "1972" 
+  "1971" -> "1973" 
+  "1976" -> "1977" 
+  "1976" -> "1978" 
+  "1978" -> "1979" 
+  "1979" -> "1980" 
+  "1979" -> "1981" 
+  "1982" -> "1983" 
+  "1982" -> "1985" 
+  "1983" -> "1984" 
+  "1985" -> "1986" 
+  "1985" -> "1987" 
+  "1985" -> "1993" 
+  "1985" -> "1994" 
+  "1985" -> "74" 
+  "1985" -> "2004" 
+  "1985" -> "2007" 
+  "1985" -> "2014" 
+  "1987" -> "1988" 
+  "1987" -> "1989" 
+  "1989" -> "1990" 
+  "1989" -> "1991" 
+  "1991" -> "1992" 
+  "1994" -> "1995" 
+  "1994" -> "1996" 
+  "1996" -> "1997" 
+  "1996" -> "2003" 
+  "1997" -> "1998" 
+  "1997" -> "1999" 
+  "1997" -> "2000" 
+  "2000" -> "2001" 
+  "2000" -> "2002" 
+  "2004" -> "2005" 
+  "2004" -> "2006" 
+  "2007" -> "73" 
+  "2007" -> "2008" 
+  "2007" -> "2013" 
+  "2008" -> "2009" 
+  "2008" -> "2012" 
+  "2009" -> "2010" 
+  "2009" -> "2011" 
+  "2014" -> "2015" 
+  "2014" -> "2017" 
+  "2015" -> "2016" 
+  "2017" -> "2018" 
+  "2017" -> "2022" 
+  "2018" -> "2019" 
+  "2018" -> "2020" 
+  "2018" -> "2021" 
+  "2022" -> "75" 
+  "2022" -> "2023" 
+  "2022" -> "2030" 
+  "2023" -> "2024" 
+  "2023" -> "2029" 
+  "2024" -> "2025" 
+  "2024" -> "2028" 
+  "2025" -> "2026" 
+  "2025" -> "2027" 
+  "2030" -> "2031" 
+  "2030" -> "2032" 
+}

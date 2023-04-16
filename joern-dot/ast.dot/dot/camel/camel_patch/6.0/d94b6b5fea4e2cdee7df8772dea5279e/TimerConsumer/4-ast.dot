@@ -1,0 +1,131 @@
+digraph "sendTimerExchange" {  
+"193" [label = <(METHOD,sendTimerExchange)<SUB>86</SUB>> ]
+"11" [label = <(PARAM,this)<SUB>86</SUB>> ]
+"194" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>86</SUB>> ]
+"195" [label = <(LOCAL,Exchange exchange: org.apache.camel.Exchange)> ]
+"196" [label = <(&lt;operator&gt;.assignment,Exchange exchange = createExchange())<SUB>87</SUB>> ]
+"197" [label = <(IDENTIFIER,exchange,Exchange exchange = createExchange())<SUB>87</SUB>> ]
+"198" [label = <(createExchange,createExchange())<SUB>87</SUB>> ]
+"199" [label = <(&lt;operator&gt;.fieldAccess,this.endpoint)<SUB>87</SUB>> ]
+"200" [label = <(IDENTIFIER,this,createExchange())<SUB>87</SUB>> ]
+"201" [label = <(FIELD_IDENTIFIER,endpoint,endpoint)<SUB>87</SUB>> ]
+"202" [label = <(setProperty,setProperty(&quot;org.apache.camel.timer.name&quot;, endpoint.getTimerName()))<SUB>88</SUB>> ]
+"203" [label = <(IDENTIFIER,exchange,setProperty(&quot;org.apache.camel.timer.name&quot;, endpoint.getTimerName()))<SUB>88</SUB>> ]
+"204" [label = <(LITERAL,&quot;org.apache.camel.timer.name&quot;,setProperty(&quot;org.apache.camel.timer.name&quot;, endpoint.getTimerName()))<SUB>88</SUB>> ]
+"205" [label = <(getTimerName,getTimerName())<SUB>88</SUB>> ]
+"206" [label = <(&lt;operator&gt;.fieldAccess,this.endpoint)<SUB>88</SUB>> ]
+"207" [label = <(IDENTIFIER,this,getTimerName())<SUB>88</SUB>> ]
+"208" [label = <(FIELD_IDENTIFIER,endpoint,endpoint)<SUB>88</SUB>> ]
+"209" [label = <(setProperty,setProperty(&quot;org.apache.camel.timer.time&quot;, endpoint.getTime()))<SUB>89</SUB>> ]
+"210" [label = <(IDENTIFIER,exchange,setProperty(&quot;org.apache.camel.timer.time&quot;, endpoint.getTime()))<SUB>89</SUB>> ]
+"211" [label = <(LITERAL,&quot;org.apache.camel.timer.time&quot;,setProperty(&quot;org.apache.camel.timer.time&quot;, endpoint.getTime()))<SUB>89</SUB>> ]
+"212" [label = <(getTime,getTime())<SUB>89</SUB>> ]
+"213" [label = <(&lt;operator&gt;.fieldAccess,this.endpoint)<SUB>89</SUB>> ]
+"214" [label = <(IDENTIFIER,this,getTime())<SUB>89</SUB>> ]
+"215" [label = <(FIELD_IDENTIFIER,endpoint,endpoint)<SUB>89</SUB>> ]
+"216" [label = <(setProperty,setProperty(&quot;org.apache.camel.timer.period&quot;, endpoint.getPeriod()))<SUB>90</SUB>> ]
+"217" [label = <(IDENTIFIER,exchange,setProperty(&quot;org.apache.camel.timer.period&quot;, endpoint.getPeriod()))<SUB>90</SUB>> ]
+"218" [label = <(LITERAL,&quot;org.apache.camel.timer.period&quot;,setProperty(&quot;org.apache.camel.timer.period&quot;, endpoint.getPeriod()))<SUB>90</SUB>> ]
+"219" [label = <(getPeriod,getPeriod())<SUB>90</SUB>> ]
+"220" [label = <(&lt;operator&gt;.fieldAccess,this.endpoint)<SUB>90</SUB>> ]
+"221" [label = <(IDENTIFIER,this,getPeriod())<SUB>90</SUB>> ]
+"222" [label = <(FIELD_IDENTIFIER,endpoint,endpoint)<SUB>90</SUB>> ]
+"9" [label = <(LOCAL,Date now: java.util.Date)> ]
+"223" [label = <(&lt;operator&gt;.assignment,Date now = new Date())<SUB>92</SUB>> ]
+"224" [label = <(IDENTIFIER,now,Date now = new Date())<SUB>92</SUB>> ]
+"225" [label = <(&lt;operator&gt;.alloc,new Date())<SUB>92</SUB>> ]
+"226" [label = <(&lt;init&gt;,new Date())<SUB>92</SUB>> ]
+"8" [label = <(IDENTIFIER,now,new Date())<SUB>92</SUB>> ]
+"227" [label = <(setProperty,setProperty(&quot;org.apache.camel.timer.firedTime&quot;, now))<SUB>93</SUB>> ]
+"228" [label = <(IDENTIFIER,exchange,setProperty(&quot;org.apache.camel.timer.firedTime&quot;, now))<SUB>93</SUB>> ]
+"229" [label = <(LITERAL,&quot;org.apache.camel.timer.firedTime&quot;,setProperty(&quot;org.apache.camel.timer.firedTime&quot;, now))<SUB>93</SUB>> ]
+"230" [label = <(IDENTIFIER,now,setProperty(&quot;org.apache.camel.timer.firedTime&quot;, now))<SUB>93</SUB>> ]
+"231" [label = <(setHeader,setHeader(&quot;firedTime&quot;, now))<SUB>95</SUB>> ]
+"232" [label = <(getIn,getIn())<SUB>95</SUB>> ]
+"233" [label = <(IDENTIFIER,exchange,getIn())<SUB>95</SUB>> ]
+"234" [label = <(LITERAL,&quot;firedTime&quot;,setHeader(&quot;firedTime&quot;, now))<SUB>95</SUB>> ]
+"235" [label = <(IDENTIFIER,now,setHeader(&quot;firedTime&quot;, now))<SUB>95</SUB>> ]
+"236" [label = <(CONTROL_STRUCTURE,try,try)<SUB>97</SUB>> ]
+"237" [label = <(BLOCK,try,try)<SUB>97</SUB>> ]
+"238" [label = <(process,process(exchange))<SUB>98</SUB>> ]
+"239" [label = <(getProcessor,getProcessor())<SUB>98</SUB>> ]
+"10" [label = <(IDENTIFIER,this,getProcessor())<SUB>98</SUB>> ]
+"240" [label = <(IDENTIFIER,exchange,process(exchange))<SUB>98</SUB>> ]
+"241" [label = <(BLOCK,catch,catch)> ]
+"242" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>99</SUB>> ]
+"243" [label = <(error,error(&quot;Caught: &quot; + e, e))<SUB>100</SUB>> ]
+"244" [label = <(&lt;operator&gt;.fieldAccess,TimerConsumer.LOG)<SUB>100</SUB>> ]
+"245" [label = <(IDENTIFIER,TimerConsumer,error(&quot;Caught: &quot; + e, e))<SUB>100</SUB>> ]
+"246" [label = <(FIELD_IDENTIFIER,LOG,LOG)<SUB>100</SUB>> ]
+"247" [label = <(&lt;operator&gt;.addition,&quot;Caught: &quot; + e)<SUB>100</SUB>> ]
+"248" [label = <(LITERAL,&quot;Caught: &quot;,&quot;Caught: &quot; + e)<SUB>100</SUB>> ]
+"249" [label = <(IDENTIFIER,e,&quot;Caught: &quot; + e)<SUB>100</SUB>> ]
+"250" [label = <(IDENTIFIER,e,error(&quot;Caught: &quot; + e, e))<SUB>100</SUB>> ]
+"251" [label = <(MODIFIER,PROTECTED)> ]
+"252" [label = <(MODIFIER,VIRTUAL)> ]
+"253" [label = <(METHOD_RETURN,void)<SUB>86</SUB>> ]
+  "193" -> "11" 
+  "193" -> "194" 
+  "193" -> "251" 
+  "193" -> "252" 
+  "193" -> "253" 
+  "194" -> "195" 
+  "194" -> "196" 
+  "194" -> "202" 
+  "194" -> "209" 
+  "194" -> "216" 
+  "194" -> "9" 
+  "194" -> "223" 
+  "194" -> "226" 
+  "194" -> "227" 
+  "194" -> "231" 
+  "194" -> "236" 
+  "196" -> "197" 
+  "196" -> "198" 
+  "198" -> "199" 
+  "199" -> "200" 
+  "199" -> "201" 
+  "202" -> "203" 
+  "202" -> "204" 
+  "202" -> "205" 
+  "205" -> "206" 
+  "206" -> "207" 
+  "206" -> "208" 
+  "209" -> "210" 
+  "209" -> "211" 
+  "209" -> "212" 
+  "212" -> "213" 
+  "213" -> "214" 
+  "213" -> "215" 
+  "216" -> "217" 
+  "216" -> "218" 
+  "216" -> "219" 
+  "219" -> "220" 
+  "220" -> "221" 
+  "220" -> "222" 
+  "223" -> "224" 
+  "223" -> "225" 
+  "226" -> "8" 
+  "227" -> "228" 
+  "227" -> "229" 
+  "227" -> "230" 
+  "231" -> "232" 
+  "231" -> "234" 
+  "231" -> "235" 
+  "232" -> "233" 
+  "236" -> "237" 
+  "236" -> "241" 
+  "237" -> "238" 
+  "238" -> "239" 
+  "238" -> "240" 
+  "239" -> "10" 
+  "241" -> "242" 
+  "242" -> "243" 
+  "243" -> "244" 
+  "243" -> "247" 
+  "243" -> "250" 
+  "244" -> "245" 
+  "244" -> "246" 
+  "247" -> "248" 
+  "247" -> "249" 
+}

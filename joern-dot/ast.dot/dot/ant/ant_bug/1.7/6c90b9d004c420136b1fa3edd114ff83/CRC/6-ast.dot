@@ -1,0 +1,101 @@
+digraph "updateCRC" {  
+"116" [label = <(METHOD,updateCRC)<SUB>128</SUB>> ]
+"6" [label = <(PARAM,this)<SUB>128</SUB>> ]
+"117" [label = <(PARAM,int inCh)<SUB>128</SUB>> ]
+"118" [label = <(PARAM,int repeat)<SUB>128</SUB>> ]
+"119" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>128</SUB>> ]
+"120" [label = <(LOCAL,int globalCrcShadow: int)> ]
+"121" [label = <(&lt;operator&gt;.assignment,int globalCrcShadow = this.globalCrc)<SUB>129</SUB>> ]
+"122" [label = <(IDENTIFIER,globalCrcShadow,int globalCrcShadow = this.globalCrc)<SUB>129</SUB>> ]
+"123" [label = <(&lt;operator&gt;.fieldAccess,this.globalCrc)<SUB>129</SUB>> ]
+"5" [label = <(IDENTIFIER,this,int globalCrcShadow = this.globalCrc)<SUB>129</SUB>> ]
+"124" [label = <(FIELD_IDENTIFIER,globalCrc,globalCrc)<SUB>129</SUB>> ]
+"125" [label = <(CONTROL_STRUCTURE,while (repeat-- &gt; 0),while (repeat-- &gt; 0))<SUB>130</SUB>> ]
+"126" [label = <(&lt;operator&gt;.greaterThan,repeat-- &gt; 0)<SUB>130</SUB>> ]
+"127" [label = <(&lt;operator&gt;.postDecrement,repeat--)<SUB>130</SUB>> ]
+"128" [label = <(IDENTIFIER,repeat,repeat--)<SUB>130</SUB>> ]
+"129" [label = <(LITERAL,0,repeat-- &gt; 0)<SUB>130</SUB>> ]
+"130" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>130</SUB>> ]
+"131" [label = <(LOCAL,int temp: int)> ]
+"132" [label = <(&lt;operator&gt;.assignment,int temp = (globalCrcShadow &gt;&gt; 24) ^ inCh)<SUB>131</SUB>> ]
+"133" [label = <(IDENTIFIER,temp,int temp = (globalCrcShadow &gt;&gt; 24) ^ inCh)<SUB>131</SUB>> ]
+"134" [label = <(&lt;operator&gt;.xor,(globalCrcShadow &gt;&gt; 24) ^ inCh)<SUB>131</SUB>> ]
+"135" [label = <(&lt;operator&gt;.logicalShiftRight,globalCrcShadow &gt;&gt; 24)<SUB>131</SUB>> ]
+"136" [label = <(IDENTIFIER,globalCrcShadow,globalCrcShadow &gt;&gt; 24)<SUB>131</SUB>> ]
+"137" [label = <(LITERAL,24,globalCrcShadow &gt;&gt; 24)<SUB>131</SUB>> ]
+"138" [label = <(IDENTIFIER,inCh,(globalCrcShadow &gt;&gt; 24) ^ inCh)<SUB>131</SUB>> ]
+"139" [label = <(&lt;operator&gt;.assignment,globalCrcShadow = (globalCrcShadow &lt;&lt; 8) ^ crc32Table[(temp &gt;= 0) ? temp : (temp + 256)])<SUB>132</SUB>> ]
+"140" [label = <(IDENTIFIER,globalCrcShadow,globalCrcShadow = (globalCrcShadow &lt;&lt; 8) ^ crc32Table[(temp &gt;= 0) ? temp : (temp + 256)])<SUB>132</SUB>> ]
+"141" [label = <(&lt;operator&gt;.xor,(globalCrcShadow &lt;&lt; 8) ^ crc32Table[(temp &gt;= 0) ? temp : (temp + 256)])<SUB>132</SUB>> ]
+"142" [label = <(&lt;operator&gt;.shiftLeft,globalCrcShadow &lt;&lt; 8)<SUB>132</SUB>> ]
+"143" [label = <(IDENTIFIER,globalCrcShadow,globalCrcShadow &lt;&lt; 8)<SUB>132</SUB>> ]
+"144" [label = <(LITERAL,8,globalCrcShadow &lt;&lt; 8)<SUB>132</SUB>> ]
+"145" [label = <(&lt;operator&gt;.indexAccess,crc32Table[(temp &gt;= 0) ? temp : (temp + 256)])<SUB>132</SUB>> ]
+"146" [label = <(&lt;operator&gt;.fieldAccess,CRC.crc32Table)<SUB>132</SUB>> ]
+"147" [label = <(IDENTIFIER,CRC,(globalCrcShadow &lt;&lt; 8) ^ crc32Table[(temp &gt;= 0) ? temp : (temp + 256)])<SUB>132</SUB>> ]
+"148" [label = <(FIELD_IDENTIFIER,crc32Table,crc32Table)<SUB>132</SUB>> ]
+"149" [label = <(&lt;operator&gt;.conditional,(temp &gt;= 0) ? temp : (temp + 256))<SUB>132</SUB>> ]
+"150" [label = <(&lt;operator&gt;.greaterEqualsThan,temp &gt;= 0)<SUB>132</SUB>> ]
+"151" [label = <(IDENTIFIER,temp,temp &gt;= 0)<SUB>132</SUB>> ]
+"152" [label = <(LITERAL,0,temp &gt;= 0)<SUB>132</SUB>> ]
+"153" [label = <(IDENTIFIER,temp,(temp &gt;= 0) ? temp : (temp + 256))<SUB>133</SUB>> ]
+"154" [label = <(&lt;operator&gt;.addition,temp + 256)<SUB>134</SUB>> ]
+"155" [label = <(IDENTIFIER,temp,temp + 256)<SUB>134</SUB>> ]
+"156" [label = <(LITERAL,256,temp + 256)<SUB>134</SUB>> ]
+"157" [label = <(&lt;operator&gt;.assignment,this.globalCrc = globalCrcShadow)<SUB>136</SUB>> ]
+"158" [label = <(&lt;operator&gt;.fieldAccess,this.globalCrc)<SUB>136</SUB>> ]
+"7" [label = <(IDENTIFIER,this,this.globalCrc = globalCrcShadow)<SUB>136</SUB>> ]
+"159" [label = <(FIELD_IDENTIFIER,globalCrc,globalCrc)<SUB>136</SUB>> ]
+"160" [label = <(IDENTIFIER,globalCrcShadow,this.globalCrc = globalCrcShadow)<SUB>136</SUB>> ]
+"161" [label = <(MODIFIER,VIRTUAL)> ]
+"162" [label = <(METHOD_RETURN,void)<SUB>128</SUB>> ]
+  "116" -> "6" 
+  "116" -> "117" 
+  "116" -> "118" 
+  "116" -> "119" 
+  "116" -> "161" 
+  "116" -> "162" 
+  "119" -> "120" 
+  "119" -> "121" 
+  "119" -> "125" 
+  "119" -> "157" 
+  "121" -> "122" 
+  "121" -> "123" 
+  "123" -> "5" 
+  "123" -> "124" 
+  "125" -> "126" 
+  "125" -> "130" 
+  "126" -> "127" 
+  "126" -> "129" 
+  "127" -> "128" 
+  "130" -> "131" 
+  "130" -> "132" 
+  "130" -> "139" 
+  "132" -> "133" 
+  "132" -> "134" 
+  "134" -> "135" 
+  "134" -> "138" 
+  "135" -> "136" 
+  "135" -> "137" 
+  "139" -> "140" 
+  "139" -> "141" 
+  "141" -> "142" 
+  "141" -> "145" 
+  "142" -> "143" 
+  "142" -> "144" 
+  "145" -> "146" 
+  "145" -> "149" 
+  "146" -> "147" 
+  "146" -> "148" 
+  "149" -> "150" 
+  "149" -> "153" 
+  "149" -> "154" 
+  "150" -> "151" 
+  "150" -> "152" 
+  "154" -> "155" 
+  "154" -> "156" 
+  "157" -> "158" 
+  "157" -> "160" 
+  "158" -> "7" 
+  "158" -> "159" 
+}

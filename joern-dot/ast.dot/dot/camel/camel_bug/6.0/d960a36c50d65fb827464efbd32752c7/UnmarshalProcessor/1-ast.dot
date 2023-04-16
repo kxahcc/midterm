@@ -1,0 +1,97 @@
+digraph "process" {  
+"31" [label = <(METHOD,process)<SUB>40</SUB>> ]
+"32" [label = <(PARAM,this)<SUB>40</SUB>> ]
+"33" [label = <(PARAM,Exchange exchange)<SUB>40</SUB>> ]
+"34" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>40</SUB>> ]
+"35" [label = <(LOCAL,InputStream stream: java.io.InputStream)> ]
+"36" [label = <(&lt;operator&gt;.assignment,InputStream stream = getMandatoryInBody(exchange, InputStream.class))<SUB>41</SUB>> ]
+"37" [label = <(IDENTIFIER,stream,InputStream stream = getMandatoryInBody(exchange, InputStream.class))<SUB>41</SUB>> ]
+"38" [label = <(getMandatoryInBody,getMandatoryInBody(exchange, InputStream.class))<SUB>41</SUB>> ]
+"39" [label = <(IDENTIFIER,ExchangeHelper,getMandatoryInBody(exchange, InputStream.class))<SUB>41</SUB>> ]
+"40" [label = <(IDENTIFIER,exchange,getMandatoryInBody(exchange, InputStream.class))<SUB>41</SUB>> ]
+"41" [label = <(&lt;operator&gt;.fieldAccess,InputStream.class)<SUB>41</SUB>> ]
+"42" [label = <(IDENTIFIER,InputStream,getMandatoryInBody(exchange, InputStream.class))<SUB>41</SUB>> ]
+"43" [label = <(FIELD_IDENTIFIER,class,class)<SUB>41</SUB>> ]
+"44" [label = <(CONTROL_STRUCTURE,try,try)<SUB>42</SUB>> ]
+"45" [label = <(BLOCK,try,try)<SUB>42</SUB>> ]
+"46" [label = <(LOCAL,Message out: org.apache.camel.Message)> ]
+"47" [label = <(&lt;operator&gt;.assignment,Message out = getOut(true))<SUB>45</SUB>> ]
+"48" [label = <(IDENTIFIER,out,Message out = getOut(true))<SUB>45</SUB>> ]
+"49" [label = <(getOut,getOut(true))<SUB>45</SUB>> ]
+"50" [label = <(IDENTIFIER,exchange,getOut(true))<SUB>45</SUB>> ]
+"51" [label = <(LITERAL,true,getOut(true))<SUB>45</SUB>> ]
+"52" [label = <(copyFrom,copyFrom(exchange.getIn()))<SUB>46</SUB>> ]
+"53" [label = <(IDENTIFIER,out,copyFrom(exchange.getIn()))<SUB>46</SUB>> ]
+"54" [label = <(getIn,getIn())<SUB>46</SUB>> ]
+"55" [label = <(IDENTIFIER,exchange,getIn())<SUB>46</SUB>> ]
+"56" [label = <(LOCAL,Object result: java.lang.Object)> ]
+"57" [label = <(&lt;operator&gt;.assignment,Object result = unmarshal(exchange, stream))<SUB>48</SUB>> ]
+"58" [label = <(IDENTIFIER,result,Object result = unmarshal(exchange, stream))<SUB>48</SUB>> ]
+"59" [label = <(unmarshal,unmarshal(exchange, stream))<SUB>48</SUB>> ]
+"60" [label = <(&lt;operator&gt;.fieldAccess,this.dataFormat)<SUB>48</SUB>> ]
+"61" [label = <(IDENTIFIER,this,unmarshal(exchange, stream))<SUB>48</SUB>> ]
+"62" [label = <(FIELD_IDENTIFIER,dataFormat,dataFormat)<SUB>48</SUB>> ]
+"63" [label = <(IDENTIFIER,exchange,unmarshal(exchange, stream))<SUB>48</SUB>> ]
+"64" [label = <(IDENTIFIER,stream,unmarshal(exchange, stream))<SUB>48</SUB>> ]
+"65" [label = <(setBody,setBody(result))<SUB>49</SUB>> ]
+"66" [label = <(IDENTIFIER,out,setBody(result))<SUB>49</SUB>> ]
+"67" [label = <(IDENTIFIER,result,setBody(result))<SUB>49</SUB>> ]
+"68" [label = <(BLOCK,finally,finally)<SUB>50</SUB>> ]
+"69" [label = <(CONTROL_STRUCTURE,if (stream != null),if (stream != null))<SUB>51</SUB>> ]
+"70" [label = <(&lt;operator&gt;.notEquals,stream != null)<SUB>51</SUB>> ]
+"71" [label = <(IDENTIFIER,stream,stream != null)<SUB>51</SUB>> ]
+"72" [label = <(LITERAL,null,stream != null)<SUB>51</SUB>> ]
+"73" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>51</SUB>> ]
+"74" [label = <(close,stream.close())<SUB>52</SUB>> ]
+"75" [label = <(IDENTIFIER,stream,stream.close())<SUB>52</SUB>> ]
+"76" [label = <(MODIFIER,PUBLIC)> ]
+"77" [label = <(MODIFIER,VIRTUAL)> ]
+"78" [label = <(METHOD_RETURN,void)<SUB>40</SUB>> ]
+  "31" -> "32" 
+  "31" -> "33" 
+  "31" -> "34" 
+  "31" -> "76" 
+  "31" -> "77" 
+  "31" -> "78" 
+  "34" -> "35" 
+  "34" -> "36" 
+  "34" -> "44" 
+  "36" -> "37" 
+  "36" -> "38" 
+  "38" -> "39" 
+  "38" -> "40" 
+  "38" -> "41" 
+  "41" -> "42" 
+  "41" -> "43" 
+  "44" -> "45" 
+  "44" -> "68" 
+  "45" -> "46" 
+  "45" -> "47" 
+  "45" -> "52" 
+  "45" -> "56" 
+  "45" -> "57" 
+  "45" -> "65" 
+  "47" -> "48" 
+  "47" -> "49" 
+  "49" -> "50" 
+  "49" -> "51" 
+  "52" -> "53" 
+  "52" -> "54" 
+  "54" -> "55" 
+  "57" -> "58" 
+  "57" -> "59" 
+  "59" -> "60" 
+  "59" -> "63" 
+  "59" -> "64" 
+  "60" -> "61" 
+  "60" -> "62" 
+  "65" -> "66" 
+  "65" -> "67" 
+  "68" -> "69" 
+  "69" -> "70" 
+  "69" -> "73" 
+  "70" -> "71" 
+  "70" -> "72" 
+  "73" -> "74" 
+  "74" -> "75" 
+}

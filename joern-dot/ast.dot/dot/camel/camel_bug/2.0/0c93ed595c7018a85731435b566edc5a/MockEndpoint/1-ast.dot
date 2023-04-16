@@ -1,0 +1,163 @@
+digraph "assertWait" {  
+"234" [label = <(METHOD,assertWait)<SUB>62</SUB>> ]
+"235" [label = <(PARAM,long timeout)<SUB>62</SUB>> ]
+"236" [label = <(PARAM,TimeUnit unit)<SUB>62</SUB>> ]
+"237" [label = <(PARAM,MockEndpoint... endpoints)<SUB>62</SUB>> ]
+"238" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>62</SUB>> ]
+"239" [label = <(LOCAL,long start: long)> ]
+"240" [label = <(&lt;operator&gt;.assignment,long start = System.currentTimeMillis())<SUB>63</SUB>> ]
+"241" [label = <(IDENTIFIER,start,long start = System.currentTimeMillis())<SUB>63</SUB>> ]
+"242" [label = <(currentTimeMillis,System.currentTimeMillis())<SUB>63</SUB>> ]
+"243" [label = <(IDENTIFIER,System,System.currentTimeMillis())<SUB>63</SUB>> ]
+"244" [label = <(LOCAL,long left: long)> ]
+"245" [label = <(&lt;operator&gt;.assignment,long left = unit.toMillis(timeout))<SUB>64</SUB>> ]
+"246" [label = <(IDENTIFIER,left,long left = unit.toMillis(timeout))<SUB>64</SUB>> ]
+"247" [label = <(toMillis,unit.toMillis(timeout))<SUB>64</SUB>> ]
+"248" [label = <(IDENTIFIER,unit,unit.toMillis(timeout))<SUB>64</SUB>> ]
+"249" [label = <(IDENTIFIER,timeout,unit.toMillis(timeout))<SUB>64</SUB>> ]
+"250" [label = <(LOCAL,long end: long)> ]
+"251" [label = <(&lt;operator&gt;.assignment,long end = start + left)<SUB>65</SUB>> ]
+"252" [label = <(IDENTIFIER,end,long end = start + left)<SUB>65</SUB>> ]
+"253" [label = <(&lt;operator&gt;.addition,start + left)<SUB>65</SUB>> ]
+"254" [label = <(IDENTIFIER,start,start + left)<SUB>65</SUB>> ]
+"255" [label = <(IDENTIFIER,left,start + left)<SUB>65</SUB>> ]
+"256" [label = <(CONTROL_STRUCTURE,&lt;empty&gt;,&lt;empty&gt;)> ]
+"257" [label = <(LOCAL,$idx0: int)<SUB>66</SUB>> ]
+"258" [label = <(&lt;operator&gt;.assignment,int $idx0 = 0)<SUB>66</SUB>> ]
+"259" [label = <(IDENTIFIER,$idx0,int $idx0 = 0)<SUB>66</SUB>> ]
+"260" [label = <(LITERAL,0,int $idx0 = 0)<SUB>66</SUB>> ]
+"261" [label = <(&lt;operator&gt;.lessThan,$idx0 &lt; endpoints.length)<SUB>66</SUB>> ]
+"262" [label = <(IDENTIFIER,$idx0,$idx0 &lt; endpoints.length)<SUB>66</SUB>> ]
+"263" [label = <(&lt;operator&gt;.fieldAccess,endpoints.length)<SUB>66</SUB>> ]
+"264" [label = <(IDENTIFIER,endpoints,$idx0 &lt; endpoints.length)<SUB>66</SUB>> ]
+"265" [label = <(FIELD_IDENTIFIER,length,length)<SUB>66</SUB>> ]
+"266" [label = <(&lt;operator&gt;.postIncrement,$idx0++)<SUB>66</SUB>> ]
+"267" [label = <(IDENTIFIER,$idx0,$idx0++)<SUB>66</SUB>> ]
+"268" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>66</SUB>> ]
+"269" [label = <(LOCAL,endpoint: org.apache.camel.component.mock.MockEndpoint)<SUB>66</SUB>> ]
+"270" [label = <(&lt;operator&gt;.assignment,&lt;empty&gt;)<SUB>66</SUB>> ]
+"271" [label = <(IDENTIFIER,endpoint,&lt;empty&gt;)<SUB>66</SUB>> ]
+"272" [label = <(&lt;operator&gt;.indexAccess,&lt;empty&gt;)<SUB>66</SUB>> ]
+"273" [label = <(IDENTIFIER,endpoints,&lt;empty&gt;)<SUB>66</SUB>> ]
+"274" [label = <(IDENTIFIER,$idx0,&lt;empty&gt;)<SUB>66</SUB>> ]
+"275" [label = <(CONTROL_STRUCTURE,if (!endpoint.await(left, TimeUnit.MILLISECONDS)),if (!endpoint.await(left, TimeUnit.MILLISECONDS)))<SUB>67</SUB>> ]
+"276" [label = <(&lt;operator&gt;.logicalNot,!endpoint.await(left, TimeUnit.MILLISECONDS))<SUB>67</SUB>> ]
+"277" [label = <(await,endpoint.await(left, TimeUnit.MILLISECONDS))<SUB>67</SUB>> ]
+"278" [label = <(IDENTIFIER,endpoint,endpoint.await(left, TimeUnit.MILLISECONDS))<SUB>67</SUB>> ]
+"279" [label = <(IDENTIFIER,left,endpoint.await(left, TimeUnit.MILLISECONDS))<SUB>67</SUB>> ]
+"280" [label = <(&lt;operator&gt;.fieldAccess,TimeUnit.MILLISECONDS)<SUB>67</SUB>> ]
+"281" [label = <(IDENTIFIER,TimeUnit,endpoint.await(left, TimeUnit.MILLISECONDS))<SUB>67</SUB>> ]
+"282" [label = <(FIELD_IDENTIFIER,MILLISECONDS,MILLISECONDS)<SUB>67</SUB>> ]
+"283" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>67</SUB>> ]
+"284" [label = <(&lt;operator&gt;.throw,throw new AssertionError(&quot;Timeout waiting for endpoints to receive enough messages. &quot; + endpoint.getEndpointUri() + &quot; timed out.&quot;);)<SUB>68</SUB>> ]
+"285" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>68</SUB>> ]
+"286" [label = <(&lt;operator&gt;.assignment,&lt;empty&gt;)> ]
+"287" [label = <(IDENTIFIER,$obj5,&lt;empty&gt;)> ]
+"288" [label = <(&lt;operator&gt;.alloc,new AssertionError(&quot;Timeout waiting for endpoints to receive enough messages. &quot; + endpoint.getEndpointUri() + &quot; timed out.&quot;))<SUB>68</SUB>> ]
+"289" [label = <(&lt;init&gt;,new AssertionError(&quot;Timeout waiting for endpoints to receive enough messages. &quot; + endpoint.getEndpointUri() + &quot; timed out.&quot;))<SUB>68</SUB>> ]
+"290" [label = <(IDENTIFIER,$obj5,new AssertionError(&quot;Timeout waiting for endpoints to receive enough messages. &quot; + endpoint.getEndpointUri() + &quot; timed out.&quot;))> ]
+"291" [label = <(&lt;operator&gt;.addition,&quot;Timeout waiting for endpoints to receive enough messages. &quot; + endpoint.getEndpointUri() + &quot; timed out.&quot;)<SUB>68</SUB>> ]
+"292" [label = <(&lt;operator&gt;.addition,&quot;Timeout waiting for endpoints to receive enough messages. &quot; + endpoint.getEndpointUri())<SUB>68</SUB>> ]
+"293" [label = <(LITERAL,&quot;Timeout waiting for endpoints to receive enough messages. &quot;,&quot;Timeout waiting for endpoints to receive enough messages. &quot; + endpoint.getEndpointUri())<SUB>68</SUB>> ]
+"294" [label = <(getEndpointUri,getEndpointUri())<SUB>68</SUB>> ]
+"295" [label = <(IDENTIFIER,endpoint,getEndpointUri())<SUB>68</SUB>> ]
+"296" [label = <(LITERAL,&quot; timed out.&quot;,&quot;Timeout waiting for endpoints to receive enough messages. &quot; + endpoint.getEndpointUri() + &quot; timed out.&quot;)<SUB>68</SUB>> ]
+"297" [label = <(IDENTIFIER,$obj5,&lt;empty&gt;)> ]
+"298" [label = <(&lt;operator&gt;.assignment,left = end - System.currentTimeMillis())<SUB>70</SUB>> ]
+"299" [label = <(IDENTIFIER,left,left = end - System.currentTimeMillis())<SUB>70</SUB>> ]
+"300" [label = <(&lt;operator&gt;.subtraction,end - System.currentTimeMillis())<SUB>70</SUB>> ]
+"301" [label = <(IDENTIFIER,end,end - System.currentTimeMillis())<SUB>70</SUB>> ]
+"302" [label = <(currentTimeMillis,System.currentTimeMillis())<SUB>70</SUB>> ]
+"303" [label = <(IDENTIFIER,System,System.currentTimeMillis())<SUB>70</SUB>> ]
+"304" [label = <(CONTROL_STRUCTURE,if (left &lt;= 0),if (left &lt;= 0))<SUB>71</SUB>> ]
+"305" [label = <(&lt;operator&gt;.lessEqualsThan,left &lt;= 0)<SUB>71</SUB>> ]
+"306" [label = <(IDENTIFIER,left,left &lt;= 0)<SUB>71</SUB>> ]
+"307" [label = <(LITERAL,0,left &lt;= 0)<SUB>71</SUB>> ]
+"308" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>71</SUB>> ]
+"309" [label = <(&lt;operator&gt;.assignment,left = 0)<SUB>72</SUB>> ]
+"310" [label = <(IDENTIFIER,left,left = 0)<SUB>72</SUB>> ]
+"311" [label = <(LITERAL,0,left = 0)<SUB>72</SUB>> ]
+"312" [label = <(MODIFIER,PUBLIC)> ]
+"313" [label = <(MODIFIER,STATIC)> ]
+"314" [label = <(METHOD_RETURN,void)<SUB>62</SUB>> ]
+  "234" -> "235" 
+  "234" -> "236" 
+  "234" -> "237" 
+  "234" -> "238" 
+  "234" -> "312" 
+  "234" -> "313" 
+  "234" -> "314" 
+  "238" -> "239" 
+  "238" -> "240" 
+  "238" -> "244" 
+  "238" -> "245" 
+  "238" -> "250" 
+  "238" -> "251" 
+  "238" -> "256" 
+  "240" -> "241" 
+  "240" -> "242" 
+  "242" -> "243" 
+  "245" -> "246" 
+  "245" -> "247" 
+  "247" -> "248" 
+  "247" -> "249" 
+  "251" -> "252" 
+  "251" -> "253" 
+  "253" -> "254" 
+  "253" -> "255" 
+  "256" -> "257" 
+  "256" -> "258" 
+  "256" -> "261" 
+  "256" -> "266" 
+  "256" -> "268" 
+  "258" -> "259" 
+  "258" -> "260" 
+  "261" -> "262" 
+  "261" -> "263" 
+  "263" -> "264" 
+  "263" -> "265" 
+  "266" -> "267" 
+  "268" -> "269" 
+  "268" -> "270" 
+  "268" -> "275" 
+  "268" -> "298" 
+  "268" -> "304" 
+  "270" -> "271" 
+  "270" -> "272" 
+  "272" -> "273" 
+  "272" -> "274" 
+  "275" -> "276" 
+  "275" -> "283" 
+  "276" -> "277" 
+  "277" -> "278" 
+  "277" -> "279" 
+  "277" -> "280" 
+  "280" -> "281" 
+  "280" -> "282" 
+  "283" -> "284" 
+  "284" -> "285" 
+  "285" -> "286" 
+  "285" -> "289" 
+  "285" -> "297" 
+  "286" -> "287" 
+  "286" -> "288" 
+  "289" -> "290" 
+  "289" -> "291" 
+  "291" -> "292" 
+  "291" -> "296" 
+  "292" -> "293" 
+  "292" -> "294" 
+  "294" -> "295" 
+  "298" -> "299" 
+  "298" -> "300" 
+  "300" -> "301" 
+  "300" -> "302" 
+  "302" -> "303" 
+  "304" -> "305" 
+  "304" -> "308" 
+  "305" -> "306" 
+  "305" -> "307" 
+  "308" -> "309" 
+  "309" -> "310" 
+  "309" -> "311" 
+}

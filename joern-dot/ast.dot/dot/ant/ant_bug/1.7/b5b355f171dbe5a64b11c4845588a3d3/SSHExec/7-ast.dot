@@ -1,0 +1,133 @@
+digraph "writeToFile" {  
+"495" [label = <(METHOD,writeToFile)<SUB>238</SUB>> ]
+"496" [label = <(PARAM,this)<SUB>238</SUB>> ]
+"497" [label = <(PARAM,String from)<SUB>238</SUB>> ]
+"498" [label = <(PARAM,boolean append)<SUB>238</SUB>> ]
+"499" [label = <(PARAM,File to)<SUB>238</SUB>> ]
+"500" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>239</SUB>> ]
+"32" [label = <(LOCAL,FileWriter out: java.io.FileWriter)> ]
+"501" [label = <(&lt;operator&gt;.assignment,FileWriter out = null)<SUB>240</SUB>> ]
+"502" [label = <(IDENTIFIER,out,FileWriter out = null)<SUB>240</SUB>> ]
+"503" [label = <(LITERAL,null,FileWriter out = null)<SUB>240</SUB>> ]
+"504" [label = <(CONTROL_STRUCTURE,try,try)<SUB>241</SUB>> ]
+"505" [label = <(BLOCK,try,try)<SUB>241</SUB>> ]
+"506" [label = <(&lt;operator&gt;.assignment,out = new FileWriter(to.getAbsolutePath(), append))<SUB>242</SUB>> ]
+"507" [label = <(IDENTIFIER,out,out = new FileWriter(to.getAbsolutePath(), append))<SUB>242</SUB>> ]
+"508" [label = <(&lt;operator&gt;.alloc,new FileWriter(to.getAbsolutePath(), append))<SUB>242</SUB>> ]
+"509" [label = <(&lt;init&gt;,new FileWriter(to.getAbsolutePath(), append))<SUB>242</SUB>> ]
+"31" [label = <(IDENTIFIER,out,new FileWriter(to.getAbsolutePath(), append))<SUB>242</SUB>> ]
+"510" [label = <(getAbsolutePath,to.getAbsolutePath())<SUB>242</SUB>> ]
+"511" [label = <(IDENTIFIER,to,to.getAbsolutePath())<SUB>242</SUB>> ]
+"512" [label = <(IDENTIFIER,append,new FileWriter(to.getAbsolutePath(), append))<SUB>242</SUB>> ]
+"34" [label = <(LOCAL,StringReader in: java.io.StringReader)> ]
+"513" [label = <(&lt;operator&gt;.assignment,StringReader in = new StringReader(from))<SUB>243</SUB>> ]
+"514" [label = <(IDENTIFIER,in,StringReader in = new StringReader(from))<SUB>243</SUB>> ]
+"515" [label = <(&lt;operator&gt;.alloc,new StringReader(from))<SUB>243</SUB>> ]
+"516" [label = <(&lt;init&gt;,new StringReader(from))<SUB>243</SUB>> ]
+"33" [label = <(IDENTIFIER,in,new StringReader(from))<SUB>243</SUB>> ]
+"517" [label = <(IDENTIFIER,from,new StringReader(from))<SUB>243</SUB>> ]
+"518" [label = <(LOCAL,char[] buffer: char[])> ]
+"519" [label = <(&lt;operator&gt;.assignment,char[] buffer = new char[8192])<SUB>244</SUB>> ]
+"520" [label = <(IDENTIFIER,buffer,char[] buffer = new char[8192])<SUB>244</SUB>> ]
+"521" [label = <(&lt;operator&gt;.alloc,new char[8192])> ]
+"522" [label = <(LITERAL,8192,new char[8192])<SUB>244</SUB>> ]
+"523" [label = <(LOCAL,int bytesRead: int)> ]
+"524" [label = <(CONTROL_STRUCTURE,while (true),while (true))<SUB>246</SUB>> ]
+"525" [label = <(LITERAL,true,while (true))<SUB>246</SUB>> ]
+"526" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>246</SUB>> ]
+"527" [label = <(&lt;operator&gt;.assignment,bytesRead = in.read(buffer))<SUB>247</SUB>> ]
+"528" [label = <(IDENTIFIER,bytesRead,bytesRead = in.read(buffer))<SUB>247</SUB>> ]
+"529" [label = <(read,in.read(buffer))<SUB>247</SUB>> ]
+"530" [label = <(IDENTIFIER,in,in.read(buffer))<SUB>247</SUB>> ]
+"531" [label = <(IDENTIFIER,buffer,in.read(buffer))<SUB>247</SUB>> ]
+"532" [label = <(CONTROL_STRUCTURE,if (bytesRead == -1),if (bytesRead == -1))<SUB>248</SUB>> ]
+"533" [label = <(&lt;operator&gt;.equals,bytesRead == -1)<SUB>248</SUB>> ]
+"534" [label = <(IDENTIFIER,bytesRead,bytesRead == -1)<SUB>248</SUB>> ]
+"535" [label = <(&lt;operator&gt;.minus,-1)<SUB>248</SUB>> ]
+"536" [label = <(LITERAL,1,-1)<SUB>248</SUB>> ]
+"537" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>248</SUB>> ]
+"538" [label = <(CONTROL_STRUCTURE,break;,break;)<SUB>249</SUB>> ]
+"539" [label = <(write,out.write(buffer, 0, bytesRead))<SUB>251</SUB>> ]
+"540" [label = <(IDENTIFIER,out,out.write(buffer, 0, bytesRead))<SUB>251</SUB>> ]
+"541" [label = <(IDENTIFIER,buffer,out.write(buffer, 0, bytesRead))<SUB>251</SUB>> ]
+"542" [label = <(LITERAL,0,out.write(buffer, 0, bytesRead))<SUB>251</SUB>> ]
+"543" [label = <(IDENTIFIER,bytesRead,out.write(buffer, 0, bytesRead))<SUB>251</SUB>> ]
+"544" [label = <(flush,out.flush())<SUB>253</SUB>> ]
+"545" [label = <(IDENTIFIER,out,out.flush())<SUB>253</SUB>> ]
+"546" [label = <(BLOCK,finally,finally)<SUB>254</SUB>> ]
+"547" [label = <(CONTROL_STRUCTURE,if (out != null),if (out != null))<SUB>255</SUB>> ]
+"548" [label = <(&lt;operator&gt;.notEquals,out != null)<SUB>255</SUB>> ]
+"549" [label = <(IDENTIFIER,out,out != null)<SUB>255</SUB>> ]
+"550" [label = <(LITERAL,null,out != null)<SUB>255</SUB>> ]
+"551" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>255</SUB>> ]
+"552" [label = <(close,out.close())<SUB>256</SUB>> ]
+"553" [label = <(IDENTIFIER,out,out.close())<SUB>256</SUB>> ]
+"554" [label = <(MODIFIER,PRIVATE)> ]
+"555" [label = <(MODIFIER,VIRTUAL)> ]
+"556" [label = <(METHOD_RETURN,void)<SUB>238</SUB>> ]
+  "495" -> "496" 
+  "495" -> "497" 
+  "495" -> "498" 
+  "495" -> "499" 
+  "495" -> "500" 
+  "495" -> "554" 
+  "495" -> "555" 
+  "495" -> "556" 
+  "500" -> "32" 
+  "500" -> "501" 
+  "500" -> "504" 
+  "501" -> "502" 
+  "501" -> "503" 
+  "504" -> "505" 
+  "504" -> "546" 
+  "505" -> "506" 
+  "505" -> "509" 
+  "505" -> "34" 
+  "505" -> "513" 
+  "505" -> "516" 
+  "505" -> "518" 
+  "505" -> "519" 
+  "505" -> "523" 
+  "505" -> "524" 
+  "505" -> "544" 
+  "506" -> "507" 
+  "506" -> "508" 
+  "509" -> "31" 
+  "509" -> "510" 
+  "509" -> "512" 
+  "510" -> "511" 
+  "513" -> "514" 
+  "513" -> "515" 
+  "516" -> "33" 
+  "516" -> "517" 
+  "519" -> "520" 
+  "519" -> "521" 
+  "521" -> "522" 
+  "524" -> "525" 
+  "524" -> "526" 
+  "526" -> "527" 
+  "526" -> "532" 
+  "526" -> "539" 
+  "527" -> "528" 
+  "527" -> "529" 
+  "529" -> "530" 
+  "529" -> "531" 
+  "532" -> "533" 
+  "532" -> "537" 
+  "533" -> "534" 
+  "533" -> "535" 
+  "535" -> "536" 
+  "537" -> "538" 
+  "539" -> "540" 
+  "539" -> "541" 
+  "539" -> "542" 
+  "539" -> "543" 
+  "544" -> "545" 
+  "546" -> "547" 
+  "547" -> "548" 
+  "547" -> "551" 
+  "548" -> "549" 
+  "548" -> "550" 
+  "551" -> "552" 
+  "552" -> "553" 
+}

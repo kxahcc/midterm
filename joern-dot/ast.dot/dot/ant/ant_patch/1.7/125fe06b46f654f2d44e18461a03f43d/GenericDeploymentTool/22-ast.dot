@@ -1,0 +1,505 @@
+digraph "getJarBaseName" {  
+"1082" [label = <(METHOD,getJarBaseName)<SUB>583</SUB>> ]
+"1083" [label = <(PARAM,this)<SUB>583</SUB>> ]
+"1084" [label = <(PARAM,String descriptorFileName)<SUB>583</SUB>> ]
+"1085" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>583</SUB>> ]
+"1086" [label = <(LOCAL,String baseName: java.lang.String)> ]
+"1087" [label = <(&lt;operator&gt;.assignment,String baseName = &quot;&quot;)<SUB>585</SUB>> ]
+"1088" [label = <(IDENTIFIER,baseName,String baseName = &quot;&quot;)<SUB>585</SUB>> ]
+"1089" [label = <(LITERAL,&quot;&quot;,String baseName = &quot;&quot;)<SUB>585</SUB>> ]
+"1090" [label = <(CONTROL_STRUCTURE,if (config.namingScheme.getValue().equals(EjbJar.NamingScheme.BASEJARNAME)),if (config.namingScheme.getValue().equals(EjbJar.NamingScheme.BASEJARNAME)))<SUB>588</SUB>> ]
+"1091" [label = <(equals,equals(EjbJar.NamingScheme.BASEJARNAME))<SUB>588</SUB>> ]
+"1092" [label = <(getValue,getValue())<SUB>588</SUB>> ]
+"1093" [label = <(&lt;operator&gt;.fieldAccess,config.namingScheme)<SUB>588</SUB>> ]
+"1094" [label = <(&lt;operator&gt;.fieldAccess,this.config)<SUB>588</SUB>> ]
+"1095" [label = <(IDENTIFIER,this,getValue())<SUB>588</SUB>> ]
+"1096" [label = <(FIELD_IDENTIFIER,config,config)<SUB>588</SUB>> ]
+"1097" [label = <(FIELD_IDENTIFIER,namingScheme,namingScheme)<SUB>588</SUB>> ]
+"1098" [label = <(&lt;operator&gt;.fieldAccess,EjbJar.NamingScheme.BASEJARNAME)<SUB>588</SUB>> ]
+"1099" [label = <(&lt;operator&gt;.fieldAccess,EjbJar.NamingScheme)<SUB>588</SUB>> ]
+"1100" [label = <(IDENTIFIER,EjbJar,equals(EjbJar.NamingScheme.BASEJARNAME))<SUB>588</SUB>> ]
+"1101" [label = <(FIELD_IDENTIFIER,NamingScheme,NamingScheme)<SUB>588</SUB>> ]
+"1102" [label = <(FIELD_IDENTIFIER,BASEJARNAME,BASEJARNAME)<SUB>588</SUB>> ]
+"1103" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>588</SUB>> ]
+"1104" [label = <(LOCAL,String canonicalDescriptor: java.lang.String)> ]
+"1105" [label = <(&lt;operator&gt;.assignment,String canonicalDescriptor = descriptorFileName.replace('\\', '/'))<SUB>589</SUB>> ]
+"1106" [label = <(IDENTIFIER,canonicalDescriptor,String canonicalDescriptor = descriptorFileName.replace('\\', '/'))<SUB>589</SUB>> ]
+"1107" [label = <(replace,descriptorFileName.replace('\\', '/'))<SUB>589</SUB>> ]
+"1108" [label = <(IDENTIFIER,descriptorFileName,descriptorFileName.replace('\\', '/'))<SUB>589</SUB>> ]
+"1109" [label = <(LITERAL,'\\',descriptorFileName.replace('\\', '/'))<SUB>589</SUB>> ]
+"1110" [label = <(LITERAL,'/',descriptorFileName.replace('\\', '/'))<SUB>589</SUB>> ]
+"1111" [label = <(LOCAL,int index: int)> ]
+"1112" [label = <(&lt;operator&gt;.assignment,int index = canonicalDescriptor.lastIndexOf('/'))<SUB>590</SUB>> ]
+"1113" [label = <(IDENTIFIER,index,int index = canonicalDescriptor.lastIndexOf('/'))<SUB>590</SUB>> ]
+"1114" [label = <(lastIndexOf,canonicalDescriptor.lastIndexOf('/'))<SUB>590</SUB>> ]
+"1115" [label = <(IDENTIFIER,canonicalDescriptor,canonicalDescriptor.lastIndexOf('/'))<SUB>590</SUB>> ]
+"1116" [label = <(LITERAL,'/',canonicalDescriptor.lastIndexOf('/'))<SUB>590</SUB>> ]
+"1117" [label = <(CONTROL_STRUCTURE,if (index != -1),if (index != -1))<SUB>591</SUB>> ]
+"1118" [label = <(&lt;operator&gt;.notEquals,index != -1)<SUB>591</SUB>> ]
+"1119" [label = <(IDENTIFIER,index,index != -1)<SUB>591</SUB>> ]
+"1120" [label = <(&lt;operator&gt;.minus,-1)<SUB>591</SUB>> ]
+"1121" [label = <(LITERAL,1,-1)<SUB>591</SUB>> ]
+"1122" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>591</SUB>> ]
+"1123" [label = <(&lt;operator&gt;.assignment,baseName = descriptorFileName.substring(0, index + 1))<SUB>592</SUB>> ]
+"1124" [label = <(IDENTIFIER,baseName,baseName = descriptorFileName.substring(0, index + 1))<SUB>592</SUB>> ]
+"1125" [label = <(substring,descriptorFileName.substring(0, index + 1))<SUB>592</SUB>> ]
+"1126" [label = <(IDENTIFIER,descriptorFileName,descriptorFileName.substring(0, index + 1))<SUB>592</SUB>> ]
+"1127" [label = <(LITERAL,0,descriptorFileName.substring(0, index + 1))<SUB>592</SUB>> ]
+"1128" [label = <(&lt;operator&gt;.addition,index + 1)<SUB>592</SUB>> ]
+"1129" [label = <(IDENTIFIER,index,index + 1)<SUB>592</SUB>> ]
+"1130" [label = <(LITERAL,1,index + 1)<SUB>592</SUB>> ]
+"1131" [label = <(&lt;operator&gt;.assignmentPlus,baseName += config.baseJarName)<SUB>594</SUB>> ]
+"1132" [label = <(IDENTIFIER,baseName,baseName += config.baseJarName)<SUB>594</SUB>> ]
+"1133" [label = <(&lt;operator&gt;.fieldAccess,config.baseJarName)<SUB>594</SUB>> ]
+"1134" [label = <(&lt;operator&gt;.fieldAccess,this.config)<SUB>594</SUB>> ]
+"1135" [label = <(IDENTIFIER,this,baseName += config.baseJarName)<SUB>594</SUB>> ]
+"1136" [label = <(FIELD_IDENTIFIER,config,config)<SUB>594</SUB>> ]
+"1137" [label = <(FIELD_IDENTIFIER,baseJarName,baseJarName)<SUB>594</SUB>> ]
+"1138" [label = <(CONTROL_STRUCTURE,else,else)<SUB>595</SUB>> ]
+"1139" [label = <(CONTROL_STRUCTURE,if (config.namingScheme.getValue().equals(EjbJar.NamingScheme.DESCRIPTOR)),if (config.namingScheme.getValue().equals(EjbJar.NamingScheme.DESCRIPTOR)))<SUB>595</SUB>> ]
+"1140" [label = <(equals,equals(EjbJar.NamingScheme.DESCRIPTOR))<SUB>595</SUB>> ]
+"1141" [label = <(getValue,getValue())<SUB>595</SUB>> ]
+"1142" [label = <(&lt;operator&gt;.fieldAccess,config.namingScheme)<SUB>595</SUB>> ]
+"1143" [label = <(&lt;operator&gt;.fieldAccess,this.config)<SUB>595</SUB>> ]
+"1144" [label = <(IDENTIFIER,this,getValue())<SUB>595</SUB>> ]
+"1145" [label = <(FIELD_IDENTIFIER,config,config)<SUB>595</SUB>> ]
+"1146" [label = <(FIELD_IDENTIFIER,namingScheme,namingScheme)<SUB>595</SUB>> ]
+"1147" [label = <(&lt;operator&gt;.fieldAccess,EjbJar.NamingScheme.DESCRIPTOR)<SUB>595</SUB>> ]
+"1148" [label = <(&lt;operator&gt;.fieldAccess,EjbJar.NamingScheme)<SUB>595</SUB>> ]
+"1149" [label = <(IDENTIFIER,EjbJar,equals(EjbJar.NamingScheme.DESCRIPTOR))<SUB>595</SUB>> ]
+"1150" [label = <(FIELD_IDENTIFIER,NamingScheme,NamingScheme)<SUB>595</SUB>> ]
+"1151" [label = <(FIELD_IDENTIFIER,DESCRIPTOR,DESCRIPTOR)<SUB>595</SUB>> ]
+"1152" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>595</SUB>> ]
+"1153" [label = <(LOCAL,int lastSeparatorIndex: int)> ]
+"1154" [label = <(&lt;operator&gt;.assignment,int lastSeparatorIndex = descriptorFileName.lastIndexOf(File.separator))<SUB>596</SUB>> ]
+"1155" [label = <(IDENTIFIER,lastSeparatorIndex,int lastSeparatorIndex = descriptorFileName.lastIndexOf(File.separator))<SUB>596</SUB>> ]
+"1156" [label = <(lastIndexOf,descriptorFileName.lastIndexOf(File.separator))<SUB>596</SUB>> ]
+"1157" [label = <(IDENTIFIER,descriptorFileName,descriptorFileName.lastIndexOf(File.separator))<SUB>596</SUB>> ]
+"1158" [label = <(&lt;operator&gt;.fieldAccess,File.separator)<SUB>596</SUB>> ]
+"1159" [label = <(IDENTIFIER,File,descriptorFileName.lastIndexOf(File.separator))<SUB>596</SUB>> ]
+"1160" [label = <(FIELD_IDENTIFIER,separator,separator)<SUB>596</SUB>> ]
+"1161" [label = <(LOCAL,int endBaseName: int)> ]
+"1162" [label = <(&lt;operator&gt;.assignment,int endBaseName = -1)<SUB>597</SUB>> ]
+"1163" [label = <(IDENTIFIER,endBaseName,int endBaseName = -1)<SUB>597</SUB>> ]
+"1164" [label = <(&lt;operator&gt;.minus,-1)<SUB>597</SUB>> ]
+"1165" [label = <(LITERAL,1,-1)<SUB>597</SUB>> ]
+"1166" [label = <(CONTROL_STRUCTURE,if (lastSeparatorIndex != -1),if (lastSeparatorIndex != -1))<SUB>598</SUB>> ]
+"1167" [label = <(&lt;operator&gt;.notEquals,lastSeparatorIndex != -1)<SUB>598</SUB>> ]
+"1168" [label = <(IDENTIFIER,lastSeparatorIndex,lastSeparatorIndex != -1)<SUB>598</SUB>> ]
+"1169" [label = <(&lt;operator&gt;.minus,-1)<SUB>598</SUB>> ]
+"1170" [label = <(LITERAL,1,-1)<SUB>598</SUB>> ]
+"1171" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>598</SUB>> ]
+"1172" [label = <(&lt;operator&gt;.assignment,endBaseName = indexOf(config.baseNameTerminator, lastSeparatorIndex))<SUB>599</SUB>> ]
+"1173" [label = <(IDENTIFIER,endBaseName,endBaseName = indexOf(config.baseNameTerminator, lastSeparatorIndex))<SUB>599</SUB>> ]
+"1174" [label = <(indexOf,indexOf(config.baseNameTerminator, lastSeparatorIndex))<SUB>599</SUB>> ]
+"1175" [label = <(IDENTIFIER,descriptorFileName,indexOf(config.baseNameTerminator, lastSeparatorIndex))<SUB>599</SUB>> ]
+"1176" [label = <(&lt;operator&gt;.fieldAccess,config.baseNameTerminator)<SUB>599</SUB>> ]
+"1177" [label = <(&lt;operator&gt;.fieldAccess,this.config)<SUB>599</SUB>> ]
+"1178" [label = <(IDENTIFIER,this,indexOf(config.baseNameTerminator, lastSeparatorIndex))<SUB>599</SUB>> ]
+"1179" [label = <(FIELD_IDENTIFIER,config,config)<SUB>599</SUB>> ]
+"1180" [label = <(FIELD_IDENTIFIER,baseNameTerminator,baseNameTerminator)<SUB>599</SUB>> ]
+"1181" [label = <(IDENTIFIER,lastSeparatorIndex,indexOf(config.baseNameTerminator, lastSeparatorIndex))<SUB>600</SUB>> ]
+"1182" [label = <(CONTROL_STRUCTURE,else,else)<SUB>601</SUB>> ]
+"1183" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>601</SUB>> ]
+"1184" [label = <(&lt;operator&gt;.assignment,endBaseName = indexOf(config.baseNameTerminator))<SUB>602</SUB>> ]
+"1185" [label = <(IDENTIFIER,endBaseName,endBaseName = indexOf(config.baseNameTerminator))<SUB>602</SUB>> ]
+"1186" [label = <(indexOf,indexOf(config.baseNameTerminator))<SUB>602</SUB>> ]
+"1187" [label = <(IDENTIFIER,descriptorFileName,indexOf(config.baseNameTerminator))<SUB>602</SUB>> ]
+"1188" [label = <(&lt;operator&gt;.fieldAccess,config.baseNameTerminator)<SUB>602</SUB>> ]
+"1189" [label = <(&lt;operator&gt;.fieldAccess,this.config)<SUB>602</SUB>> ]
+"1190" [label = <(IDENTIFIER,this,indexOf(config.baseNameTerminator))<SUB>602</SUB>> ]
+"1191" [label = <(FIELD_IDENTIFIER,config,config)<SUB>602</SUB>> ]
+"1192" [label = <(FIELD_IDENTIFIER,baseNameTerminator,baseNameTerminator)<SUB>602</SUB>> ]
+"1193" [label = <(CONTROL_STRUCTURE,if (endBaseName != -1),if (endBaseName != -1))<SUB>605</SUB>> ]
+"1194" [label = <(&lt;operator&gt;.notEquals,endBaseName != -1)<SUB>605</SUB>> ]
+"1195" [label = <(IDENTIFIER,endBaseName,endBaseName != -1)<SUB>605</SUB>> ]
+"1196" [label = <(&lt;operator&gt;.minus,-1)<SUB>605</SUB>> ]
+"1197" [label = <(LITERAL,1,-1)<SUB>605</SUB>> ]
+"1198" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>605</SUB>> ]
+"1199" [label = <(&lt;operator&gt;.assignment,baseName = descriptorFileName.substring(0, endBaseName))<SUB>606</SUB>> ]
+"1200" [label = <(IDENTIFIER,baseName,baseName = descriptorFileName.substring(0, endBaseName))<SUB>606</SUB>> ]
+"1201" [label = <(substring,descriptorFileName.substring(0, endBaseName))<SUB>606</SUB>> ]
+"1202" [label = <(IDENTIFIER,descriptorFileName,descriptorFileName.substring(0, endBaseName))<SUB>606</SUB>> ]
+"1203" [label = <(LITERAL,0,descriptorFileName.substring(0, endBaseName))<SUB>606</SUB>> ]
+"1204" [label = <(IDENTIFIER,endBaseName,descriptorFileName.substring(0, endBaseName))<SUB>606</SUB>> ]
+"1205" [label = <(CONTROL_STRUCTURE,else,else)<SUB>607</SUB>> ]
+"1206" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>607</SUB>> ]
+"1207" [label = <(&lt;operator&gt;.throw,throw new BuildException(&quot;Unable to determine jar name &quot; + &quot;from descriptor \&quot;&quot; + descriptorFileName + &quot;\&quot;&quot;);)<SUB>608</SUB>> ]
+"1208" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>608</SUB>> ]
+"1209" [label = <(&lt;operator&gt;.assignment,&lt;empty&gt;)> ]
+"1210" [label = <(IDENTIFIER,$obj12,&lt;empty&gt;)> ]
+"1211" [label = <(&lt;operator&gt;.alloc,new BuildException(&quot;Unable to determine jar name &quot; + &quot;from descriptor \&quot;&quot; + descriptorFileName + &quot;\&quot;&quot;))<SUB>608</SUB>> ]
+"1212" [label = <(&lt;init&gt;,new BuildException(&quot;Unable to determine jar name &quot; + &quot;from descriptor \&quot;&quot; + descriptorFileName + &quot;\&quot;&quot;))<SUB>608</SUB>> ]
+"1213" [label = <(IDENTIFIER,$obj12,new BuildException(&quot;Unable to determine jar name &quot; + &quot;from descriptor \&quot;&quot; + descriptorFileName + &quot;\&quot;&quot;))> ]
+"1214" [label = <(&lt;operator&gt;.addition,&quot;Unable to determine jar name &quot; + &quot;from descriptor \&quot;&quot; + descriptorFileName + &quot;\&quot;&quot;)<SUB>608</SUB>> ]
+"1215" [label = <(&lt;operator&gt;.addition,&quot;Unable to determine jar name &quot; + &quot;from descriptor \&quot;&quot; + descriptorFileName)<SUB>608</SUB>> ]
+"1216" [label = <(&lt;operator&gt;.addition,&quot;Unable to determine jar name &quot; + &quot;from descriptor \&quot;&quot;)<SUB>608</SUB>> ]
+"1217" [label = <(LITERAL,&quot;Unable to determine jar name &quot;,&quot;Unable to determine jar name &quot; + &quot;from descriptor \&quot;&quot;)<SUB>608</SUB>> ]
+"1218" [label = <(LITERAL,&quot;from descriptor \&quot;&quot;,&quot;Unable to determine jar name &quot; + &quot;from descriptor \&quot;&quot;)<SUB>609</SUB>> ]
+"1219" [label = <(IDENTIFIER,descriptorFileName,&quot;Unable to determine jar name &quot; + &quot;from descriptor \&quot;&quot; + descriptorFileName)<SUB>609</SUB>> ]
+"1220" [label = <(LITERAL,&quot;\&quot;&quot;,&quot;Unable to determine jar name &quot; + &quot;from descriptor \&quot;&quot; + descriptorFileName + &quot;\&quot;&quot;)<SUB>609</SUB>> ]
+"1221" [label = <(IDENTIFIER,$obj12,&lt;empty&gt;)> ]
+"1222" [label = <(CONTROL_STRUCTURE,else,else)<SUB>611</SUB>> ]
+"1223" [label = <(CONTROL_STRUCTURE,if (config.namingScheme.getValue().equals(EjbJar.NamingScheme.DIRECTORY)),if (config.namingScheme.getValue().equals(EjbJar.NamingScheme.DIRECTORY)))<SUB>611</SUB>> ]
+"1224" [label = <(equals,equals(EjbJar.NamingScheme.DIRECTORY))<SUB>611</SUB>> ]
+"1225" [label = <(getValue,getValue())<SUB>611</SUB>> ]
+"1226" [label = <(&lt;operator&gt;.fieldAccess,config.namingScheme)<SUB>611</SUB>> ]
+"1227" [label = <(&lt;operator&gt;.fieldAccess,this.config)<SUB>611</SUB>> ]
+"1228" [label = <(IDENTIFIER,this,getValue())<SUB>611</SUB>> ]
+"1229" [label = <(FIELD_IDENTIFIER,config,config)<SUB>611</SUB>> ]
+"1230" [label = <(FIELD_IDENTIFIER,namingScheme,namingScheme)<SUB>611</SUB>> ]
+"1231" [label = <(&lt;operator&gt;.fieldAccess,EjbJar.NamingScheme.DIRECTORY)<SUB>611</SUB>> ]
+"1232" [label = <(&lt;operator&gt;.fieldAccess,EjbJar.NamingScheme)<SUB>611</SUB>> ]
+"1233" [label = <(IDENTIFIER,EjbJar,equals(EjbJar.NamingScheme.DIRECTORY))<SUB>611</SUB>> ]
+"1234" [label = <(FIELD_IDENTIFIER,NamingScheme,NamingScheme)<SUB>611</SUB>> ]
+"1235" [label = <(FIELD_IDENTIFIER,DIRECTORY,DIRECTORY)<SUB>611</SUB>> ]
+"1236" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>611</SUB>> ]
+"49" [label = <(LOCAL,File descriptorFile: java.io.File)> ]
+"1237" [label = <(&lt;operator&gt;.assignment,File descriptorFile = new File(config.descriptorDir, descriptorFileName))<SUB>612</SUB>> ]
+"1238" [label = <(IDENTIFIER,descriptorFile,File descriptorFile = new File(config.descriptorDir, descriptorFileName))<SUB>612</SUB>> ]
+"1239" [label = <(&lt;operator&gt;.alloc,new File(config.descriptorDir, descriptorFileName))<SUB>612</SUB>> ]
+"1240" [label = <(&lt;init&gt;,new File(config.descriptorDir, descriptorFileName))<SUB>612</SUB>> ]
+"48" [label = <(IDENTIFIER,descriptorFile,new File(config.descriptorDir, descriptorFileName))<SUB>612</SUB>> ]
+"1241" [label = <(&lt;operator&gt;.fieldAccess,config.descriptorDir)<SUB>612</SUB>> ]
+"1242" [label = <(&lt;operator&gt;.fieldAccess,this.config)<SUB>612</SUB>> ]
+"1243" [label = <(IDENTIFIER,this,new File(config.descriptorDir, descriptorFileName))<SUB>612</SUB>> ]
+"1244" [label = <(FIELD_IDENTIFIER,config,config)<SUB>612</SUB>> ]
+"1245" [label = <(FIELD_IDENTIFIER,descriptorDir,descriptorDir)<SUB>612</SUB>> ]
+"1246" [label = <(IDENTIFIER,descriptorFileName,new File(config.descriptorDir, descriptorFileName))<SUB>612</SUB>> ]
+"1247" [label = <(LOCAL,String path: java.lang.String)> ]
+"1248" [label = <(&lt;operator&gt;.assignment,String path = descriptorFile.getAbsolutePath())<SUB>613</SUB>> ]
+"1249" [label = <(IDENTIFIER,path,String path = descriptorFile.getAbsolutePath())<SUB>613</SUB>> ]
+"1250" [label = <(getAbsolutePath,descriptorFile.getAbsolutePath())<SUB>613</SUB>> ]
+"1251" [label = <(IDENTIFIER,descriptorFile,descriptorFile.getAbsolutePath())<SUB>613</SUB>> ]
+"1252" [label = <(LOCAL,int lastSeparatorIndex: int)> ]
+"1253" [label = <(&lt;operator&gt;.assignment,int lastSeparatorIndex = path.lastIndexOf(File.separator))<SUB>614</SUB>> ]
+"1254" [label = <(IDENTIFIER,lastSeparatorIndex,int lastSeparatorIndex = path.lastIndexOf(File.separator))<SUB>614</SUB>> ]
+"1255" [label = <(lastIndexOf,path.lastIndexOf(File.separator))<SUB>615</SUB>> ]
+"1256" [label = <(IDENTIFIER,path,path.lastIndexOf(File.separator))<SUB>615</SUB>> ]
+"1257" [label = <(&lt;operator&gt;.fieldAccess,File.separator)<SUB>615</SUB>> ]
+"1258" [label = <(IDENTIFIER,File,path.lastIndexOf(File.separator))<SUB>615</SUB>> ]
+"1259" [label = <(FIELD_IDENTIFIER,separator,separator)<SUB>615</SUB>> ]
+"1260" [label = <(CONTROL_STRUCTURE,if (lastSeparatorIndex == -1),if (lastSeparatorIndex == -1))<SUB>616</SUB>> ]
+"1261" [label = <(&lt;operator&gt;.equals,lastSeparatorIndex == -1)<SUB>616</SUB>> ]
+"1262" [label = <(IDENTIFIER,lastSeparatorIndex,lastSeparatorIndex == -1)<SUB>616</SUB>> ]
+"1263" [label = <(&lt;operator&gt;.minus,-1)<SUB>616</SUB>> ]
+"1264" [label = <(LITERAL,1,-1)<SUB>616</SUB>> ]
+"1265" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>616</SUB>> ]
+"1266" [label = <(&lt;operator&gt;.throw,throw new BuildException(&quot;Unable to determine directory name holding descriptor&quot;);)<SUB>617</SUB>> ]
+"1267" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>617</SUB>> ]
+"1268" [label = <(&lt;operator&gt;.assignment,&lt;empty&gt;)> ]
+"1269" [label = <(IDENTIFIER,$obj14,&lt;empty&gt;)> ]
+"1270" [label = <(&lt;operator&gt;.alloc,new BuildException(&quot;Unable to determine directory name holding descriptor&quot;))<SUB>617</SUB>> ]
+"1271" [label = <(&lt;init&gt;,new BuildException(&quot;Unable to determine directory name holding descriptor&quot;))<SUB>617</SUB>> ]
+"1272" [label = <(IDENTIFIER,$obj14,new BuildException(&quot;Unable to determine directory name holding descriptor&quot;))> ]
+"1273" [label = <(LITERAL,&quot;Unable to determine directory name holding descriptor&quot;,new BuildException(&quot;Unable to determine directory name holding descriptor&quot;))<SUB>617</SUB>> ]
+"1274" [label = <(IDENTIFIER,$obj14,&lt;empty&gt;)> ]
+"1275" [label = <(LOCAL,String dirName: java.lang.String)> ]
+"1276" [label = <(&lt;operator&gt;.assignment,String dirName = path.substring(0, lastSeparatorIndex))<SUB>619</SUB>> ]
+"1277" [label = <(IDENTIFIER,dirName,String dirName = path.substring(0, lastSeparatorIndex))<SUB>619</SUB>> ]
+"1278" [label = <(substring,path.substring(0, lastSeparatorIndex))<SUB>619</SUB>> ]
+"1279" [label = <(IDENTIFIER,path,path.substring(0, lastSeparatorIndex))<SUB>619</SUB>> ]
+"1280" [label = <(LITERAL,0,path.substring(0, lastSeparatorIndex))<SUB>619</SUB>> ]
+"1281" [label = <(IDENTIFIER,lastSeparatorIndex,path.substring(0, lastSeparatorIndex))<SUB>619</SUB>> ]
+"1282" [label = <(LOCAL,int dirSeparatorIndex: int)> ]
+"1283" [label = <(&lt;operator&gt;.assignment,int dirSeparatorIndex = dirName.lastIndexOf(File.separator))<SUB>620</SUB>> ]
+"1284" [label = <(IDENTIFIER,dirSeparatorIndex,int dirSeparatorIndex = dirName.lastIndexOf(File.separator))<SUB>620</SUB>> ]
+"1285" [label = <(lastIndexOf,dirName.lastIndexOf(File.separator))<SUB>620</SUB>> ]
+"1286" [label = <(IDENTIFIER,dirName,dirName.lastIndexOf(File.separator))<SUB>620</SUB>> ]
+"1287" [label = <(&lt;operator&gt;.fieldAccess,File.separator)<SUB>620</SUB>> ]
+"1288" [label = <(IDENTIFIER,File,dirName.lastIndexOf(File.separator))<SUB>620</SUB>> ]
+"1289" [label = <(FIELD_IDENTIFIER,separator,separator)<SUB>620</SUB>> ]
+"1290" [label = <(CONTROL_STRUCTURE,if (dirSeparatorIndex != -1),if (dirSeparatorIndex != -1))<SUB>621</SUB>> ]
+"1291" [label = <(&lt;operator&gt;.notEquals,dirSeparatorIndex != -1)<SUB>621</SUB>> ]
+"1292" [label = <(IDENTIFIER,dirSeparatorIndex,dirSeparatorIndex != -1)<SUB>621</SUB>> ]
+"1293" [label = <(&lt;operator&gt;.minus,-1)<SUB>621</SUB>> ]
+"1294" [label = <(LITERAL,1,-1)<SUB>621</SUB>> ]
+"1295" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>621</SUB>> ]
+"1296" [label = <(&lt;operator&gt;.assignment,dirName = dirName.substring(dirSeparatorIndex + 1))<SUB>622</SUB>> ]
+"1297" [label = <(IDENTIFIER,dirName,dirName = dirName.substring(dirSeparatorIndex + 1))<SUB>622</SUB>> ]
+"1298" [label = <(substring,dirName.substring(dirSeparatorIndex + 1))<SUB>622</SUB>> ]
+"1299" [label = <(IDENTIFIER,dirName,dirName.substring(dirSeparatorIndex + 1))<SUB>622</SUB>> ]
+"1300" [label = <(&lt;operator&gt;.addition,dirSeparatorIndex + 1)<SUB>622</SUB>> ]
+"1301" [label = <(IDENTIFIER,dirSeparatorIndex,dirSeparatorIndex + 1)<SUB>622</SUB>> ]
+"1302" [label = <(LITERAL,1,dirSeparatorIndex + 1)<SUB>622</SUB>> ]
+"1303" [label = <(&lt;operator&gt;.assignment,baseName = dirName)<SUB>625</SUB>> ]
+"1304" [label = <(IDENTIFIER,baseName,baseName = dirName)<SUB>625</SUB>> ]
+"1305" [label = <(IDENTIFIER,dirName,baseName = dirName)<SUB>625</SUB>> ]
+"1306" [label = <(CONTROL_STRUCTURE,else,else)<SUB>626</SUB>> ]
+"1307" [label = <(CONTROL_STRUCTURE,if (config.namingScheme.getValue().equals(EjbJar.NamingScheme.EJB_NAME)),if (config.namingScheme.getValue().equals(EjbJar.NamingScheme.EJB_NAME)))<SUB>626</SUB>> ]
+"1308" [label = <(equals,equals(EjbJar.NamingScheme.EJB_NAME))<SUB>626</SUB>> ]
+"1309" [label = <(getValue,getValue())<SUB>626</SUB>> ]
+"1310" [label = <(&lt;operator&gt;.fieldAccess,config.namingScheme)<SUB>626</SUB>> ]
+"1311" [label = <(&lt;operator&gt;.fieldAccess,this.config)<SUB>626</SUB>> ]
+"1312" [label = <(IDENTIFIER,this,getValue())<SUB>626</SUB>> ]
+"1313" [label = <(FIELD_IDENTIFIER,config,config)<SUB>626</SUB>> ]
+"1314" [label = <(FIELD_IDENTIFIER,namingScheme,namingScheme)<SUB>626</SUB>> ]
+"1315" [label = <(&lt;operator&gt;.fieldAccess,EjbJar.NamingScheme.EJB_NAME)<SUB>626</SUB>> ]
+"1316" [label = <(&lt;operator&gt;.fieldAccess,EjbJar.NamingScheme)<SUB>626</SUB>> ]
+"1317" [label = <(IDENTIFIER,EjbJar,equals(EjbJar.NamingScheme.EJB_NAME))<SUB>626</SUB>> ]
+"1318" [label = <(FIELD_IDENTIFIER,NamingScheme,NamingScheme)<SUB>626</SUB>> ]
+"1319" [label = <(FIELD_IDENTIFIER,EJB_NAME,EJB_NAME)<SUB>626</SUB>> ]
+"1320" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>626</SUB>> ]
+"1321" [label = <(&lt;operator&gt;.assignment,baseName = getEjbName())<SUB>627</SUB>> ]
+"1322" [label = <(IDENTIFIER,baseName,baseName = getEjbName())<SUB>627</SUB>> ]
+"1323" [label = <(getEjbName,getEjbName())<SUB>627</SUB>> ]
+"1324" [label = <(&lt;operator&gt;.fieldAccess,this.handler)<SUB>627</SUB>> ]
+"1325" [label = <(IDENTIFIER,this,getEjbName())<SUB>627</SUB>> ]
+"1326" [label = <(FIELD_IDENTIFIER,handler,handler)<SUB>627</SUB>> ]
+"1327" [label = <(RETURN,return baseName;,return baseName;)<SUB>629</SUB>> ]
+"1328" [label = <(IDENTIFIER,baseName,return baseName;)<SUB>629</SUB>> ]
+"1329" [label = <(MODIFIER,PROTECTED)> ]
+"1330" [label = <(MODIFIER,VIRTUAL)> ]
+"1331" [label = <(METHOD_RETURN,java.lang.String)<SUB>583</SUB>> ]
+  "1082" -> "1083" 
+  "1082" -> "1084" 
+  "1082" -> "1085" 
+  "1082" -> "1329" 
+  "1082" -> "1330" 
+  "1082" -> "1331" 
+  "1085" -> "1086" 
+  "1085" -> "1087" 
+  "1085" -> "1090" 
+  "1085" -> "1327" 
+  "1087" -> "1088" 
+  "1087" -> "1089" 
+  "1090" -> "1091" 
+  "1090" -> "1103" 
+  "1090" -> "1138" 
+  "1091" -> "1092" 
+  "1091" -> "1098" 
+  "1092" -> "1093" 
+  "1093" -> "1094" 
+  "1093" -> "1097" 
+  "1094" -> "1095" 
+  "1094" -> "1096" 
+  "1098" -> "1099" 
+  "1098" -> "1102" 
+  "1099" -> "1100" 
+  "1099" -> "1101" 
+  "1103" -> "1104" 
+  "1103" -> "1105" 
+  "1103" -> "1111" 
+  "1103" -> "1112" 
+  "1103" -> "1117" 
+  "1103" -> "1131" 
+  "1105" -> "1106" 
+  "1105" -> "1107" 
+  "1107" -> "1108" 
+  "1107" -> "1109" 
+  "1107" -> "1110" 
+  "1112" -> "1113" 
+  "1112" -> "1114" 
+  "1114" -> "1115" 
+  "1114" -> "1116" 
+  "1117" -> "1118" 
+  "1117" -> "1122" 
+  "1118" -> "1119" 
+  "1118" -> "1120" 
+  "1120" -> "1121" 
+  "1122" -> "1123" 
+  "1123" -> "1124" 
+  "1123" -> "1125" 
+  "1125" -> "1126" 
+  "1125" -> "1127" 
+  "1125" -> "1128" 
+  "1128" -> "1129" 
+  "1128" -> "1130" 
+  "1131" -> "1132" 
+  "1131" -> "1133" 
+  "1133" -> "1134" 
+  "1133" -> "1137" 
+  "1134" -> "1135" 
+  "1134" -> "1136" 
+  "1138" -> "1139" 
+  "1139" -> "1140" 
+  "1139" -> "1152" 
+  "1139" -> "1222" 
+  "1140" -> "1141" 
+  "1140" -> "1147" 
+  "1141" -> "1142" 
+  "1142" -> "1143" 
+  "1142" -> "1146" 
+  "1143" -> "1144" 
+  "1143" -> "1145" 
+  "1147" -> "1148" 
+  "1147" -> "1151" 
+  "1148" -> "1149" 
+  "1148" -> "1150" 
+  "1152" -> "1153" 
+  "1152" -> "1154" 
+  "1152" -> "1161" 
+  "1152" -> "1162" 
+  "1152" -> "1166" 
+  "1152" -> "1193" 
+  "1154" -> "1155" 
+  "1154" -> "1156" 
+  "1156" -> "1157" 
+  "1156" -> "1158" 
+  "1158" -> "1159" 
+  "1158" -> "1160" 
+  "1162" -> "1163" 
+  "1162" -> "1164" 
+  "1164" -> "1165" 
+  "1166" -> "1167" 
+  "1166" -> "1171" 
+  "1166" -> "1182" 
+  "1167" -> "1168" 
+  "1167" -> "1169" 
+  "1169" -> "1170" 
+  "1171" -> "1172" 
+  "1172" -> "1173" 
+  "1172" -> "1174" 
+  "1174" -> "1175" 
+  "1174" -> "1176" 
+  "1174" -> "1181" 
+  "1176" -> "1177" 
+  "1176" -> "1180" 
+  "1177" -> "1178" 
+  "1177" -> "1179" 
+  "1182" -> "1183" 
+  "1183" -> "1184" 
+  "1184" -> "1185" 
+  "1184" -> "1186" 
+  "1186" -> "1187" 
+  "1186" -> "1188" 
+  "1188" -> "1189" 
+  "1188" -> "1192" 
+  "1189" -> "1190" 
+  "1189" -> "1191" 
+  "1193" -> "1194" 
+  "1193" -> "1198" 
+  "1193" -> "1205" 
+  "1194" -> "1195" 
+  "1194" -> "1196" 
+  "1196" -> "1197" 
+  "1198" -> "1199" 
+  "1199" -> "1200" 
+  "1199" -> "1201" 
+  "1201" -> "1202" 
+  "1201" -> "1203" 
+  "1201" -> "1204" 
+  "1205" -> "1206" 
+  "1206" -> "1207" 
+  "1207" -> "1208" 
+  "1208" -> "1209" 
+  "1208" -> "1212" 
+  "1208" -> "1221" 
+  "1209" -> "1210" 
+  "1209" -> "1211" 
+  "1212" -> "1213" 
+  "1212" -> "1214" 
+  "1214" -> "1215" 
+  "1214" -> "1220" 
+  "1215" -> "1216" 
+  "1215" -> "1219" 
+  "1216" -> "1217" 
+  "1216" -> "1218" 
+  "1222" -> "1223" 
+  "1223" -> "1224" 
+  "1223" -> "1236" 
+  "1223" -> "1306" 
+  "1224" -> "1225" 
+  "1224" -> "1231" 
+  "1225" -> "1226" 
+  "1226" -> "1227" 
+  "1226" -> "1230" 
+  "1227" -> "1228" 
+  "1227" -> "1229" 
+  "1231" -> "1232" 
+  "1231" -> "1235" 
+  "1232" -> "1233" 
+  "1232" -> "1234" 
+  "1236" -> "49" 
+  "1236" -> "1237" 
+  "1236" -> "1240" 
+  "1236" -> "1247" 
+  "1236" -> "1248" 
+  "1236" -> "1252" 
+  "1236" -> "1253" 
+  "1236" -> "1260" 
+  "1236" -> "1275" 
+  "1236" -> "1276" 
+  "1236" -> "1282" 
+  "1236" -> "1283" 
+  "1236" -> "1290" 
+  "1236" -> "1303" 
+  "1237" -> "1238" 
+  "1237" -> "1239" 
+  "1240" -> "48" 
+  "1240" -> "1241" 
+  "1240" -> "1246" 
+  "1241" -> "1242" 
+  "1241" -> "1245" 
+  "1242" -> "1243" 
+  "1242" -> "1244" 
+  "1248" -> "1249" 
+  "1248" -> "1250" 
+  "1250" -> "1251" 
+  "1253" -> "1254" 
+  "1253" -> "1255" 
+  "1255" -> "1256" 
+  "1255" -> "1257" 
+  "1257" -> "1258" 
+  "1257" -> "1259" 
+  "1260" -> "1261" 
+  "1260" -> "1265" 
+  "1261" -> "1262" 
+  "1261" -> "1263" 
+  "1263" -> "1264" 
+  "1265" -> "1266" 
+  "1266" -> "1267" 
+  "1267" -> "1268" 
+  "1267" -> "1271" 
+  "1267" -> "1274" 
+  "1268" -> "1269" 
+  "1268" -> "1270" 
+  "1271" -> "1272" 
+  "1271" -> "1273" 
+  "1276" -> "1277" 
+  "1276" -> "1278" 
+  "1278" -> "1279" 
+  "1278" -> "1280" 
+  "1278" -> "1281" 
+  "1283" -> "1284" 
+  "1283" -> "1285" 
+  "1285" -> "1286" 
+  "1285" -> "1287" 
+  "1287" -> "1288" 
+  "1287" -> "1289" 
+  "1290" -> "1291" 
+  "1290" -> "1295" 
+  "1291" -> "1292" 
+  "1291" -> "1293" 
+  "1293" -> "1294" 
+  "1295" -> "1296" 
+  "1296" -> "1297" 
+  "1296" -> "1298" 
+  "1298" -> "1299" 
+  "1298" -> "1300" 
+  "1300" -> "1301" 
+  "1300" -> "1302" 
+  "1303" -> "1304" 
+  "1303" -> "1305" 
+  "1306" -> "1307" 
+  "1307" -> "1308" 
+  "1307" -> "1320" 
+  "1308" -> "1309" 
+  "1308" -> "1315" 
+  "1309" -> "1310" 
+  "1310" -> "1311" 
+  "1310" -> "1314" 
+  "1311" -> "1312" 
+  "1311" -> "1313" 
+  "1315" -> "1316" 
+  "1315" -> "1319" 
+  "1316" -> "1317" 
+  "1316" -> "1318" 
+  "1320" -> "1321" 
+  "1321" -> "1322" 
+  "1321" -> "1323" 
+  "1323" -> "1324" 
+  "1324" -> "1325" 
+  "1324" -> "1326" 
+  "1327" -> "1328" 
+}

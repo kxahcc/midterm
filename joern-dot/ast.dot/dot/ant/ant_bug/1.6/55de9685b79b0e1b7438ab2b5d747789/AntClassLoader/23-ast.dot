@@ -1,0 +1,67 @@
+digraph "forceLoadClass" {  
+"1013" [label = <(METHOD,forceLoadClass)<SUB>622</SUB>> ]
+"65" [label = <(PARAM,this)<SUB>622</SUB>> ]
+"1014" [label = <(PARAM,String classname)<SUB>622</SUB>> ]
+"1015" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>623</SUB>> ]
+"1016" [label = <(log,log(&quot;force loading &quot; + classname, Project.MSG_DEBUG))<SUB>624</SUB>> ]
+"64" [label = <(IDENTIFIER,this,log(&quot;force loading &quot; + classname, Project.MSG_DEBUG))<SUB>624</SUB>> ]
+"1017" [label = <(&lt;operator&gt;.addition,&quot;force loading &quot; + classname)<SUB>624</SUB>> ]
+"1018" [label = <(LITERAL,&quot;force loading &quot;,&quot;force loading &quot; + classname)<SUB>624</SUB>> ]
+"1019" [label = <(IDENTIFIER,classname,&quot;force loading &quot; + classname)<SUB>624</SUB>> ]
+"1020" [label = <(&lt;operator&gt;.fieldAccess,Project.MSG_DEBUG)<SUB>624</SUB>> ]
+"1021" [label = <(IDENTIFIER,Project,log(&quot;force loading &quot; + classname, Project.MSG_DEBUG))<SUB>624</SUB>> ]
+"1022" [label = <(FIELD_IDENTIFIER,MSG_DEBUG,MSG_DEBUG)<SUB>624</SUB>> ]
+"1023" [label = <(LOCAL,Class theClass: java.lang.Class)> ]
+"1024" [label = <(&lt;operator&gt;.assignment,Class theClass = this.findLoadedClass(classname))<SUB>626</SUB>> ]
+"1025" [label = <(IDENTIFIER,theClass,Class theClass = this.findLoadedClass(classname))<SUB>626</SUB>> ]
+"1026" [label = <(findLoadedClass,this.findLoadedClass(classname))<SUB>626</SUB>> ]
+"66" [label = <(IDENTIFIER,this,this.findLoadedClass(classname))<SUB>626</SUB>> ]
+"1027" [label = <(IDENTIFIER,classname,this.findLoadedClass(classname))<SUB>626</SUB>> ]
+"1028" [label = <(CONTROL_STRUCTURE,if (theClass == null),if (theClass == null))<SUB>628</SUB>> ]
+"1029" [label = <(&lt;operator&gt;.equals,theClass == null)<SUB>628</SUB>> ]
+"1030" [label = <(IDENTIFIER,theClass,theClass == null)<SUB>628</SUB>> ]
+"1031" [label = <(LITERAL,null,theClass == null)<SUB>628</SUB>> ]
+"1032" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>628</SUB>> ]
+"1033" [label = <(&lt;operator&gt;.assignment,theClass = this.findClass(classname))<SUB>629</SUB>> ]
+"1034" [label = <(IDENTIFIER,theClass,theClass = this.findClass(classname))<SUB>629</SUB>> ]
+"1035" [label = <(findClass,this.findClass(classname))<SUB>629</SUB>> ]
+"67" [label = <(IDENTIFIER,this,this.findClass(classname))<SUB>629</SUB>> ]
+"1036" [label = <(IDENTIFIER,classname,this.findClass(classname))<SUB>629</SUB>> ]
+"1037" [label = <(RETURN,return theClass;,return theClass;)<SUB>632</SUB>> ]
+"1038" [label = <(IDENTIFIER,theClass,return theClass;)<SUB>632</SUB>> ]
+"1039" [label = <(MODIFIER,PUBLIC)> ]
+"1040" [label = <(MODIFIER,VIRTUAL)> ]
+"1041" [label = <(METHOD_RETURN,java.lang.Class)<SUB>622</SUB>> ]
+  "1013" -> "65" 
+  "1013" -> "1014" 
+  "1013" -> "1015" 
+  "1013" -> "1039" 
+  "1013" -> "1040" 
+  "1013" -> "1041" 
+  "1015" -> "1016" 
+  "1015" -> "1023" 
+  "1015" -> "1024" 
+  "1015" -> "1028" 
+  "1015" -> "1037" 
+  "1016" -> "64" 
+  "1016" -> "1017" 
+  "1016" -> "1020" 
+  "1017" -> "1018" 
+  "1017" -> "1019" 
+  "1020" -> "1021" 
+  "1020" -> "1022" 
+  "1024" -> "1025" 
+  "1024" -> "1026" 
+  "1026" -> "66" 
+  "1026" -> "1027" 
+  "1028" -> "1029" 
+  "1028" -> "1032" 
+  "1029" -> "1030" 
+  "1029" -> "1031" 
+  "1032" -> "1033" 
+  "1033" -> "1034" 
+  "1033" -> "1035" 
+  "1035" -> "67" 
+  "1035" -> "1036" 
+  "1037" -> "1038" 
+}

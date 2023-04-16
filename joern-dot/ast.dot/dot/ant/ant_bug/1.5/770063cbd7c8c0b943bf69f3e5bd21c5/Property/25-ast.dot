@@ -1,0 +1,233 @@
+digraph "loadResource" {  
+"680" [label = <(METHOD,loadResource)<SUB>408</SUB>> ]
+"56" [label = <(PARAM,this)<SUB>408</SUB>> ]
+"681" [label = <(PARAM,String name)<SUB>408</SUB>> ]
+"682" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>408</SUB>> ]
+"54" [label = <(LOCAL,Properties props: java.util.Properties)> ]
+"683" [label = <(&lt;operator&gt;.assignment,Properties props = new Properties())<SUB>409</SUB>> ]
+"684" [label = <(IDENTIFIER,props,Properties props = new Properties())<SUB>409</SUB>> ]
+"685" [label = <(&lt;operator&gt;.alloc,new Properties())<SUB>409</SUB>> ]
+"686" [label = <(&lt;init&gt;,new Properties())<SUB>409</SUB>> ]
+"53" [label = <(IDENTIFIER,props,new Properties())<SUB>409</SUB>> ]
+"687" [label = <(log,log(&quot;Resource Loading &quot; + name, Project.MSG_VERBOSE))<SUB>410</SUB>> ]
+"55" [label = <(IDENTIFIER,this,log(&quot;Resource Loading &quot; + name, Project.MSG_VERBOSE))<SUB>410</SUB>> ]
+"688" [label = <(&lt;operator&gt;.addition,&quot;Resource Loading &quot; + name)<SUB>410</SUB>> ]
+"689" [label = <(LITERAL,&quot;Resource Loading &quot;,&quot;Resource Loading &quot; + name)<SUB>410</SUB>> ]
+"690" [label = <(IDENTIFIER,name,&quot;Resource Loading &quot; + name)<SUB>410</SUB>> ]
+"691" [label = <(&lt;operator&gt;.fieldAccess,Project.MSG_VERBOSE)<SUB>410</SUB>> ]
+"692" [label = <(IDENTIFIER,Project,log(&quot;Resource Loading &quot; + name, Project.MSG_VERBOSE))<SUB>410</SUB>> ]
+"693" [label = <(FIELD_IDENTIFIER,MSG_VERBOSE,MSG_VERBOSE)<SUB>410</SUB>> ]
+"694" [label = <(LOCAL,InputStream is: java.io.InputStream)> ]
+"695" [label = <(&lt;operator&gt;.assignment,InputStream is = null)<SUB>411</SUB>> ]
+"696" [label = <(IDENTIFIER,is,InputStream is = null)<SUB>411</SUB>> ]
+"697" [label = <(LITERAL,null,InputStream is = null)<SUB>411</SUB>> ]
+"698" [label = <(CONTROL_STRUCTURE,try,try)<SUB>412</SUB>> ]
+"699" [label = <(BLOCK,try,try)<SUB>412</SUB>> ]
+"58" [label = <(LOCAL,ClassLoader cL: java.lang.ClassLoader)> ]
+"700" [label = <(&lt;operator&gt;.assignment,ClassLoader cL = null)<SUB>413</SUB>> ]
+"701" [label = <(IDENTIFIER,cL,ClassLoader cL = null)<SUB>413</SUB>> ]
+"702" [label = <(LITERAL,null,ClassLoader cL = null)<SUB>413</SUB>> ]
+"703" [label = <(CONTROL_STRUCTURE,if (classpath != null),if (classpath != null))<SUB>415</SUB>> ]
+"704" [label = <(&lt;operator&gt;.notEquals,classpath != null)<SUB>415</SUB>> ]
+"705" [label = <(&lt;operator&gt;.fieldAccess,this.classpath)<SUB>415</SUB>> ]
+"706" [label = <(IDENTIFIER,this,classpath != null)<SUB>415</SUB>> ]
+"707" [label = <(FIELD_IDENTIFIER,classpath,classpath)<SUB>415</SUB>> ]
+"708" [label = <(LITERAL,null,classpath != null)<SUB>415</SUB>> ]
+"709" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>415</SUB>> ]
+"710" [label = <(&lt;operator&gt;.assignment,cL = new AntClassLoader(project, classpath))<SUB>416</SUB>> ]
+"711" [label = <(IDENTIFIER,cL,cL = new AntClassLoader(project, classpath))<SUB>416</SUB>> ]
+"712" [label = <(&lt;operator&gt;.alloc,new AntClassLoader(project, classpath))<SUB>416</SUB>> ]
+"713" [label = <(&lt;init&gt;,new AntClassLoader(project, classpath))<SUB>416</SUB>> ]
+"57" [label = <(IDENTIFIER,cL,new AntClassLoader(project, classpath))<SUB>416</SUB>> ]
+"714" [label = <(IDENTIFIER,project,new AntClassLoader(project, classpath))<SUB>416</SUB>> ]
+"715" [label = <(&lt;operator&gt;.fieldAccess,this.classpath)<SUB>416</SUB>> ]
+"716" [label = <(IDENTIFIER,this,new AntClassLoader(project, classpath))<SUB>416</SUB>> ]
+"717" [label = <(FIELD_IDENTIFIER,classpath,classpath)<SUB>416</SUB>> ]
+"718" [label = <(CONTROL_STRUCTURE,else,else)<SUB>417</SUB>> ]
+"719" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>417</SUB>> ]
+"720" [label = <(&lt;operator&gt;.assignment,cL = getClassLoader())<SUB>418</SUB>> ]
+"721" [label = <(IDENTIFIER,cL,cL = getClassLoader())<SUB>418</SUB>> ]
+"722" [label = <(getClassLoader,getClassLoader())<SUB>418</SUB>> ]
+"723" [label = <(getClass,getClass())<SUB>418</SUB>> ]
+"59" [label = <(IDENTIFIER,this,getClass())<SUB>418</SUB>> ]
+"724" [label = <(CONTROL_STRUCTURE,if (cL == null),if (cL == null))<SUB>421</SUB>> ]
+"725" [label = <(&lt;operator&gt;.equals,cL == null)<SUB>421</SUB>> ]
+"726" [label = <(IDENTIFIER,cL,cL == null)<SUB>421</SUB>> ]
+"727" [label = <(LITERAL,null,cL == null)<SUB>421</SUB>> ]
+"728" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>421</SUB>> ]
+"729" [label = <(&lt;operator&gt;.assignment,is = ClassLoader.getSystemResourceAsStream(name))<SUB>422</SUB>> ]
+"730" [label = <(IDENTIFIER,is,is = ClassLoader.getSystemResourceAsStream(name))<SUB>422</SUB>> ]
+"731" [label = <(getSystemResourceAsStream,ClassLoader.getSystemResourceAsStream(name))<SUB>422</SUB>> ]
+"732" [label = <(IDENTIFIER,ClassLoader,ClassLoader.getSystemResourceAsStream(name))<SUB>422</SUB>> ]
+"733" [label = <(IDENTIFIER,name,ClassLoader.getSystemResourceAsStream(name))<SUB>422</SUB>> ]
+"734" [label = <(CONTROL_STRUCTURE,else,else)<SUB>423</SUB>> ]
+"735" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>423</SUB>> ]
+"736" [label = <(&lt;operator&gt;.assignment,is = cL.getResourceAsStream(name))<SUB>424</SUB>> ]
+"737" [label = <(IDENTIFIER,is,is = cL.getResourceAsStream(name))<SUB>424</SUB>> ]
+"738" [label = <(getResourceAsStream,cL.getResourceAsStream(name))<SUB>424</SUB>> ]
+"739" [label = <(IDENTIFIER,cL,cL.getResourceAsStream(name))<SUB>424</SUB>> ]
+"740" [label = <(IDENTIFIER,name,cL.getResourceAsStream(name))<SUB>424</SUB>> ]
+"741" [label = <(CONTROL_STRUCTURE,if (is != null),if (is != null))<SUB>427</SUB>> ]
+"742" [label = <(&lt;operator&gt;.notEquals,is != null)<SUB>427</SUB>> ]
+"743" [label = <(IDENTIFIER,is,is != null)<SUB>427</SUB>> ]
+"744" [label = <(LITERAL,null,is != null)<SUB>427</SUB>> ]
+"745" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>427</SUB>> ]
+"746" [label = <(load,props.load(is))<SUB>428</SUB>> ]
+"747" [label = <(IDENTIFIER,props,props.load(is))<SUB>428</SUB>> ]
+"748" [label = <(IDENTIFIER,is,props.load(is))<SUB>428</SUB>> ]
+"749" [label = <(addProperties,this.addProperties(props))<SUB>429</SUB>> ]
+"60" [label = <(IDENTIFIER,this,this.addProperties(props))<SUB>429</SUB>> ]
+"750" [label = <(IDENTIFIER,props,this.addProperties(props))<SUB>429</SUB>> ]
+"751" [label = <(CONTROL_STRUCTURE,else,else)<SUB>430</SUB>> ]
+"752" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>430</SUB>> ]
+"753" [label = <(log,log(&quot;Unable to find resource &quot; + name, Project.MSG_WARN))<SUB>431</SUB>> ]
+"61" [label = <(IDENTIFIER,this,log(&quot;Unable to find resource &quot; + name, Project.MSG_WARN))<SUB>431</SUB>> ]
+"754" [label = <(&lt;operator&gt;.addition,&quot;Unable to find resource &quot; + name)<SUB>431</SUB>> ]
+"755" [label = <(LITERAL,&quot;Unable to find resource &quot;,&quot;Unable to find resource &quot; + name)<SUB>431</SUB>> ]
+"756" [label = <(IDENTIFIER,name,&quot;Unable to find resource &quot; + name)<SUB>431</SUB>> ]
+"757" [label = <(&lt;operator&gt;.fieldAccess,Project.MSG_WARN)<SUB>431</SUB>> ]
+"758" [label = <(IDENTIFIER,Project,log(&quot;Unable to find resource &quot; + name, Project.MSG_WARN))<SUB>431</SUB>> ]
+"759" [label = <(FIELD_IDENTIFIER,MSG_WARN,MSG_WARN)<SUB>431</SUB>> ]
+"760" [label = <(BLOCK,catch,catch)> ]
+"761" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>433</SUB>> ]
+"762" [label = <(&lt;operator&gt;.throw,throw new BuildException(ex, location);)<SUB>434</SUB>> ]
+"763" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>434</SUB>> ]
+"764" [label = <(&lt;operator&gt;.assignment,&lt;empty&gt;)> ]
+"765" [label = <(IDENTIFIER,$obj9,&lt;empty&gt;)> ]
+"766" [label = <(&lt;operator&gt;.alloc,new BuildException(ex, location))<SUB>434</SUB>> ]
+"767" [label = <(&lt;init&gt;,new BuildException(ex, location))<SUB>434</SUB>> ]
+"768" [label = <(IDENTIFIER,$obj9,new BuildException(ex, location))> ]
+"769" [label = <(IDENTIFIER,ex,new BuildException(ex, location))<SUB>434</SUB>> ]
+"770" [label = <(IDENTIFIER,location,new BuildException(ex, location))<SUB>434</SUB>> ]
+"771" [label = <(IDENTIFIER,$obj9,&lt;empty&gt;)> ]
+"772" [label = <(BLOCK,finally,finally)<SUB>435</SUB>> ]
+"773" [label = <(CONTROL_STRUCTURE,if (is != null),if (is != null))<SUB>436</SUB>> ]
+"774" [label = <(&lt;operator&gt;.notEquals,is != null)<SUB>436</SUB>> ]
+"775" [label = <(IDENTIFIER,is,is != null)<SUB>436</SUB>> ]
+"776" [label = <(LITERAL,null,is != null)<SUB>436</SUB>> ]
+"777" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>436</SUB>> ]
+"778" [label = <(CONTROL_STRUCTURE,try,try)<SUB>437</SUB>> ]
+"779" [label = <(BLOCK,try,try)<SUB>437</SUB>> ]
+"780" [label = <(close,is.close())<SUB>438</SUB>> ]
+"781" [label = <(IDENTIFIER,is,is.close())<SUB>438</SUB>> ]
+"782" [label = <(BLOCK,catch,catch)> ]
+"783" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>439</SUB>> ]
+"784" [label = <(MODIFIER,PROTECTED)> ]
+"785" [label = <(MODIFIER,VIRTUAL)> ]
+"786" [label = <(METHOD_RETURN,void)<SUB>408</SUB>> ]
+  "680" -> "56" 
+  "680" -> "681" 
+  "680" -> "682" 
+  "680" -> "784" 
+  "680" -> "785" 
+  "680" -> "786" 
+  "682" -> "54" 
+  "682" -> "683" 
+  "682" -> "686" 
+  "682" -> "687" 
+  "682" -> "694" 
+  "682" -> "695" 
+  "682" -> "698" 
+  "683" -> "684" 
+  "683" -> "685" 
+  "686" -> "53" 
+  "687" -> "55" 
+  "687" -> "688" 
+  "687" -> "691" 
+  "688" -> "689" 
+  "688" -> "690" 
+  "691" -> "692" 
+  "691" -> "693" 
+  "695" -> "696" 
+  "695" -> "697" 
+  "698" -> "699" 
+  "698" -> "760" 
+  "698" -> "772" 
+  "699" -> "58" 
+  "699" -> "700" 
+  "699" -> "703" 
+  "699" -> "724" 
+  "699" -> "741" 
+  "700" -> "701" 
+  "700" -> "702" 
+  "703" -> "704" 
+  "703" -> "709" 
+  "703" -> "718" 
+  "704" -> "705" 
+  "704" -> "708" 
+  "705" -> "706" 
+  "705" -> "707" 
+  "709" -> "710" 
+  "709" -> "713" 
+  "710" -> "711" 
+  "710" -> "712" 
+  "713" -> "57" 
+  "713" -> "714" 
+  "713" -> "715" 
+  "715" -> "716" 
+  "715" -> "717" 
+  "718" -> "719" 
+  "719" -> "720" 
+  "720" -> "721" 
+  "720" -> "722" 
+  "722" -> "723" 
+  "723" -> "59" 
+  "724" -> "725" 
+  "724" -> "728" 
+  "724" -> "734" 
+  "725" -> "726" 
+  "725" -> "727" 
+  "728" -> "729" 
+  "729" -> "730" 
+  "729" -> "731" 
+  "731" -> "732" 
+  "731" -> "733" 
+  "734" -> "735" 
+  "735" -> "736" 
+  "736" -> "737" 
+  "736" -> "738" 
+  "738" -> "739" 
+  "738" -> "740" 
+  "741" -> "742" 
+  "741" -> "745" 
+  "741" -> "751" 
+  "742" -> "743" 
+  "742" -> "744" 
+  "745" -> "746" 
+  "745" -> "749" 
+  "746" -> "747" 
+  "746" -> "748" 
+  "749" -> "60" 
+  "749" -> "750" 
+  "751" -> "752" 
+  "752" -> "753" 
+  "753" -> "61" 
+  "753" -> "754" 
+  "753" -> "757" 
+  "754" -> "755" 
+  "754" -> "756" 
+  "757" -> "758" 
+  "757" -> "759" 
+  "760" -> "761" 
+  "761" -> "762" 
+  "762" -> "763" 
+  "763" -> "764" 
+  "763" -> "767" 
+  "763" -> "771" 
+  "764" -> "765" 
+  "764" -> "766" 
+  "767" -> "768" 
+  "767" -> "769" 
+  "767" -> "770" 
+  "772" -> "773" 
+  "773" -> "774" 
+  "773" -> "777" 
+  "774" -> "775" 
+  "774" -> "776" 
+  "777" -> "778" 
+  "778" -> "779" 
+  "778" -> "782" 
+  "779" -> "780" 
+  "780" -> "781" 
+  "782" -> "783" 
+}

@@ -1,0 +1,145 @@
+digraph "cast" {  
+"1582" [label = <(METHOD,cast)<SUB>740</SUB>> ]
+"1583" [label = <(PARAM,Class&lt;T&gt; toType)<SUB>740</SUB>> ]
+"1584" [label = <(PARAM,Object value)<SUB>740</SUB>> ]
+"1585" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>740</SUB>> ]
+"1586" [label = <(CONTROL_STRUCTURE,if (toType == boolean.class),if (toType == boolean.class))<SUB>741</SUB>> ]
+"1587" [label = <(&lt;operator&gt;.equals,toType == boolean.class)<SUB>741</SUB>> ]
+"1588" [label = <(IDENTIFIER,toType,toType == boolean.class)<SUB>741</SUB>> ]
+"1589" [label = <(&lt;operator&gt;.fieldAccess,boolean.class)<SUB>741</SUB>> ]
+"1590" [label = <(IDENTIFIER,boolean,toType == boolean.class)<SUB>741</SUB>> ]
+"1591" [label = <(FIELD_IDENTIFIER,class,class)<SUB>741</SUB>> ]
+"1592" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>741</SUB>> ]
+"1593" [label = <(RETURN,return (T) cast(Boolean.class, value);,return (T) cast(Boolean.class, value);)<SUB>742</SUB>> ]
+"1594" [label = <(&lt;operator&gt;.cast,(T) cast(Boolean.class, value))<SUB>742</SUB>> ]
+"1595" [label = <(TYPE_REF,T,T)<SUB>742</SUB>> ]
+"1596" [label = <(cast,cast(Boolean.class, value))<SUB>742</SUB>> ]
+"1597" [label = <(&lt;operator&gt;.fieldAccess,Boolean.class)<SUB>742</SUB>> ]
+"1598" [label = <(IDENTIFIER,Boolean,cast(Boolean.class, value))<SUB>742</SUB>> ]
+"1599" [label = <(FIELD_IDENTIFIER,class,class)<SUB>742</SUB>> ]
+"1600" [label = <(IDENTIFIER,value,cast(Boolean.class, value))<SUB>742</SUB>> ]
+"1601" [label = <(CONTROL_STRUCTURE,else,else)<SUB>743</SUB>> ]
+"1602" [label = <(CONTROL_STRUCTURE,if (toType.isPrimitive()),if (toType.isPrimitive()))<SUB>743</SUB>> ]
+"1603" [label = <(isPrimitive,toType.isPrimitive())<SUB>743</SUB>> ]
+"1604" [label = <(IDENTIFIER,toType,toType.isPrimitive())<SUB>743</SUB>> ]
+"1605" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>743</SUB>> ]
+"1606" [label = <(LOCAL,Class newType: java.lang.Class)> ]
+"1607" [label = <(&lt;operator&gt;.assignment,Class newType = convertPrimitiveTypeToWrapperType(toType))<SUB>744</SUB>> ]
+"1608" [label = <(IDENTIFIER,newType,Class newType = convertPrimitiveTypeToWrapperType(toType))<SUB>744</SUB>> ]
+"1609" [label = <(convertPrimitiveTypeToWrapperType,convertPrimitiveTypeToWrapperType(toType))<SUB>744</SUB>> ]
+"1610" [label = <(IDENTIFIER,toType,convertPrimitiveTypeToWrapperType(toType))<SUB>744</SUB>> ]
+"1611" [label = <(CONTROL_STRUCTURE,if (newType != toType),if (newType != toType))<SUB>745</SUB>> ]
+"1612" [label = <(&lt;operator&gt;.notEquals,newType != toType)<SUB>745</SUB>> ]
+"1613" [label = <(IDENTIFIER,newType,newType != toType)<SUB>745</SUB>> ]
+"1614" [label = <(IDENTIFIER,toType,newType != toType)<SUB>745</SUB>> ]
+"1615" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>745</SUB>> ]
+"1616" [label = <(RETURN,return (T) cast(newType, value);,return (T) cast(newType, value);)<SUB>746</SUB>> ]
+"1617" [label = <(&lt;operator&gt;.cast,(T) cast(newType, value))<SUB>746</SUB>> ]
+"1618" [label = <(TYPE_REF,T,T)<SUB>746</SUB>> ]
+"1619" [label = <(cast,cast(newType, value))<SUB>746</SUB>> ]
+"1620" [label = <(IDENTIFIER,newType,cast(newType, value))<SUB>746</SUB>> ]
+"1621" [label = <(IDENTIFIER,value,cast(newType, value))<SUB>746</SUB>> ]
+"1622" [label = <(CONTROL_STRUCTURE,try,try)<SUB>749</SUB>> ]
+"1623" [label = <(BLOCK,try,try)<SUB>749</SUB>> ]
+"1624" [label = <(RETURN,return toType.cast(value);,return toType.cast(value);)<SUB>750</SUB>> ]
+"1625" [label = <(cast,toType.cast(value))<SUB>750</SUB>> ]
+"1626" [label = <(IDENTIFIER,toType,toType.cast(value))<SUB>750</SUB>> ]
+"1627" [label = <(IDENTIFIER,value,toType.cast(value))<SUB>750</SUB>> ]
+"1628" [label = <(BLOCK,catch,catch)> ]
+"1629" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>751</SUB>> ]
+"1630" [label = <(&lt;operator&gt;.throw,throw new IllegalArgumentException(&quot;Failed to convert: &quot; + value + &quot; to type: &quot; + toType.getName() + &quot; due to: &quot; + e, e);)<SUB>752</SUB>> ]
+"1631" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>752</SUB>> ]
+"1632" [label = <(&lt;operator&gt;.assignment,&lt;empty&gt;)> ]
+"1633" [label = <(IDENTIFIER,$obj10,&lt;empty&gt;)> ]
+"1634" [label = <(&lt;operator&gt;.alloc,new IllegalArgumentException(&quot;Failed to convert: &quot; + value + &quot; to type: &quot; + toType.getName() + &quot; due to: &quot; + e, e))<SUB>752</SUB>> ]
+"1635" [label = <(&lt;init&gt;,new IllegalArgumentException(&quot;Failed to convert: &quot; + value + &quot; to type: &quot; + toType.getName() + &quot; due to: &quot; + e, e))<SUB>752</SUB>> ]
+"1636" [label = <(IDENTIFIER,$obj10,new IllegalArgumentException(&quot;Failed to convert: &quot; + value + &quot; to type: &quot; + toType.getName() + &quot; due to: &quot; + e, e))> ]
+"1637" [label = <(&lt;operator&gt;.addition,&quot;Failed to convert: &quot; + value + &quot; to type: &quot; + toType.getName() + &quot; due to: &quot; + e)<SUB>752</SUB>> ]
+"1638" [label = <(&lt;operator&gt;.addition,&quot;Failed to convert: &quot; + value + &quot; to type: &quot; + toType.getName() + &quot; due to: &quot;)<SUB>752</SUB>> ]
+"1639" [label = <(&lt;operator&gt;.addition,&quot;Failed to convert: &quot; + value + &quot; to type: &quot; + toType.getName())<SUB>752</SUB>> ]
+"1640" [label = <(&lt;operator&gt;.addition,&quot;Failed to convert: &quot; + value + &quot; to type: &quot;)<SUB>752</SUB>> ]
+"1641" [label = <(&lt;operator&gt;.addition,&quot;Failed to convert: &quot; + value)<SUB>752</SUB>> ]
+"1642" [label = <(LITERAL,&quot;Failed to convert: &quot;,&quot;Failed to convert: &quot; + value)<SUB>752</SUB>> ]
+"1643" [label = <(IDENTIFIER,value,&quot;Failed to convert: &quot; + value)<SUB>752</SUB>> ]
+"1644" [label = <(LITERAL,&quot; to type: &quot;,&quot;Failed to convert: &quot; + value + &quot; to type: &quot;)<SUB>752</SUB>> ]
+"1645" [label = <(getName,toType.getName())<SUB>753</SUB>> ]
+"1646" [label = <(IDENTIFIER,toType,toType.getName())<SUB>753</SUB>> ]
+"1647" [label = <(LITERAL,&quot; due to: &quot;,&quot;Failed to convert: &quot; + value + &quot; to type: &quot; + toType.getName() + &quot; due to: &quot;)<SUB>753</SUB>> ]
+"1648" [label = <(IDENTIFIER,e,&quot;Failed to convert: &quot; + value + &quot; to type: &quot; + toType.getName() + &quot; due to: &quot; + e)<SUB>753</SUB>> ]
+"1649" [label = <(IDENTIFIER,e,new IllegalArgumentException(&quot;Failed to convert: &quot; + value + &quot; to type: &quot; + toType.getName() + &quot; due to: &quot; + e, e))<SUB>753</SUB>> ]
+"1650" [label = <(IDENTIFIER,$obj10,&lt;empty&gt;)> ]
+"1651" [label = <(MODIFIER,PUBLIC)> ]
+"1652" [label = <(MODIFIER,STATIC)> ]
+"1653" [label = <(METHOD_RETURN,java.lang.Object)<SUB>740</SUB>> ]
+  "1582" -> "1583" 
+  "1582" -> "1584" 
+  "1582" -> "1585" 
+  "1582" -> "1651" 
+  "1582" -> "1652" 
+  "1582" -> "1653" 
+  "1585" -> "1586" 
+  "1585" -> "1622" 
+  "1586" -> "1587" 
+  "1586" -> "1592" 
+  "1586" -> "1601" 
+  "1587" -> "1588" 
+  "1587" -> "1589" 
+  "1589" -> "1590" 
+  "1589" -> "1591" 
+  "1592" -> "1593" 
+  "1593" -> "1594" 
+  "1594" -> "1595" 
+  "1594" -> "1596" 
+  "1596" -> "1597" 
+  "1596" -> "1600" 
+  "1597" -> "1598" 
+  "1597" -> "1599" 
+  "1601" -> "1602" 
+  "1602" -> "1603" 
+  "1602" -> "1605" 
+  "1603" -> "1604" 
+  "1605" -> "1606" 
+  "1605" -> "1607" 
+  "1605" -> "1611" 
+  "1607" -> "1608" 
+  "1607" -> "1609" 
+  "1609" -> "1610" 
+  "1611" -> "1612" 
+  "1611" -> "1615" 
+  "1612" -> "1613" 
+  "1612" -> "1614" 
+  "1615" -> "1616" 
+  "1616" -> "1617" 
+  "1617" -> "1618" 
+  "1617" -> "1619" 
+  "1619" -> "1620" 
+  "1619" -> "1621" 
+  "1622" -> "1623" 
+  "1622" -> "1628" 
+  "1623" -> "1624" 
+  "1624" -> "1625" 
+  "1625" -> "1626" 
+  "1625" -> "1627" 
+  "1628" -> "1629" 
+  "1629" -> "1630" 
+  "1630" -> "1631" 
+  "1631" -> "1632" 
+  "1631" -> "1635" 
+  "1631" -> "1650" 
+  "1632" -> "1633" 
+  "1632" -> "1634" 
+  "1635" -> "1636" 
+  "1635" -> "1637" 
+  "1635" -> "1649" 
+  "1637" -> "1638" 
+  "1637" -> "1648" 
+  "1638" -> "1639" 
+  "1638" -> "1647" 
+  "1639" -> "1640" 
+  "1639" -> "1645" 
+  "1640" -> "1641" 
+  "1640" -> "1644" 
+  "1641" -> "1642" 
+  "1641" -> "1643" 
+  "1645" -> "1646" 
+}

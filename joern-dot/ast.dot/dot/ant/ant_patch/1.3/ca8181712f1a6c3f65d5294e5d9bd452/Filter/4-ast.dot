@@ -1,0 +1,195 @@
+digraph "readFilters" {  
+"139" [label = <(METHOD,readFilters)<SUB>107</SUB>> ]
+"12" [label = <(PARAM,this)<SUB>107</SUB>> ]
+"140" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>107</SUB>> ]
+"141" [label = <(log,log(&quot;Reading filters from &quot; + filtersFile, Project.MSG_VERBOSE))<SUB>108</SUB>> ]
+"11" [label = <(IDENTIFIER,this,log(&quot;Reading filters from &quot; + filtersFile, Project.MSG_VERBOSE))<SUB>108</SUB>> ]
+"142" [label = <(&lt;operator&gt;.addition,&quot;Reading filters from &quot; + filtersFile)<SUB>108</SUB>> ]
+"143" [label = <(LITERAL,&quot;Reading filters from &quot;,&quot;Reading filters from &quot; + filtersFile)<SUB>108</SUB>> ]
+"144" [label = <(&lt;operator&gt;.fieldAccess,this.filtersFile)<SUB>108</SUB>> ]
+"145" [label = <(IDENTIFIER,this,&quot;Reading filters from &quot; + filtersFile)<SUB>108</SUB>> ]
+"146" [label = <(FIELD_IDENTIFIER,filtersFile,filtersFile)<SUB>108</SUB>> ]
+"147" [label = <(&lt;operator&gt;.fieldAccess,Project.MSG_VERBOSE)<SUB>108</SUB>> ]
+"148" [label = <(IDENTIFIER,Project,log(&quot;Reading filters from &quot; + filtersFile, Project.MSG_VERBOSE))<SUB>108</SUB>> ]
+"149" [label = <(FIELD_IDENTIFIER,MSG_VERBOSE,MSG_VERBOSE)<SUB>108</SUB>> ]
+"16" [label = <(LOCAL,FileInputStream in: java.io.FileInputStream)> ]
+"150" [label = <(&lt;operator&gt;.assignment,FileInputStream in = null)<SUB>109</SUB>> ]
+"151" [label = <(IDENTIFIER,in,FileInputStream in = null)<SUB>109</SUB>> ]
+"152" [label = <(LITERAL,null,FileInputStream in = null)<SUB>109</SUB>> ]
+"153" [label = <(CONTROL_STRUCTURE,try,try)<SUB>110</SUB>> ]
+"154" [label = <(BLOCK,try,try)<SUB>110</SUB>> ]
+"14" [label = <(LOCAL,Properties props: java.util.Properties)> ]
+"155" [label = <(&lt;operator&gt;.assignment,Properties props = new Properties())<SUB>111</SUB>> ]
+"156" [label = <(IDENTIFIER,props,Properties props = new Properties())<SUB>111</SUB>> ]
+"157" [label = <(&lt;operator&gt;.alloc,new Properties())<SUB>111</SUB>> ]
+"158" [label = <(&lt;init&gt;,new Properties())<SUB>111</SUB>> ]
+"13" [label = <(IDENTIFIER,props,new Properties())<SUB>111</SUB>> ]
+"159" [label = <(&lt;operator&gt;.assignment,in = new FileInputStream(filtersFile))<SUB>112</SUB>> ]
+"160" [label = <(IDENTIFIER,in,in = new FileInputStream(filtersFile))<SUB>112</SUB>> ]
+"161" [label = <(&lt;operator&gt;.alloc,new FileInputStream(filtersFile))<SUB>112</SUB>> ]
+"162" [label = <(&lt;init&gt;,new FileInputStream(filtersFile))<SUB>112</SUB>> ]
+"15" [label = <(IDENTIFIER,in,new FileInputStream(filtersFile))<SUB>112</SUB>> ]
+"163" [label = <(&lt;operator&gt;.fieldAccess,this.filtersFile)<SUB>112</SUB>> ]
+"164" [label = <(IDENTIFIER,this,new FileInputStream(filtersFile))<SUB>112</SUB>> ]
+"165" [label = <(FIELD_IDENTIFIER,filtersFile,filtersFile)<SUB>112</SUB>> ]
+"166" [label = <(load,props.load(in))<SUB>113</SUB>> ]
+"167" [label = <(IDENTIFIER,props,props.load(in))<SUB>113</SUB>> ]
+"168" [label = <(IDENTIFIER,in,props.load(in))<SUB>113</SUB>> ]
+"169" [label = <(LOCAL,Project proj: ANY)> ]
+"170" [label = <(&lt;operator&gt;.assignment,ANY proj = getProject())<SUB>115</SUB>> ]
+"171" [label = <(IDENTIFIER,proj,ANY proj = getProject())<SUB>115</SUB>> ]
+"172" [label = <(getProject,getProject())<SUB>115</SUB>> ]
+"17" [label = <(IDENTIFIER,this,getProject())<SUB>115</SUB>> ]
+"173" [label = <(LOCAL,Enumeration enum: java.util.Enumeration)> ]
+"174" [label = <(&lt;operator&gt;.assignment,Enumeration enum = props.propertyNames())<SUB>117</SUB>> ]
+"175" [label = <(IDENTIFIER,enum,Enumeration enum = props.propertyNames())<SUB>117</SUB>> ]
+"176" [label = <(propertyNames,props.propertyNames())<SUB>117</SUB>> ]
+"177" [label = <(IDENTIFIER,props,props.propertyNames())<SUB>117</SUB>> ]
+"178" [label = <(CONTROL_STRUCTURE,while (enum.hasMoreElements()),while (enum.hasMoreElements()))<SUB>118</SUB>> ]
+"179" [label = <(hasMoreElements,enum.hasMoreElements())<SUB>118</SUB>> ]
+"180" [label = <(IDENTIFIER,enum,enum.hasMoreElements())<SUB>118</SUB>> ]
+"181" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>118</SUB>> ]
+"182" [label = <(LOCAL,String strPropName: java.lang.String)> ]
+"183" [label = <(&lt;operator&gt;.assignment,String strPropName = (String) enum.nextElement())<SUB>119</SUB>> ]
+"184" [label = <(IDENTIFIER,strPropName,String strPropName = (String) enum.nextElement())<SUB>119</SUB>> ]
+"185" [label = <(&lt;operator&gt;.cast,(String) enum.nextElement())<SUB>119</SUB>> ]
+"186" [label = <(TYPE_REF,String,String)<SUB>119</SUB>> ]
+"187" [label = <(nextElement,enum.nextElement())<SUB>119</SUB>> ]
+"188" [label = <(IDENTIFIER,enum,enum.nextElement())<SUB>119</SUB>> ]
+"189" [label = <(LOCAL,String strValue: java.lang.String)> ]
+"190" [label = <(&lt;operator&gt;.assignment,String strValue = props.getProperty(strPropName))<SUB>120</SUB>> ]
+"191" [label = <(IDENTIFIER,strValue,String strValue = props.getProperty(strPropName))<SUB>120</SUB>> ]
+"192" [label = <(getProperty,props.getProperty(strPropName))<SUB>120</SUB>> ]
+"193" [label = <(IDENTIFIER,props,props.getProperty(strPropName))<SUB>120</SUB>> ]
+"194" [label = <(IDENTIFIER,strPropName,props.getProperty(strPropName))<SUB>120</SUB>> ]
+"195" [label = <(addFilter,addFilter(strPropName, strValue))<SUB>121</SUB>> ]
+"196" [label = <(IDENTIFIER,proj,addFilter(strPropName, strValue))<SUB>121</SUB>> ]
+"197" [label = <(IDENTIFIER,strPropName,addFilter(strPropName, strValue))<SUB>121</SUB>> ]
+"198" [label = <(IDENTIFIER,strValue,addFilter(strPropName, strValue))<SUB>121</SUB>> ]
+"199" [label = <(BLOCK,catch,catch)> ]
+"200" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>123</SUB>> ]
+"201" [label = <(&lt;operator&gt;.throw,throw new BuildException(&quot;Could not read filters from file: &quot; + filtersFile);)<SUB>124</SUB>> ]
+"202" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>124</SUB>> ]
+"203" [label = <(&lt;operator&gt;.assignment,&lt;empty&gt;)> ]
+"204" [label = <(IDENTIFIER,$obj3,&lt;empty&gt;)> ]
+"205" [label = <(&lt;operator&gt;.alloc,new BuildException(&quot;Could not read filters from file: &quot; + filtersFile))<SUB>124</SUB>> ]
+"206" [label = <(&lt;init&gt;,new BuildException(&quot;Could not read filters from file: &quot; + filtersFile))<SUB>124</SUB>> ]
+"207" [label = <(IDENTIFIER,$obj3,new BuildException(&quot;Could not read filters from file: &quot; + filtersFile))> ]
+"208" [label = <(&lt;operator&gt;.addition,&quot;Could not read filters from file: &quot; + filtersFile)<SUB>124</SUB>> ]
+"209" [label = <(LITERAL,&quot;Could not read filters from file: &quot;,&quot;Could not read filters from file: &quot; + filtersFile)<SUB>124</SUB>> ]
+"210" [label = <(&lt;operator&gt;.fieldAccess,this.filtersFile)<SUB>124</SUB>> ]
+"211" [label = <(IDENTIFIER,this,&quot;Could not read filters from file: &quot; + filtersFile)<SUB>124</SUB>> ]
+"212" [label = <(FIELD_IDENTIFIER,filtersFile,filtersFile)<SUB>124</SUB>> ]
+"213" [label = <(IDENTIFIER,$obj3,&lt;empty&gt;)> ]
+"214" [label = <(BLOCK,finally,finally)<SUB>125</SUB>> ]
+"215" [label = <(CONTROL_STRUCTURE,if (in != null),if (in != null))<SUB>126</SUB>> ]
+"216" [label = <(&lt;operator&gt;.notEquals,in != null)<SUB>126</SUB>> ]
+"217" [label = <(IDENTIFIER,in,in != null)<SUB>126</SUB>> ]
+"218" [label = <(LITERAL,null,in != null)<SUB>126</SUB>> ]
+"219" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>126</SUB>> ]
+"220" [label = <(CONTROL_STRUCTURE,try,try)<SUB>127</SUB>> ]
+"221" [label = <(BLOCK,try,try)<SUB>127</SUB>> ]
+"222" [label = <(close,in.close())<SUB>128</SUB>> ]
+"223" [label = <(IDENTIFIER,in,in.close())<SUB>128</SUB>> ]
+"224" [label = <(BLOCK,catch,catch)> ]
+"225" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>129</SUB>> ]
+"226" [label = <(MODIFIER,PROTECTED)> ]
+"227" [label = <(MODIFIER,VIRTUAL)> ]
+"228" [label = <(METHOD_RETURN,void)<SUB>107</SUB>> ]
+  "139" -> "12" 
+  "139" -> "140" 
+  "139" -> "226" 
+  "139" -> "227" 
+  "139" -> "228" 
+  "140" -> "141" 
+  "140" -> "16" 
+  "140" -> "150" 
+  "140" -> "153" 
+  "141" -> "11" 
+  "141" -> "142" 
+  "141" -> "147" 
+  "142" -> "143" 
+  "142" -> "144" 
+  "144" -> "145" 
+  "144" -> "146" 
+  "147" -> "148" 
+  "147" -> "149" 
+  "150" -> "151" 
+  "150" -> "152" 
+  "153" -> "154" 
+  "153" -> "199" 
+  "153" -> "214" 
+  "154" -> "14" 
+  "154" -> "155" 
+  "154" -> "158" 
+  "154" -> "159" 
+  "154" -> "162" 
+  "154" -> "166" 
+  "154" -> "169" 
+  "154" -> "170" 
+  "154" -> "173" 
+  "154" -> "174" 
+  "154" -> "178" 
+  "155" -> "156" 
+  "155" -> "157" 
+  "158" -> "13" 
+  "159" -> "160" 
+  "159" -> "161" 
+  "162" -> "15" 
+  "162" -> "163" 
+  "163" -> "164" 
+  "163" -> "165" 
+  "166" -> "167" 
+  "166" -> "168" 
+  "170" -> "171" 
+  "170" -> "172" 
+  "172" -> "17" 
+  "174" -> "175" 
+  "174" -> "176" 
+  "176" -> "177" 
+  "178" -> "179" 
+  "178" -> "181" 
+  "179" -> "180" 
+  "181" -> "182" 
+  "181" -> "183" 
+  "181" -> "189" 
+  "181" -> "190" 
+  "181" -> "195" 
+  "183" -> "184" 
+  "183" -> "185" 
+  "185" -> "186" 
+  "185" -> "187" 
+  "187" -> "188" 
+  "190" -> "191" 
+  "190" -> "192" 
+  "192" -> "193" 
+  "192" -> "194" 
+  "195" -> "196" 
+  "195" -> "197" 
+  "195" -> "198" 
+  "199" -> "200" 
+  "200" -> "201" 
+  "201" -> "202" 
+  "202" -> "203" 
+  "202" -> "206" 
+  "202" -> "213" 
+  "203" -> "204" 
+  "203" -> "205" 
+  "206" -> "207" 
+  "206" -> "208" 
+  "208" -> "209" 
+  "208" -> "210" 
+  "210" -> "211" 
+  "210" -> "212" 
+  "214" -> "215" 
+  "215" -> "216" 
+  "215" -> "219" 
+  "216" -> "217" 
+  "216" -> "218" 
+  "219" -> "220" 
+  "220" -> "221" 
+  "220" -> "224" 
+  "221" -> "222" 
+  "222" -> "223" 
+  "224" -> "225" 
+}

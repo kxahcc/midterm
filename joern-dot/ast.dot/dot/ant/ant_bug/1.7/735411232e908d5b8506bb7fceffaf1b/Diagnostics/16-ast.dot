@@ -1,0 +1,107 @@
+digraph "doReportSystemProperties" {  
+"491" [label = <(METHOD,doReportSystemProperties)<SUB>328</SUB>> ]
+"492" [label = <(PARAM,PrintStream out)<SUB>328</SUB>> ]
+"493" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>328</SUB>> ]
+"494" [label = <(LOCAL,Properties sysprops: java.util.Properties)> ]
+"495" [label = <(&lt;operator&gt;.assignment,Properties sysprops = null)<SUB>329</SUB>> ]
+"496" [label = <(IDENTIFIER,sysprops,Properties sysprops = null)<SUB>329</SUB>> ]
+"497" [label = <(LITERAL,null,Properties sysprops = null)<SUB>329</SUB>> ]
+"498" [label = <(CONTROL_STRUCTURE,try,try)<SUB>330</SUB>> ]
+"499" [label = <(BLOCK,try,try)<SUB>330</SUB>> ]
+"500" [label = <(&lt;operator&gt;.assignment,sysprops = System.getProperties())<SUB>331</SUB>> ]
+"501" [label = <(IDENTIFIER,sysprops,sysprops = System.getProperties())<SUB>331</SUB>> ]
+"502" [label = <(getProperties,System.getProperties())<SUB>331</SUB>> ]
+"503" [label = <(IDENTIFIER,System,System.getProperties())<SUB>331</SUB>> ]
+"504" [label = <(BLOCK,catch,catch)> ]
+"505" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>332</SUB>> ]
+"506" [label = <(ignoreThrowable,ignoreThrowable(e))<SUB>333</SUB>> ]
+"507" [label = <(IDENTIFIER,e,ignoreThrowable(e))<SUB>333</SUB>> ]
+"508" [label = <(println,out.println(&quot;Access to System.getProperties() blocked &quot; + &quot;by a security manager&quot;))<SUB>334</SUB>> ]
+"509" [label = <(IDENTIFIER,out,out.println(&quot;Access to System.getProperties() blocked &quot; + &quot;by a security manager&quot;))<SUB>334</SUB>> ]
+"510" [label = <(&lt;operator&gt;.addition,&quot;Access to System.getProperties() blocked &quot; + &quot;by a security manager&quot;)<SUB>334</SUB>> ]
+"511" [label = <(LITERAL,&quot;Access to System.getProperties() blocked &quot;,&quot;Access to System.getProperties() blocked &quot; + &quot;by a security manager&quot;)<SUB>334</SUB>> ]
+"512" [label = <(LITERAL,&quot;by a security manager&quot;,&quot;Access to System.getProperties() blocked &quot; + &quot;by a security manager&quot;)<SUB>335</SUB>> ]
+"513" [label = <(CONTROL_STRUCTURE,for (Enumeration keys = sysprops.propertyNames(); Some(keys.hasMoreElements()); ),for (Enumeration keys = sysprops.propertyNames(); Some(keys.hasMoreElements()); ))<SUB>337</SUB>> ]
+"514" [label = <(LOCAL,Enumeration keys: java.util.Enumeration)> ]
+"515" [label = <(&lt;operator&gt;.assignment,Enumeration keys = sysprops.propertyNames())<SUB>337</SUB>> ]
+"516" [label = <(IDENTIFIER,keys,Enumeration keys = sysprops.propertyNames())<SUB>337</SUB>> ]
+"517" [label = <(propertyNames,sysprops.propertyNames())<SUB>337</SUB>> ]
+"518" [label = <(IDENTIFIER,sysprops,sysprops.propertyNames())<SUB>337</SUB>> ]
+"519" [label = <(hasMoreElements,keys.hasMoreElements())<SUB>338</SUB>> ]
+"520" [label = <(IDENTIFIER,keys,keys.hasMoreElements())<SUB>338</SUB>> ]
+"521" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>338</SUB>> ]
+"522" [label = <(LOCAL,String key: java.lang.String)> ]
+"523" [label = <(&lt;operator&gt;.assignment,String key = (String) keys.nextElement())<SUB>339</SUB>> ]
+"524" [label = <(IDENTIFIER,key,String key = (String) keys.nextElement())<SUB>339</SUB>> ]
+"525" [label = <(&lt;operator&gt;.cast,(String) keys.nextElement())<SUB>339</SUB>> ]
+"526" [label = <(TYPE_REF,String,String)<SUB>339</SUB>> ]
+"527" [label = <(nextElement,keys.nextElement())<SUB>339</SUB>> ]
+"528" [label = <(IDENTIFIER,keys,keys.nextElement())<SUB>339</SUB>> ]
+"529" [label = <(LOCAL,String value: java.lang.String)> ]
+"530" [label = <(&lt;operator&gt;.assignment,String value = getProperty(key))<SUB>340</SUB>> ]
+"531" [label = <(IDENTIFIER,value,String value = getProperty(key))<SUB>340</SUB>> ]
+"532" [label = <(getProperty,getProperty(key))<SUB>340</SUB>> ]
+"533" [label = <(IDENTIFIER,key,getProperty(key))<SUB>340</SUB>> ]
+"534" [label = <(println,out.println(key + &quot; : &quot; + value))<SUB>341</SUB>> ]
+"535" [label = <(IDENTIFIER,out,out.println(key + &quot; : &quot; + value))<SUB>341</SUB>> ]
+"536" [label = <(&lt;operator&gt;.addition,key + &quot; : &quot; + value)<SUB>341</SUB>> ]
+"537" [label = <(&lt;operator&gt;.addition,key + &quot; : &quot;)<SUB>341</SUB>> ]
+"538" [label = <(IDENTIFIER,key,key + &quot; : &quot;)<SUB>341</SUB>> ]
+"539" [label = <(LITERAL,&quot; : &quot;,key + &quot; : &quot;)<SUB>341</SUB>> ]
+"540" [label = <(IDENTIFIER,value,key + &quot; : &quot; + value)<SUB>341</SUB>> ]
+"541" [label = <(MODIFIER,PRIVATE)> ]
+"542" [label = <(MODIFIER,STATIC)> ]
+"543" [label = <(METHOD_RETURN,void)<SUB>328</SUB>> ]
+  "491" -> "492" 
+  "491" -> "493" 
+  "491" -> "541" 
+  "491" -> "542" 
+  "491" -> "543" 
+  "493" -> "494" 
+  "493" -> "495" 
+  "493" -> "498" 
+  "493" -> "513" 
+  "495" -> "496" 
+  "495" -> "497" 
+  "498" -> "499" 
+  "498" -> "504" 
+  "499" -> "500" 
+  "500" -> "501" 
+  "500" -> "502" 
+  "502" -> "503" 
+  "504" -> "505" 
+  "505" -> "506" 
+  "505" -> "508" 
+  "506" -> "507" 
+  "508" -> "509" 
+  "508" -> "510" 
+  "510" -> "511" 
+  "510" -> "512" 
+  "513" -> "514" 
+  "513" -> "515" 
+  "513" -> "519" 
+  "513" -> "521" 
+  "515" -> "516" 
+  "515" -> "517" 
+  "517" -> "518" 
+  "519" -> "520" 
+  "521" -> "522" 
+  "521" -> "523" 
+  "521" -> "529" 
+  "521" -> "530" 
+  "521" -> "534" 
+  "523" -> "524" 
+  "523" -> "525" 
+  "525" -> "526" 
+  "525" -> "527" 
+  "527" -> "528" 
+  "530" -> "531" 
+  "530" -> "532" 
+  "532" -> "533" 
+  "534" -> "535" 
+  "534" -> "536" 
+  "536" -> "537" 
+  "536" -> "540" 
+  "537" -> "538" 
+  "537" -> "539" 
+}

@@ -1,0 +1,129 @@
+digraph "execute" {  
+"134" [label = <(METHOD,execute)<SUB>101</SUB>> ]
+"15" [label = <(PARAM,this)<SUB>101</SUB>> ]
+"135" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>101</SUB>> ]
+"136" [label = <(LOCAL,String command: java.lang.String)> ]
+"137" [label = <(&lt;operator&gt;.assignment,String command = &quot;scp -f &quot;)<SUB>102</SUB>> ]
+"138" [label = <(IDENTIFIER,command,String command = &quot;scp -f &quot;)<SUB>102</SUB>> ]
+"139" [label = <(LITERAL,&quot;scp -f &quot;,String command = &quot;scp -f &quot;)<SUB>102</SUB>> ]
+"140" [label = <(CONTROL_STRUCTURE,if (isRecursive),if (isRecursive))<SUB>103</SUB>> ]
+"141" [label = <(&lt;operator&gt;.fieldAccess,this.isRecursive)<SUB>103</SUB>> ]
+"142" [label = <(IDENTIFIER,this,if (isRecursive))<SUB>103</SUB>> ]
+"143" [label = <(FIELD_IDENTIFIER,isRecursive,isRecursive)<SUB>103</SUB>> ]
+"144" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>103</SUB>> ]
+"145" [label = <(&lt;operator&gt;.assignmentPlus,command += &quot;-r &quot;)<SUB>104</SUB>> ]
+"146" [label = <(IDENTIFIER,command,command += &quot;-r &quot;)<SUB>104</SUB>> ]
+"147" [label = <(LITERAL,&quot;-r &quot;,command += &quot;-r &quot;)<SUB>104</SUB>> ]
+"148" [label = <(&lt;operator&gt;.assignmentPlus,command += this.remoteFile)<SUB>106</SUB>> ]
+"149" [label = <(IDENTIFIER,command,command += this.remoteFile)<SUB>106</SUB>> ]
+"150" [label = <(&lt;operator&gt;.fieldAccess,this.remoteFile)<SUB>106</SUB>> ]
+"151" [label = <(IDENTIFIER,this,command += this.remoteFile)<SUB>106</SUB>> ]
+"152" [label = <(FIELD_IDENTIFIER,remoteFile,remoteFile)<SUB>106</SUB>> ]
+"153" [label = <(LOCAL,Channel channel: com.jcraft.jsch.Channel)> ]
+"154" [label = <(&lt;operator&gt;.assignment,Channel channel = openExecChannel(command))<SUB>107</SUB>> ]
+"155" [label = <(IDENTIFIER,channel,Channel channel = openExecChannel(command))<SUB>107</SUB>> ]
+"156" [label = <(openExecChannel,openExecChannel(command))<SUB>107</SUB>> ]
+"14" [label = <(IDENTIFIER,this,openExecChannel(command))<SUB>107</SUB>> ]
+"157" [label = <(IDENTIFIER,command,openExecChannel(command))<SUB>107</SUB>> ]
+"158" [label = <(CONTROL_STRUCTURE,try,try)<SUB>108</SUB>> ]
+"159" [label = <(BLOCK,try,try)<SUB>108</SUB>> ]
+"160" [label = <(LOCAL,OutputStream out: java.io.OutputStream)> ]
+"161" [label = <(&lt;operator&gt;.assignment,OutputStream out = getOutputStream())<SUB>110</SUB>> ]
+"162" [label = <(IDENTIFIER,out,OutputStream out = getOutputStream())<SUB>110</SUB>> ]
+"163" [label = <(getOutputStream,getOutputStream())<SUB>110</SUB>> ]
+"164" [label = <(IDENTIFIER,channel,getOutputStream())<SUB>110</SUB>> ]
+"165" [label = <(LOCAL,InputStream in: java.io.InputStream)> ]
+"166" [label = <(&lt;operator&gt;.assignment,InputStream in = getInputStream())<SUB>111</SUB>> ]
+"167" [label = <(IDENTIFIER,in,InputStream in = getInputStream())<SUB>111</SUB>> ]
+"168" [label = <(getInputStream,getInputStream())<SUB>111</SUB>> ]
+"169" [label = <(IDENTIFIER,channel,getInputStream())<SUB>111</SUB>> ]
+"170" [label = <(connect,connect())<SUB>113</SUB>> ]
+"171" [label = <(IDENTIFIER,channel,connect())<SUB>113</SUB>> ]
+"172" [label = <(sendAck,sendAck(out))<SUB>115</SUB>> ]
+"16" [label = <(IDENTIFIER,this,sendAck(out))<SUB>115</SUB>> ]
+"173" [label = <(IDENTIFIER,out,sendAck(out))<SUB>115</SUB>> ]
+"174" [label = <(startRemoteCpProtocol,this.startRemoteCpProtocol(in, out, localFile))<SUB>116</SUB>> ]
+"17" [label = <(IDENTIFIER,this,this.startRemoteCpProtocol(in, out, localFile))<SUB>116</SUB>> ]
+"175" [label = <(IDENTIFIER,in,this.startRemoteCpProtocol(in, out, localFile))<SUB>116</SUB>> ]
+"176" [label = <(IDENTIFIER,out,this.startRemoteCpProtocol(in, out, localFile))<SUB>116</SUB>> ]
+"177" [label = <(&lt;operator&gt;.fieldAccess,this.localFile)<SUB>116</SUB>> ]
+"178" [label = <(IDENTIFIER,this,this.startRemoteCpProtocol(in, out, localFile))<SUB>116</SUB>> ]
+"179" [label = <(FIELD_IDENTIFIER,localFile,localFile)<SUB>116</SUB>> ]
+"180" [label = <(BLOCK,finally,finally)<SUB>117</SUB>> ]
+"181" [label = <(CONTROL_STRUCTURE,if (channel != null),if (channel != null))<SUB>118</SUB>> ]
+"182" [label = <(&lt;operator&gt;.notEquals,channel != null)<SUB>118</SUB>> ]
+"183" [label = <(IDENTIFIER,channel,channel != null)<SUB>118</SUB>> ]
+"184" [label = <(LITERAL,null,channel != null)<SUB>118</SUB>> ]
+"185" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>118</SUB>> ]
+"186" [label = <(disconnect,disconnect())<SUB>119</SUB>> ]
+"187" [label = <(IDENTIFIER,channel,disconnect())<SUB>119</SUB>> ]
+"188" [label = <(log,log(&quot;done\n&quot;))<SUB>122</SUB>> ]
+"18" [label = <(IDENTIFIER,this,log(&quot;done\n&quot;))<SUB>122</SUB>> ]
+"189" [label = <(LITERAL,&quot;done\n&quot;,log(&quot;done\n&quot;))<SUB>122</SUB>> ]
+"190" [label = <(MODIFIER,PUBLIC)> ]
+"191" [label = <(MODIFIER,VIRTUAL)> ]
+"192" [label = <(METHOD_RETURN,void)<SUB>101</SUB>> ]
+  "134" -> "15" 
+  "134" -> "135" 
+  "134" -> "190" 
+  "134" -> "191" 
+  "134" -> "192" 
+  "135" -> "136" 
+  "135" -> "137" 
+  "135" -> "140" 
+  "135" -> "148" 
+  "135" -> "153" 
+  "135" -> "154" 
+  "135" -> "158" 
+  "135" -> "188" 
+  "137" -> "138" 
+  "137" -> "139" 
+  "140" -> "141" 
+  "140" -> "144" 
+  "141" -> "142" 
+  "141" -> "143" 
+  "144" -> "145" 
+  "145" -> "146" 
+  "145" -> "147" 
+  "148" -> "149" 
+  "148" -> "150" 
+  "150" -> "151" 
+  "150" -> "152" 
+  "154" -> "155" 
+  "154" -> "156" 
+  "156" -> "14" 
+  "156" -> "157" 
+  "158" -> "159" 
+  "158" -> "180" 
+  "159" -> "160" 
+  "159" -> "161" 
+  "159" -> "165" 
+  "159" -> "166" 
+  "159" -> "170" 
+  "159" -> "172" 
+  "159" -> "174" 
+  "161" -> "162" 
+  "161" -> "163" 
+  "163" -> "164" 
+  "166" -> "167" 
+  "166" -> "168" 
+  "168" -> "169" 
+  "170" -> "171" 
+  "172" -> "16" 
+  "172" -> "173" 
+  "174" -> "17" 
+  "174" -> "175" 
+  "174" -> "176" 
+  "174" -> "177" 
+  "177" -> "178" 
+  "177" -> "179" 
+  "180" -> "181" 
+  "181" -> "182" 
+  "181" -> "185" 
+  "182" -> "183" 
+  "182" -> "184" 
+  "185" -> "186" 
+  "186" -> "187" 
+  "188" -> "18" 
+  "188" -> "189" 
+}

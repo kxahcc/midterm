@@ -1,0 +1,127 @@
+digraph "restoreExceptionOnExchange" {  
+"908" [label = <(METHOD,restoreExceptionOnExchange)<SUB>391</SUB>> ]
+"909" [label = <(PARAM,Exchange exchange)<SUB>391</SUB>> ]
+"910" [label = <(PARAM,Predicate handledPredicate)<SUB>391</SUB>> ]
+"911" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>391</SUB>> ]
+"912" [label = <(CONTROL_STRUCTURE,if (handledPredicate == null || !handledPredicate.matches(exchange)),if (handledPredicate == null || !handledPredicate.matches(exchange)))<SUB>392</SUB>> ]
+"913" [label = <(&lt;operator&gt;.logicalOr,handledPredicate == null || !handledPredicate.matches(exchange))<SUB>392</SUB>> ]
+"914" [label = <(&lt;operator&gt;.equals,handledPredicate == null)<SUB>392</SUB>> ]
+"915" [label = <(IDENTIFIER,handledPredicate,handledPredicate == null)<SUB>392</SUB>> ]
+"916" [label = <(LITERAL,null,handledPredicate == null)<SUB>392</SUB>> ]
+"917" [label = <(&lt;operator&gt;.logicalNot,!handledPredicate.matches(exchange))<SUB>392</SUB>> ]
+"918" [label = <(matches,matches(exchange))<SUB>392</SUB>> ]
+"919" [label = <(IDENTIFIER,handledPredicate,matches(exchange))<SUB>392</SUB>> ]
+"920" [label = <(IDENTIFIER,exchange,matches(exchange))<SUB>392</SUB>> ]
+"921" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>392</SUB>> ]
+"922" [label = <(CONTROL_STRUCTURE,if (LOG.isDebugEnabled()),if (LOG.isDebugEnabled()))<SUB>393</SUB>> ]
+"923" [label = <(isDebugEnabled,isDebugEnabled())<SUB>393</SUB>> ]
+"924" [label = <(&lt;operator&gt;.fieldAccess,DeadLetterChannel.LOG)<SUB>393</SUB>> ]
+"925" [label = <(IDENTIFIER,DeadLetterChannel,isDebugEnabled())<SUB>393</SUB>> ]
+"926" [label = <(FIELD_IDENTIFIER,LOG,LOG)<SUB>393</SUB>> ]
+"927" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>393</SUB>> ]
+"928" [label = <(debug,debug(&quot;This exchange is not handled so its marked as failed: &quot; + exchange))<SUB>394</SUB>> ]
+"929" [label = <(&lt;operator&gt;.fieldAccess,DeadLetterChannel.LOG)<SUB>394</SUB>> ]
+"930" [label = <(IDENTIFIER,DeadLetterChannel,debug(&quot;This exchange is not handled so its marked as failed: &quot; + exchange))<SUB>394</SUB>> ]
+"931" [label = <(FIELD_IDENTIFIER,LOG,LOG)<SUB>394</SUB>> ]
+"932" [label = <(&lt;operator&gt;.addition,&quot;This exchange is not handled so its marked as failed: &quot; + exchange)<SUB>394</SUB>> ]
+"933" [label = <(LITERAL,&quot;This exchange is not handled so its marked as failed: &quot;,&quot;This exchange is not handled so its marked as failed: &quot; + exchange)<SUB>394</SUB>> ]
+"934" [label = <(IDENTIFIER,exchange,&quot;This exchange is not handled so its marked as failed: &quot; + exchange)<SUB>394</SUB>> ]
+"935" [label = <(setException,setException(exchange.getProperty(FAILURE_HANDLED_PROPERTY, Throwable.class)))<SUB>397</SUB>> ]
+"936" [label = <(IDENTIFIER,exchange,setException(exchange.getProperty(FAILURE_HANDLED_PROPERTY, Throwable.class)))<SUB>397</SUB>> ]
+"937" [label = <(getProperty,getProperty(FAILURE_HANDLED_PROPERTY, Throwable.class))<SUB>397</SUB>> ]
+"938" [label = <(IDENTIFIER,exchange,getProperty(FAILURE_HANDLED_PROPERTY, Throwable.class))<SUB>397</SUB>> ]
+"939" [label = <(&lt;operator&gt;.fieldAccess,DeadLetterChannel.FAILURE_HANDLED_PROPERTY)<SUB>397</SUB>> ]
+"940" [label = <(IDENTIFIER,DeadLetterChannel,getProperty(FAILURE_HANDLED_PROPERTY, Throwable.class))<SUB>397</SUB>> ]
+"941" [label = <(FIELD_IDENTIFIER,FAILURE_HANDLED_PROPERTY,FAILURE_HANDLED_PROPERTY)<SUB>397</SUB>> ]
+"942" [label = <(&lt;operator&gt;.fieldAccess,Throwable.class)<SUB>397</SUB>> ]
+"943" [label = <(IDENTIFIER,Throwable,getProperty(FAILURE_HANDLED_PROPERTY, Throwable.class))<SUB>397</SUB>> ]
+"944" [label = <(FIELD_IDENTIFIER,class,class)<SUB>397</SUB>> ]
+"945" [label = <(CONTROL_STRUCTURE,else,else)<SUB>398</SUB>> ]
+"946" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>398</SUB>> ]
+"947" [label = <(CONTROL_STRUCTURE,if (LOG.isDebugEnabled()),if (LOG.isDebugEnabled()))<SUB>399</SUB>> ]
+"948" [label = <(isDebugEnabled,isDebugEnabled())<SUB>399</SUB>> ]
+"949" [label = <(&lt;operator&gt;.fieldAccess,DeadLetterChannel.LOG)<SUB>399</SUB>> ]
+"950" [label = <(IDENTIFIER,DeadLetterChannel,isDebugEnabled())<SUB>399</SUB>> ]
+"951" [label = <(FIELD_IDENTIFIER,LOG,LOG)<SUB>399</SUB>> ]
+"952" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>399</SUB>> ]
+"953" [label = <(debug,debug(&quot;This exchange is handled so its marked as not failed: &quot; + exchange))<SUB>400</SUB>> ]
+"954" [label = <(&lt;operator&gt;.fieldAccess,DeadLetterChannel.LOG)<SUB>400</SUB>> ]
+"955" [label = <(IDENTIFIER,DeadLetterChannel,debug(&quot;This exchange is handled so its marked as not failed: &quot; + exchange))<SUB>400</SUB>> ]
+"956" [label = <(FIELD_IDENTIFIER,LOG,LOG)<SUB>400</SUB>> ]
+"957" [label = <(&lt;operator&gt;.addition,&quot;This exchange is handled so its marked as not failed: &quot; + exchange)<SUB>400</SUB>> ]
+"958" [label = <(LITERAL,&quot;This exchange is handled so its marked as not failed: &quot;,&quot;This exchange is handled so its marked as not failed: &quot; + exchange)<SUB>400</SUB>> ]
+"959" [label = <(IDENTIFIER,exchange,&quot;This exchange is handled so its marked as not failed: &quot; + exchange)<SUB>400</SUB>> ]
+"960" [label = <(setProperty,setProperty(Exchange.EXCEPTION_HANDLED_PROPERTY, Boolean.TRUE))<SUB>402</SUB>> ]
+"961" [label = <(IDENTIFIER,exchange,setProperty(Exchange.EXCEPTION_HANDLED_PROPERTY, Boolean.TRUE))<SUB>402</SUB>> ]
+"962" [label = <(&lt;operator&gt;.fieldAccess,Exchange.EXCEPTION_HANDLED_PROPERTY)<SUB>402</SUB>> ]
+"963" [label = <(IDENTIFIER,Exchange,setProperty(Exchange.EXCEPTION_HANDLED_PROPERTY, Boolean.TRUE))<SUB>402</SUB>> ]
+"964" [label = <(FIELD_IDENTIFIER,EXCEPTION_HANDLED_PROPERTY,EXCEPTION_HANDLED_PROPERTY)<SUB>402</SUB>> ]
+"965" [label = <(&lt;operator&gt;.fieldAccess,Boolean.TRUE)<SUB>402</SUB>> ]
+"966" [label = <(IDENTIFIER,Boolean,setProperty(Exchange.EXCEPTION_HANDLED_PROPERTY, Boolean.TRUE))<SUB>402</SUB>> ]
+"967" [label = <(FIELD_IDENTIFIER,TRUE,TRUE)<SUB>402</SUB>> ]
+"968" [label = <(MODIFIER,PROTECTED)> ]
+"969" [label = <(MODIFIER,STATIC)> ]
+"970" [label = <(METHOD_RETURN,void)<SUB>391</SUB>> ]
+  "908" -> "909" 
+  "908" -> "910" 
+  "908" -> "911" 
+  "908" -> "968" 
+  "908" -> "969" 
+  "908" -> "970" 
+  "911" -> "912" 
+  "912" -> "913" 
+  "912" -> "921" 
+  "912" -> "945" 
+  "913" -> "914" 
+  "913" -> "917" 
+  "914" -> "915" 
+  "914" -> "916" 
+  "917" -> "918" 
+  "918" -> "919" 
+  "918" -> "920" 
+  "921" -> "922" 
+  "921" -> "935" 
+  "922" -> "923" 
+  "922" -> "927" 
+  "923" -> "924" 
+  "924" -> "925" 
+  "924" -> "926" 
+  "927" -> "928" 
+  "928" -> "929" 
+  "928" -> "932" 
+  "929" -> "930" 
+  "929" -> "931" 
+  "932" -> "933" 
+  "932" -> "934" 
+  "935" -> "936" 
+  "935" -> "937" 
+  "937" -> "938" 
+  "937" -> "939" 
+  "937" -> "942" 
+  "939" -> "940" 
+  "939" -> "941" 
+  "942" -> "943" 
+  "942" -> "944" 
+  "945" -> "946" 
+  "946" -> "947" 
+  "946" -> "960" 
+  "947" -> "948" 
+  "947" -> "952" 
+  "948" -> "949" 
+  "949" -> "950" 
+  "949" -> "951" 
+  "952" -> "953" 
+  "953" -> "954" 
+  "953" -> "957" 
+  "954" -> "955" 
+  "954" -> "956" 
+  "957" -> "958" 
+  "957" -> "959" 
+  "960" -> "961" 
+  "960" -> "962" 
+  "960" -> "965" 
+  "962" -> "963" 
+  "962" -> "964" 
+  "965" -> "966" 
+  "965" -> "967" 
+}

@@ -1,0 +1,251 @@
+digraph "startRemoteCpProtocol" {  
+"193" [label = <(METHOD,startRemoteCpProtocol)<SUB>125</SUB>> ]
+"22" [label = <(PARAM,this)<SUB>125</SUB>> ]
+"194" [label = <(PARAM,InputStream in)<SUB>125</SUB>> ]
+"195" [label = <(PARAM,OutputStream out)<SUB>126</SUB>> ]
+"196" [label = <(PARAM,File localFile)<SUB>127</SUB>> ]
+"197" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>127</SUB>> ]
+"198" [label = <(LOCAL,File startFile: java.io.File)> ]
+"199" [label = <(&lt;operator&gt;.assignment,File startFile = localFile)<SUB>128</SUB>> ]
+"200" [label = <(IDENTIFIER,startFile,File startFile = localFile)<SUB>128</SUB>> ]
+"201" [label = <(IDENTIFIER,localFile,File startFile = localFile)<SUB>128</SUB>> ]
+"202" [label = <(CONTROL_STRUCTURE,while (true),while (true))<SUB>129</SUB>> ]
+"203" [label = <(LITERAL,true,while (true))<SUB>129</SUB>> ]
+"204" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>129</SUB>> ]
+"20" [label = <(LOCAL,ByteArrayOutputStream stream: java.io.ByteArrayOutputStream)> ]
+"205" [label = <(&lt;operator&gt;.assignment,ByteArrayOutputStream stream = new ByteArrayOutputStream())<SUB>133</SUB>> ]
+"206" [label = <(IDENTIFIER,stream,ByteArrayOutputStream stream = new ByteArrayOutputStream())<SUB>133</SUB>> ]
+"207" [label = <(&lt;operator&gt;.alloc,new ByteArrayOutputStream())<SUB>133</SUB>> ]
+"208" [label = <(&lt;init&gt;,new ByteArrayOutputStream())<SUB>133</SUB>> ]
+"19" [label = <(IDENTIFIER,stream,new ByteArrayOutputStream())<SUB>133</SUB>> ]
+"209" [label = <(CONTROL_STRUCTURE,while (true),while (true))<SUB>134</SUB>> ]
+"210" [label = <(LITERAL,true,while (true))<SUB>134</SUB>> ]
+"211" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>134</SUB>> ]
+"212" [label = <(LOCAL,int read: int)> ]
+"213" [label = <(&lt;operator&gt;.assignment,int read = in.read())<SUB>135</SUB>> ]
+"214" [label = <(IDENTIFIER,read,int read = in.read())<SUB>135</SUB>> ]
+"215" [label = <(read,in.read())<SUB>135</SUB>> ]
+"216" [label = <(IDENTIFIER,in,in.read())<SUB>135</SUB>> ]
+"217" [label = <(CONTROL_STRUCTURE,if (read &lt; 0),if (read &lt; 0))<SUB>136</SUB>> ]
+"218" [label = <(&lt;operator&gt;.lessThan,read &lt; 0)<SUB>136</SUB>> ]
+"219" [label = <(IDENTIFIER,read,read &lt; 0)<SUB>136</SUB>> ]
+"220" [label = <(LITERAL,0,read &lt; 0)<SUB>136</SUB>> ]
+"221" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>136</SUB>> ]
+"222" [label = <(RETURN,return;,return;)<SUB>137</SUB>> ]
+"223" [label = <(CONTROL_STRUCTURE,if ((byte) read == LINE_FEED),if ((byte) read == LINE_FEED))<SUB>139</SUB>> ]
+"224" [label = <(&lt;operator&gt;.equals,(byte) read == LINE_FEED)<SUB>139</SUB>> ]
+"225" [label = <(&lt;operator&gt;.cast,(byte) read)<SUB>139</SUB>> ]
+"226" [label = <(TYPE_REF,byte,byte)<SUB>139</SUB>> ]
+"227" [label = <(IDENTIFIER,read,(byte) read)<SUB>139</SUB>> ]
+"228" [label = <(&lt;operator&gt;.fieldAccess,ScpFromMessage.LINE_FEED)<SUB>139</SUB>> ]
+"229" [label = <(IDENTIFIER,ScpFromMessage,(byte) read == LINE_FEED)<SUB>139</SUB>> ]
+"230" [label = <(FIELD_IDENTIFIER,LINE_FEED,LINE_FEED)<SUB>139</SUB>> ]
+"231" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>139</SUB>> ]
+"232" [label = <(CONTROL_STRUCTURE,break;,break;)<SUB>140</SUB>> ]
+"233" [label = <(write,stream.write(read))<SUB>142</SUB>> ]
+"234" [label = <(IDENTIFIER,stream,stream.write(read))<SUB>142</SUB>> ]
+"235" [label = <(IDENTIFIER,read,stream.write(read))<SUB>142</SUB>> ]
+"236" [label = <(LOCAL,String serverResponse: java.lang.String)> ]
+"237" [label = <(&lt;operator&gt;.assignment,String serverResponse = stream.toString(&quot;UTF-8&quot;))<SUB>144</SUB>> ]
+"238" [label = <(IDENTIFIER,serverResponse,String serverResponse = stream.toString(&quot;UTF-8&quot;))<SUB>144</SUB>> ]
+"239" [label = <(toString,stream.toString(&quot;UTF-8&quot;))<SUB>144</SUB>> ]
+"240" [label = <(IDENTIFIER,stream,stream.toString(&quot;UTF-8&quot;))<SUB>144</SUB>> ]
+"241" [label = <(LITERAL,&quot;UTF-8&quot;,stream.toString(&quot;UTF-8&quot;))<SUB>144</SUB>> ]
+"242" [label = <(CONTROL_STRUCTURE,if (serverResponse.charAt(0) == 'C'),if (serverResponse.charAt(0) == 'C'))<SUB>145</SUB>> ]
+"243" [label = <(&lt;operator&gt;.equals,serverResponse.charAt(0) == 'C')<SUB>145</SUB>> ]
+"244" [label = <(charAt,serverResponse.charAt(0))<SUB>145</SUB>> ]
+"245" [label = <(IDENTIFIER,serverResponse,serverResponse.charAt(0))<SUB>145</SUB>> ]
+"246" [label = <(LITERAL,0,serverResponse.charAt(0))<SUB>145</SUB>> ]
+"247" [label = <(LITERAL,'C',serverResponse.charAt(0) == 'C')<SUB>145</SUB>> ]
+"248" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>145</SUB>> ]
+"249" [label = <(parseAndFetchFile,this.parseAndFetchFile(serverResponse, startFile, out, in))<SUB>146</SUB>> ]
+"21" [label = <(IDENTIFIER,this,this.parseAndFetchFile(serverResponse, startFile, out, in))<SUB>146</SUB>> ]
+"250" [label = <(IDENTIFIER,serverResponse,this.parseAndFetchFile(serverResponse, startFile, out, in))<SUB>146</SUB>> ]
+"251" [label = <(IDENTIFIER,startFile,this.parseAndFetchFile(serverResponse, startFile, out, in))<SUB>146</SUB>> ]
+"252" [label = <(IDENTIFIER,out,this.parseAndFetchFile(serverResponse, startFile, out, in))<SUB>146</SUB>> ]
+"253" [label = <(IDENTIFIER,in,this.parseAndFetchFile(serverResponse, startFile, out, in))<SUB>146</SUB>> ]
+"254" [label = <(CONTROL_STRUCTURE,else,else)<SUB>147</SUB>> ]
+"255" [label = <(CONTROL_STRUCTURE,if (serverResponse.charAt(0) == 'D'),if (serverResponse.charAt(0) == 'D'))<SUB>147</SUB>> ]
+"256" [label = <(&lt;operator&gt;.equals,serverResponse.charAt(0) == 'D')<SUB>147</SUB>> ]
+"257" [label = <(charAt,serverResponse.charAt(0))<SUB>147</SUB>> ]
+"258" [label = <(IDENTIFIER,serverResponse,serverResponse.charAt(0))<SUB>147</SUB>> ]
+"259" [label = <(LITERAL,0,serverResponse.charAt(0))<SUB>147</SUB>> ]
+"260" [label = <(LITERAL,'D',serverResponse.charAt(0) == 'D')<SUB>147</SUB>> ]
+"261" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>147</SUB>> ]
+"262" [label = <(&lt;operator&gt;.assignment,startFile = this.parseAndCreateDirectory(serverResponse, startFile))<SUB>148</SUB>> ]
+"263" [label = <(IDENTIFIER,startFile,startFile = this.parseAndCreateDirectory(serverResponse, startFile))<SUB>148</SUB>> ]
+"264" [label = <(parseAndCreateDirectory,this.parseAndCreateDirectory(serverResponse, startFile))<SUB>148</SUB>> ]
+"23" [label = <(IDENTIFIER,this,this.parseAndCreateDirectory(serverResponse, startFile))<SUB>148</SUB>> ]
+"265" [label = <(IDENTIFIER,serverResponse,this.parseAndCreateDirectory(serverResponse, startFile))<SUB>148</SUB>> ]
+"266" [label = <(IDENTIFIER,startFile,this.parseAndCreateDirectory(serverResponse, startFile))<SUB>149</SUB>> ]
+"267" [label = <(sendAck,sendAck(out))<SUB>150</SUB>> ]
+"24" [label = <(IDENTIFIER,this,sendAck(out))<SUB>150</SUB>> ]
+"268" [label = <(IDENTIFIER,out,sendAck(out))<SUB>150</SUB>> ]
+"269" [label = <(CONTROL_STRUCTURE,else,else)<SUB>151</SUB>> ]
+"270" [label = <(CONTROL_STRUCTURE,if (serverResponse.charAt(0) == 'E'),if (serverResponse.charAt(0) == 'E'))<SUB>151</SUB>> ]
+"271" [label = <(&lt;operator&gt;.equals,serverResponse.charAt(0) == 'E')<SUB>151</SUB>> ]
+"272" [label = <(charAt,serverResponse.charAt(0))<SUB>151</SUB>> ]
+"273" [label = <(IDENTIFIER,serverResponse,serverResponse.charAt(0))<SUB>151</SUB>> ]
+"274" [label = <(LITERAL,0,serverResponse.charAt(0))<SUB>151</SUB>> ]
+"275" [label = <(LITERAL,'E',serverResponse.charAt(0) == 'E')<SUB>151</SUB>> ]
+"276" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>151</SUB>> ]
+"277" [label = <(&lt;operator&gt;.assignment,startFile = startFile.getParentFile())<SUB>152</SUB>> ]
+"278" [label = <(IDENTIFIER,startFile,startFile = startFile.getParentFile())<SUB>152</SUB>> ]
+"279" [label = <(getParentFile,startFile.getParentFile())<SUB>152</SUB>> ]
+"280" [label = <(IDENTIFIER,startFile,startFile.getParentFile())<SUB>152</SUB>> ]
+"281" [label = <(sendAck,sendAck(out))<SUB>153</SUB>> ]
+"25" [label = <(IDENTIFIER,this,sendAck(out))<SUB>153</SUB>> ]
+"282" [label = <(IDENTIFIER,out,sendAck(out))<SUB>153</SUB>> ]
+"283" [label = <(CONTROL_STRUCTURE,else,else)<SUB>154</SUB>> ]
+"284" [label = <(CONTROL_STRUCTURE,if (serverResponse.charAt(0) == '\01' || serverResponse.charAt(0) == '\02'),if (serverResponse.charAt(0) == '\01' || serverResponse.charAt(0) == '\02'))<SUB>154</SUB>> ]
+"285" [label = <(&lt;operator&gt;.logicalOr,serverResponse.charAt(0) == '\01' || serverResponse.charAt(0) == '\02')<SUB>154</SUB>> ]
+"286" [label = <(&lt;operator&gt;.equals,serverResponse.charAt(0) == '\01')<SUB>154</SUB>> ]
+"287" [label = <(charAt,serverResponse.charAt(0))<SUB>154</SUB>> ]
+"288" [label = <(IDENTIFIER,serverResponse,serverResponse.charAt(0))<SUB>154</SUB>> ]
+"289" [label = <(LITERAL,0,serverResponse.charAt(0))<SUB>154</SUB>> ]
+"290" [label = <(LITERAL,'\01',serverResponse.charAt(0) == '\01')<SUB>154</SUB>> ]
+"291" [label = <(&lt;operator&gt;.equals,serverResponse.charAt(0) == '\02')<SUB>155</SUB>> ]
+"292" [label = <(charAt,serverResponse.charAt(0))<SUB>155</SUB>> ]
+"293" [label = <(IDENTIFIER,serverResponse,serverResponse.charAt(0))<SUB>155</SUB>> ]
+"294" [label = <(LITERAL,0,serverResponse.charAt(0))<SUB>155</SUB>> ]
+"295" [label = <(LITERAL,'\02',serverResponse.charAt(0) == '\02')<SUB>155</SUB>> ]
+"296" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>155</SUB>> ]
+"297" [label = <(&lt;operator&gt;.throw,throw new IOException(serverResponse.substring(1));)<SUB>157</SUB>> ]
+"298" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>157</SUB>> ]
+"299" [label = <(&lt;operator&gt;.assignment,&lt;empty&gt;)> ]
+"300" [label = <(IDENTIFIER,$obj1,&lt;empty&gt;)> ]
+"301" [label = <(&lt;operator&gt;.alloc,new IOException(serverResponse.substring(1)))<SUB>157</SUB>> ]
+"302" [label = <(&lt;init&gt;,new IOException(serverResponse.substring(1)))<SUB>157</SUB>> ]
+"303" [label = <(IDENTIFIER,$obj1,new IOException(serverResponse.substring(1)))> ]
+"304" [label = <(substring,serverResponse.substring(1))<SUB>157</SUB>> ]
+"305" [label = <(IDENTIFIER,serverResponse,serverResponse.substring(1))<SUB>157</SUB>> ]
+"306" [label = <(LITERAL,1,serverResponse.substring(1))<SUB>157</SUB>> ]
+"307" [label = <(IDENTIFIER,$obj1,&lt;empty&gt;)> ]
+"308" [label = <(MODIFIER,PRIVATE)> ]
+"309" [label = <(MODIFIER,VIRTUAL)> ]
+"310" [label = <(METHOD_RETURN,void)<SUB>125</SUB>> ]
+  "193" -> "22" 
+  "193" -> "194" 
+  "193" -> "195" 
+  "193" -> "196" 
+  "193" -> "197" 
+  "193" -> "308" 
+  "193" -> "309" 
+  "193" -> "310" 
+  "197" -> "198" 
+  "197" -> "199" 
+  "197" -> "202" 
+  "199" -> "200" 
+  "199" -> "201" 
+  "202" -> "203" 
+  "202" -> "204" 
+  "204" -> "20" 
+  "204" -> "205" 
+  "204" -> "208" 
+  "204" -> "209" 
+  "204" -> "236" 
+  "204" -> "237" 
+  "204" -> "242" 
+  "205" -> "206" 
+  "205" -> "207" 
+  "208" -> "19" 
+  "209" -> "210" 
+  "209" -> "211" 
+  "211" -> "212" 
+  "211" -> "213" 
+  "211" -> "217" 
+  "211" -> "223" 
+  "211" -> "233" 
+  "213" -> "214" 
+  "213" -> "215" 
+  "215" -> "216" 
+  "217" -> "218" 
+  "217" -> "221" 
+  "218" -> "219" 
+  "218" -> "220" 
+  "221" -> "222" 
+  "223" -> "224" 
+  "223" -> "231" 
+  "224" -> "225" 
+  "224" -> "228" 
+  "225" -> "226" 
+  "225" -> "227" 
+  "228" -> "229" 
+  "228" -> "230" 
+  "231" -> "232" 
+  "233" -> "234" 
+  "233" -> "235" 
+  "237" -> "238" 
+  "237" -> "239" 
+  "239" -> "240" 
+  "239" -> "241" 
+  "242" -> "243" 
+  "242" -> "248" 
+  "242" -> "254" 
+  "243" -> "244" 
+  "243" -> "247" 
+  "244" -> "245" 
+  "244" -> "246" 
+  "248" -> "249" 
+  "249" -> "21" 
+  "249" -> "250" 
+  "249" -> "251" 
+  "249" -> "252" 
+  "249" -> "253" 
+  "254" -> "255" 
+  "255" -> "256" 
+  "255" -> "261" 
+  "255" -> "269" 
+  "256" -> "257" 
+  "256" -> "260" 
+  "257" -> "258" 
+  "257" -> "259" 
+  "261" -> "262" 
+  "261" -> "267" 
+  "262" -> "263" 
+  "262" -> "264" 
+  "264" -> "23" 
+  "264" -> "265" 
+  "264" -> "266" 
+  "267" -> "24" 
+  "267" -> "268" 
+  "269" -> "270" 
+  "270" -> "271" 
+  "270" -> "276" 
+  "270" -> "283" 
+  "271" -> "272" 
+  "271" -> "275" 
+  "272" -> "273" 
+  "272" -> "274" 
+  "276" -> "277" 
+  "276" -> "281" 
+  "277" -> "278" 
+  "277" -> "279" 
+  "279" -> "280" 
+  "281" -> "25" 
+  "281" -> "282" 
+  "283" -> "284" 
+  "284" -> "285" 
+  "284" -> "296" 
+  "285" -> "286" 
+  "285" -> "291" 
+  "286" -> "287" 
+  "286" -> "290" 
+  "287" -> "288" 
+  "287" -> "289" 
+  "291" -> "292" 
+  "291" -> "295" 
+  "292" -> "293" 
+  "292" -> "294" 
+  "296" -> "297" 
+  "297" -> "298" 
+  "298" -> "299" 
+  "298" -> "302" 
+  "298" -> "307" 
+  "299" -> "300" 
+  "299" -> "301" 
+  "302" -> "303" 
+  "302" -> "304" 
+  "304" -> "305" 
+  "304" -> "306" 
+}

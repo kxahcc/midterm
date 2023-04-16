@@ -1,0 +1,117 @@
+digraph "replace" {  
+"92" [label = <(METHOD,replace)<SUB>107</SUB>> ]
+"93" [label = <(PARAM,String data)<SUB>107</SUB>> ]
+"94" [label = <(PARAM,String from)<SUB>107</SUB>> ]
+"95" [label = <(PARAM,String to)<SUB>107</SUB>> ]
+"96" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>107</SUB>> ]
+"6" [label = <(LOCAL,StringBuffer buf: java.lang.StringBuffer)> ]
+"97" [label = <(&lt;operator&gt;.assignment,StringBuffer buf = new StringBuffer(data.length()))<SUB>108</SUB>> ]
+"98" [label = <(IDENTIFIER,buf,StringBuffer buf = new StringBuffer(data.length()))<SUB>108</SUB>> ]
+"99" [label = <(&lt;operator&gt;.alloc,new StringBuffer(data.length()))<SUB>108</SUB>> ]
+"100" [label = <(&lt;init&gt;,new StringBuffer(data.length()))<SUB>108</SUB>> ]
+"5" [label = <(IDENTIFIER,buf,new StringBuffer(data.length()))<SUB>108</SUB>> ]
+"101" [label = <(length,data.length())<SUB>108</SUB>> ]
+"102" [label = <(IDENTIFIER,data,data.length())<SUB>108</SUB>> ]
+"103" [label = <(LOCAL,int pos: int)> ]
+"104" [label = <(&lt;operator&gt;.assignment,int pos = -1)<SUB>109</SUB>> ]
+"105" [label = <(IDENTIFIER,pos,int pos = -1)<SUB>109</SUB>> ]
+"106" [label = <(&lt;operator&gt;.minus,-1)<SUB>109</SUB>> ]
+"107" [label = <(LITERAL,1,-1)<SUB>109</SUB>> ]
+"108" [label = <(LOCAL,int i: int)> ]
+"109" [label = <(&lt;operator&gt;.assignment,int i = 0)<SUB>110</SUB>> ]
+"110" [label = <(IDENTIFIER,i,int i = 0)<SUB>110</SUB>> ]
+"111" [label = <(LITERAL,0,int i = 0)<SUB>110</SUB>> ]
+"112" [label = <(CONTROL_STRUCTURE,while ((pos = data.indexOf(from, i)) != -1),while ((pos = data.indexOf(from, i)) != -1))<SUB>111</SUB>> ]
+"113" [label = <(&lt;operator&gt;.notEquals,(pos = data.indexOf(from, i)) != -1)<SUB>111</SUB>> ]
+"114" [label = <(&lt;operator&gt;.assignment,pos = data.indexOf(from, i))<SUB>111</SUB>> ]
+"115" [label = <(IDENTIFIER,pos,pos = data.indexOf(from, i))<SUB>111</SUB>> ]
+"116" [label = <(indexOf,data.indexOf(from, i))<SUB>111</SUB>> ]
+"117" [label = <(IDENTIFIER,data,data.indexOf(from, i))<SUB>111</SUB>> ]
+"118" [label = <(IDENTIFIER,from,data.indexOf(from, i))<SUB>111</SUB>> ]
+"119" [label = <(IDENTIFIER,i,data.indexOf(from, i))<SUB>111</SUB>> ]
+"120" [label = <(&lt;operator&gt;.minus,-1)<SUB>111</SUB>> ]
+"121" [label = <(LITERAL,1,-1)<SUB>111</SUB>> ]
+"122" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>111</SUB>> ]
+"123" [label = <(append,buf.append(data.substring(i, pos)).append(to))<SUB>112</SUB>> ]
+"124" [label = <(append,buf.append(data.substring(i, pos)))<SUB>112</SUB>> ]
+"125" [label = <(IDENTIFIER,buf,buf.append(data.substring(i, pos)))<SUB>112</SUB>> ]
+"126" [label = <(substring,data.substring(i, pos))<SUB>112</SUB>> ]
+"127" [label = <(IDENTIFIER,data,data.substring(i, pos))<SUB>112</SUB>> ]
+"128" [label = <(IDENTIFIER,i,data.substring(i, pos))<SUB>112</SUB>> ]
+"129" [label = <(IDENTIFIER,pos,data.substring(i, pos))<SUB>112</SUB>> ]
+"130" [label = <(IDENTIFIER,to,buf.append(data.substring(i, pos)).append(to))<SUB>112</SUB>> ]
+"131" [label = <(&lt;operator&gt;.assignment,i = pos + from.length())<SUB>113</SUB>> ]
+"132" [label = <(IDENTIFIER,i,i = pos + from.length())<SUB>113</SUB>> ]
+"133" [label = <(&lt;operator&gt;.addition,pos + from.length())<SUB>113</SUB>> ]
+"134" [label = <(IDENTIFIER,pos,pos + from.length())<SUB>113</SUB>> ]
+"135" [label = <(length,from.length())<SUB>113</SUB>> ]
+"136" [label = <(IDENTIFIER,from,from.length())<SUB>113</SUB>> ]
+"137" [label = <(append,buf.append(data.substring(i)))<SUB>115</SUB>> ]
+"138" [label = <(IDENTIFIER,buf,buf.append(data.substring(i)))<SUB>115</SUB>> ]
+"139" [label = <(substring,data.substring(i))<SUB>115</SUB>> ]
+"140" [label = <(IDENTIFIER,data,data.substring(i))<SUB>115</SUB>> ]
+"141" [label = <(IDENTIFIER,i,data.substring(i))<SUB>115</SUB>> ]
+"142" [label = <(RETURN,return buf.toString();,return buf.toString();)<SUB>116</SUB>> ]
+"143" [label = <(toString,buf.toString())<SUB>116</SUB>> ]
+"144" [label = <(IDENTIFIER,buf,buf.toString())<SUB>116</SUB>> ]
+"145" [label = <(MODIFIER,PUBLIC)> ]
+"146" [label = <(MODIFIER,STATIC)> ]
+"147" [label = <(METHOD_RETURN,java.lang.String)<SUB>107</SUB>> ]
+  "92" -> "93" 
+  "92" -> "94" 
+  "92" -> "95" 
+  "92" -> "96" 
+  "92" -> "145" 
+  "92" -> "146" 
+  "92" -> "147" 
+  "96" -> "6" 
+  "96" -> "97" 
+  "96" -> "100" 
+  "96" -> "103" 
+  "96" -> "104" 
+  "96" -> "108" 
+  "96" -> "109" 
+  "96" -> "112" 
+  "96" -> "137" 
+  "96" -> "142" 
+  "97" -> "98" 
+  "97" -> "99" 
+  "100" -> "5" 
+  "100" -> "101" 
+  "101" -> "102" 
+  "104" -> "105" 
+  "104" -> "106" 
+  "106" -> "107" 
+  "109" -> "110" 
+  "109" -> "111" 
+  "112" -> "113" 
+  "112" -> "122" 
+  "113" -> "114" 
+  "113" -> "120" 
+  "114" -> "115" 
+  "114" -> "116" 
+  "116" -> "117" 
+  "116" -> "118" 
+  "116" -> "119" 
+  "120" -> "121" 
+  "122" -> "123" 
+  "122" -> "131" 
+  "123" -> "124" 
+  "123" -> "130" 
+  "124" -> "125" 
+  "124" -> "126" 
+  "126" -> "127" 
+  "126" -> "128" 
+  "126" -> "129" 
+  "131" -> "132" 
+  "131" -> "133" 
+  "133" -> "134" 
+  "133" -> "135" 
+  "135" -> "136" 
+  "137" -> "138" 
+  "137" -> "139" 
+  "139" -> "140" 
+  "139" -> "141" 
+  "142" -> "143" 
+  "143" -> "144" 
+}

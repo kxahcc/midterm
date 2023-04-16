@@ -1,0 +1,129 @@
+digraph "attach" {  
+"13" [label = <(METHOD,attach)<SUB>34</SUB>> ]
+"14" [label = <(PARAM,this)<SUB>34</SUB>> ]
+"15" [label = <(PARAM,File file)<SUB>34</SUB>> ]
+"16" [label = <(PARAM,PrintStream out)<SUB>34</SUB>> ]
+"17" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>35</SUB>> ]
+"18" [label = <(CONTROL_STRUCTURE,if (!file.exists() || !file.canRead()),if (!file.exists() || !file.canRead()))<SUB>36</SUB>> ]
+"19" [label = <(&lt;operator&gt;.logicalOr,!file.exists() || !file.canRead())<SUB>36</SUB>> ]
+"20" [label = <(&lt;operator&gt;.logicalNot,!file.exists())<SUB>36</SUB>> ]
+"21" [label = <(exists,file.exists())<SUB>36</SUB>> ]
+"22" [label = <(IDENTIFIER,file,file.exists())<SUB>36</SUB>> ]
+"23" [label = <(&lt;operator&gt;.logicalNot,!file.canRead())<SUB>36</SUB>> ]
+"24" [label = <(canRead,file.canRead())<SUB>36</SUB>> ]
+"25" [label = <(IDENTIFIER,file,file.canRead())<SUB>36</SUB>> ]
+"26" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>36</SUB>> ]
+"27" [label = <(&lt;operator&gt;.throw,throw new BuildException(&quot;File \&quot;&quot; + file.getName() + &quot;\&quot; does not exist or is not &quot; + &quot;readable.&quot;);)<SUB>37</SUB>> ]
+"28" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>37</SUB>> ]
+"29" [label = <(&lt;operator&gt;.assignment,&lt;empty&gt;)> ]
+"30" [label = <(IDENTIFIER,$obj0,&lt;empty&gt;)> ]
+"31" [label = <(&lt;operator&gt;.alloc,new BuildException(&quot;File \&quot;&quot; + file.getName() + &quot;\&quot; does not exist or is not &quot; + &quot;readable.&quot;))<SUB>37</SUB>> ]
+"32" [label = <(&lt;init&gt;,new BuildException(&quot;File \&quot;&quot; + file.getName() + &quot;\&quot; does not exist or is not &quot; + &quot;readable.&quot;))<SUB>37</SUB>> ]
+"33" [label = <(IDENTIFIER,$obj0,new BuildException(&quot;File \&quot;&quot; + file.getName() + &quot;\&quot; does not exist or is not &quot; + &quot;readable.&quot;))> ]
+"34" [label = <(&lt;operator&gt;.addition,&quot;File \&quot;&quot; + file.getName() + &quot;\&quot; does not exist or is not &quot; + &quot;readable.&quot;)<SUB>37</SUB>> ]
+"35" [label = <(&lt;operator&gt;.addition,&quot;File \&quot;&quot; + file.getName() + &quot;\&quot; does not exist or is not &quot;)<SUB>37</SUB>> ]
+"36" [label = <(&lt;operator&gt;.addition,&quot;File \&quot;&quot; + file.getName())<SUB>37</SUB>> ]
+"37" [label = <(LITERAL,&quot;File \&quot;&quot;,&quot;File \&quot;&quot; + file.getName())<SUB>37</SUB>> ]
+"38" [label = <(getName,file.getName())<SUB>37</SUB>> ]
+"39" [label = <(IDENTIFIER,file,file.getName())<SUB>37</SUB>> ]
+"40" [label = <(LITERAL,&quot;\&quot; does not exist or is not &quot;,&quot;File \&quot;&quot; + file.getName() + &quot;\&quot; does not exist or is not &quot;)<SUB>38</SUB>> ]
+"41" [label = <(LITERAL,&quot;readable.&quot;,&quot;File \&quot;&quot; + file.getName() + &quot;\&quot; does not exist or is not &quot; + &quot;readable.&quot;)<SUB>39</SUB>> ]
+"42" [label = <(IDENTIFIER,$obj0,&lt;empty&gt;)> ]
+"4" [label = <(LOCAL,FileInputStream finstr: java.io.FileInputStream)> ]
+"43" [label = <(&lt;operator&gt;.assignment,FileInputStream finstr = new FileInputStream(file))<SUB>42</SUB>> ]
+"44" [label = <(IDENTIFIER,finstr,FileInputStream finstr = new FileInputStream(file))<SUB>42</SUB>> ]
+"45" [label = <(&lt;operator&gt;.alloc,new FileInputStream(file))<SUB>42</SUB>> ]
+"46" [label = <(&lt;init&gt;,new FileInputStream(file))<SUB>42</SUB>> ]
+"3" [label = <(IDENTIFIER,finstr,new FileInputStream(file))<SUB>42</SUB>> ]
+"47" [label = <(IDENTIFIER,file,new FileInputStream(file))<SUB>42</SUB>> ]
+"48" [label = <(CONTROL_STRUCTURE,try,try)<SUB>44</SUB>> ]
+"49" [label = <(BLOCK,try,try)<SUB>44</SUB>> ]
+"6" [label = <(LOCAL,BufferedInputStream in: java.io.BufferedInputStream)> ]
+"50" [label = <(&lt;operator&gt;.assignment,BufferedInputStream in = new BufferedInputStream(finstr))<SUB>45</SUB>> ]
+"51" [label = <(IDENTIFIER,in,BufferedInputStream in = new BufferedInputStream(finstr))<SUB>45</SUB>> ]
+"52" [label = <(&lt;operator&gt;.alloc,new BufferedInputStream(finstr))<SUB>45</SUB>> ]
+"53" [label = <(&lt;init&gt;,new BufferedInputStream(finstr))<SUB>45</SUB>> ]
+"5" [label = <(IDENTIFIER,in,new BufferedInputStream(finstr))<SUB>45</SUB>> ]
+"54" [label = <(IDENTIFIER,finstr,new BufferedInputStream(finstr))<SUB>45</SUB>> ]
+"8" [label = <(LOCAL,UUEncoder encoder: org.apache.tools.ant.util.UUEncoder)> ]
+"55" [label = <(&lt;operator&gt;.assignment,UUEncoder encoder = new UUEncoder(file.getName()))<SUB>46</SUB>> ]
+"56" [label = <(IDENTIFIER,encoder,UUEncoder encoder = new UUEncoder(file.getName()))<SUB>46</SUB>> ]
+"57" [label = <(&lt;operator&gt;.alloc,new UUEncoder(file.getName()))<SUB>46</SUB>> ]
+"58" [label = <(&lt;init&gt;,new UUEncoder(file.getName()))<SUB>46</SUB>> ]
+"7" [label = <(IDENTIFIER,encoder,new UUEncoder(file.getName()))<SUB>46</SUB>> ]
+"59" [label = <(getName,file.getName())<SUB>46</SUB>> ]
+"60" [label = <(IDENTIFIER,file,file.getName())<SUB>46</SUB>> ]
+"61" [label = <(encode,encode(in, out))<SUB>48</SUB>> ]
+"62" [label = <(IDENTIFIER,encoder,encode(in, out))<SUB>48</SUB>> ]
+"63" [label = <(IDENTIFIER,in,encode(in, out))<SUB>48</SUB>> ]
+"64" [label = <(IDENTIFIER,out,encode(in, out))<SUB>48</SUB>> ]
+"65" [label = <(BLOCK,finally,finally)<SUB>50</SUB>> ]
+"66" [label = <(close,finstr.close())<SUB>51</SUB>> ]
+"67" [label = <(IDENTIFIER,finstr,finstr.close())<SUB>51</SUB>> ]
+"68" [label = <(MODIFIER,PROTECTED)> ]
+"69" [label = <(MODIFIER,VIRTUAL)> ]
+"70" [label = <(METHOD_RETURN,void)<SUB>34</SUB>> ]
+  "13" -> "14" 
+  "13" -> "15" 
+  "13" -> "16" 
+  "13" -> "17" 
+  "13" -> "68" 
+  "13" -> "69" 
+  "13" -> "70" 
+  "17" -> "18" 
+  "17" -> "4" 
+  "17" -> "43" 
+  "17" -> "46" 
+  "17" -> "48" 
+  "18" -> "19" 
+  "18" -> "26" 
+  "19" -> "20" 
+  "19" -> "23" 
+  "20" -> "21" 
+  "21" -> "22" 
+  "23" -> "24" 
+  "24" -> "25" 
+  "26" -> "27" 
+  "27" -> "28" 
+  "28" -> "29" 
+  "28" -> "32" 
+  "28" -> "42" 
+  "29" -> "30" 
+  "29" -> "31" 
+  "32" -> "33" 
+  "32" -> "34" 
+  "34" -> "35" 
+  "34" -> "41" 
+  "35" -> "36" 
+  "35" -> "40" 
+  "36" -> "37" 
+  "36" -> "38" 
+  "38" -> "39" 
+  "43" -> "44" 
+  "43" -> "45" 
+  "46" -> "3" 
+  "46" -> "47" 
+  "48" -> "49" 
+  "48" -> "65" 
+  "49" -> "6" 
+  "49" -> "50" 
+  "49" -> "53" 
+  "49" -> "8" 
+  "49" -> "55" 
+  "49" -> "58" 
+  "49" -> "61" 
+  "50" -> "51" 
+  "50" -> "52" 
+  "53" -> "5" 
+  "53" -> "54" 
+  "55" -> "56" 
+  "55" -> "57" 
+  "58" -> "7" 
+  "58" -> "59" 
+  "59" -> "60" 
+  "61" -> "62" 
+  "61" -> "63" 
+  "61" -> "64" 
+  "65" -> "66" 
+  "66" -> "67" 
+}

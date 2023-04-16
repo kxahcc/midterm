@@ -1,0 +1,57 @@
+digraph "normalizeSource" {  
+"51" [label = <(METHOD,normalizeSource)<SUB>106</SUB>> ]
+"52" [label = <(PARAM,File source)<SUB>106</SUB>> ]
+"53" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>106</SUB>> ]
+"54" [label = <(CONTROL_STRUCTURE,if (source != null),if (source != null))<SUB>107</SUB>> ]
+"55" [label = <(&lt;operator&gt;.notEquals,source != null)<SUB>107</SUB>> ]
+"56" [label = <(IDENTIFIER,source,source != null)<SUB>107</SUB>> ]
+"57" [label = <(LITERAL,null,source != null)<SUB>107</SUB>> ]
+"58" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>107</SUB>> ]
+"59" [label = <(LOCAL,FileUtils fileUtils: ANY)> ]
+"60" [label = <(&lt;operator&gt;.assignment,ANY fileUtils = newFileUtils())<SUB>108</SUB>> ]
+"61" [label = <(IDENTIFIER,fileUtils,ANY fileUtils = newFileUtils())<SUB>108</SUB>> ]
+"62" [label = <(newFileUtils,newFileUtils())<SUB>108</SUB>> ]
+"63" [label = <(IDENTIFIER,FileUtils,newFileUtils())<SUB>108</SUB>> ]
+"64" [label = <(CONTROL_STRUCTURE,try,try)<SUB>109</SUB>> ]
+"65" [label = <(BLOCK,try,try)<SUB>109</SUB>> ]
+"66" [label = <(&lt;operator&gt;.assignment,source = normalize(source.getAbsolutePath()))<SUB>110</SUB>> ]
+"67" [label = <(IDENTIFIER,source,source = normalize(source.getAbsolutePath()))<SUB>110</SUB>> ]
+"68" [label = <(normalize,normalize(source.getAbsolutePath()))<SUB>110</SUB>> ]
+"69" [label = <(IDENTIFIER,fileUtils,normalize(source.getAbsolutePath()))<SUB>110</SUB>> ]
+"70" [label = <(getAbsolutePath,source.getAbsolutePath())<SUB>110</SUB>> ]
+"71" [label = <(IDENTIFIER,source,source.getAbsolutePath())<SUB>110</SUB>> ]
+"72" [label = <(BLOCK,catch,catch)> ]
+"73" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>111</SUB>> ]
+"74" [label = <(RETURN,return source;,return source;)<SUB>116</SUB>> ]
+"75" [label = <(IDENTIFIER,source,return source;)<SUB>116</SUB>> ]
+"76" [label = <(MODIFIER,PRIVATE)> ]
+"77" [label = <(MODIFIER,STATIC)> ]
+"78" [label = <(METHOD_RETURN,java.io.File)<SUB>106</SUB>> ]
+  "51" -> "52" 
+  "51" -> "53" 
+  "51" -> "76" 
+  "51" -> "77" 
+  "51" -> "78" 
+  "53" -> "54" 
+  "53" -> "74" 
+  "54" -> "55" 
+  "54" -> "58" 
+  "55" -> "56" 
+  "55" -> "57" 
+  "58" -> "59" 
+  "58" -> "60" 
+  "58" -> "64" 
+  "60" -> "61" 
+  "60" -> "62" 
+  "62" -> "63" 
+  "64" -> "65" 
+  "64" -> "72" 
+  "65" -> "66" 
+  "66" -> "67" 
+  "66" -> "68" 
+  "68" -> "69" 
+  "68" -> "70" 
+  "70" -> "71" 
+  "72" -> "73" 
+  "74" -> "75" 
+}

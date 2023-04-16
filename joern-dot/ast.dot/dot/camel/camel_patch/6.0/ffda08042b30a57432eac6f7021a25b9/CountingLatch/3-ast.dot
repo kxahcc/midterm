@@ -1,0 +1,61 @@
+digraph "tryReleaseShared" {  
+"103" [label = <(METHOD,tryReleaseShared)<SUB>44</SUB>> ]
+"10" [label = <(PARAM,this)<SUB>44</SUB>> ]
+"104" [label = <(PARAM,int delta)<SUB>44</SUB>> ]
+"105" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>44</SUB>> ]
+"106" [label = <(CONTROL_STRUCTURE,for (; None; ),for (; None; ))<SUB>46</SUB>> ]
+"107" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>46</SUB>> ]
+"108" [label = <(LOCAL,int c: int)> ]
+"109" [label = <(&lt;operator&gt;.assignment,int c = this.getState())<SUB>47</SUB>> ]
+"110" [label = <(IDENTIFIER,c,int c = this.getState())<SUB>47</SUB>> ]
+"111" [label = <(getState,this.getState())<SUB>47</SUB>> ]
+"9" [label = <(IDENTIFIER,this,this.getState())<SUB>47</SUB>> ]
+"112" [label = <(LOCAL,int nextc: int)> ]
+"113" [label = <(&lt;operator&gt;.assignment,int nextc = c + delta)<SUB>48</SUB>> ]
+"114" [label = <(IDENTIFIER,nextc,int nextc = c + delta)<SUB>48</SUB>> ]
+"115" [label = <(&lt;operator&gt;.addition,c + delta)<SUB>48</SUB>> ]
+"116" [label = <(IDENTIFIER,c,c + delta)<SUB>48</SUB>> ]
+"117" [label = <(IDENTIFIER,delta,c + delta)<SUB>48</SUB>> ]
+"118" [label = <(CONTROL_STRUCTURE,if (compareAndSetState(c, nextc)),if (compareAndSetState(c, nextc)))<SUB>49</SUB>> ]
+"119" [label = <(compareAndSetState,this.compareAndSetState(c, nextc))<SUB>49</SUB>> ]
+"11" [label = <(IDENTIFIER,this,this.compareAndSetState(c, nextc))<SUB>49</SUB>> ]
+"120" [label = <(IDENTIFIER,c,this.compareAndSetState(c, nextc))<SUB>49</SUB>> ]
+"121" [label = <(IDENTIFIER,nextc,this.compareAndSetState(c, nextc))<SUB>49</SUB>> ]
+"122" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>49</SUB>> ]
+"123" [label = <(RETURN,return nextc == 0;,return nextc == 0;)<SUB>50</SUB>> ]
+"124" [label = <(&lt;operator&gt;.equals,nextc == 0)<SUB>50</SUB>> ]
+"125" [label = <(IDENTIFIER,nextc,nextc == 0)<SUB>50</SUB>> ]
+"126" [label = <(LITERAL,0,nextc == 0)<SUB>50</SUB>> ]
+"127" [label = <(MODIFIER,PUBLIC)> ]
+"128" [label = <(MODIFIER,VIRTUAL)> ]
+"129" [label = <(METHOD_RETURN,boolean)<SUB>44</SUB>> ]
+  "103" -> "10" 
+  "103" -> "104" 
+  "103" -> "105" 
+  "103" -> "127" 
+  "103" -> "128" 
+  "103" -> "129" 
+  "105" -> "106" 
+  "106" -> "107" 
+  "107" -> "108" 
+  "107" -> "109" 
+  "107" -> "112" 
+  "107" -> "113" 
+  "107" -> "118" 
+  "109" -> "110" 
+  "109" -> "111" 
+  "111" -> "9" 
+  "113" -> "114" 
+  "113" -> "115" 
+  "115" -> "116" 
+  "115" -> "117" 
+  "118" -> "119" 
+  "118" -> "122" 
+  "119" -> "11" 
+  "119" -> "120" 
+  "119" -> "121" 
+  "122" -> "123" 
+  "123" -> "124" 
+  "124" -> "125" 
+  "124" -> "126" 
+}

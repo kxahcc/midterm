@@ -1,0 +1,105 @@
+digraph "pollEndpoint" {  
+"25" [label = <(METHOD,pollEndpoint)<SUB>45</SUB>> ]
+"26" [label = <(PARAM,Endpoint endpoint)<SUB>45</SUB>> ]
+"27" [label = <(PARAM,Processor processor)<SUB>45</SUB>> ]
+"28" [label = <(PARAM,long timeout)<SUB>45</SUB>> ]
+"29" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>45</SUB>> ]
+"30" [label = <(LOCAL,PollingConsumer consumer: org.apache.camel.PollingConsumer)> ]
+"31" [label = <(&lt;operator&gt;.assignment,PollingConsumer consumer = createPollingConsumer())<SUB>46</SUB>> ]
+"32" [label = <(IDENTIFIER,consumer,PollingConsumer consumer = createPollingConsumer())<SUB>46</SUB>> ]
+"33" [label = <(createPollingConsumer,createPollingConsumer())<SUB>46</SUB>> ]
+"34" [label = <(IDENTIFIER,endpoint,createPollingConsumer())<SUB>46</SUB>> ]
+"35" [label = <(CONTROL_STRUCTURE,try,try)<SUB>47</SUB>> ]
+"36" [label = <(BLOCK,try,try)<SUB>47</SUB>> ]
+"37" [label = <(start,start())<SUB>48</SUB>> ]
+"38" [label = <(IDENTIFIER,consumer,start())<SUB>48</SUB>> ]
+"39" [label = <(CONTROL_STRUCTURE,while (true),while (true))<SUB>50</SUB>> ]
+"40" [label = <(LITERAL,true,while (true))<SUB>50</SUB>> ]
+"41" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>50</SUB>> ]
+"42" [label = <(LOCAL,Exchange exchange: org.apache.camel.Exchange)> ]
+"43" [label = <(&lt;operator&gt;.assignment,Exchange exchange = receive(timeout))<SUB>51</SUB>> ]
+"44" [label = <(IDENTIFIER,exchange,Exchange exchange = receive(timeout))<SUB>51</SUB>> ]
+"45" [label = <(receive,receive(timeout))<SUB>51</SUB>> ]
+"46" [label = <(IDENTIFIER,consumer,receive(timeout))<SUB>51</SUB>> ]
+"47" [label = <(IDENTIFIER,timeout,receive(timeout))<SUB>51</SUB>> ]
+"48" [label = <(CONTROL_STRUCTURE,if (exchange == null),if (exchange == null))<SUB>52</SUB>> ]
+"49" [label = <(&lt;operator&gt;.equals,exchange == null)<SUB>52</SUB>> ]
+"50" [label = <(IDENTIFIER,exchange,exchange == null)<SUB>52</SUB>> ]
+"51" [label = <(LITERAL,null,exchange == null)<SUB>52</SUB>> ]
+"52" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>52</SUB>> ]
+"53" [label = <(CONTROL_STRUCTURE,break;,break;)<SUB>53</SUB>> ]
+"54" [label = <(CONTROL_STRUCTURE,else,else)<SUB>54</SUB>> ]
+"55" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>54</SUB>> ]
+"56" [label = <(process,process(exchange))<SUB>55</SUB>> ]
+"57" [label = <(IDENTIFIER,processor,process(exchange))<SUB>55</SUB>> ]
+"58" [label = <(IDENTIFIER,exchange,process(exchange))<SUB>55</SUB>> ]
+"59" [label = <(BLOCK,finally,finally)<SUB>58</SUB>> ]
+"60" [label = <(CONTROL_STRUCTURE,try,try)<SUB>59</SUB>> ]
+"61" [label = <(BLOCK,try,try)<SUB>59</SUB>> ]
+"62" [label = <(stop,stop())<SUB>60</SUB>> ]
+"63" [label = <(IDENTIFIER,consumer,stop())<SUB>60</SUB>> ]
+"64" [label = <(BLOCK,catch,catch)> ]
+"65" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>61</SUB>> ]
+"66" [label = <(warn,warn(&quot;Failed to stop PollingConsumer: &quot; + e, e))<SUB>62</SUB>> ]
+"67" [label = <(&lt;operator&gt;.fieldAccess,EndpointHelper.LOG)<SUB>62</SUB>> ]
+"68" [label = <(IDENTIFIER,EndpointHelper,warn(&quot;Failed to stop PollingConsumer: &quot; + e, e))<SUB>62</SUB>> ]
+"69" [label = <(FIELD_IDENTIFIER,LOG,LOG)<SUB>62</SUB>> ]
+"70" [label = <(&lt;operator&gt;.addition,&quot;Failed to stop PollingConsumer: &quot; + e)<SUB>62</SUB>> ]
+"71" [label = <(LITERAL,&quot;Failed to stop PollingConsumer: &quot;,&quot;Failed to stop PollingConsumer: &quot; + e)<SUB>62</SUB>> ]
+"72" [label = <(IDENTIFIER,e,&quot;Failed to stop PollingConsumer: &quot; + e)<SUB>62</SUB>> ]
+"73" [label = <(IDENTIFIER,e,warn(&quot;Failed to stop PollingConsumer: &quot; + e, e))<SUB>62</SUB>> ]
+"74" [label = <(MODIFIER,PUBLIC)> ]
+"75" [label = <(MODIFIER,STATIC)> ]
+"76" [label = <(METHOD_RETURN,void)<SUB>45</SUB>> ]
+  "25" -> "26" 
+  "25" -> "27" 
+  "25" -> "28" 
+  "25" -> "29" 
+  "25" -> "74" 
+  "25" -> "75" 
+  "25" -> "76" 
+  "29" -> "30" 
+  "29" -> "31" 
+  "29" -> "35" 
+  "31" -> "32" 
+  "31" -> "33" 
+  "33" -> "34" 
+  "35" -> "36" 
+  "35" -> "59" 
+  "36" -> "37" 
+  "36" -> "39" 
+  "37" -> "38" 
+  "39" -> "40" 
+  "39" -> "41" 
+  "41" -> "42" 
+  "41" -> "43" 
+  "41" -> "48" 
+  "43" -> "44" 
+  "43" -> "45" 
+  "45" -> "46" 
+  "45" -> "47" 
+  "48" -> "49" 
+  "48" -> "52" 
+  "48" -> "54" 
+  "49" -> "50" 
+  "49" -> "51" 
+  "52" -> "53" 
+  "54" -> "55" 
+  "55" -> "56" 
+  "56" -> "57" 
+  "56" -> "58" 
+  "59" -> "60" 
+  "60" -> "61" 
+  "60" -> "64" 
+  "61" -> "62" 
+  "62" -> "63" 
+  "64" -> "65" 
+  "65" -> "66" 
+  "66" -> "67" 
+  "66" -> "70" 
+  "66" -> "73" 
+  "67" -> "68" 
+  "67" -> "69" 
+  "70" -> "71" 
+  "70" -> "72" 
+}

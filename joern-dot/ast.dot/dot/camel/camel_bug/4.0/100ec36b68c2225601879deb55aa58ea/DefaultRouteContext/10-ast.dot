@@ -1,0 +1,157 @@
+digraph "commit" {  
+"354" [label = <(METHOD,commit)<SUB>130</SUB>> ]
+"24" [label = <(PARAM,this)<SUB>130</SUB>> ]
+"355" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>130</SUB>> ]
+"356" [label = <(CONTROL_STRUCTURE,if (!eventDrivenProcessors.isEmpty()),if (!eventDrivenProcessors.isEmpty()))<SUB>133</SUB>> ]
+"357" [label = <(&lt;operator&gt;.logicalNot,!eventDrivenProcessors.isEmpty())<SUB>133</SUB>> ]
+"358" [label = <(isEmpty,isEmpty())<SUB>133</SUB>> ]
+"359" [label = <(&lt;operator&gt;.fieldAccess,this.eventDrivenProcessors)<SUB>133</SUB>> ]
+"360" [label = <(IDENTIFIER,this,isEmpty())<SUB>133</SUB>> ]
+"361" [label = <(FIELD_IDENTIFIER,eventDrivenProcessors,eventDrivenProcessors)<SUB>133</SUB>> ]
+"362" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>133</SUB>> ]
+"363" [label = <(LOCAL,Processor processor: org.apache.camel.Processor)> ]
+"364" [label = <(&lt;operator&gt;.assignment,Processor processor = newInstance(eventDrivenProcessors))<SUB>134</SUB>> ]
+"365" [label = <(IDENTIFIER,processor,Processor processor = newInstance(eventDrivenProcessors))<SUB>134</SUB>> ]
+"366" [label = <(newInstance,newInstance(eventDrivenProcessors))<SUB>134</SUB>> ]
+"367" [label = <(IDENTIFIER,Pipeline,newInstance(eventDrivenProcessors))<SUB>134</SUB>> ]
+"368" [label = <(&lt;operator&gt;.fieldAccess,this.eventDrivenProcessors)<SUB>134</SUB>> ]
+"369" [label = <(IDENTIFIER,this,newInstance(eventDrivenProcessors))<SUB>134</SUB>> ]
+"370" [label = <(FIELD_IDENTIFIER,eventDrivenProcessors,eventDrivenProcessors)<SUB>134</SUB>> ]
+"371" [label = <(LOCAL,AsyncProcessor asyncProcessor: org.apache.camel.AsyncProcessor)> ]
+"372" [label = <(&lt;operator&gt;.assignment,AsyncProcessor asyncProcessor = convert(processor))<SUB>137</SUB>> ]
+"373" [label = <(IDENTIFIER,asyncProcessor,AsyncProcessor asyncProcessor = convert(processor))<SUB>137</SUB>> ]
+"374" [label = <(convert,convert(processor))<SUB>137</SUB>> ]
+"375" [label = <(IDENTIFIER,AsyncProcessorTypeConverter,convert(processor))<SUB>137</SUB>> ]
+"376" [label = <(IDENTIFIER,processor,convert(processor))<SUB>137</SUB>> ]
+"22" [label = <(LOCAL,Processor unitOfWorkProcessor: org.apache.camel.Processor)> ]
+"377" [label = <(&lt;operator&gt;.assignment,Processor unitOfWorkProcessor = new UnitOfWorkProcessor(asyncProcessor))<SUB>138</SUB>> ]
+"378" [label = <(IDENTIFIER,unitOfWorkProcessor,Processor unitOfWorkProcessor = new UnitOfWorkProcessor(asyncProcessor))<SUB>138</SUB>> ]
+"379" [label = <(&lt;operator&gt;.alloc,new UnitOfWorkProcessor(asyncProcessor))<SUB>138</SUB>> ]
+"380" [label = <(&lt;init&gt;,new UnitOfWorkProcessor(asyncProcessor))<SUB>138</SUB>> ]
+"21" [label = <(IDENTIFIER,unitOfWorkProcessor,new UnitOfWorkProcessor(asyncProcessor))<SUB>138</SUB>> ]
+"381" [label = <(IDENTIFIER,asyncProcessor,new UnitOfWorkProcessor(asyncProcessor))<SUB>138</SUB>> ]
+"26" [label = <(LOCAL,Route edcr: org.apache.camel.Route)> ]
+"382" [label = <(&lt;operator&gt;.assignment,Route edcr = new EventDrivenConsumerRoute(getEndpoint(), unitOfWorkProcessor))<SUB>141</SUB>> ]
+"383" [label = <(IDENTIFIER,edcr,Route edcr = new EventDrivenConsumerRoute(getEndpoint(), unitOfWorkProcessor))<SUB>141</SUB>> ]
+"384" [label = <(&lt;operator&gt;.alloc,new EventDrivenConsumerRoute(getEndpoint(), unitOfWorkProcessor))<SUB>141</SUB>> ]
+"385" [label = <(&lt;init&gt;,new EventDrivenConsumerRoute(getEndpoint(), unitOfWorkProcessor))<SUB>141</SUB>> ]
+"25" [label = <(IDENTIFIER,edcr,new EventDrivenConsumerRoute(getEndpoint(), unitOfWorkProcessor))<SUB>141</SUB>> ]
+"386" [label = <(getEndpoint,this.getEndpoint())<SUB>141</SUB>> ]
+"23" [label = <(IDENTIFIER,this,this.getEndpoint())<SUB>141</SUB>> ]
+"387" [label = <(IDENTIFIER,unitOfWorkProcessor,new EventDrivenConsumerRoute(getEndpoint(), unitOfWorkProcessor))<SUB>141</SUB>> ]
+"388" [label = <(put,put(Route.PARENT_PROPERTY, Integer.toHexString(route.hashCode())))<SUB>142</SUB>> ]
+"389" [label = <(getProperties,getProperties())<SUB>142</SUB>> ]
+"390" [label = <(IDENTIFIER,edcr,getProperties())<SUB>142</SUB>> ]
+"391" [label = <(&lt;operator&gt;.fieldAccess,Route.PARENT_PROPERTY)<SUB>142</SUB>> ]
+"392" [label = <(IDENTIFIER,Route,put(Route.PARENT_PROPERTY, Integer.toHexString(route.hashCode())))<SUB>142</SUB>> ]
+"393" [label = <(FIELD_IDENTIFIER,PARENT_PROPERTY,PARENT_PROPERTY)<SUB>142</SUB>> ]
+"394" [label = <(toHexString,toHexString(route.hashCode()))<SUB>142</SUB>> ]
+"395" [label = <(IDENTIFIER,Integer,toHexString(route.hashCode()))<SUB>142</SUB>> ]
+"396" [label = <(hashCode,hashCode())<SUB>142</SUB>> ]
+"397" [label = <(&lt;operator&gt;.fieldAccess,this.route)<SUB>142</SUB>> ]
+"398" [label = <(IDENTIFIER,this,hashCode())<SUB>142</SUB>> ]
+"399" [label = <(FIELD_IDENTIFIER,route,route)<SUB>142</SUB>> ]
+"400" [label = <(CONTROL_STRUCTURE,if (route.getGroup() != null),if (route.getGroup() != null))<SUB>143</SUB>> ]
+"401" [label = <(&lt;operator&gt;.notEquals,route.getGroup() != null)<SUB>143</SUB>> ]
+"402" [label = <(getGroup,getGroup())<SUB>143</SUB>> ]
+"403" [label = <(&lt;operator&gt;.fieldAccess,this.route)<SUB>143</SUB>> ]
+"404" [label = <(IDENTIFIER,this,getGroup())<SUB>143</SUB>> ]
+"405" [label = <(FIELD_IDENTIFIER,route,route)<SUB>143</SUB>> ]
+"406" [label = <(LITERAL,null,route.getGroup() != null)<SUB>143</SUB>> ]
+"407" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>143</SUB>> ]
+"408" [label = <(put,put(Route.GROUP_PROPERTY, route.getGroup()))<SUB>144</SUB>> ]
+"409" [label = <(getProperties,getProperties())<SUB>144</SUB>> ]
+"410" [label = <(IDENTIFIER,edcr,getProperties())<SUB>144</SUB>> ]
+"411" [label = <(&lt;operator&gt;.fieldAccess,Route.GROUP_PROPERTY)<SUB>144</SUB>> ]
+"412" [label = <(IDENTIFIER,Route,put(Route.GROUP_PROPERTY, route.getGroup()))<SUB>144</SUB>> ]
+"413" [label = <(FIELD_IDENTIFIER,GROUP_PROPERTY,GROUP_PROPERTY)<SUB>144</SUB>> ]
+"414" [label = <(getGroup,getGroup())<SUB>144</SUB>> ]
+"415" [label = <(&lt;operator&gt;.fieldAccess,this.route)<SUB>144</SUB>> ]
+"416" [label = <(IDENTIFIER,this,getGroup())<SUB>144</SUB>> ]
+"417" [label = <(FIELD_IDENTIFIER,route,route)<SUB>144</SUB>> ]
+"418" [label = <(add,add(edcr))<SUB>146</SUB>> ]
+"419" [label = <(&lt;operator&gt;.fieldAccess,this.routes)<SUB>146</SUB>> ]
+"420" [label = <(IDENTIFIER,this,add(edcr))<SUB>146</SUB>> ]
+"421" [label = <(FIELD_IDENTIFIER,routes,routes)<SUB>146</SUB>> ]
+"422" [label = <(IDENTIFIER,edcr,add(edcr))<SUB>146</SUB>> ]
+"423" [label = <(MODIFIER,PUBLIC)> ]
+"424" [label = <(MODIFIER,VIRTUAL)> ]
+"425" [label = <(METHOD_RETURN,void)<SUB>130</SUB>> ]
+  "354" -> "24" 
+  "354" -> "355" 
+  "354" -> "423" 
+  "354" -> "424" 
+  "354" -> "425" 
+  "355" -> "356" 
+  "356" -> "357" 
+  "356" -> "362" 
+  "357" -> "358" 
+  "358" -> "359" 
+  "359" -> "360" 
+  "359" -> "361" 
+  "362" -> "363" 
+  "362" -> "364" 
+  "362" -> "371" 
+  "362" -> "372" 
+  "362" -> "22" 
+  "362" -> "377" 
+  "362" -> "380" 
+  "362" -> "26" 
+  "362" -> "382" 
+  "362" -> "385" 
+  "362" -> "388" 
+  "362" -> "400" 
+  "362" -> "418" 
+  "364" -> "365" 
+  "364" -> "366" 
+  "366" -> "367" 
+  "366" -> "368" 
+  "368" -> "369" 
+  "368" -> "370" 
+  "372" -> "373" 
+  "372" -> "374" 
+  "374" -> "375" 
+  "374" -> "376" 
+  "377" -> "378" 
+  "377" -> "379" 
+  "380" -> "21" 
+  "380" -> "381" 
+  "382" -> "383" 
+  "382" -> "384" 
+  "385" -> "25" 
+  "385" -> "386" 
+  "385" -> "387" 
+  "386" -> "23" 
+  "388" -> "389" 
+  "388" -> "391" 
+  "388" -> "394" 
+  "389" -> "390" 
+  "391" -> "392" 
+  "391" -> "393" 
+  "394" -> "395" 
+  "394" -> "396" 
+  "396" -> "397" 
+  "397" -> "398" 
+  "397" -> "399" 
+  "400" -> "401" 
+  "400" -> "407" 
+  "401" -> "402" 
+  "401" -> "406" 
+  "402" -> "403" 
+  "403" -> "404" 
+  "403" -> "405" 
+  "407" -> "408" 
+  "408" -> "409" 
+  "408" -> "411" 
+  "408" -> "414" 
+  "409" -> "410" 
+  "411" -> "412" 
+  "411" -> "413" 
+  "414" -> "415" 
+  "415" -> "416" 
+  "415" -> "417" 
+  "418" -> "419" 
+  "418" -> "422" 
+  "419" -> "420" 
+  "419" -> "421" 
+}

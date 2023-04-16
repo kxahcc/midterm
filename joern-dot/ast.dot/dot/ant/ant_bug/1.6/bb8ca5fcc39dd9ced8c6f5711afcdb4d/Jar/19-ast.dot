@@ -1,0 +1,185 @@
+digraph "getResourcesToAdd" {  
+"1169" [label = <(METHOD,getResourcesToAdd)<SUB>601</SUB>> ]
+"79" [label = <(PARAM,this)<SUB>601</SUB>> ]
+"1170" [label = <(PARAM,FileSet[] filesets)<SUB>601</SUB>> ]
+"1171" [label = <(PARAM,File zipFile)<SUB>602</SUB>> ]
+"1172" [label = <(PARAM,boolean needsUpdate)<SUB>603</SUB>> ]
+"1173" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>604</SUB>> ]
+"1174" [label = <(CONTROL_STRUCTURE,if (zipFile.exists()),if (zipFile.exists()))<SUB>607</SUB>> ]
+"1175" [label = <(exists,zipFile.exists())<SUB>607</SUB>> ]
+"1176" [label = <(IDENTIFIER,zipFile,zipFile.exists())<SUB>607</SUB>> ]
+"1177" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>607</SUB>> ]
+"1178" [label = <(CONTROL_STRUCTURE,try,try)<SUB>611</SUB>> ]
+"1179" [label = <(BLOCK,try,try)<SUB>611</SUB>> ]
+"1180" [label = <(&lt;operator&gt;.assignment,this.originalManifest = this.getManifestFromJar(zipFile))<SUB>612</SUB>> ]
+"1181" [label = <(&lt;operator&gt;.fieldAccess,this.originalManifest)<SUB>612</SUB>> ]
+"1182" [label = <(IDENTIFIER,this,this.originalManifest = this.getManifestFromJar(zipFile))<SUB>612</SUB>> ]
+"1183" [label = <(FIELD_IDENTIFIER,originalManifest,originalManifest)<SUB>612</SUB>> ]
+"1184" [label = <(getManifestFromJar,this.getManifestFromJar(zipFile))<SUB>612</SUB>> ]
+"78" [label = <(IDENTIFIER,this,this.getManifestFromJar(zipFile))<SUB>612</SUB>> ]
+"1185" [label = <(IDENTIFIER,zipFile,this.getManifestFromJar(zipFile))<SUB>612</SUB>> ]
+"1186" [label = <(CONTROL_STRUCTURE,if (originalManifest == null),if (originalManifest == null))<SUB>613</SUB>> ]
+"1187" [label = <(&lt;operator&gt;.equals,originalManifest == null)<SUB>613</SUB>> ]
+"1188" [label = <(&lt;operator&gt;.fieldAccess,this.originalManifest)<SUB>613</SUB>> ]
+"1189" [label = <(IDENTIFIER,this,originalManifest == null)<SUB>613</SUB>> ]
+"1190" [label = <(FIELD_IDENTIFIER,originalManifest,originalManifest)<SUB>613</SUB>> ]
+"1191" [label = <(LITERAL,null,originalManifest == null)<SUB>613</SUB>> ]
+"1192" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>613</SUB>> ]
+"1193" [label = <(log,log(&quot;Updating jar since the current jar has no manifest&quot;, Project.MSG_VERBOSE))<SUB>614</SUB>> ]
+"80" [label = <(IDENTIFIER,this,log(&quot;Updating jar since the current jar has no manifest&quot;, Project.MSG_VERBOSE))<SUB>614</SUB>> ]
+"1194" [label = <(LITERAL,&quot;Updating jar since the current jar has no manifest&quot;,log(&quot;Updating jar since the current jar has no manifest&quot;, Project.MSG_VERBOSE))<SUB>614</SUB>> ]
+"1195" [label = <(&lt;operator&gt;.fieldAccess,Project.MSG_VERBOSE)<SUB>615</SUB>> ]
+"1196" [label = <(IDENTIFIER,Project,log(&quot;Updating jar since the current jar has no manifest&quot;, Project.MSG_VERBOSE))<SUB>615</SUB>> ]
+"1197" [label = <(FIELD_IDENTIFIER,MSG_VERBOSE,MSG_VERBOSE)<SUB>615</SUB>> ]
+"1198" [label = <(&lt;operator&gt;.assignment,needsUpdate = true)<SUB>616</SUB>> ]
+"1199" [label = <(IDENTIFIER,needsUpdate,needsUpdate = true)<SUB>616</SUB>> ]
+"1200" [label = <(LITERAL,true,needsUpdate = true)<SUB>616</SUB>> ]
+"1201" [label = <(CONTROL_STRUCTURE,else,else)<SUB>617</SUB>> ]
+"1202" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>617</SUB>> ]
+"1203" [label = <(LOCAL,Manifest mf: ANY)> ]
+"1204" [label = <(&lt;operator&gt;.assignment,ANY mf = this.createManifest())<SUB>618</SUB>> ]
+"1205" [label = <(IDENTIFIER,mf,ANY mf = this.createManifest())<SUB>618</SUB>> ]
+"1206" [label = <(createManifest,this.createManifest())<SUB>618</SUB>> ]
+"81" [label = <(IDENTIFIER,this,this.createManifest())<SUB>618</SUB>> ]
+"1207" [label = <(CONTROL_STRUCTURE,if (!mf.equals(originalManifest)),if (!mf.equals(originalManifest)))<SUB>619</SUB>> ]
+"1208" [label = <(&lt;operator&gt;.logicalNot,!mf.equals(originalManifest))<SUB>619</SUB>> ]
+"1209" [label = <(equals,equals(originalManifest))<SUB>619</SUB>> ]
+"1210" [label = <(IDENTIFIER,mf,equals(originalManifest))<SUB>619</SUB>> ]
+"1211" [label = <(&lt;operator&gt;.fieldAccess,this.originalManifest)<SUB>619</SUB>> ]
+"1212" [label = <(IDENTIFIER,this,equals(originalManifest))<SUB>619</SUB>> ]
+"1213" [label = <(FIELD_IDENTIFIER,originalManifest,originalManifest)<SUB>619</SUB>> ]
+"1214" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>619</SUB>> ]
+"1215" [label = <(log,log(&quot;Updating jar since jar manifest has changed&quot;, Project.MSG_VERBOSE))<SUB>620</SUB>> ]
+"82" [label = <(IDENTIFIER,this,log(&quot;Updating jar since jar manifest has changed&quot;, Project.MSG_VERBOSE))<SUB>620</SUB>> ]
+"1216" [label = <(LITERAL,&quot;Updating jar since jar manifest has changed&quot;,log(&quot;Updating jar since jar manifest has changed&quot;, Project.MSG_VERBOSE))<SUB>620</SUB>> ]
+"1217" [label = <(&lt;operator&gt;.fieldAccess,Project.MSG_VERBOSE)<SUB>621</SUB>> ]
+"1218" [label = <(IDENTIFIER,Project,log(&quot;Updating jar since jar manifest has changed&quot;, Project.MSG_VERBOSE))<SUB>621</SUB>> ]
+"1219" [label = <(FIELD_IDENTIFIER,MSG_VERBOSE,MSG_VERBOSE)<SUB>621</SUB>> ]
+"1220" [label = <(&lt;operator&gt;.assignment,needsUpdate = true)<SUB>622</SUB>> ]
+"1221" [label = <(IDENTIFIER,needsUpdate,needsUpdate = true)<SUB>622</SUB>> ]
+"1222" [label = <(LITERAL,true,needsUpdate = true)<SUB>622</SUB>> ]
+"1223" [label = <(BLOCK,catch,catch)> ]
+"1224" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>625</SUB>> ]
+"1225" [label = <(log,log(&quot;error while reading original manifest: &quot; + t.getMessage(), Project.MSG_WARN))<SUB>626</SUB>> ]
+"83" [label = <(IDENTIFIER,this,log(&quot;error while reading original manifest: &quot; + t.getMessage(), Project.MSG_WARN))<SUB>626</SUB>> ]
+"1226" [label = <(&lt;operator&gt;.addition,&quot;error while reading original manifest: &quot; + t.getMessage())<SUB>626</SUB>> ]
+"1227" [label = <(LITERAL,&quot;error while reading original manifest: &quot;,&quot;error while reading original manifest: &quot; + t.getMessage())<SUB>626</SUB>> ]
+"1228" [label = <(getMessage,t.getMessage())<SUB>626</SUB>> ]
+"1229" [label = <(IDENTIFIER,t,t.getMessage())<SUB>626</SUB>> ]
+"1230" [label = <(&lt;operator&gt;.fieldAccess,Project.MSG_WARN)<SUB>627</SUB>> ]
+"1231" [label = <(IDENTIFIER,Project,log(&quot;error while reading original manifest: &quot; + t.getMessage(), Project.MSG_WARN))<SUB>627</SUB>> ]
+"1232" [label = <(FIELD_IDENTIFIER,MSG_WARN,MSG_WARN)<SUB>627</SUB>> ]
+"1233" [label = <(&lt;operator&gt;.assignment,needsUpdate = true)<SUB>628</SUB>> ]
+"1234" [label = <(IDENTIFIER,needsUpdate,needsUpdate = true)<SUB>628</SUB>> ]
+"1235" [label = <(LITERAL,true,needsUpdate = true)<SUB>628</SUB>> ]
+"1236" [label = <(CONTROL_STRUCTURE,else,else)<SUB>631</SUB>> ]
+"1237" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>631</SUB>> ]
+"1238" [label = <(&lt;operator&gt;.assignment,needsUpdate = true)<SUB>633</SUB>> ]
+"1239" [label = <(IDENTIFIER,needsUpdate,needsUpdate = true)<SUB>633</SUB>> ]
+"1240" [label = <(LITERAL,true,needsUpdate = true)<SUB>633</SUB>> ]
+"1241" [label = <(&lt;operator&gt;.assignment,this.createEmpty = needsUpdate)<SUB>636</SUB>> ]
+"1242" [label = <(&lt;operator&gt;.fieldAccess,this.createEmpty)<SUB>636</SUB>> ]
+"1243" [label = <(IDENTIFIER,this,this.createEmpty = needsUpdate)<SUB>636</SUB>> ]
+"1244" [label = <(FIELD_IDENTIFIER,createEmpty,createEmpty)<SUB>636</SUB>> ]
+"1245" [label = <(IDENTIFIER,needsUpdate,this.createEmpty = needsUpdate)<SUB>636</SUB>> ]
+"1246" [label = <(RETURN,return super.getResourcesToAdd(filesets, zipFile, needsUpdate);,return super.getResourcesToAdd(filesets, zipFile, needsUpdate);)<SUB>637</SUB>> ]
+"1247" [label = <(getResourcesToAdd,getResourcesToAdd(filesets, zipFile, needsUpdate))<SUB>637</SUB>> ]
+"1248" [label = <(IDENTIFIER,super,getResourcesToAdd(filesets, zipFile, needsUpdate))<SUB>637</SUB>> ]
+"1249" [label = <(IDENTIFIER,filesets,getResourcesToAdd(filesets, zipFile, needsUpdate))<SUB>637</SUB>> ]
+"1250" [label = <(IDENTIFIER,zipFile,getResourcesToAdd(filesets, zipFile, needsUpdate))<SUB>637</SUB>> ]
+"1251" [label = <(IDENTIFIER,needsUpdate,getResourcesToAdd(filesets, zipFile, needsUpdate))<SUB>637</SUB>> ]
+"1252" [label = <(MODIFIER,PROTECTED)> ]
+"1253" [label = <(MODIFIER,VIRTUAL)> ]
+"1254" [label = <(METHOD_RETURN,ANY)<SUB>601</SUB>> ]
+  "1169" -> "79" 
+  "1169" -> "1170" 
+  "1169" -> "1171" 
+  "1169" -> "1172" 
+  "1169" -> "1173" 
+  "1169" -> "1252" 
+  "1169" -> "1253" 
+  "1169" -> "1254" 
+  "1173" -> "1174" 
+  "1173" -> "1241" 
+  "1173" -> "1246" 
+  "1174" -> "1175" 
+  "1174" -> "1177" 
+  "1174" -> "1236" 
+  "1175" -> "1176" 
+  "1177" -> "1178" 
+  "1178" -> "1179" 
+  "1178" -> "1223" 
+  "1179" -> "1180" 
+  "1179" -> "1186" 
+  "1180" -> "1181" 
+  "1180" -> "1184" 
+  "1181" -> "1182" 
+  "1181" -> "1183" 
+  "1184" -> "78" 
+  "1184" -> "1185" 
+  "1186" -> "1187" 
+  "1186" -> "1192" 
+  "1186" -> "1201" 
+  "1187" -> "1188" 
+  "1187" -> "1191" 
+  "1188" -> "1189" 
+  "1188" -> "1190" 
+  "1192" -> "1193" 
+  "1192" -> "1198" 
+  "1193" -> "80" 
+  "1193" -> "1194" 
+  "1193" -> "1195" 
+  "1195" -> "1196" 
+  "1195" -> "1197" 
+  "1198" -> "1199" 
+  "1198" -> "1200" 
+  "1201" -> "1202" 
+  "1202" -> "1203" 
+  "1202" -> "1204" 
+  "1202" -> "1207" 
+  "1204" -> "1205" 
+  "1204" -> "1206" 
+  "1206" -> "81" 
+  "1207" -> "1208" 
+  "1207" -> "1214" 
+  "1208" -> "1209" 
+  "1209" -> "1210" 
+  "1209" -> "1211" 
+  "1211" -> "1212" 
+  "1211" -> "1213" 
+  "1214" -> "1215" 
+  "1214" -> "1220" 
+  "1215" -> "82" 
+  "1215" -> "1216" 
+  "1215" -> "1217" 
+  "1217" -> "1218" 
+  "1217" -> "1219" 
+  "1220" -> "1221" 
+  "1220" -> "1222" 
+  "1223" -> "1224" 
+  "1224" -> "1225" 
+  "1224" -> "1233" 
+  "1225" -> "83" 
+  "1225" -> "1226" 
+  "1225" -> "1230" 
+  "1226" -> "1227" 
+  "1226" -> "1228" 
+  "1228" -> "1229" 
+  "1230" -> "1231" 
+  "1230" -> "1232" 
+  "1233" -> "1234" 
+  "1233" -> "1235" 
+  "1236" -> "1237" 
+  "1237" -> "1238" 
+  "1238" -> "1239" 
+  "1238" -> "1240" 
+  "1241" -> "1242" 
+  "1241" -> "1245" 
+  "1242" -> "1243" 
+  "1242" -> "1244" 
+  "1246" -> "1247" 
+  "1247" -> "1248" 
+  "1247" -> "1249" 
+  "1247" -> "1250" 
+  "1247" -> "1251" 
+}

@@ -1,0 +1,73 @@
+digraph "toByteBuffer" {  
+"58" [label = <(METHOD,toByteBuffer)<SUB>58</SUB>> ]
+"59" [label = <(PARAM,File file)<SUB>59</SUB>> ]
+"60" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>59</SUB>> ]
+"61" [label = <(LOCAL,byte[] buf: byte[])> ]
+"62" [label = <(&lt;operator&gt;.assignment,byte[] buf = new byte[(int) file.length()])<SUB>60</SUB>> ]
+"63" [label = <(IDENTIFIER,buf,byte[] buf = new byte[(int) file.length()])<SUB>60</SUB>> ]
+"64" [label = <(&lt;operator&gt;.alloc,new byte[(int) file.length()])> ]
+"65" [label = <(&lt;operator&gt;.cast,(int) file.length())<SUB>60</SUB>> ]
+"66" [label = <(TYPE_REF,int,int)<SUB>60</SUB>> ]
+"67" [label = <(length,file.length())<SUB>60</SUB>> ]
+"68" [label = <(IDENTIFIER,file,file.length())<SUB>60</SUB>> ]
+"4" [label = <(LOCAL,InputStream in: java.io.InputStream)> ]
+"69" [label = <(&lt;operator&gt;.assignment,InputStream in = new BufferedInputStream(new FileInputStream(file)))<SUB>61</SUB>> ]
+"70" [label = <(IDENTIFIER,in,InputStream in = new BufferedInputStream(new FileInputStream(file)))<SUB>61</SUB>> ]
+"71" [label = <(&lt;operator&gt;.alloc,new BufferedInputStream(new FileInputStream(file)))<SUB>61</SUB>> ]
+"72" [label = <(&lt;init&gt;,new BufferedInputStream(new FileInputStream(file)))<SUB>61</SUB>> ]
+"3" [label = <(IDENTIFIER,in,new BufferedInputStream(new FileInputStream(file)))<SUB>61</SUB>> ]
+"73" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>61</SUB>> ]
+"74" [label = <(&lt;operator&gt;.assignment,&lt;empty&gt;)> ]
+"75" [label = <(IDENTIFIER,$obj0,&lt;empty&gt;)> ]
+"76" [label = <(&lt;operator&gt;.alloc,new FileInputStream(file))<SUB>61</SUB>> ]
+"77" [label = <(&lt;init&gt;,new FileInputStream(file))<SUB>61</SUB>> ]
+"78" [label = <(IDENTIFIER,$obj0,new FileInputStream(file))> ]
+"79" [label = <(IDENTIFIER,file,new FileInputStream(file))<SUB>61</SUB>> ]
+"80" [label = <(IDENTIFIER,$obj0,&lt;empty&gt;)> ]
+"81" [label = <(read,in.read(buf))<SUB>62</SUB>> ]
+"82" [label = <(IDENTIFIER,in,in.read(buf))<SUB>62</SUB>> ]
+"83" [label = <(IDENTIFIER,buf,in.read(buf))<SUB>62</SUB>> ]
+"84" [label = <(RETURN,return ByteBuffer.wrap(buf);,return ByteBuffer.wrap(buf);)<SUB>63</SUB>> ]
+"85" [label = <(wrap,ByteBuffer.wrap(buf))<SUB>63</SUB>> ]
+"86" [label = <(IDENTIFIER,ByteBuffer,ByteBuffer.wrap(buf))<SUB>63</SUB>> ]
+"87" [label = <(IDENTIFIER,buf,ByteBuffer.wrap(buf))<SUB>63</SUB>> ]
+"88" [label = <(MODIFIER,PUBLIC)> ]
+"89" [label = <(MODIFIER,STATIC)> ]
+"90" [label = <(ANNOTATION,@Converter,@Converter)<SUB>58</SUB>> ]
+"91" [label = <(METHOD_RETURN,java.nio.ByteBuffer)<SUB>59</SUB>> ]
+  "58" -> "59" 
+  "58" -> "60" 
+  "58" -> "88" 
+  "58" -> "89" 
+  "58" -> "90" 
+  "58" -> "91" 
+  "60" -> "61" 
+  "60" -> "62" 
+  "60" -> "4" 
+  "60" -> "69" 
+  "60" -> "72" 
+  "60" -> "81" 
+  "60" -> "84" 
+  "62" -> "63" 
+  "62" -> "64" 
+  "64" -> "65" 
+  "65" -> "66" 
+  "65" -> "67" 
+  "67" -> "68" 
+  "69" -> "70" 
+  "69" -> "71" 
+  "72" -> "3" 
+  "72" -> "73" 
+  "73" -> "74" 
+  "73" -> "77" 
+  "73" -> "80" 
+  "74" -> "75" 
+  "74" -> "76" 
+  "77" -> "78" 
+  "77" -> "79" 
+  "81" -> "82" 
+  "81" -> "83" 
+  "84" -> "85" 
+  "85" -> "86" 
+  "85" -> "87" 
+}

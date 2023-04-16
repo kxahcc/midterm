@@ -1,0 +1,81 @@
+digraph "wrapProcessorInInterceptors" {  
+"33" [label = <(METHOD,wrapProcessorInInterceptors)<SUB>43</SUB>> ]
+"34" [label = <(PARAM,this)<SUB>43</SUB>> ]
+"35" [label = <(PARAM,ProcessorType processorType)<SUB>43</SUB>> ]
+"36" [label = <(PARAM,Processor target)<SUB>44</SUB>> ]
+"37" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>44</SUB>> ]
+"38" [label = <(LOCAL,Processor retval: org.apache.camel.Processor)> ]
+"39" [label = <(&lt;operator&gt;.assignment,Processor retval = target)<SUB>46</SUB>> ]
+"40" [label = <(IDENTIFIER,retval,Processor retval = target)<SUB>46</SUB>> ]
+"41" [label = <(IDENTIFIER,target,Processor retval = target)<SUB>46</SUB>> ]
+"42" [label = <(LOCAL,PerformanceCounter counter: ANY)> ]
+"43" [label = <(&lt;operator&gt;.assignment,ANY counter = get(processorType))<SUB>47</SUB>> ]
+"44" [label = <(IDENTIFIER,counter,ANY counter = get(processorType))<SUB>47</SUB>> ]
+"45" [label = <(get,get(processorType))<SUB>47</SUB>> ]
+"46" [label = <(&lt;operator&gt;.fieldAccess,this.counterMap)<SUB>47</SUB>> ]
+"47" [label = <(IDENTIFIER,this,get(processorType))<SUB>47</SUB>> ]
+"48" [label = <(FIELD_IDENTIFIER,counterMap,counterMap)<SUB>47</SUB>> ]
+"49" [label = <(IDENTIFIER,processorType,get(processorType))<SUB>47</SUB>> ]
+"50" [label = <(CONTROL_STRUCTURE,if (counter != null),if (counter != null))<SUB>49</SUB>> ]
+"51" [label = <(&lt;operator&gt;.notEquals,counter != null)<SUB>49</SUB>> ]
+"52" [label = <(IDENTIFIER,counter,counter != null)<SUB>49</SUB>> ]
+"53" [label = <(LITERAL,null,counter != null)<SUB>49</SUB>> ]
+"54" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>49</SUB>> ]
+"6" [label = <(LOCAL,InstrumentationProcessor wrapper: ANY)> ]
+"55" [label = <(&lt;operator&gt;.assignment,ANY wrapper = new InstrumentationProcessor(counter))<SUB>50</SUB>> ]
+"56" [label = <(IDENTIFIER,wrapper,ANY wrapper = new InstrumentationProcessor(counter))<SUB>50</SUB>> ]
+"57" [label = <(&lt;operator&gt;.alloc,new InstrumentationProcessor(counter))<SUB>50</SUB>> ]
+"58" [label = <(&lt;init&gt;,new InstrumentationProcessor(counter))<SUB>50</SUB>> ]
+"5" [label = <(IDENTIFIER,wrapper,new InstrumentationProcessor(counter))<SUB>50</SUB>> ]
+"59" [label = <(IDENTIFIER,counter,new InstrumentationProcessor(counter))<SUB>50</SUB>> ]
+"60" [label = <(setProcessor,setProcessor(target))<SUB>51</SUB>> ]
+"61" [label = <(IDENTIFIER,wrapper,setProcessor(target))<SUB>51</SUB>> ]
+"62" [label = <(IDENTIFIER,target,setProcessor(target))<SUB>51</SUB>> ]
+"63" [label = <(&lt;operator&gt;.assignment,retval = wrapper)<SUB>52</SUB>> ]
+"64" [label = <(IDENTIFIER,retval,retval = wrapper)<SUB>52</SUB>> ]
+"65" [label = <(IDENTIFIER,wrapper,retval = wrapper)<SUB>52</SUB>> ]
+"66" [label = <(RETURN,return retval;,return retval;)<SUB>55</SUB>> ]
+"67" [label = <(IDENTIFIER,retval,return retval;)<SUB>55</SUB>> ]
+"68" [label = <(MODIFIER,PUBLIC)> ]
+"69" [label = <(MODIFIER,VIRTUAL)> ]
+"70" [label = <(METHOD_RETURN,org.apache.camel.Processor)<SUB>43</SUB>> ]
+  "33" -> "34" 
+  "33" -> "35" 
+  "33" -> "36" 
+  "33" -> "37" 
+  "33" -> "68" 
+  "33" -> "69" 
+  "33" -> "70" 
+  "37" -> "38" 
+  "37" -> "39" 
+  "37" -> "42" 
+  "37" -> "43" 
+  "37" -> "50" 
+  "37" -> "66" 
+  "39" -> "40" 
+  "39" -> "41" 
+  "43" -> "44" 
+  "43" -> "45" 
+  "45" -> "46" 
+  "45" -> "49" 
+  "46" -> "47" 
+  "46" -> "48" 
+  "50" -> "51" 
+  "50" -> "54" 
+  "51" -> "52" 
+  "51" -> "53" 
+  "54" -> "6" 
+  "54" -> "55" 
+  "54" -> "58" 
+  "54" -> "60" 
+  "54" -> "63" 
+  "55" -> "56" 
+  "55" -> "57" 
+  "58" -> "5" 
+  "58" -> "59" 
+  "60" -> "61" 
+  "60" -> "62" 
+  "63" -> "64" 
+  "63" -> "65" 
+  "66" -> "67" 
+}

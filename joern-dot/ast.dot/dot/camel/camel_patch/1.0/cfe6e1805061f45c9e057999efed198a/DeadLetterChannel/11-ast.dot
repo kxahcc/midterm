@@ -1,0 +1,103 @@
+digraph "incrementRedeliveryCounter" {  
+"264" [label = <(METHOD,incrementRedeliveryCounter)<SUB>136</SUB>> ]
+"265" [label = <(PARAM,this)<SUB>136</SUB>> ]
+"266" [label = <(PARAM,Exchange exchange)<SUB>136</SUB>> ]
+"267" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>136</SUB>> ]
+"268" [label = <(LOCAL,Message in: org.apache.camel.Message)> ]
+"269" [label = <(&lt;operator&gt;.assignment,Message in = getIn())<SUB>137</SUB>> ]
+"270" [label = <(IDENTIFIER,in,Message in = getIn())<SUB>137</SUB>> ]
+"271" [label = <(getIn,getIn())<SUB>137</SUB>> ]
+"272" [label = <(IDENTIFIER,exchange,getIn())<SUB>137</SUB>> ]
+"273" [label = <(LOCAL,Integer counter: java.lang.Integer)> ]
+"274" [label = <(&lt;operator&gt;.assignment,Integer counter = getHeader(REDELIVERY_COUNTER, Integer.class))<SUB>138</SUB>> ]
+"275" [label = <(IDENTIFIER,counter,Integer counter = getHeader(REDELIVERY_COUNTER, Integer.class))<SUB>138</SUB>> ]
+"276" [label = <(getHeader,getHeader(REDELIVERY_COUNTER, Integer.class))<SUB>138</SUB>> ]
+"277" [label = <(IDENTIFIER,in,getHeader(REDELIVERY_COUNTER, Integer.class))<SUB>138</SUB>> ]
+"278" [label = <(&lt;operator&gt;.fieldAccess,DeadLetterChannel.REDELIVERY_COUNTER)<SUB>138</SUB>> ]
+"279" [label = <(IDENTIFIER,DeadLetterChannel,getHeader(REDELIVERY_COUNTER, Integer.class))<SUB>138</SUB>> ]
+"280" [label = <(FIELD_IDENTIFIER,REDELIVERY_COUNTER,REDELIVERY_COUNTER)<SUB>138</SUB>> ]
+"281" [label = <(&lt;operator&gt;.fieldAccess,Integer.class)<SUB>138</SUB>> ]
+"282" [label = <(IDENTIFIER,Integer,getHeader(REDELIVERY_COUNTER, Integer.class))<SUB>138</SUB>> ]
+"283" [label = <(FIELD_IDENTIFIER,class,class)<SUB>138</SUB>> ]
+"284" [label = <(LOCAL,int next: int)> ]
+"285" [label = <(&lt;operator&gt;.assignment,int next = 1)<SUB>139</SUB>> ]
+"286" [label = <(IDENTIFIER,next,int next = 1)<SUB>139</SUB>> ]
+"287" [label = <(LITERAL,1,int next = 1)<SUB>139</SUB>> ]
+"288" [label = <(CONTROL_STRUCTURE,if (counter != null),if (counter != null))<SUB>140</SUB>> ]
+"289" [label = <(&lt;operator&gt;.notEquals,counter != null)<SUB>140</SUB>> ]
+"290" [label = <(IDENTIFIER,counter,counter != null)<SUB>140</SUB>> ]
+"291" [label = <(LITERAL,null,counter != null)<SUB>140</SUB>> ]
+"292" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>140</SUB>> ]
+"293" [label = <(&lt;operator&gt;.assignment,next = counter + 1)<SUB>141</SUB>> ]
+"294" [label = <(IDENTIFIER,next,next = counter + 1)<SUB>141</SUB>> ]
+"295" [label = <(&lt;operator&gt;.addition,counter + 1)<SUB>141</SUB>> ]
+"296" [label = <(IDENTIFIER,counter,counter + 1)<SUB>141</SUB>> ]
+"297" [label = <(LITERAL,1,counter + 1)<SUB>141</SUB>> ]
+"298" [label = <(setHeader,setHeader(REDELIVERY_COUNTER, next))<SUB>143</SUB>> ]
+"299" [label = <(IDENTIFIER,in,setHeader(REDELIVERY_COUNTER, next))<SUB>143</SUB>> ]
+"300" [label = <(&lt;operator&gt;.fieldAccess,DeadLetterChannel.REDELIVERY_COUNTER)<SUB>143</SUB>> ]
+"301" [label = <(IDENTIFIER,DeadLetterChannel,setHeader(REDELIVERY_COUNTER, next))<SUB>143</SUB>> ]
+"302" [label = <(FIELD_IDENTIFIER,REDELIVERY_COUNTER,REDELIVERY_COUNTER)<SUB>143</SUB>> ]
+"303" [label = <(IDENTIFIER,next,setHeader(REDELIVERY_COUNTER, next))<SUB>143</SUB>> ]
+"304" [label = <(setHeader,setHeader(REDELIVERED, true))<SUB>144</SUB>> ]
+"305" [label = <(IDENTIFIER,in,setHeader(REDELIVERED, true))<SUB>144</SUB>> ]
+"306" [label = <(&lt;operator&gt;.fieldAccess,DeadLetterChannel.REDELIVERED)<SUB>144</SUB>> ]
+"307" [label = <(IDENTIFIER,DeadLetterChannel,setHeader(REDELIVERED, true))<SUB>144</SUB>> ]
+"308" [label = <(FIELD_IDENTIFIER,REDELIVERED,REDELIVERED)<SUB>144</SUB>> ]
+"309" [label = <(LITERAL,true,setHeader(REDELIVERED, true))<SUB>144</SUB>> ]
+"310" [label = <(RETURN,return next;,return next;)<SUB>145</SUB>> ]
+"311" [label = <(IDENTIFIER,next,return next;)<SUB>145</SUB>> ]
+"312" [label = <(MODIFIER,PROTECTED)> ]
+"313" [label = <(MODIFIER,VIRTUAL)> ]
+"314" [label = <(METHOD_RETURN,int)<SUB>136</SUB>> ]
+  "264" -> "265" 
+  "264" -> "266" 
+  "264" -> "267" 
+  "264" -> "312" 
+  "264" -> "313" 
+  "264" -> "314" 
+  "267" -> "268" 
+  "267" -> "269" 
+  "267" -> "273" 
+  "267" -> "274" 
+  "267" -> "284" 
+  "267" -> "285" 
+  "267" -> "288" 
+  "267" -> "298" 
+  "267" -> "304" 
+  "267" -> "310" 
+  "269" -> "270" 
+  "269" -> "271" 
+  "271" -> "272" 
+  "274" -> "275" 
+  "274" -> "276" 
+  "276" -> "277" 
+  "276" -> "278" 
+  "276" -> "281" 
+  "278" -> "279" 
+  "278" -> "280" 
+  "281" -> "282" 
+  "281" -> "283" 
+  "285" -> "286" 
+  "285" -> "287" 
+  "288" -> "289" 
+  "288" -> "292" 
+  "289" -> "290" 
+  "289" -> "291" 
+  "292" -> "293" 
+  "293" -> "294" 
+  "293" -> "295" 
+  "295" -> "296" 
+  "295" -> "297" 
+  "298" -> "299" 
+  "298" -> "300" 
+  "298" -> "303" 
+  "300" -> "301" 
+  "300" -> "302" 
+  "304" -> "305" 
+  "304" -> "306" 
+  "304" -> "309" 
+  "306" -> "307" 
+  "306" -> "308" 
+  "310" -> "311" 
+}

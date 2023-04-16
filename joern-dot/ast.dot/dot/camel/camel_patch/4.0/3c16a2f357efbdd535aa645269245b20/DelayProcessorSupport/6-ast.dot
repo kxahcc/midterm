@@ -1,0 +1,105 @@
+digraph "waitUntil" {  
+"109" [label = <(METHOD,waitUntil)<SUB>75</SUB>> ]
+"10" [label = <(PARAM,this)<SUB>75</SUB>> ]
+"110" [label = <(PARAM,long time)<SUB>75</SUB>> ]
+"111" [label = <(PARAM,Exchange exchange)<SUB>75</SUB>> ]
+"112" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>75</SUB>> ]
+"113" [label = <(CONTROL_STRUCTURE,while (true),while (true))<SUB>76</SUB>> ]
+"114" [label = <(LITERAL,true,while (true))<SUB>76</SUB>> ]
+"115" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>76</SUB>> ]
+"116" [label = <(LOCAL,long delay: long)> ]
+"117" [label = <(&lt;operator&gt;.assignment,long delay = time - currentSystemTime())<SUB>77</SUB>> ]
+"118" [label = <(IDENTIFIER,delay,long delay = time - currentSystemTime())<SUB>77</SUB>> ]
+"119" [label = <(&lt;operator&gt;.subtraction,time - currentSystemTime())<SUB>77</SUB>> ]
+"120" [label = <(IDENTIFIER,time,time - currentSystemTime())<SUB>77</SUB>> ]
+"121" [label = <(currentSystemTime,this.currentSystemTime())<SUB>77</SUB>> ]
+"9" [label = <(IDENTIFIER,this,this.currentSystemTime())<SUB>77</SUB>> ]
+"122" [label = <(CONTROL_STRUCTURE,if (delay &lt; 0),if (delay &lt; 0))<SUB>78</SUB>> ]
+"123" [label = <(&lt;operator&gt;.lessThan,delay &lt; 0)<SUB>78</SUB>> ]
+"124" [label = <(IDENTIFIER,delay,delay &lt; 0)<SUB>78</SUB>> ]
+"125" [label = <(LITERAL,0,delay &lt; 0)<SUB>78</SUB>> ]
+"126" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>78</SUB>> ]
+"127" [label = <(RETURN,return;,return;)<SUB>79</SUB>> ]
+"128" [label = <(CONTROL_STRUCTURE,else,else)<SUB>80</SUB>> ]
+"129" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>80</SUB>> ]
+"130" [label = <(CONTROL_STRUCTURE,if (isFastStop() &amp;&amp; !isRunAllowed()),if (isFastStop() &amp;&amp; !isRunAllowed()))<SUB>81</SUB>> ]
+"131" [label = <(&lt;operator&gt;.logicalAnd,isFastStop() &amp;&amp; !isRunAllowed())<SUB>81</SUB>> ]
+"132" [label = <(isFastStop,this.isFastStop())<SUB>81</SUB>> ]
+"11" [label = <(IDENTIFIER,this,this.isFastStop())<SUB>81</SUB>> ]
+"133" [label = <(&lt;operator&gt;.logicalNot,!isRunAllowed())<SUB>81</SUB>> ]
+"134" [label = <(isRunAllowed,isRunAllowed())<SUB>81</SUB>> ]
+"12" [label = <(IDENTIFIER,this,isRunAllowed())<SUB>81</SUB>> ]
+"135" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>81</SUB>> ]
+"136" [label = <(&lt;operator&gt;.throw,throw new AlreadyStoppedException();)<SUB>82</SUB>> ]
+"137" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>82</SUB>> ]
+"138" [label = <(&lt;operator&gt;.assignment,&lt;empty&gt;)> ]
+"139" [label = <(IDENTIFIER,$obj1,&lt;empty&gt;)> ]
+"140" [label = <(&lt;operator&gt;.alloc,new AlreadyStoppedException())<SUB>82</SUB>> ]
+"141" [label = <(&lt;init&gt;,new AlreadyStoppedException())<SUB>82</SUB>> ]
+"142" [label = <(IDENTIFIER,$obj1,new AlreadyStoppedException())> ]
+"143" [label = <(IDENTIFIER,$obj1,&lt;empty&gt;)> ]
+"144" [label = <(CONTROL_STRUCTURE,try,try)<SUB>84</SUB>> ]
+"145" [label = <(BLOCK,try,try)<SUB>84</SUB>> ]
+"146" [label = <(sleep,this.sleep(delay))<SUB>85</SUB>> ]
+"13" [label = <(IDENTIFIER,this,this.sleep(delay))<SUB>85</SUB>> ]
+"147" [label = <(IDENTIFIER,delay,this.sleep(delay))<SUB>85</SUB>> ]
+"148" [label = <(BLOCK,catch,catch)> ]
+"149" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>86</SUB>> ]
+"150" [label = <(handleSleepInteruptedException,this.handleSleepInteruptedException(e))<SUB>87</SUB>> ]
+"14" [label = <(IDENTIFIER,this,this.handleSleepInteruptedException(e))<SUB>87</SUB>> ]
+"151" [label = <(IDENTIFIER,e,this.handleSleepInteruptedException(e))<SUB>87</SUB>> ]
+"152" [label = <(MODIFIER,PROTECTED)> ]
+"153" [label = <(MODIFIER,VIRTUAL)> ]
+"154" [label = <(METHOD_RETURN,void)<SUB>75</SUB>> ]
+  "109" -> "10" 
+  "109" -> "110" 
+  "109" -> "111" 
+  "109" -> "112" 
+  "109" -> "152" 
+  "109" -> "153" 
+  "109" -> "154" 
+  "112" -> "113" 
+  "113" -> "114" 
+  "113" -> "115" 
+  "115" -> "116" 
+  "115" -> "117" 
+  "115" -> "122" 
+  "117" -> "118" 
+  "117" -> "119" 
+  "119" -> "120" 
+  "119" -> "121" 
+  "121" -> "9" 
+  "122" -> "123" 
+  "122" -> "126" 
+  "122" -> "128" 
+  "123" -> "124" 
+  "123" -> "125" 
+  "126" -> "127" 
+  "128" -> "129" 
+  "129" -> "130" 
+  "129" -> "144" 
+  "130" -> "131" 
+  "130" -> "135" 
+  "131" -> "132" 
+  "131" -> "133" 
+  "132" -> "11" 
+  "133" -> "134" 
+  "134" -> "12" 
+  "135" -> "136" 
+  "136" -> "137" 
+  "137" -> "138" 
+  "137" -> "141" 
+  "137" -> "143" 
+  "138" -> "139" 
+  "138" -> "140" 
+  "141" -> "142" 
+  "144" -> "145" 
+  "144" -> "148" 
+  "145" -> "146" 
+  "146" -> "13" 
+  "146" -> "147" 
+  "148" -> "149" 
+  "149" -> "150" 
+  "150" -> "14" 
+  "150" -> "151" 
+}

@@ -1,0 +1,115 @@
+digraph "dieOnCircularReference" {  
+"166" [label = <(METHOD,dieOnCircularReference)<SUB>110</SUB>> ]
+"22" [label = <(PARAM,this)<SUB>110</SUB>> ]
+"167" [label = <(PARAM,Stack stk)<SUB>110</SUB>> ]
+"168" [label = <(PARAM,Project p)<SUB>110</SUB>> ]
+"169" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>111</SUB>> ]
+"170" [label = <(CONTROL_STRUCTURE,if (isChecked()),if (isChecked()))<SUB>112</SUB>> ]
+"171" [label = <(isChecked,isChecked())<SUB>112</SUB>> ]
+"21" [label = <(IDENTIFIER,this,isChecked())<SUB>112</SUB>> ]
+"172" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>112</SUB>> ]
+"173" [label = <(RETURN,return;,return;)<SUB>113</SUB>> ]
+"174" [label = <(CONTROL_STRUCTURE,if (isReference()),if (isReference()))<SUB>115</SUB>> ]
+"175" [label = <(isReference,isReference())<SUB>115</SUB>> ]
+"23" [label = <(IDENTIFIER,this,isReference())<SUB>115</SUB>> ]
+"176" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>115</SUB>> ]
+"177" [label = <(dieOnCircularReference,dieOnCircularReference(stk, p))<SUB>116</SUB>> ]
+"178" [label = <(IDENTIFIER,super,dieOnCircularReference(stk, p))<SUB>116</SUB>> ]
+"179" [label = <(IDENTIFIER,stk,dieOnCircularReference(stk, p))<SUB>116</SUB>> ]
+"180" [label = <(IDENTIFIER,p,dieOnCircularReference(stk, p))<SUB>116</SUB>> ]
+"181" [label = <(CONTROL_STRUCTURE,else,else)<SUB>117</SUB>> ]
+"182" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>117</SUB>> ]
+"183" [label = <(CONTROL_STRUCTURE,for (Iterator i = v.iterator(); Some(i.hasNext()); ),for (Iterator i = v.iterator(); Some(i.hasNext()); ))<SUB>118</SUB>> ]
+"184" [label = <(LOCAL,Iterator i: java.util.Iterator)> ]
+"185" [label = <(&lt;operator&gt;.assignment,Iterator i = v.iterator())<SUB>118</SUB>> ]
+"186" [label = <(IDENTIFIER,i,Iterator i = v.iterator())<SUB>118</SUB>> ]
+"187" [label = <(iterator,v.iterator())<SUB>118</SUB>> ]
+"188" [label = <(&lt;operator&gt;.fieldAccess,this.v)<SUB>118</SUB>> ]
+"189" [label = <(IDENTIFIER,this,v.iterator())<SUB>118</SUB>> ]
+"190" [label = <(FIELD_IDENTIFIER,v,v)<SUB>118</SUB>> ]
+"191" [label = <(hasNext,i.hasNext())<SUB>118</SUB>> ]
+"192" [label = <(IDENTIFIER,i,i.hasNext())<SUB>118</SUB>> ]
+"193" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>118</SUB>> ]
+"194" [label = <(LOCAL,Object o: java.lang.Object)> ]
+"195" [label = <(&lt;operator&gt;.assignment,Object o = i.next())<SUB>119</SUB>> ]
+"196" [label = <(IDENTIFIER,o,Object o = i.next())<SUB>119</SUB>> ]
+"197" [label = <(next,i.next())<SUB>119</SUB>> ]
+"198" [label = <(IDENTIFIER,i,i.next())<SUB>119</SUB>> ]
+"199" [label = <(CONTROL_STRUCTURE,if (o instanceof DataType),if (o instanceof DataType))<SUB>120</SUB>> ]
+"200" [label = <(&lt;operator&gt;.instanceOf,o instanceof DataType)<SUB>120</SUB>> ]
+"201" [label = <(IDENTIFIER,o,o instanceof DataType)<SUB>120</SUB>> ]
+"202" [label = <(TYPE_REF,DataType,DataType)<SUB>120</SUB>> ]
+"203" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>120</SUB>> ]
+"204" [label = <(push,stk.push(o))<SUB>121</SUB>> ]
+"205" [label = <(IDENTIFIER,stk,stk.push(o))<SUB>121</SUB>> ]
+"206" [label = <(IDENTIFIER,o,stk.push(o))<SUB>121</SUB>> ]
+"207" [label = <(invokeCircularReferenceCheck,invokeCircularReferenceCheck((DataType) o, stk, p))<SUB>122</SUB>> ]
+"24" [label = <(IDENTIFIER,this,invokeCircularReferenceCheck((DataType) o, stk, p))<SUB>122</SUB>> ]
+"208" [label = <(&lt;operator&gt;.cast,(DataType) o)<SUB>122</SUB>> ]
+"209" [label = <(TYPE_REF,DataType,DataType)<SUB>122</SUB>> ]
+"210" [label = <(IDENTIFIER,o,(DataType) o)<SUB>122</SUB>> ]
+"211" [label = <(IDENTIFIER,stk,invokeCircularReferenceCheck((DataType) o, stk, p))<SUB>122</SUB>> ]
+"212" [label = <(IDENTIFIER,p,invokeCircularReferenceCheck((DataType) o, stk, p))<SUB>122</SUB>> ]
+"213" [label = <(setChecked,setChecked(true))<SUB>125</SUB>> ]
+"25" [label = <(IDENTIFIER,this,setChecked(true))<SUB>125</SUB>> ]
+"214" [label = <(LITERAL,true,setChecked(true))<SUB>125</SUB>> ]
+"215" [label = <(MODIFIER,PROTECTED)> ]
+"216" [label = <(MODIFIER,VIRTUAL)> ]
+"217" [label = <(METHOD_RETURN,void)<SUB>110</SUB>> ]
+  "166" -> "22" 
+  "166" -> "167" 
+  "166" -> "168" 
+  "166" -> "169" 
+  "166" -> "215" 
+  "166" -> "216" 
+  "166" -> "217" 
+  "169" -> "170" 
+  "169" -> "174" 
+  "170" -> "171" 
+  "170" -> "172" 
+  "171" -> "21" 
+  "172" -> "173" 
+  "174" -> "175" 
+  "174" -> "176" 
+  "174" -> "181" 
+  "175" -> "23" 
+  "176" -> "177" 
+  "177" -> "178" 
+  "177" -> "179" 
+  "177" -> "180" 
+  "181" -> "182" 
+  "182" -> "183" 
+  "182" -> "213" 
+  "183" -> "184" 
+  "183" -> "185" 
+  "183" -> "191" 
+  "183" -> "193" 
+  "185" -> "186" 
+  "185" -> "187" 
+  "187" -> "188" 
+  "188" -> "189" 
+  "188" -> "190" 
+  "191" -> "192" 
+  "193" -> "194" 
+  "193" -> "195" 
+  "193" -> "199" 
+  "195" -> "196" 
+  "195" -> "197" 
+  "197" -> "198" 
+  "199" -> "200" 
+  "199" -> "203" 
+  "200" -> "201" 
+  "200" -> "202" 
+  "203" -> "204" 
+  "203" -> "207" 
+  "204" -> "205" 
+  "204" -> "206" 
+  "207" -> "24" 
+  "207" -> "208" 
+  "207" -> "211" 
+  "207" -> "212" 
+  "208" -> "209" 
+  "208" -> "210" 
+  "213" -> "25" 
+  "213" -> "214" 
+}

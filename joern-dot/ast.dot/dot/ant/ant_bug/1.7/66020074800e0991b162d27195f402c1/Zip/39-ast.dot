@@ -1,0 +1,173 @@
+digraph "grabNonFileSetResources" {  
+"3214" [label = <(METHOD,grabNonFileSetResources)<SUB>1305</SUB>> ]
+"3215" [label = <(PARAM,this)<SUB>1305</SUB>> ]
+"3216" [label = <(PARAM,ResourceCollection[] rcs)<SUB>1305</SUB>> ]
+"3217" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>1305</SUB>> ]
+"3218" [label = <(LOCAL,Resource[][] result: ANY)> ]
+"3219" [label = <(&lt;operator&gt;.assignment,ANY result = new Resource[rcs.length][])<SUB>1306</SUB>> ]
+"3220" [label = <(IDENTIFIER,result,ANY result = new Resource[rcs.length][])<SUB>1306</SUB>> ]
+"3221" [label = <(&lt;operator&gt;.alloc,new Resource[rcs.length][])> ]
+"3222" [label = <(&lt;operator&gt;.fieldAccess,rcs.length)<SUB>1306</SUB>> ]
+"3223" [label = <(IDENTIFIER,rcs,new Resource[rcs.length][])<SUB>1306</SUB>> ]
+"3224" [label = <(FIELD_IDENTIFIER,length,length)<SUB>1306</SUB>> ]
+"3225" [label = <(CONTROL_STRUCTURE,for (int i = 0; Some(i &lt; rcs.length); i++),for (int i = 0; Some(i &lt; rcs.length); i++))<SUB>1307</SUB>> ]
+"3226" [label = <(LOCAL,int i: int)> ]
+"3227" [label = <(&lt;operator&gt;.assignment,int i = 0)<SUB>1307</SUB>> ]
+"3228" [label = <(IDENTIFIER,i,int i = 0)<SUB>1307</SUB>> ]
+"3229" [label = <(LITERAL,0,int i = 0)<SUB>1307</SUB>> ]
+"3230" [label = <(&lt;operator&gt;.lessThan,i &lt; rcs.length)<SUB>1307</SUB>> ]
+"3231" [label = <(IDENTIFIER,i,i &lt; rcs.length)<SUB>1307</SUB>> ]
+"3232" [label = <(&lt;operator&gt;.fieldAccess,rcs.length)<SUB>1307</SUB>> ]
+"3233" [label = <(IDENTIFIER,rcs,i &lt; rcs.length)<SUB>1307</SUB>> ]
+"3234" [label = <(FIELD_IDENTIFIER,length,length)<SUB>1307</SUB>> ]
+"3235" [label = <(&lt;operator&gt;.postIncrement,i++)<SUB>1307</SUB>> ]
+"3236" [label = <(IDENTIFIER,i,i++)<SUB>1307</SUB>> ]
+"3237" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>1307</SUB>> ]
+"3238" [label = <(LOCAL,Iterator iter: java.util.Iterator)> ]
+"3239" [label = <(&lt;operator&gt;.assignment,Iterator iter = iterator())<SUB>1308</SUB>> ]
+"3240" [label = <(IDENTIFIER,iter,Iterator iter = iterator())<SUB>1308</SUB>> ]
+"3241" [label = <(iterator,iterator())<SUB>1308</SUB>> ]
+"3242" [label = <(&lt;operator&gt;.indexAccess,rcs[i])<SUB>1308</SUB>> ]
+"3243" [label = <(IDENTIFIER,rcs,iterator())<SUB>1308</SUB>> ]
+"3244" [label = <(IDENTIFIER,i,iterator())<SUB>1308</SUB>> ]
+"132" [label = <(LOCAL,ArrayList rs: java.util.ArrayList)> ]
+"3245" [label = <(&lt;operator&gt;.assignment,ArrayList rs = new ArrayList())<SUB>1309</SUB>> ]
+"3246" [label = <(IDENTIFIER,rs,ArrayList rs = new ArrayList())<SUB>1309</SUB>> ]
+"3247" [label = <(&lt;operator&gt;.alloc,new ArrayList())<SUB>1309</SUB>> ]
+"3248" [label = <(&lt;init&gt;,new ArrayList())<SUB>1309</SUB>> ]
+"131" [label = <(IDENTIFIER,rs,new ArrayList())<SUB>1309</SUB>> ]
+"3249" [label = <(LOCAL,int lastDir: int)> ]
+"3250" [label = <(&lt;operator&gt;.assignment,int lastDir = 0)<SUB>1310</SUB>> ]
+"3251" [label = <(IDENTIFIER,lastDir,int lastDir = 0)<SUB>1310</SUB>> ]
+"3252" [label = <(LITERAL,0,int lastDir = 0)<SUB>1310</SUB>> ]
+"3253" [label = <(CONTROL_STRUCTURE,while (iter.hasNext()),while (iter.hasNext()))<SUB>1311</SUB>> ]
+"3254" [label = <(hasNext,iter.hasNext())<SUB>1311</SUB>> ]
+"3255" [label = <(IDENTIFIER,iter,iter.hasNext())<SUB>1311</SUB>> ]
+"3256" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>1311</SUB>> ]
+"3257" [label = <(LOCAL,Resource r: org.apache.tools.ant.types.Resource)> ]
+"3258" [label = <(&lt;operator&gt;.assignment,Resource r = (Resource) iter.next())<SUB>1312</SUB>> ]
+"3259" [label = <(IDENTIFIER,r,Resource r = (Resource) iter.next())<SUB>1312</SUB>> ]
+"3260" [label = <(&lt;operator&gt;.cast,(Resource) iter.next())<SUB>1312</SUB>> ]
+"3261" [label = <(TYPE_REF,Resource,Resource)<SUB>1312</SUB>> ]
+"3262" [label = <(next,iter.next())<SUB>1312</SUB>> ]
+"3263" [label = <(IDENTIFIER,iter,iter.next())<SUB>1312</SUB>> ]
+"3264" [label = <(CONTROL_STRUCTURE,if (r.isExists()),if (r.isExists()))<SUB>1313</SUB>> ]
+"3265" [label = <(isExists,isExists())<SUB>1313</SUB>> ]
+"3266" [label = <(IDENTIFIER,r,isExists())<SUB>1313</SUB>> ]
+"3267" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>1313</SUB>> ]
+"3268" [label = <(CONTROL_STRUCTURE,if (r.isDirectory()),if (r.isDirectory()))<SUB>1314</SUB>> ]
+"3269" [label = <(isDirectory,isDirectory())<SUB>1314</SUB>> ]
+"3270" [label = <(IDENTIFIER,r,isDirectory())<SUB>1314</SUB>> ]
+"3271" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>1314</SUB>> ]
+"3272" [label = <(add,add(lastDir++, r))<SUB>1315</SUB>> ]
+"3273" [label = <(IDENTIFIER,rs,add(lastDir++, r))<SUB>1315</SUB>> ]
+"3274" [label = <(&lt;operator&gt;.postIncrement,lastDir++)<SUB>1315</SUB>> ]
+"3275" [label = <(IDENTIFIER,lastDir,lastDir++)<SUB>1315</SUB>> ]
+"3276" [label = <(IDENTIFIER,r,add(lastDir++, r))<SUB>1315</SUB>> ]
+"3277" [label = <(CONTROL_STRUCTURE,else,else)<SUB>1316</SUB>> ]
+"3278" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>1316</SUB>> ]
+"3279" [label = <(add,add(r))<SUB>1317</SUB>> ]
+"3280" [label = <(IDENTIFIER,rs,add(r))<SUB>1317</SUB>> ]
+"3281" [label = <(IDENTIFIER,r,add(r))<SUB>1317</SUB>> ]
+"3282" [label = <(&lt;operator&gt;.assignment,result[i] = (Resource[]) rs.toArray(new Resource[rs.size()]))<SUB>1321</SUB>> ]
+"3283" [label = <(&lt;operator&gt;.indexAccess,result[i])<SUB>1321</SUB>> ]
+"3284" [label = <(IDENTIFIER,result,result[i] = (Resource[]) rs.toArray(new Resource[rs.size()]))<SUB>1321</SUB>> ]
+"3285" [label = <(IDENTIFIER,i,result[i] = (Resource[]) rs.toArray(new Resource[rs.size()]))<SUB>1321</SUB>> ]
+"3286" [label = <(&lt;operator&gt;.cast,(Resource[]) rs.toArray(new Resource[rs.size()]))<SUB>1321</SUB>> ]
+"3287" [label = <(TYPE_REF,Resource[],Resource[])<SUB>1321</SUB>> ]
+"3288" [label = <(toArray,toArray(new Resource[rs.size()]))<SUB>1321</SUB>> ]
+"3289" [label = <(IDENTIFIER,rs,toArray(new Resource[rs.size()]))<SUB>1321</SUB>> ]
+"3290" [label = <(&lt;operator&gt;.alloc,new Resource[rs.size()])> ]
+"3291" [label = <(size,rs.size())<SUB>1321</SUB>> ]
+"3292" [label = <(IDENTIFIER,rs,rs.size())<SUB>1321</SUB>> ]
+"3293" [label = <(RETURN,return result;,return result;)<SUB>1323</SUB>> ]
+"3294" [label = <(IDENTIFIER,result,return result;)<SUB>1323</SUB>> ]
+"3295" [label = <(MODIFIER,PROTECTED)> ]
+"3296" [label = <(MODIFIER,VIRTUAL)> ]
+"3297" [label = <(METHOD_RETURN,ANY)<SUB>1305</SUB>> ]
+  "3214" -> "3215" 
+  "3214" -> "3216" 
+  "3214" -> "3217" 
+  "3214" -> "3295" 
+  "3214" -> "3296" 
+  "3214" -> "3297" 
+  "3217" -> "3218" 
+  "3217" -> "3219" 
+  "3217" -> "3225" 
+  "3217" -> "3293" 
+  "3219" -> "3220" 
+  "3219" -> "3221" 
+  "3221" -> "3222" 
+  "3222" -> "3223" 
+  "3222" -> "3224" 
+  "3225" -> "3226" 
+  "3225" -> "3227" 
+  "3225" -> "3230" 
+  "3225" -> "3235" 
+  "3225" -> "3237" 
+  "3227" -> "3228" 
+  "3227" -> "3229" 
+  "3230" -> "3231" 
+  "3230" -> "3232" 
+  "3232" -> "3233" 
+  "3232" -> "3234" 
+  "3235" -> "3236" 
+  "3237" -> "3238" 
+  "3237" -> "3239" 
+  "3237" -> "132" 
+  "3237" -> "3245" 
+  "3237" -> "3248" 
+  "3237" -> "3249" 
+  "3237" -> "3250" 
+  "3237" -> "3253" 
+  "3237" -> "3282" 
+  "3239" -> "3240" 
+  "3239" -> "3241" 
+  "3241" -> "3242" 
+  "3242" -> "3243" 
+  "3242" -> "3244" 
+  "3245" -> "3246" 
+  "3245" -> "3247" 
+  "3248" -> "131" 
+  "3250" -> "3251" 
+  "3250" -> "3252" 
+  "3253" -> "3254" 
+  "3253" -> "3256" 
+  "3254" -> "3255" 
+  "3256" -> "3257" 
+  "3256" -> "3258" 
+  "3256" -> "3264" 
+  "3258" -> "3259" 
+  "3258" -> "3260" 
+  "3260" -> "3261" 
+  "3260" -> "3262" 
+  "3262" -> "3263" 
+  "3264" -> "3265" 
+  "3264" -> "3267" 
+  "3265" -> "3266" 
+  "3267" -> "3268" 
+  "3268" -> "3269" 
+  "3268" -> "3271" 
+  "3268" -> "3277" 
+  "3269" -> "3270" 
+  "3271" -> "3272" 
+  "3272" -> "3273" 
+  "3272" -> "3274" 
+  "3272" -> "3276" 
+  "3274" -> "3275" 
+  "3277" -> "3278" 
+  "3278" -> "3279" 
+  "3279" -> "3280" 
+  "3279" -> "3281" 
+  "3282" -> "3283" 
+  "3282" -> "3286" 
+  "3283" -> "3284" 
+  "3283" -> "3285" 
+  "3286" -> "3287" 
+  "3286" -> "3288" 
+  "3288" -> "3289" 
+  "3288" -> "3290" 
+  "3290" -> "3291" 
+  "3291" -> "3292" 
+  "3293" -> "3294" 
+}

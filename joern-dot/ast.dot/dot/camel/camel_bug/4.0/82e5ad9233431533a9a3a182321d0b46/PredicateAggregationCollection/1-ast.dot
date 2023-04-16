@@ -1,0 +1,51 @@
+digraph "onAggregation" {  
+"40" [label = <(METHOD,onAggregation)<SUB>42</SUB>> ]
+"41" [label = <(PARAM,this)<SUB>42</SUB>> ]
+"42" [label = <(PARAM,Object correlationKey)<SUB>43</SUB>> ]
+"43" [label = <(PARAM,Exchange newExchange)<SUB>43</SUB>> ]
+"44" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>43</SUB>> ]
+"45" [label = <(CONTROL_STRUCTURE,if (aggregationCompletedPredicate.matches(newExchange)),if (aggregationCompletedPredicate.matches(newExchange)))<SUB>44</SUB>> ]
+"46" [label = <(matches,matches(newExchange))<SUB>44</SUB>> ]
+"47" [label = <(&lt;operator&gt;.fieldAccess,this.aggregationCompletedPredicate)<SUB>44</SUB>> ]
+"48" [label = <(IDENTIFIER,this,matches(newExchange))<SUB>44</SUB>> ]
+"49" [label = <(FIELD_IDENTIFIER,aggregationCompletedPredicate,aggregationCompletedPredicate)<SUB>44</SUB>> ]
+"50" [label = <(IDENTIFIER,newExchange,matches(newExchange))<SUB>44</SUB>> ]
+"51" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>44</SUB>> ]
+"52" [label = <(remove,remove(correlationKey))<SUB>47</SUB>> ]
+"53" [label = <(getMap,getMap())<SUB>47</SUB>> ]
+"54" [label = <(IDENTIFIER,super,getMap())<SUB>47</SUB>> ]
+"55" [label = <(IDENTIFIER,correlationKey,remove(correlationKey))<SUB>47</SUB>> ]
+"56" [label = <(add,add(newExchange))<SUB>48</SUB>> ]
+"57" [label = <(&lt;operator&gt;.fieldAccess,this.collection)<SUB>48</SUB>> ]
+"58" [label = <(IDENTIFIER,this,add(newExchange))<SUB>48</SUB>> ]
+"59" [label = <(FIELD_IDENTIFIER,collection,collection)<SUB>48</SUB>> ]
+"60" [label = <(IDENTIFIER,newExchange,add(newExchange))<SUB>48</SUB>> ]
+"61" [label = <(MODIFIER,PROTECTED)> ]
+"62" [label = <(MODIFIER,VIRTUAL)> ]
+"63" [label = <(ANNOTATION,@Override,@Override)<SUB>42</SUB>> ]
+"64" [label = <(METHOD_RETURN,void)<SUB>43</SUB>> ]
+  "40" -> "41" 
+  "40" -> "42" 
+  "40" -> "43" 
+  "40" -> "44" 
+  "40" -> "61" 
+  "40" -> "62" 
+  "40" -> "63" 
+  "40" -> "64" 
+  "44" -> "45" 
+  "45" -> "46" 
+  "45" -> "51" 
+  "46" -> "47" 
+  "46" -> "50" 
+  "47" -> "48" 
+  "47" -> "49" 
+  "51" -> "52" 
+  "51" -> "56" 
+  "52" -> "53" 
+  "52" -> "55" 
+  "53" -> "54" 
+  "56" -> "57" 
+  "56" -> "60" 
+  "57" -> "58" 
+  "57" -> "59" 
+}

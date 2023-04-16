@@ -1,0 +1,175 @@
+digraph "getResourceContainer" {  
+"383" [label = <(METHOD,getResourceContainer)<SUB>254</SUB>> ]
+"384" [label = <(PARAM,this)<SUB>254</SUB>> ]
+"385" [label = <(PARAM,String resourceLocation)<SUB>254</SUB>> ]
+"386" [label = <(PARAM,String[] paths)<SUB>254</SUB>> ]
+"387" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>255</SUB>> ]
+"388" [label = <(CONTROL_STRUCTURE,for (int i = 0; Some(i &lt; paths.length); ++i),for (int i = 0; Some(i &lt; paths.length); ++i))<SUB>256</SUB>> ]
+"389" [label = <(LOCAL,int i: int)> ]
+"390" [label = <(&lt;operator&gt;.assignment,int i = 0)<SUB>256</SUB>> ]
+"391" [label = <(IDENTIFIER,i,int i = 0)<SUB>256</SUB>> ]
+"392" [label = <(LITERAL,0,int i = 0)<SUB>256</SUB>> ]
+"393" [label = <(&lt;operator&gt;.lessThan,i &lt; paths.length)<SUB>256</SUB>> ]
+"394" [label = <(IDENTIFIER,i,i &lt; paths.length)<SUB>256</SUB>> ]
+"395" [label = <(&lt;operator&gt;.fieldAccess,paths.length)<SUB>256</SUB>> ]
+"396" [label = <(IDENTIFIER,paths,i &lt; paths.length)<SUB>256</SUB>> ]
+"397" [label = <(FIELD_IDENTIFIER,length,length)<SUB>256</SUB>> ]
+"398" [label = <(&lt;operator&gt;.preIncrement,++i)<SUB>256</SUB>> ]
+"399" [label = <(IDENTIFIER,i,++i)<SUB>256</SUB>> ]
+"400" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>256</SUB>> ]
+"23" [label = <(LOCAL,File element: java.io.File)> ]
+"401" [label = <(&lt;operator&gt;.assignment,File element = new File(paths[i]))<SUB>257</SUB>> ]
+"402" [label = <(IDENTIFIER,element,File element = new File(paths[i]))<SUB>257</SUB>> ]
+"403" [label = <(&lt;operator&gt;.alloc,new File(paths[i]))<SUB>257</SUB>> ]
+"404" [label = <(&lt;init&gt;,new File(paths[i]))<SUB>257</SUB>> ]
+"22" [label = <(IDENTIFIER,element,new File(paths[i]))<SUB>257</SUB>> ]
+"405" [label = <(&lt;operator&gt;.indexAccess,paths[i])<SUB>257</SUB>> ]
+"406" [label = <(IDENTIFIER,paths,new File(paths[i]))<SUB>257</SUB>> ]
+"407" [label = <(IDENTIFIER,i,new File(paths[i]))<SUB>257</SUB>> ]
+"408" [label = <(CONTROL_STRUCTURE,if (!element.exists()),if (!element.exists()))<SUB>258</SUB>> ]
+"409" [label = <(&lt;operator&gt;.logicalNot,!element.exists())<SUB>258</SUB>> ]
+"410" [label = <(exists,element.exists())<SUB>258</SUB>> ]
+"411" [label = <(IDENTIFIER,element,element.exists())<SUB>258</SUB>> ]
+"412" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>258</SUB>> ]
+"413" [label = <(CONTROL_STRUCTURE,continue;,continue;)<SUB>259</SUB>> ]
+"414" [label = <(CONTROL_STRUCTURE,if (element.isDirectory()),if (element.isDirectory()))<SUB>261</SUB>> ]
+"415" [label = <(isDirectory,element.isDirectory())<SUB>261</SUB>> ]
+"416" [label = <(IDENTIFIER,element,element.isDirectory())<SUB>261</SUB>> ]
+"417" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>261</SUB>> ]
+"25" [label = <(LOCAL,File resource: java.io.File)> ]
+"418" [label = <(&lt;operator&gt;.assignment,File resource = new File(element, resourceLocation))<SUB>262</SUB>> ]
+"419" [label = <(IDENTIFIER,resource,File resource = new File(element, resourceLocation))<SUB>262</SUB>> ]
+"420" [label = <(&lt;operator&gt;.alloc,new File(element, resourceLocation))<SUB>262</SUB>> ]
+"421" [label = <(&lt;init&gt;,new File(element, resourceLocation))<SUB>262</SUB>> ]
+"24" [label = <(IDENTIFIER,resource,new File(element, resourceLocation))<SUB>262</SUB>> ]
+"422" [label = <(IDENTIFIER,element,new File(element, resourceLocation))<SUB>262</SUB>> ]
+"423" [label = <(IDENTIFIER,resourceLocation,new File(element, resourceLocation))<SUB>262</SUB>> ]
+"424" [label = <(CONTROL_STRUCTURE,if (resource.exists()),if (resource.exists()))<SUB>263</SUB>> ]
+"425" [label = <(exists,resource.exists())<SUB>263</SUB>> ]
+"426" [label = <(IDENTIFIER,resource,resource.exists())<SUB>263</SUB>> ]
+"427" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>263</SUB>> ]
+"428" [label = <(RETURN,return resource;,return resource;)<SUB>264</SUB>> ]
+"429" [label = <(IDENTIFIER,resource,return resource;)<SUB>264</SUB>> ]
+"430" [label = <(CONTROL_STRUCTURE,else,else)<SUB>266</SUB>> ]
+"431" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>266</SUB>> ]
+"27" [label = <(LOCAL,ZipFile zipFile: java.util.zip.ZipFile)> ]
+"432" [label = <(&lt;operator&gt;.assignment,ZipFile zipFile = null)<SUB>268</SUB>> ]
+"433" [label = <(IDENTIFIER,zipFile,ZipFile zipFile = null)<SUB>268</SUB>> ]
+"434" [label = <(LITERAL,null,ZipFile zipFile = null)<SUB>268</SUB>> ]
+"435" [label = <(CONTROL_STRUCTURE,try,try)<SUB>269</SUB>> ]
+"436" [label = <(BLOCK,try,try)<SUB>269</SUB>> ]
+"437" [label = <(&lt;operator&gt;.assignment,zipFile = new ZipFile(element))<SUB>270</SUB>> ]
+"438" [label = <(IDENTIFIER,zipFile,zipFile = new ZipFile(element))<SUB>270</SUB>> ]
+"439" [label = <(&lt;operator&gt;.alloc,new ZipFile(element))<SUB>270</SUB>> ]
+"440" [label = <(&lt;init&gt;,new ZipFile(element))<SUB>270</SUB>> ]
+"26" [label = <(IDENTIFIER,zipFile,new ZipFile(element))<SUB>270</SUB>> ]
+"441" [label = <(IDENTIFIER,element,new ZipFile(element))<SUB>270</SUB>> ]
+"442" [label = <(CONTROL_STRUCTURE,if (zipFile.getEntry(resourceLocation) != null),if (zipFile.getEntry(resourceLocation) != null))<SUB>271</SUB>> ]
+"443" [label = <(&lt;operator&gt;.notEquals,zipFile.getEntry(resourceLocation) != null)<SUB>271</SUB>> ]
+"444" [label = <(getEntry,zipFile.getEntry(resourceLocation))<SUB>271</SUB>> ]
+"445" [label = <(IDENTIFIER,zipFile,zipFile.getEntry(resourceLocation))<SUB>271</SUB>> ]
+"446" [label = <(IDENTIFIER,resourceLocation,zipFile.getEntry(resourceLocation))<SUB>271</SUB>> ]
+"447" [label = <(LITERAL,null,zipFile.getEntry(resourceLocation) != null)<SUB>271</SUB>> ]
+"448" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>271</SUB>> ]
+"449" [label = <(RETURN,return element;,return element;)<SUB>272</SUB>> ]
+"450" [label = <(IDENTIFIER,element,return element;)<SUB>272</SUB>> ]
+"451" [label = <(BLOCK,finally,finally)<SUB>274</SUB>> ]
+"452" [label = <(CONTROL_STRUCTURE,if (zipFile != null),if (zipFile != null))<SUB>275</SUB>> ]
+"453" [label = <(&lt;operator&gt;.notEquals,zipFile != null)<SUB>275</SUB>> ]
+"454" [label = <(IDENTIFIER,zipFile,zipFile != null)<SUB>275</SUB>> ]
+"455" [label = <(LITERAL,null,zipFile != null)<SUB>275</SUB>> ]
+"456" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>275</SUB>> ]
+"457" [label = <(close,zipFile.close())<SUB>276</SUB>> ]
+"458" [label = <(IDENTIFIER,zipFile,zipFile.close())<SUB>276</SUB>> ]
+"459" [label = <(RETURN,return null;,return null;)<SUB>281</SUB>> ]
+"460" [label = <(LITERAL,null,return null;)<SUB>281</SUB>> ]
+"461" [label = <(MODIFIER,PRIVATE)> ]
+"462" [label = <(MODIFIER,VIRTUAL)> ]
+"463" [label = <(METHOD_RETURN,java.io.File)<SUB>254</SUB>> ]
+  "383" -> "384" 
+  "383" -> "385" 
+  "383" -> "386" 
+  "383" -> "387" 
+  "383" -> "461" 
+  "383" -> "462" 
+  "383" -> "463" 
+  "387" -> "388" 
+  "387" -> "459" 
+  "388" -> "389" 
+  "388" -> "390" 
+  "388" -> "393" 
+  "388" -> "398" 
+  "388" -> "400" 
+  "390" -> "391" 
+  "390" -> "392" 
+  "393" -> "394" 
+  "393" -> "395" 
+  "395" -> "396" 
+  "395" -> "397" 
+  "398" -> "399" 
+  "400" -> "23" 
+  "400" -> "401" 
+  "400" -> "404" 
+  "400" -> "408" 
+  "400" -> "414" 
+  "401" -> "402" 
+  "401" -> "403" 
+  "404" -> "22" 
+  "404" -> "405" 
+  "405" -> "406" 
+  "405" -> "407" 
+  "408" -> "409" 
+  "408" -> "412" 
+  "409" -> "410" 
+  "410" -> "411" 
+  "412" -> "413" 
+  "414" -> "415" 
+  "414" -> "417" 
+  "414" -> "430" 
+  "415" -> "416" 
+  "417" -> "25" 
+  "417" -> "418" 
+  "417" -> "421" 
+  "417" -> "424" 
+  "418" -> "419" 
+  "418" -> "420" 
+  "421" -> "24" 
+  "421" -> "422" 
+  "421" -> "423" 
+  "424" -> "425" 
+  "424" -> "427" 
+  "425" -> "426" 
+  "427" -> "428" 
+  "428" -> "429" 
+  "430" -> "431" 
+  "431" -> "27" 
+  "431" -> "432" 
+  "431" -> "435" 
+  "432" -> "433" 
+  "432" -> "434" 
+  "435" -> "436" 
+  "435" -> "451" 
+  "436" -> "437" 
+  "436" -> "440" 
+  "436" -> "442" 
+  "437" -> "438" 
+  "437" -> "439" 
+  "440" -> "26" 
+  "440" -> "441" 
+  "442" -> "443" 
+  "442" -> "448" 
+  "443" -> "444" 
+  "443" -> "447" 
+  "444" -> "445" 
+  "444" -> "446" 
+  "448" -> "449" 
+  "449" -> "450" 
+  "451" -> "452" 
+  "452" -> "453" 
+  "452" -> "456" 
+  "453" -> "454" 
+  "453" -> "455" 
+  "456" -> "457" 
+  "457" -> "458" 
+  "459" -> "460" 
+}

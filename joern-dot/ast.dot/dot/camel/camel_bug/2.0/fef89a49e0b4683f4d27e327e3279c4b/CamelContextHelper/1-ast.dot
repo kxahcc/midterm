@@ -1,0 +1,63 @@
+digraph "getMandatoryEndpoint" {  
+"22" [label = <(METHOD,getMandatoryEndpoint)<SUB>46</SUB>> ]
+"23" [label = <(PARAM,CamelContext camelContext)<SUB>46</SUB>> ]
+"24" [label = <(PARAM,String uri)<SUB>46</SUB>> ]
+"25" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>47</SUB>> ]
+"26" [label = <(LOCAL,Endpoint endpoint: org.apache.camel.Endpoint)> ]
+"27" [label = <(&lt;operator&gt;.assignment,Endpoint endpoint = getEndpoint(uri))<SUB>48</SUB>> ]
+"28" [label = <(IDENTIFIER,endpoint,Endpoint endpoint = getEndpoint(uri))<SUB>48</SUB>> ]
+"29" [label = <(getEndpoint,getEndpoint(uri))<SUB>48</SUB>> ]
+"30" [label = <(IDENTIFIER,camelContext,getEndpoint(uri))<SUB>48</SUB>> ]
+"31" [label = <(IDENTIFIER,uri,getEndpoint(uri))<SUB>48</SUB>> ]
+"32" [label = <(CONTROL_STRUCTURE,if (endpoint == null),if (endpoint == null))<SUB>49</SUB>> ]
+"33" [label = <(&lt;operator&gt;.equals,endpoint == null)<SUB>49</SUB>> ]
+"34" [label = <(IDENTIFIER,endpoint,endpoint == null)<SUB>49</SUB>> ]
+"35" [label = <(LITERAL,null,endpoint == null)<SUB>49</SUB>> ]
+"36" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>49</SUB>> ]
+"37" [label = <(&lt;operator&gt;.throw,throw new NoSuchEndpointException(uri);)<SUB>50</SUB>> ]
+"38" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>50</SUB>> ]
+"39" [label = <(&lt;operator&gt;.assignment,&lt;empty&gt;)> ]
+"40" [label = <(IDENTIFIER,$obj0,&lt;empty&gt;)> ]
+"41" [label = <(&lt;operator&gt;.alloc,new NoSuchEndpointException(uri))<SUB>50</SUB>> ]
+"42" [label = <(&lt;init&gt;,new NoSuchEndpointException(uri))<SUB>50</SUB>> ]
+"43" [label = <(IDENTIFIER,$obj0,new NoSuchEndpointException(uri))> ]
+"44" [label = <(IDENTIFIER,uri,new NoSuchEndpointException(uri))<SUB>50</SUB>> ]
+"45" [label = <(IDENTIFIER,$obj0,&lt;empty&gt;)> ]
+"46" [label = <(CONTROL_STRUCTURE,else,else)<SUB>51</SUB>> ]
+"47" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>51</SUB>> ]
+"48" [label = <(RETURN,return endpoint;,return endpoint;)<SUB>52</SUB>> ]
+"49" [label = <(IDENTIFIER,endpoint,return endpoint;)<SUB>52</SUB>> ]
+"50" [label = <(MODIFIER,PUBLIC)> ]
+"51" [label = <(MODIFIER,STATIC)> ]
+"52" [label = <(METHOD_RETURN,org.apache.camel.Endpoint)<SUB>46</SUB>> ]
+  "22" -> "23" 
+  "22" -> "24" 
+  "22" -> "25" 
+  "22" -> "50" 
+  "22" -> "51" 
+  "22" -> "52" 
+  "25" -> "26" 
+  "25" -> "27" 
+  "25" -> "32" 
+  "27" -> "28" 
+  "27" -> "29" 
+  "29" -> "30" 
+  "29" -> "31" 
+  "32" -> "33" 
+  "32" -> "36" 
+  "32" -> "46" 
+  "33" -> "34" 
+  "33" -> "35" 
+  "36" -> "37" 
+  "37" -> "38" 
+  "38" -> "39" 
+  "38" -> "42" 
+  "38" -> "45" 
+  "39" -> "40" 
+  "39" -> "41" 
+  "42" -> "43" 
+  "42" -> "44" 
+  "46" -> "47" 
+  "47" -> "48" 
+  "48" -> "49" 
+}

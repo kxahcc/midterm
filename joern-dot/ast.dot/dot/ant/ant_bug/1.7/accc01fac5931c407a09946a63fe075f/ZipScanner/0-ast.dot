@@ -1,0 +1,325 @@
+digraph "fillMapsFromArchive" {  
+"15" [label = <(METHOD,fillMapsFromArchive)<SUB>55</SUB>> ]
+"8" [label = <(PARAM,this)<SUB>55</SUB>> ]
+"16" [label = <(PARAM,Resource src)<SUB>55</SUB>> ]
+"17" [label = <(PARAM,String encoding)<SUB>55</SUB>> ]
+"18" [label = <(PARAM,Map fileEntries)<SUB>56</SUB>> ]
+"19" [label = <(PARAM,Map matchFileEntries)<SUB>56</SUB>> ]
+"20" [label = <(PARAM,Map dirEntries)<SUB>57</SUB>> ]
+"21" [label = <(PARAM,Map matchDirEntries)<SUB>57</SUB>> ]
+"22" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>57</SUB>> ]
+"23" [label = <(LOCAL,ZipEntry entry: org.apache.tools.zip.ZipEntry)> ]
+"24" [label = <(&lt;operator&gt;.assignment,ZipEntry entry = null)<SUB>58</SUB>> ]
+"25" [label = <(IDENTIFIER,entry,ZipEntry entry = null)<SUB>58</SUB>> ]
+"26" [label = <(LITERAL,null,ZipEntry entry = null)<SUB>58</SUB>> ]
+"4" [label = <(LOCAL,ZipFile zf: org.apache.tools.zip.ZipFile)> ]
+"27" [label = <(&lt;operator&gt;.assignment,ZipFile zf = null)<SUB>59</SUB>> ]
+"28" [label = <(IDENTIFIER,zf,ZipFile zf = null)<SUB>59</SUB>> ]
+"29" [label = <(LITERAL,null,ZipFile zf = null)<SUB>59</SUB>> ]
+"30" [label = <(LOCAL,File srcFile: java.io.File)> ]
+"31" [label = <(&lt;operator&gt;.assignment,File srcFile = null)<SUB>61</SUB>> ]
+"32" [label = <(IDENTIFIER,srcFile,File srcFile = null)<SUB>61</SUB>> ]
+"33" [label = <(LITERAL,null,File srcFile = null)<SUB>61</SUB>> ]
+"34" [label = <(CONTROL_STRUCTURE,if (src instanceof FileResource),if (src instanceof FileResource))<SUB>62</SUB>> ]
+"35" [label = <(&lt;operator&gt;.instanceOf,src instanceof FileResource)<SUB>62</SUB>> ]
+"36" [label = <(IDENTIFIER,src,src instanceof FileResource)<SUB>62</SUB>> ]
+"37" [label = <(TYPE_REF,FileResource,FileResource)<SUB>62</SUB>> ]
+"38" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>62</SUB>> ]
+"39" [label = <(&lt;operator&gt;.assignment,srcFile = getFile())<SUB>63</SUB>> ]
+"40" [label = <(IDENTIFIER,srcFile,srcFile = getFile())<SUB>63</SUB>> ]
+"41" [label = <(getFile,getFile())<SUB>63</SUB>> ]
+"42" [label = <(&lt;operator&gt;.cast,(FileResource) src)<SUB>63</SUB>> ]
+"43" [label = <(TYPE_REF,FileResource,FileResource)<SUB>63</SUB>> ]
+"44" [label = <(IDENTIFIER,src,(FileResource) src)<SUB>63</SUB>> ]
+"45" [label = <(CONTROL_STRUCTURE,else,else)<SUB>64</SUB>> ]
+"46" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>64</SUB>> ]
+"47" [label = <(&lt;operator&gt;.throw,throw new BuildException(&quot;only file resources are supported&quot;);)<SUB>65</SUB>> ]
+"48" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>65</SUB>> ]
+"49" [label = <(&lt;operator&gt;.assignment,&lt;empty&gt;)> ]
+"50" [label = <(IDENTIFIER,$obj0,&lt;empty&gt;)> ]
+"51" [label = <(&lt;operator&gt;.alloc,new BuildException(&quot;only file resources are supported&quot;))<SUB>65</SUB>> ]
+"52" [label = <(&lt;init&gt;,new BuildException(&quot;only file resources are supported&quot;))<SUB>65</SUB>> ]
+"53" [label = <(IDENTIFIER,$obj0,new BuildException(&quot;only file resources are supported&quot;))> ]
+"54" [label = <(LITERAL,&quot;only file resources are supported&quot;,new BuildException(&quot;only file resources are supported&quot;))<SUB>65</SUB>> ]
+"55" [label = <(IDENTIFIER,$obj0,&lt;empty&gt;)> ]
+"56" [label = <(CONTROL_STRUCTURE,try,try)<SUB>68</SUB>> ]
+"57" [label = <(BLOCK,try,try)<SUB>68</SUB>> ]
+"58" [label = <(CONTROL_STRUCTURE,try,try)<SUB>69</SUB>> ]
+"59" [label = <(BLOCK,try,try)<SUB>69</SUB>> ]
+"60" [label = <(&lt;operator&gt;.assignment,zf = new ZipFile(srcFile, encoding))<SUB>70</SUB>> ]
+"61" [label = <(IDENTIFIER,zf,zf = new ZipFile(srcFile, encoding))<SUB>70</SUB>> ]
+"62" [label = <(&lt;operator&gt;.alloc,new ZipFile(srcFile, encoding))<SUB>70</SUB>> ]
+"63" [label = <(&lt;init&gt;,new ZipFile(srcFile, encoding))<SUB>70</SUB>> ]
+"3" [label = <(IDENTIFIER,zf,new ZipFile(srcFile, encoding))<SUB>70</SUB>> ]
+"64" [label = <(IDENTIFIER,srcFile,new ZipFile(srcFile, encoding))<SUB>70</SUB>> ]
+"65" [label = <(IDENTIFIER,encoding,new ZipFile(srcFile, encoding))<SUB>70</SUB>> ]
+"66" [label = <(BLOCK,catch,catch)> ]
+"67" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>71</SUB>> ]
+"68" [label = <(&lt;operator&gt;.throw,throw new BuildException(&quot;problem reading &quot; + srcFile, ex);)<SUB>72</SUB>> ]
+"69" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>72</SUB>> ]
+"70" [label = <(&lt;operator&gt;.assignment,&lt;empty&gt;)> ]
+"71" [label = <(IDENTIFIER,$obj2,&lt;empty&gt;)> ]
+"72" [label = <(&lt;operator&gt;.alloc,new BuildException(&quot;problem reading &quot; + srcFile, ex))<SUB>72</SUB>> ]
+"73" [label = <(&lt;init&gt;,new BuildException(&quot;problem reading &quot; + srcFile, ex))<SUB>72</SUB>> ]
+"74" [label = <(IDENTIFIER,$obj2,new BuildException(&quot;problem reading &quot; + srcFile, ex))> ]
+"75" [label = <(&lt;operator&gt;.addition,&quot;problem reading &quot; + srcFile)<SUB>72</SUB>> ]
+"76" [label = <(LITERAL,&quot;problem reading &quot;,&quot;problem reading &quot; + srcFile)<SUB>72</SUB>> ]
+"77" [label = <(IDENTIFIER,srcFile,&quot;problem reading &quot; + srcFile)<SUB>72</SUB>> ]
+"78" [label = <(IDENTIFIER,ex,new BuildException(&quot;problem reading &quot; + srcFile, ex))<SUB>72</SUB>> ]
+"79" [label = <(IDENTIFIER,$obj2,&lt;empty&gt;)> ]
+"80" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>73</SUB>> ]
+"81" [label = <(&lt;operator&gt;.throw,throw new BuildException(&quot;problem opening &quot; + srcFile, ex);)<SUB>74</SUB>> ]
+"82" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>74</SUB>> ]
+"83" [label = <(&lt;operator&gt;.assignment,&lt;empty&gt;)> ]
+"84" [label = <(IDENTIFIER,$obj3,&lt;empty&gt;)> ]
+"85" [label = <(&lt;operator&gt;.alloc,new BuildException(&quot;problem opening &quot; + srcFile, ex))<SUB>74</SUB>> ]
+"86" [label = <(&lt;init&gt;,new BuildException(&quot;problem opening &quot; + srcFile, ex))<SUB>74</SUB>> ]
+"87" [label = <(IDENTIFIER,$obj3,new BuildException(&quot;problem opening &quot; + srcFile, ex))> ]
+"88" [label = <(&lt;operator&gt;.addition,&quot;problem opening &quot; + srcFile)<SUB>74</SUB>> ]
+"89" [label = <(LITERAL,&quot;problem opening &quot;,&quot;problem opening &quot; + srcFile)<SUB>74</SUB>> ]
+"90" [label = <(IDENTIFIER,srcFile,&quot;problem opening &quot; + srcFile)<SUB>74</SUB>> ]
+"91" [label = <(IDENTIFIER,ex,new BuildException(&quot;problem opening &quot; + srcFile, ex))<SUB>74</SUB>> ]
+"92" [label = <(IDENTIFIER,$obj3,&lt;empty&gt;)> ]
+"93" [label = <(LOCAL,Enumeration e: java.util.Enumeration)> ]
+"94" [label = <(&lt;operator&gt;.assignment,Enumeration e = getEntries())<SUB>76</SUB>> ]
+"95" [label = <(IDENTIFIER,e,Enumeration e = getEntries())<SUB>76</SUB>> ]
+"96" [label = <(getEntries,getEntries())<SUB>76</SUB>> ]
+"97" [label = <(IDENTIFIER,zf,getEntries())<SUB>76</SUB>> ]
+"98" [label = <(CONTROL_STRUCTURE,while (e.hasMoreElements()),while (e.hasMoreElements()))<SUB>77</SUB>> ]
+"99" [label = <(hasMoreElements,e.hasMoreElements())<SUB>77</SUB>> ]
+"100" [label = <(IDENTIFIER,e,e.hasMoreElements())<SUB>77</SUB>> ]
+"101" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>77</SUB>> ]
+"102" [label = <(&lt;operator&gt;.assignment,entry = (ZipEntry) e.nextElement())<SUB>78</SUB>> ]
+"103" [label = <(IDENTIFIER,entry,entry = (ZipEntry) e.nextElement())<SUB>78</SUB>> ]
+"104" [label = <(&lt;operator&gt;.cast,(ZipEntry) e.nextElement())<SUB>78</SUB>> ]
+"105" [label = <(TYPE_REF,ZipEntry,ZipEntry)<SUB>78</SUB>> ]
+"106" [label = <(nextElement,e.nextElement())<SUB>78</SUB>> ]
+"107" [label = <(IDENTIFIER,e,e.nextElement())<SUB>78</SUB>> ]
+"6" [label = <(LOCAL,Resource r: ANY)> ]
+"108" [label = <(&lt;operator&gt;.assignment,ANY r = new ZipResource(srcFile, encoding, entry))<SUB>79</SUB>> ]
+"109" [label = <(IDENTIFIER,r,ANY r = new ZipResource(srcFile, encoding, entry))<SUB>79</SUB>> ]
+"110" [label = <(&lt;operator&gt;.alloc,new ZipResource(srcFile, encoding, entry))<SUB>79</SUB>> ]
+"111" [label = <(&lt;init&gt;,new ZipResource(srcFile, encoding, entry))<SUB>79</SUB>> ]
+"5" [label = <(IDENTIFIER,r,new ZipResource(srcFile, encoding, entry))<SUB>79</SUB>> ]
+"112" [label = <(IDENTIFIER,srcFile,new ZipResource(srcFile, encoding, entry))<SUB>79</SUB>> ]
+"113" [label = <(IDENTIFIER,encoding,new ZipResource(srcFile, encoding, entry))<SUB>79</SUB>> ]
+"114" [label = <(IDENTIFIER,entry,new ZipResource(srcFile, encoding, entry))<SUB>79</SUB>> ]
+"115" [label = <(LOCAL,String name: java.lang.String)> ]
+"116" [label = <(&lt;operator&gt;.assignment,String name = getName())<SUB>80</SUB>> ]
+"117" [label = <(IDENTIFIER,name,String name = getName())<SUB>80</SUB>> ]
+"118" [label = <(getName,getName())<SUB>80</SUB>> ]
+"119" [label = <(IDENTIFIER,entry,getName())<SUB>80</SUB>> ]
+"120" [label = <(CONTROL_STRUCTURE,if (entry.isDirectory()),if (entry.isDirectory()))<SUB>81</SUB>> ]
+"121" [label = <(isDirectory,isDirectory())<SUB>81</SUB>> ]
+"122" [label = <(IDENTIFIER,entry,isDirectory())<SUB>81</SUB>> ]
+"123" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>81</SUB>> ]
+"124" [label = <(&lt;operator&gt;.assignment,name = trimSeparator(name))<SUB>82</SUB>> ]
+"125" [label = <(IDENTIFIER,name,name = trimSeparator(name))<SUB>82</SUB>> ]
+"126" [label = <(trimSeparator,trimSeparator(name))<SUB>82</SUB>> ]
+"7" [label = <(IDENTIFIER,this,trimSeparator(name))<SUB>82</SUB>> ]
+"127" [label = <(IDENTIFIER,name,trimSeparator(name))<SUB>82</SUB>> ]
+"128" [label = <(put,put(name, r))<SUB>83</SUB>> ]
+"129" [label = <(IDENTIFIER,dirEntries,put(name, r))<SUB>83</SUB>> ]
+"130" [label = <(IDENTIFIER,name,put(name, r))<SUB>83</SUB>> ]
+"131" [label = <(IDENTIFIER,r,put(name, r))<SUB>83</SUB>> ]
+"132" [label = <(CONTROL_STRUCTURE,if (match(name)),if (match(name)))<SUB>84</SUB>> ]
+"133" [label = <(match,match(name))<SUB>84</SUB>> ]
+"9" [label = <(IDENTIFIER,this,match(name))<SUB>84</SUB>> ]
+"134" [label = <(IDENTIFIER,name,match(name))<SUB>84</SUB>> ]
+"135" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>84</SUB>> ]
+"136" [label = <(put,put(name, r))<SUB>85</SUB>> ]
+"137" [label = <(IDENTIFIER,matchDirEntries,put(name, r))<SUB>85</SUB>> ]
+"138" [label = <(IDENTIFIER,name,put(name, r))<SUB>85</SUB>> ]
+"139" [label = <(IDENTIFIER,r,put(name, r))<SUB>85</SUB>> ]
+"140" [label = <(CONTROL_STRUCTURE,else,else)<SUB>87</SUB>> ]
+"141" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>87</SUB>> ]
+"142" [label = <(put,put(name, r))<SUB>88</SUB>> ]
+"143" [label = <(IDENTIFIER,fileEntries,put(name, r))<SUB>88</SUB>> ]
+"144" [label = <(IDENTIFIER,name,put(name, r))<SUB>88</SUB>> ]
+"145" [label = <(IDENTIFIER,r,put(name, r))<SUB>88</SUB>> ]
+"146" [label = <(CONTROL_STRUCTURE,if (match(name)),if (match(name)))<SUB>89</SUB>> ]
+"147" [label = <(match,match(name))<SUB>89</SUB>> ]
+"10" [label = <(IDENTIFIER,this,match(name))<SUB>89</SUB>> ]
+"148" [label = <(IDENTIFIER,name,match(name))<SUB>89</SUB>> ]
+"149" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>89</SUB>> ]
+"150" [label = <(put,put(name, r))<SUB>90</SUB>> ]
+"151" [label = <(IDENTIFIER,matchFileEntries,put(name, r))<SUB>90</SUB>> ]
+"152" [label = <(IDENTIFIER,name,put(name, r))<SUB>90</SUB>> ]
+"153" [label = <(IDENTIFIER,r,put(name, r))<SUB>90</SUB>> ]
+"154" [label = <(BLOCK,finally,finally)<SUB>94</SUB>> ]
+"155" [label = <(CONTROL_STRUCTURE,if (zf != null),if (zf != null))<SUB>95</SUB>> ]
+"156" [label = <(&lt;operator&gt;.notEquals,zf != null)<SUB>95</SUB>> ]
+"157" [label = <(IDENTIFIER,zf,zf != null)<SUB>95</SUB>> ]
+"158" [label = <(LITERAL,null,zf != null)<SUB>95</SUB>> ]
+"159" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>95</SUB>> ]
+"160" [label = <(CONTROL_STRUCTURE,try,try)<SUB>96</SUB>> ]
+"161" [label = <(BLOCK,try,try)<SUB>96</SUB>> ]
+"162" [label = <(close,close())<SUB>97</SUB>> ]
+"163" [label = <(IDENTIFIER,zf,close())<SUB>97</SUB>> ]
+"164" [label = <(BLOCK,catch,catch)> ]
+"165" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>98</SUB>> ]
+"166" [label = <(MODIFIER,PROTECTED)> ]
+"167" [label = <(MODIFIER,VIRTUAL)> ]
+"168" [label = <(METHOD_RETURN,void)<SUB>55</SUB>> ]
+  "15" -> "8" 
+  "15" -> "16" 
+  "15" -> "17" 
+  "15" -> "18" 
+  "15" -> "19" 
+  "15" -> "20" 
+  "15" -> "21" 
+  "15" -> "22" 
+  "15" -> "166" 
+  "15" -> "167" 
+  "15" -> "168" 
+  "22" -> "23" 
+  "22" -> "24" 
+  "22" -> "4" 
+  "22" -> "27" 
+  "22" -> "30" 
+  "22" -> "31" 
+  "22" -> "34" 
+  "22" -> "56" 
+  "24" -> "25" 
+  "24" -> "26" 
+  "27" -> "28" 
+  "27" -> "29" 
+  "31" -> "32" 
+  "31" -> "33" 
+  "34" -> "35" 
+  "34" -> "38" 
+  "34" -> "45" 
+  "35" -> "36" 
+  "35" -> "37" 
+  "38" -> "39" 
+  "39" -> "40" 
+  "39" -> "41" 
+  "41" -> "42" 
+  "42" -> "43" 
+  "42" -> "44" 
+  "45" -> "46" 
+  "46" -> "47" 
+  "47" -> "48" 
+  "48" -> "49" 
+  "48" -> "52" 
+  "48" -> "55" 
+  "49" -> "50" 
+  "49" -> "51" 
+  "52" -> "53" 
+  "52" -> "54" 
+  "56" -> "57" 
+  "56" -> "154" 
+  "57" -> "58" 
+  "57" -> "93" 
+  "57" -> "94" 
+  "57" -> "98" 
+  "58" -> "59" 
+  "58" -> "66" 
+  "59" -> "60" 
+  "59" -> "63" 
+  "60" -> "61" 
+  "60" -> "62" 
+  "63" -> "3" 
+  "63" -> "64" 
+  "63" -> "65" 
+  "66" -> "67" 
+  "66" -> "80" 
+  "67" -> "68" 
+  "68" -> "69" 
+  "69" -> "70" 
+  "69" -> "73" 
+  "69" -> "79" 
+  "70" -> "71" 
+  "70" -> "72" 
+  "73" -> "74" 
+  "73" -> "75" 
+  "73" -> "78" 
+  "75" -> "76" 
+  "75" -> "77" 
+  "80" -> "81" 
+  "81" -> "82" 
+  "82" -> "83" 
+  "82" -> "86" 
+  "82" -> "92" 
+  "83" -> "84" 
+  "83" -> "85" 
+  "86" -> "87" 
+  "86" -> "88" 
+  "86" -> "91" 
+  "88" -> "89" 
+  "88" -> "90" 
+  "94" -> "95" 
+  "94" -> "96" 
+  "96" -> "97" 
+  "98" -> "99" 
+  "98" -> "101" 
+  "99" -> "100" 
+  "101" -> "102" 
+  "101" -> "6" 
+  "101" -> "108" 
+  "101" -> "111" 
+  "101" -> "115" 
+  "101" -> "116" 
+  "101" -> "120" 
+  "102" -> "103" 
+  "102" -> "104" 
+  "104" -> "105" 
+  "104" -> "106" 
+  "106" -> "107" 
+  "108" -> "109" 
+  "108" -> "110" 
+  "111" -> "5" 
+  "111" -> "112" 
+  "111" -> "113" 
+  "111" -> "114" 
+  "116" -> "117" 
+  "116" -> "118" 
+  "118" -> "119" 
+  "120" -> "121" 
+  "120" -> "123" 
+  "120" -> "140" 
+  "121" -> "122" 
+  "123" -> "124" 
+  "123" -> "128" 
+  "123" -> "132" 
+  "124" -> "125" 
+  "124" -> "126" 
+  "126" -> "7" 
+  "126" -> "127" 
+  "128" -> "129" 
+  "128" -> "130" 
+  "128" -> "131" 
+  "132" -> "133" 
+  "132" -> "135" 
+  "133" -> "9" 
+  "133" -> "134" 
+  "135" -> "136" 
+  "136" -> "137" 
+  "136" -> "138" 
+  "136" -> "139" 
+  "140" -> "141" 
+  "141" -> "142" 
+  "141" -> "146" 
+  "142" -> "143" 
+  "142" -> "144" 
+  "142" -> "145" 
+  "146" -> "147" 
+  "146" -> "149" 
+  "147" -> "10" 
+  "147" -> "148" 
+  "149" -> "150" 
+  "150" -> "151" 
+  "150" -> "152" 
+  "150" -> "153" 
+  "154" -> "155" 
+  "155" -> "156" 
+  "155" -> "159" 
+  "156" -> "157" 
+  "156" -> "158" 
+  "159" -> "160" 
+  "160" -> "161" 
+  "160" -> "164" 
+  "161" -> "162" 
+  "162" -> "163" 
+  "164" -> "165" 
+}

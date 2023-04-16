@@ -1,0 +1,187 @@
+digraph "pollFileOrDirectory" {  
+"219" [label = <(METHOD,pollFileOrDirectory)<SUB>87</SUB>> ]
+"10" [label = <(PARAM,this)<SUB>87</SUB>> ]
+"220" [label = <(PARAM,File fileOrDirectory)<SUB>87</SUB>> ]
+"221" [label = <(PARAM,boolean processDir)<SUB>87</SUB>> ]
+"222" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>87</SUB>> ]
+"223" [label = <(CONTROL_STRUCTURE,if (!fileOrDirectory.isDirectory()),if (!fileOrDirectory.isDirectory()))<SUB>88</SUB>> ]
+"224" [label = <(&lt;operator&gt;.logicalNot,!fileOrDirectory.isDirectory())<SUB>88</SUB>> ]
+"225" [label = <(isDirectory,fileOrDirectory.isDirectory())<SUB>88</SUB>> ]
+"226" [label = <(IDENTIFIER,fileOrDirectory,fileOrDirectory.isDirectory())<SUB>88</SUB>> ]
+"227" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>88</SUB>> ]
+"228" [label = <(RETURN,return pollFile(fileOrDirectory);,return pollFile(fileOrDirectory);)<SUB>90</SUB>> ]
+"229" [label = <(pollFile,this.pollFile(fileOrDirectory))<SUB>90</SUB>> ]
+"9" [label = <(IDENTIFIER,this,this.pollFile(fileOrDirectory))<SUB>90</SUB>> ]
+"230" [label = <(IDENTIFIER,fileOrDirectory,this.pollFile(fileOrDirectory))<SUB>90</SUB>> ]
+"231" [label = <(CONTROL_STRUCTURE,else,else)<SUB>91</SUB>> ]
+"232" [label = <(CONTROL_STRUCTURE,if (processDir),if (processDir))<SUB>91</SUB>> ]
+"233" [label = <(IDENTIFIER,processDir,if (processDir))<SUB>91</SUB>> ]
+"234" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>91</SUB>> ]
+"235" [label = <(LOCAL,int rc: int)> ]
+"236" [label = <(&lt;operator&gt;.assignment,int rc = 0)<SUB>93</SUB>> ]
+"237" [label = <(IDENTIFIER,rc,int rc = 0)<SUB>93</SUB>> ]
+"238" [label = <(LITERAL,0,int rc = 0)<SUB>93</SUB>> ]
+"239" [label = <(CONTROL_STRUCTURE,if (isValidFile(fileOrDirectory)),if (isValidFile(fileOrDirectory)))<SUB>94</SUB>> ]
+"240" [label = <(isValidFile,this.isValidFile(fileOrDirectory))<SUB>94</SUB>> ]
+"11" [label = <(IDENTIFIER,this,this.isValidFile(fileOrDirectory))<SUB>94</SUB>> ]
+"241" [label = <(IDENTIFIER,fileOrDirectory,this.isValidFile(fileOrDirectory))<SUB>94</SUB>> ]
+"242" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>94</SUB>> ]
+"243" [label = <(CONTROL_STRUCTURE,if (LOG.isTraceEnabled()),if (LOG.isTraceEnabled()))<SUB>95</SUB>> ]
+"244" [label = <(isTraceEnabled,isTraceEnabled())<SUB>95</SUB>> ]
+"245" [label = <(&lt;operator&gt;.fieldAccess,FileConsumer.LOG)<SUB>95</SUB>> ]
+"246" [label = <(IDENTIFIER,FileConsumer,isTraceEnabled())<SUB>95</SUB>> ]
+"247" [label = <(FIELD_IDENTIFIER,LOG,LOG)<SUB>95</SUB>> ]
+"248" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>95</SUB>> ]
+"249" [label = <(trace,trace(&quot;Polling directory &quot; + fileOrDirectory))<SUB>96</SUB>> ]
+"250" [label = <(&lt;operator&gt;.fieldAccess,FileConsumer.LOG)<SUB>96</SUB>> ]
+"251" [label = <(IDENTIFIER,FileConsumer,trace(&quot;Polling directory &quot; + fileOrDirectory))<SUB>96</SUB>> ]
+"252" [label = <(FIELD_IDENTIFIER,LOG,LOG)<SUB>96</SUB>> ]
+"253" [label = <(&lt;operator&gt;.addition,&quot;Polling directory &quot; + fileOrDirectory)<SUB>96</SUB>> ]
+"254" [label = <(LITERAL,&quot;Polling directory &quot;,&quot;Polling directory &quot; + fileOrDirectory)<SUB>96</SUB>> ]
+"255" [label = <(IDENTIFIER,fileOrDirectory,&quot;Polling directory &quot; + fileOrDirectory)<SUB>96</SUB>> ]
+"256" [label = <(LOCAL,File[] files: java.io.File[])> ]
+"257" [label = <(&lt;operator&gt;.assignment,File[] files = fileOrDirectory.listFiles())<SUB>98</SUB>> ]
+"258" [label = <(IDENTIFIER,files,File[] files = fileOrDirectory.listFiles())<SUB>98</SUB>> ]
+"259" [label = <(listFiles,fileOrDirectory.listFiles())<SUB>98</SUB>> ]
+"260" [label = <(IDENTIFIER,fileOrDirectory,fileOrDirectory.listFiles())<SUB>98</SUB>> ]
+"261" [label = <(CONTROL_STRUCTURE,&lt;empty&gt;,&lt;empty&gt;)> ]
+"262" [label = <(LOCAL,$idx0: int)<SUB>99</SUB>> ]
+"263" [label = <(&lt;operator&gt;.assignment,int $idx0 = 0)<SUB>99</SUB>> ]
+"264" [label = <(IDENTIFIER,$idx0,int $idx0 = 0)<SUB>99</SUB>> ]
+"265" [label = <(LITERAL,0,int $idx0 = 0)<SUB>99</SUB>> ]
+"266" [label = <(&lt;operator&gt;.lessThan,$idx0 &lt; files.length)<SUB>99</SUB>> ]
+"267" [label = <(IDENTIFIER,$idx0,$idx0 &lt; files.length)<SUB>99</SUB>> ]
+"268" [label = <(&lt;operator&gt;.fieldAccess,files.length)<SUB>99</SUB>> ]
+"269" [label = <(IDENTIFIER,files,$idx0 &lt; files.length)<SUB>99</SUB>> ]
+"270" [label = <(FIELD_IDENTIFIER,length,length)<SUB>99</SUB>> ]
+"271" [label = <(&lt;operator&gt;.postIncrement,$idx0++)<SUB>99</SUB>> ]
+"272" [label = <(IDENTIFIER,$idx0,$idx0++)<SUB>99</SUB>> ]
+"273" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>99</SUB>> ]
+"274" [label = <(LOCAL,file: java.io.File)<SUB>99</SUB>> ]
+"275" [label = <(&lt;operator&gt;.assignment,&lt;empty&gt;)<SUB>99</SUB>> ]
+"276" [label = <(IDENTIFIER,file,&lt;empty&gt;)<SUB>99</SUB>> ]
+"277" [label = <(&lt;operator&gt;.indexAccess,&lt;empty&gt;)<SUB>99</SUB>> ]
+"278" [label = <(IDENTIFIER,files,&lt;empty&gt;)<SUB>99</SUB>> ]
+"279" [label = <(IDENTIFIER,$idx0,&lt;empty&gt;)<SUB>99</SUB>> ]
+"280" [label = <(&lt;operator&gt;.assignmentPlus,rc += this.pollFileOrDirectory(file, isRecursive()))<SUB>100</SUB>> ]
+"281" [label = <(IDENTIFIER,rc,rc += this.pollFileOrDirectory(file, isRecursive()))<SUB>100</SUB>> ]
+"282" [label = <(pollFileOrDirectory,this.pollFileOrDirectory(file, isRecursive()))<SUB>100</SUB>> ]
+"13" [label = <(IDENTIFIER,this,this.pollFileOrDirectory(file, isRecursive()))<SUB>100</SUB>> ]
+"283" [label = <(IDENTIFIER,file,this.pollFileOrDirectory(file, isRecursive()))<SUB>100</SUB>> ]
+"284" [label = <(isRecursive,this.isRecursive())<SUB>100</SUB>> ]
+"12" [label = <(IDENTIFIER,this,this.isRecursive())<SUB>100</SUB>> ]
+"285" [label = <(RETURN,return rc;,return rc;)<SUB>103</SUB>> ]
+"286" [label = <(IDENTIFIER,rc,return rc;)<SUB>103</SUB>> ]
+"287" [label = <(CONTROL_STRUCTURE,else,else)<SUB>104</SUB>> ]
+"288" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>104</SUB>> ]
+"289" [label = <(CONTROL_STRUCTURE,if (LOG.isTraceEnabled()),if (LOG.isTraceEnabled()))<SUB>105</SUB>> ]
+"290" [label = <(isTraceEnabled,isTraceEnabled())<SUB>105</SUB>> ]
+"291" [label = <(&lt;operator&gt;.fieldAccess,FileConsumer.LOG)<SUB>105</SUB>> ]
+"292" [label = <(IDENTIFIER,FileConsumer,isTraceEnabled())<SUB>105</SUB>> ]
+"293" [label = <(FIELD_IDENTIFIER,LOG,LOG)<SUB>105</SUB>> ]
+"294" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>105</SUB>> ]
+"295" [label = <(trace,trace(&quot;Skipping directory &quot; + fileOrDirectory))<SUB>106</SUB>> ]
+"296" [label = <(&lt;operator&gt;.fieldAccess,FileConsumer.LOG)<SUB>106</SUB>> ]
+"297" [label = <(IDENTIFIER,FileConsumer,trace(&quot;Skipping directory &quot; + fileOrDirectory))<SUB>106</SUB>> ]
+"298" [label = <(FIELD_IDENTIFIER,LOG,LOG)<SUB>106</SUB>> ]
+"299" [label = <(&lt;operator&gt;.addition,&quot;Skipping directory &quot; + fileOrDirectory)<SUB>106</SUB>> ]
+"300" [label = <(LITERAL,&quot;Skipping directory &quot;,&quot;Skipping directory &quot; + fileOrDirectory)<SUB>106</SUB>> ]
+"301" [label = <(IDENTIFIER,fileOrDirectory,&quot;Skipping directory &quot; + fileOrDirectory)<SUB>106</SUB>> ]
+"302" [label = <(RETURN,return 0;,return 0;)<SUB>108</SUB>> ]
+"303" [label = <(LITERAL,0,return 0;)<SUB>108</SUB>> ]
+"304" [label = <(MODIFIER,PROTECTED)> ]
+"305" [label = <(MODIFIER,VIRTUAL)> ]
+"306" [label = <(METHOD_RETURN,int)<SUB>87</SUB>> ]
+  "219" -> "10" 
+  "219" -> "220" 
+  "219" -> "221" 
+  "219" -> "222" 
+  "219" -> "304" 
+  "219" -> "305" 
+  "219" -> "306" 
+  "222" -> "223" 
+  "223" -> "224" 
+  "223" -> "227" 
+  "223" -> "231" 
+  "224" -> "225" 
+  "225" -> "226" 
+  "227" -> "228" 
+  "228" -> "229" 
+  "229" -> "9" 
+  "229" -> "230" 
+  "231" -> "232" 
+  "232" -> "233" 
+  "232" -> "234" 
+  "232" -> "287" 
+  "234" -> "235" 
+  "234" -> "236" 
+  "234" -> "239" 
+  "234" -> "285" 
+  "236" -> "237" 
+  "236" -> "238" 
+  "239" -> "240" 
+  "239" -> "242" 
+  "240" -> "11" 
+  "240" -> "241" 
+  "242" -> "243" 
+  "242" -> "256" 
+  "242" -> "257" 
+  "242" -> "261" 
+  "243" -> "244" 
+  "243" -> "248" 
+  "244" -> "245" 
+  "245" -> "246" 
+  "245" -> "247" 
+  "248" -> "249" 
+  "249" -> "250" 
+  "249" -> "253" 
+  "250" -> "251" 
+  "250" -> "252" 
+  "253" -> "254" 
+  "253" -> "255" 
+  "257" -> "258" 
+  "257" -> "259" 
+  "259" -> "260" 
+  "261" -> "262" 
+  "261" -> "263" 
+  "261" -> "266" 
+  "261" -> "271" 
+  "261" -> "273" 
+  "263" -> "264" 
+  "263" -> "265" 
+  "266" -> "267" 
+  "266" -> "268" 
+  "268" -> "269" 
+  "268" -> "270" 
+  "271" -> "272" 
+  "273" -> "274" 
+  "273" -> "275" 
+  "273" -> "280" 
+  "275" -> "276" 
+  "275" -> "277" 
+  "277" -> "278" 
+  "277" -> "279" 
+  "280" -> "281" 
+  "280" -> "282" 
+  "282" -> "13" 
+  "282" -> "283" 
+  "282" -> "284" 
+  "284" -> "12" 
+  "285" -> "286" 
+  "287" -> "288" 
+  "288" -> "289" 
+  "288" -> "302" 
+  "289" -> "290" 
+  "289" -> "294" 
+  "290" -> "291" 
+  "291" -> "292" 
+  "291" -> "293" 
+  "294" -> "295" 
+  "295" -> "296" 
+  "295" -> "299" 
+  "296" -> "297" 
+  "296" -> "298" 
+  "299" -> "300" 
+  "299" -> "301" 
+  "302" -> "303" 
+}

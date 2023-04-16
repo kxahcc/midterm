@@ -1,0 +1,209 @@
+digraph "getLocationURLs" {  
+"917" [label = <(METHOD,getLocationURLs)<SUB>420</SUB>> ]
+"918" [label = <(PARAM,File location)<SUB>420</SUB>> ]
+"919" [label = <(PARAM,final String[] extensions)<SUB>421</SUB>> ]
+"920" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>422</SUB>> ]
+"921" [label = <(LOCAL,URL[] urls: java.net.URL[])> ]
+"922" [label = <(&lt;operator&gt;.assignment,URL[] urls = new URL[0])<SUB>423</SUB>> ]
+"923" [label = <(IDENTIFIER,urls,URL[] urls = new URL[0])<SUB>423</SUB>> ]
+"924" [label = <(&lt;operator&gt;.alloc,new URL[0])> ]
+"925" [label = <(LITERAL,0,new URL[0])<SUB>423</SUB>> ]
+"926" [label = <(CONTROL_STRUCTURE,if (!location.exists()),if (!location.exists()))<SUB>425</SUB>> ]
+"927" [label = <(&lt;operator&gt;.logicalNot,!location.exists())<SUB>425</SUB>> ]
+"928" [label = <(exists,location.exists())<SUB>425</SUB>> ]
+"929" [label = <(IDENTIFIER,location,location.exists())<SUB>425</SUB>> ]
+"930" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>425</SUB>> ]
+"931" [label = <(RETURN,return urls;,return urls;)<SUB>426</SUB>> ]
+"932" [label = <(IDENTIFIER,urls,return urls;)<SUB>426</SUB>> ]
+"933" [label = <(CONTROL_STRUCTURE,if (!location.isDirectory()),if (!location.isDirectory()))<SUB>428</SUB>> ]
+"934" [label = <(&lt;operator&gt;.logicalNot,!location.isDirectory())<SUB>428</SUB>> ]
+"935" [label = <(isDirectory,location.isDirectory())<SUB>428</SUB>> ]
+"936" [label = <(IDENTIFIER,location,location.isDirectory())<SUB>428</SUB>> ]
+"937" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>428</SUB>> ]
+"938" [label = <(&lt;operator&gt;.assignment,urls = new URL[1])<SUB>429</SUB>> ]
+"939" [label = <(IDENTIFIER,urls,urls = new URL[1])<SUB>429</SUB>> ]
+"940" [label = <(&lt;operator&gt;.alloc,new URL[1])> ]
+"941" [label = <(LITERAL,1,new URL[1])<SUB>429</SUB>> ]
+"942" [label = <(LOCAL,String path: java.lang.String)> ]
+"943" [label = <(&lt;operator&gt;.assignment,String path = location.getPath())<SUB>430</SUB>> ]
+"944" [label = <(IDENTIFIER,path,String path = location.getPath())<SUB>430</SUB>> ]
+"945" [label = <(getPath,location.getPath())<SUB>430</SUB>> ]
+"946" [label = <(IDENTIFIER,location,location.getPath())<SUB>430</SUB>> ]
+"947" [label = <(CONTROL_STRUCTURE,for (int i = 0; Some(i &lt; extensions.length); ++i),for (int i = 0; Some(i &lt; extensions.length); ++i))<SUB>431</SUB>> ]
+"948" [label = <(LOCAL,int i: int)> ]
+"949" [label = <(&lt;operator&gt;.assignment,int i = 0)<SUB>431</SUB>> ]
+"950" [label = <(IDENTIFIER,i,int i = 0)<SUB>431</SUB>> ]
+"951" [label = <(LITERAL,0,int i = 0)<SUB>431</SUB>> ]
+"952" [label = <(&lt;operator&gt;.lessThan,i &lt; extensions.length)<SUB>431</SUB>> ]
+"953" [label = <(IDENTIFIER,i,i &lt; extensions.length)<SUB>431</SUB>> ]
+"954" [label = <(&lt;operator&gt;.fieldAccess,extensions.length)<SUB>431</SUB>> ]
+"955" [label = <(IDENTIFIER,extensions,i &lt; extensions.length)<SUB>431</SUB>> ]
+"956" [label = <(FIELD_IDENTIFIER,length,length)<SUB>431</SUB>> ]
+"957" [label = <(&lt;operator&gt;.preIncrement,++i)<SUB>431</SUB>> ]
+"958" [label = <(IDENTIFIER,i,++i)<SUB>431</SUB>> ]
+"959" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>431</SUB>> ]
+"960" [label = <(CONTROL_STRUCTURE,if (path.toLowerCase().endsWith(extensions[i])),if (path.toLowerCase().endsWith(extensions[i])))<SUB>432</SUB>> ]
+"961" [label = <(endsWith,path.toLowerCase().endsWith(extensions[i]))<SUB>432</SUB>> ]
+"962" [label = <(toLowerCase,path.toLowerCase())<SUB>432</SUB>> ]
+"963" [label = <(IDENTIFIER,path,path.toLowerCase())<SUB>432</SUB>> ]
+"964" [label = <(&lt;operator&gt;.indexAccess,extensions[i])<SUB>432</SUB>> ]
+"965" [label = <(IDENTIFIER,extensions,path.toLowerCase().endsWith(extensions[i]))<SUB>432</SUB>> ]
+"966" [label = <(IDENTIFIER,i,path.toLowerCase().endsWith(extensions[i]))<SUB>432</SUB>> ]
+"967" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>432</SUB>> ]
+"968" [label = <(&lt;operator&gt;.assignment,urls[0] = fileToURL(location))<SUB>433</SUB>> ]
+"969" [label = <(&lt;operator&gt;.indexAccess,urls[0])<SUB>433</SUB>> ]
+"970" [label = <(IDENTIFIER,urls,urls[0] = fileToURL(location))<SUB>433</SUB>> ]
+"971" [label = <(LITERAL,0,urls[0] = fileToURL(location))<SUB>433</SUB>> ]
+"972" [label = <(fileToURL,fileToURL(location))<SUB>433</SUB>> ]
+"973" [label = <(IDENTIFIER,location,fileToURL(location))<SUB>433</SUB>> ]
+"974" [label = <(CONTROL_STRUCTURE,break;,break;)<SUB>434</SUB>> ]
+"975" [label = <(RETURN,return urls;,return urls;)<SUB>437</SUB>> ]
+"976" [label = <(IDENTIFIER,urls,return urls;)<SUB>437</SUB>> ]
+"977" [label = <(LOCAL,File[] matches: java.io.File[])> ]
+"978" [label = <(&lt;operator&gt;.assignment,File[] matches = location.listFiles(new FilenameFilter() {\012\012    public boolean accept(File dir, String name) {\012        for (int i = 0; i &lt; extensions.length; ++i) {\012            if (name.toLowerCase().endsWith(extensions[i])) {\012                return true;\012            }\012        }\012        return false;\012    }\012}))<SUB>439</SUB>> ]
+"979" [label = <(IDENTIFIER,matches,File[] matches = location.listFiles(new FilenameFilter() {\012\012    public boolean accept(File dir, String name) {\012        for (int i = 0; i &lt; extensions.length; ++i) {\012            if (name.toLowerCase().endsWith(extensions[i])) {\012                return true;\012            }\012        }\012        return false;\012    }\012}))<SUB>439</SUB>> ]
+"980" [label = <(listFiles,location.listFiles(new FilenameFilter() {\012\012    public boolean accept(File dir, String name) {\012        for (int i = 0; i &lt; extensions.length; ++i) {\012            if (name.toLowerCase().endsWith(extensions[i])) {\012                return true;\012            }\012        }\012        return false;\012    }\012}))<SUB>439</SUB>> ]
+"981" [label = <(IDENTIFIER,location,location.listFiles(new FilenameFilter() {\012\012    public boolean accept(File dir, String name) {\012        for (int i = 0; i &lt; extensions.length; ++i) {\012            if (name.toLowerCase().endsWith(extensions[i])) {\012                return true;\012            }\012        }\012        return false;\012    }\012}))<SUB>439</SUB>> ]
+"982" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>440</SUB>> ]
+"983" [label = <(&lt;operator&gt;.assignment,&lt;empty&gt;)> ]
+"984" [label = <(IDENTIFIER,$obj14,&lt;empty&gt;)> ]
+"985" [label = <(&lt;operator&gt;.alloc,new FilenameFilter() {\012\012    public boolean accept(File dir, String name) {\012        for (int i = 0; i &lt; extensions.length; ++i) {\012            if (name.toLowerCase().endsWith(extensions[i])) {\012                return true;\012            }\012        }\012        return false;\012    }\012})<SUB>440</SUB>> ]
+"986" [label = <(&lt;init&gt;,new FilenameFilter() {\012\012    public boolean accept(File dir, String name) {\012        for (int i = 0; i &lt; extensions.length; ++i) {\012            if (name.toLowerCase().endsWith(extensions[i])) {\012                return true;\012            }\012        }\012        return false;\012    }\012})<SUB>440</SUB>> ]
+"987" [label = <(IDENTIFIER,$obj14,new FilenameFilter() {\012\012    public boolean accept(File dir, String name) {\012        for (int i = 0; i &lt; extensions.length; ++i) {\012            if (name.toLowerCase().endsWith(extensions[i])) {\012                return true;\012            }\012        }\012        return false;\012    }\012})> ]
+"988" [label = <(IDENTIFIER,$obj14,&lt;empty&gt;)> ]
+"989" [label = <(&lt;operator&gt;.assignment,urls = new URL[matches.length])<SUB>450</SUB>> ]
+"990" [label = <(IDENTIFIER,urls,urls = new URL[matches.length])<SUB>450</SUB>> ]
+"991" [label = <(&lt;operator&gt;.alloc,new URL[matches.length])> ]
+"992" [label = <(&lt;operator&gt;.fieldAccess,matches.length)<SUB>450</SUB>> ]
+"993" [label = <(IDENTIFIER,matches,new URL[matches.length])<SUB>450</SUB>> ]
+"994" [label = <(FIELD_IDENTIFIER,length,length)<SUB>450</SUB>> ]
+"995" [label = <(CONTROL_STRUCTURE,for (int i = 0; Some(i &lt; matches.length); ++i),for (int i = 0; Some(i &lt; matches.length); ++i))<SUB>451</SUB>> ]
+"996" [label = <(LOCAL,int i: int)> ]
+"997" [label = <(&lt;operator&gt;.assignment,int i = 0)<SUB>451</SUB>> ]
+"998" [label = <(IDENTIFIER,i,int i = 0)<SUB>451</SUB>> ]
+"999" [label = <(LITERAL,0,int i = 0)<SUB>451</SUB>> ]
+"1000" [label = <(&lt;operator&gt;.lessThan,i &lt; matches.length)<SUB>451</SUB>> ]
+"1001" [label = <(IDENTIFIER,i,i &lt; matches.length)<SUB>451</SUB>> ]
+"1002" [label = <(&lt;operator&gt;.fieldAccess,matches.length)<SUB>451</SUB>> ]
+"1003" [label = <(IDENTIFIER,matches,i &lt; matches.length)<SUB>451</SUB>> ]
+"1004" [label = <(FIELD_IDENTIFIER,length,length)<SUB>451</SUB>> ]
+"1005" [label = <(&lt;operator&gt;.preIncrement,++i)<SUB>451</SUB>> ]
+"1006" [label = <(IDENTIFIER,i,++i)<SUB>451</SUB>> ]
+"1007" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>451</SUB>> ]
+"1008" [label = <(&lt;operator&gt;.assignment,urls[i] = fileToURL(matches[i]))<SUB>452</SUB>> ]
+"1009" [label = <(&lt;operator&gt;.indexAccess,urls[i])<SUB>452</SUB>> ]
+"1010" [label = <(IDENTIFIER,urls,urls[i] = fileToURL(matches[i]))<SUB>452</SUB>> ]
+"1011" [label = <(IDENTIFIER,i,urls[i] = fileToURL(matches[i]))<SUB>452</SUB>> ]
+"1012" [label = <(fileToURL,fileToURL(matches[i]))<SUB>452</SUB>> ]
+"1013" [label = <(&lt;operator&gt;.indexAccess,matches[i])<SUB>452</SUB>> ]
+"1014" [label = <(IDENTIFIER,matches,fileToURL(matches[i]))<SUB>452</SUB>> ]
+"1015" [label = <(IDENTIFIER,i,fileToURL(matches[i]))<SUB>452</SUB>> ]
+"1016" [label = <(RETURN,return urls;,return urls;)<SUB>454</SUB>> ]
+"1017" [label = <(IDENTIFIER,urls,return urls;)<SUB>454</SUB>> ]
+"1018" [label = <(MODIFIER,PUBLIC)> ]
+"1019" [label = <(MODIFIER,STATIC)> ]
+"1020" [label = <(METHOD_RETURN,java.net.URL[])<SUB>420</SUB>> ]
+  "917" -> "918" 
+  "917" -> "919" 
+  "917" -> "920" 
+  "917" -> "1018" 
+  "917" -> "1019" 
+  "917" -> "1020" 
+  "920" -> "921" 
+  "920" -> "922" 
+  "920" -> "926" 
+  "920" -> "933" 
+  "920" -> "977" 
+  "920" -> "978" 
+  "920" -> "989" 
+  "920" -> "995" 
+  "920" -> "1016" 
+  "922" -> "923" 
+  "922" -> "924" 
+  "924" -> "925" 
+  "926" -> "927" 
+  "926" -> "930" 
+  "927" -> "928" 
+  "928" -> "929" 
+  "930" -> "931" 
+  "931" -> "932" 
+  "933" -> "934" 
+  "933" -> "937" 
+  "934" -> "935" 
+  "935" -> "936" 
+  "937" -> "938" 
+  "937" -> "942" 
+  "937" -> "943" 
+  "937" -> "947" 
+  "937" -> "975" 
+  "938" -> "939" 
+  "938" -> "940" 
+  "940" -> "941" 
+  "943" -> "944" 
+  "943" -> "945" 
+  "945" -> "946" 
+  "947" -> "948" 
+  "947" -> "949" 
+  "947" -> "952" 
+  "947" -> "957" 
+  "947" -> "959" 
+  "949" -> "950" 
+  "949" -> "951" 
+  "952" -> "953" 
+  "952" -> "954" 
+  "954" -> "955" 
+  "954" -> "956" 
+  "957" -> "958" 
+  "959" -> "960" 
+  "960" -> "961" 
+  "960" -> "967" 
+  "961" -> "962" 
+  "961" -> "964" 
+  "962" -> "963" 
+  "964" -> "965" 
+  "964" -> "966" 
+  "967" -> "968" 
+  "967" -> "974" 
+  "968" -> "969" 
+  "968" -> "972" 
+  "969" -> "970" 
+  "969" -> "971" 
+  "972" -> "973" 
+  "975" -> "976" 
+  "978" -> "979" 
+  "978" -> "980" 
+  "980" -> "981" 
+  "980" -> "982" 
+  "982" -> "983" 
+  "982" -> "986" 
+  "982" -> "988" 
+  "983" -> "984" 
+  "983" -> "985" 
+  "986" -> "987" 
+  "989" -> "990" 
+  "989" -> "991" 
+  "991" -> "992" 
+  "992" -> "993" 
+  "992" -> "994" 
+  "995" -> "996" 
+  "995" -> "997" 
+  "995" -> "1000" 
+  "995" -> "1005" 
+  "995" -> "1007" 
+  "997" -> "998" 
+  "997" -> "999" 
+  "1000" -> "1001" 
+  "1000" -> "1002" 
+  "1002" -> "1003" 
+  "1002" -> "1004" 
+  "1005" -> "1006" 
+  "1007" -> "1008" 
+  "1008" -> "1009" 
+  "1008" -> "1012" 
+  "1009" -> "1010" 
+  "1009" -> "1011" 
+  "1012" -> "1013" 
+  "1013" -> "1014" 
+  "1013" -> "1015" 
+  "1016" -> "1017" 
+}

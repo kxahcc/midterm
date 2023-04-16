@@ -1,0 +1,53 @@
+digraph "sendBodyAndHeaders" {  
+"492" [label = <(METHOD,sendBodyAndHeaders)<SUB>289</SUB>> ]
+"53" [label = <(PARAM,this)<SUB>289</SUB>> ]
+"493" [label = <(PARAM,Endpoint endpoint)<SUB>289</SUB>> ]
+"494" [label = <(PARAM,final Object body)<SUB>289</SUB>> ]
+"495" [label = <(PARAM,final Map&lt;String, Object&gt; headers)<SUB>289</SUB>> ]
+"496" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>289</SUB>> ]
+"497" [label = <(LOCAL,E result: java.lang.Object)> ]
+"498" [label = <(&lt;operator&gt;.assignment,Object result = send(endpoint, new Processor() {\012\012    public void process(Exchange exchange) {\012        Message in = exchange.getIn();\012        for (Map.Entry&lt;String, Object&gt; header : headers.entrySet()) {\012            in.setHeader(header.getKey(), header.getValue());\012        }\012        in.setBody(body);\012    }\012}))<SUB>290</SUB>> ]
+"499" [label = <(IDENTIFIER,result,Object result = send(endpoint, new Processor() {\012\012    public void process(Exchange exchange) {\012        Message in = exchange.getIn();\012        for (Map.Entry&lt;String, Object&gt; header : headers.entrySet()) {\012            in.setHeader(header.getKey(), header.getValue());\012        }\012        in.setBody(body);\012    }\012}))<SUB>290</SUB>> ]
+"500" [label = <(send,send(endpoint, new Processor() {\012\012    public void process(Exchange exchange) {\012        Message in = exchange.getIn();\012        for (Map.Entry&lt;String, Object&gt; header : headers.entrySet()) {\012            in.setHeader(header.getKey(), header.getValue());\012        }\012        in.setBody(body);\012    }\012}))<SUB>290</SUB>> ]
+"52" [label = <(IDENTIFIER,this,send(endpoint, new Processor() {\012\012    public void process(Exchange exchange) {\012        Message in = exchange.getIn();\012        for (Map.Entry&lt;String, Object&gt; header : headers.entrySet()) {\012            in.setHeader(header.getKey(), header.getValue());\012        }\012        in.setBody(body);\012    }\012}))<SUB>290</SUB>> ]
+"501" [label = <(IDENTIFIER,endpoint,send(endpoint, new Processor() {\012\012    public void process(Exchange exchange) {\012        Message in = exchange.getIn();\012        for (Map.Entry&lt;String, Object&gt; header : headers.entrySet()) {\012            in.setHeader(header.getKey(), header.getValue());\012        }\012        in.setBody(body);\012    }\012}))<SUB>290</SUB>> ]
+"502" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>290</SUB>> ]
+"503" [label = <(&lt;operator&gt;.assignment,&lt;empty&gt;)> ]
+"504" [label = <(IDENTIFIER,$obj2,&lt;empty&gt;)> ]
+"505" [label = <(&lt;operator&gt;.alloc,new Processor() {\012\012    public void process(Exchange exchange) {\012        Message in = exchange.getIn();\012        for (Map.Entry&lt;String, Object&gt; header : headers.entrySet()) {\012            in.setHeader(header.getKey(), header.getValue());\012        }\012        in.setBody(body);\012    }\012})<SUB>290</SUB>> ]
+"506" [label = <(&lt;init&gt;,new Processor() {\012\012    public void process(Exchange exchange) {\012        Message in = exchange.getIn();\012        for (Map.Entry&lt;String, Object&gt; header : headers.entrySet()) {\012            in.setHeader(header.getKey(), header.getValue());\012        }\012        in.setBody(body);\012    }\012})<SUB>290</SUB>> ]
+"507" [label = <(IDENTIFIER,$obj2,new Processor() {\012\012    public void process(Exchange exchange) {\012        Message in = exchange.getIn();\012        for (Map.Entry&lt;String, Object&gt; header : headers.entrySet()) {\012            in.setHeader(header.getKey(), header.getValue());\012        }\012        in.setBody(body);\012    }\012})> ]
+"508" [label = <(IDENTIFIER,$obj2,&lt;empty&gt;)> ]
+"509" [label = <(RETURN,return extractResultBody(result);,return extractResultBody(result);)<SUB>299</SUB>> ]
+"510" [label = <(extractResultBody,this.extractResultBody(result))<SUB>299</SUB>> ]
+"54" [label = <(IDENTIFIER,this,this.extractResultBody(result))<SUB>299</SUB>> ]
+"511" [label = <(IDENTIFIER,result,this.extractResultBody(result))<SUB>299</SUB>> ]
+"512" [label = <(MODIFIER,PUBLIC)> ]
+"513" [label = <(MODIFIER,VIRTUAL)> ]
+"514" [label = <(METHOD_RETURN,java.lang.Object)<SUB>289</SUB>> ]
+  "492" -> "53" 
+  "492" -> "493" 
+  "492" -> "494" 
+  "492" -> "495" 
+  "492" -> "496" 
+  "492" -> "512" 
+  "492" -> "513" 
+  "492" -> "514" 
+  "496" -> "497" 
+  "496" -> "498" 
+  "496" -> "509" 
+  "498" -> "499" 
+  "498" -> "500" 
+  "500" -> "52" 
+  "500" -> "501" 
+  "500" -> "502" 
+  "502" -> "503" 
+  "502" -> "506" 
+  "502" -> "508" 
+  "503" -> "504" 
+  "503" -> "505" 
+  "506" -> "507" 
+  "509" -> "510" 
+  "510" -> "54" 
+  "510" -> "511" 
+}

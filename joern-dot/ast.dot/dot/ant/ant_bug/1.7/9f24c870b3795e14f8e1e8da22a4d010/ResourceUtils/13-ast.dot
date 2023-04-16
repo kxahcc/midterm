@@ -1,0 +1,129 @@
+digraph "logFuture" {  
+"1223" [label = <(METHOD,logFuture)<SUB>557</SUB>> ]
+"1224" [label = <(PARAM,ProjectComponent logTo)<SUB>557</SUB>> ]
+"1225" [label = <(PARAM,ResourceCollection rc)<SUB>558</SUB>> ]
+"1226" [label = <(PARAM,long granularity)<SUB>558</SUB>> ]
+"1227" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>558</SUB>> ]
+"1228" [label = <(LOCAL,long now: long)> ]
+"1229" [label = <(&lt;operator&gt;.assignment,long now = System.currentTimeMillis() + granularity)<SUB>559</SUB>> ]
+"1230" [label = <(IDENTIFIER,now,long now = System.currentTimeMillis() + granularity)<SUB>559</SUB>> ]
+"1231" [label = <(&lt;operator&gt;.addition,System.currentTimeMillis() + granularity)<SUB>559</SUB>> ]
+"1232" [label = <(currentTimeMillis,System.currentTimeMillis())<SUB>559</SUB>> ]
+"1233" [label = <(IDENTIFIER,System,System.currentTimeMillis())<SUB>559</SUB>> ]
+"1234" [label = <(IDENTIFIER,granularity,System.currentTimeMillis() + granularity)<SUB>559</SUB>> ]
+"67" [label = <(LOCAL,Date sel: org.apache.tools.ant.types.resources.selectors.Date)> ]
+"1235" [label = <(&lt;operator&gt;.assignment,Date sel = new Date())<SUB>560</SUB>> ]
+"1236" [label = <(IDENTIFIER,sel,Date sel = new Date())<SUB>560</SUB>> ]
+"1237" [label = <(&lt;operator&gt;.alloc,new Date())<SUB>560</SUB>> ]
+"1238" [label = <(&lt;init&gt;,new Date())<SUB>560</SUB>> ]
+"66" [label = <(IDENTIFIER,sel,new Date())<SUB>560</SUB>> ]
+"1239" [label = <(setMillis,setMillis(now))<SUB>561</SUB>> ]
+"1240" [label = <(IDENTIFIER,sel,setMillis(now))<SUB>561</SUB>> ]
+"1241" [label = <(IDENTIFIER,now,setMillis(now))<SUB>561</SUB>> ]
+"1242" [label = <(setWhen,setWhen(TimeComparison.AFTER))<SUB>562</SUB>> ]
+"1243" [label = <(IDENTIFIER,sel,setWhen(TimeComparison.AFTER))<SUB>562</SUB>> ]
+"1244" [label = <(&lt;operator&gt;.fieldAccess,TimeComparison.AFTER)<SUB>562</SUB>> ]
+"1245" [label = <(IDENTIFIER,TimeComparison,setWhen(TimeComparison.AFTER))<SUB>562</SUB>> ]
+"1246" [label = <(FIELD_IDENTIFIER,AFTER,AFTER)<SUB>562</SUB>> ]
+"69" [label = <(LOCAL,Restrict future: org.apache.tools.ant.types.resources.Restrict)> ]
+"1247" [label = <(&lt;operator&gt;.assignment,Restrict future = new Restrict())<SUB>563</SUB>> ]
+"1248" [label = <(IDENTIFIER,future,Restrict future = new Restrict())<SUB>563</SUB>> ]
+"1249" [label = <(&lt;operator&gt;.alloc,new Restrict())<SUB>563</SUB>> ]
+"1250" [label = <(&lt;init&gt;,new Restrict())<SUB>563</SUB>> ]
+"68" [label = <(IDENTIFIER,future,new Restrict())<SUB>563</SUB>> ]
+"1251" [label = <(add,add(sel))<SUB>564</SUB>> ]
+"1252" [label = <(IDENTIFIER,future,add(sel))<SUB>564</SUB>> ]
+"1253" [label = <(IDENTIFIER,sel,add(sel))<SUB>564</SUB>> ]
+"1254" [label = <(add,add(rc))<SUB>565</SUB>> ]
+"1255" [label = <(IDENTIFIER,future,add(rc))<SUB>565</SUB>> ]
+"1256" [label = <(IDENTIFIER,rc,add(rc))<SUB>565</SUB>> ]
+"1257" [label = <(CONTROL_STRUCTURE,for (Iterator iter = future.iterator(); Some(iter.hasNext()); ),for (Iterator iter = future.iterator(); Some(iter.hasNext()); ))<SUB>566</SUB>> ]
+"1258" [label = <(LOCAL,Iterator iter: java.util.Iterator)> ]
+"1259" [label = <(&lt;operator&gt;.assignment,Iterator iter = iterator())<SUB>566</SUB>> ]
+"1260" [label = <(IDENTIFIER,iter,Iterator iter = iterator())<SUB>566</SUB>> ]
+"1261" [label = <(iterator,iterator())<SUB>566</SUB>> ]
+"1262" [label = <(IDENTIFIER,future,iterator())<SUB>566</SUB>> ]
+"1263" [label = <(hasNext,iter.hasNext())<SUB>566</SUB>> ]
+"1264" [label = <(IDENTIFIER,iter,iter.hasNext())<SUB>566</SUB>> ]
+"1265" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>566</SUB>> ]
+"1266" [label = <(log,log(&quot;Warning: &quot; + ((Resource) iter.next()).getName() + &quot; modified in the future.&quot;, Project.MSG_WARN))<SUB>567</SUB>> ]
+"1267" [label = <(IDENTIFIER,logTo,log(&quot;Warning: &quot; + ((Resource) iter.next()).getName() + &quot; modified in the future.&quot;, Project.MSG_WARN))<SUB>567</SUB>> ]
+"1268" [label = <(&lt;operator&gt;.addition,&quot;Warning: &quot; + ((Resource) iter.next()).getName() + &quot; modified in the future.&quot;)<SUB>567</SUB>> ]
+"1269" [label = <(&lt;operator&gt;.addition,&quot;Warning: &quot; + ((Resource) iter.next()).getName())<SUB>567</SUB>> ]
+"1270" [label = <(LITERAL,&quot;Warning: &quot;,&quot;Warning: &quot; + ((Resource) iter.next()).getName())<SUB>567</SUB>> ]
+"1271" [label = <(getName,getName())<SUB>567</SUB>> ]
+"1272" [label = <(&lt;operator&gt;.cast,(Resource) iter.next())<SUB>567</SUB>> ]
+"1273" [label = <(TYPE_REF,Resource,Resource)<SUB>567</SUB>> ]
+"1274" [label = <(next,iter.next())<SUB>567</SUB>> ]
+"1275" [label = <(IDENTIFIER,iter,iter.next())<SUB>567</SUB>> ]
+"1276" [label = <(LITERAL,&quot; modified in the future.&quot;,&quot;Warning: &quot; + ((Resource) iter.next()).getName() + &quot; modified in the future.&quot;)<SUB>568</SUB>> ]
+"1277" [label = <(&lt;operator&gt;.fieldAccess,Project.MSG_WARN)<SUB>568</SUB>> ]
+"1278" [label = <(IDENTIFIER,Project,log(&quot;Warning: &quot; + ((Resource) iter.next()).getName() + &quot; modified in the future.&quot;, Project.MSG_WARN))<SUB>568</SUB>> ]
+"1279" [label = <(FIELD_IDENTIFIER,MSG_WARN,MSG_WARN)<SUB>568</SUB>> ]
+"1280" [label = <(MODIFIER,PRIVATE)> ]
+"1281" [label = <(MODIFIER,STATIC)> ]
+"1282" [label = <(METHOD_RETURN,void)<SUB>557</SUB>> ]
+  "1223" -> "1224" 
+  "1223" -> "1225" 
+  "1223" -> "1226" 
+  "1223" -> "1227" 
+  "1223" -> "1280" 
+  "1223" -> "1281" 
+  "1223" -> "1282" 
+  "1227" -> "1228" 
+  "1227" -> "1229" 
+  "1227" -> "67" 
+  "1227" -> "1235" 
+  "1227" -> "1238" 
+  "1227" -> "1239" 
+  "1227" -> "1242" 
+  "1227" -> "69" 
+  "1227" -> "1247" 
+  "1227" -> "1250" 
+  "1227" -> "1251" 
+  "1227" -> "1254" 
+  "1227" -> "1257" 
+  "1229" -> "1230" 
+  "1229" -> "1231" 
+  "1231" -> "1232" 
+  "1231" -> "1234" 
+  "1232" -> "1233" 
+  "1235" -> "1236" 
+  "1235" -> "1237" 
+  "1238" -> "66" 
+  "1239" -> "1240" 
+  "1239" -> "1241" 
+  "1242" -> "1243" 
+  "1242" -> "1244" 
+  "1244" -> "1245" 
+  "1244" -> "1246" 
+  "1247" -> "1248" 
+  "1247" -> "1249" 
+  "1250" -> "68" 
+  "1251" -> "1252" 
+  "1251" -> "1253" 
+  "1254" -> "1255" 
+  "1254" -> "1256" 
+  "1257" -> "1258" 
+  "1257" -> "1259" 
+  "1257" -> "1263" 
+  "1257" -> "1265" 
+  "1259" -> "1260" 
+  "1259" -> "1261" 
+  "1261" -> "1262" 
+  "1263" -> "1264" 
+  "1265" -> "1266" 
+  "1266" -> "1267" 
+  "1266" -> "1268" 
+  "1266" -> "1277" 
+  "1268" -> "1269" 
+  "1268" -> "1276" 
+  "1269" -> "1270" 
+  "1269" -> "1271" 
+  "1271" -> "1272" 
+  "1272" -> "1273" 
+  "1272" -> "1274" 
+  "1274" -> "1275" 
+  "1277" -> "1278" 
+  "1277" -> "1279" 
+}

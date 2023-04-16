@@ -1,0 +1,103 @@
+digraph "setXmlfile" {  
+"180" [label = <(METHOD,setXmlfile)<SUB>169</SUB>> ]
+"15" [label = <(PARAM,this)<SUB>169</SUB>> ]
+"181" [label = <(PARAM,File xmlfile)<SUB>169</SUB>> ]
+"182" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>169</SUB>> ]
+"183" [label = <(CONTROL_STRUCTURE,try,try)<SUB>170</SUB>> ]
+"184" [label = <(BLOCK,try,try)<SUB>170</SUB>> ]
+"185" [label = <(LOCAL,DocumentBuilder builder: javax.xml.parsers.DocumentBuilder)> ]
+"186" [label = <(&lt;operator&gt;.assignment,DocumentBuilder builder = privateDBFactory.newDocumentBuilder())<SUB>171</SUB>> ]
+"187" [label = <(IDENTIFIER,builder,DocumentBuilder builder = privateDBFactory.newDocumentBuilder())<SUB>171</SUB>> ]
+"188" [label = <(newDocumentBuilder,privateDBFactory.newDocumentBuilder())<SUB>171</SUB>> ]
+"189" [label = <(&lt;operator&gt;.fieldAccess,AggregateTransformer.privateDBFactory)<SUB>171</SUB>> ]
+"190" [label = <(IDENTIFIER,AggregateTransformer,privateDBFactory.newDocumentBuilder())<SUB>171</SUB>> ]
+"191" [label = <(FIELD_IDENTIFIER,privateDBFactory,privateDBFactory)<SUB>171</SUB>> ]
+"13" [label = <(LOCAL,InputStream in: java.io.InputStream)> ]
+"192" [label = <(&lt;operator&gt;.assignment,InputStream in = new FileInputStream(xmlfile))<SUB>172</SUB>> ]
+"193" [label = <(IDENTIFIER,in,InputStream in = new FileInputStream(xmlfile))<SUB>172</SUB>> ]
+"194" [label = <(&lt;operator&gt;.alloc,new FileInputStream(xmlfile))<SUB>172</SUB>> ]
+"195" [label = <(&lt;init&gt;,new FileInputStream(xmlfile))<SUB>172</SUB>> ]
+"12" [label = <(IDENTIFIER,in,new FileInputStream(xmlfile))<SUB>172</SUB>> ]
+"196" [label = <(IDENTIFIER,xmlfile,new FileInputStream(xmlfile))<SUB>172</SUB>> ]
+"197" [label = <(CONTROL_STRUCTURE,try,try)<SUB>173</SUB>> ]
+"198" [label = <(BLOCK,try,try)<SUB>173</SUB>> ]
+"199" [label = <(LOCAL,Document doc: org.w3c.dom.Document)> ]
+"200" [label = <(&lt;operator&gt;.assignment,Document doc = builder.parse(in))<SUB>174</SUB>> ]
+"201" [label = <(IDENTIFIER,doc,Document doc = builder.parse(in))<SUB>174</SUB>> ]
+"202" [label = <(parse,builder.parse(in))<SUB>174</SUB>> ]
+"203" [label = <(IDENTIFIER,builder,builder.parse(in))<SUB>174</SUB>> ]
+"204" [label = <(IDENTIFIER,in,builder.parse(in))<SUB>174</SUB>> ]
+"205" [label = <(setXmlDocument,setXmlDocument(doc))<SUB>175</SUB>> ]
+"14" [label = <(IDENTIFIER,this,setXmlDocument(doc))<SUB>175</SUB>> ]
+"206" [label = <(IDENTIFIER,doc,setXmlDocument(doc))<SUB>175</SUB>> ]
+"207" [label = <(BLOCK,finally,finally)<SUB>176</SUB>> ]
+"208" [label = <(close,in.close())<SUB>177</SUB>> ]
+"209" [label = <(IDENTIFIER,in,in.close())<SUB>177</SUB>> ]
+"210" [label = <(BLOCK,catch,catch)> ]
+"211" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>179</SUB>> ]
+"212" [label = <(&lt;operator&gt;.throw,throw new BuildException(&quot;Error while parsing document: &quot; + xmlfile, e);)<SUB>180</SUB>> ]
+"213" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>180</SUB>> ]
+"214" [label = <(&lt;operator&gt;.assignment,&lt;empty&gt;)> ]
+"215" [label = <(IDENTIFIER,$obj2,&lt;empty&gt;)> ]
+"216" [label = <(&lt;operator&gt;.alloc,new BuildException(&quot;Error while parsing document: &quot; + xmlfile, e))<SUB>180</SUB>> ]
+"217" [label = <(&lt;init&gt;,new BuildException(&quot;Error while parsing document: &quot; + xmlfile, e))<SUB>180</SUB>> ]
+"218" [label = <(IDENTIFIER,$obj2,new BuildException(&quot;Error while parsing document: &quot; + xmlfile, e))> ]
+"219" [label = <(&lt;operator&gt;.addition,&quot;Error while parsing document: &quot; + xmlfile)<SUB>180</SUB>> ]
+"220" [label = <(LITERAL,&quot;Error while parsing document: &quot;,&quot;Error while parsing document: &quot; + xmlfile)<SUB>180</SUB>> ]
+"221" [label = <(IDENTIFIER,xmlfile,&quot;Error while parsing document: &quot; + xmlfile)<SUB>180</SUB>> ]
+"222" [label = <(IDENTIFIER,e,new BuildException(&quot;Error while parsing document: &quot; + xmlfile, e))<SUB>180</SUB>> ]
+"223" [label = <(IDENTIFIER,$obj2,&lt;empty&gt;)> ]
+"224" [label = <(MODIFIER,PROTECTED)> ]
+"225" [label = <(MODIFIER,VIRTUAL)> ]
+"226" [label = <(METHOD_RETURN,void)<SUB>169</SUB>> ]
+  "180" -> "15" 
+  "180" -> "181" 
+  "180" -> "182" 
+  "180" -> "224" 
+  "180" -> "225" 
+  "180" -> "226" 
+  "182" -> "183" 
+  "183" -> "184" 
+  "183" -> "210" 
+  "184" -> "185" 
+  "184" -> "186" 
+  "184" -> "13" 
+  "184" -> "192" 
+  "184" -> "195" 
+  "184" -> "197" 
+  "186" -> "187" 
+  "186" -> "188" 
+  "188" -> "189" 
+  "189" -> "190" 
+  "189" -> "191" 
+  "192" -> "193" 
+  "192" -> "194" 
+  "195" -> "12" 
+  "195" -> "196" 
+  "197" -> "198" 
+  "197" -> "207" 
+  "198" -> "199" 
+  "198" -> "200" 
+  "198" -> "205" 
+  "200" -> "201" 
+  "200" -> "202" 
+  "202" -> "203" 
+  "202" -> "204" 
+  "205" -> "14" 
+  "205" -> "206" 
+  "207" -> "208" 
+  "208" -> "209" 
+  "210" -> "211" 
+  "211" -> "212" 
+  "212" -> "213" 
+  "213" -> "214" 
+  "213" -> "217" 
+  "213" -> "223" 
+  "214" -> "215" 
+  "214" -> "216" 
+  "217" -> "218" 
+  "217" -> "219" 
+  "217" -> "222" 
+  "219" -> "220" 
+  "219" -> "221" 
+}

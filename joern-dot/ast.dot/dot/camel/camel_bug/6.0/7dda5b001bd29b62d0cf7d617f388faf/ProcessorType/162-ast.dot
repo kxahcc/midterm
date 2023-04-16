@@ -1,0 +1,207 @@
+digraph "createOutputsProcessor" {  
+"3740" [label = <(METHOD,createOutputsProcessor)<SUB>2007</SUB>> ]
+"533" [label = <(PARAM,this)<SUB>2007</SUB>> ]
+"3741" [label = <(PARAM,RouteContext routeContext)<SUB>2007</SUB>> ]
+"3742" [label = <(PARAM,Collection&lt;ProcessorType&lt;?&gt;&gt; outputs)<SUB>2007</SUB>> ]
+"3743" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>2008</SUB>> ]
+"531" [label = <(LOCAL,List&lt;Processor&gt; list: ANY)> ]
+"3744" [label = <(&lt;operator&gt;.assignment,ANY list = new ArrayList&lt;Processor&gt;())<SUB>2009</SUB>> ]
+"3745" [label = <(IDENTIFIER,list,ANY list = new ArrayList&lt;Processor&gt;())<SUB>2009</SUB>> ]
+"3746" [label = <(&lt;operator&gt;.alloc,new ArrayList&lt;Processor&gt;())<SUB>2009</SUB>> ]
+"3747" [label = <(&lt;init&gt;,new ArrayList&lt;Processor&gt;())<SUB>2009</SUB>> ]
+"530" [label = <(IDENTIFIER,list,new ArrayList&lt;Processor&gt;())<SUB>2009</SUB>> ]
+"3748" [label = <(LOCAL,$iterLocal4: java.util.Iterator)<SUB>2010</SUB>> ]
+"3749" [label = <(&lt;operator&gt;.assignment,)<SUB>2010</SUB>> ]
+"3750" [label = <(IDENTIFIER,$iterLocal4,)<SUB>2010</SUB>> ]
+"3751" [label = <(iterator,&lt;empty&gt;)<SUB>2010</SUB>> ]
+"3752" [label = <(IDENTIFIER,outputs,&lt;empty&gt;)<SUB>2010</SUB>> ]
+"3753" [label = <(CONTROL_STRUCTURE,FOR,FOR)<SUB>2010</SUB>> ]
+"3754" [label = <(hasNext,&lt;empty&gt;)<SUB>2010</SUB>> ]
+"3755" [label = <(IDENTIFIER,$iterLocal4,&lt;empty&gt;)<SUB>2010</SUB>> ]
+"3756" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>2010</SUB>> ]
+"3757" [label = <(LOCAL,output: org.apache.camel.model.ProcessorType)<SUB>2010</SUB>> ]
+"3758" [label = <(&lt;operator&gt;.assignment,&lt;empty&gt;)<SUB>2010</SUB>> ]
+"3759" [label = <(IDENTIFIER,output,&lt;empty&gt;)<SUB>2010</SUB>> ]
+"3760" [label = <(next,&lt;empty&gt;)<SUB>2010</SUB>> ]
+"3761" [label = <(IDENTIFIER,$iterLocal4,&lt;empty&gt;)<SUB>2010</SUB>> ]
+"3762" [label = <(LOCAL,Processor processor: org.apache.camel.Processor)> ]
+"3763" [label = <(&lt;operator&gt;.assignment,Processor processor = createProcessor(routeContext))<SUB>2011</SUB>> ]
+"3764" [label = <(IDENTIFIER,processor,Processor processor = createProcessor(routeContext))<SUB>2011</SUB>> ]
+"3765" [label = <(createProcessor,createProcessor(routeContext))<SUB>2011</SUB>> ]
+"3766" [label = <(IDENTIFIER,output,createProcessor(routeContext))<SUB>2011</SUB>> ]
+"3767" [label = <(IDENTIFIER,routeContext,createProcessor(routeContext))<SUB>2011</SUB>> ]
+"3768" [label = <(CONTROL_STRUCTURE,if (output instanceof ProceedType &amp;&amp; processor == null),if (output instanceof ProceedType &amp;&amp; processor == null))<SUB>2013</SUB>> ]
+"3769" [label = <(&lt;operator&gt;.logicalAnd,output instanceof ProceedType &amp;&amp; processor == null)<SUB>2013</SUB>> ]
+"3770" [label = <(&lt;operator&gt;.instanceOf,output instanceof ProceedType)<SUB>2013</SUB>> ]
+"3771" [label = <(IDENTIFIER,output,output instanceof ProceedType)<SUB>2013</SUB>> ]
+"3772" [label = <(TYPE_REF,ProceedType,ProceedType)<SUB>2013</SUB>> ]
+"3773" [label = <(&lt;operator&gt;.equals,processor == null)<SUB>2013</SUB>> ]
+"3774" [label = <(IDENTIFIER,processor,processor == null)<SUB>2013</SUB>> ]
+"3775" [label = <(LITERAL,null,processor == null)<SUB>2013</SUB>> ]
+"3776" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>2013</SUB>> ]
+"3777" [label = <(CONTROL_STRUCTURE,continue;,continue;)<SUB>2014</SUB>> ]
+"3778" [label = <(&lt;operator&gt;.assignment,processor = wrapProcessorInInterceptors(routeContext, processor))<SUB>2016</SUB>> ]
+"3779" [label = <(IDENTIFIER,processor,processor = wrapProcessorInInterceptors(routeContext, processor))<SUB>2016</SUB>> ]
+"3780" [label = <(wrapProcessorInInterceptors,wrapProcessorInInterceptors(routeContext, processor))<SUB>2016</SUB>> ]
+"3781" [label = <(IDENTIFIER,output,wrapProcessorInInterceptors(routeContext, processor))<SUB>2016</SUB>> ]
+"3782" [label = <(IDENTIFIER,routeContext,wrapProcessorInInterceptors(routeContext, processor))<SUB>2016</SUB>> ]
+"3783" [label = <(IDENTIFIER,processor,wrapProcessorInInterceptors(routeContext, processor))<SUB>2016</SUB>> ]
+"3784" [label = <(LOCAL,ProcessorType currentProcessor: org.apache.camel.model.ProcessorType)> ]
+"3785" [label = <(&lt;operator&gt;.assignment,ProcessorType currentProcessor = this)<SUB>2018</SUB>> ]
+"3786" [label = <(IDENTIFIER,currentProcessor,ProcessorType currentProcessor = this)<SUB>2018</SUB>> ]
+"532" [label = <(IDENTIFIER,this,ProcessorType currentProcessor = this)<SUB>2018</SUB>> ]
+"3787" [label = <(CONTROL_STRUCTURE,if (!(currentProcessor instanceof ExceptionType || currentProcessor instanceof TryType)),if (!(currentProcessor instanceof ExceptionType || currentProcessor instanceof TryType)))<SUB>2019</SUB>> ]
+"3788" [label = <(&lt;operator&gt;.logicalNot,!(currentProcessor instanceof ExceptionType || currentProcessor instanceof TryType))<SUB>2019</SUB>> ]
+"3789" [label = <(&lt;operator&gt;.logicalOr,currentProcessor instanceof ExceptionType || currentProcessor instanceof TryType)<SUB>2019</SUB>> ]
+"3790" [label = <(&lt;operator&gt;.instanceOf,currentProcessor instanceof ExceptionType)<SUB>2019</SUB>> ]
+"3791" [label = <(IDENTIFIER,currentProcessor,currentProcessor instanceof ExceptionType)<SUB>2019</SUB>> ]
+"3792" [label = <(TYPE_REF,ExceptionType,ExceptionType)<SUB>2019</SUB>> ]
+"3793" [label = <(&lt;operator&gt;.instanceOf,currentProcessor instanceof TryType)<SUB>2019</SUB>> ]
+"3794" [label = <(IDENTIFIER,currentProcessor,currentProcessor instanceof TryType)<SUB>2019</SUB>> ]
+"3795" [label = <(TYPE_REF,TryType,TryType)<SUB>2019</SUB>> ]
+"3796" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>2019</SUB>> ]
+"3797" [label = <(&lt;operator&gt;.assignment,processor = wrapInErrorHandler(routeContext, processor))<SUB>2020</SUB>> ]
+"3798" [label = <(IDENTIFIER,processor,processor = wrapInErrorHandler(routeContext, processor))<SUB>2020</SUB>> ]
+"3799" [label = <(wrapInErrorHandler,wrapInErrorHandler(routeContext, processor))<SUB>2020</SUB>> ]
+"3800" [label = <(IDENTIFIER,output,wrapInErrorHandler(routeContext, processor))<SUB>2020</SUB>> ]
+"3801" [label = <(IDENTIFIER,routeContext,wrapInErrorHandler(routeContext, processor))<SUB>2020</SUB>> ]
+"3802" [label = <(IDENTIFIER,processor,wrapInErrorHandler(routeContext, processor))<SUB>2020</SUB>> ]
+"3803" [label = <(add,add(processor))<SUB>2023</SUB>> ]
+"3804" [label = <(IDENTIFIER,list,add(processor))<SUB>2023</SUB>> ]
+"3805" [label = <(IDENTIFIER,processor,add(processor))<SUB>2023</SUB>> ]
+"3806" [label = <(LOCAL,Processor processor: org.apache.camel.Processor)> ]
+"3807" [label = <(&lt;operator&gt;.assignment,Processor processor = null)<SUB>2025</SUB>> ]
+"3808" [label = <(IDENTIFIER,processor,Processor processor = null)<SUB>2025</SUB>> ]
+"3809" [label = <(LITERAL,null,Processor processor = null)<SUB>2025</SUB>> ]
+"3810" [label = <(CONTROL_STRUCTURE,if (!list.isEmpty()),if (!list.isEmpty()))<SUB>2026</SUB>> ]
+"3811" [label = <(&lt;operator&gt;.logicalNot,!list.isEmpty())<SUB>2026</SUB>> ]
+"3812" [label = <(isEmpty,isEmpty())<SUB>2026</SUB>> ]
+"3813" [label = <(IDENTIFIER,list,isEmpty())<SUB>2026</SUB>> ]
+"3814" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>2026</SUB>> ]
+"3815" [label = <(CONTROL_STRUCTURE,if (list.size() == 1),if (list.size() == 1))<SUB>2027</SUB>> ]
+"3816" [label = <(&lt;operator&gt;.equals,list.size() == 1)<SUB>2027</SUB>> ]
+"3817" [label = <(size,size())<SUB>2027</SUB>> ]
+"3818" [label = <(IDENTIFIER,list,size())<SUB>2027</SUB>> ]
+"3819" [label = <(LITERAL,1,list.size() == 1)<SUB>2027</SUB>> ]
+"3820" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>2027</SUB>> ]
+"3821" [label = <(&lt;operator&gt;.assignment,processor = get(0))<SUB>2028</SUB>> ]
+"3822" [label = <(IDENTIFIER,processor,processor = get(0))<SUB>2028</SUB>> ]
+"3823" [label = <(get,get(0))<SUB>2028</SUB>> ]
+"3824" [label = <(IDENTIFIER,list,get(0))<SUB>2028</SUB>> ]
+"3825" [label = <(LITERAL,0,get(0))<SUB>2028</SUB>> ]
+"3826" [label = <(CONTROL_STRUCTURE,else,else)<SUB>2029</SUB>> ]
+"3827" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>2029</SUB>> ]
+"3828" [label = <(&lt;operator&gt;.assignment,processor = createCompositeProcessor(routeContext, list))<SUB>2030</SUB>> ]
+"3829" [label = <(IDENTIFIER,processor,processor = createCompositeProcessor(routeContext, list))<SUB>2030</SUB>> ]
+"3830" [label = <(createCompositeProcessor,createCompositeProcessor(routeContext, list))<SUB>2030</SUB>> ]
+"534" [label = <(IDENTIFIER,this,createCompositeProcessor(routeContext, list))<SUB>2030</SUB>> ]
+"3831" [label = <(IDENTIFIER,routeContext,createCompositeProcessor(routeContext, list))<SUB>2030</SUB>> ]
+"3832" [label = <(IDENTIFIER,list,createCompositeProcessor(routeContext, list))<SUB>2030</SUB>> ]
+"3833" [label = <(RETURN,return processor;,return processor;)<SUB>2033</SUB>> ]
+"3834" [label = <(IDENTIFIER,processor,return processor;)<SUB>2033</SUB>> ]
+"3835" [label = <(MODIFIER,PROTECTED)> ]
+"3836" [label = <(MODIFIER,VIRTUAL)> ]
+"3837" [label = <(METHOD_RETURN,org.apache.camel.Processor)<SUB>2007</SUB>> ]
+  "3740" -> "533" 
+  "3740" -> "3741" 
+  "3740" -> "3742" 
+  "3740" -> "3743" 
+  "3740" -> "3835" 
+  "3740" -> "3836" 
+  "3740" -> "3837" 
+  "3743" -> "531" 
+  "3743" -> "3744" 
+  "3743" -> "3747" 
+  "3743" -> "3748" 
+  "3743" -> "3749" 
+  "3743" -> "3753" 
+  "3743" -> "3806" 
+  "3743" -> "3807" 
+  "3743" -> "3810" 
+  "3743" -> "3833" 
+  "3744" -> "3745" 
+  "3744" -> "3746" 
+  "3747" -> "530" 
+  "3749" -> "3750" 
+  "3749" -> "3751" 
+  "3751" -> "3752" 
+  "3753" -> "3754" 
+  "3753" -> "3756" 
+  "3754" -> "3755" 
+  "3756" -> "3757" 
+  "3756" -> "3758" 
+  "3756" -> "3762" 
+  "3756" -> "3763" 
+  "3756" -> "3768" 
+  "3756" -> "3778" 
+  "3756" -> "3784" 
+  "3756" -> "3785" 
+  "3756" -> "3787" 
+  "3756" -> "3803" 
+  "3758" -> "3759" 
+  "3758" -> "3760" 
+  "3760" -> "3761" 
+  "3763" -> "3764" 
+  "3763" -> "3765" 
+  "3765" -> "3766" 
+  "3765" -> "3767" 
+  "3768" -> "3769" 
+  "3768" -> "3776" 
+  "3769" -> "3770" 
+  "3769" -> "3773" 
+  "3770" -> "3771" 
+  "3770" -> "3772" 
+  "3773" -> "3774" 
+  "3773" -> "3775" 
+  "3776" -> "3777" 
+  "3778" -> "3779" 
+  "3778" -> "3780" 
+  "3780" -> "3781" 
+  "3780" -> "3782" 
+  "3780" -> "3783" 
+  "3785" -> "3786" 
+  "3785" -> "532" 
+  "3787" -> "3788" 
+  "3787" -> "3796" 
+  "3788" -> "3789" 
+  "3789" -> "3790" 
+  "3789" -> "3793" 
+  "3790" -> "3791" 
+  "3790" -> "3792" 
+  "3793" -> "3794" 
+  "3793" -> "3795" 
+  "3796" -> "3797" 
+  "3797" -> "3798" 
+  "3797" -> "3799" 
+  "3799" -> "3800" 
+  "3799" -> "3801" 
+  "3799" -> "3802" 
+  "3803" -> "3804" 
+  "3803" -> "3805" 
+  "3807" -> "3808" 
+  "3807" -> "3809" 
+  "3810" -> "3811" 
+  "3810" -> "3814" 
+  "3811" -> "3812" 
+  "3812" -> "3813" 
+  "3814" -> "3815" 
+  "3815" -> "3816" 
+  "3815" -> "3820" 
+  "3815" -> "3826" 
+  "3816" -> "3817" 
+  "3816" -> "3819" 
+  "3817" -> "3818" 
+  "3820" -> "3821" 
+  "3821" -> "3822" 
+  "3821" -> "3823" 
+  "3823" -> "3824" 
+  "3823" -> "3825" 
+  "3826" -> "3827" 
+  "3827" -> "3828" 
+  "3828" -> "3829" 
+  "3828" -> "3830" 
+  "3830" -> "534" 
+  "3830" -> "3831" 
+  "3830" -> "3832" 
+  "3833" -> "3834" 
+}

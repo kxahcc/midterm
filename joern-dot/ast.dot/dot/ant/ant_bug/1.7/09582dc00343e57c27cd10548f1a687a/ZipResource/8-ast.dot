@@ -1,0 +1,137 @@
+digraph "getInputStream" {  
+"173" [label = <(METHOD,getInputStream)<SUB>126</SUB>> ]
+"19" [label = <(PARAM,this)<SUB>126</SUB>> ]
+"174" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>126</SUB>> ]
+"175" [label = <(CONTROL_STRUCTURE,if (isReference()),if (isReference()))<SUB>127</SUB>> ]
+"176" [label = <(isReference,isReference())<SUB>127</SUB>> ]
+"18" [label = <(IDENTIFIER,this,isReference())<SUB>127</SUB>> ]
+"177" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>127</SUB>> ]
+"178" [label = <(RETURN,return ((Resource) getCheckedRef()).getInputStream();,return ((Resource) getCheckedRef()).getInputStream();)<SUB>128</SUB>> ]
+"179" [label = <(getInputStream,getInputStream())<SUB>128</SUB>> ]
+"180" [label = <(&lt;operator&gt;.cast,(Resource) getCheckedRef())<SUB>128</SUB>> ]
+"181" [label = <(TYPE_REF,Resource,Resource)<SUB>128</SUB>> ]
+"182" [label = <(getCheckedRef,getCheckedRef())<SUB>128</SUB>> ]
+"20" [label = <(IDENTIFIER,this,getCheckedRef())<SUB>128</SUB>> ]
+"24" [label = <(LOCAL,ZipFile z: org.apache.tools.zip.ZipFile)> ]
+"183" [label = <(&lt;operator&gt;.assignment,ZipFile z = new ZipFile(getZipfile(), getEncoding()))<SUB>130</SUB>> ]
+"184" [label = <(IDENTIFIER,z,ZipFile z = new ZipFile(getZipfile(), getEncoding()))<SUB>130</SUB>> ]
+"185" [label = <(&lt;operator&gt;.alloc,new ZipFile(getZipfile(), getEncoding()))<SUB>130</SUB>> ]
+"186" [label = <(&lt;init&gt;,new ZipFile(getZipfile(), getEncoding()))<SUB>130</SUB>> ]
+"23" [label = <(IDENTIFIER,z,new ZipFile(getZipfile(), getEncoding()))<SUB>130</SUB>> ]
+"187" [label = <(getZipfile,this.getZipfile())<SUB>130</SUB>> ]
+"21" [label = <(IDENTIFIER,this,this.getZipfile())<SUB>130</SUB>> ]
+"188" [label = <(getEncoding,this.getEncoding())<SUB>130</SUB>> ]
+"22" [label = <(IDENTIFIER,this,this.getEncoding())<SUB>130</SUB>> ]
+"189" [label = <(LOCAL,ZipEntry ze: org.apache.tools.zip.ZipEntry)> ]
+"190" [label = <(&lt;operator&gt;.assignment,ZipEntry ze = getEntry(getName()))<SUB>131</SUB>> ]
+"191" [label = <(IDENTIFIER,ze,ZipEntry ze = getEntry(getName()))<SUB>131</SUB>> ]
+"192" [label = <(getEntry,getEntry(getName()))<SUB>131</SUB>> ]
+"193" [label = <(IDENTIFIER,z,getEntry(getName()))<SUB>131</SUB>> ]
+"194" [label = <(getName,getName())<SUB>131</SUB>> ]
+"25" [label = <(IDENTIFIER,this,getName())<SUB>131</SUB>> ]
+"195" [label = <(CONTROL_STRUCTURE,if (ze == null),if (ze == null))<SUB>132</SUB>> ]
+"196" [label = <(&lt;operator&gt;.equals,ze == null)<SUB>132</SUB>> ]
+"197" [label = <(IDENTIFIER,ze,ze == null)<SUB>132</SUB>> ]
+"198" [label = <(LITERAL,null,ze == null)<SUB>132</SUB>> ]
+"199" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>132</SUB>> ]
+"200" [label = <(close,close())<SUB>133</SUB>> ]
+"201" [label = <(IDENTIFIER,z,close())<SUB>133</SUB>> ]
+"202" [label = <(&lt;operator&gt;.throw,throw new BuildException(&quot;no entry &quot; + getName() + &quot; in &quot; + getArchive());)<SUB>134</SUB>> ]
+"203" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>134</SUB>> ]
+"204" [label = <(&lt;operator&gt;.assignment,&lt;empty&gt;)> ]
+"205" [label = <(IDENTIFIER,$obj2,&lt;empty&gt;)> ]
+"206" [label = <(&lt;operator&gt;.alloc,new BuildException(&quot;no entry &quot; + getName() + &quot; in &quot; + getArchive()))<SUB>134</SUB>> ]
+"207" [label = <(&lt;init&gt;,new BuildException(&quot;no entry &quot; + getName() + &quot; in &quot; + getArchive()))<SUB>134</SUB>> ]
+"208" [label = <(IDENTIFIER,$obj2,new BuildException(&quot;no entry &quot; + getName() + &quot; in &quot; + getArchive()))> ]
+"209" [label = <(&lt;operator&gt;.addition,&quot;no entry &quot; + getName() + &quot; in &quot; + getArchive())<SUB>134</SUB>> ]
+"210" [label = <(&lt;operator&gt;.addition,&quot;no entry &quot; + getName() + &quot; in &quot;)<SUB>134</SUB>> ]
+"211" [label = <(&lt;operator&gt;.addition,&quot;no entry &quot; + getName())<SUB>134</SUB>> ]
+"212" [label = <(LITERAL,&quot;no entry &quot;,&quot;no entry &quot; + getName())<SUB>134</SUB>> ]
+"213" [label = <(getName,getName())<SUB>134</SUB>> ]
+"26" [label = <(IDENTIFIER,this,getName())<SUB>134</SUB>> ]
+"214" [label = <(LITERAL,&quot; in &quot;,&quot;no entry &quot; + getName() + &quot; in &quot;)<SUB>134</SUB>> ]
+"215" [label = <(getArchive,getArchive())<SUB>135</SUB>> ]
+"27" [label = <(IDENTIFIER,this,getArchive())<SUB>135</SUB>> ]
+"216" [label = <(IDENTIFIER,$obj2,&lt;empty&gt;)> ]
+"217" [label = <(RETURN,return new FilterInputStream(z.getInputStream(ze)) {\012\012    public void close() throws IOException {\012        FileUtils.close(in);\012        z.close();\012    }\012\012    protected void finalize() throws Throwable {\012        try {\012            close();\012        } finally {\012            super.finalize();\012        }\012    }\012};,return new FilterInputStream(z.getInputStream(ze)) {\012\012    public void close() throws IOException {\012        FileUtils.close(in);\012        z.close();\012    }\012\012    protected void finalize() throws Throwable {\012        try {\012            close();\012        } finally {\012            super.finalize();\012        }\012    }\012};)<SUB>137</SUB>> ]
+"218" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>137</SUB>> ]
+"219" [label = <(&lt;operator&gt;.assignment,&lt;empty&gt;)> ]
+"220" [label = <(IDENTIFIER,$obj3,&lt;empty&gt;)> ]
+"221" [label = <(&lt;operator&gt;.alloc,new FilterInputStream(z.getInputStream(ze)) {\012\012    public void close() throws IOException {\012        FileUtils.close(in);\012        z.close();\012    }\012\012    protected void finalize() throws Throwable {\012        try {\012            close();\012        } finally {\012            super.finalize();\012        }\012    }\012})<SUB>137</SUB>> ]
+"222" [label = <(&lt;init&gt;,new FilterInputStream(z.getInputStream(ze)) {\012\012    public void close() throws IOException {\012        FileUtils.close(in);\012        z.close();\012    }\012\012    protected void finalize() throws Throwable {\012        try {\012            close();\012        } finally {\012            super.finalize();\012        }\012    }\012})<SUB>137</SUB>> ]
+"223" [label = <(IDENTIFIER,$obj3,new FilterInputStream(z.getInputStream(ze)) {\012\012    public void close() throws IOException {\012        FileUtils.close(in);\012        z.close();\012    }\012\012    protected void finalize() throws Throwable {\012        try {\012            close();\012        } finally {\012            super.finalize();\012        }\012    }\012})> ]
+"224" [label = <(getInputStream,getInputStream(ze))<SUB>137</SUB>> ]
+"225" [label = <(IDENTIFIER,z,getInputStream(ze))<SUB>137</SUB>> ]
+"226" [label = <(IDENTIFIER,ze,getInputStream(ze))<SUB>137</SUB>> ]
+"227" [label = <(IDENTIFIER,$obj3,&lt;empty&gt;)> ]
+"228" [label = <(MODIFIER,PUBLIC)> ]
+"229" [label = <(MODIFIER,VIRTUAL)> ]
+"230" [label = <(METHOD_RETURN,java.io.InputStream)<SUB>126</SUB>> ]
+  "173" -> "19" 
+  "173" -> "174" 
+  "173" -> "228" 
+  "173" -> "229" 
+  "173" -> "230" 
+  "174" -> "175" 
+  "174" -> "24" 
+  "174" -> "183" 
+  "174" -> "186" 
+  "174" -> "189" 
+  "174" -> "190" 
+  "174" -> "195" 
+  "174" -> "217" 
+  "175" -> "176" 
+  "175" -> "177" 
+  "176" -> "18" 
+  "177" -> "178" 
+  "178" -> "179" 
+  "179" -> "180" 
+  "180" -> "181" 
+  "180" -> "182" 
+  "182" -> "20" 
+  "183" -> "184" 
+  "183" -> "185" 
+  "186" -> "23" 
+  "186" -> "187" 
+  "186" -> "188" 
+  "187" -> "21" 
+  "188" -> "22" 
+  "190" -> "191" 
+  "190" -> "192" 
+  "192" -> "193" 
+  "192" -> "194" 
+  "194" -> "25" 
+  "195" -> "196" 
+  "195" -> "199" 
+  "196" -> "197" 
+  "196" -> "198" 
+  "199" -> "200" 
+  "199" -> "202" 
+  "200" -> "201" 
+  "202" -> "203" 
+  "203" -> "204" 
+  "203" -> "207" 
+  "203" -> "216" 
+  "204" -> "205" 
+  "204" -> "206" 
+  "207" -> "208" 
+  "207" -> "209" 
+  "209" -> "210" 
+  "209" -> "215" 
+  "210" -> "211" 
+  "210" -> "214" 
+  "211" -> "212" 
+  "211" -> "213" 
+  "213" -> "26" 
+  "215" -> "27" 
+  "217" -> "218" 
+  "218" -> "219" 
+  "218" -> "222" 
+  "218" -> "227" 
+  "219" -> "220" 
+  "219" -> "221" 
+  "222" -> "223" 
+  "222" -> "224" 
+  "224" -> "225" 
+  "224" -> "226" 
+}

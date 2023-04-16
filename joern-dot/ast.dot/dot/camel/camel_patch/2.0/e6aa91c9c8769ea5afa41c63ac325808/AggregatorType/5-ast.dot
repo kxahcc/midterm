@@ -1,0 +1,141 @@
+digraph "addRoutes" {  
+"138" [label = <(METHOD,addRoutes)<SUB>68</SUB>> ]
+"14" [label = <(PARAM,this)<SUB>68</SUB>> ]
+"139" [label = <(PARAM,RouteContext routeContext)<SUB>69</SUB>> ]
+"140" [label = <(PARAM,Collection&lt;Route&gt; routes)<SUB>69</SUB>> ]
+"141" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>69</SUB>> ]
+"142" [label = <(LOCAL,Endpoint from: org.apache.camel.Endpoint)> ]
+"143" [label = <(&lt;operator&gt;.assignment,Endpoint from = getEndpoint())<SUB>70</SUB>> ]
+"144" [label = <(IDENTIFIER,from,Endpoint from = getEndpoint())<SUB>70</SUB>> ]
+"145" [label = <(getEndpoint,getEndpoint())<SUB>70</SUB>> ]
+"146" [label = <(IDENTIFIER,routeContext,getEndpoint())<SUB>70</SUB>> ]
+"147" [label = <(LOCAL,Processor processor: org.apache.camel.Processor)> ]
+"148" [label = <(&lt;operator&gt;.assignment,Processor processor = createProcessor(this))<SUB>71</SUB>> ]
+"149" [label = <(IDENTIFIER,processor,Processor processor = createProcessor(this))<SUB>71</SUB>> ]
+"150" [label = <(createProcessor,createProcessor(this))<SUB>71</SUB>> ]
+"151" [label = <(IDENTIFIER,routeContext,createProcessor(this))<SUB>71</SUB>> ]
+"13" [label = <(IDENTIFIER,this,createProcessor(this))<SUB>71</SUB>> ]
+"17" [label = <(LOCAL,Aggregator service: org.apache.camel.processor.Aggregator)> ]
+"152" [label = <(&lt;operator&gt;.assignment,Aggregator service = new Aggregator(from, processor, getExpression().createExpression(routeContext), aggregationStrategy))<SUB>72</SUB>> ]
+"153" [label = <(IDENTIFIER,service,Aggregator service = new Aggregator(from, processor, getExpression().createExpression(routeContext), aggregationStrategy))<SUB>72</SUB>> ]
+"154" [label = <(&lt;operator&gt;.alloc,new Aggregator(from, processor, getExpression().createExpression(routeContext), aggregationStrategy))<SUB>72</SUB>> ]
+"155" [label = <(&lt;init&gt;,new Aggregator(from, processor, getExpression().createExpression(routeContext), aggregationStrategy))<SUB>72</SUB>> ]
+"16" [label = <(IDENTIFIER,service,new Aggregator(from, processor, getExpression().createExpression(routeContext), aggregationStrategy))<SUB>72</SUB>> ]
+"156" [label = <(IDENTIFIER,from,new Aggregator(from, processor, getExpression().createExpression(routeContext), aggregationStrategy))<SUB>72</SUB>> ]
+"157" [label = <(IDENTIFIER,processor,new Aggregator(from, processor, getExpression().createExpression(routeContext), aggregationStrategy))<SUB>72</SUB>> ]
+"158" [label = <(createExpression,createExpression(routeContext))<SUB>72</SUB>> ]
+"159" [label = <(getExpression,getExpression())<SUB>72</SUB>> ]
+"15" [label = <(IDENTIFIER,this,getExpression())<SUB>72</SUB>> ]
+"160" [label = <(IDENTIFIER,routeContext,createExpression(routeContext))<SUB>73</SUB>> ]
+"161" [label = <(&lt;operator&gt;.fieldAccess,this.aggregationStrategy)<SUB>73</SUB>> ]
+"162" [label = <(IDENTIFIER,this,new Aggregator(from, processor, getExpression().createExpression(routeContext), aggregationStrategy))<SUB>73</SUB>> ]
+"163" [label = <(FIELD_IDENTIFIER,aggregationStrategy,aggregationStrategy)<SUB>73</SUB>> ]
+"164" [label = <(CONTROL_STRUCTURE,if (batchSize != 0),if (batchSize != 0))<SUB>75</SUB>> ]
+"165" [label = <(&lt;operator&gt;.notEquals,batchSize != 0)<SUB>75</SUB>> ]
+"166" [label = <(&lt;operator&gt;.fieldAccess,this.batchSize)<SUB>75</SUB>> ]
+"167" [label = <(IDENTIFIER,this,batchSize != 0)<SUB>75</SUB>> ]
+"168" [label = <(FIELD_IDENTIFIER,batchSize,batchSize)<SUB>75</SUB>> ]
+"169" [label = <(LITERAL,0,batchSize != 0)<SUB>75</SUB>> ]
+"170" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>75</SUB>> ]
+"171" [label = <(setBatchSize,setBatchSize(batchSize))<SUB>76</SUB>> ]
+"172" [label = <(IDENTIFIER,service,setBatchSize(batchSize))<SUB>76</SUB>> ]
+"173" [label = <(&lt;operator&gt;.fieldAccess,this.batchSize)<SUB>76</SUB>> ]
+"174" [label = <(IDENTIFIER,this,setBatchSize(batchSize))<SUB>76</SUB>> ]
+"175" [label = <(FIELD_IDENTIFIER,batchSize,batchSize)<SUB>76</SUB>> ]
+"176" [label = <(CONTROL_STRUCTURE,if (batchSize != 0),if (batchSize != 0))<SUB>78</SUB>> ]
+"177" [label = <(&lt;operator&gt;.notEquals,batchSize != 0)<SUB>78</SUB>> ]
+"178" [label = <(&lt;operator&gt;.fieldAccess,this.batchSize)<SUB>78</SUB>> ]
+"179" [label = <(IDENTIFIER,this,batchSize != 0)<SUB>78</SUB>> ]
+"180" [label = <(FIELD_IDENTIFIER,batchSize,batchSize)<SUB>78</SUB>> ]
+"181" [label = <(LITERAL,0,batchSize != 0)<SUB>78</SUB>> ]
+"182" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>78</SUB>> ]
+"183" [label = <(setBatchTimeout,setBatchTimeout(batchTimeout))<SUB>79</SUB>> ]
+"184" [label = <(IDENTIFIER,service,setBatchTimeout(batchTimeout))<SUB>79</SUB>> ]
+"185" [label = <(&lt;operator&gt;.fieldAccess,this.batchTimeout)<SUB>79</SUB>> ]
+"186" [label = <(IDENTIFIER,this,setBatchTimeout(batchTimeout))<SUB>79</SUB>> ]
+"187" [label = <(FIELD_IDENTIFIER,batchTimeout,batchTimeout)<SUB>79</SUB>> ]
+"19" [label = <(LOCAL,Route route: org.apache.camel.Route)> ]
+"188" [label = <(&lt;operator&gt;.assignment,Route route = new Route&lt;Exchange&gt;(from, service) {\012\012    @Override\012    public String toString() {\012        return &quot;AggregatorRoute[&quot; + getEndpoint() + &quot; -&gt; &quot; + processor + &quot;]&quot;;\012    }\012})<SUB>82</SUB>> ]
+"189" [label = <(IDENTIFIER,route,Route route = new Route&lt;Exchange&gt;(from, service) {\012\012    @Override\012    public String toString() {\012        return &quot;AggregatorRoute[&quot; + getEndpoint() + &quot; -&gt; &quot; + processor + &quot;]&quot;;\012    }\012})<SUB>82</SUB>> ]
+"190" [label = <(&lt;operator&gt;.alloc,new Route&lt;Exchange&gt;(from, service) {\012\012    @Override\012    public String toString() {\012        return &quot;AggregatorRoute[&quot; + getEndpoint() + &quot; -&gt; &quot; + processor + &quot;]&quot;;\012    }\012})<SUB>82</SUB>> ]
+"191" [label = <(&lt;init&gt;,new Route&lt;Exchange&gt;(from, service) {\012\012    @Override\012    public String toString() {\012        return &quot;AggregatorRoute[&quot; + getEndpoint() + &quot; -&gt; &quot; + processor + &quot;]&quot;;\012    }\012})<SUB>82</SUB>> ]
+"18" [label = <(IDENTIFIER,route,new Route&lt;Exchange&gt;(from, service) {\012\012    @Override\012    public String toString() {\012        return &quot;AggregatorRoute[&quot; + getEndpoint() + &quot; -&gt; &quot; + processor + &quot;]&quot;;\012    }\012})<SUB>82</SUB>> ]
+"192" [label = <(IDENTIFIER,from,new Route&lt;Exchange&gt;(from, service) {\012\012    @Override\012    public String toString() {\012        return &quot;AggregatorRoute[&quot; + getEndpoint() + &quot; -&gt; &quot; + processor + &quot;]&quot;;\012    }\012})<SUB>82</SUB>> ]
+"193" [label = <(IDENTIFIER,service,new Route&lt;Exchange&gt;(from, service) {\012\012    @Override\012    public String toString() {\012        return &quot;AggregatorRoute[&quot; + getEndpoint() + &quot; -&gt; &quot; + processor + &quot;]&quot;;\012    }\012})<SUB>82</SUB>> ]
+"194" [label = <(add,add(route))<SUB>89</SUB>> ]
+"195" [label = <(IDENTIFIER,routes,add(route))<SUB>89</SUB>> ]
+"196" [label = <(IDENTIFIER,route,add(route))<SUB>89</SUB>> ]
+"197" [label = <(MODIFIER,PUBLIC)> ]
+"198" [label = <(MODIFIER,VIRTUAL)> ]
+"199" [label = <(ANNOTATION,@Override,@Override)<SUB>68</SUB>> ]
+"200" [label = <(METHOD_RETURN,void)<SUB>69</SUB>> ]
+  "138" -> "14" 
+  "138" -> "139" 
+  "138" -> "140" 
+  "138" -> "141" 
+  "138" -> "197" 
+  "138" -> "198" 
+  "138" -> "199" 
+  "138" -> "200" 
+  "141" -> "142" 
+  "141" -> "143" 
+  "141" -> "147" 
+  "141" -> "148" 
+  "141" -> "17" 
+  "141" -> "152" 
+  "141" -> "155" 
+  "141" -> "164" 
+  "141" -> "176" 
+  "141" -> "19" 
+  "141" -> "188" 
+  "141" -> "191" 
+  "141" -> "194" 
+  "143" -> "144" 
+  "143" -> "145" 
+  "145" -> "146" 
+  "148" -> "149" 
+  "148" -> "150" 
+  "150" -> "151" 
+  "150" -> "13" 
+  "152" -> "153" 
+  "152" -> "154" 
+  "155" -> "16" 
+  "155" -> "156" 
+  "155" -> "157" 
+  "155" -> "158" 
+  "155" -> "161" 
+  "158" -> "159" 
+  "158" -> "160" 
+  "159" -> "15" 
+  "161" -> "162" 
+  "161" -> "163" 
+  "164" -> "165" 
+  "164" -> "170" 
+  "165" -> "166" 
+  "165" -> "169" 
+  "166" -> "167" 
+  "166" -> "168" 
+  "170" -> "171" 
+  "171" -> "172" 
+  "171" -> "173" 
+  "173" -> "174" 
+  "173" -> "175" 
+  "176" -> "177" 
+  "176" -> "182" 
+  "177" -> "178" 
+  "177" -> "181" 
+  "178" -> "179" 
+  "178" -> "180" 
+  "182" -> "183" 
+  "183" -> "184" 
+  "183" -> "185" 
+  "185" -> "186" 
+  "185" -> "187" 
+  "188" -> "189" 
+  "188" -> "190" 
+  "191" -> "18" 
+  "191" -> "192" 
+  "191" -> "193" 
+  "194" -> "195" 
+  "194" -> "196" 
+}

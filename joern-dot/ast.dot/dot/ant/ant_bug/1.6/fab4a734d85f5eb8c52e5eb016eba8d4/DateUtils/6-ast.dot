@@ -1,0 +1,243 @@
+digraph "getDateForHeader" {  
+"232" [label = <(METHOD,getDateForHeader)<SUB>235</SUB>> ]
+"233" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>235</SUB>> ]
+"234" [label = <(LOCAL,Calendar cal: java.util.Calendar)> ]
+"235" [label = <(&lt;operator&gt;.assignment,Calendar cal = Calendar.getInstance())<SUB>236</SUB>> ]
+"236" [label = <(IDENTIFIER,cal,Calendar cal = Calendar.getInstance())<SUB>236</SUB>> ]
+"237" [label = <(getInstance,Calendar.getInstance())<SUB>236</SUB>> ]
+"238" [label = <(IDENTIFIER,Calendar,Calendar.getInstance())<SUB>236</SUB>> ]
+"239" [label = <(LOCAL,TimeZone tz: java.util.TimeZone)> ]
+"240" [label = <(&lt;operator&gt;.assignment,TimeZone tz = cal.getTimeZone())<SUB>237</SUB>> ]
+"241" [label = <(IDENTIFIER,tz,TimeZone tz = cal.getTimeZone())<SUB>237</SUB>> ]
+"242" [label = <(getTimeZone,cal.getTimeZone())<SUB>237</SUB>> ]
+"243" [label = <(IDENTIFIER,cal,cal.getTimeZone())<SUB>237</SUB>> ]
+"244" [label = <(LOCAL,int offset: int)> ]
+"245" [label = <(&lt;operator&gt;.assignment,int offset = tz.getOffset(cal.get(Calendar.ERA), cal.get(Calendar.YEAR), cal.get(Calendar.MONTH), cal.get(Calendar.DAY_OF_MONTH), cal.get(Calendar.DAY_OF_WEEK), cal.get(Calendar.MILLISECOND)))<SUB>238</SUB>> ]
+"246" [label = <(IDENTIFIER,offset,int offset = tz.getOffset(cal.get(Calendar.ERA), cal.get(Calendar.YEAR), cal.get(Calendar.MONTH), cal.get(Calendar.DAY_OF_MONTH), cal.get(Calendar.DAY_OF_WEEK), cal.get(Calendar.MILLISECOND)))<SUB>238</SUB>> ]
+"247" [label = <(getOffset,tz.getOffset(cal.get(Calendar.ERA), cal.get(Calendar.YEAR), cal.get(Calendar.MONTH), cal.get(Calendar.DAY_OF_MONTH), cal.get(Calendar.DAY_OF_WEEK), cal.get(Calendar.MILLISECOND)))<SUB>238</SUB>> ]
+"248" [label = <(IDENTIFIER,tz,tz.getOffset(cal.get(Calendar.ERA), cal.get(Calendar.YEAR), cal.get(Calendar.MONTH), cal.get(Calendar.DAY_OF_MONTH), cal.get(Calendar.DAY_OF_WEEK), cal.get(Calendar.MILLISECOND)))<SUB>238</SUB>> ]
+"249" [label = <(get,cal.get(Calendar.ERA))<SUB>238</SUB>> ]
+"250" [label = <(IDENTIFIER,cal,cal.get(Calendar.ERA))<SUB>238</SUB>> ]
+"251" [label = <(&lt;operator&gt;.fieldAccess,Calendar.ERA)<SUB>238</SUB>> ]
+"252" [label = <(IDENTIFIER,Calendar,cal.get(Calendar.ERA))<SUB>238</SUB>> ]
+"253" [label = <(FIELD_IDENTIFIER,ERA,ERA)<SUB>238</SUB>> ]
+"254" [label = <(get,cal.get(Calendar.YEAR))<SUB>239</SUB>> ]
+"255" [label = <(IDENTIFIER,cal,cal.get(Calendar.YEAR))<SUB>239</SUB>> ]
+"256" [label = <(&lt;operator&gt;.fieldAccess,Calendar.YEAR)<SUB>239</SUB>> ]
+"257" [label = <(IDENTIFIER,Calendar,cal.get(Calendar.YEAR))<SUB>239</SUB>> ]
+"258" [label = <(FIELD_IDENTIFIER,YEAR,YEAR)<SUB>239</SUB>> ]
+"259" [label = <(get,cal.get(Calendar.MONTH))<SUB>240</SUB>> ]
+"260" [label = <(IDENTIFIER,cal,cal.get(Calendar.MONTH))<SUB>240</SUB>> ]
+"261" [label = <(&lt;operator&gt;.fieldAccess,Calendar.MONTH)<SUB>240</SUB>> ]
+"262" [label = <(IDENTIFIER,Calendar,cal.get(Calendar.MONTH))<SUB>240</SUB>> ]
+"263" [label = <(FIELD_IDENTIFIER,MONTH,MONTH)<SUB>240</SUB>> ]
+"264" [label = <(get,cal.get(Calendar.DAY_OF_MONTH))<SUB>241</SUB>> ]
+"265" [label = <(IDENTIFIER,cal,cal.get(Calendar.DAY_OF_MONTH))<SUB>241</SUB>> ]
+"266" [label = <(&lt;operator&gt;.fieldAccess,Calendar.DAY_OF_MONTH)<SUB>241</SUB>> ]
+"267" [label = <(IDENTIFIER,Calendar,cal.get(Calendar.DAY_OF_MONTH))<SUB>241</SUB>> ]
+"268" [label = <(FIELD_IDENTIFIER,DAY_OF_MONTH,DAY_OF_MONTH)<SUB>241</SUB>> ]
+"269" [label = <(get,cal.get(Calendar.DAY_OF_WEEK))<SUB>242</SUB>> ]
+"270" [label = <(IDENTIFIER,cal,cal.get(Calendar.DAY_OF_WEEK))<SUB>242</SUB>> ]
+"271" [label = <(&lt;operator&gt;.fieldAccess,Calendar.DAY_OF_WEEK)<SUB>242</SUB>> ]
+"272" [label = <(IDENTIFIER,Calendar,cal.get(Calendar.DAY_OF_WEEK))<SUB>242</SUB>> ]
+"273" [label = <(FIELD_IDENTIFIER,DAY_OF_WEEK,DAY_OF_WEEK)<SUB>242</SUB>> ]
+"274" [label = <(get,cal.get(Calendar.MILLISECOND))<SUB>243</SUB>> ]
+"275" [label = <(IDENTIFIER,cal,cal.get(Calendar.MILLISECOND))<SUB>243</SUB>> ]
+"276" [label = <(&lt;operator&gt;.fieldAccess,Calendar.MILLISECOND)<SUB>243</SUB>> ]
+"277" [label = <(IDENTIFIER,Calendar,cal.get(Calendar.MILLISECOND))<SUB>243</SUB>> ]
+"278" [label = <(FIELD_IDENTIFIER,MILLISECOND,MILLISECOND)<SUB>243</SUB>> ]
+"14" [label = <(LOCAL,StringBuffer tzMarker: java.lang.StringBuffer)> ]
+"279" [label = <(&lt;operator&gt;.assignment,StringBuffer tzMarker = new StringBuffer(offset &lt; 0 ? &quot;-&quot; : &quot;+&quot;))<SUB>244</SUB>> ]
+"280" [label = <(IDENTIFIER,tzMarker,StringBuffer tzMarker = new StringBuffer(offset &lt; 0 ? &quot;-&quot; : &quot;+&quot;))<SUB>244</SUB>> ]
+"281" [label = <(&lt;operator&gt;.alloc,new StringBuffer(offset &lt; 0 ? &quot;-&quot; : &quot;+&quot;))<SUB>244</SUB>> ]
+"282" [label = <(&lt;init&gt;,new StringBuffer(offset &lt; 0 ? &quot;-&quot; : &quot;+&quot;))<SUB>244</SUB>> ]
+"13" [label = <(IDENTIFIER,tzMarker,new StringBuffer(offset &lt; 0 ? &quot;-&quot; : &quot;+&quot;))<SUB>244</SUB>> ]
+"283" [label = <(&lt;operator&gt;.conditional,offset &lt; 0 ? &quot;-&quot; : &quot;+&quot;)<SUB>244</SUB>> ]
+"284" [label = <(&lt;operator&gt;.lessThan,offset &lt; 0)<SUB>244</SUB>> ]
+"285" [label = <(IDENTIFIER,offset,offset &lt; 0)<SUB>244</SUB>> ]
+"286" [label = <(LITERAL,0,offset &lt; 0)<SUB>244</SUB>> ]
+"287" [label = <(LITERAL,&quot;-&quot;,offset &lt; 0 ? &quot;-&quot; : &quot;+&quot;)<SUB>244</SUB>> ]
+"288" [label = <(LITERAL,&quot;+&quot;,offset &lt; 0 ? &quot;-&quot; : &quot;+&quot;)<SUB>244</SUB>> ]
+"289" [label = <(&lt;operator&gt;.assignment,offset = Math.abs(offset))<SUB>245</SUB>> ]
+"290" [label = <(IDENTIFIER,offset,offset = Math.abs(offset))<SUB>245</SUB>> ]
+"291" [label = <(abs,Math.abs(offset))<SUB>245</SUB>> ]
+"292" [label = <(IDENTIFIER,Math,Math.abs(offset))<SUB>245</SUB>> ]
+"293" [label = <(IDENTIFIER,offset,Math.abs(offset))<SUB>245</SUB>> ]
+"294" [label = <(LOCAL,int hours: int)> ]
+"295" [label = <(&lt;operator&gt;.assignment,int hours = offset / (60 * 60 * 1000))<SUB>246</SUB>> ]
+"296" [label = <(IDENTIFIER,hours,int hours = offset / (60 * 60 * 1000))<SUB>246</SUB>> ]
+"297" [label = <(&lt;operator&gt;.division,offset / (60 * 60 * 1000))<SUB>246</SUB>> ]
+"298" [label = <(IDENTIFIER,offset,offset / (60 * 60 * 1000))<SUB>246</SUB>> ]
+"299" [label = <(&lt;operator&gt;.multiplication,60 * 60 * 1000)<SUB>246</SUB>> ]
+"300" [label = <(&lt;operator&gt;.multiplication,60 * 60)<SUB>246</SUB>> ]
+"301" [label = <(LITERAL,60,60 * 60)<SUB>246</SUB>> ]
+"302" [label = <(LITERAL,60,60 * 60)<SUB>246</SUB>> ]
+"303" [label = <(LITERAL,1000,60 * 60 * 1000)<SUB>246</SUB>> ]
+"304" [label = <(LOCAL,int minutes: int)> ]
+"305" [label = <(&lt;operator&gt;.assignment,int minutes = offset / (60 * 1000) - 60 * hours)<SUB>247</SUB>> ]
+"306" [label = <(IDENTIFIER,minutes,int minutes = offset / (60 * 1000) - 60 * hours)<SUB>247</SUB>> ]
+"307" [label = <(&lt;operator&gt;.subtraction,offset / (60 * 1000) - 60 * hours)<SUB>247</SUB>> ]
+"308" [label = <(&lt;operator&gt;.division,offset / (60 * 1000))<SUB>247</SUB>> ]
+"309" [label = <(IDENTIFIER,offset,offset / (60 * 1000))<SUB>247</SUB>> ]
+"310" [label = <(&lt;operator&gt;.multiplication,60 * 1000)<SUB>247</SUB>> ]
+"311" [label = <(LITERAL,60,60 * 1000)<SUB>247</SUB>> ]
+"312" [label = <(LITERAL,1000,60 * 1000)<SUB>247</SUB>> ]
+"313" [label = <(&lt;operator&gt;.multiplication,60 * hours)<SUB>247</SUB>> ]
+"314" [label = <(LITERAL,60,60 * hours)<SUB>247</SUB>> ]
+"315" [label = <(IDENTIFIER,hours,60 * hours)<SUB>247</SUB>> ]
+"316" [label = <(CONTROL_STRUCTURE,if (hours &lt; 10),if (hours &lt; 10))<SUB>248</SUB>> ]
+"317" [label = <(&lt;operator&gt;.lessThan,hours &lt; 10)<SUB>248</SUB>> ]
+"318" [label = <(IDENTIFIER,hours,hours &lt; 10)<SUB>248</SUB>> ]
+"319" [label = <(LITERAL,10,hours &lt; 10)<SUB>248</SUB>> ]
+"320" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>248</SUB>> ]
+"321" [label = <(append,tzMarker.append(&quot;0&quot;))<SUB>249</SUB>> ]
+"322" [label = <(IDENTIFIER,tzMarker,tzMarker.append(&quot;0&quot;))<SUB>249</SUB>> ]
+"323" [label = <(LITERAL,&quot;0&quot;,tzMarker.append(&quot;0&quot;))<SUB>249</SUB>> ]
+"324" [label = <(append,tzMarker.append(hours))<SUB>251</SUB>> ]
+"325" [label = <(IDENTIFIER,tzMarker,tzMarker.append(hours))<SUB>251</SUB>> ]
+"326" [label = <(IDENTIFIER,hours,tzMarker.append(hours))<SUB>251</SUB>> ]
+"327" [label = <(CONTROL_STRUCTURE,if (minutes &lt; 10),if (minutes &lt; 10))<SUB>252</SUB>> ]
+"328" [label = <(&lt;operator&gt;.lessThan,minutes &lt; 10)<SUB>252</SUB>> ]
+"329" [label = <(IDENTIFIER,minutes,minutes &lt; 10)<SUB>252</SUB>> ]
+"330" [label = <(LITERAL,10,minutes &lt; 10)<SUB>252</SUB>> ]
+"331" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>252</SUB>> ]
+"332" [label = <(append,tzMarker.append(&quot;0&quot;))<SUB>253</SUB>> ]
+"333" [label = <(IDENTIFIER,tzMarker,tzMarker.append(&quot;0&quot;))<SUB>253</SUB>> ]
+"334" [label = <(LITERAL,&quot;0&quot;,tzMarker.append(&quot;0&quot;))<SUB>253</SUB>> ]
+"335" [label = <(append,tzMarker.append(minutes))<SUB>255</SUB>> ]
+"336" [label = <(IDENTIFIER,tzMarker,tzMarker.append(minutes))<SUB>255</SUB>> ]
+"337" [label = <(IDENTIFIER,minutes,tzMarker.append(minutes))<SUB>255</SUB>> ]
+"338" [label = <(RETURN,return DATE_HEADER_FORMAT.format(cal.getTime()) + tzMarker.toString();,return DATE_HEADER_FORMAT.format(cal.getTime()) + tzMarker.toString();)<SUB>256</SUB>> ]
+"339" [label = <(&lt;operator&gt;.addition,DATE_HEADER_FORMAT.format(cal.getTime()) + tzMarker.toString())<SUB>256</SUB>> ]
+"340" [label = <(format,DATE_HEADER_FORMAT.format(cal.getTime()))<SUB>256</SUB>> ]
+"341" [label = <(&lt;operator&gt;.fieldAccess,DateUtils.DATE_HEADER_FORMAT)<SUB>256</SUB>> ]
+"342" [label = <(IDENTIFIER,DateUtils,DATE_HEADER_FORMAT.format(cal.getTime()))<SUB>256</SUB>> ]
+"343" [label = <(FIELD_IDENTIFIER,DATE_HEADER_FORMAT,DATE_HEADER_FORMAT)<SUB>256</SUB>> ]
+"344" [label = <(getTime,cal.getTime())<SUB>256</SUB>> ]
+"345" [label = <(IDENTIFIER,cal,cal.getTime())<SUB>256</SUB>> ]
+"346" [label = <(toString,tzMarker.toString())<SUB>256</SUB>> ]
+"347" [label = <(IDENTIFIER,tzMarker,tzMarker.toString())<SUB>256</SUB>> ]
+"348" [label = <(MODIFIER,PUBLIC)> ]
+"349" [label = <(MODIFIER,STATIC)> ]
+"350" [label = <(METHOD_RETURN,java.lang.String)<SUB>235</SUB>> ]
+  "232" -> "233" 
+  "232" -> "348" 
+  "232" -> "349" 
+  "232" -> "350" 
+  "233" -> "234" 
+  "233" -> "235" 
+  "233" -> "239" 
+  "233" -> "240" 
+  "233" -> "244" 
+  "233" -> "245" 
+  "233" -> "14" 
+  "233" -> "279" 
+  "233" -> "282" 
+  "233" -> "289" 
+  "233" -> "294" 
+  "233" -> "295" 
+  "233" -> "304" 
+  "233" -> "305" 
+  "233" -> "316" 
+  "233" -> "324" 
+  "233" -> "327" 
+  "233" -> "335" 
+  "233" -> "338" 
+  "235" -> "236" 
+  "235" -> "237" 
+  "237" -> "238" 
+  "240" -> "241" 
+  "240" -> "242" 
+  "242" -> "243" 
+  "245" -> "246" 
+  "245" -> "247" 
+  "247" -> "248" 
+  "247" -> "249" 
+  "247" -> "254" 
+  "247" -> "259" 
+  "247" -> "264" 
+  "247" -> "269" 
+  "247" -> "274" 
+  "249" -> "250" 
+  "249" -> "251" 
+  "251" -> "252" 
+  "251" -> "253" 
+  "254" -> "255" 
+  "254" -> "256" 
+  "256" -> "257" 
+  "256" -> "258" 
+  "259" -> "260" 
+  "259" -> "261" 
+  "261" -> "262" 
+  "261" -> "263" 
+  "264" -> "265" 
+  "264" -> "266" 
+  "266" -> "267" 
+  "266" -> "268" 
+  "269" -> "270" 
+  "269" -> "271" 
+  "271" -> "272" 
+  "271" -> "273" 
+  "274" -> "275" 
+  "274" -> "276" 
+  "276" -> "277" 
+  "276" -> "278" 
+  "279" -> "280" 
+  "279" -> "281" 
+  "282" -> "13" 
+  "282" -> "283" 
+  "283" -> "284" 
+  "283" -> "287" 
+  "283" -> "288" 
+  "284" -> "285" 
+  "284" -> "286" 
+  "289" -> "290" 
+  "289" -> "291" 
+  "291" -> "292" 
+  "291" -> "293" 
+  "295" -> "296" 
+  "295" -> "297" 
+  "297" -> "298" 
+  "297" -> "299" 
+  "299" -> "300" 
+  "299" -> "303" 
+  "300" -> "301" 
+  "300" -> "302" 
+  "305" -> "306" 
+  "305" -> "307" 
+  "307" -> "308" 
+  "307" -> "313" 
+  "308" -> "309" 
+  "308" -> "310" 
+  "310" -> "311" 
+  "310" -> "312" 
+  "313" -> "314" 
+  "313" -> "315" 
+  "316" -> "317" 
+  "316" -> "320" 
+  "317" -> "318" 
+  "317" -> "319" 
+  "320" -> "321" 
+  "321" -> "322" 
+  "321" -> "323" 
+  "324" -> "325" 
+  "324" -> "326" 
+  "327" -> "328" 
+  "327" -> "331" 
+  "328" -> "329" 
+  "328" -> "330" 
+  "331" -> "332" 
+  "332" -> "333" 
+  "332" -> "334" 
+  "335" -> "336" 
+  "335" -> "337" 
+  "338" -> "339" 
+  "339" -> "340" 
+  "339" -> "346" 
+  "340" -> "341" 
+  "340" -> "344" 
+  "341" -> "342" 
+  "341" -> "343" 
+  "344" -> "345" 
+  "346" -> "347" 
+}

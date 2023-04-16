@@ -1,0 +1,157 @@
+digraph "process" {  
+"106" [label = <(METHOD,process)<SUB>65</SUB>> ]
+"11" [label = <(PARAM,this)<SUB>65</SUB>> ]
+"107" [label = <(PARAM,Exchange exchange)<SUB>65</SUB>> ]
+"108" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>65</SUB>> ]
+"109" [label = <(LOCAL,Message message: org.apache.camel.Message)> ]
+"110" [label = <(&lt;operator&gt;.assignment,Message message = getIn())<SUB>66</SUB>> ]
+"111" [label = <(IDENTIFIER,message,Message message = getIn())<SUB>66</SUB>> ]
+"112" [label = <(getIn,getIn())<SUB>66</SUB>> ]
+"113" [label = <(IDENTIFIER,exchange,getIn())<SUB>66</SUB>> ]
+"114" [label = <(LOCAL,String[] recipients: java.lang.String[])> ]
+"115" [label = <(&lt;operator&gt;.assignment,String[] recipients = recipients(message))<SUB>67</SUB>> ]
+"116" [label = <(IDENTIFIER,recipients,String[] recipients = recipients(message))<SUB>67</SUB>> ]
+"117" [label = <(recipients,recipients(message))<SUB>67</SUB>> ]
+"10" [label = <(IDENTIFIER,this,recipients(message))<SUB>67</SUB>> ]
+"118" [label = <(IDENTIFIER,message,recipients(message))<SUB>67</SUB>> ]
+"119" [label = <(LOCAL,Exchange current: org.apache.camel.Exchange)> ]
+"120" [label = <(&lt;operator&gt;.assignment,Exchange current = exchange)<SUB>68</SUB>> ]
+"121" [label = <(IDENTIFIER,current,Exchange current = exchange)<SUB>68</SUB>> ]
+"122" [label = <(IDENTIFIER,exchange,Exchange current = exchange)<SUB>68</SUB>> ]
+"123" [label = <(CONTROL_STRUCTURE,&lt;empty&gt;,&lt;empty&gt;)> ]
+"124" [label = <(LOCAL,$idx0: int)<SUB>70</SUB>> ]
+"125" [label = <(&lt;operator&gt;.assignment,int $idx0 = 0)<SUB>70</SUB>> ]
+"126" [label = <(IDENTIFIER,$idx0,int $idx0 = 0)<SUB>70</SUB>> ]
+"127" [label = <(LITERAL,0,int $idx0 = 0)<SUB>70</SUB>> ]
+"128" [label = <(&lt;operator&gt;.lessThan,$idx0 &lt; recipients.length)<SUB>70</SUB>> ]
+"129" [label = <(IDENTIFIER,$idx0,$idx0 &lt; recipients.length)<SUB>70</SUB>> ]
+"130" [label = <(&lt;operator&gt;.fieldAccess,recipients.length)<SUB>70</SUB>> ]
+"131" [label = <(IDENTIFIER,recipients,$idx0 &lt; recipients.length)<SUB>70</SUB>> ]
+"132" [label = <(FIELD_IDENTIFIER,length,length)<SUB>70</SUB>> ]
+"133" [label = <(&lt;operator&gt;.postIncrement,$idx0++)<SUB>70</SUB>> ]
+"134" [label = <(IDENTIFIER,$idx0,$idx0++)<SUB>70</SUB>> ]
+"135" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>70</SUB>> ]
+"136" [label = <(LOCAL,nextRecipient: java.lang.String)<SUB>70</SUB>> ]
+"137" [label = <(&lt;operator&gt;.assignment,&lt;empty&gt;)<SUB>70</SUB>> ]
+"138" [label = <(IDENTIFIER,nextRecipient,&lt;empty&gt;)<SUB>70</SUB>> ]
+"139" [label = <(&lt;operator&gt;.indexAccess,&lt;empty&gt;)<SUB>70</SUB>> ]
+"140" [label = <(IDENTIFIER,recipients,&lt;empty&gt;)<SUB>70</SUB>> ]
+"141" [label = <(IDENTIFIER,$idx0,&lt;empty&gt;)<SUB>70</SUB>> ]
+"142" [label = <(LOCAL,Endpoint&lt;Exchange&gt; endpoint: ANY)> ]
+"143" [label = <(&lt;operator&gt;.assignment,ANY endpoint = resolveEndpoint(exchange, nextRecipient))<SUB>71</SUB>> ]
+"144" [label = <(IDENTIFIER,endpoint,ANY endpoint = resolveEndpoint(exchange, nextRecipient))<SUB>71</SUB>> ]
+"145" [label = <(resolveEndpoint,resolveEndpoint(exchange, nextRecipient))<SUB>71</SUB>> ]
+"12" [label = <(IDENTIFIER,this,resolveEndpoint(exchange, nextRecipient))<SUB>71</SUB>> ]
+"146" [label = <(IDENTIFIER,exchange,resolveEndpoint(exchange, nextRecipient))<SUB>71</SUB>> ]
+"147" [label = <(IDENTIFIER,nextRecipient,resolveEndpoint(exchange, nextRecipient))<SUB>71</SUB>> ]
+"148" [label = <(LOCAL,Producer&lt;Exchange&gt; producer: ANY)> ]
+"149" [label = <(&lt;operator&gt;.assignment,ANY producer = getProducer(endpoint))<SUB>72</SUB>> ]
+"150" [label = <(IDENTIFIER,producer,ANY producer = getProducer(endpoint))<SUB>72</SUB>> ]
+"151" [label = <(getProducer,getProducer(endpoint))<SUB>72</SUB>> ]
+"152" [label = <(&lt;operator&gt;.fieldAccess,this.producerCache)<SUB>72</SUB>> ]
+"153" [label = <(IDENTIFIER,this,getProducer(endpoint))<SUB>72</SUB>> ]
+"154" [label = <(FIELD_IDENTIFIER,producerCache,producerCache)<SUB>72</SUB>> ]
+"155" [label = <(IDENTIFIER,endpoint,getProducer(endpoint))<SUB>72</SUB>> ]
+"156" [label = <(LOCAL,Exchange ex: org.apache.camel.Exchange)> ]
+"157" [label = <(&lt;operator&gt;.assignment,Exchange ex = newInstance())<SUB>73</SUB>> ]
+"158" [label = <(IDENTIFIER,ex,Exchange ex = newInstance())<SUB>73</SUB>> ]
+"159" [label = <(newInstance,newInstance())<SUB>73</SUB>> ]
+"160" [label = <(IDENTIFIER,current,newInstance())<SUB>73</SUB>> ]
+"161" [label = <(updateRoutingSlip,updateRoutingSlip(current))<SUB>75</SUB>> ]
+"13" [label = <(IDENTIFIER,this,updateRoutingSlip(current))<SUB>75</SUB>> ]
+"162" [label = <(IDENTIFIER,current,updateRoutingSlip(current))<SUB>75</SUB>> ]
+"163" [label = <(copyOutToIn,copyOutToIn(ex, current))<SUB>76</SUB>> ]
+"14" [label = <(IDENTIFIER,this,copyOutToIn(ex, current))<SUB>76</SUB>> ]
+"164" [label = <(IDENTIFIER,ex,copyOutToIn(ex, current))<SUB>76</SUB>> ]
+"165" [label = <(IDENTIFIER,current,copyOutToIn(ex, current))<SUB>76</SUB>> ]
+"166" [label = <(process,process(ex))<SUB>78</SUB>> ]
+"167" [label = <(IDENTIFIER,producer,process(ex))<SUB>78</SUB>> ]
+"168" [label = <(IDENTIFIER,ex,process(ex))<SUB>78</SUB>> ]
+"169" [label = <(&lt;operator&gt;.assignment,current = ex)<SUB>80</SUB>> ]
+"170" [label = <(IDENTIFIER,current,current = ex)<SUB>80</SUB>> ]
+"171" [label = <(IDENTIFIER,ex,current = ex)<SUB>80</SUB>> ]
+"172" [label = <(copyResults,copyResults(exchange, current))<SUB>82</SUB>> ]
+"173" [label = <(IDENTIFIER,ExchangeHelper,copyResults(exchange, current))<SUB>82</SUB>> ]
+"174" [label = <(IDENTIFIER,exchange,copyResults(exchange, current))<SUB>82</SUB>> ]
+"175" [label = <(IDENTIFIER,current,copyResults(exchange, current))<SUB>82</SUB>> ]
+"176" [label = <(MODIFIER,PUBLIC)> ]
+"177" [label = <(MODIFIER,VIRTUAL)> ]
+"178" [label = <(METHOD_RETURN,void)<SUB>65</SUB>> ]
+  "106" -> "11" 
+  "106" -> "107" 
+  "106" -> "108" 
+  "106" -> "176" 
+  "106" -> "177" 
+  "106" -> "178" 
+  "108" -> "109" 
+  "108" -> "110" 
+  "108" -> "114" 
+  "108" -> "115" 
+  "108" -> "119" 
+  "108" -> "120" 
+  "108" -> "123" 
+  "108" -> "172" 
+  "110" -> "111" 
+  "110" -> "112" 
+  "112" -> "113" 
+  "115" -> "116" 
+  "115" -> "117" 
+  "117" -> "10" 
+  "117" -> "118" 
+  "120" -> "121" 
+  "120" -> "122" 
+  "123" -> "124" 
+  "123" -> "125" 
+  "123" -> "128" 
+  "123" -> "133" 
+  "123" -> "135" 
+  "125" -> "126" 
+  "125" -> "127" 
+  "128" -> "129" 
+  "128" -> "130" 
+  "130" -> "131" 
+  "130" -> "132" 
+  "133" -> "134" 
+  "135" -> "136" 
+  "135" -> "137" 
+  "135" -> "142" 
+  "135" -> "143" 
+  "135" -> "148" 
+  "135" -> "149" 
+  "135" -> "156" 
+  "135" -> "157" 
+  "135" -> "161" 
+  "135" -> "163" 
+  "135" -> "166" 
+  "135" -> "169" 
+  "137" -> "138" 
+  "137" -> "139" 
+  "139" -> "140" 
+  "139" -> "141" 
+  "143" -> "144" 
+  "143" -> "145" 
+  "145" -> "12" 
+  "145" -> "146" 
+  "145" -> "147" 
+  "149" -> "150" 
+  "149" -> "151" 
+  "151" -> "152" 
+  "151" -> "155" 
+  "152" -> "153" 
+  "152" -> "154" 
+  "157" -> "158" 
+  "157" -> "159" 
+  "159" -> "160" 
+  "161" -> "13" 
+  "161" -> "162" 
+  "163" -> "14" 
+  "163" -> "164" 
+  "163" -> "165" 
+  "166" -> "167" 
+  "166" -> "168" 
+  "169" -> "170" 
+  "169" -> "171" 
+  "172" -> "173" 
+  "172" -> "174" 
+  "172" -> "175" 
+}

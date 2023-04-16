@@ -1,0 +1,79 @@
+digraph "copyEntryContents" {  
+"812" [label = <(METHOD,copyEntryContents)<SUB>380</SUB>> ]
+"88" [label = <(PARAM,this)<SUB>380</SUB>> ]
+"813" [label = <(PARAM,OutputStream out)<SUB>380</SUB>> ]
+"814" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>380</SUB>> ]
+"815" [label = <(LOCAL,byte[] buf: byte[])> ]
+"816" [label = <(&lt;operator&gt;.assignment,byte[] buf = new byte[32 * 1024])<SUB>381</SUB>> ]
+"817" [label = <(IDENTIFIER,buf,byte[] buf = new byte[32 * 1024])<SUB>381</SUB>> ]
+"818" [label = <(&lt;operator&gt;.alloc,new byte[32 * 1024])> ]
+"819" [label = <(&lt;operator&gt;.multiplication,32 * 1024)<SUB>381</SUB>> ]
+"820" [label = <(LITERAL,32,32 * 1024)<SUB>381</SUB>> ]
+"821" [label = <(LITERAL,1024,32 * 1024)<SUB>381</SUB>> ]
+"822" [label = <(CONTROL_STRUCTURE,while (true),while (true))<SUB>383</SUB>> ]
+"823" [label = <(LITERAL,true,while (true))<SUB>383</SUB>> ]
+"824" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>383</SUB>> ]
+"825" [label = <(LOCAL,int numRead: int)> ]
+"826" [label = <(&lt;operator&gt;.assignment,int numRead = this.read(buf, 0, buf.length))<SUB>384</SUB>> ]
+"827" [label = <(IDENTIFIER,numRead,int numRead = this.read(buf, 0, buf.length))<SUB>384</SUB>> ]
+"828" [label = <(read,this.read(buf, 0, buf.length))<SUB>384</SUB>> ]
+"87" [label = <(IDENTIFIER,this,this.read(buf, 0, buf.length))<SUB>384</SUB>> ]
+"829" [label = <(IDENTIFIER,buf,this.read(buf, 0, buf.length))<SUB>384</SUB>> ]
+"830" [label = <(LITERAL,0,this.read(buf, 0, buf.length))<SUB>384</SUB>> ]
+"831" [label = <(&lt;operator&gt;.fieldAccess,buf.length)<SUB>384</SUB>> ]
+"832" [label = <(IDENTIFIER,buf,this.read(buf, 0, buf.length))<SUB>384</SUB>> ]
+"833" [label = <(FIELD_IDENTIFIER,length,length)<SUB>384</SUB>> ]
+"834" [label = <(CONTROL_STRUCTURE,if (numRead == -1),if (numRead == -1))<SUB>386</SUB>> ]
+"835" [label = <(&lt;operator&gt;.equals,numRead == -1)<SUB>386</SUB>> ]
+"836" [label = <(IDENTIFIER,numRead,numRead == -1)<SUB>386</SUB>> ]
+"837" [label = <(&lt;operator&gt;.minus,-1)<SUB>386</SUB>> ]
+"838" [label = <(LITERAL,1,-1)<SUB>386</SUB>> ]
+"839" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>386</SUB>> ]
+"840" [label = <(CONTROL_STRUCTURE,break;,break;)<SUB>387</SUB>> ]
+"841" [label = <(write,out.write(buf, 0, numRead))<SUB>390</SUB>> ]
+"842" [label = <(IDENTIFIER,out,out.write(buf, 0, numRead))<SUB>390</SUB>> ]
+"843" [label = <(IDENTIFIER,buf,out.write(buf, 0, numRead))<SUB>390</SUB>> ]
+"844" [label = <(LITERAL,0,out.write(buf, 0, numRead))<SUB>390</SUB>> ]
+"845" [label = <(IDENTIFIER,numRead,out.write(buf, 0, numRead))<SUB>390</SUB>> ]
+"846" [label = <(MODIFIER,PUBLIC)> ]
+"847" [label = <(MODIFIER,VIRTUAL)> ]
+"848" [label = <(METHOD_RETURN,void)<SUB>380</SUB>> ]
+  "812" -> "88" 
+  "812" -> "813" 
+  "812" -> "814" 
+  "812" -> "846" 
+  "812" -> "847" 
+  "812" -> "848" 
+  "814" -> "815" 
+  "814" -> "816" 
+  "814" -> "822" 
+  "816" -> "817" 
+  "816" -> "818" 
+  "818" -> "819" 
+  "819" -> "820" 
+  "819" -> "821" 
+  "822" -> "823" 
+  "822" -> "824" 
+  "824" -> "825" 
+  "824" -> "826" 
+  "824" -> "834" 
+  "824" -> "841" 
+  "826" -> "827" 
+  "826" -> "828" 
+  "828" -> "87" 
+  "828" -> "829" 
+  "828" -> "830" 
+  "828" -> "831" 
+  "831" -> "832" 
+  "831" -> "833" 
+  "834" -> "835" 
+  "834" -> "839" 
+  "835" -> "836" 
+  "835" -> "837" 
+  "837" -> "838" 
+  "839" -> "840" 
+  "841" -> "842" 
+  "841" -> "843" 
+  "841" -> "844" 
+  "841" -> "845" 
+}

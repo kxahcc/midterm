@@ -1,0 +1,247 @@
+digraph "find" {  
+"310" [label = <(METHOD,find)<SUB>203</SUB>> ]
+"48" [label = <(PARAM,this)<SUB>203</SUB>> ]
+"311" [label = <(PARAM,Test test)<SUB>203</SUB>> ]
+"312" [label = <(PARAM,String packageName)<SUB>203</SUB>> ]
+"313" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>203</SUB>> ]
+"314" [label = <(&lt;operator&gt;.assignment,packageName = packageName.replace('.', '/'))<SUB>204</SUB>> ]
+"315" [label = <(IDENTIFIER,packageName,packageName = packageName.replace('.', '/'))<SUB>204</SUB>> ]
+"316" [label = <(replace,packageName.replace('.', '/'))<SUB>204</SUB>> ]
+"317" [label = <(IDENTIFIER,packageName,packageName.replace('.', '/'))<SUB>204</SUB>> ]
+"318" [label = <(LITERAL,'.',packageName.replace('.', '/'))<SUB>204</SUB>> ]
+"319" [label = <(LITERAL,'/',packageName.replace('.', '/'))<SUB>204</SUB>> ]
+"320" [label = <(LOCAL,ClassLoader loader: java.lang.ClassLoader)> ]
+"321" [label = <(&lt;operator&gt;.assignment,ClassLoader loader = this.getClassLoader())<SUB>205</SUB>> ]
+"322" [label = <(IDENTIFIER,loader,ClassLoader loader = this.getClassLoader())<SUB>205</SUB>> ]
+"323" [label = <(getClassLoader,this.getClassLoader())<SUB>205</SUB>> ]
+"47" [label = <(IDENTIFIER,this,this.getClassLoader())<SUB>205</SUB>> ]
+"324" [label = <(LOCAL,Enumeration&lt;URL&gt; urls: java.util.Enumeration)> ]
+"325" [label = <(CONTROL_STRUCTURE,try,try)<SUB>208</SUB>> ]
+"326" [label = <(BLOCK,try,try)<SUB>208</SUB>> ]
+"327" [label = <(&lt;operator&gt;.assignment,urls = loader.getResources(packageName))<SUB>209</SUB>> ]
+"328" [label = <(IDENTIFIER,urls,urls = loader.getResources(packageName))<SUB>209</SUB>> ]
+"329" [label = <(getResources,loader.getResources(packageName))<SUB>209</SUB>> ]
+"330" [label = <(IDENTIFIER,loader,loader.getResources(packageName))<SUB>209</SUB>> ]
+"331" [label = <(IDENTIFIER,packageName,loader.getResources(packageName))<SUB>209</SUB>> ]
+"332" [label = <(BLOCK,catch,catch)> ]
+"333" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>211</SUB>> ]
+"334" [label = <(warn,warn(&quot;Could not read package: &quot; + packageName, ioe))<SUB>212</SUB>> ]
+"335" [label = <(&lt;operator&gt;.fieldAccess,ResolverUtil.log)<SUB>212</SUB>> ]
+"336" [label = <(IDENTIFIER,ResolverUtil,warn(&quot;Could not read package: &quot; + packageName, ioe))<SUB>212</SUB>> ]
+"337" [label = <(FIELD_IDENTIFIER,log,log)<SUB>212</SUB>> ]
+"338" [label = <(&lt;operator&gt;.addition,&quot;Could not read package: &quot; + packageName)<SUB>212</SUB>> ]
+"339" [label = <(LITERAL,&quot;Could not read package: &quot;,&quot;Could not read package: &quot; + packageName)<SUB>212</SUB>> ]
+"340" [label = <(IDENTIFIER,packageName,&quot;Could not read package: &quot; + packageName)<SUB>212</SUB>> ]
+"341" [label = <(IDENTIFIER,ioe,warn(&quot;Could not read package: &quot; + packageName, ioe))<SUB>212</SUB>> ]
+"342" [label = <(RETURN,return;,return;)<SUB>213</SUB>> ]
+"343" [label = <(CONTROL_STRUCTURE,while (urls.hasMoreElements()),while (urls.hasMoreElements()))<SUB>216</SUB>> ]
+"344" [label = <(hasMoreElements,urls.hasMoreElements())<SUB>216</SUB>> ]
+"345" [label = <(IDENTIFIER,urls,urls.hasMoreElements())<SUB>216</SUB>> ]
+"346" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>216</SUB>> ]
+"347" [label = <(CONTROL_STRUCTURE,try,try)<SUB>217</SUB>> ]
+"348" [label = <(BLOCK,try,try)<SUB>217</SUB>> ]
+"349" [label = <(LOCAL,String urlPath: java.lang.String)> ]
+"350" [label = <(&lt;operator&gt;.assignment,String urlPath = urls.nextElement().getFile())<SUB>218</SUB>> ]
+"351" [label = <(IDENTIFIER,urlPath,String urlPath = urls.nextElement().getFile())<SUB>218</SUB>> ]
+"352" [label = <(getFile,urls.nextElement().getFile())<SUB>218</SUB>> ]
+"353" [label = <(nextElement,urls.nextElement())<SUB>218</SUB>> ]
+"354" [label = <(IDENTIFIER,urls,urls.nextElement())<SUB>218</SUB>> ]
+"355" [label = <(&lt;operator&gt;.assignment,urlPath = URLDecoder.decode(urlPath, &quot;UTF-8&quot;))<SUB>219</SUB>> ]
+"356" [label = <(IDENTIFIER,urlPath,urlPath = URLDecoder.decode(urlPath, &quot;UTF-8&quot;))<SUB>219</SUB>> ]
+"357" [label = <(decode,URLDecoder.decode(urlPath, &quot;UTF-8&quot;))<SUB>219</SUB>> ]
+"358" [label = <(IDENTIFIER,URLDecoder,URLDecoder.decode(urlPath, &quot;UTF-8&quot;))<SUB>219</SUB>> ]
+"359" [label = <(IDENTIFIER,urlPath,URLDecoder.decode(urlPath, &quot;UTF-8&quot;))<SUB>219</SUB>> ]
+"360" [label = <(LITERAL,&quot;UTF-8&quot;,URLDecoder.decode(urlPath, &quot;UTF-8&quot;))<SUB>219</SUB>> ]
+"361" [label = <(CONTROL_STRUCTURE,if (urlPath.startsWith(&quot;file:&quot;)),if (urlPath.startsWith(&quot;file:&quot;)))<SUB>222</SUB>> ]
+"362" [label = <(startsWith,urlPath.startsWith(&quot;file:&quot;))<SUB>222</SUB>> ]
+"363" [label = <(IDENTIFIER,urlPath,urlPath.startsWith(&quot;file:&quot;))<SUB>222</SUB>> ]
+"364" [label = <(LITERAL,&quot;file:&quot;,urlPath.startsWith(&quot;file:&quot;))<SUB>222</SUB>> ]
+"365" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>222</SUB>> ]
+"366" [label = <(&lt;operator&gt;.assignment,urlPath = urlPath.substring(5))<SUB>223</SUB>> ]
+"367" [label = <(IDENTIFIER,urlPath,urlPath = urlPath.substring(5))<SUB>223</SUB>> ]
+"368" [label = <(substring,urlPath.substring(5))<SUB>223</SUB>> ]
+"369" [label = <(IDENTIFIER,urlPath,urlPath.substring(5))<SUB>223</SUB>> ]
+"370" [label = <(LITERAL,5,urlPath.substring(5))<SUB>223</SUB>> ]
+"371" [label = <(CONTROL_STRUCTURE,if (urlPath.indexOf('!') &gt; 0),if (urlPath.indexOf('!') &gt; 0))<SUB>227</SUB>> ]
+"372" [label = <(&lt;operator&gt;.greaterThan,urlPath.indexOf('!') &gt; 0)<SUB>227</SUB>> ]
+"373" [label = <(indexOf,urlPath.indexOf('!'))<SUB>227</SUB>> ]
+"374" [label = <(IDENTIFIER,urlPath,urlPath.indexOf('!'))<SUB>227</SUB>> ]
+"375" [label = <(LITERAL,'!',urlPath.indexOf('!'))<SUB>227</SUB>> ]
+"376" [label = <(LITERAL,0,urlPath.indexOf('!') &gt; 0)<SUB>227</SUB>> ]
+"377" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>227</SUB>> ]
+"378" [label = <(&lt;operator&gt;.assignment,urlPath = urlPath.substring(0, urlPath.indexOf('!')))<SUB>228</SUB>> ]
+"379" [label = <(IDENTIFIER,urlPath,urlPath = urlPath.substring(0, urlPath.indexOf('!')))<SUB>228</SUB>> ]
+"380" [label = <(substring,urlPath.substring(0, urlPath.indexOf('!')))<SUB>228</SUB>> ]
+"381" [label = <(IDENTIFIER,urlPath,urlPath.substring(0, urlPath.indexOf('!')))<SUB>228</SUB>> ]
+"382" [label = <(LITERAL,0,urlPath.substring(0, urlPath.indexOf('!')))<SUB>228</SUB>> ]
+"383" [label = <(indexOf,urlPath.indexOf('!'))<SUB>228</SUB>> ]
+"384" [label = <(IDENTIFIER,urlPath,urlPath.indexOf('!'))<SUB>228</SUB>> ]
+"385" [label = <(LITERAL,'!',urlPath.indexOf('!'))<SUB>228</SUB>> ]
+"386" [label = <(debug,debug(&quot;Scanning for classes in [&quot; + urlPath + &quot;] matching criteria: &quot; + test))<SUB>231</SUB>> ]
+"387" [label = <(&lt;operator&gt;.fieldAccess,ResolverUtil.log)<SUB>231</SUB>> ]
+"388" [label = <(IDENTIFIER,ResolverUtil,debug(&quot;Scanning for classes in [&quot; + urlPath + &quot;] matching criteria: &quot; + test))<SUB>231</SUB>> ]
+"389" [label = <(FIELD_IDENTIFIER,log,log)<SUB>231</SUB>> ]
+"390" [label = <(&lt;operator&gt;.addition,&quot;Scanning for classes in [&quot; + urlPath + &quot;] matching criteria: &quot; + test)<SUB>231</SUB>> ]
+"391" [label = <(&lt;operator&gt;.addition,&quot;Scanning for classes in [&quot; + urlPath + &quot;] matching criteria: &quot;)<SUB>231</SUB>> ]
+"392" [label = <(&lt;operator&gt;.addition,&quot;Scanning for classes in [&quot; + urlPath)<SUB>231</SUB>> ]
+"393" [label = <(LITERAL,&quot;Scanning for classes in [&quot;,&quot;Scanning for classes in [&quot; + urlPath)<SUB>231</SUB>> ]
+"394" [label = <(IDENTIFIER,urlPath,&quot;Scanning for classes in [&quot; + urlPath)<SUB>231</SUB>> ]
+"395" [label = <(LITERAL,&quot;] matching criteria: &quot;,&quot;Scanning for classes in [&quot; + urlPath + &quot;] matching criteria: &quot;)<SUB>231</SUB>> ]
+"396" [label = <(IDENTIFIER,test,&quot;Scanning for classes in [&quot; + urlPath + &quot;] matching criteria: &quot; + test)<SUB>231</SUB>> ]
+"50" [label = <(LOCAL,File file: java.io.File)> ]
+"397" [label = <(&lt;operator&gt;.assignment,File file = new File(urlPath))<SUB>232</SUB>> ]
+"398" [label = <(IDENTIFIER,file,File file = new File(urlPath))<SUB>232</SUB>> ]
+"399" [label = <(&lt;operator&gt;.alloc,new File(urlPath))<SUB>232</SUB>> ]
+"400" [label = <(&lt;init&gt;,new File(urlPath))<SUB>232</SUB>> ]
+"49" [label = <(IDENTIFIER,file,new File(urlPath))<SUB>232</SUB>> ]
+"401" [label = <(IDENTIFIER,urlPath,new File(urlPath))<SUB>232</SUB>> ]
+"402" [label = <(CONTROL_STRUCTURE,if (file.isDirectory()),if (file.isDirectory()))<SUB>233</SUB>> ]
+"403" [label = <(isDirectory,file.isDirectory())<SUB>233</SUB>> ]
+"404" [label = <(IDENTIFIER,file,file.isDirectory())<SUB>233</SUB>> ]
+"405" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>233</SUB>> ]
+"406" [label = <(loadImplementationsInDirectory,this.loadImplementationsInDirectory(test, packageName, file))<SUB>234</SUB>> ]
+"51" [label = <(IDENTIFIER,this,this.loadImplementationsInDirectory(test, packageName, file))<SUB>234</SUB>> ]
+"407" [label = <(IDENTIFIER,test,this.loadImplementationsInDirectory(test, packageName, file))<SUB>234</SUB>> ]
+"408" [label = <(IDENTIFIER,packageName,this.loadImplementationsInDirectory(test, packageName, file))<SUB>234</SUB>> ]
+"409" [label = <(IDENTIFIER,file,this.loadImplementationsInDirectory(test, packageName, file))<SUB>234</SUB>> ]
+"410" [label = <(CONTROL_STRUCTURE,else,else)<SUB>236</SUB>> ]
+"411" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>236</SUB>> ]
+"412" [label = <(loadImplementationsInJar,this.loadImplementationsInJar(test, packageName, file))<SUB>237</SUB>> ]
+"52" [label = <(IDENTIFIER,this,this.loadImplementationsInJar(test, packageName, file))<SUB>237</SUB>> ]
+"413" [label = <(IDENTIFIER,test,this.loadImplementationsInJar(test, packageName, file))<SUB>237</SUB>> ]
+"414" [label = <(IDENTIFIER,packageName,this.loadImplementationsInJar(test, packageName, file))<SUB>237</SUB>> ]
+"415" [label = <(IDENTIFIER,file,this.loadImplementationsInJar(test, packageName, file))<SUB>237</SUB>> ]
+"416" [label = <(BLOCK,catch,catch)> ]
+"417" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>240</SUB>> ]
+"418" [label = <(warn,warn(&quot;could not read entries&quot;, ioe))<SUB>241</SUB>> ]
+"419" [label = <(&lt;operator&gt;.fieldAccess,ResolverUtil.log)<SUB>241</SUB>> ]
+"420" [label = <(IDENTIFIER,ResolverUtil,warn(&quot;could not read entries&quot;, ioe))<SUB>241</SUB>> ]
+"421" [label = <(FIELD_IDENTIFIER,log,log)<SUB>241</SUB>> ]
+"422" [label = <(LITERAL,&quot;could not read entries&quot;,warn(&quot;could not read entries&quot;, ioe))<SUB>241</SUB>> ]
+"423" [label = <(IDENTIFIER,ioe,warn(&quot;could not read entries&quot;, ioe))<SUB>241</SUB>> ]
+"424" [label = <(MODIFIER,PUBLIC)> ]
+"425" [label = <(MODIFIER,VIRTUAL)> ]
+"426" [label = <(METHOD_RETURN,void)<SUB>203</SUB>> ]
+  "310" -> "48" 
+  "310" -> "311" 
+  "310" -> "312" 
+  "310" -> "313" 
+  "310" -> "424" 
+  "310" -> "425" 
+  "310" -> "426" 
+  "313" -> "314" 
+  "313" -> "320" 
+  "313" -> "321" 
+  "313" -> "324" 
+  "313" -> "325" 
+  "313" -> "343" 
+  "314" -> "315" 
+  "314" -> "316" 
+  "316" -> "317" 
+  "316" -> "318" 
+  "316" -> "319" 
+  "321" -> "322" 
+  "321" -> "323" 
+  "323" -> "47" 
+  "325" -> "326" 
+  "325" -> "332" 
+  "326" -> "327" 
+  "327" -> "328" 
+  "327" -> "329" 
+  "329" -> "330" 
+  "329" -> "331" 
+  "332" -> "333" 
+  "333" -> "334" 
+  "333" -> "342" 
+  "334" -> "335" 
+  "334" -> "338" 
+  "334" -> "341" 
+  "335" -> "336" 
+  "335" -> "337" 
+  "338" -> "339" 
+  "338" -> "340" 
+  "343" -> "344" 
+  "343" -> "346" 
+  "344" -> "345" 
+  "346" -> "347" 
+  "347" -> "348" 
+  "347" -> "416" 
+  "348" -> "349" 
+  "348" -> "350" 
+  "348" -> "355" 
+  "348" -> "361" 
+  "348" -> "371" 
+  "348" -> "386" 
+  "348" -> "50" 
+  "348" -> "397" 
+  "348" -> "400" 
+  "348" -> "402" 
+  "350" -> "351" 
+  "350" -> "352" 
+  "352" -> "353" 
+  "353" -> "354" 
+  "355" -> "356" 
+  "355" -> "357" 
+  "357" -> "358" 
+  "357" -> "359" 
+  "357" -> "360" 
+  "361" -> "362" 
+  "361" -> "365" 
+  "362" -> "363" 
+  "362" -> "364" 
+  "365" -> "366" 
+  "366" -> "367" 
+  "366" -> "368" 
+  "368" -> "369" 
+  "368" -> "370" 
+  "371" -> "372" 
+  "371" -> "377" 
+  "372" -> "373" 
+  "372" -> "376" 
+  "373" -> "374" 
+  "373" -> "375" 
+  "377" -> "378" 
+  "378" -> "379" 
+  "378" -> "380" 
+  "380" -> "381" 
+  "380" -> "382" 
+  "380" -> "383" 
+  "383" -> "384" 
+  "383" -> "385" 
+  "386" -> "387" 
+  "386" -> "390" 
+  "387" -> "388" 
+  "387" -> "389" 
+  "390" -> "391" 
+  "390" -> "396" 
+  "391" -> "392" 
+  "391" -> "395" 
+  "392" -> "393" 
+  "392" -> "394" 
+  "397" -> "398" 
+  "397" -> "399" 
+  "400" -> "49" 
+  "400" -> "401" 
+  "402" -> "403" 
+  "402" -> "405" 
+  "402" -> "410" 
+  "403" -> "404" 
+  "405" -> "406" 
+  "406" -> "51" 
+  "406" -> "407" 
+  "406" -> "408" 
+  "406" -> "409" 
+  "410" -> "411" 
+  "411" -> "412" 
+  "412" -> "52" 
+  "412" -> "413" 
+  "412" -> "414" 
+  "412" -> "415" 
+  "416" -> "417" 
+  "417" -> "418" 
+  "418" -> "419" 
+  "418" -> "422" 
+  "418" -> "423" 
+  "419" -> "420" 
+  "419" -> "421" 
+}

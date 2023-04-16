@@ -1,0 +1,145 @@
+digraph "cast" {  
+"1250" [label = <(METHOD,cast)<SUB>554</SUB>> ]
+"1251" [label = <(PARAM,Class&lt;T&gt; toType)<SUB>554</SUB>> ]
+"1252" [label = <(PARAM,Object value)<SUB>554</SUB>> ]
+"1253" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>554</SUB>> ]
+"1254" [label = <(CONTROL_STRUCTURE,if (toType == boolean.class),if (toType == boolean.class))<SUB>555</SUB>> ]
+"1255" [label = <(&lt;operator&gt;.equals,toType == boolean.class)<SUB>555</SUB>> ]
+"1256" [label = <(IDENTIFIER,toType,toType == boolean.class)<SUB>555</SUB>> ]
+"1257" [label = <(&lt;operator&gt;.fieldAccess,boolean.class)<SUB>555</SUB>> ]
+"1258" [label = <(IDENTIFIER,boolean,toType == boolean.class)<SUB>555</SUB>> ]
+"1259" [label = <(FIELD_IDENTIFIER,class,class)<SUB>555</SUB>> ]
+"1260" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>555</SUB>> ]
+"1261" [label = <(RETURN,return (T) cast(Boolean.class, value);,return (T) cast(Boolean.class, value);)<SUB>556</SUB>> ]
+"1262" [label = <(&lt;operator&gt;.cast,(T) cast(Boolean.class, value))<SUB>556</SUB>> ]
+"1263" [label = <(TYPE_REF,T,T)<SUB>556</SUB>> ]
+"1264" [label = <(cast,cast(Boolean.class, value))<SUB>556</SUB>> ]
+"1265" [label = <(&lt;operator&gt;.fieldAccess,Boolean.class)<SUB>556</SUB>> ]
+"1266" [label = <(IDENTIFIER,Boolean,cast(Boolean.class, value))<SUB>556</SUB>> ]
+"1267" [label = <(FIELD_IDENTIFIER,class,class)<SUB>556</SUB>> ]
+"1268" [label = <(IDENTIFIER,value,cast(Boolean.class, value))<SUB>556</SUB>> ]
+"1269" [label = <(CONTROL_STRUCTURE,else,else)<SUB>557</SUB>> ]
+"1270" [label = <(CONTROL_STRUCTURE,if (toType.isPrimitive()),if (toType.isPrimitive()))<SUB>557</SUB>> ]
+"1271" [label = <(isPrimitive,toType.isPrimitive())<SUB>557</SUB>> ]
+"1272" [label = <(IDENTIFIER,toType,toType.isPrimitive())<SUB>557</SUB>> ]
+"1273" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>557</SUB>> ]
+"1274" [label = <(LOCAL,Class newType: java.lang.Class)> ]
+"1275" [label = <(&lt;operator&gt;.assignment,Class newType = convertPrimitiveTypeToWrapperType(toType))<SUB>558</SUB>> ]
+"1276" [label = <(IDENTIFIER,newType,Class newType = convertPrimitiveTypeToWrapperType(toType))<SUB>558</SUB>> ]
+"1277" [label = <(convertPrimitiveTypeToWrapperType,convertPrimitiveTypeToWrapperType(toType))<SUB>558</SUB>> ]
+"1278" [label = <(IDENTIFIER,toType,convertPrimitiveTypeToWrapperType(toType))<SUB>558</SUB>> ]
+"1279" [label = <(CONTROL_STRUCTURE,if (newType != toType),if (newType != toType))<SUB>559</SUB>> ]
+"1280" [label = <(&lt;operator&gt;.notEquals,newType != toType)<SUB>559</SUB>> ]
+"1281" [label = <(IDENTIFIER,newType,newType != toType)<SUB>559</SUB>> ]
+"1282" [label = <(IDENTIFIER,toType,newType != toType)<SUB>559</SUB>> ]
+"1283" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>559</SUB>> ]
+"1284" [label = <(RETURN,return (T) cast(newType, value);,return (T) cast(newType, value);)<SUB>560</SUB>> ]
+"1285" [label = <(&lt;operator&gt;.cast,(T) cast(newType, value))<SUB>560</SUB>> ]
+"1286" [label = <(TYPE_REF,T,T)<SUB>560</SUB>> ]
+"1287" [label = <(cast,cast(newType, value))<SUB>560</SUB>> ]
+"1288" [label = <(IDENTIFIER,newType,cast(newType, value))<SUB>560</SUB>> ]
+"1289" [label = <(IDENTIFIER,value,cast(newType, value))<SUB>560</SUB>> ]
+"1290" [label = <(CONTROL_STRUCTURE,try,try)<SUB>563</SUB>> ]
+"1291" [label = <(BLOCK,try,try)<SUB>563</SUB>> ]
+"1292" [label = <(RETURN,return toType.cast(value);,return toType.cast(value);)<SUB>564</SUB>> ]
+"1293" [label = <(cast,toType.cast(value))<SUB>564</SUB>> ]
+"1294" [label = <(IDENTIFIER,toType,toType.cast(value))<SUB>564</SUB>> ]
+"1295" [label = <(IDENTIFIER,value,toType.cast(value))<SUB>564</SUB>> ]
+"1296" [label = <(BLOCK,catch,catch)> ]
+"1297" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>565</SUB>> ]
+"1298" [label = <(&lt;operator&gt;.throw,throw new IllegalArgumentException(&quot;Failed to convert: &quot; + value + &quot; to type: &quot; + toType.getName() + &quot; due to: &quot; + e, e);)<SUB>566</SUB>> ]
+"1299" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>566</SUB>> ]
+"1300" [label = <(&lt;operator&gt;.assignment,&lt;empty&gt;)> ]
+"1301" [label = <(IDENTIFIER,$obj6,&lt;empty&gt;)> ]
+"1302" [label = <(&lt;operator&gt;.alloc,new IllegalArgumentException(&quot;Failed to convert: &quot; + value + &quot; to type: &quot; + toType.getName() + &quot; due to: &quot; + e, e))<SUB>566</SUB>> ]
+"1303" [label = <(&lt;init&gt;,new IllegalArgumentException(&quot;Failed to convert: &quot; + value + &quot; to type: &quot; + toType.getName() + &quot; due to: &quot; + e, e))<SUB>566</SUB>> ]
+"1304" [label = <(IDENTIFIER,$obj6,new IllegalArgumentException(&quot;Failed to convert: &quot; + value + &quot; to type: &quot; + toType.getName() + &quot; due to: &quot; + e, e))> ]
+"1305" [label = <(&lt;operator&gt;.addition,&quot;Failed to convert: &quot; + value + &quot; to type: &quot; + toType.getName() + &quot; due to: &quot; + e)<SUB>566</SUB>> ]
+"1306" [label = <(&lt;operator&gt;.addition,&quot;Failed to convert: &quot; + value + &quot; to type: &quot; + toType.getName() + &quot; due to: &quot;)<SUB>566</SUB>> ]
+"1307" [label = <(&lt;operator&gt;.addition,&quot;Failed to convert: &quot; + value + &quot; to type: &quot; + toType.getName())<SUB>566</SUB>> ]
+"1308" [label = <(&lt;operator&gt;.addition,&quot;Failed to convert: &quot; + value + &quot; to type: &quot;)<SUB>566</SUB>> ]
+"1309" [label = <(&lt;operator&gt;.addition,&quot;Failed to convert: &quot; + value)<SUB>566</SUB>> ]
+"1310" [label = <(LITERAL,&quot;Failed to convert: &quot;,&quot;Failed to convert: &quot; + value)<SUB>566</SUB>> ]
+"1311" [label = <(IDENTIFIER,value,&quot;Failed to convert: &quot; + value)<SUB>566</SUB>> ]
+"1312" [label = <(LITERAL,&quot; to type: &quot;,&quot;Failed to convert: &quot; + value + &quot; to type: &quot;)<SUB>566</SUB>> ]
+"1313" [label = <(getName,toType.getName())<SUB>567</SUB>> ]
+"1314" [label = <(IDENTIFIER,toType,toType.getName())<SUB>567</SUB>> ]
+"1315" [label = <(LITERAL,&quot; due to: &quot;,&quot;Failed to convert: &quot; + value + &quot; to type: &quot; + toType.getName() + &quot; due to: &quot;)<SUB>567</SUB>> ]
+"1316" [label = <(IDENTIFIER,e,&quot;Failed to convert: &quot; + value + &quot; to type: &quot; + toType.getName() + &quot; due to: &quot; + e)<SUB>567</SUB>> ]
+"1317" [label = <(IDENTIFIER,e,new IllegalArgumentException(&quot;Failed to convert: &quot; + value + &quot; to type: &quot; + toType.getName() + &quot; due to: &quot; + e, e))<SUB>567</SUB>> ]
+"1318" [label = <(IDENTIFIER,$obj6,&lt;empty&gt;)> ]
+"1319" [label = <(MODIFIER,PUBLIC)> ]
+"1320" [label = <(MODIFIER,STATIC)> ]
+"1321" [label = <(METHOD_RETURN,java.lang.Object)<SUB>554</SUB>> ]
+  "1250" -> "1251" 
+  "1250" -> "1252" 
+  "1250" -> "1253" 
+  "1250" -> "1319" 
+  "1250" -> "1320" 
+  "1250" -> "1321" 
+  "1253" -> "1254" 
+  "1253" -> "1290" 
+  "1254" -> "1255" 
+  "1254" -> "1260" 
+  "1254" -> "1269" 
+  "1255" -> "1256" 
+  "1255" -> "1257" 
+  "1257" -> "1258" 
+  "1257" -> "1259" 
+  "1260" -> "1261" 
+  "1261" -> "1262" 
+  "1262" -> "1263" 
+  "1262" -> "1264" 
+  "1264" -> "1265" 
+  "1264" -> "1268" 
+  "1265" -> "1266" 
+  "1265" -> "1267" 
+  "1269" -> "1270" 
+  "1270" -> "1271" 
+  "1270" -> "1273" 
+  "1271" -> "1272" 
+  "1273" -> "1274" 
+  "1273" -> "1275" 
+  "1273" -> "1279" 
+  "1275" -> "1276" 
+  "1275" -> "1277" 
+  "1277" -> "1278" 
+  "1279" -> "1280" 
+  "1279" -> "1283" 
+  "1280" -> "1281" 
+  "1280" -> "1282" 
+  "1283" -> "1284" 
+  "1284" -> "1285" 
+  "1285" -> "1286" 
+  "1285" -> "1287" 
+  "1287" -> "1288" 
+  "1287" -> "1289" 
+  "1290" -> "1291" 
+  "1290" -> "1296" 
+  "1291" -> "1292" 
+  "1292" -> "1293" 
+  "1293" -> "1294" 
+  "1293" -> "1295" 
+  "1296" -> "1297" 
+  "1297" -> "1298" 
+  "1298" -> "1299" 
+  "1299" -> "1300" 
+  "1299" -> "1303" 
+  "1299" -> "1318" 
+  "1300" -> "1301" 
+  "1300" -> "1302" 
+  "1303" -> "1304" 
+  "1303" -> "1305" 
+  "1303" -> "1317" 
+  "1305" -> "1306" 
+  "1305" -> "1316" 
+  "1306" -> "1307" 
+  "1306" -> "1315" 
+  "1307" -> "1308" 
+  "1307" -> "1313" 
+  "1308" -> "1309" 
+  "1308" -> "1312" 
+  "1309" -> "1310" 
+  "1309" -> "1311" 
+  "1313" -> "1314" 
+}

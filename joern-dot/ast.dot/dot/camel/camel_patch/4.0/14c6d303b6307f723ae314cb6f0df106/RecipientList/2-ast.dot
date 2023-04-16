@@ -1,0 +1,143 @@
+digraph "process" {  
+"60" [label = <(METHOD,process)<SUB>59</SUB>> ]
+"9" [label = <(PARAM,this)<SUB>59</SUB>> ]
+"61" [label = <(PARAM,Exchange exchange)<SUB>59</SUB>> ]
+"62" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>59</SUB>> ]
+"63" [label = <(LOCAL,Object receipientList: java.lang.Object)> ]
+"64" [label = <(&lt;operator&gt;.assignment,Object receipientList = evaluate(exchange))<SUB>60</SUB>> ]
+"65" [label = <(IDENTIFIER,receipientList,Object receipientList = evaluate(exchange))<SUB>60</SUB>> ]
+"66" [label = <(evaluate,evaluate(exchange))<SUB>60</SUB>> ]
+"67" [label = <(&lt;operator&gt;.fieldAccess,this.expression)<SUB>60</SUB>> ]
+"68" [label = <(IDENTIFIER,this,evaluate(exchange))<SUB>60</SUB>> ]
+"69" [label = <(FIELD_IDENTIFIER,expression,expression)<SUB>60</SUB>> ]
+"70" [label = <(IDENTIFIER,exchange,evaluate(exchange))<SUB>60</SUB>> ]
+"71" [label = <(LOCAL,Iterator iter: java.util.Iterator)> ]
+"72" [label = <(&lt;operator&gt;.assignment,Iterator iter = iterator(receipientList))<SUB>61</SUB>> ]
+"73" [label = <(IDENTIFIER,iter,Iterator iter = iterator(receipientList))<SUB>61</SUB>> ]
+"74" [label = <(iterator,iterator(receipientList))<SUB>61</SUB>> ]
+"75" [label = <(IDENTIFIER,ObjectConverter,iterator(receipientList))<SUB>61</SUB>> ]
+"76" [label = <(IDENTIFIER,receipientList,iterator(receipientList))<SUB>61</SUB>> ]
+"7" [label = <(LOCAL,List&lt;Processor&gt; processors: ANY)> ]
+"77" [label = <(&lt;operator&gt;.assignment,ANY processors = new ArrayList&lt;Processor&gt;())<SUB>62</SUB>> ]
+"78" [label = <(IDENTIFIER,processors,ANY processors = new ArrayList&lt;Processor&gt;())<SUB>62</SUB>> ]
+"79" [label = <(&lt;operator&gt;.alloc,new ArrayList&lt;Processor&gt;())<SUB>62</SUB>> ]
+"80" [label = <(&lt;init&gt;,new ArrayList&lt;Processor&gt;())<SUB>62</SUB>> ]
+"6" [label = <(IDENTIFIER,processors,new ArrayList&lt;Processor&gt;())<SUB>62</SUB>> ]
+"81" [label = <(CONTROL_STRUCTURE,while (iter.hasNext()),while (iter.hasNext()))<SUB>63</SUB>> ]
+"82" [label = <(hasNext,iter.hasNext())<SUB>63</SUB>> ]
+"83" [label = <(IDENTIFIER,iter,iter.hasNext())<SUB>63</SUB>> ]
+"84" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>63</SUB>> ]
+"85" [label = <(LOCAL,Object recipient: java.lang.Object)> ]
+"86" [label = <(&lt;operator&gt;.assignment,Object recipient = iter.next())<SUB>64</SUB>> ]
+"87" [label = <(IDENTIFIER,recipient,Object recipient = iter.next())<SUB>64</SUB>> ]
+"88" [label = <(next,iter.next())<SUB>64</SUB>> ]
+"89" [label = <(IDENTIFIER,iter,iter.next())<SUB>64</SUB>> ]
+"90" [label = <(LOCAL,Endpoint&lt;Exchange&gt; endpoint: ANY)> ]
+"91" [label = <(&lt;operator&gt;.assignment,ANY endpoint = resolveEndpoint(exchange, recipient))<SUB>65</SUB>> ]
+"92" [label = <(IDENTIFIER,endpoint,ANY endpoint = resolveEndpoint(exchange, recipient))<SUB>65</SUB>> ]
+"93" [label = <(resolveEndpoint,resolveEndpoint(exchange, recipient))<SUB>65</SUB>> ]
+"8" [label = <(IDENTIFIER,this,resolveEndpoint(exchange, recipient))<SUB>65</SUB>> ]
+"94" [label = <(IDENTIFIER,exchange,resolveEndpoint(exchange, recipient))<SUB>65</SUB>> ]
+"95" [label = <(IDENTIFIER,recipient,resolveEndpoint(exchange, recipient))<SUB>65</SUB>> ]
+"96" [label = <(LOCAL,Producer&lt;Exchange&gt; producer: ANY)> ]
+"97" [label = <(&lt;operator&gt;.assignment,ANY producer = getProducer(endpoint))<SUB>66</SUB>> ]
+"98" [label = <(IDENTIFIER,producer,ANY producer = getProducer(endpoint))<SUB>66</SUB>> ]
+"99" [label = <(getProducer,getProducer(endpoint))<SUB>66</SUB>> ]
+"100" [label = <(&lt;operator&gt;.fieldAccess,this.producerCache)<SUB>66</SUB>> ]
+"101" [label = <(IDENTIFIER,this,getProducer(endpoint))<SUB>66</SUB>> ]
+"102" [label = <(FIELD_IDENTIFIER,producerCache,producerCache)<SUB>66</SUB>> ]
+"103" [label = <(IDENTIFIER,endpoint,getProducer(endpoint))<SUB>66</SUB>> ]
+"104" [label = <(add,add(producer))<SUB>67</SUB>> ]
+"105" [label = <(IDENTIFIER,processors,add(producer))<SUB>67</SUB>> ]
+"106" [label = <(IDENTIFIER,producer,add(producer))<SUB>67</SUB>> ]
+"11" [label = <(LOCAL,MulticastProcessor mp: ANY)> ]
+"107" [label = <(&lt;operator&gt;.assignment,ANY mp = new MulticastProcessor(processors, new UseLatestAggregationStrategy()))<SUB>69</SUB>> ]
+"108" [label = <(IDENTIFIER,mp,ANY mp = new MulticastProcessor(processors, new UseLatestAggregationStrategy()))<SUB>69</SUB>> ]
+"109" [label = <(&lt;operator&gt;.alloc,new MulticastProcessor(processors, new UseLatestAggregationStrategy()))<SUB>69</SUB>> ]
+"110" [label = <(&lt;init&gt;,new MulticastProcessor(processors, new UseLatestAggregationStrategy()))<SUB>69</SUB>> ]
+"10" [label = <(IDENTIFIER,mp,new MulticastProcessor(processors, new UseLatestAggregationStrategy()))<SUB>69</SUB>> ]
+"111" [label = <(IDENTIFIER,processors,new MulticastProcessor(processors, new UseLatestAggregationStrategy()))<SUB>69</SUB>> ]
+"112" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>69</SUB>> ]
+"113" [label = <(&lt;operator&gt;.assignment,&lt;empty&gt;)> ]
+"114" [label = <(IDENTIFIER,$obj2,&lt;empty&gt;)> ]
+"115" [label = <(&lt;operator&gt;.alloc,new UseLatestAggregationStrategy())<SUB>69</SUB>> ]
+"116" [label = <(&lt;init&gt;,new UseLatestAggregationStrategy())<SUB>69</SUB>> ]
+"117" [label = <(IDENTIFIER,$obj2,new UseLatestAggregationStrategy())> ]
+"118" [label = <(IDENTIFIER,$obj2,&lt;empty&gt;)> ]
+"119" [label = <(process,process(exchange))<SUB>70</SUB>> ]
+"120" [label = <(IDENTIFIER,mp,process(exchange))<SUB>70</SUB>> ]
+"121" [label = <(IDENTIFIER,exchange,process(exchange))<SUB>70</SUB>> ]
+"122" [label = <(MODIFIER,PUBLIC)> ]
+"123" [label = <(MODIFIER,VIRTUAL)> ]
+"124" [label = <(METHOD_RETURN,void)<SUB>59</SUB>> ]
+  "60" -> "9" 
+  "60" -> "61" 
+  "60" -> "62" 
+  "60" -> "122" 
+  "60" -> "123" 
+  "60" -> "124" 
+  "62" -> "63" 
+  "62" -> "64" 
+  "62" -> "71" 
+  "62" -> "72" 
+  "62" -> "7" 
+  "62" -> "77" 
+  "62" -> "80" 
+  "62" -> "81" 
+  "62" -> "11" 
+  "62" -> "107" 
+  "62" -> "110" 
+  "62" -> "119" 
+  "64" -> "65" 
+  "64" -> "66" 
+  "66" -> "67" 
+  "66" -> "70" 
+  "67" -> "68" 
+  "67" -> "69" 
+  "72" -> "73" 
+  "72" -> "74" 
+  "74" -> "75" 
+  "74" -> "76" 
+  "77" -> "78" 
+  "77" -> "79" 
+  "80" -> "6" 
+  "81" -> "82" 
+  "81" -> "84" 
+  "82" -> "83" 
+  "84" -> "85" 
+  "84" -> "86" 
+  "84" -> "90" 
+  "84" -> "91" 
+  "84" -> "96" 
+  "84" -> "97" 
+  "84" -> "104" 
+  "86" -> "87" 
+  "86" -> "88" 
+  "88" -> "89" 
+  "91" -> "92" 
+  "91" -> "93" 
+  "93" -> "8" 
+  "93" -> "94" 
+  "93" -> "95" 
+  "97" -> "98" 
+  "97" -> "99" 
+  "99" -> "100" 
+  "99" -> "103" 
+  "100" -> "101" 
+  "100" -> "102" 
+  "104" -> "105" 
+  "104" -> "106" 
+  "107" -> "108" 
+  "107" -> "109" 
+  "110" -> "10" 
+  "110" -> "111" 
+  "110" -> "112" 
+  "112" -> "113" 
+  "112" -> "116" 
+  "112" -> "118" 
+  "113" -> "114" 
+  "113" -> "115" 
+  "116" -> "117" 
+  "119" -> "120" 
+  "119" -> "121" 
+}

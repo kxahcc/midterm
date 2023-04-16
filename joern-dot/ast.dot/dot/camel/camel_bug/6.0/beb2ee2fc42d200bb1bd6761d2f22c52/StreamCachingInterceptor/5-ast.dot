@@ -1,0 +1,79 @@
+digraph "process" {  
+"98" [label = <(METHOD,process)<SUB>72</SUB>> ]
+"11" [label = <(PARAM,this)<SUB>72</SUB>> ]
+"99" [label = <(PARAM,Exchange exchange)<SUB>72</SUB>> ]
+"100" [label = <(PARAM,AsyncCallback callback)<SUB>72</SUB>> ]
+"101" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>72</SUB>> ]
+"102" [label = <(CONTROL_STRUCTURE,try,try)<SUB>73</SUB>> ]
+"103" [label = <(BLOCK,try,try)<SUB>73</SUB>> ]
+"104" [label = <(LOCAL,StreamCache newBody: org.apache.camel.converter.stream.StreamCache)> ]
+"105" [label = <(&lt;operator&gt;.assignment,StreamCache newBody = getBody(StreamCache.class))<SUB>74</SUB>> ]
+"106" [label = <(IDENTIFIER,newBody,StreamCache newBody = getBody(StreamCache.class))<SUB>74</SUB>> ]
+"107" [label = <(getBody,getBody(StreamCache.class))<SUB>74</SUB>> ]
+"108" [label = <(getIn,getIn())<SUB>74</SUB>> ]
+"109" [label = <(IDENTIFIER,exchange,getIn())<SUB>74</SUB>> ]
+"110" [label = <(&lt;operator&gt;.fieldAccess,StreamCache.class)<SUB>74</SUB>> ]
+"111" [label = <(IDENTIFIER,StreamCache,getBody(StreamCache.class))<SUB>74</SUB>> ]
+"112" [label = <(FIELD_IDENTIFIER,class,class)<SUB>74</SUB>> ]
+"113" [label = <(CONTROL_STRUCTURE,if (newBody != null),if (newBody != null))<SUB>75</SUB>> ]
+"114" [label = <(&lt;operator&gt;.notEquals,newBody != null)<SUB>75</SUB>> ]
+"115" [label = <(IDENTIFIER,newBody,newBody != null)<SUB>75</SUB>> ]
+"116" [label = <(LITERAL,null,newBody != null)<SUB>75</SUB>> ]
+"117" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>75</SUB>> ]
+"118" [label = <(setBody,setBody(newBody))<SUB>76</SUB>> ]
+"119" [label = <(getIn,getIn())<SUB>76</SUB>> ]
+"120" [label = <(IDENTIFIER,exchange,getIn())<SUB>76</SUB>> ]
+"121" [label = <(IDENTIFIER,newBody,setBody(newBody))<SUB>76</SUB>> ]
+"122" [label = <(resetStreamCache,resetStreamCache(exchange.getIn()))<SUB>78</SUB>> ]
+"123" [label = <(IDENTIFIER,MessageHelper,resetStreamCache(exchange.getIn()))<SUB>78</SUB>> ]
+"124" [label = <(getIn,getIn())<SUB>78</SUB>> ]
+"125" [label = <(IDENTIFIER,exchange,getIn())<SUB>78</SUB>> ]
+"126" [label = <(BLOCK,catch,catch)> ]
+"127" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>79</SUB>> ]
+"128" [label = <(RETURN,return proceed(exchange, callback);,return proceed(exchange, callback);)<SUB>82</SUB>> ]
+"129" [label = <(proceed,proceed(exchange, callback))<SUB>82</SUB>> ]
+"10" [label = <(IDENTIFIER,this,proceed(exchange, callback))<SUB>82</SUB>> ]
+"130" [label = <(IDENTIFIER,exchange,proceed(exchange, callback))<SUB>82</SUB>> ]
+"131" [label = <(IDENTIFIER,callback,proceed(exchange, callback))<SUB>82</SUB>> ]
+"132" [label = <(MODIFIER,PUBLIC)> ]
+"133" [label = <(MODIFIER,VIRTUAL)> ]
+"134" [label = <(METHOD_RETURN,boolean)<SUB>72</SUB>> ]
+  "98" -> "11" 
+  "98" -> "99" 
+  "98" -> "100" 
+  "98" -> "101" 
+  "98" -> "132" 
+  "98" -> "133" 
+  "98" -> "134" 
+  "101" -> "102" 
+  "101" -> "128" 
+  "102" -> "103" 
+  "102" -> "126" 
+  "103" -> "104" 
+  "103" -> "105" 
+  "103" -> "113" 
+  "103" -> "122" 
+  "105" -> "106" 
+  "105" -> "107" 
+  "107" -> "108" 
+  "107" -> "110" 
+  "108" -> "109" 
+  "110" -> "111" 
+  "110" -> "112" 
+  "113" -> "114" 
+  "113" -> "117" 
+  "114" -> "115" 
+  "114" -> "116" 
+  "117" -> "118" 
+  "118" -> "119" 
+  "118" -> "121" 
+  "119" -> "120" 
+  "122" -> "123" 
+  "122" -> "124" 
+  "124" -> "125" 
+  "126" -> "127" 
+  "128" -> "129" 
+  "129" -> "10" 
+  "129" -> "130" 
+  "129" -> "131" 
+}

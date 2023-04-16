@@ -1,0 +1,91 @@
+digraph "createAggregationStrategy" {  
+"379" [label = <(METHOD,createAggregationStrategy)<SUB>145</SUB>> ]
+"31" [label = <(PARAM,this)<SUB>145</SUB>> ]
+"380" [label = <(PARAM,RouteContext routeContext)<SUB>145</SUB>> ]
+"381" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>145</SUB>> ]
+"33" [label = <(LOCAL,AggregationStrategy strategy: org.apache.camel.processor.aggregate.AggregationStrategy)> ]
+"382" [label = <(&lt;operator&gt;.assignment,AggregationStrategy strategy = this.getAggregationStrategy())<SUB>146</SUB>> ]
+"383" [label = <(IDENTIFIER,strategy,AggregationStrategy strategy = this.getAggregationStrategy())<SUB>146</SUB>> ]
+"384" [label = <(getAggregationStrategy,this.getAggregationStrategy())<SUB>146</SUB>> ]
+"30" [label = <(IDENTIFIER,this,this.getAggregationStrategy())<SUB>146</SUB>> ]
+"385" [label = <(CONTROL_STRUCTURE,if (strategy == null &amp;&amp; strategyRef != null),if (strategy == null &amp;&amp; strategyRef != null))<SUB>147</SUB>> ]
+"386" [label = <(&lt;operator&gt;.logicalAnd,strategy == null &amp;&amp; strategyRef != null)<SUB>147</SUB>> ]
+"387" [label = <(&lt;operator&gt;.equals,strategy == null)<SUB>147</SUB>> ]
+"388" [label = <(IDENTIFIER,strategy,strategy == null)<SUB>147</SUB>> ]
+"389" [label = <(LITERAL,null,strategy == null)<SUB>147</SUB>> ]
+"390" [label = <(&lt;operator&gt;.notEquals,strategyRef != null)<SUB>147</SUB>> ]
+"391" [label = <(&lt;operator&gt;.fieldAccess,this.strategyRef)<SUB>147</SUB>> ]
+"392" [label = <(IDENTIFIER,this,strategyRef != null)<SUB>147</SUB>> ]
+"393" [label = <(FIELD_IDENTIFIER,strategyRef,strategyRef)<SUB>147</SUB>> ]
+"394" [label = <(LITERAL,null,strategyRef != null)<SUB>147</SUB>> ]
+"395" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>147</SUB>> ]
+"396" [label = <(&lt;operator&gt;.assignment,strategy = lookup(strategyRef, AggregationStrategy.class))<SUB>148</SUB>> ]
+"397" [label = <(IDENTIFIER,strategy,strategy = lookup(strategyRef, AggregationStrategy.class))<SUB>148</SUB>> ]
+"398" [label = <(lookup,lookup(strategyRef, AggregationStrategy.class))<SUB>148</SUB>> ]
+"399" [label = <(IDENTIFIER,routeContext,lookup(strategyRef, AggregationStrategy.class))<SUB>148</SUB>> ]
+"400" [label = <(&lt;operator&gt;.fieldAccess,this.strategyRef)<SUB>148</SUB>> ]
+"401" [label = <(IDENTIFIER,this,lookup(strategyRef, AggregationStrategy.class))<SUB>148</SUB>> ]
+"402" [label = <(FIELD_IDENTIFIER,strategyRef,strategyRef)<SUB>148</SUB>> ]
+"403" [label = <(&lt;operator&gt;.fieldAccess,AggregationStrategy.class)<SUB>148</SUB>> ]
+"404" [label = <(IDENTIFIER,AggregationStrategy,lookup(strategyRef, AggregationStrategy.class))<SUB>148</SUB>> ]
+"405" [label = <(FIELD_IDENTIFIER,class,class)<SUB>148</SUB>> ]
+"406" [label = <(CONTROL_STRUCTURE,if (strategy == null),if (strategy == null))<SUB>150</SUB>> ]
+"407" [label = <(&lt;operator&gt;.equals,strategy == null)<SUB>150</SUB>> ]
+"408" [label = <(IDENTIFIER,strategy,strategy == null)<SUB>150</SUB>> ]
+"409" [label = <(LITERAL,null,strategy == null)<SUB>150</SUB>> ]
+"410" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>150</SUB>> ]
+"411" [label = <(&lt;operator&gt;.assignment,strategy = new UseLatestAggregationStrategy())<SUB>152</SUB>> ]
+"412" [label = <(IDENTIFIER,strategy,strategy = new UseLatestAggregationStrategy())<SUB>152</SUB>> ]
+"413" [label = <(&lt;operator&gt;.alloc,new UseLatestAggregationStrategy())<SUB>152</SUB>> ]
+"414" [label = <(&lt;init&gt;,new UseLatestAggregationStrategy())<SUB>152</SUB>> ]
+"32" [label = <(IDENTIFIER,strategy,new UseLatestAggregationStrategy())<SUB>152</SUB>> ]
+"415" [label = <(RETURN,return strategy;,return strategy;)<SUB>154</SUB>> ]
+"416" [label = <(IDENTIFIER,strategy,return strategy;)<SUB>154</SUB>> ]
+"417" [label = <(MODIFIER,PRIVATE)> ]
+"418" [label = <(MODIFIER,VIRTUAL)> ]
+"419" [label = <(METHOD_RETURN,org.apache.camel.processor.aggregate.AggregationStrategy)<SUB>145</SUB>> ]
+  "379" -> "31" 
+  "379" -> "380" 
+  "379" -> "381" 
+  "379" -> "417" 
+  "379" -> "418" 
+  "379" -> "419" 
+  "381" -> "33" 
+  "381" -> "382" 
+  "381" -> "385" 
+  "381" -> "406" 
+  "381" -> "415" 
+  "382" -> "383" 
+  "382" -> "384" 
+  "384" -> "30" 
+  "385" -> "386" 
+  "385" -> "395" 
+  "386" -> "387" 
+  "386" -> "390" 
+  "387" -> "388" 
+  "387" -> "389" 
+  "390" -> "391" 
+  "390" -> "394" 
+  "391" -> "392" 
+  "391" -> "393" 
+  "395" -> "396" 
+  "396" -> "397" 
+  "396" -> "398" 
+  "398" -> "399" 
+  "398" -> "400" 
+  "398" -> "403" 
+  "400" -> "401" 
+  "400" -> "402" 
+  "403" -> "404" 
+  "403" -> "405" 
+  "406" -> "407" 
+  "406" -> "410" 
+  "407" -> "408" 
+  "407" -> "409" 
+  "410" -> "411" 
+  "410" -> "414" 
+  "411" -> "412" 
+  "411" -> "413" 
+  "414" -> "32" 
+  "415" -> "416" 
+}

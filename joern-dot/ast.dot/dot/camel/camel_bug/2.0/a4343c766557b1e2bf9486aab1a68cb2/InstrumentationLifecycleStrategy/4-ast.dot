@@ -1,0 +1,85 @@
+digraph "onServiceAdd" {  
+"178" [label = <(METHOD,onServiceAdd)<SUB>82</SUB>> ]
+"21" [label = <(PARAM,this)<SUB>82</SUB>> ]
+"179" [label = <(PARAM,CamelContext context)<SUB>82</SUB>> ]
+"180" [label = <(PARAM,Service service)<SUB>82</SUB>> ]
+"181" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>82</SUB>> ]
+"182" [label = <(CONTROL_STRUCTURE,if (service instanceof ServiceSupport),if (service instanceof ServiceSupport))<SUB>83</SUB>> ]
+"183" [label = <(&lt;operator&gt;.instanceOf,service instanceof ServiceSupport)<SUB>83</SUB>> ]
+"184" [label = <(IDENTIFIER,service,service instanceof ServiceSupport)<SUB>83</SUB>> ]
+"185" [label = <(TYPE_REF,ServiceSupport,ServiceSupport)<SUB>83</SUB>> ]
+"186" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>83</SUB>> ]
+"187" [label = <(CONTROL_STRUCTURE,try,try)<SUB>84</SUB>> ]
+"188" [label = <(BLOCK,try,try)<SUB>84</SUB>> ]
+"19" [label = <(LOCAL,ManagedService ms: ANY)> ]
+"189" [label = <(&lt;operator&gt;.assignment,ANY ms = new ManagedService((ServiceSupport) service))<SUB>85</SUB>> ]
+"190" [label = <(IDENTIFIER,ms,ANY ms = new ManagedService((ServiceSupport) service))<SUB>85</SUB>> ]
+"191" [label = <(&lt;operator&gt;.alloc,new ManagedService((ServiceSupport) service))<SUB>85</SUB>> ]
+"192" [label = <(&lt;init&gt;,new ManagedService((ServiceSupport) service))<SUB>85</SUB>> ]
+"18" [label = <(IDENTIFIER,ms,new ManagedService((ServiceSupport) service))<SUB>85</SUB>> ]
+"193" [label = <(&lt;operator&gt;.cast,(ServiceSupport) service)<SUB>85</SUB>> ]
+"194" [label = <(TYPE_REF,ServiceSupport,ServiceSupport)<SUB>85</SUB>> ]
+"195" [label = <(IDENTIFIER,service,(ServiceSupport) service)<SUB>85</SUB>> ]
+"196" [label = <(register,register(ms, getNamingStrategy().getObjectName(context, ms)))<SUB>86</SUB>> ]
+"197" [label = <(&lt;operator&gt;.fieldAccess,this.agent)<SUB>86</SUB>> ]
+"198" [label = <(IDENTIFIER,this,register(ms, getNamingStrategy().getObjectName(context, ms)))<SUB>86</SUB>> ]
+"199" [label = <(FIELD_IDENTIFIER,agent,agent)<SUB>86</SUB>> ]
+"200" [label = <(IDENTIFIER,ms,register(ms, getNamingStrategy().getObjectName(context, ms)))<SUB>86</SUB>> ]
+"201" [label = <(getObjectName,getObjectName(context, ms))<SUB>86</SUB>> ]
+"202" [label = <(getNamingStrategy,this.getNamingStrategy())<SUB>86</SUB>> ]
+"20" [label = <(IDENTIFIER,this,this.getNamingStrategy())<SUB>86</SUB>> ]
+"203" [label = <(IDENTIFIER,context,getObjectName(context, ms))<SUB>86</SUB>> ]
+"204" [label = <(IDENTIFIER,ms,getObjectName(context, ms))<SUB>86</SUB>> ]
+"205" [label = <(BLOCK,catch,catch)> ]
+"206" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>88</SUB>> ]
+"207" [label = <(warn,warn(&quot;Could not register Service MBean&quot;, e))<SUB>89</SUB>> ]
+"208" [label = <(&lt;operator&gt;.fieldAccess,InstrumentationLifecycleStrategy.LOG)<SUB>89</SUB>> ]
+"209" [label = <(IDENTIFIER,InstrumentationLifecycleStrategy,warn(&quot;Could not register Service MBean&quot;, e))<SUB>89</SUB>> ]
+"210" [label = <(FIELD_IDENTIFIER,LOG,LOG)<SUB>89</SUB>> ]
+"211" [label = <(LITERAL,&quot;Could not register Service MBean&quot;,warn(&quot;Could not register Service MBean&quot;, e))<SUB>89</SUB>> ]
+"212" [label = <(IDENTIFIER,e,warn(&quot;Could not register Service MBean&quot;, e))<SUB>89</SUB>> ]
+"213" [label = <(MODIFIER,PUBLIC)> ]
+"214" [label = <(MODIFIER,VIRTUAL)> ]
+"215" [label = <(METHOD_RETURN,void)<SUB>82</SUB>> ]
+  "178" -> "21" 
+  "178" -> "179" 
+  "178" -> "180" 
+  "178" -> "181" 
+  "178" -> "213" 
+  "178" -> "214" 
+  "178" -> "215" 
+  "181" -> "182" 
+  "182" -> "183" 
+  "182" -> "186" 
+  "183" -> "184" 
+  "183" -> "185" 
+  "186" -> "187" 
+  "187" -> "188" 
+  "187" -> "205" 
+  "188" -> "19" 
+  "188" -> "189" 
+  "188" -> "192" 
+  "188" -> "196" 
+  "189" -> "190" 
+  "189" -> "191" 
+  "192" -> "18" 
+  "192" -> "193" 
+  "193" -> "194" 
+  "193" -> "195" 
+  "196" -> "197" 
+  "196" -> "200" 
+  "196" -> "201" 
+  "197" -> "198" 
+  "197" -> "199" 
+  "201" -> "202" 
+  "201" -> "203" 
+  "201" -> "204" 
+  "202" -> "20" 
+  "205" -> "206" 
+  "206" -> "207" 
+  "207" -> "208" 
+  "207" -> "211" 
+  "207" -> "212" 
+  "208" -> "209" 
+  "208" -> "210" 
+}

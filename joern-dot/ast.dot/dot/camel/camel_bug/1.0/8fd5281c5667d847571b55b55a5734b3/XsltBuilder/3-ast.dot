@@ -1,0 +1,107 @@
+digraph "process" {  
+"174" [label = <(METHOD,process)<SUB>67</SUB>> ]
+"6" [label = <(PARAM,this)<SUB>67</SUB>> ]
+"175" [label = <(PARAM,Exchange exchange)<SUB>67</SUB>> ]
+"176" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>67</SUB>> ]
+"177" [label = <(LOCAL,Transformer transformer: javax.xml.transform.Transformer)> ]
+"178" [label = <(&lt;operator&gt;.assignment,Transformer transformer = this.getTransformer())<SUB>68</SUB>> ]
+"179" [label = <(IDENTIFIER,transformer,Transformer transformer = this.getTransformer())<SUB>68</SUB>> ]
+"180" [label = <(getTransformer,this.getTransformer())<SUB>68</SUB>> ]
+"5" [label = <(IDENTIFIER,this,this.getTransformer())<SUB>68</SUB>> ]
+"181" [label = <(CONTROL_STRUCTURE,if (transformer == null),if (transformer == null))<SUB>69</SUB>> ]
+"182" [label = <(&lt;operator&gt;.equals,transformer == null)<SUB>69</SUB>> ]
+"183" [label = <(IDENTIFIER,transformer,transformer == null)<SUB>69</SUB>> ]
+"184" [label = <(LITERAL,null,transformer == null)<SUB>69</SUB>> ]
+"185" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>69</SUB>> ]
+"186" [label = <(&lt;operator&gt;.throw,throw new IllegalArgumentException(&quot;No transformer configured!&quot;);)<SUB>70</SUB>> ]
+"187" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>70</SUB>> ]
+"188" [label = <(&lt;operator&gt;.assignment,&lt;empty&gt;)> ]
+"189" [label = <(IDENTIFIER,$obj3,&lt;empty&gt;)> ]
+"190" [label = <(&lt;operator&gt;.alloc,new IllegalArgumentException(&quot;No transformer configured!&quot;))<SUB>70</SUB>> ]
+"191" [label = <(&lt;init&gt;,new IllegalArgumentException(&quot;No transformer configured!&quot;))<SUB>70</SUB>> ]
+"192" [label = <(IDENTIFIER,$obj3,new IllegalArgumentException(&quot;No transformer configured!&quot;))> ]
+"193" [label = <(LITERAL,&quot;No transformer configured!&quot;,new IllegalArgumentException(&quot;No transformer configured!&quot;))<SUB>70</SUB>> ]
+"194" [label = <(IDENTIFIER,$obj3,&lt;empty&gt;)> ]
+"195" [label = <(configureTransformer,configureTransformer(transformer, exchange))<SUB>72</SUB>> ]
+"7" [label = <(IDENTIFIER,this,configureTransformer(transformer, exchange))<SUB>72</SUB>> ]
+"196" [label = <(IDENTIFIER,transformer,configureTransformer(transformer, exchange))<SUB>72</SUB>> ]
+"197" [label = <(IDENTIFIER,exchange,configureTransformer(transformer, exchange))<SUB>72</SUB>> ]
+"198" [label = <(LOCAL,Source source: javax.xml.transform.Source)> ]
+"199" [label = <(&lt;operator&gt;.assignment,Source source = getSource(exchange))<SUB>73</SUB>> ]
+"200" [label = <(IDENTIFIER,source,Source source = getSource(exchange))<SUB>73</SUB>> ]
+"201" [label = <(getSource,getSource(exchange))<SUB>73</SUB>> ]
+"8" [label = <(IDENTIFIER,this,getSource(exchange))<SUB>73</SUB>> ]
+"202" [label = <(IDENTIFIER,exchange,getSource(exchange))<SUB>73</SUB>> ]
+"203" [label = <(LOCAL,Result result: javax.xml.transform.Result)> ]
+"204" [label = <(&lt;operator&gt;.assignment,Result result = getResult())<SUB>74</SUB>> ]
+"205" [label = <(IDENTIFIER,result,Result result = getResult())<SUB>74</SUB>> ]
+"206" [label = <(getResult,getResult())<SUB>74</SUB>> ]
+"207" [label = <(&lt;operator&gt;.fieldAccess,this.resultHandler)<SUB>74</SUB>> ]
+"208" [label = <(IDENTIFIER,this,getResult())<SUB>74</SUB>> ]
+"209" [label = <(FIELD_IDENTIFIER,resultHandler,resultHandler)<SUB>74</SUB>> ]
+"210" [label = <(transform,transformer.transform(source, result))<SUB>75</SUB>> ]
+"211" [label = <(IDENTIFIER,transformer,transformer.transform(source, result))<SUB>75</SUB>> ]
+"212" [label = <(IDENTIFIER,source,transformer.transform(source, result))<SUB>75</SUB>> ]
+"213" [label = <(IDENTIFIER,result,transformer.transform(source, result))<SUB>75</SUB>> ]
+"214" [label = <(setBody,setBody(exchange.getIn()))<SUB>76</SUB>> ]
+"215" [label = <(&lt;operator&gt;.fieldAccess,this.resultHandler)<SUB>76</SUB>> ]
+"216" [label = <(IDENTIFIER,this,setBody(exchange.getIn()))<SUB>76</SUB>> ]
+"217" [label = <(FIELD_IDENTIFIER,resultHandler,resultHandler)<SUB>76</SUB>> ]
+"218" [label = <(getIn,getIn())<SUB>76</SUB>> ]
+"219" [label = <(IDENTIFIER,exchange,getIn())<SUB>76</SUB>> ]
+"220" [label = <(MODIFIER,PUBLIC)> ]
+"221" [label = <(MODIFIER,VIRTUAL)> ]
+"222" [label = <(METHOD_RETURN,void)<SUB>67</SUB>> ]
+  "174" -> "6" 
+  "174" -> "175" 
+  "174" -> "176" 
+  "174" -> "220" 
+  "174" -> "221" 
+  "174" -> "222" 
+  "176" -> "177" 
+  "176" -> "178" 
+  "176" -> "181" 
+  "176" -> "195" 
+  "176" -> "198" 
+  "176" -> "199" 
+  "176" -> "203" 
+  "176" -> "204" 
+  "176" -> "210" 
+  "176" -> "214" 
+  "178" -> "179" 
+  "178" -> "180" 
+  "180" -> "5" 
+  "181" -> "182" 
+  "181" -> "185" 
+  "182" -> "183" 
+  "182" -> "184" 
+  "185" -> "186" 
+  "186" -> "187" 
+  "187" -> "188" 
+  "187" -> "191" 
+  "187" -> "194" 
+  "188" -> "189" 
+  "188" -> "190" 
+  "191" -> "192" 
+  "191" -> "193" 
+  "195" -> "7" 
+  "195" -> "196" 
+  "195" -> "197" 
+  "199" -> "200" 
+  "199" -> "201" 
+  "201" -> "8" 
+  "201" -> "202" 
+  "204" -> "205" 
+  "204" -> "206" 
+  "206" -> "207" 
+  "207" -> "208" 
+  "207" -> "209" 
+  "210" -> "211" 
+  "210" -> "212" 
+  "210" -> "213" 
+  "214" -> "215" 
+  "214" -> "218" 
+  "215" -> "216" 
+  "215" -> "217" 
+  "218" -> "219" 
+}

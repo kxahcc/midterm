@@ -1,0 +1,89 @@
+digraph "getLoadBalancer" {  
+"56" [label = <(METHOD,getLoadBalancer)<SUB>59</SUB>> ]
+"57" [label = <(PARAM,RouteContext routeContext)<SUB>59</SUB>> ]
+"58" [label = <(PARAM,LoadBalancerType type)<SUB>59</SUB>> ]
+"59" [label = <(PARAM,String ref)<SUB>59</SUB>> ]
+"60" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>59</SUB>> ]
+"61" [label = <(CONTROL_STRUCTURE,if (type == null),if (type == null))<SUB>60</SUB>> ]
+"62" [label = <(&lt;operator&gt;.equals,type == null)<SUB>60</SUB>> ]
+"63" [label = <(IDENTIFIER,type,type == null)<SUB>60</SUB>> ]
+"64" [label = <(LITERAL,null,type == null)<SUB>60</SUB>> ]
+"65" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>60</SUB>> ]
+"66" [label = <(notNull,notNull(ref, &quot;ref or LoadBalancerType&quot;))<SUB>61</SUB>> ]
+"67" [label = <(IDENTIFIER,this,notNull(ref, &quot;ref or LoadBalancerType&quot;))<SUB>61</SUB>> ]
+"68" [label = <(IDENTIFIER,ref,notNull(ref, &quot;ref or LoadBalancerType&quot;))<SUB>61</SUB>> ]
+"69" [label = <(LITERAL,&quot;ref or LoadBalancerType&quot;,notNull(ref, &quot;ref or LoadBalancerType&quot;))<SUB>61</SUB>> ]
+"70" [label = <(LOCAL,LoadBalancer loadBalancer: org.apache.camel.processor.loadbalancer.LoadBalancer)> ]
+"71" [label = <(&lt;operator&gt;.assignment,LoadBalancer loadBalancer = lookup(ref, LoadBalancer.class))<SUB>62</SUB>> ]
+"72" [label = <(IDENTIFIER,loadBalancer,LoadBalancer loadBalancer = lookup(ref, LoadBalancer.class))<SUB>62</SUB>> ]
+"73" [label = <(lookup,lookup(ref, LoadBalancer.class))<SUB>62</SUB>> ]
+"74" [label = <(IDENTIFIER,routeContext,lookup(ref, LoadBalancer.class))<SUB>62</SUB>> ]
+"75" [label = <(IDENTIFIER,ref,lookup(ref, LoadBalancer.class))<SUB>62</SUB>> ]
+"76" [label = <(&lt;operator&gt;.fieldAccess,LoadBalancer.class)<SUB>62</SUB>> ]
+"77" [label = <(IDENTIFIER,LoadBalancer,lookup(ref, LoadBalancer.class))<SUB>62</SUB>> ]
+"78" [label = <(FIELD_IDENTIFIER,class,class)<SUB>62</SUB>> ]
+"79" [label = <(CONTROL_STRUCTURE,if (loadBalancer instanceof LoadBalancerType),if (loadBalancer instanceof LoadBalancerType))<SUB>63</SUB>> ]
+"80" [label = <(&lt;operator&gt;.instanceOf,loadBalancer instanceof LoadBalancerType)<SUB>63</SUB>> ]
+"81" [label = <(IDENTIFIER,loadBalancer,loadBalancer instanceof LoadBalancerType)<SUB>63</SUB>> ]
+"82" [label = <(TYPE_REF,LoadBalancerType,LoadBalancerType)<SUB>63</SUB>> ]
+"83" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>63</SUB>> ]
+"84" [label = <(&lt;operator&gt;.assignment,type = (LoadBalancerType) loadBalancer)<SUB>64</SUB>> ]
+"85" [label = <(IDENTIFIER,type,type = (LoadBalancerType) loadBalancer)<SUB>64</SUB>> ]
+"86" [label = <(&lt;operator&gt;.cast,(LoadBalancerType) loadBalancer)<SUB>64</SUB>> ]
+"87" [label = <(TYPE_REF,LoadBalancerType,LoadBalancerType)<SUB>64</SUB>> ]
+"88" [label = <(IDENTIFIER,loadBalancer,(LoadBalancerType) loadBalancer)<SUB>64</SUB>> ]
+"89" [label = <(CONTROL_STRUCTURE,else,else)<SUB>65</SUB>> ]
+"90" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>65</SUB>> ]
+"91" [label = <(RETURN,return loadBalancer;,return loadBalancer;)<SUB>66</SUB>> ]
+"92" [label = <(IDENTIFIER,loadBalancer,return loadBalancer;)<SUB>66</SUB>> ]
+"93" [label = <(RETURN,return type.getLoadBalancer(routeContext);,return type.getLoadBalancer(routeContext);)<SUB>69</SUB>> ]
+"94" [label = <(getLoadBalancer,getLoadBalancer(routeContext))<SUB>69</SUB>> ]
+"95" [label = <(IDENTIFIER,type,getLoadBalancer(routeContext))<SUB>69</SUB>> ]
+"96" [label = <(IDENTIFIER,routeContext,getLoadBalancer(routeContext))<SUB>69</SUB>> ]
+"97" [label = <(MODIFIER,PUBLIC)> ]
+"98" [label = <(MODIFIER,STATIC)> ]
+"99" [label = <(METHOD_RETURN,org.apache.camel.processor.loadbalancer.LoadBalancer)<SUB>59</SUB>> ]
+  "56" -> "57" 
+  "56" -> "58" 
+  "56" -> "59" 
+  "56" -> "60" 
+  "56" -> "97" 
+  "56" -> "98" 
+  "56" -> "99" 
+  "60" -> "61" 
+  "60" -> "93" 
+  "61" -> "62" 
+  "61" -> "65" 
+  "62" -> "63" 
+  "62" -> "64" 
+  "65" -> "66" 
+  "65" -> "70" 
+  "65" -> "71" 
+  "65" -> "79" 
+  "66" -> "67" 
+  "66" -> "68" 
+  "66" -> "69" 
+  "71" -> "72" 
+  "71" -> "73" 
+  "73" -> "74" 
+  "73" -> "75" 
+  "73" -> "76" 
+  "76" -> "77" 
+  "76" -> "78" 
+  "79" -> "80" 
+  "79" -> "83" 
+  "79" -> "89" 
+  "80" -> "81" 
+  "80" -> "82" 
+  "83" -> "84" 
+  "84" -> "85" 
+  "84" -> "86" 
+  "86" -> "87" 
+  "86" -> "88" 
+  "89" -> "90" 
+  "90" -> "91" 
+  "91" -> "92" 
+  "93" -> "94" 
+  "94" -> "95" 
+  "94" -> "96" 
+}

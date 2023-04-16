@@ -1,0 +1,277 @@
+digraph "addFiles" {  
+"1827" [label = <(METHOD,addFiles)<SUB>684</SUB>> ]
+"89" [label = <(PARAM,this)<SUB>684</SUB>> ]
+"1828" [label = <(PARAM,Vector filesets)<SUB>684</SUB>> ]
+"1829" [label = <(PARAM,ZipOutputStream zOut)<SUB>684</SUB>> ]
+"1830" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>685</SUB>> ]
+"1831" [label = <(CONTROL_STRUCTURE,for (int i = 0; Some(i &lt; filesets.size()); i++),for (int i = 0; Some(i &lt; filesets.size()); i++))<SUB>687</SUB>> ]
+"1832" [label = <(LOCAL,int i: int)> ]
+"1833" [label = <(&lt;operator&gt;.assignment,int i = 0)<SUB>687</SUB>> ]
+"1834" [label = <(IDENTIFIER,i,int i = 0)<SUB>687</SUB>> ]
+"1835" [label = <(LITERAL,0,int i = 0)<SUB>687</SUB>> ]
+"1836" [label = <(&lt;operator&gt;.lessThan,i &lt; filesets.size())<SUB>687</SUB>> ]
+"1837" [label = <(IDENTIFIER,i,i &lt; filesets.size())<SUB>687</SUB>> ]
+"1838" [label = <(size,filesets.size())<SUB>687</SUB>> ]
+"1839" [label = <(IDENTIFIER,filesets,filesets.size())<SUB>687</SUB>> ]
+"1840" [label = <(&lt;operator&gt;.postIncrement,i++)<SUB>687</SUB>> ]
+"1841" [label = <(IDENTIFIER,i,i++)<SUB>687</SUB>> ]
+"1842" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>687</SUB>> ]
+"1843" [label = <(LOCAL,FileSet fs: ANY)> ]
+"1844" [label = <(&lt;operator&gt;.assignment,ANY fs = (FileSet) filesets.elementAt(i))<SUB>688</SUB>> ]
+"1845" [label = <(IDENTIFIER,fs,ANY fs = (FileSet) filesets.elementAt(i))<SUB>688</SUB>> ]
+"1846" [label = <(&lt;operator&gt;.cast,(FileSet) filesets.elementAt(i))<SUB>688</SUB>> ]
+"1847" [label = <(TYPE_REF,FileSet,FileSet)<SUB>688</SUB>> ]
+"1848" [label = <(elementAt,filesets.elementAt(i))<SUB>688</SUB>> ]
+"1849" [label = <(IDENTIFIER,filesets,filesets.elementAt(i))<SUB>688</SUB>> ]
+"1850" [label = <(IDENTIFIER,i,filesets.elementAt(i))<SUB>688</SUB>> ]
+"1851" [label = <(LOCAL,DirectoryScanner ds: ANY)> ]
+"1852" [label = <(&lt;operator&gt;.assignment,ANY ds = getDirectoryScanner(project))<SUB>689</SUB>> ]
+"1853" [label = <(IDENTIFIER,ds,ANY ds = getDirectoryScanner(project))<SUB>689</SUB>> ]
+"1854" [label = <(getDirectoryScanner,getDirectoryScanner(project))<SUB>689</SUB>> ]
+"1855" [label = <(IDENTIFIER,fs,getDirectoryScanner(project))<SUB>689</SUB>> ]
+"1856" [label = <(IDENTIFIER,project,getDirectoryScanner(project))<SUB>689</SUB>> ]
+"1857" [label = <(LOCAL,String prefix: java.lang.String)> ]
+"1858" [label = <(&lt;operator&gt;.assignment,String prefix = &quot;&quot;)<SUB>691</SUB>> ]
+"1859" [label = <(IDENTIFIER,prefix,String prefix = &quot;&quot;)<SUB>691</SUB>> ]
+"1860" [label = <(LITERAL,&quot;&quot;,String prefix = &quot;&quot;)<SUB>691</SUB>> ]
+"1861" [label = <(LOCAL,String fullpath: java.lang.String)> ]
+"1862" [label = <(&lt;operator&gt;.assignment,String fullpath = &quot;&quot;)<SUB>692</SUB>> ]
+"1863" [label = <(IDENTIFIER,fullpath,String fullpath = &quot;&quot;)<SUB>692</SUB>> ]
+"1864" [label = <(LITERAL,&quot;&quot;,String fullpath = &quot;&quot;)<SUB>692</SUB>> ]
+"1865" [label = <(CONTROL_STRUCTURE,if (fs instanceof ZipFileSet),if (fs instanceof ZipFileSet))<SUB>693</SUB>> ]
+"1866" [label = <(&lt;operator&gt;.instanceOf,fs instanceof ZipFileSet)<SUB>693</SUB>> ]
+"1867" [label = <(IDENTIFIER,fs,fs instanceof ZipFileSet)<SUB>693</SUB>> ]
+"1868" [label = <(TYPE_REF,ZipFileSet,ZipFileSet)<SUB>693</SUB>> ]
+"1869" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>693</SUB>> ]
+"1870" [label = <(LOCAL,ZipFileSet zfs: ANY)> ]
+"1871" [label = <(&lt;operator&gt;.assignment,ANY zfs = (ZipFileSet) fs)<SUB>694</SUB>> ]
+"1872" [label = <(IDENTIFIER,zfs,ANY zfs = (ZipFileSet) fs)<SUB>694</SUB>> ]
+"1873" [label = <(&lt;operator&gt;.cast,(ZipFileSet) fs)<SUB>694</SUB>> ]
+"1874" [label = <(TYPE_REF,ZipFileSet,ZipFileSet)<SUB>694</SUB>> ]
+"1875" [label = <(IDENTIFIER,fs,(ZipFileSet) fs)<SUB>694</SUB>> ]
+"1876" [label = <(&lt;operator&gt;.assignment,prefix = getPrefix())<SUB>695</SUB>> ]
+"1877" [label = <(IDENTIFIER,prefix,prefix = getPrefix())<SUB>695</SUB>> ]
+"1878" [label = <(getPrefix,getPrefix())<SUB>695</SUB>> ]
+"1879" [label = <(IDENTIFIER,zfs,getPrefix())<SUB>695</SUB>> ]
+"1880" [label = <(&lt;operator&gt;.assignment,fullpath = getFullpath())<SUB>696</SUB>> ]
+"1881" [label = <(IDENTIFIER,fullpath,fullpath = getFullpath())<SUB>696</SUB>> ]
+"1882" [label = <(getFullpath,getFullpath())<SUB>696</SUB>> ]
+"1883" [label = <(IDENTIFIER,zfs,getFullpath())<SUB>696</SUB>> ]
+"1884" [label = <(CONTROL_STRUCTURE,if (prefix.length() &gt; 0 &amp;&amp; !prefix.endsWith(&quot;/&quot;) &amp;&amp; !prefix.endsWith(&quot;\\&quot;)),if (prefix.length() &gt; 0 &amp;&amp; !prefix.endsWith(&quot;/&quot;) &amp;&amp; !prefix.endsWith(&quot;\\&quot;)))<SUB>699</SUB>> ]
+"1885" [label = <(&lt;operator&gt;.logicalAnd,prefix.length() &gt; 0 &amp;&amp; !prefix.endsWith(&quot;/&quot;) &amp;&amp; !prefix.endsWith(&quot;\\&quot;))<SUB>699</SUB>> ]
+"1886" [label = <(&lt;operator&gt;.logicalAnd,prefix.length() &gt; 0 &amp;&amp; !prefix.endsWith(&quot;/&quot;))<SUB>699</SUB>> ]
+"1887" [label = <(&lt;operator&gt;.greaterThan,prefix.length() &gt; 0)<SUB>699</SUB>> ]
+"1888" [label = <(length,prefix.length())<SUB>699</SUB>> ]
+"1889" [label = <(IDENTIFIER,prefix,prefix.length())<SUB>699</SUB>> ]
+"1890" [label = <(LITERAL,0,prefix.length() &gt; 0)<SUB>699</SUB>> ]
+"1891" [label = <(&lt;operator&gt;.logicalNot,!prefix.endsWith(&quot;/&quot;))<SUB>700</SUB>> ]
+"1892" [label = <(endsWith,prefix.endsWith(&quot;/&quot;))<SUB>700</SUB>> ]
+"1893" [label = <(IDENTIFIER,prefix,prefix.endsWith(&quot;/&quot;))<SUB>700</SUB>> ]
+"1894" [label = <(LITERAL,&quot;/&quot;,prefix.endsWith(&quot;/&quot;))<SUB>700</SUB>> ]
+"1895" [label = <(&lt;operator&gt;.logicalNot,!prefix.endsWith(&quot;\\&quot;))<SUB>701</SUB>> ]
+"1896" [label = <(endsWith,prefix.endsWith(&quot;\\&quot;))<SUB>701</SUB>> ]
+"1897" [label = <(IDENTIFIER,prefix,prefix.endsWith(&quot;\\&quot;))<SUB>701</SUB>> ]
+"1898" [label = <(LITERAL,&quot;\\&quot;,prefix.endsWith(&quot;\\&quot;))<SUB>701</SUB>> ]
+"1899" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>701</SUB>> ]
+"1900" [label = <(&lt;operator&gt;.assignmentPlus,prefix += &quot;/&quot;)<SUB>702</SUB>> ]
+"1901" [label = <(IDENTIFIER,prefix,prefix += &quot;/&quot;)<SUB>702</SUB>> ]
+"1902" [label = <(LITERAL,&quot;/&quot;,prefix += &quot;/&quot;)<SUB>702</SUB>> ]
+"1903" [label = <(CONTROL_STRUCTURE,if (prefix.length() &gt; 0),if (prefix.length() &gt; 0))<SUB>707</SUB>> ]
+"1904" [label = <(&lt;operator&gt;.greaterThan,prefix.length() &gt; 0)<SUB>707</SUB>> ]
+"1905" [label = <(length,prefix.length())<SUB>707</SUB>> ]
+"1906" [label = <(IDENTIFIER,prefix,prefix.length())<SUB>707</SUB>> ]
+"1907" [label = <(LITERAL,0,prefix.length() &gt; 0)<SUB>707</SUB>> ]
+"1908" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>707</SUB>> ]
+"1909" [label = <(addParentDirs,addParentDirs(null, prefix, zOut, &quot;&quot;))<SUB>708</SUB>> ]
+"88" [label = <(IDENTIFIER,this,addParentDirs(null, prefix, zOut, &quot;&quot;))<SUB>708</SUB>> ]
+"1910" [label = <(LITERAL,null,addParentDirs(null, prefix, zOut, &quot;&quot;))<SUB>708</SUB>> ]
+"1911" [label = <(IDENTIFIER,prefix,addParentDirs(null, prefix, zOut, &quot;&quot;))<SUB>708</SUB>> ]
+"1912" [label = <(IDENTIFIER,zOut,addParentDirs(null, prefix, zOut, &quot;&quot;))<SUB>708</SUB>> ]
+"1913" [label = <(LITERAL,&quot;&quot;,addParentDirs(null, prefix, zOut, &quot;&quot;))<SUB>708</SUB>> ]
+"1914" [label = <(zipDir,zipDir(null, zOut, prefix))<SUB>709</SUB>> ]
+"90" [label = <(IDENTIFIER,this,zipDir(null, zOut, prefix))<SUB>709</SUB>> ]
+"1915" [label = <(LITERAL,null,zipDir(null, zOut, prefix))<SUB>709</SUB>> ]
+"1916" [label = <(IDENTIFIER,zOut,zipDir(null, zOut, prefix))<SUB>709</SUB>> ]
+"1917" [label = <(IDENTIFIER,prefix,zipDir(null, zOut, prefix))<SUB>709</SUB>> ]
+"1918" [label = <(CONTROL_STRUCTURE,else,else)<SUB>710</SUB>> ]
+"1919" [label = <(CONTROL_STRUCTURE,if (fullpath.length() &gt; 0),if (fullpath.length() &gt; 0))<SUB>710</SUB>> ]
+"1920" [label = <(&lt;operator&gt;.greaterThan,fullpath.length() &gt; 0)<SUB>710</SUB>> ]
+"1921" [label = <(length,fullpath.length())<SUB>710</SUB>> ]
+"1922" [label = <(IDENTIFIER,fullpath,fullpath.length())<SUB>710</SUB>> ]
+"1923" [label = <(LITERAL,0,fullpath.length() &gt; 0)<SUB>710</SUB>> ]
+"1924" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>710</SUB>> ]
+"1925" [label = <(addParentDirs,addParentDirs(null, fullpath, zOut, &quot;&quot;))<SUB>711</SUB>> ]
+"91" [label = <(IDENTIFIER,this,addParentDirs(null, fullpath, zOut, &quot;&quot;))<SUB>711</SUB>> ]
+"1926" [label = <(LITERAL,null,addParentDirs(null, fullpath, zOut, &quot;&quot;))<SUB>711</SUB>> ]
+"1927" [label = <(IDENTIFIER,fullpath,addParentDirs(null, fullpath, zOut, &quot;&quot;))<SUB>711</SUB>> ]
+"1928" [label = <(IDENTIFIER,zOut,addParentDirs(null, fullpath, zOut, &quot;&quot;))<SUB>711</SUB>> ]
+"1929" [label = <(LITERAL,&quot;&quot;,addParentDirs(null, fullpath, zOut, &quot;&quot;))<SUB>711</SUB>> ]
+"1930" [label = <(CONTROL_STRUCTURE,if (fs instanceof ZipFileSet &amp;&amp; ((ZipFileSet) fs).getSrc() != null),if (fs instanceof ZipFileSet &amp;&amp; ((ZipFileSet) fs).getSrc() != null))<SUB>714</SUB>> ]
+"1931" [label = <(&lt;operator&gt;.logicalAnd,fs instanceof ZipFileSet &amp;&amp; ((ZipFileSet) fs).getSrc() != null)<SUB>714</SUB>> ]
+"1932" [label = <(&lt;operator&gt;.instanceOf,fs instanceof ZipFileSet)<SUB>714</SUB>> ]
+"1933" [label = <(IDENTIFIER,fs,fs instanceof ZipFileSet)<SUB>714</SUB>> ]
+"1934" [label = <(TYPE_REF,ZipFileSet,ZipFileSet)<SUB>714</SUB>> ]
+"1935" [label = <(&lt;operator&gt;.notEquals,((ZipFileSet) fs).getSrc() != null)<SUB>715</SUB>> ]
+"1936" [label = <(getSrc,getSrc())<SUB>715</SUB>> ]
+"1937" [label = <(&lt;operator&gt;.cast,(ZipFileSet) fs)<SUB>715</SUB>> ]
+"1938" [label = <(TYPE_REF,ZipFileSet,ZipFileSet)<SUB>715</SUB>> ]
+"1939" [label = <(IDENTIFIER,fs,(ZipFileSet) fs)<SUB>715</SUB>> ]
+"1940" [label = <(LITERAL,null,((ZipFileSet) fs).getSrc() != null)<SUB>715</SUB>> ]
+"1941" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>715</SUB>> ]
+"1942" [label = <(addZipEntries,addZipEntries((ZipFileSet) fs, ds, zOut, prefix))<SUB>716</SUB>> ]
+"92" [label = <(IDENTIFIER,this,addZipEntries((ZipFileSet) fs, ds, zOut, prefix))<SUB>716</SUB>> ]
+"1943" [label = <(&lt;operator&gt;.cast,(ZipFileSet) fs)<SUB>716</SUB>> ]
+"1944" [label = <(TYPE_REF,ZipFileSet,ZipFileSet)<SUB>716</SUB>> ]
+"1945" [label = <(IDENTIFIER,fs,(ZipFileSet) fs)<SUB>716</SUB>> ]
+"1946" [label = <(IDENTIFIER,ds,addZipEntries((ZipFileSet) fs, ds, zOut, prefix))<SUB>716</SUB>> ]
+"1947" [label = <(IDENTIFIER,zOut,addZipEntries((ZipFileSet) fs, ds, zOut, prefix))<SUB>716</SUB>> ]
+"1948" [label = <(IDENTIFIER,prefix,addZipEntries((ZipFileSet) fs, ds, zOut, prefix))<SUB>716</SUB>> ]
+"1949" [label = <(CONTROL_STRUCTURE,else,else)<SUB>717</SUB>> ]
+"1950" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>717</SUB>> ]
+"1951" [label = <(addFiles,addFiles(ds, zOut, prefix, fullpath))<SUB>719</SUB>> ]
+"93" [label = <(IDENTIFIER,this,addFiles(ds, zOut, prefix, fullpath))<SUB>719</SUB>> ]
+"1952" [label = <(IDENTIFIER,ds,addFiles(ds, zOut, prefix, fullpath))<SUB>719</SUB>> ]
+"1953" [label = <(IDENTIFIER,zOut,addFiles(ds, zOut, prefix, fullpath))<SUB>719</SUB>> ]
+"1954" [label = <(IDENTIFIER,prefix,addFiles(ds, zOut, prefix, fullpath))<SUB>719</SUB>> ]
+"1955" [label = <(IDENTIFIER,fullpath,addFiles(ds, zOut, prefix, fullpath))<SUB>719</SUB>> ]
+"1956" [label = <(MODIFIER,PROTECTED)> ]
+"1957" [label = <(MODIFIER,VIRTUAL)> ]
+"1958" [label = <(METHOD_RETURN,void)<SUB>684</SUB>> ]
+  "1827" -> "89" 
+  "1827" -> "1828" 
+  "1827" -> "1829" 
+  "1827" -> "1830" 
+  "1827" -> "1956" 
+  "1827" -> "1957" 
+  "1827" -> "1958" 
+  "1830" -> "1831" 
+  "1831" -> "1832" 
+  "1831" -> "1833" 
+  "1831" -> "1836" 
+  "1831" -> "1840" 
+  "1831" -> "1842" 
+  "1833" -> "1834" 
+  "1833" -> "1835" 
+  "1836" -> "1837" 
+  "1836" -> "1838" 
+  "1838" -> "1839" 
+  "1840" -> "1841" 
+  "1842" -> "1843" 
+  "1842" -> "1844" 
+  "1842" -> "1851" 
+  "1842" -> "1852" 
+  "1842" -> "1857" 
+  "1842" -> "1858" 
+  "1842" -> "1861" 
+  "1842" -> "1862" 
+  "1842" -> "1865" 
+  "1842" -> "1884" 
+  "1842" -> "1903" 
+  "1842" -> "1930" 
+  "1844" -> "1845" 
+  "1844" -> "1846" 
+  "1846" -> "1847" 
+  "1846" -> "1848" 
+  "1848" -> "1849" 
+  "1848" -> "1850" 
+  "1852" -> "1853" 
+  "1852" -> "1854" 
+  "1854" -> "1855" 
+  "1854" -> "1856" 
+  "1858" -> "1859" 
+  "1858" -> "1860" 
+  "1862" -> "1863" 
+  "1862" -> "1864" 
+  "1865" -> "1866" 
+  "1865" -> "1869" 
+  "1866" -> "1867" 
+  "1866" -> "1868" 
+  "1869" -> "1870" 
+  "1869" -> "1871" 
+  "1869" -> "1876" 
+  "1869" -> "1880" 
+  "1871" -> "1872" 
+  "1871" -> "1873" 
+  "1873" -> "1874" 
+  "1873" -> "1875" 
+  "1876" -> "1877" 
+  "1876" -> "1878" 
+  "1878" -> "1879" 
+  "1880" -> "1881" 
+  "1880" -> "1882" 
+  "1882" -> "1883" 
+  "1884" -> "1885" 
+  "1884" -> "1899" 
+  "1885" -> "1886" 
+  "1885" -> "1895" 
+  "1886" -> "1887" 
+  "1886" -> "1891" 
+  "1887" -> "1888" 
+  "1887" -> "1890" 
+  "1888" -> "1889" 
+  "1891" -> "1892" 
+  "1892" -> "1893" 
+  "1892" -> "1894" 
+  "1895" -> "1896" 
+  "1896" -> "1897" 
+  "1896" -> "1898" 
+  "1899" -> "1900" 
+  "1900" -> "1901" 
+  "1900" -> "1902" 
+  "1903" -> "1904" 
+  "1903" -> "1908" 
+  "1903" -> "1918" 
+  "1904" -> "1905" 
+  "1904" -> "1907" 
+  "1905" -> "1906" 
+  "1908" -> "1909" 
+  "1908" -> "1914" 
+  "1909" -> "88" 
+  "1909" -> "1910" 
+  "1909" -> "1911" 
+  "1909" -> "1912" 
+  "1909" -> "1913" 
+  "1914" -> "90" 
+  "1914" -> "1915" 
+  "1914" -> "1916" 
+  "1914" -> "1917" 
+  "1918" -> "1919" 
+  "1919" -> "1920" 
+  "1919" -> "1924" 
+  "1920" -> "1921" 
+  "1920" -> "1923" 
+  "1921" -> "1922" 
+  "1924" -> "1925" 
+  "1925" -> "91" 
+  "1925" -> "1926" 
+  "1925" -> "1927" 
+  "1925" -> "1928" 
+  "1925" -> "1929" 
+  "1930" -> "1931" 
+  "1930" -> "1941" 
+  "1930" -> "1949" 
+  "1931" -> "1932" 
+  "1931" -> "1935" 
+  "1932" -> "1933" 
+  "1932" -> "1934" 
+  "1935" -> "1936" 
+  "1935" -> "1940" 
+  "1936" -> "1937" 
+  "1937" -> "1938" 
+  "1937" -> "1939" 
+  "1941" -> "1942" 
+  "1942" -> "92" 
+  "1942" -> "1943" 
+  "1942" -> "1946" 
+  "1942" -> "1947" 
+  "1942" -> "1948" 
+  "1943" -> "1944" 
+  "1943" -> "1945" 
+  "1949" -> "1950" 
+  "1950" -> "1951" 
+  "1951" -> "93" 
+  "1951" -> "1952" 
+  "1951" -> "1953" 
+  "1951" -> "1954" 
+  "1951" -> "1955" 
+}

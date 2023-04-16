@@ -1,0 +1,117 @@
+digraph "getRef" {  
+"890" [label = <(METHOD,getRef)<SUB>398</SUB>> ]
+"101" [label = <(PARAM,this)<SUB>398</SUB>> ]
+"891" [label = <(PARAM,Project p)<SUB>398</SUB>> ]
+"892" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>398</SUB>> ]
+"893" [label = <(CONTROL_STRUCTURE,if (!checked),if (!checked))<SUB>399</SUB>> ]
+"894" [label = <(&lt;operator&gt;.logicalNot,!checked)<SUB>399</SUB>> ]
+"895" [label = <(IDENTIFIER,checked,!checked)<SUB>399</SUB>> ]
+"896" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>399</SUB>> ]
+"99" [label = <(LOCAL,Stack stk: java.util.Stack)> ]
+"897" [label = <(&lt;operator&gt;.assignment,Stack stk = new Stack())<SUB>400</SUB>> ]
+"898" [label = <(IDENTIFIER,stk,Stack stk = new Stack())<SUB>400</SUB>> ]
+"899" [label = <(&lt;operator&gt;.alloc,new Stack())<SUB>400</SUB>> ]
+"900" [label = <(&lt;init&gt;,new Stack())<SUB>400</SUB>> ]
+"98" [label = <(IDENTIFIER,stk,new Stack())<SUB>400</SUB>> ]
+"901" [label = <(push,stk.push(this))<SUB>401</SUB>> ]
+"902" [label = <(IDENTIFIER,stk,stk.push(this))<SUB>401</SUB>> ]
+"100" [label = <(IDENTIFIER,this,stk.push(this))<SUB>401</SUB>> ]
+"903" [label = <(dieOnCircularReference,dieOnCircularReference(stk, p))<SUB>402</SUB>> ]
+"102" [label = <(IDENTIFIER,this,dieOnCircularReference(stk, p))<SUB>402</SUB>> ]
+"904" [label = <(IDENTIFIER,stk,dieOnCircularReference(stk, p))<SUB>402</SUB>> ]
+"905" [label = <(IDENTIFIER,p,dieOnCircularReference(stk, p))<SUB>402</SUB>> ]
+"906" [label = <(LOCAL,Object o: java.lang.Object)> ]
+"907" [label = <(&lt;operator&gt;.assignment,Object o = getReferencedObject(p))<SUB>405</SUB>> ]
+"908" [label = <(IDENTIFIER,o,Object o = getReferencedObject(p))<SUB>405</SUB>> ]
+"909" [label = <(getReferencedObject,getReferencedObject(p))<SUB>405</SUB>> ]
+"910" [label = <(IDENTIFIER,ref,getReferencedObject(p))<SUB>405</SUB>> ]
+"911" [label = <(IDENTIFIER,p,getReferencedObject(p))<SUB>405</SUB>> ]
+"912" [label = <(CONTROL_STRUCTURE,if (!(o instanceof PatternSet)),if (!(o instanceof PatternSet)))<SUB>406</SUB>> ]
+"913" [label = <(&lt;operator&gt;.logicalNot,!(o instanceof PatternSet))<SUB>406</SUB>> ]
+"914" [label = <(&lt;operator&gt;.instanceOf,o instanceof PatternSet)<SUB>406</SUB>> ]
+"915" [label = <(IDENTIFIER,o,o instanceof PatternSet)<SUB>406</SUB>> ]
+"916" [label = <(TYPE_REF,PatternSet,PatternSet)<SUB>406</SUB>> ]
+"917" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>406</SUB>> ]
+"918" [label = <(LOCAL,String msg: java.lang.String)> ]
+"919" [label = <(&lt;operator&gt;.assignment,String msg = ref.getRefId() + &quot; doesn\'t denote a patternset&quot;)<SUB>407</SUB>> ]
+"920" [label = <(IDENTIFIER,msg,String msg = ref.getRefId() + &quot; doesn\'t denote a patternset&quot;)<SUB>407</SUB>> ]
+"921" [label = <(&lt;operator&gt;.addition,ref.getRefId() + &quot; doesn\'t denote a patternset&quot;)<SUB>407</SUB>> ]
+"922" [label = <(getRefId,getRefId())<SUB>407</SUB>> ]
+"923" [label = <(IDENTIFIER,ref,getRefId())<SUB>407</SUB>> ]
+"924" [label = <(LITERAL,&quot; doesn\'t denote a patternset&quot;,ref.getRefId() + &quot; doesn\'t denote a patternset&quot;)<SUB>407</SUB>> ]
+"925" [label = <(&lt;operator&gt;.throw,throw new BuildException(msg);)<SUB>408</SUB>> ]
+"926" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>408</SUB>> ]
+"927" [label = <(&lt;operator&gt;.assignment,&lt;empty&gt;)> ]
+"928" [label = <(IDENTIFIER,$obj13,&lt;empty&gt;)> ]
+"929" [label = <(&lt;operator&gt;.alloc,new BuildException(msg))<SUB>408</SUB>> ]
+"930" [label = <(&lt;init&gt;,new BuildException(msg))<SUB>408</SUB>> ]
+"931" [label = <(IDENTIFIER,$obj13,new BuildException(msg))> ]
+"932" [label = <(IDENTIFIER,msg,new BuildException(msg))<SUB>408</SUB>> ]
+"933" [label = <(IDENTIFIER,$obj13,&lt;empty&gt;)> ]
+"934" [label = <(CONTROL_STRUCTURE,else,else)<SUB>409</SUB>> ]
+"935" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>409</SUB>> ]
+"936" [label = <(RETURN,return (PatternSet) o;,return (PatternSet) o;)<SUB>410</SUB>> ]
+"937" [label = <(&lt;operator&gt;.cast,(PatternSet) o)<SUB>410</SUB>> ]
+"938" [label = <(TYPE_REF,PatternSet,PatternSet)<SUB>410</SUB>> ]
+"939" [label = <(IDENTIFIER,o,(PatternSet) o)<SUB>410</SUB>> ]
+"940" [label = <(MODIFIER,PRIVATE)> ]
+"941" [label = <(MODIFIER,VIRTUAL)> ]
+"942" [label = <(METHOD_RETURN,org.apache.tools.ant.types.PatternSet)<SUB>398</SUB>> ]
+  "890" -> "101" 
+  "890" -> "891" 
+  "890" -> "892" 
+  "890" -> "940" 
+  "890" -> "941" 
+  "890" -> "942" 
+  "892" -> "893" 
+  "892" -> "906" 
+  "892" -> "907" 
+  "892" -> "912" 
+  "893" -> "894" 
+  "893" -> "896" 
+  "894" -> "895" 
+  "896" -> "99" 
+  "896" -> "897" 
+  "896" -> "900" 
+  "896" -> "901" 
+  "896" -> "903" 
+  "897" -> "898" 
+  "897" -> "899" 
+  "900" -> "98" 
+  "901" -> "902" 
+  "901" -> "100" 
+  "903" -> "102" 
+  "903" -> "904" 
+  "903" -> "905" 
+  "907" -> "908" 
+  "907" -> "909" 
+  "909" -> "910" 
+  "909" -> "911" 
+  "912" -> "913" 
+  "912" -> "917" 
+  "912" -> "934" 
+  "913" -> "914" 
+  "914" -> "915" 
+  "914" -> "916" 
+  "917" -> "918" 
+  "917" -> "919" 
+  "917" -> "925" 
+  "919" -> "920" 
+  "919" -> "921" 
+  "921" -> "922" 
+  "921" -> "924" 
+  "922" -> "923" 
+  "925" -> "926" 
+  "926" -> "927" 
+  "926" -> "930" 
+  "926" -> "933" 
+  "927" -> "928" 
+  "927" -> "929" 
+  "930" -> "931" 
+  "930" -> "932" 
+  "934" -> "935" 
+  "935" -> "936" 
+  "936" -> "937" 
+  "937" -> "938" 
+  "937" -> "939" 
+}

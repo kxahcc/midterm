@@ -1,0 +1,183 @@
+digraph "runCommand" {  
+"1255" [label = <(METHOD,runCommand)<SUB>659</SUB>> ]
+"1256" [label = <(PARAM,Task task)<SUB>659</SUB>> ]
+"1257" [label = <(PARAM,String[] cmdline)<SUB>659</SUB>> ]
+"1258" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>660</SUB>> ]
+"1259" [label = <(CONTROL_STRUCTURE,try,try)<SUB>661</SUB>> ]
+"1260" [label = <(BLOCK,try,try)<SUB>661</SUB>> ]
+"1261" [label = <(log,log(Commandline.describeCommand(cmdline), Project.MSG_VERBOSE))<SUB>662</SUB>> ]
+"1262" [label = <(IDENTIFIER,task,log(Commandline.describeCommand(cmdline), Project.MSG_VERBOSE))<SUB>662</SUB>> ]
+"1263" [label = <(describeCommand,describeCommand(cmdline))<SUB>662</SUB>> ]
+"1264" [label = <(IDENTIFIER,Commandline,describeCommand(cmdline))<SUB>662</SUB>> ]
+"1265" [label = <(IDENTIFIER,cmdline,describeCommand(cmdline))<SUB>662</SUB>> ]
+"1266" [label = <(&lt;operator&gt;.fieldAccess,Project.MSG_VERBOSE)<SUB>663</SUB>> ]
+"1267" [label = <(IDENTIFIER,Project,log(Commandline.describeCommand(cmdline), Project.MSG_VERBOSE))<SUB>663</SUB>> ]
+"1268" [label = <(FIELD_IDENTIFIER,MSG_VERBOSE,MSG_VERBOSE)<SUB>663</SUB>> ]
+"49" [label = <(LOCAL,Execute exe: org.apache.tools.ant.taskdefs.Execute)> ]
+"1269" [label = <(&lt;operator&gt;.assignment,Execute exe = new Execute(new LogStreamHandler(task, Project.MSG_INFO, Project.MSG_ERR)))<SUB>664</SUB>> ]
+"1270" [label = <(IDENTIFIER,exe,Execute exe = new Execute(new LogStreamHandler(task, Project.MSG_INFO, Project.MSG_ERR)))<SUB>664</SUB>> ]
+"1271" [label = <(&lt;operator&gt;.alloc,new Execute(new LogStreamHandler(task, Project.MSG_INFO, Project.MSG_ERR)))<SUB>664</SUB>> ]
+"1272" [label = <(&lt;init&gt;,new Execute(new LogStreamHandler(task, Project.MSG_INFO, Project.MSG_ERR)))<SUB>664</SUB>> ]
+"48" [label = <(IDENTIFIER,exe,new Execute(new LogStreamHandler(task, Project.MSG_INFO, Project.MSG_ERR)))<SUB>664</SUB>> ]
+"1273" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>664</SUB>> ]
+"1274" [label = <(&lt;operator&gt;.assignment,&lt;empty&gt;)> ]
+"1275" [label = <(IDENTIFIER,$obj25,&lt;empty&gt;)> ]
+"1276" [label = <(&lt;operator&gt;.alloc,new LogStreamHandler(task, Project.MSG_INFO, Project.MSG_ERR))<SUB>664</SUB>> ]
+"1277" [label = <(&lt;init&gt;,new LogStreamHandler(task, Project.MSG_INFO, Project.MSG_ERR))<SUB>664</SUB>> ]
+"1278" [label = <(IDENTIFIER,$obj25,new LogStreamHandler(task, Project.MSG_INFO, Project.MSG_ERR))> ]
+"1279" [label = <(IDENTIFIER,task,new LogStreamHandler(task, Project.MSG_INFO, Project.MSG_ERR))<SUB>664</SUB>> ]
+"1280" [label = <(&lt;operator&gt;.fieldAccess,Project.MSG_INFO)<SUB>665</SUB>> ]
+"1281" [label = <(IDENTIFIER,Project,new LogStreamHandler(task, Project.MSG_INFO, Project.MSG_ERR))<SUB>665</SUB>> ]
+"1282" [label = <(FIELD_IDENTIFIER,MSG_INFO,MSG_INFO)<SUB>665</SUB>> ]
+"1283" [label = <(&lt;operator&gt;.fieldAccess,Project.MSG_ERR)<SUB>666</SUB>> ]
+"1284" [label = <(IDENTIFIER,Project,new LogStreamHandler(task, Project.MSG_INFO, Project.MSG_ERR))<SUB>666</SUB>> ]
+"1285" [label = <(FIELD_IDENTIFIER,MSG_ERR,MSG_ERR)<SUB>666</SUB>> ]
+"1286" [label = <(IDENTIFIER,$obj25,&lt;empty&gt;)> ]
+"1287" [label = <(setAntRun,setAntRun(task.getProject()))<SUB>667</SUB>> ]
+"1288" [label = <(IDENTIFIER,exe,setAntRun(task.getProject()))<SUB>667</SUB>> ]
+"1289" [label = <(getProject,getProject())<SUB>667</SUB>> ]
+"1290" [label = <(IDENTIFIER,task,getProject())<SUB>667</SUB>> ]
+"1291" [label = <(setCommandline,exe.setCommandline(cmdline))<SUB>668</SUB>> ]
+"1292" [label = <(IDENTIFIER,exe,exe.setCommandline(cmdline))<SUB>668</SUB>> ]
+"1293" [label = <(IDENTIFIER,cmdline,exe.setCommandline(cmdline))<SUB>668</SUB>> ]
+"1294" [label = <(LOCAL,int retval: int)> ]
+"1295" [label = <(&lt;operator&gt;.assignment,int retval = exe.execute())<SUB>669</SUB>> ]
+"1296" [label = <(IDENTIFIER,retval,int retval = exe.execute())<SUB>669</SUB>> ]
+"1297" [label = <(execute,exe.execute())<SUB>669</SUB>> ]
+"1298" [label = <(IDENTIFIER,exe,exe.execute())<SUB>669</SUB>> ]
+"1299" [label = <(CONTROL_STRUCTURE,if (isFailure(retval)),if (isFailure(retval)))<SUB>670</SUB>> ]
+"1300" [label = <(isFailure,isFailure(retval))<SUB>670</SUB>> ]
+"1301" [label = <(IDENTIFIER,retval,isFailure(retval))<SUB>670</SUB>> ]
+"1302" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>670</SUB>> ]
+"1303" [label = <(&lt;operator&gt;.throw,throw new BuildException(cmdline[0] + &quot; failed with return code &quot; + retval, task.getLocation());)<SUB>671</SUB>> ]
+"1304" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>671</SUB>> ]
+"1305" [label = <(&lt;operator&gt;.assignment,&lt;empty&gt;)> ]
+"1306" [label = <(IDENTIFIER,$obj27,&lt;empty&gt;)> ]
+"1307" [label = <(&lt;operator&gt;.alloc,new BuildException(cmdline[0] + &quot; failed with return code &quot; + retval, task.getLocation()))<SUB>671</SUB>> ]
+"1308" [label = <(&lt;init&gt;,new BuildException(cmdline[0] + &quot; failed with return code &quot; + retval, task.getLocation()))<SUB>671</SUB>> ]
+"1309" [label = <(IDENTIFIER,$obj27,new BuildException(cmdline[0] + &quot; failed with return code &quot; + retval, task.getLocation()))> ]
+"1310" [label = <(&lt;operator&gt;.addition,cmdline[0] + &quot; failed with return code &quot; + retval)<SUB>671</SUB>> ]
+"1311" [label = <(&lt;operator&gt;.addition,cmdline[0] + &quot; failed with return code &quot;)<SUB>671</SUB>> ]
+"1312" [label = <(&lt;operator&gt;.indexAccess,cmdline[0])<SUB>671</SUB>> ]
+"1313" [label = <(IDENTIFIER,cmdline,cmdline[0] + &quot; failed with return code &quot;)<SUB>671</SUB>> ]
+"1314" [label = <(LITERAL,0,cmdline[0] + &quot; failed with return code &quot;)<SUB>671</SUB>> ]
+"1315" [label = <(LITERAL,&quot; failed with return code &quot;,cmdline[0] + &quot; failed with return code &quot;)<SUB>672</SUB>> ]
+"1316" [label = <(IDENTIFIER,retval,cmdline[0] + &quot; failed with return code &quot; + retval)<SUB>672</SUB>> ]
+"1317" [label = <(getLocation,getLocation())<SUB>672</SUB>> ]
+"1318" [label = <(IDENTIFIER,task,getLocation())<SUB>672</SUB>> ]
+"1319" [label = <(IDENTIFIER,$obj27,&lt;empty&gt;)> ]
+"1320" [label = <(BLOCK,catch,catch)> ]
+"1321" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>674</SUB>> ]
+"1322" [label = <(&lt;operator&gt;.throw,throw new BuildException(&quot;Could not launch &quot; + cmdline[0] + &quot;: &quot; + exc, task.getLocation());)<SUB>675</SUB>> ]
+"1323" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>675</SUB>> ]
+"1324" [label = <(&lt;operator&gt;.assignment,&lt;empty&gt;)> ]
+"1325" [label = <(IDENTIFIER,$obj28,&lt;empty&gt;)> ]
+"1326" [label = <(&lt;operator&gt;.alloc,new BuildException(&quot;Could not launch &quot; + cmdline[0] + &quot;: &quot; + exc, task.getLocation()))<SUB>675</SUB>> ]
+"1327" [label = <(&lt;init&gt;,new BuildException(&quot;Could not launch &quot; + cmdline[0] + &quot;: &quot; + exc, task.getLocation()))<SUB>675</SUB>> ]
+"1328" [label = <(IDENTIFIER,$obj28,new BuildException(&quot;Could not launch &quot; + cmdline[0] + &quot;: &quot; + exc, task.getLocation()))> ]
+"1329" [label = <(&lt;operator&gt;.addition,&quot;Could not launch &quot; + cmdline[0] + &quot;: &quot; + exc)<SUB>675</SUB>> ]
+"1330" [label = <(&lt;operator&gt;.addition,&quot;Could not launch &quot; + cmdline[0] + &quot;: &quot;)<SUB>675</SUB>> ]
+"1331" [label = <(&lt;operator&gt;.addition,&quot;Could not launch &quot; + cmdline[0])<SUB>675</SUB>> ]
+"1332" [label = <(LITERAL,&quot;Could not launch &quot;,&quot;Could not launch &quot; + cmdline[0])<SUB>675</SUB>> ]
+"1333" [label = <(&lt;operator&gt;.indexAccess,cmdline[0])<SUB>675</SUB>> ]
+"1334" [label = <(IDENTIFIER,cmdline,&quot;Could not launch &quot; + cmdline[0])<SUB>675</SUB>> ]
+"1335" [label = <(LITERAL,0,&quot;Could not launch &quot; + cmdline[0])<SUB>675</SUB>> ]
+"1336" [label = <(LITERAL,&quot;: &quot;,&quot;Could not launch &quot; + cmdline[0] + &quot;: &quot;)<SUB>675</SUB>> ]
+"1337" [label = <(IDENTIFIER,exc,&quot;Could not launch &quot; + cmdline[0] + &quot;: &quot; + exc)<SUB>676</SUB>> ]
+"1338" [label = <(getLocation,getLocation())<SUB>676</SUB>> ]
+"1339" [label = <(IDENTIFIER,task,getLocation())<SUB>676</SUB>> ]
+"1340" [label = <(IDENTIFIER,$obj28,&lt;empty&gt;)> ]
+"1341" [label = <(MODIFIER,PUBLIC)> ]
+"1342" [label = <(MODIFIER,STATIC)> ]
+"1343" [label = <(METHOD_RETURN,void)<SUB>659</SUB>> ]
+  "1255" -> "1256" 
+  "1255" -> "1257" 
+  "1255" -> "1258" 
+  "1255" -> "1341" 
+  "1255" -> "1342" 
+  "1255" -> "1343" 
+  "1258" -> "1259" 
+  "1259" -> "1260" 
+  "1259" -> "1320" 
+  "1260" -> "1261" 
+  "1260" -> "49" 
+  "1260" -> "1269" 
+  "1260" -> "1272" 
+  "1260" -> "1287" 
+  "1260" -> "1291" 
+  "1260" -> "1294" 
+  "1260" -> "1295" 
+  "1260" -> "1299" 
+  "1261" -> "1262" 
+  "1261" -> "1263" 
+  "1261" -> "1266" 
+  "1263" -> "1264" 
+  "1263" -> "1265" 
+  "1266" -> "1267" 
+  "1266" -> "1268" 
+  "1269" -> "1270" 
+  "1269" -> "1271" 
+  "1272" -> "48" 
+  "1272" -> "1273" 
+  "1273" -> "1274" 
+  "1273" -> "1277" 
+  "1273" -> "1286" 
+  "1274" -> "1275" 
+  "1274" -> "1276" 
+  "1277" -> "1278" 
+  "1277" -> "1279" 
+  "1277" -> "1280" 
+  "1277" -> "1283" 
+  "1280" -> "1281" 
+  "1280" -> "1282" 
+  "1283" -> "1284" 
+  "1283" -> "1285" 
+  "1287" -> "1288" 
+  "1287" -> "1289" 
+  "1289" -> "1290" 
+  "1291" -> "1292" 
+  "1291" -> "1293" 
+  "1295" -> "1296" 
+  "1295" -> "1297" 
+  "1297" -> "1298" 
+  "1299" -> "1300" 
+  "1299" -> "1302" 
+  "1300" -> "1301" 
+  "1302" -> "1303" 
+  "1303" -> "1304" 
+  "1304" -> "1305" 
+  "1304" -> "1308" 
+  "1304" -> "1319" 
+  "1305" -> "1306" 
+  "1305" -> "1307" 
+  "1308" -> "1309" 
+  "1308" -> "1310" 
+  "1308" -> "1317" 
+  "1310" -> "1311" 
+  "1310" -> "1316" 
+  "1311" -> "1312" 
+  "1311" -> "1315" 
+  "1312" -> "1313" 
+  "1312" -> "1314" 
+  "1317" -> "1318" 
+  "1320" -> "1321" 
+  "1321" -> "1322" 
+  "1322" -> "1323" 
+  "1323" -> "1324" 
+  "1323" -> "1327" 
+  "1323" -> "1340" 
+  "1324" -> "1325" 
+  "1324" -> "1326" 
+  "1327" -> "1328" 
+  "1327" -> "1329" 
+  "1327" -> "1338" 
+  "1329" -> "1330" 
+  "1329" -> "1337" 
+  "1330" -> "1331" 
+  "1330" -> "1336" 
+  "1331" -> "1332" 
+  "1331" -> "1333" 
+  "1333" -> "1334" 
+  "1333" -> "1335" 
+  "1338" -> "1339" 
+}

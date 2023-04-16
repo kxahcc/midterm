@@ -1,0 +1,67 @@
+digraph "forceLoadSystemClass" {  
+"895" [label = <(METHOD,forceLoadSystemClass)<SUB>579</SUB>> ]
+"58" [label = <(PARAM,this)<SUB>579</SUB>> ]
+"896" [label = <(PARAM,String classname)<SUB>579</SUB>> ]
+"897" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>580</SUB>> ]
+"898" [label = <(log,log(&quot;force system loading &quot; + classname, Project.MSG_DEBUG))<SUB>581</SUB>> ]
+"57" [label = <(IDENTIFIER,this,log(&quot;force system loading &quot; + classname, Project.MSG_DEBUG))<SUB>581</SUB>> ]
+"899" [label = <(&lt;operator&gt;.addition,&quot;force system loading &quot; + classname)<SUB>581</SUB>> ]
+"900" [label = <(LITERAL,&quot;force system loading &quot;,&quot;force system loading &quot; + classname)<SUB>581</SUB>> ]
+"901" [label = <(IDENTIFIER,classname,&quot;force system loading &quot; + classname)<SUB>581</SUB>> ]
+"902" [label = <(&lt;operator&gt;.fieldAccess,Project.MSG_DEBUG)<SUB>581</SUB>> ]
+"903" [label = <(IDENTIFIER,Project,log(&quot;force system loading &quot; + classname, Project.MSG_DEBUG))<SUB>581</SUB>> ]
+"904" [label = <(FIELD_IDENTIFIER,MSG_DEBUG,MSG_DEBUG)<SUB>581</SUB>> ]
+"905" [label = <(LOCAL,Class theClass: java.lang.Class)> ]
+"906" [label = <(&lt;operator&gt;.assignment,Class theClass = this.findLoadedClass(classname))<SUB>583</SUB>> ]
+"907" [label = <(IDENTIFIER,theClass,Class theClass = this.findLoadedClass(classname))<SUB>583</SUB>> ]
+"908" [label = <(findLoadedClass,this.findLoadedClass(classname))<SUB>583</SUB>> ]
+"59" [label = <(IDENTIFIER,this,this.findLoadedClass(classname))<SUB>583</SUB>> ]
+"909" [label = <(IDENTIFIER,classname,this.findLoadedClass(classname))<SUB>583</SUB>> ]
+"910" [label = <(CONTROL_STRUCTURE,if (theClass == null),if (theClass == null))<SUB>585</SUB>> ]
+"911" [label = <(&lt;operator&gt;.equals,theClass == null)<SUB>585</SUB>> ]
+"912" [label = <(IDENTIFIER,theClass,theClass == null)<SUB>585</SUB>> ]
+"913" [label = <(LITERAL,null,theClass == null)<SUB>585</SUB>> ]
+"914" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>585</SUB>> ]
+"915" [label = <(&lt;operator&gt;.assignment,theClass = this.findBaseClass(classname))<SUB>586</SUB>> ]
+"916" [label = <(IDENTIFIER,theClass,theClass = this.findBaseClass(classname))<SUB>586</SUB>> ]
+"917" [label = <(findBaseClass,this.findBaseClass(classname))<SUB>586</SUB>> ]
+"60" [label = <(IDENTIFIER,this,this.findBaseClass(classname))<SUB>586</SUB>> ]
+"918" [label = <(IDENTIFIER,classname,this.findBaseClass(classname))<SUB>586</SUB>> ]
+"919" [label = <(RETURN,return theClass;,return theClass;)<SUB>589</SUB>> ]
+"920" [label = <(IDENTIFIER,theClass,return theClass;)<SUB>589</SUB>> ]
+"921" [label = <(MODIFIER,PUBLIC)> ]
+"922" [label = <(MODIFIER,VIRTUAL)> ]
+"923" [label = <(METHOD_RETURN,java.lang.Class)<SUB>579</SUB>> ]
+  "895" -> "58" 
+  "895" -> "896" 
+  "895" -> "897" 
+  "895" -> "921" 
+  "895" -> "922" 
+  "895" -> "923" 
+  "897" -> "898" 
+  "897" -> "905" 
+  "897" -> "906" 
+  "897" -> "910" 
+  "897" -> "919" 
+  "898" -> "57" 
+  "898" -> "899" 
+  "898" -> "902" 
+  "899" -> "900" 
+  "899" -> "901" 
+  "902" -> "903" 
+  "902" -> "904" 
+  "906" -> "907" 
+  "906" -> "908" 
+  "908" -> "59" 
+  "908" -> "909" 
+  "910" -> "911" 
+  "910" -> "914" 
+  "911" -> "912" 
+  "911" -> "913" 
+  "914" -> "915" 
+  "915" -> "916" 
+  "915" -> "917" 
+  "917" -> "60" 
+  "917" -> "918" 
+  "919" -> "920" 
+}

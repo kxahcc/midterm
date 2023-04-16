@@ -1,0 +1,119 @@
+digraph "getEndpointInjection" {  
+"411" [label = <(METHOD,getEndpointInjection)<SUB>209</SUB>> ]
+"412" [label = <(PARAM,CamelContext camelContext)<SUB>209</SUB>> ]
+"413" [label = <(PARAM,String uri)<SUB>209</SUB>> ]
+"414" [label = <(PARAM,String name)<SUB>209</SUB>> ]
+"415" [label = <(PARAM,String injectionPointName)<SUB>209</SUB>> ]
+"416" [label = <(PARAM,boolean mandatory)<SUB>209</SUB>> ]
+"417" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>209</SUB>> ]
+"418" [label = <(LOCAL,Endpoint endpoint: org.apache.camel.Endpoint)> ]
+"419" [label = <(&lt;operator&gt;.assignment,Endpoint endpoint = null)<SUB>210</SUB>> ]
+"420" [label = <(IDENTIFIER,endpoint,Endpoint endpoint = null)<SUB>210</SUB>> ]
+"421" [label = <(LITERAL,null,Endpoint endpoint = null)<SUB>210</SUB>> ]
+"422" [label = <(CONTROL_STRUCTURE,if (isNotNullAndNonEmpty(uri)),if (isNotNullAndNonEmpty(uri)))<SUB>211</SUB>> ]
+"423" [label = <(isNotNullAndNonEmpty,isNotNullAndNonEmpty(uri))<SUB>211</SUB>> ]
+"424" [label = <(IDENTIFIER,this,isNotNullAndNonEmpty(uri))<SUB>211</SUB>> ]
+"425" [label = <(IDENTIFIER,uri,isNotNullAndNonEmpty(uri))<SUB>211</SUB>> ]
+"426" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>211</SUB>> ]
+"427" [label = <(&lt;operator&gt;.assignment,endpoint = getEndpoint(uri))<SUB>212</SUB>> ]
+"428" [label = <(IDENTIFIER,endpoint,endpoint = getEndpoint(uri))<SUB>212</SUB>> ]
+"429" [label = <(getEndpoint,getEndpoint(uri))<SUB>212</SUB>> ]
+"430" [label = <(IDENTIFIER,camelContext,getEndpoint(uri))<SUB>212</SUB>> ]
+"431" [label = <(IDENTIFIER,uri,getEndpoint(uri))<SUB>212</SUB>> ]
+"432" [label = <(CONTROL_STRUCTURE,else,else)<SUB>213</SUB>> ]
+"433" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>213</SUB>> ]
+"434" [label = <(CONTROL_STRUCTURE,if (isNullOrBlank(name)),if (isNullOrBlank(name)))<SUB>214</SUB>> ]
+"435" [label = <(isNullOrBlank,isNullOrBlank(name))<SUB>214</SUB>> ]
+"436" [label = <(IDENTIFIER,this,isNullOrBlank(name))<SUB>214</SUB>> ]
+"437" [label = <(IDENTIFIER,name,isNullOrBlank(name))<SUB>214</SUB>> ]
+"438" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>214</SUB>> ]
+"439" [label = <(&lt;operator&gt;.assignment,name = injectionPointName)<SUB>215</SUB>> ]
+"440" [label = <(IDENTIFIER,name,name = injectionPointName)<SUB>215</SUB>> ]
+"441" [label = <(IDENTIFIER,injectionPointName,name = injectionPointName)<SUB>215</SUB>> ]
+"442" [label = <(CONTROL_STRUCTURE,if (mandatory),if (mandatory))<SUB>217</SUB>> ]
+"443" [label = <(IDENTIFIER,mandatory,if (mandatory))<SUB>217</SUB>> ]
+"444" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>217</SUB>> ]
+"445" [label = <(&lt;operator&gt;.assignment,endpoint = mandatoryLookup(camelContext, name, Endpoint.class))<SUB>218</SUB>> ]
+"446" [label = <(IDENTIFIER,endpoint,endpoint = mandatoryLookup(camelContext, name, Endpoint.class))<SUB>218</SUB>> ]
+"447" [label = <(mandatoryLookup,mandatoryLookup(camelContext, name, Endpoint.class))<SUB>218</SUB>> ]
+"448" [label = <(IDENTIFIER,this,mandatoryLookup(camelContext, name, Endpoint.class))<SUB>218</SUB>> ]
+"449" [label = <(IDENTIFIER,camelContext,mandatoryLookup(camelContext, name, Endpoint.class))<SUB>218</SUB>> ]
+"450" [label = <(IDENTIFIER,name,mandatoryLookup(camelContext, name, Endpoint.class))<SUB>218</SUB>> ]
+"451" [label = <(&lt;operator&gt;.fieldAccess,Endpoint.class)<SUB>218</SUB>> ]
+"452" [label = <(IDENTIFIER,Endpoint,mandatoryLookup(camelContext, name, Endpoint.class))<SUB>218</SUB>> ]
+"453" [label = <(FIELD_IDENTIFIER,class,class)<SUB>218</SUB>> ]
+"454" [label = <(CONTROL_STRUCTURE,else,else)<SUB>219</SUB>> ]
+"455" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>219</SUB>> ]
+"456" [label = <(&lt;operator&gt;.assignment,endpoint = lookup(camelContext, name, Endpoint.class))<SUB>220</SUB>> ]
+"457" [label = <(IDENTIFIER,endpoint,endpoint = lookup(camelContext, name, Endpoint.class))<SUB>220</SUB>> ]
+"458" [label = <(lookup,lookup(camelContext, name, Endpoint.class))<SUB>220</SUB>> ]
+"459" [label = <(IDENTIFIER,this,lookup(camelContext, name, Endpoint.class))<SUB>220</SUB>> ]
+"460" [label = <(IDENTIFIER,camelContext,lookup(camelContext, name, Endpoint.class))<SUB>220</SUB>> ]
+"461" [label = <(IDENTIFIER,name,lookup(camelContext, name, Endpoint.class))<SUB>220</SUB>> ]
+"462" [label = <(&lt;operator&gt;.fieldAccess,Endpoint.class)<SUB>220</SUB>> ]
+"463" [label = <(IDENTIFIER,Endpoint,lookup(camelContext, name, Endpoint.class))<SUB>220</SUB>> ]
+"464" [label = <(FIELD_IDENTIFIER,class,class)<SUB>220</SUB>> ]
+"465" [label = <(RETURN,return endpoint;,return endpoint;)<SUB>223</SUB>> ]
+"466" [label = <(IDENTIFIER,endpoint,return endpoint;)<SUB>223</SUB>> ]
+"467" [label = <(MODIFIER,PUBLIC)> ]
+"468" [label = <(MODIFIER,STATIC)> ]
+"469" [label = <(METHOD_RETURN,org.apache.camel.Endpoint)<SUB>209</SUB>> ]
+  "411" -> "412" 
+  "411" -> "413" 
+  "411" -> "414" 
+  "411" -> "415" 
+  "411" -> "416" 
+  "411" -> "417" 
+  "411" -> "467" 
+  "411" -> "468" 
+  "411" -> "469" 
+  "417" -> "418" 
+  "417" -> "419" 
+  "417" -> "422" 
+  "417" -> "465" 
+  "419" -> "420" 
+  "419" -> "421" 
+  "422" -> "423" 
+  "422" -> "426" 
+  "422" -> "432" 
+  "423" -> "424" 
+  "423" -> "425" 
+  "426" -> "427" 
+  "427" -> "428" 
+  "427" -> "429" 
+  "429" -> "430" 
+  "429" -> "431" 
+  "432" -> "433" 
+  "433" -> "434" 
+  "433" -> "442" 
+  "434" -> "435" 
+  "434" -> "438" 
+  "435" -> "436" 
+  "435" -> "437" 
+  "438" -> "439" 
+  "439" -> "440" 
+  "439" -> "441" 
+  "442" -> "443" 
+  "442" -> "444" 
+  "442" -> "454" 
+  "444" -> "445" 
+  "445" -> "446" 
+  "445" -> "447" 
+  "447" -> "448" 
+  "447" -> "449" 
+  "447" -> "450" 
+  "447" -> "451" 
+  "451" -> "452" 
+  "451" -> "453" 
+  "454" -> "455" 
+  "455" -> "456" 
+  "456" -> "457" 
+  "456" -> "458" 
+  "458" -> "459" 
+  "458" -> "460" 
+  "458" -> "461" 
+  "458" -> "462" 
+  "462" -> "463" 
+  "462" -> "464" 
+  "465" -> "466" 
+}

@@ -1,0 +1,101 @@
+digraph "poll" {  
+"41" [label = <(METHOD,poll)<SUB>44</SUB>> ]
+"8" [label = <(PARAM,this)<SUB>44</SUB>> ]
+"42" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>44</SUB>> ]
+"43" [label = <(CONTROL_STRUCTURE,while (true),while (true))<SUB>45</SUB>> ]
+"44" [label = <(LITERAL,true,while (true))<SUB>45</SUB>> ]
+"45" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>45</SUB>> ]
+"46" [label = <(LOCAL,E exchange: java.lang.Object)> ]
+"47" [label = <(&lt;operator&gt;.assignment,Object exchange = receiveNoWait())<SUB>46</SUB>> ]
+"48" [label = <(IDENTIFIER,exchange,Object exchange = receiveNoWait())<SUB>46</SUB>> ]
+"49" [label = <(receiveNoWait,receiveNoWait())<SUB>46</SUB>> ]
+"50" [label = <(&lt;operator&gt;.fieldAccess,this.pollingConsumer)<SUB>46</SUB>> ]
+"51" [label = <(IDENTIFIER,this,receiveNoWait())<SUB>46</SUB>> ]
+"52" [label = <(FIELD_IDENTIFIER,pollingConsumer,pollingConsumer)<SUB>46</SUB>> ]
+"53" [label = <(CONTROL_STRUCTURE,if (exchange == null),if (exchange == null))<SUB>47</SUB>> ]
+"54" [label = <(&lt;operator&gt;.equals,exchange == null)<SUB>47</SUB>> ]
+"55" [label = <(IDENTIFIER,exchange,exchange == null)<SUB>47</SUB>> ]
+"56" [label = <(LITERAL,null,exchange == null)<SUB>47</SUB>> ]
+"57" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>47</SUB>> ]
+"58" [label = <(CONTROL_STRUCTURE,break;,break;)<SUB>48</SUB>> ]
+"59" [label = <(LOCAL,Message out: org.apache.camel.Message)> ]
+"60" [label = <(&lt;operator&gt;.assignment,Message out = getOut(false))<SUB>53</SUB>> ]
+"61" [label = <(IDENTIFIER,out,Message out = getOut(false))<SUB>53</SUB>> ]
+"62" [label = <(getOut,getOut(false))<SUB>53</SUB>> ]
+"63" [label = <(IDENTIFIER,exchange,getOut(false))<SUB>53</SUB>> ]
+"64" [label = <(LITERAL,false,getOut(false))<SUB>53</SUB>> ]
+"65" [label = <(CONTROL_STRUCTURE,if (out != null),if (out != null))<SUB>54</SUB>> ]
+"66" [label = <(&lt;operator&gt;.notEquals,out != null)<SUB>54</SUB>> ]
+"67" [label = <(IDENTIFIER,out,out != null)<SUB>54</SUB>> ]
+"68" [label = <(LITERAL,null,out != null)<SUB>54</SUB>> ]
+"69" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>54</SUB>> ]
+"70" [label = <(LOCAL,E newExchange: java.lang.Object)> ]
+"71" [label = <(&lt;operator&gt;.assignment,Object newExchange = createExchange())<SUB>56</SUB>> ]
+"72" [label = <(IDENTIFIER,newExchange,Object newExchange = createExchange())<SUB>56</SUB>> ]
+"73" [label = <(createExchange,createExchange())<SUB>56</SUB>> ]
+"74" [label = <(getEndpoint,getEndpoint())<SUB>56</SUB>> ]
+"7" [label = <(IDENTIFIER,this,getEndpoint())<SUB>56</SUB>> ]
+"75" [label = <(copyFrom,copyFrom(out))<SUB>57</SUB>> ]
+"76" [label = <(getIn,getIn())<SUB>57</SUB>> ]
+"77" [label = <(IDENTIFIER,newExchange,getIn())<SUB>57</SUB>> ]
+"78" [label = <(IDENTIFIER,out,copyFrom(out))<SUB>57</SUB>> ]
+"79" [label = <(&lt;operator&gt;.assignment,exchange = newExchange)<SUB>58</SUB>> ]
+"80" [label = <(IDENTIFIER,exchange,exchange = newExchange)<SUB>58</SUB>> ]
+"81" [label = <(IDENTIFIER,newExchange,exchange = newExchange)<SUB>58</SUB>> ]
+"82" [label = <(process,process(exchange))<SUB>60</SUB>> ]
+"83" [label = <(getProcessor,getProcessor())<SUB>60</SUB>> ]
+"9" [label = <(IDENTIFIER,this,getProcessor())<SUB>60</SUB>> ]
+"84" [label = <(IDENTIFIER,exchange,process(exchange))<SUB>60</SUB>> ]
+"85" [label = <(MODIFIER,PROTECTED)> ]
+"86" [label = <(MODIFIER,VIRTUAL)> ]
+"87" [label = <(METHOD_RETURN,void)<SUB>44</SUB>> ]
+  "41" -> "8" 
+  "41" -> "42" 
+  "41" -> "85" 
+  "41" -> "86" 
+  "41" -> "87" 
+  "42" -> "43" 
+  "43" -> "44" 
+  "43" -> "45" 
+  "45" -> "46" 
+  "45" -> "47" 
+  "45" -> "53" 
+  "45" -> "59" 
+  "45" -> "60" 
+  "45" -> "65" 
+  "45" -> "82" 
+  "47" -> "48" 
+  "47" -> "49" 
+  "49" -> "50" 
+  "50" -> "51" 
+  "50" -> "52" 
+  "53" -> "54" 
+  "53" -> "57" 
+  "54" -> "55" 
+  "54" -> "56" 
+  "57" -> "58" 
+  "60" -> "61" 
+  "60" -> "62" 
+  "62" -> "63" 
+  "62" -> "64" 
+  "65" -> "66" 
+  "65" -> "69" 
+  "66" -> "67" 
+  "66" -> "68" 
+  "69" -> "70" 
+  "69" -> "71" 
+  "69" -> "75" 
+  "69" -> "79" 
+  "71" -> "72" 
+  "71" -> "73" 
+  "73" -> "74" 
+  "74" -> "7" 
+  "75" -> "76" 
+  "75" -> "78" 
+  "76" -> "77" 
+  "79" -> "80" 
+  "79" -> "81" 
+  "82" -> "83" 
+  "82" -> "84" 
+  "83" -> "9" 
+}

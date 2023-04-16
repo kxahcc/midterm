@@ -1,0 +1,143 @@
+digraph "toByteBuffer" {  
+"150" [label = <(METHOD,toByteBuffer)<SUB>88</SUB>> ]
+"151" [label = <(PARAM,String value)<SUB>89</SUB>> ]
+"152" [label = <(PARAM,Exchange exchange)<SUB>89</SUB>> ]
+"153" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>89</SUB>> ]
+"154" [label = <(LOCAL,ByteBuffer buf: java.nio.ByteBuffer)> ]
+"155" [label = <(&lt;operator&gt;.assignment,ByteBuffer buf = ByteBuffer.allocate(value.length()))<SUB>90</SUB>> ]
+"156" [label = <(IDENTIFIER,buf,ByteBuffer buf = ByteBuffer.allocate(value.length()))<SUB>90</SUB>> ]
+"157" [label = <(allocate,ByteBuffer.allocate(value.length()))<SUB>90</SUB>> ]
+"158" [label = <(IDENTIFIER,ByteBuffer,ByteBuffer.allocate(value.length()))<SUB>90</SUB>> ]
+"159" [label = <(length,value.length())<SUB>90</SUB>> ]
+"160" [label = <(IDENTIFIER,value,value.length())<SUB>90</SUB>> ]
+"161" [label = <(LOCAL,byte[] bytes: byte[])> ]
+"162" [label = <(&lt;operator&gt;.assignment,byte[] bytes = null)<SUB>91</SUB>> ]
+"163" [label = <(IDENTIFIER,bytes,byte[] bytes = null)<SUB>91</SUB>> ]
+"164" [label = <(LITERAL,null,byte[] bytes = null)<SUB>91</SUB>> ]
+"165" [label = <(CONTROL_STRUCTURE,if (exchange != null),if (exchange != null))<SUB>92</SUB>> ]
+"166" [label = <(&lt;operator&gt;.notEquals,exchange != null)<SUB>92</SUB>> ]
+"167" [label = <(IDENTIFIER,exchange,exchange != null)<SUB>92</SUB>> ]
+"168" [label = <(LITERAL,null,exchange != null)<SUB>92</SUB>> ]
+"169" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>92</SUB>> ]
+"170" [label = <(LOCAL,String charsetName: java.lang.String)> ]
+"171" [label = <(&lt;operator&gt;.assignment,String charsetName = getProperty(Exchange.CHARSET_NAME, String.class))<SUB>93</SUB>> ]
+"172" [label = <(IDENTIFIER,charsetName,String charsetName = getProperty(Exchange.CHARSET_NAME, String.class))<SUB>93</SUB>> ]
+"173" [label = <(getProperty,getProperty(Exchange.CHARSET_NAME, String.class))<SUB>93</SUB>> ]
+"174" [label = <(IDENTIFIER,exchange,getProperty(Exchange.CHARSET_NAME, String.class))<SUB>93</SUB>> ]
+"175" [label = <(&lt;operator&gt;.fieldAccess,Exchange.CHARSET_NAME)<SUB>93</SUB>> ]
+"176" [label = <(IDENTIFIER,Exchange,getProperty(Exchange.CHARSET_NAME, String.class))<SUB>93</SUB>> ]
+"177" [label = <(FIELD_IDENTIFIER,CHARSET_NAME,CHARSET_NAME)<SUB>93</SUB>> ]
+"178" [label = <(&lt;operator&gt;.fieldAccess,String.class)<SUB>93</SUB>> ]
+"179" [label = <(IDENTIFIER,String,getProperty(Exchange.CHARSET_NAME, String.class))<SUB>93</SUB>> ]
+"180" [label = <(FIELD_IDENTIFIER,class,class)<SUB>93</SUB>> ]
+"181" [label = <(CONTROL_STRUCTURE,if (charsetName != null),if (charsetName != null))<SUB>94</SUB>> ]
+"182" [label = <(&lt;operator&gt;.notEquals,charsetName != null)<SUB>94</SUB>> ]
+"183" [label = <(IDENTIFIER,charsetName,charsetName != null)<SUB>94</SUB>> ]
+"184" [label = <(LITERAL,null,charsetName != null)<SUB>94</SUB>> ]
+"185" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>94</SUB>> ]
+"186" [label = <(CONTROL_STRUCTURE,try,try)<SUB>95</SUB>> ]
+"187" [label = <(BLOCK,try,try)<SUB>95</SUB>> ]
+"188" [label = <(&lt;operator&gt;.assignment,bytes = value.getBytes(charsetName))<SUB>96</SUB>> ]
+"189" [label = <(IDENTIFIER,bytes,bytes = value.getBytes(charsetName))<SUB>96</SUB>> ]
+"190" [label = <(getBytes,value.getBytes(charsetName))<SUB>96</SUB>> ]
+"191" [label = <(IDENTIFIER,value,value.getBytes(charsetName))<SUB>96</SUB>> ]
+"192" [label = <(IDENTIFIER,charsetName,value.getBytes(charsetName))<SUB>96</SUB>> ]
+"193" [label = <(BLOCK,catch,catch)> ]
+"194" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>97</SUB>> ]
+"195" [label = <(warn,warn(&quot;Can't convert the byte to String with the charset &quot; + charsetName, e))<SUB>98</SUB>> ]
+"196" [label = <(&lt;operator&gt;.fieldAccess,NIOConverter.LOG)<SUB>98</SUB>> ]
+"197" [label = <(IDENTIFIER,NIOConverter,warn(&quot;Can't convert the byte to String with the charset &quot; + charsetName, e))<SUB>98</SUB>> ]
+"198" [label = <(FIELD_IDENTIFIER,LOG,LOG)<SUB>98</SUB>> ]
+"199" [label = <(&lt;operator&gt;.addition,&quot;Can't convert the byte to String with the charset &quot; + charsetName)<SUB>98</SUB>> ]
+"200" [label = <(LITERAL,&quot;Can't convert the byte to String with the charset &quot;,&quot;Can't convert the byte to String with the charset &quot; + charsetName)<SUB>98</SUB>> ]
+"201" [label = <(IDENTIFIER,charsetName,&quot;Can't convert the byte to String with the charset &quot; + charsetName)<SUB>98</SUB>> ]
+"202" [label = <(IDENTIFIER,e,warn(&quot;Can't convert the byte to String with the charset &quot; + charsetName, e))<SUB>98</SUB>> ]
+"203" [label = <(CONTROL_STRUCTURE,if (bytes == null),if (bytes == null))<SUB>102</SUB>> ]
+"204" [label = <(&lt;operator&gt;.equals,bytes == null)<SUB>102</SUB>> ]
+"205" [label = <(IDENTIFIER,bytes,bytes == null)<SUB>102</SUB>> ]
+"206" [label = <(LITERAL,null,bytes == null)<SUB>102</SUB>> ]
+"207" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>102</SUB>> ]
+"208" [label = <(&lt;operator&gt;.assignment,bytes = value.getBytes())<SUB>103</SUB>> ]
+"209" [label = <(IDENTIFIER,bytes,bytes = value.getBytes())<SUB>103</SUB>> ]
+"210" [label = <(getBytes,value.getBytes())<SUB>103</SUB>> ]
+"211" [label = <(IDENTIFIER,value,value.getBytes())<SUB>103</SUB>> ]
+"212" [label = <(put,buf.put(bytes))<SUB>105</SUB>> ]
+"213" [label = <(IDENTIFIER,buf,buf.put(bytes))<SUB>105</SUB>> ]
+"214" [label = <(IDENTIFIER,bytes,buf.put(bytes))<SUB>105</SUB>> ]
+"215" [label = <(RETURN,return buf;,return buf;)<SUB>106</SUB>> ]
+"216" [label = <(IDENTIFIER,buf,return buf;)<SUB>106</SUB>> ]
+"217" [label = <(MODIFIER,PUBLIC)> ]
+"218" [label = <(MODIFIER,STATIC)> ]
+"219" [label = <(ANNOTATION,@Converter,@Converter)<SUB>88</SUB>> ]
+"220" [label = <(METHOD_RETURN,java.nio.ByteBuffer)<SUB>89</SUB>> ]
+  "150" -> "151" 
+  "150" -> "152" 
+  "150" -> "153" 
+  "150" -> "217" 
+  "150" -> "218" 
+  "150" -> "219" 
+  "150" -> "220" 
+  "153" -> "154" 
+  "153" -> "155" 
+  "153" -> "161" 
+  "153" -> "162" 
+  "153" -> "165" 
+  "153" -> "203" 
+  "153" -> "212" 
+  "153" -> "215" 
+  "155" -> "156" 
+  "155" -> "157" 
+  "157" -> "158" 
+  "157" -> "159" 
+  "159" -> "160" 
+  "162" -> "163" 
+  "162" -> "164" 
+  "165" -> "166" 
+  "165" -> "169" 
+  "166" -> "167" 
+  "166" -> "168" 
+  "169" -> "170" 
+  "169" -> "171" 
+  "169" -> "181" 
+  "171" -> "172" 
+  "171" -> "173" 
+  "173" -> "174" 
+  "173" -> "175" 
+  "173" -> "178" 
+  "175" -> "176" 
+  "175" -> "177" 
+  "178" -> "179" 
+  "178" -> "180" 
+  "181" -> "182" 
+  "181" -> "185" 
+  "182" -> "183" 
+  "182" -> "184" 
+  "185" -> "186" 
+  "186" -> "187" 
+  "186" -> "193" 
+  "187" -> "188" 
+  "188" -> "189" 
+  "188" -> "190" 
+  "190" -> "191" 
+  "190" -> "192" 
+  "193" -> "194" 
+  "194" -> "195" 
+  "195" -> "196" 
+  "195" -> "199" 
+  "195" -> "202" 
+  "196" -> "197" 
+  "196" -> "198" 
+  "199" -> "200" 
+  "199" -> "201" 
+  "203" -> "204" 
+  "203" -> "207" 
+  "204" -> "205" 
+  "204" -> "206" 
+  "207" -> "208" 
+  "208" -> "209" 
+  "208" -> "210" 
+  "210" -> "211" 
+  "212" -> "213" 
+  "212" -> "214" 
+  "215" -> "216" 
+}

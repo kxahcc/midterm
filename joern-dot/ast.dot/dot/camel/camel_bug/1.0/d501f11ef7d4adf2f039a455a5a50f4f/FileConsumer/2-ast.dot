@@ -1,0 +1,123 @@
+digraph "pollFileOrDirectory" {  
+"114" [label = <(METHOD,pollFileOrDirectory)<SUB>51</SUB>> ]
+"10" [label = <(PARAM,this)<SUB>51</SUB>> ]
+"115" [label = <(PARAM,File fileOrDirectory)<SUB>51</SUB>> ]
+"116" [label = <(PARAM,boolean processDir)<SUB>51</SUB>> ]
+"117" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>51</SUB>> ]
+"118" [label = <(CONTROL_STRUCTURE,if (!fileOrDirectory.isDirectory()),if (!fileOrDirectory.isDirectory()))<SUB>52</SUB>> ]
+"119" [label = <(&lt;operator&gt;.logicalNot,!fileOrDirectory.isDirectory())<SUB>52</SUB>> ]
+"120" [label = <(isDirectory,fileOrDirectory.isDirectory())<SUB>52</SUB>> ]
+"121" [label = <(IDENTIFIER,fileOrDirectory,fileOrDirectory.isDirectory())<SUB>52</SUB>> ]
+"122" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>52</SUB>> ]
+"123" [label = <(pollFile,this.pollFile(fileOrDirectory))<SUB>53</SUB>> ]
+"9" [label = <(IDENTIFIER,this,this.pollFile(fileOrDirectory))<SUB>53</SUB>> ]
+"124" [label = <(IDENTIFIER,fileOrDirectory,this.pollFile(fileOrDirectory))<SUB>53</SUB>> ]
+"125" [label = <(CONTROL_STRUCTURE,else,else)<SUB>55</SUB>> ]
+"126" [label = <(CONTROL_STRUCTURE,if (processDir),if (processDir))<SUB>55</SUB>> ]
+"127" [label = <(IDENTIFIER,processDir,if (processDir))<SUB>55</SUB>> ]
+"128" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>55</SUB>> ]
+"129" [label = <(debug,debug(&quot;Polling directory &quot; + fileOrDirectory))<SUB>56</SUB>> ]
+"130" [label = <(&lt;operator&gt;.fieldAccess,FileConsumer.log)<SUB>56</SUB>> ]
+"131" [label = <(IDENTIFIER,FileConsumer,debug(&quot;Polling directory &quot; + fileOrDirectory))<SUB>56</SUB>> ]
+"132" [label = <(FIELD_IDENTIFIER,log,log)<SUB>56</SUB>> ]
+"133" [label = <(&lt;operator&gt;.addition,&quot;Polling directory &quot; + fileOrDirectory)<SUB>56</SUB>> ]
+"134" [label = <(LITERAL,&quot;Polling directory &quot;,&quot;Polling directory &quot; + fileOrDirectory)<SUB>56</SUB>> ]
+"135" [label = <(IDENTIFIER,fileOrDirectory,&quot;Polling directory &quot; + fileOrDirectory)<SUB>56</SUB>> ]
+"136" [label = <(LOCAL,File[] files: java.io.File[])> ]
+"137" [label = <(&lt;operator&gt;.assignment,File[] files = fileOrDirectory.listFiles())<SUB>57</SUB>> ]
+"138" [label = <(IDENTIFIER,files,File[] files = fileOrDirectory.listFiles())<SUB>57</SUB>> ]
+"139" [label = <(listFiles,fileOrDirectory.listFiles())<SUB>57</SUB>> ]
+"140" [label = <(IDENTIFIER,fileOrDirectory,fileOrDirectory.listFiles())<SUB>57</SUB>> ]
+"141" [label = <(CONTROL_STRUCTURE,for (int i = 0; Some(i &lt; files.length); i++),for (int i = 0; Some(i &lt; files.length); i++))<SUB>58</SUB>> ]
+"142" [label = <(LOCAL,int i: int)> ]
+"143" [label = <(&lt;operator&gt;.assignment,int i = 0)<SUB>58</SUB>> ]
+"144" [label = <(IDENTIFIER,i,int i = 0)<SUB>58</SUB>> ]
+"145" [label = <(LITERAL,0,int i = 0)<SUB>58</SUB>> ]
+"146" [label = <(&lt;operator&gt;.lessThan,i &lt; files.length)<SUB>58</SUB>> ]
+"147" [label = <(IDENTIFIER,i,i &lt; files.length)<SUB>58</SUB>> ]
+"148" [label = <(&lt;operator&gt;.fieldAccess,files.length)<SUB>58</SUB>> ]
+"149" [label = <(IDENTIFIER,files,i &lt; files.length)<SUB>58</SUB>> ]
+"150" [label = <(FIELD_IDENTIFIER,length,length)<SUB>58</SUB>> ]
+"151" [label = <(&lt;operator&gt;.postIncrement,i++)<SUB>58</SUB>> ]
+"152" [label = <(IDENTIFIER,i,i++)<SUB>58</SUB>> ]
+"153" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>58</SUB>> ]
+"154" [label = <(pollFileOrDirectory,this.pollFileOrDirectory(files[i], isRecursive()))<SUB>59</SUB>> ]
+"12" [label = <(IDENTIFIER,this,this.pollFileOrDirectory(files[i], isRecursive()))<SUB>59</SUB>> ]
+"155" [label = <(&lt;operator&gt;.indexAccess,files[i])<SUB>59</SUB>> ]
+"156" [label = <(IDENTIFIER,files,this.pollFileOrDirectory(files[i], isRecursive()))<SUB>59</SUB>> ]
+"157" [label = <(IDENTIFIER,i,this.pollFileOrDirectory(files[i], isRecursive()))<SUB>59</SUB>> ]
+"158" [label = <(isRecursive,this.isRecursive())<SUB>59</SUB>> ]
+"11" [label = <(IDENTIFIER,this,this.isRecursive())<SUB>59</SUB>> ]
+"159" [label = <(CONTROL_STRUCTURE,else,else)<SUB>62</SUB>> ]
+"160" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>62</SUB>> ]
+"161" [label = <(debug,debug(&quot;Skipping directory &quot; + fileOrDirectory))<SUB>63</SUB>> ]
+"162" [label = <(&lt;operator&gt;.fieldAccess,FileConsumer.log)<SUB>63</SUB>> ]
+"163" [label = <(IDENTIFIER,FileConsumer,debug(&quot;Skipping directory &quot; + fileOrDirectory))<SUB>63</SUB>> ]
+"164" [label = <(FIELD_IDENTIFIER,log,log)<SUB>63</SUB>> ]
+"165" [label = <(&lt;operator&gt;.addition,&quot;Skipping directory &quot; + fileOrDirectory)<SUB>63</SUB>> ]
+"166" [label = <(LITERAL,&quot;Skipping directory &quot;,&quot;Skipping directory &quot; + fileOrDirectory)<SUB>63</SUB>> ]
+"167" [label = <(IDENTIFIER,fileOrDirectory,&quot;Skipping directory &quot; + fileOrDirectory)<SUB>63</SUB>> ]
+"168" [label = <(MODIFIER,PROTECTED)> ]
+"169" [label = <(MODIFIER,VIRTUAL)> ]
+"170" [label = <(METHOD_RETURN,void)<SUB>51</SUB>> ]
+  "114" -> "10" 
+  "114" -> "115" 
+  "114" -> "116" 
+  "114" -> "117" 
+  "114" -> "168" 
+  "114" -> "169" 
+  "114" -> "170" 
+  "117" -> "118" 
+  "118" -> "119" 
+  "118" -> "122" 
+  "118" -> "125" 
+  "119" -> "120" 
+  "120" -> "121" 
+  "122" -> "123" 
+  "123" -> "9" 
+  "123" -> "124" 
+  "125" -> "126" 
+  "126" -> "127" 
+  "126" -> "128" 
+  "126" -> "159" 
+  "128" -> "129" 
+  "128" -> "136" 
+  "128" -> "137" 
+  "128" -> "141" 
+  "129" -> "130" 
+  "129" -> "133" 
+  "130" -> "131" 
+  "130" -> "132" 
+  "133" -> "134" 
+  "133" -> "135" 
+  "137" -> "138" 
+  "137" -> "139" 
+  "139" -> "140" 
+  "141" -> "142" 
+  "141" -> "143" 
+  "141" -> "146" 
+  "141" -> "151" 
+  "141" -> "153" 
+  "143" -> "144" 
+  "143" -> "145" 
+  "146" -> "147" 
+  "146" -> "148" 
+  "148" -> "149" 
+  "148" -> "150" 
+  "151" -> "152" 
+  "153" -> "154" 
+  "154" -> "12" 
+  "154" -> "155" 
+  "154" -> "158" 
+  "155" -> "156" 
+  "155" -> "157" 
+  "158" -> "11" 
+  "159" -> "160" 
+  "160" -> "161" 
+  "161" -> "162" 
+  "161" -> "165" 
+  "162" -> "163" 
+  "162" -> "164" 
+  "165" -> "166" 
+  "165" -> "167" 
+}

@@ -1,0 +1,99 @@
+digraph "onServiceAdd" {  
+"307" [label = <(METHOD,onServiceAdd)<SUB>138</SUB>> ]
+"25" [label = <(PARAM,this)<SUB>138</SUB>> ]
+"308" [label = <(PARAM,CamelContext context)<SUB>138</SUB>> ]
+"309" [label = <(PARAM,Service service)<SUB>138</SUB>> ]
+"310" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>138</SUB>> ]
+"311" [label = <(CONTROL_STRUCTURE,if (!initialized),if (!initialized))<SUB>141</SUB>> ]
+"312" [label = <(&lt;operator&gt;.logicalNot,!initialized)<SUB>141</SUB>> ]
+"313" [label = <(&lt;operator&gt;.fieldAccess,this.initialized)<SUB>141</SUB>> ]
+"314" [label = <(IDENTIFIER,this,!initialized)<SUB>141</SUB>> ]
+"315" [label = <(FIELD_IDENTIFIER,initialized,initialized)<SUB>141</SUB>> ]
+"316" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>141</SUB>> ]
+"317" [label = <(RETURN,return;,return;)<SUB>142</SUB>> ]
+"318" [label = <(CONTROL_STRUCTURE,if (service instanceof ServiceSupport),if (service instanceof ServiceSupport))<SUB>144</SUB>> ]
+"319" [label = <(&lt;operator&gt;.instanceOf,service instanceof ServiceSupport)<SUB>144</SUB>> ]
+"320" [label = <(IDENTIFIER,service,service instanceof ServiceSupport)<SUB>144</SUB>> ]
+"321" [label = <(TYPE_REF,ServiceSupport,ServiceSupport)<SUB>144</SUB>> ]
+"322" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>144</SUB>> ]
+"323" [label = <(CONTROL_STRUCTURE,try,try)<SUB>145</SUB>> ]
+"324" [label = <(BLOCK,try,try)<SUB>145</SUB>> ]
+"23" [label = <(LOCAL,ManagedService ms: ANY)> ]
+"325" [label = <(&lt;operator&gt;.assignment,ANY ms = new ManagedService((ServiceSupport) service))<SUB>146</SUB>> ]
+"326" [label = <(IDENTIFIER,ms,ANY ms = new ManagedService((ServiceSupport) service))<SUB>146</SUB>> ]
+"327" [label = <(&lt;operator&gt;.alloc,new ManagedService((ServiceSupport) service))<SUB>146</SUB>> ]
+"328" [label = <(&lt;init&gt;,new ManagedService((ServiceSupport) service))<SUB>146</SUB>> ]
+"22" [label = <(IDENTIFIER,ms,new ManagedService((ServiceSupport) service))<SUB>146</SUB>> ]
+"329" [label = <(&lt;operator&gt;.cast,(ServiceSupport) service)<SUB>146</SUB>> ]
+"330" [label = <(TYPE_REF,ServiceSupport,ServiceSupport)<SUB>146</SUB>> ]
+"331" [label = <(IDENTIFIER,service,(ServiceSupport) service)<SUB>146</SUB>> ]
+"332" [label = <(register,register(ms, getNamingStrategy().getObjectName(context, ms)))<SUB>147</SUB>> ]
+"333" [label = <(&lt;operator&gt;.fieldAccess,this.agent)<SUB>147</SUB>> ]
+"334" [label = <(IDENTIFIER,this,register(ms, getNamingStrategy().getObjectName(context, ms)))<SUB>147</SUB>> ]
+"335" [label = <(FIELD_IDENTIFIER,agent,agent)<SUB>147</SUB>> ]
+"336" [label = <(IDENTIFIER,ms,register(ms, getNamingStrategy().getObjectName(context, ms)))<SUB>147</SUB>> ]
+"337" [label = <(getObjectName,getObjectName(context, ms))<SUB>147</SUB>> ]
+"338" [label = <(getNamingStrategy,this.getNamingStrategy())<SUB>147</SUB>> ]
+"24" [label = <(IDENTIFIER,this,this.getNamingStrategy())<SUB>147</SUB>> ]
+"339" [label = <(IDENTIFIER,context,getObjectName(context, ms))<SUB>147</SUB>> ]
+"340" [label = <(IDENTIFIER,ms,getObjectName(context, ms))<SUB>147</SUB>> ]
+"341" [label = <(BLOCK,catch,catch)> ]
+"342" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>148</SUB>> ]
+"343" [label = <(warn,warn(&quot;Could not register Service MBean&quot;, e))<SUB>149</SUB>> ]
+"344" [label = <(&lt;operator&gt;.fieldAccess,InstrumentationLifecycleStrategy.LOG)<SUB>149</SUB>> ]
+"345" [label = <(IDENTIFIER,InstrumentationLifecycleStrategy,warn(&quot;Could not register Service MBean&quot;, e))<SUB>149</SUB>> ]
+"346" [label = <(FIELD_IDENTIFIER,LOG,LOG)<SUB>149</SUB>> ]
+"347" [label = <(LITERAL,&quot;Could not register Service MBean&quot;,warn(&quot;Could not register Service MBean&quot;, e))<SUB>149</SUB>> ]
+"348" [label = <(IDENTIFIER,e,warn(&quot;Could not register Service MBean&quot;, e))<SUB>149</SUB>> ]
+"349" [label = <(MODIFIER,PUBLIC)> ]
+"350" [label = <(MODIFIER,VIRTUAL)> ]
+"351" [label = <(METHOD_RETURN,void)<SUB>138</SUB>> ]
+  "307" -> "25" 
+  "307" -> "308" 
+  "307" -> "309" 
+  "307" -> "310" 
+  "307" -> "349" 
+  "307" -> "350" 
+  "307" -> "351" 
+  "310" -> "311" 
+  "310" -> "318" 
+  "311" -> "312" 
+  "311" -> "316" 
+  "312" -> "313" 
+  "313" -> "314" 
+  "313" -> "315" 
+  "316" -> "317" 
+  "318" -> "319" 
+  "318" -> "322" 
+  "319" -> "320" 
+  "319" -> "321" 
+  "322" -> "323" 
+  "323" -> "324" 
+  "323" -> "341" 
+  "324" -> "23" 
+  "324" -> "325" 
+  "324" -> "328" 
+  "324" -> "332" 
+  "325" -> "326" 
+  "325" -> "327" 
+  "328" -> "22" 
+  "328" -> "329" 
+  "329" -> "330" 
+  "329" -> "331" 
+  "332" -> "333" 
+  "332" -> "336" 
+  "332" -> "337" 
+  "333" -> "334" 
+  "333" -> "335" 
+  "337" -> "338" 
+  "337" -> "339" 
+  "337" -> "340" 
+  "338" -> "24" 
+  "341" -> "342" 
+  "342" -> "343" 
+  "343" -> "344" 
+  "343" -> "347" 
+  "343" -> "348" 
+  "344" -> "345" 
+  "344" -> "346" 
+}

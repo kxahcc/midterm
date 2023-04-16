@@ -1,0 +1,143 @@
+digraph "getManifestFromJar" {  
+"392" [label = <(METHOD,getManifestFromJar)<SUB>269</SUB>> ]
+"27" [label = <(PARAM,this)<SUB>269</SUB>> ]
+"393" [label = <(PARAM,File jarFile)<SUB>269</SUB>> ]
+"394" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>269</SUB>> ]
+"23" [label = <(LOCAL,ZipFile zf: java.util.zip.ZipFile)> ]
+"395" [label = <(&lt;operator&gt;.assignment,ZipFile zf = null)<SUB>270</SUB>> ]
+"396" [label = <(IDENTIFIER,zf,ZipFile zf = null)<SUB>270</SUB>> ]
+"397" [label = <(LITERAL,null,ZipFile zf = null)<SUB>270</SUB>> ]
+"398" [label = <(CONTROL_STRUCTURE,try,try)<SUB>271</SUB>> ]
+"399" [label = <(BLOCK,try,try)<SUB>271</SUB>> ]
+"400" [label = <(&lt;operator&gt;.assignment,zf = new ZipFile(jarFile))<SUB>272</SUB>> ]
+"401" [label = <(IDENTIFIER,zf,zf = new ZipFile(jarFile))<SUB>272</SUB>> ]
+"402" [label = <(&lt;operator&gt;.alloc,new ZipFile(jarFile))<SUB>272</SUB>> ]
+"403" [label = <(&lt;init&gt;,new ZipFile(jarFile))<SUB>272</SUB>> ]
+"22" [label = <(IDENTIFIER,zf,new ZipFile(jarFile))<SUB>272</SUB>> ]
+"404" [label = <(IDENTIFIER,jarFile,new ZipFile(jarFile))<SUB>272</SUB>> ]
+"405" [label = <(LOCAL,Enumeration e: java.util.Enumeration)> ]
+"406" [label = <(&lt;operator&gt;.assignment,Enumeration e = zf.entries())<SUB>276</SUB>> ]
+"407" [label = <(IDENTIFIER,e,Enumeration e = zf.entries())<SUB>276</SUB>> ]
+"408" [label = <(entries,zf.entries())<SUB>276</SUB>> ]
+"409" [label = <(IDENTIFIER,zf,zf.entries())<SUB>276</SUB>> ]
+"410" [label = <(CONTROL_STRUCTURE,while (e.hasMoreElements()),while (e.hasMoreElements()))<SUB>277</SUB>> ]
+"411" [label = <(hasMoreElements,e.hasMoreElements())<SUB>277</SUB>> ]
+"412" [label = <(IDENTIFIER,e,e.hasMoreElements())<SUB>277</SUB>> ]
+"413" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>277</SUB>> ]
+"414" [label = <(LOCAL,ZipEntry ze: java.util.zip.ZipEntry)> ]
+"415" [label = <(&lt;operator&gt;.assignment,ZipEntry ze = (ZipEntry) e.nextElement())<SUB>278</SUB>> ]
+"416" [label = <(IDENTIFIER,ze,ZipEntry ze = (ZipEntry) e.nextElement())<SUB>278</SUB>> ]
+"417" [label = <(&lt;operator&gt;.cast,(ZipEntry) e.nextElement())<SUB>278</SUB>> ]
+"418" [label = <(TYPE_REF,ZipEntry,ZipEntry)<SUB>278</SUB>> ]
+"419" [label = <(nextElement,e.nextElement())<SUB>278</SUB>> ]
+"420" [label = <(IDENTIFIER,e,e.nextElement())<SUB>278</SUB>> ]
+"421" [label = <(CONTROL_STRUCTURE,if (ze.getName().equalsIgnoreCase(MANIFEST_NAME)),if (ze.getName().equalsIgnoreCase(MANIFEST_NAME)))<SUB>279</SUB>> ]
+"422" [label = <(equalsIgnoreCase,ze.getName().equalsIgnoreCase(MANIFEST_NAME))<SUB>279</SUB>> ]
+"423" [label = <(getName,ze.getName())<SUB>279</SUB>> ]
+"424" [label = <(IDENTIFIER,ze,ze.getName())<SUB>279</SUB>> ]
+"425" [label = <(&lt;operator&gt;.fieldAccess,Jar.MANIFEST_NAME)<SUB>279</SUB>> ]
+"426" [label = <(IDENTIFIER,Jar,ze.getName().equalsIgnoreCase(MANIFEST_NAME))<SUB>279</SUB>> ]
+"427" [label = <(FIELD_IDENTIFIER,MANIFEST_NAME,MANIFEST_NAME)<SUB>279</SUB>> ]
+"428" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>279</SUB>> ]
+"25" [label = <(LOCAL,InputStreamReader isr: java.io.InputStreamReader)> ]
+"429" [label = <(&lt;operator&gt;.assignment,InputStreamReader isr = new InputStreamReader(zf.getInputStream(ze), &quot;UTF-8&quot;))<SUB>280</SUB>> ]
+"430" [label = <(IDENTIFIER,isr,InputStreamReader isr = new InputStreamReader(zf.getInputStream(ze), &quot;UTF-8&quot;))<SUB>280</SUB>> ]
+"431" [label = <(&lt;operator&gt;.alloc,new InputStreamReader(zf.getInputStream(ze), &quot;UTF-8&quot;))<SUB>281</SUB>> ]
+"432" [label = <(&lt;init&gt;,new InputStreamReader(zf.getInputStream(ze), &quot;UTF-8&quot;))<SUB>281</SUB>> ]
+"24" [label = <(IDENTIFIER,isr,new InputStreamReader(zf.getInputStream(ze), &quot;UTF-8&quot;))<SUB>280</SUB>> ]
+"433" [label = <(getInputStream,zf.getInputStream(ze))<SUB>281</SUB>> ]
+"434" [label = <(IDENTIFIER,zf,zf.getInputStream(ze))<SUB>281</SUB>> ]
+"435" [label = <(IDENTIFIER,ze,zf.getInputStream(ze))<SUB>281</SUB>> ]
+"436" [label = <(LITERAL,&quot;UTF-8&quot;,new InputStreamReader(zf.getInputStream(ze), &quot;UTF-8&quot;))<SUB>281</SUB>> ]
+"437" [label = <(RETURN,return getManifest(isr);,return getManifest(isr);)<SUB>282</SUB>> ]
+"438" [label = <(getManifest,this.getManifest(isr))<SUB>282</SUB>> ]
+"26" [label = <(IDENTIFIER,this,this.getManifest(isr))<SUB>282</SUB>> ]
+"439" [label = <(IDENTIFIER,isr,this.getManifest(isr))<SUB>282</SUB>> ]
+"440" [label = <(RETURN,return null;,return null;)<SUB>285</SUB>> ]
+"441" [label = <(LITERAL,null,return null;)<SUB>285</SUB>> ]
+"442" [label = <(BLOCK,finally,finally)<SUB>286</SUB>> ]
+"443" [label = <(CONTROL_STRUCTURE,if (zf != null),if (zf != null))<SUB>287</SUB>> ]
+"444" [label = <(&lt;operator&gt;.notEquals,zf != null)<SUB>287</SUB>> ]
+"445" [label = <(IDENTIFIER,zf,zf != null)<SUB>287</SUB>> ]
+"446" [label = <(LITERAL,null,zf != null)<SUB>287</SUB>> ]
+"447" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>287</SUB>> ]
+"448" [label = <(CONTROL_STRUCTURE,try,try)<SUB>288</SUB>> ]
+"449" [label = <(BLOCK,try,try)<SUB>288</SUB>> ]
+"450" [label = <(close,zf.close())<SUB>289</SUB>> ]
+"451" [label = <(IDENTIFIER,zf,zf.close())<SUB>289</SUB>> ]
+"452" [label = <(BLOCK,catch,catch)> ]
+"453" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>290</SUB>> ]
+"454" [label = <(MODIFIER,PRIVATE)> ]
+"455" [label = <(MODIFIER,VIRTUAL)> ]
+"456" [label = <(METHOD_RETURN,ANY)<SUB>269</SUB>> ]
+  "392" -> "27" 
+  "392" -> "393" 
+  "392" -> "394" 
+  "392" -> "454" 
+  "392" -> "455" 
+  "392" -> "456" 
+  "394" -> "23" 
+  "394" -> "395" 
+  "394" -> "398" 
+  "395" -> "396" 
+  "395" -> "397" 
+  "398" -> "399" 
+  "398" -> "442" 
+  "399" -> "400" 
+  "399" -> "403" 
+  "399" -> "405" 
+  "399" -> "406" 
+  "399" -> "410" 
+  "399" -> "440" 
+  "400" -> "401" 
+  "400" -> "402" 
+  "403" -> "22" 
+  "403" -> "404" 
+  "406" -> "407" 
+  "406" -> "408" 
+  "408" -> "409" 
+  "410" -> "411" 
+  "410" -> "413" 
+  "411" -> "412" 
+  "413" -> "414" 
+  "413" -> "415" 
+  "413" -> "421" 
+  "415" -> "416" 
+  "415" -> "417" 
+  "417" -> "418" 
+  "417" -> "419" 
+  "419" -> "420" 
+  "421" -> "422" 
+  "421" -> "428" 
+  "422" -> "423" 
+  "422" -> "425" 
+  "423" -> "424" 
+  "425" -> "426" 
+  "425" -> "427" 
+  "428" -> "25" 
+  "428" -> "429" 
+  "428" -> "432" 
+  "428" -> "437" 
+  "429" -> "430" 
+  "429" -> "431" 
+  "432" -> "24" 
+  "432" -> "433" 
+  "432" -> "436" 
+  "433" -> "434" 
+  "433" -> "435" 
+  "437" -> "438" 
+  "438" -> "26" 
+  "438" -> "439" 
+  "440" -> "441" 
+  "442" -> "443" 
+  "443" -> "444" 
+  "443" -> "447" 
+  "444" -> "445" 
+  "444" -> "446" 
+  "447" -> "448" 
+  "448" -> "449" 
+  "448" -> "452" 
+  "449" -> "450" 
+  "450" -> "451" 
+  "452" -> "453" 
+}

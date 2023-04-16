@@ -1,0 +1,223 @@
+digraph "resolveEntity" {  
+"1688" [label = <(METHOD,resolveEntity)<SUB>937</SUB>> ]
+"164" [label = <(PARAM,this)<SUB>937</SUB>> ]
+"1689" [label = <(PARAM,String publicId)<SUB>937</SUB>> ]
+"1690" [label = <(PARAM,String systemId)<SUB>938</SUB>> ]
+"1691" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>938</SUB>> ]
+"1692" [label = <(LOCAL,InputSource result: org.xml.sax.InputSource)> ]
+"1693" [label = <(&lt;operator&gt;.assignment,InputSource result = null)<SUB>939</SUB>> ]
+"1694" [label = <(IDENTIFIER,result,InputSource result = null)<SUB>939</SUB>> ]
+"1695" [label = <(LITERAL,null,InputSource result = null)<SUB>939</SUB>> ]
+"1696" [label = <(processExternalCatalogs,processExternalCatalogs())<SUB>941</SUB>> ]
+"163" [label = <(IDENTIFIER,this,processExternalCatalogs())<SUB>941</SUB>> ]
+"1697" [label = <(LOCAL,ResourceLocation matchingEntry: ANY)> ]
+"1698" [label = <(&lt;operator&gt;.assignment,ANY matchingEntry = findMatchingEntry(publicId))<SUB>943</SUB>> ]
+"1699" [label = <(IDENTIFIER,matchingEntry,ANY matchingEntry = findMatchingEntry(publicId))<SUB>943</SUB>> ]
+"1700" [label = <(findMatchingEntry,findMatchingEntry(publicId))<SUB>943</SUB>> ]
+"165" [label = <(IDENTIFIER,this,findMatchingEntry(publicId))<SUB>943</SUB>> ]
+"1701" [label = <(IDENTIFIER,publicId,findMatchingEntry(publicId))<SUB>943</SUB>> ]
+"1702" [label = <(CONTROL_STRUCTURE,if (matchingEntry != null),if (matchingEntry != null))<SUB>945</SUB>> ]
+"1703" [label = <(&lt;operator&gt;.notEquals,matchingEntry != null)<SUB>945</SUB>> ]
+"1704" [label = <(IDENTIFIER,matchingEntry,matchingEntry != null)<SUB>945</SUB>> ]
+"1705" [label = <(LITERAL,null,matchingEntry != null)<SUB>945</SUB>> ]
+"1706" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>945</SUB>> ]
+"1707" [label = <(log,log(&quot;Matching catalog entry found for publicId: '&quot; + matchingEntry.getPublicId() + &quot;' location: '&quot; + matchingEntry.getLocation() + &quot;'&quot;, Project.MSG_DEBUG))<SUB>947</SUB>> ]
+"166" [label = <(IDENTIFIER,this,log(&quot;Matching catalog entry found for publicId: '&quot; + matchingEntry.getPublicId() + &quot;' location: '&quot; + matchingEntry.getLocation() + &quot;'&quot;, Project.MSG_DEBUG))<SUB>947</SUB>> ]
+"1708" [label = <(&lt;operator&gt;.addition,&quot;Matching catalog entry found for publicId: '&quot; + matchingEntry.getPublicId() + &quot;' location: '&quot; + matchingEntry.getLocation() + &quot;'&quot;)<SUB>947</SUB>> ]
+"1709" [label = <(&lt;operator&gt;.addition,&quot;Matching catalog entry found for publicId: '&quot; + matchingEntry.getPublicId() + &quot;' location: '&quot; + matchingEntry.getLocation())<SUB>947</SUB>> ]
+"1710" [label = <(&lt;operator&gt;.addition,&quot;Matching catalog entry found for publicId: '&quot; + matchingEntry.getPublicId() + &quot;' location: '&quot;)<SUB>947</SUB>> ]
+"1711" [label = <(&lt;operator&gt;.addition,&quot;Matching catalog entry found for publicId: '&quot; + matchingEntry.getPublicId())<SUB>947</SUB>> ]
+"1712" [label = <(LITERAL,&quot;Matching catalog entry found for publicId: '&quot;,&quot;Matching catalog entry found for publicId: '&quot; + matchingEntry.getPublicId())<SUB>947</SUB>> ]
+"1713" [label = <(getPublicId,getPublicId())<SUB>948</SUB>> ]
+"1714" [label = <(IDENTIFIER,matchingEntry,getPublicId())<SUB>948</SUB>> ]
+"1715" [label = <(LITERAL,&quot;' location: '&quot;,&quot;Matching catalog entry found for publicId: '&quot; + matchingEntry.getPublicId() + &quot;' location: '&quot;)<SUB>948</SUB>> ]
+"1716" [label = <(getLocation,getLocation())<SUB>949</SUB>> ]
+"1717" [label = <(IDENTIFIER,matchingEntry,getLocation())<SUB>949</SUB>> ]
+"1718" [label = <(LITERAL,&quot;'&quot;,&quot;Matching catalog entry found for publicId: '&quot; + matchingEntry.getPublicId() + &quot;' location: '&quot; + matchingEntry.getLocation() + &quot;'&quot;)<SUB>949</SUB>> ]
+"1719" [label = <(&lt;operator&gt;.fieldAccess,Project.MSG_DEBUG)<SUB>950</SUB>> ]
+"1720" [label = <(IDENTIFIER,Project,log(&quot;Matching catalog entry found for publicId: '&quot; + matchingEntry.getPublicId() + &quot;' location: '&quot; + matchingEntry.getLocation() + &quot;'&quot;, Project.MSG_DEBUG))<SUB>950</SUB>> ]
+"1721" [label = <(FIELD_IDENTIFIER,MSG_DEBUG,MSG_DEBUG)<SUB>950</SUB>> ]
+"1722" [label = <(&lt;operator&gt;.assignment,result = filesystemLookup(matchingEntry))<SUB>952</SUB>> ]
+"1723" [label = <(IDENTIFIER,result,result = filesystemLookup(matchingEntry))<SUB>952</SUB>> ]
+"1724" [label = <(filesystemLookup,filesystemLookup(matchingEntry))<SUB>952</SUB>> ]
+"167" [label = <(IDENTIFIER,this,filesystemLookup(matchingEntry))<SUB>952</SUB>> ]
+"1725" [label = <(IDENTIFIER,matchingEntry,filesystemLookup(matchingEntry))<SUB>952</SUB>> ]
+"1726" [label = <(CONTROL_STRUCTURE,if (result == null),if (result == null))<SUB>954</SUB>> ]
+"1727" [label = <(&lt;operator&gt;.equals,result == null)<SUB>954</SUB>> ]
+"1728" [label = <(IDENTIFIER,result,result == null)<SUB>954</SUB>> ]
+"1729" [label = <(LITERAL,null,result == null)<SUB>954</SUB>> ]
+"1730" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>954</SUB>> ]
+"1731" [label = <(&lt;operator&gt;.assignment,result = classpathLookup(matchingEntry))<SUB>955</SUB>> ]
+"1732" [label = <(IDENTIFIER,result,result = classpathLookup(matchingEntry))<SUB>955</SUB>> ]
+"1733" [label = <(classpathLookup,classpathLookup(matchingEntry))<SUB>955</SUB>> ]
+"168" [label = <(IDENTIFIER,this,classpathLookup(matchingEntry))<SUB>955</SUB>> ]
+"1734" [label = <(IDENTIFIER,matchingEntry,classpathLookup(matchingEntry))<SUB>955</SUB>> ]
+"1735" [label = <(CONTROL_STRUCTURE,if (result == null),if (result == null))<SUB>958</SUB>> ]
+"1736" [label = <(&lt;operator&gt;.equals,result == null)<SUB>958</SUB>> ]
+"1737" [label = <(IDENTIFIER,result,result == null)<SUB>958</SUB>> ]
+"1738" [label = <(LITERAL,null,result == null)<SUB>958</SUB>> ]
+"1739" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>958</SUB>> ]
+"1740" [label = <(CONTROL_STRUCTURE,try,try)<SUB>959</SUB>> ]
+"1741" [label = <(BLOCK,try,try)<SUB>959</SUB>> ]
+"1742" [label = <(&lt;operator&gt;.assignment,result = (InputSource) resolveEntity.invoke(resolverImpl, new Object[] { publicId, systemId }))<SUB>960</SUB>> ]
+"1743" [label = <(IDENTIFIER,result,result = (InputSource) resolveEntity.invoke(resolverImpl, new Object[] { publicId, systemId }))<SUB>960</SUB>> ]
+"1744" [label = <(&lt;operator&gt;.cast,(InputSource) resolveEntity.invoke(resolverImpl, new Object[] { publicId, systemId }))<SUB>961</SUB>> ]
+"1745" [label = <(TYPE_REF,InputSource,InputSource)<SUB>961</SUB>> ]
+"1746" [label = <(invoke,invoke(resolverImpl, new Object[] { publicId, systemId }))<SUB>961</SUB>> ]
+"1747" [label = <(IDENTIFIER,resolveEntity,invoke(resolverImpl, new Object[] { publicId, systemId }))<SUB>961</SUB>> ]
+"1748" [label = <(IDENTIFIER,resolverImpl,invoke(resolverImpl, new Object[] { publicId, systemId }))<SUB>961</SUB>> ]
+"1749" [label = <(&lt;operator&gt;.arrayInitializer,new Object[] { publicId, systemId })<SUB>962</SUB>> ]
+"1750" [label = <(IDENTIFIER,publicId,new Object[] { publicId, systemId })<SUB>962</SUB>> ]
+"1751" [label = <(IDENTIFIER,systemId,new Object[] { publicId, systemId })<SUB>962</SUB>> ]
+"1752" [label = <(BLOCK,catch,catch)> ]
+"1753" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>963</SUB>> ]
+"1754" [label = <(&lt;operator&gt;.throw,throw new BuildException(ex);)<SUB>964</SUB>> ]
+"1755" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>964</SUB>> ]
+"1756" [label = <(&lt;operator&gt;.assignment,&lt;empty&gt;)> ]
+"1757" [label = <(IDENTIFIER,$obj28,&lt;empty&gt;)> ]
+"1758" [label = <(&lt;operator&gt;.alloc,new BuildException(ex))<SUB>964</SUB>> ]
+"1759" [label = <(&lt;init&gt;,new BuildException(ex))<SUB>964</SUB>> ]
+"1760" [label = <(IDENTIFIER,$obj28,new BuildException(ex))> ]
+"1761" [label = <(IDENTIFIER,ex,new BuildException(ex))<SUB>964</SUB>> ]
+"1762" [label = <(IDENTIFIER,$obj28,&lt;empty&gt;)> ]
+"1763" [label = <(CONTROL_STRUCTURE,else,else)<SUB>967</SUB>> ]
+"1764" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>967</SUB>> ]
+"1765" [label = <(CONTROL_STRUCTURE,try,try)<SUB>976</SUB>> ]
+"1766" [label = <(BLOCK,try,try)<SUB>976</SUB>> ]
+"1767" [label = <(&lt;operator&gt;.assignment,result = (InputSource) resolveEntity.invoke(resolverImpl, new Object[] { publicId, systemId }))<SUB>977</SUB>> ]
+"1768" [label = <(IDENTIFIER,result,result = (InputSource) resolveEntity.invoke(resolverImpl, new Object[] { publicId, systemId }))<SUB>977</SUB>> ]
+"1769" [label = <(&lt;operator&gt;.cast,(InputSource) resolveEntity.invoke(resolverImpl, new Object[] { publicId, systemId }))<SUB>978</SUB>> ]
+"1770" [label = <(TYPE_REF,InputSource,InputSource)<SUB>978</SUB>> ]
+"1771" [label = <(invoke,invoke(resolverImpl, new Object[] { publicId, systemId }))<SUB>978</SUB>> ]
+"1772" [label = <(IDENTIFIER,resolveEntity,invoke(resolverImpl, new Object[] { publicId, systemId }))<SUB>978</SUB>> ]
+"1773" [label = <(IDENTIFIER,resolverImpl,invoke(resolverImpl, new Object[] { publicId, systemId }))<SUB>978</SUB>> ]
+"1774" [label = <(&lt;operator&gt;.arrayInitializer,new Object[] { publicId, systemId })<SUB>979</SUB>> ]
+"1775" [label = <(IDENTIFIER,publicId,new Object[] { publicId, systemId })<SUB>979</SUB>> ]
+"1776" [label = <(IDENTIFIER,systemId,new Object[] { publicId, systemId })<SUB>979</SUB>> ]
+"1777" [label = <(BLOCK,catch,catch)> ]
+"1778" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>980</SUB>> ]
+"1779" [label = <(&lt;operator&gt;.throw,throw new BuildException(ex);)<SUB>981</SUB>> ]
+"1780" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>981</SUB>> ]
+"1781" [label = <(&lt;operator&gt;.assignment,&lt;empty&gt;)> ]
+"1782" [label = <(IDENTIFIER,$obj29,&lt;empty&gt;)> ]
+"1783" [label = <(&lt;operator&gt;.alloc,new BuildException(ex))<SUB>981</SUB>> ]
+"1784" [label = <(&lt;init&gt;,new BuildException(ex))<SUB>981</SUB>> ]
+"1785" [label = <(IDENTIFIER,$obj29,new BuildException(ex))> ]
+"1786" [label = <(IDENTIFIER,ex,new BuildException(ex))<SUB>981</SUB>> ]
+"1787" [label = <(IDENTIFIER,$obj29,&lt;empty&gt;)> ]
+"1788" [label = <(RETURN,return result;,return result;)<SUB>985</SUB>> ]
+"1789" [label = <(IDENTIFIER,result,return result;)<SUB>985</SUB>> ]
+"1790" [label = <(MODIFIER,PUBLIC)> ]
+"1791" [label = <(MODIFIER,VIRTUAL)> ]
+"1792" [label = <(METHOD_RETURN,org.xml.sax.InputSource)<SUB>937</SUB>> ]
+  "1688" -> "164" 
+  "1688" -> "1689" 
+  "1688" -> "1690" 
+  "1688" -> "1691" 
+  "1688" -> "1790" 
+  "1688" -> "1791" 
+  "1688" -> "1792" 
+  "1691" -> "1692" 
+  "1691" -> "1693" 
+  "1691" -> "1696" 
+  "1691" -> "1697" 
+  "1691" -> "1698" 
+  "1691" -> "1702" 
+  "1691" -> "1788" 
+  "1693" -> "1694" 
+  "1693" -> "1695" 
+  "1696" -> "163" 
+  "1698" -> "1699" 
+  "1698" -> "1700" 
+  "1700" -> "165" 
+  "1700" -> "1701" 
+  "1702" -> "1703" 
+  "1702" -> "1706" 
+  "1702" -> "1763" 
+  "1703" -> "1704" 
+  "1703" -> "1705" 
+  "1706" -> "1707" 
+  "1706" -> "1722" 
+  "1706" -> "1726" 
+  "1706" -> "1735" 
+  "1707" -> "166" 
+  "1707" -> "1708" 
+  "1707" -> "1719" 
+  "1708" -> "1709" 
+  "1708" -> "1718" 
+  "1709" -> "1710" 
+  "1709" -> "1716" 
+  "1710" -> "1711" 
+  "1710" -> "1715" 
+  "1711" -> "1712" 
+  "1711" -> "1713" 
+  "1713" -> "1714" 
+  "1716" -> "1717" 
+  "1719" -> "1720" 
+  "1719" -> "1721" 
+  "1722" -> "1723" 
+  "1722" -> "1724" 
+  "1724" -> "167" 
+  "1724" -> "1725" 
+  "1726" -> "1727" 
+  "1726" -> "1730" 
+  "1727" -> "1728" 
+  "1727" -> "1729" 
+  "1730" -> "1731" 
+  "1731" -> "1732" 
+  "1731" -> "1733" 
+  "1733" -> "168" 
+  "1733" -> "1734" 
+  "1735" -> "1736" 
+  "1735" -> "1739" 
+  "1736" -> "1737" 
+  "1736" -> "1738" 
+  "1739" -> "1740" 
+  "1740" -> "1741" 
+  "1740" -> "1752" 
+  "1741" -> "1742" 
+  "1742" -> "1743" 
+  "1742" -> "1744" 
+  "1744" -> "1745" 
+  "1744" -> "1746" 
+  "1746" -> "1747" 
+  "1746" -> "1748" 
+  "1746" -> "1749" 
+  "1749" -> "1750" 
+  "1749" -> "1751" 
+  "1752" -> "1753" 
+  "1753" -> "1754" 
+  "1754" -> "1755" 
+  "1755" -> "1756" 
+  "1755" -> "1759" 
+  "1755" -> "1762" 
+  "1756" -> "1757" 
+  "1756" -> "1758" 
+  "1759" -> "1760" 
+  "1759" -> "1761" 
+  "1763" -> "1764" 
+  "1764" -> "1765" 
+  "1765" -> "1766" 
+  "1765" -> "1777" 
+  "1766" -> "1767" 
+  "1767" -> "1768" 
+  "1767" -> "1769" 
+  "1769" -> "1770" 
+  "1769" -> "1771" 
+  "1771" -> "1772" 
+  "1771" -> "1773" 
+  "1771" -> "1774" 
+  "1774" -> "1775" 
+  "1774" -> "1776" 
+  "1777" -> "1778" 
+  "1778" -> "1779" 
+  "1779" -> "1780" 
+  "1780" -> "1781" 
+  "1780" -> "1784" 
+  "1780" -> "1787" 
+  "1781" -> "1782" 
+  "1781" -> "1783" 
+  "1784" -> "1785" 
+  "1784" -> "1786" 
+  "1788" -> "1789" 
+}

@@ -1,0 +1,115 @@
+digraph "getClassFromStream" {  
+"2580" [label = <(METHOD,getClassFromStream)<SUB>1295</SUB>> ]
+"167" [label = <(PARAM,this)<SUB>1295</SUB>> ]
+"2581" [label = <(PARAM,InputStream stream)<SUB>1295</SUB>> ]
+"2582" [label = <(PARAM,String classname)<SUB>1295</SUB>> ]
+"2583" [label = <(PARAM,File container)<SUB>1296</SUB>> ]
+"2584" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>1297</SUB>> ]
+"165" [label = <(LOCAL,ByteArrayOutputStream baos: java.io.ByteArrayOutputStream)> ]
+"2585" [label = <(&lt;operator&gt;.assignment,ByteArrayOutputStream baos = new ByteArrayOutputStream())<SUB>1298</SUB>> ]
+"2586" [label = <(IDENTIFIER,baos,ByteArrayOutputStream baos = new ByteArrayOutputStream())<SUB>1298</SUB>> ]
+"2587" [label = <(&lt;operator&gt;.alloc,new ByteArrayOutputStream())<SUB>1298</SUB>> ]
+"2588" [label = <(&lt;init&gt;,new ByteArrayOutputStream())<SUB>1298</SUB>> ]
+"164" [label = <(IDENTIFIER,baos,new ByteArrayOutputStream())<SUB>1298</SUB>> ]
+"2589" [label = <(LOCAL,int bytesRead: int)> ]
+"2590" [label = <(&lt;operator&gt;.assignment,int bytesRead = -1)<SUB>1299</SUB>> ]
+"2591" [label = <(IDENTIFIER,bytesRead,int bytesRead = -1)<SUB>1299</SUB>> ]
+"2592" [label = <(&lt;operator&gt;.minus,-1)<SUB>1299</SUB>> ]
+"2593" [label = <(LITERAL,1,-1)<SUB>1299</SUB>> ]
+"2594" [label = <(LOCAL,byte[] buffer: byte[])> ]
+"2595" [label = <(&lt;operator&gt;.assignment,byte[] buffer = new byte[BUFFER_SIZE])<SUB>1300</SUB>> ]
+"2596" [label = <(IDENTIFIER,buffer,byte[] buffer = new byte[BUFFER_SIZE])<SUB>1300</SUB>> ]
+"2597" [label = <(&lt;operator&gt;.alloc,new byte[BUFFER_SIZE])> ]
+"2598" [label = <(&lt;operator&gt;.fieldAccess,AntClassLoader.BUFFER_SIZE)<SUB>1300</SUB>> ]
+"2599" [label = <(IDENTIFIER,AntClassLoader,new byte[BUFFER_SIZE])<SUB>1300</SUB>> ]
+"2600" [label = <(FIELD_IDENTIFIER,BUFFER_SIZE,BUFFER_SIZE)<SUB>1300</SUB>> ]
+"2601" [label = <(CONTROL_STRUCTURE,while ((bytesRead = stream.read(buffer, 0, BUFFER_SIZE)) != -1),while ((bytesRead = stream.read(buffer, 0, BUFFER_SIZE)) != -1))<SUB>1302</SUB>> ]
+"2602" [label = <(&lt;operator&gt;.notEquals,(bytesRead = stream.read(buffer, 0, BUFFER_SIZE)) != -1)<SUB>1302</SUB>> ]
+"2603" [label = <(&lt;operator&gt;.assignment,bytesRead = stream.read(buffer, 0, BUFFER_SIZE))<SUB>1302</SUB>> ]
+"2604" [label = <(IDENTIFIER,bytesRead,bytesRead = stream.read(buffer, 0, BUFFER_SIZE))<SUB>1302</SUB>> ]
+"2605" [label = <(read,stream.read(buffer, 0, BUFFER_SIZE))<SUB>1302</SUB>> ]
+"2606" [label = <(IDENTIFIER,stream,stream.read(buffer, 0, BUFFER_SIZE))<SUB>1302</SUB>> ]
+"2607" [label = <(IDENTIFIER,buffer,stream.read(buffer, 0, BUFFER_SIZE))<SUB>1302</SUB>> ]
+"2608" [label = <(LITERAL,0,stream.read(buffer, 0, BUFFER_SIZE))<SUB>1302</SUB>> ]
+"2609" [label = <(&lt;operator&gt;.fieldAccess,AntClassLoader.BUFFER_SIZE)<SUB>1302</SUB>> ]
+"2610" [label = <(IDENTIFIER,AntClassLoader,stream.read(buffer, 0, BUFFER_SIZE))<SUB>1302</SUB>> ]
+"2611" [label = <(FIELD_IDENTIFIER,BUFFER_SIZE,BUFFER_SIZE)<SUB>1302</SUB>> ]
+"2612" [label = <(&lt;operator&gt;.minus,-1)<SUB>1302</SUB>> ]
+"2613" [label = <(LITERAL,1,-1)<SUB>1302</SUB>> ]
+"2614" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>1302</SUB>> ]
+"2615" [label = <(write,baos.write(buffer, 0, bytesRead))<SUB>1303</SUB>> ]
+"2616" [label = <(IDENTIFIER,baos,baos.write(buffer, 0, bytesRead))<SUB>1303</SUB>> ]
+"2617" [label = <(IDENTIFIER,buffer,baos.write(buffer, 0, bytesRead))<SUB>1303</SUB>> ]
+"2618" [label = <(LITERAL,0,baos.write(buffer, 0, bytesRead))<SUB>1303</SUB>> ]
+"2619" [label = <(IDENTIFIER,bytesRead,baos.write(buffer, 0, bytesRead))<SUB>1303</SUB>> ]
+"2620" [label = <(LOCAL,byte[] classData: byte[])> ]
+"2621" [label = <(&lt;operator&gt;.assignment,byte[] classData = baos.toByteArray())<SUB>1306</SUB>> ]
+"2622" [label = <(IDENTIFIER,classData,byte[] classData = baos.toByteArray())<SUB>1306</SUB>> ]
+"2623" [label = <(toByteArray,baos.toByteArray())<SUB>1306</SUB>> ]
+"2624" [label = <(IDENTIFIER,baos,baos.toByteArray())<SUB>1306</SUB>> ]
+"2625" [label = <(RETURN,return defineClassFromData(container, classData, classname);,return defineClassFromData(container, classData, classname);)<SUB>1307</SUB>> ]
+"2626" [label = <(defineClassFromData,this.defineClassFromData(container, classData, classname))<SUB>1307</SUB>> ]
+"166" [label = <(IDENTIFIER,this,this.defineClassFromData(container, classData, classname))<SUB>1307</SUB>> ]
+"2627" [label = <(IDENTIFIER,container,this.defineClassFromData(container, classData, classname))<SUB>1307</SUB>> ]
+"2628" [label = <(IDENTIFIER,classData,this.defineClassFromData(container, classData, classname))<SUB>1307</SUB>> ]
+"2629" [label = <(IDENTIFIER,classname,this.defineClassFromData(container, classData, classname))<SUB>1307</SUB>> ]
+"2630" [label = <(MODIFIER,PRIVATE)> ]
+"2631" [label = <(MODIFIER,VIRTUAL)> ]
+"2632" [label = <(METHOD_RETURN,java.lang.Class)<SUB>1295</SUB>> ]
+  "2580" -> "167" 
+  "2580" -> "2581" 
+  "2580" -> "2582" 
+  "2580" -> "2583" 
+  "2580" -> "2584" 
+  "2580" -> "2630" 
+  "2580" -> "2631" 
+  "2580" -> "2632" 
+  "2584" -> "165" 
+  "2584" -> "2585" 
+  "2584" -> "2588" 
+  "2584" -> "2589" 
+  "2584" -> "2590" 
+  "2584" -> "2594" 
+  "2584" -> "2595" 
+  "2584" -> "2601" 
+  "2584" -> "2620" 
+  "2584" -> "2621" 
+  "2584" -> "2625" 
+  "2585" -> "2586" 
+  "2585" -> "2587" 
+  "2588" -> "164" 
+  "2590" -> "2591" 
+  "2590" -> "2592" 
+  "2592" -> "2593" 
+  "2595" -> "2596" 
+  "2595" -> "2597" 
+  "2597" -> "2598" 
+  "2598" -> "2599" 
+  "2598" -> "2600" 
+  "2601" -> "2602" 
+  "2601" -> "2614" 
+  "2602" -> "2603" 
+  "2602" -> "2612" 
+  "2603" -> "2604" 
+  "2603" -> "2605" 
+  "2605" -> "2606" 
+  "2605" -> "2607" 
+  "2605" -> "2608" 
+  "2605" -> "2609" 
+  "2609" -> "2610" 
+  "2609" -> "2611" 
+  "2612" -> "2613" 
+  "2614" -> "2615" 
+  "2615" -> "2616" 
+  "2615" -> "2617" 
+  "2615" -> "2618" 
+  "2615" -> "2619" 
+  "2621" -> "2622" 
+  "2621" -> "2623" 
+  "2623" -> "2624" 
+  "2625" -> "2626" 
+  "2626" -> "166" 
+  "2626" -> "2627" 
+  "2626" -> "2628" 
+  "2626" -> "2629" 
+}

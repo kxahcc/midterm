@@ -1,0 +1,277 @@
+digraph "addFiles" {  
+"1476" [label = <(METHOD,addFiles)<SUB>514</SUB>> ]
+"69" [label = <(PARAM,this)<SUB>514</SUB>> ]
+"1477" [label = <(PARAM,Vector filesets)<SUB>514</SUB>> ]
+"1478" [label = <(PARAM,ZipOutputStream zOut)<SUB>514</SUB>> ]
+"1479" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>515</SUB>> ]
+"1480" [label = <(CONTROL_STRUCTURE,for (int i = 0; Some(i &lt; filesets.size()); i++),for (int i = 0; Some(i &lt; filesets.size()); i++))<SUB>517</SUB>> ]
+"1481" [label = <(LOCAL,int i: int)> ]
+"1482" [label = <(&lt;operator&gt;.assignment,int i = 0)<SUB>517</SUB>> ]
+"1483" [label = <(IDENTIFIER,i,int i = 0)<SUB>517</SUB>> ]
+"1484" [label = <(LITERAL,0,int i = 0)<SUB>517</SUB>> ]
+"1485" [label = <(&lt;operator&gt;.lessThan,i &lt; filesets.size())<SUB>517</SUB>> ]
+"1486" [label = <(IDENTIFIER,i,i &lt; filesets.size())<SUB>517</SUB>> ]
+"1487" [label = <(size,filesets.size())<SUB>517</SUB>> ]
+"1488" [label = <(IDENTIFIER,filesets,filesets.size())<SUB>517</SUB>> ]
+"1489" [label = <(&lt;operator&gt;.postIncrement,i++)<SUB>517</SUB>> ]
+"1490" [label = <(IDENTIFIER,i,i++)<SUB>517</SUB>> ]
+"1491" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>517</SUB>> ]
+"1492" [label = <(LOCAL,FileSet fs: ANY)> ]
+"1493" [label = <(&lt;operator&gt;.assignment,ANY fs = (FileSet) filesets.elementAt(i))<SUB>518</SUB>> ]
+"1494" [label = <(IDENTIFIER,fs,ANY fs = (FileSet) filesets.elementAt(i))<SUB>518</SUB>> ]
+"1495" [label = <(&lt;operator&gt;.cast,(FileSet) filesets.elementAt(i))<SUB>518</SUB>> ]
+"1496" [label = <(TYPE_REF,FileSet,FileSet)<SUB>518</SUB>> ]
+"1497" [label = <(elementAt,filesets.elementAt(i))<SUB>518</SUB>> ]
+"1498" [label = <(IDENTIFIER,filesets,filesets.elementAt(i))<SUB>518</SUB>> ]
+"1499" [label = <(IDENTIFIER,i,filesets.elementAt(i))<SUB>518</SUB>> ]
+"1500" [label = <(LOCAL,DirectoryScanner ds: ANY)> ]
+"1501" [label = <(&lt;operator&gt;.assignment,ANY ds = getDirectoryScanner(project))<SUB>519</SUB>> ]
+"1502" [label = <(IDENTIFIER,ds,ANY ds = getDirectoryScanner(project))<SUB>519</SUB>> ]
+"1503" [label = <(getDirectoryScanner,getDirectoryScanner(project))<SUB>519</SUB>> ]
+"1504" [label = <(IDENTIFIER,fs,getDirectoryScanner(project))<SUB>519</SUB>> ]
+"1505" [label = <(IDENTIFIER,project,getDirectoryScanner(project))<SUB>519</SUB>> ]
+"1506" [label = <(LOCAL,String prefix: java.lang.String)> ]
+"1507" [label = <(&lt;operator&gt;.assignment,String prefix = &quot;&quot;)<SUB>521</SUB>> ]
+"1508" [label = <(IDENTIFIER,prefix,String prefix = &quot;&quot;)<SUB>521</SUB>> ]
+"1509" [label = <(LITERAL,&quot;&quot;,String prefix = &quot;&quot;)<SUB>521</SUB>> ]
+"1510" [label = <(LOCAL,String fullpath: java.lang.String)> ]
+"1511" [label = <(&lt;operator&gt;.assignment,String fullpath = &quot;&quot;)<SUB>522</SUB>> ]
+"1512" [label = <(IDENTIFIER,fullpath,String fullpath = &quot;&quot;)<SUB>522</SUB>> ]
+"1513" [label = <(LITERAL,&quot;&quot;,String fullpath = &quot;&quot;)<SUB>522</SUB>> ]
+"1514" [label = <(CONTROL_STRUCTURE,if (fs instanceof ZipFileSet),if (fs instanceof ZipFileSet))<SUB>523</SUB>> ]
+"1515" [label = <(&lt;operator&gt;.instanceOf,fs instanceof ZipFileSet)<SUB>523</SUB>> ]
+"1516" [label = <(IDENTIFIER,fs,fs instanceof ZipFileSet)<SUB>523</SUB>> ]
+"1517" [label = <(TYPE_REF,ZipFileSet,ZipFileSet)<SUB>523</SUB>> ]
+"1518" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>523</SUB>> ]
+"1519" [label = <(LOCAL,ZipFileSet zfs: ANY)> ]
+"1520" [label = <(&lt;operator&gt;.assignment,ANY zfs = (ZipFileSet) fs)<SUB>524</SUB>> ]
+"1521" [label = <(IDENTIFIER,zfs,ANY zfs = (ZipFileSet) fs)<SUB>524</SUB>> ]
+"1522" [label = <(&lt;operator&gt;.cast,(ZipFileSet) fs)<SUB>524</SUB>> ]
+"1523" [label = <(TYPE_REF,ZipFileSet,ZipFileSet)<SUB>524</SUB>> ]
+"1524" [label = <(IDENTIFIER,fs,(ZipFileSet) fs)<SUB>524</SUB>> ]
+"1525" [label = <(&lt;operator&gt;.assignment,prefix = getPrefix())<SUB>525</SUB>> ]
+"1526" [label = <(IDENTIFIER,prefix,prefix = getPrefix())<SUB>525</SUB>> ]
+"1527" [label = <(getPrefix,getPrefix())<SUB>525</SUB>> ]
+"1528" [label = <(IDENTIFIER,zfs,getPrefix())<SUB>525</SUB>> ]
+"1529" [label = <(&lt;operator&gt;.assignment,fullpath = getFullpath())<SUB>526</SUB>> ]
+"1530" [label = <(IDENTIFIER,fullpath,fullpath = getFullpath())<SUB>526</SUB>> ]
+"1531" [label = <(getFullpath,getFullpath())<SUB>526</SUB>> ]
+"1532" [label = <(IDENTIFIER,zfs,getFullpath())<SUB>526</SUB>> ]
+"1533" [label = <(CONTROL_STRUCTURE,if (prefix.length() &gt; 0 &amp;&amp; !prefix.endsWith(&quot;/&quot;) &amp;&amp; !prefix.endsWith(&quot;\\&quot;)),if (prefix.length() &gt; 0 &amp;&amp; !prefix.endsWith(&quot;/&quot;) &amp;&amp; !prefix.endsWith(&quot;\\&quot;)))<SUB>529</SUB>> ]
+"1534" [label = <(&lt;operator&gt;.logicalAnd,prefix.length() &gt; 0 &amp;&amp; !prefix.endsWith(&quot;/&quot;) &amp;&amp; !prefix.endsWith(&quot;\\&quot;))<SUB>529</SUB>> ]
+"1535" [label = <(&lt;operator&gt;.logicalAnd,prefix.length() &gt; 0 &amp;&amp; !prefix.endsWith(&quot;/&quot;))<SUB>529</SUB>> ]
+"1536" [label = <(&lt;operator&gt;.greaterThan,prefix.length() &gt; 0)<SUB>529</SUB>> ]
+"1537" [label = <(length,prefix.length())<SUB>529</SUB>> ]
+"1538" [label = <(IDENTIFIER,prefix,prefix.length())<SUB>529</SUB>> ]
+"1539" [label = <(LITERAL,0,prefix.length() &gt; 0)<SUB>529</SUB>> ]
+"1540" [label = <(&lt;operator&gt;.logicalNot,!prefix.endsWith(&quot;/&quot;))<SUB>530</SUB>> ]
+"1541" [label = <(endsWith,prefix.endsWith(&quot;/&quot;))<SUB>530</SUB>> ]
+"1542" [label = <(IDENTIFIER,prefix,prefix.endsWith(&quot;/&quot;))<SUB>530</SUB>> ]
+"1543" [label = <(LITERAL,&quot;/&quot;,prefix.endsWith(&quot;/&quot;))<SUB>530</SUB>> ]
+"1544" [label = <(&lt;operator&gt;.logicalNot,!prefix.endsWith(&quot;\\&quot;))<SUB>531</SUB>> ]
+"1545" [label = <(endsWith,prefix.endsWith(&quot;\\&quot;))<SUB>531</SUB>> ]
+"1546" [label = <(IDENTIFIER,prefix,prefix.endsWith(&quot;\\&quot;))<SUB>531</SUB>> ]
+"1547" [label = <(LITERAL,&quot;\\&quot;,prefix.endsWith(&quot;\\&quot;))<SUB>531</SUB>> ]
+"1548" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>531</SUB>> ]
+"1549" [label = <(&lt;operator&gt;.assignmentPlus,prefix += &quot;/&quot;)<SUB>532</SUB>> ]
+"1550" [label = <(IDENTIFIER,prefix,prefix += &quot;/&quot;)<SUB>532</SUB>> ]
+"1551" [label = <(LITERAL,&quot;/&quot;,prefix += &quot;/&quot;)<SUB>532</SUB>> ]
+"1552" [label = <(CONTROL_STRUCTURE,if (prefix.length() &gt; 0),if (prefix.length() &gt; 0))<SUB>537</SUB>> ]
+"1553" [label = <(&lt;operator&gt;.greaterThan,prefix.length() &gt; 0)<SUB>537</SUB>> ]
+"1554" [label = <(length,prefix.length())<SUB>537</SUB>> ]
+"1555" [label = <(IDENTIFIER,prefix,prefix.length())<SUB>537</SUB>> ]
+"1556" [label = <(LITERAL,0,prefix.length() &gt; 0)<SUB>537</SUB>> ]
+"1557" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>537</SUB>> ]
+"1558" [label = <(addParentDirs,this.addParentDirs(null, prefix, zOut, &quot;&quot;))<SUB>538</SUB>> ]
+"68" [label = <(IDENTIFIER,this,this.addParentDirs(null, prefix, zOut, &quot;&quot;))<SUB>538</SUB>> ]
+"1559" [label = <(LITERAL,null,this.addParentDirs(null, prefix, zOut, &quot;&quot;))<SUB>538</SUB>> ]
+"1560" [label = <(IDENTIFIER,prefix,this.addParentDirs(null, prefix, zOut, &quot;&quot;))<SUB>538</SUB>> ]
+"1561" [label = <(IDENTIFIER,zOut,this.addParentDirs(null, prefix, zOut, &quot;&quot;))<SUB>538</SUB>> ]
+"1562" [label = <(LITERAL,&quot;&quot;,this.addParentDirs(null, prefix, zOut, &quot;&quot;))<SUB>538</SUB>> ]
+"1563" [label = <(zipDir,this.zipDir(null, zOut, prefix))<SUB>539</SUB>> ]
+"70" [label = <(IDENTIFIER,this,this.zipDir(null, zOut, prefix))<SUB>539</SUB>> ]
+"1564" [label = <(LITERAL,null,this.zipDir(null, zOut, prefix))<SUB>539</SUB>> ]
+"1565" [label = <(IDENTIFIER,zOut,this.zipDir(null, zOut, prefix))<SUB>539</SUB>> ]
+"1566" [label = <(IDENTIFIER,prefix,this.zipDir(null, zOut, prefix))<SUB>539</SUB>> ]
+"1567" [label = <(CONTROL_STRUCTURE,else,else)<SUB>540</SUB>> ]
+"1568" [label = <(CONTROL_STRUCTURE,if (fullpath.length() &gt; 0),if (fullpath.length() &gt; 0))<SUB>540</SUB>> ]
+"1569" [label = <(&lt;operator&gt;.greaterThan,fullpath.length() &gt; 0)<SUB>540</SUB>> ]
+"1570" [label = <(length,fullpath.length())<SUB>540</SUB>> ]
+"1571" [label = <(IDENTIFIER,fullpath,fullpath.length())<SUB>540</SUB>> ]
+"1572" [label = <(LITERAL,0,fullpath.length() &gt; 0)<SUB>540</SUB>> ]
+"1573" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>540</SUB>> ]
+"1574" [label = <(addParentDirs,this.addParentDirs(null, fullpath, zOut, &quot;&quot;))<SUB>541</SUB>> ]
+"71" [label = <(IDENTIFIER,this,this.addParentDirs(null, fullpath, zOut, &quot;&quot;))<SUB>541</SUB>> ]
+"1575" [label = <(LITERAL,null,this.addParentDirs(null, fullpath, zOut, &quot;&quot;))<SUB>541</SUB>> ]
+"1576" [label = <(IDENTIFIER,fullpath,this.addParentDirs(null, fullpath, zOut, &quot;&quot;))<SUB>541</SUB>> ]
+"1577" [label = <(IDENTIFIER,zOut,this.addParentDirs(null, fullpath, zOut, &quot;&quot;))<SUB>541</SUB>> ]
+"1578" [label = <(LITERAL,&quot;&quot;,this.addParentDirs(null, fullpath, zOut, &quot;&quot;))<SUB>541</SUB>> ]
+"1579" [label = <(CONTROL_STRUCTURE,if (fs instanceof ZipFileSet &amp;&amp; ((ZipFileSet) fs).getSrc() != null),if (fs instanceof ZipFileSet &amp;&amp; ((ZipFileSet) fs).getSrc() != null))<SUB>544</SUB>> ]
+"1580" [label = <(&lt;operator&gt;.logicalAnd,fs instanceof ZipFileSet &amp;&amp; ((ZipFileSet) fs).getSrc() != null)<SUB>544</SUB>> ]
+"1581" [label = <(&lt;operator&gt;.instanceOf,fs instanceof ZipFileSet)<SUB>544</SUB>> ]
+"1582" [label = <(IDENTIFIER,fs,fs instanceof ZipFileSet)<SUB>544</SUB>> ]
+"1583" [label = <(TYPE_REF,ZipFileSet,ZipFileSet)<SUB>544</SUB>> ]
+"1584" [label = <(&lt;operator&gt;.notEquals,((ZipFileSet) fs).getSrc() != null)<SUB>545</SUB>> ]
+"1585" [label = <(getSrc,getSrc())<SUB>545</SUB>> ]
+"1586" [label = <(&lt;operator&gt;.cast,(ZipFileSet) fs)<SUB>545</SUB>> ]
+"1587" [label = <(TYPE_REF,ZipFileSet,ZipFileSet)<SUB>545</SUB>> ]
+"1588" [label = <(IDENTIFIER,fs,(ZipFileSet) fs)<SUB>545</SUB>> ]
+"1589" [label = <(LITERAL,null,((ZipFileSet) fs).getSrc() != null)<SUB>545</SUB>> ]
+"1590" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>545</SUB>> ]
+"1591" [label = <(addZipEntries,addZipEntries((ZipFileSet) fs, ds, zOut, prefix))<SUB>546</SUB>> ]
+"72" [label = <(IDENTIFIER,this,addZipEntries((ZipFileSet) fs, ds, zOut, prefix))<SUB>546</SUB>> ]
+"1592" [label = <(&lt;operator&gt;.cast,(ZipFileSet) fs)<SUB>546</SUB>> ]
+"1593" [label = <(TYPE_REF,ZipFileSet,ZipFileSet)<SUB>546</SUB>> ]
+"1594" [label = <(IDENTIFIER,fs,(ZipFileSet) fs)<SUB>546</SUB>> ]
+"1595" [label = <(IDENTIFIER,ds,addZipEntries((ZipFileSet) fs, ds, zOut, prefix))<SUB>546</SUB>> ]
+"1596" [label = <(IDENTIFIER,zOut,addZipEntries((ZipFileSet) fs, ds, zOut, prefix))<SUB>546</SUB>> ]
+"1597" [label = <(IDENTIFIER,prefix,addZipEntries((ZipFileSet) fs, ds, zOut, prefix))<SUB>546</SUB>> ]
+"1598" [label = <(CONTROL_STRUCTURE,else,else)<SUB>547</SUB>> ]
+"1599" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>547</SUB>> ]
+"1600" [label = <(addFiles,addFiles(ds, zOut, prefix, fullpath))<SUB>549</SUB>> ]
+"73" [label = <(IDENTIFIER,this,addFiles(ds, zOut, prefix, fullpath))<SUB>549</SUB>> ]
+"1601" [label = <(IDENTIFIER,ds,addFiles(ds, zOut, prefix, fullpath))<SUB>549</SUB>> ]
+"1602" [label = <(IDENTIFIER,zOut,addFiles(ds, zOut, prefix, fullpath))<SUB>549</SUB>> ]
+"1603" [label = <(IDENTIFIER,prefix,addFiles(ds, zOut, prefix, fullpath))<SUB>549</SUB>> ]
+"1604" [label = <(IDENTIFIER,fullpath,addFiles(ds, zOut, prefix, fullpath))<SUB>549</SUB>> ]
+"1605" [label = <(MODIFIER,PROTECTED)> ]
+"1606" [label = <(MODIFIER,VIRTUAL)> ]
+"1607" [label = <(METHOD_RETURN,void)<SUB>514</SUB>> ]
+  "1476" -> "69" 
+  "1476" -> "1477" 
+  "1476" -> "1478" 
+  "1476" -> "1479" 
+  "1476" -> "1605" 
+  "1476" -> "1606" 
+  "1476" -> "1607" 
+  "1479" -> "1480" 
+  "1480" -> "1481" 
+  "1480" -> "1482" 
+  "1480" -> "1485" 
+  "1480" -> "1489" 
+  "1480" -> "1491" 
+  "1482" -> "1483" 
+  "1482" -> "1484" 
+  "1485" -> "1486" 
+  "1485" -> "1487" 
+  "1487" -> "1488" 
+  "1489" -> "1490" 
+  "1491" -> "1492" 
+  "1491" -> "1493" 
+  "1491" -> "1500" 
+  "1491" -> "1501" 
+  "1491" -> "1506" 
+  "1491" -> "1507" 
+  "1491" -> "1510" 
+  "1491" -> "1511" 
+  "1491" -> "1514" 
+  "1491" -> "1533" 
+  "1491" -> "1552" 
+  "1491" -> "1579" 
+  "1493" -> "1494" 
+  "1493" -> "1495" 
+  "1495" -> "1496" 
+  "1495" -> "1497" 
+  "1497" -> "1498" 
+  "1497" -> "1499" 
+  "1501" -> "1502" 
+  "1501" -> "1503" 
+  "1503" -> "1504" 
+  "1503" -> "1505" 
+  "1507" -> "1508" 
+  "1507" -> "1509" 
+  "1511" -> "1512" 
+  "1511" -> "1513" 
+  "1514" -> "1515" 
+  "1514" -> "1518" 
+  "1515" -> "1516" 
+  "1515" -> "1517" 
+  "1518" -> "1519" 
+  "1518" -> "1520" 
+  "1518" -> "1525" 
+  "1518" -> "1529" 
+  "1520" -> "1521" 
+  "1520" -> "1522" 
+  "1522" -> "1523" 
+  "1522" -> "1524" 
+  "1525" -> "1526" 
+  "1525" -> "1527" 
+  "1527" -> "1528" 
+  "1529" -> "1530" 
+  "1529" -> "1531" 
+  "1531" -> "1532" 
+  "1533" -> "1534" 
+  "1533" -> "1548" 
+  "1534" -> "1535" 
+  "1534" -> "1544" 
+  "1535" -> "1536" 
+  "1535" -> "1540" 
+  "1536" -> "1537" 
+  "1536" -> "1539" 
+  "1537" -> "1538" 
+  "1540" -> "1541" 
+  "1541" -> "1542" 
+  "1541" -> "1543" 
+  "1544" -> "1545" 
+  "1545" -> "1546" 
+  "1545" -> "1547" 
+  "1548" -> "1549" 
+  "1549" -> "1550" 
+  "1549" -> "1551" 
+  "1552" -> "1553" 
+  "1552" -> "1557" 
+  "1552" -> "1567" 
+  "1553" -> "1554" 
+  "1553" -> "1556" 
+  "1554" -> "1555" 
+  "1557" -> "1558" 
+  "1557" -> "1563" 
+  "1558" -> "68" 
+  "1558" -> "1559" 
+  "1558" -> "1560" 
+  "1558" -> "1561" 
+  "1558" -> "1562" 
+  "1563" -> "70" 
+  "1563" -> "1564" 
+  "1563" -> "1565" 
+  "1563" -> "1566" 
+  "1567" -> "1568" 
+  "1568" -> "1569" 
+  "1568" -> "1573" 
+  "1569" -> "1570" 
+  "1569" -> "1572" 
+  "1570" -> "1571" 
+  "1573" -> "1574" 
+  "1574" -> "71" 
+  "1574" -> "1575" 
+  "1574" -> "1576" 
+  "1574" -> "1577" 
+  "1574" -> "1578" 
+  "1579" -> "1580" 
+  "1579" -> "1590" 
+  "1579" -> "1598" 
+  "1580" -> "1581" 
+  "1580" -> "1584" 
+  "1581" -> "1582" 
+  "1581" -> "1583" 
+  "1584" -> "1585" 
+  "1584" -> "1589" 
+  "1585" -> "1586" 
+  "1586" -> "1587" 
+  "1586" -> "1588" 
+  "1590" -> "1591" 
+  "1591" -> "72" 
+  "1591" -> "1592" 
+  "1591" -> "1595" 
+  "1591" -> "1596" 
+  "1591" -> "1597" 
+  "1592" -> "1593" 
+  "1592" -> "1594" 
+  "1598" -> "1599" 
+  "1599" -> "1600" 
+  "1600" -> "73" 
+  "1600" -> "1601" 
+  "1600" -> "1602" 
+  "1600" -> "1603" 
+  "1600" -> "1604" 
+}

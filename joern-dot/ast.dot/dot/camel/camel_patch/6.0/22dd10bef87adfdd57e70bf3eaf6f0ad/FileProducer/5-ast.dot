@@ -1,0 +1,223 @@
+digraph "writeFileByStream" {  
+"218" [label = <(METHOD,writeFileByStream)<SUB>99</SUB>> ]
+"16" [label = <(PARAM,this)<SUB>99</SUB>> ]
+"219" [label = <(PARAM,InputStream in)<SUB>99</SUB>> ]
+"220" [label = <(PARAM,File target)<SUB>99</SUB>> ]
+"221" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>99</SUB>> ]
+"222" [label = <(LOCAL,FileChannel out: java.nio.channels.FileChannel)> ]
+"223" [label = <(&lt;operator&gt;.assignment,FileChannel out = null)<SUB>100</SUB>> ]
+"224" [label = <(IDENTIFIER,out,FileChannel out = null)<SUB>100</SUB>> ]
+"225" [label = <(LITERAL,null,FileChannel out = null)<SUB>100</SUB>> ]
+"226" [label = <(CONTROL_STRUCTURE,try,try)<SUB>101</SUB>> ]
+"227" [label = <(BLOCK,try,try)<SUB>101</SUB>> ]
+"228" [label = <(&lt;operator&gt;.assignment,out = this.prepareOutputFileChannel(target, out))<SUB>102</SUB>> ]
+"229" [label = <(IDENTIFIER,out,out = this.prepareOutputFileChannel(target, out))<SUB>102</SUB>> ]
+"230" [label = <(prepareOutputFileChannel,this.prepareOutputFileChannel(target, out))<SUB>102</SUB>> ]
+"15" [label = <(IDENTIFIER,this,this.prepareOutputFileChannel(target, out))<SUB>102</SUB>> ]
+"231" [label = <(IDENTIFIER,target,this.prepareOutputFileChannel(target, out))<SUB>102</SUB>> ]
+"232" [label = <(IDENTIFIER,out,this.prepareOutputFileChannel(target, out))<SUB>102</SUB>> ]
+"233" [label = <(CONTROL_STRUCTURE,if (LOG.isTraceEnabled()),if (LOG.isTraceEnabled()))<SUB>104</SUB>> ]
+"234" [label = <(isTraceEnabled,isTraceEnabled())<SUB>104</SUB>> ]
+"235" [label = <(&lt;operator&gt;.fieldAccess,FileProducer.LOG)<SUB>104</SUB>> ]
+"236" [label = <(IDENTIFIER,FileProducer,isTraceEnabled())<SUB>104</SUB>> ]
+"237" [label = <(FIELD_IDENTIFIER,LOG,LOG)<SUB>104</SUB>> ]
+"238" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>104</SUB>> ]
+"239" [label = <(trace,trace(&quot;Using InputStream to transfer from: &quot; + in + &quot; to: &quot; + out))<SUB>105</SUB>> ]
+"240" [label = <(&lt;operator&gt;.fieldAccess,FileProducer.LOG)<SUB>105</SUB>> ]
+"241" [label = <(IDENTIFIER,FileProducer,trace(&quot;Using InputStream to transfer from: &quot; + in + &quot; to: &quot; + out))<SUB>105</SUB>> ]
+"242" [label = <(FIELD_IDENTIFIER,LOG,LOG)<SUB>105</SUB>> ]
+"243" [label = <(&lt;operator&gt;.addition,&quot;Using InputStream to transfer from: &quot; + in + &quot; to: &quot; + out)<SUB>105</SUB>> ]
+"244" [label = <(&lt;operator&gt;.addition,&quot;Using InputStream to transfer from: &quot; + in + &quot; to: &quot;)<SUB>105</SUB>> ]
+"245" [label = <(&lt;operator&gt;.addition,&quot;Using InputStream to transfer from: &quot; + in)<SUB>105</SUB>> ]
+"246" [label = <(LITERAL,&quot;Using InputStream to transfer from: &quot;,&quot;Using InputStream to transfer from: &quot; + in)<SUB>105</SUB>> ]
+"247" [label = <(IDENTIFIER,in,&quot;Using InputStream to transfer from: &quot; + in)<SUB>105</SUB>> ]
+"248" [label = <(LITERAL,&quot; to: &quot;,&quot;Using InputStream to transfer from: &quot; + in + &quot; to: &quot;)<SUB>105</SUB>> ]
+"249" [label = <(IDENTIFIER,out,&quot;Using InputStream to transfer from: &quot; + in + &quot; to: &quot; + out)<SUB>105</SUB>> ]
+"250" [label = <(LOCAL,int size: int)> ]
+"251" [label = <(&lt;operator&gt;.assignment,int size = getBufferSize())<SUB>107</SUB>> ]
+"252" [label = <(IDENTIFIER,size,int size = getBufferSize())<SUB>107</SUB>> ]
+"253" [label = <(getBufferSize,getBufferSize())<SUB>107</SUB>> ]
+"254" [label = <(&lt;operator&gt;.fieldAccess,this.endpoint)<SUB>107</SUB>> ]
+"255" [label = <(IDENTIFIER,this,getBufferSize())<SUB>107</SUB>> ]
+"256" [label = <(FIELD_IDENTIFIER,endpoint,endpoint)<SUB>107</SUB>> ]
+"257" [label = <(LOCAL,byte[] buffer: byte[])> ]
+"258" [label = <(&lt;operator&gt;.assignment,byte[] buffer = new byte[size])<SUB>108</SUB>> ]
+"259" [label = <(IDENTIFIER,buffer,byte[] buffer = new byte[size])<SUB>108</SUB>> ]
+"260" [label = <(&lt;operator&gt;.alloc,new byte[size])> ]
+"261" [label = <(IDENTIFIER,size,new byte[size])<SUB>108</SUB>> ]
+"262" [label = <(LOCAL,ByteBuffer byteBuffer: java.nio.ByteBuffer)> ]
+"263" [label = <(&lt;operator&gt;.assignment,ByteBuffer byteBuffer = ByteBuffer.wrap(buffer))<SUB>109</SUB>> ]
+"264" [label = <(IDENTIFIER,byteBuffer,ByteBuffer byteBuffer = ByteBuffer.wrap(buffer))<SUB>109</SUB>> ]
+"265" [label = <(wrap,ByteBuffer.wrap(buffer))<SUB>109</SUB>> ]
+"266" [label = <(IDENTIFIER,ByteBuffer,ByteBuffer.wrap(buffer))<SUB>109</SUB>> ]
+"267" [label = <(IDENTIFIER,buffer,ByteBuffer.wrap(buffer))<SUB>109</SUB>> ]
+"268" [label = <(CONTROL_STRUCTURE,while (true),while (true))<SUB>110</SUB>> ]
+"269" [label = <(LITERAL,true,while (true))<SUB>110</SUB>> ]
+"270" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>110</SUB>> ]
+"271" [label = <(LOCAL,int count: int)> ]
+"272" [label = <(&lt;operator&gt;.assignment,int count = in.read(buffer))<SUB>111</SUB>> ]
+"273" [label = <(IDENTIFIER,count,int count = in.read(buffer))<SUB>111</SUB>> ]
+"274" [label = <(read,in.read(buffer))<SUB>111</SUB>> ]
+"275" [label = <(IDENTIFIER,in,in.read(buffer))<SUB>111</SUB>> ]
+"276" [label = <(IDENTIFIER,buffer,in.read(buffer))<SUB>111</SUB>> ]
+"277" [label = <(CONTROL_STRUCTURE,if (count &lt;= 0),if (count &lt;= 0))<SUB>112</SUB>> ]
+"278" [label = <(&lt;operator&gt;.lessEqualsThan,count &lt;= 0)<SUB>112</SUB>> ]
+"279" [label = <(IDENTIFIER,count,count &lt;= 0)<SUB>112</SUB>> ]
+"280" [label = <(LITERAL,0,count &lt;= 0)<SUB>112</SUB>> ]
+"281" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>112</SUB>> ]
+"282" [label = <(CONTROL_STRUCTURE,break;,break;)<SUB>113</SUB>> ]
+"283" [label = <(CONTROL_STRUCTURE,else,else)<SUB>114</SUB>> ]
+"284" [label = <(CONTROL_STRUCTURE,if (count &lt; size),if (count &lt; size))<SUB>114</SUB>> ]
+"285" [label = <(&lt;operator&gt;.lessThan,count &lt; size)<SUB>114</SUB>> ]
+"286" [label = <(IDENTIFIER,count,count &lt; size)<SUB>114</SUB>> ]
+"287" [label = <(IDENTIFIER,size,count &lt; size)<SUB>114</SUB>> ]
+"288" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>114</SUB>> ]
+"289" [label = <(&lt;operator&gt;.assignment,byteBuffer = ByteBuffer.wrap(buffer, 0, count))<SUB>115</SUB>> ]
+"290" [label = <(IDENTIFIER,byteBuffer,byteBuffer = ByteBuffer.wrap(buffer, 0, count))<SUB>115</SUB>> ]
+"291" [label = <(wrap,ByteBuffer.wrap(buffer, 0, count))<SUB>115</SUB>> ]
+"292" [label = <(IDENTIFIER,ByteBuffer,ByteBuffer.wrap(buffer, 0, count))<SUB>115</SUB>> ]
+"293" [label = <(IDENTIFIER,buffer,ByteBuffer.wrap(buffer, 0, count))<SUB>115</SUB>> ]
+"294" [label = <(LITERAL,0,ByteBuffer.wrap(buffer, 0, count))<SUB>115</SUB>> ]
+"295" [label = <(IDENTIFIER,count,ByteBuffer.wrap(buffer, 0, count))<SUB>115</SUB>> ]
+"296" [label = <(write,out.write(byteBuffer))<SUB>116</SUB>> ]
+"297" [label = <(IDENTIFIER,out,out.write(byteBuffer))<SUB>116</SUB>> ]
+"298" [label = <(IDENTIFIER,byteBuffer,out.write(byteBuffer))<SUB>116</SUB>> ]
+"299" [label = <(CONTROL_STRUCTURE,break;,break;)<SUB>117</SUB>> ]
+"300" [label = <(CONTROL_STRUCTURE,else,else)<SUB>118</SUB>> ]
+"301" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>118</SUB>> ]
+"302" [label = <(write,out.write(byteBuffer))<SUB>119</SUB>> ]
+"303" [label = <(IDENTIFIER,out,out.write(byteBuffer))<SUB>119</SUB>> ]
+"304" [label = <(IDENTIFIER,byteBuffer,out.write(byteBuffer))<SUB>119</SUB>> ]
+"305" [label = <(clear,byteBuffer.clear())<SUB>120</SUB>> ]
+"306" [label = <(IDENTIFIER,byteBuffer,byteBuffer.clear())<SUB>120</SUB>> ]
+"307" [label = <(BLOCK,finally,finally)<SUB>123</SUB>> ]
+"308" [label = <(close,close(in, target.getName(), LOG))<SUB>124</SUB>> ]
+"309" [label = <(IDENTIFIER,ObjectHelper,close(in, target.getName(), LOG))<SUB>124</SUB>> ]
+"310" [label = <(IDENTIFIER,in,close(in, target.getName(), LOG))<SUB>124</SUB>> ]
+"311" [label = <(getName,target.getName())<SUB>124</SUB>> ]
+"312" [label = <(IDENTIFIER,target,target.getName())<SUB>124</SUB>> ]
+"313" [label = <(&lt;operator&gt;.fieldAccess,FileProducer.LOG)<SUB>124</SUB>> ]
+"314" [label = <(IDENTIFIER,FileProducer,close(in, target.getName(), LOG))<SUB>124</SUB>> ]
+"315" [label = <(FIELD_IDENTIFIER,LOG,LOG)<SUB>124</SUB>> ]
+"316" [label = <(close,close(out, target.getName(), LOG))<SUB>125</SUB>> ]
+"317" [label = <(IDENTIFIER,ObjectHelper,close(out, target.getName(), LOG))<SUB>125</SUB>> ]
+"318" [label = <(IDENTIFIER,out,close(out, target.getName(), LOG))<SUB>125</SUB>> ]
+"319" [label = <(getName,target.getName())<SUB>125</SUB>> ]
+"320" [label = <(IDENTIFIER,target,target.getName())<SUB>125</SUB>> ]
+"321" [label = <(&lt;operator&gt;.fieldAccess,FileProducer.LOG)<SUB>125</SUB>> ]
+"322" [label = <(IDENTIFIER,FileProducer,close(out, target.getName(), LOG))<SUB>125</SUB>> ]
+"323" [label = <(FIELD_IDENTIFIER,LOG,LOG)<SUB>125</SUB>> ]
+"324" [label = <(MODIFIER,PRIVATE)> ]
+"325" [label = <(MODIFIER,VIRTUAL)> ]
+"326" [label = <(METHOD_RETURN,void)<SUB>99</SUB>> ]
+  "218" -> "16" 
+  "218" -> "219" 
+  "218" -> "220" 
+  "218" -> "221" 
+  "218" -> "324" 
+  "218" -> "325" 
+  "218" -> "326" 
+  "221" -> "222" 
+  "221" -> "223" 
+  "221" -> "226" 
+  "223" -> "224" 
+  "223" -> "225" 
+  "226" -> "227" 
+  "226" -> "307" 
+  "227" -> "228" 
+  "227" -> "233" 
+  "227" -> "250" 
+  "227" -> "251" 
+  "227" -> "257" 
+  "227" -> "258" 
+  "227" -> "262" 
+  "227" -> "263" 
+  "227" -> "268" 
+  "228" -> "229" 
+  "228" -> "230" 
+  "230" -> "15" 
+  "230" -> "231" 
+  "230" -> "232" 
+  "233" -> "234" 
+  "233" -> "238" 
+  "234" -> "235" 
+  "235" -> "236" 
+  "235" -> "237" 
+  "238" -> "239" 
+  "239" -> "240" 
+  "239" -> "243" 
+  "240" -> "241" 
+  "240" -> "242" 
+  "243" -> "244" 
+  "243" -> "249" 
+  "244" -> "245" 
+  "244" -> "248" 
+  "245" -> "246" 
+  "245" -> "247" 
+  "251" -> "252" 
+  "251" -> "253" 
+  "253" -> "254" 
+  "254" -> "255" 
+  "254" -> "256" 
+  "258" -> "259" 
+  "258" -> "260" 
+  "260" -> "261" 
+  "263" -> "264" 
+  "263" -> "265" 
+  "265" -> "266" 
+  "265" -> "267" 
+  "268" -> "269" 
+  "268" -> "270" 
+  "270" -> "271" 
+  "270" -> "272" 
+  "270" -> "277" 
+  "272" -> "273" 
+  "272" -> "274" 
+  "274" -> "275" 
+  "274" -> "276" 
+  "277" -> "278" 
+  "277" -> "281" 
+  "277" -> "283" 
+  "278" -> "279" 
+  "278" -> "280" 
+  "281" -> "282" 
+  "283" -> "284" 
+  "284" -> "285" 
+  "284" -> "288" 
+  "284" -> "300" 
+  "285" -> "286" 
+  "285" -> "287" 
+  "288" -> "289" 
+  "288" -> "296" 
+  "288" -> "299" 
+  "289" -> "290" 
+  "289" -> "291" 
+  "291" -> "292" 
+  "291" -> "293" 
+  "291" -> "294" 
+  "291" -> "295" 
+  "296" -> "297" 
+  "296" -> "298" 
+  "300" -> "301" 
+  "301" -> "302" 
+  "301" -> "305" 
+  "302" -> "303" 
+  "302" -> "304" 
+  "305" -> "306" 
+  "307" -> "308" 
+  "307" -> "316" 
+  "308" -> "309" 
+  "308" -> "310" 
+  "308" -> "311" 
+  "308" -> "313" 
+  "311" -> "312" 
+  "313" -> "314" 
+  "313" -> "315" 
+  "316" -> "317" 
+  "316" -> "318" 
+  "316" -> "319" 
+  "316" -> "321" 
+  "319" -> "320" 
+  "321" -> "322" 
+  "321" -> "323" 
+}

@@ -1,0 +1,141 @@
+digraph "extractProperties" {  
+"266" [label = <(METHOD,extractProperties)<SUB>105</SUB>> ]
+"267" [label = <(PARAM,Map props)<SUB>105</SUB>> ]
+"268" [label = <(PARAM,String optionPrefix)<SUB>105</SUB>> ]
+"269" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>105</SUB>> ]
+"270" [label = <(CONTROL_STRUCTURE,if (props == null),if (props == null))<SUB>106</SUB>> ]
+"271" [label = <(&lt;operator&gt;.equals,props == null)<SUB>106</SUB>> ]
+"272" [label = <(IDENTIFIER,props,props == null)<SUB>106</SUB>> ]
+"273" [label = <(LITERAL,null,props == null)<SUB>106</SUB>> ]
+"274" [label = <(&lt;operator&gt;.throw,throw new IllegalArgumentException(&quot;props was null.&quot;);)<SUB>107</SUB>> ]
+"275" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>107</SUB>> ]
+"276" [label = <(&lt;operator&gt;.assignment,&lt;empty&gt;)> ]
+"277" [label = <(IDENTIFIER,$obj4,&lt;empty&gt;)> ]
+"278" [label = <(&lt;operator&gt;.alloc,new IllegalArgumentException(&quot;props was null.&quot;))<SUB>107</SUB>> ]
+"279" [label = <(&lt;init&gt;,new IllegalArgumentException(&quot;props was null.&quot;))<SUB>107</SUB>> ]
+"280" [label = <(IDENTIFIER,$obj4,new IllegalArgumentException(&quot;props was null.&quot;))> ]
+"281" [label = <(LITERAL,&quot;props was null.&quot;,new IllegalArgumentException(&quot;props was null.&quot;))<SUB>107</SUB>> ]
+"282" [label = <(IDENTIFIER,$obj4,&lt;empty&gt;)> ]
+"4" [label = <(LOCAL,HashMap rc: java.util.HashMap)> ]
+"283" [label = <(&lt;operator&gt;.assignment,HashMap rc = new HashMap(props.size()))<SUB>109</SUB>> ]
+"284" [label = <(IDENTIFIER,rc,HashMap rc = new HashMap(props.size()))<SUB>109</SUB>> ]
+"285" [label = <(&lt;operator&gt;.alloc,new HashMap(props.size()))<SUB>109</SUB>> ]
+"286" [label = <(&lt;init&gt;,new HashMap(props.size()))<SUB>109</SUB>> ]
+"3" [label = <(IDENTIFIER,rc,new HashMap(props.size()))<SUB>109</SUB>> ]
+"287" [label = <(size,props.size())<SUB>109</SUB>> ]
+"288" [label = <(IDENTIFIER,props,props.size())<SUB>109</SUB>> ]
+"289" [label = <(CONTROL_STRUCTURE,for (Iterator iter = props.keySet().iterator(); Some(iter.hasNext()); ),for (Iterator iter = props.keySet().iterator(); Some(iter.hasNext()); ))<SUB>111</SUB>> ]
+"290" [label = <(LOCAL,Iterator iter: java.util.Iterator)> ]
+"291" [label = <(&lt;operator&gt;.assignment,Iterator iter = props.keySet().iterator())<SUB>111</SUB>> ]
+"292" [label = <(IDENTIFIER,iter,Iterator iter = props.keySet().iterator())<SUB>111</SUB>> ]
+"293" [label = <(iterator,props.keySet().iterator())<SUB>111</SUB>> ]
+"294" [label = <(keySet,props.keySet())<SUB>111</SUB>> ]
+"295" [label = <(IDENTIFIER,props,props.keySet())<SUB>111</SUB>> ]
+"296" [label = <(hasNext,iter.hasNext())<SUB>111</SUB>> ]
+"297" [label = <(IDENTIFIER,iter,iter.hasNext())<SUB>111</SUB>> ]
+"298" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>111</SUB>> ]
+"299" [label = <(LOCAL,String name: java.lang.String)> ]
+"300" [label = <(&lt;operator&gt;.assignment,String name = (String) iter.next())<SUB>112</SUB>> ]
+"301" [label = <(IDENTIFIER,name,String name = (String) iter.next())<SUB>112</SUB>> ]
+"302" [label = <(&lt;operator&gt;.cast,(String) iter.next())<SUB>112</SUB>> ]
+"303" [label = <(TYPE_REF,String,String)<SUB>112</SUB>> ]
+"304" [label = <(next,iter.next())<SUB>112</SUB>> ]
+"305" [label = <(IDENTIFIER,iter,iter.next())<SUB>112</SUB>> ]
+"306" [label = <(CONTROL_STRUCTURE,if (name.startsWith(optionPrefix)),if (name.startsWith(optionPrefix)))<SUB>113</SUB>> ]
+"307" [label = <(startsWith,name.startsWith(optionPrefix))<SUB>113</SUB>> ]
+"308" [label = <(IDENTIFIER,name,name.startsWith(optionPrefix))<SUB>113</SUB>> ]
+"309" [label = <(IDENTIFIER,optionPrefix,name.startsWith(optionPrefix))<SUB>113</SUB>> ]
+"310" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>113</SUB>> ]
+"311" [label = <(LOCAL,Object value: java.lang.Object)> ]
+"312" [label = <(&lt;operator&gt;.assignment,Object value = props.get(name))<SUB>114</SUB>> ]
+"313" [label = <(IDENTIFIER,value,Object value = props.get(name))<SUB>114</SUB>> ]
+"314" [label = <(get,props.get(name))<SUB>114</SUB>> ]
+"315" [label = <(IDENTIFIER,props,props.get(name))<SUB>114</SUB>> ]
+"316" [label = <(IDENTIFIER,name,props.get(name))<SUB>114</SUB>> ]
+"317" [label = <(&lt;operator&gt;.assignment,name = name.substring(optionPrefix.length()))<SUB>115</SUB>> ]
+"318" [label = <(IDENTIFIER,name,name = name.substring(optionPrefix.length()))<SUB>115</SUB>> ]
+"319" [label = <(substring,name.substring(optionPrefix.length()))<SUB>115</SUB>> ]
+"320" [label = <(IDENTIFIER,name,name.substring(optionPrefix.length()))<SUB>115</SUB>> ]
+"321" [label = <(length,optionPrefix.length())<SUB>115</SUB>> ]
+"322" [label = <(IDENTIFIER,optionPrefix,optionPrefix.length())<SUB>115</SUB>> ]
+"323" [label = <(put,rc.put(name, value))<SUB>116</SUB>> ]
+"324" [label = <(IDENTIFIER,rc,rc.put(name, value))<SUB>116</SUB>> ]
+"325" [label = <(IDENTIFIER,name,rc.put(name, value))<SUB>116</SUB>> ]
+"326" [label = <(IDENTIFIER,value,rc.put(name, value))<SUB>116</SUB>> ]
+"327" [label = <(remove,iter.remove())<SUB>117</SUB>> ]
+"328" [label = <(IDENTIFIER,iter,iter.remove())<SUB>117</SUB>> ]
+"329" [label = <(RETURN,return rc;,return rc;)<SUB>121</SUB>> ]
+"330" [label = <(IDENTIFIER,rc,return rc;)<SUB>121</SUB>> ]
+"331" [label = <(MODIFIER,PUBLIC)> ]
+"332" [label = <(MODIFIER,STATIC)> ]
+"333" [label = <(METHOD_RETURN,java.util.Map)<SUB>105</SUB>> ]
+  "266" -> "267" 
+  "266" -> "268" 
+  "266" -> "269" 
+  "266" -> "331" 
+  "266" -> "332" 
+  "266" -> "333" 
+  "269" -> "270" 
+  "269" -> "4" 
+  "269" -> "283" 
+  "269" -> "286" 
+  "269" -> "289" 
+  "269" -> "329" 
+  "270" -> "271" 
+  "270" -> "274" 
+  "271" -> "272" 
+  "271" -> "273" 
+  "274" -> "275" 
+  "275" -> "276" 
+  "275" -> "279" 
+  "275" -> "282" 
+  "276" -> "277" 
+  "276" -> "278" 
+  "279" -> "280" 
+  "279" -> "281" 
+  "283" -> "284" 
+  "283" -> "285" 
+  "286" -> "3" 
+  "286" -> "287" 
+  "287" -> "288" 
+  "289" -> "290" 
+  "289" -> "291" 
+  "289" -> "296" 
+  "289" -> "298" 
+  "291" -> "292" 
+  "291" -> "293" 
+  "293" -> "294" 
+  "294" -> "295" 
+  "296" -> "297" 
+  "298" -> "299" 
+  "298" -> "300" 
+  "298" -> "306" 
+  "300" -> "301" 
+  "300" -> "302" 
+  "302" -> "303" 
+  "302" -> "304" 
+  "304" -> "305" 
+  "306" -> "307" 
+  "306" -> "310" 
+  "307" -> "308" 
+  "307" -> "309" 
+  "310" -> "311" 
+  "310" -> "312" 
+  "310" -> "317" 
+  "310" -> "323" 
+  "310" -> "327" 
+  "312" -> "313" 
+  "312" -> "314" 
+  "314" -> "315" 
+  "314" -> "316" 
+  "317" -> "318" 
+  "317" -> "319" 
+  "319" -> "320" 
+  "319" -> "321" 
+  "321" -> "322" 
+  "323" -> "324" 
+  "323" -> "325" 
+  "323" -> "326" 
+  "327" -> "328" 
+  "329" -> "330" 
+}

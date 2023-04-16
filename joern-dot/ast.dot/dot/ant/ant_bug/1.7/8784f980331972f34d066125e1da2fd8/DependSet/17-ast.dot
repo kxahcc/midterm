@@ -1,0 +1,81 @@
+digraph "logFuture" {  
+"538" [label = <(METHOD,logFuture)<SUB>238</SUB>> ]
+"64" [label = <(PARAM,this)<SUB>238</SUB>> ]
+"539" [label = <(PARAM,ResourceCollection rc)<SUB>238</SUB>> ]
+"540" [label = <(PARAM,ResourceSelector rsel)<SUB>238</SUB>> ]
+"541" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>238</SUB>> ]
+"62" [label = <(LOCAL,Restrict r: org.apache.tools.ant.types.resources.Restrict)> ]
+"542" [label = <(&lt;operator&gt;.assignment,Restrict r = new Restrict())<SUB>239</SUB>> ]
+"543" [label = <(IDENTIFIER,r,Restrict r = new Restrict())<SUB>239</SUB>> ]
+"544" [label = <(&lt;operator&gt;.alloc,new Restrict())<SUB>239</SUB>> ]
+"545" [label = <(&lt;init&gt;,new Restrict())<SUB>239</SUB>> ]
+"61" [label = <(IDENTIFIER,r,new Restrict())<SUB>239</SUB>> ]
+"546" [label = <(add,add(rsel))<SUB>240</SUB>> ]
+"547" [label = <(IDENTIFIER,r,add(rsel))<SUB>240</SUB>> ]
+"548" [label = <(IDENTIFIER,rsel,add(rsel))<SUB>240</SUB>> ]
+"549" [label = <(add,add(rc))<SUB>241</SUB>> ]
+"550" [label = <(IDENTIFIER,r,add(rc))<SUB>241</SUB>> ]
+"551" [label = <(IDENTIFIER,rc,add(rc))<SUB>241</SUB>> ]
+"552" [label = <(CONTROL_STRUCTURE,for (Iterator i = r.iterator(); Some(i.hasNext()); ),for (Iterator i = r.iterator(); Some(i.hasNext()); ))<SUB>242</SUB>> ]
+"553" [label = <(LOCAL,Iterator i: java.util.Iterator)> ]
+"554" [label = <(&lt;operator&gt;.assignment,Iterator i = iterator())<SUB>242</SUB>> ]
+"555" [label = <(IDENTIFIER,i,Iterator i = iterator())<SUB>242</SUB>> ]
+"556" [label = <(iterator,iterator())<SUB>242</SUB>> ]
+"557" [label = <(IDENTIFIER,r,iterator())<SUB>242</SUB>> ]
+"558" [label = <(hasNext,i.hasNext())<SUB>242</SUB>> ]
+"559" [label = <(IDENTIFIER,i,i.hasNext())<SUB>242</SUB>> ]
+"560" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>242</SUB>> ]
+"561" [label = <(log,log(&quot;Warning: &quot; + i.next() + &quot; modified in the future.&quot;, Project.MSG_WARN))<SUB>243</SUB>> ]
+"63" [label = <(IDENTIFIER,this,log(&quot;Warning: &quot; + i.next() + &quot; modified in the future.&quot;, Project.MSG_WARN))<SUB>243</SUB>> ]
+"562" [label = <(&lt;operator&gt;.addition,&quot;Warning: &quot; + i.next() + &quot; modified in the future.&quot;)<SUB>243</SUB>> ]
+"563" [label = <(&lt;operator&gt;.addition,&quot;Warning: &quot; + i.next())<SUB>243</SUB>> ]
+"564" [label = <(LITERAL,&quot;Warning: &quot;,&quot;Warning: &quot; + i.next())<SUB>243</SUB>> ]
+"565" [label = <(next,i.next())<SUB>243</SUB>> ]
+"566" [label = <(IDENTIFIER,i,i.next())<SUB>243</SUB>> ]
+"567" [label = <(LITERAL,&quot; modified in the future.&quot;,&quot;Warning: &quot; + i.next() + &quot; modified in the future.&quot;)<SUB>243</SUB>> ]
+"568" [label = <(&lt;operator&gt;.fieldAccess,Project.MSG_WARN)<SUB>243</SUB>> ]
+"569" [label = <(IDENTIFIER,Project,log(&quot;Warning: &quot; + i.next() + &quot; modified in the future.&quot;, Project.MSG_WARN))<SUB>243</SUB>> ]
+"570" [label = <(FIELD_IDENTIFIER,MSG_WARN,MSG_WARN)<SUB>243</SUB>> ]
+"571" [label = <(MODIFIER,PRIVATE)> ]
+"572" [label = <(MODIFIER,VIRTUAL)> ]
+"573" [label = <(METHOD_RETURN,void)<SUB>238</SUB>> ]
+  "538" -> "64" 
+  "538" -> "539" 
+  "538" -> "540" 
+  "538" -> "541" 
+  "538" -> "571" 
+  "538" -> "572" 
+  "538" -> "573" 
+  "541" -> "62" 
+  "541" -> "542" 
+  "541" -> "545" 
+  "541" -> "546" 
+  "541" -> "549" 
+  "541" -> "552" 
+  "542" -> "543" 
+  "542" -> "544" 
+  "545" -> "61" 
+  "546" -> "547" 
+  "546" -> "548" 
+  "549" -> "550" 
+  "549" -> "551" 
+  "552" -> "553" 
+  "552" -> "554" 
+  "552" -> "558" 
+  "552" -> "560" 
+  "554" -> "555" 
+  "554" -> "556" 
+  "556" -> "557" 
+  "558" -> "559" 
+  "560" -> "561" 
+  "561" -> "63" 
+  "561" -> "562" 
+  "561" -> "568" 
+  "562" -> "563" 
+  "562" -> "567" 
+  "563" -> "564" 
+  "563" -> "565" 
+  "565" -> "566" 
+  "568" -> "569" 
+  "568" -> "570" 
+}

@@ -1,0 +1,143 @@
+digraph "decrementRedeliveryCounter" {  
+"1091" [label = <(METHOD,decrementRedeliveryCounter)<SUB>443</SUB>> ]
+"1092" [label = <(PARAM,this)<SUB>443</SUB>> ]
+"1093" [label = <(PARAM,Exchange exchange)<SUB>443</SUB>> ]
+"1094" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>443</SUB>> ]
+"1095" [label = <(LOCAL,Message in: org.apache.camel.Message)> ]
+"1096" [label = <(&lt;operator&gt;.assignment,Message in = getIn())<SUB>444</SUB>> ]
+"1097" [label = <(IDENTIFIER,in,Message in = getIn())<SUB>444</SUB>> ]
+"1098" [label = <(getIn,getIn())<SUB>444</SUB>> ]
+"1099" [label = <(IDENTIFIER,exchange,getIn())<SUB>444</SUB>> ]
+"1100" [label = <(LOCAL,Integer counter: java.lang.Integer)> ]
+"1101" [label = <(&lt;operator&gt;.assignment,Integer counter = getHeader(REDELIVERY_COUNTER, Integer.class))<SUB>445</SUB>> ]
+"1102" [label = <(IDENTIFIER,counter,Integer counter = getHeader(REDELIVERY_COUNTER, Integer.class))<SUB>445</SUB>> ]
+"1103" [label = <(getHeader,getHeader(REDELIVERY_COUNTER, Integer.class))<SUB>445</SUB>> ]
+"1104" [label = <(IDENTIFIER,in,getHeader(REDELIVERY_COUNTER, Integer.class))<SUB>445</SUB>> ]
+"1105" [label = <(&lt;operator&gt;.fieldAccess,DeadLetterChannel.REDELIVERY_COUNTER)<SUB>445</SUB>> ]
+"1106" [label = <(IDENTIFIER,DeadLetterChannel,getHeader(REDELIVERY_COUNTER, Integer.class))<SUB>445</SUB>> ]
+"1107" [label = <(FIELD_IDENTIFIER,REDELIVERY_COUNTER,REDELIVERY_COUNTER)<SUB>445</SUB>> ]
+"1108" [label = <(&lt;operator&gt;.fieldAccess,Integer.class)<SUB>445</SUB>> ]
+"1109" [label = <(IDENTIFIER,Integer,getHeader(REDELIVERY_COUNTER, Integer.class))<SUB>445</SUB>> ]
+"1110" [label = <(FIELD_IDENTIFIER,class,class)<SUB>445</SUB>> ]
+"1111" [label = <(CONTROL_STRUCTURE,if (counter != null),if (counter != null))<SUB>446</SUB>> ]
+"1112" [label = <(&lt;operator&gt;.notEquals,counter != null)<SUB>446</SUB>> ]
+"1113" [label = <(IDENTIFIER,counter,counter != null)<SUB>446</SUB>> ]
+"1114" [label = <(LITERAL,null,counter != null)<SUB>446</SUB>> ]
+"1115" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>446</SUB>> ]
+"1116" [label = <(LOCAL,int prev: int)> ]
+"1117" [label = <(&lt;operator&gt;.assignment,int prev = counter - 1)<SUB>447</SUB>> ]
+"1118" [label = <(IDENTIFIER,prev,int prev = counter - 1)<SUB>447</SUB>> ]
+"1119" [label = <(&lt;operator&gt;.subtraction,counter - 1)<SUB>447</SUB>> ]
+"1120" [label = <(IDENTIFIER,counter,counter - 1)<SUB>447</SUB>> ]
+"1121" [label = <(LITERAL,1,counter - 1)<SUB>447</SUB>> ]
+"1122" [label = <(setHeader,setHeader(REDELIVERY_COUNTER, prev))<SUB>448</SUB>> ]
+"1123" [label = <(IDENTIFIER,in,setHeader(REDELIVERY_COUNTER, prev))<SUB>448</SUB>> ]
+"1124" [label = <(&lt;operator&gt;.fieldAccess,DeadLetterChannel.REDELIVERY_COUNTER)<SUB>448</SUB>> ]
+"1125" [label = <(IDENTIFIER,DeadLetterChannel,setHeader(REDELIVERY_COUNTER, prev))<SUB>448</SUB>> ]
+"1126" [label = <(FIELD_IDENTIFIER,REDELIVERY_COUNTER,REDELIVERY_COUNTER)<SUB>448</SUB>> ]
+"1127" [label = <(IDENTIFIER,prev,setHeader(REDELIVERY_COUNTER, prev))<SUB>448</SUB>> ]
+"1128" [label = <(setHeader,setHeader(REDELIVERED, prev &gt; 0 ? Boolean.TRUE : Boolean.FALSE))<SUB>450</SUB>> ]
+"1129" [label = <(IDENTIFIER,in,setHeader(REDELIVERED, prev &gt; 0 ? Boolean.TRUE : Boolean.FALSE))<SUB>450</SUB>> ]
+"1130" [label = <(&lt;operator&gt;.fieldAccess,DeadLetterChannel.REDELIVERED)<SUB>450</SUB>> ]
+"1131" [label = <(IDENTIFIER,DeadLetterChannel,setHeader(REDELIVERED, prev &gt; 0 ? Boolean.TRUE : Boolean.FALSE))<SUB>450</SUB>> ]
+"1132" [label = <(FIELD_IDENTIFIER,REDELIVERED,REDELIVERED)<SUB>450</SUB>> ]
+"1133" [label = <(&lt;operator&gt;.conditional,prev &gt; 0 ? Boolean.TRUE : Boolean.FALSE)<SUB>450</SUB>> ]
+"1134" [label = <(&lt;operator&gt;.greaterThan,prev &gt; 0)<SUB>450</SUB>> ]
+"1135" [label = <(IDENTIFIER,prev,prev &gt; 0)<SUB>450</SUB>> ]
+"1136" [label = <(LITERAL,0,prev &gt; 0)<SUB>450</SUB>> ]
+"1137" [label = <(&lt;operator&gt;.fieldAccess,Boolean.TRUE)<SUB>450</SUB>> ]
+"1138" [label = <(IDENTIFIER,Boolean,prev &gt; 0 ? Boolean.TRUE : Boolean.FALSE)<SUB>450</SUB>> ]
+"1139" [label = <(FIELD_IDENTIFIER,TRUE,TRUE)<SUB>450</SUB>> ]
+"1140" [label = <(&lt;operator&gt;.fieldAccess,Boolean.FALSE)<SUB>450</SUB>> ]
+"1141" [label = <(IDENTIFIER,Boolean,prev &gt; 0 ? Boolean.TRUE : Boolean.FALSE)<SUB>450</SUB>> ]
+"1142" [label = <(FIELD_IDENTIFIER,FALSE,FALSE)<SUB>450</SUB>> ]
+"1143" [label = <(CONTROL_STRUCTURE,else,else)<SUB>451</SUB>> ]
+"1144" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>451</SUB>> ]
+"1145" [label = <(setHeader,setHeader(REDELIVERY_COUNTER, 0))<SUB>453</SUB>> ]
+"1146" [label = <(IDENTIFIER,in,setHeader(REDELIVERY_COUNTER, 0))<SUB>453</SUB>> ]
+"1147" [label = <(&lt;operator&gt;.fieldAccess,DeadLetterChannel.REDELIVERY_COUNTER)<SUB>453</SUB>> ]
+"1148" [label = <(IDENTIFIER,DeadLetterChannel,setHeader(REDELIVERY_COUNTER, 0))<SUB>453</SUB>> ]
+"1149" [label = <(FIELD_IDENTIFIER,REDELIVERY_COUNTER,REDELIVERY_COUNTER)<SUB>453</SUB>> ]
+"1150" [label = <(LITERAL,0,setHeader(REDELIVERY_COUNTER, 0))<SUB>453</SUB>> ]
+"1151" [label = <(setHeader,setHeader(REDELIVERED, Boolean.FALSE))<SUB>454</SUB>> ]
+"1152" [label = <(IDENTIFIER,in,setHeader(REDELIVERED, Boolean.FALSE))<SUB>454</SUB>> ]
+"1153" [label = <(&lt;operator&gt;.fieldAccess,DeadLetterChannel.REDELIVERED)<SUB>454</SUB>> ]
+"1154" [label = <(IDENTIFIER,DeadLetterChannel,setHeader(REDELIVERED, Boolean.FALSE))<SUB>454</SUB>> ]
+"1155" [label = <(FIELD_IDENTIFIER,REDELIVERED,REDELIVERED)<SUB>454</SUB>> ]
+"1156" [label = <(&lt;operator&gt;.fieldAccess,Boolean.FALSE)<SUB>454</SUB>> ]
+"1157" [label = <(IDENTIFIER,Boolean,setHeader(REDELIVERED, Boolean.FALSE))<SUB>454</SUB>> ]
+"1158" [label = <(FIELD_IDENTIFIER,FALSE,FALSE)<SUB>454</SUB>> ]
+"1159" [label = <(MODIFIER,PRIVATE)> ]
+"1160" [label = <(MODIFIER,VIRTUAL)> ]
+"1161" [label = <(METHOD_RETURN,void)<SUB>443</SUB>> ]
+  "1091" -> "1092" 
+  "1091" -> "1093" 
+  "1091" -> "1094" 
+  "1091" -> "1159" 
+  "1091" -> "1160" 
+  "1091" -> "1161" 
+  "1094" -> "1095" 
+  "1094" -> "1096" 
+  "1094" -> "1100" 
+  "1094" -> "1101" 
+  "1094" -> "1111" 
+  "1096" -> "1097" 
+  "1096" -> "1098" 
+  "1098" -> "1099" 
+  "1101" -> "1102" 
+  "1101" -> "1103" 
+  "1103" -> "1104" 
+  "1103" -> "1105" 
+  "1103" -> "1108" 
+  "1105" -> "1106" 
+  "1105" -> "1107" 
+  "1108" -> "1109" 
+  "1108" -> "1110" 
+  "1111" -> "1112" 
+  "1111" -> "1115" 
+  "1111" -> "1143" 
+  "1112" -> "1113" 
+  "1112" -> "1114" 
+  "1115" -> "1116" 
+  "1115" -> "1117" 
+  "1115" -> "1122" 
+  "1115" -> "1128" 
+  "1117" -> "1118" 
+  "1117" -> "1119" 
+  "1119" -> "1120" 
+  "1119" -> "1121" 
+  "1122" -> "1123" 
+  "1122" -> "1124" 
+  "1122" -> "1127" 
+  "1124" -> "1125" 
+  "1124" -> "1126" 
+  "1128" -> "1129" 
+  "1128" -> "1130" 
+  "1128" -> "1133" 
+  "1130" -> "1131" 
+  "1130" -> "1132" 
+  "1133" -> "1134" 
+  "1133" -> "1137" 
+  "1133" -> "1140" 
+  "1134" -> "1135" 
+  "1134" -> "1136" 
+  "1137" -> "1138" 
+  "1137" -> "1139" 
+  "1140" -> "1141" 
+  "1140" -> "1142" 
+  "1143" -> "1144" 
+  "1144" -> "1145" 
+  "1144" -> "1151" 
+  "1145" -> "1146" 
+  "1145" -> "1147" 
+  "1145" -> "1150" 
+  "1147" -> "1148" 
+  "1147" -> "1149" 
+  "1151" -> "1152" 
+  "1151" -> "1153" 
+  "1151" -> "1156" 
+  "1153" -> "1154" 
+  "1153" -> "1155" 
+  "1156" -> "1157" 
+  "1156" -> "1158" 
+}

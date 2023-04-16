@@ -1,0 +1,225 @@
+digraph "matchPatternStart" {  
+"61" [label = <(METHOD,matchPatternStart)<SUB>95</SUB>> ]
+"62" [label = <(PARAM,String pattern)<SUB>95</SUB>> ]
+"63" [label = <(PARAM,String str)<SUB>95</SUB>> ]
+"64" [label = <(PARAM,boolean isCaseSensitive)<SUB>96</SUB>> ]
+"65" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>96</SUB>> ]
+"66" [label = <(CONTROL_STRUCTURE,if (str.startsWith(File.separator) != pattern.startsWith(File.separator)),if (str.startsWith(File.separator) != pattern.startsWith(File.separator)))<SUB>101</SUB>> ]
+"67" [label = <(&lt;operator&gt;.notEquals,str.startsWith(File.separator) != pattern.startsWith(File.separator))<SUB>101</SUB>> ]
+"68" [label = <(startsWith,str.startsWith(File.separator))<SUB>101</SUB>> ]
+"69" [label = <(IDENTIFIER,str,str.startsWith(File.separator))<SUB>101</SUB>> ]
+"70" [label = <(&lt;operator&gt;.fieldAccess,File.separator)<SUB>101</SUB>> ]
+"71" [label = <(IDENTIFIER,File,str.startsWith(File.separator))<SUB>101</SUB>> ]
+"72" [label = <(FIELD_IDENTIFIER,separator,separator)<SUB>101</SUB>> ]
+"73" [label = <(startsWith,pattern.startsWith(File.separator))<SUB>102</SUB>> ]
+"74" [label = <(IDENTIFIER,pattern,pattern.startsWith(File.separator))<SUB>102</SUB>> ]
+"75" [label = <(&lt;operator&gt;.fieldAccess,File.separator)<SUB>102</SUB>> ]
+"76" [label = <(IDENTIFIER,File,pattern.startsWith(File.separator))<SUB>102</SUB>> ]
+"77" [label = <(FIELD_IDENTIFIER,separator,separator)<SUB>102</SUB>> ]
+"78" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>102</SUB>> ]
+"79" [label = <(RETURN,return false;,return false;)<SUB>103</SUB>> ]
+"80" [label = <(LITERAL,false,return false;)<SUB>103</SUB>> ]
+"81" [label = <(LOCAL,String[] patDirs: java.lang.String[])> ]
+"82" [label = <(&lt;operator&gt;.assignment,String[] patDirs = tokenizePathAsArray(pattern))<SUB>106</SUB>> ]
+"83" [label = <(IDENTIFIER,patDirs,String[] patDirs = tokenizePathAsArray(pattern))<SUB>106</SUB>> ]
+"84" [label = <(tokenizePathAsArray,tokenizePathAsArray(pattern))<SUB>106</SUB>> ]
+"85" [label = <(IDENTIFIER,pattern,tokenizePathAsArray(pattern))<SUB>106</SUB>> ]
+"86" [label = <(LOCAL,String[] strDirs: java.lang.String[])> ]
+"87" [label = <(&lt;operator&gt;.assignment,String[] strDirs = tokenizePathAsArray(str))<SUB>107</SUB>> ]
+"88" [label = <(IDENTIFIER,strDirs,String[] strDirs = tokenizePathAsArray(str))<SUB>107</SUB>> ]
+"89" [label = <(tokenizePathAsArray,tokenizePathAsArray(str))<SUB>107</SUB>> ]
+"90" [label = <(IDENTIFIER,str,tokenizePathAsArray(str))<SUB>107</SUB>> ]
+"91" [label = <(LOCAL,int patIdxStart: int)> ]
+"92" [label = <(&lt;operator&gt;.assignment,int patIdxStart = 0)<SUB>109</SUB>> ]
+"93" [label = <(IDENTIFIER,patIdxStart,int patIdxStart = 0)<SUB>109</SUB>> ]
+"94" [label = <(LITERAL,0,int patIdxStart = 0)<SUB>109</SUB>> ]
+"95" [label = <(LOCAL,int patIdxEnd: int)> ]
+"96" [label = <(&lt;operator&gt;.assignment,int patIdxEnd = patDirs.length - 1)<SUB>110</SUB>> ]
+"97" [label = <(IDENTIFIER,patIdxEnd,int patIdxEnd = patDirs.length - 1)<SUB>110</SUB>> ]
+"98" [label = <(&lt;operator&gt;.subtraction,patDirs.length - 1)<SUB>110</SUB>> ]
+"99" [label = <(&lt;operator&gt;.fieldAccess,patDirs.length)<SUB>110</SUB>> ]
+"100" [label = <(IDENTIFIER,patDirs,patDirs.length - 1)<SUB>110</SUB>> ]
+"101" [label = <(FIELD_IDENTIFIER,length,length)<SUB>110</SUB>> ]
+"102" [label = <(LITERAL,1,patDirs.length - 1)<SUB>110</SUB>> ]
+"103" [label = <(LOCAL,int strIdxStart: int)> ]
+"104" [label = <(&lt;operator&gt;.assignment,int strIdxStart = 0)<SUB>111</SUB>> ]
+"105" [label = <(IDENTIFIER,strIdxStart,int strIdxStart = 0)<SUB>111</SUB>> ]
+"106" [label = <(LITERAL,0,int strIdxStart = 0)<SUB>111</SUB>> ]
+"107" [label = <(LOCAL,int strIdxEnd: int)> ]
+"108" [label = <(&lt;operator&gt;.assignment,int strIdxEnd = strDirs.length - 1)<SUB>112</SUB>> ]
+"109" [label = <(IDENTIFIER,strIdxEnd,int strIdxEnd = strDirs.length - 1)<SUB>112</SUB>> ]
+"110" [label = <(&lt;operator&gt;.subtraction,strDirs.length - 1)<SUB>112</SUB>> ]
+"111" [label = <(&lt;operator&gt;.fieldAccess,strDirs.length)<SUB>112</SUB>> ]
+"112" [label = <(IDENTIFIER,strDirs,strDirs.length - 1)<SUB>112</SUB>> ]
+"113" [label = <(FIELD_IDENTIFIER,length,length)<SUB>112</SUB>> ]
+"114" [label = <(LITERAL,1,strDirs.length - 1)<SUB>112</SUB>> ]
+"115" [label = <(CONTROL_STRUCTURE,while (patIdxStart &lt;= patIdxEnd &amp;&amp; strIdxStart &lt;= strIdxEnd),while (patIdxStart &lt;= patIdxEnd &amp;&amp; strIdxStart &lt;= strIdxEnd))<SUB>115</SUB>> ]
+"116" [label = <(&lt;operator&gt;.logicalAnd,patIdxStart &lt;= patIdxEnd &amp;&amp; strIdxStart &lt;= strIdxEnd)<SUB>115</SUB>> ]
+"117" [label = <(&lt;operator&gt;.lessEqualsThan,patIdxStart &lt;= patIdxEnd)<SUB>115</SUB>> ]
+"118" [label = <(IDENTIFIER,patIdxStart,patIdxStart &lt;= patIdxEnd)<SUB>115</SUB>> ]
+"119" [label = <(IDENTIFIER,patIdxEnd,patIdxStart &lt;= patIdxEnd)<SUB>115</SUB>> ]
+"120" [label = <(&lt;operator&gt;.lessEqualsThan,strIdxStart &lt;= strIdxEnd)<SUB>115</SUB>> ]
+"121" [label = <(IDENTIFIER,strIdxStart,strIdxStart &lt;= strIdxEnd)<SUB>115</SUB>> ]
+"122" [label = <(IDENTIFIER,strIdxEnd,strIdxStart &lt;= strIdxEnd)<SUB>115</SUB>> ]
+"123" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>115</SUB>> ]
+"124" [label = <(LOCAL,String patDir: java.lang.String)> ]
+"125" [label = <(&lt;operator&gt;.assignment,String patDir = patDirs[patIdxStart])<SUB>116</SUB>> ]
+"126" [label = <(IDENTIFIER,patDir,String patDir = patDirs[patIdxStart])<SUB>116</SUB>> ]
+"127" [label = <(&lt;operator&gt;.indexAccess,patDirs[patIdxStart])<SUB>116</SUB>> ]
+"128" [label = <(IDENTIFIER,patDirs,String patDir = patDirs[patIdxStart])<SUB>116</SUB>> ]
+"129" [label = <(IDENTIFIER,patIdxStart,String patDir = patDirs[patIdxStart])<SUB>116</SUB>> ]
+"130" [label = <(CONTROL_STRUCTURE,if (patDir.equals(&quot;**&quot;)),if (patDir.equals(&quot;**&quot;)))<SUB>117</SUB>> ]
+"131" [label = <(equals,patDir.equals(&quot;**&quot;))<SUB>117</SUB>> ]
+"132" [label = <(IDENTIFIER,patDir,patDir.equals(&quot;**&quot;))<SUB>117</SUB>> ]
+"133" [label = <(LITERAL,&quot;**&quot;,patDir.equals(&quot;**&quot;))<SUB>117</SUB>> ]
+"134" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>117</SUB>> ]
+"135" [label = <(CONTROL_STRUCTURE,break;,break;)<SUB>118</SUB>> ]
+"136" [label = <(CONTROL_STRUCTURE,if (!match(patDir, strDirs[strIdxStart], isCaseSensitive)),if (!match(patDir, strDirs[strIdxStart], isCaseSensitive)))<SUB>120</SUB>> ]
+"137" [label = <(&lt;operator&gt;.logicalNot,!match(patDir, strDirs[strIdxStart], isCaseSensitive))<SUB>120</SUB>> ]
+"138" [label = <(match,match(patDir, strDirs[strIdxStart], isCaseSensitive))<SUB>120</SUB>> ]
+"139" [label = <(IDENTIFIER,patDir,match(patDir, strDirs[strIdxStart], isCaseSensitive))<SUB>120</SUB>> ]
+"140" [label = <(&lt;operator&gt;.indexAccess,strDirs[strIdxStart])<SUB>120</SUB>> ]
+"141" [label = <(IDENTIFIER,strDirs,match(patDir, strDirs[strIdxStart], isCaseSensitive))<SUB>120</SUB>> ]
+"142" [label = <(IDENTIFIER,strIdxStart,match(patDir, strDirs[strIdxStart], isCaseSensitive))<SUB>120</SUB>> ]
+"143" [label = <(IDENTIFIER,isCaseSensitive,match(patDir, strDirs[strIdxStart], isCaseSensitive))<SUB>120</SUB>> ]
+"144" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>120</SUB>> ]
+"145" [label = <(RETURN,return false;,return false;)<SUB>121</SUB>> ]
+"146" [label = <(LITERAL,false,return false;)<SUB>121</SUB>> ]
+"147" [label = <(&lt;operator&gt;.postIncrement,patIdxStart++)<SUB>123</SUB>> ]
+"148" [label = <(IDENTIFIER,patIdxStart,patIdxStart++)<SUB>123</SUB>> ]
+"149" [label = <(&lt;operator&gt;.postIncrement,strIdxStart++)<SUB>124</SUB>> ]
+"150" [label = <(IDENTIFIER,strIdxStart,strIdxStart++)<SUB>124</SUB>> ]
+"151" [label = <(CONTROL_STRUCTURE,if (strIdxStart &gt; strIdxEnd),if (strIdxStart &gt; strIdxEnd))<SUB>127</SUB>> ]
+"152" [label = <(&lt;operator&gt;.greaterThan,strIdxStart &gt; strIdxEnd)<SUB>127</SUB>> ]
+"153" [label = <(IDENTIFIER,strIdxStart,strIdxStart &gt; strIdxEnd)<SUB>127</SUB>> ]
+"154" [label = <(IDENTIFIER,strIdxEnd,strIdxStart &gt; strIdxEnd)<SUB>127</SUB>> ]
+"155" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>127</SUB>> ]
+"156" [label = <(RETURN,return true;,return true;)<SUB>129</SUB>> ]
+"157" [label = <(LITERAL,true,return true;)<SUB>129</SUB>> ]
+"158" [label = <(CONTROL_STRUCTURE,else,else)<SUB>130</SUB>> ]
+"159" [label = <(CONTROL_STRUCTURE,if (patIdxStart &gt; patIdxEnd),if (patIdxStart &gt; patIdxEnd))<SUB>130</SUB>> ]
+"160" [label = <(&lt;operator&gt;.greaterThan,patIdxStart &gt; patIdxEnd)<SUB>130</SUB>> ]
+"161" [label = <(IDENTIFIER,patIdxStart,patIdxStart &gt; patIdxEnd)<SUB>130</SUB>> ]
+"162" [label = <(IDENTIFIER,patIdxEnd,patIdxStart &gt; patIdxEnd)<SUB>130</SUB>> ]
+"163" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>130</SUB>> ]
+"164" [label = <(RETURN,return false;,return false;)<SUB>132</SUB>> ]
+"165" [label = <(LITERAL,false,return false;)<SUB>132</SUB>> ]
+"166" [label = <(CONTROL_STRUCTURE,else,else)<SUB>133</SUB>> ]
+"167" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>133</SUB>> ]
+"168" [label = <(RETURN,return true;,return true;)<SUB>136</SUB>> ]
+"169" [label = <(LITERAL,true,return true;)<SUB>136</SUB>> ]
+"170" [label = <(MODIFIER,PUBLIC)> ]
+"171" [label = <(MODIFIER,STATIC)> ]
+"172" [label = <(METHOD_RETURN,boolean)<SUB>95</SUB>> ]
+  "61" -> "62" 
+  "61" -> "63" 
+  "61" -> "64" 
+  "61" -> "65" 
+  "61" -> "170" 
+  "61" -> "171" 
+  "61" -> "172" 
+  "65" -> "66" 
+  "65" -> "81" 
+  "65" -> "82" 
+  "65" -> "86" 
+  "65" -> "87" 
+  "65" -> "91" 
+  "65" -> "92" 
+  "65" -> "95" 
+  "65" -> "96" 
+  "65" -> "103" 
+  "65" -> "104" 
+  "65" -> "107" 
+  "65" -> "108" 
+  "65" -> "115" 
+  "65" -> "151" 
+  "66" -> "67" 
+  "66" -> "78" 
+  "67" -> "68" 
+  "67" -> "73" 
+  "68" -> "69" 
+  "68" -> "70" 
+  "70" -> "71" 
+  "70" -> "72" 
+  "73" -> "74" 
+  "73" -> "75" 
+  "75" -> "76" 
+  "75" -> "77" 
+  "78" -> "79" 
+  "79" -> "80" 
+  "82" -> "83" 
+  "82" -> "84" 
+  "84" -> "85" 
+  "87" -> "88" 
+  "87" -> "89" 
+  "89" -> "90" 
+  "92" -> "93" 
+  "92" -> "94" 
+  "96" -> "97" 
+  "96" -> "98" 
+  "98" -> "99" 
+  "98" -> "102" 
+  "99" -> "100" 
+  "99" -> "101" 
+  "104" -> "105" 
+  "104" -> "106" 
+  "108" -> "109" 
+  "108" -> "110" 
+  "110" -> "111" 
+  "110" -> "114" 
+  "111" -> "112" 
+  "111" -> "113" 
+  "115" -> "116" 
+  "115" -> "123" 
+  "116" -> "117" 
+  "116" -> "120" 
+  "117" -> "118" 
+  "117" -> "119" 
+  "120" -> "121" 
+  "120" -> "122" 
+  "123" -> "124" 
+  "123" -> "125" 
+  "123" -> "130" 
+  "123" -> "136" 
+  "123" -> "147" 
+  "123" -> "149" 
+  "125" -> "126" 
+  "125" -> "127" 
+  "127" -> "128" 
+  "127" -> "129" 
+  "130" -> "131" 
+  "130" -> "134" 
+  "131" -> "132" 
+  "131" -> "133" 
+  "134" -> "135" 
+  "136" -> "137" 
+  "136" -> "144" 
+  "137" -> "138" 
+  "138" -> "139" 
+  "138" -> "140" 
+  "138" -> "143" 
+  "140" -> "141" 
+  "140" -> "142" 
+  "144" -> "145" 
+  "145" -> "146" 
+  "147" -> "148" 
+  "149" -> "150" 
+  "151" -> "152" 
+  "151" -> "155" 
+  "151" -> "158" 
+  "152" -> "153" 
+  "152" -> "154" 
+  "155" -> "156" 
+  "156" -> "157" 
+  "158" -> "159" 
+  "159" -> "160" 
+  "159" -> "163" 
+  "159" -> "166" 
+  "160" -> "161" 
+  "160" -> "162" 
+  "163" -> "164" 
+  "164" -> "165" 
+  "166" -> "167" 
+  "167" -> "168" 
+  "168" -> "169" 
+}

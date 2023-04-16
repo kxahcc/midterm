@@ -1,0 +1,115 @@
+digraph "chooseProcessor" {  
+"73" [label = <(METHOD,chooseProcessor)<SUB>50</SUB>> ]
+"9" [label = <(PARAM,this)<SUB>50</SUB>> ]
+"74" [label = <(PARAM,List&lt;Processor&gt; processors)<SUB>50</SUB>> ]
+"75" [label = <(PARAM,Exchange exchange)<SUB>50</SUB>> ]
+"76" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>50</SUB>> ]
+"77" [label = <(LOCAL,Object value: java.lang.Object)> ]
+"78" [label = <(&lt;operator&gt;.assignment,Object value = evaluate(exchange))<SUB>51</SUB>> ]
+"79" [label = <(IDENTIFIER,value,Object value = evaluate(exchange))<SUB>51</SUB>> ]
+"80" [label = <(evaluate,evaluate(exchange))<SUB>51</SUB>> ]
+"81" [label = <(&lt;operator&gt;.fieldAccess,this.correlationExpression)<SUB>51</SUB>> ]
+"82" [label = <(IDENTIFIER,this,evaluate(exchange))<SUB>51</SUB>> ]
+"83" [label = <(FIELD_IDENTIFIER,correlationExpression,correlationExpression)<SUB>51</SUB>> ]
+"84" [label = <(IDENTIFIER,exchange,evaluate(exchange))<SUB>51</SUB>> ]
+"85" [label = <(LOCAL,Object key: java.lang.Object)> ]
+"86" [label = <(&lt;operator&gt;.assignment,Object key = this.getStickyKey(value))<SUB>52</SUB>> ]
+"87" [label = <(IDENTIFIER,key,Object key = this.getStickyKey(value))<SUB>52</SUB>> ]
+"88" [label = <(getStickyKey,this.getStickyKey(value))<SUB>52</SUB>> ]
+"8" [label = <(IDENTIFIER,this,this.getStickyKey(value))<SUB>52</SUB>> ]
+"89" [label = <(IDENTIFIER,value,this.getStickyKey(value))<SUB>52</SUB>> ]
+"90" [label = <(LOCAL,Processor processor: org.apache.camel.Processor)> ]
+"91" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>55</SUB>> ]
+"92" [label = <(MODIFIER,SYNCHRONIZED)> ]
+"93" [label = <(&lt;operator&gt;.fieldAccess,this.stickyMap)<SUB>55</SUB>> ]
+"94" [label = <(IDENTIFIER,this,&lt;empty&gt;)<SUB>55</SUB>> ]
+"95" [label = <(FIELD_IDENTIFIER,stickyMap,stickyMap)<SUB>55</SUB>> ]
+"96" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>55</SUB>> ]
+"97" [label = <(&lt;operator&gt;.assignment,processor = get(key))<SUB>56</SUB>> ]
+"98" [label = <(IDENTIFIER,processor,processor = get(key))<SUB>56</SUB>> ]
+"99" [label = <(get,get(key))<SUB>56</SUB>> ]
+"100" [label = <(&lt;operator&gt;.fieldAccess,this.stickyMap)<SUB>56</SUB>> ]
+"101" [label = <(IDENTIFIER,this,get(key))<SUB>56</SUB>> ]
+"102" [label = <(FIELD_IDENTIFIER,stickyMap,stickyMap)<SUB>56</SUB>> ]
+"103" [label = <(IDENTIFIER,key,get(key))<SUB>56</SUB>> ]
+"104" [label = <(CONTROL_STRUCTURE,if (processor == null),if (processor == null))<SUB>57</SUB>> ]
+"105" [label = <(&lt;operator&gt;.equals,processor == null)<SUB>57</SUB>> ]
+"106" [label = <(IDENTIFIER,processor,processor == null)<SUB>57</SUB>> ]
+"107" [label = <(LITERAL,null,processor == null)<SUB>57</SUB>> ]
+"108" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>57</SUB>> ]
+"109" [label = <(&lt;operator&gt;.assignment,processor = chooseProcessor(processors, exchange))<SUB>58</SUB>> ]
+"110" [label = <(IDENTIFIER,processor,processor = chooseProcessor(processors, exchange))<SUB>58</SUB>> ]
+"111" [label = <(chooseProcessor,chooseProcessor(processors, exchange))<SUB>58</SUB>> ]
+"112" [label = <(&lt;operator&gt;.fieldAccess,this.loadBalancer)<SUB>58</SUB>> ]
+"113" [label = <(IDENTIFIER,this,chooseProcessor(processors, exchange))<SUB>58</SUB>> ]
+"114" [label = <(FIELD_IDENTIFIER,loadBalancer,loadBalancer)<SUB>58</SUB>> ]
+"115" [label = <(IDENTIFIER,processors,chooseProcessor(processors, exchange))<SUB>58</SUB>> ]
+"116" [label = <(IDENTIFIER,exchange,chooseProcessor(processors, exchange))<SUB>58</SUB>> ]
+"117" [label = <(put,put(key, processor))<SUB>59</SUB>> ]
+"118" [label = <(&lt;operator&gt;.fieldAccess,this.stickyMap)<SUB>59</SUB>> ]
+"119" [label = <(IDENTIFIER,this,put(key, processor))<SUB>59</SUB>> ]
+"120" [label = <(FIELD_IDENTIFIER,stickyMap,stickyMap)<SUB>59</SUB>> ]
+"121" [label = <(IDENTIFIER,key,put(key, processor))<SUB>59</SUB>> ]
+"122" [label = <(IDENTIFIER,processor,put(key, processor))<SUB>59</SUB>> ]
+"123" [label = <(RETURN,return processor;,return processor;)<SUB>62</SUB>> ]
+"124" [label = <(IDENTIFIER,processor,return processor;)<SUB>62</SUB>> ]
+"125" [label = <(MODIFIER,PROTECTED)> ]
+"126" [label = <(MODIFIER,VIRTUAL)> ]
+"127" [label = <(METHOD_RETURN,org.apache.camel.Processor)<SUB>50</SUB>> ]
+  "73" -> "9" 
+  "73" -> "74" 
+  "73" -> "75" 
+  "73" -> "76" 
+  "73" -> "125" 
+  "73" -> "126" 
+  "73" -> "127" 
+  "76" -> "77" 
+  "76" -> "78" 
+  "76" -> "85" 
+  "76" -> "86" 
+  "76" -> "90" 
+  "76" -> "91" 
+  "76" -> "123" 
+  "78" -> "79" 
+  "78" -> "80" 
+  "80" -> "81" 
+  "80" -> "84" 
+  "81" -> "82" 
+  "81" -> "83" 
+  "86" -> "87" 
+  "86" -> "88" 
+  "88" -> "8" 
+  "88" -> "89" 
+  "91" -> "92" 
+  "91" -> "93" 
+  "91" -> "96" 
+  "93" -> "94" 
+  "93" -> "95" 
+  "96" -> "97" 
+  "96" -> "104" 
+  "97" -> "98" 
+  "97" -> "99" 
+  "99" -> "100" 
+  "99" -> "103" 
+  "100" -> "101" 
+  "100" -> "102" 
+  "104" -> "105" 
+  "104" -> "108" 
+  "105" -> "106" 
+  "105" -> "107" 
+  "108" -> "109" 
+  "108" -> "117" 
+  "109" -> "110" 
+  "109" -> "111" 
+  "111" -> "112" 
+  "111" -> "115" 
+  "111" -> "116" 
+  "112" -> "113" 
+  "112" -> "114" 
+  "117" -> "118" 
+  "117" -> "121" 
+  "117" -> "122" 
+  "118" -> "119" 
+  "118" -> "120" 
+  "123" -> "124" 
+}

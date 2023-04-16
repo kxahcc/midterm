@@ -1,0 +1,149 @@
+digraph "addZipEntries" {  
+"642" [label = <(METHOD,addZipEntries)<SUB>265</SUB>> ]
+"31" [label = <(PARAM,this)<SUB>265</SUB>> ]
+"643" [label = <(PARAM,ZipFileSet fs)<SUB>265</SUB>> ]
+"644" [label = <(PARAM,DirectoryScanner ds)<SUB>265</SUB>> ]
+"645" [label = <(PARAM,ZipOutputStream zOut)<SUB>266</SUB>> ]
+"646" [label = <(PARAM,String prefix)<SUB>266</SUB>> ]
+"647" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>268</SUB>> ]
+"648" [label = <(LOCAL,ZipScanner zipScanner: ANY)> ]
+"649" [label = <(&lt;operator&gt;.assignment,ANY zipScanner = (ZipScanner) ds)<SUB>269</SUB>> ]
+"650" [label = <(IDENTIFIER,zipScanner,ANY zipScanner = (ZipScanner) ds)<SUB>269</SUB>> ]
+"651" [label = <(&lt;operator&gt;.cast,(ZipScanner) ds)<SUB>269</SUB>> ]
+"652" [label = <(TYPE_REF,ZipScanner,ZipScanner)<SUB>269</SUB>> ]
+"653" [label = <(IDENTIFIER,ds,(ZipScanner) ds)<SUB>269</SUB>> ]
+"654" [label = <(LOCAL,File zipSrc: java.io.File)> ]
+"655" [label = <(&lt;operator&gt;.assignment,File zipSrc = getSrc())<SUB>270</SUB>> ]
+"656" [label = <(IDENTIFIER,zipSrc,File zipSrc = getSrc())<SUB>270</SUB>> ]
+"657" [label = <(getSrc,getSrc())<SUB>270</SUB>> ]
+"658" [label = <(IDENTIFIER,fs,getSrc())<SUB>270</SUB>> ]
+"659" [label = <(LOCAL,ZipEntry entry: java.util.zip.ZipEntry)> ]
+"29" [label = <(LOCAL,ZipInputStream in: java.util.zip.ZipInputStream)> ]
+"660" [label = <(&lt;operator&gt;.assignment,ZipInputStream in = new ZipInputStream(new FileInputStream(zipSrc)))<SUB>273</SUB>> ]
+"661" [label = <(IDENTIFIER,in,ZipInputStream in = new ZipInputStream(new FileInputStream(zipSrc)))<SUB>273</SUB>> ]
+"662" [label = <(&lt;operator&gt;.alloc,new ZipInputStream(new FileInputStream(zipSrc)))<SUB>273</SUB>> ]
+"663" [label = <(&lt;init&gt;,new ZipInputStream(new FileInputStream(zipSrc)))<SUB>273</SUB>> ]
+"28" [label = <(IDENTIFIER,in,new ZipInputStream(new FileInputStream(zipSrc)))<SUB>273</SUB>> ]
+"664" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>273</SUB>> ]
+"665" [label = <(&lt;operator&gt;.assignment,&lt;empty&gt;)> ]
+"666" [label = <(IDENTIFIER,$obj14,&lt;empty&gt;)> ]
+"667" [label = <(&lt;operator&gt;.alloc,new FileInputStream(zipSrc))<SUB>273</SUB>> ]
+"668" [label = <(&lt;init&gt;,new FileInputStream(zipSrc))<SUB>273</SUB>> ]
+"669" [label = <(IDENTIFIER,$obj14,new FileInputStream(zipSrc))> ]
+"670" [label = <(IDENTIFIER,zipSrc,new FileInputStream(zipSrc))<SUB>273</SUB>> ]
+"671" [label = <(IDENTIFIER,$obj14,&lt;empty&gt;)> ]
+"672" [label = <(CONTROL_STRUCTURE,while ((entry = in.getNextEntry()) != null),while ((entry = in.getNextEntry()) != null))<SUB>274</SUB>> ]
+"673" [label = <(&lt;operator&gt;.notEquals,(entry = in.getNextEntry()) != null)<SUB>274</SUB>> ]
+"674" [label = <(&lt;operator&gt;.assignment,entry = in.getNextEntry())<SUB>274</SUB>> ]
+"675" [label = <(IDENTIFIER,entry,entry = in.getNextEntry())<SUB>274</SUB>> ]
+"676" [label = <(getNextEntry,in.getNextEntry())<SUB>274</SUB>> ]
+"677" [label = <(IDENTIFIER,in,in.getNextEntry())<SUB>274</SUB>> ]
+"678" [label = <(LITERAL,null,(entry = in.getNextEntry()) != null)<SUB>274</SUB>> ]
+"679" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>274</SUB>> ]
+"680" [label = <(LOCAL,String vPath: java.lang.String)> ]
+"681" [label = <(&lt;operator&gt;.assignment,String vPath = entry.getName())<SUB>275</SUB>> ]
+"682" [label = <(IDENTIFIER,vPath,String vPath = entry.getName())<SUB>275</SUB>> ]
+"683" [label = <(getName,entry.getName())<SUB>275</SUB>> ]
+"684" [label = <(IDENTIFIER,entry,entry.getName())<SUB>275</SUB>> ]
+"685" [label = <(CONTROL_STRUCTURE,if (zipScanner.match(vPath)),if (zipScanner.match(vPath)))<SUB>276</SUB>> ]
+"686" [label = <(match,match(vPath))<SUB>276</SUB>> ]
+"687" [label = <(IDENTIFIER,zipScanner,match(vPath))<SUB>276</SUB>> ]
+"688" [label = <(IDENTIFIER,vPath,match(vPath))<SUB>276</SUB>> ]
+"689" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>276</SUB>> ]
+"690" [label = <(addParentDirs,this.addParentDirs(null, vPath, zOut, prefix))<SUB>277</SUB>> ]
+"30" [label = <(IDENTIFIER,this,this.addParentDirs(null, vPath, zOut, prefix))<SUB>277</SUB>> ]
+"691" [label = <(LITERAL,null,this.addParentDirs(null, vPath, zOut, prefix))<SUB>277</SUB>> ]
+"692" [label = <(IDENTIFIER,vPath,this.addParentDirs(null, vPath, zOut, prefix))<SUB>277</SUB>> ]
+"693" [label = <(IDENTIFIER,zOut,this.addParentDirs(null, vPath, zOut, prefix))<SUB>277</SUB>> ]
+"694" [label = <(IDENTIFIER,prefix,this.addParentDirs(null, vPath, zOut, prefix))<SUB>277</SUB>> ]
+"695" [label = <(CONTROL_STRUCTURE,if (!entry.isDirectory()),if (!entry.isDirectory()))<SUB>278</SUB>> ]
+"696" [label = <(&lt;operator&gt;.logicalNot,!entry.isDirectory())<SUB>278</SUB>> ]
+"697" [label = <(isDirectory,entry.isDirectory())<SUB>278</SUB>> ]
+"698" [label = <(IDENTIFIER,entry,entry.isDirectory())<SUB>278</SUB>> ]
+"699" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>278</SUB>> ]
+"700" [label = <(zipFile,this.zipFile(in, zOut, prefix + vPath, entry.getTime()))<SUB>279</SUB>> ]
+"32" [label = <(IDENTIFIER,this,this.zipFile(in, zOut, prefix + vPath, entry.getTime()))<SUB>279</SUB>> ]
+"701" [label = <(IDENTIFIER,in,this.zipFile(in, zOut, prefix + vPath, entry.getTime()))<SUB>279</SUB>> ]
+"702" [label = <(IDENTIFIER,zOut,this.zipFile(in, zOut, prefix + vPath, entry.getTime()))<SUB>279</SUB>> ]
+"703" [label = <(&lt;operator&gt;.addition,prefix + vPath)<SUB>279</SUB>> ]
+"704" [label = <(IDENTIFIER,prefix,prefix + vPath)<SUB>279</SUB>> ]
+"705" [label = <(IDENTIFIER,vPath,prefix + vPath)<SUB>279</SUB>> ]
+"706" [label = <(getTime,entry.getTime())<SUB>279</SUB>> ]
+"707" [label = <(IDENTIFIER,entry,entry.getTime())<SUB>279</SUB>> ]
+"708" [label = <(MODIFIER,PROTECTED)> ]
+"709" [label = <(MODIFIER,VIRTUAL)> ]
+"710" [label = <(METHOD_RETURN,void)<SUB>265</SUB>> ]
+  "642" -> "31" 
+  "642" -> "643" 
+  "642" -> "644" 
+  "642" -> "645" 
+  "642" -> "646" 
+  "642" -> "647" 
+  "642" -> "708" 
+  "642" -> "709" 
+  "642" -> "710" 
+  "647" -> "648" 
+  "647" -> "649" 
+  "647" -> "654" 
+  "647" -> "655" 
+  "647" -> "659" 
+  "647" -> "29" 
+  "647" -> "660" 
+  "647" -> "663" 
+  "647" -> "672" 
+  "649" -> "650" 
+  "649" -> "651" 
+  "651" -> "652" 
+  "651" -> "653" 
+  "655" -> "656" 
+  "655" -> "657" 
+  "657" -> "658" 
+  "660" -> "661" 
+  "660" -> "662" 
+  "663" -> "28" 
+  "663" -> "664" 
+  "664" -> "665" 
+  "664" -> "668" 
+  "664" -> "671" 
+  "665" -> "666" 
+  "665" -> "667" 
+  "668" -> "669" 
+  "668" -> "670" 
+  "672" -> "673" 
+  "672" -> "679" 
+  "673" -> "674" 
+  "673" -> "678" 
+  "674" -> "675" 
+  "674" -> "676" 
+  "676" -> "677" 
+  "679" -> "680" 
+  "679" -> "681" 
+  "679" -> "685" 
+  "681" -> "682" 
+  "681" -> "683" 
+  "683" -> "684" 
+  "685" -> "686" 
+  "685" -> "689" 
+  "686" -> "687" 
+  "686" -> "688" 
+  "689" -> "690" 
+  "689" -> "695" 
+  "690" -> "30" 
+  "690" -> "691" 
+  "690" -> "692" 
+  "690" -> "693" 
+  "690" -> "694" 
+  "695" -> "696" 
+  "695" -> "699" 
+  "696" -> "697" 
+  "697" -> "698" 
+  "699" -> "700" 
+  "700" -> "32" 
+  "700" -> "701" 
+  "700" -> "702" 
+  "700" -> "703" 
+  "700" -> "706" 
+  "703" -> "704" 
+  "703" -> "705" 
+  "706" -> "707" 
+}

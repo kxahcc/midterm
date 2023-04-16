@@ -1,0 +1,55 @@
+digraph "createProxy" {  
+"22" [label = <(METHOD,createProxy)<SUB>42</SUB>> ]
+"23" [label = <(PARAM,final Endpoint endpoint)<SUB>42</SUB>> ]
+"24" [label = <(PARAM,ClassLoader cl)<SUB>42</SUB>> ]
+"25" [label = <(PARAM,Class[] interfaces)<SUB>42</SUB>> ]
+"26" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>43</SUB>> ]
+"27" [label = <(LOCAL,Producer producer: org.apache.camel.Producer)> ]
+"28" [label = <(&lt;operator&gt;.assignment,Producer producer = createProducer())<SUB>44</SUB>> ]
+"29" [label = <(IDENTIFIER,producer,Producer producer = createProducer())<SUB>44</SUB>> ]
+"30" [label = <(createProducer,createProducer())<SUB>44</SUB>> ]
+"31" [label = <(IDENTIFIER,endpoint,createProducer())<SUB>44</SUB>> ]
+"32" [label = <(RETURN,return Proxy.newProxyInstance(cl, interfaces, new CamelInvocationHandler(endpoint, producer));,return Proxy.newProxyInstance(cl, interfaces, new CamelInvocationHandler(endpoint, producer));)<SUB>45</SUB>> ]
+"33" [label = <(newProxyInstance,newProxyInstance(cl, interfaces, new CamelInvocationHandler(endpoint, producer)))<SUB>45</SUB>> ]
+"34" [label = <(IDENTIFIER,Proxy,newProxyInstance(cl, interfaces, new CamelInvocationHandler(endpoint, producer)))<SUB>45</SUB>> ]
+"35" [label = <(IDENTIFIER,cl,newProxyInstance(cl, interfaces, new CamelInvocationHandler(endpoint, producer)))<SUB>45</SUB>> ]
+"36" [label = <(IDENTIFIER,interfaces,newProxyInstance(cl, interfaces, new CamelInvocationHandler(endpoint, producer)))<SUB>45</SUB>> ]
+"37" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>45</SUB>> ]
+"38" [label = <(&lt;operator&gt;.assignment,&lt;empty&gt;)> ]
+"39" [label = <(IDENTIFIER,$obj0,&lt;empty&gt;)> ]
+"40" [label = <(&lt;operator&gt;.alloc,new CamelInvocationHandler(endpoint, producer))<SUB>45</SUB>> ]
+"41" [label = <(&lt;init&gt;,new CamelInvocationHandler(endpoint, producer))<SUB>45</SUB>> ]
+"42" [label = <(IDENTIFIER,$obj0,new CamelInvocationHandler(endpoint, producer))> ]
+"43" [label = <(IDENTIFIER,endpoint,new CamelInvocationHandler(endpoint, producer))<SUB>45</SUB>> ]
+"44" [label = <(IDENTIFIER,producer,new CamelInvocationHandler(endpoint, producer))<SUB>45</SUB>> ]
+"45" [label = <(IDENTIFIER,$obj0,&lt;empty&gt;)> ]
+"46" [label = <(MODIFIER,PUBLIC)> ]
+"47" [label = <(MODIFIER,STATIC)> ]
+"48" [label = <(METHOD_RETURN,java.lang.Object)<SUB>42</SUB>> ]
+  "22" -> "23" 
+  "22" -> "24" 
+  "22" -> "25" 
+  "22" -> "26" 
+  "22" -> "46" 
+  "22" -> "47" 
+  "22" -> "48" 
+  "26" -> "27" 
+  "26" -> "28" 
+  "26" -> "32" 
+  "28" -> "29" 
+  "28" -> "30" 
+  "30" -> "31" 
+  "32" -> "33" 
+  "33" -> "34" 
+  "33" -> "35" 
+  "33" -> "36" 
+  "33" -> "37" 
+  "37" -> "38" 
+  "37" -> "41" 
+  "37" -> "45" 
+  "38" -> "39" 
+  "38" -> "40" 
+  "41" -> "42" 
+  "41" -> "43" 
+  "41" -> "44" 
+}

@@ -1,0 +1,117 @@
+digraph "findMethodsWithAnnotation" {  
+"1149" [label = <(METHOD,findMethodsWithAnnotation)<SUB>583</SUB>> ]
+"1150" [label = <(PARAM,Class&lt;?&gt; type)<SUB>583</SUB>> ]
+"1151" [label = <(PARAM,Class&lt;? extends Annotation&gt; annotationType)<SUB>584</SUB>> ]
+"1152" [label = <(PARAM,boolean checkMetaAnnotations)<SUB>584</SUB>> ]
+"1153" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>584</SUB>> ]
+"6" [label = <(LOCAL,List&lt;Method&gt; answer: java.util.List)> ]
+"1154" [label = <(&lt;operator&gt;.assignment,List answer = new ArrayList&lt;Method&gt;())<SUB>585</SUB>> ]
+"1155" [label = <(IDENTIFIER,answer,List answer = new ArrayList&lt;Method&gt;())<SUB>585</SUB>> ]
+"1156" [label = <(&lt;operator&gt;.alloc,new ArrayList&lt;Method&gt;())<SUB>585</SUB>> ]
+"1157" [label = <(&lt;init&gt;,new ArrayList&lt;Method&gt;())<SUB>585</SUB>> ]
+"5" [label = <(IDENTIFIER,answer,new ArrayList&lt;Method&gt;())<SUB>585</SUB>> ]
+"1158" [label = <(CONTROL_STRUCTURE,do {...} while (type != null),do {...} while (type != null))<SUB>586</SUB>> ]
+"1159" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>586</SUB>> ]
+"1160" [label = <(LOCAL,Method[] methods: java.lang.reflect.Method[])> ]
+"1161" [label = <(&lt;operator&gt;.assignment,Method[] methods = type.getDeclaredMethods())<SUB>587</SUB>> ]
+"1162" [label = <(IDENTIFIER,methods,Method[] methods = type.getDeclaredMethods())<SUB>587</SUB>> ]
+"1163" [label = <(getDeclaredMethods,type.getDeclaredMethods())<SUB>587</SUB>> ]
+"1164" [label = <(IDENTIFIER,type,type.getDeclaredMethods())<SUB>587</SUB>> ]
+"1165" [label = <(CONTROL_STRUCTURE,&lt;empty&gt;,&lt;empty&gt;)> ]
+"1166" [label = <(LOCAL,$idx1: int)<SUB>588</SUB>> ]
+"1167" [label = <(&lt;operator&gt;.assignment,int $idx1 = 0)<SUB>588</SUB>> ]
+"1168" [label = <(IDENTIFIER,$idx1,int $idx1 = 0)<SUB>588</SUB>> ]
+"1169" [label = <(LITERAL,0,int $idx1 = 0)<SUB>588</SUB>> ]
+"1170" [label = <(&lt;operator&gt;.lessThan,$idx1 &lt; methods.length)<SUB>588</SUB>> ]
+"1171" [label = <(IDENTIFIER,$idx1,$idx1 &lt; methods.length)<SUB>588</SUB>> ]
+"1172" [label = <(&lt;operator&gt;.fieldAccess,methods.length)<SUB>588</SUB>> ]
+"1173" [label = <(IDENTIFIER,methods,$idx1 &lt; methods.length)<SUB>588</SUB>> ]
+"1174" [label = <(FIELD_IDENTIFIER,length,length)<SUB>588</SUB>> ]
+"1175" [label = <(&lt;operator&gt;.postIncrement,$idx1++)<SUB>588</SUB>> ]
+"1176" [label = <(IDENTIFIER,$idx1,$idx1++)<SUB>588</SUB>> ]
+"1177" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>588</SUB>> ]
+"1178" [label = <(LOCAL,method: java.lang.reflect.Method)<SUB>588</SUB>> ]
+"1179" [label = <(&lt;operator&gt;.assignment,&lt;empty&gt;)<SUB>588</SUB>> ]
+"1180" [label = <(IDENTIFIER,method,&lt;empty&gt;)<SUB>588</SUB>> ]
+"1181" [label = <(&lt;operator&gt;.indexAccess,&lt;empty&gt;)<SUB>588</SUB>> ]
+"1182" [label = <(IDENTIFIER,methods,&lt;empty&gt;)<SUB>588</SUB>> ]
+"1183" [label = <(IDENTIFIER,$idx1,&lt;empty&gt;)<SUB>588</SUB>> ]
+"1184" [label = <(CONTROL_STRUCTURE,if (hasAnnotation(method, annotationType, checkMetaAnnotations)),if (hasAnnotation(method, annotationType, checkMetaAnnotations)))<SUB>589</SUB>> ]
+"1185" [label = <(hasAnnotation,hasAnnotation(method, annotationType, checkMetaAnnotations))<SUB>589</SUB>> ]
+"1186" [label = <(IDENTIFIER,method,hasAnnotation(method, annotationType, checkMetaAnnotations))<SUB>589</SUB>> ]
+"1187" [label = <(IDENTIFIER,annotationType,hasAnnotation(method, annotationType, checkMetaAnnotations))<SUB>589</SUB>> ]
+"1188" [label = <(IDENTIFIER,checkMetaAnnotations,hasAnnotation(method, annotationType, checkMetaAnnotations))<SUB>589</SUB>> ]
+"1189" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>589</SUB>> ]
+"1190" [label = <(add,answer.add(method))<SUB>590</SUB>> ]
+"1191" [label = <(IDENTIFIER,answer,answer.add(method))<SUB>590</SUB>> ]
+"1192" [label = <(IDENTIFIER,method,answer.add(method))<SUB>590</SUB>> ]
+"1193" [label = <(&lt;operator&gt;.assignment,type = type.getSuperclass())<SUB>593</SUB>> ]
+"1194" [label = <(IDENTIFIER,type,type = type.getSuperclass())<SUB>593</SUB>> ]
+"1195" [label = <(getSuperclass,type.getSuperclass())<SUB>593</SUB>> ]
+"1196" [label = <(IDENTIFIER,type,type.getSuperclass())<SUB>593</SUB>> ]
+"1197" [label = <(&lt;operator&gt;.notEquals,type != null)<SUB>594</SUB>> ]
+"1198" [label = <(IDENTIFIER,type,type != null)<SUB>594</SUB>> ]
+"1199" [label = <(LITERAL,null,type != null)<SUB>594</SUB>> ]
+"1200" [label = <(RETURN,return answer;,return answer;)<SUB>595</SUB>> ]
+"1201" [label = <(IDENTIFIER,answer,return answer;)<SUB>595</SUB>> ]
+"1202" [label = <(MODIFIER,PUBLIC)> ]
+"1203" [label = <(MODIFIER,STATIC)> ]
+"1204" [label = <(METHOD_RETURN,java.util.List)<SUB>583</SUB>> ]
+  "1149" -> "1150" 
+  "1149" -> "1151" 
+  "1149" -> "1152" 
+  "1149" -> "1153" 
+  "1149" -> "1202" 
+  "1149" -> "1203" 
+  "1149" -> "1204" 
+  "1153" -> "6" 
+  "1153" -> "1154" 
+  "1153" -> "1157" 
+  "1153" -> "1158" 
+  "1153" -> "1200" 
+  "1154" -> "1155" 
+  "1154" -> "1156" 
+  "1157" -> "5" 
+  "1158" -> "1159" 
+  "1158" -> "1197" 
+  "1159" -> "1160" 
+  "1159" -> "1161" 
+  "1159" -> "1165" 
+  "1159" -> "1193" 
+  "1161" -> "1162" 
+  "1161" -> "1163" 
+  "1163" -> "1164" 
+  "1165" -> "1166" 
+  "1165" -> "1167" 
+  "1165" -> "1170" 
+  "1165" -> "1175" 
+  "1165" -> "1177" 
+  "1167" -> "1168" 
+  "1167" -> "1169" 
+  "1170" -> "1171" 
+  "1170" -> "1172" 
+  "1172" -> "1173" 
+  "1172" -> "1174" 
+  "1175" -> "1176" 
+  "1177" -> "1178" 
+  "1177" -> "1179" 
+  "1177" -> "1184" 
+  "1179" -> "1180" 
+  "1179" -> "1181" 
+  "1181" -> "1182" 
+  "1181" -> "1183" 
+  "1184" -> "1185" 
+  "1184" -> "1189" 
+  "1185" -> "1186" 
+  "1185" -> "1187" 
+  "1185" -> "1188" 
+  "1189" -> "1190" 
+  "1190" -> "1191" 
+  "1190" -> "1192" 
+  "1193" -> "1194" 
+  "1193" -> "1195" 
+  "1195" -> "1196" 
+  "1197" -> "1198" 
+  "1197" -> "1199" 
+  "1200" -> "1201" 
+}

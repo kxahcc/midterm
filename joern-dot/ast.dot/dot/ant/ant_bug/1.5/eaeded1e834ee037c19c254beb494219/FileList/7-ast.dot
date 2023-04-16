@@ -1,0 +1,117 @@
+digraph "getRef" {  
+"246" [label = <(METHOD,getRef)<SUB>157</SUB>> ]
+"30" [label = <(PARAM,this)<SUB>157</SUB>> ]
+"247" [label = <(PARAM,Project p)<SUB>157</SUB>> ]
+"248" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>157</SUB>> ]
+"249" [label = <(CONTROL_STRUCTURE,if (!checked),if (!checked))<SUB>158</SUB>> ]
+"250" [label = <(&lt;operator&gt;.logicalNot,!checked)<SUB>158</SUB>> ]
+"251" [label = <(IDENTIFIER,checked,!checked)<SUB>158</SUB>> ]
+"252" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>158</SUB>> ]
+"28" [label = <(LOCAL,Stack stk: java.util.Stack)> ]
+"253" [label = <(&lt;operator&gt;.assignment,Stack stk = new Stack())<SUB>159</SUB>> ]
+"254" [label = <(IDENTIFIER,stk,Stack stk = new Stack())<SUB>159</SUB>> ]
+"255" [label = <(&lt;operator&gt;.alloc,new Stack())<SUB>159</SUB>> ]
+"256" [label = <(&lt;init&gt;,new Stack())<SUB>159</SUB>> ]
+"27" [label = <(IDENTIFIER,stk,new Stack())<SUB>159</SUB>> ]
+"257" [label = <(push,stk.push(this))<SUB>160</SUB>> ]
+"258" [label = <(IDENTIFIER,stk,stk.push(this))<SUB>160</SUB>> ]
+"29" [label = <(IDENTIFIER,this,stk.push(this))<SUB>160</SUB>> ]
+"259" [label = <(dieOnCircularReference,dieOnCircularReference(stk, p))<SUB>161</SUB>> ]
+"31" [label = <(IDENTIFIER,this,dieOnCircularReference(stk, p))<SUB>161</SUB>> ]
+"260" [label = <(IDENTIFIER,stk,dieOnCircularReference(stk, p))<SUB>161</SUB>> ]
+"261" [label = <(IDENTIFIER,p,dieOnCircularReference(stk, p))<SUB>161</SUB>> ]
+"262" [label = <(LOCAL,Object o: java.lang.Object)> ]
+"263" [label = <(&lt;operator&gt;.assignment,Object o = getReferencedObject(p))<SUB>164</SUB>> ]
+"264" [label = <(IDENTIFIER,o,Object o = getReferencedObject(p))<SUB>164</SUB>> ]
+"265" [label = <(getReferencedObject,getReferencedObject(p))<SUB>164</SUB>> ]
+"266" [label = <(IDENTIFIER,ref,getReferencedObject(p))<SUB>164</SUB>> ]
+"267" [label = <(IDENTIFIER,p,getReferencedObject(p))<SUB>164</SUB>> ]
+"268" [label = <(CONTROL_STRUCTURE,if (!(o instanceof FileList)),if (!(o instanceof FileList)))<SUB>165</SUB>> ]
+"269" [label = <(&lt;operator&gt;.logicalNot,!(o instanceof FileList))<SUB>165</SUB>> ]
+"270" [label = <(&lt;operator&gt;.instanceOf,o instanceof FileList)<SUB>165</SUB>> ]
+"271" [label = <(IDENTIFIER,o,o instanceof FileList)<SUB>165</SUB>> ]
+"272" [label = <(TYPE_REF,FileList,FileList)<SUB>165</SUB>> ]
+"273" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>165</SUB>> ]
+"274" [label = <(LOCAL,String msg: java.lang.String)> ]
+"275" [label = <(&lt;operator&gt;.assignment,String msg = ref.getRefId() + &quot; doesn\'t denote a filelist&quot;)<SUB>166</SUB>> ]
+"276" [label = <(IDENTIFIER,msg,String msg = ref.getRefId() + &quot; doesn\'t denote a filelist&quot;)<SUB>166</SUB>> ]
+"277" [label = <(&lt;operator&gt;.addition,ref.getRefId() + &quot; doesn\'t denote a filelist&quot;)<SUB>166</SUB>> ]
+"278" [label = <(getRefId,getRefId())<SUB>166</SUB>> ]
+"279" [label = <(IDENTIFIER,ref,getRefId())<SUB>166</SUB>> ]
+"280" [label = <(LITERAL,&quot; doesn\'t denote a filelist&quot;,ref.getRefId() + &quot; doesn\'t denote a filelist&quot;)<SUB>166</SUB>> ]
+"281" [label = <(&lt;operator&gt;.throw,throw new BuildException(msg);)<SUB>167</SUB>> ]
+"282" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>167</SUB>> ]
+"283" [label = <(&lt;operator&gt;.assignment,&lt;empty&gt;)> ]
+"284" [label = <(IDENTIFIER,$obj5,&lt;empty&gt;)> ]
+"285" [label = <(&lt;operator&gt;.alloc,new BuildException(msg))<SUB>167</SUB>> ]
+"286" [label = <(&lt;init&gt;,new BuildException(msg))<SUB>167</SUB>> ]
+"287" [label = <(IDENTIFIER,$obj5,new BuildException(msg))> ]
+"288" [label = <(IDENTIFIER,msg,new BuildException(msg))<SUB>167</SUB>> ]
+"289" [label = <(IDENTIFIER,$obj5,&lt;empty&gt;)> ]
+"290" [label = <(CONTROL_STRUCTURE,else,else)<SUB>168</SUB>> ]
+"291" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>168</SUB>> ]
+"292" [label = <(RETURN,return (FileList) o;,return (FileList) o;)<SUB>169</SUB>> ]
+"293" [label = <(&lt;operator&gt;.cast,(FileList) o)<SUB>169</SUB>> ]
+"294" [label = <(TYPE_REF,FileList,FileList)<SUB>169</SUB>> ]
+"295" [label = <(IDENTIFIER,o,(FileList) o)<SUB>169</SUB>> ]
+"296" [label = <(MODIFIER,PROTECTED)> ]
+"297" [label = <(MODIFIER,VIRTUAL)> ]
+"298" [label = <(METHOD_RETURN,org.apache.tools.ant.types.FileList)<SUB>157</SUB>> ]
+  "246" -> "30" 
+  "246" -> "247" 
+  "246" -> "248" 
+  "246" -> "296" 
+  "246" -> "297" 
+  "246" -> "298" 
+  "248" -> "249" 
+  "248" -> "262" 
+  "248" -> "263" 
+  "248" -> "268" 
+  "249" -> "250" 
+  "249" -> "252" 
+  "250" -> "251" 
+  "252" -> "28" 
+  "252" -> "253" 
+  "252" -> "256" 
+  "252" -> "257" 
+  "252" -> "259" 
+  "253" -> "254" 
+  "253" -> "255" 
+  "256" -> "27" 
+  "257" -> "258" 
+  "257" -> "29" 
+  "259" -> "31" 
+  "259" -> "260" 
+  "259" -> "261" 
+  "263" -> "264" 
+  "263" -> "265" 
+  "265" -> "266" 
+  "265" -> "267" 
+  "268" -> "269" 
+  "268" -> "273" 
+  "268" -> "290" 
+  "269" -> "270" 
+  "270" -> "271" 
+  "270" -> "272" 
+  "273" -> "274" 
+  "273" -> "275" 
+  "273" -> "281" 
+  "275" -> "276" 
+  "275" -> "277" 
+  "277" -> "278" 
+  "277" -> "280" 
+  "278" -> "279" 
+  "281" -> "282" 
+  "282" -> "283" 
+  "282" -> "286" 
+  "282" -> "289" 
+  "283" -> "284" 
+  "283" -> "285" 
+  "286" -> "287" 
+  "286" -> "288" 
+  "290" -> "291" 
+  "291" -> "292" 
+  "292" -> "293" 
+  "293" -> "294" 
+  "293" -> "295" 
+}

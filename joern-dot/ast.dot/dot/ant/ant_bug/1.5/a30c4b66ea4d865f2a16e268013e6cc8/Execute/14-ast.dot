@@ -1,0 +1,83 @@
+digraph "launch" {  
+"708" [label = <(METHOD,launch)<SUB>408</SUB>> ]
+"709" [label = <(PARAM,Project project)<SUB>408</SUB>> ]
+"710" [label = <(PARAM,String[] command)<SUB>408</SUB>> ]
+"711" [label = <(PARAM,String[] env)<SUB>409</SUB>> ]
+"712" [label = <(PARAM,File dir)<SUB>409</SUB>> ]
+"713" [label = <(PARAM,boolean useVM)<SUB>409</SUB>> ]
+"714" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>410</SUB>> ]
+"715" [label = <(LOCAL,CommandLauncher launcher: org.apache.tools.ant.taskdefs.Execute$CommandLauncher)> ]
+"716" [label = <(&lt;operator&gt;.assignment,Execute$CommandLauncher launcher = vmLauncher != null ? vmLauncher : shellLauncher)<SUB>411</SUB>> ]
+"717" [label = <(IDENTIFIER,launcher,Execute$CommandLauncher launcher = vmLauncher != null ? vmLauncher : shellLauncher)<SUB>411</SUB>> ]
+"718" [label = <(&lt;operator&gt;.conditional,vmLauncher != null ? vmLauncher : shellLauncher)<SUB>412</SUB>> ]
+"719" [label = <(&lt;operator&gt;.notEquals,vmLauncher != null)<SUB>412</SUB>> ]
+"720" [label = <(&lt;operator&gt;.fieldAccess,Execute.vmLauncher)<SUB>412</SUB>> ]
+"721" [label = <(IDENTIFIER,Execute,vmLauncher != null)<SUB>412</SUB>> ]
+"722" [label = <(FIELD_IDENTIFIER,vmLauncher,vmLauncher)<SUB>412</SUB>> ]
+"723" [label = <(LITERAL,null,vmLauncher != null)<SUB>412</SUB>> ]
+"724" [label = <(&lt;operator&gt;.fieldAccess,Execute.vmLauncher)<SUB>412</SUB>> ]
+"725" [label = <(IDENTIFIER,Execute,vmLauncher != null ? vmLauncher : shellLauncher)<SUB>412</SUB>> ]
+"726" [label = <(FIELD_IDENTIFIER,vmLauncher,vmLauncher)<SUB>412</SUB>> ]
+"727" [label = <(&lt;operator&gt;.fieldAccess,Execute.shellLauncher)<SUB>412</SUB>> ]
+"728" [label = <(IDENTIFIER,Execute,vmLauncher != null ? vmLauncher : shellLauncher)<SUB>412</SUB>> ]
+"729" [label = <(FIELD_IDENTIFIER,shellLauncher,shellLauncher)<SUB>412</SUB>> ]
+"730" [label = <(CONTROL_STRUCTURE,if (!useVM),if (!useVM))<SUB>413</SUB>> ]
+"731" [label = <(&lt;operator&gt;.logicalNot,!useVM)<SUB>413</SUB>> ]
+"732" [label = <(IDENTIFIER,useVM,!useVM)<SUB>413</SUB>> ]
+"733" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>413</SUB>> ]
+"734" [label = <(&lt;operator&gt;.assignment,launcher = Execute.shellLauncher)<SUB>414</SUB>> ]
+"735" [label = <(IDENTIFIER,launcher,launcher = Execute.shellLauncher)<SUB>414</SUB>> ]
+"736" [label = <(&lt;operator&gt;.fieldAccess,Execute.shellLauncher)<SUB>414</SUB>> ]
+"737" [label = <(IDENTIFIER,Execute,launcher = Execute.shellLauncher)<SUB>414</SUB>> ]
+"738" [label = <(FIELD_IDENTIFIER,shellLauncher,shellLauncher)<SUB>414</SUB>> ]
+"739" [label = <(RETURN,return launcher.exec(project, command, env, dir);,return launcher.exec(project, command, env, dir);)<SUB>417</SUB>> ]
+"740" [label = <(exec,exec(project, command, env, dir))<SUB>417</SUB>> ]
+"741" [label = <(IDENTIFIER,launcher,exec(project, command, env, dir))<SUB>417</SUB>> ]
+"742" [label = <(IDENTIFIER,project,exec(project, command, env, dir))<SUB>417</SUB>> ]
+"743" [label = <(IDENTIFIER,command,exec(project, command, env, dir))<SUB>417</SUB>> ]
+"744" [label = <(IDENTIFIER,env,exec(project, command, env, dir))<SUB>417</SUB>> ]
+"745" [label = <(IDENTIFIER,dir,exec(project, command, env, dir))<SUB>417</SUB>> ]
+"746" [label = <(MODIFIER,PUBLIC)> ]
+"747" [label = <(MODIFIER,STATIC)> ]
+"748" [label = <(METHOD_RETURN,java.lang.Process)<SUB>408</SUB>> ]
+  "708" -> "709" 
+  "708" -> "710" 
+  "708" -> "711" 
+  "708" -> "712" 
+  "708" -> "713" 
+  "708" -> "714" 
+  "708" -> "746" 
+  "708" -> "747" 
+  "708" -> "748" 
+  "714" -> "715" 
+  "714" -> "716" 
+  "714" -> "730" 
+  "714" -> "739" 
+  "716" -> "717" 
+  "716" -> "718" 
+  "718" -> "719" 
+  "718" -> "724" 
+  "718" -> "727" 
+  "719" -> "720" 
+  "719" -> "723" 
+  "720" -> "721" 
+  "720" -> "722" 
+  "724" -> "725" 
+  "724" -> "726" 
+  "727" -> "728" 
+  "727" -> "729" 
+  "730" -> "731" 
+  "730" -> "733" 
+  "731" -> "732" 
+  "733" -> "734" 
+  "734" -> "735" 
+  "734" -> "736" 
+  "736" -> "737" 
+  "736" -> "738" 
+  "739" -> "740" 
+  "740" -> "741" 
+  "740" -> "742" 
+  "740" -> "743" 
+  "740" -> "744" 
+  "740" -> "745" 
+}

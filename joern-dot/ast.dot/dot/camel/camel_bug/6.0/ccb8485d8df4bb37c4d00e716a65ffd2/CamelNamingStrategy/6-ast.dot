@@ -1,0 +1,207 @@
+digraph "getObjectName" {  
+"414" [label = <(METHOD,getObjectName)<SUB>150</SUB>> ]
+"29" [label = <(PARAM,this)<SUB>150</SUB>> ]
+"415" [label = <(PARAM,RouteContext routeContext)<SUB>150</SUB>> ]
+"416" [label = <(PARAM,ProcessorType processor)<SUB>150</SUB>> ]
+"417" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>151</SUB>> ]
+"418" [label = <(LOCAL,Endpoint&lt;? extends Exchange&gt; ep: ANY)> ]
+"419" [label = <(&lt;operator&gt;.assignment,ANY ep = getEndpoint())<SUB>152</SUB>> ]
+"420" [label = <(IDENTIFIER,ep,ANY ep = getEndpoint())<SUB>152</SUB>> ]
+"421" [label = <(getEndpoint,getEndpoint())<SUB>152</SUB>> ]
+"422" [label = <(IDENTIFIER,routeContext,getEndpoint())<SUB>152</SUB>> ]
+"423" [label = <(LOCAL,String ctxid: java.lang.String)> ]
+"424" [label = <(&lt;operator&gt;.assignment,String ctxid = ep != null ? getContextId(ep.getCamelContext()) : VALUE_UNKNOWN)<SUB>153</SUB>> ]
+"425" [label = <(IDENTIFIER,ctxid,String ctxid = ep != null ? getContextId(ep.getCamelContext()) : VALUE_UNKNOWN)<SUB>153</SUB>> ]
+"426" [label = <(&lt;operator&gt;.conditional,ep != null ? getContextId(ep.getCamelContext()) : VALUE_UNKNOWN)<SUB>153</SUB>> ]
+"427" [label = <(&lt;operator&gt;.notEquals,ep != null)<SUB>153</SUB>> ]
+"428" [label = <(IDENTIFIER,ep,ep != null)<SUB>153</SUB>> ]
+"429" [label = <(LITERAL,null,ep != null)<SUB>153</SUB>> ]
+"430" [label = <(getContextId,getContextId(ep.getCamelContext()))<SUB>153</SUB>> ]
+"28" [label = <(IDENTIFIER,this,getContextId(ep.getCamelContext()))<SUB>153</SUB>> ]
+"431" [label = <(getCamelContext,getCamelContext())<SUB>153</SUB>> ]
+"432" [label = <(IDENTIFIER,ep,getCamelContext())<SUB>153</SUB>> ]
+"433" [label = <(&lt;operator&gt;.fieldAccess,CamelNamingStrategy.VALUE_UNKNOWN)<SUB>153</SUB>> ]
+"434" [label = <(IDENTIFIER,CamelNamingStrategy,ep != null ? getContextId(ep.getCamelContext()) : VALUE_UNKNOWN)<SUB>153</SUB>> ]
+"435" [label = <(FIELD_IDENTIFIER,VALUE_UNKNOWN,VALUE_UNKNOWN)<SUB>153</SUB>> ]
+"436" [label = <(LOCAL,String cid: java.lang.String)> ]
+"437" [label = <(&lt;operator&gt;.assignment,String cid = quote(ep.getEndpointUri()))<SUB>154</SUB>> ]
+"438" [label = <(IDENTIFIER,cid,String cid = quote(ep.getEndpointUri()))<SUB>154</SUB>> ]
+"439" [label = <(quote,quote(ep.getEndpointUri()))<SUB>154</SUB>> ]
+"440" [label = <(IDENTIFIER,ObjectName,quote(ep.getEndpointUri()))<SUB>154</SUB>> ]
+"441" [label = <(getEndpointUri,getEndpointUri())<SUB>154</SUB>> ]
+"442" [label = <(IDENTIFIER,ep,getEndpointUri())<SUB>154</SUB>> ]
+"443" [label = <(LOCAL,String nodeId: java.lang.String)> ]
+"444" [label = <(&lt;operator&gt;.assignment,String nodeId = idOrCreate())<SUB>156</SUB>> ]
+"445" [label = <(IDENTIFIER,nodeId,String nodeId = idOrCreate())<SUB>156</SUB>> ]
+"446" [label = <(idOrCreate,idOrCreate())<SUB>156</SUB>> ]
+"447" [label = <(IDENTIFIER,processor,idOrCreate())<SUB>156</SUB>> ]
+"31" [label = <(LOCAL,StringBuffer buffer: java.lang.StringBuffer)> ]
+"448" [label = <(&lt;operator&gt;.assignment,StringBuffer buffer = new StringBuffer())<SUB>158</SUB>> ]
+"449" [label = <(IDENTIFIER,buffer,StringBuffer buffer = new StringBuffer())<SUB>158</SUB>> ]
+"450" [label = <(&lt;operator&gt;.alloc,new StringBuffer())<SUB>158</SUB>> ]
+"451" [label = <(&lt;init&gt;,new StringBuffer())<SUB>158</SUB>> ]
+"30" [label = <(IDENTIFIER,buffer,new StringBuffer())<SUB>158</SUB>> ]
+"452" [label = <(append,buffer.append(domainName).append(&quot;:&quot;))<SUB>159</SUB>> ]
+"453" [label = <(append,buffer.append(domainName))<SUB>159</SUB>> ]
+"454" [label = <(IDENTIFIER,buffer,buffer.append(domainName))<SUB>159</SUB>> ]
+"455" [label = <(&lt;operator&gt;.fieldAccess,this.domainName)<SUB>159</SUB>> ]
+"456" [label = <(IDENTIFIER,this,buffer.append(domainName))<SUB>159</SUB>> ]
+"457" [label = <(FIELD_IDENTIFIER,domainName,domainName)<SUB>159</SUB>> ]
+"458" [label = <(LITERAL,&quot;:&quot;,buffer.append(domainName).append(&quot;:&quot;))<SUB>159</SUB>> ]
+"459" [label = <(append,buffer.append(KEY_CONTEXT + &quot;=&quot;).append(ctxid).append(&quot;,&quot;))<SUB>160</SUB>> ]
+"460" [label = <(append,buffer.append(KEY_CONTEXT + &quot;=&quot;).append(ctxid))<SUB>160</SUB>> ]
+"461" [label = <(append,buffer.append(KEY_CONTEXT + &quot;=&quot;))<SUB>160</SUB>> ]
+"462" [label = <(IDENTIFIER,buffer,buffer.append(KEY_CONTEXT + &quot;=&quot;))<SUB>160</SUB>> ]
+"463" [label = <(&lt;operator&gt;.addition,KEY_CONTEXT + &quot;=&quot;)<SUB>160</SUB>> ]
+"464" [label = <(&lt;operator&gt;.fieldAccess,CamelNamingStrategy.KEY_CONTEXT)<SUB>160</SUB>> ]
+"465" [label = <(IDENTIFIER,CamelNamingStrategy,KEY_CONTEXT + &quot;=&quot;)<SUB>160</SUB>> ]
+"466" [label = <(FIELD_IDENTIFIER,KEY_CONTEXT,KEY_CONTEXT)<SUB>160</SUB>> ]
+"467" [label = <(LITERAL,&quot;=&quot;,KEY_CONTEXT + &quot;=&quot;)<SUB>160</SUB>> ]
+"468" [label = <(IDENTIFIER,ctxid,buffer.append(KEY_CONTEXT + &quot;=&quot;).append(ctxid))<SUB>160</SUB>> ]
+"469" [label = <(LITERAL,&quot;,&quot;,buffer.append(KEY_CONTEXT + &quot;=&quot;).append(ctxid).append(&quot;,&quot;))<SUB>160</SUB>> ]
+"470" [label = <(append,buffer.append(KEY_TYPE + &quot;=&quot; + TYPE_PROCESSOR + &quot;,&quot;))<SUB>162</SUB>> ]
+"471" [label = <(IDENTIFIER,buffer,buffer.append(KEY_TYPE + &quot;=&quot; + TYPE_PROCESSOR + &quot;,&quot;))<SUB>162</SUB>> ]
+"472" [label = <(&lt;operator&gt;.addition,KEY_TYPE + &quot;=&quot; + TYPE_PROCESSOR + &quot;,&quot;)<SUB>162</SUB>> ]
+"473" [label = <(&lt;operator&gt;.addition,KEY_TYPE + &quot;=&quot; + TYPE_PROCESSOR)<SUB>162</SUB>> ]
+"474" [label = <(&lt;operator&gt;.addition,KEY_TYPE + &quot;=&quot;)<SUB>162</SUB>> ]
+"475" [label = <(&lt;operator&gt;.fieldAccess,CamelNamingStrategy.KEY_TYPE)<SUB>162</SUB>> ]
+"476" [label = <(IDENTIFIER,CamelNamingStrategy,KEY_TYPE + &quot;=&quot;)<SUB>162</SUB>> ]
+"477" [label = <(FIELD_IDENTIFIER,KEY_TYPE,KEY_TYPE)<SUB>162</SUB>> ]
+"478" [label = <(LITERAL,&quot;=&quot;,KEY_TYPE + &quot;=&quot;)<SUB>162</SUB>> ]
+"479" [label = <(&lt;operator&gt;.fieldAccess,CamelNamingStrategy.TYPE_PROCESSOR)<SUB>162</SUB>> ]
+"480" [label = <(IDENTIFIER,CamelNamingStrategy,KEY_TYPE + &quot;=&quot; + TYPE_PROCESSOR)<SUB>162</SUB>> ]
+"481" [label = <(FIELD_IDENTIFIER,TYPE_PROCESSOR,TYPE_PROCESSOR)<SUB>162</SUB>> ]
+"482" [label = <(LITERAL,&quot;,&quot;,KEY_TYPE + &quot;=&quot; + TYPE_PROCESSOR + &quot;,&quot;)<SUB>162</SUB>> ]
+"483" [label = <(append,buffer.append(KEY_NODE_ID + &quot;=&quot;).append(nodeId).append(&quot;,&quot;))<SUB>163</SUB>> ]
+"484" [label = <(append,buffer.append(KEY_NODE_ID + &quot;=&quot;).append(nodeId))<SUB>163</SUB>> ]
+"485" [label = <(append,buffer.append(KEY_NODE_ID + &quot;=&quot;))<SUB>163</SUB>> ]
+"486" [label = <(IDENTIFIER,buffer,buffer.append(KEY_NODE_ID + &quot;=&quot;))<SUB>163</SUB>> ]
+"487" [label = <(&lt;operator&gt;.addition,KEY_NODE_ID + &quot;=&quot;)<SUB>163</SUB>> ]
+"488" [label = <(&lt;operator&gt;.fieldAccess,CamelNamingStrategy.KEY_NODE_ID)<SUB>163</SUB>> ]
+"489" [label = <(IDENTIFIER,CamelNamingStrategy,KEY_NODE_ID + &quot;=&quot;)<SUB>163</SUB>> ]
+"490" [label = <(FIELD_IDENTIFIER,KEY_NODE_ID,KEY_NODE_ID)<SUB>163</SUB>> ]
+"491" [label = <(LITERAL,&quot;=&quot;,KEY_NODE_ID + &quot;=&quot;)<SUB>163</SUB>> ]
+"492" [label = <(IDENTIFIER,nodeId,buffer.append(KEY_NODE_ID + &quot;=&quot;).append(nodeId))<SUB>163</SUB>> ]
+"493" [label = <(LITERAL,&quot;,&quot;,buffer.append(KEY_NODE_ID + &quot;=&quot;).append(nodeId).append(&quot;,&quot;))<SUB>163</SUB>> ]
+"494" [label = <(append,append(ObjectName.quote(processor.toString())))<SUB>164</SUB>> ]
+"495" [label = <(append,buffer.append(KEY_NAME + &quot;=&quot;))<SUB>164</SUB>> ]
+"496" [label = <(IDENTIFIER,buffer,buffer.append(KEY_NAME + &quot;=&quot;))<SUB>164</SUB>> ]
+"497" [label = <(&lt;operator&gt;.addition,KEY_NAME + &quot;=&quot;)<SUB>164</SUB>> ]
+"498" [label = <(&lt;operator&gt;.fieldAccess,CamelNamingStrategy.KEY_NAME)<SUB>164</SUB>> ]
+"499" [label = <(IDENTIFIER,CamelNamingStrategy,KEY_NAME + &quot;=&quot;)<SUB>164</SUB>> ]
+"500" [label = <(FIELD_IDENTIFIER,KEY_NAME,KEY_NAME)<SUB>164</SUB>> ]
+"501" [label = <(LITERAL,&quot;=&quot;,KEY_NAME + &quot;=&quot;)<SUB>164</SUB>> ]
+"502" [label = <(quote,quote(processor.toString()))<SUB>164</SUB>> ]
+"503" [label = <(IDENTIFIER,ObjectName,quote(processor.toString()))<SUB>164</SUB>> ]
+"504" [label = <(toString,toString())<SUB>164</SUB>> ]
+"505" [label = <(IDENTIFIER,processor,toString())<SUB>164</SUB>> ]
+"506" [label = <(RETURN,return createObjectName(buffer);,return createObjectName(buffer);)<SUB>165</SUB>> ]
+"507" [label = <(createObjectName,this.createObjectName(buffer))<SUB>165</SUB>> ]
+"32" [label = <(IDENTIFIER,this,this.createObjectName(buffer))<SUB>165</SUB>> ]
+"508" [label = <(IDENTIFIER,buffer,this.createObjectName(buffer))<SUB>165</SUB>> ]
+"509" [label = <(MODIFIER,PUBLIC)> ]
+"510" [label = <(MODIFIER,VIRTUAL)> ]
+"511" [label = <(METHOD_RETURN,javax.management.ObjectName)<SUB>150</SUB>> ]
+  "414" -> "29" 
+  "414" -> "415" 
+  "414" -> "416" 
+  "414" -> "417" 
+  "414" -> "509" 
+  "414" -> "510" 
+  "414" -> "511" 
+  "417" -> "418" 
+  "417" -> "419" 
+  "417" -> "423" 
+  "417" -> "424" 
+  "417" -> "436" 
+  "417" -> "437" 
+  "417" -> "443" 
+  "417" -> "444" 
+  "417" -> "31" 
+  "417" -> "448" 
+  "417" -> "451" 
+  "417" -> "452" 
+  "417" -> "459" 
+  "417" -> "470" 
+  "417" -> "483" 
+  "417" -> "494" 
+  "417" -> "506" 
+  "419" -> "420" 
+  "419" -> "421" 
+  "421" -> "422" 
+  "424" -> "425" 
+  "424" -> "426" 
+  "426" -> "427" 
+  "426" -> "430" 
+  "426" -> "433" 
+  "427" -> "428" 
+  "427" -> "429" 
+  "430" -> "28" 
+  "430" -> "431" 
+  "431" -> "432" 
+  "433" -> "434" 
+  "433" -> "435" 
+  "437" -> "438" 
+  "437" -> "439" 
+  "439" -> "440" 
+  "439" -> "441" 
+  "441" -> "442" 
+  "444" -> "445" 
+  "444" -> "446" 
+  "446" -> "447" 
+  "448" -> "449" 
+  "448" -> "450" 
+  "451" -> "30" 
+  "452" -> "453" 
+  "452" -> "458" 
+  "453" -> "454" 
+  "453" -> "455" 
+  "455" -> "456" 
+  "455" -> "457" 
+  "459" -> "460" 
+  "459" -> "469" 
+  "460" -> "461" 
+  "460" -> "468" 
+  "461" -> "462" 
+  "461" -> "463" 
+  "463" -> "464" 
+  "463" -> "467" 
+  "464" -> "465" 
+  "464" -> "466" 
+  "470" -> "471" 
+  "470" -> "472" 
+  "472" -> "473" 
+  "472" -> "482" 
+  "473" -> "474" 
+  "473" -> "479" 
+  "474" -> "475" 
+  "474" -> "478" 
+  "475" -> "476" 
+  "475" -> "477" 
+  "479" -> "480" 
+  "479" -> "481" 
+  "483" -> "484" 
+  "483" -> "493" 
+  "484" -> "485" 
+  "484" -> "492" 
+  "485" -> "486" 
+  "485" -> "487" 
+  "487" -> "488" 
+  "487" -> "491" 
+  "488" -> "489" 
+  "488" -> "490" 
+  "494" -> "495" 
+  "494" -> "502" 
+  "495" -> "496" 
+  "495" -> "497" 
+  "497" -> "498" 
+  "497" -> "501" 
+  "498" -> "499" 
+  "498" -> "500" 
+  "502" -> "503" 
+  "502" -> "504" 
+  "504" -> "505" 
+  "506" -> "507" 
+  "507" -> "32" 
+  "507" -> "508" 
+}

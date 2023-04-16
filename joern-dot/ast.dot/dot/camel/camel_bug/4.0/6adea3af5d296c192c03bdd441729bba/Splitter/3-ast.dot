@@ -1,0 +1,171 @@
+digraph "createProcessorExchangePairs" {  
+"96" [label = <(METHOD,createProcessorExchangePairs)<SUB>67</SUB>> ]
+"17" [label = <(PARAM,this)<SUB>67</SUB>> ]
+"97" [label = <(PARAM,Exchange exchange)<SUB>69</SUB>> ]
+"98" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>69</SUB>> ]
+"99" [label = <(LOCAL,Object value: java.lang.Object)> ]
+"100" [label = <(&lt;operator&gt;.assignment,Object value = evaluate(exchange))<SUB>70</SUB>> ]
+"101" [label = <(IDENTIFIER,value,Object value = evaluate(exchange))<SUB>70</SUB>> ]
+"102" [label = <(evaluate,evaluate(exchange))<SUB>70</SUB>> ]
+"103" [label = <(&lt;operator&gt;.fieldAccess,this.expression)<SUB>70</SUB>> ]
+"104" [label = <(IDENTIFIER,this,evaluate(exchange))<SUB>70</SUB>> ]
+"105" [label = <(FIELD_IDENTIFIER,expression,expression)<SUB>70</SUB>> ]
+"106" [label = <(IDENTIFIER,exchange,evaluate(exchange))<SUB>70</SUB>> ]
+"107" [label = <(LOCAL,Integer collectionSize: java.lang.Integer)> ]
+"108" [label = <(&lt;operator&gt;.assignment,Integer collectionSize = size(value))<SUB>71</SUB>> ]
+"109" [label = <(IDENTIFIER,collectionSize,Integer collectionSize = size(value))<SUB>71</SUB>> ]
+"110" [label = <(size,size(value))<SUB>71</SUB>> ]
+"111" [label = <(IDENTIFIER,CollectionHelper,size(value))<SUB>71</SUB>> ]
+"112" [label = <(IDENTIFIER,value,size(value))<SUB>71</SUB>> ]
+"14" [label = <(LOCAL,List&lt;ProcessorExchangePair&gt; result: ANY)> ]
+"113" [label = <(CONTROL_STRUCTURE,if (collectionSize != null),if (collectionSize != null))<SUB>73</SUB>> ]
+"114" [label = <(&lt;operator&gt;.notEquals,collectionSize != null)<SUB>73</SUB>> ]
+"115" [label = <(IDENTIFIER,collectionSize,collectionSize != null)<SUB>73</SUB>> ]
+"116" [label = <(LITERAL,null,collectionSize != null)<SUB>73</SUB>> ]
+"117" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>73</SUB>> ]
+"118" [label = <(&lt;operator&gt;.assignment,result = new ArrayList&lt;ProcessorExchangePair&gt;(collectionSize))<SUB>74</SUB>> ]
+"119" [label = <(IDENTIFIER,result,result = new ArrayList&lt;ProcessorExchangePair&gt;(collectionSize))<SUB>74</SUB>> ]
+"120" [label = <(&lt;operator&gt;.alloc,new ArrayList&lt;ProcessorExchangePair&gt;(collectionSize))<SUB>74</SUB>> ]
+"121" [label = <(&lt;init&gt;,new ArrayList&lt;ProcessorExchangePair&gt;(collectionSize))<SUB>74</SUB>> ]
+"13" [label = <(IDENTIFIER,result,new ArrayList&lt;ProcessorExchangePair&gt;(collectionSize))<SUB>74</SUB>> ]
+"122" [label = <(IDENTIFIER,collectionSize,new ArrayList&lt;ProcessorExchangePair&gt;(collectionSize))<SUB>74</SUB>> ]
+"123" [label = <(CONTROL_STRUCTURE,else,else)<SUB>75</SUB>> ]
+"124" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>75</SUB>> ]
+"125" [label = <(&lt;operator&gt;.assignment,result = new ArrayList&lt;ProcessorExchangePair&gt;())<SUB>76</SUB>> ]
+"126" [label = <(IDENTIFIER,result,result = new ArrayList&lt;ProcessorExchangePair&gt;())<SUB>76</SUB>> ]
+"127" [label = <(&lt;operator&gt;.alloc,new ArrayList&lt;ProcessorExchangePair&gt;())<SUB>76</SUB>> ]
+"128" [label = <(&lt;init&gt;,new ArrayList&lt;ProcessorExchangePair&gt;())<SUB>76</SUB>> ]
+"15" [label = <(IDENTIFIER,result,new ArrayList&lt;ProcessorExchangePair&gt;())<SUB>76</SUB>> ]
+"129" [label = <(LOCAL,Iterator&lt;Object&gt; iter: java.util.Iterator)> ]
+"130" [label = <(&lt;operator&gt;.assignment,Iterator iter = iterator(value))<SUB>78</SUB>> ]
+"131" [label = <(IDENTIFIER,iter,Iterator iter = iterator(value))<SUB>78</SUB>> ]
+"132" [label = <(iterator,iterator(value))<SUB>78</SUB>> ]
+"133" [label = <(IDENTIFIER,ObjectConverter,iterator(value))<SUB>78</SUB>> ]
+"134" [label = <(IDENTIFIER,value,iterator(value))<SUB>78</SUB>> ]
+"135" [label = <(CONTROL_STRUCTURE,while (iter.hasNext()),while (iter.hasNext()))<SUB>79</SUB>> ]
+"136" [label = <(hasNext,iter.hasNext())<SUB>79</SUB>> ]
+"137" [label = <(IDENTIFIER,iter,iter.hasNext())<SUB>79</SUB>> ]
+"138" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>79</SUB>> ]
+"139" [label = <(LOCAL,Object part: java.lang.Object)> ]
+"140" [label = <(&lt;operator&gt;.assignment,Object part = iter.next())<SUB>80</SUB>> ]
+"141" [label = <(IDENTIFIER,part,Object part = iter.next())<SUB>80</SUB>> ]
+"142" [label = <(next,iter.next())<SUB>80</SUB>> ]
+"143" [label = <(IDENTIFIER,iter,iter.next())<SUB>80</SUB>> ]
+"144" [label = <(LOCAL,Exchange newExchange: org.apache.camel.Exchange)> ]
+"145" [label = <(&lt;operator&gt;.assignment,Exchange newExchange = copy())<SUB>81</SUB>> ]
+"146" [label = <(IDENTIFIER,newExchange,Exchange newExchange = copy())<SUB>81</SUB>> ]
+"147" [label = <(copy,copy())<SUB>81</SUB>> ]
+"148" [label = <(IDENTIFIER,exchange,copy())<SUB>81</SUB>> ]
+"149" [label = <(LOCAL,Message in: org.apache.camel.Message)> ]
+"150" [label = <(&lt;operator&gt;.assignment,Message in = getIn())<SUB>82</SUB>> ]
+"151" [label = <(IDENTIFIER,in,Message in = getIn())<SUB>82</SUB>> ]
+"152" [label = <(getIn,getIn())<SUB>82</SUB>> ]
+"153" [label = <(IDENTIFIER,newExchange,getIn())<SUB>82</SUB>> ]
+"154" [label = <(setBody,setBody(part))<SUB>83</SUB>> ]
+"155" [label = <(IDENTIFIER,in,setBody(part))<SUB>83</SUB>> ]
+"156" [label = <(IDENTIFIER,part,setBody(part))<SUB>83</SUB>> ]
+"157" [label = <(add,add(new ProcessorExchangePair(getProcessors().iterator().next(), newExchange)))<SUB>84</SUB>> ]
+"158" [label = <(IDENTIFIER,result,add(new ProcessorExchangePair(getProcessors().iterator().next(), newExchange)))<SUB>84</SUB>> ]
+"159" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>84</SUB>> ]
+"160" [label = <(&lt;operator&gt;.assignment,&lt;empty&gt;)> ]
+"161" [label = <(IDENTIFIER,$obj2,&lt;empty&gt;)> ]
+"162" [label = <(&lt;operator&gt;.alloc,new ProcessorExchangePair(getProcessors().iterator().next(), newExchange))<SUB>84</SUB>> ]
+"163" [label = <(&lt;init&gt;,new ProcessorExchangePair(getProcessors().iterator().next(), newExchange))<SUB>84</SUB>> ]
+"164" [label = <(IDENTIFIER,$obj2,new ProcessorExchangePair(getProcessors().iterator().next(), newExchange))> ]
+"165" [label = <(next,next())<SUB>84</SUB>> ]
+"166" [label = <(iterator,iterator())<SUB>84</SUB>> ]
+"167" [label = <(getProcessors,getProcessors())<SUB>84</SUB>> ]
+"16" [label = <(IDENTIFIER,this,getProcessors())<SUB>84</SUB>> ]
+"168" [label = <(IDENTIFIER,newExchange,new ProcessorExchangePair(getProcessors().iterator().next(), newExchange))<SUB>84</SUB>> ]
+"169" [label = <(IDENTIFIER,$obj2,&lt;empty&gt;)> ]
+"170" [label = <(RETURN,return result;,return result;)<SUB>86</SUB>> ]
+"171" [label = <(IDENTIFIER,result,return result;)<SUB>86</SUB>> ]
+"172" [label = <(MODIFIER,PROTECTED)> ]
+"173" [label = <(MODIFIER,VIRTUAL)> ]
+"174" [label = <(ANNOTATION,@Override,@Override)<SUB>67</SUB>> ]
+"175" [label = <(METHOD_RETURN,ANY)<SUB>68</SUB>> ]
+  "96" -> "17" 
+  "96" -> "97" 
+  "96" -> "98" 
+  "96" -> "172" 
+  "96" -> "173" 
+  "96" -> "174" 
+  "96" -> "175" 
+  "98" -> "99" 
+  "98" -> "100" 
+  "98" -> "107" 
+  "98" -> "108" 
+  "98" -> "14" 
+  "98" -> "113" 
+  "98" -> "129" 
+  "98" -> "130" 
+  "98" -> "135" 
+  "98" -> "170" 
+  "100" -> "101" 
+  "100" -> "102" 
+  "102" -> "103" 
+  "102" -> "106" 
+  "103" -> "104" 
+  "103" -> "105" 
+  "108" -> "109" 
+  "108" -> "110" 
+  "110" -> "111" 
+  "110" -> "112" 
+  "113" -> "114" 
+  "113" -> "117" 
+  "113" -> "123" 
+  "114" -> "115" 
+  "114" -> "116" 
+  "117" -> "118" 
+  "117" -> "121" 
+  "118" -> "119" 
+  "118" -> "120" 
+  "121" -> "13" 
+  "121" -> "122" 
+  "123" -> "124" 
+  "124" -> "125" 
+  "124" -> "128" 
+  "125" -> "126" 
+  "125" -> "127" 
+  "128" -> "15" 
+  "130" -> "131" 
+  "130" -> "132" 
+  "132" -> "133" 
+  "132" -> "134" 
+  "135" -> "136" 
+  "135" -> "138" 
+  "136" -> "137" 
+  "138" -> "139" 
+  "138" -> "140" 
+  "138" -> "144" 
+  "138" -> "145" 
+  "138" -> "149" 
+  "138" -> "150" 
+  "138" -> "154" 
+  "138" -> "157" 
+  "140" -> "141" 
+  "140" -> "142" 
+  "142" -> "143" 
+  "145" -> "146" 
+  "145" -> "147" 
+  "147" -> "148" 
+  "150" -> "151" 
+  "150" -> "152" 
+  "152" -> "153" 
+  "154" -> "155" 
+  "154" -> "156" 
+  "157" -> "158" 
+  "157" -> "159" 
+  "159" -> "160" 
+  "159" -> "163" 
+  "159" -> "169" 
+  "160" -> "161" 
+  "160" -> "162" 
+  "163" -> "164" 
+  "163" -> "165" 
+  "163" -> "168" 
+  "165" -> "166" 
+  "166" -> "167" 
+  "167" -> "16" 
+  "170" -> "171" 
+}

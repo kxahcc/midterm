@@ -1,0 +1,53 @@
+digraph "rollback" {  
+"187" [label = <(METHOD,rollback)<SUB>81</SUB>> ]
+"15" [label = <(PARAM,this)<SUB>81</SUB>> ]
+"188" [label = <(PARAM,FileEndpoint endpoint)<SUB>81</SUB>> ]
+"189" [label = <(PARAM,FileExchange exchange)<SUB>81</SUB>> ]
+"190" [label = <(PARAM,File file)<SUB>81</SUB>> ]
+"191" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>81</SUB>> ]
+"192" [label = <(CONTROL_STRUCTURE,try,try)<SUB>82</SUB>> ]
+"193" [label = <(BLOCK,try,try)<SUB>82</SUB>> ]
+"194" [label = <(unlockFile,unlockFile(endpoint, exchange, file))<SUB>83</SUB>> ]
+"14" [label = <(IDENTIFIER,this,unlockFile(endpoint, exchange, file))<SUB>83</SUB>> ]
+"195" [label = <(IDENTIFIER,endpoint,unlockFile(endpoint, exchange, file))<SUB>83</SUB>> ]
+"196" [label = <(IDENTIFIER,exchange,unlockFile(endpoint, exchange, file))<SUB>83</SUB>> ]
+"197" [label = <(IDENTIFIER,file,unlockFile(endpoint, exchange, file))<SUB>83</SUB>> ]
+"198" [label = <(BLOCK,catch,catch)> ]
+"199" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>84</SUB>> ]
+"200" [label = <(warn,warn(&quot;Unable to unlock file: &quot; + file, e))<SUB>85</SUB>> ]
+"201" [label = <(&lt;operator&gt;.fieldAccess,FileProcessStrategySupport.LOG)<SUB>85</SUB>> ]
+"202" [label = <(IDENTIFIER,FileProcessStrategySupport,warn(&quot;Unable to unlock file: &quot; + file, e))<SUB>85</SUB>> ]
+"203" [label = <(FIELD_IDENTIFIER,LOG,LOG)<SUB>85</SUB>> ]
+"204" [label = <(&lt;operator&gt;.addition,&quot;Unable to unlock file: &quot; + file)<SUB>85</SUB>> ]
+"205" [label = <(LITERAL,&quot;Unable to unlock file: &quot;,&quot;Unable to unlock file: &quot; + file)<SUB>85</SUB>> ]
+"206" [label = <(IDENTIFIER,file,&quot;Unable to unlock file: &quot; + file)<SUB>85</SUB>> ]
+"207" [label = <(IDENTIFIER,e,warn(&quot;Unable to unlock file: &quot; + file, e))<SUB>85</SUB>> ]
+"208" [label = <(MODIFIER,PUBLIC)> ]
+"209" [label = <(MODIFIER,VIRTUAL)> ]
+"210" [label = <(METHOD_RETURN,void)<SUB>81</SUB>> ]
+  "187" -> "15" 
+  "187" -> "188" 
+  "187" -> "189" 
+  "187" -> "190" 
+  "187" -> "191" 
+  "187" -> "208" 
+  "187" -> "209" 
+  "187" -> "210" 
+  "191" -> "192" 
+  "192" -> "193" 
+  "192" -> "198" 
+  "193" -> "194" 
+  "194" -> "14" 
+  "194" -> "195" 
+  "194" -> "196" 
+  "194" -> "197" 
+  "198" -> "199" 
+  "199" -> "200" 
+  "200" -> "201" 
+  "200" -> "204" 
+  "200" -> "207" 
+  "201" -> "202" 
+  "201" -> "203" 
+  "204" -> "205" 
+  "204" -> "206" 
+}

@@ -1,0 +1,287 @@
+digraph "isValidRdbms" {  
+"1043" [label = <(METHOD,isValidRdbms)<SUB>459</SUB>> ]
+"61" [label = <(PARAM,this)<SUB>459</SUB>> ]
+"1044" [label = <(PARAM,Connection conn)<SUB>459</SUB>> ]
+"1045" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>459</SUB>> ]
+"1046" [label = <(CONTROL_STRUCTURE,if (rdbms == null &amp;&amp; version == null),if (rdbms == null &amp;&amp; version == null))<SUB>460</SUB>> ]
+"1047" [label = <(&lt;operator&gt;.logicalAnd,rdbms == null &amp;&amp; version == null)<SUB>460</SUB>> ]
+"1048" [label = <(&lt;operator&gt;.equals,rdbms == null)<SUB>460</SUB>> ]
+"1049" [label = <(&lt;operator&gt;.fieldAccess,this.rdbms)<SUB>460</SUB>> ]
+"1050" [label = <(IDENTIFIER,this,rdbms == null)<SUB>460</SUB>> ]
+"1051" [label = <(FIELD_IDENTIFIER,rdbms,rdbms)<SUB>460</SUB>> ]
+"1052" [label = <(LITERAL,null,rdbms == null)<SUB>460</SUB>> ]
+"1053" [label = <(&lt;operator&gt;.equals,version == null)<SUB>460</SUB>> ]
+"1054" [label = <(&lt;operator&gt;.fieldAccess,this.version)<SUB>460</SUB>> ]
+"1055" [label = <(IDENTIFIER,this,version == null)<SUB>460</SUB>> ]
+"1056" [label = <(FIELD_IDENTIFIER,version,version)<SUB>460</SUB>> ]
+"1057" [label = <(LITERAL,null,version == null)<SUB>460</SUB>> ]
+"1058" [label = <(RETURN,return true;,return true;)<SUB>461</SUB>> ]
+"1059" [label = <(LITERAL,true,return true;)<SUB>461</SUB>> ]
+"1060" [label = <(CONTROL_STRUCTURE,try,try)<SUB>463</SUB>> ]
+"1061" [label = <(BLOCK,try,try)<SUB>463</SUB>> ]
+"1062" [label = <(LOCAL,DatabaseMetaData dmd: java.sql.DatabaseMetaData)> ]
+"1063" [label = <(&lt;operator&gt;.assignment,DatabaseMetaData dmd = conn.getMetaData())<SUB>464</SUB>> ]
+"1064" [label = <(IDENTIFIER,dmd,DatabaseMetaData dmd = conn.getMetaData())<SUB>464</SUB>> ]
+"1065" [label = <(getMetaData,conn.getMetaData())<SUB>464</SUB>> ]
+"1066" [label = <(IDENTIFIER,conn,conn.getMetaData())<SUB>464</SUB>> ]
+"1067" [label = <(CONTROL_STRUCTURE,if (rdbms != null),if (rdbms != null))<SUB>466</SUB>> ]
+"1068" [label = <(&lt;operator&gt;.notEquals,rdbms != null)<SUB>466</SUB>> ]
+"1069" [label = <(&lt;operator&gt;.fieldAccess,this.rdbms)<SUB>466</SUB>> ]
+"1070" [label = <(IDENTIFIER,this,rdbms != null)<SUB>466</SUB>> ]
+"1071" [label = <(FIELD_IDENTIFIER,rdbms,rdbms)<SUB>466</SUB>> ]
+"1072" [label = <(LITERAL,null,rdbms != null)<SUB>466</SUB>> ]
+"1073" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>466</SUB>> ]
+"1074" [label = <(LOCAL,String theVendor: java.lang.String)> ]
+"1075" [label = <(&lt;operator&gt;.assignment,String theVendor = dmd.getDatabaseProductName().toLowerCase())<SUB>467</SUB>> ]
+"1076" [label = <(IDENTIFIER,theVendor,String theVendor = dmd.getDatabaseProductName().toLowerCase())<SUB>467</SUB>> ]
+"1077" [label = <(toLowerCase,dmd.getDatabaseProductName().toLowerCase())<SUB>467</SUB>> ]
+"1078" [label = <(getDatabaseProductName,dmd.getDatabaseProductName())<SUB>467</SUB>> ]
+"1079" [label = <(IDENTIFIER,dmd,dmd.getDatabaseProductName())<SUB>467</SUB>> ]
+"1080" [label = <(log,log(&quot;RDBMS = &quot; + theVendor, Project.MSG_VERBOSE))<SUB>469</SUB>> ]
+"60" [label = <(IDENTIFIER,this,log(&quot;RDBMS = &quot; + theVendor, Project.MSG_VERBOSE))<SUB>469</SUB>> ]
+"1081" [label = <(&lt;operator&gt;.addition,&quot;RDBMS = &quot; + theVendor)<SUB>469</SUB>> ]
+"1082" [label = <(LITERAL,&quot;RDBMS = &quot;,&quot;RDBMS = &quot; + theVendor)<SUB>469</SUB>> ]
+"1083" [label = <(IDENTIFIER,theVendor,&quot;RDBMS = &quot; + theVendor)<SUB>469</SUB>> ]
+"1084" [label = <(&lt;operator&gt;.fieldAccess,Project.MSG_VERBOSE)<SUB>469</SUB>> ]
+"1085" [label = <(IDENTIFIER,Project,log(&quot;RDBMS = &quot; + theVendor, Project.MSG_VERBOSE))<SUB>469</SUB>> ]
+"1086" [label = <(FIELD_IDENTIFIER,MSG_VERBOSE,MSG_VERBOSE)<SUB>469</SUB>> ]
+"1087" [label = <(CONTROL_STRUCTURE,if (theVendor == null || theVendor.indexOf(rdbms) &lt; 0),if (theVendor == null || theVendor.indexOf(rdbms) &lt; 0))<SUB>470</SUB>> ]
+"1088" [label = <(&lt;operator&gt;.logicalOr,theVendor == null || theVendor.indexOf(rdbms) &lt; 0)<SUB>470</SUB>> ]
+"1089" [label = <(&lt;operator&gt;.equals,theVendor == null)<SUB>470</SUB>> ]
+"1090" [label = <(IDENTIFIER,theVendor,theVendor == null)<SUB>470</SUB>> ]
+"1091" [label = <(LITERAL,null,theVendor == null)<SUB>470</SUB>> ]
+"1092" [label = <(&lt;operator&gt;.lessThan,theVendor.indexOf(rdbms) &lt; 0)<SUB>470</SUB>> ]
+"1093" [label = <(indexOf,theVendor.indexOf(rdbms))<SUB>470</SUB>> ]
+"1094" [label = <(IDENTIFIER,theVendor,theVendor.indexOf(rdbms))<SUB>470</SUB>> ]
+"1095" [label = <(&lt;operator&gt;.fieldAccess,this.rdbms)<SUB>470</SUB>> ]
+"1096" [label = <(IDENTIFIER,this,theVendor.indexOf(rdbms))<SUB>470</SUB>> ]
+"1097" [label = <(FIELD_IDENTIFIER,rdbms,rdbms)<SUB>470</SUB>> ]
+"1098" [label = <(LITERAL,0,theVendor.indexOf(rdbms) &lt; 0)<SUB>470</SUB>> ]
+"1099" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>470</SUB>> ]
+"1100" [label = <(log,log(&quot;Not the required RDBMS: &quot; + rdbms, Project.MSG_VERBOSE))<SUB>471</SUB>> ]
+"62" [label = <(IDENTIFIER,this,log(&quot;Not the required RDBMS: &quot; + rdbms, Project.MSG_VERBOSE))<SUB>471</SUB>> ]
+"1101" [label = <(&lt;operator&gt;.addition,&quot;Not the required RDBMS: &quot; + rdbms)<SUB>471</SUB>> ]
+"1102" [label = <(LITERAL,&quot;Not the required RDBMS: &quot;,&quot;Not the required RDBMS: &quot; + rdbms)<SUB>471</SUB>> ]
+"1103" [label = <(&lt;operator&gt;.fieldAccess,this.rdbms)<SUB>471</SUB>> ]
+"1104" [label = <(IDENTIFIER,this,&quot;Not the required RDBMS: &quot; + rdbms)<SUB>471</SUB>> ]
+"1105" [label = <(FIELD_IDENTIFIER,rdbms,rdbms)<SUB>471</SUB>> ]
+"1106" [label = <(&lt;operator&gt;.fieldAccess,Project.MSG_VERBOSE)<SUB>471</SUB>> ]
+"1107" [label = <(IDENTIFIER,Project,log(&quot;Not the required RDBMS: &quot; + rdbms, Project.MSG_VERBOSE))<SUB>471</SUB>> ]
+"1108" [label = <(FIELD_IDENTIFIER,MSG_VERBOSE,MSG_VERBOSE)<SUB>471</SUB>> ]
+"1109" [label = <(RETURN,return false;,return false;)<SUB>472</SUB>> ]
+"1110" [label = <(LITERAL,false,return false;)<SUB>472</SUB>> ]
+"1111" [label = <(CONTROL_STRUCTURE,if (version != null),if (version != null))<SUB>476</SUB>> ]
+"1112" [label = <(&lt;operator&gt;.notEquals,version != null)<SUB>476</SUB>> ]
+"1113" [label = <(&lt;operator&gt;.fieldAccess,this.version)<SUB>476</SUB>> ]
+"1114" [label = <(IDENTIFIER,this,version != null)<SUB>476</SUB>> ]
+"1115" [label = <(FIELD_IDENTIFIER,version,version)<SUB>476</SUB>> ]
+"1116" [label = <(LITERAL,null,version != null)<SUB>476</SUB>> ]
+"1117" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>476</SUB>> ]
+"1118" [label = <(LOCAL,String theVersion: java.lang.String)> ]
+"1119" [label = <(&lt;operator&gt;.assignment,String theVersion = dmd.getDatabaseProductVersion().toLowerCase())<SUB>477</SUB>> ]
+"1120" [label = <(IDENTIFIER,theVersion,String theVersion = dmd.getDatabaseProductVersion().toLowerCase())<SUB>477</SUB>> ]
+"1121" [label = <(toLowerCase,dmd.getDatabaseProductVersion().toLowerCase())<SUB>477</SUB>> ]
+"1122" [label = <(getDatabaseProductVersion,dmd.getDatabaseProductVersion())<SUB>477</SUB>> ]
+"1123" [label = <(IDENTIFIER,dmd,dmd.getDatabaseProductVersion())<SUB>477</SUB>> ]
+"1124" [label = <(log,log(&quot;Version = &quot; + theVersion, Project.MSG_VERBOSE))<SUB>479</SUB>> ]
+"63" [label = <(IDENTIFIER,this,log(&quot;Version = &quot; + theVersion, Project.MSG_VERBOSE))<SUB>479</SUB>> ]
+"1125" [label = <(&lt;operator&gt;.addition,&quot;Version = &quot; + theVersion)<SUB>479</SUB>> ]
+"1126" [label = <(LITERAL,&quot;Version = &quot;,&quot;Version = &quot; + theVersion)<SUB>479</SUB>> ]
+"1127" [label = <(IDENTIFIER,theVersion,&quot;Version = &quot; + theVersion)<SUB>479</SUB>> ]
+"1128" [label = <(&lt;operator&gt;.fieldAccess,Project.MSG_VERBOSE)<SUB>479</SUB>> ]
+"1129" [label = <(IDENTIFIER,Project,log(&quot;Version = &quot; + theVersion, Project.MSG_VERBOSE))<SUB>479</SUB>> ]
+"1130" [label = <(FIELD_IDENTIFIER,MSG_VERBOSE,MSG_VERBOSE)<SUB>479</SUB>> ]
+"1131" [label = <(CONTROL_STRUCTURE,if (theVersion == null || !(theVersion.startsWith(version) || theVersion.indexOf(&quot; &quot; + version) &gt;= 0)),if (theVersion == null || !(theVersion.startsWith(version) || theVersion.indexOf(&quot; &quot; + version) &gt;= 0)))<SUB>480</SUB>> ]
+"1132" [label = <(&lt;operator&gt;.logicalOr,theVersion == null || !(theVersion.startsWith(version) || theVersion.indexOf(&quot; &quot; + version) &gt;= 0))<SUB>480</SUB>> ]
+"1133" [label = <(&lt;operator&gt;.equals,theVersion == null)<SUB>480</SUB>> ]
+"1134" [label = <(IDENTIFIER,theVersion,theVersion == null)<SUB>480</SUB>> ]
+"1135" [label = <(LITERAL,null,theVersion == null)<SUB>480</SUB>> ]
+"1136" [label = <(&lt;operator&gt;.logicalNot,!(theVersion.startsWith(version) || theVersion.indexOf(&quot; &quot; + version) &gt;= 0))<SUB>481</SUB>> ]
+"1137" [label = <(&lt;operator&gt;.logicalOr,theVersion.startsWith(version) || theVersion.indexOf(&quot; &quot; + version) &gt;= 0)<SUB>481</SUB>> ]
+"1138" [label = <(startsWith,theVersion.startsWith(version))<SUB>481</SUB>> ]
+"1139" [label = <(IDENTIFIER,theVersion,theVersion.startsWith(version))<SUB>481</SUB>> ]
+"1140" [label = <(&lt;operator&gt;.fieldAccess,this.version)<SUB>481</SUB>> ]
+"1141" [label = <(IDENTIFIER,this,theVersion.startsWith(version))<SUB>481</SUB>> ]
+"1142" [label = <(FIELD_IDENTIFIER,version,version)<SUB>481</SUB>> ]
+"1143" [label = <(&lt;operator&gt;.greaterEqualsThan,theVersion.indexOf(&quot; &quot; + version) &gt;= 0)<SUB>482</SUB>> ]
+"1144" [label = <(indexOf,theVersion.indexOf(&quot; &quot; + version))<SUB>482</SUB>> ]
+"1145" [label = <(IDENTIFIER,theVersion,theVersion.indexOf(&quot; &quot; + version))<SUB>482</SUB>> ]
+"1146" [label = <(&lt;operator&gt;.addition,&quot; &quot; + version)<SUB>482</SUB>> ]
+"1147" [label = <(LITERAL,&quot; &quot;,&quot; &quot; + version)<SUB>482</SUB>> ]
+"1148" [label = <(&lt;operator&gt;.fieldAccess,this.version)<SUB>482</SUB>> ]
+"1149" [label = <(IDENTIFIER,this,&quot; &quot; + version)<SUB>482</SUB>> ]
+"1150" [label = <(FIELD_IDENTIFIER,version,version)<SUB>482</SUB>> ]
+"1151" [label = <(LITERAL,0,theVersion.indexOf(&quot; &quot; + version) &gt;= 0)<SUB>482</SUB>> ]
+"1152" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>482</SUB>> ]
+"1153" [label = <(log,log(&quot;Not the required version: \&quot;&quot; + version + &quot;\&quot;&quot;, Project.MSG_VERBOSE))<SUB>483</SUB>> ]
+"64" [label = <(IDENTIFIER,this,log(&quot;Not the required version: \&quot;&quot; + version + &quot;\&quot;&quot;, Project.MSG_VERBOSE))<SUB>483</SUB>> ]
+"1154" [label = <(&lt;operator&gt;.addition,&quot;Not the required version: \&quot;&quot; + version + &quot;\&quot;&quot;)<SUB>483</SUB>> ]
+"1155" [label = <(&lt;operator&gt;.addition,&quot;Not the required version: \&quot;&quot; + version)<SUB>483</SUB>> ]
+"1156" [label = <(LITERAL,&quot;Not the required version: \&quot;&quot;,&quot;Not the required version: \&quot;&quot; + version)<SUB>483</SUB>> ]
+"1157" [label = <(&lt;operator&gt;.fieldAccess,this.version)<SUB>483</SUB>> ]
+"1158" [label = <(IDENTIFIER,this,&quot;Not the required version: \&quot;&quot; + version)<SUB>483</SUB>> ]
+"1159" [label = <(FIELD_IDENTIFIER,version,version)<SUB>483</SUB>> ]
+"1160" [label = <(LITERAL,&quot;\&quot;&quot;,&quot;Not the required version: \&quot;&quot; + version + &quot;\&quot;&quot;)<SUB>483</SUB>> ]
+"1161" [label = <(&lt;operator&gt;.fieldAccess,Project.MSG_VERBOSE)<SUB>483</SUB>> ]
+"1162" [label = <(IDENTIFIER,Project,log(&quot;Not the required version: \&quot;&quot; + version + &quot;\&quot;&quot;, Project.MSG_VERBOSE))<SUB>483</SUB>> ]
+"1163" [label = <(FIELD_IDENTIFIER,MSG_VERBOSE,MSG_VERBOSE)<SUB>483</SUB>> ]
+"1164" [label = <(RETURN,return false;,return false;)<SUB>484</SUB>> ]
+"1165" [label = <(LITERAL,false,return false;)<SUB>484</SUB>> ]
+"1166" [label = <(BLOCK,catch,catch)> ]
+"1167" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>488</SUB>> ]
+"1168" [label = <(log,log(&quot;Failed to obtain required RDBMS information&quot;, Project.MSG_ERR))<SUB>490</SUB>> ]
+"65" [label = <(IDENTIFIER,this,log(&quot;Failed to obtain required RDBMS information&quot;, Project.MSG_ERR))<SUB>490</SUB>> ]
+"1169" [label = <(LITERAL,&quot;Failed to obtain required RDBMS information&quot;,log(&quot;Failed to obtain required RDBMS information&quot;, Project.MSG_ERR))<SUB>490</SUB>> ]
+"1170" [label = <(&lt;operator&gt;.fieldAccess,Project.MSG_ERR)<SUB>490</SUB>> ]
+"1171" [label = <(IDENTIFIER,Project,log(&quot;Failed to obtain required RDBMS information&quot;, Project.MSG_ERR))<SUB>490</SUB>> ]
+"1172" [label = <(FIELD_IDENTIFIER,MSG_ERR,MSG_ERR)<SUB>490</SUB>> ]
+"1173" [label = <(RETURN,return false;,return false;)<SUB>491</SUB>> ]
+"1174" [label = <(LITERAL,false,return false;)<SUB>491</SUB>> ]
+"1175" [label = <(RETURN,return true;,return true;)<SUB>494</SUB>> ]
+"1176" [label = <(LITERAL,true,return true;)<SUB>494</SUB>> ]
+"1177" [label = <(MODIFIER,PROTECTED)> ]
+"1178" [label = <(MODIFIER,VIRTUAL)> ]
+"1179" [label = <(METHOD_RETURN,boolean)<SUB>459</SUB>> ]
+  "1043" -> "61" 
+  "1043" -> "1044" 
+  "1043" -> "1045" 
+  "1043" -> "1177" 
+  "1043" -> "1178" 
+  "1043" -> "1179" 
+  "1045" -> "1046" 
+  "1045" -> "1060" 
+  "1045" -> "1175" 
+  "1046" -> "1047" 
+  "1046" -> "1058" 
+  "1047" -> "1048" 
+  "1047" -> "1053" 
+  "1048" -> "1049" 
+  "1048" -> "1052" 
+  "1049" -> "1050" 
+  "1049" -> "1051" 
+  "1053" -> "1054" 
+  "1053" -> "1057" 
+  "1054" -> "1055" 
+  "1054" -> "1056" 
+  "1058" -> "1059" 
+  "1060" -> "1061" 
+  "1060" -> "1166" 
+  "1061" -> "1062" 
+  "1061" -> "1063" 
+  "1061" -> "1067" 
+  "1061" -> "1111" 
+  "1063" -> "1064" 
+  "1063" -> "1065" 
+  "1065" -> "1066" 
+  "1067" -> "1068" 
+  "1067" -> "1073" 
+  "1068" -> "1069" 
+  "1068" -> "1072" 
+  "1069" -> "1070" 
+  "1069" -> "1071" 
+  "1073" -> "1074" 
+  "1073" -> "1075" 
+  "1073" -> "1080" 
+  "1073" -> "1087" 
+  "1075" -> "1076" 
+  "1075" -> "1077" 
+  "1077" -> "1078" 
+  "1078" -> "1079" 
+  "1080" -> "60" 
+  "1080" -> "1081" 
+  "1080" -> "1084" 
+  "1081" -> "1082" 
+  "1081" -> "1083" 
+  "1084" -> "1085" 
+  "1084" -> "1086" 
+  "1087" -> "1088" 
+  "1087" -> "1099" 
+  "1088" -> "1089" 
+  "1088" -> "1092" 
+  "1089" -> "1090" 
+  "1089" -> "1091" 
+  "1092" -> "1093" 
+  "1092" -> "1098" 
+  "1093" -> "1094" 
+  "1093" -> "1095" 
+  "1095" -> "1096" 
+  "1095" -> "1097" 
+  "1099" -> "1100" 
+  "1099" -> "1109" 
+  "1100" -> "62" 
+  "1100" -> "1101" 
+  "1100" -> "1106" 
+  "1101" -> "1102" 
+  "1101" -> "1103" 
+  "1103" -> "1104" 
+  "1103" -> "1105" 
+  "1106" -> "1107" 
+  "1106" -> "1108" 
+  "1109" -> "1110" 
+  "1111" -> "1112" 
+  "1111" -> "1117" 
+  "1112" -> "1113" 
+  "1112" -> "1116" 
+  "1113" -> "1114" 
+  "1113" -> "1115" 
+  "1117" -> "1118" 
+  "1117" -> "1119" 
+  "1117" -> "1124" 
+  "1117" -> "1131" 
+  "1119" -> "1120" 
+  "1119" -> "1121" 
+  "1121" -> "1122" 
+  "1122" -> "1123" 
+  "1124" -> "63" 
+  "1124" -> "1125" 
+  "1124" -> "1128" 
+  "1125" -> "1126" 
+  "1125" -> "1127" 
+  "1128" -> "1129" 
+  "1128" -> "1130" 
+  "1131" -> "1132" 
+  "1131" -> "1152" 
+  "1132" -> "1133" 
+  "1132" -> "1136" 
+  "1133" -> "1134" 
+  "1133" -> "1135" 
+  "1136" -> "1137" 
+  "1137" -> "1138" 
+  "1137" -> "1143" 
+  "1138" -> "1139" 
+  "1138" -> "1140" 
+  "1140" -> "1141" 
+  "1140" -> "1142" 
+  "1143" -> "1144" 
+  "1143" -> "1151" 
+  "1144" -> "1145" 
+  "1144" -> "1146" 
+  "1146" -> "1147" 
+  "1146" -> "1148" 
+  "1148" -> "1149" 
+  "1148" -> "1150" 
+  "1152" -> "1153" 
+  "1152" -> "1164" 
+  "1153" -> "64" 
+  "1153" -> "1154" 
+  "1153" -> "1161" 
+  "1154" -> "1155" 
+  "1154" -> "1160" 
+  "1155" -> "1156" 
+  "1155" -> "1157" 
+  "1157" -> "1158" 
+  "1157" -> "1159" 
+  "1161" -> "1162" 
+  "1161" -> "1163" 
+  "1164" -> "1165" 
+  "1166" -> "1167" 
+  "1167" -> "1168" 
+  "1167" -> "1173" 
+  "1168" -> "65" 
+  "1168" -> "1169" 
+  "1168" -> "1170" 
+  "1170" -> "1171" 
+  "1170" -> "1172" 
+  "1173" -> "1174" 
+  "1175" -> "1176" 
+}

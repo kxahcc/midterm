@@ -1,0 +1,101 @@
+digraph "wrapStream" {  
+"27" [label = <(METHOD,wrapStream)<SUB>56</SUB>> ]
+"28" [label = <(PARAM,this)<SUB>56</SUB>> ]
+"29" [label = <(PARAM,InputStream in)<SUB>56</SUB>> ]
+"30" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>56</SUB>> ]
+"31" [label = <(CONTROL_STRUCTURE,for (int i = 0; Some(i &lt; MAGIC.length); i++),for (int i = 0; Some(i &lt; MAGIC.length); i++))<SUB>57</SUB>> ]
+"32" [label = <(LOCAL,int i: int)> ]
+"33" [label = <(&lt;operator&gt;.assignment,int i = 0)<SUB>57</SUB>> ]
+"34" [label = <(IDENTIFIER,i,int i = 0)<SUB>57</SUB>> ]
+"35" [label = <(LITERAL,0,int i = 0)<SUB>57</SUB>> ]
+"36" [label = <(&lt;operator&gt;.lessThan,i &lt; MAGIC.length)<SUB>57</SUB>> ]
+"37" [label = <(IDENTIFIER,i,i &lt; MAGIC.length)<SUB>57</SUB>> ]
+"38" [label = <(&lt;operator&gt;.fieldAccess,MAGIC.length)<SUB>57</SUB>> ]
+"39" [label = <(&lt;operator&gt;.fieldAccess,BZip2Resource.MAGIC)<SUB>57</SUB>> ]
+"40" [label = <(IDENTIFIER,BZip2Resource,i &lt; MAGIC.length)<SUB>57</SUB>> ]
+"41" [label = <(FIELD_IDENTIFIER,MAGIC,MAGIC)<SUB>57</SUB>> ]
+"42" [label = <(FIELD_IDENTIFIER,length,length)<SUB>57</SUB>> ]
+"43" [label = <(&lt;operator&gt;.postIncrement,i++)<SUB>57</SUB>> ]
+"44" [label = <(IDENTIFIER,i,i++)<SUB>57</SUB>> ]
+"45" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>57</SUB>> ]
+"46" [label = <(CONTROL_STRUCTURE,if (in.read() != MAGIC[i]),if (in.read() != MAGIC[i]))<SUB>58</SUB>> ]
+"47" [label = <(&lt;operator&gt;.notEquals,in.read() != MAGIC[i])<SUB>58</SUB>> ]
+"48" [label = <(read,in.read())<SUB>58</SUB>> ]
+"49" [label = <(IDENTIFIER,in,in.read())<SUB>58</SUB>> ]
+"50" [label = <(&lt;operator&gt;.indexAccess,MAGIC[i])<SUB>58</SUB>> ]
+"51" [label = <(&lt;operator&gt;.fieldAccess,BZip2Resource.MAGIC)<SUB>58</SUB>> ]
+"52" [label = <(IDENTIFIER,BZip2Resource,in.read() != MAGIC[i])<SUB>58</SUB>> ]
+"53" [label = <(FIELD_IDENTIFIER,MAGIC,MAGIC)<SUB>58</SUB>> ]
+"54" [label = <(IDENTIFIER,i,in.read() != MAGIC[i])<SUB>58</SUB>> ]
+"55" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>58</SUB>> ]
+"56" [label = <(&lt;operator&gt;.throw,throw new IOException(&quot;Invalid bz2 stream.&quot;);)<SUB>59</SUB>> ]
+"57" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>59</SUB>> ]
+"58" [label = <(&lt;operator&gt;.assignment,&lt;empty&gt;)> ]
+"59" [label = <(IDENTIFIER,$obj0,&lt;empty&gt;)> ]
+"60" [label = <(&lt;operator&gt;.alloc,new IOException(&quot;Invalid bz2 stream.&quot;))<SUB>59</SUB>> ]
+"61" [label = <(&lt;init&gt;,new IOException(&quot;Invalid bz2 stream.&quot;))<SUB>59</SUB>> ]
+"62" [label = <(IDENTIFIER,$obj0,new IOException(&quot;Invalid bz2 stream.&quot;))> ]
+"63" [label = <(LITERAL,&quot;Invalid bz2 stream.&quot;,new IOException(&quot;Invalid bz2 stream.&quot;))<SUB>59</SUB>> ]
+"64" [label = <(IDENTIFIER,$obj0,&lt;empty&gt;)> ]
+"65" [label = <(RETURN,return new CBZip2InputStream(in);,return new CBZip2InputStream(in);)<SUB>62</SUB>> ]
+"66" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>62</SUB>> ]
+"67" [label = <(&lt;operator&gt;.assignment,&lt;empty&gt;)> ]
+"68" [label = <(IDENTIFIER,$obj1,&lt;empty&gt;)> ]
+"69" [label = <(&lt;operator&gt;.alloc,new CBZip2InputStream(in))<SUB>62</SUB>> ]
+"70" [label = <(&lt;init&gt;,new CBZip2InputStream(in))<SUB>62</SUB>> ]
+"71" [label = <(IDENTIFIER,$obj1,new CBZip2InputStream(in))> ]
+"72" [label = <(IDENTIFIER,in,new CBZip2InputStream(in))<SUB>62</SUB>> ]
+"73" [label = <(IDENTIFIER,$obj1,&lt;empty&gt;)> ]
+"74" [label = <(MODIFIER,PROTECTED)> ]
+"75" [label = <(MODIFIER,VIRTUAL)> ]
+"76" [label = <(METHOD_RETURN,java.io.InputStream)<SUB>56</SUB>> ]
+  "27" -> "28" 
+  "27" -> "29" 
+  "27" -> "30" 
+  "27" -> "74" 
+  "27" -> "75" 
+  "27" -> "76" 
+  "30" -> "31" 
+  "30" -> "65" 
+  "31" -> "32" 
+  "31" -> "33" 
+  "31" -> "36" 
+  "31" -> "43" 
+  "31" -> "45" 
+  "33" -> "34" 
+  "33" -> "35" 
+  "36" -> "37" 
+  "36" -> "38" 
+  "38" -> "39" 
+  "38" -> "42" 
+  "39" -> "40" 
+  "39" -> "41" 
+  "43" -> "44" 
+  "45" -> "46" 
+  "46" -> "47" 
+  "46" -> "55" 
+  "47" -> "48" 
+  "47" -> "50" 
+  "48" -> "49" 
+  "50" -> "51" 
+  "50" -> "54" 
+  "51" -> "52" 
+  "51" -> "53" 
+  "55" -> "56" 
+  "56" -> "57" 
+  "57" -> "58" 
+  "57" -> "61" 
+  "57" -> "64" 
+  "58" -> "59" 
+  "58" -> "60" 
+  "61" -> "62" 
+  "61" -> "63" 
+  "65" -> "66" 
+  "66" -> "67" 
+  "66" -> "70" 
+  "66" -> "73" 
+  "67" -> "68" 
+  "67" -> "69" 
+  "70" -> "71" 
+  "70" -> "72" 
+}

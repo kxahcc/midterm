@@ -1,0 +1,51 @@
+digraph "send" {  
+"87" [label = <(METHOD,send)<SUB>68</SUB>> ]
+"4" [label = <(PARAM,this)<SUB>68</SUB>> ]
+"88" [label = <(PARAM,Endpoint&lt;E&gt; endpoint)<SUB>68</SUB>> ]
+"89" [label = <(PARAM,E exchange)<SUB>68</SUB>> ]
+"90" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>68</SUB>> ]
+"91" [label = <(CONTROL_STRUCTURE,try,try)<SUB>69</SUB>> ]
+"92" [label = <(BLOCK,try,try)<SUB>69</SUB>> ]
+"93" [label = <(LOCAL,Producer&lt;E&gt; producer: ANY)> ]
+"94" [label = <(&lt;operator&gt;.assignment,ANY producer = getProducer(endpoint))<SUB>70</SUB>> ]
+"95" [label = <(IDENTIFIER,producer,ANY producer = getProducer(endpoint))<SUB>70</SUB>> ]
+"96" [label = <(getProducer,getProducer(endpoint))<SUB>70</SUB>> ]
+"3" [label = <(IDENTIFIER,this,getProducer(endpoint))<SUB>70</SUB>> ]
+"97" [label = <(IDENTIFIER,endpoint,getProducer(endpoint))<SUB>70</SUB>> ]
+"98" [label = <(process,process(exchange))<SUB>71</SUB>> ]
+"99" [label = <(IDENTIFIER,producer,process(exchange))<SUB>71</SUB>> ]
+"100" [label = <(IDENTIFIER,exchange,process(exchange))<SUB>71</SUB>> ]
+"101" [label = <(BLOCK,catch,catch)> ]
+"102" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>72</SUB>> ]
+"103" [label = <(&lt;operator&gt;.throw,throw wrapRuntimeCamelException(e);)<SUB>73</SUB>> ]
+"104" [label = <(wrapRuntimeCamelException,wrapRuntimeCamelException(e))<SUB>73</SUB>> ]
+"5" [label = <(IDENTIFIER,this,wrapRuntimeCamelException(e))<SUB>73</SUB>> ]
+"105" [label = <(IDENTIFIER,e,wrapRuntimeCamelException(e))<SUB>73</SUB>> ]
+"106" [label = <(MODIFIER,PUBLIC)> ]
+"107" [label = <(MODIFIER,VIRTUAL)> ]
+"108" [label = <(METHOD_RETURN,void)<SUB>68</SUB>> ]
+  "87" -> "4" 
+  "87" -> "88" 
+  "87" -> "89" 
+  "87" -> "90" 
+  "87" -> "106" 
+  "87" -> "107" 
+  "87" -> "108" 
+  "90" -> "91" 
+  "91" -> "92" 
+  "91" -> "101" 
+  "92" -> "93" 
+  "92" -> "94" 
+  "92" -> "98" 
+  "94" -> "95" 
+  "94" -> "96" 
+  "96" -> "3" 
+  "96" -> "97" 
+  "98" -> "99" 
+  "98" -> "100" 
+  "101" -> "102" 
+  "102" -> "103" 
+  "103" -> "104" 
+  "104" -> "5" 
+  "104" -> "105" 
+}

@@ -1,0 +1,219 @@
+digraph "addParentDirs" {  
+"1725" [label = <(METHOD,addParentDirs)<SUB>652</SUB>> ]
+"87" [label = <(PARAM,this)<SUB>652</SUB>> ]
+"1726" [label = <(PARAM,File baseDir)<SUB>652</SUB>> ]
+"1727" [label = <(PARAM,String entry)<SUB>652</SUB>> ]
+"1728" [label = <(PARAM,ZipOutputStream zOut)<SUB>653</SUB>> ]
+"1729" [label = <(PARAM,String prefix)<SUB>653</SUB>> ]
+"1730" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>654</SUB>> ]
+"1731" [label = <(CONTROL_STRUCTURE,if (!doFilesonly),if (!doFilesonly))<SUB>655</SUB>> ]
+"1732" [label = <(&lt;operator&gt;.logicalNot,!doFilesonly)<SUB>655</SUB>> ]
+"1733" [label = <(&lt;operator&gt;.fieldAccess,this.doFilesonly)<SUB>655</SUB>> ]
+"1734" [label = <(IDENTIFIER,this,!doFilesonly)<SUB>655</SUB>> ]
+"1735" [label = <(FIELD_IDENTIFIER,doFilesonly,doFilesonly)<SUB>655</SUB>> ]
+"1736" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>655</SUB>> ]
+"82" [label = <(LOCAL,Stack directories: java.util.Stack)> ]
+"1737" [label = <(&lt;operator&gt;.assignment,Stack directories = new Stack())<SUB>656</SUB>> ]
+"1738" [label = <(IDENTIFIER,directories,Stack directories = new Stack())<SUB>656</SUB>> ]
+"1739" [label = <(&lt;operator&gt;.alloc,new Stack())<SUB>656</SUB>> ]
+"1740" [label = <(&lt;init&gt;,new Stack())<SUB>656</SUB>> ]
+"81" [label = <(IDENTIFIER,directories,new Stack())<SUB>656</SUB>> ]
+"1741" [label = <(LOCAL,int slashPos: int)> ]
+"1742" [label = <(&lt;operator&gt;.assignment,int slashPos = entry.length())<SUB>657</SUB>> ]
+"1743" [label = <(IDENTIFIER,slashPos,int slashPos = entry.length())<SUB>657</SUB>> ]
+"1744" [label = <(length,entry.length())<SUB>657</SUB>> ]
+"1745" [label = <(IDENTIFIER,entry,entry.length())<SUB>657</SUB>> ]
+"1746" [label = <(CONTROL_STRUCTURE,while ((slashPos = entry.lastIndexOf((int) '/', slashPos - 1)) != -1),while ((slashPos = entry.lastIndexOf((int) '/', slashPos - 1)) != -1))<SUB>659</SUB>> ]
+"1747" [label = <(&lt;operator&gt;.notEquals,(slashPos = entry.lastIndexOf((int) '/', slashPos - 1)) != -1)<SUB>659</SUB>> ]
+"1748" [label = <(&lt;operator&gt;.assignment,slashPos = entry.lastIndexOf((int) '/', slashPos - 1))<SUB>659</SUB>> ]
+"1749" [label = <(IDENTIFIER,slashPos,slashPos = entry.lastIndexOf((int) '/', slashPos - 1))<SUB>659</SUB>> ]
+"1750" [label = <(lastIndexOf,entry.lastIndexOf((int) '/', slashPos - 1))<SUB>659</SUB>> ]
+"1751" [label = <(IDENTIFIER,entry,entry.lastIndexOf((int) '/', slashPos - 1))<SUB>659</SUB>> ]
+"1752" [label = <(&lt;operator&gt;.cast,(int) '/')<SUB>659</SUB>> ]
+"1753" [label = <(TYPE_REF,int,int)<SUB>659</SUB>> ]
+"1754" [label = <(LITERAL,'/',(int) '/')<SUB>659</SUB>> ]
+"1755" [label = <(&lt;operator&gt;.subtraction,slashPos - 1)<SUB>659</SUB>> ]
+"1756" [label = <(IDENTIFIER,slashPos,slashPos - 1)<SUB>659</SUB>> ]
+"1757" [label = <(LITERAL,1,slashPos - 1)<SUB>659</SUB>> ]
+"1758" [label = <(&lt;operator&gt;.minus,-1)<SUB>659</SUB>> ]
+"1759" [label = <(LITERAL,1,-1)<SUB>659</SUB>> ]
+"1760" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>659</SUB>> ]
+"1761" [label = <(LOCAL,String dir: java.lang.String)> ]
+"1762" [label = <(&lt;operator&gt;.assignment,String dir = entry.substring(0, slashPos + 1))<SUB>660</SUB>> ]
+"1763" [label = <(IDENTIFIER,dir,String dir = entry.substring(0, slashPos + 1))<SUB>660</SUB>> ]
+"1764" [label = <(substring,entry.substring(0, slashPos + 1))<SUB>660</SUB>> ]
+"1765" [label = <(IDENTIFIER,entry,entry.substring(0, slashPos + 1))<SUB>660</SUB>> ]
+"1766" [label = <(LITERAL,0,entry.substring(0, slashPos + 1))<SUB>660</SUB>> ]
+"1767" [label = <(&lt;operator&gt;.addition,slashPos + 1)<SUB>660</SUB>> ]
+"1768" [label = <(IDENTIFIER,slashPos,slashPos + 1)<SUB>660</SUB>> ]
+"1769" [label = <(LITERAL,1,slashPos + 1)<SUB>660</SUB>> ]
+"1770" [label = <(CONTROL_STRUCTURE,if (addedDirs.get(prefix + dir) != null),if (addedDirs.get(prefix + dir) != null))<SUB>661</SUB>> ]
+"1771" [label = <(&lt;operator&gt;.notEquals,addedDirs.get(prefix + dir) != null)<SUB>661</SUB>> ]
+"1772" [label = <(get,addedDirs.get(prefix + dir))<SUB>661</SUB>> ]
+"1773" [label = <(&lt;operator&gt;.fieldAccess,this.addedDirs)<SUB>661</SUB>> ]
+"1774" [label = <(IDENTIFIER,this,addedDirs.get(prefix + dir))<SUB>661</SUB>> ]
+"1775" [label = <(FIELD_IDENTIFIER,addedDirs,addedDirs)<SUB>661</SUB>> ]
+"1776" [label = <(&lt;operator&gt;.addition,prefix + dir)<SUB>661</SUB>> ]
+"1777" [label = <(IDENTIFIER,prefix,prefix + dir)<SUB>661</SUB>> ]
+"1778" [label = <(IDENTIFIER,dir,prefix + dir)<SUB>661</SUB>> ]
+"1779" [label = <(LITERAL,null,addedDirs.get(prefix + dir) != null)<SUB>661</SUB>> ]
+"1780" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>661</SUB>> ]
+"1781" [label = <(CONTROL_STRUCTURE,break;,break;)<SUB>662</SUB>> ]
+"1782" [label = <(push,directories.push(dir))<SUB>664</SUB>> ]
+"1783" [label = <(IDENTIFIER,directories,directories.push(dir))<SUB>664</SUB>> ]
+"1784" [label = <(IDENTIFIER,dir,directories.push(dir))<SUB>664</SUB>> ]
+"1785" [label = <(CONTROL_STRUCTURE,while (!directories.isEmpty()),while (!directories.isEmpty()))<SUB>667</SUB>> ]
+"1786" [label = <(&lt;operator&gt;.logicalNot,!directories.isEmpty())<SUB>667</SUB>> ]
+"1787" [label = <(isEmpty,directories.isEmpty())<SUB>667</SUB>> ]
+"1788" [label = <(IDENTIFIER,directories,directories.isEmpty())<SUB>667</SUB>> ]
+"1789" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>667</SUB>> ]
+"1790" [label = <(LOCAL,String dir: java.lang.String)> ]
+"1791" [label = <(&lt;operator&gt;.assignment,String dir = (String) directories.pop())<SUB>668</SUB>> ]
+"1792" [label = <(IDENTIFIER,dir,String dir = (String) directories.pop())<SUB>668</SUB>> ]
+"1793" [label = <(&lt;operator&gt;.cast,(String) directories.pop())<SUB>668</SUB>> ]
+"1794" [label = <(TYPE_REF,String,String)<SUB>668</SUB>> ]
+"1795" [label = <(pop,directories.pop())<SUB>668</SUB>> ]
+"1796" [label = <(IDENTIFIER,directories,directories.pop())<SUB>668</SUB>> ]
+"84" [label = <(LOCAL,File f: java.io.File)> ]
+"1797" [label = <(&lt;operator&gt;.assignment,File f = null)<SUB>669</SUB>> ]
+"1798" [label = <(IDENTIFIER,f,File f = null)<SUB>669</SUB>> ]
+"1799" [label = <(LITERAL,null,File f = null)<SUB>669</SUB>> ]
+"1800" [label = <(CONTROL_STRUCTURE,if (baseDir != null),if (baseDir != null))<SUB>670</SUB>> ]
+"1801" [label = <(&lt;operator&gt;.notEquals,baseDir != null)<SUB>670</SUB>> ]
+"1802" [label = <(IDENTIFIER,baseDir,baseDir != null)<SUB>670</SUB>> ]
+"1803" [label = <(LITERAL,null,baseDir != null)<SUB>670</SUB>> ]
+"1804" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>670</SUB>> ]
+"1805" [label = <(&lt;operator&gt;.assignment,f = new File(baseDir, dir))<SUB>671</SUB>> ]
+"1806" [label = <(IDENTIFIER,f,f = new File(baseDir, dir))<SUB>671</SUB>> ]
+"1807" [label = <(&lt;operator&gt;.alloc,new File(baseDir, dir))<SUB>671</SUB>> ]
+"1808" [label = <(&lt;init&gt;,new File(baseDir, dir))<SUB>671</SUB>> ]
+"83" [label = <(IDENTIFIER,f,new File(baseDir, dir))<SUB>671</SUB>> ]
+"1809" [label = <(IDENTIFIER,baseDir,new File(baseDir, dir))<SUB>671</SUB>> ]
+"1810" [label = <(IDENTIFIER,dir,new File(baseDir, dir))<SUB>671</SUB>> ]
+"1811" [label = <(CONTROL_STRUCTURE,else,else)<SUB>672</SUB>> ]
+"1812" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>672</SUB>> ]
+"1813" [label = <(&lt;operator&gt;.assignment,f = new File(dir))<SUB>673</SUB>> ]
+"1814" [label = <(IDENTIFIER,f,f = new File(dir))<SUB>673</SUB>> ]
+"1815" [label = <(&lt;operator&gt;.alloc,new File(dir))<SUB>673</SUB>> ]
+"1816" [label = <(&lt;init&gt;,new File(dir))<SUB>673</SUB>> ]
+"85" [label = <(IDENTIFIER,f,new File(dir))<SUB>673</SUB>> ]
+"1817" [label = <(IDENTIFIER,dir,new File(dir))<SUB>673</SUB>> ]
+"1818" [label = <(zipDir,zipDir(f, zOut, prefix + dir))<SUB>675</SUB>> ]
+"86" [label = <(IDENTIFIER,this,zipDir(f, zOut, prefix + dir))<SUB>675</SUB>> ]
+"1819" [label = <(IDENTIFIER,f,zipDir(f, zOut, prefix + dir))<SUB>675</SUB>> ]
+"1820" [label = <(IDENTIFIER,zOut,zipDir(f, zOut, prefix + dir))<SUB>675</SUB>> ]
+"1821" [label = <(&lt;operator&gt;.addition,prefix + dir)<SUB>675</SUB>> ]
+"1822" [label = <(IDENTIFIER,prefix,prefix + dir)<SUB>675</SUB>> ]
+"1823" [label = <(IDENTIFIER,dir,prefix + dir)<SUB>675</SUB>> ]
+"1824" [label = <(MODIFIER,PROTECTED)> ]
+"1825" [label = <(MODIFIER,VIRTUAL)> ]
+"1826" [label = <(METHOD_RETURN,void)<SUB>652</SUB>> ]
+  "1725" -> "87" 
+  "1725" -> "1726" 
+  "1725" -> "1727" 
+  "1725" -> "1728" 
+  "1725" -> "1729" 
+  "1725" -> "1730" 
+  "1725" -> "1824" 
+  "1725" -> "1825" 
+  "1725" -> "1826" 
+  "1730" -> "1731" 
+  "1731" -> "1732" 
+  "1731" -> "1736" 
+  "1732" -> "1733" 
+  "1733" -> "1734" 
+  "1733" -> "1735" 
+  "1736" -> "82" 
+  "1736" -> "1737" 
+  "1736" -> "1740" 
+  "1736" -> "1741" 
+  "1736" -> "1742" 
+  "1736" -> "1746" 
+  "1736" -> "1785" 
+  "1737" -> "1738" 
+  "1737" -> "1739" 
+  "1740" -> "81" 
+  "1742" -> "1743" 
+  "1742" -> "1744" 
+  "1744" -> "1745" 
+  "1746" -> "1747" 
+  "1746" -> "1760" 
+  "1747" -> "1748" 
+  "1747" -> "1758" 
+  "1748" -> "1749" 
+  "1748" -> "1750" 
+  "1750" -> "1751" 
+  "1750" -> "1752" 
+  "1750" -> "1755" 
+  "1752" -> "1753" 
+  "1752" -> "1754" 
+  "1755" -> "1756" 
+  "1755" -> "1757" 
+  "1758" -> "1759" 
+  "1760" -> "1761" 
+  "1760" -> "1762" 
+  "1760" -> "1770" 
+  "1760" -> "1782" 
+  "1762" -> "1763" 
+  "1762" -> "1764" 
+  "1764" -> "1765" 
+  "1764" -> "1766" 
+  "1764" -> "1767" 
+  "1767" -> "1768" 
+  "1767" -> "1769" 
+  "1770" -> "1771" 
+  "1770" -> "1780" 
+  "1771" -> "1772" 
+  "1771" -> "1779" 
+  "1772" -> "1773" 
+  "1772" -> "1776" 
+  "1773" -> "1774" 
+  "1773" -> "1775" 
+  "1776" -> "1777" 
+  "1776" -> "1778" 
+  "1780" -> "1781" 
+  "1782" -> "1783" 
+  "1782" -> "1784" 
+  "1785" -> "1786" 
+  "1785" -> "1789" 
+  "1786" -> "1787" 
+  "1787" -> "1788" 
+  "1789" -> "1790" 
+  "1789" -> "1791" 
+  "1789" -> "84" 
+  "1789" -> "1797" 
+  "1789" -> "1800" 
+  "1789" -> "1818" 
+  "1791" -> "1792" 
+  "1791" -> "1793" 
+  "1793" -> "1794" 
+  "1793" -> "1795" 
+  "1795" -> "1796" 
+  "1797" -> "1798" 
+  "1797" -> "1799" 
+  "1800" -> "1801" 
+  "1800" -> "1804" 
+  "1800" -> "1811" 
+  "1801" -> "1802" 
+  "1801" -> "1803" 
+  "1804" -> "1805" 
+  "1804" -> "1808" 
+  "1805" -> "1806" 
+  "1805" -> "1807" 
+  "1808" -> "83" 
+  "1808" -> "1809" 
+  "1808" -> "1810" 
+  "1811" -> "1812" 
+  "1812" -> "1813" 
+  "1812" -> "1816" 
+  "1813" -> "1814" 
+  "1813" -> "1815" 
+  "1816" -> "85" 
+  "1816" -> "1817" 
+  "1818" -> "86" 
+  "1818" -> "1819" 
+  "1818" -> "1820" 
+  "1818" -> "1821" 
+  "1821" -> "1822" 
+  "1821" -> "1823" 
+}

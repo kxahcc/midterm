@@ -1,0 +1,209 @@
+digraph "createNextExchange" {  
+"199" [label = <(METHOD,createNextExchange)<SUB>145</SUB>> ]
+"12" [label = <(PARAM,this)<SUB>145</SUB>> ]
+"200" [label = <(PARAM,Processor producer)<SUB>145</SUB>> ]
+"201" [label = <(PARAM,Exchange previousExchange)<SUB>145</SUB>> ]
+"202" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>145</SUB>> ]
+"203" [label = <(LOCAL,Exchange answer: org.apache.camel.Exchange)> ]
+"204" [label = <(&lt;operator&gt;.assignment,Exchange answer = copyExchangeStrategy(previousExchange))<SUB>146</SUB>> ]
+"205" [label = <(IDENTIFIER,answer,Exchange answer = copyExchangeStrategy(previousExchange))<SUB>146</SUB>> ]
+"206" [label = <(copyExchangeStrategy,copyExchangeStrategy(previousExchange))<SUB>146</SUB>> ]
+"11" [label = <(IDENTIFIER,this,copyExchangeStrategy(previousExchange))<SUB>146</SUB>> ]
+"207" [label = <(IDENTIFIER,previousExchange,copyExchangeStrategy(previousExchange))<SUB>146</SUB>> ]
+"208" [label = <(LOCAL,Message previousOut: org.apache.camel.Message)> ]
+"209" [label = <(&lt;operator&gt;.assignment,Message previousOut = getOut(false))<SUB>150</SUB>> ]
+"210" [label = <(IDENTIFIER,previousOut,Message previousOut = getOut(false))<SUB>150</SUB>> ]
+"211" [label = <(getOut,getOut(false))<SUB>150</SUB>> ]
+"212" [label = <(IDENTIFIER,previousExchange,getOut(false))<SUB>150</SUB>> ]
+"213" [label = <(LITERAL,false,getOut(false))<SUB>150</SUB>> ]
+"214" [label = <(LOCAL,Object output: java.lang.Object)> ]
+"215" [label = <(&lt;operator&gt;.assignment,Object output = previousOut != null ? previousOut.getBody() : null)<SUB>151</SUB>> ]
+"216" [label = <(IDENTIFIER,output,Object output = previousOut != null ? previousOut.getBody() : null)<SUB>151</SUB>> ]
+"217" [label = <(&lt;operator&gt;.conditional,previousOut != null ? previousOut.getBody() : null)<SUB>151</SUB>> ]
+"218" [label = <(&lt;operator&gt;.notEquals,previousOut != null)<SUB>151</SUB>> ]
+"219" [label = <(IDENTIFIER,previousOut,previousOut != null)<SUB>151</SUB>> ]
+"220" [label = <(LITERAL,null,previousOut != null)<SUB>151</SUB>> ]
+"221" [label = <(getBody,getBody())<SUB>151</SUB>> ]
+"222" [label = <(IDENTIFIER,previousOut,getBody())<SUB>151</SUB>> ]
+"223" [label = <(LITERAL,null,previousOut != null ? previousOut.getBody() : null)<SUB>151</SUB>> ]
+"224" [label = <(LOCAL,Message in: org.apache.camel.Message)> ]
+"225" [label = <(&lt;operator&gt;.assignment,Message in = getIn())<SUB>152</SUB>> ]
+"226" [label = <(IDENTIFIER,in,Message in = getIn())<SUB>152</SUB>> ]
+"227" [label = <(getIn,getIn())<SUB>152</SUB>> ]
+"228" [label = <(IDENTIFIER,answer,getIn())<SUB>152</SUB>> ]
+"229" [label = <(CONTROL_STRUCTURE,if (output != null),if (output != null))<SUB>153</SUB>> ]
+"230" [label = <(&lt;operator&gt;.notEquals,output != null)<SUB>153</SUB>> ]
+"231" [label = <(IDENTIFIER,output,output != null)<SUB>153</SUB>> ]
+"232" [label = <(LITERAL,null,output != null)<SUB>153</SUB>> ]
+"233" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>153</SUB>> ]
+"234" [label = <(setBody,setBody(output))<SUB>154</SUB>> ]
+"235" [label = <(IDENTIFIER,in,setBody(output))<SUB>154</SUB>> ]
+"236" [label = <(IDENTIFIER,output,setBody(output))<SUB>154</SUB>> ]
+"237" [label = <(LOCAL,Set&lt;Map.Entry&lt;String, Object&gt;&gt; entries: java.util.Set)> ]
+"238" [label = <(&lt;operator&gt;.assignment,Set entries = entrySet())<SUB>155</SUB>> ]
+"239" [label = <(IDENTIFIER,entries,Set entries = entrySet())<SUB>155</SUB>> ]
+"240" [label = <(entrySet,entrySet())<SUB>155</SUB>> ]
+"241" [label = <(getHeaders,getHeaders())<SUB>155</SUB>> ]
+"242" [label = <(IDENTIFIER,previousOut,getHeaders())<SUB>155</SUB>> ]
+"243" [label = <(LOCAL,$iterLocal0: java.util.Iterator)<SUB>156</SUB>> ]
+"244" [label = <(&lt;operator&gt;.assignment,)<SUB>156</SUB>> ]
+"245" [label = <(IDENTIFIER,$iterLocal0,)<SUB>156</SUB>> ]
+"246" [label = <(iterator,&lt;empty&gt;)<SUB>156</SUB>> ]
+"247" [label = <(IDENTIFIER,entries,&lt;empty&gt;)<SUB>156</SUB>> ]
+"248" [label = <(CONTROL_STRUCTURE,FOR,FOR)<SUB>156</SUB>> ]
+"249" [label = <(hasNext,&lt;empty&gt;)<SUB>156</SUB>> ]
+"250" [label = <(IDENTIFIER,$iterLocal0,&lt;empty&gt;)<SUB>156</SUB>> ]
+"251" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>156</SUB>> ]
+"252" [label = <(LOCAL,entry: java.util.Map$Entry)<SUB>156</SUB>> ]
+"253" [label = <(&lt;operator&gt;.assignment,&lt;empty&gt;)<SUB>156</SUB>> ]
+"254" [label = <(IDENTIFIER,entry,&lt;empty&gt;)<SUB>156</SUB>> ]
+"255" [label = <(next,&lt;empty&gt;)<SUB>156</SUB>> ]
+"256" [label = <(IDENTIFIER,$iterLocal0,&lt;empty&gt;)<SUB>156</SUB>> ]
+"257" [label = <(setHeader,setHeader(entry.getKey(), entry.getValue()))<SUB>157</SUB>> ]
+"258" [label = <(IDENTIFIER,in,setHeader(entry.getKey(), entry.getValue()))<SUB>157</SUB>> ]
+"259" [label = <(getKey,entry.getKey())<SUB>157</SUB>> ]
+"260" [label = <(IDENTIFIER,entry,entry.getKey())<SUB>157</SUB>> ]
+"261" [label = <(getValue,entry.getValue())<SUB>157</SUB>> ]
+"262" [label = <(IDENTIFIER,entry,entry.getValue())<SUB>157</SUB>> ]
+"263" [label = <(CONTROL_STRUCTURE,else,else)<SUB>160</SUB>> ]
+"264" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>160</SUB>> ]
+"265" [label = <(LOCAL,Object previousInBody: java.lang.Object)> ]
+"266" [label = <(&lt;operator&gt;.assignment,Object previousInBody = getBody())<SUB>161</SUB>> ]
+"267" [label = <(IDENTIFIER,previousInBody,Object previousInBody = getBody())<SUB>161</SUB>> ]
+"268" [label = <(getBody,getBody())<SUB>161</SUB>> ]
+"269" [label = <(getIn,getIn())<SUB>161</SUB>> ]
+"270" [label = <(IDENTIFIER,previousExchange,getIn())<SUB>161</SUB>> ]
+"271" [label = <(CONTROL_STRUCTURE,if (in.getBody() == null &amp;&amp; previousInBody != null),if (in.getBody() == null &amp;&amp; previousInBody != null))<SUB>162</SUB>> ]
+"272" [label = <(&lt;operator&gt;.logicalAnd,in.getBody() == null &amp;&amp; previousInBody != null)<SUB>162</SUB>> ]
+"273" [label = <(&lt;operator&gt;.equals,in.getBody() == null)<SUB>162</SUB>> ]
+"274" [label = <(getBody,getBody())<SUB>162</SUB>> ]
+"275" [label = <(IDENTIFIER,in,getBody())<SUB>162</SUB>> ]
+"276" [label = <(LITERAL,null,in.getBody() == null)<SUB>162</SUB>> ]
+"277" [label = <(&lt;operator&gt;.notEquals,previousInBody != null)<SUB>162</SUB>> ]
+"278" [label = <(IDENTIFIER,previousInBody,previousInBody != null)<SUB>162</SUB>> ]
+"279" [label = <(LITERAL,null,previousInBody != null)<SUB>162</SUB>> ]
+"280" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>162</SUB>> ]
+"281" [label = <(warn,warn(&quot;Bad exchange implementation; the copy() method did not copy across the in body: &quot; + previousExchange + &quot; of type: &quot; + previousExchange.getClass()))<SUB>163</SUB>> ]
+"282" [label = <(&lt;operator&gt;.fieldAccess,Pipeline.LOG)<SUB>163</SUB>> ]
+"283" [label = <(IDENTIFIER,Pipeline,warn(&quot;Bad exchange implementation; the copy() method did not copy across the in body: &quot; + previousExchange + &quot; of type: &quot; + previousExchange.getClass()))<SUB>163</SUB>> ]
+"284" [label = <(FIELD_IDENTIFIER,LOG,LOG)<SUB>163</SUB>> ]
+"285" [label = <(&lt;operator&gt;.addition,&quot;Bad exchange implementation; the copy() method did not copy across the in body: &quot; + previousExchange + &quot; of type: &quot; + previousExchange.getClass())<SUB>163</SUB>> ]
+"286" [label = <(&lt;operator&gt;.addition,&quot;Bad exchange implementation; the copy() method did not copy across the in body: &quot; + previousExchange + &quot; of type: &quot;)<SUB>163</SUB>> ]
+"287" [label = <(&lt;operator&gt;.addition,&quot;Bad exchange implementation; the copy() method did not copy across the in body: &quot; + previousExchange)<SUB>163</SUB>> ]
+"288" [label = <(LITERAL,&quot;Bad exchange implementation; the copy() method did not copy across the in body: &quot;,&quot;Bad exchange implementation; the copy() method did not copy across the in body: &quot; + previousExchange)<SUB>163</SUB>> ]
+"289" [label = <(IDENTIFIER,previousExchange,&quot;Bad exchange implementation; the copy() method did not copy across the in body: &quot; + previousExchange)<SUB>163</SUB>> ]
+"290" [label = <(LITERAL,&quot; of type: &quot;,&quot;Bad exchange implementation; the copy() method did not copy across the in body: &quot; + previousExchange + &quot; of type: &quot;)<SUB>164</SUB>> ]
+"291" [label = <(getClass,getClass())<SUB>164</SUB>> ]
+"292" [label = <(IDENTIFIER,previousExchange,getClass())<SUB>164</SUB>> ]
+"293" [label = <(setBody,setBody(previousInBody))<SUB>165</SUB>> ]
+"294" [label = <(IDENTIFIER,in,setBody(previousInBody))<SUB>165</SUB>> ]
+"295" [label = <(IDENTIFIER,previousInBody,setBody(previousInBody))<SUB>165</SUB>> ]
+"296" [label = <(RETURN,return answer;,return answer;)<SUB>168</SUB>> ]
+"297" [label = <(IDENTIFIER,answer,return answer;)<SUB>168</SUB>> ]
+"298" [label = <(MODIFIER,PROTECTED)> ]
+"299" [label = <(MODIFIER,VIRTUAL)> ]
+"300" [label = <(METHOD_RETURN,org.apache.camel.Exchange)<SUB>145</SUB>> ]
+  "199" -> "12" 
+  "199" -> "200" 
+  "199" -> "201" 
+  "199" -> "202" 
+  "199" -> "298" 
+  "199" -> "299" 
+  "199" -> "300" 
+  "202" -> "203" 
+  "202" -> "204" 
+  "202" -> "208" 
+  "202" -> "209" 
+  "202" -> "214" 
+  "202" -> "215" 
+  "202" -> "224" 
+  "202" -> "225" 
+  "202" -> "229" 
+  "202" -> "296" 
+  "204" -> "205" 
+  "204" -> "206" 
+  "206" -> "11" 
+  "206" -> "207" 
+  "209" -> "210" 
+  "209" -> "211" 
+  "211" -> "212" 
+  "211" -> "213" 
+  "215" -> "216" 
+  "215" -> "217" 
+  "217" -> "218" 
+  "217" -> "221" 
+  "217" -> "223" 
+  "218" -> "219" 
+  "218" -> "220" 
+  "221" -> "222" 
+  "225" -> "226" 
+  "225" -> "227" 
+  "227" -> "228" 
+  "229" -> "230" 
+  "229" -> "233" 
+  "229" -> "263" 
+  "230" -> "231" 
+  "230" -> "232" 
+  "233" -> "234" 
+  "233" -> "237" 
+  "233" -> "238" 
+  "233" -> "243" 
+  "233" -> "244" 
+  "233" -> "248" 
+  "234" -> "235" 
+  "234" -> "236" 
+  "238" -> "239" 
+  "238" -> "240" 
+  "240" -> "241" 
+  "241" -> "242" 
+  "244" -> "245" 
+  "244" -> "246" 
+  "246" -> "247" 
+  "248" -> "249" 
+  "248" -> "251" 
+  "249" -> "250" 
+  "251" -> "252" 
+  "251" -> "253" 
+  "251" -> "257" 
+  "253" -> "254" 
+  "253" -> "255" 
+  "255" -> "256" 
+  "257" -> "258" 
+  "257" -> "259" 
+  "257" -> "261" 
+  "259" -> "260" 
+  "261" -> "262" 
+  "263" -> "264" 
+  "264" -> "265" 
+  "264" -> "266" 
+  "264" -> "271" 
+  "266" -> "267" 
+  "266" -> "268" 
+  "268" -> "269" 
+  "269" -> "270" 
+  "271" -> "272" 
+  "271" -> "280" 
+  "272" -> "273" 
+  "272" -> "277" 
+  "273" -> "274" 
+  "273" -> "276" 
+  "274" -> "275" 
+  "277" -> "278" 
+  "277" -> "279" 
+  "280" -> "281" 
+  "280" -> "293" 
+  "281" -> "282" 
+  "281" -> "285" 
+  "282" -> "283" 
+  "282" -> "284" 
+  "285" -> "286" 
+  "285" -> "291" 
+  "286" -> "287" 
+  "286" -> "290" 
+  "287" -> "288" 
+  "287" -> "289" 
+  "291" -> "292" 
+  "293" -> "294" 
+  "293" -> "295" 
+  "296" -> "297" 
+}

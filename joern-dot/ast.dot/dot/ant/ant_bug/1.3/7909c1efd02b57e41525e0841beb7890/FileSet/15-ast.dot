@@ -1,0 +1,117 @@
+digraph "getRef" {  
+"511" [label = <(METHOD,getRef)<SUB>272</SUB>> ]
+"56" [label = <(PARAM,this)<SUB>272</SUB>> ]
+"512" [label = <(PARAM,Project p)<SUB>272</SUB>> ]
+"513" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>272</SUB>> ]
+"514" [label = <(CONTROL_STRUCTURE,if (!checked),if (!checked))<SUB>273</SUB>> ]
+"515" [label = <(&lt;operator&gt;.logicalNot,!checked)<SUB>273</SUB>> ]
+"516" [label = <(IDENTIFIER,checked,!checked)<SUB>273</SUB>> ]
+"517" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>273</SUB>> ]
+"54" [label = <(LOCAL,Stack stk: java.util.Stack)> ]
+"518" [label = <(&lt;operator&gt;.assignment,Stack stk = new Stack())<SUB>274</SUB>> ]
+"519" [label = <(IDENTIFIER,stk,Stack stk = new Stack())<SUB>274</SUB>> ]
+"520" [label = <(&lt;operator&gt;.alloc,new Stack())<SUB>274</SUB>> ]
+"521" [label = <(&lt;init&gt;,new Stack())<SUB>274</SUB>> ]
+"53" [label = <(IDENTIFIER,stk,new Stack())<SUB>274</SUB>> ]
+"522" [label = <(push,stk.push(this))<SUB>275</SUB>> ]
+"523" [label = <(IDENTIFIER,stk,stk.push(this))<SUB>275</SUB>> ]
+"55" [label = <(IDENTIFIER,this,stk.push(this))<SUB>275</SUB>> ]
+"524" [label = <(dieOnCircularReference,dieOnCircularReference(stk, p))<SUB>276</SUB>> ]
+"57" [label = <(IDENTIFIER,this,dieOnCircularReference(stk, p))<SUB>276</SUB>> ]
+"525" [label = <(IDENTIFIER,stk,dieOnCircularReference(stk, p))<SUB>276</SUB>> ]
+"526" [label = <(IDENTIFIER,p,dieOnCircularReference(stk, p))<SUB>276</SUB>> ]
+"527" [label = <(LOCAL,Object o: java.lang.Object)> ]
+"528" [label = <(&lt;operator&gt;.assignment,Object o = getReferencedObject(p))<SUB>279</SUB>> ]
+"529" [label = <(IDENTIFIER,o,Object o = getReferencedObject(p))<SUB>279</SUB>> ]
+"530" [label = <(getReferencedObject,getReferencedObject(p))<SUB>279</SUB>> ]
+"531" [label = <(IDENTIFIER,ref,getReferencedObject(p))<SUB>279</SUB>> ]
+"532" [label = <(IDENTIFIER,p,getReferencedObject(p))<SUB>279</SUB>> ]
+"533" [label = <(CONTROL_STRUCTURE,if (!(o instanceof FileSet)),if (!(o instanceof FileSet)))<SUB>280</SUB>> ]
+"534" [label = <(&lt;operator&gt;.logicalNot,!(o instanceof FileSet))<SUB>280</SUB>> ]
+"535" [label = <(&lt;operator&gt;.instanceOf,o instanceof FileSet)<SUB>280</SUB>> ]
+"536" [label = <(IDENTIFIER,o,o instanceof FileSet)<SUB>280</SUB>> ]
+"537" [label = <(TYPE_REF,FileSet,FileSet)<SUB>280</SUB>> ]
+"538" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>280</SUB>> ]
+"539" [label = <(LOCAL,String msg: java.lang.String)> ]
+"540" [label = <(&lt;operator&gt;.assignment,String msg = ref.getRefId() + &quot; doesn\'t denote a fileset&quot;)<SUB>281</SUB>> ]
+"541" [label = <(IDENTIFIER,msg,String msg = ref.getRefId() + &quot; doesn\'t denote a fileset&quot;)<SUB>281</SUB>> ]
+"542" [label = <(&lt;operator&gt;.addition,ref.getRefId() + &quot; doesn\'t denote a fileset&quot;)<SUB>281</SUB>> ]
+"543" [label = <(getRefId,getRefId())<SUB>281</SUB>> ]
+"544" [label = <(IDENTIFIER,ref,getRefId())<SUB>281</SUB>> ]
+"545" [label = <(LITERAL,&quot; doesn\'t denote a fileset&quot;,ref.getRefId() + &quot; doesn\'t denote a fileset&quot;)<SUB>281</SUB>> ]
+"546" [label = <(&lt;operator&gt;.throw,throw new BuildException(msg);)<SUB>282</SUB>> ]
+"547" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>282</SUB>> ]
+"548" [label = <(&lt;operator&gt;.assignment,&lt;empty&gt;)> ]
+"549" [label = <(IDENTIFIER,$obj9,&lt;empty&gt;)> ]
+"550" [label = <(&lt;operator&gt;.alloc,new BuildException(msg))<SUB>282</SUB>> ]
+"551" [label = <(&lt;init&gt;,new BuildException(msg))<SUB>282</SUB>> ]
+"552" [label = <(IDENTIFIER,$obj9,new BuildException(msg))> ]
+"553" [label = <(IDENTIFIER,msg,new BuildException(msg))<SUB>282</SUB>> ]
+"554" [label = <(IDENTIFIER,$obj9,&lt;empty&gt;)> ]
+"555" [label = <(CONTROL_STRUCTURE,else,else)<SUB>283</SUB>> ]
+"556" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>283</SUB>> ]
+"557" [label = <(RETURN,return (FileSet) o;,return (FileSet) o;)<SUB>284</SUB>> ]
+"558" [label = <(&lt;operator&gt;.cast,(FileSet) o)<SUB>284</SUB>> ]
+"559" [label = <(TYPE_REF,FileSet,FileSet)<SUB>284</SUB>> ]
+"560" [label = <(IDENTIFIER,o,(FileSet) o)<SUB>284</SUB>> ]
+"561" [label = <(MODIFIER,PROTECTED)> ]
+"562" [label = <(MODIFIER,VIRTUAL)> ]
+"563" [label = <(METHOD_RETURN,org.apache.tools.ant.types.FileSet)<SUB>272</SUB>> ]
+  "511" -> "56" 
+  "511" -> "512" 
+  "511" -> "513" 
+  "511" -> "561" 
+  "511" -> "562" 
+  "511" -> "563" 
+  "513" -> "514" 
+  "513" -> "527" 
+  "513" -> "528" 
+  "513" -> "533" 
+  "514" -> "515" 
+  "514" -> "517" 
+  "515" -> "516" 
+  "517" -> "54" 
+  "517" -> "518" 
+  "517" -> "521" 
+  "517" -> "522" 
+  "517" -> "524" 
+  "518" -> "519" 
+  "518" -> "520" 
+  "521" -> "53" 
+  "522" -> "523" 
+  "522" -> "55" 
+  "524" -> "57" 
+  "524" -> "525" 
+  "524" -> "526" 
+  "528" -> "529" 
+  "528" -> "530" 
+  "530" -> "531" 
+  "530" -> "532" 
+  "533" -> "534" 
+  "533" -> "538" 
+  "533" -> "555" 
+  "534" -> "535" 
+  "535" -> "536" 
+  "535" -> "537" 
+  "538" -> "539" 
+  "538" -> "540" 
+  "538" -> "546" 
+  "540" -> "541" 
+  "540" -> "542" 
+  "542" -> "543" 
+  "542" -> "545" 
+  "543" -> "544" 
+  "546" -> "547" 
+  "547" -> "548" 
+  "547" -> "551" 
+  "547" -> "554" 
+  "548" -> "549" 
+  "548" -> "550" 
+  "551" -> "552" 
+  "551" -> "553" 
+  "555" -> "556" 
+  "556" -> "557" 
+  "557" -> "558" 
+  "558" -> "559" 
+  "558" -> "560" 
+}

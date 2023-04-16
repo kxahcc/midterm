@@ -1,0 +1,133 @@
+digraph "process" {  
+"78" [label = <(METHOD,process)<SUB>52</SUB>> ]
+"4" [label = <(PARAM,this)<SUB>52</SUB>> ]
+"79" [label = <(PARAM,Exchange exchange)<SUB>52</SUB>> ]
+"80" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>52</SUB>> ]
+"81" [label = <(LOCAL,Schema schema: javax.xml.validation.Schema)> ]
+"82" [label = <(&lt;operator&gt;.assignment,Schema schema = this.getSchema())<SUB>53</SUB>> ]
+"83" [label = <(IDENTIFIER,schema,Schema schema = this.getSchema())<SUB>53</SUB>> ]
+"84" [label = <(getSchema,this.getSchema())<SUB>53</SUB>> ]
+"3" [label = <(IDENTIFIER,this,this.getSchema())<SUB>53</SUB>> ]
+"85" [label = <(LOCAL,Validator validator: javax.xml.validation.Validator)> ]
+"86" [label = <(&lt;operator&gt;.assignment,Validator validator = schema.newValidator())<SUB>54</SUB>> ]
+"87" [label = <(IDENTIFIER,validator,Validator validator = schema.newValidator())<SUB>54</SUB>> ]
+"88" [label = <(newValidator,schema.newValidator())<SUB>54</SUB>> ]
+"89" [label = <(IDENTIFIER,schema,schema.newValidator())<SUB>54</SUB>> ]
+"90" [label = <(LOCAL,Source source: javax.xml.transform.Source)> ]
+"91" [label = <(&lt;operator&gt;.assignment,Source source = getBody(DOMSource.class))<SUB>56</SUB>> ]
+"92" [label = <(IDENTIFIER,source,Source source = getBody(DOMSource.class))<SUB>56</SUB>> ]
+"93" [label = <(getBody,getBody(DOMSource.class))<SUB>56</SUB>> ]
+"94" [label = <(getIn,getIn())<SUB>56</SUB>> ]
+"95" [label = <(IDENTIFIER,exchange,getIn())<SUB>56</SUB>> ]
+"96" [label = <(&lt;operator&gt;.fieldAccess,DOMSource.class)<SUB>56</SUB>> ]
+"97" [label = <(IDENTIFIER,DOMSource,getBody(DOMSource.class))<SUB>56</SUB>> ]
+"98" [label = <(FIELD_IDENTIFIER,class,class)<SUB>56</SUB>> ]
+"99" [label = <(CONTROL_STRUCTURE,if (source == null),if (source == null))<SUB>57</SUB>> ]
+"100" [label = <(&lt;operator&gt;.equals,source == null)<SUB>57</SUB>> ]
+"101" [label = <(IDENTIFIER,source,source == null)<SUB>57</SUB>> ]
+"102" [label = <(LITERAL,null,source == null)<SUB>57</SUB>> ]
+"103" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>57</SUB>> ]
+"104" [label = <(&lt;operator&gt;.throw,throw new NoXmlBodyValidationException(exchange);)<SUB>58</SUB>> ]
+"105" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>58</SUB>> ]
+"106" [label = <(&lt;operator&gt;.assignment,&lt;empty&gt;)> ]
+"107" [label = <(IDENTIFIER,$obj1,&lt;empty&gt;)> ]
+"108" [label = <(&lt;operator&gt;.alloc,new NoXmlBodyValidationException(exchange))<SUB>58</SUB>> ]
+"109" [label = <(&lt;init&gt;,new NoXmlBodyValidationException(exchange))<SUB>58</SUB>> ]
+"110" [label = <(IDENTIFIER,$obj1,new NoXmlBodyValidationException(exchange))> ]
+"111" [label = <(IDENTIFIER,exchange,new NoXmlBodyValidationException(exchange))<SUB>58</SUB>> ]
+"112" [label = <(IDENTIFIER,$obj1,&lt;empty&gt;)> ]
+"113" [label = <(LOCAL,ValidatorErrorHandler handler: ANY)> ]
+"114" [label = <(&lt;operator&gt;.assignment,ANY handler = newInstance())<SUB>63</SUB>> ]
+"115" [label = <(IDENTIFIER,handler,ANY handler = newInstance())<SUB>63</SUB>> ]
+"116" [label = <(newInstance,newInstance())<SUB>63</SUB>> ]
+"117" [label = <(getClass,getClass())<SUB>63</SUB>> ]
+"118" [label = <(&lt;operator&gt;.fieldAccess,this.errorHandler)<SUB>63</SUB>> ]
+"119" [label = <(IDENTIFIER,this,getClass())<SUB>63</SUB>> ]
+"120" [label = <(FIELD_IDENTIFIER,errorHandler,errorHandler)<SUB>63</SUB>> ]
+"121" [label = <(setErrorHandler,setErrorHandler(handler))<SUB>64</SUB>> ]
+"122" [label = <(IDENTIFIER,validator,setErrorHandler(handler))<SUB>64</SUB>> ]
+"123" [label = <(IDENTIFIER,handler,setErrorHandler(handler))<SUB>64</SUB>> ]
+"6" [label = <(LOCAL,DOMResult result: javax.xml.transform.dom.DOMResult)> ]
+"124" [label = <(&lt;operator&gt;.assignment,DOMResult result = new DOMResult())<SUB>66</SUB>> ]
+"125" [label = <(IDENTIFIER,result,DOMResult result = new DOMResult())<SUB>66</SUB>> ]
+"126" [label = <(&lt;operator&gt;.alloc,new DOMResult())<SUB>66</SUB>> ]
+"127" [label = <(&lt;init&gt;,new DOMResult())<SUB>66</SUB>> ]
+"5" [label = <(IDENTIFIER,result,new DOMResult())<SUB>66</SUB>> ]
+"128" [label = <(validate,validator.validate(source, result))<SUB>67</SUB>> ]
+"129" [label = <(IDENTIFIER,validator,validator.validate(source, result))<SUB>67</SUB>> ]
+"130" [label = <(IDENTIFIER,source,validator.validate(source, result))<SUB>67</SUB>> ]
+"131" [label = <(IDENTIFIER,result,validator.validate(source, result))<SUB>67</SUB>> ]
+"132" [label = <(handleErrors,handleErrors(exchange, schema, result))<SUB>69</SUB>> ]
+"133" [label = <(IDENTIFIER,handler,handleErrors(exchange, schema, result))<SUB>69</SUB>> ]
+"134" [label = <(IDENTIFIER,exchange,handleErrors(exchange, schema, result))<SUB>69</SUB>> ]
+"135" [label = <(IDENTIFIER,schema,handleErrors(exchange, schema, result))<SUB>69</SUB>> ]
+"136" [label = <(IDENTIFIER,result,handleErrors(exchange, schema, result))<SUB>69</SUB>> ]
+"137" [label = <(MODIFIER,PUBLIC)> ]
+"138" [label = <(MODIFIER,VIRTUAL)> ]
+"139" [label = <(METHOD_RETURN,void)<SUB>52</SUB>> ]
+  "78" -> "4" 
+  "78" -> "79" 
+  "78" -> "80" 
+  "78" -> "137" 
+  "78" -> "138" 
+  "78" -> "139" 
+  "80" -> "81" 
+  "80" -> "82" 
+  "80" -> "85" 
+  "80" -> "86" 
+  "80" -> "90" 
+  "80" -> "91" 
+  "80" -> "99" 
+  "80" -> "113" 
+  "80" -> "114" 
+  "80" -> "121" 
+  "80" -> "6" 
+  "80" -> "124" 
+  "80" -> "127" 
+  "80" -> "128" 
+  "80" -> "132" 
+  "82" -> "83" 
+  "82" -> "84" 
+  "84" -> "3" 
+  "86" -> "87" 
+  "86" -> "88" 
+  "88" -> "89" 
+  "91" -> "92" 
+  "91" -> "93" 
+  "93" -> "94" 
+  "93" -> "96" 
+  "94" -> "95" 
+  "96" -> "97" 
+  "96" -> "98" 
+  "99" -> "100" 
+  "99" -> "103" 
+  "100" -> "101" 
+  "100" -> "102" 
+  "103" -> "104" 
+  "104" -> "105" 
+  "105" -> "106" 
+  "105" -> "109" 
+  "105" -> "112" 
+  "106" -> "107" 
+  "106" -> "108" 
+  "109" -> "110" 
+  "109" -> "111" 
+  "114" -> "115" 
+  "114" -> "116" 
+  "116" -> "117" 
+  "117" -> "118" 
+  "118" -> "119" 
+  "118" -> "120" 
+  "121" -> "122" 
+  "121" -> "123" 
+  "124" -> "125" 
+  "124" -> "126" 
+  "127" -> "5" 
+  "128" -> "129" 
+  "128" -> "130" 
+  "128" -> "131" 
+  "132" -> "133" 
+  "132" -> "134" 
+  "132" -> "135" 
+  "132" -> "136" 
+}

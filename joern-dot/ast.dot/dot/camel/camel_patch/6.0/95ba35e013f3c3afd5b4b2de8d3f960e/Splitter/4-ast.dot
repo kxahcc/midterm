@@ -1,0 +1,45 @@
+digraph "createProcessorExchangePairsIterable" {  
+"133" [label = <(METHOD,createProcessorExchangePairsIterable)<SUB>81</SUB>> ]
+"134" [label = <(PARAM,this)<SUB>81</SUB>> ]
+"135" [label = <(PARAM,final Exchange exchange)<SUB>81</SUB>> ]
+"136" [label = <(PARAM,Object value)<SUB>81</SUB>> ]
+"137" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>81</SUB>> ]
+"138" [label = <(LOCAL,Iterator iterator: java.util.Iterator)> ]
+"139" [label = <(&lt;operator&gt;.assignment,Iterator iterator = createIterator(value))<SUB>82</SUB>> ]
+"140" [label = <(IDENTIFIER,iterator,Iterator iterator = createIterator(value))<SUB>82</SUB>> ]
+"141" [label = <(createIterator,createIterator(value))<SUB>82</SUB>> ]
+"142" [label = <(IDENTIFIER,ObjectHelper,createIterator(value))<SUB>82</SUB>> ]
+"143" [label = <(IDENTIFIER,value,createIterator(value))<SUB>82</SUB>> ]
+"144" [label = <(RETURN,return new Iterable() {\012\012    public Iterator iterator() {\012        return new Iterator() {\012\012            public boolean hasNext() {\012                return iterator.hasNext();\012            }\012\012            public Object next() {\012                Object part = iterator.next();\012                Exchange newExchange = exchange.copy();\012                Message in = newExchange.getIn();\012                in.setBody(part);\012                return new ProcessorExchangePair(getProcessors().iterator().next(), newExchange);\012            }\012\012            public void remove() {\012                throw new UnsupportedOperationException(&quot;remove is not supported by this iterator&quot;);\012            }\012        };\012    }\012};,return new Iterable() {\012\012    public Iterator iterator() {\012        return new Iterator() {\012\012            public boolean hasNext() {\012                return iterator.hasNext();\012            }\012\012            public Object next() {\012                Object part = iterator.next();\012                Exchange newExchange = exchange.copy();\012                Message in = newExchange.getIn();\012                in.setBody(part);\012                return new ProcessorExchangePair(getProcessors().iterator().next(), newExchange);\012            }\012\012            public void remove() {\012                throw new UnsupportedOperationException(&quot;remove is not supported by this iterator&quot;);\012            }\012        };\012    }\012};)<SUB>83</SUB>> ]
+"145" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>83</SUB>> ]
+"146" [label = <(&lt;operator&gt;.assignment,&lt;empty&gt;)> ]
+"147" [label = <(IDENTIFIER,$obj0,&lt;empty&gt;)> ]
+"148" [label = <(&lt;operator&gt;.alloc,new Iterable() {\012\012    public Iterator iterator() {\012        return new Iterator() {\012\012            public boolean hasNext() {\012                return iterator.hasNext();\012            }\012\012            public Object next() {\012                Object part = iterator.next();\012                Exchange newExchange = exchange.copy();\012                Message in = newExchange.getIn();\012                in.setBody(part);\012                return new ProcessorExchangePair(getProcessors().iterator().next(), newExchange);\012            }\012\012            public void remove() {\012                throw new UnsupportedOperationException(&quot;remove is not supported by this iterator&quot;);\012            }\012        };\012    }\012})<SUB>83</SUB>> ]
+"149" [label = <(&lt;init&gt;,new Iterable() {\012\012    public Iterator iterator() {\012        return new Iterator() {\012\012            public boolean hasNext() {\012                return iterator.hasNext();\012            }\012\012            public Object next() {\012                Object part = iterator.next();\012                Exchange newExchange = exchange.copy();\012                Message in = newExchange.getIn();\012                in.setBody(part);\012                return new ProcessorExchangePair(getProcessors().iterator().next(), newExchange);\012            }\012\012            public void remove() {\012                throw new UnsupportedOperationException(&quot;remove is not supported by this iterator&quot;);\012            }\012        };\012    }\012})<SUB>83</SUB>> ]
+"150" [label = <(IDENTIFIER,$obj0,new Iterable() {\012\012    public Iterator iterator() {\012        return new Iterator() {\012\012            public boolean hasNext() {\012                return iterator.hasNext();\012            }\012\012            public Object next() {\012                Object part = iterator.next();\012                Exchange newExchange = exchange.copy();\012                Message in = newExchange.getIn();\012                in.setBody(part);\012                return new ProcessorExchangePair(getProcessors().iterator().next(), newExchange);\012            }\012\012            public void remove() {\012                throw new UnsupportedOperationException(&quot;remove is not supported by this iterator&quot;);\012            }\012        };\012    }\012})> ]
+"151" [label = <(IDENTIFIER,$obj0,&lt;empty&gt;)> ]
+"152" [label = <(MODIFIER,PRIVATE)> ]
+"153" [label = <(MODIFIER,VIRTUAL)> ]
+"154" [label = <(METHOD_RETURN,ANY)<SUB>81</SUB>> ]
+  "133" -> "134" 
+  "133" -> "135" 
+  "133" -> "136" 
+  "133" -> "137" 
+  "133" -> "152" 
+  "133" -> "153" 
+  "133" -> "154" 
+  "137" -> "138" 
+  "137" -> "139" 
+  "137" -> "144" 
+  "139" -> "140" 
+  "139" -> "141" 
+  "141" -> "142" 
+  "141" -> "143" 
+  "144" -> "145" 
+  "145" -> "146" 
+  "145" -> "149" 
+  "145" -> "151" 
+  "146" -> "147" 
+  "146" -> "148" 
+  "149" -> "150" 
+}

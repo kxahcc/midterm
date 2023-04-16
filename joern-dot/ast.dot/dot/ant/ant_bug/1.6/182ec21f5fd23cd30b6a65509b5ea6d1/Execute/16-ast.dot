@@ -1,0 +1,83 @@
+digraph "launch" {  
+"872" [label = <(METHOD,launch)<SUB>470</SUB>> ]
+"873" [label = <(PARAM,Project project)<SUB>470</SUB>> ]
+"874" [label = <(PARAM,String[] command)<SUB>470</SUB>> ]
+"875" [label = <(PARAM,String[] env)<SUB>471</SUB>> ]
+"876" [label = <(PARAM,File dir)<SUB>471</SUB>> ]
+"877" [label = <(PARAM,boolean useVM)<SUB>471</SUB>> ]
+"878" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>472</SUB>> ]
+"879" [label = <(LOCAL,CommandLauncher launcher: org.apache.tools.ant.taskdefs.Execute$CommandLauncher)> ]
+"880" [label = <(&lt;operator&gt;.assignment,Execute$CommandLauncher launcher = vmLauncher != null ? vmLauncher : shellLauncher)<SUB>473</SUB>> ]
+"881" [label = <(IDENTIFIER,launcher,Execute$CommandLauncher launcher = vmLauncher != null ? vmLauncher : shellLauncher)<SUB>473</SUB>> ]
+"882" [label = <(&lt;operator&gt;.conditional,vmLauncher != null ? vmLauncher : shellLauncher)<SUB>474</SUB>> ]
+"883" [label = <(&lt;operator&gt;.notEquals,vmLauncher != null)<SUB>474</SUB>> ]
+"884" [label = <(&lt;operator&gt;.fieldAccess,Execute.vmLauncher)<SUB>474</SUB>> ]
+"885" [label = <(IDENTIFIER,Execute,vmLauncher != null)<SUB>474</SUB>> ]
+"886" [label = <(FIELD_IDENTIFIER,vmLauncher,vmLauncher)<SUB>474</SUB>> ]
+"887" [label = <(LITERAL,null,vmLauncher != null)<SUB>474</SUB>> ]
+"888" [label = <(&lt;operator&gt;.fieldAccess,Execute.vmLauncher)<SUB>474</SUB>> ]
+"889" [label = <(IDENTIFIER,Execute,vmLauncher != null ? vmLauncher : shellLauncher)<SUB>474</SUB>> ]
+"890" [label = <(FIELD_IDENTIFIER,vmLauncher,vmLauncher)<SUB>474</SUB>> ]
+"891" [label = <(&lt;operator&gt;.fieldAccess,Execute.shellLauncher)<SUB>474</SUB>> ]
+"892" [label = <(IDENTIFIER,Execute,vmLauncher != null ? vmLauncher : shellLauncher)<SUB>474</SUB>> ]
+"893" [label = <(FIELD_IDENTIFIER,shellLauncher,shellLauncher)<SUB>474</SUB>> ]
+"894" [label = <(CONTROL_STRUCTURE,if (!useVM),if (!useVM))<SUB>475</SUB>> ]
+"895" [label = <(&lt;operator&gt;.logicalNot,!useVM)<SUB>475</SUB>> ]
+"896" [label = <(IDENTIFIER,useVM,!useVM)<SUB>475</SUB>> ]
+"897" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>475</SUB>> ]
+"898" [label = <(&lt;operator&gt;.assignment,launcher = Execute.shellLauncher)<SUB>476</SUB>> ]
+"899" [label = <(IDENTIFIER,launcher,launcher = Execute.shellLauncher)<SUB>476</SUB>> ]
+"900" [label = <(&lt;operator&gt;.fieldAccess,Execute.shellLauncher)<SUB>476</SUB>> ]
+"901" [label = <(IDENTIFIER,Execute,launcher = Execute.shellLauncher)<SUB>476</SUB>> ]
+"902" [label = <(FIELD_IDENTIFIER,shellLauncher,shellLauncher)<SUB>476</SUB>> ]
+"903" [label = <(RETURN,return launcher.exec(project, command, env, dir);,return launcher.exec(project, command, env, dir);)<SUB>479</SUB>> ]
+"904" [label = <(exec,exec(project, command, env, dir))<SUB>479</SUB>> ]
+"905" [label = <(IDENTIFIER,launcher,exec(project, command, env, dir))<SUB>479</SUB>> ]
+"906" [label = <(IDENTIFIER,project,exec(project, command, env, dir))<SUB>479</SUB>> ]
+"907" [label = <(IDENTIFIER,command,exec(project, command, env, dir))<SUB>479</SUB>> ]
+"908" [label = <(IDENTIFIER,env,exec(project, command, env, dir))<SUB>479</SUB>> ]
+"909" [label = <(IDENTIFIER,dir,exec(project, command, env, dir))<SUB>479</SUB>> ]
+"910" [label = <(MODIFIER,PUBLIC)> ]
+"911" [label = <(MODIFIER,STATIC)> ]
+"912" [label = <(METHOD_RETURN,java.lang.Process)<SUB>470</SUB>> ]
+  "872" -> "873" 
+  "872" -> "874" 
+  "872" -> "875" 
+  "872" -> "876" 
+  "872" -> "877" 
+  "872" -> "878" 
+  "872" -> "910" 
+  "872" -> "911" 
+  "872" -> "912" 
+  "878" -> "879" 
+  "878" -> "880" 
+  "878" -> "894" 
+  "878" -> "903" 
+  "880" -> "881" 
+  "880" -> "882" 
+  "882" -> "883" 
+  "882" -> "888" 
+  "882" -> "891" 
+  "883" -> "884" 
+  "883" -> "887" 
+  "884" -> "885" 
+  "884" -> "886" 
+  "888" -> "889" 
+  "888" -> "890" 
+  "891" -> "892" 
+  "891" -> "893" 
+  "894" -> "895" 
+  "894" -> "897" 
+  "895" -> "896" 
+  "897" -> "898" 
+  "898" -> "899" 
+  "898" -> "900" 
+  "900" -> "901" 
+  "900" -> "902" 
+  "903" -> "904" 
+  "904" -> "905" 
+  "904" -> "906" 
+  "904" -> "907" 
+  "904" -> "908" 
+  "904" -> "909" 
+}

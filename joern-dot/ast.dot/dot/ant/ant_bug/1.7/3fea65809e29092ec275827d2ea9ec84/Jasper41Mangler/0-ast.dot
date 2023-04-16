@@ -1,0 +1,195 @@
+digraph "mapJspToJavaName" {  
+"22" [label = <(METHOD,mapJspToJavaName)<SUB>37</SUB>> ]
+"23" [label = <(PARAM,this)<SUB>37</SUB>> ]
+"24" [label = <(PARAM,File jspFile)<SUB>37</SUB>> ]
+"25" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>37</SUB>> ]
+"26" [label = <(LOCAL,String jspUri: java.lang.String)> ]
+"27" [label = <(&lt;operator&gt;.assignment,String jspUri = jspFile.getAbsolutePath())<SUB>38</SUB>> ]
+"28" [label = <(IDENTIFIER,jspUri,String jspUri = jspFile.getAbsolutePath())<SUB>38</SUB>> ]
+"29" [label = <(getAbsolutePath,jspFile.getAbsolutePath())<SUB>38</SUB>> ]
+"30" [label = <(IDENTIFIER,jspFile,jspFile.getAbsolutePath())<SUB>38</SUB>> ]
+"31" [label = <(LOCAL,int start: int)> ]
+"32" [label = <(&lt;operator&gt;.assignment,int start = jspUri.lastIndexOf(File.separatorChar) + 1)<SUB>39</SUB>> ]
+"33" [label = <(IDENTIFIER,start,int start = jspUri.lastIndexOf(File.separatorChar) + 1)<SUB>39</SUB>> ]
+"34" [label = <(&lt;operator&gt;.addition,jspUri.lastIndexOf(File.separatorChar) + 1)<SUB>39</SUB>> ]
+"35" [label = <(lastIndexOf,jspUri.lastIndexOf(File.separatorChar))<SUB>39</SUB>> ]
+"36" [label = <(IDENTIFIER,jspUri,jspUri.lastIndexOf(File.separatorChar))<SUB>39</SUB>> ]
+"37" [label = <(&lt;operator&gt;.fieldAccess,File.separatorChar)<SUB>39</SUB>> ]
+"38" [label = <(IDENTIFIER,File,jspUri.lastIndexOf(File.separatorChar))<SUB>39</SUB>> ]
+"39" [label = <(FIELD_IDENTIFIER,separatorChar,separatorChar)<SUB>39</SUB>> ]
+"40" [label = <(LITERAL,1,jspUri.lastIndexOf(File.separatorChar) + 1)<SUB>39</SUB>> ]
+"41" [label = <(LOCAL,int end: int)> ]
+"42" [label = <(&lt;operator&gt;.assignment,int end = jspUri.length())<SUB>40</SUB>> ]
+"43" [label = <(IDENTIFIER,end,int end = jspUri.length())<SUB>40</SUB>> ]
+"44" [label = <(length,jspUri.length())<SUB>40</SUB>> ]
+"45" [label = <(IDENTIFIER,jspUri,jspUri.length())<SUB>40</SUB>> ]
+"4" [label = <(LOCAL,StringBuffer modifiedClassName: java.lang.StringBuffer)> ]
+"46" [label = <(&lt;operator&gt;.assignment,modifiedClassName = new StringBuffer(jspUri.length() - start))<SUB>42</SUB>> ]
+"47" [label = <(IDENTIFIER,modifiedClassName,modifiedClassName = new StringBuffer(jspUri.length() - start))<SUB>42</SUB>> ]
+"48" [label = <(&lt;operator&gt;.alloc,new StringBuffer(jspUri.length() - start))<SUB>42</SUB>> ]
+"49" [label = <(&lt;init&gt;,new StringBuffer(jspUri.length() - start))<SUB>42</SUB>> ]
+"3" [label = <(IDENTIFIER,modifiedClassName,new StringBuffer(jspUri.length() - start))<SUB>42</SUB>> ]
+"50" [label = <(&lt;operator&gt;.subtraction,jspUri.length() - start)<SUB>42</SUB>> ]
+"51" [label = <(length,jspUri.length())<SUB>42</SUB>> ]
+"52" [label = <(IDENTIFIER,jspUri,jspUri.length())<SUB>42</SUB>> ]
+"53" [label = <(IDENTIFIER,start,jspUri.length() - start)<SUB>42</SUB>> ]
+"54" [label = <(CONTROL_STRUCTURE,if (!Character.isJavaIdentifierStart(jspUri.charAt(start)) || jspUri.charAt(start) == '_'),if (!Character.isJavaIdentifierStart(jspUri.charAt(start)) || jspUri.charAt(start) == '_'))<SUB>43</SUB>> ]
+"55" [label = <(&lt;operator&gt;.logicalOr,!Character.isJavaIdentifierStart(jspUri.charAt(start)) || jspUri.charAt(start) == '_')<SUB>43</SUB>> ]
+"56" [label = <(&lt;operator&gt;.logicalNot,!Character.isJavaIdentifierStart(jspUri.charAt(start)))<SUB>43</SUB>> ]
+"57" [label = <(isJavaIdentifierStart,Character.isJavaIdentifierStart(jspUri.charAt(start)))<SUB>43</SUB>> ]
+"58" [label = <(IDENTIFIER,Character,Character.isJavaIdentifierStart(jspUri.charAt(start)))<SUB>43</SUB>> ]
+"59" [label = <(charAt,jspUri.charAt(start))<SUB>43</SUB>> ]
+"60" [label = <(IDENTIFIER,jspUri,jspUri.charAt(start))<SUB>43</SUB>> ]
+"61" [label = <(IDENTIFIER,start,jspUri.charAt(start))<SUB>43</SUB>> ]
+"62" [label = <(&lt;operator&gt;.equals,jspUri.charAt(start) == '_')<SUB>44</SUB>> ]
+"63" [label = <(charAt,jspUri.charAt(start))<SUB>44</SUB>> ]
+"64" [label = <(IDENTIFIER,jspUri,jspUri.charAt(start))<SUB>44</SUB>> ]
+"65" [label = <(IDENTIFIER,start,jspUri.charAt(start))<SUB>44</SUB>> ]
+"66" [label = <(LITERAL,'_',jspUri.charAt(start) == '_')<SUB>44</SUB>> ]
+"67" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>44</SUB>> ]
+"68" [label = <(append,modifiedClassName.append('_'))<SUB>47</SUB>> ]
+"69" [label = <(IDENTIFIER,modifiedClassName,modifiedClassName.append('_'))<SUB>47</SUB>> ]
+"70" [label = <(LITERAL,'_',modifiedClassName.append('_'))<SUB>47</SUB>> ]
+"71" [label = <(CONTROL_STRUCTURE,for (int i = start; Some(i &lt; end); i++),for (int i = start; Some(i &lt; end); i++))<SUB>49</SUB>> ]
+"72" [label = <(LOCAL,int i: int)> ]
+"73" [label = <(&lt;operator&gt;.assignment,int i = start)<SUB>49</SUB>> ]
+"74" [label = <(IDENTIFIER,i,int i = start)<SUB>49</SUB>> ]
+"75" [label = <(IDENTIFIER,start,int i = start)<SUB>49</SUB>> ]
+"76" [label = <(&lt;operator&gt;.lessThan,i &lt; end)<SUB>49</SUB>> ]
+"77" [label = <(IDENTIFIER,i,i &lt; end)<SUB>49</SUB>> ]
+"78" [label = <(IDENTIFIER,end,i &lt; end)<SUB>49</SUB>> ]
+"79" [label = <(&lt;operator&gt;.postIncrement,i++)<SUB>49</SUB>> ]
+"80" [label = <(IDENTIFIER,i,i++)<SUB>49</SUB>> ]
+"81" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>49</SUB>> ]
+"82" [label = <(LOCAL,char ch: char)> ]
+"83" [label = <(&lt;operator&gt;.assignment,char ch = jspUri.charAt(i))<SUB>50</SUB>> ]
+"84" [label = <(IDENTIFIER,ch,char ch = jspUri.charAt(i))<SUB>50</SUB>> ]
+"85" [label = <(charAt,jspUri.charAt(i))<SUB>50</SUB>> ]
+"86" [label = <(IDENTIFIER,jspUri,jspUri.charAt(i))<SUB>50</SUB>> ]
+"87" [label = <(IDENTIFIER,i,jspUri.charAt(i))<SUB>50</SUB>> ]
+"88" [label = <(CONTROL_STRUCTURE,if (Character.isJavaIdentifierPart(ch)),if (Character.isJavaIdentifierPart(ch)))<SUB>51</SUB>> ]
+"89" [label = <(isJavaIdentifierPart,Character.isJavaIdentifierPart(ch))<SUB>51</SUB>> ]
+"90" [label = <(IDENTIFIER,Character,Character.isJavaIdentifierPart(ch))<SUB>51</SUB>> ]
+"91" [label = <(IDENTIFIER,ch,Character.isJavaIdentifierPart(ch))<SUB>51</SUB>> ]
+"92" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>51</SUB>> ]
+"93" [label = <(append,modifiedClassName.append(ch))<SUB>52</SUB>> ]
+"94" [label = <(IDENTIFIER,modifiedClassName,modifiedClassName.append(ch))<SUB>52</SUB>> ]
+"95" [label = <(IDENTIFIER,ch,modifiedClassName.append(ch))<SUB>52</SUB>> ]
+"96" [label = <(CONTROL_STRUCTURE,else,else)<SUB>53</SUB>> ]
+"97" [label = <(CONTROL_STRUCTURE,if (ch == '.'),if (ch == '.'))<SUB>53</SUB>> ]
+"98" [label = <(&lt;operator&gt;.equals,ch == '.')<SUB>53</SUB>> ]
+"99" [label = <(IDENTIFIER,ch,ch == '.')<SUB>53</SUB>> ]
+"100" [label = <(LITERAL,'.',ch == '.')<SUB>53</SUB>> ]
+"101" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>53</SUB>> ]
+"102" [label = <(append,modifiedClassName.append('_'))<SUB>54</SUB>> ]
+"103" [label = <(IDENTIFIER,modifiedClassName,modifiedClassName.append('_'))<SUB>54</SUB>> ]
+"104" [label = <(LITERAL,'_',modifiedClassName.append('_'))<SUB>54</SUB>> ]
+"105" [label = <(CONTROL_STRUCTURE,else,else)<SUB>55</SUB>> ]
+"106" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>55</SUB>> ]
+"107" [label = <(append,modifiedClassName.append(mangleChar(ch)))<SUB>56</SUB>> ]
+"108" [label = <(IDENTIFIER,modifiedClassName,modifiedClassName.append(mangleChar(ch)))<SUB>56</SUB>> ]
+"109" [label = <(mangleChar,mangleChar(ch))<SUB>56</SUB>> ]
+"110" [label = <(IDENTIFIER,ch,mangleChar(ch))<SUB>56</SUB>> ]
+"111" [label = <(RETURN,return modifiedClassName.toString();,return modifiedClassName.toString();)<SUB>59</SUB>> ]
+"112" [label = <(toString,modifiedClassName.toString())<SUB>59</SUB>> ]
+"113" [label = <(IDENTIFIER,modifiedClassName,modifiedClassName.toString())<SUB>59</SUB>> ]
+"114" [label = <(MODIFIER,PUBLIC)> ]
+"115" [label = <(MODIFIER,VIRTUAL)> ]
+"116" [label = <(METHOD_RETURN,java.lang.String)<SUB>37</SUB>> ]
+  "22" -> "23" 
+  "22" -> "24" 
+  "22" -> "25" 
+  "22" -> "114" 
+  "22" -> "115" 
+  "22" -> "116" 
+  "25" -> "26" 
+  "25" -> "27" 
+  "25" -> "31" 
+  "25" -> "32" 
+  "25" -> "41" 
+  "25" -> "42" 
+  "25" -> "4" 
+  "25" -> "46" 
+  "25" -> "49" 
+  "25" -> "54" 
+  "25" -> "71" 
+  "25" -> "111" 
+  "27" -> "28" 
+  "27" -> "29" 
+  "29" -> "30" 
+  "32" -> "33" 
+  "32" -> "34" 
+  "34" -> "35" 
+  "34" -> "40" 
+  "35" -> "36" 
+  "35" -> "37" 
+  "37" -> "38" 
+  "37" -> "39" 
+  "42" -> "43" 
+  "42" -> "44" 
+  "44" -> "45" 
+  "46" -> "47" 
+  "46" -> "48" 
+  "49" -> "3" 
+  "49" -> "50" 
+  "50" -> "51" 
+  "50" -> "53" 
+  "51" -> "52" 
+  "54" -> "55" 
+  "54" -> "67" 
+  "55" -> "56" 
+  "55" -> "62" 
+  "56" -> "57" 
+  "57" -> "58" 
+  "57" -> "59" 
+  "59" -> "60" 
+  "59" -> "61" 
+  "62" -> "63" 
+  "62" -> "66" 
+  "63" -> "64" 
+  "63" -> "65" 
+  "67" -> "68" 
+  "68" -> "69" 
+  "68" -> "70" 
+  "71" -> "72" 
+  "71" -> "73" 
+  "71" -> "76" 
+  "71" -> "79" 
+  "71" -> "81" 
+  "73" -> "74" 
+  "73" -> "75" 
+  "76" -> "77" 
+  "76" -> "78" 
+  "79" -> "80" 
+  "81" -> "82" 
+  "81" -> "83" 
+  "81" -> "88" 
+  "83" -> "84" 
+  "83" -> "85" 
+  "85" -> "86" 
+  "85" -> "87" 
+  "88" -> "89" 
+  "88" -> "92" 
+  "88" -> "96" 
+  "89" -> "90" 
+  "89" -> "91" 
+  "92" -> "93" 
+  "93" -> "94" 
+  "93" -> "95" 
+  "96" -> "97" 
+  "97" -> "98" 
+  "97" -> "101" 
+  "97" -> "105" 
+  "98" -> "99" 
+  "98" -> "100" 
+  "101" -> "102" 
+  "102" -> "103" 
+  "102" -> "104" 
+  "105" -> "106" 
+  "106" -> "107" 
+  "107" -> "108" 
+  "107" -> "109" 
+  "109" -> "110" 
+  "111" -> "112" 
+  "112" -> "113" 
+}

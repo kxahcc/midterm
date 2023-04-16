@@ -1,0 +1,161 @@
+digraph "getClassLoaderForPath" {  
+"183" [label = <(METHOD,getClassLoaderForPath)<SUB>177</SUB>> ]
+"184" [label = <(PARAM,Project p)<SUB>178</SUB>> ]
+"185" [label = <(PARAM,Path path)<SUB>178</SUB>> ]
+"186" [label = <(PARAM,String loaderId)<SUB>178</SUB>> ]
+"187" [label = <(PARAM,boolean reverseLoader)<SUB>178</SUB>> ]
+"188" [label = <(PARAM,boolean reuseLoader)<SUB>179</SUB>> ]
+"189" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>179</SUB>> ]
+"190" [label = <(LOCAL,ClassLoader cl: java.lang.ClassLoader)> ]
+"191" [label = <(&lt;operator&gt;.assignment,ClassLoader cl = null)<SUB>181</SUB>> ]
+"192" [label = <(IDENTIFIER,cl,ClassLoader cl = null)<SUB>181</SUB>> ]
+"193" [label = <(LITERAL,null,ClassLoader cl = null)<SUB>181</SUB>> ]
+"194" [label = <(CONTROL_STRUCTURE,if (loaderId != null &amp;&amp; reuseLoader),if (loaderId != null &amp;&amp; reuseLoader))<SUB>184</SUB>> ]
+"195" [label = <(&lt;operator&gt;.logicalAnd,loaderId != null &amp;&amp; reuseLoader)<SUB>184</SUB>> ]
+"196" [label = <(&lt;operator&gt;.notEquals,loaderId != null)<SUB>184</SUB>> ]
+"197" [label = <(IDENTIFIER,loaderId,loaderId != null)<SUB>184</SUB>> ]
+"198" [label = <(LITERAL,null,loaderId != null)<SUB>184</SUB>> ]
+"199" [label = <(IDENTIFIER,reuseLoader,loaderId != null &amp;&amp; reuseLoader)<SUB>184</SUB>> ]
+"200" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>184</SUB>> ]
+"201" [label = <(LOCAL,Object reusedLoader: java.lang.Object)> ]
+"202" [label = <(&lt;operator&gt;.assignment,Object reusedLoader = getReference(loaderId))<SUB>185</SUB>> ]
+"203" [label = <(IDENTIFIER,reusedLoader,Object reusedLoader = getReference(loaderId))<SUB>185</SUB>> ]
+"204" [label = <(getReference,getReference(loaderId))<SUB>185</SUB>> ]
+"205" [label = <(IDENTIFIER,p,getReference(loaderId))<SUB>185</SUB>> ]
+"206" [label = <(IDENTIFIER,loaderId,getReference(loaderId))<SUB>185</SUB>> ]
+"207" [label = <(CONTROL_STRUCTURE,if (reusedLoader != null &amp;&amp; !(reusedLoader instanceof ClassLoader)),if (reusedLoader != null &amp;&amp; !(reusedLoader instanceof ClassLoader)))<SUB>186</SUB>> ]
+"208" [label = <(&lt;operator&gt;.logicalAnd,reusedLoader != null &amp;&amp; !(reusedLoader instanceof ClassLoader))<SUB>186</SUB>> ]
+"209" [label = <(&lt;operator&gt;.notEquals,reusedLoader != null)<SUB>186</SUB>> ]
+"210" [label = <(IDENTIFIER,reusedLoader,reusedLoader != null)<SUB>186</SUB>> ]
+"211" [label = <(LITERAL,null,reusedLoader != null)<SUB>186</SUB>> ]
+"212" [label = <(&lt;operator&gt;.logicalNot,!(reusedLoader instanceof ClassLoader))<SUB>187</SUB>> ]
+"213" [label = <(&lt;operator&gt;.instanceOf,reusedLoader instanceof ClassLoader)<SUB>187</SUB>> ]
+"214" [label = <(IDENTIFIER,reusedLoader,reusedLoader instanceof ClassLoader)<SUB>187</SUB>> ]
+"215" [label = <(TYPE_REF,ClassLoader,ClassLoader)<SUB>187</SUB>> ]
+"216" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>187</SUB>> ]
+"217" [label = <(&lt;operator&gt;.throw,throw new BuildException(&quot;The specified loader id &quot; + loaderId + &quot; does not reference a class loader&quot;);)<SUB>188</SUB>> ]
+"218" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>188</SUB>> ]
+"219" [label = <(&lt;operator&gt;.assignment,&lt;empty&gt;)> ]
+"220" [label = <(IDENTIFIER,$obj1,&lt;empty&gt;)> ]
+"221" [label = <(&lt;operator&gt;.alloc,new BuildException(&quot;The specified loader id &quot; + loaderId + &quot; does not reference a class loader&quot;))<SUB>188</SUB>> ]
+"222" [label = <(&lt;init&gt;,new BuildException(&quot;The specified loader id &quot; + loaderId + &quot; does not reference a class loader&quot;))<SUB>188</SUB>> ]
+"223" [label = <(IDENTIFIER,$obj1,new BuildException(&quot;The specified loader id &quot; + loaderId + &quot; does not reference a class loader&quot;))> ]
+"224" [label = <(&lt;operator&gt;.addition,&quot;The specified loader id &quot; + loaderId + &quot; does not reference a class loader&quot;)<SUB>188</SUB>> ]
+"225" [label = <(&lt;operator&gt;.addition,&quot;The specified loader id &quot; + loaderId)<SUB>188</SUB>> ]
+"226" [label = <(LITERAL,&quot;The specified loader id &quot;,&quot;The specified loader id &quot; + loaderId)<SUB>188</SUB>> ]
+"227" [label = <(IDENTIFIER,loaderId,&quot;The specified loader id &quot; + loaderId)<SUB>188</SUB>> ]
+"228" [label = <(LITERAL,&quot; does not reference a class loader&quot;,&quot;The specified loader id &quot; + loaderId + &quot; does not reference a class loader&quot;)<SUB>189</SUB>> ]
+"229" [label = <(IDENTIFIER,$obj1,&lt;empty&gt;)> ]
+"230" [label = <(&lt;operator&gt;.assignment,cl = (ClassLoader) reusedLoader)<SUB>191</SUB>> ]
+"231" [label = <(IDENTIFIER,cl,cl = (ClassLoader) reusedLoader)<SUB>191</SUB>> ]
+"232" [label = <(&lt;operator&gt;.cast,(ClassLoader) reusedLoader)<SUB>191</SUB>> ]
+"233" [label = <(TYPE_REF,ClassLoader,ClassLoader)<SUB>191</SUB>> ]
+"234" [label = <(IDENTIFIER,reusedLoader,(ClassLoader) reusedLoader)<SUB>191</SUB>> ]
+"235" [label = <(CONTROL_STRUCTURE,if (cl == null),if (cl == null))<SUB>193</SUB>> ]
+"236" [label = <(&lt;operator&gt;.equals,cl == null)<SUB>193</SUB>> ]
+"237" [label = <(IDENTIFIER,cl,cl == null)<SUB>193</SUB>> ]
+"238" [label = <(LITERAL,null,cl == null)<SUB>193</SUB>> ]
+"239" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>193</SUB>> ]
+"240" [label = <(&lt;operator&gt;.assignment,cl = getUniqueClassLoaderForPath(p, path, reverseLoader))<SUB>194</SUB>> ]
+"241" [label = <(IDENTIFIER,cl,cl = getUniqueClassLoaderForPath(p, path, reverseLoader))<SUB>194</SUB>> ]
+"242" [label = <(getUniqueClassLoaderForPath,getUniqueClassLoaderForPath(p, path, reverseLoader))<SUB>194</SUB>> ]
+"243" [label = <(IDENTIFIER,this,getUniqueClassLoaderForPath(p, path, reverseLoader))<SUB>194</SUB>> ]
+"244" [label = <(IDENTIFIER,p,getUniqueClassLoaderForPath(p, path, reverseLoader))<SUB>194</SUB>> ]
+"245" [label = <(IDENTIFIER,path,getUniqueClassLoaderForPath(p, path, reverseLoader))<SUB>194</SUB>> ]
+"246" [label = <(IDENTIFIER,reverseLoader,getUniqueClassLoaderForPath(p, path, reverseLoader))<SUB>194</SUB>> ]
+"247" [label = <(CONTROL_STRUCTURE,if (loaderId != null &amp;&amp; reuseLoader),if (loaderId != null &amp;&amp; reuseLoader))<SUB>195</SUB>> ]
+"248" [label = <(&lt;operator&gt;.logicalAnd,loaderId != null &amp;&amp; reuseLoader)<SUB>195</SUB>> ]
+"249" [label = <(&lt;operator&gt;.notEquals,loaderId != null)<SUB>195</SUB>> ]
+"250" [label = <(IDENTIFIER,loaderId,loaderId != null)<SUB>195</SUB>> ]
+"251" [label = <(LITERAL,null,loaderId != null)<SUB>195</SUB>> ]
+"252" [label = <(IDENTIFIER,reuseLoader,loaderId != null &amp;&amp; reuseLoader)<SUB>195</SUB>> ]
+"253" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>195</SUB>> ]
+"254" [label = <(addReference,addReference(loaderId, cl))<SUB>196</SUB>> ]
+"255" [label = <(IDENTIFIER,p,addReference(loaderId, cl))<SUB>196</SUB>> ]
+"256" [label = <(IDENTIFIER,loaderId,addReference(loaderId, cl))<SUB>196</SUB>> ]
+"257" [label = <(IDENTIFIER,cl,addReference(loaderId, cl))<SUB>196</SUB>> ]
+"258" [label = <(RETURN,return cl;,return cl;)<SUB>199</SUB>> ]
+"259" [label = <(IDENTIFIER,cl,return cl;)<SUB>199</SUB>> ]
+"260" [label = <(MODIFIER,PUBLIC)> ]
+"261" [label = <(MODIFIER,STATIC)> ]
+"262" [label = <(METHOD_RETURN,java.lang.ClassLoader)<SUB>177</SUB>> ]
+  "183" -> "184" 
+  "183" -> "185" 
+  "183" -> "186" 
+  "183" -> "187" 
+  "183" -> "188" 
+  "183" -> "189" 
+  "183" -> "260" 
+  "183" -> "261" 
+  "183" -> "262" 
+  "189" -> "190" 
+  "189" -> "191" 
+  "189" -> "194" 
+  "189" -> "235" 
+  "189" -> "258" 
+  "191" -> "192" 
+  "191" -> "193" 
+  "194" -> "195" 
+  "194" -> "200" 
+  "195" -> "196" 
+  "195" -> "199" 
+  "196" -> "197" 
+  "196" -> "198" 
+  "200" -> "201" 
+  "200" -> "202" 
+  "200" -> "207" 
+  "200" -> "230" 
+  "202" -> "203" 
+  "202" -> "204" 
+  "204" -> "205" 
+  "204" -> "206" 
+  "207" -> "208" 
+  "207" -> "216" 
+  "208" -> "209" 
+  "208" -> "212" 
+  "209" -> "210" 
+  "209" -> "211" 
+  "212" -> "213" 
+  "213" -> "214" 
+  "213" -> "215" 
+  "216" -> "217" 
+  "217" -> "218" 
+  "218" -> "219" 
+  "218" -> "222" 
+  "218" -> "229" 
+  "219" -> "220" 
+  "219" -> "221" 
+  "222" -> "223" 
+  "222" -> "224" 
+  "224" -> "225" 
+  "224" -> "228" 
+  "225" -> "226" 
+  "225" -> "227" 
+  "230" -> "231" 
+  "230" -> "232" 
+  "232" -> "233" 
+  "232" -> "234" 
+  "235" -> "236" 
+  "235" -> "239" 
+  "236" -> "237" 
+  "236" -> "238" 
+  "239" -> "240" 
+  "239" -> "247" 
+  "240" -> "241" 
+  "240" -> "242" 
+  "242" -> "243" 
+  "242" -> "244" 
+  "242" -> "245" 
+  "242" -> "246" 
+  "247" -> "248" 
+  "247" -> "253" 
+  "248" -> "249" 
+  "248" -> "252" 
+  "249" -> "250" 
+  "249" -> "251" 
+  "253" -> "254" 
+  "254" -> "255" 
+  "254" -> "256" 
+  "254" -> "257" 
+  "258" -> "259" 
+}

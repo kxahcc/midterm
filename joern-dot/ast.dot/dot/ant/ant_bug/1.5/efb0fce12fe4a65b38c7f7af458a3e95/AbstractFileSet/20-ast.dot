@@ -1,0 +1,127 @@
+digraph "getRef" {  
+"858" [label = <(METHOD,getRef)<SUB>380</SUB>> ]
+"80" [label = <(PARAM,this)<SUB>380</SUB>> ]
+"859" [label = <(PARAM,Project p)<SUB>380</SUB>> ]
+"860" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>380</SUB>> ]
+"861" [label = <(CONTROL_STRUCTURE,if (!checked),if (!checked))<SUB>381</SUB>> ]
+"862" [label = <(&lt;operator&gt;.logicalNot,!checked)<SUB>381</SUB>> ]
+"863" [label = <(IDENTIFIER,checked,!checked)<SUB>381</SUB>> ]
+"864" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>381</SUB>> ]
+"78" [label = <(LOCAL,Stack stk: java.util.Stack)> ]
+"865" [label = <(&lt;operator&gt;.assignment,Stack stk = new Stack())<SUB>382</SUB>> ]
+"866" [label = <(IDENTIFIER,stk,Stack stk = new Stack())<SUB>382</SUB>> ]
+"867" [label = <(&lt;operator&gt;.alloc,new Stack())<SUB>382</SUB>> ]
+"868" [label = <(&lt;init&gt;,new Stack())<SUB>382</SUB>> ]
+"77" [label = <(IDENTIFIER,stk,new Stack())<SUB>382</SUB>> ]
+"869" [label = <(push,stk.push(this))<SUB>383</SUB>> ]
+"870" [label = <(IDENTIFIER,stk,stk.push(this))<SUB>383</SUB>> ]
+"79" [label = <(IDENTIFIER,this,stk.push(this))<SUB>383</SUB>> ]
+"871" [label = <(dieOnCircularReference,dieOnCircularReference(stk, p))<SUB>384</SUB>> ]
+"81" [label = <(IDENTIFIER,this,dieOnCircularReference(stk, p))<SUB>384</SUB>> ]
+"872" [label = <(IDENTIFIER,stk,dieOnCircularReference(stk, p))<SUB>384</SUB>> ]
+"873" [label = <(IDENTIFIER,p,dieOnCircularReference(stk, p))<SUB>384</SUB>> ]
+"874" [label = <(LOCAL,Object o: java.lang.Object)> ]
+"875" [label = <(&lt;operator&gt;.assignment,Object o = getReferencedObject(p))<SUB>387</SUB>> ]
+"876" [label = <(IDENTIFIER,o,Object o = getReferencedObject(p))<SUB>387</SUB>> ]
+"877" [label = <(getReferencedObject,getReferencedObject(p))<SUB>387</SUB>> ]
+"878" [label = <(IDENTIFIER,ref,getReferencedObject(p))<SUB>387</SUB>> ]
+"879" [label = <(IDENTIFIER,p,getReferencedObject(p))<SUB>387</SUB>> ]
+"880" [label = <(CONTROL_STRUCTURE,if (!getClass().isAssignableFrom(o.getClass())),if (!getClass().isAssignableFrom(o.getClass())))<SUB>388</SUB>> ]
+"881" [label = <(&lt;operator&gt;.logicalNot,!getClass().isAssignableFrom(o.getClass()))<SUB>388</SUB>> ]
+"882" [label = <(isAssignableFrom,this.getClass().isAssignableFrom(o.getClass()))<SUB>388</SUB>> ]
+"883" [label = <(getClass,this.getClass())<SUB>388</SUB>> ]
+"82" [label = <(IDENTIFIER,this,this.getClass())<SUB>388</SUB>> ]
+"884" [label = <(getClass,o.getClass())<SUB>388</SUB>> ]
+"885" [label = <(IDENTIFIER,o,o.getClass())<SUB>388</SUB>> ]
+"886" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>388</SUB>> ]
+"887" [label = <(LOCAL,String msg: java.lang.String)> ]
+"888" [label = <(&lt;operator&gt;.assignment,String msg = ref.getRefId() + &quot; doesn\'t denote a &quot; + getDataTypeName())<SUB>389</SUB>> ]
+"889" [label = <(IDENTIFIER,msg,String msg = ref.getRefId() + &quot; doesn\'t denote a &quot; + getDataTypeName())<SUB>389</SUB>> ]
+"890" [label = <(&lt;operator&gt;.addition,ref.getRefId() + &quot; doesn\'t denote a &quot; + getDataTypeName())<SUB>389</SUB>> ]
+"891" [label = <(&lt;operator&gt;.addition,ref.getRefId() + &quot; doesn\'t denote a &quot;)<SUB>389</SUB>> ]
+"892" [label = <(getRefId,getRefId())<SUB>389</SUB>> ]
+"893" [label = <(IDENTIFIER,ref,getRefId())<SUB>389</SUB>> ]
+"894" [label = <(LITERAL,&quot; doesn\'t denote a &quot;,ref.getRefId() + &quot; doesn\'t denote a &quot;)<SUB>389</SUB>> ]
+"895" [label = <(getDataTypeName,this.getDataTypeName())<SUB>390</SUB>> ]
+"83" [label = <(IDENTIFIER,this,this.getDataTypeName())<SUB>390</SUB>> ]
+"896" [label = <(&lt;operator&gt;.throw,throw new BuildException(msg);)<SUB>391</SUB>> ]
+"897" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>391</SUB>> ]
+"898" [label = <(&lt;operator&gt;.assignment,&lt;empty&gt;)> ]
+"899" [label = <(IDENTIFIER,$obj10,&lt;empty&gt;)> ]
+"900" [label = <(&lt;operator&gt;.alloc,new BuildException(msg))<SUB>391</SUB>> ]
+"901" [label = <(&lt;init&gt;,new BuildException(msg))<SUB>391</SUB>> ]
+"902" [label = <(IDENTIFIER,$obj10,new BuildException(msg))> ]
+"903" [label = <(IDENTIFIER,msg,new BuildException(msg))<SUB>391</SUB>> ]
+"904" [label = <(IDENTIFIER,$obj10,&lt;empty&gt;)> ]
+"905" [label = <(CONTROL_STRUCTURE,else,else)<SUB>392</SUB>> ]
+"906" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>392</SUB>> ]
+"907" [label = <(RETURN,return (AbstractFileSet) o;,return (AbstractFileSet) o;)<SUB>393</SUB>> ]
+"908" [label = <(&lt;operator&gt;.cast,(AbstractFileSet) o)<SUB>393</SUB>> ]
+"909" [label = <(TYPE_REF,AbstractFileSet,AbstractFileSet)<SUB>393</SUB>> ]
+"910" [label = <(IDENTIFIER,o,(AbstractFileSet) o)<SUB>393</SUB>> ]
+"911" [label = <(MODIFIER,PROTECTED)> ]
+"912" [label = <(MODIFIER,VIRTUAL)> ]
+"913" [label = <(METHOD_RETURN,org.apache.tools.ant.types.AbstractFileSet)<SUB>380</SUB>> ]
+  "858" -> "80" 
+  "858" -> "859" 
+  "858" -> "860" 
+  "858" -> "911" 
+  "858" -> "912" 
+  "858" -> "913" 
+  "860" -> "861" 
+  "860" -> "874" 
+  "860" -> "875" 
+  "860" -> "880" 
+  "861" -> "862" 
+  "861" -> "864" 
+  "862" -> "863" 
+  "864" -> "78" 
+  "864" -> "865" 
+  "864" -> "868" 
+  "864" -> "869" 
+  "864" -> "871" 
+  "865" -> "866" 
+  "865" -> "867" 
+  "868" -> "77" 
+  "869" -> "870" 
+  "869" -> "79" 
+  "871" -> "81" 
+  "871" -> "872" 
+  "871" -> "873" 
+  "875" -> "876" 
+  "875" -> "877" 
+  "877" -> "878" 
+  "877" -> "879" 
+  "880" -> "881" 
+  "880" -> "886" 
+  "880" -> "905" 
+  "881" -> "882" 
+  "882" -> "883" 
+  "882" -> "884" 
+  "883" -> "82" 
+  "884" -> "885" 
+  "886" -> "887" 
+  "886" -> "888" 
+  "886" -> "896" 
+  "888" -> "889" 
+  "888" -> "890" 
+  "890" -> "891" 
+  "890" -> "895" 
+  "891" -> "892" 
+  "891" -> "894" 
+  "892" -> "893" 
+  "895" -> "83" 
+  "896" -> "897" 
+  "897" -> "898" 
+  "897" -> "901" 
+  "897" -> "904" 
+  "898" -> "899" 
+  "898" -> "900" 
+  "901" -> "902" 
+  "901" -> "903" 
+  "905" -> "906" 
+  "906" -> "907" 
+  "907" -> "908" 
+  "908" -> "909" 
+  "908" -> "910" 
+}

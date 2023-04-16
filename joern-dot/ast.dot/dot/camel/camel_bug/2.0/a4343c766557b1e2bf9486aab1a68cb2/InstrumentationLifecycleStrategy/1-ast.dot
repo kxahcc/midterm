@@ -1,0 +1,89 @@
+digraph "onContextCreate" {  
+"66" [label = <(METHOD,onContextCreate)<SUB>47</SUB>> ]
+"9" [label = <(PARAM,this)<SUB>47</SUB>> ]
+"67" [label = <(PARAM,CamelContext context)<SUB>47</SUB>> ]
+"68" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>47</SUB>> ]
+"69" [label = <(CONTROL_STRUCTURE,if (context instanceof DefaultCamelContext),if (context instanceof DefaultCamelContext))<SUB>48</SUB>> ]
+"70" [label = <(&lt;operator&gt;.instanceOf,context instanceof DefaultCamelContext)<SUB>48</SUB>> ]
+"71" [label = <(IDENTIFIER,context,context instanceof DefaultCamelContext)<SUB>48</SUB>> ]
+"72" [label = <(TYPE_REF,DefaultCamelContext,DefaultCamelContext)<SUB>48</SUB>> ]
+"73" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>48</SUB>> ]
+"74" [label = <(CONTROL_STRUCTURE,try,try)<SUB>49</SUB>> ]
+"75" [label = <(BLOCK,try,try)<SUB>49</SUB>> ]
+"76" [label = <(LOCAL,DefaultCamelContext dc: org.apache.camel.impl.DefaultCamelContext)> ]
+"77" [label = <(&lt;operator&gt;.assignment,DefaultCamelContext dc = (DefaultCamelContext) context)<SUB>50</SUB>> ]
+"78" [label = <(IDENTIFIER,dc,DefaultCamelContext dc = (DefaultCamelContext) context)<SUB>50</SUB>> ]
+"79" [label = <(&lt;operator&gt;.cast,(DefaultCamelContext) context)<SUB>50</SUB>> ]
+"80" [label = <(TYPE_REF,DefaultCamelContext,DefaultCamelContext)<SUB>50</SUB>> ]
+"81" [label = <(IDENTIFIER,context,(DefaultCamelContext) context)<SUB>50</SUB>> ]
+"7" [label = <(LOCAL,ManagedService ms: ANY)> ]
+"82" [label = <(&lt;operator&gt;.assignment,ANY ms = new ManagedService(dc))<SUB>51</SUB>> ]
+"83" [label = <(IDENTIFIER,ms,ANY ms = new ManagedService(dc))<SUB>51</SUB>> ]
+"84" [label = <(&lt;operator&gt;.alloc,new ManagedService(dc))<SUB>51</SUB>> ]
+"85" [label = <(&lt;init&gt;,new ManagedService(dc))<SUB>51</SUB>> ]
+"6" [label = <(IDENTIFIER,ms,new ManagedService(dc))<SUB>51</SUB>> ]
+"86" [label = <(IDENTIFIER,dc,new ManagedService(dc))<SUB>51</SUB>> ]
+"87" [label = <(register,register(ms, getNamingStrategy().getObjectName(dc)))<SUB>52</SUB>> ]
+"88" [label = <(&lt;operator&gt;.fieldAccess,this.agent)<SUB>52</SUB>> ]
+"89" [label = <(IDENTIFIER,this,register(ms, getNamingStrategy().getObjectName(dc)))<SUB>52</SUB>> ]
+"90" [label = <(FIELD_IDENTIFIER,agent,agent)<SUB>52</SUB>> ]
+"91" [label = <(IDENTIFIER,ms,register(ms, getNamingStrategy().getObjectName(dc)))<SUB>52</SUB>> ]
+"92" [label = <(getObjectName,getObjectName(dc))<SUB>52</SUB>> ]
+"93" [label = <(getNamingStrategy,this.getNamingStrategy())<SUB>52</SUB>> ]
+"8" [label = <(IDENTIFIER,this,this.getNamingStrategy())<SUB>52</SUB>> ]
+"94" [label = <(IDENTIFIER,dc,getObjectName(dc))<SUB>52</SUB>> ]
+"95" [label = <(BLOCK,catch,catch)> ]
+"96" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>54</SUB>> ]
+"97" [label = <(warn,warn(&quot;Could not register CamelContext MBean&quot;, e))<SUB>55</SUB>> ]
+"98" [label = <(&lt;operator&gt;.fieldAccess,InstrumentationLifecycleStrategy.LOG)<SUB>55</SUB>> ]
+"99" [label = <(IDENTIFIER,InstrumentationLifecycleStrategy,warn(&quot;Could not register CamelContext MBean&quot;, e))<SUB>55</SUB>> ]
+"100" [label = <(FIELD_IDENTIFIER,LOG,LOG)<SUB>55</SUB>> ]
+"101" [label = <(LITERAL,&quot;Could not register CamelContext MBean&quot;,warn(&quot;Could not register CamelContext MBean&quot;, e))<SUB>55</SUB>> ]
+"102" [label = <(IDENTIFIER,e,warn(&quot;Could not register CamelContext MBean&quot;, e))<SUB>55</SUB>> ]
+"103" [label = <(MODIFIER,PUBLIC)> ]
+"104" [label = <(MODIFIER,VIRTUAL)> ]
+"105" [label = <(METHOD_RETURN,void)<SUB>47</SUB>> ]
+  "66" -> "9" 
+  "66" -> "67" 
+  "66" -> "68" 
+  "66" -> "103" 
+  "66" -> "104" 
+  "66" -> "105" 
+  "68" -> "69" 
+  "69" -> "70" 
+  "69" -> "73" 
+  "70" -> "71" 
+  "70" -> "72" 
+  "73" -> "74" 
+  "74" -> "75" 
+  "74" -> "95" 
+  "75" -> "76" 
+  "75" -> "77" 
+  "75" -> "7" 
+  "75" -> "82" 
+  "75" -> "85" 
+  "75" -> "87" 
+  "77" -> "78" 
+  "77" -> "79" 
+  "79" -> "80" 
+  "79" -> "81" 
+  "82" -> "83" 
+  "82" -> "84" 
+  "85" -> "6" 
+  "85" -> "86" 
+  "87" -> "88" 
+  "87" -> "91" 
+  "87" -> "92" 
+  "88" -> "89" 
+  "88" -> "90" 
+  "92" -> "93" 
+  "92" -> "94" 
+  "93" -> "8" 
+  "95" -> "96" 
+  "96" -> "97" 
+  "97" -> "98" 
+  "97" -> "101" 
+  "97" -> "102" 
+  "98" -> "99" 
+  "98" -> "100" 
+}

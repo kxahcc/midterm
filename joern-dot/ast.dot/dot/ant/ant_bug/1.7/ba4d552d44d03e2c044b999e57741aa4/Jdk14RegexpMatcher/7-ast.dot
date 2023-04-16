@@ -1,0 +1,137 @@
+digraph "getGroups" {  
+"152" [label = <(METHOD,getGroups)<SUB>127</SUB>> ]
+"15" [label = <(PARAM,this)<SUB>127</SUB>> ]
+"153" [label = <(PARAM,String input)<SUB>127</SUB>> ]
+"154" [label = <(PARAM,int options)<SUB>127</SUB>> ]
+"155" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>128</SUB>> ]
+"156" [label = <(LOCAL,Pattern p: java.util.regex.Pattern)> ]
+"157" [label = <(&lt;operator&gt;.assignment,Pattern p = this.getCompiledPattern(options))<SUB>129</SUB>> ]
+"158" [label = <(IDENTIFIER,p,Pattern p = this.getCompiledPattern(options))<SUB>129</SUB>> ]
+"159" [label = <(getCompiledPattern,this.getCompiledPattern(options))<SUB>129</SUB>> ]
+"14" [label = <(IDENTIFIER,this,this.getCompiledPattern(options))<SUB>129</SUB>> ]
+"160" [label = <(IDENTIFIER,options,this.getCompiledPattern(options))<SUB>129</SUB>> ]
+"161" [label = <(LOCAL,Matcher matcher: java.util.regex.Matcher)> ]
+"162" [label = <(&lt;operator&gt;.assignment,Matcher matcher = p.matcher(input))<SUB>130</SUB>> ]
+"163" [label = <(IDENTIFIER,matcher,Matcher matcher = p.matcher(input))<SUB>130</SUB>> ]
+"164" [label = <(matcher,p.matcher(input))<SUB>130</SUB>> ]
+"165" [label = <(IDENTIFIER,p,p.matcher(input))<SUB>130</SUB>> ]
+"166" [label = <(IDENTIFIER,input,p.matcher(input))<SUB>130</SUB>> ]
+"167" [label = <(CONTROL_STRUCTURE,if (!matcher.find()),if (!matcher.find()))<SUB>131</SUB>> ]
+"168" [label = <(&lt;operator&gt;.logicalNot,!matcher.find())<SUB>131</SUB>> ]
+"169" [label = <(find,matcher.find())<SUB>131</SUB>> ]
+"170" [label = <(IDENTIFIER,matcher,matcher.find())<SUB>131</SUB>> ]
+"171" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>131</SUB>> ]
+"172" [label = <(RETURN,return null;,return null;)<SUB>132</SUB>> ]
+"173" [label = <(LITERAL,null,return null;)<SUB>132</SUB>> ]
+"17" [label = <(LOCAL,Vector v: java.util.Vector)> ]
+"174" [label = <(&lt;operator&gt;.assignment,Vector v = new Vector())<SUB>134</SUB>> ]
+"175" [label = <(IDENTIFIER,v,Vector v = new Vector())<SUB>134</SUB>> ]
+"176" [label = <(&lt;operator&gt;.alloc,new Vector())<SUB>134</SUB>> ]
+"177" [label = <(&lt;init&gt;,new Vector())<SUB>134</SUB>> ]
+"16" [label = <(IDENTIFIER,v,new Vector())<SUB>134</SUB>> ]
+"178" [label = <(LOCAL,int cnt: int)> ]
+"179" [label = <(&lt;operator&gt;.assignment,int cnt = matcher.groupCount())<SUB>135</SUB>> ]
+"180" [label = <(IDENTIFIER,cnt,int cnt = matcher.groupCount())<SUB>135</SUB>> ]
+"181" [label = <(groupCount,matcher.groupCount())<SUB>135</SUB>> ]
+"182" [label = <(IDENTIFIER,matcher,matcher.groupCount())<SUB>135</SUB>> ]
+"183" [label = <(CONTROL_STRUCTURE,for (int i = 0; Some(i &lt;= cnt); i++),for (int i = 0; Some(i &lt;= cnt); i++))<SUB>136</SUB>> ]
+"184" [label = <(LOCAL,int i: int)> ]
+"185" [label = <(&lt;operator&gt;.assignment,int i = 0)<SUB>136</SUB>> ]
+"186" [label = <(IDENTIFIER,i,int i = 0)<SUB>136</SUB>> ]
+"187" [label = <(LITERAL,0,int i = 0)<SUB>136</SUB>> ]
+"188" [label = <(&lt;operator&gt;.lessEqualsThan,i &lt;= cnt)<SUB>136</SUB>> ]
+"189" [label = <(IDENTIFIER,i,i &lt;= cnt)<SUB>136</SUB>> ]
+"190" [label = <(IDENTIFIER,cnt,i &lt;= cnt)<SUB>136</SUB>> ]
+"191" [label = <(&lt;operator&gt;.postIncrement,i++)<SUB>136</SUB>> ]
+"192" [label = <(IDENTIFIER,i,i++)<SUB>136</SUB>> ]
+"193" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>136</SUB>> ]
+"194" [label = <(LOCAL,String match: java.lang.String)> ]
+"195" [label = <(&lt;operator&gt;.assignment,String match = matcher.group(i))<SUB>137</SUB>> ]
+"196" [label = <(IDENTIFIER,match,String match = matcher.group(i))<SUB>137</SUB>> ]
+"197" [label = <(group,matcher.group(i))<SUB>137</SUB>> ]
+"198" [label = <(IDENTIFIER,matcher,matcher.group(i))<SUB>137</SUB>> ]
+"199" [label = <(IDENTIFIER,i,matcher.group(i))<SUB>137</SUB>> ]
+"200" [label = <(CONTROL_STRUCTURE,if (match == null),if (match == null))<SUB>139</SUB>> ]
+"201" [label = <(&lt;operator&gt;.equals,match == null)<SUB>139</SUB>> ]
+"202" [label = <(IDENTIFIER,match,match == null)<SUB>139</SUB>> ]
+"203" [label = <(LITERAL,null,match == null)<SUB>139</SUB>> ]
+"204" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>139</SUB>> ]
+"205" [label = <(&lt;operator&gt;.assignment,match = &quot;&quot;)<SUB>140</SUB>> ]
+"206" [label = <(IDENTIFIER,match,match = &quot;&quot;)<SUB>140</SUB>> ]
+"207" [label = <(LITERAL,&quot;&quot;,match = &quot;&quot;)<SUB>140</SUB>> ]
+"208" [label = <(addElement,v.addElement(match))<SUB>142</SUB>> ]
+"209" [label = <(IDENTIFIER,v,v.addElement(match))<SUB>142</SUB>> ]
+"210" [label = <(IDENTIFIER,match,v.addElement(match))<SUB>142</SUB>> ]
+"211" [label = <(RETURN,return v;,return v;)<SUB>144</SUB>> ]
+"212" [label = <(IDENTIFIER,v,return v;)<SUB>144</SUB>> ]
+"213" [label = <(MODIFIER,PUBLIC)> ]
+"214" [label = <(MODIFIER,VIRTUAL)> ]
+"215" [label = <(METHOD_RETURN,java.util.Vector)<SUB>127</SUB>> ]
+  "152" -> "15" 
+  "152" -> "153" 
+  "152" -> "154" 
+  "152" -> "155" 
+  "152" -> "213" 
+  "152" -> "214" 
+  "152" -> "215" 
+  "155" -> "156" 
+  "155" -> "157" 
+  "155" -> "161" 
+  "155" -> "162" 
+  "155" -> "167" 
+  "155" -> "17" 
+  "155" -> "174" 
+  "155" -> "177" 
+  "155" -> "178" 
+  "155" -> "179" 
+  "155" -> "183" 
+  "155" -> "211" 
+  "157" -> "158" 
+  "157" -> "159" 
+  "159" -> "14" 
+  "159" -> "160" 
+  "162" -> "163" 
+  "162" -> "164" 
+  "164" -> "165" 
+  "164" -> "166" 
+  "167" -> "168" 
+  "167" -> "171" 
+  "168" -> "169" 
+  "169" -> "170" 
+  "171" -> "172" 
+  "172" -> "173" 
+  "174" -> "175" 
+  "174" -> "176" 
+  "177" -> "16" 
+  "179" -> "180" 
+  "179" -> "181" 
+  "181" -> "182" 
+  "183" -> "184" 
+  "183" -> "185" 
+  "183" -> "188" 
+  "183" -> "191" 
+  "183" -> "193" 
+  "185" -> "186" 
+  "185" -> "187" 
+  "188" -> "189" 
+  "188" -> "190" 
+  "191" -> "192" 
+  "193" -> "194" 
+  "193" -> "195" 
+  "193" -> "200" 
+  "193" -> "208" 
+  "195" -> "196" 
+  "195" -> "197" 
+  "197" -> "198" 
+  "197" -> "199" 
+  "200" -> "201" 
+  "200" -> "204" 
+  "201" -> "202" 
+  "201" -> "203" 
+  "204" -> "205" 
+  "205" -> "206" 
+  "205" -> "207" 
+  "208" -> "209" 
+  "208" -> "210" 
+  "211" -> "212" 
+}

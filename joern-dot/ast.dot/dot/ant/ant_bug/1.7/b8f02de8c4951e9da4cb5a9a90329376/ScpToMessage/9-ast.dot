@@ -1,0 +1,129 @@
+digraph "doMultipleTransfer" {  
+"234" [label = <(METHOD,doMultipleTransfer)<SUB>167</SUB>> ]
+"29" [label = <(PARAM,this)<SUB>167</SUB>> ]
+"235" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>167</SUB>> ]
+"236" [label = <(LOCAL,Channel channel: com.jcraft.jsch.Channel)> ]
+"237" [label = <(&lt;operator&gt;.assignment,Channel channel = openExecChannel(&quot;scp -r -d -t &quot; + remotePath))<SUB>168</SUB>> ]
+"238" [label = <(IDENTIFIER,channel,Channel channel = openExecChannel(&quot;scp -r -d -t &quot; + remotePath))<SUB>168</SUB>> ]
+"239" [label = <(openExecChannel,openExecChannel(&quot;scp -r -d -t &quot; + remotePath))<SUB>168</SUB>> ]
+"28" [label = <(IDENTIFIER,this,openExecChannel(&quot;scp -r -d -t &quot; + remotePath))<SUB>168</SUB>> ]
+"240" [label = <(&lt;operator&gt;.addition,&quot;scp -r -d -t &quot; + remotePath)<SUB>168</SUB>> ]
+"241" [label = <(LITERAL,&quot;scp -r -d -t &quot;,&quot;scp -r -d -t &quot; + remotePath)<SUB>168</SUB>> ]
+"242" [label = <(&lt;operator&gt;.fieldAccess,this.remotePath)<SUB>168</SUB>> ]
+"243" [label = <(IDENTIFIER,this,&quot;scp -r -d -t &quot; + remotePath)<SUB>168</SUB>> ]
+"244" [label = <(FIELD_IDENTIFIER,remotePath,remotePath)<SUB>168</SUB>> ]
+"245" [label = <(CONTROL_STRUCTURE,try,try)<SUB>169</SUB>> ]
+"246" [label = <(BLOCK,try,try)<SUB>169</SUB>> ]
+"247" [label = <(LOCAL,OutputStream out: java.io.OutputStream)> ]
+"248" [label = <(&lt;operator&gt;.assignment,OutputStream out = getOutputStream())<SUB>170</SUB>> ]
+"249" [label = <(IDENTIFIER,out,OutputStream out = getOutputStream())<SUB>170</SUB>> ]
+"250" [label = <(getOutputStream,getOutputStream())<SUB>170</SUB>> ]
+"251" [label = <(IDENTIFIER,channel,getOutputStream())<SUB>170</SUB>> ]
+"252" [label = <(LOCAL,InputStream in: java.io.InputStream)> ]
+"253" [label = <(&lt;operator&gt;.assignment,InputStream in = getInputStream())<SUB>171</SUB>> ]
+"254" [label = <(IDENTIFIER,in,InputStream in = getInputStream())<SUB>171</SUB>> ]
+"255" [label = <(getInputStream,getInputStream())<SUB>171</SUB>> ]
+"256" [label = <(IDENTIFIER,channel,getInputStream())<SUB>171</SUB>> ]
+"257" [label = <(connect,connect())<SUB>173</SUB>> ]
+"258" [label = <(IDENTIFIER,channel,connect())<SUB>173</SUB>> ]
+"259" [label = <(waitForAck,waitForAck(in))<SUB>175</SUB>> ]
+"30" [label = <(IDENTIFIER,this,waitForAck(in))<SUB>175</SUB>> ]
+"260" [label = <(IDENTIFIER,in,waitForAck(in))<SUB>175</SUB>> ]
+"261" [label = <(CONTROL_STRUCTURE,for (Iterator i = directoryList.iterator(); Some(i.hasNext()); ),for (Iterator i = directoryList.iterator(); Some(i.hasNext()); ))<SUB>176</SUB>> ]
+"262" [label = <(LOCAL,Iterator i: java.util.Iterator)> ]
+"263" [label = <(&lt;operator&gt;.assignment,Iterator i = directoryList.iterator())<SUB>176</SUB>> ]
+"264" [label = <(IDENTIFIER,i,Iterator i = directoryList.iterator())<SUB>176</SUB>> ]
+"265" [label = <(iterator,directoryList.iterator())<SUB>176</SUB>> ]
+"266" [label = <(&lt;operator&gt;.fieldAccess,this.directoryList)<SUB>176</SUB>> ]
+"267" [label = <(IDENTIFIER,this,directoryList.iterator())<SUB>176</SUB>> ]
+"268" [label = <(FIELD_IDENTIFIER,directoryList,directoryList)<SUB>176</SUB>> ]
+"269" [label = <(hasNext,i.hasNext())<SUB>176</SUB>> ]
+"270" [label = <(IDENTIFIER,i,i.hasNext())<SUB>176</SUB>> ]
+"271" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>176</SUB>> ]
+"272" [label = <(LOCAL,Directory current: ANY)> ]
+"273" [label = <(&lt;operator&gt;.assignment,ANY current = (Directory) i.next())<SUB>177</SUB>> ]
+"274" [label = <(IDENTIFIER,current,ANY current = (Directory) i.next())<SUB>177</SUB>> ]
+"275" [label = <(&lt;operator&gt;.cast,(Directory) i.next())<SUB>177</SUB>> ]
+"276" [label = <(TYPE_REF,Directory,Directory)<SUB>177</SUB>> ]
+"277" [label = <(next,i.next())<SUB>177</SUB>> ]
+"278" [label = <(IDENTIFIER,i,i.next())<SUB>177</SUB>> ]
+"279" [label = <(sendDirectory,sendDirectory(current, in, out))<SUB>178</SUB>> ]
+"31" [label = <(IDENTIFIER,this,sendDirectory(current, in, out))<SUB>178</SUB>> ]
+"280" [label = <(IDENTIFIER,current,sendDirectory(current, in, out))<SUB>178</SUB>> ]
+"281" [label = <(IDENTIFIER,in,sendDirectory(current, in, out))<SUB>178</SUB>> ]
+"282" [label = <(IDENTIFIER,out,sendDirectory(current, in, out))<SUB>178</SUB>> ]
+"283" [label = <(BLOCK,finally,finally)<SUB>180</SUB>> ]
+"284" [label = <(CONTROL_STRUCTURE,if (channel != null),if (channel != null))<SUB>181</SUB>> ]
+"285" [label = <(&lt;operator&gt;.notEquals,channel != null)<SUB>181</SUB>> ]
+"286" [label = <(IDENTIFIER,channel,channel != null)<SUB>181</SUB>> ]
+"287" [label = <(LITERAL,null,channel != null)<SUB>181</SUB>> ]
+"288" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>181</SUB>> ]
+"289" [label = <(disconnect,disconnect())<SUB>182</SUB>> ]
+"290" [label = <(IDENTIFIER,channel,disconnect())<SUB>182</SUB>> ]
+"291" [label = <(MODIFIER,PRIVATE)> ]
+"292" [label = <(MODIFIER,VIRTUAL)> ]
+"293" [label = <(METHOD_RETURN,void)<SUB>167</SUB>> ]
+  "234" -> "29" 
+  "234" -> "235" 
+  "234" -> "291" 
+  "234" -> "292" 
+  "234" -> "293" 
+  "235" -> "236" 
+  "235" -> "237" 
+  "235" -> "245" 
+  "237" -> "238" 
+  "237" -> "239" 
+  "239" -> "28" 
+  "239" -> "240" 
+  "240" -> "241" 
+  "240" -> "242" 
+  "242" -> "243" 
+  "242" -> "244" 
+  "245" -> "246" 
+  "245" -> "283" 
+  "246" -> "247" 
+  "246" -> "248" 
+  "246" -> "252" 
+  "246" -> "253" 
+  "246" -> "257" 
+  "246" -> "259" 
+  "246" -> "261" 
+  "248" -> "249" 
+  "248" -> "250" 
+  "250" -> "251" 
+  "253" -> "254" 
+  "253" -> "255" 
+  "255" -> "256" 
+  "257" -> "258" 
+  "259" -> "30" 
+  "259" -> "260" 
+  "261" -> "262" 
+  "261" -> "263" 
+  "261" -> "269" 
+  "261" -> "271" 
+  "263" -> "264" 
+  "263" -> "265" 
+  "265" -> "266" 
+  "266" -> "267" 
+  "266" -> "268" 
+  "269" -> "270" 
+  "271" -> "272" 
+  "271" -> "273" 
+  "271" -> "279" 
+  "273" -> "274" 
+  "273" -> "275" 
+  "275" -> "276" 
+  "275" -> "277" 
+  "277" -> "278" 
+  "279" -> "31" 
+  "279" -> "280" 
+  "279" -> "281" 
+  "279" -> "282" 
+  "283" -> "284" 
+  "284" -> "285" 
+  "284" -> "288" 
+  "285" -> "286" 
+  "285" -> "287" 
+  "288" -> "289" 
+  "289" -> "290" 
+}

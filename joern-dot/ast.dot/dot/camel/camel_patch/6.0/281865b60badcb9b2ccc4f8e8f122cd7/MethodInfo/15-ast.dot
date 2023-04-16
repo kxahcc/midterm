@@ -1,0 +1,103 @@
+digraph "createParametersExpression" {  
+"352" [label = <(METHOD,createParametersExpression)<SUB>166</SUB>> ]
+"353" [label = <(PARAM,this)<SUB>166</SUB>> ]
+"354" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>166</SUB>> ]
+"355" [label = <(LOCAL,int size: int)> ]
+"356" [label = <(&lt;operator&gt;.assignment,int size = size())<SUB>167</SUB>> ]
+"357" [label = <(IDENTIFIER,size,int size = size())<SUB>167</SUB>> ]
+"358" [label = <(size,size())<SUB>167</SUB>> ]
+"359" [label = <(&lt;operator&gt;.fieldAccess,this.parameters)<SUB>167</SUB>> ]
+"360" [label = <(IDENTIFIER,this,size())<SUB>167</SUB>> ]
+"361" [label = <(FIELD_IDENTIFIER,parameters,parameters)<SUB>167</SUB>> ]
+"362" [label = <(LOCAL,Expression[] expressions: ANY)> ]
+"363" [label = <(&lt;operator&gt;.assignment,ANY expressions = new Expression[size])<SUB>168</SUB>> ]
+"364" [label = <(IDENTIFIER,expressions,ANY expressions = new Expression[size])<SUB>168</SUB>> ]
+"365" [label = <(&lt;operator&gt;.alloc,new Expression[size])> ]
+"366" [label = <(IDENTIFIER,size,new Expression[size])<SUB>168</SUB>> ]
+"367" [label = <(CONTROL_STRUCTURE,for (int i = 0; Some(i &lt; size); i++),for (int i = 0; Some(i &lt; size); i++))<SUB>169</SUB>> ]
+"368" [label = <(LOCAL,int i: int)> ]
+"369" [label = <(&lt;operator&gt;.assignment,int i = 0)<SUB>169</SUB>> ]
+"370" [label = <(IDENTIFIER,i,int i = 0)<SUB>169</SUB>> ]
+"371" [label = <(LITERAL,0,int i = 0)<SUB>169</SUB>> ]
+"372" [label = <(&lt;operator&gt;.lessThan,i &lt; size)<SUB>169</SUB>> ]
+"373" [label = <(IDENTIFIER,i,i &lt; size)<SUB>169</SUB>> ]
+"374" [label = <(IDENTIFIER,size,i &lt; size)<SUB>169</SUB>> ]
+"375" [label = <(&lt;operator&gt;.postIncrement,i++)<SUB>169</SUB>> ]
+"376" [label = <(IDENTIFIER,i,i++)<SUB>169</SUB>> ]
+"377" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>169</SUB>> ]
+"378" [label = <(LOCAL,Expression parameterExpression: org.apache.camel.Expression)> ]
+"379" [label = <(&lt;operator&gt;.assignment,Expression parameterExpression = getExpression())<SUB>170</SUB>> ]
+"380" [label = <(IDENTIFIER,parameterExpression,Expression parameterExpression = getExpression())<SUB>170</SUB>> ]
+"381" [label = <(getExpression,getExpression())<SUB>170</SUB>> ]
+"382" [label = <(get,get(i))<SUB>170</SUB>> ]
+"383" [label = <(&lt;operator&gt;.fieldAccess,this.parameters)<SUB>170</SUB>> ]
+"384" [label = <(IDENTIFIER,this,get(i))<SUB>170</SUB>> ]
+"385" [label = <(FIELD_IDENTIFIER,parameters,parameters)<SUB>170</SUB>> ]
+"386" [label = <(IDENTIFIER,i,get(i))<SUB>170</SUB>> ]
+"387" [label = <(&lt;operator&gt;.assignment,expressions[i] = parameterExpression)<SUB>171</SUB>> ]
+"388" [label = <(&lt;operator&gt;.indexAccess,expressions[i])<SUB>171</SUB>> ]
+"389" [label = <(IDENTIFIER,expressions,expressions[i] = parameterExpression)<SUB>171</SUB>> ]
+"390" [label = <(IDENTIFIER,i,expressions[i] = parameterExpression)<SUB>171</SUB>> ]
+"391" [label = <(IDENTIFIER,parameterExpression,expressions[i] = parameterExpression)<SUB>171</SUB>> ]
+"392" [label = <(RETURN,return new Expression&lt;Exchange&gt;() {\012\012    public Object evaluate(Exchange exchange) {\012        Object[] answer = new Object[size];\012        Object body = exchange.getIn().getBody();\012        boolean multiParameterArray = false;\012        if (exchange.getIn().getHeader(BeanProcessor.MULTI_PARAMETER_ARRAY) != null) {\012            multiParameterArray = exchange.getIn().getHeader(BeanProcessor.MULTI_PARAMETER_ARRAY, Boolean.class);\012        }\012        for (int i = 0; i &lt; size; i++) {\012            Object value = null;\012            if (multiParameterArray) {\012                value = ((Object[]) body)[i];\012            } else {\012                value = expressions[i].evaluate(exchange);\012            }\012            Class expectedType = parameters.get(i).getType();\012            value = ExchangeHelper.convertToType(exchange, expectedType, value);\012            answer[i] = value;\012        }\012        return answer;\012    }\012\012    @Override\012    public String toString() {\012        return &quot;ParametersExpression: &quot; + Arrays.asList(expressions);\012    }\012};,return new Expression&lt;Exchange&gt;() {\012\012    public Object evaluate(Exchange exchange) {\012        Object[] answer = new Object[size];\012        Object body = exchange.getIn().getBody();\012        boolean multiParameterArray = false;\012        if (exchange.getIn().getHeader(BeanProcessor.MULTI_PARAMETER_ARRAY) != null) {\012            multiParameterArray = exchange.getIn().getHeader(BeanProcessor.MULTI_PARAMETER_ARRAY, Boolean.class);\012        }\012        for (int i = 0; i &lt; size; i++) {\012            Object value = null;\012            if (multiParameterArray) {\012                value = ((Object[]) body)[i];\012            } else {\012                value = expressions[i].evaluate(exchange);\012            }\012            Class expectedType = parameters.get(i).getType();\012            value = ExchangeHelper.convertToType(exchange, expectedType, value);\012            answer[i] = value;\012        }\012        return answer;\012    }\012\012    @Override\012    public String toString() {\012        return &quot;ParametersExpression: &quot; + Arrays.asList(expressions);\012    }\012};)<SUB>173</SUB>> ]
+"393" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>173</SUB>> ]
+"394" [label = <(&lt;operator&gt;.assignment,&lt;empty&gt;)> ]
+"395" [label = <(IDENTIFIER,$obj3,&lt;empty&gt;)> ]
+"396" [label = <(&lt;operator&gt;.alloc,new Expression&lt;Exchange&gt;() {\012\012    public Object evaluate(Exchange exchange) {\012        Object[] answer = new Object[size];\012        Object body = exchange.getIn().getBody();\012        boolean multiParameterArray = false;\012        if (exchange.getIn().getHeader(BeanProcessor.MULTI_PARAMETER_ARRAY) != null) {\012            multiParameterArray = exchange.getIn().getHeader(BeanProcessor.MULTI_PARAMETER_ARRAY, Boolean.class);\012        }\012        for (int i = 0; i &lt; size; i++) {\012            Object value = null;\012            if (multiParameterArray) {\012                value = ((Object[]) body)[i];\012            } else {\012                value = expressions[i].evaluate(exchange);\012            }\012            Class expectedType = parameters.get(i).getType();\012            value = ExchangeHelper.convertToType(exchange, expectedType, value);\012            answer[i] = value;\012        }\012        return answer;\012    }\012\012    @Override\012    public String toString() {\012        return &quot;ParametersExpression: &quot; + Arrays.asList(expressions);\012    }\012})<SUB>173</SUB>> ]
+"397" [label = <(&lt;init&gt;,new Expression&lt;Exchange&gt;() {\012\012    public Object evaluate(Exchange exchange) {\012        Object[] answer = new Object[size];\012        Object body = exchange.getIn().getBody();\012        boolean multiParameterArray = false;\012        if (exchange.getIn().getHeader(BeanProcessor.MULTI_PARAMETER_ARRAY) != null) {\012            multiParameterArray = exchange.getIn().getHeader(BeanProcessor.MULTI_PARAMETER_ARRAY, Boolean.class);\012        }\012        for (int i = 0; i &lt; size; i++) {\012            Object value = null;\012            if (multiParameterArray) {\012                value = ((Object[]) body)[i];\012            } else {\012                value = expressions[i].evaluate(exchange);\012            }\012            Class expectedType = parameters.get(i).getType();\012            value = ExchangeHelper.convertToType(exchange, expectedType, value);\012            answer[i] = value;\012        }\012        return answer;\012    }\012\012    @Override\012    public String toString() {\012        return &quot;ParametersExpression: &quot; + Arrays.asList(expressions);\012    }\012})<SUB>173</SUB>> ]
+"398" [label = <(IDENTIFIER,$obj3,new Expression&lt;Exchange&gt;() {\012\012    public Object evaluate(Exchange exchange) {\012        Object[] answer = new Object[size];\012        Object body = exchange.getIn().getBody();\012        boolean multiParameterArray = false;\012        if (exchange.getIn().getHeader(BeanProcessor.MULTI_PARAMETER_ARRAY) != null) {\012            multiParameterArray = exchange.getIn().getHeader(BeanProcessor.MULTI_PARAMETER_ARRAY, Boolean.class);\012        }\012        for (int i = 0; i &lt; size; i++) {\012            Object value = null;\012            if (multiParameterArray) {\012                value = ((Object[]) body)[i];\012            } else {\012                value = expressions[i].evaluate(exchange);\012            }\012            Class expectedType = parameters.get(i).getType();\012            value = ExchangeHelper.convertToType(exchange, expectedType, value);\012            answer[i] = value;\012        }\012        return answer;\012    }\012\012    @Override\012    public String toString() {\012        return &quot;ParametersExpression: &quot; + Arrays.asList(expressions);\012    }\012})> ]
+"399" [label = <(IDENTIFIER,$obj3,&lt;empty&gt;)> ]
+"400" [label = <(MODIFIER,PROTECTED)> ]
+"401" [label = <(MODIFIER,VIRTUAL)> ]
+"402" [label = <(METHOD_RETURN,org.apache.camel.Expression)<SUB>166</SUB>> ]
+  "352" -> "353" 
+  "352" -> "354" 
+  "352" -> "400" 
+  "352" -> "401" 
+  "352" -> "402" 
+  "354" -> "355" 
+  "354" -> "356" 
+  "354" -> "362" 
+  "354" -> "363" 
+  "354" -> "367" 
+  "354" -> "392" 
+  "356" -> "357" 
+  "356" -> "358" 
+  "358" -> "359" 
+  "359" -> "360" 
+  "359" -> "361" 
+  "363" -> "364" 
+  "363" -> "365" 
+  "365" -> "366" 
+  "367" -> "368" 
+  "367" -> "369" 
+  "367" -> "372" 
+  "367" -> "375" 
+  "367" -> "377" 
+  "369" -> "370" 
+  "369" -> "371" 
+  "372" -> "373" 
+  "372" -> "374" 
+  "375" -> "376" 
+  "377" -> "378" 
+  "377" -> "379" 
+  "377" -> "387" 
+  "379" -> "380" 
+  "379" -> "381" 
+  "381" -> "382" 
+  "382" -> "383" 
+  "382" -> "386" 
+  "383" -> "384" 
+  "383" -> "385" 
+  "387" -> "388" 
+  "387" -> "391" 
+  "388" -> "389" 
+  "388" -> "390" 
+  "392" -> "393" 
+  "393" -> "394" 
+  "393" -> "397" 
+  "393" -> "399" 
+  "394" -> "395" 
+  "394" -> "396" 
+  "397" -> "398" 
+}

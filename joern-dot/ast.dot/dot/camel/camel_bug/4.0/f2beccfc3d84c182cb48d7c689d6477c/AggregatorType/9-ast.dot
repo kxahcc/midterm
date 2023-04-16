@@ -1,0 +1,303 @@
+digraph "createAggregator" {  
+"240" [label = <(METHOD,createAggregator)<SUB>117</SUB>> ]
+"22" [label = <(PARAM,this)<SUB>117</SUB>> ]
+"241" [label = <(PARAM,RouteContext routeContext)<SUB>117</SUB>> ]
+"242" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>117</SUB>> ]
+"243" [label = <(LOCAL,Endpoint from: org.apache.camel.Endpoint)> ]
+"244" [label = <(&lt;operator&gt;.assignment,Endpoint from = getEndpoint())<SUB>118</SUB>> ]
+"245" [label = <(IDENTIFIER,from,Endpoint from = getEndpoint())<SUB>118</SUB>> ]
+"246" [label = <(getEndpoint,getEndpoint())<SUB>118</SUB>> ]
+"247" [label = <(IDENTIFIER,routeContext,getEndpoint())<SUB>118</SUB>> ]
+"248" [label = <(LOCAL,Processor processor: org.apache.camel.Processor)> ]
+"249" [label = <(&lt;operator&gt;.assignment,Processor processor = createProcessor(this))<SUB>119</SUB>> ]
+"250" [label = <(IDENTIFIER,processor,Processor processor = createProcessor(this))<SUB>119</SUB>> ]
+"251" [label = <(createProcessor,createProcessor(this))<SUB>119</SUB>> ]
+"252" [label = <(IDENTIFIER,routeContext,createProcessor(this))<SUB>119</SUB>> ]
+"21" [label = <(IDENTIFIER,this,createProcessor(this))<SUB>119</SUB>> ]
+"24" [label = <(LOCAL,Aggregator aggregator: org.apache.camel.processor.Aggregator)> ]
+"253" [label = <(CONTROL_STRUCTURE,if (aggregationCollection != null),if (aggregationCollection != null))<SUB>122</SUB>> ]
+"254" [label = <(&lt;operator&gt;.notEquals,aggregationCollection != null)<SUB>122</SUB>> ]
+"255" [label = <(&lt;operator&gt;.fieldAccess,this.aggregationCollection)<SUB>122</SUB>> ]
+"256" [label = <(IDENTIFIER,this,aggregationCollection != null)<SUB>122</SUB>> ]
+"257" [label = <(FIELD_IDENTIFIER,aggregationCollection,aggregationCollection)<SUB>122</SUB>> ]
+"258" [label = <(LITERAL,null,aggregationCollection != null)<SUB>122</SUB>> ]
+"259" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>122</SUB>> ]
+"260" [label = <(&lt;operator&gt;.assignment,aggregator = new Aggregator(from, processor, aggregationCollection))<SUB>123</SUB>> ]
+"261" [label = <(IDENTIFIER,aggregator,aggregator = new Aggregator(from, processor, aggregationCollection))<SUB>123</SUB>> ]
+"262" [label = <(&lt;operator&gt;.alloc,new Aggregator(from, processor, aggregationCollection))<SUB>123</SUB>> ]
+"263" [label = <(&lt;init&gt;,new Aggregator(from, processor, aggregationCollection))<SUB>123</SUB>> ]
+"23" [label = <(IDENTIFIER,aggregator,new Aggregator(from, processor, aggregationCollection))<SUB>123</SUB>> ]
+"264" [label = <(IDENTIFIER,from,new Aggregator(from, processor, aggregationCollection))<SUB>123</SUB>> ]
+"265" [label = <(IDENTIFIER,processor,new Aggregator(from, processor, aggregationCollection))<SUB>123</SUB>> ]
+"266" [label = <(&lt;operator&gt;.fieldAccess,this.aggregationCollection)<SUB>123</SUB>> ]
+"267" [label = <(IDENTIFIER,this,new Aggregator(from, processor, aggregationCollection))<SUB>123</SUB>> ]
+"268" [label = <(FIELD_IDENTIFIER,aggregationCollection,aggregationCollection)<SUB>123</SUB>> ]
+"269" [label = <(CONTROL_STRUCTURE,else,else)<SUB>124</SUB>> ]
+"270" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>124</SUB>> ]
+"27" [label = <(LOCAL,AggregationStrategy strategy: org.apache.camel.processor.aggregate.AggregationStrategy)> ]
+"271" [label = <(&lt;operator&gt;.assignment,AggregationStrategy strategy = this.getAggregationStrategy())<SUB>125</SUB>> ]
+"272" [label = <(IDENTIFIER,strategy,AggregationStrategy strategy = this.getAggregationStrategy())<SUB>125</SUB>> ]
+"273" [label = <(getAggregationStrategy,this.getAggregationStrategy())<SUB>125</SUB>> ]
+"25" [label = <(IDENTIFIER,this,this.getAggregationStrategy())<SUB>125</SUB>> ]
+"274" [label = <(CONTROL_STRUCTURE,if (strategy == null &amp;&amp; strategyRef != null),if (strategy == null &amp;&amp; strategyRef != null))<SUB>126</SUB>> ]
+"275" [label = <(&lt;operator&gt;.logicalAnd,strategy == null &amp;&amp; strategyRef != null)<SUB>126</SUB>> ]
+"276" [label = <(&lt;operator&gt;.equals,strategy == null)<SUB>126</SUB>> ]
+"277" [label = <(IDENTIFIER,strategy,strategy == null)<SUB>126</SUB>> ]
+"278" [label = <(LITERAL,null,strategy == null)<SUB>126</SUB>> ]
+"279" [label = <(&lt;operator&gt;.notEquals,strategyRef != null)<SUB>126</SUB>> ]
+"280" [label = <(&lt;operator&gt;.fieldAccess,this.strategyRef)<SUB>126</SUB>> ]
+"281" [label = <(IDENTIFIER,this,strategyRef != null)<SUB>126</SUB>> ]
+"282" [label = <(FIELD_IDENTIFIER,strategyRef,strategyRef)<SUB>126</SUB>> ]
+"283" [label = <(LITERAL,null,strategyRef != null)<SUB>126</SUB>> ]
+"284" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>126</SUB>> ]
+"285" [label = <(&lt;operator&gt;.assignment,strategy = lookup(strategyRef, AggregationStrategy.class))<SUB>127</SUB>> ]
+"286" [label = <(IDENTIFIER,strategy,strategy = lookup(strategyRef, AggregationStrategy.class))<SUB>127</SUB>> ]
+"287" [label = <(lookup,lookup(strategyRef, AggregationStrategy.class))<SUB>127</SUB>> ]
+"288" [label = <(IDENTIFIER,routeContext,lookup(strategyRef, AggregationStrategy.class))<SUB>127</SUB>> ]
+"289" [label = <(&lt;operator&gt;.fieldAccess,this.strategyRef)<SUB>127</SUB>> ]
+"290" [label = <(IDENTIFIER,this,lookup(strategyRef, AggregationStrategy.class))<SUB>127</SUB>> ]
+"291" [label = <(FIELD_IDENTIFIER,strategyRef,strategyRef)<SUB>127</SUB>> ]
+"292" [label = <(&lt;operator&gt;.fieldAccess,AggregationStrategy.class)<SUB>127</SUB>> ]
+"293" [label = <(IDENTIFIER,AggregationStrategy,lookup(strategyRef, AggregationStrategy.class))<SUB>127</SUB>> ]
+"294" [label = <(FIELD_IDENTIFIER,class,class)<SUB>127</SUB>> ]
+"295" [label = <(CONTROL_STRUCTURE,if (strategy == null),if (strategy == null))<SUB>129</SUB>> ]
+"296" [label = <(&lt;operator&gt;.equals,strategy == null)<SUB>129</SUB>> ]
+"297" [label = <(IDENTIFIER,strategy,strategy == null)<SUB>129</SUB>> ]
+"298" [label = <(LITERAL,null,strategy == null)<SUB>129</SUB>> ]
+"299" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>129</SUB>> ]
+"300" [label = <(&lt;operator&gt;.assignment,strategy = new UseLatestAggregationStrategy())<SUB>130</SUB>> ]
+"301" [label = <(IDENTIFIER,strategy,strategy = new UseLatestAggregationStrategy())<SUB>130</SUB>> ]
+"302" [label = <(&lt;operator&gt;.alloc,new UseLatestAggregationStrategy())<SUB>130</SUB>> ]
+"303" [label = <(&lt;init&gt;,new UseLatestAggregationStrategy())<SUB>130</SUB>> ]
+"26" [label = <(IDENTIFIER,strategy,new UseLatestAggregationStrategy())<SUB>130</SUB>> ]
+"304" [label = <(LOCAL,Expression aggregateExpression: org.apache.camel.Expression)> ]
+"305" [label = <(&lt;operator&gt;.assignment,Expression aggregateExpression = createExpression(routeContext))<SUB>132</SUB>> ]
+"306" [label = <(IDENTIFIER,aggregateExpression,Expression aggregateExpression = createExpression(routeContext))<SUB>132</SUB>> ]
+"307" [label = <(createExpression,createExpression(routeContext))<SUB>132</SUB>> ]
+"308" [label = <(getExpression,getExpression())<SUB>132</SUB>> ]
+"28" [label = <(IDENTIFIER,this,getExpression())<SUB>132</SUB>> ]
+"309" [label = <(IDENTIFIER,routeContext,createExpression(routeContext))<SUB>132</SUB>> ]
+"310" [label = <(LOCAL,Predicate predicate: org.apache.camel.Predicate)> ]
+"311" [label = <(&lt;operator&gt;.assignment,Predicate predicate = null)<SUB>134</SUB>> ]
+"312" [label = <(IDENTIFIER,predicate,Predicate predicate = null)<SUB>134</SUB>> ]
+"313" [label = <(LITERAL,null,Predicate predicate = null)<SUB>134</SUB>> ]
+"314" [label = <(CONTROL_STRUCTURE,if (completedPredicate != null),if (completedPredicate != null))<SUB>135</SUB>> ]
+"315" [label = <(&lt;operator&gt;.notEquals,completedPredicate != null)<SUB>135</SUB>> ]
+"316" [label = <(&lt;operator&gt;.fieldAccess,this.completedPredicate)<SUB>135</SUB>> ]
+"317" [label = <(IDENTIFIER,this,completedPredicate != null)<SUB>135</SUB>> ]
+"318" [label = <(FIELD_IDENTIFIER,completedPredicate,completedPredicate)<SUB>135</SUB>> ]
+"319" [label = <(LITERAL,null,completedPredicate != null)<SUB>135</SUB>> ]
+"320" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>135</SUB>> ]
+"321" [label = <(&lt;operator&gt;.assignment,predicate = createPredicate(routeContext))<SUB>136</SUB>> ]
+"322" [label = <(IDENTIFIER,predicate,predicate = createPredicate(routeContext))<SUB>136</SUB>> ]
+"323" [label = <(createPredicate,createPredicate(routeContext))<SUB>136</SUB>> ]
+"324" [label = <(&lt;operator&gt;.fieldAccess,this.completedPredicate)<SUB>136</SUB>> ]
+"325" [label = <(IDENTIFIER,this,createPredicate(routeContext))<SUB>136</SUB>> ]
+"326" [label = <(FIELD_IDENTIFIER,completedPredicate,completedPredicate)<SUB>136</SUB>> ]
+"327" [label = <(IDENTIFIER,routeContext,createPredicate(routeContext))<SUB>136</SUB>> ]
+"328" [label = <(CONTROL_STRUCTURE,if (predicate != null),if (predicate != null))<SUB>138</SUB>> ]
+"329" [label = <(&lt;operator&gt;.notEquals,predicate != null)<SUB>138</SUB>> ]
+"330" [label = <(IDENTIFIER,predicate,predicate != null)<SUB>138</SUB>> ]
+"331" [label = <(LITERAL,null,predicate != null)<SUB>138</SUB>> ]
+"332" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>138</SUB>> ]
+"333" [label = <(&lt;operator&gt;.assignment,aggregator = new Aggregator(from, processor, aggregateExpression, strategy, predicate))<SUB>139</SUB>> ]
+"334" [label = <(IDENTIFIER,aggregator,aggregator = new Aggregator(from, processor, aggregateExpression, strategy, predicate))<SUB>139</SUB>> ]
+"335" [label = <(&lt;operator&gt;.alloc,new Aggregator(from, processor, aggregateExpression, strategy, predicate))<SUB>139</SUB>> ]
+"336" [label = <(&lt;init&gt;,new Aggregator(from, processor, aggregateExpression, strategy, predicate))<SUB>139</SUB>> ]
+"29" [label = <(IDENTIFIER,aggregator,new Aggregator(from, processor, aggregateExpression, strategy, predicate))<SUB>139</SUB>> ]
+"337" [label = <(IDENTIFIER,from,new Aggregator(from, processor, aggregateExpression, strategy, predicate))<SUB>139</SUB>> ]
+"338" [label = <(IDENTIFIER,processor,new Aggregator(from, processor, aggregateExpression, strategy, predicate))<SUB>139</SUB>> ]
+"339" [label = <(IDENTIFIER,aggregateExpression,new Aggregator(from, processor, aggregateExpression, strategy, predicate))<SUB>139</SUB>> ]
+"340" [label = <(IDENTIFIER,strategy,new Aggregator(from, processor, aggregateExpression, strategy, predicate))<SUB>139</SUB>> ]
+"341" [label = <(IDENTIFIER,predicate,new Aggregator(from, processor, aggregateExpression, strategy, predicate))<SUB>139</SUB>> ]
+"342" [label = <(CONTROL_STRUCTURE,else,else)<SUB>140</SUB>> ]
+"343" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>140</SUB>> ]
+"344" [label = <(&lt;operator&gt;.assignment,aggregator = new Aggregator(from, processor, aggregateExpression, strategy))<SUB>141</SUB>> ]
+"345" [label = <(IDENTIFIER,aggregator,aggregator = new Aggregator(from, processor, aggregateExpression, strategy))<SUB>141</SUB>> ]
+"346" [label = <(&lt;operator&gt;.alloc,new Aggregator(from, processor, aggregateExpression, strategy))<SUB>141</SUB>> ]
+"347" [label = <(&lt;init&gt;,new Aggregator(from, processor, aggregateExpression, strategy))<SUB>141</SUB>> ]
+"30" [label = <(IDENTIFIER,aggregator,new Aggregator(from, processor, aggregateExpression, strategy))<SUB>141</SUB>> ]
+"348" [label = <(IDENTIFIER,from,new Aggregator(from, processor, aggregateExpression, strategy))<SUB>141</SUB>> ]
+"349" [label = <(IDENTIFIER,processor,new Aggregator(from, processor, aggregateExpression, strategy))<SUB>141</SUB>> ]
+"350" [label = <(IDENTIFIER,aggregateExpression,new Aggregator(from, processor, aggregateExpression, strategy))<SUB>141</SUB>> ]
+"351" [label = <(IDENTIFIER,strategy,new Aggregator(from, processor, aggregateExpression, strategy))<SUB>141</SUB>> ]
+"352" [label = <(CONTROL_STRUCTURE,if (batchSize != null),if (batchSize != null))<SUB>145</SUB>> ]
+"353" [label = <(&lt;operator&gt;.notEquals,batchSize != null)<SUB>145</SUB>> ]
+"354" [label = <(&lt;operator&gt;.fieldAccess,this.batchSize)<SUB>145</SUB>> ]
+"355" [label = <(IDENTIFIER,this,batchSize != null)<SUB>145</SUB>> ]
+"356" [label = <(FIELD_IDENTIFIER,batchSize,batchSize)<SUB>145</SUB>> ]
+"357" [label = <(LITERAL,null,batchSize != null)<SUB>145</SUB>> ]
+"358" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>145</SUB>> ]
+"359" [label = <(setBatchSize,setBatchSize(batchSize))<SUB>146</SUB>> ]
+"360" [label = <(IDENTIFIER,aggregator,setBatchSize(batchSize))<SUB>146</SUB>> ]
+"361" [label = <(&lt;operator&gt;.fieldAccess,this.batchSize)<SUB>146</SUB>> ]
+"362" [label = <(IDENTIFIER,this,setBatchSize(batchSize))<SUB>146</SUB>> ]
+"363" [label = <(FIELD_IDENTIFIER,batchSize,batchSize)<SUB>146</SUB>> ]
+"364" [label = <(CONTROL_STRUCTURE,if (batchTimeout != null),if (batchTimeout != null))<SUB>149</SUB>> ]
+"365" [label = <(&lt;operator&gt;.notEquals,batchTimeout != null)<SUB>149</SUB>> ]
+"366" [label = <(&lt;operator&gt;.fieldAccess,this.batchTimeout)<SUB>149</SUB>> ]
+"367" [label = <(IDENTIFIER,this,batchTimeout != null)<SUB>149</SUB>> ]
+"368" [label = <(FIELD_IDENTIFIER,batchTimeout,batchTimeout)<SUB>149</SUB>> ]
+"369" [label = <(LITERAL,null,batchTimeout != null)<SUB>149</SUB>> ]
+"370" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>149</SUB>> ]
+"371" [label = <(setBatchTimeout,setBatchTimeout(batchTimeout))<SUB>150</SUB>> ]
+"372" [label = <(IDENTIFIER,aggregator,setBatchTimeout(batchTimeout))<SUB>150</SUB>> ]
+"373" [label = <(&lt;operator&gt;.fieldAccess,this.batchTimeout)<SUB>150</SUB>> ]
+"374" [label = <(IDENTIFIER,this,setBatchTimeout(batchTimeout))<SUB>150</SUB>> ]
+"375" [label = <(FIELD_IDENTIFIER,batchTimeout,batchTimeout)<SUB>150</SUB>> ]
+"376" [label = <(RETURN,return aggregator;,return aggregator;)<SUB>153</SUB>> ]
+"377" [label = <(IDENTIFIER,aggregator,return aggregator;)<SUB>153</SUB>> ]
+"378" [label = <(MODIFIER,PROTECTED)> ]
+"379" [label = <(MODIFIER,VIRTUAL)> ]
+"380" [label = <(METHOD_RETURN,org.apache.camel.processor.Aggregator)<SUB>117</SUB>> ]
+  "240" -> "22" 
+  "240" -> "241" 
+  "240" -> "242" 
+  "240" -> "378" 
+  "240" -> "379" 
+  "240" -> "380" 
+  "242" -> "243" 
+  "242" -> "244" 
+  "242" -> "248" 
+  "242" -> "249" 
+  "242" -> "24" 
+  "242" -> "253" 
+  "242" -> "352" 
+  "242" -> "364" 
+  "242" -> "376" 
+  "244" -> "245" 
+  "244" -> "246" 
+  "246" -> "247" 
+  "249" -> "250" 
+  "249" -> "251" 
+  "251" -> "252" 
+  "251" -> "21" 
+  "253" -> "254" 
+  "253" -> "259" 
+  "253" -> "269" 
+  "254" -> "255" 
+  "254" -> "258" 
+  "255" -> "256" 
+  "255" -> "257" 
+  "259" -> "260" 
+  "259" -> "263" 
+  "260" -> "261" 
+  "260" -> "262" 
+  "263" -> "23" 
+  "263" -> "264" 
+  "263" -> "265" 
+  "263" -> "266" 
+  "266" -> "267" 
+  "266" -> "268" 
+  "269" -> "270" 
+  "270" -> "27" 
+  "270" -> "271" 
+  "270" -> "274" 
+  "270" -> "295" 
+  "270" -> "304" 
+  "270" -> "305" 
+  "270" -> "310" 
+  "270" -> "311" 
+  "270" -> "314" 
+  "270" -> "328" 
+  "271" -> "272" 
+  "271" -> "273" 
+  "273" -> "25" 
+  "274" -> "275" 
+  "274" -> "284" 
+  "275" -> "276" 
+  "275" -> "279" 
+  "276" -> "277" 
+  "276" -> "278" 
+  "279" -> "280" 
+  "279" -> "283" 
+  "280" -> "281" 
+  "280" -> "282" 
+  "284" -> "285" 
+  "285" -> "286" 
+  "285" -> "287" 
+  "287" -> "288" 
+  "287" -> "289" 
+  "287" -> "292" 
+  "289" -> "290" 
+  "289" -> "291" 
+  "292" -> "293" 
+  "292" -> "294" 
+  "295" -> "296" 
+  "295" -> "299" 
+  "296" -> "297" 
+  "296" -> "298" 
+  "299" -> "300" 
+  "299" -> "303" 
+  "300" -> "301" 
+  "300" -> "302" 
+  "303" -> "26" 
+  "305" -> "306" 
+  "305" -> "307" 
+  "307" -> "308" 
+  "307" -> "309" 
+  "308" -> "28" 
+  "311" -> "312" 
+  "311" -> "313" 
+  "314" -> "315" 
+  "314" -> "320" 
+  "315" -> "316" 
+  "315" -> "319" 
+  "316" -> "317" 
+  "316" -> "318" 
+  "320" -> "321" 
+  "321" -> "322" 
+  "321" -> "323" 
+  "323" -> "324" 
+  "323" -> "327" 
+  "324" -> "325" 
+  "324" -> "326" 
+  "328" -> "329" 
+  "328" -> "332" 
+  "328" -> "342" 
+  "329" -> "330" 
+  "329" -> "331" 
+  "332" -> "333" 
+  "332" -> "336" 
+  "333" -> "334" 
+  "333" -> "335" 
+  "336" -> "29" 
+  "336" -> "337" 
+  "336" -> "338" 
+  "336" -> "339" 
+  "336" -> "340" 
+  "336" -> "341" 
+  "342" -> "343" 
+  "343" -> "344" 
+  "343" -> "347" 
+  "344" -> "345" 
+  "344" -> "346" 
+  "347" -> "30" 
+  "347" -> "348" 
+  "347" -> "349" 
+  "347" -> "350" 
+  "347" -> "351" 
+  "352" -> "353" 
+  "352" -> "358" 
+  "353" -> "354" 
+  "353" -> "357" 
+  "354" -> "355" 
+  "354" -> "356" 
+  "358" -> "359" 
+  "359" -> "360" 
+  "359" -> "361" 
+  "361" -> "362" 
+  "361" -> "363" 
+  "364" -> "365" 
+  "364" -> "370" 
+  "365" -> "366" 
+  "365" -> "369" 
+  "366" -> "367" 
+  "366" -> "368" 
+  "370" -> "371" 
+  "371" -> "372" 
+  "371" -> "373" 
+  "373" -> "374" 
+  "373" -> "375" 
+  "376" -> "377" 
+}

@@ -1,0 +1,89 @@
+digraph "createEndpoint" {  
+"51" [label = <(METHOD,createEndpoint)<SUB>50</SUB>> ]
+"4" [label = <(PARAM,this)<SUB>50</SUB>> ]
+"52" [label = <(PARAM,String uri)<SUB>50</SUB>> ]
+"53" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>50</SUB>> ]
+"54" [label = <(notNull,notNull(getCamelContext(), &quot;camelContext&quot;))<SUB>52</SUB>> ]
+"55" [label = <(IDENTIFIER,ObjectHelper,notNull(getCamelContext(), &quot;camelContext&quot;))<SUB>52</SUB>> ]
+"56" [label = <(getCamelContext,this.getCamelContext())<SUB>52</SUB>> ]
+"3" [label = <(IDENTIFIER,this,this.getCamelContext())<SUB>52</SUB>> ]
+"57" [label = <(LITERAL,&quot;camelContext&quot;,notNull(getCamelContext(), &quot;camelContext&quot;))<SUB>52</SUB>> ]
+"6" [label = <(LOCAL,URI u: java.net.URI)> ]
+"58" [label = <(&lt;operator&gt;.assignment,URI u = new URI(uri))<SUB>53</SUB>> ]
+"59" [label = <(IDENTIFIER,u,URI u = new URI(uri))<SUB>53</SUB>> ]
+"60" [label = <(&lt;operator&gt;.alloc,new URI(uri))<SUB>53</SUB>> ]
+"61" [label = <(&lt;init&gt;,new URI(uri))<SUB>53</SUB>> ]
+"5" [label = <(IDENTIFIER,u,new URI(uri))<SUB>53</SUB>> ]
+"62" [label = <(IDENTIFIER,uri,new URI(uri))<SUB>53</SUB>> ]
+"63" [label = <(LOCAL,Map parameters: java.util.Map)> ]
+"64" [label = <(&lt;operator&gt;.assignment,Map parameters = parseParamters(u))<SUB>54</SUB>> ]
+"65" [label = <(IDENTIFIER,parameters,Map parameters = parseParamters(u))<SUB>54</SUB>> ]
+"66" [label = <(parseParamters,parseParamters(u))<SUB>54</SUB>> ]
+"67" [label = <(IDENTIFIER,URISupport,parseParamters(u))<SUB>54</SUB>> ]
+"68" [label = <(IDENTIFIER,u,parseParamters(u))<SUB>54</SUB>> ]
+"9" [label = <(LOCAL,Endpoint&lt;E&gt; endpoint: ANY)> ]
+"69" [label = <(&lt;operator&gt;.assignment,ANY endpoint = new DirectEndpoint&lt;E&gt;(uri, this))<SUB>56</SUB>> ]
+"70" [label = <(IDENTIFIER,endpoint,ANY endpoint = new DirectEndpoint&lt;E&gt;(uri, this))<SUB>56</SUB>> ]
+"71" [label = <(&lt;operator&gt;.alloc,new DirectEndpoint&lt;E&gt;(uri, this))<SUB>56</SUB>> ]
+"72" [label = <(&lt;init&gt;,new DirectEndpoint&lt;E&gt;(uri, this))<SUB>56</SUB>> ]
+"8" [label = <(IDENTIFIER,endpoint,new DirectEndpoint&lt;E&gt;(uri, this))<SUB>56</SUB>> ]
+"73" [label = <(IDENTIFIER,uri,new DirectEndpoint&lt;E&gt;(uri, this))<SUB>56</SUB>> ]
+"7" [label = <(IDENTIFIER,this,new DirectEndpoint&lt;E&gt;(uri, this))<SUB>56</SUB>> ]
+"74" [label = <(CONTROL_STRUCTURE,if (parameters != null),if (parameters != null))<SUB>57</SUB>> ]
+"75" [label = <(&lt;operator&gt;.notEquals,parameters != null)<SUB>57</SUB>> ]
+"76" [label = <(IDENTIFIER,parameters,parameters != null)<SUB>57</SUB>> ]
+"77" [label = <(LITERAL,null,parameters != null)<SUB>57</SUB>> ]
+"78" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>57</SUB>> ]
+"79" [label = <(setProperties,setProperties(endpoint, parameters))<SUB>58</SUB>> ]
+"80" [label = <(IDENTIFIER,IntrospectionSupport,setProperties(endpoint, parameters))<SUB>58</SUB>> ]
+"81" [label = <(IDENTIFIER,endpoint,setProperties(endpoint, parameters))<SUB>58</SUB>> ]
+"82" [label = <(IDENTIFIER,parameters,setProperties(endpoint, parameters))<SUB>58</SUB>> ]
+"83" [label = <(RETURN,return endpoint;,return endpoint;)<SUB>60</SUB>> ]
+"84" [label = <(IDENTIFIER,endpoint,return endpoint;)<SUB>60</SUB>> ]
+"85" [label = <(MODIFIER,PUBLIC)> ]
+"86" [label = <(MODIFIER,VIRTUAL)> ]
+"87" [label = <(METHOD_RETURN,ANY)<SUB>50</SUB>> ]
+  "51" -> "4" 
+  "51" -> "52" 
+  "51" -> "53" 
+  "51" -> "85" 
+  "51" -> "86" 
+  "51" -> "87" 
+  "53" -> "54" 
+  "53" -> "6" 
+  "53" -> "58" 
+  "53" -> "61" 
+  "53" -> "63" 
+  "53" -> "64" 
+  "53" -> "9" 
+  "53" -> "69" 
+  "53" -> "72" 
+  "53" -> "74" 
+  "53" -> "83" 
+  "54" -> "55" 
+  "54" -> "56" 
+  "54" -> "57" 
+  "56" -> "3" 
+  "58" -> "59" 
+  "58" -> "60" 
+  "61" -> "5" 
+  "61" -> "62" 
+  "64" -> "65" 
+  "64" -> "66" 
+  "66" -> "67" 
+  "66" -> "68" 
+  "69" -> "70" 
+  "69" -> "71" 
+  "72" -> "8" 
+  "72" -> "73" 
+  "72" -> "7" 
+  "74" -> "75" 
+  "74" -> "78" 
+  "75" -> "76" 
+  "75" -> "77" 
+  "78" -> "79" 
+  "79" -> "80" 
+  "79" -> "81" 
+  "79" -> "82" 
+  "83" -> "84" 
+}

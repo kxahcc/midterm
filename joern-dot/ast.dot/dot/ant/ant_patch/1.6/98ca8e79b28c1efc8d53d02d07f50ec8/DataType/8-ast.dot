@@ -1,0 +1,35 @@
+digraph "circularReference" {  
+"244" [label = <(METHOD,circularReference)<SUB>222</SUB>> ]
+"245" [label = <(PARAM,this)<SUB>222</SUB>> ]
+"246" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>222</SUB>> ]
+"247" [label = <(RETURN,return new BuildException(&quot;This data type contains a circular &quot; + &quot;reference.&quot;);,return new BuildException(&quot;This data type contains a circular &quot; + &quot;reference.&quot;);)<SUB>223</SUB>> ]
+"248" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>223</SUB>> ]
+"249" [label = <(&lt;operator&gt;.assignment,&lt;empty&gt;)> ]
+"250" [label = <(IDENTIFIER,$obj4,&lt;empty&gt;)> ]
+"251" [label = <(&lt;operator&gt;.alloc,new BuildException(&quot;This data type contains a circular &quot; + &quot;reference.&quot;))<SUB>223</SUB>> ]
+"252" [label = <(&lt;init&gt;,new BuildException(&quot;This data type contains a circular &quot; + &quot;reference.&quot;))<SUB>223</SUB>> ]
+"253" [label = <(IDENTIFIER,$obj4,new BuildException(&quot;This data type contains a circular &quot; + &quot;reference.&quot;))> ]
+"254" [label = <(&lt;operator&gt;.addition,&quot;This data type contains a circular &quot; + &quot;reference.&quot;)<SUB>223</SUB>> ]
+"255" [label = <(LITERAL,&quot;This data type contains a circular &quot;,&quot;This data type contains a circular &quot; + &quot;reference.&quot;)<SUB>223</SUB>> ]
+"256" [label = <(LITERAL,&quot;reference.&quot;,&quot;This data type contains a circular &quot; + &quot;reference.&quot;)<SUB>224</SUB>> ]
+"257" [label = <(IDENTIFIER,$obj4,&lt;empty&gt;)> ]
+"258" [label = <(MODIFIER,PROTECTED)> ]
+"259" [label = <(MODIFIER,VIRTUAL)> ]
+"260" [label = <(METHOD_RETURN,org.apache.tools.ant.BuildException)<SUB>222</SUB>> ]
+  "244" -> "245" 
+  "244" -> "246" 
+  "244" -> "258" 
+  "244" -> "259" 
+  "244" -> "260" 
+  "246" -> "247" 
+  "247" -> "248" 
+  "248" -> "249" 
+  "248" -> "252" 
+  "248" -> "257" 
+  "249" -> "250" 
+  "249" -> "251" 
+  "252" -> "253" 
+  "252" -> "254" 
+  "254" -> "255" 
+  "254" -> "256" 
+}

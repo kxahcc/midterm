@@ -1,0 +1,71 @@
+digraph "isOutOfDate" {  
+"1278" [label = <(METHOD,isOutOfDate)<SUB>633</SUB>> ]
+"1279" [label = <(PARAM,Resource src)<SUB>633</SUB>> ]
+"1280" [label = <(PARAM,Resource target)<SUB>633</SUB>> ]
+"1281" [label = <(PARAM,int granularity)<SUB>634</SUB>> ]
+"1282" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>634</SUB>> ]
+"1283" [label = <(CONTROL_STRUCTURE,if (!src.isExists()),if (!src.isExists()))<SUB>635</SUB>> ]
+"1284" [label = <(&lt;operator&gt;.logicalNot,!src.isExists())<SUB>635</SUB>> ]
+"1285" [label = <(isExists,isExists())<SUB>635</SUB>> ]
+"1286" [label = <(IDENTIFIER,src,isExists())<SUB>635</SUB>> ]
+"1287" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>635</SUB>> ]
+"1288" [label = <(RETURN,return false;,return false;)<SUB>636</SUB>> ]
+"1289" [label = <(LITERAL,false,return false;)<SUB>636</SUB>> ]
+"1290" [label = <(CONTROL_STRUCTURE,if (!target.isExists()),if (!target.isExists()))<SUB>638</SUB>> ]
+"1291" [label = <(&lt;operator&gt;.logicalNot,!target.isExists())<SUB>638</SUB>> ]
+"1292" [label = <(isExists,isExists())<SUB>638</SUB>> ]
+"1293" [label = <(IDENTIFIER,target,isExists())<SUB>638</SUB>> ]
+"1294" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>638</SUB>> ]
+"1295" [label = <(RETURN,return true;,return true;)<SUB>639</SUB>> ]
+"1296" [label = <(LITERAL,true,return true;)<SUB>639</SUB>> ]
+"1297" [label = <(CONTROL_STRUCTURE,if ((src.getLastModified() - granularity) &gt; target.getLastModified()),if ((src.getLastModified() - granularity) &gt; target.getLastModified()))<SUB>641</SUB>> ]
+"1298" [label = <(&lt;operator&gt;.greaterThan,(src.getLastModified() - granularity) &gt; target.getLastModified())<SUB>641</SUB>> ]
+"1299" [label = <(&lt;operator&gt;.subtraction,src.getLastModified() - granularity)<SUB>641</SUB>> ]
+"1300" [label = <(getLastModified,getLastModified())<SUB>641</SUB>> ]
+"1301" [label = <(IDENTIFIER,src,getLastModified())<SUB>641</SUB>> ]
+"1302" [label = <(IDENTIFIER,granularity,src.getLastModified() - granularity)<SUB>641</SUB>> ]
+"1303" [label = <(getLastModified,getLastModified())<SUB>641</SUB>> ]
+"1304" [label = <(IDENTIFIER,target,getLastModified())<SUB>641</SUB>> ]
+"1305" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>641</SUB>> ]
+"1306" [label = <(RETURN,return true;,return true;)<SUB>642</SUB>> ]
+"1307" [label = <(LITERAL,true,return true;)<SUB>642</SUB>> ]
+"1308" [label = <(RETURN,return false;,return false;)<SUB>644</SUB>> ]
+"1309" [label = <(LITERAL,false,return false;)<SUB>644</SUB>> ]
+"1310" [label = <(MODIFIER,PUBLIC)> ]
+"1311" [label = <(MODIFIER,STATIC)> ]
+"1312" [label = <(METHOD_RETURN,boolean)<SUB>633</SUB>> ]
+  "1278" -> "1279" 
+  "1278" -> "1280" 
+  "1278" -> "1281" 
+  "1278" -> "1282" 
+  "1278" -> "1310" 
+  "1278" -> "1311" 
+  "1278" -> "1312" 
+  "1282" -> "1283" 
+  "1282" -> "1290" 
+  "1282" -> "1297" 
+  "1282" -> "1308" 
+  "1283" -> "1284" 
+  "1283" -> "1287" 
+  "1284" -> "1285" 
+  "1285" -> "1286" 
+  "1287" -> "1288" 
+  "1288" -> "1289" 
+  "1290" -> "1291" 
+  "1290" -> "1294" 
+  "1291" -> "1292" 
+  "1292" -> "1293" 
+  "1294" -> "1295" 
+  "1295" -> "1296" 
+  "1297" -> "1298" 
+  "1297" -> "1305" 
+  "1298" -> "1299" 
+  "1298" -> "1303" 
+  "1299" -> "1300" 
+  "1299" -> "1302" 
+  "1300" -> "1301" 
+  "1303" -> "1304" 
+  "1305" -> "1306" 
+  "1306" -> "1307" 
+  "1308" -> "1309" 
+}

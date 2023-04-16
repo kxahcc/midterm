@@ -1,0 +1,119 @@
+digraph "onExchange" {  
+"761" [label = <(METHOD,onExchange)<SUB>310</SUB>> ]
+"46" [label = <(PARAM,this)<SUB>310</SUB>> ]
+"762" [label = <(PARAM,Exchange exchange)<SUB>310</SUB>> ]
+"763" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>310</SUB>> ]
+"764" [label = <(CONTROL_STRUCTURE,try,try)<SUB>311</SUB>> ]
+"765" [label = <(BLOCK,try,try)<SUB>311</SUB>> ]
+"766" [label = <(debug,debug(getEndpointUri() + &quot; &gt;&gt;&gt;&gt; &quot; + exchange))<SUB>312</SUB>> ]
+"767" [label = <(&lt;operator&gt;.fieldAccess,MockEndpoint.log)<SUB>312</SUB>> ]
+"768" [label = <(IDENTIFIER,MockEndpoint,debug(getEndpointUri() + &quot; &gt;&gt;&gt;&gt; &quot; + exchange))<SUB>312</SUB>> ]
+"769" [label = <(FIELD_IDENTIFIER,log,log)<SUB>312</SUB>> ]
+"770" [label = <(&lt;operator&gt;.addition,getEndpointUri() + &quot; &gt;&gt;&gt;&gt; &quot; + exchange)<SUB>312</SUB>> ]
+"771" [label = <(&lt;operator&gt;.addition,getEndpointUri() + &quot; &gt;&gt;&gt;&gt; &quot;)<SUB>312</SUB>> ]
+"772" [label = <(getEndpointUri,getEndpointUri())<SUB>312</SUB>> ]
+"45" [label = <(IDENTIFIER,this,getEndpointUri())<SUB>312</SUB>> ]
+"773" [label = <(LITERAL,&quot; &gt;&gt;&gt;&gt; &quot;,getEndpointUri() + &quot; &gt;&gt;&gt;&gt; &quot;)<SUB>312</SUB>> ]
+"774" [label = <(IDENTIFIER,exchange,getEndpointUri() + &quot; &gt;&gt;&gt;&gt; &quot; + exchange)<SUB>312</SUB>> ]
+"775" [label = <(add,add(exchange))<SUB>314</SUB>> ]
+"776" [label = <(&lt;operator&gt;.fieldAccess,this.receivedExchanges)<SUB>314</SUB>> ]
+"777" [label = <(IDENTIFIER,this,add(exchange))<SUB>314</SUB>> ]
+"778" [label = <(FIELD_IDENTIFIER,receivedExchanges,receivedExchanges)<SUB>314</SUB>> ]
+"779" [label = <(IDENTIFIER,exchange,add(exchange))<SUB>314</SUB>> ]
+"780" [label = <(LOCAL,Processor processor: org.apache.camel.Processor)> ]
+"781" [label = <(&lt;operator&gt;.assignment,Processor processor = get(getReceivedCounter()))<SUB>316</SUB>> ]
+"782" [label = <(IDENTIFIER,processor,Processor processor = get(getReceivedCounter()))<SUB>316</SUB>> ]
+"783" [label = <(get,get(getReceivedCounter()))<SUB>316</SUB>> ]
+"784" [label = <(&lt;operator&gt;.fieldAccess,this.processors)<SUB>316</SUB>> ]
+"785" [label = <(IDENTIFIER,this,get(getReceivedCounter()))<SUB>316</SUB>> ]
+"786" [label = <(FIELD_IDENTIFIER,processors,processors)<SUB>316</SUB>> ]
+"787" [label = <(getReceivedCounter,this.getReceivedCounter())<SUB>316</SUB>> ]
+"47" [label = <(IDENTIFIER,this,this.getReceivedCounter())<SUB>316</SUB>> ]
+"788" [label = <(CONTROL_STRUCTURE,if (processor != null),if (processor != null))<SUB>317</SUB>> ]
+"789" [label = <(&lt;operator&gt;.notEquals,processor != null)<SUB>317</SUB>> ]
+"790" [label = <(IDENTIFIER,processor,processor != null)<SUB>317</SUB>> ]
+"791" [label = <(LITERAL,null,processor != null)<SUB>317</SUB>> ]
+"792" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>317</SUB>> ]
+"793" [label = <(process,process(exchange))<SUB>318</SUB>> ]
+"794" [label = <(IDENTIFIER,processor,process(exchange))<SUB>318</SUB>> ]
+"795" [label = <(IDENTIFIER,exchange,process(exchange))<SUB>318</SUB>> ]
+"796" [label = <(CONTROL_STRUCTURE,if (latch != null),if (latch != null))<SUB>321</SUB>> ]
+"797" [label = <(&lt;operator&gt;.notEquals,latch != null)<SUB>321</SUB>> ]
+"798" [label = <(&lt;operator&gt;.fieldAccess,this.latch)<SUB>321</SUB>> ]
+"799" [label = <(IDENTIFIER,this,latch != null)<SUB>321</SUB>> ]
+"800" [label = <(FIELD_IDENTIFIER,latch,latch)<SUB>321</SUB>> ]
+"801" [label = <(LITERAL,null,latch != null)<SUB>321</SUB>> ]
+"802" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>321</SUB>> ]
+"803" [label = <(countDown,latch.countDown())<SUB>322</SUB>> ]
+"804" [label = <(&lt;operator&gt;.fieldAccess,this.latch)<SUB>322</SUB>> ]
+"805" [label = <(IDENTIFIER,this,latch.countDown())<SUB>322</SUB>> ]
+"806" [label = <(FIELD_IDENTIFIER,latch,latch)<SUB>322</SUB>> ]
+"807" [label = <(BLOCK,catch,catch)> ]
+"808" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>325</SUB>> ]
+"809" [label = <(add,failures.add(e))<SUB>326</SUB>> ]
+"810" [label = <(&lt;operator&gt;.fieldAccess,this.failures)<SUB>326</SUB>> ]
+"811" [label = <(IDENTIFIER,this,failures.add(e))<SUB>326</SUB>> ]
+"812" [label = <(FIELD_IDENTIFIER,failures,failures)<SUB>326</SUB>> ]
+"813" [label = <(IDENTIFIER,e,failures.add(e))<SUB>326</SUB>> ]
+"814" [label = <(MODIFIER,PROTECTED)> ]
+"815" [label = <(MODIFIER,VIRTUAL)> ]
+"816" [label = <(METHOD_RETURN,void)<SUB>310</SUB>> ]
+  "761" -> "46" 
+  "761" -> "762" 
+  "761" -> "763" 
+  "761" -> "814" 
+  "761" -> "815" 
+  "761" -> "816" 
+  "763" -> "764" 
+  "764" -> "765" 
+  "764" -> "807" 
+  "765" -> "766" 
+  "765" -> "775" 
+  "765" -> "780" 
+  "765" -> "781" 
+  "765" -> "788" 
+  "765" -> "796" 
+  "766" -> "767" 
+  "766" -> "770" 
+  "767" -> "768" 
+  "767" -> "769" 
+  "770" -> "771" 
+  "770" -> "774" 
+  "771" -> "772" 
+  "771" -> "773" 
+  "772" -> "45" 
+  "775" -> "776" 
+  "775" -> "779" 
+  "776" -> "777" 
+  "776" -> "778" 
+  "781" -> "782" 
+  "781" -> "783" 
+  "783" -> "784" 
+  "783" -> "787" 
+  "784" -> "785" 
+  "784" -> "786" 
+  "787" -> "47" 
+  "788" -> "789" 
+  "788" -> "792" 
+  "789" -> "790" 
+  "789" -> "791" 
+  "792" -> "793" 
+  "793" -> "794" 
+  "793" -> "795" 
+  "796" -> "797" 
+  "796" -> "802" 
+  "797" -> "798" 
+  "797" -> "801" 
+  "798" -> "799" 
+  "798" -> "800" 
+  "802" -> "803" 
+  "803" -> "804" 
+  "804" -> "805" 
+  "804" -> "806" 
+  "807" -> "808" 
+  "808" -> "809" 
+  "809" -> "810" 
+  "809" -> "813" 
+  "810" -> "811" 
+  "810" -> "812" 
+}

@@ -1,0 +1,539 @@
+digraph "find" {  
+"488" [label = <(METHOD,find)<SUB>308</SUB>> ]
+"56" [label = <(PARAM,this)<SUB>308</SUB>> ]
+"489" [label = <(PARAM,Test test)<SUB>308</SUB>> ]
+"490" [label = <(PARAM,String packageName)<SUB>308</SUB>> ]
+"491" [label = <(PARAM,ClassLoader loader)<SUB>308</SUB>> ]
+"492" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>308</SUB>> ]
+"493" [label = <(CONTROL_STRUCTURE,if (LOG.isTraceEnabled()),if (LOG.isTraceEnabled()))<SUB>309</SUB>> ]
+"494" [label = <(isTraceEnabled,isTraceEnabled())<SUB>309</SUB>> ]
+"495" [label = <(&lt;operator&gt;.fieldAccess,ResolverUtil.LOG)<SUB>309</SUB>> ]
+"496" [label = <(IDENTIFIER,ResolverUtil,isTraceEnabled())<SUB>309</SUB>> ]
+"497" [label = <(FIELD_IDENTIFIER,LOG,LOG)<SUB>309</SUB>> ]
+"498" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>309</SUB>> ]
+"499" [label = <(trace,trace(&quot;Searching for: &quot; + test + &quot; in package: &quot; + packageName + &quot; using classloader: &quot; + loader.getClass().getName()))<SUB>310</SUB>> ]
+"500" [label = <(&lt;operator&gt;.fieldAccess,ResolverUtil.LOG)<SUB>310</SUB>> ]
+"501" [label = <(IDENTIFIER,ResolverUtil,trace(&quot;Searching for: &quot; + test + &quot; in package: &quot; + packageName + &quot; using classloader: &quot; + loader.getClass().getName()))<SUB>310</SUB>> ]
+"502" [label = <(FIELD_IDENTIFIER,LOG,LOG)<SUB>310</SUB>> ]
+"503" [label = <(&lt;operator&gt;.addition,&quot;Searching for: &quot; + test + &quot; in package: &quot; + packageName + &quot; using classloader: &quot; + loader.getClass().getName())<SUB>310</SUB>> ]
+"504" [label = <(&lt;operator&gt;.addition,&quot;Searching for: &quot; + test + &quot; in package: &quot; + packageName + &quot; using classloader: &quot;)<SUB>310</SUB>> ]
+"505" [label = <(&lt;operator&gt;.addition,&quot;Searching for: &quot; + test + &quot; in package: &quot; + packageName)<SUB>310</SUB>> ]
+"506" [label = <(&lt;operator&gt;.addition,&quot;Searching for: &quot; + test + &quot; in package: &quot;)<SUB>310</SUB>> ]
+"507" [label = <(&lt;operator&gt;.addition,&quot;Searching for: &quot; + test)<SUB>310</SUB>> ]
+"508" [label = <(LITERAL,&quot;Searching for: &quot;,&quot;Searching for: &quot; + test)<SUB>310</SUB>> ]
+"509" [label = <(IDENTIFIER,test,&quot;Searching for: &quot; + test)<SUB>310</SUB>> ]
+"510" [label = <(LITERAL,&quot; in package: &quot;,&quot;Searching for: &quot; + test + &quot; in package: &quot;)<SUB>310</SUB>> ]
+"511" [label = <(IDENTIFIER,packageName,&quot;Searching for: &quot; + test + &quot; in package: &quot; + packageName)<SUB>310</SUB>> ]
+"512" [label = <(LITERAL,&quot; using classloader: &quot;,&quot;Searching for: &quot; + test + &quot; in package: &quot; + packageName + &quot; using classloader: &quot;)<SUB>310</SUB>> ]
+"513" [label = <(getName,loader.getClass().getName())<SUB>311</SUB>> ]
+"514" [label = <(getClass,loader.getClass())<SUB>311</SUB>> ]
+"515" [label = <(IDENTIFIER,loader,loader.getClass())<SUB>311</SUB>> ]
+"516" [label = <(LOCAL,Enumeration&lt;URL&gt; urls: java.util.Enumeration)> ]
+"517" [label = <(CONTROL_STRUCTURE,try,try)<SUB>315</SUB>> ]
+"518" [label = <(BLOCK,try,try)<SUB>315</SUB>> ]
+"519" [label = <(&lt;operator&gt;.assignment,urls = this.getResources(loader, packageName))<SUB>316</SUB>> ]
+"520" [label = <(IDENTIFIER,urls,urls = this.getResources(loader, packageName))<SUB>316</SUB>> ]
+"521" [label = <(getResources,this.getResources(loader, packageName))<SUB>316</SUB>> ]
+"55" [label = <(IDENTIFIER,this,this.getResources(loader, packageName))<SUB>316</SUB>> ]
+"522" [label = <(IDENTIFIER,loader,this.getResources(loader, packageName))<SUB>316</SUB>> ]
+"523" [label = <(IDENTIFIER,packageName,this.getResources(loader, packageName))<SUB>316</SUB>> ]
+"524" [label = <(CONTROL_STRUCTURE,if (!urls.hasMoreElements()),if (!urls.hasMoreElements()))<SUB>317</SUB>> ]
+"525" [label = <(&lt;operator&gt;.logicalNot,!urls.hasMoreElements())<SUB>317</SUB>> ]
+"526" [label = <(hasMoreElements,urls.hasMoreElements())<SUB>317</SUB>> ]
+"527" [label = <(IDENTIFIER,urls,urls.hasMoreElements())<SUB>317</SUB>> ]
+"528" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>317</SUB>> ]
+"529" [label = <(trace,trace(&quot;No URLs returned by classloader&quot;))<SUB>318</SUB>> ]
+"530" [label = <(&lt;operator&gt;.fieldAccess,ResolverUtil.LOG)<SUB>318</SUB>> ]
+"531" [label = <(IDENTIFIER,ResolverUtil,trace(&quot;No URLs returned by classloader&quot;))<SUB>318</SUB>> ]
+"532" [label = <(FIELD_IDENTIFIER,LOG,LOG)<SUB>318</SUB>> ]
+"533" [label = <(LITERAL,&quot;No URLs returned by classloader&quot;,trace(&quot;No URLs returned by classloader&quot;))<SUB>318</SUB>> ]
+"534" [label = <(BLOCK,catch,catch)> ]
+"535" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>320</SUB>> ]
+"536" [label = <(warn,warn(&quot;Could not read package: &quot; + packageName, ioe))<SUB>321</SUB>> ]
+"537" [label = <(&lt;operator&gt;.fieldAccess,ResolverUtil.LOG)<SUB>321</SUB>> ]
+"538" [label = <(IDENTIFIER,ResolverUtil,warn(&quot;Could not read package: &quot; + packageName, ioe))<SUB>321</SUB>> ]
+"539" [label = <(FIELD_IDENTIFIER,LOG,LOG)<SUB>321</SUB>> ]
+"540" [label = <(&lt;operator&gt;.addition,&quot;Could not read package: &quot; + packageName)<SUB>321</SUB>> ]
+"541" [label = <(LITERAL,&quot;Could not read package: &quot;,&quot;Could not read package: &quot; + packageName)<SUB>321</SUB>> ]
+"542" [label = <(IDENTIFIER,packageName,&quot;Could not read package: &quot; + packageName)<SUB>321</SUB>> ]
+"543" [label = <(IDENTIFIER,ioe,warn(&quot;Could not read package: &quot; + packageName, ioe))<SUB>321</SUB>> ]
+"544" [label = <(RETURN,return;,return;)<SUB>322</SUB>> ]
+"545" [label = <(CONTROL_STRUCTURE,while (urls.hasMoreElements()),while (urls.hasMoreElements()))<SUB>325</SUB>> ]
+"546" [label = <(hasMoreElements,urls.hasMoreElements())<SUB>325</SUB>> ]
+"547" [label = <(IDENTIFIER,urls,urls.hasMoreElements())<SUB>325</SUB>> ]
+"548" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>325</SUB>> ]
+"549" [label = <(LOCAL,URL url: java.net.URL)> ]
+"550" [label = <(&lt;operator&gt;.assignment,URL url = null)<SUB>326</SUB>> ]
+"551" [label = <(IDENTIFIER,url,URL url = null)<SUB>326</SUB>> ]
+"552" [label = <(LITERAL,null,URL url = null)<SUB>326</SUB>> ]
+"553" [label = <(CONTROL_STRUCTURE,try,try)<SUB>327</SUB>> ]
+"554" [label = <(BLOCK,try,try)<SUB>327</SUB>> ]
+"555" [label = <(&lt;operator&gt;.assignment,url = urls.nextElement())<SUB>328</SUB>> ]
+"556" [label = <(IDENTIFIER,url,url = urls.nextElement())<SUB>328</SUB>> ]
+"557" [label = <(nextElement,urls.nextElement())<SUB>328</SUB>> ]
+"558" [label = <(IDENTIFIER,urls,urls.nextElement())<SUB>328</SUB>> ]
+"559" [label = <(CONTROL_STRUCTURE,if (LOG.isTraceEnabled()),if (LOG.isTraceEnabled()))<SUB>329</SUB>> ]
+"560" [label = <(isTraceEnabled,isTraceEnabled())<SUB>329</SUB>> ]
+"561" [label = <(&lt;operator&gt;.fieldAccess,ResolverUtil.LOG)<SUB>329</SUB>> ]
+"562" [label = <(IDENTIFIER,ResolverUtil,isTraceEnabled())<SUB>329</SUB>> ]
+"563" [label = <(FIELD_IDENTIFIER,LOG,LOG)<SUB>329</SUB>> ]
+"564" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>329</SUB>> ]
+"565" [label = <(trace,trace(&quot;URL from classloader: &quot; + url))<SUB>330</SUB>> ]
+"566" [label = <(&lt;operator&gt;.fieldAccess,ResolverUtil.LOG)<SUB>330</SUB>> ]
+"567" [label = <(IDENTIFIER,ResolverUtil,trace(&quot;URL from classloader: &quot; + url))<SUB>330</SUB>> ]
+"568" [label = <(FIELD_IDENTIFIER,LOG,LOG)<SUB>330</SUB>> ]
+"569" [label = <(&lt;operator&gt;.addition,&quot;URL from classloader: &quot; + url)<SUB>330</SUB>> ]
+"570" [label = <(LITERAL,&quot;URL from classloader: &quot;,&quot;URL from classloader: &quot; + url)<SUB>330</SUB>> ]
+"571" [label = <(IDENTIFIER,url,&quot;URL from classloader: &quot; + url)<SUB>330</SUB>> ]
+"572" [label = <(LOCAL,String urlPath: java.lang.String)> ]
+"573" [label = <(&lt;operator&gt;.assignment,String urlPath = url.getFile())<SUB>333</SUB>> ]
+"574" [label = <(IDENTIFIER,urlPath,String urlPath = url.getFile())<SUB>333</SUB>> ]
+"575" [label = <(getFile,url.getFile())<SUB>333</SUB>> ]
+"576" [label = <(IDENTIFIER,url,url.getFile())<SUB>333</SUB>> ]
+"577" [label = <(&lt;operator&gt;.assignment,urlPath = URLDecoder.decode(urlPath, &quot;UTF-8&quot;))<SUB>334</SUB>> ]
+"578" [label = <(IDENTIFIER,urlPath,urlPath = URLDecoder.decode(urlPath, &quot;UTF-8&quot;))<SUB>334</SUB>> ]
+"579" [label = <(decode,URLDecoder.decode(urlPath, &quot;UTF-8&quot;))<SUB>334</SUB>> ]
+"580" [label = <(IDENTIFIER,URLDecoder,URLDecoder.decode(urlPath, &quot;UTF-8&quot;))<SUB>334</SUB>> ]
+"581" [label = <(IDENTIFIER,urlPath,URLDecoder.decode(urlPath, &quot;UTF-8&quot;))<SUB>334</SUB>> ]
+"582" [label = <(LITERAL,&quot;UTF-8&quot;,URLDecoder.decode(urlPath, &quot;UTF-8&quot;))<SUB>334</SUB>> ]
+"583" [label = <(CONTROL_STRUCTURE,if (LOG.isTraceEnabled()),if (LOG.isTraceEnabled()))<SUB>335</SUB>> ]
+"584" [label = <(isTraceEnabled,isTraceEnabled())<SUB>335</SUB>> ]
+"585" [label = <(&lt;operator&gt;.fieldAccess,ResolverUtil.LOG)<SUB>335</SUB>> ]
+"586" [label = <(IDENTIFIER,ResolverUtil,isTraceEnabled())<SUB>335</SUB>> ]
+"587" [label = <(FIELD_IDENTIFIER,LOG,LOG)<SUB>335</SUB>> ]
+"588" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>335</SUB>> ]
+"589" [label = <(trace,trace(&quot;Decoded urlPath: &quot; + urlPath))<SUB>336</SUB>> ]
+"590" [label = <(&lt;operator&gt;.fieldAccess,ResolverUtil.LOG)<SUB>336</SUB>> ]
+"591" [label = <(IDENTIFIER,ResolverUtil,trace(&quot;Decoded urlPath: &quot; + urlPath))<SUB>336</SUB>> ]
+"592" [label = <(FIELD_IDENTIFIER,LOG,LOG)<SUB>336</SUB>> ]
+"593" [label = <(&lt;operator&gt;.addition,&quot;Decoded urlPath: &quot; + urlPath)<SUB>336</SUB>> ]
+"594" [label = <(LITERAL,&quot;Decoded urlPath: &quot;,&quot;Decoded urlPath: &quot; + urlPath)<SUB>336</SUB>> ]
+"595" [label = <(IDENTIFIER,urlPath,&quot;Decoded urlPath: &quot; + urlPath)<SUB>336</SUB>> ]
+"596" [label = <(CONTROL_STRUCTURE,if (urlPath.startsWith(&quot;file:&quot;)),if (urlPath.startsWith(&quot;file:&quot;)))<SUB>340</SUB>> ]
+"597" [label = <(startsWith,urlPath.startsWith(&quot;file:&quot;))<SUB>340</SUB>> ]
+"598" [label = <(IDENTIFIER,urlPath,urlPath.startsWith(&quot;file:&quot;))<SUB>340</SUB>> ]
+"599" [label = <(LITERAL,&quot;file:&quot;,urlPath.startsWith(&quot;file:&quot;))<SUB>340</SUB>> ]
+"600" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>340</SUB>> ]
+"601" [label = <(&lt;operator&gt;.assignment,urlPath = urlPath.substring(5))<SUB>341</SUB>> ]
+"602" [label = <(IDENTIFIER,urlPath,urlPath = urlPath.substring(5))<SUB>341</SUB>> ]
+"603" [label = <(substring,urlPath.substring(5))<SUB>341</SUB>> ]
+"604" [label = <(IDENTIFIER,urlPath,urlPath.substring(5))<SUB>341</SUB>> ]
+"605" [label = <(LITERAL,5,urlPath.substring(5))<SUB>341</SUB>> ]
+"606" [label = <(CONTROL_STRUCTURE,if (url.toString().startsWith(&quot;bundle:&quot;) || urlPath.startsWith(&quot;bundle:&quot;)),if (url.toString().startsWith(&quot;bundle:&quot;) || urlPath.startsWith(&quot;bundle:&quot;)))<SUB>345</SUB>> ]
+"607" [label = <(&lt;operator&gt;.logicalOr,url.toString().startsWith(&quot;bundle:&quot;) || urlPath.startsWith(&quot;bundle:&quot;))<SUB>345</SUB>> ]
+"608" [label = <(startsWith,url.toString().startsWith(&quot;bundle:&quot;))<SUB>345</SUB>> ]
+"609" [label = <(toString,url.toString())<SUB>345</SUB>> ]
+"610" [label = <(IDENTIFIER,url,url.toString())<SUB>345</SUB>> ]
+"611" [label = <(LITERAL,&quot;bundle:&quot;,url.toString().startsWith(&quot;bundle:&quot;))<SUB>345</SUB>> ]
+"612" [label = <(startsWith,urlPath.startsWith(&quot;bundle:&quot;))<SUB>345</SUB>> ]
+"613" [label = <(IDENTIFIER,urlPath,urlPath.startsWith(&quot;bundle:&quot;))<SUB>345</SUB>> ]
+"614" [label = <(LITERAL,&quot;bundle:&quot;,urlPath.startsWith(&quot;bundle:&quot;))<SUB>345</SUB>> ]
+"615" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>345</SUB>> ]
+"616" [label = <(trace,trace(&quot;It's a virtual osgi bundle, skipping&quot;))<SUB>346</SUB>> ]
+"617" [label = <(&lt;operator&gt;.fieldAccess,ResolverUtil.LOG)<SUB>346</SUB>> ]
+"618" [label = <(IDENTIFIER,ResolverUtil,trace(&quot;It's a virtual osgi bundle, skipping&quot;))<SUB>346</SUB>> ]
+"619" [label = <(FIELD_IDENTIFIER,LOG,LOG)<SUB>346</SUB>> ]
+"620" [label = <(LITERAL,&quot;It's a virtual osgi bundle, skipping&quot;,trace(&quot;It's a virtual osgi bundle, skipping&quot;))<SUB>346</SUB>> ]
+"621" [label = <(CONTROL_STRUCTURE,continue;,continue;)<SUB>347</SUB>> ]
+"622" [label = <(CONTROL_STRUCTURE,if (urlPath.indexOf('!') &gt; 0),if (urlPath.indexOf('!') &gt; 0))<SUB>351</SUB>> ]
+"623" [label = <(&lt;operator&gt;.greaterThan,urlPath.indexOf('!') &gt; 0)<SUB>351</SUB>> ]
+"624" [label = <(indexOf,urlPath.indexOf('!'))<SUB>351</SUB>> ]
+"625" [label = <(IDENTIFIER,urlPath,urlPath.indexOf('!'))<SUB>351</SUB>> ]
+"626" [label = <(LITERAL,'!',urlPath.indexOf('!'))<SUB>351</SUB>> ]
+"627" [label = <(LITERAL,0,urlPath.indexOf('!') &gt; 0)<SUB>351</SUB>> ]
+"628" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>351</SUB>> ]
+"629" [label = <(&lt;operator&gt;.assignment,urlPath = urlPath.substring(0, urlPath.indexOf('!')))<SUB>352</SUB>> ]
+"630" [label = <(IDENTIFIER,urlPath,urlPath = urlPath.substring(0, urlPath.indexOf('!')))<SUB>352</SUB>> ]
+"631" [label = <(substring,urlPath.substring(0, urlPath.indexOf('!')))<SUB>352</SUB>> ]
+"632" [label = <(IDENTIFIER,urlPath,urlPath.substring(0, urlPath.indexOf('!')))<SUB>352</SUB>> ]
+"633" [label = <(LITERAL,0,urlPath.substring(0, urlPath.indexOf('!')))<SUB>352</SUB>> ]
+"634" [label = <(indexOf,urlPath.indexOf('!'))<SUB>352</SUB>> ]
+"635" [label = <(IDENTIFIER,urlPath,urlPath.indexOf('!'))<SUB>352</SUB>> ]
+"636" [label = <(LITERAL,'!',urlPath.indexOf('!'))<SUB>352</SUB>> ]
+"637" [label = <(CONTROL_STRUCTURE,if (LOG.isTraceEnabled()),if (LOG.isTraceEnabled()))<SUB>355</SUB>> ]
+"638" [label = <(isTraceEnabled,isTraceEnabled())<SUB>355</SUB>> ]
+"639" [label = <(&lt;operator&gt;.fieldAccess,ResolverUtil.LOG)<SUB>355</SUB>> ]
+"640" [label = <(IDENTIFIER,ResolverUtil,isTraceEnabled())<SUB>355</SUB>> ]
+"641" [label = <(FIELD_IDENTIFIER,LOG,LOG)<SUB>355</SUB>> ]
+"642" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>355</SUB>> ]
+"643" [label = <(trace,trace(&quot;Scanning for classes in [&quot; + urlPath + &quot;] matching criteria: &quot; + test))<SUB>356</SUB>> ]
+"644" [label = <(&lt;operator&gt;.fieldAccess,ResolverUtil.LOG)<SUB>356</SUB>> ]
+"645" [label = <(IDENTIFIER,ResolverUtil,trace(&quot;Scanning for classes in [&quot; + urlPath + &quot;] matching criteria: &quot; + test))<SUB>356</SUB>> ]
+"646" [label = <(FIELD_IDENTIFIER,LOG,LOG)<SUB>356</SUB>> ]
+"647" [label = <(&lt;operator&gt;.addition,&quot;Scanning for classes in [&quot; + urlPath + &quot;] matching criteria: &quot; + test)<SUB>356</SUB>> ]
+"648" [label = <(&lt;operator&gt;.addition,&quot;Scanning for classes in [&quot; + urlPath + &quot;] matching criteria: &quot;)<SUB>356</SUB>> ]
+"649" [label = <(&lt;operator&gt;.addition,&quot;Scanning for classes in [&quot; + urlPath)<SUB>356</SUB>> ]
+"650" [label = <(LITERAL,&quot;Scanning for classes in [&quot;,&quot;Scanning for classes in [&quot; + urlPath)<SUB>356</SUB>> ]
+"651" [label = <(IDENTIFIER,urlPath,&quot;Scanning for classes in [&quot; + urlPath)<SUB>356</SUB>> ]
+"652" [label = <(LITERAL,&quot;] matching criteria: &quot;,&quot;Scanning for classes in [&quot; + urlPath + &quot;] matching criteria: &quot;)<SUB>356</SUB>> ]
+"653" [label = <(IDENTIFIER,test,&quot;Scanning for classes in [&quot; + urlPath + &quot;] matching criteria: &quot; + test)<SUB>356</SUB>> ]
+"58" [label = <(LOCAL,File file: java.io.File)> ]
+"654" [label = <(&lt;operator&gt;.assignment,File file = new File(urlPath))<SUB>359</SUB>> ]
+"655" [label = <(IDENTIFIER,file,File file = new File(urlPath))<SUB>359</SUB>> ]
+"656" [label = <(&lt;operator&gt;.alloc,new File(urlPath))<SUB>359</SUB>> ]
+"657" [label = <(&lt;init&gt;,new File(urlPath))<SUB>359</SUB>> ]
+"57" [label = <(IDENTIFIER,file,new File(urlPath))<SUB>359</SUB>> ]
+"658" [label = <(IDENTIFIER,urlPath,new File(urlPath))<SUB>359</SUB>> ]
+"659" [label = <(CONTROL_STRUCTURE,if (file.isDirectory()),if (file.isDirectory()))<SUB>360</SUB>> ]
+"660" [label = <(isDirectory,file.isDirectory())<SUB>360</SUB>> ]
+"661" [label = <(IDENTIFIER,file,file.isDirectory())<SUB>360</SUB>> ]
+"662" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>360</SUB>> ]
+"663" [label = <(CONTROL_STRUCTURE,if (LOG.isDebugEnabled()),if (LOG.isDebugEnabled()))<SUB>361</SUB>> ]
+"664" [label = <(isDebugEnabled,isDebugEnabled())<SUB>361</SUB>> ]
+"665" [label = <(&lt;operator&gt;.fieldAccess,ResolverUtil.LOG)<SUB>361</SUB>> ]
+"666" [label = <(IDENTIFIER,ResolverUtil,isDebugEnabled())<SUB>361</SUB>> ]
+"667" [label = <(FIELD_IDENTIFIER,LOG,LOG)<SUB>361</SUB>> ]
+"668" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>361</SUB>> ]
+"669" [label = <(debug,debug(&quot;Loading from directory: &quot; + file))<SUB>362</SUB>> ]
+"670" [label = <(&lt;operator&gt;.fieldAccess,ResolverUtil.LOG)<SUB>362</SUB>> ]
+"671" [label = <(IDENTIFIER,ResolverUtil,debug(&quot;Loading from directory: &quot; + file))<SUB>362</SUB>> ]
+"672" [label = <(FIELD_IDENTIFIER,LOG,LOG)<SUB>362</SUB>> ]
+"673" [label = <(&lt;operator&gt;.addition,&quot;Loading from directory: &quot; + file)<SUB>362</SUB>> ]
+"674" [label = <(LITERAL,&quot;Loading from directory: &quot;,&quot;Loading from directory: &quot; + file)<SUB>362</SUB>> ]
+"675" [label = <(IDENTIFIER,file,&quot;Loading from directory: &quot; + file)<SUB>362</SUB>> ]
+"676" [label = <(loadImplementationsInDirectory,this.loadImplementationsInDirectory(test, packageName, file))<SUB>364</SUB>> ]
+"59" [label = <(IDENTIFIER,this,this.loadImplementationsInDirectory(test, packageName, file))<SUB>364</SUB>> ]
+"677" [label = <(IDENTIFIER,test,this.loadImplementationsInDirectory(test, packageName, file))<SUB>364</SUB>> ]
+"678" [label = <(IDENTIFIER,packageName,this.loadImplementationsInDirectory(test, packageName, file))<SUB>364</SUB>> ]
+"679" [label = <(IDENTIFIER,file,this.loadImplementationsInDirectory(test, packageName, file))<SUB>364</SUB>> ]
+"680" [label = <(CONTROL_STRUCTURE,else,else)<SUB>365</SUB>> ]
+"681" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>365</SUB>> ]
+"63" [label = <(LOCAL,InputStream stream: java.io.InputStream)> ]
+"682" [label = <(CONTROL_STRUCTURE,if (urlPath.startsWith(&quot;http:&quot;)),if (urlPath.startsWith(&quot;http:&quot;)))<SUB>367</SUB>> ]
+"683" [label = <(startsWith,urlPath.startsWith(&quot;http:&quot;))<SUB>367</SUB>> ]
+"684" [label = <(IDENTIFIER,urlPath,urlPath.startsWith(&quot;http:&quot;))<SUB>367</SUB>> ]
+"685" [label = <(LITERAL,&quot;http:&quot;,urlPath.startsWith(&quot;http:&quot;))<SUB>367</SUB>> ]
+"686" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>367</SUB>> ]
+"687" [label = <(debug,debug(&quot;The current jar is accessed via http&quot;))<SUB>369</SUB>> ]
+"688" [label = <(&lt;operator&gt;.fieldAccess,ResolverUtil.LOG)<SUB>369</SUB>> ]
+"689" [label = <(IDENTIFIER,ResolverUtil,debug(&quot;The current jar is accessed via http&quot;))<SUB>369</SUB>> ]
+"690" [label = <(FIELD_IDENTIFIER,LOG,LOG)<SUB>369</SUB>> ]
+"691" [label = <(LITERAL,&quot;The current jar is accessed via http&quot;,debug(&quot;The current jar is accessed via http&quot;))<SUB>369</SUB>> ]
+"61" [label = <(LOCAL,URL urlStream: java.net.URL)> ]
+"692" [label = <(&lt;operator&gt;.assignment,URL urlStream = new URL(urlPath))<SUB>370</SUB>> ]
+"693" [label = <(IDENTIFIER,urlStream,URL urlStream = new URL(urlPath))<SUB>370</SUB>> ]
+"694" [label = <(&lt;operator&gt;.alloc,new URL(urlPath))<SUB>370</SUB>> ]
+"695" [label = <(&lt;init&gt;,new URL(urlPath))<SUB>370</SUB>> ]
+"60" [label = <(IDENTIFIER,urlStream,new URL(urlPath))<SUB>370</SUB>> ]
+"696" [label = <(IDENTIFIER,urlPath,new URL(urlPath))<SUB>370</SUB>> ]
+"697" [label = <(LOCAL,URLConnection con: java.net.URLConnection)> ]
+"698" [label = <(&lt;operator&gt;.assignment,URLConnection con = urlStream.openConnection())<SUB>371</SUB>> ]
+"699" [label = <(IDENTIFIER,con,URLConnection con = urlStream.openConnection())<SUB>371</SUB>> ]
+"700" [label = <(openConnection,urlStream.openConnection())<SUB>371</SUB>> ]
+"701" [label = <(IDENTIFIER,urlStream,urlStream.openConnection())<SUB>371</SUB>> ]
+"702" [label = <(setUseCaches,con.setUseCaches(false))<SUB>373</SUB>> ]
+"703" [label = <(IDENTIFIER,con,con.setUseCaches(false))<SUB>373</SUB>> ]
+"704" [label = <(LITERAL,false,con.setUseCaches(false))<SUB>373</SUB>> ]
+"705" [label = <(&lt;operator&gt;.assignment,stream = con.getInputStream())<SUB>374</SUB>> ]
+"706" [label = <(IDENTIFIER,stream,stream = con.getInputStream())<SUB>374</SUB>> ]
+"707" [label = <(getInputStream,con.getInputStream())<SUB>374</SUB>> ]
+"708" [label = <(IDENTIFIER,con,con.getInputStream())<SUB>374</SUB>> ]
+"709" [label = <(CONTROL_STRUCTURE,else,else)<SUB>375</SUB>> ]
+"710" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>375</SUB>> ]
+"711" [label = <(&lt;operator&gt;.assignment,stream = new FileInputStream(file))<SUB>376</SUB>> ]
+"712" [label = <(IDENTIFIER,stream,stream = new FileInputStream(file))<SUB>376</SUB>> ]
+"713" [label = <(&lt;operator&gt;.alloc,new FileInputStream(file))<SUB>376</SUB>> ]
+"714" [label = <(&lt;init&gt;,new FileInputStream(file))<SUB>376</SUB>> ]
+"62" [label = <(IDENTIFIER,stream,new FileInputStream(file))<SUB>376</SUB>> ]
+"715" [label = <(IDENTIFIER,file,new FileInputStream(file))<SUB>376</SUB>> ]
+"716" [label = <(CONTROL_STRUCTURE,if (LOG.isDebugEnabled()),if (LOG.isDebugEnabled()))<SUB>379</SUB>> ]
+"717" [label = <(isDebugEnabled,isDebugEnabled())<SUB>379</SUB>> ]
+"718" [label = <(&lt;operator&gt;.fieldAccess,ResolverUtil.LOG)<SUB>379</SUB>> ]
+"719" [label = <(IDENTIFIER,ResolverUtil,isDebugEnabled())<SUB>379</SUB>> ]
+"720" [label = <(FIELD_IDENTIFIER,LOG,LOG)<SUB>379</SUB>> ]
+"721" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>379</SUB>> ]
+"722" [label = <(debug,debug(&quot;Loading from jar: &quot; + file))<SUB>380</SUB>> ]
+"723" [label = <(&lt;operator&gt;.fieldAccess,ResolverUtil.LOG)<SUB>380</SUB>> ]
+"724" [label = <(IDENTIFIER,ResolverUtil,debug(&quot;Loading from jar: &quot; + file))<SUB>380</SUB>> ]
+"725" [label = <(FIELD_IDENTIFIER,LOG,LOG)<SUB>380</SUB>> ]
+"726" [label = <(&lt;operator&gt;.addition,&quot;Loading from jar: &quot; + file)<SUB>380</SUB>> ]
+"727" [label = <(LITERAL,&quot;Loading from jar: &quot;,&quot;Loading from jar: &quot; + file)<SUB>380</SUB>> ]
+"728" [label = <(IDENTIFIER,file,&quot;Loading from jar: &quot; + file)<SUB>380</SUB>> ]
+"729" [label = <(loadImplementationsInJar,this.loadImplementationsInJar(test, packageName, stream, urlPath))<SUB>382</SUB>> ]
+"64" [label = <(IDENTIFIER,this,this.loadImplementationsInJar(test, packageName, stream, urlPath))<SUB>382</SUB>> ]
+"730" [label = <(IDENTIFIER,test,this.loadImplementationsInJar(test, packageName, stream, urlPath))<SUB>382</SUB>> ]
+"731" [label = <(IDENTIFIER,packageName,this.loadImplementationsInJar(test, packageName, stream, urlPath))<SUB>382</SUB>> ]
+"732" [label = <(IDENTIFIER,stream,this.loadImplementationsInJar(test, packageName, stream, urlPath))<SUB>382</SUB>> ]
+"733" [label = <(IDENTIFIER,urlPath,this.loadImplementationsInJar(test, packageName, stream, urlPath))<SUB>382</SUB>> ]
+"734" [label = <(BLOCK,catch,catch)> ]
+"735" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>384</SUB>> ]
+"736" [label = <(warn,warn(&quot;Could not read entries in url: &quot; + url, ioe))<SUB>385</SUB>> ]
+"737" [label = <(&lt;operator&gt;.fieldAccess,ResolverUtil.LOG)<SUB>385</SUB>> ]
+"738" [label = <(IDENTIFIER,ResolverUtil,warn(&quot;Could not read entries in url: &quot; + url, ioe))<SUB>385</SUB>> ]
+"739" [label = <(FIELD_IDENTIFIER,LOG,LOG)<SUB>385</SUB>> ]
+"740" [label = <(&lt;operator&gt;.addition,&quot;Could not read entries in url: &quot; + url)<SUB>385</SUB>> ]
+"741" [label = <(LITERAL,&quot;Could not read entries in url: &quot;,&quot;Could not read entries in url: &quot; + url)<SUB>385</SUB>> ]
+"742" [label = <(IDENTIFIER,url,&quot;Could not read entries in url: &quot; + url)<SUB>385</SUB>> ]
+"743" [label = <(IDENTIFIER,ioe,warn(&quot;Could not read entries in url: &quot; + url, ioe))<SUB>385</SUB>> ]
+"744" [label = <(MODIFIER,PROTECTED)> ]
+"745" [label = <(MODIFIER,VIRTUAL)> ]
+"746" [label = <(METHOD_RETURN,void)<SUB>308</SUB>> ]
+  "488" -> "56" 
+  "488" -> "489" 
+  "488" -> "490" 
+  "488" -> "491" 
+  "488" -> "492" 
+  "488" -> "744" 
+  "488" -> "745" 
+  "488" -> "746" 
+  "492" -> "493" 
+  "492" -> "516" 
+  "492" -> "517" 
+  "492" -> "545" 
+  "493" -> "494" 
+  "493" -> "498" 
+  "494" -> "495" 
+  "495" -> "496" 
+  "495" -> "497" 
+  "498" -> "499" 
+  "499" -> "500" 
+  "499" -> "503" 
+  "500" -> "501" 
+  "500" -> "502" 
+  "503" -> "504" 
+  "503" -> "513" 
+  "504" -> "505" 
+  "504" -> "512" 
+  "505" -> "506" 
+  "505" -> "511" 
+  "506" -> "507" 
+  "506" -> "510" 
+  "507" -> "508" 
+  "507" -> "509" 
+  "513" -> "514" 
+  "514" -> "515" 
+  "517" -> "518" 
+  "517" -> "534" 
+  "518" -> "519" 
+  "518" -> "524" 
+  "519" -> "520" 
+  "519" -> "521" 
+  "521" -> "55" 
+  "521" -> "522" 
+  "521" -> "523" 
+  "524" -> "525" 
+  "524" -> "528" 
+  "525" -> "526" 
+  "526" -> "527" 
+  "528" -> "529" 
+  "529" -> "530" 
+  "529" -> "533" 
+  "530" -> "531" 
+  "530" -> "532" 
+  "534" -> "535" 
+  "535" -> "536" 
+  "535" -> "544" 
+  "536" -> "537" 
+  "536" -> "540" 
+  "536" -> "543" 
+  "537" -> "538" 
+  "537" -> "539" 
+  "540" -> "541" 
+  "540" -> "542" 
+  "545" -> "546" 
+  "545" -> "548" 
+  "546" -> "547" 
+  "548" -> "549" 
+  "548" -> "550" 
+  "548" -> "553" 
+  "550" -> "551" 
+  "550" -> "552" 
+  "553" -> "554" 
+  "553" -> "734" 
+  "554" -> "555" 
+  "554" -> "559" 
+  "554" -> "572" 
+  "554" -> "573" 
+  "554" -> "577" 
+  "554" -> "583" 
+  "554" -> "596" 
+  "554" -> "606" 
+  "554" -> "622" 
+  "554" -> "637" 
+  "554" -> "58" 
+  "554" -> "654" 
+  "554" -> "657" 
+  "554" -> "659" 
+  "555" -> "556" 
+  "555" -> "557" 
+  "557" -> "558" 
+  "559" -> "560" 
+  "559" -> "564" 
+  "560" -> "561" 
+  "561" -> "562" 
+  "561" -> "563" 
+  "564" -> "565" 
+  "565" -> "566" 
+  "565" -> "569" 
+  "566" -> "567" 
+  "566" -> "568" 
+  "569" -> "570" 
+  "569" -> "571" 
+  "573" -> "574" 
+  "573" -> "575" 
+  "575" -> "576" 
+  "577" -> "578" 
+  "577" -> "579" 
+  "579" -> "580" 
+  "579" -> "581" 
+  "579" -> "582" 
+  "583" -> "584" 
+  "583" -> "588" 
+  "584" -> "585" 
+  "585" -> "586" 
+  "585" -> "587" 
+  "588" -> "589" 
+  "589" -> "590" 
+  "589" -> "593" 
+  "590" -> "591" 
+  "590" -> "592" 
+  "593" -> "594" 
+  "593" -> "595" 
+  "596" -> "597" 
+  "596" -> "600" 
+  "597" -> "598" 
+  "597" -> "599" 
+  "600" -> "601" 
+  "601" -> "602" 
+  "601" -> "603" 
+  "603" -> "604" 
+  "603" -> "605" 
+  "606" -> "607" 
+  "606" -> "615" 
+  "607" -> "608" 
+  "607" -> "612" 
+  "608" -> "609" 
+  "608" -> "611" 
+  "609" -> "610" 
+  "612" -> "613" 
+  "612" -> "614" 
+  "615" -> "616" 
+  "615" -> "621" 
+  "616" -> "617" 
+  "616" -> "620" 
+  "617" -> "618" 
+  "617" -> "619" 
+  "622" -> "623" 
+  "622" -> "628" 
+  "623" -> "624" 
+  "623" -> "627" 
+  "624" -> "625" 
+  "624" -> "626" 
+  "628" -> "629" 
+  "629" -> "630" 
+  "629" -> "631" 
+  "631" -> "632" 
+  "631" -> "633" 
+  "631" -> "634" 
+  "634" -> "635" 
+  "634" -> "636" 
+  "637" -> "638" 
+  "637" -> "642" 
+  "638" -> "639" 
+  "639" -> "640" 
+  "639" -> "641" 
+  "642" -> "643" 
+  "643" -> "644" 
+  "643" -> "647" 
+  "644" -> "645" 
+  "644" -> "646" 
+  "647" -> "648" 
+  "647" -> "653" 
+  "648" -> "649" 
+  "648" -> "652" 
+  "649" -> "650" 
+  "649" -> "651" 
+  "654" -> "655" 
+  "654" -> "656" 
+  "657" -> "57" 
+  "657" -> "658" 
+  "659" -> "660" 
+  "659" -> "662" 
+  "659" -> "680" 
+  "660" -> "661" 
+  "662" -> "663" 
+  "662" -> "676" 
+  "663" -> "664" 
+  "663" -> "668" 
+  "664" -> "665" 
+  "665" -> "666" 
+  "665" -> "667" 
+  "668" -> "669" 
+  "669" -> "670" 
+  "669" -> "673" 
+  "670" -> "671" 
+  "670" -> "672" 
+  "673" -> "674" 
+  "673" -> "675" 
+  "676" -> "59" 
+  "676" -> "677" 
+  "676" -> "678" 
+  "676" -> "679" 
+  "680" -> "681" 
+  "681" -> "63" 
+  "681" -> "682" 
+  "681" -> "716" 
+  "681" -> "729" 
+  "682" -> "683" 
+  "682" -> "686" 
+  "682" -> "709" 
+  "683" -> "684" 
+  "683" -> "685" 
+  "686" -> "687" 
+  "686" -> "61" 
+  "686" -> "692" 
+  "686" -> "695" 
+  "686" -> "697" 
+  "686" -> "698" 
+  "686" -> "702" 
+  "686" -> "705" 
+  "687" -> "688" 
+  "687" -> "691" 
+  "688" -> "689" 
+  "688" -> "690" 
+  "692" -> "693" 
+  "692" -> "694" 
+  "695" -> "60" 
+  "695" -> "696" 
+  "698" -> "699" 
+  "698" -> "700" 
+  "700" -> "701" 
+  "702" -> "703" 
+  "702" -> "704" 
+  "705" -> "706" 
+  "705" -> "707" 
+  "707" -> "708" 
+  "709" -> "710" 
+  "710" -> "711" 
+  "710" -> "714" 
+  "711" -> "712" 
+  "711" -> "713" 
+  "714" -> "62" 
+  "714" -> "715" 
+  "716" -> "717" 
+  "716" -> "721" 
+  "717" -> "718" 
+  "718" -> "719" 
+  "718" -> "720" 
+  "721" -> "722" 
+  "722" -> "723" 
+  "722" -> "726" 
+  "723" -> "724" 
+  "723" -> "725" 
+  "726" -> "727" 
+  "726" -> "728" 
+  "729" -> "64" 
+  "729" -> "730" 
+  "729" -> "731" 
+  "729" -> "732" 
+  "729" -> "733" 
+  "734" -> "735" 
+  "735" -> "736" 
+  "736" -> "737" 
+  "736" -> "740" 
+  "736" -> "743" 
+  "737" -> "738" 
+  "737" -> "739" 
+  "740" -> "741" 
+  "740" -> "742" 
+}

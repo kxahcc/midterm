@@ -1,0 +1,163 @@
+digraph "checkPermission" {  
+"653" [label = <(METHOD,checkPermission)<SUB>184</SUB>> ]
+"16" [label = <(PARAM,this)<SUB>184</SUB>> ]
+"654" [label = <(PARAM,java.security.Permission perm)<SUB>184</SUB>> ]
+"655" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>184</SUB>> ]
+"656" [label = <(CONTROL_STRUCTURE,if (active),if (active))<SUB>185</SUB>> ]
+"657" [label = <(&lt;operator&gt;.fieldAccess,this.active)<SUB>185</SUB>> ]
+"658" [label = <(IDENTIFIER,this,if (active))<SUB>185</SUB>> ]
+"659" [label = <(FIELD_IDENTIFIER,active,active)<SUB>185</SUB>> ]
+"660" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>185</SUB>> ]
+"661" [label = <(CONTROL_STRUCTURE,if (delegateToOldSM &amp;&amp; !perm.getName().equals(&quot;exitVM&quot;)),if (delegateToOldSM &amp;&amp; !perm.getName().equals(&quot;exitVM&quot;)))<SUB>186</SUB>> ]
+"662" [label = <(&lt;operator&gt;.logicalAnd,delegateToOldSM &amp;&amp; !perm.getName().equals(&quot;exitVM&quot;))<SUB>186</SUB>> ]
+"663" [label = <(&lt;operator&gt;.fieldAccess,this.delegateToOldSM)<SUB>186</SUB>> ]
+"664" [label = <(IDENTIFIER,this,delegateToOldSM &amp;&amp; !perm.getName().equals(&quot;exitVM&quot;))<SUB>186</SUB>> ]
+"665" [label = <(FIELD_IDENTIFIER,delegateToOldSM,delegateToOldSM)<SUB>186</SUB>> ]
+"666" [label = <(&lt;operator&gt;.logicalNot,!perm.getName().equals(&quot;exitVM&quot;))<SUB>186</SUB>> ]
+"667" [label = <(equals,perm.getName().equals(&quot;exitVM&quot;))<SUB>186</SUB>> ]
+"668" [label = <(getName,perm.getName())<SUB>186</SUB>> ]
+"669" [label = <(IDENTIFIER,perm,perm.getName())<SUB>186</SUB>> ]
+"670" [label = <(LITERAL,&quot;exitVM&quot;,perm.getName().equals(&quot;exitVM&quot;))<SUB>186</SUB>> ]
+"671" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>186</SUB>> ]
+"672" [label = <(LOCAL,boolean permOK: boolean)> ]
+"673" [label = <(&lt;operator&gt;.assignment,boolean permOK = false)<SUB>187</SUB>> ]
+"674" [label = <(IDENTIFIER,permOK,boolean permOK = false)<SUB>187</SUB>> ]
+"675" [label = <(LITERAL,false,boolean permOK = false)<SUB>187</SUB>> ]
+"676" [label = <(CONTROL_STRUCTURE,if (granted.implies(perm)),if (granted.implies(perm)))<SUB>188</SUB>> ]
+"677" [label = <(implies,granted.implies(perm))<SUB>188</SUB>> ]
+"678" [label = <(&lt;operator&gt;.fieldAccess,this.granted)<SUB>188</SUB>> ]
+"679" [label = <(IDENTIFIER,this,granted.implies(perm))<SUB>188</SUB>> ]
+"680" [label = <(FIELD_IDENTIFIER,granted,granted)<SUB>188</SUB>> ]
+"681" [label = <(IDENTIFIER,perm,granted.implies(perm))<SUB>188</SUB>> ]
+"682" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>188</SUB>> ]
+"683" [label = <(&lt;operator&gt;.assignment,permOK = true)<SUB>189</SUB>> ]
+"684" [label = <(IDENTIFIER,permOK,permOK = true)<SUB>189</SUB>> ]
+"685" [label = <(LITERAL,true,permOK = true)<SUB>189</SUB>> ]
+"686" [label = <(checkRevoked,this.checkRevoked(perm))<SUB>191</SUB>> ]
+"15" [label = <(IDENTIFIER,this,this.checkRevoked(perm))<SUB>191</SUB>> ]
+"687" [label = <(IDENTIFIER,perm,this.checkRevoked(perm))<SUB>191</SUB>> ]
+"688" [label = <(CONTROL_STRUCTURE,if (!permOK &amp;&amp; origSm != null),if (!permOK &amp;&amp; origSm != null))<SUB>196</SUB>> ]
+"689" [label = <(&lt;operator&gt;.logicalAnd,!permOK &amp;&amp; origSm != null)<SUB>196</SUB>> ]
+"690" [label = <(&lt;operator&gt;.logicalNot,!permOK)<SUB>196</SUB>> ]
+"691" [label = <(IDENTIFIER,permOK,!permOK)<SUB>196</SUB>> ]
+"692" [label = <(&lt;operator&gt;.notEquals,origSm != null)<SUB>196</SUB>> ]
+"693" [label = <(&lt;operator&gt;.fieldAccess,this.origSm)<SUB>196</SUB>> ]
+"694" [label = <(IDENTIFIER,this,origSm != null)<SUB>196</SUB>> ]
+"695" [label = <(FIELD_IDENTIFIER,origSm,origSm)<SUB>196</SUB>> ]
+"696" [label = <(LITERAL,null,origSm != null)<SUB>196</SUB>> ]
+"697" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>196</SUB>> ]
+"698" [label = <(checkPermission,origSm.checkPermission(perm))<SUB>197</SUB>> ]
+"699" [label = <(&lt;operator&gt;.fieldAccess,this.origSm)<SUB>197</SUB>> ]
+"700" [label = <(IDENTIFIER,this,origSm.checkPermission(perm))<SUB>197</SUB>> ]
+"701" [label = <(FIELD_IDENTIFIER,origSm,origSm)<SUB>197</SUB>> ]
+"702" [label = <(IDENTIFIER,perm,origSm.checkPermission(perm))<SUB>197</SUB>> ]
+"703" [label = <(CONTROL_STRUCTURE,else,else)<SUB>199</SUB>> ]
+"704" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>199</SUB>> ]
+"705" [label = <(CONTROL_STRUCTURE,if (!granted.implies(perm)),if (!granted.implies(perm)))<SUB>200</SUB>> ]
+"706" [label = <(&lt;operator&gt;.logicalNot,!granted.implies(perm))<SUB>200</SUB>> ]
+"707" [label = <(implies,granted.implies(perm))<SUB>200</SUB>> ]
+"708" [label = <(&lt;operator&gt;.fieldAccess,this.granted)<SUB>200</SUB>> ]
+"709" [label = <(IDENTIFIER,this,granted.implies(perm))<SUB>200</SUB>> ]
+"710" [label = <(FIELD_IDENTIFIER,granted,granted)<SUB>200</SUB>> ]
+"711" [label = <(IDENTIFIER,perm,granted.implies(perm))<SUB>200</SUB>> ]
+"712" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>200</SUB>> ]
+"713" [label = <(&lt;operator&gt;.throw,throw new SecurityException(&quot;Permission &quot; + perm + &quot; was not granted.&quot;);)<SUB>201</SUB>> ]
+"714" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>201</SUB>> ]
+"715" [label = <(&lt;operator&gt;.assignment,&lt;empty&gt;)> ]
+"716" [label = <(IDENTIFIER,$obj30,&lt;empty&gt;)> ]
+"717" [label = <(&lt;operator&gt;.alloc,new SecurityException(&quot;Permission &quot; + perm + &quot; was not granted.&quot;))<SUB>201</SUB>> ]
+"718" [label = <(&lt;init&gt;,new SecurityException(&quot;Permission &quot; + perm + &quot; was not granted.&quot;))<SUB>201</SUB>> ]
+"719" [label = <(IDENTIFIER,$obj30,new SecurityException(&quot;Permission &quot; + perm + &quot; was not granted.&quot;))> ]
+"720" [label = <(&lt;operator&gt;.addition,&quot;Permission &quot; + perm + &quot; was not granted.&quot;)<SUB>201</SUB>> ]
+"721" [label = <(&lt;operator&gt;.addition,&quot;Permission &quot; + perm)<SUB>201</SUB>> ]
+"722" [label = <(LITERAL,&quot;Permission &quot;,&quot;Permission &quot; + perm)<SUB>201</SUB>> ]
+"723" [label = <(IDENTIFIER,perm,&quot;Permission &quot; + perm)<SUB>201</SUB>> ]
+"724" [label = <(LITERAL,&quot; was not granted.&quot;,&quot;Permission &quot; + perm + &quot; was not granted.&quot;)<SUB>201</SUB>> ]
+"725" [label = <(IDENTIFIER,$obj30,&lt;empty&gt;)> ]
+"726" [label = <(checkRevoked,this.checkRevoked(perm))<SUB>203</SUB>> ]
+"17" [label = <(IDENTIFIER,this,this.checkRevoked(perm))<SUB>203</SUB>> ]
+"727" [label = <(IDENTIFIER,perm,this.checkRevoked(perm))<SUB>203</SUB>> ]
+"728" [label = <(MODIFIER,PUBLIC)> ]
+"729" [label = <(MODIFIER,VIRTUAL)> ]
+"730" [label = <(METHOD_RETURN,void)<SUB>184</SUB>> ]
+  "653" -> "16" 
+  "653" -> "654" 
+  "653" -> "655" 
+  "653" -> "728" 
+  "653" -> "729" 
+  "653" -> "730" 
+  "655" -> "656" 
+  "656" -> "657" 
+  "656" -> "660" 
+  "657" -> "658" 
+  "657" -> "659" 
+  "660" -> "661" 
+  "661" -> "662" 
+  "661" -> "671" 
+  "661" -> "703" 
+  "662" -> "663" 
+  "662" -> "666" 
+  "663" -> "664" 
+  "663" -> "665" 
+  "666" -> "667" 
+  "667" -> "668" 
+  "667" -> "670" 
+  "668" -> "669" 
+  "671" -> "672" 
+  "671" -> "673" 
+  "671" -> "676" 
+  "671" -> "686" 
+  "671" -> "688" 
+  "673" -> "674" 
+  "673" -> "675" 
+  "676" -> "677" 
+  "676" -> "682" 
+  "677" -> "678" 
+  "677" -> "681" 
+  "678" -> "679" 
+  "678" -> "680" 
+  "682" -> "683" 
+  "683" -> "684" 
+  "683" -> "685" 
+  "686" -> "15" 
+  "686" -> "687" 
+  "688" -> "689" 
+  "688" -> "697" 
+  "689" -> "690" 
+  "689" -> "692" 
+  "690" -> "691" 
+  "692" -> "693" 
+  "692" -> "696" 
+  "693" -> "694" 
+  "693" -> "695" 
+  "697" -> "698" 
+  "698" -> "699" 
+  "698" -> "702" 
+  "699" -> "700" 
+  "699" -> "701" 
+  "703" -> "704" 
+  "704" -> "705" 
+  "704" -> "726" 
+  "705" -> "706" 
+  "705" -> "712" 
+  "706" -> "707" 
+  "707" -> "708" 
+  "707" -> "711" 
+  "708" -> "709" 
+  "708" -> "710" 
+  "712" -> "713" 
+  "713" -> "714" 
+  "714" -> "715" 
+  "714" -> "718" 
+  "714" -> "725" 
+  "715" -> "716" 
+  "715" -> "717" 
+  "718" -> "719" 
+  "718" -> "720" 
+  "720" -> "721" 
+  "720" -> "724" 
+  "721" -> "722" 
+  "721" -> "723" 
+  "726" -> "17" 
+  "726" -> "727" 
+}

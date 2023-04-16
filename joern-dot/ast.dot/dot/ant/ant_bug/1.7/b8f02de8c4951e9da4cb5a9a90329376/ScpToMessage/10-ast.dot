@@ -1,0 +1,95 @@
+digraph "sendDirectory" {  
+"294" [label = <(METHOD,sendDirectory)<SUB>187</SUB>> ]
+"33" [label = <(PARAM,this)<SUB>187</SUB>> ]
+"295" [label = <(PARAM,Directory current)<SUB>187</SUB>> ]
+"296" [label = <(PARAM,InputStream in)<SUB>188</SUB>> ]
+"297" [label = <(PARAM,OutputStream out)<SUB>189</SUB>> ]
+"298" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>189</SUB>> ]
+"299" [label = <(CONTROL_STRUCTURE,for (Iterator fileIt = current.filesIterator(); Some(fileIt.hasNext()); ),for (Iterator fileIt = current.filesIterator(); Some(fileIt.hasNext()); ))<SUB>190</SUB>> ]
+"300" [label = <(LOCAL,Iterator fileIt: java.util.Iterator)> ]
+"301" [label = <(&lt;operator&gt;.assignment,Iterator fileIt = filesIterator())<SUB>190</SUB>> ]
+"302" [label = <(IDENTIFIER,fileIt,Iterator fileIt = filesIterator())<SUB>190</SUB>> ]
+"303" [label = <(filesIterator,filesIterator())<SUB>190</SUB>> ]
+"304" [label = <(IDENTIFIER,current,filesIterator())<SUB>190</SUB>> ]
+"305" [label = <(hasNext,fileIt.hasNext())<SUB>190</SUB>> ]
+"306" [label = <(IDENTIFIER,fileIt,fileIt.hasNext())<SUB>190</SUB>> ]
+"307" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>190</SUB>> ]
+"308" [label = <(sendFileToRemote,this.sendFileToRemote((File) fileIt.next(), in, out))<SUB>191</SUB>> ]
+"32" [label = <(IDENTIFIER,this,this.sendFileToRemote((File) fileIt.next(), in, out))<SUB>191</SUB>> ]
+"309" [label = <(&lt;operator&gt;.cast,(File) fileIt.next())<SUB>191</SUB>> ]
+"310" [label = <(TYPE_REF,File,File)<SUB>191</SUB>> ]
+"311" [label = <(next,fileIt.next())<SUB>191</SUB>> ]
+"312" [label = <(IDENTIFIER,fileIt,fileIt.next())<SUB>191</SUB>> ]
+"313" [label = <(IDENTIFIER,in,this.sendFileToRemote((File) fileIt.next(), in, out))<SUB>191</SUB>> ]
+"314" [label = <(IDENTIFIER,out,this.sendFileToRemote((File) fileIt.next(), in, out))<SUB>191</SUB>> ]
+"315" [label = <(CONTROL_STRUCTURE,for (Iterator dirIt = current.directoryIterator(); Some(dirIt.hasNext()); ),for (Iterator dirIt = current.directoryIterator(); Some(dirIt.hasNext()); ))<SUB>193</SUB>> ]
+"316" [label = <(LOCAL,Iterator dirIt: java.util.Iterator)> ]
+"317" [label = <(&lt;operator&gt;.assignment,Iterator dirIt = directoryIterator())<SUB>193</SUB>> ]
+"318" [label = <(IDENTIFIER,dirIt,Iterator dirIt = directoryIterator())<SUB>193</SUB>> ]
+"319" [label = <(directoryIterator,directoryIterator())<SUB>193</SUB>> ]
+"320" [label = <(IDENTIFIER,current,directoryIterator())<SUB>193</SUB>> ]
+"321" [label = <(hasNext,dirIt.hasNext())<SUB>193</SUB>> ]
+"322" [label = <(IDENTIFIER,dirIt,dirIt.hasNext())<SUB>193</SUB>> ]
+"323" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>193</SUB>> ]
+"324" [label = <(LOCAL,Directory dir: ANY)> ]
+"325" [label = <(&lt;operator&gt;.assignment,ANY dir = (Directory) dirIt.next())<SUB>194</SUB>> ]
+"326" [label = <(IDENTIFIER,dir,ANY dir = (Directory) dirIt.next())<SUB>194</SUB>> ]
+"327" [label = <(&lt;operator&gt;.cast,(Directory) dirIt.next())<SUB>194</SUB>> ]
+"328" [label = <(TYPE_REF,Directory,Directory)<SUB>194</SUB>> ]
+"329" [label = <(next,dirIt.next())<SUB>194</SUB>> ]
+"330" [label = <(IDENTIFIER,dirIt,dirIt.next())<SUB>194</SUB>> ]
+"331" [label = <(sendDirectoryToRemote,sendDirectoryToRemote(dir, in, out))<SUB>195</SUB>> ]
+"34" [label = <(IDENTIFIER,this,sendDirectoryToRemote(dir, in, out))<SUB>195</SUB>> ]
+"332" [label = <(IDENTIFIER,dir,sendDirectoryToRemote(dir, in, out))<SUB>195</SUB>> ]
+"333" [label = <(IDENTIFIER,in,sendDirectoryToRemote(dir, in, out))<SUB>195</SUB>> ]
+"334" [label = <(IDENTIFIER,out,sendDirectoryToRemote(dir, in, out))<SUB>195</SUB>> ]
+"335" [label = <(MODIFIER,PRIVATE)> ]
+"336" [label = <(MODIFIER,VIRTUAL)> ]
+"337" [label = <(METHOD_RETURN,void)<SUB>187</SUB>> ]
+  "294" -> "33" 
+  "294" -> "295" 
+  "294" -> "296" 
+  "294" -> "297" 
+  "294" -> "298" 
+  "294" -> "335" 
+  "294" -> "336" 
+  "294" -> "337" 
+  "298" -> "299" 
+  "298" -> "315" 
+  "299" -> "300" 
+  "299" -> "301" 
+  "299" -> "305" 
+  "299" -> "307" 
+  "301" -> "302" 
+  "301" -> "303" 
+  "303" -> "304" 
+  "305" -> "306" 
+  "307" -> "308" 
+  "308" -> "32" 
+  "308" -> "309" 
+  "308" -> "313" 
+  "308" -> "314" 
+  "309" -> "310" 
+  "309" -> "311" 
+  "311" -> "312" 
+  "315" -> "316" 
+  "315" -> "317" 
+  "315" -> "321" 
+  "315" -> "323" 
+  "317" -> "318" 
+  "317" -> "319" 
+  "319" -> "320" 
+  "321" -> "322" 
+  "323" -> "324" 
+  "323" -> "325" 
+  "323" -> "331" 
+  "325" -> "326" 
+  "325" -> "327" 
+  "327" -> "328" 
+  "327" -> "329" 
+  "329" -> "330" 
+  "331" -> "34" 
+  "331" -> "332" 
+  "331" -> "333" 
+  "331" -> "334" 
+}

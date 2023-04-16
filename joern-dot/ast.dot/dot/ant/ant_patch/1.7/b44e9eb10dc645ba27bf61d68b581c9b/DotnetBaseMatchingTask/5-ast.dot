@@ -1,0 +1,203 @@
+digraph "buildFileList" {  
+"103" [label = <(METHOD,buildFileList)<SUB>112</SUB>> ]
+"8" [label = <(PARAM,this)<SUB>112</SUB>> ]
+"104" [label = <(PARAM,NetCommand command)<SUB>112</SUB>> ]
+"105" [label = <(PARAM,Hashtable filesToBuild)<SUB>112</SUB>> ]
+"106" [label = <(PARAM,long outputTimestamp)<SUB>112</SUB>> ]
+"107" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>112</SUB>> ]
+"108" [label = <(LOCAL,int filesOutOfDate: int)> ]
+"109" [label = <(&lt;operator&gt;.assignment,int filesOutOfDate = 0)<SUB>113</SUB>> ]
+"110" [label = <(IDENTIFIER,filesOutOfDate,int filesOutOfDate = 0)<SUB>113</SUB>> ]
+"111" [label = <(LITERAL,0,int filesOutOfDate = 0)<SUB>113</SUB>> ]
+"112" [label = <(LOCAL,boolean scanImplicitFileset: boolean)> ]
+"113" [label = <(&lt;operator&gt;.assignment,boolean scanImplicitFileset = getSrcDir() != null || filesets.size() == 0)<SUB>114</SUB>> ]
+"114" [label = <(IDENTIFIER,scanImplicitFileset,boolean scanImplicitFileset = getSrcDir() != null || filesets.size() == 0)<SUB>114</SUB>> ]
+"115" [label = <(&lt;operator&gt;.logicalOr,getSrcDir() != null || filesets.size() == 0)<SUB>115</SUB>> ]
+"116" [label = <(&lt;operator&gt;.notEquals,getSrcDir() != null)<SUB>115</SUB>> ]
+"117" [label = <(getSrcDir,this.getSrcDir())<SUB>115</SUB>> ]
+"7" [label = <(IDENTIFIER,this,this.getSrcDir())<SUB>115</SUB>> ]
+"118" [label = <(LITERAL,null,getSrcDir() != null)<SUB>115</SUB>> ]
+"119" [label = <(&lt;operator&gt;.equals,filesets.size() == 0)<SUB>115</SUB>> ]
+"120" [label = <(size,filesets.size())<SUB>115</SUB>> ]
+"121" [label = <(&lt;operator&gt;.fieldAccess,this.filesets)<SUB>115</SUB>> ]
+"122" [label = <(IDENTIFIER,this,filesets.size())<SUB>115</SUB>> ]
+"123" [label = <(FIELD_IDENTIFIER,filesets,filesets)<SUB>115</SUB>> ]
+"124" [label = <(LITERAL,0,filesets.size() == 0)<SUB>115</SUB>> ]
+"125" [label = <(CONTROL_STRUCTURE,if (scanImplicitFileset),if (scanImplicitFileset))<SUB>116</SUB>> ]
+"126" [label = <(IDENTIFIER,scanImplicitFileset,if (scanImplicitFileset))<SUB>116</SUB>> ]
+"127" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>116</SUB>> ]
+"128" [label = <(CONTROL_STRUCTURE,if (getSrcDir() == null),if (getSrcDir() == null))<SUB>119</SUB>> ]
+"129" [label = <(&lt;operator&gt;.equals,getSrcDir() == null)<SUB>119</SUB>> ]
+"130" [label = <(getSrcDir,this.getSrcDir())<SUB>119</SUB>> ]
+"9" [label = <(IDENTIFIER,this,this.getSrcDir())<SUB>119</SUB>> ]
+"131" [label = <(LITERAL,null,getSrcDir() == null)<SUB>119</SUB>> ]
+"132" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>119</SUB>> ]
+"133" [label = <(setSrcDir,setSrcDir(getProject().resolveFile(&quot;.&quot;)))<SUB>121</SUB>> ]
+"11" [label = <(IDENTIFIER,this,setSrcDir(getProject().resolveFile(&quot;.&quot;)))<SUB>121</SUB>> ]
+"134" [label = <(resolveFile,resolveFile(&quot;.&quot;))<SUB>121</SUB>> ]
+"135" [label = <(getProject,getProject())<SUB>121</SUB>> ]
+"10" [label = <(IDENTIFIER,this,getProject())<SUB>121</SUB>> ]
+"136" [label = <(LITERAL,&quot;.&quot;,resolveFile(&quot;.&quot;))<SUB>121</SUB>> ]
+"137" [label = <(log,log(&quot;working from source directory &quot; + getSrcDir(), Project.MSG_VERBOSE))<SUB>123</SUB>> ]
+"13" [label = <(IDENTIFIER,this,log(&quot;working from source directory &quot; + getSrcDir(), Project.MSG_VERBOSE))<SUB>123</SUB>> ]
+"138" [label = <(&lt;operator&gt;.addition,&quot;working from source directory &quot; + getSrcDir())<SUB>123</SUB>> ]
+"139" [label = <(LITERAL,&quot;working from source directory &quot;,&quot;working from source directory &quot; + getSrcDir())<SUB>123</SUB>> ]
+"140" [label = <(getSrcDir,this.getSrcDir())<SUB>123</SUB>> ]
+"12" [label = <(IDENTIFIER,this,this.getSrcDir())<SUB>123</SUB>> ]
+"141" [label = <(&lt;operator&gt;.fieldAccess,Project.MSG_VERBOSE)<SUB>124</SUB>> ]
+"142" [label = <(IDENTIFIER,Project,log(&quot;working from source directory &quot; + getSrcDir(), Project.MSG_VERBOSE))<SUB>124</SUB>> ]
+"143" [label = <(FIELD_IDENTIFIER,MSG_VERBOSE,MSG_VERBOSE)<SUB>124</SUB>> ]
+"144" [label = <(LOCAL,DirectoryScanner scanner: org.apache.tools.ant.DirectoryScanner)> ]
+"145" [label = <(&lt;operator&gt;.assignment,DirectoryScanner scanner = getDirectoryScanner(getSrcDir()))<SUB>126</SUB>> ]
+"146" [label = <(IDENTIFIER,scanner,DirectoryScanner scanner = getDirectoryScanner(getSrcDir()))<SUB>126</SUB>> ]
+"147" [label = <(getDirectoryScanner,getDirectoryScanner(getSrcDir()))<SUB>126</SUB>> ]
+"15" [label = <(IDENTIFIER,this,getDirectoryScanner(getSrcDir()))<SUB>126</SUB>> ]
+"148" [label = <(getSrcDir,this.getSrcDir())<SUB>126</SUB>> ]
+"14" [label = <(IDENTIFIER,this,this.getSrcDir())<SUB>126</SUB>> ]
+"149" [label = <(&lt;operator&gt;.assignment,filesOutOfDate = scanOneFileset(scanner, filesToBuild, outputTimestamp))<SUB>127</SUB>> ]
+"150" [label = <(IDENTIFIER,filesOutOfDate,filesOutOfDate = scanOneFileset(scanner, filesToBuild, outputTimestamp))<SUB>127</SUB>> ]
+"151" [label = <(scanOneFileset,scanOneFileset(scanner, filesToBuild, outputTimestamp))<SUB>127</SUB>> ]
+"152" [label = <(IDENTIFIER,command,scanOneFileset(scanner, filesToBuild, outputTimestamp))<SUB>127</SUB>> ]
+"153" [label = <(IDENTIFIER,scanner,scanOneFileset(scanner, filesToBuild, outputTimestamp))<SUB>127</SUB>> ]
+"154" [label = <(IDENTIFIER,filesToBuild,scanOneFileset(scanner, filesToBuild, outputTimestamp))<SUB>128</SUB>> ]
+"155" [label = <(IDENTIFIER,outputTimestamp,scanOneFileset(scanner, filesToBuild, outputTimestamp))<SUB>128</SUB>> ]
+"156" [label = <(CONTROL_STRUCTURE,for (int i = 0; Some(i &lt; filesets.size()); i++),for (int i = 0; Some(i &lt; filesets.size()); i++))<SUB>131</SUB>> ]
+"157" [label = <(LOCAL,int i: int)> ]
+"158" [label = <(&lt;operator&gt;.assignment,int i = 0)<SUB>131</SUB>> ]
+"159" [label = <(IDENTIFIER,i,int i = 0)<SUB>131</SUB>> ]
+"160" [label = <(LITERAL,0,int i = 0)<SUB>131</SUB>> ]
+"161" [label = <(&lt;operator&gt;.lessThan,i &lt; filesets.size())<SUB>131</SUB>> ]
+"162" [label = <(IDENTIFIER,i,i &lt; filesets.size())<SUB>131</SUB>> ]
+"163" [label = <(size,filesets.size())<SUB>131</SUB>> ]
+"164" [label = <(&lt;operator&gt;.fieldAccess,this.filesets)<SUB>131</SUB>> ]
+"165" [label = <(IDENTIFIER,this,filesets.size())<SUB>131</SUB>> ]
+"166" [label = <(FIELD_IDENTIFIER,filesets,filesets)<SUB>131</SUB>> ]
+"167" [label = <(&lt;operator&gt;.postIncrement,i++)<SUB>131</SUB>> ]
+"168" [label = <(IDENTIFIER,i,i++)<SUB>131</SUB>> ]
+"169" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>131</SUB>> ]
+"170" [label = <(LOCAL,FileSet fs: org.apache.tools.ant.types.FileSet)> ]
+"171" [label = <(&lt;operator&gt;.assignment,FileSet fs = (FileSet) filesets.elementAt(i))<SUB>132</SUB>> ]
+"172" [label = <(IDENTIFIER,fs,FileSet fs = (FileSet) filesets.elementAt(i))<SUB>132</SUB>> ]
+"173" [label = <(&lt;operator&gt;.cast,(FileSet) filesets.elementAt(i))<SUB>132</SUB>> ]
+"174" [label = <(TYPE_REF,FileSet,FileSet)<SUB>132</SUB>> ]
+"175" [label = <(elementAt,filesets.elementAt(i))<SUB>132</SUB>> ]
+"176" [label = <(&lt;operator&gt;.fieldAccess,this.filesets)<SUB>132</SUB>> ]
+"177" [label = <(IDENTIFIER,this,filesets.elementAt(i))<SUB>132</SUB>> ]
+"178" [label = <(FIELD_IDENTIFIER,filesets,filesets)<SUB>132</SUB>> ]
+"179" [label = <(IDENTIFIER,i,filesets.elementAt(i))<SUB>132</SUB>> ]
+"180" [label = <(&lt;operator&gt;.assignmentPlus,filesOutOfDate += scanOneFileset(fs.getDirectoryScanner(getProject()), filesToBuild, outputTimestamp))<SUB>133</SUB>> ]
+"181" [label = <(IDENTIFIER,filesOutOfDate,filesOutOfDate += scanOneFileset(fs.getDirectoryScanner(getProject()), filesToBuild, outputTimestamp))<SUB>133</SUB>> ]
+"182" [label = <(scanOneFileset,scanOneFileset(fs.getDirectoryScanner(getProject()), filesToBuild, outputTimestamp))<SUB>133</SUB>> ]
+"183" [label = <(IDENTIFIER,command,scanOneFileset(fs.getDirectoryScanner(getProject()), filesToBuild, outputTimestamp))<SUB>133</SUB>> ]
+"184" [label = <(getDirectoryScanner,getDirectoryScanner(getProject()))<SUB>134</SUB>> ]
+"185" [label = <(IDENTIFIER,fs,getDirectoryScanner(getProject()))<SUB>134</SUB>> ]
+"186" [label = <(getProject,getProject())<SUB>134</SUB>> ]
+"16" [label = <(IDENTIFIER,this,getProject())<SUB>134</SUB>> ]
+"187" [label = <(IDENTIFIER,filesToBuild,scanOneFileset(fs.getDirectoryScanner(getProject()), filesToBuild, outputTimestamp))<SUB>135</SUB>> ]
+"188" [label = <(IDENTIFIER,outputTimestamp,scanOneFileset(fs.getDirectoryScanner(getProject()), filesToBuild, outputTimestamp))<SUB>136</SUB>> ]
+"189" [label = <(RETURN,return filesOutOfDate;,return filesOutOfDate;)<SUB>139</SUB>> ]
+"190" [label = <(IDENTIFIER,filesOutOfDate,return filesOutOfDate;)<SUB>139</SUB>> ]
+"191" [label = <(MODIFIER,PROTECTED)> ]
+"192" [label = <(MODIFIER,VIRTUAL)> ]
+"193" [label = <(METHOD_RETURN,int)<SUB>112</SUB>> ]
+  "103" -> "8" 
+  "103" -> "104" 
+  "103" -> "105" 
+  "103" -> "106" 
+  "103" -> "107" 
+  "103" -> "191" 
+  "103" -> "192" 
+  "103" -> "193" 
+  "107" -> "108" 
+  "107" -> "109" 
+  "107" -> "112" 
+  "107" -> "113" 
+  "107" -> "125" 
+  "107" -> "156" 
+  "107" -> "189" 
+  "109" -> "110" 
+  "109" -> "111" 
+  "113" -> "114" 
+  "113" -> "115" 
+  "115" -> "116" 
+  "115" -> "119" 
+  "116" -> "117" 
+  "116" -> "118" 
+  "117" -> "7" 
+  "119" -> "120" 
+  "119" -> "124" 
+  "120" -> "121" 
+  "121" -> "122" 
+  "121" -> "123" 
+  "125" -> "126" 
+  "125" -> "127" 
+  "127" -> "128" 
+  "127" -> "137" 
+  "127" -> "144" 
+  "127" -> "145" 
+  "127" -> "149" 
+  "128" -> "129" 
+  "128" -> "132" 
+  "129" -> "130" 
+  "129" -> "131" 
+  "130" -> "9" 
+  "132" -> "133" 
+  "133" -> "11" 
+  "133" -> "134" 
+  "134" -> "135" 
+  "134" -> "136" 
+  "135" -> "10" 
+  "137" -> "13" 
+  "137" -> "138" 
+  "137" -> "141" 
+  "138" -> "139" 
+  "138" -> "140" 
+  "140" -> "12" 
+  "141" -> "142" 
+  "141" -> "143" 
+  "145" -> "146" 
+  "145" -> "147" 
+  "147" -> "15" 
+  "147" -> "148" 
+  "148" -> "14" 
+  "149" -> "150" 
+  "149" -> "151" 
+  "151" -> "152" 
+  "151" -> "153" 
+  "151" -> "154" 
+  "151" -> "155" 
+  "156" -> "157" 
+  "156" -> "158" 
+  "156" -> "161" 
+  "156" -> "167" 
+  "156" -> "169" 
+  "158" -> "159" 
+  "158" -> "160" 
+  "161" -> "162" 
+  "161" -> "163" 
+  "163" -> "164" 
+  "164" -> "165" 
+  "164" -> "166" 
+  "167" -> "168" 
+  "169" -> "170" 
+  "169" -> "171" 
+  "169" -> "180" 
+  "171" -> "172" 
+  "171" -> "173" 
+  "173" -> "174" 
+  "173" -> "175" 
+  "175" -> "176" 
+  "175" -> "179" 
+  "176" -> "177" 
+  "176" -> "178" 
+  "180" -> "181" 
+  "180" -> "182" 
+  "182" -> "183" 
+  "182" -> "184" 
+  "182" -> "187" 
+  "182" -> "188" 
+  "184" -> "185" 
+  "184" -> "186" 
+  "186" -> "16" 
+  "189" -> "190" 
+}

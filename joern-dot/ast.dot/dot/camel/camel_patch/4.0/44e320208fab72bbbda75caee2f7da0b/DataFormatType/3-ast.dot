@@ -1,0 +1,89 @@
+digraph "getDataFormat" {  
+"53" [label = <(METHOD,getDataFormat)<SUB>59</SUB>> ]
+"54" [label = <(PARAM,RouteContext routeContext)<SUB>59</SUB>> ]
+"55" [label = <(PARAM,DataFormatType type)<SUB>59</SUB>> ]
+"56" [label = <(PARAM,String ref)<SUB>59</SUB>> ]
+"57" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>59</SUB>> ]
+"58" [label = <(CONTROL_STRUCTURE,if (type == null),if (type == null))<SUB>60</SUB>> ]
+"59" [label = <(&lt;operator&gt;.equals,type == null)<SUB>60</SUB>> ]
+"60" [label = <(IDENTIFIER,type,type == null)<SUB>60</SUB>> ]
+"61" [label = <(LITERAL,null,type == null)<SUB>60</SUB>> ]
+"62" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>60</SUB>> ]
+"63" [label = <(notNull,notNull(ref, &quot;ref or dataFormatType&quot;))<SUB>61</SUB>> ]
+"64" [label = <(IDENTIFIER,this,notNull(ref, &quot;ref or dataFormatType&quot;))<SUB>61</SUB>> ]
+"65" [label = <(IDENTIFIER,ref,notNull(ref, &quot;ref or dataFormatType&quot;))<SUB>61</SUB>> ]
+"66" [label = <(LITERAL,&quot;ref or dataFormatType&quot;,notNull(ref, &quot;ref or dataFormatType&quot;))<SUB>61</SUB>> ]
+"67" [label = <(LOCAL,DataFormat dataFormat: org.apache.camel.spi.DataFormat)> ]
+"68" [label = <(&lt;operator&gt;.assignment,DataFormat dataFormat = lookup(ref, DataFormat.class))<SUB>62</SUB>> ]
+"69" [label = <(IDENTIFIER,dataFormat,DataFormat dataFormat = lookup(ref, DataFormat.class))<SUB>62</SUB>> ]
+"70" [label = <(lookup,lookup(ref, DataFormat.class))<SUB>62</SUB>> ]
+"71" [label = <(IDENTIFIER,routeContext,lookup(ref, DataFormat.class))<SUB>62</SUB>> ]
+"72" [label = <(IDENTIFIER,ref,lookup(ref, DataFormat.class))<SUB>62</SUB>> ]
+"73" [label = <(&lt;operator&gt;.fieldAccess,DataFormat.class)<SUB>62</SUB>> ]
+"74" [label = <(IDENTIFIER,DataFormat,lookup(ref, DataFormat.class))<SUB>62</SUB>> ]
+"75" [label = <(FIELD_IDENTIFIER,class,class)<SUB>62</SUB>> ]
+"76" [label = <(CONTROL_STRUCTURE,if (dataFormat instanceof DataFormatType),if (dataFormat instanceof DataFormatType))<SUB>63</SUB>> ]
+"77" [label = <(&lt;operator&gt;.instanceOf,dataFormat instanceof DataFormatType)<SUB>63</SUB>> ]
+"78" [label = <(IDENTIFIER,dataFormat,dataFormat instanceof DataFormatType)<SUB>63</SUB>> ]
+"79" [label = <(TYPE_REF,DataFormatType,DataFormatType)<SUB>63</SUB>> ]
+"80" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>63</SUB>> ]
+"81" [label = <(&lt;operator&gt;.assignment,type = (DataFormatType) dataFormat)<SUB>64</SUB>> ]
+"82" [label = <(IDENTIFIER,type,type = (DataFormatType) dataFormat)<SUB>64</SUB>> ]
+"83" [label = <(&lt;operator&gt;.cast,(DataFormatType) dataFormat)<SUB>64</SUB>> ]
+"84" [label = <(TYPE_REF,DataFormatType,DataFormatType)<SUB>64</SUB>> ]
+"85" [label = <(IDENTIFIER,dataFormat,(DataFormatType) dataFormat)<SUB>64</SUB>> ]
+"86" [label = <(CONTROL_STRUCTURE,else,else)<SUB>65</SUB>> ]
+"87" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>65</SUB>> ]
+"88" [label = <(RETURN,return dataFormat;,return dataFormat;)<SUB>66</SUB>> ]
+"89" [label = <(IDENTIFIER,dataFormat,return dataFormat;)<SUB>66</SUB>> ]
+"90" [label = <(RETURN,return type.getDataFormat(routeContext);,return type.getDataFormat(routeContext);)<SUB>69</SUB>> ]
+"91" [label = <(getDataFormat,getDataFormat(routeContext))<SUB>69</SUB>> ]
+"92" [label = <(IDENTIFIER,type,getDataFormat(routeContext))<SUB>69</SUB>> ]
+"93" [label = <(IDENTIFIER,routeContext,getDataFormat(routeContext))<SUB>69</SUB>> ]
+"94" [label = <(MODIFIER,PUBLIC)> ]
+"95" [label = <(MODIFIER,STATIC)> ]
+"96" [label = <(METHOD_RETURN,org.apache.camel.spi.DataFormat)<SUB>59</SUB>> ]
+  "53" -> "54" 
+  "53" -> "55" 
+  "53" -> "56" 
+  "53" -> "57" 
+  "53" -> "94" 
+  "53" -> "95" 
+  "53" -> "96" 
+  "57" -> "58" 
+  "57" -> "90" 
+  "58" -> "59" 
+  "58" -> "62" 
+  "59" -> "60" 
+  "59" -> "61" 
+  "62" -> "63" 
+  "62" -> "67" 
+  "62" -> "68" 
+  "62" -> "76" 
+  "63" -> "64" 
+  "63" -> "65" 
+  "63" -> "66" 
+  "68" -> "69" 
+  "68" -> "70" 
+  "70" -> "71" 
+  "70" -> "72" 
+  "70" -> "73" 
+  "73" -> "74" 
+  "73" -> "75" 
+  "76" -> "77" 
+  "76" -> "80" 
+  "76" -> "86" 
+  "77" -> "78" 
+  "77" -> "79" 
+  "80" -> "81" 
+  "81" -> "82" 
+  "81" -> "83" 
+  "83" -> "84" 
+  "83" -> "85" 
+  "86" -> "87" 
+  "87" -> "88" 
+  "88" -> "89" 
+  "90" -> "91" 
+  "91" -> "92" 
+  "91" -> "93" 
+}

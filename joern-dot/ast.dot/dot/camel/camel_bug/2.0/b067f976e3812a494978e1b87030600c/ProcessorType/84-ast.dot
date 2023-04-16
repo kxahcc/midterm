@@ -1,0 +1,243 @@
+digraph "wrapProcessorInInterceptors" {  
+"1707" [label = <(METHOD,wrapProcessorInInterceptors)<SUB>894</SUB>> ]
+"244" [label = <(PARAM,this)<SUB>894</SUB>> ]
+"1708" [label = <(PARAM,RouteContext routeContext)<SUB>894</SUB>> ]
+"1709" [label = <(PARAM,Processor target)<SUB>894</SUB>> ]
+"1710" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>894</SUB>> ]
+"1711" [label = <(CONTROL_STRUCTURE,if (target == null),if (target == null))<SUB>896</SUB>> ]
+"1712" [label = <(&lt;operator&gt;.equals,target == null)<SUB>896</SUB>> ]
+"1713" [label = <(IDENTIFIER,target,target == null)<SUB>896</SUB>> ]
+"1714" [label = <(LITERAL,null,target == null)<SUB>896</SUB>> ]
+"1715" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>896</SUB>> ]
+"1716" [label = <(&lt;operator&gt;.throw,throw new RuntimeCamelException(&quot;target provided.&quot;);)<SUB>897</SUB>> ]
+"1717" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>897</SUB>> ]
+"1718" [label = <(&lt;operator&gt;.assignment,&lt;empty&gt;)> ]
+"1719" [label = <(IDENTIFIER,$obj46,&lt;empty&gt;)> ]
+"1720" [label = <(&lt;operator&gt;.alloc,new RuntimeCamelException(&quot;target provided.&quot;))<SUB>897</SUB>> ]
+"1721" [label = <(&lt;init&gt;,new RuntimeCamelException(&quot;target provided.&quot;))<SUB>897</SUB>> ]
+"1722" [label = <(IDENTIFIER,$obj46,new RuntimeCamelException(&quot;target provided.&quot;))> ]
+"1723" [label = <(LITERAL,&quot;target provided.&quot;,new RuntimeCamelException(&quot;target provided.&quot;))<SUB>897</SUB>> ]
+"1724" [label = <(IDENTIFIER,$obj46,&lt;empty&gt;)> ]
+"1725" [label = <(LOCAL,DelegateProcessor first: org.apache.camel.processor.DelegateProcessor)> ]
+"1726" [label = <(&lt;operator&gt;.assignment,DelegateProcessor first = null)<SUB>901</SUB>> ]
+"1727" [label = <(IDENTIFIER,first,DelegateProcessor first = null)<SUB>901</SUB>> ]
+"1728" [label = <(LITERAL,null,DelegateProcessor first = null)<SUB>901</SUB>> ]
+"1729" [label = <(LOCAL,DelegateProcessor last: org.apache.camel.processor.DelegateProcessor)> ]
+"1730" [label = <(&lt;operator&gt;.assignment,DelegateProcessor last = null)<SUB>902</SUB>> ]
+"1731" [label = <(IDENTIFIER,last,DelegateProcessor last = null)<SUB>902</SUB>> ]
+"1732" [label = <(LITERAL,null,DelegateProcessor last = null)<SUB>902</SUB>> ]
+"242" [label = <(LOCAL,List&lt;InterceptorType&gt; interceptors: ANY)> ]
+"1733" [label = <(&lt;operator&gt;.assignment,ANY interceptors = new ArrayList&lt;InterceptorType&gt;(routeContext.getRoute().getInterceptors()))<SUB>903</SUB>> ]
+"1734" [label = <(IDENTIFIER,interceptors,ANY interceptors = new ArrayList&lt;InterceptorType&gt;(routeContext.getRoute().getInterceptors()))<SUB>903</SUB>> ]
+"1735" [label = <(&lt;operator&gt;.alloc,new ArrayList&lt;InterceptorType&gt;(routeContext.getRoute().getInterceptors()))<SUB>903</SUB>> ]
+"1736" [label = <(&lt;init&gt;,new ArrayList&lt;InterceptorType&gt;(routeContext.getRoute().getInterceptors()))<SUB>903</SUB>> ]
+"241" [label = <(IDENTIFIER,interceptors,new ArrayList&lt;InterceptorType&gt;(routeContext.getRoute().getInterceptors()))<SUB>903</SUB>> ]
+"1737" [label = <(getInterceptors,getInterceptors())<SUB>903</SUB>> ]
+"1738" [label = <(getRoute,getRoute())<SUB>903</SUB>> ]
+"1739" [label = <(IDENTIFIER,routeContext,getRoute())<SUB>903</SUB>> ]
+"1740" [label = <(LOCAL,List&lt;InterceptorType&gt; list: ANY)> ]
+"1741" [label = <(&lt;operator&gt;.assignment,ANY list = this.getInterceptors())<SUB>905</SUB>> ]
+"1742" [label = <(IDENTIFIER,list,ANY list = this.getInterceptors())<SUB>905</SUB>> ]
+"1743" [label = <(getInterceptors,this.getInterceptors())<SUB>905</SUB>> ]
+"243" [label = <(IDENTIFIER,this,this.getInterceptors())<SUB>905</SUB>> ]
+"1744" [label = <(LOCAL,$iterLocal1: java.util.Iterator)<SUB>906</SUB>> ]
+"1745" [label = <(&lt;operator&gt;.assignment,)<SUB>906</SUB>> ]
+"1746" [label = <(IDENTIFIER,$iterLocal1,)<SUB>906</SUB>> ]
+"1747" [label = <(iterator,&lt;empty&gt;)<SUB>906</SUB>> ]
+"1748" [label = <(IDENTIFIER,list,&lt;empty&gt;)<SUB>906</SUB>> ]
+"1749" [label = <(CONTROL_STRUCTURE,FOR,FOR)<SUB>906</SUB>> ]
+"1750" [label = <(hasNext,&lt;empty&gt;)<SUB>906</SUB>> ]
+"1751" [label = <(IDENTIFIER,$iterLocal1,&lt;empty&gt;)<SUB>906</SUB>> ]
+"1752" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>906</SUB>> ]
+"1753" [label = <(LOCAL,interceptorType: ANY)<SUB>906</SUB>> ]
+"1754" [label = <(&lt;operator&gt;.assignment,&lt;empty&gt;)<SUB>906</SUB>> ]
+"1755" [label = <(IDENTIFIER,interceptorType,&lt;empty&gt;)<SUB>906</SUB>> ]
+"1756" [label = <(next,&lt;empty&gt;)<SUB>906</SUB>> ]
+"1757" [label = <(IDENTIFIER,$iterLocal1,&lt;empty&gt;)<SUB>906</SUB>> ]
+"1758" [label = <(CONTROL_STRUCTURE,if (!interceptors.contains(interceptorType)),if (!interceptors.contains(interceptorType)))<SUB>907</SUB>> ]
+"1759" [label = <(&lt;operator&gt;.logicalNot,!interceptors.contains(interceptorType))<SUB>907</SUB>> ]
+"1760" [label = <(contains,contains(interceptorType))<SUB>907</SUB>> ]
+"1761" [label = <(IDENTIFIER,interceptors,contains(interceptorType))<SUB>907</SUB>> ]
+"1762" [label = <(IDENTIFIER,interceptorType,contains(interceptorType))<SUB>907</SUB>> ]
+"1763" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>907</SUB>> ]
+"1764" [label = <(add,add(interceptorType))<SUB>908</SUB>> ]
+"1765" [label = <(IDENTIFIER,interceptors,add(interceptorType))<SUB>908</SUB>> ]
+"1766" [label = <(IDENTIFIER,interceptorType,add(interceptorType))<SUB>908</SUB>> ]
+"1767" [label = <(LOCAL,$iterLocal2: java.util.Iterator)<SUB>911</SUB>> ]
+"1768" [label = <(&lt;operator&gt;.assignment,)<SUB>911</SUB>> ]
+"1769" [label = <(IDENTIFIER,$iterLocal2,)<SUB>911</SUB>> ]
+"1770" [label = <(iterator,&lt;empty&gt;)<SUB>911</SUB>> ]
+"1771" [label = <(IDENTIFIER,interceptors,&lt;empty&gt;)<SUB>911</SUB>> ]
+"1772" [label = <(CONTROL_STRUCTURE,FOR,FOR)<SUB>911</SUB>> ]
+"1773" [label = <(hasNext,&lt;empty&gt;)<SUB>911</SUB>> ]
+"1774" [label = <(IDENTIFIER,$iterLocal2,&lt;empty&gt;)<SUB>911</SUB>> ]
+"1775" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>911</SUB>> ]
+"1776" [label = <(LOCAL,interceptorRef: ANY)<SUB>911</SUB>> ]
+"1777" [label = <(&lt;operator&gt;.assignment,&lt;empty&gt;)<SUB>911</SUB>> ]
+"1778" [label = <(IDENTIFIER,interceptorRef,&lt;empty&gt;)<SUB>911</SUB>> ]
+"1779" [label = <(next,&lt;empty&gt;)<SUB>911</SUB>> ]
+"1780" [label = <(IDENTIFIER,$iterLocal2,&lt;empty&gt;)<SUB>911</SUB>> ]
+"1781" [label = <(LOCAL,DelegateProcessor p: org.apache.camel.processor.DelegateProcessor)> ]
+"1782" [label = <(&lt;operator&gt;.assignment,DelegateProcessor p = createInterceptor(routeContext))<SUB>912</SUB>> ]
+"1783" [label = <(IDENTIFIER,p,DelegateProcessor p = createInterceptor(routeContext))<SUB>912</SUB>> ]
+"1784" [label = <(createInterceptor,createInterceptor(routeContext))<SUB>912</SUB>> ]
+"1785" [label = <(IDENTIFIER,interceptorRef,createInterceptor(routeContext))<SUB>912</SUB>> ]
+"1786" [label = <(IDENTIFIER,routeContext,createInterceptor(routeContext))<SUB>912</SUB>> ]
+"1787" [label = <(CONTROL_STRUCTURE,if (first == null),if (first == null))<SUB>913</SUB>> ]
+"1788" [label = <(&lt;operator&gt;.equals,first == null)<SUB>913</SUB>> ]
+"1789" [label = <(IDENTIFIER,first,first == null)<SUB>913</SUB>> ]
+"1790" [label = <(LITERAL,null,first == null)<SUB>913</SUB>> ]
+"1791" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>913</SUB>> ]
+"1792" [label = <(&lt;operator&gt;.assignment,first = p)<SUB>914</SUB>> ]
+"1793" [label = <(IDENTIFIER,first,first = p)<SUB>914</SUB>> ]
+"1794" [label = <(IDENTIFIER,p,first = p)<SUB>914</SUB>> ]
+"1795" [label = <(CONTROL_STRUCTURE,if (last != null),if (last != null))<SUB>916</SUB>> ]
+"1796" [label = <(&lt;operator&gt;.notEquals,last != null)<SUB>916</SUB>> ]
+"1797" [label = <(IDENTIFIER,last,last != null)<SUB>916</SUB>> ]
+"1798" [label = <(LITERAL,null,last != null)<SUB>916</SUB>> ]
+"1799" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>916</SUB>> ]
+"1800" [label = <(setProcessor,setProcessor(p))<SUB>917</SUB>> ]
+"1801" [label = <(IDENTIFIER,last,setProcessor(p))<SUB>917</SUB>> ]
+"1802" [label = <(IDENTIFIER,p,setProcessor(p))<SUB>917</SUB>> ]
+"1803" [label = <(&lt;operator&gt;.assignment,last = p)<SUB>919</SUB>> ]
+"1804" [label = <(IDENTIFIER,last,last = p)<SUB>919</SUB>> ]
+"1805" [label = <(IDENTIFIER,p,last = p)<SUB>919</SUB>> ]
+"1806" [label = <(CONTROL_STRUCTURE,if (last != null),if (last != null))<SUB>922</SUB>> ]
+"1807" [label = <(&lt;operator&gt;.notEquals,last != null)<SUB>922</SUB>> ]
+"1808" [label = <(IDENTIFIER,last,last != null)<SUB>922</SUB>> ]
+"1809" [label = <(LITERAL,null,last != null)<SUB>922</SUB>> ]
+"1810" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>922</SUB>> ]
+"1811" [label = <(setProcessor,setProcessor(target))<SUB>923</SUB>> ]
+"1812" [label = <(IDENTIFIER,last,setProcessor(target))<SUB>923</SUB>> ]
+"1813" [label = <(IDENTIFIER,target,setProcessor(target))<SUB>923</SUB>> ]
+"1814" [label = <(RETURN,return first == null ? target : first;,return first == null ? target : first;)<SUB>925</SUB>> ]
+"1815" [label = <(&lt;operator&gt;.conditional,first == null ? target : first)<SUB>925</SUB>> ]
+"1816" [label = <(&lt;operator&gt;.equals,first == null)<SUB>925</SUB>> ]
+"1817" [label = <(IDENTIFIER,first,first == null)<SUB>925</SUB>> ]
+"1818" [label = <(LITERAL,null,first == null)<SUB>925</SUB>> ]
+"1819" [label = <(IDENTIFIER,target,first == null ? target : first)<SUB>925</SUB>> ]
+"1820" [label = <(IDENTIFIER,first,first == null ? target : first)<SUB>925</SUB>> ]
+"1821" [label = <(MODIFIER,PROTECTED)> ]
+"1822" [label = <(MODIFIER,VIRTUAL)> ]
+"1823" [label = <(METHOD_RETURN,org.apache.camel.Processor)<SUB>894</SUB>> ]
+  "1707" -> "244" 
+  "1707" -> "1708" 
+  "1707" -> "1709" 
+  "1707" -> "1710" 
+  "1707" -> "1821" 
+  "1707" -> "1822" 
+  "1707" -> "1823" 
+  "1710" -> "1711" 
+  "1710" -> "1725" 
+  "1710" -> "1726" 
+  "1710" -> "1729" 
+  "1710" -> "1730" 
+  "1710" -> "242" 
+  "1710" -> "1733" 
+  "1710" -> "1736" 
+  "1710" -> "1740" 
+  "1710" -> "1741" 
+  "1710" -> "1744" 
+  "1710" -> "1745" 
+  "1710" -> "1749" 
+  "1710" -> "1767" 
+  "1710" -> "1768" 
+  "1710" -> "1772" 
+  "1710" -> "1806" 
+  "1710" -> "1814" 
+  "1711" -> "1712" 
+  "1711" -> "1715" 
+  "1712" -> "1713" 
+  "1712" -> "1714" 
+  "1715" -> "1716" 
+  "1716" -> "1717" 
+  "1717" -> "1718" 
+  "1717" -> "1721" 
+  "1717" -> "1724" 
+  "1718" -> "1719" 
+  "1718" -> "1720" 
+  "1721" -> "1722" 
+  "1721" -> "1723" 
+  "1726" -> "1727" 
+  "1726" -> "1728" 
+  "1730" -> "1731" 
+  "1730" -> "1732" 
+  "1733" -> "1734" 
+  "1733" -> "1735" 
+  "1736" -> "241" 
+  "1736" -> "1737" 
+  "1737" -> "1738" 
+  "1738" -> "1739" 
+  "1741" -> "1742" 
+  "1741" -> "1743" 
+  "1743" -> "243" 
+  "1745" -> "1746" 
+  "1745" -> "1747" 
+  "1747" -> "1748" 
+  "1749" -> "1750" 
+  "1749" -> "1752" 
+  "1750" -> "1751" 
+  "1752" -> "1753" 
+  "1752" -> "1754" 
+  "1752" -> "1758" 
+  "1754" -> "1755" 
+  "1754" -> "1756" 
+  "1756" -> "1757" 
+  "1758" -> "1759" 
+  "1758" -> "1763" 
+  "1759" -> "1760" 
+  "1760" -> "1761" 
+  "1760" -> "1762" 
+  "1763" -> "1764" 
+  "1764" -> "1765" 
+  "1764" -> "1766" 
+  "1768" -> "1769" 
+  "1768" -> "1770" 
+  "1770" -> "1771" 
+  "1772" -> "1773" 
+  "1772" -> "1775" 
+  "1773" -> "1774" 
+  "1775" -> "1776" 
+  "1775" -> "1777" 
+  "1775" -> "1781" 
+  "1775" -> "1782" 
+  "1775" -> "1787" 
+  "1775" -> "1795" 
+  "1775" -> "1803" 
+  "1777" -> "1778" 
+  "1777" -> "1779" 
+  "1779" -> "1780" 
+  "1782" -> "1783" 
+  "1782" -> "1784" 
+  "1784" -> "1785" 
+  "1784" -> "1786" 
+  "1787" -> "1788" 
+  "1787" -> "1791" 
+  "1788" -> "1789" 
+  "1788" -> "1790" 
+  "1791" -> "1792" 
+  "1792" -> "1793" 
+  "1792" -> "1794" 
+  "1795" -> "1796" 
+  "1795" -> "1799" 
+  "1796" -> "1797" 
+  "1796" -> "1798" 
+  "1799" -> "1800" 
+  "1800" -> "1801" 
+  "1800" -> "1802" 
+  "1803" -> "1804" 
+  "1803" -> "1805" 
+  "1806" -> "1807" 
+  "1806" -> "1810" 
+  "1807" -> "1808" 
+  "1807" -> "1809" 
+  "1810" -> "1811" 
+  "1811" -> "1812" 
+  "1811" -> "1813" 
+  "1814" -> "1815" 
+  "1815" -> "1816" 
+  "1815" -> "1819" 
+  "1815" -> "1820" 
+  "1816" -> "1817" 
+  "1816" -> "1818" 
+}

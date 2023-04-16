@@ -1,0 +1,93 @@
+digraph "process" {  
+"59" [label = <(METHOD,process)<SUB>56</SUB>> ]
+"7" [label = <(PARAM,this)<SUB>56</SUB>> ]
+"60" [label = <(PARAM,Exchange exchange)<SUB>56</SUB>> ]
+"61" [label = <(PARAM,AsyncCallback callback)<SUB>56</SUB>> ]
+"62" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>56</SUB>> ]
+"63" [label = <(LOCAL,List&lt;Processor&gt; list: ANY)> ]
+"64" [label = <(&lt;operator&gt;.assignment,ANY list = getProcessors())<SUB>57</SUB>> ]
+"65" [label = <(IDENTIFIER,list,ANY list = getProcessors())<SUB>57</SUB>> ]
+"66" [label = <(getProcessors,getProcessors())<SUB>57</SUB>> ]
+"6" [label = <(IDENTIFIER,this,getProcessors())<SUB>57</SUB>> ]
+"67" [label = <(LOCAL,$iterLocal1: java.util.Iterator)<SUB>58</SUB>> ]
+"68" [label = <(&lt;operator&gt;.assignment,)<SUB>58</SUB>> ]
+"69" [label = <(IDENTIFIER,$iterLocal1,)<SUB>58</SUB>> ]
+"70" [label = <(iterator,&lt;empty&gt;)<SUB>58</SUB>> ]
+"71" [label = <(IDENTIFIER,list,&lt;empty&gt;)<SUB>58</SUB>> ]
+"72" [label = <(CONTROL_STRUCTURE,FOR,FOR)<SUB>58</SUB>> ]
+"73" [label = <(hasNext,&lt;empty&gt;)<SUB>58</SUB>> ]
+"74" [label = <(IDENTIFIER,$iterLocal1,&lt;empty&gt;)<SUB>58</SUB>> ]
+"75" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>58</SUB>> ]
+"76" [label = <(LOCAL,processor: ANY)<SUB>58</SUB>> ]
+"77" [label = <(&lt;operator&gt;.assignment,&lt;empty&gt;)<SUB>58</SUB>> ]
+"78" [label = <(IDENTIFIER,processor,&lt;empty&gt;)<SUB>58</SUB>> ]
+"79" [label = <(next,&lt;empty&gt;)<SUB>58</SUB>> ]
+"80" [label = <(IDENTIFIER,$iterLocal1,&lt;empty&gt;)<SUB>58</SUB>> ]
+"81" [label = <(LOCAL,Exchange copy: org.apache.camel.Exchange)> ]
+"82" [label = <(&lt;operator&gt;.assignment,Exchange copy = copyExchangeStrategy(processor, exchange))<SUB>59</SUB>> ]
+"83" [label = <(IDENTIFIER,copy,Exchange copy = copyExchangeStrategy(processor, exchange))<SUB>59</SUB>> ]
+"84" [label = <(copyExchangeStrategy,copyExchangeStrategy(processor, exchange))<SUB>59</SUB>> ]
+"8" [label = <(IDENTIFIER,this,copyExchangeStrategy(processor, exchange))<SUB>59</SUB>> ]
+"85" [label = <(IDENTIFIER,processor,copyExchangeStrategy(processor, exchange))<SUB>59</SUB>> ]
+"86" [label = <(IDENTIFIER,exchange,copyExchangeStrategy(processor, exchange))<SUB>59</SUB>> ]
+"87" [label = <(CONTROL_STRUCTURE,try,try)<SUB>60</SUB>> ]
+"88" [label = <(BLOCK,try,try)<SUB>60</SUB>> ]
+"89" [label = <(process,process(copy))<SUB>61</SUB>> ]
+"90" [label = <(IDENTIFIER,processor,process(copy))<SUB>61</SUB>> ]
+"91" [label = <(IDENTIFIER,copy,process(copy))<SUB>61</SUB>> ]
+"92" [label = <(BLOCK,catch,catch)> ]
+"93" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>62</SUB>> ]
+"94" [label = <(done,done(false))<SUB>66</SUB>> ]
+"95" [label = <(IDENTIFIER,callback,done(false))<SUB>66</SUB>> ]
+"96" [label = <(LITERAL,false,done(false))<SUB>66</SUB>> ]
+"97" [label = <(RETURN,return false;,return false;)<SUB>67</SUB>> ]
+"98" [label = <(LITERAL,false,return false;)<SUB>67</SUB>> ]
+"99" [label = <(MODIFIER,PUBLIC)> ]
+"100" [label = <(MODIFIER,VIRTUAL)> ]
+"101" [label = <(METHOD_RETURN,boolean)<SUB>56</SUB>> ]
+  "59" -> "7" 
+  "59" -> "60" 
+  "59" -> "61" 
+  "59" -> "62" 
+  "59" -> "99" 
+  "59" -> "100" 
+  "59" -> "101" 
+  "62" -> "63" 
+  "62" -> "64" 
+  "62" -> "67" 
+  "62" -> "68" 
+  "62" -> "72" 
+  "62" -> "94" 
+  "62" -> "97" 
+  "64" -> "65" 
+  "64" -> "66" 
+  "66" -> "6" 
+  "68" -> "69" 
+  "68" -> "70" 
+  "70" -> "71" 
+  "72" -> "73" 
+  "72" -> "75" 
+  "73" -> "74" 
+  "75" -> "76" 
+  "75" -> "77" 
+  "75" -> "81" 
+  "75" -> "82" 
+  "75" -> "87" 
+  "77" -> "78" 
+  "77" -> "79" 
+  "79" -> "80" 
+  "82" -> "83" 
+  "82" -> "84" 
+  "84" -> "8" 
+  "84" -> "85" 
+  "84" -> "86" 
+  "87" -> "88" 
+  "87" -> "92" 
+  "88" -> "89" 
+  "89" -> "90" 
+  "89" -> "91" 
+  "92" -> "93" 
+  "94" -> "95" 
+  "94" -> "96" 
+  "97" -> "98" 
+}

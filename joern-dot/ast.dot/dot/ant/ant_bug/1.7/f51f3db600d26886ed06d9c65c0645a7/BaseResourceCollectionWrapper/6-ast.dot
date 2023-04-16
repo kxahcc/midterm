@@ -1,0 +1,99 @@
+digraph "dieOnCircularReference" {  
+"209" [label = <(METHOD,dieOnCircularReference)<SUB>133</SUB>> ]
+"25" [label = <(PARAM,this)<SUB>133</SUB>> ]
+"210" [label = <(PARAM,Stack stk)<SUB>133</SUB>> ]
+"211" [label = <(PARAM,Project p)<SUB>133</SUB>> ]
+"212" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>134</SUB>> ]
+"213" [label = <(CONTROL_STRUCTURE,if (isChecked()),if (isChecked()))<SUB>135</SUB>> ]
+"214" [label = <(isChecked,isChecked())<SUB>135</SUB>> ]
+"24" [label = <(IDENTIFIER,this,isChecked())<SUB>135</SUB>> ]
+"215" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>135</SUB>> ]
+"216" [label = <(RETURN,return;,return;)<SUB>136</SUB>> ]
+"217" [label = <(CONTROL_STRUCTURE,if (isReference()),if (isReference()))<SUB>138</SUB>> ]
+"218" [label = <(isReference,isReference())<SUB>138</SUB>> ]
+"26" [label = <(IDENTIFIER,this,isReference())<SUB>138</SUB>> ]
+"219" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>138</SUB>> ]
+"220" [label = <(dieOnCircularReference,dieOnCircularReference(stk, p))<SUB>139</SUB>> ]
+"221" [label = <(IDENTIFIER,super,dieOnCircularReference(stk, p))<SUB>139</SUB>> ]
+"222" [label = <(IDENTIFIER,stk,dieOnCircularReference(stk, p))<SUB>139</SUB>> ]
+"223" [label = <(IDENTIFIER,p,dieOnCircularReference(stk, p))<SUB>139</SUB>> ]
+"224" [label = <(CONTROL_STRUCTURE,else,else)<SUB>140</SUB>> ]
+"225" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>140</SUB>> ]
+"226" [label = <(CONTROL_STRUCTURE,if (rc instanceof DataType),if (rc instanceof DataType))<SUB>141</SUB>> ]
+"227" [label = <(&lt;operator&gt;.instanceOf,rc instanceof DataType)<SUB>141</SUB>> ]
+"228" [label = <(&lt;operator&gt;.fieldAccess,this.rc)<SUB>141</SUB>> ]
+"229" [label = <(IDENTIFIER,this,rc instanceof DataType)<SUB>141</SUB>> ]
+"230" [label = <(FIELD_IDENTIFIER,rc,rc)<SUB>141</SUB>> ]
+"231" [label = <(TYPE_REF,DataType,DataType)<SUB>141</SUB>> ]
+"232" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>141</SUB>> ]
+"233" [label = <(push,push(rc))<SUB>142</SUB>> ]
+"234" [label = <(IDENTIFIER,stk,push(rc))<SUB>142</SUB>> ]
+"235" [label = <(&lt;operator&gt;.fieldAccess,this.rc)<SUB>142</SUB>> ]
+"236" [label = <(IDENTIFIER,this,push(rc))<SUB>142</SUB>> ]
+"237" [label = <(FIELD_IDENTIFIER,rc,rc)<SUB>142</SUB>> ]
+"238" [label = <(invokeCircularReferenceCheck,invokeCircularReferenceCheck((DataType) rc, stk, p))<SUB>143</SUB>> ]
+"27" [label = <(IDENTIFIER,this,invokeCircularReferenceCheck((DataType) rc, stk, p))<SUB>143</SUB>> ]
+"239" [label = <(&lt;operator&gt;.cast,(DataType) rc)<SUB>143</SUB>> ]
+"240" [label = <(TYPE_REF,DataType,DataType)<SUB>143</SUB>> ]
+"241" [label = <(&lt;operator&gt;.fieldAccess,this.rc)<SUB>143</SUB>> ]
+"242" [label = <(IDENTIFIER,this,(DataType) rc)<SUB>143</SUB>> ]
+"243" [label = <(FIELD_IDENTIFIER,rc,rc)<SUB>143</SUB>> ]
+"244" [label = <(IDENTIFIER,stk,invokeCircularReferenceCheck((DataType) rc, stk, p))<SUB>143</SUB>> ]
+"245" [label = <(IDENTIFIER,p,invokeCircularReferenceCheck((DataType) rc, stk, p))<SUB>143</SUB>> ]
+"246" [label = <(pop,stk.pop())<SUB>144</SUB>> ]
+"247" [label = <(IDENTIFIER,stk,stk.pop())<SUB>144</SUB>> ]
+"248" [label = <(setChecked,setChecked(true))<SUB>146</SUB>> ]
+"28" [label = <(IDENTIFIER,this,setChecked(true))<SUB>146</SUB>> ]
+"249" [label = <(LITERAL,true,setChecked(true))<SUB>146</SUB>> ]
+"250" [label = <(MODIFIER,PROTECTED)> ]
+"251" [label = <(MODIFIER,VIRTUAL)> ]
+"252" [label = <(METHOD_RETURN,void)<SUB>133</SUB>> ]
+  "209" -> "25" 
+  "209" -> "210" 
+  "209" -> "211" 
+  "209" -> "212" 
+  "209" -> "250" 
+  "209" -> "251" 
+  "209" -> "252" 
+  "212" -> "213" 
+  "212" -> "217" 
+  "213" -> "214" 
+  "213" -> "215" 
+  "214" -> "24" 
+  "215" -> "216" 
+  "217" -> "218" 
+  "217" -> "219" 
+  "217" -> "224" 
+  "218" -> "26" 
+  "219" -> "220" 
+  "220" -> "221" 
+  "220" -> "222" 
+  "220" -> "223" 
+  "224" -> "225" 
+  "225" -> "226" 
+  "225" -> "248" 
+  "226" -> "227" 
+  "226" -> "232" 
+  "227" -> "228" 
+  "227" -> "231" 
+  "228" -> "229" 
+  "228" -> "230" 
+  "232" -> "233" 
+  "232" -> "238" 
+  "232" -> "246" 
+  "233" -> "234" 
+  "233" -> "235" 
+  "235" -> "236" 
+  "235" -> "237" 
+  "238" -> "27" 
+  "238" -> "239" 
+  "238" -> "244" 
+  "238" -> "245" 
+  "239" -> "240" 
+  "239" -> "241" 
+  "241" -> "242" 
+  "241" -> "243" 
+  "246" -> "247" 
+  "248" -> "28" 
+  "248" -> "249" 
+}

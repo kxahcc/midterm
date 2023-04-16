@@ -1,0 +1,77 @@
+digraph "invoke" {  
+"91" [label = <(METHOD,invoke)<SUB>87</SUB>> ]
+"92" [label = <(PARAM,Object obj)<SUB>88</SUB>> ]
+"93" [label = <(PARAM,String methodName)<SUB>88</SUB>> ]
+"94" [label = <(PARAM,Class argType1)<SUB>88</SUB>> ]
+"95" [label = <(PARAM,Object arg1)<SUB>88</SUB>> ]
+"96" [label = <(PARAM,Class argType2)<SUB>89</SUB>> ]
+"97" [label = <(PARAM,Object arg2)<SUB>89</SUB>> ]
+"98" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>89</SUB>> ]
+"99" [label = <(CONTROL_STRUCTURE,try,try)<SUB>90</SUB>> ]
+"100" [label = <(BLOCK,try,try)<SUB>90</SUB>> ]
+"101" [label = <(LOCAL,Method method: java.lang.reflect.Method)> ]
+"102" [label = <(&lt;operator&gt;.assignment,method = obj.getClass().getMethod(methodName, new Class[] { argType1, argType2 }))<SUB>92</SUB>> ]
+"103" [label = <(IDENTIFIER,method,method = obj.getClass().getMethod(methodName, new Class[] { argType1, argType2 }))<SUB>92</SUB>> ]
+"104" [label = <(getMethod,obj.getClass().getMethod(methodName, new Class[] { argType1, argType2 }))<SUB>92</SUB>> ]
+"105" [label = <(getClass,obj.getClass())<SUB>92</SUB>> ]
+"106" [label = <(IDENTIFIER,obj,obj.getClass())<SUB>92</SUB>> ]
+"107" [label = <(IDENTIFIER,methodName,obj.getClass().getMethod(methodName, new Class[] { argType1, argType2 }))<SUB>93</SUB>> ]
+"108" [label = <(&lt;operator&gt;.arrayInitializer,&lt;operator&gt;.arrayInitializer)<SUB>92</SUB>> ]
+"109" [label = <(&lt;operator&gt;.arrayInitializer,new Class[] { argType1, argType2 })<SUB>93</SUB>> ]
+"110" [label = <(IDENTIFIER,argType1,new Class[] { argType1, argType2 })<SUB>93</SUB>> ]
+"111" [label = <(IDENTIFIER,argType2,new Class[] { argType1, argType2 })<SUB>93</SUB>> ]
+"112" [label = <(RETURN,return method.invoke(obj, new Object[] { arg1, arg2 });,return method.invoke(obj, new Object[] { arg1, arg2 });)<SUB>94</SUB>> ]
+"113" [label = <(invoke,method.invoke(obj, new Object[] { arg1, arg2 }))<SUB>94</SUB>> ]
+"114" [label = <(IDENTIFIER,method,method.invoke(obj, new Object[] { arg1, arg2 }))<SUB>94</SUB>> ]
+"115" [label = <(IDENTIFIER,obj,method.invoke(obj, new Object[] { arg1, arg2 }))<SUB>94</SUB>> ]
+"116" [label = <(&lt;operator&gt;.arrayInitializer,&lt;operator&gt;.arrayInitializer)<SUB>94</SUB>> ]
+"117" [label = <(&lt;operator&gt;.arrayInitializer,new Object[] { arg1, arg2 })<SUB>94</SUB>> ]
+"118" [label = <(IDENTIFIER,arg1,new Object[] { arg1, arg2 })<SUB>94</SUB>> ]
+"119" [label = <(IDENTIFIER,arg2,new Object[] { arg1, arg2 })<SUB>94</SUB>> ]
+"120" [label = <(BLOCK,catch,catch)> ]
+"121" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>95</SUB>> ]
+"122" [label = <(throwBuildException,throwBuildException(t))<SUB>96</SUB>> ]
+"123" [label = <(IDENTIFIER,t,throwBuildException(t))<SUB>96</SUB>> ]
+"124" [label = <(RETURN,return null;,return null;)<SUB>97</SUB>> ]
+"125" [label = <(LITERAL,null,return null;)<SUB>97</SUB>> ]
+"126" [label = <(MODIFIER,PUBLIC)> ]
+"127" [label = <(MODIFIER,STATIC)> ]
+"128" [label = <(METHOD_RETURN,java.lang.Object)<SUB>87</SUB>> ]
+  "91" -> "92" 
+  "91" -> "93" 
+  "91" -> "94" 
+  "91" -> "95" 
+  "91" -> "96" 
+  "91" -> "97" 
+  "91" -> "98" 
+  "91" -> "126" 
+  "91" -> "127" 
+  "91" -> "128" 
+  "98" -> "99" 
+  "99" -> "100" 
+  "99" -> "120" 
+  "100" -> "101" 
+  "100" -> "102" 
+  "100" -> "112" 
+  "102" -> "103" 
+  "102" -> "104" 
+  "104" -> "105" 
+  "104" -> "107" 
+  "104" -> "108" 
+  "105" -> "106" 
+  "108" -> "109" 
+  "109" -> "110" 
+  "109" -> "111" 
+  "112" -> "113" 
+  "113" -> "114" 
+  "113" -> "115" 
+  "113" -> "116" 
+  "116" -> "117" 
+  "117" -> "118" 
+  "117" -> "119" 
+  "120" -> "121" 
+  "121" -> "122" 
+  "121" -> "124" 
+  "122" -> "123" 
+  "124" -> "125" 
+}

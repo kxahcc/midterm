@@ -1,0 +1,115 @@
+digraph "getClassFromStream" {  
+"1937" [label = <(METHOD,getClassFromStream)<SUB>1099</SUB>> ]
+"121" [label = <(PARAM,this)<SUB>1099</SUB>> ]
+"1938" [label = <(PARAM,InputStream stream)<SUB>1099</SUB>> ]
+"1939" [label = <(PARAM,String classname)<SUB>1099</SUB>> ]
+"1940" [label = <(PARAM,File container)<SUB>1100</SUB>> ]
+"1941" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>1101</SUB>> ]
+"119" [label = <(LOCAL,ByteArrayOutputStream baos: java.io.ByteArrayOutputStream)> ]
+"1942" [label = <(&lt;operator&gt;.assignment,ByteArrayOutputStream baos = new ByteArrayOutputStream())<SUB>1102</SUB>> ]
+"1943" [label = <(IDENTIFIER,baos,ByteArrayOutputStream baos = new ByteArrayOutputStream())<SUB>1102</SUB>> ]
+"1944" [label = <(&lt;operator&gt;.alloc,new ByteArrayOutputStream())<SUB>1102</SUB>> ]
+"1945" [label = <(&lt;init&gt;,new ByteArrayOutputStream())<SUB>1102</SUB>> ]
+"118" [label = <(IDENTIFIER,baos,new ByteArrayOutputStream())<SUB>1102</SUB>> ]
+"1946" [label = <(LOCAL,int bytesRead: int)> ]
+"1947" [label = <(&lt;operator&gt;.assignment,int bytesRead = -1)<SUB>1103</SUB>> ]
+"1948" [label = <(IDENTIFIER,bytesRead,int bytesRead = -1)<SUB>1103</SUB>> ]
+"1949" [label = <(&lt;operator&gt;.minus,-1)<SUB>1103</SUB>> ]
+"1950" [label = <(LITERAL,1,-1)<SUB>1103</SUB>> ]
+"1951" [label = <(LOCAL,byte[] buffer: byte[])> ]
+"1952" [label = <(&lt;operator&gt;.assignment,byte[] buffer = new byte[BUFFER_SIZE])<SUB>1104</SUB>> ]
+"1953" [label = <(IDENTIFIER,buffer,byte[] buffer = new byte[BUFFER_SIZE])<SUB>1104</SUB>> ]
+"1954" [label = <(&lt;operator&gt;.alloc,new byte[BUFFER_SIZE])> ]
+"1955" [label = <(&lt;operator&gt;.fieldAccess,AntClassLoader.BUFFER_SIZE)<SUB>1104</SUB>> ]
+"1956" [label = <(IDENTIFIER,AntClassLoader,new byte[BUFFER_SIZE])<SUB>1104</SUB>> ]
+"1957" [label = <(FIELD_IDENTIFIER,BUFFER_SIZE,BUFFER_SIZE)<SUB>1104</SUB>> ]
+"1958" [label = <(CONTROL_STRUCTURE,while ((bytesRead = stream.read(buffer, 0, BUFFER_SIZE)) != -1),while ((bytesRead = stream.read(buffer, 0, BUFFER_SIZE)) != -1))<SUB>1106</SUB>> ]
+"1959" [label = <(&lt;operator&gt;.notEquals,(bytesRead = stream.read(buffer, 0, BUFFER_SIZE)) != -1)<SUB>1106</SUB>> ]
+"1960" [label = <(&lt;operator&gt;.assignment,bytesRead = stream.read(buffer, 0, BUFFER_SIZE))<SUB>1106</SUB>> ]
+"1961" [label = <(IDENTIFIER,bytesRead,bytesRead = stream.read(buffer, 0, BUFFER_SIZE))<SUB>1106</SUB>> ]
+"1962" [label = <(read,stream.read(buffer, 0, BUFFER_SIZE))<SUB>1106</SUB>> ]
+"1963" [label = <(IDENTIFIER,stream,stream.read(buffer, 0, BUFFER_SIZE))<SUB>1106</SUB>> ]
+"1964" [label = <(IDENTIFIER,buffer,stream.read(buffer, 0, BUFFER_SIZE))<SUB>1106</SUB>> ]
+"1965" [label = <(LITERAL,0,stream.read(buffer, 0, BUFFER_SIZE))<SUB>1106</SUB>> ]
+"1966" [label = <(&lt;operator&gt;.fieldAccess,AntClassLoader.BUFFER_SIZE)<SUB>1106</SUB>> ]
+"1967" [label = <(IDENTIFIER,AntClassLoader,stream.read(buffer, 0, BUFFER_SIZE))<SUB>1106</SUB>> ]
+"1968" [label = <(FIELD_IDENTIFIER,BUFFER_SIZE,BUFFER_SIZE)<SUB>1106</SUB>> ]
+"1969" [label = <(&lt;operator&gt;.minus,-1)<SUB>1106</SUB>> ]
+"1970" [label = <(LITERAL,1,-1)<SUB>1106</SUB>> ]
+"1971" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>1106</SUB>> ]
+"1972" [label = <(write,baos.write(buffer, 0, bytesRead))<SUB>1107</SUB>> ]
+"1973" [label = <(IDENTIFIER,baos,baos.write(buffer, 0, bytesRead))<SUB>1107</SUB>> ]
+"1974" [label = <(IDENTIFIER,buffer,baos.write(buffer, 0, bytesRead))<SUB>1107</SUB>> ]
+"1975" [label = <(LITERAL,0,baos.write(buffer, 0, bytesRead))<SUB>1107</SUB>> ]
+"1976" [label = <(IDENTIFIER,bytesRead,baos.write(buffer, 0, bytesRead))<SUB>1107</SUB>> ]
+"1977" [label = <(LOCAL,byte[] classData: byte[])> ]
+"1978" [label = <(&lt;operator&gt;.assignment,byte[] classData = baos.toByteArray())<SUB>1110</SUB>> ]
+"1979" [label = <(IDENTIFIER,classData,byte[] classData = baos.toByteArray())<SUB>1110</SUB>> ]
+"1980" [label = <(toByteArray,baos.toByteArray())<SUB>1110</SUB>> ]
+"1981" [label = <(IDENTIFIER,baos,baos.toByteArray())<SUB>1110</SUB>> ]
+"1982" [label = <(RETURN,return defineClassFromData(container, classData, classname);,return defineClassFromData(container, classData, classname);)<SUB>1111</SUB>> ]
+"1983" [label = <(defineClassFromData,this.defineClassFromData(container, classData, classname))<SUB>1111</SUB>> ]
+"120" [label = <(IDENTIFIER,this,this.defineClassFromData(container, classData, classname))<SUB>1111</SUB>> ]
+"1984" [label = <(IDENTIFIER,container,this.defineClassFromData(container, classData, classname))<SUB>1111</SUB>> ]
+"1985" [label = <(IDENTIFIER,classData,this.defineClassFromData(container, classData, classname))<SUB>1111</SUB>> ]
+"1986" [label = <(IDENTIFIER,classname,this.defineClassFromData(container, classData, classname))<SUB>1111</SUB>> ]
+"1987" [label = <(MODIFIER,PRIVATE)> ]
+"1988" [label = <(MODIFIER,VIRTUAL)> ]
+"1989" [label = <(METHOD_RETURN,java.lang.Class)<SUB>1099</SUB>> ]
+  "1937" -> "121" 
+  "1937" -> "1938" 
+  "1937" -> "1939" 
+  "1937" -> "1940" 
+  "1937" -> "1941" 
+  "1937" -> "1987" 
+  "1937" -> "1988" 
+  "1937" -> "1989" 
+  "1941" -> "119" 
+  "1941" -> "1942" 
+  "1941" -> "1945" 
+  "1941" -> "1946" 
+  "1941" -> "1947" 
+  "1941" -> "1951" 
+  "1941" -> "1952" 
+  "1941" -> "1958" 
+  "1941" -> "1977" 
+  "1941" -> "1978" 
+  "1941" -> "1982" 
+  "1942" -> "1943" 
+  "1942" -> "1944" 
+  "1945" -> "118" 
+  "1947" -> "1948" 
+  "1947" -> "1949" 
+  "1949" -> "1950" 
+  "1952" -> "1953" 
+  "1952" -> "1954" 
+  "1954" -> "1955" 
+  "1955" -> "1956" 
+  "1955" -> "1957" 
+  "1958" -> "1959" 
+  "1958" -> "1971" 
+  "1959" -> "1960" 
+  "1959" -> "1969" 
+  "1960" -> "1961" 
+  "1960" -> "1962" 
+  "1962" -> "1963" 
+  "1962" -> "1964" 
+  "1962" -> "1965" 
+  "1962" -> "1966" 
+  "1966" -> "1967" 
+  "1966" -> "1968" 
+  "1969" -> "1970" 
+  "1971" -> "1972" 
+  "1972" -> "1973" 
+  "1972" -> "1974" 
+  "1972" -> "1975" 
+  "1972" -> "1976" 
+  "1978" -> "1979" 
+  "1978" -> "1980" 
+  "1980" -> "1981" 
+  "1982" -> "1983" 
+  "1983" -> "120" 
+  "1983" -> "1984" 
+  "1983" -> "1985" 
+  "1983" -> "1986" 
+}

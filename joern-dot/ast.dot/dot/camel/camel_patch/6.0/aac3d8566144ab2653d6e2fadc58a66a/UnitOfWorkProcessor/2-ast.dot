@@ -1,0 +1,103 @@
+digraph "process" {  
+"34" [label = <(METHOD,process)<SUB>40</SUB>> ]
+"8" [label = <(PARAM,this)<SUB>40</SUB>> ]
+"35" [label = <(PARAM,final Exchange exchange)<SUB>40</SUB>> ]
+"36" [label = <(PARAM,final AsyncCallback callback)<SUB>40</SUB>> ]
+"37" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>40</SUB>> ]
+"38" [label = <(CONTROL_STRUCTURE,if (exchange.getUnitOfWork() == null),if (exchange.getUnitOfWork() == null))<SUB>41</SUB>> ]
+"39" [label = <(&lt;operator&gt;.equals,exchange.getUnitOfWork() == null)<SUB>41</SUB>> ]
+"40" [label = <(getUnitOfWork,getUnitOfWork())<SUB>41</SUB>> ]
+"41" [label = <(IDENTIFIER,exchange,getUnitOfWork())<SUB>41</SUB>> ]
+"42" [label = <(LITERAL,null,exchange.getUnitOfWork() == null)<SUB>41</SUB>> ]
+"43" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>41</SUB>> ]
+"6" [label = <(LOCAL,DefaultUnitOfWork uow: org.apache.camel.impl.DefaultUnitOfWork)> ]
+"44" [label = <(&lt;operator&gt;.assignment,DefaultUnitOfWork uow = new DefaultUnitOfWork())<SUB>44</SUB>> ]
+"45" [label = <(IDENTIFIER,uow,DefaultUnitOfWork uow = new DefaultUnitOfWork())<SUB>44</SUB>> ]
+"46" [label = <(&lt;operator&gt;.alloc,new DefaultUnitOfWork())<SUB>44</SUB>> ]
+"47" [label = <(&lt;init&gt;,new DefaultUnitOfWork())<SUB>44</SUB>> ]
+"5" [label = <(IDENTIFIER,uow,new DefaultUnitOfWork())<SUB>44</SUB>> ]
+"48" [label = <(setUnitOfWork,setUnitOfWork(uow))<SUB>45</SUB>> ]
+"49" [label = <(IDENTIFIER,exchange,setUnitOfWork(uow))<SUB>45</SUB>> ]
+"50" [label = <(IDENTIFIER,uow,setUnitOfWork(uow))<SUB>45</SUB>> ]
+"51" [label = <(CONTROL_STRUCTURE,try,try)<SUB>46</SUB>> ]
+"52" [label = <(BLOCK,try,try)<SUB>46</SUB>> ]
+"53" [label = <(start,start())<SUB>47</SUB>> ]
+"54" [label = <(IDENTIFIER,uow,start())<SUB>47</SUB>> ]
+"55" [label = <(BLOCK,catch,catch)> ]
+"56" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>48</SUB>> ]
+"57" [label = <(&lt;operator&gt;.throw,throw wrapRuntimeCamelException(e);)<SUB>49</SUB>> ]
+"58" [label = <(wrapRuntimeCamelException,wrapRuntimeCamelException(e))<SUB>49</SUB>> ]
+"7" [label = <(IDENTIFIER,this,wrapRuntimeCamelException(e))<SUB>49</SUB>> ]
+"59" [label = <(IDENTIFIER,e,wrapRuntimeCamelException(e))<SUB>49</SUB>> ]
+"60" [label = <(RETURN,return processor.process(exchange, new AsyncCallback() {\012\012    public void done(boolean sync) {\012        callback.done(sync);\012        exchange.getUnitOfWork().done(exchange);\012        try {\012            uow.stop();\012        } catch (Exception e) {\012            throw wrapRuntimeCamelException(e);\012        }\012        exchange.setUnitOfWork(null);\012    }\012});,return processor.process(exchange, new AsyncCallback() {\012\012    public void done(boolean sync) {\012        callback.done(sync);\012        exchange.getUnitOfWork().done(exchange);\012        try {\012            uow.stop();\012        } catch (Exception e) {\012            throw wrapRuntimeCamelException(e);\012        }\012        exchange.setUnitOfWork(null);\012    }\012});)<SUB>52</SUB>> ]
+"61" [label = <(process,process(exchange, new AsyncCallback() {\012\012    public void done(boolean sync) {\012        callback.done(sync);\012        exchange.getUnitOfWork().done(exchange);\012        try {\012            uow.stop();\012        } catch (Exception e) {\012            throw wrapRuntimeCamelException(e);\012        }\012        exchange.setUnitOfWork(null);\012    }\012}))<SUB>52</SUB>> ]
+"62" [label = <(IDENTIFIER,processor,process(exchange, new AsyncCallback() {\012\012    public void done(boolean sync) {\012        callback.done(sync);\012        exchange.getUnitOfWork().done(exchange);\012        try {\012            uow.stop();\012        } catch (Exception e) {\012            throw wrapRuntimeCamelException(e);\012        }\012        exchange.setUnitOfWork(null);\012    }\012}))<SUB>52</SUB>> ]
+"63" [label = <(IDENTIFIER,exchange,process(exchange, new AsyncCallback() {\012\012    public void done(boolean sync) {\012        callback.done(sync);\012        exchange.getUnitOfWork().done(exchange);\012        try {\012            uow.stop();\012        } catch (Exception e) {\012            throw wrapRuntimeCamelException(e);\012        }\012        exchange.setUnitOfWork(null);\012    }\012}))<SUB>52</SUB>> ]
+"64" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>52</SUB>> ]
+"65" [label = <(&lt;operator&gt;.assignment,&lt;empty&gt;)> ]
+"66" [label = <(IDENTIFIER,$obj1,&lt;empty&gt;)> ]
+"67" [label = <(&lt;operator&gt;.alloc,new AsyncCallback() {\012\012    public void done(boolean sync) {\012        callback.done(sync);\012        exchange.getUnitOfWork().done(exchange);\012        try {\012            uow.stop();\012        } catch (Exception e) {\012            throw wrapRuntimeCamelException(e);\012        }\012        exchange.setUnitOfWork(null);\012    }\012})<SUB>52</SUB>> ]
+"68" [label = <(&lt;init&gt;,new AsyncCallback() {\012\012    public void done(boolean sync) {\012        callback.done(sync);\012        exchange.getUnitOfWork().done(exchange);\012        try {\012            uow.stop();\012        } catch (Exception e) {\012            throw wrapRuntimeCamelException(e);\012        }\012        exchange.setUnitOfWork(null);\012    }\012})<SUB>52</SUB>> ]
+"69" [label = <(IDENTIFIER,$obj1,new AsyncCallback() {\012\012    public void done(boolean sync) {\012        callback.done(sync);\012        exchange.getUnitOfWork().done(exchange);\012        try {\012            uow.stop();\012        } catch (Exception e) {\012            throw wrapRuntimeCamelException(e);\012        }\012        exchange.setUnitOfWork(null);\012    }\012})> ]
+"70" [label = <(IDENTIFIER,$obj1,&lt;empty&gt;)> ]
+"71" [label = <(CONTROL_STRUCTURE,else,else)<SUB>67</SUB>> ]
+"72" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>67</SUB>> ]
+"73" [label = <(RETURN,return processor.process(exchange, callback);,return processor.process(exchange, callback);)<SUB>70</SUB>> ]
+"74" [label = <(process,process(exchange, callback))<SUB>70</SUB>> ]
+"75" [label = <(IDENTIFIER,processor,process(exchange, callback))<SUB>70</SUB>> ]
+"76" [label = <(IDENTIFIER,exchange,process(exchange, callback))<SUB>70</SUB>> ]
+"77" [label = <(IDENTIFIER,callback,process(exchange, callback))<SUB>70</SUB>> ]
+"78" [label = <(MODIFIER,PUBLIC)> ]
+"79" [label = <(MODIFIER,VIRTUAL)> ]
+"80" [label = <(METHOD_RETURN,boolean)<SUB>40</SUB>> ]
+  "34" -> "8" 
+  "34" -> "35" 
+  "34" -> "36" 
+  "34" -> "37" 
+  "34" -> "78" 
+  "34" -> "79" 
+  "34" -> "80" 
+  "37" -> "38" 
+  "38" -> "39" 
+  "38" -> "43" 
+  "38" -> "71" 
+  "39" -> "40" 
+  "39" -> "42" 
+  "40" -> "41" 
+  "43" -> "6" 
+  "43" -> "44" 
+  "43" -> "47" 
+  "43" -> "48" 
+  "43" -> "51" 
+  "43" -> "60" 
+  "44" -> "45" 
+  "44" -> "46" 
+  "47" -> "5" 
+  "48" -> "49" 
+  "48" -> "50" 
+  "51" -> "52" 
+  "51" -> "55" 
+  "52" -> "53" 
+  "53" -> "54" 
+  "55" -> "56" 
+  "56" -> "57" 
+  "57" -> "58" 
+  "58" -> "7" 
+  "58" -> "59" 
+  "60" -> "61" 
+  "61" -> "62" 
+  "61" -> "63" 
+  "61" -> "64" 
+  "64" -> "65" 
+  "64" -> "68" 
+  "64" -> "70" 
+  "65" -> "66" 
+  "65" -> "67" 
+  "68" -> "69" 
+  "71" -> "72" 
+  "72" -> "73" 
+  "73" -> "74" 
+  "74" -> "75" 
+  "74" -> "76" 
+  "74" -> "77" 
+}

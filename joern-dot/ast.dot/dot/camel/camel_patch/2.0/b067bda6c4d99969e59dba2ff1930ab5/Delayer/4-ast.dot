@@ -1,0 +1,117 @@
+digraph "delay" {  
+"89" [label = <(METHOD,delay)<SUB>70</SUB>> ]
+"12" [label = <(PARAM,this)<SUB>70</SUB>> ]
+"90" [label = <(PARAM,Exchange exchange)<SUB>70</SUB>> ]
+"91" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>70</SUB>> ]
+"92" [label = <(LOCAL,long time: long)> ]
+"93" [label = <(&lt;operator&gt;.assignment,long time = 0)<SUB>71</SUB>> ]
+"94" [label = <(IDENTIFIER,time,long time = 0)<SUB>71</SUB>> ]
+"95" [label = <(LITERAL,0,long time = 0)<SUB>71</SUB>> ]
+"96" [label = <(CONTROL_STRUCTURE,if (timeExpression != null),if (timeExpression != null))<SUB>72</SUB>> ]
+"97" [label = <(&lt;operator&gt;.notEquals,timeExpression != null)<SUB>72</SUB>> ]
+"98" [label = <(&lt;operator&gt;.fieldAccess,this.timeExpression)<SUB>72</SUB>> ]
+"99" [label = <(IDENTIFIER,this,timeExpression != null)<SUB>72</SUB>> ]
+"100" [label = <(FIELD_IDENTIFIER,timeExpression,timeExpression)<SUB>72</SUB>> ]
+"101" [label = <(LITERAL,null,timeExpression != null)<SUB>72</SUB>> ]
+"102" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>72</SUB>> ]
+"103" [label = <(LOCAL,Long longValue: java.lang.Long)> ]
+"104" [label = <(&lt;operator&gt;.assignment,Long longValue = evaluateAsType(timeExpression, exchange, Long.class))<SUB>73</SUB>> ]
+"105" [label = <(IDENTIFIER,longValue,Long longValue = evaluateAsType(timeExpression, exchange, Long.class))<SUB>73</SUB>> ]
+"106" [label = <(evaluateAsType,evaluateAsType(timeExpression, exchange, Long.class))<SUB>73</SUB>> ]
+"107" [label = <(IDENTIFIER,ExpressionHelper,evaluateAsType(timeExpression, exchange, Long.class))<SUB>73</SUB>> ]
+"108" [label = <(&lt;operator&gt;.fieldAccess,this.timeExpression)<SUB>73</SUB>> ]
+"109" [label = <(IDENTIFIER,this,evaluateAsType(timeExpression, exchange, Long.class))<SUB>73</SUB>> ]
+"110" [label = <(FIELD_IDENTIFIER,timeExpression,timeExpression)<SUB>73</SUB>> ]
+"111" [label = <(IDENTIFIER,exchange,evaluateAsType(timeExpression, exchange, Long.class))<SUB>73</SUB>> ]
+"112" [label = <(&lt;operator&gt;.fieldAccess,Long.class)<SUB>73</SUB>> ]
+"113" [label = <(IDENTIFIER,Long,evaluateAsType(timeExpression, exchange, Long.class))<SUB>73</SUB>> ]
+"114" [label = <(FIELD_IDENTIFIER,class,class)<SUB>73</SUB>> ]
+"115" [label = <(CONTROL_STRUCTURE,if (longValue != null),if (longValue != null))<SUB>74</SUB>> ]
+"116" [label = <(&lt;operator&gt;.notEquals,longValue != null)<SUB>74</SUB>> ]
+"117" [label = <(IDENTIFIER,longValue,longValue != null)<SUB>74</SUB>> ]
+"118" [label = <(LITERAL,null,longValue != null)<SUB>74</SUB>> ]
+"119" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>74</SUB>> ]
+"120" [label = <(&lt;operator&gt;.assignment,time = longValue.longValue())<SUB>75</SUB>> ]
+"121" [label = <(IDENTIFIER,time,time = longValue.longValue())<SUB>75</SUB>> ]
+"122" [label = <(longValue,longValue.longValue())<SUB>75</SUB>> ]
+"123" [label = <(IDENTIFIER,longValue,longValue.longValue())<SUB>75</SUB>> ]
+"124" [label = <(CONTROL_STRUCTURE,if (time &lt;= 0),if (time &lt;= 0))<SUB>78</SUB>> ]
+"125" [label = <(&lt;operator&gt;.lessEqualsThan,time &lt;= 0)<SUB>78</SUB>> ]
+"126" [label = <(IDENTIFIER,time,time &lt;= 0)<SUB>78</SUB>> ]
+"127" [label = <(LITERAL,0,time &lt;= 0)<SUB>78</SUB>> ]
+"128" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>78</SUB>> ]
+"129" [label = <(&lt;operator&gt;.assignment,time = defaultProcessTime(exchange))<SUB>79</SUB>> ]
+"130" [label = <(IDENTIFIER,time,time = defaultProcessTime(exchange))<SUB>79</SUB>> ]
+"131" [label = <(defaultProcessTime,defaultProcessTime(exchange))<SUB>79</SUB>> ]
+"11" [label = <(IDENTIFIER,this,defaultProcessTime(exchange))<SUB>79</SUB>> ]
+"132" [label = <(IDENTIFIER,exchange,defaultProcessTime(exchange))<SUB>79</SUB>> ]
+"133" [label = <(&lt;operator&gt;.assignmentPlus,time += this.delay)<SUB>82</SUB>> ]
+"134" [label = <(IDENTIFIER,time,time += this.delay)<SUB>82</SUB>> ]
+"135" [label = <(&lt;operator&gt;.fieldAccess,this.delay)<SUB>82</SUB>> ]
+"136" [label = <(IDENTIFIER,this,time += this.delay)<SUB>82</SUB>> ]
+"137" [label = <(FIELD_IDENTIFIER,delay,delay)<SUB>82</SUB>> ]
+"138" [label = <(waitUntil,waitUntil(time, exchange))<SUB>84</SUB>> ]
+"13" [label = <(IDENTIFIER,this,waitUntil(time, exchange))<SUB>84</SUB>> ]
+"139" [label = <(IDENTIFIER,time,waitUntil(time, exchange))<SUB>84</SUB>> ]
+"140" [label = <(IDENTIFIER,exchange,waitUntil(time, exchange))<SUB>84</SUB>> ]
+"141" [label = <(MODIFIER,PROTECTED)> ]
+"142" [label = <(MODIFIER,VIRTUAL)> ]
+"143" [label = <(METHOD_RETURN,void)<SUB>70</SUB>> ]
+  "89" -> "12" 
+  "89" -> "90" 
+  "89" -> "91" 
+  "89" -> "141" 
+  "89" -> "142" 
+  "89" -> "143" 
+  "91" -> "92" 
+  "91" -> "93" 
+  "91" -> "96" 
+  "91" -> "124" 
+  "91" -> "133" 
+  "91" -> "138" 
+  "93" -> "94" 
+  "93" -> "95" 
+  "96" -> "97" 
+  "96" -> "102" 
+  "97" -> "98" 
+  "97" -> "101" 
+  "98" -> "99" 
+  "98" -> "100" 
+  "102" -> "103" 
+  "102" -> "104" 
+  "102" -> "115" 
+  "104" -> "105" 
+  "104" -> "106" 
+  "106" -> "107" 
+  "106" -> "108" 
+  "106" -> "111" 
+  "106" -> "112" 
+  "108" -> "109" 
+  "108" -> "110" 
+  "112" -> "113" 
+  "112" -> "114" 
+  "115" -> "116" 
+  "115" -> "119" 
+  "116" -> "117" 
+  "116" -> "118" 
+  "119" -> "120" 
+  "120" -> "121" 
+  "120" -> "122" 
+  "122" -> "123" 
+  "124" -> "125" 
+  "124" -> "128" 
+  "125" -> "126" 
+  "125" -> "127" 
+  "128" -> "129" 
+  "129" -> "130" 
+  "129" -> "131" 
+  "131" -> "11" 
+  "131" -> "132" 
+  "133" -> "134" 
+  "133" -> "135" 
+  "135" -> "136" 
+  "135" -> "137" 
+  "138" -> "13" 
+  "138" -> "139" 
+  "138" -> "140" 
+}

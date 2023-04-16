@@ -1,0 +1,165 @@
+digraph "logAndAddFilesToCompile" {  
+"716" [label = <(METHOD,logAndAddFilesToCompile)<SUB>287</SUB>> ]
+"717" [label = <(PARAM,this)<SUB>287</SUB>> ]
+"718" [label = <(PARAM,Commandline cmd)<SUB>287</SUB>> ]
+"719" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>287</SUB>> ]
+"720" [label = <(LOCAL,Vector compileList: java.util.Vector)> ]
+"721" [label = <(&lt;operator&gt;.assignment,Vector compileList = getCompileList())<SUB>288</SUB>> ]
+"722" [label = <(IDENTIFIER,compileList,Vector compileList = getCompileList())<SUB>288</SUB>> ]
+"723" [label = <(getCompileList,getCompileList())<SUB>288</SUB>> ]
+"724" [label = <(&lt;operator&gt;.fieldAccess,this.attributes)<SUB>288</SUB>> ]
+"725" [label = <(IDENTIFIER,this,getCompileList())<SUB>288</SUB>> ]
+"726" [label = <(FIELD_IDENTIFIER,attributes,attributes)<SUB>288</SUB>> ]
+"727" [label = <(log,log(&quot;Compilation args: &quot; + cmd.toString(), Project.MSG_VERBOSE))<SUB>290</SUB>> ]
+"728" [label = <(&lt;operator&gt;.fieldAccess,this.attributes)<SUB>290</SUB>> ]
+"729" [label = <(IDENTIFIER,this,log(&quot;Compilation args: &quot; + cmd.toString(), Project.MSG_VERBOSE))<SUB>290</SUB>> ]
+"730" [label = <(FIELD_IDENTIFIER,attributes,attributes)<SUB>290</SUB>> ]
+"731" [label = <(&lt;operator&gt;.addition,&quot;Compilation args: &quot; + cmd.toString())<SUB>290</SUB>> ]
+"732" [label = <(LITERAL,&quot;Compilation args: &quot;,&quot;Compilation args: &quot; + cmd.toString())<SUB>290</SUB>> ]
+"733" [label = <(toString,toString())<SUB>290</SUB>> ]
+"734" [label = <(IDENTIFIER,cmd,toString())<SUB>290</SUB>> ]
+"735" [label = <(&lt;operator&gt;.fieldAccess,Project.MSG_VERBOSE)<SUB>291</SUB>> ]
+"736" [label = <(IDENTIFIER,Project,log(&quot;Compilation args: &quot; + cmd.toString(), Project.MSG_VERBOSE))<SUB>291</SUB>> ]
+"737" [label = <(FIELD_IDENTIFIER,MSG_VERBOSE,MSG_VERBOSE)<SUB>291</SUB>> ]
+"22" [label = <(LOCAL,StringBuffer niceSourceList: java.lang.StringBuffer)> ]
+"738" [label = <(&lt;operator&gt;.assignment,StringBuffer niceSourceList = new StringBuffer(&quot;File&quot;))<SUB>293</SUB>> ]
+"739" [label = <(IDENTIFIER,niceSourceList,StringBuffer niceSourceList = new StringBuffer(&quot;File&quot;))<SUB>293</SUB>> ]
+"740" [label = <(&lt;operator&gt;.alloc,new StringBuffer(&quot;File&quot;))<SUB>293</SUB>> ]
+"741" [label = <(&lt;init&gt;,new StringBuffer(&quot;File&quot;))<SUB>293</SUB>> ]
+"21" [label = <(IDENTIFIER,niceSourceList,new StringBuffer(&quot;File&quot;))<SUB>293</SUB>> ]
+"742" [label = <(LITERAL,&quot;File&quot;,new StringBuffer(&quot;File&quot;))<SUB>293</SUB>> ]
+"743" [label = <(CONTROL_STRUCTURE,if (compileList.size() != 1),if (compileList.size() != 1))<SUB>294</SUB>> ]
+"744" [label = <(&lt;operator&gt;.notEquals,compileList.size() != 1)<SUB>294</SUB>> ]
+"745" [label = <(size,compileList.size())<SUB>294</SUB>> ]
+"746" [label = <(IDENTIFIER,compileList,compileList.size())<SUB>294</SUB>> ]
+"747" [label = <(LITERAL,1,compileList.size() != 1)<SUB>294</SUB>> ]
+"748" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>294</SUB>> ]
+"749" [label = <(append,niceSourceList.append(&quot;s&quot;))<SUB>295</SUB>> ]
+"750" [label = <(IDENTIFIER,niceSourceList,niceSourceList.append(&quot;s&quot;))<SUB>295</SUB>> ]
+"751" [label = <(LITERAL,&quot;s&quot;,niceSourceList.append(&quot;s&quot;))<SUB>295</SUB>> ]
+"752" [label = <(append,niceSourceList.append(&quot; to be compiled:&quot;))<SUB>297</SUB>> ]
+"753" [label = <(IDENTIFIER,niceSourceList,niceSourceList.append(&quot; to be compiled:&quot;))<SUB>297</SUB>> ]
+"754" [label = <(LITERAL,&quot; to be compiled:&quot;,niceSourceList.append(&quot; to be compiled:&quot;))<SUB>297</SUB>> ]
+"755" [label = <(CONTROL_STRUCTURE,for (int i = 0; Some(i &lt; compileList.size()); i++),for (int i = 0; Some(i &lt; compileList.size()); i++))<SUB>299</SUB>> ]
+"756" [label = <(LOCAL,int i: int)> ]
+"757" [label = <(&lt;operator&gt;.assignment,int i = 0)<SUB>299</SUB>> ]
+"758" [label = <(IDENTIFIER,i,int i = 0)<SUB>299</SUB>> ]
+"759" [label = <(LITERAL,0,int i = 0)<SUB>299</SUB>> ]
+"760" [label = <(&lt;operator&gt;.lessThan,i &lt; compileList.size())<SUB>299</SUB>> ]
+"761" [label = <(IDENTIFIER,i,i &lt; compileList.size())<SUB>299</SUB>> ]
+"762" [label = <(size,compileList.size())<SUB>299</SUB>> ]
+"763" [label = <(IDENTIFIER,compileList,compileList.size())<SUB>299</SUB>> ]
+"764" [label = <(&lt;operator&gt;.postIncrement,i++)<SUB>299</SUB>> ]
+"765" [label = <(IDENTIFIER,i,i++)<SUB>299</SUB>> ]
+"766" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>299</SUB>> ]
+"767" [label = <(LOCAL,String arg: java.lang.String)> ]
+"768" [label = <(&lt;operator&gt;.assignment,String arg = (String) compileList.elementAt(i))<SUB>300</SUB>> ]
+"769" [label = <(IDENTIFIER,arg,String arg = (String) compileList.elementAt(i))<SUB>300</SUB>> ]
+"770" [label = <(&lt;operator&gt;.cast,(String) compileList.elementAt(i))<SUB>300</SUB>> ]
+"771" [label = <(TYPE_REF,String,String)<SUB>300</SUB>> ]
+"772" [label = <(elementAt,compileList.elementAt(i))<SUB>300</SUB>> ]
+"773" [label = <(IDENTIFIER,compileList,compileList.elementAt(i))<SUB>300</SUB>> ]
+"774" [label = <(IDENTIFIER,i,compileList.elementAt(i))<SUB>300</SUB>> ]
+"775" [label = <(setValue,setValue(arg))<SUB>301</SUB>> ]
+"776" [label = <(createArgument,createArgument())<SUB>301</SUB>> ]
+"777" [label = <(IDENTIFIER,cmd,createArgument())<SUB>301</SUB>> ]
+"778" [label = <(IDENTIFIER,arg,setValue(arg))<SUB>301</SUB>> ]
+"779" [label = <(append,niceSourceList.append(&quot;    &quot; + arg))<SUB>302</SUB>> ]
+"780" [label = <(IDENTIFIER,niceSourceList,niceSourceList.append(&quot;    &quot; + arg))<SUB>302</SUB>> ]
+"781" [label = <(&lt;operator&gt;.addition,&quot;    &quot; + arg)<SUB>302</SUB>> ]
+"782" [label = <(LITERAL,&quot;    &quot;,&quot;    &quot; + arg)<SUB>302</SUB>> ]
+"783" [label = <(IDENTIFIER,arg,&quot;    &quot; + arg)<SUB>302</SUB>> ]
+"784" [label = <(log,log(niceSourceList.toString(), Project.MSG_VERBOSE))<SUB>305</SUB>> ]
+"785" [label = <(&lt;operator&gt;.fieldAccess,this.attributes)<SUB>305</SUB>> ]
+"786" [label = <(IDENTIFIER,this,log(niceSourceList.toString(), Project.MSG_VERBOSE))<SUB>305</SUB>> ]
+"787" [label = <(FIELD_IDENTIFIER,attributes,attributes)<SUB>305</SUB>> ]
+"788" [label = <(toString,niceSourceList.toString())<SUB>305</SUB>> ]
+"789" [label = <(IDENTIFIER,niceSourceList,niceSourceList.toString())<SUB>305</SUB>> ]
+"790" [label = <(&lt;operator&gt;.fieldAccess,Project.MSG_VERBOSE)<SUB>305</SUB>> ]
+"791" [label = <(IDENTIFIER,Project,log(niceSourceList.toString(), Project.MSG_VERBOSE))<SUB>305</SUB>> ]
+"792" [label = <(FIELD_IDENTIFIER,MSG_VERBOSE,MSG_VERBOSE)<SUB>305</SUB>> ]
+"793" [label = <(MODIFIER,PROTECTED)> ]
+"794" [label = <(MODIFIER,VIRTUAL)> ]
+"795" [label = <(METHOD_RETURN,void)<SUB>287</SUB>> ]
+  "716" -> "717" 
+  "716" -> "718" 
+  "716" -> "719" 
+  "716" -> "793" 
+  "716" -> "794" 
+  "716" -> "795" 
+  "719" -> "720" 
+  "719" -> "721" 
+  "719" -> "727" 
+  "719" -> "22" 
+  "719" -> "738" 
+  "719" -> "741" 
+  "719" -> "743" 
+  "719" -> "752" 
+  "719" -> "755" 
+  "719" -> "784" 
+  "721" -> "722" 
+  "721" -> "723" 
+  "723" -> "724" 
+  "724" -> "725" 
+  "724" -> "726" 
+  "727" -> "728" 
+  "727" -> "731" 
+  "727" -> "735" 
+  "728" -> "729" 
+  "728" -> "730" 
+  "731" -> "732" 
+  "731" -> "733" 
+  "733" -> "734" 
+  "735" -> "736" 
+  "735" -> "737" 
+  "738" -> "739" 
+  "738" -> "740" 
+  "741" -> "21" 
+  "741" -> "742" 
+  "743" -> "744" 
+  "743" -> "748" 
+  "744" -> "745" 
+  "744" -> "747" 
+  "745" -> "746" 
+  "748" -> "749" 
+  "749" -> "750" 
+  "749" -> "751" 
+  "752" -> "753" 
+  "752" -> "754" 
+  "755" -> "756" 
+  "755" -> "757" 
+  "755" -> "760" 
+  "755" -> "764" 
+  "755" -> "766" 
+  "757" -> "758" 
+  "757" -> "759" 
+  "760" -> "761" 
+  "760" -> "762" 
+  "762" -> "763" 
+  "764" -> "765" 
+  "766" -> "767" 
+  "766" -> "768" 
+  "766" -> "775" 
+  "766" -> "779" 
+  "768" -> "769" 
+  "768" -> "770" 
+  "770" -> "771" 
+  "770" -> "772" 
+  "772" -> "773" 
+  "772" -> "774" 
+  "775" -> "776" 
+  "775" -> "778" 
+  "776" -> "777" 
+  "779" -> "780" 
+  "779" -> "781" 
+  "781" -> "782" 
+  "781" -> "783" 
+  "784" -> "785" 
+  "784" -> "788" 
+  "784" -> "790" 
+  "785" -> "786" 
+  "785" -> "787" 
+  "788" -> "789" 
+  "790" -> "791" 
+  "790" -> "792" 
+}

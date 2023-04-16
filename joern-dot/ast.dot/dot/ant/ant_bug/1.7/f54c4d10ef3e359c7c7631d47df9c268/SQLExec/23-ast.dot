@@ -1,0 +1,397 @@
+digraph "execSQL" {  
+"916" [label = <(METHOD,execSQL)<SUB>550</SUB>> ]
+"64" [label = <(PARAM,this)<SUB>550</SUB>> ]
+"917" [label = <(PARAM,String sql)<SUB>550</SUB>> ]
+"918" [label = <(PARAM,PrintStream out)<SUB>550</SUB>> ]
+"919" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>550</SUB>> ]
+"920" [label = <(CONTROL_STRUCTURE,if (&quot;&quot;.equals(sql.trim())),if (&quot;&quot;.equals(sql.trim())))<SUB>552</SUB>> ]
+"921" [label = <(equals,this.equals(sql.trim()))<SUB>552</SUB>> ]
+"922" [label = <(LITERAL,&quot;&quot;,this.equals(sql.trim()))<SUB>552</SUB>> ]
+"923" [label = <(trim,sql.trim())<SUB>552</SUB>> ]
+"924" [label = <(IDENTIFIER,sql,sql.trim())<SUB>552</SUB>> ]
+"925" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>552</SUB>> ]
+"926" [label = <(RETURN,return;,return;)<SUB>553</SUB>> ]
+"927" [label = <(LOCAL,ResultSet resultSet: java.sql.ResultSet)> ]
+"928" [label = <(&lt;operator&gt;.assignment,ResultSet resultSet = null)<SUB>556</SUB>> ]
+"929" [label = <(IDENTIFIER,resultSet,ResultSet resultSet = null)<SUB>556</SUB>> ]
+"930" [label = <(LITERAL,null,ResultSet resultSet = null)<SUB>556</SUB>> ]
+"931" [label = <(CONTROL_STRUCTURE,try,try)<SUB>557</SUB>> ]
+"932" [label = <(BLOCK,try,try)<SUB>557</SUB>> ]
+"933" [label = <(&lt;operator&gt;.postIncrement,totalSql++)<SUB>558</SUB>> ]
+"934" [label = <(&lt;operator&gt;.fieldAccess,this.totalSql)<SUB>558</SUB>> ]
+"935" [label = <(IDENTIFIER,this,totalSql++)<SUB>558</SUB>> ]
+"936" [label = <(FIELD_IDENTIFIER,totalSql,totalSql)<SUB>558</SUB>> ]
+"937" [label = <(log,log(&quot;SQL: &quot; + sql, Project.MSG_VERBOSE))<SUB>559</SUB>> ]
+"63" [label = <(IDENTIFIER,this,log(&quot;SQL: &quot; + sql, Project.MSG_VERBOSE))<SUB>559</SUB>> ]
+"938" [label = <(&lt;operator&gt;.addition,&quot;SQL: &quot; + sql)<SUB>559</SUB>> ]
+"939" [label = <(LITERAL,&quot;SQL: &quot;,&quot;SQL: &quot; + sql)<SUB>559</SUB>> ]
+"940" [label = <(IDENTIFIER,sql,&quot;SQL: &quot; + sql)<SUB>559</SUB>> ]
+"941" [label = <(&lt;operator&gt;.fieldAccess,Project.MSG_VERBOSE)<SUB>559</SUB>> ]
+"942" [label = <(IDENTIFIER,Project,log(&quot;SQL: &quot; + sql, Project.MSG_VERBOSE))<SUB>559</SUB>> ]
+"943" [label = <(FIELD_IDENTIFIER,MSG_VERBOSE,MSG_VERBOSE)<SUB>559</SUB>> ]
+"944" [label = <(LOCAL,boolean ret: boolean)> ]
+"945" [label = <(LOCAL,int updateCount: int)> ]
+"946" [label = <(LOCAL,int updateCountTotal: int)> ]
+"947" [label = <(&lt;operator&gt;.assignment,int updateCount = 0)<SUB>562</SUB>> ]
+"948" [label = <(IDENTIFIER,updateCount,int updateCount = 0)<SUB>562</SUB>> ]
+"949" [label = <(LITERAL,0,int updateCount = 0)<SUB>562</SUB>> ]
+"950" [label = <(&lt;operator&gt;.assignment,int updateCountTotal = 0)<SUB>562</SUB>> ]
+"951" [label = <(IDENTIFIER,updateCountTotal,int updateCountTotal = 0)<SUB>562</SUB>> ]
+"952" [label = <(LITERAL,0,int updateCountTotal = 0)<SUB>562</SUB>> ]
+"953" [label = <(&lt;operator&gt;.assignment,ret = statement.execute(sql))<SUB>564</SUB>> ]
+"954" [label = <(IDENTIFIER,ret,ret = statement.execute(sql))<SUB>564</SUB>> ]
+"955" [label = <(execute,statement.execute(sql))<SUB>564</SUB>> ]
+"956" [label = <(&lt;operator&gt;.fieldAccess,this.statement)<SUB>564</SUB>> ]
+"957" [label = <(IDENTIFIER,this,statement.execute(sql))<SUB>564</SUB>> ]
+"958" [label = <(FIELD_IDENTIFIER,statement,statement)<SUB>564</SUB>> ]
+"959" [label = <(IDENTIFIER,sql,statement.execute(sql))<SUB>564</SUB>> ]
+"960" [label = <(&lt;operator&gt;.assignment,updateCount = statement.getUpdateCount())<SUB>565</SUB>> ]
+"961" [label = <(IDENTIFIER,updateCount,updateCount = statement.getUpdateCount())<SUB>565</SUB>> ]
+"962" [label = <(getUpdateCount,statement.getUpdateCount())<SUB>565</SUB>> ]
+"963" [label = <(&lt;operator&gt;.fieldAccess,this.statement)<SUB>565</SUB>> ]
+"964" [label = <(IDENTIFIER,this,statement.getUpdateCount())<SUB>565</SUB>> ]
+"965" [label = <(FIELD_IDENTIFIER,statement,statement)<SUB>565</SUB>> ]
+"966" [label = <(&lt;operator&gt;.assignment,resultSet = statement.getResultSet())<SUB>566</SUB>> ]
+"967" [label = <(IDENTIFIER,resultSet,resultSet = statement.getResultSet())<SUB>566</SUB>> ]
+"968" [label = <(getResultSet,statement.getResultSet())<SUB>566</SUB>> ]
+"969" [label = <(&lt;operator&gt;.fieldAccess,this.statement)<SUB>566</SUB>> ]
+"970" [label = <(IDENTIFIER,this,statement.getResultSet())<SUB>566</SUB>> ]
+"971" [label = <(FIELD_IDENTIFIER,statement,statement)<SUB>566</SUB>> ]
+"972" [label = <(CONTROL_STRUCTURE,do {...} while (ret),do {...} while (ret))<SUB>567</SUB>> ]
+"973" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>567</SUB>> ]
+"974" [label = <(CONTROL_STRUCTURE,if (!ret),if (!ret))<SUB>568</SUB>> ]
+"975" [label = <(&lt;operator&gt;.logicalNot,!ret)<SUB>568</SUB>> ]
+"976" [label = <(IDENTIFIER,ret,!ret)<SUB>568</SUB>> ]
+"977" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>568</SUB>> ]
+"978" [label = <(CONTROL_STRUCTURE,if (updateCount != -1),if (updateCount != -1))<SUB>569</SUB>> ]
+"979" [label = <(&lt;operator&gt;.notEquals,updateCount != -1)<SUB>569</SUB>> ]
+"980" [label = <(IDENTIFIER,updateCount,updateCount != -1)<SUB>569</SUB>> ]
+"981" [label = <(&lt;operator&gt;.minus,-1)<SUB>569</SUB>> ]
+"982" [label = <(LITERAL,1,-1)<SUB>569</SUB>> ]
+"983" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>569</SUB>> ]
+"984" [label = <(&lt;operator&gt;.assignmentPlus,updateCountTotal += updateCount)<SUB>570</SUB>> ]
+"985" [label = <(IDENTIFIER,updateCountTotal,updateCountTotal += updateCount)<SUB>570</SUB>> ]
+"986" [label = <(IDENTIFIER,updateCount,updateCountTotal += updateCount)<SUB>570</SUB>> ]
+"987" [label = <(CONTROL_STRUCTURE,else,else)<SUB>572</SUB>> ]
+"988" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>572</SUB>> ]
+"989" [label = <(CONTROL_STRUCTURE,if (print),if (print))<SUB>573</SUB>> ]
+"990" [label = <(&lt;operator&gt;.fieldAccess,this.print)<SUB>573</SUB>> ]
+"991" [label = <(IDENTIFIER,this,if (print))<SUB>573</SUB>> ]
+"992" [label = <(FIELD_IDENTIFIER,print,print)<SUB>573</SUB>> ]
+"993" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>573</SUB>> ]
+"994" [label = <(printResults,this.printResults(resultSet, out))<SUB>574</SUB>> ]
+"65" [label = <(IDENTIFIER,this,this.printResults(resultSet, out))<SUB>574</SUB>> ]
+"995" [label = <(IDENTIFIER,resultSet,this.printResults(resultSet, out))<SUB>574</SUB>> ]
+"996" [label = <(IDENTIFIER,out,this.printResults(resultSet, out))<SUB>574</SUB>> ]
+"997" [label = <(&lt;operator&gt;.assignment,ret = statement.getMoreResults())<SUB>577</SUB>> ]
+"998" [label = <(IDENTIFIER,ret,ret = statement.getMoreResults())<SUB>577</SUB>> ]
+"999" [label = <(getMoreResults,statement.getMoreResults())<SUB>577</SUB>> ]
+"1000" [label = <(&lt;operator&gt;.fieldAccess,this.statement)<SUB>577</SUB>> ]
+"1001" [label = <(IDENTIFIER,this,statement.getMoreResults())<SUB>577</SUB>> ]
+"1002" [label = <(FIELD_IDENTIFIER,statement,statement)<SUB>577</SUB>> ]
+"1003" [label = <(CONTROL_STRUCTURE,if (ret),if (ret))<SUB>578</SUB>> ]
+"1004" [label = <(IDENTIFIER,ret,if (ret))<SUB>578</SUB>> ]
+"1005" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>578</SUB>> ]
+"1006" [label = <(&lt;operator&gt;.assignment,updateCount = statement.getUpdateCount())<SUB>579</SUB>> ]
+"1007" [label = <(IDENTIFIER,updateCount,updateCount = statement.getUpdateCount())<SUB>579</SUB>> ]
+"1008" [label = <(getUpdateCount,statement.getUpdateCount())<SUB>579</SUB>> ]
+"1009" [label = <(&lt;operator&gt;.fieldAccess,this.statement)<SUB>579</SUB>> ]
+"1010" [label = <(IDENTIFIER,this,statement.getUpdateCount())<SUB>579</SUB>> ]
+"1011" [label = <(FIELD_IDENTIFIER,statement,statement)<SUB>579</SUB>> ]
+"1012" [label = <(&lt;operator&gt;.assignment,resultSet = statement.getResultSet())<SUB>580</SUB>> ]
+"1013" [label = <(IDENTIFIER,resultSet,resultSet = statement.getResultSet())<SUB>580</SUB>> ]
+"1014" [label = <(getResultSet,statement.getResultSet())<SUB>580</SUB>> ]
+"1015" [label = <(&lt;operator&gt;.fieldAccess,this.statement)<SUB>580</SUB>> ]
+"1016" [label = <(IDENTIFIER,this,statement.getResultSet())<SUB>580</SUB>> ]
+"1017" [label = <(FIELD_IDENTIFIER,statement,statement)<SUB>580</SUB>> ]
+"1018" [label = <(IDENTIFIER,ret,do {...} while (ret))<SUB>582</SUB>> ]
+"1019" [label = <(log,log(updateCountTotal + &quot; rows affected&quot;, Project.MSG_VERBOSE))<SUB>584</SUB>> ]
+"66" [label = <(IDENTIFIER,this,log(updateCountTotal + &quot; rows affected&quot;, Project.MSG_VERBOSE))<SUB>584</SUB>> ]
+"1020" [label = <(&lt;operator&gt;.addition,updateCountTotal + &quot; rows affected&quot;)<SUB>584</SUB>> ]
+"1021" [label = <(IDENTIFIER,updateCountTotal,updateCountTotal + &quot; rows affected&quot;)<SUB>584</SUB>> ]
+"1022" [label = <(LITERAL,&quot; rows affected&quot;,updateCountTotal + &quot; rows affected&quot;)<SUB>584</SUB>> ]
+"1023" [label = <(&lt;operator&gt;.fieldAccess,Project.MSG_VERBOSE)<SUB>585</SUB>> ]
+"1024" [label = <(IDENTIFIER,Project,log(updateCountTotal + &quot; rows affected&quot;, Project.MSG_VERBOSE))<SUB>585</SUB>> ]
+"1025" [label = <(FIELD_IDENTIFIER,MSG_VERBOSE,MSG_VERBOSE)<SUB>585</SUB>> ]
+"1026" [label = <(CONTROL_STRUCTURE,if (print &amp;&amp; showtrailers),if (print &amp;&amp; showtrailers))<SUB>587</SUB>> ]
+"1027" [label = <(&lt;operator&gt;.logicalAnd,print &amp;&amp; showtrailers)<SUB>587</SUB>> ]
+"1028" [label = <(&lt;operator&gt;.fieldAccess,this.print)<SUB>587</SUB>> ]
+"1029" [label = <(IDENTIFIER,this,print &amp;&amp; showtrailers)<SUB>587</SUB>> ]
+"1030" [label = <(FIELD_IDENTIFIER,print,print)<SUB>587</SUB>> ]
+"1031" [label = <(&lt;operator&gt;.fieldAccess,this.showtrailers)<SUB>587</SUB>> ]
+"1032" [label = <(IDENTIFIER,this,print &amp;&amp; showtrailers)<SUB>587</SUB>> ]
+"1033" [label = <(FIELD_IDENTIFIER,showtrailers,showtrailers)<SUB>587</SUB>> ]
+"1034" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>587</SUB>> ]
+"1035" [label = <(println,out.println(updateCountTotal + &quot; rows affected&quot;))<SUB>588</SUB>> ]
+"1036" [label = <(IDENTIFIER,out,out.println(updateCountTotal + &quot; rows affected&quot;))<SUB>588</SUB>> ]
+"1037" [label = <(&lt;operator&gt;.addition,updateCountTotal + &quot; rows affected&quot;)<SUB>588</SUB>> ]
+"1038" [label = <(IDENTIFIER,updateCountTotal,updateCountTotal + &quot; rows affected&quot;)<SUB>588</SUB>> ]
+"1039" [label = <(LITERAL,&quot; rows affected&quot;,updateCountTotal + &quot; rows affected&quot;)<SUB>588</SUB>> ]
+"1040" [label = <(LOCAL,SQLWarning warning: java.sql.SQLWarning)> ]
+"1041" [label = <(&lt;operator&gt;.assignment,SQLWarning warning = conn.getWarnings())<SUB>591</SUB>> ]
+"1042" [label = <(IDENTIFIER,warning,SQLWarning warning = conn.getWarnings())<SUB>591</SUB>> ]
+"1043" [label = <(getWarnings,conn.getWarnings())<SUB>591</SUB>> ]
+"1044" [label = <(&lt;operator&gt;.fieldAccess,this.conn)<SUB>591</SUB>> ]
+"1045" [label = <(IDENTIFIER,this,conn.getWarnings())<SUB>591</SUB>> ]
+"1046" [label = <(FIELD_IDENTIFIER,conn,conn)<SUB>591</SUB>> ]
+"1047" [label = <(CONTROL_STRUCTURE,while (warning != null),while (warning != null))<SUB>592</SUB>> ]
+"1048" [label = <(&lt;operator&gt;.notEquals,warning != null)<SUB>592</SUB>> ]
+"1049" [label = <(IDENTIFIER,warning,warning != null)<SUB>592</SUB>> ]
+"1050" [label = <(LITERAL,null,warning != null)<SUB>592</SUB>> ]
+"1051" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>592</SUB>> ]
+"1052" [label = <(log,log(warning + &quot; sql warning&quot;, Project.MSG_VERBOSE))<SUB>593</SUB>> ]
+"67" [label = <(IDENTIFIER,this,log(warning + &quot; sql warning&quot;, Project.MSG_VERBOSE))<SUB>593</SUB>> ]
+"1053" [label = <(&lt;operator&gt;.addition,warning + &quot; sql warning&quot;)<SUB>593</SUB>> ]
+"1054" [label = <(IDENTIFIER,warning,warning + &quot; sql warning&quot;)<SUB>593</SUB>> ]
+"1055" [label = <(LITERAL,&quot; sql warning&quot;,warning + &quot; sql warning&quot;)<SUB>593</SUB>> ]
+"1056" [label = <(&lt;operator&gt;.fieldAccess,Project.MSG_VERBOSE)<SUB>593</SUB>> ]
+"1057" [label = <(IDENTIFIER,Project,log(warning + &quot; sql warning&quot;, Project.MSG_VERBOSE))<SUB>593</SUB>> ]
+"1058" [label = <(FIELD_IDENTIFIER,MSG_VERBOSE,MSG_VERBOSE)<SUB>593</SUB>> ]
+"1059" [label = <(&lt;operator&gt;.assignment,warning = warning.getNextWarning())<SUB>594</SUB>> ]
+"1060" [label = <(IDENTIFIER,warning,warning = warning.getNextWarning())<SUB>594</SUB>> ]
+"1061" [label = <(getNextWarning,warning.getNextWarning())<SUB>594</SUB>> ]
+"1062" [label = <(IDENTIFIER,warning,warning.getNextWarning())<SUB>594</SUB>> ]
+"1063" [label = <(clearWarnings,conn.clearWarnings())<SUB>596</SUB>> ]
+"1064" [label = <(&lt;operator&gt;.fieldAccess,this.conn)<SUB>596</SUB>> ]
+"1065" [label = <(IDENTIFIER,this,conn.clearWarnings())<SUB>596</SUB>> ]
+"1066" [label = <(FIELD_IDENTIFIER,conn,conn)<SUB>596</SUB>> ]
+"1067" [label = <(&lt;operator&gt;.postIncrement,goodSql++)<SUB>597</SUB>> ]
+"1068" [label = <(&lt;operator&gt;.fieldAccess,this.goodSql)<SUB>597</SUB>> ]
+"1069" [label = <(IDENTIFIER,this,goodSql++)<SUB>597</SUB>> ]
+"1070" [label = <(FIELD_IDENTIFIER,goodSql,goodSql)<SUB>597</SUB>> ]
+"1071" [label = <(BLOCK,catch,catch)> ]
+"1072" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>598</SUB>> ]
+"1073" [label = <(log,log(&quot;Failed to execute: &quot; + sql, Project.MSG_ERR))<SUB>599</SUB>> ]
+"68" [label = <(IDENTIFIER,this,log(&quot;Failed to execute: &quot; + sql, Project.MSG_ERR))<SUB>599</SUB>> ]
+"1074" [label = <(&lt;operator&gt;.addition,&quot;Failed to execute: &quot; + sql)<SUB>599</SUB>> ]
+"1075" [label = <(LITERAL,&quot;Failed to execute: &quot;,&quot;Failed to execute: &quot; + sql)<SUB>599</SUB>> ]
+"1076" [label = <(IDENTIFIER,sql,&quot;Failed to execute: &quot; + sql)<SUB>599</SUB>> ]
+"1077" [label = <(&lt;operator&gt;.fieldAccess,Project.MSG_ERR)<SUB>599</SUB>> ]
+"1078" [label = <(IDENTIFIER,Project,log(&quot;Failed to execute: &quot; + sql, Project.MSG_ERR))<SUB>599</SUB>> ]
+"1079" [label = <(FIELD_IDENTIFIER,MSG_ERR,MSG_ERR)<SUB>599</SUB>> ]
+"1080" [label = <(CONTROL_STRUCTURE,if (!onError.equals(&quot;continue&quot;)),if (!onError.equals(&quot;continue&quot;)))<SUB>600</SUB>> ]
+"1081" [label = <(&lt;operator&gt;.logicalNot,!onError.equals(&quot;continue&quot;))<SUB>600</SUB>> ]
+"1082" [label = <(equals,onError.equals(&quot;continue&quot;))<SUB>600</SUB>> ]
+"1083" [label = <(&lt;operator&gt;.fieldAccess,this.onError)<SUB>600</SUB>> ]
+"1084" [label = <(IDENTIFIER,this,onError.equals(&quot;continue&quot;))<SUB>600</SUB>> ]
+"1085" [label = <(FIELD_IDENTIFIER,onError,onError)<SUB>600</SUB>> ]
+"1086" [label = <(LITERAL,&quot;continue&quot;,onError.equals(&quot;continue&quot;))<SUB>600</SUB>> ]
+"1087" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>600</SUB>> ]
+"1088" [label = <(&lt;operator&gt;.throw,throw e;)<SUB>601</SUB>> ]
+"1089" [label = <(IDENTIFIER,e,throw e;)<SUB>601</SUB>> ]
+"1090" [label = <(log,log(e.toString(), Project.MSG_ERR))<SUB>603</SUB>> ]
+"69" [label = <(IDENTIFIER,this,log(e.toString(), Project.MSG_ERR))<SUB>603</SUB>> ]
+"1091" [label = <(toString,e.toString())<SUB>603</SUB>> ]
+"1092" [label = <(IDENTIFIER,e,e.toString())<SUB>603</SUB>> ]
+"1093" [label = <(&lt;operator&gt;.fieldAccess,Project.MSG_ERR)<SUB>603</SUB>> ]
+"1094" [label = <(IDENTIFIER,Project,log(e.toString(), Project.MSG_ERR))<SUB>603</SUB>> ]
+"1095" [label = <(FIELD_IDENTIFIER,MSG_ERR,MSG_ERR)<SUB>603</SUB>> ]
+"1096" [label = <(BLOCK,finally,finally)<SUB>604</SUB>> ]
+"1097" [label = <(CONTROL_STRUCTURE,if (resultSet != null),if (resultSet != null))<SUB>605</SUB>> ]
+"1098" [label = <(&lt;operator&gt;.notEquals,resultSet != null)<SUB>605</SUB>> ]
+"1099" [label = <(IDENTIFIER,resultSet,resultSet != null)<SUB>605</SUB>> ]
+"1100" [label = <(LITERAL,null,resultSet != null)<SUB>605</SUB>> ]
+"1101" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>605</SUB>> ]
+"1102" [label = <(close,resultSet.close())<SUB>606</SUB>> ]
+"1103" [label = <(IDENTIFIER,resultSet,resultSet.close())<SUB>606</SUB>> ]
+"1104" [label = <(MODIFIER,PROTECTED)> ]
+"1105" [label = <(MODIFIER,VIRTUAL)> ]
+"1106" [label = <(METHOD_RETURN,void)<SUB>550</SUB>> ]
+  "916" -> "64" 
+  "916" -> "917" 
+  "916" -> "918" 
+  "916" -> "919" 
+  "916" -> "1104" 
+  "916" -> "1105" 
+  "916" -> "1106" 
+  "919" -> "920" 
+  "919" -> "927" 
+  "919" -> "928" 
+  "919" -> "931" 
+  "920" -> "921" 
+  "920" -> "925" 
+  "921" -> "922" 
+  "921" -> "923" 
+  "923" -> "924" 
+  "925" -> "926" 
+  "928" -> "929" 
+  "928" -> "930" 
+  "931" -> "932" 
+  "931" -> "1071" 
+  "931" -> "1096" 
+  "932" -> "933" 
+  "932" -> "937" 
+  "932" -> "944" 
+  "932" -> "945" 
+  "932" -> "946" 
+  "932" -> "947" 
+  "932" -> "950" 
+  "932" -> "953" 
+  "932" -> "960" 
+  "932" -> "966" 
+  "932" -> "972" 
+  "932" -> "1019" 
+  "932" -> "1026" 
+  "932" -> "1040" 
+  "932" -> "1041" 
+  "932" -> "1047" 
+  "932" -> "1063" 
+  "932" -> "1067" 
+  "933" -> "934" 
+  "934" -> "935" 
+  "934" -> "936" 
+  "937" -> "63" 
+  "937" -> "938" 
+  "937" -> "941" 
+  "938" -> "939" 
+  "938" -> "940" 
+  "941" -> "942" 
+  "941" -> "943" 
+  "947" -> "948" 
+  "947" -> "949" 
+  "950" -> "951" 
+  "950" -> "952" 
+  "953" -> "954" 
+  "953" -> "955" 
+  "955" -> "956" 
+  "955" -> "959" 
+  "956" -> "957" 
+  "956" -> "958" 
+  "960" -> "961" 
+  "960" -> "962" 
+  "962" -> "963" 
+  "963" -> "964" 
+  "963" -> "965" 
+  "966" -> "967" 
+  "966" -> "968" 
+  "968" -> "969" 
+  "969" -> "970" 
+  "969" -> "971" 
+  "972" -> "973" 
+  "972" -> "1018" 
+  "973" -> "974" 
+  "973" -> "997" 
+  "973" -> "1003" 
+  "974" -> "975" 
+  "974" -> "977" 
+  "974" -> "987" 
+  "975" -> "976" 
+  "977" -> "978" 
+  "978" -> "979" 
+  "978" -> "983" 
+  "979" -> "980" 
+  "979" -> "981" 
+  "981" -> "982" 
+  "983" -> "984" 
+  "984" -> "985" 
+  "984" -> "986" 
+  "987" -> "988" 
+  "988" -> "989" 
+  "989" -> "990" 
+  "989" -> "993" 
+  "990" -> "991" 
+  "990" -> "992" 
+  "993" -> "994" 
+  "994" -> "65" 
+  "994" -> "995" 
+  "994" -> "996" 
+  "997" -> "998" 
+  "997" -> "999" 
+  "999" -> "1000" 
+  "1000" -> "1001" 
+  "1000" -> "1002" 
+  "1003" -> "1004" 
+  "1003" -> "1005" 
+  "1005" -> "1006" 
+  "1005" -> "1012" 
+  "1006" -> "1007" 
+  "1006" -> "1008" 
+  "1008" -> "1009" 
+  "1009" -> "1010" 
+  "1009" -> "1011" 
+  "1012" -> "1013" 
+  "1012" -> "1014" 
+  "1014" -> "1015" 
+  "1015" -> "1016" 
+  "1015" -> "1017" 
+  "1019" -> "66" 
+  "1019" -> "1020" 
+  "1019" -> "1023" 
+  "1020" -> "1021" 
+  "1020" -> "1022" 
+  "1023" -> "1024" 
+  "1023" -> "1025" 
+  "1026" -> "1027" 
+  "1026" -> "1034" 
+  "1027" -> "1028" 
+  "1027" -> "1031" 
+  "1028" -> "1029" 
+  "1028" -> "1030" 
+  "1031" -> "1032" 
+  "1031" -> "1033" 
+  "1034" -> "1035" 
+  "1035" -> "1036" 
+  "1035" -> "1037" 
+  "1037" -> "1038" 
+  "1037" -> "1039" 
+  "1041" -> "1042" 
+  "1041" -> "1043" 
+  "1043" -> "1044" 
+  "1044" -> "1045" 
+  "1044" -> "1046" 
+  "1047" -> "1048" 
+  "1047" -> "1051" 
+  "1048" -> "1049" 
+  "1048" -> "1050" 
+  "1051" -> "1052" 
+  "1051" -> "1059" 
+  "1052" -> "67" 
+  "1052" -> "1053" 
+  "1052" -> "1056" 
+  "1053" -> "1054" 
+  "1053" -> "1055" 
+  "1056" -> "1057" 
+  "1056" -> "1058" 
+  "1059" -> "1060" 
+  "1059" -> "1061" 
+  "1061" -> "1062" 
+  "1063" -> "1064" 
+  "1064" -> "1065" 
+  "1064" -> "1066" 
+  "1067" -> "1068" 
+  "1068" -> "1069" 
+  "1068" -> "1070" 
+  "1071" -> "1072" 
+  "1072" -> "1073" 
+  "1072" -> "1080" 
+  "1072" -> "1090" 
+  "1073" -> "68" 
+  "1073" -> "1074" 
+  "1073" -> "1077" 
+  "1074" -> "1075" 
+  "1074" -> "1076" 
+  "1077" -> "1078" 
+  "1077" -> "1079" 
+  "1080" -> "1081" 
+  "1080" -> "1087" 
+  "1081" -> "1082" 
+  "1082" -> "1083" 
+  "1082" -> "1086" 
+  "1083" -> "1084" 
+  "1083" -> "1085" 
+  "1087" -> "1088" 
+  "1088" -> "1089" 
+  "1090" -> "69" 
+  "1090" -> "1091" 
+  "1090" -> "1093" 
+  "1091" -> "1092" 
+  "1093" -> "1094" 
+  "1093" -> "1095" 
+  "1096" -> "1097" 
+  "1097" -> "1098" 
+  "1097" -> "1101" 
+  "1098" -> "1099" 
+  "1098" -> "1100" 
+  "1101" -> "1102" 
+  "1102" -> "1103" 
+}

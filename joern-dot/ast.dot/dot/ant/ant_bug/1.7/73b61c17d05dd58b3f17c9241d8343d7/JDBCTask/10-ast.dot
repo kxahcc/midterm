@@ -1,0 +1,295 @@
+digraph "isValidRdbms" {  
+"222" [label = <(METHOD,isValidRdbms)<SUB>239</SUB>> ]
+"27" [label = <(PARAM,this)<SUB>239</SUB>> ]
+"223" [label = <(PARAM,Connection conn)<SUB>239</SUB>> ]
+"224" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>239</SUB>> ]
+"225" [label = <(CONTROL_STRUCTURE,if (rdbms == null &amp;&amp; version == null),if (rdbms == null &amp;&amp; version == null))<SUB>240</SUB>> ]
+"226" [label = <(&lt;operator&gt;.logicalAnd,rdbms == null &amp;&amp; version == null)<SUB>240</SUB>> ]
+"227" [label = <(&lt;operator&gt;.equals,rdbms == null)<SUB>240</SUB>> ]
+"228" [label = <(&lt;operator&gt;.fieldAccess,this.rdbms)<SUB>240</SUB>> ]
+"229" [label = <(IDENTIFIER,this,rdbms == null)<SUB>240</SUB>> ]
+"230" [label = <(FIELD_IDENTIFIER,rdbms,rdbms)<SUB>240</SUB>> ]
+"231" [label = <(LITERAL,null,rdbms == null)<SUB>240</SUB>> ]
+"232" [label = <(&lt;operator&gt;.equals,version == null)<SUB>240</SUB>> ]
+"233" [label = <(&lt;operator&gt;.fieldAccess,this.version)<SUB>240</SUB>> ]
+"234" [label = <(IDENTIFIER,this,version == null)<SUB>240</SUB>> ]
+"235" [label = <(FIELD_IDENTIFIER,version,version)<SUB>240</SUB>> ]
+"236" [label = <(LITERAL,null,version == null)<SUB>240</SUB>> ]
+"237" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>240</SUB>> ]
+"238" [label = <(RETURN,return true;,return true;)<SUB>241</SUB>> ]
+"239" [label = <(LITERAL,true,return true;)<SUB>241</SUB>> ]
+"240" [label = <(CONTROL_STRUCTURE,try,try)<SUB>244</SUB>> ]
+"241" [label = <(BLOCK,try,try)<SUB>244</SUB>> ]
+"242" [label = <(LOCAL,DatabaseMetaData dmd: java.sql.DatabaseMetaData)> ]
+"243" [label = <(&lt;operator&gt;.assignment,DatabaseMetaData dmd = conn.getMetaData())<SUB>245</SUB>> ]
+"244" [label = <(IDENTIFIER,dmd,DatabaseMetaData dmd = conn.getMetaData())<SUB>245</SUB>> ]
+"245" [label = <(getMetaData,conn.getMetaData())<SUB>245</SUB>> ]
+"246" [label = <(IDENTIFIER,conn,conn.getMetaData())<SUB>245</SUB>> ]
+"247" [label = <(CONTROL_STRUCTURE,if (rdbms != null),if (rdbms != null))<SUB>247</SUB>> ]
+"248" [label = <(&lt;operator&gt;.notEquals,rdbms != null)<SUB>247</SUB>> ]
+"249" [label = <(&lt;operator&gt;.fieldAccess,this.rdbms)<SUB>247</SUB>> ]
+"250" [label = <(IDENTIFIER,this,rdbms != null)<SUB>247</SUB>> ]
+"251" [label = <(FIELD_IDENTIFIER,rdbms,rdbms)<SUB>247</SUB>> ]
+"252" [label = <(LITERAL,null,rdbms != null)<SUB>247</SUB>> ]
+"253" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>247</SUB>> ]
+"254" [label = <(LOCAL,String theVendor: java.lang.String)> ]
+"255" [label = <(&lt;operator&gt;.assignment,String theVendor = dmd.getDatabaseProductName().toLowerCase())<SUB>248</SUB>> ]
+"256" [label = <(IDENTIFIER,theVendor,String theVendor = dmd.getDatabaseProductName().toLowerCase())<SUB>248</SUB>> ]
+"257" [label = <(toLowerCase,dmd.getDatabaseProductName().toLowerCase())<SUB>248</SUB>> ]
+"258" [label = <(getDatabaseProductName,dmd.getDatabaseProductName())<SUB>248</SUB>> ]
+"259" [label = <(IDENTIFIER,dmd,dmd.getDatabaseProductName())<SUB>248</SUB>> ]
+"260" [label = <(log,log(&quot;RDBMS = &quot; + theVendor, Project.MSG_VERBOSE))<SUB>250</SUB>> ]
+"26" [label = <(IDENTIFIER,this,log(&quot;RDBMS = &quot; + theVendor, Project.MSG_VERBOSE))<SUB>250</SUB>> ]
+"261" [label = <(&lt;operator&gt;.addition,&quot;RDBMS = &quot; + theVendor)<SUB>250</SUB>> ]
+"262" [label = <(LITERAL,&quot;RDBMS = &quot;,&quot;RDBMS = &quot; + theVendor)<SUB>250</SUB>> ]
+"263" [label = <(IDENTIFIER,theVendor,&quot;RDBMS = &quot; + theVendor)<SUB>250</SUB>> ]
+"264" [label = <(&lt;operator&gt;.fieldAccess,Project.MSG_VERBOSE)<SUB>250</SUB>> ]
+"265" [label = <(IDENTIFIER,Project,log(&quot;RDBMS = &quot; + theVendor, Project.MSG_VERBOSE))<SUB>250</SUB>> ]
+"266" [label = <(FIELD_IDENTIFIER,MSG_VERBOSE,MSG_VERBOSE)<SUB>250</SUB>> ]
+"267" [label = <(CONTROL_STRUCTURE,if (theVendor == null || theVendor.indexOf(rdbms) &lt; 0),if (theVendor == null || theVendor.indexOf(rdbms) &lt; 0))<SUB>251</SUB>> ]
+"268" [label = <(&lt;operator&gt;.logicalOr,theVendor == null || theVendor.indexOf(rdbms) &lt; 0)<SUB>251</SUB>> ]
+"269" [label = <(&lt;operator&gt;.equals,theVendor == null)<SUB>251</SUB>> ]
+"270" [label = <(IDENTIFIER,theVendor,theVendor == null)<SUB>251</SUB>> ]
+"271" [label = <(LITERAL,null,theVendor == null)<SUB>251</SUB>> ]
+"272" [label = <(&lt;operator&gt;.lessThan,theVendor.indexOf(rdbms) &lt; 0)<SUB>251</SUB>> ]
+"273" [label = <(indexOf,theVendor.indexOf(rdbms))<SUB>251</SUB>> ]
+"274" [label = <(IDENTIFIER,theVendor,theVendor.indexOf(rdbms))<SUB>251</SUB>> ]
+"275" [label = <(&lt;operator&gt;.fieldAccess,this.rdbms)<SUB>251</SUB>> ]
+"276" [label = <(IDENTIFIER,this,theVendor.indexOf(rdbms))<SUB>251</SUB>> ]
+"277" [label = <(FIELD_IDENTIFIER,rdbms,rdbms)<SUB>251</SUB>> ]
+"278" [label = <(LITERAL,0,theVendor.indexOf(rdbms) &lt; 0)<SUB>251</SUB>> ]
+"279" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>251</SUB>> ]
+"280" [label = <(log,log(&quot;Not the required RDBMS: &quot; + rdbms, Project.MSG_VERBOSE))<SUB>252</SUB>> ]
+"28" [label = <(IDENTIFIER,this,log(&quot;Not the required RDBMS: &quot; + rdbms, Project.MSG_VERBOSE))<SUB>252</SUB>> ]
+"281" [label = <(&lt;operator&gt;.addition,&quot;Not the required RDBMS: &quot; + rdbms)<SUB>252</SUB>> ]
+"282" [label = <(LITERAL,&quot;Not the required RDBMS: &quot;,&quot;Not the required RDBMS: &quot; + rdbms)<SUB>252</SUB>> ]
+"283" [label = <(&lt;operator&gt;.fieldAccess,this.rdbms)<SUB>252</SUB>> ]
+"284" [label = <(IDENTIFIER,this,&quot;Not the required RDBMS: &quot; + rdbms)<SUB>252</SUB>> ]
+"285" [label = <(FIELD_IDENTIFIER,rdbms,rdbms)<SUB>252</SUB>> ]
+"286" [label = <(&lt;operator&gt;.fieldAccess,Project.MSG_VERBOSE)<SUB>252</SUB>> ]
+"287" [label = <(IDENTIFIER,Project,log(&quot;Not the required RDBMS: &quot; + rdbms, Project.MSG_VERBOSE))<SUB>252</SUB>> ]
+"288" [label = <(FIELD_IDENTIFIER,MSG_VERBOSE,MSG_VERBOSE)<SUB>252</SUB>> ]
+"289" [label = <(RETURN,return false;,return false;)<SUB>253</SUB>> ]
+"290" [label = <(LITERAL,false,return false;)<SUB>253</SUB>> ]
+"291" [label = <(CONTROL_STRUCTURE,if (version != null),if (version != null))<SUB>257</SUB>> ]
+"292" [label = <(&lt;operator&gt;.notEquals,version != null)<SUB>257</SUB>> ]
+"293" [label = <(&lt;operator&gt;.fieldAccess,this.version)<SUB>257</SUB>> ]
+"294" [label = <(IDENTIFIER,this,version != null)<SUB>257</SUB>> ]
+"295" [label = <(FIELD_IDENTIFIER,version,version)<SUB>257</SUB>> ]
+"296" [label = <(LITERAL,null,version != null)<SUB>257</SUB>> ]
+"297" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>257</SUB>> ]
+"298" [label = <(LOCAL,String theVersion: java.lang.String)> ]
+"299" [label = <(&lt;operator&gt;.assignment,String theVersion = dmd.getDatabaseProductVersion().toLowerCase(Locale.ENGLISH))<SUB>258</SUB>> ]
+"300" [label = <(IDENTIFIER,theVersion,String theVersion = dmd.getDatabaseProductVersion().toLowerCase(Locale.ENGLISH))<SUB>258</SUB>> ]
+"301" [label = <(toLowerCase,dmd.getDatabaseProductVersion().toLowerCase(Locale.ENGLISH))<SUB>258</SUB>> ]
+"302" [label = <(getDatabaseProductVersion,dmd.getDatabaseProductVersion())<SUB>258</SUB>> ]
+"303" [label = <(IDENTIFIER,dmd,dmd.getDatabaseProductVersion())<SUB>258</SUB>> ]
+"304" [label = <(&lt;operator&gt;.fieldAccess,Locale.ENGLISH)<SUB>258</SUB>> ]
+"305" [label = <(IDENTIFIER,Locale,dmd.getDatabaseProductVersion().toLowerCase(Locale.ENGLISH))<SUB>258</SUB>> ]
+"306" [label = <(FIELD_IDENTIFIER,ENGLISH,ENGLISH)<SUB>258</SUB>> ]
+"307" [label = <(log,log(&quot;Version = &quot; + theVersion, Project.MSG_VERBOSE))<SUB>260</SUB>> ]
+"29" [label = <(IDENTIFIER,this,log(&quot;Version = &quot; + theVersion, Project.MSG_VERBOSE))<SUB>260</SUB>> ]
+"308" [label = <(&lt;operator&gt;.addition,&quot;Version = &quot; + theVersion)<SUB>260</SUB>> ]
+"309" [label = <(LITERAL,&quot;Version = &quot;,&quot;Version = &quot; + theVersion)<SUB>260</SUB>> ]
+"310" [label = <(IDENTIFIER,theVersion,&quot;Version = &quot; + theVersion)<SUB>260</SUB>> ]
+"311" [label = <(&lt;operator&gt;.fieldAccess,Project.MSG_VERBOSE)<SUB>260</SUB>> ]
+"312" [label = <(IDENTIFIER,Project,log(&quot;Version = &quot; + theVersion, Project.MSG_VERBOSE))<SUB>260</SUB>> ]
+"313" [label = <(FIELD_IDENTIFIER,MSG_VERBOSE,MSG_VERBOSE)<SUB>260</SUB>> ]
+"314" [label = <(CONTROL_STRUCTURE,if (theVersion == null || !(theVersion.startsWith(version) || theVersion.indexOf(&quot; &quot; + version) &gt;= 0)),if (theVersion == null || !(theVersion.startsWith(version) || theVersion.indexOf(&quot; &quot; + version) &gt;= 0)))<SUB>261</SUB>> ]
+"315" [label = <(&lt;operator&gt;.logicalOr,theVersion == null || !(theVersion.startsWith(version) || theVersion.indexOf(&quot; &quot; + version) &gt;= 0))<SUB>261</SUB>> ]
+"316" [label = <(&lt;operator&gt;.equals,theVersion == null)<SUB>261</SUB>> ]
+"317" [label = <(IDENTIFIER,theVersion,theVersion == null)<SUB>261</SUB>> ]
+"318" [label = <(LITERAL,null,theVersion == null)<SUB>261</SUB>> ]
+"319" [label = <(&lt;operator&gt;.logicalNot,!(theVersion.startsWith(version) || theVersion.indexOf(&quot; &quot; + version) &gt;= 0))<SUB>262</SUB>> ]
+"320" [label = <(&lt;operator&gt;.logicalOr,theVersion.startsWith(version) || theVersion.indexOf(&quot; &quot; + version) &gt;= 0)<SUB>262</SUB>> ]
+"321" [label = <(startsWith,theVersion.startsWith(version))<SUB>262</SUB>> ]
+"322" [label = <(IDENTIFIER,theVersion,theVersion.startsWith(version))<SUB>262</SUB>> ]
+"323" [label = <(&lt;operator&gt;.fieldAccess,this.version)<SUB>262</SUB>> ]
+"324" [label = <(IDENTIFIER,this,theVersion.startsWith(version))<SUB>262</SUB>> ]
+"325" [label = <(FIELD_IDENTIFIER,version,version)<SUB>262</SUB>> ]
+"326" [label = <(&lt;operator&gt;.greaterEqualsThan,theVersion.indexOf(&quot; &quot; + version) &gt;= 0)<SUB>263</SUB>> ]
+"327" [label = <(indexOf,theVersion.indexOf(&quot; &quot; + version))<SUB>263</SUB>> ]
+"328" [label = <(IDENTIFIER,theVersion,theVersion.indexOf(&quot; &quot; + version))<SUB>263</SUB>> ]
+"329" [label = <(&lt;operator&gt;.addition,&quot; &quot; + version)<SUB>263</SUB>> ]
+"330" [label = <(LITERAL,&quot; &quot;,&quot; &quot; + version)<SUB>263</SUB>> ]
+"331" [label = <(&lt;operator&gt;.fieldAccess,this.version)<SUB>263</SUB>> ]
+"332" [label = <(IDENTIFIER,this,&quot; &quot; + version)<SUB>263</SUB>> ]
+"333" [label = <(FIELD_IDENTIFIER,version,version)<SUB>263</SUB>> ]
+"334" [label = <(LITERAL,0,theVersion.indexOf(&quot; &quot; + version) &gt;= 0)<SUB>263</SUB>> ]
+"335" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>263</SUB>> ]
+"336" [label = <(log,log(&quot;Not the required version: \&quot;&quot; + version + &quot;\&quot;&quot;, Project.MSG_VERBOSE))<SUB>264</SUB>> ]
+"30" [label = <(IDENTIFIER,this,log(&quot;Not the required version: \&quot;&quot; + version + &quot;\&quot;&quot;, Project.MSG_VERBOSE))<SUB>264</SUB>> ]
+"337" [label = <(&lt;operator&gt;.addition,&quot;Not the required version: \&quot;&quot; + version + &quot;\&quot;&quot;)<SUB>264</SUB>> ]
+"338" [label = <(&lt;operator&gt;.addition,&quot;Not the required version: \&quot;&quot; + version)<SUB>264</SUB>> ]
+"339" [label = <(LITERAL,&quot;Not the required version: \&quot;&quot;,&quot;Not the required version: \&quot;&quot; + version)<SUB>264</SUB>> ]
+"340" [label = <(&lt;operator&gt;.fieldAccess,this.version)<SUB>264</SUB>> ]
+"341" [label = <(IDENTIFIER,this,&quot;Not the required version: \&quot;&quot; + version)<SUB>264</SUB>> ]
+"342" [label = <(FIELD_IDENTIFIER,version,version)<SUB>264</SUB>> ]
+"343" [label = <(LITERAL,&quot;\&quot;&quot;,&quot;Not the required version: \&quot;&quot; + version + &quot;\&quot;&quot;)<SUB>264</SUB>> ]
+"344" [label = <(&lt;operator&gt;.fieldAccess,Project.MSG_VERBOSE)<SUB>264</SUB>> ]
+"345" [label = <(IDENTIFIER,Project,log(&quot;Not the required version: \&quot;&quot; + version + &quot;\&quot;&quot;, Project.MSG_VERBOSE))<SUB>264</SUB>> ]
+"346" [label = <(FIELD_IDENTIFIER,MSG_VERBOSE,MSG_VERBOSE)<SUB>264</SUB>> ]
+"347" [label = <(RETURN,return false;,return false;)<SUB>265</SUB>> ]
+"348" [label = <(LITERAL,false,return false;)<SUB>265</SUB>> ]
+"349" [label = <(BLOCK,catch,catch)> ]
+"350" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>268</SUB>> ]
+"351" [label = <(log,log(&quot;Failed to obtain required RDBMS information&quot;, Project.MSG_ERR))<SUB>270</SUB>> ]
+"31" [label = <(IDENTIFIER,this,log(&quot;Failed to obtain required RDBMS information&quot;, Project.MSG_ERR))<SUB>270</SUB>> ]
+"352" [label = <(LITERAL,&quot;Failed to obtain required RDBMS information&quot;,log(&quot;Failed to obtain required RDBMS information&quot;, Project.MSG_ERR))<SUB>270</SUB>> ]
+"353" [label = <(&lt;operator&gt;.fieldAccess,Project.MSG_ERR)<SUB>270</SUB>> ]
+"354" [label = <(IDENTIFIER,Project,log(&quot;Failed to obtain required RDBMS information&quot;, Project.MSG_ERR))<SUB>270</SUB>> ]
+"355" [label = <(FIELD_IDENTIFIER,MSG_ERR,MSG_ERR)<SUB>270</SUB>> ]
+"356" [label = <(RETURN,return false;,return false;)<SUB>271</SUB>> ]
+"357" [label = <(LITERAL,false,return false;)<SUB>271</SUB>> ]
+"358" [label = <(RETURN,return true;,return true;)<SUB>274</SUB>> ]
+"359" [label = <(LITERAL,true,return true;)<SUB>274</SUB>> ]
+"360" [label = <(MODIFIER,PROTECTED)> ]
+"361" [label = <(MODIFIER,VIRTUAL)> ]
+"362" [label = <(METHOD_RETURN,boolean)<SUB>239</SUB>> ]
+  "222" -> "27" 
+  "222" -> "223" 
+  "222" -> "224" 
+  "222" -> "360" 
+  "222" -> "361" 
+  "222" -> "362" 
+  "224" -> "225" 
+  "224" -> "240" 
+  "224" -> "358" 
+  "225" -> "226" 
+  "225" -> "237" 
+  "226" -> "227" 
+  "226" -> "232" 
+  "227" -> "228" 
+  "227" -> "231" 
+  "228" -> "229" 
+  "228" -> "230" 
+  "232" -> "233" 
+  "232" -> "236" 
+  "233" -> "234" 
+  "233" -> "235" 
+  "237" -> "238" 
+  "238" -> "239" 
+  "240" -> "241" 
+  "240" -> "349" 
+  "241" -> "242" 
+  "241" -> "243" 
+  "241" -> "247" 
+  "241" -> "291" 
+  "243" -> "244" 
+  "243" -> "245" 
+  "245" -> "246" 
+  "247" -> "248" 
+  "247" -> "253" 
+  "248" -> "249" 
+  "248" -> "252" 
+  "249" -> "250" 
+  "249" -> "251" 
+  "253" -> "254" 
+  "253" -> "255" 
+  "253" -> "260" 
+  "253" -> "267" 
+  "255" -> "256" 
+  "255" -> "257" 
+  "257" -> "258" 
+  "258" -> "259" 
+  "260" -> "26" 
+  "260" -> "261" 
+  "260" -> "264" 
+  "261" -> "262" 
+  "261" -> "263" 
+  "264" -> "265" 
+  "264" -> "266" 
+  "267" -> "268" 
+  "267" -> "279" 
+  "268" -> "269" 
+  "268" -> "272" 
+  "269" -> "270" 
+  "269" -> "271" 
+  "272" -> "273" 
+  "272" -> "278" 
+  "273" -> "274" 
+  "273" -> "275" 
+  "275" -> "276" 
+  "275" -> "277" 
+  "279" -> "280" 
+  "279" -> "289" 
+  "280" -> "28" 
+  "280" -> "281" 
+  "280" -> "286" 
+  "281" -> "282" 
+  "281" -> "283" 
+  "283" -> "284" 
+  "283" -> "285" 
+  "286" -> "287" 
+  "286" -> "288" 
+  "289" -> "290" 
+  "291" -> "292" 
+  "291" -> "297" 
+  "292" -> "293" 
+  "292" -> "296" 
+  "293" -> "294" 
+  "293" -> "295" 
+  "297" -> "298" 
+  "297" -> "299" 
+  "297" -> "307" 
+  "297" -> "314" 
+  "299" -> "300" 
+  "299" -> "301" 
+  "301" -> "302" 
+  "301" -> "304" 
+  "302" -> "303" 
+  "304" -> "305" 
+  "304" -> "306" 
+  "307" -> "29" 
+  "307" -> "308" 
+  "307" -> "311" 
+  "308" -> "309" 
+  "308" -> "310" 
+  "311" -> "312" 
+  "311" -> "313" 
+  "314" -> "315" 
+  "314" -> "335" 
+  "315" -> "316" 
+  "315" -> "319" 
+  "316" -> "317" 
+  "316" -> "318" 
+  "319" -> "320" 
+  "320" -> "321" 
+  "320" -> "326" 
+  "321" -> "322" 
+  "321" -> "323" 
+  "323" -> "324" 
+  "323" -> "325" 
+  "326" -> "327" 
+  "326" -> "334" 
+  "327" -> "328" 
+  "327" -> "329" 
+  "329" -> "330" 
+  "329" -> "331" 
+  "331" -> "332" 
+  "331" -> "333" 
+  "335" -> "336" 
+  "335" -> "347" 
+  "336" -> "30" 
+  "336" -> "337" 
+  "336" -> "344" 
+  "337" -> "338" 
+  "337" -> "343" 
+  "338" -> "339" 
+  "338" -> "340" 
+  "340" -> "341" 
+  "340" -> "342" 
+  "344" -> "345" 
+  "344" -> "346" 
+  "347" -> "348" 
+  "349" -> "350" 
+  "350" -> "351" 
+  "350" -> "356" 
+  "351" -> "31" 
+  "351" -> "352" 
+  "351" -> "353" 
+  "353" -> "354" 
+  "353" -> "355" 
+  "356" -> "357" 
+  "358" -> "359" 
+}

@@ -1,0 +1,139 @@
+digraph "process" {  
+"138" [label = <(METHOD,process)<SUB>65</SUB>> ]
+"11" [label = <(PARAM,this)<SUB>65</SUB>> ]
+"139" [label = <(PARAM,Exchange exchange)<SUB>65</SUB>> ]
+"140" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>65</SUB>> ]
+"141" [label = <(LOCAL,int redeliveryCounter: int)> ]
+"142" [label = <(&lt;operator&gt;.assignment,int redeliveryCounter = 0)<SUB>66</SUB>> ]
+"143" [label = <(IDENTIFIER,redeliveryCounter,int redeliveryCounter = 0)<SUB>66</SUB>> ]
+"144" [label = <(LITERAL,0,int redeliveryCounter = 0)<SUB>66</SUB>> ]
+"145" [label = <(LOCAL,long redeliveryDelay: long)> ]
+"146" [label = <(&lt;operator&gt;.assignment,long redeliveryDelay = 0)<SUB>67</SUB>> ]
+"147" [label = <(IDENTIFIER,redeliveryDelay,long redeliveryDelay = 0)<SUB>67</SUB>> ]
+"148" [label = <(LITERAL,0,long redeliveryDelay = 0)<SUB>67</SUB>> ]
+"149" [label = <(CONTROL_STRUCTURE,do {...} while (redeliveryPolicy.shouldRedeliver(redeliveryCounter)),do {...} while (redeliveryPolicy.shouldRedeliver(redeliveryCounter)))<SUB>69</SUB>> ]
+"150" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>69</SUB>> ]
+"151" [label = <(CONTROL_STRUCTURE,if (redeliveryCounter &gt; 0),if (redeliveryCounter &gt; 0))<SUB>70</SUB>> ]
+"152" [label = <(&lt;operator&gt;.greaterThan,redeliveryCounter &gt; 0)<SUB>70</SUB>> ]
+"153" [label = <(IDENTIFIER,redeliveryCounter,redeliveryCounter &gt; 0)<SUB>70</SUB>> ]
+"154" [label = <(LITERAL,0,redeliveryCounter &gt; 0)<SUB>70</SUB>> ]
+"155" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>70</SUB>> ]
+"156" [label = <(&lt;operator&gt;.assignment,redeliveryDelay = getRedeliveryDelay(redeliveryDelay))<SUB>72</SUB>> ]
+"157" [label = <(IDENTIFIER,redeliveryDelay,redeliveryDelay = getRedeliveryDelay(redeliveryDelay))<SUB>72</SUB>> ]
+"158" [label = <(getRedeliveryDelay,getRedeliveryDelay(redeliveryDelay))<SUB>72</SUB>> ]
+"159" [label = <(&lt;operator&gt;.fieldAccess,this.redeliveryPolicy)<SUB>72</SUB>> ]
+"160" [label = <(IDENTIFIER,this,getRedeliveryDelay(redeliveryDelay))<SUB>72</SUB>> ]
+"161" [label = <(FIELD_IDENTIFIER,redeliveryPolicy,redeliveryPolicy)<SUB>72</SUB>> ]
+"162" [label = <(IDENTIFIER,redeliveryDelay,getRedeliveryDelay(redeliveryDelay))<SUB>72</SUB>> ]
+"163" [label = <(sleep,this.sleep(redeliveryDelay))<SUB>73</SUB>> ]
+"10" [label = <(IDENTIFIER,this,this.sleep(redeliveryDelay))<SUB>73</SUB>> ]
+"164" [label = <(IDENTIFIER,redeliveryDelay,this.sleep(redeliveryDelay))<SUB>73</SUB>> ]
+"165" [label = <(CONTROL_STRUCTURE,try,try)<SUB>76</SUB>> ]
+"166" [label = <(BLOCK,try,try)<SUB>76</SUB>> ]
+"167" [label = <(process,process(exchange))<SUB>77</SUB>> ]
+"168" [label = <(&lt;operator&gt;.fieldAccess,this.output)<SUB>77</SUB>> ]
+"169" [label = <(IDENTIFIER,this,process(exchange))<SUB>77</SUB>> ]
+"170" [label = <(FIELD_IDENTIFIER,output,output)<SUB>77</SUB>> ]
+"171" [label = <(IDENTIFIER,exchange,process(exchange))<SUB>77</SUB>> ]
+"172" [label = <(RETURN,return;,return;)<SUB>78</SUB>> ]
+"173" [label = <(BLOCK,catch,catch)> ]
+"174" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>80</SUB>> ]
+"175" [label = <(log,log(&quot;On delivery attempt: &quot; + redeliveryCounter + &quot; caught: &quot; + e, e))<SUB>81</SUB>> ]
+"176" [label = <(&lt;operator&gt;.fieldAccess,this.logger)<SUB>81</SUB>> ]
+"177" [label = <(IDENTIFIER,this,log(&quot;On delivery attempt: &quot; + redeliveryCounter + &quot; caught: &quot; + e, e))<SUB>81</SUB>> ]
+"178" [label = <(FIELD_IDENTIFIER,logger,logger)<SUB>81</SUB>> ]
+"179" [label = <(&lt;operator&gt;.addition,&quot;On delivery attempt: &quot; + redeliveryCounter + &quot; caught: &quot; + e)<SUB>81</SUB>> ]
+"180" [label = <(&lt;operator&gt;.addition,&quot;On delivery attempt: &quot; + redeliveryCounter + &quot; caught: &quot;)<SUB>81</SUB>> ]
+"181" [label = <(&lt;operator&gt;.addition,&quot;On delivery attempt: &quot; + redeliveryCounter)<SUB>81</SUB>> ]
+"182" [label = <(LITERAL,&quot;On delivery attempt: &quot;,&quot;On delivery attempt: &quot; + redeliveryCounter)<SUB>81</SUB>> ]
+"183" [label = <(IDENTIFIER,redeliveryCounter,&quot;On delivery attempt: &quot; + redeliveryCounter)<SUB>81</SUB>> ]
+"184" [label = <(LITERAL,&quot; caught: &quot;,&quot;On delivery attempt: &quot; + redeliveryCounter + &quot; caught: &quot;)<SUB>81</SUB>> ]
+"185" [label = <(IDENTIFIER,e,&quot;On delivery attempt: &quot; + redeliveryCounter + &quot; caught: &quot; + e)<SUB>81</SUB>> ]
+"186" [label = <(IDENTIFIER,e,log(&quot;On delivery attempt: &quot; + redeliveryCounter + &quot; caught: &quot; + e, e))<SUB>81</SUB>> ]
+"187" [label = <(&lt;operator&gt;.assignment,redeliveryCounter = incrementRedeliveryCounter(exchange))<SUB>83</SUB>> ]
+"188" [label = <(IDENTIFIER,redeliveryCounter,redeliveryCounter = incrementRedeliveryCounter(exchange))<SUB>83</SUB>> ]
+"189" [label = <(incrementRedeliveryCounter,incrementRedeliveryCounter(exchange))<SUB>83</SUB>> ]
+"12" [label = <(IDENTIFIER,this,incrementRedeliveryCounter(exchange))<SUB>83</SUB>> ]
+"190" [label = <(IDENTIFIER,exchange,incrementRedeliveryCounter(exchange))<SUB>83</SUB>> ]
+"191" [label = <(shouldRedeliver,shouldRedeliver(redeliveryCounter))<SUB>85</SUB>> ]
+"192" [label = <(&lt;operator&gt;.fieldAccess,this.redeliveryPolicy)<SUB>85</SUB>> ]
+"193" [label = <(IDENTIFIER,this,shouldRedeliver(redeliveryCounter))<SUB>85</SUB>> ]
+"194" [label = <(FIELD_IDENTIFIER,redeliveryPolicy,redeliveryPolicy)<SUB>85</SUB>> ]
+"195" [label = <(IDENTIFIER,redeliveryCounter,shouldRedeliver(redeliveryCounter))<SUB>85</SUB>> ]
+"196" [label = <(process,process(exchange))<SUB>88</SUB>> ]
+"197" [label = <(&lt;operator&gt;.fieldAccess,this.deadLetter)<SUB>88</SUB>> ]
+"198" [label = <(IDENTIFIER,this,process(exchange))<SUB>88</SUB>> ]
+"199" [label = <(FIELD_IDENTIFIER,deadLetter,deadLetter)<SUB>88</SUB>> ]
+"200" [label = <(IDENTIFIER,exchange,process(exchange))<SUB>88</SUB>> ]
+"201" [label = <(MODIFIER,PUBLIC)> ]
+"202" [label = <(MODIFIER,VIRTUAL)> ]
+"203" [label = <(METHOD_RETURN,void)<SUB>65</SUB>> ]
+  "138" -> "11" 
+  "138" -> "139" 
+  "138" -> "140" 
+  "138" -> "201" 
+  "138" -> "202" 
+  "138" -> "203" 
+  "140" -> "141" 
+  "140" -> "142" 
+  "140" -> "145" 
+  "140" -> "146" 
+  "140" -> "149" 
+  "140" -> "196" 
+  "142" -> "143" 
+  "142" -> "144" 
+  "146" -> "147" 
+  "146" -> "148" 
+  "149" -> "150" 
+  "149" -> "191" 
+  "150" -> "151" 
+  "150" -> "165" 
+  "150" -> "187" 
+  "151" -> "152" 
+  "151" -> "155" 
+  "152" -> "153" 
+  "152" -> "154" 
+  "155" -> "156" 
+  "155" -> "163" 
+  "156" -> "157" 
+  "156" -> "158" 
+  "158" -> "159" 
+  "158" -> "162" 
+  "159" -> "160" 
+  "159" -> "161" 
+  "163" -> "10" 
+  "163" -> "164" 
+  "165" -> "166" 
+  "165" -> "173" 
+  "166" -> "167" 
+  "166" -> "172" 
+  "167" -> "168" 
+  "167" -> "171" 
+  "168" -> "169" 
+  "168" -> "170" 
+  "173" -> "174" 
+  "174" -> "175" 
+  "175" -> "176" 
+  "175" -> "179" 
+  "175" -> "186" 
+  "176" -> "177" 
+  "176" -> "178" 
+  "179" -> "180" 
+  "179" -> "185" 
+  "180" -> "181" 
+  "180" -> "184" 
+  "181" -> "182" 
+  "181" -> "183" 
+  "187" -> "188" 
+  "187" -> "189" 
+  "189" -> "12" 
+  "189" -> "190" 
+  "191" -> "192" 
+  "191" -> "195" 
+  "192" -> "193" 
+  "192" -> "194" 
+  "196" -> "197" 
+  "196" -> "200" 
+  "197" -> "198" 
+  "197" -> "199" 
+}

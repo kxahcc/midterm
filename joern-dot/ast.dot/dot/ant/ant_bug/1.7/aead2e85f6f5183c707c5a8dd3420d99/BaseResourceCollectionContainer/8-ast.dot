@@ -1,0 +1,119 @@
+digraph "dieOnCircularReference" {  
+"290" [label = <(METHOD,dieOnCircularReference)<SUB>169</SUB>> ]
+"34" [label = <(PARAM,this)<SUB>169</SUB>> ]
+"291" [label = <(PARAM,Stack stk)<SUB>169</SUB>> ]
+"292" [label = <(PARAM,Project p)<SUB>169</SUB>> ]
+"293" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>170</SUB>> ]
+"294" [label = <(CONTROL_STRUCTURE,if (isChecked()),if (isChecked()))<SUB>171</SUB>> ]
+"295" [label = <(isChecked,isChecked())<SUB>171</SUB>> ]
+"33" [label = <(IDENTIFIER,this,isChecked())<SUB>171</SUB>> ]
+"296" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>171</SUB>> ]
+"297" [label = <(RETURN,return;,return;)<SUB>172</SUB>> ]
+"298" [label = <(CONTROL_STRUCTURE,if (isReference()),if (isReference()))<SUB>174</SUB>> ]
+"299" [label = <(isReference,isReference())<SUB>174</SUB>> ]
+"35" [label = <(IDENTIFIER,this,isReference())<SUB>174</SUB>> ]
+"300" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>174</SUB>> ]
+"301" [label = <(dieOnCircularReference,dieOnCircularReference(stk, p))<SUB>175</SUB>> ]
+"302" [label = <(IDENTIFIER,super,dieOnCircularReference(stk, p))<SUB>175</SUB>> ]
+"303" [label = <(IDENTIFIER,stk,dieOnCircularReference(stk, p))<SUB>175</SUB>> ]
+"304" [label = <(IDENTIFIER,p,dieOnCircularReference(stk, p))<SUB>175</SUB>> ]
+"305" [label = <(CONTROL_STRUCTURE,else,else)<SUB>176</SUB>> ]
+"306" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>176</SUB>> ]
+"307" [label = <(CONTROL_STRUCTURE,for (Iterator i = rc.iterator(); Some(i.hasNext()); ),for (Iterator i = rc.iterator(); Some(i.hasNext()); ))<SUB>177</SUB>> ]
+"308" [label = <(LOCAL,Iterator i: java.util.Iterator)> ]
+"309" [label = <(&lt;operator&gt;.assignment,Iterator i = rc.iterator())<SUB>177</SUB>> ]
+"310" [label = <(IDENTIFIER,i,Iterator i = rc.iterator())<SUB>177</SUB>> ]
+"311" [label = <(iterator,rc.iterator())<SUB>177</SUB>> ]
+"312" [label = <(&lt;operator&gt;.fieldAccess,this.rc)<SUB>177</SUB>> ]
+"313" [label = <(IDENTIFIER,this,rc.iterator())<SUB>177</SUB>> ]
+"314" [label = <(FIELD_IDENTIFIER,rc,rc)<SUB>177</SUB>> ]
+"315" [label = <(hasNext,i.hasNext())<SUB>177</SUB>> ]
+"316" [label = <(IDENTIFIER,i,i.hasNext())<SUB>177</SUB>> ]
+"317" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>177</SUB>> ]
+"318" [label = <(LOCAL,Object o: java.lang.Object)> ]
+"319" [label = <(&lt;operator&gt;.assignment,Object o = i.next())<SUB>178</SUB>> ]
+"320" [label = <(IDENTIFIER,o,Object o = i.next())<SUB>178</SUB>> ]
+"321" [label = <(next,i.next())<SUB>178</SUB>> ]
+"322" [label = <(IDENTIFIER,i,i.next())<SUB>178</SUB>> ]
+"323" [label = <(CONTROL_STRUCTURE,if (o instanceof DataType),if (o instanceof DataType))<SUB>179</SUB>> ]
+"324" [label = <(&lt;operator&gt;.instanceOf,o instanceof DataType)<SUB>179</SUB>> ]
+"325" [label = <(IDENTIFIER,o,o instanceof DataType)<SUB>179</SUB>> ]
+"326" [label = <(TYPE_REF,DataType,DataType)<SUB>179</SUB>> ]
+"327" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>179</SUB>> ]
+"328" [label = <(push,stk.push(o))<SUB>180</SUB>> ]
+"329" [label = <(IDENTIFIER,stk,stk.push(o))<SUB>180</SUB>> ]
+"330" [label = <(IDENTIFIER,o,stk.push(o))<SUB>180</SUB>> ]
+"331" [label = <(invokeCircularReferenceCheck,invokeCircularReferenceCheck((DataType) o, stk, p))<SUB>181</SUB>> ]
+"36" [label = <(IDENTIFIER,this,invokeCircularReferenceCheck((DataType) o, stk, p))<SUB>181</SUB>> ]
+"332" [label = <(&lt;operator&gt;.cast,(DataType) o)<SUB>181</SUB>> ]
+"333" [label = <(TYPE_REF,DataType,DataType)<SUB>181</SUB>> ]
+"334" [label = <(IDENTIFIER,o,(DataType) o)<SUB>181</SUB>> ]
+"335" [label = <(IDENTIFIER,stk,invokeCircularReferenceCheck((DataType) o, stk, p))<SUB>181</SUB>> ]
+"336" [label = <(IDENTIFIER,p,invokeCircularReferenceCheck((DataType) o, stk, p))<SUB>181</SUB>> ]
+"337" [label = <(pop,stk.pop())<SUB>182</SUB>> ]
+"338" [label = <(IDENTIFIER,stk,stk.pop())<SUB>182</SUB>> ]
+"339" [label = <(setChecked,setChecked(true))<SUB>185</SUB>> ]
+"37" [label = <(IDENTIFIER,this,setChecked(true))<SUB>185</SUB>> ]
+"340" [label = <(LITERAL,true,setChecked(true))<SUB>185</SUB>> ]
+"341" [label = <(MODIFIER,PROTECTED)> ]
+"342" [label = <(MODIFIER,VIRTUAL)> ]
+"343" [label = <(METHOD_RETURN,void)<SUB>169</SUB>> ]
+  "290" -> "34" 
+  "290" -> "291" 
+  "290" -> "292" 
+  "290" -> "293" 
+  "290" -> "341" 
+  "290" -> "342" 
+  "290" -> "343" 
+  "293" -> "294" 
+  "293" -> "298" 
+  "294" -> "295" 
+  "294" -> "296" 
+  "295" -> "33" 
+  "296" -> "297" 
+  "298" -> "299" 
+  "298" -> "300" 
+  "298" -> "305" 
+  "299" -> "35" 
+  "300" -> "301" 
+  "301" -> "302" 
+  "301" -> "303" 
+  "301" -> "304" 
+  "305" -> "306" 
+  "306" -> "307" 
+  "306" -> "339" 
+  "307" -> "308" 
+  "307" -> "309" 
+  "307" -> "315" 
+  "307" -> "317" 
+  "309" -> "310" 
+  "309" -> "311" 
+  "311" -> "312" 
+  "312" -> "313" 
+  "312" -> "314" 
+  "315" -> "316" 
+  "317" -> "318" 
+  "317" -> "319" 
+  "317" -> "323" 
+  "319" -> "320" 
+  "319" -> "321" 
+  "321" -> "322" 
+  "323" -> "324" 
+  "323" -> "327" 
+  "324" -> "325" 
+  "324" -> "326" 
+  "327" -> "328" 
+  "327" -> "331" 
+  "327" -> "337" 
+  "328" -> "329" 
+  "328" -> "330" 
+  "331" -> "36" 
+  "331" -> "332" 
+  "331" -> "335" 
+  "331" -> "336" 
+  "332" -> "333" 
+  "332" -> "334" 
+  "337" -> "338" 
+  "339" -> "37" 
+  "339" -> "340" 
+}

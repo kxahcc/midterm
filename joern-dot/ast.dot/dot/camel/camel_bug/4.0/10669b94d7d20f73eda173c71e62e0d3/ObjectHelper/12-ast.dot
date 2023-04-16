@@ -1,0 +1,161 @@
+digraph "createIterator" {  
+"544" [label = <(METHOD,createIterator)<SUB>238</SUB>> ]
+"545" [label = <(PARAM,Object value)<SUB>239</SUB>> ]
+"546" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>239</SUB>> ]
+"547" [label = <(CONTROL_STRUCTURE,if (value == null),if (value == null))<SUB>240</SUB>> ]
+"548" [label = <(&lt;operator&gt;.equals,value == null)<SUB>240</SUB>> ]
+"549" [label = <(IDENTIFIER,value,value == null)<SUB>240</SUB>> ]
+"550" [label = <(LITERAL,null,value == null)<SUB>240</SUB>> ]
+"551" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>240</SUB>> ]
+"552" [label = <(RETURN,return Collections.EMPTY_LIST.iterator();,return Collections.EMPTY_LIST.iterator();)<SUB>241</SUB>> ]
+"553" [label = <(iterator,Collections.EMPTY_LIST.iterator())<SUB>241</SUB>> ]
+"554" [label = <(&lt;operator&gt;.fieldAccess,Collections.EMPTY_LIST)<SUB>241</SUB>> ]
+"555" [label = <(IDENTIFIER,Collections,Collections.EMPTY_LIST.iterator())<SUB>241</SUB>> ]
+"556" [label = <(FIELD_IDENTIFIER,EMPTY_LIST,EMPTY_LIST)<SUB>241</SUB>> ]
+"557" [label = <(CONTROL_STRUCTURE,else,else)<SUB>242</SUB>> ]
+"558" [label = <(CONTROL_STRUCTURE,if (value instanceof Collection),if (value instanceof Collection))<SUB>242</SUB>> ]
+"559" [label = <(&lt;operator&gt;.instanceOf,value instanceof Collection)<SUB>242</SUB>> ]
+"560" [label = <(IDENTIFIER,value,value instanceof Collection)<SUB>242</SUB>> ]
+"561" [label = <(TYPE_REF,Collection,Collection)<SUB>242</SUB>> ]
+"562" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>242</SUB>> ]
+"563" [label = <(LOCAL,Collection collection: java.util.Collection)> ]
+"564" [label = <(&lt;operator&gt;.assignment,Collection collection = (Collection) value)<SUB>243</SUB>> ]
+"565" [label = <(IDENTIFIER,collection,Collection collection = (Collection) value)<SUB>243</SUB>> ]
+"566" [label = <(&lt;operator&gt;.cast,(Collection) value)<SUB>243</SUB>> ]
+"567" [label = <(TYPE_REF,Collection,Collection)<SUB>243</SUB>> ]
+"568" [label = <(IDENTIFIER,value,(Collection) value)<SUB>243</SUB>> ]
+"569" [label = <(RETURN,return collection.iterator();,return collection.iterator();)<SUB>244</SUB>> ]
+"570" [label = <(iterator,collection.iterator())<SUB>244</SUB>> ]
+"571" [label = <(IDENTIFIER,collection,collection.iterator())<SUB>244</SUB>> ]
+"572" [label = <(CONTROL_STRUCTURE,else,else)<SUB>245</SUB>> ]
+"573" [label = <(CONTROL_STRUCTURE,if (value.getClass().isArray()),if (value.getClass().isArray()))<SUB>245</SUB>> ]
+"574" [label = <(isArray,value.getClass().isArray())<SUB>245</SUB>> ]
+"575" [label = <(getClass,value.getClass())<SUB>245</SUB>> ]
+"576" [label = <(IDENTIFIER,value,value.getClass())<SUB>245</SUB>> ]
+"577" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>245</SUB>> ]
+"578" [label = <(LOCAL,List&lt;Object&gt; list: java.util.List)> ]
+"579" [label = <(&lt;operator&gt;.assignment,List list = Arrays.asList((Object[]) value))<SUB>247</SUB>> ]
+"580" [label = <(IDENTIFIER,list,List list = Arrays.asList((Object[]) value))<SUB>247</SUB>> ]
+"581" [label = <(asList,Arrays.asList((Object[]) value))<SUB>247</SUB>> ]
+"582" [label = <(IDENTIFIER,Arrays,Arrays.asList((Object[]) value))<SUB>247</SUB>> ]
+"583" [label = <(&lt;operator&gt;.arrayInitializer,&lt;operator&gt;.arrayInitializer)<SUB>247</SUB>> ]
+"584" [label = <(&lt;operator&gt;.cast,(Object[]) value)<SUB>247</SUB>> ]
+"585" [label = <(TYPE_REF,Object[],Object[])<SUB>247</SUB>> ]
+"586" [label = <(IDENTIFIER,value,(Object[]) value)<SUB>247</SUB>> ]
+"587" [label = <(RETURN,return list.iterator();,return list.iterator();)<SUB>248</SUB>> ]
+"588" [label = <(iterator,list.iterator())<SUB>248</SUB>> ]
+"589" [label = <(IDENTIFIER,list,list.iterator())<SUB>248</SUB>> ]
+"590" [label = <(CONTROL_STRUCTURE,else,else)<SUB>249</SUB>> ]
+"591" [label = <(CONTROL_STRUCTURE,if (value instanceof NodeList),if (value instanceof NodeList))<SUB>249</SUB>> ]
+"592" [label = <(&lt;operator&gt;.instanceOf,value instanceof NodeList)<SUB>249</SUB>> ]
+"593" [label = <(IDENTIFIER,value,value instanceof NodeList)<SUB>249</SUB>> ]
+"594" [label = <(TYPE_REF,NodeList,NodeList)<SUB>249</SUB>> ]
+"595" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>249</SUB>> ]
+"596" [label = <(LOCAL,NodeList nodeList: org.w3c.dom.NodeList)> ]
+"597" [label = <(&lt;operator&gt;.assignment,NodeList nodeList = (NodeList) value)<SUB>251</SUB>> ]
+"598" [label = <(IDENTIFIER,nodeList,NodeList nodeList = (NodeList) value)<SUB>251</SUB>> ]
+"599" [label = <(&lt;operator&gt;.cast,(NodeList) value)<SUB>251</SUB>> ]
+"600" [label = <(TYPE_REF,NodeList,NodeList)<SUB>251</SUB>> ]
+"601" [label = <(IDENTIFIER,value,(NodeList) value)<SUB>251</SUB>> ]
+"602" [label = <(RETURN,return new Iterator&lt;Node&gt;() {\012\012    int idx = -1;\012\012    public boolean hasNext() {\012        return ++idx &lt; nodeList.getLength();\012    }\012\012    public Node next() {\012        return nodeList.item(idx);\012    }\012\012    public void remove() {\012        throw new UnsupportedOperationException();\012    }\012};,return new Iterator&lt;Node&gt;() {\012\012    int idx = -1;\012\012    public boolean hasNext() {\012        return ++idx &lt; nodeList.getLength();\012    }\012\012    public Node next() {\012        return nodeList.item(idx);\012    }\012\012    public void remove() {\012        throw new UnsupportedOperationException();\012    }\012};)<SUB>252</SUB>> ]
+"603" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>252</SUB>> ]
+"604" [label = <(&lt;operator&gt;.assignment,&lt;empty&gt;)> ]
+"605" [label = <(IDENTIFIER,$obj1,&lt;empty&gt;)> ]
+"606" [label = <(&lt;operator&gt;.alloc,new Iterator&lt;Node&gt;() {\012\012    int idx = -1;\012\012    public boolean hasNext() {\012        return ++idx &lt; nodeList.getLength();\012    }\012\012    public Node next() {\012        return nodeList.item(idx);\012    }\012\012    public void remove() {\012        throw new UnsupportedOperationException();\012    }\012})<SUB>252</SUB>> ]
+"607" [label = <(&lt;init&gt;,new Iterator&lt;Node&gt;() {\012\012    int idx = -1;\012\012    public boolean hasNext() {\012        return ++idx &lt; nodeList.getLength();\012    }\012\012    public Node next() {\012        return nodeList.item(idx);\012    }\012\012    public void remove() {\012        throw new UnsupportedOperationException();\012    }\012})<SUB>252</SUB>> ]
+"608" [label = <(IDENTIFIER,$obj1,new Iterator&lt;Node&gt;() {\012\012    int idx = -1;\012\012    public boolean hasNext() {\012        return ++idx &lt; nodeList.getLength();\012    }\012\012    public Node next() {\012        return nodeList.item(idx);\012    }\012\012    public void remove() {\012        throw new UnsupportedOperationException();\012    }\012})> ]
+"609" [label = <(IDENTIFIER,$obj1,&lt;empty&gt;)> ]
+"610" [label = <(CONTROL_STRUCTURE,else,else)<SUB>267</SUB>> ]
+"611" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>267</SUB>> ]
+"612" [label = <(RETURN,return Collections.singletonList(value).iterator();,return Collections.singletonList(value).iterator();)<SUB>268</SUB>> ]
+"613" [label = <(iterator,Collections.singletonList(value).iterator())<SUB>268</SUB>> ]
+"614" [label = <(singletonList,Collections.singletonList(value))<SUB>268</SUB>> ]
+"615" [label = <(IDENTIFIER,Collections,Collections.singletonList(value))<SUB>268</SUB>> ]
+"616" [label = <(IDENTIFIER,value,Collections.singletonList(value))<SUB>268</SUB>> ]
+"617" [label = <(MODIFIER,PUBLIC)> ]
+"618" [label = <(MODIFIER,STATIC)> ]
+"619" [label = <(ANNOTATION,@SuppressWarnings(&quot;unchecked&quot;),@SuppressWarnings(&quot;unchecked&quot;))<SUB>238</SUB>> ]
+"620" [label = <(ANNOTATION_PARAMETER_ASSIGN,&quot;unchecked&quot;)> ]
+"621" [label = <(ANNOTATION_PARAMETER,value)> ]
+"622" [label = <(ANNOTATION_LITERAL,unchecked,unchecked)> ]
+"623" [label = <(METHOD_RETURN,java.util.Iterator)<SUB>239</SUB>> ]
+  "544" -> "545" 
+  "544" -> "546" 
+  "544" -> "617" 
+  "544" -> "618" 
+  "544" -> "619" 
+  "544" -> "623" 
+  "546" -> "547" 
+  "547" -> "548" 
+  "547" -> "551" 
+  "547" -> "557" 
+  "548" -> "549" 
+  "548" -> "550" 
+  "551" -> "552" 
+  "552" -> "553" 
+  "553" -> "554" 
+  "554" -> "555" 
+  "554" -> "556" 
+  "557" -> "558" 
+  "558" -> "559" 
+  "558" -> "562" 
+  "558" -> "572" 
+  "559" -> "560" 
+  "559" -> "561" 
+  "562" -> "563" 
+  "562" -> "564" 
+  "562" -> "569" 
+  "564" -> "565" 
+  "564" -> "566" 
+  "566" -> "567" 
+  "566" -> "568" 
+  "569" -> "570" 
+  "570" -> "571" 
+  "572" -> "573" 
+  "573" -> "574" 
+  "573" -> "577" 
+  "573" -> "590" 
+  "574" -> "575" 
+  "575" -> "576" 
+  "577" -> "578" 
+  "577" -> "579" 
+  "577" -> "587" 
+  "579" -> "580" 
+  "579" -> "581" 
+  "581" -> "582" 
+  "581" -> "583" 
+  "583" -> "584" 
+  "584" -> "585" 
+  "584" -> "586" 
+  "587" -> "588" 
+  "588" -> "589" 
+  "590" -> "591" 
+  "591" -> "592" 
+  "591" -> "595" 
+  "591" -> "610" 
+  "592" -> "593" 
+  "592" -> "594" 
+  "595" -> "596" 
+  "595" -> "597" 
+  "595" -> "602" 
+  "597" -> "598" 
+  "597" -> "599" 
+  "599" -> "600" 
+  "599" -> "601" 
+  "602" -> "603" 
+  "603" -> "604" 
+  "603" -> "607" 
+  "603" -> "609" 
+  "604" -> "605" 
+  "604" -> "606" 
+  "607" -> "608" 
+  "610" -> "611" 
+  "611" -> "612" 
+  "612" -> "613" 
+  "613" -> "614" 
+  "614" -> "615" 
+  "614" -> "616" 
+  "619" -> "620" 
+  "620" -> "621" 
+  "620" -> "622" 
+}

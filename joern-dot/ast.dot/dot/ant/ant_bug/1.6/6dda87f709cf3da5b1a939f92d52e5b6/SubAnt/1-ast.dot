@@ -1,0 +1,219 @@
+digraph "execute" {  
+"313" [label = <(METHOD,execute)<SUB>198</SUB>> ]
+"16" [label = <(PARAM,this)<SUB>198</SUB>> ]
+"314" [label = <(PARAM,File file)<SUB>198</SUB>> ]
+"315" [label = <(PARAM,File directory)<SUB>198</SUB>> ]
+"316" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>199</SUB>> ]
+"317" [label = <(CONTROL_STRUCTURE,if (!file.exists() || file.isDirectory() || !file.canRead()),if (!file.exists() || file.isDirectory() || !file.canRead()))<SUB>200</SUB>> ]
+"318" [label = <(&lt;operator&gt;.logicalOr,!file.exists() || file.isDirectory() || !file.canRead())<SUB>200</SUB>> ]
+"319" [label = <(&lt;operator&gt;.logicalOr,!file.exists() || file.isDirectory())<SUB>200</SUB>> ]
+"320" [label = <(&lt;operator&gt;.logicalNot,!file.exists())<SUB>200</SUB>> ]
+"321" [label = <(exists,file.exists())<SUB>200</SUB>> ]
+"322" [label = <(IDENTIFIER,file,file.exists())<SUB>200</SUB>> ]
+"323" [label = <(isDirectory,file.isDirectory())<SUB>200</SUB>> ]
+"324" [label = <(IDENTIFIER,file,file.isDirectory())<SUB>200</SUB>> ]
+"325" [label = <(&lt;operator&gt;.logicalNot,!file.canRead())<SUB>200</SUB>> ]
+"326" [label = <(canRead,file.canRead())<SUB>200</SUB>> ]
+"327" [label = <(IDENTIFIER,file,file.canRead())<SUB>200</SUB>> ]
+"328" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>200</SUB>> ]
+"329" [label = <(LOCAL,String msg: java.lang.String)> ]
+"330" [label = <(&lt;operator&gt;.assignment,String msg = &quot;Invalid file: &quot; + file)<SUB>201</SUB>> ]
+"331" [label = <(IDENTIFIER,msg,String msg = &quot;Invalid file: &quot; + file)<SUB>201</SUB>> ]
+"332" [label = <(&lt;operator&gt;.addition,&quot;Invalid file: &quot; + file)<SUB>201</SUB>> ]
+"333" [label = <(LITERAL,&quot;Invalid file: &quot;,&quot;Invalid file: &quot; + file)<SUB>201</SUB>> ]
+"334" [label = <(IDENTIFIER,file,&quot;Invalid file: &quot; + file)<SUB>201</SUB>> ]
+"335" [label = <(CONTROL_STRUCTURE,if (failOnError),if (failOnError))<SUB>202</SUB>> ]
+"336" [label = <(&lt;operator&gt;.fieldAccess,this.failOnError)<SUB>202</SUB>> ]
+"337" [label = <(IDENTIFIER,this,if (failOnError))<SUB>202</SUB>> ]
+"338" [label = <(FIELD_IDENTIFIER,failOnError,failOnError)<SUB>202</SUB>> ]
+"339" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>202</SUB>> ]
+"340" [label = <(&lt;operator&gt;.throw,throw new BuildException(msg);)<SUB>203</SUB>> ]
+"341" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>203</SUB>> ]
+"342" [label = <(&lt;operator&gt;.assignment,&lt;empty&gt;)> ]
+"343" [label = <(IDENTIFIER,$obj8,&lt;empty&gt;)> ]
+"344" [label = <(&lt;operator&gt;.alloc,new BuildException(msg))<SUB>203</SUB>> ]
+"345" [label = <(&lt;init&gt;,new BuildException(msg))<SUB>203</SUB>> ]
+"346" [label = <(IDENTIFIER,$obj8,new BuildException(msg))> ]
+"347" [label = <(IDENTIFIER,msg,new BuildException(msg))<SUB>203</SUB>> ]
+"348" [label = <(IDENTIFIER,$obj8,&lt;empty&gt;)> ]
+"349" [label = <(log,log(msg, Project.MSG_WARN))<SUB>205</SUB>> ]
+"15" [label = <(IDENTIFIER,this,log(msg, Project.MSG_WARN))<SUB>205</SUB>> ]
+"350" [label = <(IDENTIFIER,msg,log(msg, Project.MSG_WARN))<SUB>205</SUB>> ]
+"351" [label = <(&lt;operator&gt;.fieldAccess,Project.MSG_WARN)<SUB>205</SUB>> ]
+"352" [label = <(IDENTIFIER,Project,log(msg, Project.MSG_WARN))<SUB>205</SUB>> ]
+"353" [label = <(FIELD_IDENTIFIER,MSG_WARN,MSG_WARN)<SUB>205</SUB>> ]
+"354" [label = <(RETURN,return;,return;)<SUB>206</SUB>> ]
+"355" [label = <(LOCAL,Ant ant: ANY)> ]
+"356" [label = <(&lt;operator&gt;.assignment,ANY ant = this.createAntTask(directory))<SUB>209</SUB>> ]
+"357" [label = <(IDENTIFIER,ant,ANY ant = this.createAntTask(directory))<SUB>209</SUB>> ]
+"358" [label = <(createAntTask,this.createAntTask(directory))<SUB>209</SUB>> ]
+"17" [label = <(IDENTIFIER,this,this.createAntTask(directory))<SUB>209</SUB>> ]
+"359" [label = <(IDENTIFIER,directory,this.createAntTask(directory))<SUB>209</SUB>> ]
+"360" [label = <(LOCAL,String antfilename: java.lang.String)> ]
+"361" [label = <(&lt;operator&gt;.assignment,String antfilename = null)<SUB>210</SUB>> ]
+"362" [label = <(IDENTIFIER,antfilename,String antfilename = null)<SUB>210</SUB>> ]
+"363" [label = <(LITERAL,null,String antfilename = null)<SUB>210</SUB>> ]
+"364" [label = <(CONTROL_STRUCTURE,try,try)<SUB>211</SUB>> ]
+"365" [label = <(BLOCK,try,try)<SUB>211</SUB>> ]
+"366" [label = <(&lt;operator&gt;.assignment,antfilename = file.getCanonicalPath())<SUB>212</SUB>> ]
+"367" [label = <(IDENTIFIER,antfilename,antfilename = file.getCanonicalPath())<SUB>212</SUB>> ]
+"368" [label = <(getCanonicalPath,file.getCanonicalPath())<SUB>212</SUB>> ]
+"369" [label = <(IDENTIFIER,file,file.getCanonicalPath())<SUB>212</SUB>> ]
+"370" [label = <(BLOCK,catch,catch)> ]
+"371" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>213</SUB>> ]
+"372" [label = <(&lt;operator&gt;.throw,throw new BuildException(e);)<SUB>214</SUB>> ]
+"373" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>214</SUB>> ]
+"374" [label = <(&lt;operator&gt;.assignment,&lt;empty&gt;)> ]
+"375" [label = <(IDENTIFIER,$obj9,&lt;empty&gt;)> ]
+"376" [label = <(&lt;operator&gt;.alloc,new BuildException(e))<SUB>214</SUB>> ]
+"377" [label = <(&lt;init&gt;,new BuildException(e))<SUB>214</SUB>> ]
+"378" [label = <(IDENTIFIER,$obj9,new BuildException(e))> ]
+"379" [label = <(IDENTIFIER,e,new BuildException(e))<SUB>214</SUB>> ]
+"380" [label = <(IDENTIFIER,$obj9,&lt;empty&gt;)> ]
+"381" [label = <(setAntfile,setAntfile(antfilename))<SUB>217</SUB>> ]
+"382" [label = <(IDENTIFIER,ant,setAntfile(antfilename))<SUB>217</SUB>> ]
+"383" [label = <(IDENTIFIER,antfilename,setAntfile(antfilename))<SUB>217</SUB>> ]
+"384" [label = <(CONTROL_STRUCTURE,try,try)<SUB>218</SUB>> ]
+"385" [label = <(BLOCK,try,try)<SUB>218</SUB>> ]
+"386" [label = <(execute,execute())<SUB>219</SUB>> ]
+"387" [label = <(IDENTIFIER,ant,execute())<SUB>219</SUB>> ]
+"388" [label = <(BLOCK,catch,catch)> ]
+"389" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>220</SUB>> ]
+"390" [label = <(CONTROL_STRUCTURE,if (failOnError),if (failOnError))<SUB>221</SUB>> ]
+"391" [label = <(&lt;operator&gt;.fieldAccess,this.failOnError)<SUB>221</SUB>> ]
+"392" [label = <(IDENTIFIER,this,if (failOnError))<SUB>221</SUB>> ]
+"393" [label = <(FIELD_IDENTIFIER,failOnError,failOnError)<SUB>221</SUB>> ]
+"394" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>221</SUB>> ]
+"395" [label = <(&lt;operator&gt;.throw,throw e;)<SUB>222</SUB>> ]
+"396" [label = <(IDENTIFIER,e,throw e;)<SUB>222</SUB>> ]
+"397" [label = <(log,log(&quot;Failure for target '&quot; + target + &quot;' of: &quot; + antfilename + &quot;\n&quot; + e.getMessage(), Project.MSG_WARN))<SUB>224</SUB>> ]
+"18" [label = <(IDENTIFIER,this,log(&quot;Failure for target '&quot; + target + &quot;' of: &quot; + antfilename + &quot;\n&quot; + e.getMessage(), Project.MSG_WARN))<SUB>224</SUB>> ]
+"398" [label = <(&lt;operator&gt;.addition,&quot;Failure for target '&quot; + target + &quot;' of: &quot; + antfilename + &quot;\n&quot; + e.getMessage())<SUB>224</SUB>> ]
+"399" [label = <(&lt;operator&gt;.addition,&quot;Failure for target '&quot; + target + &quot;' of: &quot; + antfilename + &quot;\n&quot;)<SUB>224</SUB>> ]
+"400" [label = <(&lt;operator&gt;.addition,&quot;Failure for target '&quot; + target + &quot;' of: &quot; + antfilename)<SUB>224</SUB>> ]
+"401" [label = <(&lt;operator&gt;.addition,&quot;Failure for target '&quot; + target + &quot;' of: &quot;)<SUB>224</SUB>> ]
+"402" [label = <(&lt;operator&gt;.addition,&quot;Failure for target '&quot; + target)<SUB>224</SUB>> ]
+"403" [label = <(LITERAL,&quot;Failure for target '&quot;,&quot;Failure for target '&quot; + target)<SUB>224</SUB>> ]
+"404" [label = <(&lt;operator&gt;.fieldAccess,this.target)<SUB>224</SUB>> ]
+"405" [label = <(IDENTIFIER,this,&quot;Failure for target '&quot; + target)<SUB>224</SUB>> ]
+"406" [label = <(FIELD_IDENTIFIER,target,target)<SUB>224</SUB>> ]
+"407" [label = <(LITERAL,&quot;' of: &quot;,&quot;Failure for target '&quot; + target + &quot;' of: &quot;)<SUB>225</SUB>> ]
+"408" [label = <(IDENTIFIER,antfilename,&quot;Failure for target '&quot; + target + &quot;' of: &quot; + antfilename)<SUB>225</SUB>> ]
+"409" [label = <(LITERAL,&quot;\n&quot;,&quot;Failure for target '&quot; + target + &quot;' of: &quot; + antfilename + &quot;\n&quot;)<SUB>225</SUB>> ]
+"410" [label = <(getMessage,getMessage())<SUB>226</SUB>> ]
+"411" [label = <(IDENTIFIER,e,getMessage())<SUB>226</SUB>> ]
+"412" [label = <(&lt;operator&gt;.fieldAccess,Project.MSG_WARN)<SUB>226</SUB>> ]
+"413" [label = <(IDENTIFIER,Project,log(&quot;Failure for target '&quot; + target + &quot;' of: &quot; + antfilename + &quot;\n&quot; + e.getMessage(), Project.MSG_WARN))<SUB>226</SUB>> ]
+"414" [label = <(FIELD_IDENTIFIER,MSG_WARN,MSG_WARN)<SUB>226</SUB>> ]
+"415" [label = <(MODIFIER,PRIVATE)> ]
+"416" [label = <(MODIFIER,VIRTUAL)> ]
+"417" [label = <(METHOD_RETURN,void)<SUB>198</SUB>> ]
+  "313" -> "16" 
+  "313" -> "314" 
+  "313" -> "315" 
+  "313" -> "316" 
+  "313" -> "415" 
+  "313" -> "416" 
+  "313" -> "417" 
+  "316" -> "317" 
+  "316" -> "355" 
+  "316" -> "356" 
+  "316" -> "360" 
+  "316" -> "361" 
+  "316" -> "364" 
+  "316" -> "381" 
+  "316" -> "384" 
+  "317" -> "318" 
+  "317" -> "328" 
+  "318" -> "319" 
+  "318" -> "325" 
+  "319" -> "320" 
+  "319" -> "323" 
+  "320" -> "321" 
+  "321" -> "322" 
+  "323" -> "324" 
+  "325" -> "326" 
+  "326" -> "327" 
+  "328" -> "329" 
+  "328" -> "330" 
+  "328" -> "335" 
+  "328" -> "349" 
+  "328" -> "354" 
+  "330" -> "331" 
+  "330" -> "332" 
+  "332" -> "333" 
+  "332" -> "334" 
+  "335" -> "336" 
+  "335" -> "339" 
+  "336" -> "337" 
+  "336" -> "338" 
+  "339" -> "340" 
+  "340" -> "341" 
+  "341" -> "342" 
+  "341" -> "345" 
+  "341" -> "348" 
+  "342" -> "343" 
+  "342" -> "344" 
+  "345" -> "346" 
+  "345" -> "347" 
+  "349" -> "15" 
+  "349" -> "350" 
+  "349" -> "351" 
+  "351" -> "352" 
+  "351" -> "353" 
+  "356" -> "357" 
+  "356" -> "358" 
+  "358" -> "17" 
+  "358" -> "359" 
+  "361" -> "362" 
+  "361" -> "363" 
+  "364" -> "365" 
+  "364" -> "370" 
+  "365" -> "366" 
+  "366" -> "367" 
+  "366" -> "368" 
+  "368" -> "369" 
+  "370" -> "371" 
+  "371" -> "372" 
+  "372" -> "373" 
+  "373" -> "374" 
+  "373" -> "377" 
+  "373" -> "380" 
+  "374" -> "375" 
+  "374" -> "376" 
+  "377" -> "378" 
+  "377" -> "379" 
+  "381" -> "382" 
+  "381" -> "383" 
+  "384" -> "385" 
+  "384" -> "388" 
+  "385" -> "386" 
+  "386" -> "387" 
+  "388" -> "389" 
+  "389" -> "390" 
+  "389" -> "397" 
+  "390" -> "391" 
+  "390" -> "394" 
+  "391" -> "392" 
+  "391" -> "393" 
+  "394" -> "395" 
+  "395" -> "396" 
+  "397" -> "18" 
+  "397" -> "398" 
+  "397" -> "412" 
+  "398" -> "399" 
+  "398" -> "410" 
+  "399" -> "400" 
+  "399" -> "409" 
+  "400" -> "401" 
+  "400" -> "408" 
+  "401" -> "402" 
+  "401" -> "407" 
+  "402" -> "403" 
+  "402" -> "404" 
+  "404" -> "405" 
+  "404" -> "406" 
+  "410" -> "411" 
+  "412" -> "413" 
+  "412" -> "414" 
+}

@@ -1,0 +1,221 @@
+digraph "getNextClassFile" {  
+"116" [label = <(METHOD,getNextClassFile)<SUB>113</SUB>> ]
+"9" [label = <(PARAM,this)<SUB>113</SUB>> ]
+"117" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>113</SUB>> ]
+"118" [label = <(LOCAL,ClassFile nextElement: ANY)> ]
+"119" [label = <(&lt;operator&gt;.assignment,ANY nextElement = null)<SUB>114</SUB>> ]
+"120" [label = <(IDENTIFIER,nextElement,ANY nextElement = null)<SUB>114</SUB>> ]
+"121" [label = <(LITERAL,null,ANY nextElement = null)<SUB>114</SUB>> ]
+"122" [label = <(CONTROL_STRUCTURE,try,try)<SUB>116</SUB>> ]
+"123" [label = <(BLOCK,try,try)<SUB>116</SUB>> ]
+"124" [label = <(CONTROL_STRUCTURE,while (nextElement == null),while (nextElement == null))<SUB>117</SUB>> ]
+"125" [label = <(&lt;operator&gt;.equals,nextElement == null)<SUB>117</SUB>> ]
+"126" [label = <(IDENTIFIER,nextElement,nextElement == null)<SUB>117</SUB>> ]
+"127" [label = <(LITERAL,null,nextElement == null)<SUB>117</SUB>> ]
+"128" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>117</SUB>> ]
+"129" [label = <(CONTROL_STRUCTURE,if (currentEnum.hasMoreElements()),if (currentEnum.hasMoreElements()))<SUB>118</SUB>> ]
+"130" [label = <(hasMoreElements,currentEnum.hasMoreElements())<SUB>118</SUB>> ]
+"131" [label = <(&lt;operator&gt;.fieldAccess,this.currentEnum)<SUB>118</SUB>> ]
+"132" [label = <(IDENTIFIER,this,currentEnum.hasMoreElements())<SUB>118</SUB>> ]
+"133" [label = <(FIELD_IDENTIFIER,currentEnum,currentEnum)<SUB>118</SUB>> ]
+"134" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>118</SUB>> ]
+"135" [label = <(LOCAL,File element: java.io.File)> ]
+"136" [label = <(&lt;operator&gt;.assignment,File element = (File) currentEnum.nextElement())<SUB>119</SUB>> ]
+"137" [label = <(IDENTIFIER,element,File element = (File) currentEnum.nextElement())<SUB>119</SUB>> ]
+"138" [label = <(&lt;operator&gt;.cast,(File) currentEnum.nextElement())<SUB>119</SUB>> ]
+"139" [label = <(TYPE_REF,File,File)<SUB>119</SUB>> ]
+"140" [label = <(nextElement,currentEnum.nextElement())<SUB>119</SUB>> ]
+"141" [label = <(&lt;operator&gt;.fieldAccess,this.currentEnum)<SUB>119</SUB>> ]
+"142" [label = <(IDENTIFIER,this,currentEnum.nextElement())<SUB>119</SUB>> ]
+"143" [label = <(FIELD_IDENTIFIER,currentEnum,currentEnum)<SUB>119</SUB>> ]
+"144" [label = <(CONTROL_STRUCTURE,if (element.isDirectory()),if (element.isDirectory()))<SUB>121</SUB>> ]
+"145" [label = <(isDirectory,element.isDirectory())<SUB>121</SUB>> ]
+"146" [label = <(IDENTIFIER,element,element.isDirectory())<SUB>121</SUB>> ]
+"147" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>121</SUB>> ]
+"148" [label = <(push,enumStack.push(currentEnum))<SUB>125</SUB>> ]
+"149" [label = <(&lt;operator&gt;.fieldAccess,this.enumStack)<SUB>125</SUB>> ]
+"150" [label = <(IDENTIFIER,this,enumStack.push(currentEnum))<SUB>125</SUB>> ]
+"151" [label = <(FIELD_IDENTIFIER,enumStack,enumStack)<SUB>125</SUB>> ]
+"152" [label = <(&lt;operator&gt;.fieldAccess,this.currentEnum)<SUB>125</SUB>> ]
+"153" [label = <(IDENTIFIER,this,enumStack.push(currentEnum))<SUB>125</SUB>> ]
+"154" [label = <(FIELD_IDENTIFIER,currentEnum,currentEnum)<SUB>125</SUB>> ]
+"155" [label = <(LOCAL,Vector files: java.util.Vector)> ]
+"156" [label = <(&lt;operator&gt;.assignment,Vector files = this.getDirectoryEntries(element))<SUB>127</SUB>> ]
+"157" [label = <(IDENTIFIER,files,Vector files = this.getDirectoryEntries(element))<SUB>127</SUB>> ]
+"158" [label = <(getDirectoryEntries,this.getDirectoryEntries(element))<SUB>127</SUB>> ]
+"8" [label = <(IDENTIFIER,this,this.getDirectoryEntries(element))<SUB>127</SUB>> ]
+"159" [label = <(IDENTIFIER,element,this.getDirectoryEntries(element))<SUB>127</SUB>> ]
+"160" [label = <(&lt;operator&gt;.assignment,this.currentEnum = files.elements())<SUB>129</SUB>> ]
+"161" [label = <(&lt;operator&gt;.fieldAccess,this.currentEnum)<SUB>129</SUB>> ]
+"162" [label = <(IDENTIFIER,this,this.currentEnum = files.elements())<SUB>129</SUB>> ]
+"163" [label = <(FIELD_IDENTIFIER,currentEnum,currentEnum)<SUB>129</SUB>> ]
+"164" [label = <(elements,files.elements())<SUB>129</SUB>> ]
+"165" [label = <(IDENTIFIER,files,files.elements())<SUB>129</SUB>> ]
+"166" [label = <(CONTROL_STRUCTURE,else,else)<SUB>130</SUB>> ]
+"167" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>130</SUB>> ]
+"11" [label = <(LOCAL,FileInputStream inFileStream: java.io.FileInputStream)> ]
+"168" [label = <(&lt;operator&gt;.assignment,FileInputStream inFileStream = new FileInputStream(element))<SUB>133</SUB>> ]
+"169" [label = <(IDENTIFIER,inFileStream,FileInputStream inFileStream = new FileInputStream(element))<SUB>133</SUB>> ]
+"170" [label = <(&lt;operator&gt;.alloc,new FileInputStream(element))<SUB>134</SUB>> ]
+"171" [label = <(&lt;init&gt;,new FileInputStream(element))<SUB>134</SUB>> ]
+"10" [label = <(IDENTIFIER,inFileStream,new FileInputStream(element))<SUB>133</SUB>> ]
+"172" [label = <(IDENTIFIER,element,new FileInputStream(element))<SUB>134</SUB>> ]
+"173" [label = <(CONTROL_STRUCTURE,if (element.getName().endsWith(&quot;.class&quot;)),if (element.getName().endsWith(&quot;.class&quot;)))<SUB>136</SUB>> ]
+"174" [label = <(endsWith,element.getName().endsWith(&quot;.class&quot;))<SUB>136</SUB>> ]
+"175" [label = <(getName,element.getName())<SUB>136</SUB>> ]
+"176" [label = <(IDENTIFIER,element,element.getName())<SUB>136</SUB>> ]
+"177" [label = <(LITERAL,&quot;.class&quot;,element.getName().endsWith(&quot;.class&quot;))<SUB>136</SUB>> ]
+"178" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>136</SUB>> ]
+"13" [label = <(LOCAL,ClassFile javaClass: ANY)> ]
+"179" [label = <(&lt;operator&gt;.assignment,ANY javaClass = new ClassFile())<SUB>140</SUB>> ]
+"180" [label = <(IDENTIFIER,javaClass,ANY javaClass = new ClassFile())<SUB>140</SUB>> ]
+"181" [label = <(&lt;operator&gt;.alloc,new ClassFile())<SUB>140</SUB>> ]
+"182" [label = <(&lt;init&gt;,new ClassFile())<SUB>140</SUB>> ]
+"12" [label = <(IDENTIFIER,javaClass,new ClassFile())<SUB>140</SUB>> ]
+"183" [label = <(read,read(inFileStream))<SUB>142</SUB>> ]
+"184" [label = <(IDENTIFIER,javaClass,read(inFileStream))<SUB>142</SUB>> ]
+"185" [label = <(IDENTIFIER,inFileStream,read(inFileStream))<SUB>142</SUB>> ]
+"186" [label = <(&lt;operator&gt;.assignment,nextElement = javaClass)<SUB>144</SUB>> ]
+"187" [label = <(IDENTIFIER,nextElement,nextElement = javaClass)<SUB>144</SUB>> ]
+"188" [label = <(IDENTIFIER,javaClass,nextElement = javaClass)<SUB>144</SUB>> ]
+"189" [label = <(CONTROL_STRUCTURE,else,else)<SUB>147</SUB>> ]
+"190" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>147</SUB>> ]
+"191" [label = <(CONTROL_STRUCTURE,if (enumStack.empty()),if (enumStack.empty()))<SUB>149</SUB>> ]
+"192" [label = <(empty,enumStack.empty())<SUB>149</SUB>> ]
+"193" [label = <(&lt;operator&gt;.fieldAccess,this.enumStack)<SUB>149</SUB>> ]
+"194" [label = <(IDENTIFIER,this,enumStack.empty())<SUB>149</SUB>> ]
+"195" [label = <(FIELD_IDENTIFIER,enumStack,enumStack)<SUB>149</SUB>> ]
+"196" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>149</SUB>> ]
+"197" [label = <(CONTROL_STRUCTURE,break;,break;)<SUB>150</SUB>> ]
+"198" [label = <(CONTROL_STRUCTURE,else,else)<SUB>151</SUB>> ]
+"199" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>151</SUB>> ]
+"200" [label = <(&lt;operator&gt;.assignment,this.currentEnum = (Enumeration) enumStack.pop())<SUB>152</SUB>> ]
+"201" [label = <(&lt;operator&gt;.fieldAccess,this.currentEnum)<SUB>152</SUB>> ]
+"202" [label = <(IDENTIFIER,this,this.currentEnum = (Enumeration) enumStack.pop())<SUB>152</SUB>> ]
+"203" [label = <(FIELD_IDENTIFIER,currentEnum,currentEnum)<SUB>152</SUB>> ]
+"204" [label = <(&lt;operator&gt;.cast,(Enumeration) enumStack.pop())<SUB>152</SUB>> ]
+"205" [label = <(TYPE_REF,Enumeration,Enumeration)<SUB>152</SUB>> ]
+"206" [label = <(pop,enumStack.pop())<SUB>152</SUB>> ]
+"207" [label = <(&lt;operator&gt;.fieldAccess,this.enumStack)<SUB>152</SUB>> ]
+"208" [label = <(IDENTIFIER,this,enumStack.pop())<SUB>152</SUB>> ]
+"209" [label = <(FIELD_IDENTIFIER,enumStack,enumStack)<SUB>152</SUB>> ]
+"210" [label = <(BLOCK,catch,catch)> ]
+"211" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>156</SUB>> ]
+"212" [label = <(&lt;operator&gt;.assignment,nextElement = null)<SUB>157</SUB>> ]
+"213" [label = <(IDENTIFIER,nextElement,nextElement = null)<SUB>157</SUB>> ]
+"214" [label = <(LITERAL,null,nextElement = null)<SUB>157</SUB>> ]
+"215" [label = <(RETURN,return nextElement;,return nextElement;)<SUB>160</SUB>> ]
+"216" [label = <(IDENTIFIER,nextElement,return nextElement;)<SUB>160</SUB>> ]
+"217" [label = <(MODIFIER,PUBLIC)> ]
+"218" [label = <(MODIFIER,VIRTUAL)> ]
+"219" [label = <(METHOD_RETURN,ANY)<SUB>113</SUB>> ]
+  "116" -> "9" 
+  "116" -> "117" 
+  "116" -> "217" 
+  "116" -> "218" 
+  "116" -> "219" 
+  "117" -> "118" 
+  "117" -> "119" 
+  "117" -> "122" 
+  "117" -> "215" 
+  "119" -> "120" 
+  "119" -> "121" 
+  "122" -> "123" 
+  "122" -> "210" 
+  "123" -> "124" 
+  "124" -> "125" 
+  "124" -> "128" 
+  "125" -> "126" 
+  "125" -> "127" 
+  "128" -> "129" 
+  "129" -> "130" 
+  "129" -> "134" 
+  "129" -> "189" 
+  "130" -> "131" 
+  "131" -> "132" 
+  "131" -> "133" 
+  "134" -> "135" 
+  "134" -> "136" 
+  "134" -> "144" 
+  "136" -> "137" 
+  "136" -> "138" 
+  "138" -> "139" 
+  "138" -> "140" 
+  "140" -> "141" 
+  "141" -> "142" 
+  "141" -> "143" 
+  "144" -> "145" 
+  "144" -> "147" 
+  "144" -> "166" 
+  "145" -> "146" 
+  "147" -> "148" 
+  "147" -> "155" 
+  "147" -> "156" 
+  "147" -> "160" 
+  "148" -> "149" 
+  "148" -> "152" 
+  "149" -> "150" 
+  "149" -> "151" 
+  "152" -> "153" 
+  "152" -> "154" 
+  "156" -> "157" 
+  "156" -> "158" 
+  "158" -> "8" 
+  "158" -> "159" 
+  "160" -> "161" 
+  "160" -> "164" 
+  "161" -> "162" 
+  "161" -> "163" 
+  "164" -> "165" 
+  "166" -> "167" 
+  "167" -> "11" 
+  "167" -> "168" 
+  "167" -> "171" 
+  "167" -> "173" 
+  "168" -> "169" 
+  "168" -> "170" 
+  "171" -> "10" 
+  "171" -> "172" 
+  "173" -> "174" 
+  "173" -> "178" 
+  "174" -> "175" 
+  "174" -> "177" 
+  "175" -> "176" 
+  "178" -> "13" 
+  "178" -> "179" 
+  "178" -> "182" 
+  "178" -> "183" 
+  "178" -> "186" 
+  "179" -> "180" 
+  "179" -> "181" 
+  "182" -> "12" 
+  "183" -> "184" 
+  "183" -> "185" 
+  "186" -> "187" 
+  "186" -> "188" 
+  "189" -> "190" 
+  "190" -> "191" 
+  "191" -> "192" 
+  "191" -> "196" 
+  "191" -> "198" 
+  "192" -> "193" 
+  "193" -> "194" 
+  "193" -> "195" 
+  "196" -> "197" 
+  "198" -> "199" 
+  "199" -> "200" 
+  "200" -> "201" 
+  "200" -> "204" 
+  "201" -> "202" 
+  "201" -> "203" 
+  "204" -> "205" 
+  "204" -> "206" 
+  "206" -> "207" 
+  "207" -> "208" 
+  "207" -> "209" 
+  "210" -> "211" 
+  "211" -> "212" 
+  "212" -> "213" 
+  "212" -> "214" 
+  "215" -> "216" 
+}

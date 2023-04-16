@@ -1,0 +1,275 @@
+digraph "process" {  
+"73" [label = <(METHOD,process)<SUB>60</SUB>> ]
+"8" [label = <(PARAM,this)<SUB>60</SUB>> ]
+"74" [label = <(PARAM,Exchange original)<SUB>60</SUB>> ]
+"75" [label = <(PARAM,AsyncCallback callback)<SUB>60</SUB>> ]
+"76" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>60</SUB>> ]
+"77" [label = <(LOCAL,Iterator&lt;Processor&gt; processors: ANY)> ]
+"78" [label = <(&lt;operator&gt;.assignment,ANY processors = iterator())<SUB>61</SUB>> ]
+"79" [label = <(IDENTIFIER,processors,ANY processors = iterator())<SUB>61</SUB>> ]
+"80" [label = <(iterator,iterator())<SUB>61</SUB>> ]
+"81" [label = <(getProcessors,getProcessors())<SUB>61</SUB>> ]
+"7" [label = <(IDENTIFIER,this,getProcessors())<SUB>61</SUB>> ]
+"82" [label = <(LOCAL,Exchange nextExchange: org.apache.camel.Exchange)> ]
+"83" [label = <(&lt;operator&gt;.assignment,Exchange nextExchange = original)<SUB>62</SUB>> ]
+"84" [label = <(IDENTIFIER,nextExchange,Exchange nextExchange = original)<SUB>62</SUB>> ]
+"85" [label = <(IDENTIFIER,original,Exchange nextExchange = original)<SUB>62</SUB>> ]
+"86" [label = <(LOCAL,boolean first: boolean)> ]
+"87" [label = <(&lt;operator&gt;.assignment,boolean first = true)<SUB>63</SUB>> ]
+"88" [label = <(IDENTIFIER,first,boolean first = true)<SUB>63</SUB>> ]
+"89" [label = <(LITERAL,true,boolean first = true)<SUB>63</SUB>> ]
+"90" [label = <(CONTROL_STRUCTURE,while (true),while (true))<SUB>64</SUB>> ]
+"91" [label = <(LITERAL,true,while (true))<SUB>64</SUB>> ]
+"92" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>64</SUB>> ]
+"93" [label = <(LOCAL,boolean exceptionHandled: boolean)> ]
+"94" [label = <(&lt;operator&gt;.assignment,boolean exceptionHandled = hasExceptionBeenHandled(nextExchange))<SUB>65</SUB>> ]
+"95" [label = <(IDENTIFIER,exceptionHandled,boolean exceptionHandled = hasExceptionBeenHandled(nextExchange))<SUB>65</SUB>> ]
+"96" [label = <(hasExceptionBeenHandled,hasExceptionBeenHandled(nextExchange))<SUB>65</SUB>> ]
+"9" [label = <(IDENTIFIER,this,hasExceptionBeenHandled(nextExchange))<SUB>65</SUB>> ]
+"97" [label = <(IDENTIFIER,nextExchange,hasExceptionBeenHandled(nextExchange))<SUB>65</SUB>> ]
+"98" [label = <(CONTROL_STRUCTURE,if (nextExchange.isFailed() || exceptionHandled),if (nextExchange.isFailed() || exceptionHandled))<SUB>66</SUB>> ]
+"99" [label = <(&lt;operator&gt;.logicalOr,nextExchange.isFailed() || exceptionHandled)<SUB>66</SUB>> ]
+"100" [label = <(isFailed,isFailed())<SUB>66</SUB>> ]
+"101" [label = <(IDENTIFIER,nextExchange,isFailed())<SUB>66</SUB>> ]
+"102" [label = <(IDENTIFIER,exceptionHandled,nextExchange.isFailed() || exceptionHandled)<SUB>66</SUB>> ]
+"103" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>66</SUB>> ]
+"104" [label = <(CONTROL_STRUCTURE,if (LOG.isDebugEnabled()),if (LOG.isDebugEnabled()))<SUB>69</SUB>> ]
+"105" [label = <(isDebugEnabled,isDebugEnabled())<SUB>69</SUB>> ]
+"106" [label = <(&lt;operator&gt;.fieldAccess,Pipeline.LOG)<SUB>69</SUB>> ]
+"107" [label = <(IDENTIFIER,Pipeline,isDebugEnabled())<SUB>69</SUB>> ]
+"108" [label = <(FIELD_IDENTIFIER,LOG,LOG)<SUB>69</SUB>> ]
+"109" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>69</SUB>> ]
+"110" [label = <(debug,debug(&quot;Message exchange has failed so breaking out of pipeline: &quot; + nextExchange + &quot; exception: &quot; + nextExchange.getException() + &quot; fault: &quot; + nextExchange.getFault(false) + (exceptionHandled ? &quot; handled by the error handler&quot; : &quot;&quot;)))<SUB>70</SUB>> ]
+"111" [label = <(&lt;operator&gt;.fieldAccess,Pipeline.LOG)<SUB>70</SUB>> ]
+"112" [label = <(IDENTIFIER,Pipeline,debug(&quot;Message exchange has failed so breaking out of pipeline: &quot; + nextExchange + &quot; exception: &quot; + nextExchange.getException() + &quot; fault: &quot; + nextExchange.getFault(false) + (exceptionHandled ? &quot; handled by the error handler&quot; : &quot;&quot;)))<SUB>70</SUB>> ]
+"113" [label = <(FIELD_IDENTIFIER,LOG,LOG)<SUB>70</SUB>> ]
+"114" [label = <(&lt;operator&gt;.addition,&quot;Message exchange has failed so breaking out of pipeline: &quot; + nextExchange + &quot; exception: &quot; + nextExchange.getException() + &quot; fault: &quot; + nextExchange.getFault(false) + (exceptionHandled ? &quot; handled by the error handler&quot; : &quot;&quot;))<SUB>70</SUB>> ]
+"115" [label = <(&lt;operator&gt;.addition,&quot;Message exchange has failed so breaking out of pipeline: &quot; + nextExchange + &quot; exception: &quot; + nextExchange.getException() + &quot; fault: &quot; + nextExchange.getFault(false))<SUB>70</SUB>> ]
+"116" [label = <(&lt;operator&gt;.addition,&quot;Message exchange has failed so breaking out of pipeline: &quot; + nextExchange + &quot; exception: &quot; + nextExchange.getException() + &quot; fault: &quot;)<SUB>70</SUB>> ]
+"117" [label = <(&lt;operator&gt;.addition,&quot;Message exchange has failed so breaking out of pipeline: &quot; + nextExchange + &quot; exception: &quot; + nextExchange.getException())<SUB>70</SUB>> ]
+"118" [label = <(&lt;operator&gt;.addition,&quot;Message exchange has failed so breaking out of pipeline: &quot; + nextExchange + &quot; exception: &quot;)<SUB>70</SUB>> ]
+"119" [label = <(&lt;operator&gt;.addition,&quot;Message exchange has failed so breaking out of pipeline: &quot; + nextExchange)<SUB>70</SUB>> ]
+"120" [label = <(LITERAL,&quot;Message exchange has failed so breaking out of pipeline: &quot;,&quot;Message exchange has failed so breaking out of pipeline: &quot; + nextExchange)<SUB>70</SUB>> ]
+"121" [label = <(IDENTIFIER,nextExchange,&quot;Message exchange has failed so breaking out of pipeline: &quot; + nextExchange)<SUB>70</SUB>> ]
+"122" [label = <(LITERAL,&quot; exception: &quot;,&quot;Message exchange has failed so breaking out of pipeline: &quot; + nextExchange + &quot; exception: &quot;)<SUB>71</SUB>> ]
+"123" [label = <(getException,getException())<SUB>71</SUB>> ]
+"124" [label = <(IDENTIFIER,nextExchange,getException())<SUB>71</SUB>> ]
+"125" [label = <(LITERAL,&quot; fault: &quot;,&quot;Message exchange has failed so breaking out of pipeline: &quot; + nextExchange + &quot; exception: &quot; + nextExchange.getException() + &quot; fault: &quot;)<SUB>71</SUB>> ]
+"126" [label = <(getFault,getFault(false))<SUB>72</SUB>> ]
+"127" [label = <(IDENTIFIER,nextExchange,getFault(false))<SUB>72</SUB>> ]
+"128" [label = <(LITERAL,false,getFault(false))<SUB>72</SUB>> ]
+"129" [label = <(&lt;operator&gt;.conditional,exceptionHandled ? &quot; handled by the error handler&quot; : &quot;&quot;)<SUB>73</SUB>> ]
+"130" [label = <(IDENTIFIER,exceptionHandled,exceptionHandled ? &quot; handled by the error handler&quot; : &quot;&quot;)<SUB>73</SUB>> ]
+"131" [label = <(LITERAL,&quot; handled by the error handler&quot;,exceptionHandled ? &quot; handled by the error handler&quot; : &quot;&quot;)<SUB>73</SUB>> ]
+"132" [label = <(LITERAL,&quot;&quot;,exceptionHandled ? &quot; handled by the error handler&quot; : &quot;&quot;)<SUB>73</SUB>> ]
+"133" [label = <(CONTROL_STRUCTURE,break;,break;)<SUB>75</SUB>> ]
+"134" [label = <(CONTROL_STRUCTURE,if (!processors.hasNext()),if (!processors.hasNext()))<SUB>77</SUB>> ]
+"135" [label = <(&lt;operator&gt;.logicalNot,!processors.hasNext())<SUB>77</SUB>> ]
+"136" [label = <(hasNext,hasNext())<SUB>77</SUB>> ]
+"137" [label = <(IDENTIFIER,processors,hasNext())<SUB>77</SUB>> ]
+"138" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>77</SUB>> ]
+"139" [label = <(CONTROL_STRUCTURE,break;,break;)<SUB>78</SUB>> ]
+"140" [label = <(LOCAL,AsyncProcessor processor: org.apache.camel.AsyncProcessor)> ]
+"141" [label = <(&lt;operator&gt;.assignment,AsyncProcessor processor = convert(processors.next()))<SUB>81</SUB>> ]
+"142" [label = <(IDENTIFIER,processor,AsyncProcessor processor = convert(processors.next()))<SUB>81</SUB>> ]
+"143" [label = <(convert,convert(processors.next()))<SUB>81</SUB>> ]
+"144" [label = <(IDENTIFIER,AsyncProcessorTypeConverter,convert(processors.next()))<SUB>81</SUB>> ]
+"145" [label = <(next,next())<SUB>81</SUB>> ]
+"146" [label = <(IDENTIFIER,processors,next())<SUB>81</SUB>> ]
+"147" [label = <(CONTROL_STRUCTURE,if (first),if (first))<SUB>83</SUB>> ]
+"148" [label = <(IDENTIFIER,first,if (first))<SUB>83</SUB>> ]
+"149" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>83</SUB>> ]
+"150" [label = <(&lt;operator&gt;.assignment,first = false)<SUB>84</SUB>> ]
+"151" [label = <(IDENTIFIER,first,first = false)<SUB>84</SUB>> ]
+"152" [label = <(LITERAL,false,first = false)<SUB>84</SUB>> ]
+"153" [label = <(CONTROL_STRUCTURE,else,else)<SUB>85</SUB>> ]
+"154" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>85</SUB>> ]
+"155" [label = <(&lt;operator&gt;.assignment,nextExchange = createNextExchange(processor, nextExchange))<SUB>86</SUB>> ]
+"156" [label = <(IDENTIFIER,nextExchange,nextExchange = createNextExchange(processor, nextExchange))<SUB>86</SUB>> ]
+"157" [label = <(createNextExchange,createNextExchange(processor, nextExchange))<SUB>86</SUB>> ]
+"10" [label = <(IDENTIFIER,this,createNextExchange(processor, nextExchange))<SUB>86</SUB>> ]
+"158" [label = <(IDENTIFIER,processor,createNextExchange(processor, nextExchange))<SUB>86</SUB>> ]
+"159" [label = <(IDENTIFIER,nextExchange,createNextExchange(processor, nextExchange))<SUB>86</SUB>> ]
+"160" [label = <(LOCAL,boolean sync: boolean)> ]
+"161" [label = <(&lt;operator&gt;.assignment,boolean sync = process(original, nextExchange, callback, processors, processor))<SUB>89</SUB>> ]
+"162" [label = <(IDENTIFIER,sync,boolean sync = process(original, nextExchange, callback, processors, processor))<SUB>89</SUB>> ]
+"163" [label = <(process,process(original, nextExchange, callback, processors, processor))<SUB>89</SUB>> ]
+"11" [label = <(IDENTIFIER,this,process(original, nextExchange, callback, processors, processor))<SUB>89</SUB>> ]
+"164" [label = <(IDENTIFIER,original,process(original, nextExchange, callback, processors, processor))<SUB>89</SUB>> ]
+"165" [label = <(IDENTIFIER,nextExchange,process(original, nextExchange, callback, processors, processor))<SUB>89</SUB>> ]
+"166" [label = <(IDENTIFIER,callback,process(original, nextExchange, callback, processors, processor))<SUB>89</SUB>> ]
+"167" [label = <(IDENTIFIER,processors,process(original, nextExchange, callback, processors, processor))<SUB>89</SUB>> ]
+"168" [label = <(IDENTIFIER,processor,process(original, nextExchange, callback, processors, processor))<SUB>89</SUB>> ]
+"169" [label = <(CONTROL_STRUCTURE,if (!sync),if (!sync))<SUB>91</SUB>> ]
+"170" [label = <(&lt;operator&gt;.logicalNot,!sync)<SUB>91</SUB>> ]
+"171" [label = <(IDENTIFIER,sync,!sync)<SUB>91</SUB>> ]
+"172" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>91</SUB>> ]
+"173" [label = <(RETURN,return false;,return false;)<SUB>93</SUB>> ]
+"174" [label = <(LITERAL,false,return false;)<SUB>93</SUB>> ]
+"175" [label = <(CONTROL_STRUCTURE,if (LOG.isTraceEnabled()),if (LOG.isTraceEnabled()))<SUB>99</SUB>> ]
+"176" [label = <(isTraceEnabled,isTraceEnabled())<SUB>99</SUB>> ]
+"177" [label = <(&lt;operator&gt;.fieldAccess,Pipeline.LOG)<SUB>99</SUB>> ]
+"178" [label = <(IDENTIFIER,Pipeline,isTraceEnabled())<SUB>99</SUB>> ]
+"179" [label = <(FIELD_IDENTIFIER,LOG,LOG)<SUB>99</SUB>> ]
+"180" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>99</SUB>> ]
+"181" [label = <(trace,trace(&quot;Processing compelete for exchangeId: &quot; + original.getExchangeId() + &quot; &gt;&gt;&gt; &quot; + nextExchange))<SUB>103</SUB>> ]
+"182" [label = <(&lt;operator&gt;.fieldAccess,Pipeline.LOG)<SUB>103</SUB>> ]
+"183" [label = <(IDENTIFIER,Pipeline,trace(&quot;Processing compelete for exchangeId: &quot; + original.getExchangeId() + &quot; &gt;&gt;&gt; &quot; + nextExchange))<SUB>103</SUB>> ]
+"184" [label = <(FIELD_IDENTIFIER,LOG,LOG)<SUB>103</SUB>> ]
+"185" [label = <(&lt;operator&gt;.addition,&quot;Processing compelete for exchangeId: &quot; + original.getExchangeId() + &quot; &gt;&gt;&gt; &quot; + nextExchange)<SUB>103</SUB>> ]
+"186" [label = <(&lt;operator&gt;.addition,&quot;Processing compelete for exchangeId: &quot; + original.getExchangeId() + &quot; &gt;&gt;&gt; &quot;)<SUB>103</SUB>> ]
+"187" [label = <(&lt;operator&gt;.addition,&quot;Processing compelete for exchangeId: &quot; + original.getExchangeId())<SUB>103</SUB>> ]
+"188" [label = <(LITERAL,&quot;Processing compelete for exchangeId: &quot;,&quot;Processing compelete for exchangeId: &quot; + original.getExchangeId())<SUB>103</SUB>> ]
+"189" [label = <(getExchangeId,getExchangeId())<SUB>103</SUB>> ]
+"190" [label = <(IDENTIFIER,original,getExchangeId())<SUB>103</SUB>> ]
+"191" [label = <(LITERAL,&quot; &gt;&gt;&gt; &quot;,&quot;Processing compelete for exchangeId: &quot; + original.getExchangeId() + &quot; &gt;&gt;&gt; &quot;)<SUB>103</SUB>> ]
+"192" [label = <(IDENTIFIER,nextExchange,&quot;Processing compelete for exchangeId: &quot; + original.getExchangeId() + &quot; &gt;&gt;&gt; &quot; + nextExchange)<SUB>103</SUB>> ]
+"193" [label = <(copyResults,copyResults(original, nextExchange))<SUB>105</SUB>> ]
+"194" [label = <(IDENTIFIER,ExchangeHelper,copyResults(original, nextExchange))<SUB>105</SUB>> ]
+"195" [label = <(IDENTIFIER,original,copyResults(original, nextExchange))<SUB>105</SUB>> ]
+"196" [label = <(IDENTIFIER,nextExchange,copyResults(original, nextExchange))<SUB>105</SUB>> ]
+"197" [label = <(done,done(true))<SUB>106</SUB>> ]
+"198" [label = <(IDENTIFIER,callback,done(true))<SUB>106</SUB>> ]
+"199" [label = <(LITERAL,true,done(true))<SUB>106</SUB>> ]
+"200" [label = <(RETURN,return true;,return true;)<SUB>107</SUB>> ]
+"201" [label = <(LITERAL,true,return true;)<SUB>107</SUB>> ]
+"202" [label = <(MODIFIER,PUBLIC)> ]
+"203" [label = <(MODIFIER,VIRTUAL)> ]
+"204" [label = <(METHOD_RETURN,boolean)<SUB>60</SUB>> ]
+  "73" -> "8" 
+  "73" -> "74" 
+  "73" -> "75" 
+  "73" -> "76" 
+  "73" -> "202" 
+  "73" -> "203" 
+  "73" -> "204" 
+  "76" -> "77" 
+  "76" -> "78" 
+  "76" -> "82" 
+  "76" -> "83" 
+  "76" -> "86" 
+  "76" -> "87" 
+  "76" -> "90" 
+  "76" -> "175" 
+  "76" -> "193" 
+  "76" -> "197" 
+  "76" -> "200" 
+  "78" -> "79" 
+  "78" -> "80" 
+  "80" -> "81" 
+  "81" -> "7" 
+  "83" -> "84" 
+  "83" -> "85" 
+  "87" -> "88" 
+  "87" -> "89" 
+  "90" -> "91" 
+  "90" -> "92" 
+  "92" -> "93" 
+  "92" -> "94" 
+  "92" -> "98" 
+  "92" -> "134" 
+  "92" -> "140" 
+  "92" -> "141" 
+  "92" -> "147" 
+  "92" -> "160" 
+  "92" -> "161" 
+  "92" -> "169" 
+  "94" -> "95" 
+  "94" -> "96" 
+  "96" -> "9" 
+  "96" -> "97" 
+  "98" -> "99" 
+  "98" -> "103" 
+  "99" -> "100" 
+  "99" -> "102" 
+  "100" -> "101" 
+  "103" -> "104" 
+  "103" -> "133" 
+  "104" -> "105" 
+  "104" -> "109" 
+  "105" -> "106" 
+  "106" -> "107" 
+  "106" -> "108" 
+  "109" -> "110" 
+  "110" -> "111" 
+  "110" -> "114" 
+  "111" -> "112" 
+  "111" -> "113" 
+  "114" -> "115" 
+  "114" -> "129" 
+  "115" -> "116" 
+  "115" -> "126" 
+  "116" -> "117" 
+  "116" -> "125" 
+  "117" -> "118" 
+  "117" -> "123" 
+  "118" -> "119" 
+  "118" -> "122" 
+  "119" -> "120" 
+  "119" -> "121" 
+  "123" -> "124" 
+  "126" -> "127" 
+  "126" -> "128" 
+  "129" -> "130" 
+  "129" -> "131" 
+  "129" -> "132" 
+  "134" -> "135" 
+  "134" -> "138" 
+  "135" -> "136" 
+  "136" -> "137" 
+  "138" -> "139" 
+  "141" -> "142" 
+  "141" -> "143" 
+  "143" -> "144" 
+  "143" -> "145" 
+  "145" -> "146" 
+  "147" -> "148" 
+  "147" -> "149" 
+  "147" -> "153" 
+  "149" -> "150" 
+  "150" -> "151" 
+  "150" -> "152" 
+  "153" -> "154" 
+  "154" -> "155" 
+  "155" -> "156" 
+  "155" -> "157" 
+  "157" -> "10" 
+  "157" -> "158" 
+  "157" -> "159" 
+  "161" -> "162" 
+  "161" -> "163" 
+  "163" -> "11" 
+  "163" -> "164" 
+  "163" -> "165" 
+  "163" -> "166" 
+  "163" -> "167" 
+  "163" -> "168" 
+  "169" -> "170" 
+  "169" -> "172" 
+  "170" -> "171" 
+  "172" -> "173" 
+  "173" -> "174" 
+  "175" -> "176" 
+  "175" -> "180" 
+  "176" -> "177" 
+  "177" -> "178" 
+  "177" -> "179" 
+  "180" -> "181" 
+  "181" -> "182" 
+  "181" -> "185" 
+  "182" -> "183" 
+  "182" -> "184" 
+  "185" -> "186" 
+  "185" -> "192" 
+  "186" -> "187" 
+  "186" -> "191" 
+  "187" -> "188" 
+  "187" -> "189" 
+  "189" -> "190" 
+  "193" -> "194" 
+  "193" -> "195" 
+  "193" -> "196" 
+  "197" -> "198" 
+  "197" -> "199" 
+  "200" -> "201" 
+}

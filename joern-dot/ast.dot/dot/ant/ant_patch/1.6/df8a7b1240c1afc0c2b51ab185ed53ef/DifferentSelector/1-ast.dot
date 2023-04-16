@@ -1,0 +1,169 @@
+digraph "selectionTest" {  
+"24" [label = <(METHOD,selectionTest)<SUB>104</SUB>> ]
+"25" [label = <(PARAM,this)<SUB>104</SUB>> ]
+"26" [label = <(PARAM,File srcfile)<SUB>104</SUB>> ]
+"27" [label = <(PARAM,File destfile)<SUB>104</SUB>> ]
+"28" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>104</SUB>> ]
+"29" [label = <(CONTROL_STRUCTURE,if (srcfile.exists() != destfile.exists()),if (srcfile.exists() != destfile.exists()))<SUB>107</SUB>> ]
+"30" [label = <(&lt;operator&gt;.notEquals,srcfile.exists() != destfile.exists())<SUB>107</SUB>> ]
+"31" [label = <(exists,srcfile.exists())<SUB>107</SUB>> ]
+"32" [label = <(IDENTIFIER,srcfile,srcfile.exists())<SUB>107</SUB>> ]
+"33" [label = <(exists,destfile.exists())<SUB>107</SUB>> ]
+"34" [label = <(IDENTIFIER,destfile,destfile.exists())<SUB>107</SUB>> ]
+"35" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>107</SUB>> ]
+"36" [label = <(RETURN,return true;,return true;)<SUB>108</SUB>> ]
+"37" [label = <(LITERAL,true,return true;)<SUB>108</SUB>> ]
+"38" [label = <(CONTROL_STRUCTURE,if (srcfile.length() != destfile.length()),if (srcfile.length() != destfile.length()))<SUB>111</SUB>> ]
+"39" [label = <(&lt;operator&gt;.notEquals,srcfile.length() != destfile.length())<SUB>111</SUB>> ]
+"40" [label = <(length,srcfile.length())<SUB>111</SUB>> ]
+"41" [label = <(IDENTIFIER,srcfile,srcfile.length())<SUB>111</SUB>> ]
+"42" [label = <(length,destfile.length())<SUB>111</SUB>> ]
+"43" [label = <(IDENTIFIER,destfile,destfile.length())<SUB>111</SUB>> ]
+"44" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>111</SUB>> ]
+"45" [label = <(RETURN,return true;,return true;)<SUB>113</SUB>> ]
+"46" [label = <(LITERAL,true,return true;)<SUB>113</SUB>> ]
+"47" [label = <(CONTROL_STRUCTURE,if (!ignoreFileTimes),if (!ignoreFileTimes))<SUB>116</SUB>> ]
+"48" [label = <(&lt;operator&gt;.logicalNot,!ignoreFileTimes)<SUB>116</SUB>> ]
+"49" [label = <(&lt;operator&gt;.fieldAccess,this.ignoreFileTimes)<SUB>116</SUB>> ]
+"50" [label = <(IDENTIFIER,this,!ignoreFileTimes)<SUB>116</SUB>> ]
+"51" [label = <(FIELD_IDENTIFIER,ignoreFileTimes,ignoreFileTimes)<SUB>116</SUB>> ]
+"52" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>116</SUB>> ]
+"53" [label = <(LOCAL,boolean sameDate: boolean)> ]
+"54" [label = <(&lt;operator&gt;.assignment,sameDate = destfile.lastModified() &gt;= srcfile.lastModified() - granularity &amp;&amp; destfile.lastModified() &lt;= srcfile.lastModified() + granularity)<SUB>119</SUB>> ]
+"55" [label = <(IDENTIFIER,sameDate,sameDate = destfile.lastModified() &gt;= srcfile.lastModified() - granularity &amp;&amp; destfile.lastModified() &lt;= srcfile.lastModified() + granularity)<SUB>119</SUB>> ]
+"56" [label = <(&lt;operator&gt;.logicalAnd,destfile.lastModified() &gt;= srcfile.lastModified() - granularity &amp;&amp; destfile.lastModified() &lt;= srcfile.lastModified() + granularity)<SUB>119</SUB>> ]
+"57" [label = <(&lt;operator&gt;.greaterEqualsThan,destfile.lastModified() &gt;= srcfile.lastModified() - granularity)<SUB>119</SUB>> ]
+"58" [label = <(lastModified,destfile.lastModified())<SUB>119</SUB>> ]
+"59" [label = <(IDENTIFIER,destfile,destfile.lastModified())<SUB>119</SUB>> ]
+"60" [label = <(&lt;operator&gt;.subtraction,srcfile.lastModified() - granularity)<SUB>119</SUB>> ]
+"61" [label = <(lastModified,srcfile.lastModified())<SUB>119</SUB>> ]
+"62" [label = <(IDENTIFIER,srcfile,srcfile.lastModified())<SUB>119</SUB>> ]
+"63" [label = <(IDENTIFIER,granularity,srcfile.lastModified() - granularity)<SUB>119</SUB>> ]
+"64" [label = <(&lt;operator&gt;.lessEqualsThan,destfile.lastModified() &lt;= srcfile.lastModified() + granularity)<SUB>120</SUB>> ]
+"65" [label = <(lastModified,destfile.lastModified())<SUB>120</SUB>> ]
+"66" [label = <(IDENTIFIER,destfile,destfile.lastModified())<SUB>120</SUB>> ]
+"67" [label = <(&lt;operator&gt;.addition,srcfile.lastModified() + granularity)<SUB>120</SUB>> ]
+"68" [label = <(lastModified,srcfile.lastModified())<SUB>120</SUB>> ]
+"69" [label = <(IDENTIFIER,srcfile,srcfile.lastModified())<SUB>120</SUB>> ]
+"70" [label = <(IDENTIFIER,granularity,srcfile.lastModified() + granularity)<SUB>120</SUB>> ]
+"71" [label = <(CONTROL_STRUCTURE,if (!sameDate),if (!sameDate))<SUB>123</SUB>> ]
+"72" [label = <(&lt;operator&gt;.logicalNot,!sameDate)<SUB>123</SUB>> ]
+"73" [label = <(IDENTIFIER,sameDate,!sameDate)<SUB>123</SUB>> ]
+"74" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>123</SUB>> ]
+"75" [label = <(RETURN,return true;,return true;)<SUB>124</SUB>> ]
+"76" [label = <(LITERAL,true,return true;)<SUB>124</SUB>> ]
+"77" [label = <(CONTROL_STRUCTURE,try,try)<SUB>129</SUB>> ]
+"78" [label = <(BLOCK,try,try)<SUB>129</SUB>> ]
+"79" [label = <(RETURN,return !fileUtils.contentEquals(srcfile, destfile);,return !fileUtils.contentEquals(srcfile, destfile);)<SUB>130</SUB>> ]
+"80" [label = <(&lt;operator&gt;.logicalNot,!fileUtils.contentEquals(srcfile, destfile))<SUB>130</SUB>> ]
+"81" [label = <(contentEquals,contentEquals(srcfile, destfile))<SUB>130</SUB>> ]
+"82" [label = <(&lt;operator&gt;.fieldAccess,this.fileUtils)<SUB>130</SUB>> ]
+"83" [label = <(IDENTIFIER,this,contentEquals(srcfile, destfile))<SUB>130</SUB>> ]
+"84" [label = <(FIELD_IDENTIFIER,fileUtils,fileUtils)<SUB>130</SUB>> ]
+"85" [label = <(IDENTIFIER,srcfile,contentEquals(srcfile, destfile))<SUB>130</SUB>> ]
+"86" [label = <(IDENTIFIER,destfile,contentEquals(srcfile, destfile))<SUB>130</SUB>> ]
+"87" [label = <(BLOCK,catch,catch)> ]
+"88" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>131</SUB>> ]
+"89" [label = <(&lt;operator&gt;.throw,throw new BuildException(&quot;while comparing &quot; + srcfile + &quot; and &quot; + destfile, e);)<SUB>132</SUB>> ]
+"90" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>132</SUB>> ]
+"91" [label = <(&lt;operator&gt;.assignment,&lt;empty&gt;)> ]
+"92" [label = <(IDENTIFIER,$obj0,&lt;empty&gt;)> ]
+"93" [label = <(&lt;operator&gt;.alloc,new BuildException(&quot;while comparing &quot; + srcfile + &quot; and &quot; + destfile, e))<SUB>132</SUB>> ]
+"94" [label = <(&lt;init&gt;,new BuildException(&quot;while comparing &quot; + srcfile + &quot; and &quot; + destfile, e))<SUB>132</SUB>> ]
+"95" [label = <(IDENTIFIER,$obj0,new BuildException(&quot;while comparing &quot; + srcfile + &quot; and &quot; + destfile, e))> ]
+"96" [label = <(&lt;operator&gt;.addition,&quot;while comparing &quot; + srcfile + &quot; and &quot; + destfile)<SUB>132</SUB>> ]
+"97" [label = <(&lt;operator&gt;.addition,&quot;while comparing &quot; + srcfile + &quot; and &quot;)<SUB>132</SUB>> ]
+"98" [label = <(&lt;operator&gt;.addition,&quot;while comparing &quot; + srcfile)<SUB>132</SUB>> ]
+"99" [label = <(LITERAL,&quot;while comparing &quot;,&quot;while comparing &quot; + srcfile)<SUB>132</SUB>> ]
+"100" [label = <(IDENTIFIER,srcfile,&quot;while comparing &quot; + srcfile)<SUB>132</SUB>> ]
+"101" [label = <(LITERAL,&quot; and &quot;,&quot;while comparing &quot; + srcfile + &quot; and &quot;)<SUB>132</SUB>> ]
+"102" [label = <(IDENTIFIER,destfile,&quot;while comparing &quot; + srcfile + &quot; and &quot; + destfile)<SUB>133</SUB>> ]
+"103" [label = <(IDENTIFIER,e,new BuildException(&quot;while comparing &quot; + srcfile + &quot; and &quot; + destfile, e))<SUB>133</SUB>> ]
+"104" [label = <(IDENTIFIER,$obj0,&lt;empty&gt;)> ]
+"105" [label = <(MODIFIER,PROTECTED)> ]
+"106" [label = <(MODIFIER,VIRTUAL)> ]
+"107" [label = <(METHOD_RETURN,boolean)<SUB>104</SUB>> ]
+  "24" -> "25" 
+  "24" -> "26" 
+  "24" -> "27" 
+  "24" -> "28" 
+  "24" -> "105" 
+  "24" -> "106" 
+  "24" -> "107" 
+  "28" -> "29" 
+  "28" -> "38" 
+  "28" -> "47" 
+  "28" -> "77" 
+  "29" -> "30" 
+  "29" -> "35" 
+  "30" -> "31" 
+  "30" -> "33" 
+  "31" -> "32" 
+  "33" -> "34" 
+  "35" -> "36" 
+  "36" -> "37" 
+  "38" -> "39" 
+  "38" -> "44" 
+  "39" -> "40" 
+  "39" -> "42" 
+  "40" -> "41" 
+  "42" -> "43" 
+  "44" -> "45" 
+  "45" -> "46" 
+  "47" -> "48" 
+  "47" -> "52" 
+  "48" -> "49" 
+  "49" -> "50" 
+  "49" -> "51" 
+  "52" -> "53" 
+  "52" -> "54" 
+  "52" -> "71" 
+  "54" -> "55" 
+  "54" -> "56" 
+  "56" -> "57" 
+  "56" -> "64" 
+  "57" -> "58" 
+  "57" -> "60" 
+  "58" -> "59" 
+  "60" -> "61" 
+  "60" -> "63" 
+  "61" -> "62" 
+  "64" -> "65" 
+  "64" -> "67" 
+  "65" -> "66" 
+  "67" -> "68" 
+  "67" -> "70" 
+  "68" -> "69" 
+  "71" -> "72" 
+  "71" -> "74" 
+  "72" -> "73" 
+  "74" -> "75" 
+  "75" -> "76" 
+  "77" -> "78" 
+  "77" -> "87" 
+  "78" -> "79" 
+  "79" -> "80" 
+  "80" -> "81" 
+  "81" -> "82" 
+  "81" -> "85" 
+  "81" -> "86" 
+  "82" -> "83" 
+  "82" -> "84" 
+  "87" -> "88" 
+  "88" -> "89" 
+  "89" -> "90" 
+  "90" -> "91" 
+  "90" -> "94" 
+  "90" -> "104" 
+  "91" -> "92" 
+  "91" -> "93" 
+  "94" -> "95" 
+  "94" -> "96" 
+  "94" -> "103" 
+  "96" -> "97" 
+  "96" -> "102" 
+  "97" -> "98" 
+  "97" -> "101" 
+  "98" -> "99" 
+  "98" -> "100" 
+}

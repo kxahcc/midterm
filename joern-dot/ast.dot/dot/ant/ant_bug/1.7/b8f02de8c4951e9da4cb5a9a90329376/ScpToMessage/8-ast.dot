@@ -1,0 +1,105 @@
+digraph "doSingleTransfer" {  
+"186" [label = <(METHOD,doSingleTransfer)<SUB>148</SUB>> ]
+"25" [label = <(PARAM,this)<SUB>148</SUB>> ]
+"187" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>148</SUB>> ]
+"188" [label = <(LOCAL,String cmd: java.lang.String)> ]
+"189" [label = <(&lt;operator&gt;.assignment,String cmd = &quot;scp -t &quot; + remotePath)<SUB>149</SUB>> ]
+"190" [label = <(IDENTIFIER,cmd,String cmd = &quot;scp -t &quot; + remotePath)<SUB>149</SUB>> ]
+"191" [label = <(&lt;operator&gt;.addition,&quot;scp -t &quot; + remotePath)<SUB>149</SUB>> ]
+"192" [label = <(LITERAL,&quot;scp -t &quot;,&quot;scp -t &quot; + remotePath)<SUB>149</SUB>> ]
+"193" [label = <(&lt;operator&gt;.fieldAccess,this.remotePath)<SUB>149</SUB>> ]
+"194" [label = <(IDENTIFIER,this,&quot;scp -t &quot; + remotePath)<SUB>149</SUB>> ]
+"195" [label = <(FIELD_IDENTIFIER,remotePath,remotePath)<SUB>149</SUB>> ]
+"196" [label = <(LOCAL,Channel channel: com.jcraft.jsch.Channel)> ]
+"197" [label = <(&lt;operator&gt;.assignment,Channel channel = openExecChannel(cmd))<SUB>150</SUB>> ]
+"198" [label = <(IDENTIFIER,channel,Channel channel = openExecChannel(cmd))<SUB>150</SUB>> ]
+"199" [label = <(openExecChannel,openExecChannel(cmd))<SUB>150</SUB>> ]
+"24" [label = <(IDENTIFIER,this,openExecChannel(cmd))<SUB>150</SUB>> ]
+"200" [label = <(IDENTIFIER,cmd,openExecChannel(cmd))<SUB>150</SUB>> ]
+"201" [label = <(CONTROL_STRUCTURE,try,try)<SUB>151</SUB>> ]
+"202" [label = <(BLOCK,try,try)<SUB>151</SUB>> ]
+"203" [label = <(LOCAL,OutputStream out: java.io.OutputStream)> ]
+"204" [label = <(&lt;operator&gt;.assignment,OutputStream out = getOutputStream())<SUB>153</SUB>> ]
+"205" [label = <(IDENTIFIER,out,OutputStream out = getOutputStream())<SUB>153</SUB>> ]
+"206" [label = <(getOutputStream,getOutputStream())<SUB>153</SUB>> ]
+"207" [label = <(IDENTIFIER,channel,getOutputStream())<SUB>153</SUB>> ]
+"208" [label = <(LOCAL,InputStream in: java.io.InputStream)> ]
+"209" [label = <(&lt;operator&gt;.assignment,InputStream in = getInputStream())<SUB>154</SUB>> ]
+"210" [label = <(IDENTIFIER,in,InputStream in = getInputStream())<SUB>154</SUB>> ]
+"211" [label = <(getInputStream,getInputStream())<SUB>154</SUB>> ]
+"212" [label = <(IDENTIFIER,channel,getInputStream())<SUB>154</SUB>> ]
+"213" [label = <(connect,connect())<SUB>156</SUB>> ]
+"214" [label = <(IDENTIFIER,channel,connect())<SUB>156</SUB>> ]
+"215" [label = <(waitForAck,waitForAck(in))<SUB>158</SUB>> ]
+"26" [label = <(IDENTIFIER,this,waitForAck(in))<SUB>158</SUB>> ]
+"216" [label = <(IDENTIFIER,in,waitForAck(in))<SUB>158</SUB>> ]
+"217" [label = <(sendFileToRemote,this.sendFileToRemote(localFile, in, out))<SUB>159</SUB>> ]
+"27" [label = <(IDENTIFIER,this,this.sendFileToRemote(localFile, in, out))<SUB>159</SUB>> ]
+"218" [label = <(&lt;operator&gt;.fieldAccess,this.localFile)<SUB>159</SUB>> ]
+"219" [label = <(IDENTIFIER,this,this.sendFileToRemote(localFile, in, out))<SUB>159</SUB>> ]
+"220" [label = <(FIELD_IDENTIFIER,localFile,localFile)<SUB>159</SUB>> ]
+"221" [label = <(IDENTIFIER,in,this.sendFileToRemote(localFile, in, out))<SUB>159</SUB>> ]
+"222" [label = <(IDENTIFIER,out,this.sendFileToRemote(localFile, in, out))<SUB>159</SUB>> ]
+"223" [label = <(BLOCK,finally,finally)<SUB>160</SUB>> ]
+"224" [label = <(CONTROL_STRUCTURE,if (channel != null),if (channel != null))<SUB>161</SUB>> ]
+"225" [label = <(&lt;operator&gt;.notEquals,channel != null)<SUB>161</SUB>> ]
+"226" [label = <(IDENTIFIER,channel,channel != null)<SUB>161</SUB>> ]
+"227" [label = <(LITERAL,null,channel != null)<SUB>161</SUB>> ]
+"228" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>161</SUB>> ]
+"229" [label = <(disconnect,disconnect())<SUB>162</SUB>> ]
+"230" [label = <(IDENTIFIER,channel,disconnect())<SUB>162</SUB>> ]
+"231" [label = <(MODIFIER,PRIVATE)> ]
+"232" [label = <(MODIFIER,VIRTUAL)> ]
+"233" [label = <(METHOD_RETURN,void)<SUB>148</SUB>> ]
+  "186" -> "25" 
+  "186" -> "187" 
+  "186" -> "231" 
+  "186" -> "232" 
+  "186" -> "233" 
+  "187" -> "188" 
+  "187" -> "189" 
+  "187" -> "196" 
+  "187" -> "197" 
+  "187" -> "201" 
+  "189" -> "190" 
+  "189" -> "191" 
+  "191" -> "192" 
+  "191" -> "193" 
+  "193" -> "194" 
+  "193" -> "195" 
+  "197" -> "198" 
+  "197" -> "199" 
+  "199" -> "24" 
+  "199" -> "200" 
+  "201" -> "202" 
+  "201" -> "223" 
+  "202" -> "203" 
+  "202" -> "204" 
+  "202" -> "208" 
+  "202" -> "209" 
+  "202" -> "213" 
+  "202" -> "215" 
+  "202" -> "217" 
+  "204" -> "205" 
+  "204" -> "206" 
+  "206" -> "207" 
+  "209" -> "210" 
+  "209" -> "211" 
+  "211" -> "212" 
+  "213" -> "214" 
+  "215" -> "26" 
+  "215" -> "216" 
+  "217" -> "27" 
+  "217" -> "218" 
+  "217" -> "221" 
+  "217" -> "222" 
+  "218" -> "219" 
+  "218" -> "220" 
+  "223" -> "224" 
+  "224" -> "225" 
+  "224" -> "228" 
+  "225" -> "226" 
+  "225" -> "227" 
+  "228" -> "229" 
+  "229" -> "230" 
+}

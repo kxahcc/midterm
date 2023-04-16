@@ -1,0 +1,469 @@
+digraph "evaluatePackages" {  
+"2479" [label = <(METHOD,evaluatePackages)<SUB>784</SUB>> ]
+"184" [label = <(PARAM,this)<SUB>784</SUB>> ]
+"2480" [label = <(PARAM,Commandline toExecute)<SUB>784</SUB>> ]
+"2481" [label = <(PARAM,Path sourcePath)<SUB>784</SUB>> ]
+"2482" [label = <(PARAM,Vector packages)<SUB>785</SUB>> ]
+"2483" [label = <(PARAM,Vector excludePackages)<SUB>785</SUB>> ]
+"2484" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>785</SUB>> ]
+"2485" [label = <(log,log(&quot;Source path = &quot; + sourcePath.toString(), Project.MSG_VERBOSE))<SUB>786</SUB>> ]
+"183" [label = <(IDENTIFIER,this,log(&quot;Source path = &quot; + sourcePath.toString(), Project.MSG_VERBOSE))<SUB>786</SUB>> ]
+"2486" [label = <(&lt;operator&gt;.addition,&quot;Source path = &quot; + sourcePath.toString())<SUB>786</SUB>> ]
+"2487" [label = <(LITERAL,&quot;Source path = &quot;,&quot;Source path = &quot; + sourcePath.toString())<SUB>786</SUB>> ]
+"2488" [label = <(toString,toString())<SUB>786</SUB>> ]
+"2489" [label = <(IDENTIFIER,sourcePath,toString())<SUB>786</SUB>> ]
+"2490" [label = <(&lt;operator&gt;.fieldAccess,Project.MSG_VERBOSE)<SUB>786</SUB>> ]
+"2491" [label = <(IDENTIFIER,Project,log(&quot;Source path = &quot; + sourcePath.toString(), Project.MSG_VERBOSE))<SUB>786</SUB>> ]
+"2492" [label = <(FIELD_IDENTIFIER,MSG_VERBOSE,MSG_VERBOSE)<SUB>786</SUB>> ]
+"2493" [label = <(log,log(&quot;Packages = &quot; + packages, Project.MSG_VERBOSE))<SUB>787</SUB>> ]
+"185" [label = <(IDENTIFIER,this,log(&quot;Packages = &quot; + packages, Project.MSG_VERBOSE))<SUB>787</SUB>> ]
+"2494" [label = <(&lt;operator&gt;.addition,&quot;Packages = &quot; + packages)<SUB>787</SUB>> ]
+"2495" [label = <(LITERAL,&quot;Packages = &quot;,&quot;Packages = &quot; + packages)<SUB>787</SUB>> ]
+"2496" [label = <(IDENTIFIER,packages,&quot;Packages = &quot; + packages)<SUB>787</SUB>> ]
+"2497" [label = <(&lt;operator&gt;.fieldAccess,Project.MSG_VERBOSE)<SUB>787</SUB>> ]
+"2498" [label = <(IDENTIFIER,Project,log(&quot;Packages = &quot; + packages, Project.MSG_VERBOSE))<SUB>787</SUB>> ]
+"2499" [label = <(FIELD_IDENTIFIER,MSG_VERBOSE,MSG_VERBOSE)<SUB>787</SUB>> ]
+"2500" [label = <(log,log(&quot;Exclude Packages = &quot; + excludePackages, Project.MSG_VERBOSE))<SUB>788</SUB>> ]
+"186" [label = <(IDENTIFIER,this,log(&quot;Exclude Packages = &quot; + excludePackages, Project.MSG_VERBOSE))<SUB>788</SUB>> ]
+"2501" [label = <(&lt;operator&gt;.addition,&quot;Exclude Packages = &quot; + excludePackages)<SUB>788</SUB>> ]
+"2502" [label = <(LITERAL,&quot;Exclude Packages = &quot;,&quot;Exclude Packages = &quot; + excludePackages)<SUB>788</SUB>> ]
+"2503" [label = <(IDENTIFIER,excludePackages,&quot;Exclude Packages = &quot; + excludePackages)<SUB>788</SUB>> ]
+"2504" [label = <(&lt;operator&gt;.fieldAccess,Project.MSG_VERBOSE)<SUB>788</SUB>> ]
+"2505" [label = <(IDENTIFIER,Project,log(&quot;Exclude Packages = &quot; + excludePackages, Project.MSG_VERBOSE))<SUB>788</SUB>> ]
+"2506" [label = <(FIELD_IDENTIFIER,MSG_VERBOSE,MSG_VERBOSE)<SUB>788</SUB>> ]
+"188" [label = <(LOCAL,Vector addedPackages: java.util.Vector)> ]
+"2507" [label = <(&lt;operator&gt;.assignment,Vector addedPackages = new Vector())<SUB>790</SUB>> ]
+"2508" [label = <(IDENTIFIER,addedPackages,Vector addedPackages = new Vector())<SUB>790</SUB>> ]
+"2509" [label = <(&lt;operator&gt;.alloc,new Vector())<SUB>790</SUB>> ]
+"2510" [label = <(&lt;init&gt;,new Vector())<SUB>790</SUB>> ]
+"187" [label = <(IDENTIFIER,addedPackages,new Vector())<SUB>790</SUB>> ]
+"2511" [label = <(LOCAL,String[] list: java.lang.String[])> ]
+"2512" [label = <(&lt;operator&gt;.assignment,String[] list = list())<SUB>792</SUB>> ]
+"2513" [label = <(IDENTIFIER,list,String[] list = list())<SUB>792</SUB>> ]
+"2514" [label = <(list,list())<SUB>792</SUB>> ]
+"2515" [label = <(IDENTIFIER,sourcePath,list())<SUB>792</SUB>> ]
+"2516" [label = <(CONTROL_STRUCTURE,if (list == null),if (list == null))<SUB>793</SUB>> ]
+"2517" [label = <(&lt;operator&gt;.equals,list == null)<SUB>793</SUB>> ]
+"2518" [label = <(IDENTIFIER,list,list == null)<SUB>793</SUB>> ]
+"2519" [label = <(LITERAL,null,list == null)<SUB>793</SUB>> ]
+"2520" [label = <(&lt;operator&gt;.assignment,list = new String[0])<SUB>793</SUB>> ]
+"2521" [label = <(IDENTIFIER,list,list = new String[0])<SUB>793</SUB>> ]
+"2522" [label = <(&lt;operator&gt;.alloc,new String[0])> ]
+"2523" [label = <(LITERAL,0,new String[0])<SUB>793</SUB>> ]
+"190" [label = <(LOCAL,FileSet fs: ANY)> ]
+"2524" [label = <(&lt;operator&gt;.assignment,ANY fs = new FileSet())<SUB>795</SUB>> ]
+"2525" [label = <(IDENTIFIER,fs,ANY fs = new FileSet())<SUB>795</SUB>> ]
+"2526" [label = <(&lt;operator&gt;.alloc,new FileSet())<SUB>795</SUB>> ]
+"2527" [label = <(&lt;init&gt;,new FileSet())<SUB>795</SUB>> ]
+"189" [label = <(IDENTIFIER,fs,new FileSet())<SUB>795</SUB>> ]
+"2528" [label = <(setDefaultexcludes,setDefaultexcludes(useDefaultExcludes))<SUB>796</SUB>> ]
+"2529" [label = <(IDENTIFIER,fs,setDefaultexcludes(useDefaultExcludes))<SUB>796</SUB>> ]
+"2530" [label = <(&lt;operator&gt;.fieldAccess,this.useDefaultExcludes)<SUB>796</SUB>> ]
+"2531" [label = <(IDENTIFIER,this,setDefaultexcludes(useDefaultExcludes))<SUB>796</SUB>> ]
+"2532" [label = <(FIELD_IDENTIFIER,useDefaultExcludes,useDefaultExcludes)<SUB>796</SUB>> ]
+"2533" [label = <(LOCAL,Enumeration e: java.util.Enumeration)> ]
+"2534" [label = <(&lt;operator&gt;.assignment,Enumeration e = packages.elements())<SUB>798</SUB>> ]
+"2535" [label = <(IDENTIFIER,e,Enumeration e = packages.elements())<SUB>798</SUB>> ]
+"2536" [label = <(elements,packages.elements())<SUB>798</SUB>> ]
+"2537" [label = <(IDENTIFIER,packages,packages.elements())<SUB>798</SUB>> ]
+"2538" [label = <(CONTROL_STRUCTURE,while (e.hasMoreElements()),while (e.hasMoreElements()))<SUB>799</SUB>> ]
+"2539" [label = <(hasMoreElements,e.hasMoreElements())<SUB>799</SUB>> ]
+"2540" [label = <(IDENTIFIER,e,e.hasMoreElements())<SUB>799</SUB>> ]
+"2541" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>799</SUB>> ]
+"2542" [label = <(LOCAL,String pkg: java.lang.String)> ]
+"2543" [label = <(&lt;operator&gt;.assignment,String pkg = (String) e.nextElement())<SUB>800</SUB>> ]
+"2544" [label = <(IDENTIFIER,pkg,String pkg = (String) e.nextElement())<SUB>800</SUB>> ]
+"2545" [label = <(&lt;operator&gt;.cast,(String) e.nextElement())<SUB>800</SUB>> ]
+"2546" [label = <(TYPE_REF,String,String)<SUB>800</SUB>> ]
+"2547" [label = <(nextElement,e.nextElement())<SUB>800</SUB>> ]
+"2548" [label = <(IDENTIFIER,e,e.nextElement())<SUB>800</SUB>> ]
+"2549" [label = <(&lt;operator&gt;.assignment,pkg = pkg.replace('.', '/'))<SUB>801</SUB>> ]
+"2550" [label = <(IDENTIFIER,pkg,pkg = pkg.replace('.', '/'))<SUB>801</SUB>> ]
+"2551" [label = <(replace,pkg.replace('.', '/'))<SUB>801</SUB>> ]
+"2552" [label = <(IDENTIFIER,pkg,pkg.replace('.', '/'))<SUB>801</SUB>> ]
+"2553" [label = <(LITERAL,'.',pkg.replace('.', '/'))<SUB>801</SUB>> ]
+"2554" [label = <(LITERAL,'/',pkg.replace('.', '/'))<SUB>801</SUB>> ]
+"2555" [label = <(CONTROL_STRUCTURE,if (pkg.endsWith(&quot;*&quot;)),if (pkg.endsWith(&quot;*&quot;)))<SUB>802</SUB>> ]
+"2556" [label = <(endsWith,pkg.endsWith(&quot;*&quot;))<SUB>802</SUB>> ]
+"2557" [label = <(IDENTIFIER,pkg,pkg.endsWith(&quot;*&quot;))<SUB>802</SUB>> ]
+"2558" [label = <(LITERAL,&quot;*&quot;,pkg.endsWith(&quot;*&quot;))<SUB>802</SUB>> ]
+"2559" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>802</SUB>> ]
+"2560" [label = <(&lt;operator&gt;.assignmentPlus,pkg += &quot;*&quot;)<SUB>803</SUB>> ]
+"2561" [label = <(IDENTIFIER,pkg,pkg += &quot;*&quot;)<SUB>803</SUB>> ]
+"2562" [label = <(LITERAL,&quot;*&quot;,pkg += &quot;*&quot;)<SUB>803</SUB>> ]
+"2563" [label = <(setName,setName(pkg))<SUB>806</SUB>> ]
+"2564" [label = <(createInclude,createInclude())<SUB>806</SUB>> ]
+"2565" [label = <(IDENTIFIER,fs,createInclude())<SUB>806</SUB>> ]
+"2566" [label = <(IDENTIFIER,pkg,setName(pkg))<SUB>806</SUB>> ]
+"2567" [label = <(&lt;operator&gt;.assignment,e = excludePackages.elements())<SUB>809</SUB>> ]
+"2568" [label = <(IDENTIFIER,e,e = excludePackages.elements())<SUB>809</SUB>> ]
+"2569" [label = <(elements,excludePackages.elements())<SUB>809</SUB>> ]
+"2570" [label = <(IDENTIFIER,excludePackages,excludePackages.elements())<SUB>809</SUB>> ]
+"2571" [label = <(CONTROL_STRUCTURE,while (e.hasMoreElements()),while (e.hasMoreElements()))<SUB>810</SUB>> ]
+"2572" [label = <(hasMoreElements,e.hasMoreElements())<SUB>810</SUB>> ]
+"2573" [label = <(IDENTIFIER,e,e.hasMoreElements())<SUB>810</SUB>> ]
+"2574" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>810</SUB>> ]
+"2575" [label = <(LOCAL,String pkg: java.lang.String)> ]
+"2576" [label = <(&lt;operator&gt;.assignment,String pkg = (String) e.nextElement())<SUB>811</SUB>> ]
+"2577" [label = <(IDENTIFIER,pkg,String pkg = (String) e.nextElement())<SUB>811</SUB>> ]
+"2578" [label = <(&lt;operator&gt;.cast,(String) e.nextElement())<SUB>811</SUB>> ]
+"2579" [label = <(TYPE_REF,String,String)<SUB>811</SUB>> ]
+"2580" [label = <(nextElement,e.nextElement())<SUB>811</SUB>> ]
+"2581" [label = <(IDENTIFIER,e,e.nextElement())<SUB>811</SUB>> ]
+"2582" [label = <(&lt;operator&gt;.assignment,pkg = pkg.replace('.', '/'))<SUB>812</SUB>> ]
+"2583" [label = <(IDENTIFIER,pkg,pkg = pkg.replace('.', '/'))<SUB>812</SUB>> ]
+"2584" [label = <(replace,pkg.replace('.', '/'))<SUB>812</SUB>> ]
+"2585" [label = <(IDENTIFIER,pkg,pkg.replace('.', '/'))<SUB>812</SUB>> ]
+"2586" [label = <(LITERAL,'.',pkg.replace('.', '/'))<SUB>812</SUB>> ]
+"2587" [label = <(LITERAL,'/',pkg.replace('.', '/'))<SUB>812</SUB>> ]
+"2588" [label = <(CONTROL_STRUCTURE,if (pkg.endsWith(&quot;*&quot;)),if (pkg.endsWith(&quot;*&quot;)))<SUB>813</SUB>> ]
+"2589" [label = <(endsWith,pkg.endsWith(&quot;*&quot;))<SUB>813</SUB>> ]
+"2590" [label = <(IDENTIFIER,pkg,pkg.endsWith(&quot;*&quot;))<SUB>813</SUB>> ]
+"2591" [label = <(LITERAL,&quot;*&quot;,pkg.endsWith(&quot;*&quot;))<SUB>813</SUB>> ]
+"2592" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>813</SUB>> ]
+"2593" [label = <(&lt;operator&gt;.assignmentPlus,pkg += &quot;*&quot;)<SUB>814</SUB>> ]
+"2594" [label = <(IDENTIFIER,pkg,pkg += &quot;*&quot;)<SUB>814</SUB>> ]
+"2595" [label = <(LITERAL,&quot;*&quot;,pkg += &quot;*&quot;)<SUB>814</SUB>> ]
+"2596" [label = <(setName,setName(pkg))<SUB>817</SUB>> ]
+"2597" [label = <(createExclude,createExclude())<SUB>817</SUB>> ]
+"2598" [label = <(IDENTIFIER,fs,createExclude())<SUB>817</SUB>> ]
+"2599" [label = <(IDENTIFIER,pkg,setName(pkg))<SUB>817</SUB>> ]
+"2600" [label = <(CONTROL_STRUCTURE,for (int j = 0; Some(j &lt; list.length); j++),for (int j = 0; Some(j &lt; list.length); j++))<SUB>820</SUB>> ]
+"2601" [label = <(LOCAL,int j: int)> ]
+"2602" [label = <(&lt;operator&gt;.assignment,int j = 0)<SUB>820</SUB>> ]
+"2603" [label = <(IDENTIFIER,j,int j = 0)<SUB>820</SUB>> ]
+"2604" [label = <(LITERAL,0,int j = 0)<SUB>820</SUB>> ]
+"2605" [label = <(&lt;operator&gt;.lessThan,j &lt; list.length)<SUB>820</SUB>> ]
+"2606" [label = <(IDENTIFIER,j,j &lt; list.length)<SUB>820</SUB>> ]
+"2607" [label = <(&lt;operator&gt;.fieldAccess,list.length)<SUB>820</SUB>> ]
+"2608" [label = <(IDENTIFIER,list,j &lt; list.length)<SUB>820</SUB>> ]
+"2609" [label = <(FIELD_IDENTIFIER,length,length)<SUB>820</SUB>> ]
+"2610" [label = <(&lt;operator&gt;.postIncrement,j++)<SUB>820</SUB>> ]
+"2611" [label = <(IDENTIFIER,j,j++)<SUB>820</SUB>> ]
+"2612" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>820</SUB>> ]
+"2613" [label = <(LOCAL,File source: java.io.File)> ]
+"2614" [label = <(&lt;operator&gt;.assignment,File source = resolveFile(list[j]))<SUB>821</SUB>> ]
+"2615" [label = <(IDENTIFIER,source,File source = resolveFile(list[j]))<SUB>821</SUB>> ]
+"2616" [label = <(resolveFile,resolveFile(list[j]))<SUB>821</SUB>> ]
+"2617" [label = <(IDENTIFIER,project,resolveFile(list[j]))<SUB>821</SUB>> ]
+"2618" [label = <(&lt;operator&gt;.indexAccess,list[j])<SUB>821</SUB>> ]
+"2619" [label = <(IDENTIFIER,list,resolveFile(list[j]))<SUB>821</SUB>> ]
+"2620" [label = <(IDENTIFIER,j,resolveFile(list[j]))<SUB>821</SUB>> ]
+"2621" [label = <(setDir,setDir(source))<SUB>822</SUB>> ]
+"2622" [label = <(IDENTIFIER,fs,setDir(source))<SUB>822</SUB>> ]
+"2623" [label = <(IDENTIFIER,source,setDir(source))<SUB>822</SUB>> ]
+"2624" [label = <(LOCAL,DirectoryScanner ds: org.apache.tools.ant.DirectoryScanner)> ]
+"2625" [label = <(&lt;operator&gt;.assignment,DirectoryScanner ds = getDirectoryScanner(project))<SUB>824</SUB>> ]
+"2626" [label = <(IDENTIFIER,ds,DirectoryScanner ds = getDirectoryScanner(project))<SUB>824</SUB>> ]
+"2627" [label = <(getDirectoryScanner,getDirectoryScanner(project))<SUB>824</SUB>> ]
+"2628" [label = <(IDENTIFIER,fs,getDirectoryScanner(project))<SUB>824</SUB>> ]
+"2629" [label = <(IDENTIFIER,project,getDirectoryScanner(project))<SUB>824</SUB>> ]
+"2630" [label = <(LOCAL,String[] packageDirs: java.lang.String[])> ]
+"2631" [label = <(&lt;operator&gt;.assignment,String[] packageDirs = getIncludedDirectories())<SUB>825</SUB>> ]
+"2632" [label = <(IDENTIFIER,packageDirs,String[] packageDirs = getIncludedDirectories())<SUB>825</SUB>> ]
+"2633" [label = <(getIncludedDirectories,getIncludedDirectories())<SUB>825</SUB>> ]
+"2634" [label = <(IDENTIFIER,ds,getIncludedDirectories())<SUB>825</SUB>> ]
+"2635" [label = <(CONTROL_STRUCTURE,for (int i = 0; Some(i &lt; packageDirs.length); i++),for (int i = 0; Some(i &lt; packageDirs.length); i++))<SUB>827</SUB>> ]
+"2636" [label = <(LOCAL,int i: int)> ]
+"2637" [label = <(&lt;operator&gt;.assignment,int i = 0)<SUB>827</SUB>> ]
+"2638" [label = <(IDENTIFIER,i,int i = 0)<SUB>827</SUB>> ]
+"2639" [label = <(LITERAL,0,int i = 0)<SUB>827</SUB>> ]
+"2640" [label = <(&lt;operator&gt;.lessThan,i &lt; packageDirs.length)<SUB>827</SUB>> ]
+"2641" [label = <(IDENTIFIER,i,i &lt; packageDirs.length)<SUB>827</SUB>> ]
+"2642" [label = <(&lt;operator&gt;.fieldAccess,packageDirs.length)<SUB>827</SUB>> ]
+"2643" [label = <(IDENTIFIER,packageDirs,i &lt; packageDirs.length)<SUB>827</SUB>> ]
+"2644" [label = <(FIELD_IDENTIFIER,length,length)<SUB>827</SUB>> ]
+"2645" [label = <(&lt;operator&gt;.postIncrement,i++)<SUB>827</SUB>> ]
+"2646" [label = <(IDENTIFIER,i,i++)<SUB>827</SUB>> ]
+"2647" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>827</SUB>> ]
+"192" [label = <(LOCAL,File pd: java.io.File)> ]
+"2648" [label = <(&lt;operator&gt;.assignment,File pd = new File(source, packageDirs[i]))<SUB>828</SUB>> ]
+"2649" [label = <(IDENTIFIER,pd,File pd = new File(source, packageDirs[i]))<SUB>828</SUB>> ]
+"2650" [label = <(&lt;operator&gt;.alloc,new File(source, packageDirs[i]))<SUB>828</SUB>> ]
+"2651" [label = <(&lt;init&gt;,new File(source, packageDirs[i]))<SUB>828</SUB>> ]
+"191" [label = <(IDENTIFIER,pd,new File(source, packageDirs[i]))<SUB>828</SUB>> ]
+"2652" [label = <(IDENTIFIER,source,new File(source, packageDirs[i]))<SUB>828</SUB>> ]
+"2653" [label = <(&lt;operator&gt;.indexAccess,packageDirs[i])<SUB>828</SUB>> ]
+"2654" [label = <(IDENTIFIER,packageDirs,new File(source, packageDirs[i]))<SUB>828</SUB>> ]
+"2655" [label = <(IDENTIFIER,i,new File(source, packageDirs[i]))<SUB>828</SUB>> ]
+"2656" [label = <(LOCAL,String[] files: java.lang.String[])> ]
+"2657" [label = <(&lt;operator&gt;.assignment,String[] files = pd.list(new FilenameFilter() {\012\012    public boolean accept(File dir1, String name) {\012        if (name.endsWith(&quot;.java&quot;)) {\012            return true;\012        }\012        return false;\012    }\012}))<SUB>829</SUB>> ]
+"2658" [label = <(IDENTIFIER,files,String[] files = pd.list(new FilenameFilter() {\012\012    public boolean accept(File dir1, String name) {\012        if (name.endsWith(&quot;.java&quot;)) {\012            return true;\012        }\012        return false;\012    }\012}))<SUB>829</SUB>> ]
+"2659" [label = <(list,pd.list(new FilenameFilter() {\012\012    public boolean accept(File dir1, String name) {\012        if (name.endsWith(&quot;.java&quot;)) {\012            return true;\012        }\012        return false;\012    }\012}))<SUB>829</SUB>> ]
+"2660" [label = <(IDENTIFIER,pd,pd.list(new FilenameFilter() {\012\012    public boolean accept(File dir1, String name) {\012        if (name.endsWith(&quot;.java&quot;)) {\012            return true;\012        }\012        return false;\012    }\012}))<SUB>829</SUB>> ]
+"2661" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>829</SUB>> ]
+"2662" [label = <(&lt;operator&gt;.assignment,&lt;empty&gt;)> ]
+"2663" [label = <(IDENTIFIER,$obj41,&lt;empty&gt;)> ]
+"2664" [label = <(&lt;operator&gt;.alloc,new FilenameFilter() {\012\012    public boolean accept(File dir1, String name) {\012        if (name.endsWith(&quot;.java&quot;)) {\012            return true;\012        }\012        return false;\012    }\012})<SUB>829</SUB>> ]
+"2665" [label = <(&lt;init&gt;,new FilenameFilter() {\012\012    public boolean accept(File dir1, String name) {\012        if (name.endsWith(&quot;.java&quot;)) {\012            return true;\012        }\012        return false;\012    }\012})<SUB>829</SUB>> ]
+"2666" [label = <(IDENTIFIER,$obj41,new FilenameFilter() {\012\012    public boolean accept(File dir1, String name) {\012        if (name.endsWith(&quot;.java&quot;)) {\012            return true;\012        }\012        return false;\012    }\012})> ]
+"2667" [label = <(IDENTIFIER,$obj41,&lt;empty&gt;)> ]
+"2668" [label = <(CONTROL_STRUCTURE,if (files.length &gt; 0),if (files.length &gt; 0))<SUB>838</SUB>> ]
+"2669" [label = <(&lt;operator&gt;.greaterThan,files.length &gt; 0)<SUB>838</SUB>> ]
+"2670" [label = <(&lt;operator&gt;.fieldAccess,files.length)<SUB>838</SUB>> ]
+"2671" [label = <(IDENTIFIER,files,files.length &gt; 0)<SUB>838</SUB>> ]
+"2672" [label = <(FIELD_IDENTIFIER,length,length)<SUB>838</SUB>> ]
+"2673" [label = <(LITERAL,0,files.length &gt; 0)<SUB>838</SUB>> ]
+"2674" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>838</SUB>> ]
+"2675" [label = <(LOCAL,String pkgDir: java.lang.String)> ]
+"2676" [label = <(&lt;operator&gt;.assignment,String pkgDir = this.replace('/', '.').replace('\\', '.'))<SUB>839</SUB>> ]
+"2677" [label = <(IDENTIFIER,pkgDir,String pkgDir = this.replace('/', '.').replace('\\', '.'))<SUB>839</SUB>> ]
+"2678" [label = <(replace,this.replace('/', '.').replace('\\', '.'))<SUB>839</SUB>> ]
+"2679" [label = <(replace,this.replace('/', '.'))<SUB>839</SUB>> ]
+"2680" [label = <(&lt;operator&gt;.indexAccess,packageDirs[i])<SUB>839</SUB>> ]
+"2681" [label = <(IDENTIFIER,packageDirs,this.replace('/', '.'))<SUB>839</SUB>> ]
+"2682" [label = <(IDENTIFIER,i,this.replace('/', '.'))<SUB>839</SUB>> ]
+"2683" [label = <(LITERAL,'/',this.replace('/', '.'))<SUB>839</SUB>> ]
+"2684" [label = <(LITERAL,'.',this.replace('/', '.'))<SUB>839</SUB>> ]
+"2685" [label = <(LITERAL,'\\',this.replace('/', '.').replace('\\', '.'))<SUB>839</SUB>> ]
+"2686" [label = <(LITERAL,'.',this.replace('/', '.').replace('\\', '.'))<SUB>839</SUB>> ]
+"2687" [label = <(CONTROL_STRUCTURE,if (!addedPackages.contains(pkgDir)),if (!addedPackages.contains(pkgDir)))<SUB>840</SUB>> ]
+"2688" [label = <(&lt;operator&gt;.logicalNot,!addedPackages.contains(pkgDir))<SUB>840</SUB>> ]
+"2689" [label = <(contains,addedPackages.contains(pkgDir))<SUB>840</SUB>> ]
+"2690" [label = <(IDENTIFIER,addedPackages,addedPackages.contains(pkgDir))<SUB>840</SUB>> ]
+"2691" [label = <(IDENTIFIER,pkgDir,addedPackages.contains(pkgDir))<SUB>840</SUB>> ]
+"2692" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>840</SUB>> ]
+"2693" [label = <(setValue,setValue(pkgDir))<SUB>841</SUB>> ]
+"2694" [label = <(createArgument,createArgument())<SUB>841</SUB>> ]
+"2695" [label = <(IDENTIFIER,toExecute,createArgument())<SUB>841</SUB>> ]
+"2696" [label = <(IDENTIFIER,pkgDir,setValue(pkgDir))<SUB>841</SUB>> ]
+"2697" [label = <(addElement,addedPackages.addElement(pkgDir))<SUB>842</SUB>> ]
+"2698" [label = <(IDENTIFIER,addedPackages,addedPackages.addElement(pkgDir))<SUB>842</SUB>> ]
+"2699" [label = <(IDENTIFIER,pkgDir,addedPackages.addElement(pkgDir))<SUB>842</SUB>> ]
+"2700" [label = <(MODIFIER,PRIVATE)> ]
+"2701" [label = <(MODIFIER,VIRTUAL)> ]
+"2702" [label = <(METHOD_RETURN,void)<SUB>784</SUB>> ]
+  "2479" -> "184" 
+  "2479" -> "2480" 
+  "2479" -> "2481" 
+  "2479" -> "2482" 
+  "2479" -> "2483" 
+  "2479" -> "2484" 
+  "2479" -> "2700" 
+  "2479" -> "2701" 
+  "2479" -> "2702" 
+  "2484" -> "2485" 
+  "2484" -> "2493" 
+  "2484" -> "2500" 
+  "2484" -> "188" 
+  "2484" -> "2507" 
+  "2484" -> "2510" 
+  "2484" -> "2511" 
+  "2484" -> "2512" 
+  "2484" -> "2516" 
+  "2484" -> "190" 
+  "2484" -> "2524" 
+  "2484" -> "2527" 
+  "2484" -> "2528" 
+  "2484" -> "2533" 
+  "2484" -> "2534" 
+  "2484" -> "2538" 
+  "2484" -> "2567" 
+  "2484" -> "2571" 
+  "2484" -> "2600" 
+  "2485" -> "183" 
+  "2485" -> "2486" 
+  "2485" -> "2490" 
+  "2486" -> "2487" 
+  "2486" -> "2488" 
+  "2488" -> "2489" 
+  "2490" -> "2491" 
+  "2490" -> "2492" 
+  "2493" -> "185" 
+  "2493" -> "2494" 
+  "2493" -> "2497" 
+  "2494" -> "2495" 
+  "2494" -> "2496" 
+  "2497" -> "2498" 
+  "2497" -> "2499" 
+  "2500" -> "186" 
+  "2500" -> "2501" 
+  "2500" -> "2504" 
+  "2501" -> "2502" 
+  "2501" -> "2503" 
+  "2504" -> "2505" 
+  "2504" -> "2506" 
+  "2507" -> "2508" 
+  "2507" -> "2509" 
+  "2510" -> "187" 
+  "2512" -> "2513" 
+  "2512" -> "2514" 
+  "2514" -> "2515" 
+  "2516" -> "2517" 
+  "2516" -> "2520" 
+  "2517" -> "2518" 
+  "2517" -> "2519" 
+  "2520" -> "2521" 
+  "2520" -> "2522" 
+  "2522" -> "2523" 
+  "2524" -> "2525" 
+  "2524" -> "2526" 
+  "2527" -> "189" 
+  "2528" -> "2529" 
+  "2528" -> "2530" 
+  "2530" -> "2531" 
+  "2530" -> "2532" 
+  "2534" -> "2535" 
+  "2534" -> "2536" 
+  "2536" -> "2537" 
+  "2538" -> "2539" 
+  "2538" -> "2541" 
+  "2539" -> "2540" 
+  "2541" -> "2542" 
+  "2541" -> "2543" 
+  "2541" -> "2549" 
+  "2541" -> "2555" 
+  "2541" -> "2563" 
+  "2543" -> "2544" 
+  "2543" -> "2545" 
+  "2545" -> "2546" 
+  "2545" -> "2547" 
+  "2547" -> "2548" 
+  "2549" -> "2550" 
+  "2549" -> "2551" 
+  "2551" -> "2552" 
+  "2551" -> "2553" 
+  "2551" -> "2554" 
+  "2555" -> "2556" 
+  "2555" -> "2559" 
+  "2556" -> "2557" 
+  "2556" -> "2558" 
+  "2559" -> "2560" 
+  "2560" -> "2561" 
+  "2560" -> "2562" 
+  "2563" -> "2564" 
+  "2563" -> "2566" 
+  "2564" -> "2565" 
+  "2567" -> "2568" 
+  "2567" -> "2569" 
+  "2569" -> "2570" 
+  "2571" -> "2572" 
+  "2571" -> "2574" 
+  "2572" -> "2573" 
+  "2574" -> "2575" 
+  "2574" -> "2576" 
+  "2574" -> "2582" 
+  "2574" -> "2588" 
+  "2574" -> "2596" 
+  "2576" -> "2577" 
+  "2576" -> "2578" 
+  "2578" -> "2579" 
+  "2578" -> "2580" 
+  "2580" -> "2581" 
+  "2582" -> "2583" 
+  "2582" -> "2584" 
+  "2584" -> "2585" 
+  "2584" -> "2586" 
+  "2584" -> "2587" 
+  "2588" -> "2589" 
+  "2588" -> "2592" 
+  "2589" -> "2590" 
+  "2589" -> "2591" 
+  "2592" -> "2593" 
+  "2593" -> "2594" 
+  "2593" -> "2595" 
+  "2596" -> "2597" 
+  "2596" -> "2599" 
+  "2597" -> "2598" 
+  "2600" -> "2601" 
+  "2600" -> "2602" 
+  "2600" -> "2605" 
+  "2600" -> "2610" 
+  "2600" -> "2612" 
+  "2602" -> "2603" 
+  "2602" -> "2604" 
+  "2605" -> "2606" 
+  "2605" -> "2607" 
+  "2607" -> "2608" 
+  "2607" -> "2609" 
+  "2610" -> "2611" 
+  "2612" -> "2613" 
+  "2612" -> "2614" 
+  "2612" -> "2621" 
+  "2612" -> "2624" 
+  "2612" -> "2625" 
+  "2612" -> "2630" 
+  "2612" -> "2631" 
+  "2612" -> "2635" 
+  "2614" -> "2615" 
+  "2614" -> "2616" 
+  "2616" -> "2617" 
+  "2616" -> "2618" 
+  "2618" -> "2619" 
+  "2618" -> "2620" 
+  "2621" -> "2622" 
+  "2621" -> "2623" 
+  "2625" -> "2626" 
+  "2625" -> "2627" 
+  "2627" -> "2628" 
+  "2627" -> "2629" 
+  "2631" -> "2632" 
+  "2631" -> "2633" 
+  "2633" -> "2634" 
+  "2635" -> "2636" 
+  "2635" -> "2637" 
+  "2635" -> "2640" 
+  "2635" -> "2645" 
+  "2635" -> "2647" 
+  "2637" -> "2638" 
+  "2637" -> "2639" 
+  "2640" -> "2641" 
+  "2640" -> "2642" 
+  "2642" -> "2643" 
+  "2642" -> "2644" 
+  "2645" -> "2646" 
+  "2647" -> "192" 
+  "2647" -> "2648" 
+  "2647" -> "2651" 
+  "2647" -> "2656" 
+  "2647" -> "2657" 
+  "2647" -> "2668" 
+  "2648" -> "2649" 
+  "2648" -> "2650" 
+  "2651" -> "191" 
+  "2651" -> "2652" 
+  "2651" -> "2653" 
+  "2653" -> "2654" 
+  "2653" -> "2655" 
+  "2657" -> "2658" 
+  "2657" -> "2659" 
+  "2659" -> "2660" 
+  "2659" -> "2661" 
+  "2661" -> "2662" 
+  "2661" -> "2665" 
+  "2661" -> "2667" 
+  "2662" -> "2663" 
+  "2662" -> "2664" 
+  "2665" -> "2666" 
+  "2668" -> "2669" 
+  "2668" -> "2674" 
+  "2669" -> "2670" 
+  "2669" -> "2673" 
+  "2670" -> "2671" 
+  "2670" -> "2672" 
+  "2674" -> "2675" 
+  "2674" -> "2676" 
+  "2674" -> "2687" 
+  "2676" -> "2677" 
+  "2676" -> "2678" 
+  "2678" -> "2679" 
+  "2678" -> "2685" 
+  "2678" -> "2686" 
+  "2679" -> "2680" 
+  "2679" -> "2683" 
+  "2679" -> "2684" 
+  "2680" -> "2681" 
+  "2680" -> "2682" 
+  "2687" -> "2688" 
+  "2687" -> "2692" 
+  "2688" -> "2689" 
+  "2689" -> "2690" 
+  "2689" -> "2691" 
+  "2692" -> "2693" 
+  "2692" -> "2697" 
+  "2693" -> "2694" 
+  "2693" -> "2696" 
+  "2694" -> "2695" 
+  "2697" -> "2698" 
+  "2697" -> "2699" 
+}

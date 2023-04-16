@@ -1,0 +1,137 @@
+digraph "getCheckedRef" {  
+"136" [label = <(METHOD,getCheckedRef)<SUB>169</SUB>> ]
+"11" [label = <(PARAM,this)<SUB>169</SUB>> ]
+"137" [label = <(PARAM,Class requiredClass)<SUB>169</SUB>> ]
+"138" [label = <(PARAM,String dataTypeName)<SUB>169</SUB>> ]
+"139" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>169</SUB>> ]
+"140" [label = <(CONTROL_STRUCTURE,if (!checked),if (!checked))<SUB>170</SUB>> ]
+"141" [label = <(&lt;operator&gt;.logicalNot,!checked)<SUB>170</SUB>> ]
+"142" [label = <(&lt;operator&gt;.fieldAccess,this.checked)<SUB>170</SUB>> ]
+"143" [label = <(IDENTIFIER,this,!checked)<SUB>170</SUB>> ]
+"144" [label = <(FIELD_IDENTIFIER,checked,checked)<SUB>170</SUB>> ]
+"145" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>170</SUB>> ]
+"9" [label = <(LOCAL,Stack stk: java.util.Stack)> ]
+"146" [label = <(&lt;operator&gt;.assignment,Stack stk = new Stack())<SUB>171</SUB>> ]
+"147" [label = <(IDENTIFIER,stk,Stack stk = new Stack())<SUB>171</SUB>> ]
+"148" [label = <(&lt;operator&gt;.alloc,new Stack())<SUB>171</SUB>> ]
+"149" [label = <(&lt;init&gt;,new Stack())<SUB>171</SUB>> ]
+"8" [label = <(IDENTIFIER,stk,new Stack())<SUB>171</SUB>> ]
+"150" [label = <(push,stk.push(this))<SUB>172</SUB>> ]
+"151" [label = <(IDENTIFIER,stk,stk.push(this))<SUB>172</SUB>> ]
+"10" [label = <(IDENTIFIER,this,stk.push(this))<SUB>172</SUB>> ]
+"152" [label = <(dieOnCircularReference,dieOnCircularReference(stk, getProject()))<SUB>173</SUB>> ]
+"13" [label = <(IDENTIFIER,this,dieOnCircularReference(stk, getProject()))<SUB>173</SUB>> ]
+"153" [label = <(IDENTIFIER,stk,dieOnCircularReference(stk, getProject()))<SUB>173</SUB>> ]
+"154" [label = <(getProject,getProject())<SUB>173</SUB>> ]
+"12" [label = <(IDENTIFIER,this,getProject())<SUB>173</SUB>> ]
+"155" [label = <(LOCAL,Object o: java.lang.Object)> ]
+"156" [label = <(&lt;operator&gt;.assignment,Object o = getReferencedObject(getProject()))<SUB>176</SUB>> ]
+"157" [label = <(IDENTIFIER,o,Object o = getReferencedObject(getProject()))<SUB>176</SUB>> ]
+"158" [label = <(getReferencedObject,getReferencedObject(getProject()))<SUB>176</SUB>> ]
+"159" [label = <(&lt;operator&gt;.fieldAccess,this.ref)<SUB>176</SUB>> ]
+"160" [label = <(IDENTIFIER,this,getReferencedObject(getProject()))<SUB>176</SUB>> ]
+"161" [label = <(FIELD_IDENTIFIER,ref,ref)<SUB>176</SUB>> ]
+"162" [label = <(getProject,getProject())<SUB>176</SUB>> ]
+"14" [label = <(IDENTIFIER,this,getProject())<SUB>176</SUB>> ]
+"163" [label = <(CONTROL_STRUCTURE,if (!(requiredClass.isAssignableFrom(o.getClass()))),if (!(requiredClass.isAssignableFrom(o.getClass()))))<SUB>177</SUB>> ]
+"164" [label = <(&lt;operator&gt;.logicalNot,!(requiredClass.isAssignableFrom(o.getClass())))<SUB>177</SUB>> ]
+"165" [label = <(isAssignableFrom,requiredClass.isAssignableFrom(o.getClass()))<SUB>177</SUB>> ]
+"166" [label = <(IDENTIFIER,requiredClass,requiredClass.isAssignableFrom(o.getClass()))<SUB>177</SUB>> ]
+"167" [label = <(getClass,o.getClass())<SUB>177</SUB>> ]
+"168" [label = <(IDENTIFIER,o,o.getClass())<SUB>177</SUB>> ]
+"169" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>177</SUB>> ]
+"170" [label = <(LOCAL,String msg: java.lang.String)> ]
+"171" [label = <(&lt;operator&gt;.assignment,String msg = ref.getRefId() + &quot; doesn\'t denote a &quot; + dataTypeName)<SUB>178</SUB>> ]
+"172" [label = <(IDENTIFIER,msg,String msg = ref.getRefId() + &quot; doesn\'t denote a &quot; + dataTypeName)<SUB>178</SUB>> ]
+"173" [label = <(&lt;operator&gt;.addition,ref.getRefId() + &quot; doesn\'t denote a &quot; + dataTypeName)<SUB>178</SUB>> ]
+"174" [label = <(&lt;operator&gt;.addition,ref.getRefId() + &quot; doesn\'t denote a &quot;)<SUB>178</SUB>> ]
+"175" [label = <(getRefId,getRefId())<SUB>178</SUB>> ]
+"176" [label = <(&lt;operator&gt;.fieldAccess,this.ref)<SUB>178</SUB>> ]
+"177" [label = <(IDENTIFIER,this,getRefId())<SUB>178</SUB>> ]
+"178" [label = <(FIELD_IDENTIFIER,ref,ref)<SUB>178</SUB>> ]
+"179" [label = <(LITERAL,&quot; doesn\'t denote a &quot;,ref.getRefId() + &quot; doesn\'t denote a &quot;)<SUB>178</SUB>> ]
+"180" [label = <(IDENTIFIER,dataTypeName,ref.getRefId() + &quot; doesn\'t denote a &quot; + dataTypeName)<SUB>178</SUB>> ]
+"181" [label = <(&lt;operator&gt;.throw,throw new BuildException(msg);)<SUB>179</SUB>> ]
+"182" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>179</SUB>> ]
+"183" [label = <(&lt;operator&gt;.assignment,&lt;empty&gt;)> ]
+"184" [label = <(IDENTIFIER,$obj1,&lt;empty&gt;)> ]
+"185" [label = <(&lt;operator&gt;.alloc,new BuildException(msg))<SUB>179</SUB>> ]
+"186" [label = <(&lt;init&gt;,new BuildException(msg))<SUB>179</SUB>> ]
+"187" [label = <(IDENTIFIER,$obj1,new BuildException(msg))> ]
+"188" [label = <(IDENTIFIER,msg,new BuildException(msg))<SUB>179</SUB>> ]
+"189" [label = <(IDENTIFIER,$obj1,&lt;empty&gt;)> ]
+"190" [label = <(CONTROL_STRUCTURE,else,else)<SUB>180</SUB>> ]
+"191" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>180</SUB>> ]
+"192" [label = <(RETURN,return o;,return o;)<SUB>181</SUB>> ]
+"193" [label = <(IDENTIFIER,o,return o;)<SUB>181</SUB>> ]
+"194" [label = <(MODIFIER,PROTECTED)> ]
+"195" [label = <(MODIFIER,VIRTUAL)> ]
+"196" [label = <(METHOD_RETURN,java.lang.Object)<SUB>169</SUB>> ]
+  "136" -> "11" 
+  "136" -> "137" 
+  "136" -> "138" 
+  "136" -> "139" 
+  "136" -> "194" 
+  "136" -> "195" 
+  "136" -> "196" 
+  "139" -> "140" 
+  "139" -> "155" 
+  "139" -> "156" 
+  "139" -> "163" 
+  "140" -> "141" 
+  "140" -> "145" 
+  "141" -> "142" 
+  "142" -> "143" 
+  "142" -> "144" 
+  "145" -> "9" 
+  "145" -> "146" 
+  "145" -> "149" 
+  "145" -> "150" 
+  "145" -> "152" 
+  "146" -> "147" 
+  "146" -> "148" 
+  "149" -> "8" 
+  "150" -> "151" 
+  "150" -> "10" 
+  "152" -> "13" 
+  "152" -> "153" 
+  "152" -> "154" 
+  "154" -> "12" 
+  "156" -> "157" 
+  "156" -> "158" 
+  "158" -> "159" 
+  "158" -> "162" 
+  "159" -> "160" 
+  "159" -> "161" 
+  "162" -> "14" 
+  "163" -> "164" 
+  "163" -> "169" 
+  "163" -> "190" 
+  "164" -> "165" 
+  "165" -> "166" 
+  "165" -> "167" 
+  "167" -> "168" 
+  "169" -> "170" 
+  "169" -> "171" 
+  "169" -> "181" 
+  "171" -> "172" 
+  "171" -> "173" 
+  "173" -> "174" 
+  "173" -> "180" 
+  "174" -> "175" 
+  "174" -> "179" 
+  "175" -> "176" 
+  "176" -> "177" 
+  "176" -> "178" 
+  "181" -> "182" 
+  "182" -> "183" 
+  "182" -> "186" 
+  "182" -> "189" 
+  "183" -> "184" 
+  "183" -> "185" 
+  "186" -> "187" 
+  "186" -> "188" 
+  "190" -> "191" 
+  "191" -> "192" 
+  "192" -> "193" 
+}

@@ -1,0 +1,107 @@
+digraph "dieOnCircularReference" {  
+"447" [label = <(METHOD,dieOnCircularReference)<SUB>200</SUB>> ]
+"77" [label = <(PARAM,this)<SUB>200</SUB>> ]
+"448" [label = <(PARAM,Stack stk)<SUB>200</SUB>> ]
+"449" [label = <(PARAM,Project p)<SUB>200</SUB>> ]
+"450" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>201</SUB>> ]
+"451" [label = <(CONTROL_STRUCTURE,if (isChecked()),if (isChecked()))<SUB>202</SUB>> ]
+"452" [label = <(isChecked,isChecked())<SUB>202</SUB>> ]
+"76" [label = <(IDENTIFIER,this,isChecked())<SUB>202</SUB>> ]
+"453" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>202</SUB>> ]
+"454" [label = <(RETURN,return;,return;)<SUB>203</SUB>> ]
+"455" [label = <(CONTROL_STRUCTURE,if (isReference()),if (isReference()))<SUB>205</SUB>> ]
+"456" [label = <(isReference,isReference())<SUB>205</SUB>> ]
+"78" [label = <(IDENTIFIER,this,isReference())<SUB>205</SUB>> ]
+"457" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>205</SUB>> ]
+"458" [label = <(dieOnCircularReference,dieOnCircularReference(stk, p))<SUB>206</SUB>> ]
+"459" [label = <(IDENTIFIER,super,dieOnCircularReference(stk, p))<SUB>206</SUB>> ]
+"460" [label = <(IDENTIFIER,stk,dieOnCircularReference(stk, p))<SUB>206</SUB>> ]
+"461" [label = <(IDENTIFIER,p,dieOnCircularReference(stk, p))<SUB>206</SUB>> ]
+"462" [label = <(CONTROL_STRUCTURE,else,else)<SUB>207</SUB>> ]
+"463" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>207</SUB>> ]
+"464" [label = <(CONTROL_STRUCTURE,for (Iterator i = getNested().iterator(); Some(i.hasNext()); ),for (Iterator i = getNested().iterator(); Some(i.hasNext()); ))<SUB>208</SUB>> ]
+"465" [label = <(LOCAL,Iterator i: java.util.Iterator)> ]
+"466" [label = <(&lt;operator&gt;.assignment,Iterator i = this.getNested().iterator())<SUB>208</SUB>> ]
+"467" [label = <(IDENTIFIER,i,Iterator i = this.getNested().iterator())<SUB>208</SUB>> ]
+"468" [label = <(iterator,this.getNested().iterator())<SUB>208</SUB>> ]
+"469" [label = <(getNested,this.getNested())<SUB>208</SUB>> ]
+"79" [label = <(IDENTIFIER,this,this.getNested())<SUB>208</SUB>> ]
+"470" [label = <(hasNext,i.hasNext())<SUB>208</SUB>> ]
+"471" [label = <(IDENTIFIER,i,i.hasNext())<SUB>208</SUB>> ]
+"472" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>208</SUB>> ]
+"473" [label = <(LOCAL,Object o: java.lang.Object)> ]
+"474" [label = <(&lt;operator&gt;.assignment,Object o = i.next())<SUB>209</SUB>> ]
+"475" [label = <(IDENTIFIER,o,Object o = i.next())<SUB>209</SUB>> ]
+"476" [label = <(next,i.next())<SUB>209</SUB>> ]
+"477" [label = <(IDENTIFIER,i,i.next())<SUB>209</SUB>> ]
+"478" [label = <(CONTROL_STRUCTURE,if (o instanceof DataType),if (o instanceof DataType))<SUB>210</SUB>> ]
+"479" [label = <(&lt;operator&gt;.instanceOf,o instanceof DataType)<SUB>210</SUB>> ]
+"480" [label = <(IDENTIFIER,o,o instanceof DataType)<SUB>210</SUB>> ]
+"481" [label = <(TYPE_REF,DataType,DataType)<SUB>210</SUB>> ]
+"482" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>210</SUB>> ]
+"483" [label = <(invokeCircularReferenceCheck,invokeCircularReferenceCheck((DataType) o, stk, p))<SUB>211</SUB>> ]
+"80" [label = <(IDENTIFIER,this,invokeCircularReferenceCheck((DataType) o, stk, p))<SUB>211</SUB>> ]
+"484" [label = <(&lt;operator&gt;.cast,(DataType) o)<SUB>211</SUB>> ]
+"485" [label = <(TYPE_REF,DataType,DataType)<SUB>211</SUB>> ]
+"486" [label = <(IDENTIFIER,o,(DataType) o)<SUB>211</SUB>> ]
+"487" [label = <(IDENTIFIER,stk,invokeCircularReferenceCheck((DataType) o, stk, p))<SUB>211</SUB>> ]
+"488" [label = <(IDENTIFIER,p,invokeCircularReferenceCheck((DataType) o, stk, p))<SUB>211</SUB>> ]
+"489" [label = <(setChecked,setChecked(true))<SUB>214</SUB>> ]
+"81" [label = <(IDENTIFIER,this,setChecked(true))<SUB>214</SUB>> ]
+"490" [label = <(LITERAL,true,setChecked(true))<SUB>214</SUB>> ]
+"491" [label = <(MODIFIER,PROTECTED)> ]
+"492" [label = <(MODIFIER,VIRTUAL)> ]
+"493" [label = <(METHOD_RETURN,void)<SUB>200</SUB>> ]
+  "447" -> "77" 
+  "447" -> "448" 
+  "447" -> "449" 
+  "447" -> "450" 
+  "447" -> "491" 
+  "447" -> "492" 
+  "447" -> "493" 
+  "450" -> "451" 
+  "450" -> "455" 
+  "451" -> "452" 
+  "451" -> "453" 
+  "452" -> "76" 
+  "453" -> "454" 
+  "455" -> "456" 
+  "455" -> "457" 
+  "455" -> "462" 
+  "456" -> "78" 
+  "457" -> "458" 
+  "458" -> "459" 
+  "458" -> "460" 
+  "458" -> "461" 
+  "462" -> "463" 
+  "463" -> "464" 
+  "463" -> "489" 
+  "464" -> "465" 
+  "464" -> "466" 
+  "464" -> "470" 
+  "464" -> "472" 
+  "466" -> "467" 
+  "466" -> "468" 
+  "468" -> "469" 
+  "469" -> "79" 
+  "470" -> "471" 
+  "472" -> "473" 
+  "472" -> "474" 
+  "472" -> "478" 
+  "474" -> "475" 
+  "474" -> "476" 
+  "476" -> "477" 
+  "478" -> "479" 
+  "478" -> "482" 
+  "479" -> "480" 
+  "479" -> "481" 
+  "482" -> "483" 
+  "483" -> "80" 
+  "483" -> "484" 
+  "483" -> "487" 
+  "483" -> "488" 
+  "484" -> "485" 
+  "484" -> "486" 
+  "489" -> "81" 
+  "489" -> "490" 
+}

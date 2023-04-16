@@ -1,0 +1,91 @@
+digraph "demuxFlush" {  
+"2058" [label = <(METHOD,demuxFlush)<SUB>1263</SUB>> ]
+"153" [label = <(PARAM,this)<SUB>1263</SUB>> ]
+"2059" [label = <(PARAM,String output)<SUB>1263</SUB>> ]
+"2060" [label = <(PARAM,boolean isError)<SUB>1263</SUB>> ]
+"2061" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>1263</SUB>> ]
+"2062" [label = <(LOCAL,Task task: ANY)> ]
+"2063" [label = <(&lt;operator&gt;.assignment,ANY task = this.getThreadTask(Thread.currentThread()))<SUB>1264</SUB>> ]
+"2064" [label = <(IDENTIFIER,task,ANY task = this.getThreadTask(Thread.currentThread()))<SUB>1264</SUB>> ]
+"2065" [label = <(getThreadTask,this.getThreadTask(Thread.currentThread()))<SUB>1264</SUB>> ]
+"152" [label = <(IDENTIFIER,this,this.getThreadTask(Thread.currentThread()))<SUB>1264</SUB>> ]
+"2066" [label = <(currentThread,Thread.currentThread())<SUB>1264</SUB>> ]
+"2067" [label = <(IDENTIFIER,Thread,Thread.currentThread())<SUB>1264</SUB>> ]
+"2068" [label = <(CONTROL_STRUCTURE,if (task == null),if (task == null))<SUB>1265</SUB>> ]
+"2069" [label = <(&lt;operator&gt;.equals,task == null)<SUB>1265</SUB>> ]
+"2070" [label = <(IDENTIFIER,task,task == null)<SUB>1265</SUB>> ]
+"2071" [label = <(LITERAL,null,task == null)<SUB>1265</SUB>> ]
+"2072" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>1265</SUB>> ]
+"2073" [label = <(fireMessageLogged,fireMessageLogged(this, output, isError ? MSG_ERR : MSG_INFO))<SUB>1266</SUB>> ]
+"155" [label = <(IDENTIFIER,this,fireMessageLogged(this, output, isError ? MSG_ERR : MSG_INFO))<SUB>1266</SUB>> ]
+"154" [label = <(IDENTIFIER,this,fireMessageLogged(this, output, isError ? MSG_ERR : MSG_INFO))<SUB>1266</SUB>> ]
+"2074" [label = <(IDENTIFIER,output,fireMessageLogged(this, output, isError ? MSG_ERR : MSG_INFO))<SUB>1266</SUB>> ]
+"2075" [label = <(&lt;operator&gt;.conditional,isError ? MSG_ERR : MSG_INFO)<SUB>1266</SUB>> ]
+"2076" [label = <(IDENTIFIER,isError,isError ? MSG_ERR : MSG_INFO)<SUB>1266</SUB>> ]
+"2077" [label = <(&lt;operator&gt;.fieldAccess,Project.MSG_ERR)<SUB>1266</SUB>> ]
+"2078" [label = <(IDENTIFIER,Project,isError ? MSG_ERR : MSG_INFO)<SUB>1266</SUB>> ]
+"2079" [label = <(FIELD_IDENTIFIER,MSG_ERR,MSG_ERR)<SUB>1266</SUB>> ]
+"2080" [label = <(&lt;operator&gt;.fieldAccess,Project.MSG_INFO)<SUB>1266</SUB>> ]
+"2081" [label = <(IDENTIFIER,Project,isError ? MSG_ERR : MSG_INFO)<SUB>1266</SUB>> ]
+"2082" [label = <(FIELD_IDENTIFIER,MSG_INFO,MSG_INFO)<SUB>1266</SUB>> ]
+"2083" [label = <(CONTROL_STRUCTURE,else,else)<SUB>1267</SUB>> ]
+"2084" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>1267</SUB>> ]
+"2085" [label = <(CONTROL_STRUCTURE,if (isError),if (isError))<SUB>1268</SUB>> ]
+"2086" [label = <(IDENTIFIER,isError,if (isError))<SUB>1268</SUB>> ]
+"2087" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>1268</SUB>> ]
+"2088" [label = <(handleErrorFlush,handleErrorFlush(output))<SUB>1269</SUB>> ]
+"2089" [label = <(IDENTIFIER,task,handleErrorFlush(output))<SUB>1269</SUB>> ]
+"2090" [label = <(IDENTIFIER,output,handleErrorFlush(output))<SUB>1269</SUB>> ]
+"2091" [label = <(CONTROL_STRUCTURE,else,else)<SUB>1270</SUB>> ]
+"2092" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>1270</SUB>> ]
+"2093" [label = <(handleFlush,handleFlush(output))<SUB>1271</SUB>> ]
+"2094" [label = <(IDENTIFIER,task,handleFlush(output))<SUB>1271</SUB>> ]
+"2095" [label = <(IDENTIFIER,output,handleFlush(output))<SUB>1271</SUB>> ]
+"2096" [label = <(MODIFIER,PUBLIC)> ]
+"2097" [label = <(MODIFIER,VIRTUAL)> ]
+"2098" [label = <(METHOD_RETURN,void)<SUB>1263</SUB>> ]
+  "2058" -> "153" 
+  "2058" -> "2059" 
+  "2058" -> "2060" 
+  "2058" -> "2061" 
+  "2058" -> "2096" 
+  "2058" -> "2097" 
+  "2058" -> "2098" 
+  "2061" -> "2062" 
+  "2061" -> "2063" 
+  "2061" -> "2068" 
+  "2063" -> "2064" 
+  "2063" -> "2065" 
+  "2065" -> "152" 
+  "2065" -> "2066" 
+  "2066" -> "2067" 
+  "2068" -> "2069" 
+  "2068" -> "2072" 
+  "2068" -> "2083" 
+  "2069" -> "2070" 
+  "2069" -> "2071" 
+  "2072" -> "2073" 
+  "2073" -> "155" 
+  "2073" -> "154" 
+  "2073" -> "2074" 
+  "2073" -> "2075" 
+  "2075" -> "2076" 
+  "2075" -> "2077" 
+  "2075" -> "2080" 
+  "2077" -> "2078" 
+  "2077" -> "2079" 
+  "2080" -> "2081" 
+  "2080" -> "2082" 
+  "2083" -> "2084" 
+  "2084" -> "2085" 
+  "2085" -> "2086" 
+  "2085" -> "2087" 
+  "2085" -> "2091" 
+  "2087" -> "2088" 
+  "2088" -> "2089" 
+  "2088" -> "2090" 
+  "2091" -> "2092" 
+  "2092" -> "2093" 
+  "2093" -> "2094" 
+  "2093" -> "2095" 
+}

@@ -1,0 +1,169 @@
+digraph "begin" {  
+"90" [label = <(METHOD,begin)<SUB>57</SUB>> ]
+"11" [label = <(PARAM,this)<SUB>57</SUB>> ]
+"91" [label = <(PARAM,FileEndpoint endpoint)<SUB>57</SUB>> ]
+"92" [label = <(PARAM,FileExchange exchange)<SUB>57</SUB>> ]
+"93" [label = <(PARAM,File file)<SUB>57</SUB>> ]
+"94" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>57</SUB>> ]
+"95" [label = <(CONTROL_STRUCTURE,if (isLockFile()),if (isLockFile()))<SUB>58</SUB>> ]
+"96" [label = <(isLockFile,this.isLockFile())<SUB>58</SUB>> ]
+"10" [label = <(IDENTIFIER,this,this.isLockFile())<SUB>58</SUB>> ]
+"97" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>58</SUB>> ]
+"98" [label = <(LOCAL,File newFile: java.io.File)> ]
+"99" [label = <(&lt;operator&gt;.assignment,File newFile = renameFile(file))<SUB>59</SUB>> ]
+"100" [label = <(IDENTIFIER,newFile,File newFile = renameFile(file))<SUB>59</SUB>> ]
+"101" [label = <(renameFile,renameFile(file))<SUB>59</SUB>> ]
+"102" [label = <(&lt;operator&gt;.fieldAccess,this.lockFileRenamer)<SUB>59</SUB>> ]
+"103" [label = <(IDENTIFIER,this,renameFile(file))<SUB>59</SUB>> ]
+"104" [label = <(FIELD_IDENTIFIER,lockFileRenamer,lockFileRenamer)<SUB>59</SUB>> ]
+"105" [label = <(IDENTIFIER,file,renameFile(file))<SUB>59</SUB>> ]
+"106" [label = <(LOCAL,String lockFileName: java.lang.String)> ]
+"107" [label = <(&lt;operator&gt;.assignment,String lockFileName = newFile.getAbsolutePath())<SUB>60</SUB>> ]
+"108" [label = <(IDENTIFIER,lockFileName,String lockFileName = newFile.getAbsolutePath())<SUB>60</SUB>> ]
+"109" [label = <(getAbsolutePath,newFile.getAbsolutePath())<SUB>60</SUB>> ]
+"110" [label = <(IDENTIFIER,newFile,newFile.getAbsolutePath())<SUB>60</SUB>> ]
+"111" [label = <(CONTROL_STRUCTURE,if (LOG.isDebugEnabled()),if (LOG.isDebugEnabled()))<SUB>61</SUB>> ]
+"112" [label = <(isDebugEnabled,isDebugEnabled())<SUB>61</SUB>> ]
+"113" [label = <(&lt;operator&gt;.fieldAccess,FileProcessStrategySupport.LOG)<SUB>61</SUB>> ]
+"114" [label = <(IDENTIFIER,FileProcessStrategySupport,isDebugEnabled())<SUB>61</SUB>> ]
+"115" [label = <(FIELD_IDENTIFIER,LOG,LOG)<SUB>61</SUB>> ]
+"116" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>61</SUB>> ]
+"117" [label = <(debug,debug(&quot;Locking the file: &quot; + file + &quot; using the lock file name: &quot; + lockFileName))<SUB>62</SUB>> ]
+"118" [label = <(&lt;operator&gt;.fieldAccess,FileProcessStrategySupport.LOG)<SUB>62</SUB>> ]
+"119" [label = <(IDENTIFIER,FileProcessStrategySupport,debug(&quot;Locking the file: &quot; + file + &quot; using the lock file name: &quot; + lockFileName))<SUB>62</SUB>> ]
+"120" [label = <(FIELD_IDENTIFIER,LOG,LOG)<SUB>62</SUB>> ]
+"121" [label = <(&lt;operator&gt;.addition,&quot;Locking the file: &quot; + file + &quot; using the lock file name: &quot; + lockFileName)<SUB>62</SUB>> ]
+"122" [label = <(&lt;operator&gt;.addition,&quot;Locking the file: &quot; + file + &quot; using the lock file name: &quot;)<SUB>62</SUB>> ]
+"123" [label = <(&lt;operator&gt;.addition,&quot;Locking the file: &quot; + file)<SUB>62</SUB>> ]
+"124" [label = <(LITERAL,&quot;Locking the file: &quot;,&quot;Locking the file: &quot; + file)<SUB>62</SUB>> ]
+"125" [label = <(IDENTIFIER,file,&quot;Locking the file: &quot; + file)<SUB>62</SUB>> ]
+"126" [label = <(LITERAL,&quot; using the lock file name: &quot;,&quot;Locking the file: &quot; + file + &quot; using the lock file name: &quot;)<SUB>62</SUB>> ]
+"127" [label = <(IDENTIFIER,lockFileName,&quot;Locking the file: &quot; + file + &quot; using the lock file name: &quot; + lockFileName)<SUB>62</SUB>> ]
+"128" [label = <(LOCAL,FileChannel channel: java.nio.channels.FileChannel)> ]
+"129" [label = <(&lt;operator&gt;.assignment,FileChannel channel = new RandomAccessFile(lockFileName, &quot;rw&quot;).getChannel())<SUB>65</SUB>> ]
+"130" [label = <(IDENTIFIER,channel,FileChannel channel = new RandomAccessFile(lockFileName, &quot;rw&quot;).getChannel())<SUB>65</SUB>> ]
+"131" [label = <(getChannel,new RandomAccessFile(lockFileName, &quot;rw&quot;).getChannel())<SUB>65</SUB>> ]
+"132" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>65</SUB>> ]
+"133" [label = <(&lt;operator&gt;.assignment,&lt;empty&gt;)> ]
+"134" [label = <(IDENTIFIER,$obj1,&lt;empty&gt;)> ]
+"135" [label = <(&lt;operator&gt;.alloc,new RandomAccessFile(lockFileName, &quot;rw&quot;))<SUB>65</SUB>> ]
+"136" [label = <(&lt;init&gt;,new RandomAccessFile(lockFileName, &quot;rw&quot;))<SUB>65</SUB>> ]
+"137" [label = <(IDENTIFIER,$obj1,new RandomAccessFile(lockFileName, &quot;rw&quot;))> ]
+"138" [label = <(IDENTIFIER,lockFileName,new RandomAccessFile(lockFileName, &quot;rw&quot;))<SUB>65</SUB>> ]
+"139" [label = <(LITERAL,&quot;rw&quot;,new RandomAccessFile(lockFileName, &quot;rw&quot;))<SUB>65</SUB>> ]
+"140" [label = <(IDENTIFIER,$obj1,&lt;empty&gt;)> ]
+"141" [label = <(LOCAL,FileLock lock: java.nio.channels.FileLock)> ]
+"142" [label = <(&lt;operator&gt;.assignment,FileLock lock = channel.lock())<SUB>66</SUB>> ]
+"143" [label = <(IDENTIFIER,lock,FileLock lock = channel.lock())<SUB>66</SUB>> ]
+"144" [label = <(lock,channel.lock())<SUB>66</SUB>> ]
+"145" [label = <(IDENTIFIER,channel,channel.lock())<SUB>66</SUB>> ]
+"146" [label = <(CONTROL_STRUCTURE,if (lock != null),if (lock != null))<SUB>67</SUB>> ]
+"147" [label = <(&lt;operator&gt;.notEquals,lock != null)<SUB>67</SUB>> ]
+"148" [label = <(IDENTIFIER,lock,lock != null)<SUB>67</SUB>> ]
+"149" [label = <(LITERAL,null,lock != null)<SUB>67</SUB>> ]
+"150" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>67</SUB>> ]
+"151" [label = <(setProperty,setProperty(&quot;org.apache.camel.fileChannel&quot;, channel))<SUB>68</SUB>> ]
+"152" [label = <(IDENTIFIER,exchange,setProperty(&quot;org.apache.camel.fileChannel&quot;, channel))<SUB>68</SUB>> ]
+"153" [label = <(LITERAL,&quot;org.apache.camel.fileChannel&quot;,setProperty(&quot;org.apache.camel.fileChannel&quot;, channel))<SUB>68</SUB>> ]
+"154" [label = <(IDENTIFIER,channel,setProperty(&quot;org.apache.camel.fileChannel&quot;, channel))<SUB>68</SUB>> ]
+"155" [label = <(setProperty,setProperty(&quot;org.apache.camel.file.lock&quot;, lock))<SUB>69</SUB>> ]
+"156" [label = <(IDENTIFIER,exchange,setProperty(&quot;org.apache.camel.file.lock&quot;, lock))<SUB>69</SUB>> ]
+"157" [label = <(LITERAL,&quot;org.apache.camel.file.lock&quot;,setProperty(&quot;org.apache.camel.file.lock&quot;, lock))<SUB>69</SUB>> ]
+"158" [label = <(IDENTIFIER,lock,setProperty(&quot;org.apache.camel.file.lock&quot;, lock))<SUB>69</SUB>> ]
+"159" [label = <(setProperty,setProperty(&quot;org.apache.camel.file.lock.name&quot;, lockFileName))<SUB>70</SUB>> ]
+"160" [label = <(IDENTIFIER,exchange,setProperty(&quot;org.apache.camel.file.lock.name&quot;, lockFileName))<SUB>70</SUB>> ]
+"161" [label = <(LITERAL,&quot;org.apache.camel.file.lock.name&quot;,setProperty(&quot;org.apache.camel.file.lock.name&quot;, lockFileName))<SUB>70</SUB>> ]
+"162" [label = <(IDENTIFIER,lockFileName,setProperty(&quot;org.apache.camel.file.lock.name&quot;, lockFileName))<SUB>70</SUB>> ]
+"163" [label = <(RETURN,return true;,return true;)<SUB>71</SUB>> ]
+"164" [label = <(LITERAL,true,return true;)<SUB>71</SUB>> ]
+"165" [label = <(RETURN,return false;,return false;)<SUB>73</SUB>> ]
+"166" [label = <(LITERAL,false,return false;)<SUB>73</SUB>> ]
+"167" [label = <(RETURN,return true;,return true;)<SUB>75</SUB>> ]
+"168" [label = <(LITERAL,true,return true;)<SUB>75</SUB>> ]
+"169" [label = <(MODIFIER,PUBLIC)> ]
+"170" [label = <(MODIFIER,VIRTUAL)> ]
+"171" [label = <(METHOD_RETURN,boolean)<SUB>57</SUB>> ]
+  "90" -> "11" 
+  "90" -> "91" 
+  "90" -> "92" 
+  "90" -> "93" 
+  "90" -> "94" 
+  "90" -> "169" 
+  "90" -> "170" 
+  "90" -> "171" 
+  "94" -> "95" 
+  "94" -> "167" 
+  "95" -> "96" 
+  "95" -> "97" 
+  "96" -> "10" 
+  "97" -> "98" 
+  "97" -> "99" 
+  "97" -> "106" 
+  "97" -> "107" 
+  "97" -> "111" 
+  "97" -> "128" 
+  "97" -> "129" 
+  "97" -> "141" 
+  "97" -> "142" 
+  "97" -> "146" 
+  "97" -> "165" 
+  "99" -> "100" 
+  "99" -> "101" 
+  "101" -> "102" 
+  "101" -> "105" 
+  "102" -> "103" 
+  "102" -> "104" 
+  "107" -> "108" 
+  "107" -> "109" 
+  "109" -> "110" 
+  "111" -> "112" 
+  "111" -> "116" 
+  "112" -> "113" 
+  "113" -> "114" 
+  "113" -> "115" 
+  "116" -> "117" 
+  "117" -> "118" 
+  "117" -> "121" 
+  "118" -> "119" 
+  "118" -> "120" 
+  "121" -> "122" 
+  "121" -> "127" 
+  "122" -> "123" 
+  "122" -> "126" 
+  "123" -> "124" 
+  "123" -> "125" 
+  "129" -> "130" 
+  "129" -> "131" 
+  "131" -> "132" 
+  "132" -> "133" 
+  "132" -> "136" 
+  "132" -> "140" 
+  "133" -> "134" 
+  "133" -> "135" 
+  "136" -> "137" 
+  "136" -> "138" 
+  "136" -> "139" 
+  "142" -> "143" 
+  "142" -> "144" 
+  "144" -> "145" 
+  "146" -> "147" 
+  "146" -> "150" 
+  "147" -> "148" 
+  "147" -> "149" 
+  "150" -> "151" 
+  "150" -> "155" 
+  "150" -> "159" 
+  "150" -> "163" 
+  "151" -> "152" 
+  "151" -> "153" 
+  "151" -> "154" 
+  "155" -> "156" 
+  "155" -> "157" 
+  "155" -> "158" 
+  "159" -> "160" 
+  "159" -> "161" 
+  "159" -> "162" 
+  "163" -> "164" 
+  "165" -> "166" 
+  "167" -> "168" 
+}

@@ -1,0 +1,109 @@
+digraph "add" {  
+"61" [label = <(METHOD,add)<SUB>45</SUB>> ]
+"62" [label = <(PARAM,this)<SUB>45</SUB>> ]
+"63" [label = <(PARAM,Exchange exchange)<SUB>46</SUB>> ]
+"64" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>46</SUB>> ]
+"65" [label = <(LOCAL,Object correlationKey: java.lang.Object)> ]
+"66" [label = <(&lt;operator&gt;.assignment,Object correlationKey = evaluate(exchange))<SUB>47</SUB>> ]
+"67" [label = <(IDENTIFIER,correlationKey,Object correlationKey = evaluate(exchange))<SUB>47</SUB>> ]
+"68" [label = <(evaluate,evaluate(exchange))<SUB>47</SUB>> ]
+"69" [label = <(&lt;operator&gt;.fieldAccess,this.correlationExpression)<SUB>47</SUB>> ]
+"70" [label = <(IDENTIFIER,this,evaluate(exchange))<SUB>47</SUB>> ]
+"71" [label = <(FIELD_IDENTIFIER,correlationExpression,correlationExpression)<SUB>47</SUB>> ]
+"72" [label = <(IDENTIFIER,exchange,evaluate(exchange))<SUB>47</SUB>> ]
+"73" [label = <(LOCAL,Exchange oldExchange: org.apache.camel.Exchange)> ]
+"74" [label = <(&lt;operator&gt;.assignment,Exchange oldExchange = get(correlationKey))<SUB>48</SUB>> ]
+"75" [label = <(IDENTIFIER,oldExchange,Exchange oldExchange = get(correlationKey))<SUB>48</SUB>> ]
+"76" [label = <(get,get(correlationKey))<SUB>48</SUB>> ]
+"77" [label = <(&lt;operator&gt;.fieldAccess,this.map)<SUB>48</SUB>> ]
+"78" [label = <(IDENTIFIER,this,get(correlationKey))<SUB>48</SUB>> ]
+"79" [label = <(FIELD_IDENTIFIER,map,map)<SUB>48</SUB>> ]
+"80" [label = <(IDENTIFIER,correlationKey,get(correlationKey))<SUB>48</SUB>> ]
+"81" [label = <(LOCAL,Exchange newExchange: org.apache.camel.Exchange)> ]
+"82" [label = <(&lt;operator&gt;.assignment,Exchange newExchange = exchange)<SUB>49</SUB>> ]
+"83" [label = <(IDENTIFIER,newExchange,Exchange newExchange = exchange)<SUB>49</SUB>> ]
+"84" [label = <(IDENTIFIER,exchange,Exchange newExchange = exchange)<SUB>49</SUB>> ]
+"85" [label = <(CONTROL_STRUCTURE,if (oldExchange != null),if (oldExchange != null))<SUB>50</SUB>> ]
+"86" [label = <(&lt;operator&gt;.notEquals,oldExchange != null)<SUB>50</SUB>> ]
+"87" [label = <(IDENTIFIER,oldExchange,oldExchange != null)<SUB>50</SUB>> ]
+"88" [label = <(LITERAL,null,oldExchange != null)<SUB>50</SUB>> ]
+"89" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>50</SUB>> ]
+"90" [label = <(&lt;operator&gt;.assignment,newExchange = aggregate(oldExchange, newExchange))<SUB>51</SUB>> ]
+"91" [label = <(IDENTIFIER,newExchange,newExchange = aggregate(oldExchange, newExchange))<SUB>51</SUB>> ]
+"92" [label = <(aggregate,aggregate(oldExchange, newExchange))<SUB>51</SUB>> ]
+"93" [label = <(&lt;operator&gt;.fieldAccess,this.aggregationStrategy)<SUB>51</SUB>> ]
+"94" [label = <(IDENTIFIER,this,aggregate(oldExchange, newExchange))<SUB>51</SUB>> ]
+"95" [label = <(FIELD_IDENTIFIER,aggregationStrategy,aggregationStrategy)<SUB>51</SUB>> ]
+"96" [label = <(IDENTIFIER,oldExchange,aggregate(oldExchange, newExchange))<SUB>51</SUB>> ]
+"97" [label = <(IDENTIFIER,newExchange,aggregate(oldExchange, newExchange))<SUB>51</SUB>> ]
+"98" [label = <(CONTROL_STRUCTURE,if (newExchange != oldExchange),if (newExchange != oldExchange))<SUB>55</SUB>> ]
+"99" [label = <(&lt;operator&gt;.notEquals,newExchange != oldExchange)<SUB>55</SUB>> ]
+"100" [label = <(IDENTIFIER,newExchange,newExchange != oldExchange)<SUB>55</SUB>> ]
+"101" [label = <(IDENTIFIER,oldExchange,newExchange != oldExchange)<SUB>55</SUB>> ]
+"102" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>55</SUB>> ]
+"103" [label = <(put,put(correlationKey, newExchange))<SUB>56</SUB>> ]
+"104" [label = <(&lt;operator&gt;.fieldAccess,this.map)<SUB>56</SUB>> ]
+"105" [label = <(IDENTIFIER,this,put(correlationKey, newExchange))<SUB>56</SUB>> ]
+"106" [label = <(FIELD_IDENTIFIER,map,map)<SUB>56</SUB>> ]
+"107" [label = <(IDENTIFIER,correlationKey,put(correlationKey, newExchange))<SUB>56</SUB>> ]
+"108" [label = <(IDENTIFIER,newExchange,put(correlationKey, newExchange))<SUB>56</SUB>> ]
+"109" [label = <(RETURN,return true;,return true;)<SUB>58</SUB>> ]
+"110" [label = <(LITERAL,true,return true;)<SUB>58</SUB>> ]
+"111" [label = <(MODIFIER,PUBLIC)> ]
+"112" [label = <(MODIFIER,VIRTUAL)> ]
+"113" [label = <(ANNOTATION,@Override,@Override)<SUB>45</SUB>> ]
+"114" [label = <(METHOD_RETURN,boolean)<SUB>46</SUB>> ]
+  "61" -> "62" 
+  "61" -> "63" 
+  "61" -> "64" 
+  "61" -> "111" 
+  "61" -> "112" 
+  "61" -> "113" 
+  "61" -> "114" 
+  "64" -> "65" 
+  "64" -> "66" 
+  "64" -> "73" 
+  "64" -> "74" 
+  "64" -> "81" 
+  "64" -> "82" 
+  "64" -> "85" 
+  "64" -> "98" 
+  "64" -> "109" 
+  "66" -> "67" 
+  "66" -> "68" 
+  "68" -> "69" 
+  "68" -> "72" 
+  "69" -> "70" 
+  "69" -> "71" 
+  "74" -> "75" 
+  "74" -> "76" 
+  "76" -> "77" 
+  "76" -> "80" 
+  "77" -> "78" 
+  "77" -> "79" 
+  "82" -> "83" 
+  "82" -> "84" 
+  "85" -> "86" 
+  "85" -> "89" 
+  "86" -> "87" 
+  "86" -> "88" 
+  "89" -> "90" 
+  "90" -> "91" 
+  "90" -> "92" 
+  "92" -> "93" 
+  "92" -> "96" 
+  "92" -> "97" 
+  "93" -> "94" 
+  "93" -> "95" 
+  "98" -> "99" 
+  "98" -> "102" 
+  "99" -> "100" 
+  "99" -> "101" 
+  "102" -> "103" 
+  "103" -> "104" 
+  "103" -> "107" 
+  "103" -> "108" 
+  "104" -> "105" 
+  "104" -> "106" 
+  "109" -> "110" 
+}

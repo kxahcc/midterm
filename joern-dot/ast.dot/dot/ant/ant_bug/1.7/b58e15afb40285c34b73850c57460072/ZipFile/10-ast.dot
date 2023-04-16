@@ -1,0 +1,171 @@
+digraph "getInputStream" {  
+"282" [label = <(METHOD,getInputStream)<SUB>213</SUB>> ]
+"283" [label = <(PARAM,this)<SUB>213</SUB>> ]
+"284" [label = <(PARAM,ZipEntry ze)<SUB>213</SUB>> ]
+"285" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>214</SUB>> ]
+"286" [label = <(LOCAL,OffsetEntry offsetEntry: org.apache.tools.zip.ZipFile$OffsetEntry)> ]
+"287" [label = <(&lt;operator&gt;.assignment,ZipFile$OffsetEntry offsetEntry = (OffsetEntry) entries.get(ze))<SUB>215</SUB>> ]
+"288" [label = <(IDENTIFIER,offsetEntry,ZipFile$OffsetEntry offsetEntry = (OffsetEntry) entries.get(ze))<SUB>215</SUB>> ]
+"289" [label = <(&lt;operator&gt;.cast,(OffsetEntry) entries.get(ze))<SUB>215</SUB>> ]
+"290" [label = <(TYPE_REF,OffsetEntry,OffsetEntry)<SUB>215</SUB>> ]
+"291" [label = <(get,get(ze))<SUB>215</SUB>> ]
+"292" [label = <(&lt;operator&gt;.fieldAccess,this.entries)<SUB>215</SUB>> ]
+"293" [label = <(IDENTIFIER,this,get(ze))<SUB>215</SUB>> ]
+"294" [label = <(FIELD_IDENTIFIER,entries,entries)<SUB>215</SUB>> ]
+"295" [label = <(IDENTIFIER,ze,get(ze))<SUB>215</SUB>> ]
+"296" [label = <(CONTROL_STRUCTURE,if (offsetEntry == null),if (offsetEntry == null))<SUB>216</SUB>> ]
+"297" [label = <(&lt;operator&gt;.equals,offsetEntry == null)<SUB>216</SUB>> ]
+"298" [label = <(IDENTIFIER,offsetEntry,offsetEntry == null)<SUB>216</SUB>> ]
+"299" [label = <(LITERAL,null,offsetEntry == null)<SUB>216</SUB>> ]
+"300" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>216</SUB>> ]
+"301" [label = <(RETURN,return null;,return null;)<SUB>217</SUB>> ]
+"302" [label = <(LITERAL,null,return null;)<SUB>217</SUB>> ]
+"303" [label = <(LOCAL,long start: long)> ]
+"304" [label = <(&lt;operator&gt;.assignment,long start = offsetEntry.dataOffset)<SUB>219</SUB>> ]
+"305" [label = <(IDENTIFIER,start,long start = offsetEntry.dataOffset)<SUB>219</SUB>> ]
+"306" [label = <(&lt;operator&gt;.fieldAccess,offsetEntry.dataOffset)<SUB>219</SUB>> ]
+"307" [label = <(IDENTIFIER,offsetEntry,long start = offsetEntry.dataOffset)<SUB>219</SUB>> ]
+"308" [label = <(FIELD_IDENTIFIER,dataOffset,dataOffset)<SUB>219</SUB>> ]
+"28" [label = <(LOCAL,BoundedInputStream bis: org.apache.tools.zip.ZipFile$BoundedInputStream)> ]
+"309" [label = <(&lt;operator&gt;.assignment,ZipFile$BoundedInputStream bis = new BoundedInputStream(start, ze.getCompressedSize()))<SUB>220</SUB>> ]
+"310" [label = <(IDENTIFIER,bis,ZipFile$BoundedInputStream bis = new BoundedInputStream(start, ze.getCompressedSize()))<SUB>220</SUB>> ]
+"311" [label = <(&lt;operator&gt;.alloc,new BoundedInputStream(start, ze.getCompressedSize()))<SUB>221</SUB>> ]
+"312" [label = <(&lt;init&gt;,new BoundedInputStream(start, ze.getCompressedSize()))<SUB>221</SUB>> ]
+"27" [label = <(IDENTIFIER,bis,new BoundedInputStream(start, ze.getCompressedSize()))<SUB>220</SUB>> ]
+"313" [label = <(IDENTIFIER,start,new BoundedInputStream(start, ze.getCompressedSize()))<SUB>221</SUB>> ]
+"314" [label = <(getCompressedSize,getCompressedSize())<SUB>221</SUB>> ]
+"315" [label = <(IDENTIFIER,ze,getCompressedSize())<SUB>221</SUB>> ]
+"316" [label = <(CONTROL_STRUCTURE,switch(ze.getMethod()),switch(ze.getMethod()))> ]
+"317" [label = <(getMethod,getMethod())<SUB>222</SUB>> ]
+"318" [label = <(IDENTIFIER,ze,getMethod())<SUB>222</SUB>> ]
+"319" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)> ]
+"320" [label = <(JUMP_TARGET,case)> ]
+"321" [label = <(&lt;operator&gt;.fieldAccess,ZipEntry.STORED)<SUB>223</SUB>> ]
+"322" [label = <(IDENTIFIER,ZipEntry,&lt;empty&gt;)<SUB>223</SUB>> ]
+"323" [label = <(FIELD_IDENTIFIER,STORED,STORED)<SUB>223</SUB>> ]
+"324" [label = <(RETURN,return bis;,return bis;)<SUB>224</SUB>> ]
+"325" [label = <(IDENTIFIER,bis,return bis;)<SUB>224</SUB>> ]
+"326" [label = <(JUMP_TARGET,case)> ]
+"327" [label = <(&lt;operator&gt;.fieldAccess,ZipEntry.DEFLATED)<SUB>225</SUB>> ]
+"328" [label = <(IDENTIFIER,ZipEntry,&lt;empty&gt;)<SUB>225</SUB>> ]
+"329" [label = <(FIELD_IDENTIFIER,DEFLATED,DEFLATED)<SUB>225</SUB>> ]
+"330" [label = <(addDummy,addDummy())<SUB>226</SUB>> ]
+"331" [label = <(IDENTIFIER,bis,addDummy())<SUB>226</SUB>> ]
+"332" [label = <(RETURN,return new InflaterInputStream(bis, new Inflater(true));,return new InflaterInputStream(bis, new Inflater(true));)<SUB>227</SUB>> ]
+"333" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>227</SUB>> ]
+"334" [label = <(&lt;operator&gt;.assignment,&lt;empty&gt;)> ]
+"335" [label = <(IDENTIFIER,$obj7,&lt;empty&gt;)> ]
+"336" [label = <(&lt;operator&gt;.alloc,new InflaterInputStream(bis, new Inflater(true)))<SUB>227</SUB>> ]
+"337" [label = <(&lt;init&gt;,new InflaterInputStream(bis, new Inflater(true)))<SUB>227</SUB>> ]
+"338" [label = <(IDENTIFIER,$obj7,new InflaterInputStream(bis, new Inflater(true)))> ]
+"339" [label = <(IDENTIFIER,bis,new InflaterInputStream(bis, new Inflater(true)))<SUB>227</SUB>> ]
+"340" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>227</SUB>> ]
+"341" [label = <(&lt;operator&gt;.assignment,&lt;empty&gt;)> ]
+"342" [label = <(IDENTIFIER,$obj6,&lt;empty&gt;)> ]
+"343" [label = <(&lt;operator&gt;.alloc,new Inflater(true))<SUB>227</SUB>> ]
+"344" [label = <(&lt;init&gt;,new Inflater(true))<SUB>227</SUB>> ]
+"345" [label = <(IDENTIFIER,$obj6,new Inflater(true))> ]
+"346" [label = <(LITERAL,true,new Inflater(true))<SUB>227</SUB>> ]
+"347" [label = <(IDENTIFIER,$obj6,&lt;empty&gt;)> ]
+"348" [label = <(IDENTIFIER,$obj7,&lt;empty&gt;)> ]
+"349" [label = <(JUMP_TARGET,default)> ]
+"350" [label = <(&lt;operator&gt;.throw,throw new ZipException(&quot;Found unsupported compression method &quot; + ze.getMethod());)<SUB>229</SUB>> ]
+"351" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>229</SUB>> ]
+"352" [label = <(&lt;operator&gt;.assignment,&lt;empty&gt;)> ]
+"353" [label = <(IDENTIFIER,$obj8,&lt;empty&gt;)> ]
+"354" [label = <(&lt;operator&gt;.alloc,new ZipException(&quot;Found unsupported compression method &quot; + ze.getMethod()))<SUB>229</SUB>> ]
+"355" [label = <(&lt;init&gt;,new ZipException(&quot;Found unsupported compression method &quot; + ze.getMethod()))<SUB>229</SUB>> ]
+"356" [label = <(IDENTIFIER,$obj8,new ZipException(&quot;Found unsupported compression method &quot; + ze.getMethod()))> ]
+"357" [label = <(&lt;operator&gt;.addition,&quot;Found unsupported compression method &quot; + ze.getMethod())<SUB>229</SUB>> ]
+"358" [label = <(LITERAL,&quot;Found unsupported compression method &quot;,&quot;Found unsupported compression method &quot; + ze.getMethod())<SUB>229</SUB>> ]
+"359" [label = <(getMethod,getMethod())<SUB>230</SUB>> ]
+"360" [label = <(IDENTIFIER,ze,getMethod())<SUB>230</SUB>> ]
+"361" [label = <(IDENTIFIER,$obj8,&lt;empty&gt;)> ]
+"362" [label = <(MODIFIER,PUBLIC)> ]
+"363" [label = <(MODIFIER,VIRTUAL)> ]
+"364" [label = <(METHOD_RETURN,java.io.InputStream)<SUB>213</SUB>> ]
+  "282" -> "283" 
+  "282" -> "284" 
+  "282" -> "285" 
+  "282" -> "362" 
+  "282" -> "363" 
+  "282" -> "364" 
+  "285" -> "286" 
+  "285" -> "287" 
+  "285" -> "296" 
+  "285" -> "303" 
+  "285" -> "304" 
+  "285" -> "28" 
+  "285" -> "309" 
+  "285" -> "312" 
+  "285" -> "316" 
+  "287" -> "288" 
+  "287" -> "289" 
+  "289" -> "290" 
+  "289" -> "291" 
+  "291" -> "292" 
+  "291" -> "295" 
+  "292" -> "293" 
+  "292" -> "294" 
+  "296" -> "297" 
+  "296" -> "300" 
+  "297" -> "298" 
+  "297" -> "299" 
+  "300" -> "301" 
+  "301" -> "302" 
+  "304" -> "305" 
+  "304" -> "306" 
+  "306" -> "307" 
+  "306" -> "308" 
+  "309" -> "310" 
+  "309" -> "311" 
+  "312" -> "27" 
+  "312" -> "313" 
+  "312" -> "314" 
+  "314" -> "315" 
+  "316" -> "317" 
+  "316" -> "319" 
+  "317" -> "318" 
+  "319" -> "320" 
+  "319" -> "321" 
+  "319" -> "324" 
+  "319" -> "326" 
+  "319" -> "327" 
+  "319" -> "330" 
+  "319" -> "332" 
+  "319" -> "349" 
+  "319" -> "350" 
+  "321" -> "322" 
+  "321" -> "323" 
+  "324" -> "325" 
+  "327" -> "328" 
+  "327" -> "329" 
+  "330" -> "331" 
+  "332" -> "333" 
+  "333" -> "334" 
+  "333" -> "337" 
+  "333" -> "348" 
+  "334" -> "335" 
+  "334" -> "336" 
+  "337" -> "338" 
+  "337" -> "339" 
+  "337" -> "340" 
+  "340" -> "341" 
+  "340" -> "344" 
+  "340" -> "347" 
+  "341" -> "342" 
+  "341" -> "343" 
+  "344" -> "345" 
+  "344" -> "346" 
+  "350" -> "351" 
+  "351" -> "352" 
+  "351" -> "355" 
+  "351" -> "361" 
+  "352" -> "353" 
+  "352" -> "354" 
+  "355" -> "356" 
+  "355" -> "357" 
+  "357" -> "358" 
+  "357" -> "359" 
+  "359" -> "360" 
+}

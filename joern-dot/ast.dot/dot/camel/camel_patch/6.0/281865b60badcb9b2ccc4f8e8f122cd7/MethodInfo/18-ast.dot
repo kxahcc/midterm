@@ -1,0 +1,215 @@
+digraph "getPatternAnnotation" {  
+"484" [label = <(METHOD,getPatternAnnotation)<SUB>250</SUB>> ]
+"25" [label = <(PARAM,this)<SUB>250</SUB>> ]
+"485" [label = <(PARAM,AnnotatedElement annotatedElement)<SUB>250</SUB>> ]
+"486" [label = <(PARAM,int depth)<SUB>250</SUB>> ]
+"487" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>250</SUB>> ]
+"488" [label = <(LOCAL,Pattern answer: org.apache.camel.Pattern)> ]
+"489" [label = <(&lt;operator&gt;.assignment,Pattern answer = getAnnotation(Pattern.class))<SUB>251</SUB>> ]
+"490" [label = <(IDENTIFIER,answer,Pattern answer = getAnnotation(Pattern.class))<SUB>251</SUB>> ]
+"491" [label = <(getAnnotation,getAnnotation(Pattern.class))<SUB>251</SUB>> ]
+"492" [label = <(IDENTIFIER,annotatedElement,getAnnotation(Pattern.class))<SUB>251</SUB>> ]
+"493" [label = <(&lt;operator&gt;.fieldAccess,Pattern.class)<SUB>251</SUB>> ]
+"494" [label = <(IDENTIFIER,Pattern,getAnnotation(Pattern.class))<SUB>251</SUB>> ]
+"495" [label = <(FIELD_IDENTIFIER,class,class)<SUB>251</SUB>> ]
+"496" [label = <(LOCAL,int nextDepth: int)> ]
+"497" [label = <(&lt;operator&gt;.assignment,int nextDepth = depth - 1)<SUB>252</SUB>> ]
+"498" [label = <(IDENTIFIER,nextDepth,int nextDepth = depth - 1)<SUB>252</SUB>> ]
+"499" [label = <(&lt;operator&gt;.subtraction,depth - 1)<SUB>252</SUB>> ]
+"500" [label = <(IDENTIFIER,depth,depth - 1)<SUB>252</SUB>> ]
+"501" [label = <(LITERAL,1,depth - 1)<SUB>252</SUB>> ]
+"502" [label = <(CONTROL_STRUCTURE,if (nextDepth &gt; 0),if (nextDepth &gt; 0))<SUB>254</SUB>> ]
+"503" [label = <(&lt;operator&gt;.greaterThan,nextDepth &gt; 0)<SUB>254</SUB>> ]
+"504" [label = <(IDENTIFIER,nextDepth,nextDepth &gt; 0)<SUB>254</SUB>> ]
+"505" [label = <(LITERAL,0,nextDepth &gt; 0)<SUB>254</SUB>> ]
+"506" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>254</SUB>> ]
+"507" [label = <(LOCAL,Annotation[] annotations: java.lang.annotation.Annotation[])> ]
+"508" [label = <(&lt;operator&gt;.assignment,Annotation[] annotations = annotatedElement.getAnnotations())<SUB>256</SUB>> ]
+"509" [label = <(IDENTIFIER,annotations,Annotation[] annotations = annotatedElement.getAnnotations())<SUB>256</SUB>> ]
+"510" [label = <(getAnnotations,annotatedElement.getAnnotations())<SUB>256</SUB>> ]
+"511" [label = <(IDENTIFIER,annotatedElement,annotatedElement.getAnnotations())<SUB>256</SUB>> ]
+"512" [label = <(CONTROL_STRUCTURE,&lt;empty&gt;,&lt;empty&gt;)> ]
+"513" [label = <(LOCAL,$idx1: int)<SUB>257</SUB>> ]
+"514" [label = <(&lt;operator&gt;.assignment,int $idx1 = 0)<SUB>257</SUB>> ]
+"515" [label = <(IDENTIFIER,$idx1,int $idx1 = 0)<SUB>257</SUB>> ]
+"516" [label = <(LITERAL,0,int $idx1 = 0)<SUB>257</SUB>> ]
+"517" [label = <(&lt;operator&gt;.lessThan,$idx1 &lt; annotations.length)<SUB>257</SUB>> ]
+"518" [label = <(IDENTIFIER,$idx1,$idx1 &lt; annotations.length)<SUB>257</SUB>> ]
+"519" [label = <(&lt;operator&gt;.fieldAccess,annotations.length)<SUB>257</SUB>> ]
+"520" [label = <(IDENTIFIER,annotations,$idx1 &lt; annotations.length)<SUB>257</SUB>> ]
+"521" [label = <(FIELD_IDENTIFIER,length,length)<SUB>257</SUB>> ]
+"522" [label = <(&lt;operator&gt;.postIncrement,$idx1++)<SUB>257</SUB>> ]
+"523" [label = <(IDENTIFIER,$idx1,$idx1++)<SUB>257</SUB>> ]
+"524" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>257</SUB>> ]
+"525" [label = <(LOCAL,annotation: java.lang.annotation.Annotation)<SUB>257</SUB>> ]
+"526" [label = <(&lt;operator&gt;.assignment,&lt;empty&gt;)<SUB>257</SUB>> ]
+"527" [label = <(IDENTIFIER,annotation,&lt;empty&gt;)<SUB>257</SUB>> ]
+"528" [label = <(&lt;operator&gt;.indexAccess,&lt;empty&gt;)<SUB>257</SUB>> ]
+"529" [label = <(IDENTIFIER,annotations,&lt;empty&gt;)<SUB>257</SUB>> ]
+"530" [label = <(IDENTIFIER,$idx1,&lt;empty&gt;)<SUB>257</SUB>> ]
+"531" [label = <(LOCAL,Class&lt;? extends Annotation&gt; annotationType: java.lang.Class)> ]
+"532" [label = <(&lt;operator&gt;.assignment,Class annotationType = annotation.annotationType())<SUB>258</SUB>> ]
+"533" [label = <(IDENTIFIER,annotationType,Class annotationType = annotation.annotationType())<SUB>258</SUB>> ]
+"534" [label = <(annotationType,annotation.annotationType())<SUB>258</SUB>> ]
+"535" [label = <(IDENTIFIER,annotation,annotation.annotationType())<SUB>258</SUB>> ]
+"536" [label = <(CONTROL_STRUCTURE,if (annotation instanceof Pattern || annotationType.equals(annotatedElement)),if (annotation instanceof Pattern || annotationType.equals(annotatedElement)))<SUB>259</SUB>> ]
+"537" [label = <(&lt;operator&gt;.logicalOr,annotation instanceof Pattern || annotationType.equals(annotatedElement))<SUB>259</SUB>> ]
+"538" [label = <(&lt;operator&gt;.instanceOf,annotation instanceof Pattern)<SUB>259</SUB>> ]
+"539" [label = <(IDENTIFIER,annotation,annotation instanceof Pattern)<SUB>259</SUB>> ]
+"540" [label = <(TYPE_REF,Pattern,Pattern)<SUB>259</SUB>> ]
+"541" [label = <(equals,annotationType.equals(annotatedElement))<SUB>259</SUB>> ]
+"542" [label = <(IDENTIFIER,annotationType,annotationType.equals(annotatedElement))<SUB>259</SUB>> ]
+"543" [label = <(IDENTIFIER,annotatedElement,annotationType.equals(annotatedElement))<SUB>259</SUB>> ]
+"544" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>259</SUB>> ]
+"545" [label = <(CONTROL_STRUCTURE,continue;,continue;)<SUB>260</SUB>> ]
+"546" [label = <(CONTROL_STRUCTURE,else,else)<SUB>261</SUB>> ]
+"547" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>261</SUB>> ]
+"548" [label = <(LOCAL,Pattern another: org.apache.camel.Pattern)> ]
+"549" [label = <(&lt;operator&gt;.assignment,Pattern another = this.getPatternAnnotation(annotationType, nextDepth))<SUB>262</SUB>> ]
+"550" [label = <(IDENTIFIER,another,Pattern another = this.getPatternAnnotation(annotationType, nextDepth))<SUB>262</SUB>> ]
+"551" [label = <(getPatternAnnotation,this.getPatternAnnotation(annotationType, nextDepth))<SUB>262</SUB>> ]
+"24" [label = <(IDENTIFIER,this,this.getPatternAnnotation(annotationType, nextDepth))<SUB>262</SUB>> ]
+"552" [label = <(IDENTIFIER,annotationType,this.getPatternAnnotation(annotationType, nextDepth))<SUB>262</SUB>> ]
+"553" [label = <(IDENTIFIER,nextDepth,this.getPatternAnnotation(annotationType, nextDepth))<SUB>262</SUB>> ]
+"554" [label = <(CONTROL_STRUCTURE,if (pattern != null),if (pattern != null))<SUB>263</SUB>> ]
+"555" [label = <(&lt;operator&gt;.notEquals,pattern != null)<SUB>263</SUB>> ]
+"556" [label = <(&lt;operator&gt;.fieldAccess,this.pattern)<SUB>263</SUB>> ]
+"557" [label = <(IDENTIFIER,this,pattern != null)<SUB>263</SUB>> ]
+"558" [label = <(FIELD_IDENTIFIER,pattern,pattern)<SUB>263</SUB>> ]
+"559" [label = <(LITERAL,null,pattern != null)<SUB>263</SUB>> ]
+"560" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>263</SUB>> ]
+"561" [label = <(CONTROL_STRUCTURE,if (answer == null),if (answer == null))<SUB>264</SUB>> ]
+"562" [label = <(&lt;operator&gt;.equals,answer == null)<SUB>264</SUB>> ]
+"563" [label = <(IDENTIFIER,answer,answer == null)<SUB>264</SUB>> ]
+"564" [label = <(LITERAL,null,answer == null)<SUB>264</SUB>> ]
+"565" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>264</SUB>> ]
+"566" [label = <(&lt;operator&gt;.assignment,answer = another)<SUB>265</SUB>> ]
+"567" [label = <(IDENTIFIER,answer,answer = another)<SUB>265</SUB>> ]
+"568" [label = <(IDENTIFIER,another,answer = another)<SUB>265</SUB>> ]
+"569" [label = <(CONTROL_STRUCTURE,else,else)<SUB>266</SUB>> ]
+"570" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>266</SUB>> ]
+"571" [label = <(warn,warn(&quot;Duplicate pattern annotation: &quot; + another + &quot; found on annotation: &quot; + annotation + &quot; which will be ignored&quot;))<SUB>267</SUB>> ]
+"572" [label = <(&lt;operator&gt;.fieldAccess,MethodInfo.LOG)<SUB>267</SUB>> ]
+"573" [label = <(IDENTIFIER,MethodInfo,warn(&quot;Duplicate pattern annotation: &quot; + another + &quot; found on annotation: &quot; + annotation + &quot; which will be ignored&quot;))<SUB>267</SUB>> ]
+"574" [label = <(FIELD_IDENTIFIER,LOG,LOG)<SUB>267</SUB>> ]
+"575" [label = <(&lt;operator&gt;.addition,&quot;Duplicate pattern annotation: &quot; + another + &quot; found on annotation: &quot; + annotation + &quot; which will be ignored&quot;)<SUB>267</SUB>> ]
+"576" [label = <(&lt;operator&gt;.addition,&quot;Duplicate pattern annotation: &quot; + another + &quot; found on annotation: &quot; + annotation)<SUB>267</SUB>> ]
+"577" [label = <(&lt;operator&gt;.addition,&quot;Duplicate pattern annotation: &quot; + another + &quot; found on annotation: &quot;)<SUB>267</SUB>> ]
+"578" [label = <(&lt;operator&gt;.addition,&quot;Duplicate pattern annotation: &quot; + another)<SUB>267</SUB>> ]
+"579" [label = <(LITERAL,&quot;Duplicate pattern annotation: &quot;,&quot;Duplicate pattern annotation: &quot; + another)<SUB>267</SUB>> ]
+"580" [label = <(IDENTIFIER,another,&quot;Duplicate pattern annotation: &quot; + another)<SUB>267</SUB>> ]
+"581" [label = <(LITERAL,&quot; found on annotation: &quot;,&quot;Duplicate pattern annotation: &quot; + another + &quot; found on annotation: &quot;)<SUB>267</SUB>> ]
+"582" [label = <(IDENTIFIER,annotation,&quot;Duplicate pattern annotation: &quot; + another + &quot; found on annotation: &quot; + annotation)<SUB>267</SUB>> ]
+"583" [label = <(LITERAL,&quot; which will be ignored&quot;,&quot;Duplicate pattern annotation: &quot; + another + &quot; found on annotation: &quot; + annotation + &quot; which will be ignored&quot;)<SUB>267</SUB>> ]
+"584" [label = <(RETURN,return answer;,return answer;)<SUB>273</SUB>> ]
+"585" [label = <(IDENTIFIER,answer,return answer;)<SUB>273</SUB>> ]
+"586" [label = <(MODIFIER,PROTECTED)> ]
+"587" [label = <(MODIFIER,VIRTUAL)> ]
+"588" [label = <(METHOD_RETURN,org.apache.camel.Pattern)<SUB>250</SUB>> ]
+  "484" -> "25" 
+  "484" -> "485" 
+  "484" -> "486" 
+  "484" -> "487" 
+  "484" -> "586" 
+  "484" -> "587" 
+  "484" -> "588" 
+  "487" -> "488" 
+  "487" -> "489" 
+  "487" -> "496" 
+  "487" -> "497" 
+  "487" -> "502" 
+  "487" -> "584" 
+  "489" -> "490" 
+  "489" -> "491" 
+  "491" -> "492" 
+  "491" -> "493" 
+  "493" -> "494" 
+  "493" -> "495" 
+  "497" -> "498" 
+  "497" -> "499" 
+  "499" -> "500" 
+  "499" -> "501" 
+  "502" -> "503" 
+  "502" -> "506" 
+  "503" -> "504" 
+  "503" -> "505" 
+  "506" -> "507" 
+  "506" -> "508" 
+  "506" -> "512" 
+  "508" -> "509" 
+  "508" -> "510" 
+  "510" -> "511" 
+  "512" -> "513" 
+  "512" -> "514" 
+  "512" -> "517" 
+  "512" -> "522" 
+  "512" -> "524" 
+  "514" -> "515" 
+  "514" -> "516" 
+  "517" -> "518" 
+  "517" -> "519" 
+  "519" -> "520" 
+  "519" -> "521" 
+  "522" -> "523" 
+  "524" -> "525" 
+  "524" -> "526" 
+  "524" -> "531" 
+  "524" -> "532" 
+  "524" -> "536" 
+  "526" -> "527" 
+  "526" -> "528" 
+  "528" -> "529" 
+  "528" -> "530" 
+  "532" -> "533" 
+  "532" -> "534" 
+  "534" -> "535" 
+  "536" -> "537" 
+  "536" -> "544" 
+  "536" -> "546" 
+  "537" -> "538" 
+  "537" -> "541" 
+  "538" -> "539" 
+  "538" -> "540" 
+  "541" -> "542" 
+  "541" -> "543" 
+  "544" -> "545" 
+  "546" -> "547" 
+  "547" -> "548" 
+  "547" -> "549" 
+  "547" -> "554" 
+  "549" -> "550" 
+  "549" -> "551" 
+  "551" -> "24" 
+  "551" -> "552" 
+  "551" -> "553" 
+  "554" -> "555" 
+  "554" -> "560" 
+  "555" -> "556" 
+  "555" -> "559" 
+  "556" -> "557" 
+  "556" -> "558" 
+  "560" -> "561" 
+  "561" -> "562" 
+  "561" -> "565" 
+  "561" -> "569" 
+  "562" -> "563" 
+  "562" -> "564" 
+  "565" -> "566" 
+  "566" -> "567" 
+  "566" -> "568" 
+  "569" -> "570" 
+  "570" -> "571" 
+  "571" -> "572" 
+  "571" -> "575" 
+  "572" -> "573" 
+  "572" -> "574" 
+  "575" -> "576" 
+  "575" -> "583" 
+  "576" -> "577" 
+  "576" -> "582" 
+  "577" -> "578" 
+  "577" -> "581" 
+  "578" -> "579" 
+  "578" -> "580" 
+  "584" -> "585" 
+}

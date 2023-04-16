@@ -1,0 +1,221 @@
+digraph "deleteSymlink" {  
+"598" [label = <(METHOD,deleteSymlink)<SUB>406</SUB>> ]
+"599" [label = <(PARAM,File linkfil)<SUB>406</SUB>> ]
+"600" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>407</SUB>> ]
+"601" [label = <(CONTROL_STRUCTURE,if (!linkfil.exists()),if (!linkfil.exists()))<SUB>408</SUB>> ]
+"602" [label = <(&lt;operator&gt;.logicalNot,!linkfil.exists())<SUB>408</SUB>> ]
+"603" [label = <(exists,linkfil.exists())<SUB>408</SUB>> ]
+"604" [label = <(IDENTIFIER,linkfil,linkfil.exists())<SUB>408</SUB>> ]
+"605" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>408</SUB>> ]
+"606" [label = <(&lt;operator&gt;.throw,throw new FileNotFoundException(&quot;No such symlink: &quot; + linkfil);)<SUB>409</SUB>> ]
+"607" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>409</SUB>> ]
+"608" [label = <(&lt;operator&gt;.assignment,&lt;empty&gt;)> ]
+"609" [label = <(IDENTIFIER,$obj8,&lt;empty&gt;)> ]
+"610" [label = <(&lt;operator&gt;.alloc,new FileNotFoundException(&quot;No such symlink: &quot; + linkfil))<SUB>409</SUB>> ]
+"611" [label = <(&lt;init&gt;,new FileNotFoundException(&quot;No such symlink: &quot; + linkfil))<SUB>409</SUB>> ]
+"612" [label = <(IDENTIFIER,$obj8,new FileNotFoundException(&quot;No such symlink: &quot; + linkfil))> ]
+"613" [label = <(&lt;operator&gt;.addition,&quot;No such symlink: &quot; + linkfil)<SUB>409</SUB>> ]
+"614" [label = <(LITERAL,&quot;No such symlink: &quot;,&quot;No such symlink: &quot; + linkfil)<SUB>409</SUB>> ]
+"615" [label = <(IDENTIFIER,linkfil,&quot;No such symlink: &quot; + linkfil)<SUB>409</SUB>> ]
+"616" [label = <(IDENTIFIER,$obj8,&lt;empty&gt;)> ]
+"617" [label = <(LOCAL,File canfil: java.io.File)> ]
+"618" [label = <(&lt;operator&gt;.assignment,File canfil = linkfil.getCanonicalFile())<SUB>412</SUB>> ]
+"619" [label = <(IDENTIFIER,canfil,File canfil = linkfil.getCanonicalFile())<SUB>412</SUB>> ]
+"620" [label = <(getCanonicalFile,linkfil.getCanonicalFile())<SUB>412</SUB>> ]
+"621" [label = <(IDENTIFIER,linkfil,linkfil.getCanonicalFile())<SUB>412</SUB>> ]
+"622" [label = <(LOCAL,File temp: java.io.File)> ]
+"623" [label = <(&lt;operator&gt;.assignment,File temp = createTempFile(&quot;symlink&quot;, &quot;.tmp&quot;, canfil.getParentFile()))<SUB>415</SUB>> ]
+"624" [label = <(IDENTIFIER,temp,File temp = createTempFile(&quot;symlink&quot;, &quot;.tmp&quot;, canfil.getParentFile()))<SUB>415</SUB>> ]
+"625" [label = <(createTempFile,createTempFile(&quot;symlink&quot;, &quot;.tmp&quot;, canfil.getParentFile()))<SUB>415</SUB>> ]
+"626" [label = <(&lt;operator&gt;.fieldAccess,Symlink.FILE_UTILS)<SUB>415</SUB>> ]
+"627" [label = <(IDENTIFIER,Symlink,createTempFile(&quot;symlink&quot;, &quot;.tmp&quot;, canfil.getParentFile()))<SUB>415</SUB>> ]
+"628" [label = <(FIELD_IDENTIFIER,FILE_UTILS,FILE_UTILS)<SUB>415</SUB>> ]
+"629" [label = <(LITERAL,&quot;symlink&quot;,createTempFile(&quot;symlink&quot;, &quot;.tmp&quot;, canfil.getParentFile()))<SUB>415</SUB>> ]
+"630" [label = <(LITERAL,&quot;.tmp&quot;,createTempFile(&quot;symlink&quot;, &quot;.tmp&quot;, canfil.getParentFile()))<SUB>415</SUB>> ]
+"631" [label = <(getParentFile,canfil.getParentFile())<SUB>416</SUB>> ]
+"632" [label = <(IDENTIFIER,canfil,canfil.getParentFile())<SUB>416</SUB>> ]
+"633" [label = <(CONTROL_STRUCTURE,try,try)<SUB>417</SUB>> ]
+"634" [label = <(BLOCK,try,try)<SUB>417</SUB>> ]
+"635" [label = <(CONTROL_STRUCTURE,try,try)<SUB>418</SUB>> ]
+"636" [label = <(BLOCK,try,try)<SUB>418</SUB>> ]
+"637" [label = <(rename,rename(canfil, temp))<SUB>419</SUB>> ]
+"638" [label = <(&lt;operator&gt;.fieldAccess,Symlink.FILE_UTILS)<SUB>419</SUB>> ]
+"639" [label = <(IDENTIFIER,Symlink,rename(canfil, temp))<SUB>419</SUB>> ]
+"640" [label = <(FIELD_IDENTIFIER,FILE_UTILS,FILE_UTILS)<SUB>419</SUB>> ]
+"641" [label = <(IDENTIFIER,canfil,rename(canfil, temp))<SUB>419</SUB>> ]
+"642" [label = <(IDENTIFIER,temp,rename(canfil, temp))<SUB>419</SUB>> ]
+"643" [label = <(BLOCK,catch,catch)> ]
+"644" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>420</SUB>> ]
+"645" [label = <(&lt;operator&gt;.throw,throw new IOException(&quot;Couldn't rename resource when attempting to delete &quot; + linkfil);)<SUB>421</SUB>> ]
+"646" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>421</SUB>> ]
+"647" [label = <(&lt;operator&gt;.assignment,&lt;empty&gt;)> ]
+"648" [label = <(IDENTIFIER,$obj9,&lt;empty&gt;)> ]
+"649" [label = <(&lt;operator&gt;.alloc,new IOException(&quot;Couldn't rename resource when attempting to delete &quot; + linkfil))<SUB>421</SUB>> ]
+"650" [label = <(&lt;init&gt;,new IOException(&quot;Couldn't rename resource when attempting to delete &quot; + linkfil))<SUB>421</SUB>> ]
+"651" [label = <(IDENTIFIER,$obj9,new IOException(&quot;Couldn't rename resource when attempting to delete &quot; + linkfil))> ]
+"652" [label = <(&lt;operator&gt;.addition,&quot;Couldn't rename resource when attempting to delete &quot; + linkfil)<SUB>422</SUB>> ]
+"653" [label = <(LITERAL,&quot;Couldn't rename resource when attempting to delete &quot;,&quot;Couldn't rename resource when attempting to delete &quot; + linkfil)<SUB>422</SUB>> ]
+"654" [label = <(IDENTIFIER,linkfil,&quot;Couldn't rename resource when attempting to delete &quot; + linkfil)<SUB>423</SUB>> ]
+"655" [label = <(IDENTIFIER,$obj9,&lt;empty&gt;)> ]
+"656" [label = <(CONTROL_STRUCTURE,if (!linkfil.delete()),if (!linkfil.delete()))<SUB>426</SUB>> ]
+"657" [label = <(&lt;operator&gt;.logicalNot,!linkfil.delete())<SUB>426</SUB>> ]
+"658" [label = <(delete,linkfil.delete())<SUB>426</SUB>> ]
+"659" [label = <(IDENTIFIER,linkfil,linkfil.delete())<SUB>426</SUB>> ]
+"660" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>426</SUB>> ]
+"661" [label = <(&lt;operator&gt;.throw,throw new IOException(&quot;Couldn't delete symlink: &quot; + linkfil + &quot; (was it a real file? is this not a UNIX system?)&quot;);)<SUB>427</SUB>> ]
+"662" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>427</SUB>> ]
+"663" [label = <(&lt;operator&gt;.assignment,&lt;empty&gt;)> ]
+"664" [label = <(IDENTIFIER,$obj10,&lt;empty&gt;)> ]
+"665" [label = <(&lt;operator&gt;.alloc,new IOException(&quot;Couldn't delete symlink: &quot; + linkfil + &quot; (was it a real file? is this not a UNIX system?)&quot;))<SUB>427</SUB>> ]
+"666" [label = <(&lt;init&gt;,new IOException(&quot;Couldn't delete symlink: &quot; + linkfil + &quot; (was it a real file? is this not a UNIX system?)&quot;))<SUB>427</SUB>> ]
+"667" [label = <(IDENTIFIER,$obj10,new IOException(&quot;Couldn't delete symlink: &quot; + linkfil + &quot; (was it a real file? is this not a UNIX system?)&quot;))> ]
+"668" [label = <(&lt;operator&gt;.addition,&quot;Couldn't delete symlink: &quot; + linkfil + &quot; (was it a real file? is this not a UNIX system?)&quot;)<SUB>427</SUB>> ]
+"669" [label = <(&lt;operator&gt;.addition,&quot;Couldn't delete symlink: &quot; + linkfil)<SUB>427</SUB>> ]
+"670" [label = <(LITERAL,&quot;Couldn't delete symlink: &quot;,&quot;Couldn't delete symlink: &quot; + linkfil)<SUB>427</SUB>> ]
+"671" [label = <(IDENTIFIER,linkfil,&quot;Couldn't delete symlink: &quot; + linkfil)<SUB>427</SUB>> ]
+"672" [label = <(LITERAL,&quot; (was it a real file? is this not a UNIX system?)&quot;,&quot;Couldn't delete symlink: &quot; + linkfil + &quot; (was it a real file? is this not a UNIX system?)&quot;)<SUB>428</SUB>> ]
+"673" [label = <(IDENTIFIER,$obj10,&lt;empty&gt;)> ]
+"674" [label = <(BLOCK,finally,finally)<SUB>430</SUB>> ]
+"675" [label = <(CONTROL_STRUCTURE,try,try)<SUB>432</SUB>> ]
+"676" [label = <(BLOCK,try,try)<SUB>432</SUB>> ]
+"677" [label = <(rename,rename(temp, canfil))<SUB>433</SUB>> ]
+"678" [label = <(&lt;operator&gt;.fieldAccess,Symlink.FILE_UTILS)<SUB>433</SUB>> ]
+"679" [label = <(IDENTIFIER,Symlink,rename(temp, canfil))<SUB>433</SUB>> ]
+"680" [label = <(FIELD_IDENTIFIER,FILE_UTILS,FILE_UTILS)<SUB>433</SUB>> ]
+"681" [label = <(IDENTIFIER,temp,rename(temp, canfil))<SUB>433</SUB>> ]
+"682" [label = <(IDENTIFIER,canfil,rename(temp, canfil))<SUB>433</SUB>> ]
+"683" [label = <(BLOCK,catch,catch)> ]
+"684" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>434</SUB>> ]
+"685" [label = <(&lt;operator&gt;.throw,throw new IOException(&quot;Couldn't return resource &quot; + temp + &quot; to its original name: &quot; + canfil.getAbsolutePath() + &quot;\n THE RESOURCE'S NAME ON DISK HAS &quot; + &quot;BEEN CHANGED BY THIS ERROR!\n&quot;);)<SUB>435</SUB>> ]
+"686" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>435</SUB>> ]
+"687" [label = <(&lt;operator&gt;.assignment,&lt;empty&gt;)> ]
+"688" [label = <(IDENTIFIER,$obj11,&lt;empty&gt;)> ]
+"689" [label = <(&lt;operator&gt;.alloc,new IOException(&quot;Couldn't return resource &quot; + temp + &quot; to its original name: &quot; + canfil.getAbsolutePath() + &quot;\n THE RESOURCE'S NAME ON DISK HAS &quot; + &quot;BEEN CHANGED BY THIS ERROR!\n&quot;))<SUB>435</SUB>> ]
+"690" [label = <(&lt;init&gt;,new IOException(&quot;Couldn't return resource &quot; + temp + &quot; to its original name: &quot; + canfil.getAbsolutePath() + &quot;\n THE RESOURCE'S NAME ON DISK HAS &quot; + &quot;BEEN CHANGED BY THIS ERROR!\n&quot;))<SUB>435</SUB>> ]
+"691" [label = <(IDENTIFIER,$obj11,new IOException(&quot;Couldn't return resource &quot; + temp + &quot; to its original name: &quot; + canfil.getAbsolutePath() + &quot;\n THE RESOURCE'S NAME ON DISK HAS &quot; + &quot;BEEN CHANGED BY THIS ERROR!\n&quot;))> ]
+"692" [label = <(&lt;operator&gt;.addition,&quot;Couldn't return resource &quot; + temp + &quot; to its original name: &quot; + canfil.getAbsolutePath() + &quot;\n THE RESOURCE'S NAME ON DISK HAS &quot; + &quot;BEEN CHANGED BY THIS ERROR!\n&quot;)<SUB>435</SUB>> ]
+"693" [label = <(&lt;operator&gt;.addition,&quot;Couldn't return resource &quot; + temp + &quot; to its original name: &quot; + canfil.getAbsolutePath() + &quot;\n THE RESOURCE'S NAME ON DISK HAS &quot;)<SUB>435</SUB>> ]
+"694" [label = <(&lt;operator&gt;.addition,&quot;Couldn't return resource &quot; + temp + &quot; to its original name: &quot; + canfil.getAbsolutePath())<SUB>435</SUB>> ]
+"695" [label = <(&lt;operator&gt;.addition,&quot;Couldn't return resource &quot; + temp + &quot; to its original name: &quot;)<SUB>435</SUB>> ]
+"696" [label = <(&lt;operator&gt;.addition,&quot;Couldn't return resource &quot; + temp)<SUB>435</SUB>> ]
+"697" [label = <(LITERAL,&quot;Couldn't return resource &quot;,&quot;Couldn't return resource &quot; + temp)<SUB>435</SUB>> ]
+"698" [label = <(IDENTIFIER,temp,&quot;Couldn't return resource &quot; + temp)<SUB>435</SUB>> ]
+"699" [label = <(LITERAL,&quot; to its original name: &quot;,&quot;Couldn't return resource &quot; + temp + &quot; to its original name: &quot;)<SUB>436</SUB>> ]
+"700" [label = <(getAbsolutePath,canfil.getAbsolutePath())<SUB>436</SUB>> ]
+"701" [label = <(IDENTIFIER,canfil,canfil.getAbsolutePath())<SUB>436</SUB>> ]
+"702" [label = <(LITERAL,&quot;\n THE RESOURCE'S NAME ON DISK HAS &quot;,&quot;Couldn't return resource &quot; + temp + &quot; to its original name: &quot; + canfil.getAbsolutePath() + &quot;\n THE RESOURCE'S NAME ON DISK HAS &quot;)<SUB>437</SUB>> ]
+"703" [label = <(LITERAL,&quot;BEEN CHANGED BY THIS ERROR!\n&quot;,&quot;Couldn't return resource &quot; + temp + &quot; to its original name: &quot; + canfil.getAbsolutePath() + &quot;\n THE RESOURCE'S NAME ON DISK HAS &quot; + &quot;BEEN CHANGED BY THIS ERROR!\n&quot;)<SUB>438</SUB>> ]
+"704" [label = <(IDENTIFIER,$obj11,&lt;empty&gt;)> ]
+"705" [label = <(MODIFIER,PUBLIC)> ]
+"706" [label = <(MODIFIER,STATIC)> ]
+"707" [label = <(METHOD_RETURN,void)<SUB>406</SUB>> ]
+  "598" -> "599" 
+  "598" -> "600" 
+  "598" -> "705" 
+  "598" -> "706" 
+  "598" -> "707" 
+  "600" -> "601" 
+  "600" -> "617" 
+  "600" -> "618" 
+  "600" -> "622" 
+  "600" -> "623" 
+  "600" -> "633" 
+  "601" -> "602" 
+  "601" -> "605" 
+  "602" -> "603" 
+  "603" -> "604" 
+  "605" -> "606" 
+  "606" -> "607" 
+  "607" -> "608" 
+  "607" -> "611" 
+  "607" -> "616" 
+  "608" -> "609" 
+  "608" -> "610" 
+  "611" -> "612" 
+  "611" -> "613" 
+  "613" -> "614" 
+  "613" -> "615" 
+  "618" -> "619" 
+  "618" -> "620" 
+  "620" -> "621" 
+  "623" -> "624" 
+  "623" -> "625" 
+  "625" -> "626" 
+  "625" -> "629" 
+  "625" -> "630" 
+  "625" -> "631" 
+  "626" -> "627" 
+  "626" -> "628" 
+  "631" -> "632" 
+  "633" -> "634" 
+  "633" -> "674" 
+  "634" -> "635" 
+  "634" -> "656" 
+  "635" -> "636" 
+  "635" -> "643" 
+  "636" -> "637" 
+  "637" -> "638" 
+  "637" -> "641" 
+  "637" -> "642" 
+  "638" -> "639" 
+  "638" -> "640" 
+  "643" -> "644" 
+  "644" -> "645" 
+  "645" -> "646" 
+  "646" -> "647" 
+  "646" -> "650" 
+  "646" -> "655" 
+  "647" -> "648" 
+  "647" -> "649" 
+  "650" -> "651" 
+  "650" -> "652" 
+  "652" -> "653" 
+  "652" -> "654" 
+  "656" -> "657" 
+  "656" -> "660" 
+  "657" -> "658" 
+  "658" -> "659" 
+  "660" -> "661" 
+  "661" -> "662" 
+  "662" -> "663" 
+  "662" -> "666" 
+  "662" -> "673" 
+  "663" -> "664" 
+  "663" -> "665" 
+  "666" -> "667" 
+  "666" -> "668" 
+  "668" -> "669" 
+  "668" -> "672" 
+  "669" -> "670" 
+  "669" -> "671" 
+  "674" -> "675" 
+  "675" -> "676" 
+  "675" -> "683" 
+  "676" -> "677" 
+  "677" -> "678" 
+  "677" -> "681" 
+  "677" -> "682" 
+  "678" -> "679" 
+  "678" -> "680" 
+  "683" -> "684" 
+  "684" -> "685" 
+  "685" -> "686" 
+  "686" -> "687" 
+  "686" -> "690" 
+  "686" -> "704" 
+  "687" -> "688" 
+  "687" -> "689" 
+  "690" -> "691" 
+  "690" -> "692" 
+  "692" -> "693" 
+  "692" -> "703" 
+  "693" -> "694" 
+  "693" -> "702" 
+  "694" -> "695" 
+  "694" -> "700" 
+  "695" -> "696" 
+  "695" -> "699" 
+  "696" -> "697" 
+  "696" -> "698" 
+  "700" -> "701" 
+}

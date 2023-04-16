@@ -1,0 +1,485 @@
+digraph "loadConverterMethods" {  
+"301" [label = <(METHOD,loadConverterMethods)<SUB>132</SUB>> ]
+"21" [label = <(PARAM,this)<SUB>132</SUB>> ]
+"302" [label = <(PARAM,TypeConverterRegistry registry)<SUB>132</SUB>> ]
+"303" [label = <(PARAM,Class type)<SUB>132</SUB>> ]
+"304" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>132</SUB>> ]
+"305" [label = <(CONTROL_STRUCTURE,if (visitedClasses.contains(type)),if (visitedClasses.contains(type)))<SUB>133</SUB>> ]
+"306" [label = <(contains,visitedClasses.contains(type))<SUB>133</SUB>> ]
+"307" [label = <(&lt;operator&gt;.fieldAccess,this.visitedClasses)<SUB>133</SUB>> ]
+"308" [label = <(IDENTIFIER,this,visitedClasses.contains(type))<SUB>133</SUB>> ]
+"309" [label = <(FIELD_IDENTIFIER,visitedClasses,visitedClasses)<SUB>133</SUB>> ]
+"310" [label = <(IDENTIFIER,type,visitedClasses.contains(type))<SUB>133</SUB>> ]
+"311" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>133</SUB>> ]
+"312" [label = <(RETURN,return;,return;)<SUB>134</SUB>> ]
+"313" [label = <(add,visitedClasses.add(type))<SUB>136</SUB>> ]
+"314" [label = <(&lt;operator&gt;.fieldAccess,this.visitedClasses)<SUB>136</SUB>> ]
+"315" [label = <(IDENTIFIER,this,visitedClasses.add(type))<SUB>136</SUB>> ]
+"316" [label = <(FIELD_IDENTIFIER,visitedClasses,visitedClasses)<SUB>136</SUB>> ]
+"317" [label = <(IDENTIFIER,type,visitedClasses.add(type))<SUB>136</SUB>> ]
+"318" [label = <(CONTROL_STRUCTURE,try,try)<SUB>137</SUB>> ]
+"319" [label = <(BLOCK,try,try)<SUB>137</SUB>> ]
+"320" [label = <(LOCAL,Method[] methods: java.lang.reflect.Method[])> ]
+"321" [label = <(&lt;operator&gt;.assignment,Method[] methods = type.getDeclaredMethods())<SUB>138</SUB>> ]
+"322" [label = <(IDENTIFIER,methods,Method[] methods = type.getDeclaredMethods())<SUB>138</SUB>> ]
+"323" [label = <(getDeclaredMethods,type.getDeclaredMethods())<SUB>138</SUB>> ]
+"324" [label = <(IDENTIFIER,type,type.getDeclaredMethods())<SUB>138</SUB>> ]
+"23" [label = <(LOCAL,CachingInjector injector: ANY)> ]
+"325" [label = <(&lt;operator&gt;.assignment,ANY injector = null)<SUB>139</SUB>> ]
+"326" [label = <(IDENTIFIER,injector,ANY injector = null)<SUB>139</SUB>> ]
+"327" [label = <(LITERAL,null,ANY injector = null)<SUB>139</SUB>> ]
+"328" [label = <(CONTROL_STRUCTURE,&lt;empty&gt;,&lt;empty&gt;)> ]
+"329" [label = <(LOCAL,$idx0: int)<SUB>141</SUB>> ]
+"330" [label = <(&lt;operator&gt;.assignment,int $idx0 = 0)<SUB>141</SUB>> ]
+"331" [label = <(IDENTIFIER,$idx0,int $idx0 = 0)<SUB>141</SUB>> ]
+"332" [label = <(LITERAL,0,int $idx0 = 0)<SUB>141</SUB>> ]
+"333" [label = <(&lt;operator&gt;.lessThan,$idx0 &lt; methods.length)<SUB>141</SUB>> ]
+"334" [label = <(IDENTIFIER,$idx0,$idx0 &lt; methods.length)<SUB>141</SUB>> ]
+"335" [label = <(&lt;operator&gt;.fieldAccess,methods.length)<SUB>141</SUB>> ]
+"336" [label = <(IDENTIFIER,methods,$idx0 &lt; methods.length)<SUB>141</SUB>> ]
+"337" [label = <(FIELD_IDENTIFIER,length,length)<SUB>141</SUB>> ]
+"338" [label = <(&lt;operator&gt;.postIncrement,$idx0++)<SUB>141</SUB>> ]
+"339" [label = <(IDENTIFIER,$idx0,$idx0++)<SUB>141</SUB>> ]
+"340" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>141</SUB>> ]
+"341" [label = <(LOCAL,method: java.lang.reflect.Method)<SUB>141</SUB>> ]
+"342" [label = <(&lt;operator&gt;.assignment,&lt;empty&gt;)<SUB>141</SUB>> ]
+"343" [label = <(IDENTIFIER,method,&lt;empty&gt;)<SUB>141</SUB>> ]
+"344" [label = <(&lt;operator&gt;.indexAccess,&lt;empty&gt;)<SUB>141</SUB>> ]
+"345" [label = <(IDENTIFIER,methods,&lt;empty&gt;)<SUB>141</SUB>> ]
+"346" [label = <(IDENTIFIER,$idx0,&lt;empty&gt;)<SUB>141</SUB>> ]
+"347" [label = <(LOCAL,Converter annotation: org.apache.camel.Converter)> ]
+"348" [label = <(&lt;operator&gt;.assignment,Converter annotation = getAnnotation(Converter.class))<SUB>142</SUB>> ]
+"349" [label = <(IDENTIFIER,annotation,Converter annotation = getAnnotation(Converter.class))<SUB>142</SUB>> ]
+"350" [label = <(getAnnotation,getAnnotation(Converter.class))<SUB>142</SUB>> ]
+"351" [label = <(IDENTIFIER,method,getAnnotation(Converter.class))<SUB>142</SUB>> ]
+"352" [label = <(&lt;operator&gt;.fieldAccess,Converter.class)<SUB>142</SUB>> ]
+"353" [label = <(IDENTIFIER,Converter,getAnnotation(Converter.class))<SUB>142</SUB>> ]
+"354" [label = <(FIELD_IDENTIFIER,class,class)<SUB>142</SUB>> ]
+"355" [label = <(CONTROL_STRUCTURE,if (annotation != null),if (annotation != null))<SUB>143</SUB>> ]
+"356" [label = <(&lt;operator&gt;.notEquals,annotation != null)<SUB>143</SUB>> ]
+"357" [label = <(IDENTIFIER,annotation,annotation != null)<SUB>143</SUB>> ]
+"358" [label = <(LITERAL,null,annotation != null)<SUB>143</SUB>> ]
+"359" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>143</SUB>> ]
+"360" [label = <(LOCAL,Class&lt;?&gt;[] parameterTypes: java.lang.Class[])> ]
+"361" [label = <(&lt;operator&gt;.assignment,Class[] parameterTypes = method.getParameterTypes())<SUB>144</SUB>> ]
+"362" [label = <(IDENTIFIER,parameterTypes,Class[] parameterTypes = method.getParameterTypes())<SUB>144</SUB>> ]
+"363" [label = <(getParameterTypes,method.getParameterTypes())<SUB>144</SUB>> ]
+"364" [label = <(IDENTIFIER,method,method.getParameterTypes())<SUB>144</SUB>> ]
+"365" [label = <(CONTROL_STRUCTURE,if (parameterTypes == null || parameterTypes.length != 1),if (parameterTypes == null || parameterTypes.length != 1))<SUB>145</SUB>> ]
+"366" [label = <(&lt;operator&gt;.logicalOr,parameterTypes == null || parameterTypes.length != 1)<SUB>145</SUB>> ]
+"367" [label = <(&lt;operator&gt;.equals,parameterTypes == null)<SUB>145</SUB>> ]
+"368" [label = <(IDENTIFIER,parameterTypes,parameterTypes == null)<SUB>145</SUB>> ]
+"369" [label = <(LITERAL,null,parameterTypes == null)<SUB>145</SUB>> ]
+"370" [label = <(&lt;operator&gt;.notEquals,parameterTypes.length != 1)<SUB>145</SUB>> ]
+"371" [label = <(&lt;operator&gt;.fieldAccess,parameterTypes.length)<SUB>145</SUB>> ]
+"372" [label = <(IDENTIFIER,parameterTypes,parameterTypes.length != 1)<SUB>145</SUB>> ]
+"373" [label = <(FIELD_IDENTIFIER,length,length)<SUB>145</SUB>> ]
+"374" [label = <(LITERAL,1,parameterTypes.length != 1)<SUB>145</SUB>> ]
+"375" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>145</SUB>> ]
+"376" [label = <(warn,warn(&quot;Ignoring bad converter on type: &quot; + type.getName() + &quot; method: &quot; + method + &quot; as a converter method should have one parameter&quot;))<SUB>146</SUB>> ]
+"377" [label = <(&lt;operator&gt;.fieldAccess,AnnotationTypeConverterLoader.LOG)<SUB>146</SUB>> ]
+"378" [label = <(IDENTIFIER,AnnotationTypeConverterLoader,warn(&quot;Ignoring bad converter on type: &quot; + type.getName() + &quot; method: &quot; + method + &quot; as a converter method should have one parameter&quot;))<SUB>146</SUB>> ]
+"379" [label = <(FIELD_IDENTIFIER,LOG,LOG)<SUB>146</SUB>> ]
+"380" [label = <(&lt;operator&gt;.addition,&quot;Ignoring bad converter on type: &quot; + type.getName() + &quot; method: &quot; + method + &quot; as a converter method should have one parameter&quot;)<SUB>146</SUB>> ]
+"381" [label = <(&lt;operator&gt;.addition,&quot;Ignoring bad converter on type: &quot; + type.getName() + &quot; method: &quot; + method)<SUB>146</SUB>> ]
+"382" [label = <(&lt;operator&gt;.addition,&quot;Ignoring bad converter on type: &quot; + type.getName() + &quot; method: &quot;)<SUB>146</SUB>> ]
+"383" [label = <(&lt;operator&gt;.addition,&quot;Ignoring bad converter on type: &quot; + type.getName())<SUB>146</SUB>> ]
+"384" [label = <(LITERAL,&quot;Ignoring bad converter on type: &quot;,&quot;Ignoring bad converter on type: &quot; + type.getName())<SUB>146</SUB>> ]
+"385" [label = <(getName,type.getName())<SUB>146</SUB>> ]
+"386" [label = <(IDENTIFIER,type,type.getName())<SUB>146</SUB>> ]
+"387" [label = <(LITERAL,&quot; method: &quot;,&quot;Ignoring bad converter on type: &quot; + type.getName() + &quot; method: &quot;)<SUB>146</SUB>> ]
+"388" [label = <(IDENTIFIER,method,&quot;Ignoring bad converter on type: &quot; + type.getName() + &quot; method: &quot; + method)<SUB>146</SUB>> ]
+"389" [label = <(LITERAL,&quot; as a converter method should have one parameter&quot;,&quot;Ignoring bad converter on type: &quot; + type.getName() + &quot; method: &quot; + method + &quot; as a converter method should have one parameter&quot;)<SUB>147</SUB>> ]
+"390" [label = <(CONTROL_STRUCTURE,else,else)<SUB>148</SUB>> ]
+"391" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>148</SUB>> ]
+"392" [label = <(LOCAL,int modifiers: int)> ]
+"393" [label = <(&lt;operator&gt;.assignment,int modifiers = method.getModifiers())<SUB>149</SUB>> ]
+"394" [label = <(IDENTIFIER,modifiers,int modifiers = method.getModifiers())<SUB>149</SUB>> ]
+"395" [label = <(getModifiers,method.getModifiers())<SUB>149</SUB>> ]
+"396" [label = <(IDENTIFIER,method,method.getModifiers())<SUB>149</SUB>> ]
+"397" [label = <(CONTROL_STRUCTURE,if (isAbstract(modifiers) || !isPublic(modifiers)),if (isAbstract(modifiers) || !isPublic(modifiers)))<SUB>150</SUB>> ]
+"398" [label = <(&lt;operator&gt;.logicalOr,isAbstract(modifiers) || !isPublic(modifiers))<SUB>150</SUB>> ]
+"399" [label = <(isAbstract,isAbstract(modifiers))<SUB>150</SUB>> ]
+"400" [label = <(IDENTIFIER,modifiers,isAbstract(modifiers))<SUB>150</SUB>> ]
+"401" [label = <(&lt;operator&gt;.logicalNot,!isPublic(modifiers))<SUB>150</SUB>> ]
+"402" [label = <(isPublic,isPublic(modifiers))<SUB>150</SUB>> ]
+"403" [label = <(IDENTIFIER,modifiers,isPublic(modifiers))<SUB>150</SUB>> ]
+"404" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>150</SUB>> ]
+"405" [label = <(warn,warn(&quot;Ignoring bad converter on type: &quot; + type.getName() + &quot; method: &quot; + method + &quot; as a converter method is not a public and concrete method&quot;))<SUB>151</SUB>> ]
+"406" [label = <(&lt;operator&gt;.fieldAccess,AnnotationTypeConverterLoader.LOG)<SUB>151</SUB>> ]
+"407" [label = <(IDENTIFIER,AnnotationTypeConverterLoader,warn(&quot;Ignoring bad converter on type: &quot; + type.getName() + &quot; method: &quot; + method + &quot; as a converter method is not a public and concrete method&quot;))<SUB>151</SUB>> ]
+"408" [label = <(FIELD_IDENTIFIER,LOG,LOG)<SUB>151</SUB>> ]
+"409" [label = <(&lt;operator&gt;.addition,&quot;Ignoring bad converter on type: &quot; + type.getName() + &quot; method: &quot; + method + &quot; as a converter method is not a public and concrete method&quot;)<SUB>151</SUB>> ]
+"410" [label = <(&lt;operator&gt;.addition,&quot;Ignoring bad converter on type: &quot; + type.getName() + &quot; method: &quot; + method)<SUB>151</SUB>> ]
+"411" [label = <(&lt;operator&gt;.addition,&quot;Ignoring bad converter on type: &quot; + type.getName() + &quot; method: &quot;)<SUB>151</SUB>> ]
+"412" [label = <(&lt;operator&gt;.addition,&quot;Ignoring bad converter on type: &quot; + type.getName())<SUB>151</SUB>> ]
+"413" [label = <(LITERAL,&quot;Ignoring bad converter on type: &quot;,&quot;Ignoring bad converter on type: &quot; + type.getName())<SUB>151</SUB>> ]
+"414" [label = <(getName,type.getName())<SUB>151</SUB>> ]
+"415" [label = <(IDENTIFIER,type,type.getName())<SUB>151</SUB>> ]
+"416" [label = <(LITERAL,&quot; method: &quot;,&quot;Ignoring bad converter on type: &quot; + type.getName() + &quot; method: &quot;)<SUB>151</SUB>> ]
+"417" [label = <(IDENTIFIER,method,&quot;Ignoring bad converter on type: &quot; + type.getName() + &quot; method: &quot; + method)<SUB>151</SUB>> ]
+"418" [label = <(LITERAL,&quot; as a converter method is not a public and concrete method&quot;,&quot;Ignoring bad converter on type: &quot; + type.getName() + &quot; method: &quot; + method + &quot; as a converter method is not a public and concrete method&quot;)<SUB>152</SUB>> ]
+"419" [label = <(CONTROL_STRUCTURE,else,else)<SUB>153</SUB>> ]
+"420" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>153</SUB>> ]
+"421" [label = <(LOCAL,Class toType: java.lang.Class)> ]
+"422" [label = <(&lt;operator&gt;.assignment,Class toType = method.getReturnType())<SUB>154</SUB>> ]
+"423" [label = <(IDENTIFIER,toType,Class toType = method.getReturnType())<SUB>154</SUB>> ]
+"424" [label = <(getReturnType,method.getReturnType())<SUB>154</SUB>> ]
+"425" [label = <(IDENTIFIER,method,method.getReturnType())<SUB>154</SUB>> ]
+"426" [label = <(CONTROL_STRUCTURE,if (toType.equals(Void.class)),if (toType.equals(Void.class)))<SUB>155</SUB>> ]
+"427" [label = <(equals,toType.equals(Void.class))<SUB>155</SUB>> ]
+"428" [label = <(IDENTIFIER,toType,toType.equals(Void.class))<SUB>155</SUB>> ]
+"429" [label = <(&lt;operator&gt;.fieldAccess,Void.class)<SUB>155</SUB>> ]
+"430" [label = <(IDENTIFIER,Void,toType.equals(Void.class))<SUB>155</SUB>> ]
+"431" [label = <(FIELD_IDENTIFIER,class,class)<SUB>155</SUB>> ]
+"432" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>155</SUB>> ]
+"433" [label = <(warn,warn(&quot;Ignoring bad converter on type: &quot; + type.getName() + &quot; method: &quot; + method + &quot; as a converter method returns a void method&quot;))<SUB>156</SUB>> ]
+"434" [label = <(&lt;operator&gt;.fieldAccess,AnnotationTypeConverterLoader.LOG)<SUB>156</SUB>> ]
+"435" [label = <(IDENTIFIER,AnnotationTypeConverterLoader,warn(&quot;Ignoring bad converter on type: &quot; + type.getName() + &quot; method: &quot; + method + &quot; as a converter method returns a void method&quot;))<SUB>156</SUB>> ]
+"436" [label = <(FIELD_IDENTIFIER,LOG,LOG)<SUB>156</SUB>> ]
+"437" [label = <(&lt;operator&gt;.addition,&quot;Ignoring bad converter on type: &quot; + type.getName() + &quot; method: &quot; + method + &quot; as a converter method returns a void method&quot;)<SUB>156</SUB>> ]
+"438" [label = <(&lt;operator&gt;.addition,&quot;Ignoring bad converter on type: &quot; + type.getName() + &quot; method: &quot; + method)<SUB>156</SUB>> ]
+"439" [label = <(&lt;operator&gt;.addition,&quot;Ignoring bad converter on type: &quot; + type.getName() + &quot; method: &quot;)<SUB>156</SUB>> ]
+"440" [label = <(&lt;operator&gt;.addition,&quot;Ignoring bad converter on type: &quot; + type.getName())<SUB>156</SUB>> ]
+"441" [label = <(LITERAL,&quot;Ignoring bad converter on type: &quot;,&quot;Ignoring bad converter on type: &quot; + type.getName())<SUB>156</SUB>> ]
+"442" [label = <(getName,type.getName())<SUB>156</SUB>> ]
+"443" [label = <(IDENTIFIER,type,type.getName())<SUB>156</SUB>> ]
+"444" [label = <(LITERAL,&quot; method: &quot;,&quot;Ignoring bad converter on type: &quot; + type.getName() + &quot; method: &quot;)<SUB>156</SUB>> ]
+"445" [label = <(IDENTIFIER,method,&quot;Ignoring bad converter on type: &quot; + type.getName() + &quot; method: &quot; + method)<SUB>157</SUB>> ]
+"446" [label = <(LITERAL,&quot; as a converter method returns a void method&quot;,&quot;Ignoring bad converter on type: &quot; + type.getName() + &quot; method: &quot; + method + &quot; as a converter method returns a void method&quot;)<SUB>157</SUB>> ]
+"447" [label = <(CONTROL_STRUCTURE,else,else)<SUB>158</SUB>> ]
+"448" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>158</SUB>> ]
+"449" [label = <(LOCAL,Class fromType: java.lang.Class)> ]
+"450" [label = <(&lt;operator&gt;.assignment,Class fromType = parameterTypes[0])<SUB>159</SUB>> ]
+"451" [label = <(IDENTIFIER,fromType,Class fromType = parameterTypes[0])<SUB>159</SUB>> ]
+"452" [label = <(&lt;operator&gt;.indexAccess,parameterTypes[0])<SUB>159</SUB>> ]
+"453" [label = <(IDENTIFIER,parameterTypes,Class fromType = parameterTypes[0])<SUB>159</SUB>> ]
+"454" [label = <(LITERAL,0,Class fromType = parameterTypes[0])<SUB>159</SUB>> ]
+"455" [label = <(CONTROL_STRUCTURE,if (isStatic(modifiers)),if (isStatic(modifiers)))<SUB>160</SUB>> ]
+"456" [label = <(isStatic,isStatic(modifiers))<SUB>160</SUB>> ]
+"457" [label = <(IDENTIFIER,modifiers,isStatic(modifiers))<SUB>160</SUB>> ]
+"458" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>160</SUB>> ]
+"459" [label = <(registerTypeConverter,registerTypeConverter(registry, method, toType, fromType, new StaticMethodTypeConverter(method)))<SUB>161</SUB>> ]
+"20" [label = <(IDENTIFIER,this,registerTypeConverter(registry, method, toType, fromType, new StaticMethodTypeConverter(method)))<SUB>161</SUB>> ]
+"460" [label = <(IDENTIFIER,registry,registerTypeConverter(registry, method, toType, fromType, new StaticMethodTypeConverter(method)))<SUB>161</SUB>> ]
+"461" [label = <(IDENTIFIER,method,registerTypeConverter(registry, method, toType, fromType, new StaticMethodTypeConverter(method)))<SUB>161</SUB>> ]
+"462" [label = <(IDENTIFIER,toType,registerTypeConverter(registry, method, toType, fromType, new StaticMethodTypeConverter(method)))<SUB>161</SUB>> ]
+"463" [label = <(IDENTIFIER,fromType,registerTypeConverter(registry, method, toType, fromType, new StaticMethodTypeConverter(method)))<SUB>161</SUB>> ]
+"464" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>162</SUB>> ]
+"465" [label = <(&lt;operator&gt;.assignment,&lt;empty&gt;)> ]
+"466" [label = <(IDENTIFIER,$obj7,&lt;empty&gt;)> ]
+"467" [label = <(&lt;operator&gt;.alloc,new StaticMethodTypeConverter(method))<SUB>162</SUB>> ]
+"468" [label = <(&lt;init&gt;,new StaticMethodTypeConverter(method))<SUB>162</SUB>> ]
+"469" [label = <(IDENTIFIER,$obj7,new StaticMethodTypeConverter(method))> ]
+"470" [label = <(IDENTIFIER,method,new StaticMethodTypeConverter(method))<SUB>162</SUB>> ]
+"471" [label = <(IDENTIFIER,$obj7,&lt;empty&gt;)> ]
+"472" [label = <(CONTROL_STRUCTURE,else,else)<SUB>163</SUB>> ]
+"473" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>163</SUB>> ]
+"474" [label = <(CONTROL_STRUCTURE,if (injector == null),if (injector == null))<SUB>164</SUB>> ]
+"475" [label = <(&lt;operator&gt;.equals,injector == null)<SUB>164</SUB>> ]
+"476" [label = <(IDENTIFIER,injector,injector == null)<SUB>164</SUB>> ]
+"477" [label = <(LITERAL,null,injector == null)<SUB>164</SUB>> ]
+"478" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>164</SUB>> ]
+"479" [label = <(&lt;operator&gt;.assignment,injector = new CachingInjector(registry, type))<SUB>165</SUB>> ]
+"480" [label = <(IDENTIFIER,injector,injector = new CachingInjector(registry, type))<SUB>165</SUB>> ]
+"481" [label = <(&lt;operator&gt;.alloc,new CachingInjector(registry, type))<SUB>165</SUB>> ]
+"482" [label = <(&lt;init&gt;,new CachingInjector(registry, type))<SUB>165</SUB>> ]
+"22" [label = <(IDENTIFIER,injector,new CachingInjector(registry, type))<SUB>165</SUB>> ]
+"483" [label = <(IDENTIFIER,registry,new CachingInjector(registry, type))<SUB>165</SUB>> ]
+"484" [label = <(IDENTIFIER,type,new CachingInjector(registry, type))<SUB>165</SUB>> ]
+"485" [label = <(registerTypeConverter,registerTypeConverter(registry, method, toType, fromType, new InstanceMethodTypeConverter(injector, method)))<SUB>167</SUB>> ]
+"24" [label = <(IDENTIFIER,this,registerTypeConverter(registry, method, toType, fromType, new InstanceMethodTypeConverter(injector, method)))<SUB>167</SUB>> ]
+"486" [label = <(IDENTIFIER,registry,registerTypeConverter(registry, method, toType, fromType, new InstanceMethodTypeConverter(injector, method)))<SUB>167</SUB>> ]
+"487" [label = <(IDENTIFIER,method,registerTypeConverter(registry, method, toType, fromType, new InstanceMethodTypeConverter(injector, method)))<SUB>167</SUB>> ]
+"488" [label = <(IDENTIFIER,toType,registerTypeConverter(registry, method, toType, fromType, new InstanceMethodTypeConverter(injector, method)))<SUB>167</SUB>> ]
+"489" [label = <(IDENTIFIER,fromType,registerTypeConverter(registry, method, toType, fromType, new InstanceMethodTypeConverter(injector, method)))<SUB>167</SUB>> ]
+"490" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>168</SUB>> ]
+"491" [label = <(&lt;operator&gt;.assignment,&lt;empty&gt;)> ]
+"492" [label = <(IDENTIFIER,$obj9,&lt;empty&gt;)> ]
+"493" [label = <(&lt;operator&gt;.alloc,new InstanceMethodTypeConverter(injector, method))<SUB>168</SUB>> ]
+"494" [label = <(&lt;init&gt;,new InstanceMethodTypeConverter(injector, method))<SUB>168</SUB>> ]
+"495" [label = <(IDENTIFIER,$obj9,new InstanceMethodTypeConverter(injector, method))> ]
+"496" [label = <(IDENTIFIER,injector,new InstanceMethodTypeConverter(injector, method))<SUB>168</SUB>> ]
+"497" [label = <(IDENTIFIER,method,new InstanceMethodTypeConverter(injector, method))<SUB>168</SUB>> ]
+"498" [label = <(IDENTIFIER,$obj9,&lt;empty&gt;)> ]
+"499" [label = <(LOCAL,Class superclass: java.lang.Class)> ]
+"500" [label = <(&lt;operator&gt;.assignment,Class superclass = type.getSuperclass())<SUB>175</SUB>> ]
+"501" [label = <(IDENTIFIER,superclass,Class superclass = type.getSuperclass())<SUB>175</SUB>> ]
+"502" [label = <(getSuperclass,type.getSuperclass())<SUB>175</SUB>> ]
+"503" [label = <(IDENTIFIER,type,type.getSuperclass())<SUB>175</SUB>> ]
+"504" [label = <(CONTROL_STRUCTURE,if (superclass != null &amp;&amp; !superclass.equals(Object.class)),if (superclass != null &amp;&amp; !superclass.equals(Object.class)))<SUB>176</SUB>> ]
+"505" [label = <(&lt;operator&gt;.logicalAnd,superclass != null &amp;&amp; !superclass.equals(Object.class))<SUB>176</SUB>> ]
+"506" [label = <(&lt;operator&gt;.notEquals,superclass != null)<SUB>176</SUB>> ]
+"507" [label = <(IDENTIFIER,superclass,superclass != null)<SUB>176</SUB>> ]
+"508" [label = <(LITERAL,null,superclass != null)<SUB>176</SUB>> ]
+"509" [label = <(&lt;operator&gt;.logicalNot,!superclass.equals(Object.class))<SUB>176</SUB>> ]
+"510" [label = <(equals,superclass.equals(Object.class))<SUB>176</SUB>> ]
+"511" [label = <(IDENTIFIER,superclass,superclass.equals(Object.class))<SUB>176</SUB>> ]
+"512" [label = <(&lt;operator&gt;.fieldAccess,Object.class)<SUB>176</SUB>> ]
+"513" [label = <(IDENTIFIER,Object,superclass.equals(Object.class))<SUB>176</SUB>> ]
+"514" [label = <(FIELD_IDENTIFIER,class,class)<SUB>176</SUB>> ]
+"515" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>176</SUB>> ]
+"516" [label = <(loadConverterMethods,loadConverterMethods(registry, superclass))<SUB>177</SUB>> ]
+"25" [label = <(IDENTIFIER,this,loadConverterMethods(registry, superclass))<SUB>177</SUB>> ]
+"517" [label = <(IDENTIFIER,registry,loadConverterMethods(registry, superclass))<SUB>177</SUB>> ]
+"518" [label = <(IDENTIFIER,superclass,loadConverterMethods(registry, superclass))<SUB>177</SUB>> ]
+"519" [label = <(BLOCK,catch,catch)> ]
+"520" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>179</SUB>> ]
+"521" [label = <(debug,debug(&quot;Ignoring converter type: &quot; + type.getName() + &quot; as a dependent class could not be found: &quot; + e, e))<SUB>180</SUB>> ]
+"522" [label = <(&lt;operator&gt;.fieldAccess,AnnotationTypeConverterLoader.LOG)<SUB>180</SUB>> ]
+"523" [label = <(IDENTIFIER,AnnotationTypeConverterLoader,debug(&quot;Ignoring converter type: &quot; + type.getName() + &quot; as a dependent class could not be found: &quot; + e, e))<SUB>180</SUB>> ]
+"524" [label = <(FIELD_IDENTIFIER,LOG,LOG)<SUB>180</SUB>> ]
+"525" [label = <(&lt;operator&gt;.addition,&quot;Ignoring converter type: &quot; + type.getName() + &quot; as a dependent class could not be found: &quot; + e)<SUB>180</SUB>> ]
+"526" [label = <(&lt;operator&gt;.addition,&quot;Ignoring converter type: &quot; + type.getName() + &quot; as a dependent class could not be found: &quot;)<SUB>180</SUB>> ]
+"527" [label = <(&lt;operator&gt;.addition,&quot;Ignoring converter type: &quot; + type.getName())<SUB>180</SUB>> ]
+"528" [label = <(LITERAL,&quot;Ignoring converter type: &quot;,&quot;Ignoring converter type: &quot; + type.getName())<SUB>180</SUB>> ]
+"529" [label = <(getName,type.getName())<SUB>180</SUB>> ]
+"530" [label = <(IDENTIFIER,type,type.getName())<SUB>180</SUB>> ]
+"531" [label = <(LITERAL,&quot; as a dependent class could not be found: &quot;,&quot;Ignoring converter type: &quot; + type.getName() + &quot; as a dependent class could not be found: &quot;)<SUB>180</SUB>> ]
+"532" [label = <(IDENTIFIER,e,&quot;Ignoring converter type: &quot; + type.getName() + &quot; as a dependent class could not be found: &quot; + e)<SUB>180</SUB>> ]
+"533" [label = <(IDENTIFIER,e,debug(&quot;Ignoring converter type: &quot; + type.getName() + &quot; as a dependent class could not be found: &quot; + e, e))<SUB>180</SUB>> ]
+"534" [label = <(MODIFIER,PROTECTED)> ]
+"535" [label = <(MODIFIER,VIRTUAL)> ]
+"536" [label = <(METHOD_RETURN,void)<SUB>132</SUB>> ]
+  "301" -> "21" 
+  "301" -> "302" 
+  "301" -> "303" 
+  "301" -> "304" 
+  "301" -> "534" 
+  "301" -> "535" 
+  "301" -> "536" 
+  "304" -> "305" 
+  "304" -> "313" 
+  "304" -> "318" 
+  "305" -> "306" 
+  "305" -> "311" 
+  "306" -> "307" 
+  "306" -> "310" 
+  "307" -> "308" 
+  "307" -> "309" 
+  "311" -> "312" 
+  "313" -> "314" 
+  "313" -> "317" 
+  "314" -> "315" 
+  "314" -> "316" 
+  "318" -> "319" 
+  "318" -> "519" 
+  "319" -> "320" 
+  "319" -> "321" 
+  "319" -> "23" 
+  "319" -> "325" 
+  "319" -> "328" 
+  "319" -> "499" 
+  "319" -> "500" 
+  "319" -> "504" 
+  "321" -> "322" 
+  "321" -> "323" 
+  "323" -> "324" 
+  "325" -> "326" 
+  "325" -> "327" 
+  "328" -> "329" 
+  "328" -> "330" 
+  "328" -> "333" 
+  "328" -> "338" 
+  "328" -> "340" 
+  "330" -> "331" 
+  "330" -> "332" 
+  "333" -> "334" 
+  "333" -> "335" 
+  "335" -> "336" 
+  "335" -> "337" 
+  "338" -> "339" 
+  "340" -> "341" 
+  "340" -> "342" 
+  "340" -> "347" 
+  "340" -> "348" 
+  "340" -> "355" 
+  "342" -> "343" 
+  "342" -> "344" 
+  "344" -> "345" 
+  "344" -> "346" 
+  "348" -> "349" 
+  "348" -> "350" 
+  "350" -> "351" 
+  "350" -> "352" 
+  "352" -> "353" 
+  "352" -> "354" 
+  "355" -> "356" 
+  "355" -> "359" 
+  "356" -> "357" 
+  "356" -> "358" 
+  "359" -> "360" 
+  "359" -> "361" 
+  "359" -> "365" 
+  "361" -> "362" 
+  "361" -> "363" 
+  "363" -> "364" 
+  "365" -> "366" 
+  "365" -> "375" 
+  "365" -> "390" 
+  "366" -> "367" 
+  "366" -> "370" 
+  "367" -> "368" 
+  "367" -> "369" 
+  "370" -> "371" 
+  "370" -> "374" 
+  "371" -> "372" 
+  "371" -> "373" 
+  "375" -> "376" 
+  "376" -> "377" 
+  "376" -> "380" 
+  "377" -> "378" 
+  "377" -> "379" 
+  "380" -> "381" 
+  "380" -> "389" 
+  "381" -> "382" 
+  "381" -> "388" 
+  "382" -> "383" 
+  "382" -> "387" 
+  "383" -> "384" 
+  "383" -> "385" 
+  "385" -> "386" 
+  "390" -> "391" 
+  "391" -> "392" 
+  "391" -> "393" 
+  "391" -> "397" 
+  "393" -> "394" 
+  "393" -> "395" 
+  "395" -> "396" 
+  "397" -> "398" 
+  "397" -> "404" 
+  "397" -> "419" 
+  "398" -> "399" 
+  "398" -> "401" 
+  "399" -> "400" 
+  "401" -> "402" 
+  "402" -> "403" 
+  "404" -> "405" 
+  "405" -> "406" 
+  "405" -> "409" 
+  "406" -> "407" 
+  "406" -> "408" 
+  "409" -> "410" 
+  "409" -> "418" 
+  "410" -> "411" 
+  "410" -> "417" 
+  "411" -> "412" 
+  "411" -> "416" 
+  "412" -> "413" 
+  "412" -> "414" 
+  "414" -> "415" 
+  "419" -> "420" 
+  "420" -> "421" 
+  "420" -> "422" 
+  "420" -> "426" 
+  "422" -> "423" 
+  "422" -> "424" 
+  "424" -> "425" 
+  "426" -> "427" 
+  "426" -> "432" 
+  "426" -> "447" 
+  "427" -> "428" 
+  "427" -> "429" 
+  "429" -> "430" 
+  "429" -> "431" 
+  "432" -> "433" 
+  "433" -> "434" 
+  "433" -> "437" 
+  "434" -> "435" 
+  "434" -> "436" 
+  "437" -> "438" 
+  "437" -> "446" 
+  "438" -> "439" 
+  "438" -> "445" 
+  "439" -> "440" 
+  "439" -> "444" 
+  "440" -> "441" 
+  "440" -> "442" 
+  "442" -> "443" 
+  "447" -> "448" 
+  "448" -> "449" 
+  "448" -> "450" 
+  "448" -> "455" 
+  "450" -> "451" 
+  "450" -> "452" 
+  "452" -> "453" 
+  "452" -> "454" 
+  "455" -> "456" 
+  "455" -> "458" 
+  "455" -> "472" 
+  "456" -> "457" 
+  "458" -> "459" 
+  "459" -> "20" 
+  "459" -> "460" 
+  "459" -> "461" 
+  "459" -> "462" 
+  "459" -> "463" 
+  "459" -> "464" 
+  "464" -> "465" 
+  "464" -> "468" 
+  "464" -> "471" 
+  "465" -> "466" 
+  "465" -> "467" 
+  "468" -> "469" 
+  "468" -> "470" 
+  "472" -> "473" 
+  "473" -> "474" 
+  "473" -> "485" 
+  "474" -> "475" 
+  "474" -> "478" 
+  "475" -> "476" 
+  "475" -> "477" 
+  "478" -> "479" 
+  "478" -> "482" 
+  "479" -> "480" 
+  "479" -> "481" 
+  "482" -> "22" 
+  "482" -> "483" 
+  "482" -> "484" 
+  "485" -> "24" 
+  "485" -> "486" 
+  "485" -> "487" 
+  "485" -> "488" 
+  "485" -> "489" 
+  "485" -> "490" 
+  "490" -> "491" 
+  "490" -> "494" 
+  "490" -> "498" 
+  "491" -> "492" 
+  "491" -> "493" 
+  "494" -> "495" 
+  "494" -> "496" 
+  "494" -> "497" 
+  "500" -> "501" 
+  "500" -> "502" 
+  "502" -> "503" 
+  "504" -> "505" 
+  "504" -> "515" 
+  "505" -> "506" 
+  "505" -> "509" 
+  "506" -> "507" 
+  "506" -> "508" 
+  "509" -> "510" 
+  "510" -> "511" 
+  "510" -> "512" 
+  "512" -> "513" 
+  "512" -> "514" 
+  "515" -> "516" 
+  "516" -> "25" 
+  "516" -> "517" 
+  "516" -> "518" 
+  "519" -> "520" 
+  "520" -> "521" 
+  "521" -> "522" 
+  "521" -> "525" 
+  "521" -> "533" 
+  "522" -> "523" 
+  "522" -> "524" 
+  "525" -> "526" 
+  "525" -> "532" 
+  "526" -> "527" 
+  "526" -> "531" 
+  "527" -> "528" 
+  "527" -> "529" 
+  "529" -> "530" 
+}

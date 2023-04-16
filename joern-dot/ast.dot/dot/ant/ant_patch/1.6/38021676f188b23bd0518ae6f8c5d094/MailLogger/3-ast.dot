@@ -1,0 +1,165 @@
+digraph "sendMail" {  
+"368" [label = <(METHOD,sendMail)<SUB>238</SUB>> ]
+"369" [label = <(PARAM,this)<SUB>238</SUB>> ]
+"370" [label = <(PARAM,String mailhost)<SUB>238</SUB>> ]
+"371" [label = <(PARAM,int port)<SUB>238</SUB>> ]
+"372" [label = <(PARAM,String from)<SUB>238</SUB>> ]
+"373" [label = <(PARAM,String replyToList)<SUB>238</SUB>> ]
+"374" [label = <(PARAM,String toList)<SUB>238</SUB>> ]
+"375" [label = <(PARAM,String subject)<SUB>239</SUB>> ]
+"376" [label = <(PARAM,String message)<SUB>239</SUB>> ]
+"377" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>239</SUB>> ]
+"21" [label = <(LOCAL,MailMessage mailMessage: org.apache.tools.mail.MailMessage)> ]
+"378" [label = <(&lt;operator&gt;.assignment,MailMessage mailMessage = new MailMessage(mailhost, port))<SUB>240</SUB>> ]
+"379" [label = <(IDENTIFIER,mailMessage,MailMessage mailMessage = new MailMessage(mailhost, port))<SUB>240</SUB>> ]
+"380" [label = <(&lt;operator&gt;.alloc,new MailMessage(mailhost, port))<SUB>240</SUB>> ]
+"381" [label = <(&lt;init&gt;,new MailMessage(mailhost, port))<SUB>240</SUB>> ]
+"20" [label = <(IDENTIFIER,mailMessage,new MailMessage(mailhost, port))<SUB>240</SUB>> ]
+"382" [label = <(IDENTIFIER,mailhost,new MailMessage(mailhost, port))<SUB>240</SUB>> ]
+"383" [label = <(IDENTIFIER,port,new MailMessage(mailhost, port))<SUB>240</SUB>> ]
+"384" [label = <(setHeader,setHeader(&quot;Date&quot;, DateUtils.getDateForHeader()))<SUB>241</SUB>> ]
+"385" [label = <(IDENTIFIER,mailMessage,setHeader(&quot;Date&quot;, DateUtils.getDateForHeader()))<SUB>241</SUB>> ]
+"386" [label = <(LITERAL,&quot;Date&quot;,setHeader(&quot;Date&quot;, DateUtils.getDateForHeader()))<SUB>241</SUB>> ]
+"387" [label = <(getDateForHeader,getDateForHeader())<SUB>241</SUB>> ]
+"388" [label = <(IDENTIFIER,DateUtils,getDateForHeader())<SUB>241</SUB>> ]
+"389" [label = <(from,from(from))<SUB>243</SUB>> ]
+"390" [label = <(IDENTIFIER,mailMessage,from(from))<SUB>243</SUB>> ]
+"391" [label = <(IDENTIFIER,from,from(from))<SUB>243</SUB>> ]
+"392" [label = <(CONTROL_STRUCTURE,if (!replyToList.equals(&quot;&quot;)),if (!replyToList.equals(&quot;&quot;)))<SUB>244</SUB>> ]
+"393" [label = <(&lt;operator&gt;.logicalNot,!replyToList.equals(&quot;&quot;))<SUB>244</SUB>> ]
+"394" [label = <(equals,replyToList.equals(&quot;&quot;))<SUB>244</SUB>> ]
+"395" [label = <(IDENTIFIER,replyToList,replyToList.equals(&quot;&quot;))<SUB>244</SUB>> ]
+"396" [label = <(LITERAL,&quot;&quot;,replyToList.equals(&quot;&quot;))<SUB>244</SUB>> ]
+"397" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>244</SUB>> ]
+"23" [label = <(LOCAL,StringTokenizer t: java.util.StringTokenizer)> ]
+"398" [label = <(&lt;operator&gt;.assignment,StringTokenizer t = new StringTokenizer(replyToList, &quot;, &quot;, false))<SUB>245</SUB>> ]
+"399" [label = <(IDENTIFIER,t,StringTokenizer t = new StringTokenizer(replyToList, &quot;, &quot;, false))<SUB>245</SUB>> ]
+"400" [label = <(&lt;operator&gt;.alloc,new StringTokenizer(replyToList, &quot;, &quot;, false))<SUB>245</SUB>> ]
+"401" [label = <(&lt;init&gt;,new StringTokenizer(replyToList, &quot;, &quot;, false))<SUB>245</SUB>> ]
+"22" [label = <(IDENTIFIER,t,new StringTokenizer(replyToList, &quot;, &quot;, false))<SUB>245</SUB>> ]
+"402" [label = <(IDENTIFIER,replyToList,new StringTokenizer(replyToList, &quot;, &quot;, false))<SUB>245</SUB>> ]
+"403" [label = <(LITERAL,&quot;, &quot;,new StringTokenizer(replyToList, &quot;, &quot;, false))<SUB>245</SUB>> ]
+"404" [label = <(LITERAL,false,new StringTokenizer(replyToList, &quot;, &quot;, false))<SUB>245</SUB>> ]
+"405" [label = <(CONTROL_STRUCTURE,while (t.hasMoreTokens()),while (t.hasMoreTokens()))<SUB>246</SUB>> ]
+"406" [label = <(hasMoreTokens,t.hasMoreTokens())<SUB>246</SUB>> ]
+"407" [label = <(IDENTIFIER,t,t.hasMoreTokens())<SUB>246</SUB>> ]
+"408" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>246</SUB>> ]
+"409" [label = <(replyto,replyto(t.nextToken()))<SUB>247</SUB>> ]
+"410" [label = <(IDENTIFIER,mailMessage,replyto(t.nextToken()))<SUB>247</SUB>> ]
+"411" [label = <(nextToken,t.nextToken())<SUB>247</SUB>> ]
+"412" [label = <(IDENTIFIER,t,t.nextToken())<SUB>247</SUB>> ]
+"25" [label = <(LOCAL,StringTokenizer t: java.util.StringTokenizer)> ]
+"413" [label = <(&lt;operator&gt;.assignment,StringTokenizer t = new StringTokenizer(toList, &quot;, &quot;, false))<SUB>250</SUB>> ]
+"414" [label = <(IDENTIFIER,t,StringTokenizer t = new StringTokenizer(toList, &quot;, &quot;, false))<SUB>250</SUB>> ]
+"415" [label = <(&lt;operator&gt;.alloc,new StringTokenizer(toList, &quot;, &quot;, false))<SUB>250</SUB>> ]
+"416" [label = <(&lt;init&gt;,new StringTokenizer(toList, &quot;, &quot;, false))<SUB>250</SUB>> ]
+"24" [label = <(IDENTIFIER,t,new StringTokenizer(toList, &quot;, &quot;, false))<SUB>250</SUB>> ]
+"417" [label = <(IDENTIFIER,toList,new StringTokenizer(toList, &quot;, &quot;, false))<SUB>250</SUB>> ]
+"418" [label = <(LITERAL,&quot;, &quot;,new StringTokenizer(toList, &quot;, &quot;, false))<SUB>250</SUB>> ]
+"419" [label = <(LITERAL,false,new StringTokenizer(toList, &quot;, &quot;, false))<SUB>250</SUB>> ]
+"420" [label = <(CONTROL_STRUCTURE,while (t.hasMoreTokens()),while (t.hasMoreTokens()))<SUB>251</SUB>> ]
+"421" [label = <(hasMoreTokens,t.hasMoreTokens())<SUB>251</SUB>> ]
+"422" [label = <(IDENTIFIER,t,t.hasMoreTokens())<SUB>251</SUB>> ]
+"423" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>251</SUB>> ]
+"424" [label = <(to,to(t.nextToken()))<SUB>252</SUB>> ]
+"425" [label = <(IDENTIFIER,mailMessage,to(t.nextToken()))<SUB>252</SUB>> ]
+"426" [label = <(nextToken,t.nextToken())<SUB>252</SUB>> ]
+"427" [label = <(IDENTIFIER,t,t.nextToken())<SUB>252</SUB>> ]
+"428" [label = <(setSubject,setSubject(subject))<SUB>255</SUB>> ]
+"429" [label = <(IDENTIFIER,mailMessage,setSubject(subject))<SUB>255</SUB>> ]
+"430" [label = <(IDENTIFIER,subject,setSubject(subject))<SUB>255</SUB>> ]
+"431" [label = <(LOCAL,PrintStream ps: java.io.PrintStream)> ]
+"432" [label = <(&lt;operator&gt;.assignment,PrintStream ps = getPrintStream())<SUB>257</SUB>> ]
+"433" [label = <(IDENTIFIER,ps,PrintStream ps = getPrintStream())<SUB>257</SUB>> ]
+"434" [label = <(getPrintStream,getPrintStream())<SUB>257</SUB>> ]
+"435" [label = <(IDENTIFIER,mailMessage,getPrintStream())<SUB>257</SUB>> ]
+"436" [label = <(println,ps.println(message))<SUB>258</SUB>> ]
+"437" [label = <(IDENTIFIER,ps,ps.println(message))<SUB>258</SUB>> ]
+"438" [label = <(IDENTIFIER,message,ps.println(message))<SUB>258</SUB>> ]
+"439" [label = <(sendAndClose,sendAndClose())<SUB>260</SUB>> ]
+"440" [label = <(IDENTIFIER,mailMessage,sendAndClose())<SUB>260</SUB>> ]
+"441" [label = <(MODIFIER,PRIVATE)> ]
+"442" [label = <(MODIFIER,VIRTUAL)> ]
+"443" [label = <(METHOD_RETURN,void)<SUB>238</SUB>> ]
+  "368" -> "369" 
+  "368" -> "370" 
+  "368" -> "371" 
+  "368" -> "372" 
+  "368" -> "373" 
+  "368" -> "374" 
+  "368" -> "375" 
+  "368" -> "376" 
+  "368" -> "377" 
+  "368" -> "441" 
+  "368" -> "442" 
+  "368" -> "443" 
+  "377" -> "21" 
+  "377" -> "378" 
+  "377" -> "381" 
+  "377" -> "384" 
+  "377" -> "389" 
+  "377" -> "392" 
+  "377" -> "25" 
+  "377" -> "413" 
+  "377" -> "416" 
+  "377" -> "420" 
+  "377" -> "428" 
+  "377" -> "431" 
+  "377" -> "432" 
+  "377" -> "436" 
+  "377" -> "439" 
+  "378" -> "379" 
+  "378" -> "380" 
+  "381" -> "20" 
+  "381" -> "382" 
+  "381" -> "383" 
+  "384" -> "385" 
+  "384" -> "386" 
+  "384" -> "387" 
+  "387" -> "388" 
+  "389" -> "390" 
+  "389" -> "391" 
+  "392" -> "393" 
+  "392" -> "397" 
+  "393" -> "394" 
+  "394" -> "395" 
+  "394" -> "396" 
+  "397" -> "23" 
+  "397" -> "398" 
+  "397" -> "401" 
+  "397" -> "405" 
+  "398" -> "399" 
+  "398" -> "400" 
+  "401" -> "22" 
+  "401" -> "402" 
+  "401" -> "403" 
+  "401" -> "404" 
+  "405" -> "406" 
+  "405" -> "408" 
+  "406" -> "407" 
+  "408" -> "409" 
+  "409" -> "410" 
+  "409" -> "411" 
+  "411" -> "412" 
+  "413" -> "414" 
+  "413" -> "415" 
+  "416" -> "24" 
+  "416" -> "417" 
+  "416" -> "418" 
+  "416" -> "419" 
+  "420" -> "421" 
+  "420" -> "423" 
+  "421" -> "422" 
+  "423" -> "424" 
+  "424" -> "425" 
+  "424" -> "426" 
+  "426" -> "427" 
+  "428" -> "429" 
+  "428" -> "430" 
+  "432" -> "433" 
+  "432" -> "434" 
+  "434" -> "435" 
+  "436" -> "437" 
+  "436" -> "438" 
+  "439" -> "440" 
+}

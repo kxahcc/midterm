@@ -1,0 +1,111 @@
+digraph "parseParameters" {  
+"364" [label = <(METHOD,parseParameters)<SUB>131</SUB>> ]
+"365" [label = <(PARAM,URI uri)<SUB>131</SUB>> ]
+"366" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>131</SUB>> ]
+"367" [label = <(LOCAL,String query: java.lang.String)> ]
+"368" [label = <(&lt;operator&gt;.assignment,String query = uri.getQuery())<SUB>132</SUB>> ]
+"369" [label = <(IDENTIFIER,query,String query = uri.getQuery())<SUB>132</SUB>> ]
+"370" [label = <(getQuery,uri.getQuery())<SUB>132</SUB>> ]
+"371" [label = <(IDENTIFIER,uri,uri.getQuery())<SUB>132</SUB>> ]
+"372" [label = <(CONTROL_STRUCTURE,if (query == null),if (query == null))<SUB>133</SUB>> ]
+"373" [label = <(&lt;operator&gt;.equals,query == null)<SUB>133</SUB>> ]
+"374" [label = <(IDENTIFIER,query,query == null)<SUB>133</SUB>> ]
+"375" [label = <(LITERAL,null,query == null)<SUB>133</SUB>> ]
+"376" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>133</SUB>> ]
+"377" [label = <(LOCAL,String schemeSpecificPart: java.lang.String)> ]
+"378" [label = <(&lt;operator&gt;.assignment,String schemeSpecificPart = uri.getSchemeSpecificPart())<SUB>134</SUB>> ]
+"379" [label = <(IDENTIFIER,schemeSpecificPart,String schemeSpecificPart = uri.getSchemeSpecificPart())<SUB>134</SUB>> ]
+"380" [label = <(getSchemeSpecificPart,uri.getSchemeSpecificPart())<SUB>134</SUB>> ]
+"381" [label = <(IDENTIFIER,uri,uri.getSchemeSpecificPart())<SUB>134</SUB>> ]
+"382" [label = <(LOCAL,int idx: int)> ]
+"383" [label = <(&lt;operator&gt;.assignment,int idx = schemeSpecificPart.lastIndexOf('?'))<SUB>135</SUB>> ]
+"384" [label = <(IDENTIFIER,idx,int idx = schemeSpecificPart.lastIndexOf('?'))<SUB>135</SUB>> ]
+"385" [label = <(lastIndexOf,schemeSpecificPart.lastIndexOf('?'))<SUB>135</SUB>> ]
+"386" [label = <(IDENTIFIER,schemeSpecificPart,schemeSpecificPart.lastIndexOf('?'))<SUB>135</SUB>> ]
+"387" [label = <(LITERAL,'?',schemeSpecificPart.lastIndexOf('?'))<SUB>135</SUB>> ]
+"388" [label = <(CONTROL_STRUCTURE,if (idx &lt; 0),if (idx &lt; 0))<SUB>136</SUB>> ]
+"389" [label = <(&lt;operator&gt;.lessThan,idx &lt; 0)<SUB>136</SUB>> ]
+"390" [label = <(IDENTIFIER,idx,idx &lt; 0)<SUB>136</SUB>> ]
+"391" [label = <(LITERAL,0,idx &lt; 0)<SUB>136</SUB>> ]
+"392" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>136</SUB>> ]
+"393" [label = <(RETURN,return Collections.EMPTY_MAP;,return Collections.EMPTY_MAP;)<SUB>137</SUB>> ]
+"394" [label = <(&lt;operator&gt;.fieldAccess,Collections.EMPTY_MAP)<SUB>137</SUB>> ]
+"395" [label = <(IDENTIFIER,Collections,return Collections.EMPTY_MAP;)<SUB>137</SUB>> ]
+"396" [label = <(FIELD_IDENTIFIER,EMPTY_MAP,EMPTY_MAP)<SUB>137</SUB>> ]
+"397" [label = <(CONTROL_STRUCTURE,else,else)<SUB>138</SUB>> ]
+"398" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>138</SUB>> ]
+"399" [label = <(&lt;operator&gt;.assignment,query = schemeSpecificPart.substring(idx + 1))<SUB>139</SUB>> ]
+"400" [label = <(IDENTIFIER,query,query = schemeSpecificPart.substring(idx + 1))<SUB>139</SUB>> ]
+"401" [label = <(substring,schemeSpecificPart.substring(idx + 1))<SUB>139</SUB>> ]
+"402" [label = <(IDENTIFIER,schemeSpecificPart,schemeSpecificPart.substring(idx + 1))<SUB>139</SUB>> ]
+"403" [label = <(&lt;operator&gt;.addition,idx + 1)<SUB>139</SUB>> ]
+"404" [label = <(IDENTIFIER,idx,idx + 1)<SUB>139</SUB>> ]
+"405" [label = <(LITERAL,1,idx + 1)<SUB>139</SUB>> ]
+"406" [label = <(CONTROL_STRUCTURE,else,else)<SUB>141</SUB>> ]
+"407" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>141</SUB>> ]
+"408" [label = <(&lt;operator&gt;.assignment,query = stripPrefix(query, &quot;?&quot;))<SUB>142</SUB>> ]
+"409" [label = <(IDENTIFIER,query,query = stripPrefix(query, &quot;?&quot;))<SUB>142</SUB>> ]
+"410" [label = <(stripPrefix,stripPrefix(query, &quot;?&quot;))<SUB>142</SUB>> ]
+"411" [label = <(IDENTIFIER,query,stripPrefix(query, &quot;?&quot;))<SUB>142</SUB>> ]
+"412" [label = <(LITERAL,&quot;?&quot;,stripPrefix(query, &quot;?&quot;))<SUB>142</SUB>> ]
+"413" [label = <(RETURN,return parseQuery(query);,return parseQuery(query);)<SUB>144</SUB>> ]
+"414" [label = <(parseQuery,parseQuery(query))<SUB>144</SUB>> ]
+"415" [label = <(IDENTIFIER,query,parseQuery(query))<SUB>144</SUB>> ]
+"416" [label = <(MODIFIER,PUBLIC)> ]
+"417" [label = <(MODIFIER,STATIC)> ]
+"418" [label = <(METHOD_RETURN,java.util.Map)<SUB>131</SUB>> ]
+  "364" -> "365" 
+  "364" -> "366" 
+  "364" -> "416" 
+  "364" -> "417" 
+  "364" -> "418" 
+  "366" -> "367" 
+  "366" -> "368" 
+  "366" -> "372" 
+  "366" -> "413" 
+  "368" -> "369" 
+  "368" -> "370" 
+  "370" -> "371" 
+  "372" -> "373" 
+  "372" -> "376" 
+  "372" -> "406" 
+  "373" -> "374" 
+  "373" -> "375" 
+  "376" -> "377" 
+  "376" -> "378" 
+  "376" -> "382" 
+  "376" -> "383" 
+  "376" -> "388" 
+  "378" -> "379" 
+  "378" -> "380" 
+  "380" -> "381" 
+  "383" -> "384" 
+  "383" -> "385" 
+  "385" -> "386" 
+  "385" -> "387" 
+  "388" -> "389" 
+  "388" -> "392" 
+  "388" -> "397" 
+  "389" -> "390" 
+  "389" -> "391" 
+  "392" -> "393" 
+  "393" -> "394" 
+  "394" -> "395" 
+  "394" -> "396" 
+  "397" -> "398" 
+  "398" -> "399" 
+  "399" -> "400" 
+  "399" -> "401" 
+  "401" -> "402" 
+  "401" -> "403" 
+  "403" -> "404" 
+  "403" -> "405" 
+  "406" -> "407" 
+  "407" -> "408" 
+  "408" -> "409" 
+  "408" -> "410" 
+  "410" -> "411" 
+  "410" -> "412" 
+  "413" -> "414" 
+  "414" -> "415" 
+}

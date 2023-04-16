@@ -1,0 +1,69 @@
+digraph "read" {  
+"73" [label = <(METHOD,read)<SUB>63</SUB>> ]
+"4" [label = <(PARAM,this)<SUB>63</SUB>> ]
+"74" [label = <(PARAM,DataInputStream classStream)<SUB>63</SUB>> ]
+"75" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>63</SUB>> ]
+"76" [label = <(LOCAL,int numEntries: int)> ]
+"77" [label = <(&lt;operator&gt;.assignment,int numEntries = classStream.readUnsignedShort())<SUB>64</SUB>> ]
+"78" [label = <(IDENTIFIER,numEntries,int numEntries = classStream.readUnsignedShort())<SUB>64</SUB>> ]
+"79" [label = <(readUnsignedShort,classStream.readUnsignedShort())<SUB>64</SUB>> ]
+"80" [label = <(IDENTIFIER,classStream,classStream.readUnsignedShort())<SUB>64</SUB>> ]
+"81" [label = <(CONTROL_STRUCTURE,for (int i = 1; Some(i &lt; numEntries); ),for (int i = 1; Some(i &lt; numEntries); ))<SUB>66</SUB>> ]
+"82" [label = <(LOCAL,int i: int)> ]
+"83" [label = <(&lt;operator&gt;.assignment,int i = 1)<SUB>66</SUB>> ]
+"84" [label = <(IDENTIFIER,i,int i = 1)<SUB>66</SUB>> ]
+"85" [label = <(LITERAL,1,int i = 1)<SUB>66</SUB>> ]
+"86" [label = <(&lt;operator&gt;.lessThan,i &lt; numEntries)<SUB>66</SUB>> ]
+"87" [label = <(IDENTIFIER,i,i &lt; numEntries)<SUB>66</SUB>> ]
+"88" [label = <(IDENTIFIER,numEntries,i &lt; numEntries)<SUB>66</SUB>> ]
+"89" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>66</SUB>> ]
+"90" [label = <(LOCAL,ConstantPoolEntry nextEntry: ANY)> ]
+"91" [label = <(&lt;operator&gt;.assignment,ANY nextEntry = readEntry(classStream))<SUB>67</SUB>> ]
+"92" [label = <(IDENTIFIER,nextEntry,ANY nextEntry = readEntry(classStream))<SUB>67</SUB>> ]
+"93" [label = <(readEntry,readEntry(classStream))<SUB>68</SUB>> ]
+"94" [label = <(IDENTIFIER,ConstantPoolEntry,readEntry(classStream))<SUB>68</SUB>> ]
+"95" [label = <(IDENTIFIER,classStream,readEntry(classStream))<SUB>68</SUB>> ]
+"96" [label = <(&lt;operator&gt;.assignmentPlus,i += getNumEntries())<SUB>70</SUB>> ]
+"97" [label = <(IDENTIFIER,i,i += getNumEntries())<SUB>70</SUB>> ]
+"98" [label = <(getNumEntries,getNumEntries())<SUB>70</SUB>> ]
+"99" [label = <(IDENTIFIER,nextEntry,getNumEntries())<SUB>70</SUB>> ]
+"100" [label = <(addEntry,addEntry(nextEntry))<SUB>72</SUB>> ]
+"3" [label = <(IDENTIFIER,this,addEntry(nextEntry))<SUB>72</SUB>> ]
+"101" [label = <(IDENTIFIER,nextEntry,addEntry(nextEntry))<SUB>72</SUB>> ]
+"102" [label = <(MODIFIER,PUBLIC)> ]
+"103" [label = <(MODIFIER,VIRTUAL)> ]
+"104" [label = <(METHOD_RETURN,void)<SUB>63</SUB>> ]
+  "73" -> "4" 
+  "73" -> "74" 
+  "73" -> "75" 
+  "73" -> "102" 
+  "73" -> "103" 
+  "73" -> "104" 
+  "75" -> "76" 
+  "75" -> "77" 
+  "75" -> "81" 
+  "77" -> "78" 
+  "77" -> "79" 
+  "79" -> "80" 
+  "81" -> "82" 
+  "81" -> "83" 
+  "81" -> "86" 
+  "81" -> "89" 
+  "83" -> "84" 
+  "83" -> "85" 
+  "86" -> "87" 
+  "86" -> "88" 
+  "89" -> "90" 
+  "89" -> "91" 
+  "89" -> "96" 
+  "89" -> "100" 
+  "91" -> "92" 
+  "91" -> "93" 
+  "93" -> "94" 
+  "93" -> "95" 
+  "96" -> "97" 
+  "96" -> "98" 
+  "98" -> "99" 
+  "100" -> "3" 
+  "100" -> "101" 
+}

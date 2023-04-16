@@ -1,0 +1,189 @@
+digraph "getRedeliveryDelay" {  
+"253" [label = <(METHOD,getRedeliveryDelay)<SUB>109</SUB>> ]
+"254" [label = <(PARAM,this)<SUB>109</SUB>> ]
+"255" [label = <(PARAM,long previousDelay)<SUB>109</SUB>> ]
+"256" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>109</SUB>> ]
+"257" [label = <(LOCAL,long redeliveryDelay: long)> ]
+"258" [label = <(CONTROL_STRUCTURE,if (previousDelay == 0),if (previousDelay == 0))<SUB>112</SUB>> ]
+"259" [label = <(&lt;operator&gt;.equals,previousDelay == 0)<SUB>112</SUB>> ]
+"260" [label = <(IDENTIFIER,previousDelay,previousDelay == 0)<SUB>112</SUB>> ]
+"261" [label = <(LITERAL,0,previousDelay == 0)<SUB>112</SUB>> ]
+"262" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>112</SUB>> ]
+"263" [label = <(&lt;operator&gt;.assignment,redeliveryDelay = this.initialRedeliveryDelay)<SUB>113</SUB>> ]
+"264" [label = <(IDENTIFIER,redeliveryDelay,redeliveryDelay = this.initialRedeliveryDelay)<SUB>113</SUB>> ]
+"265" [label = <(&lt;operator&gt;.fieldAccess,this.initialRedeliveryDelay)<SUB>113</SUB>> ]
+"266" [label = <(IDENTIFIER,this,redeliveryDelay = this.initialRedeliveryDelay)<SUB>113</SUB>> ]
+"267" [label = <(FIELD_IDENTIFIER,initialRedeliveryDelay,initialRedeliveryDelay)<SUB>113</SUB>> ]
+"268" [label = <(CONTROL_STRUCTURE,else,else)<SUB>114</SUB>> ]
+"269" [label = <(CONTROL_STRUCTURE,if (useExponentialBackOff &amp;&amp; backOffMultiplier &gt; 1),if (useExponentialBackOff &amp;&amp; backOffMultiplier &gt; 1))<SUB>114</SUB>> ]
+"270" [label = <(&lt;operator&gt;.logicalAnd,useExponentialBackOff &amp;&amp; backOffMultiplier &gt; 1)<SUB>114</SUB>> ]
+"271" [label = <(&lt;operator&gt;.fieldAccess,this.useExponentialBackOff)<SUB>114</SUB>> ]
+"272" [label = <(IDENTIFIER,this,useExponentialBackOff &amp;&amp; backOffMultiplier &gt; 1)<SUB>114</SUB>> ]
+"273" [label = <(FIELD_IDENTIFIER,useExponentialBackOff,useExponentialBackOff)<SUB>114</SUB>> ]
+"274" [label = <(&lt;operator&gt;.greaterThan,backOffMultiplier &gt; 1)<SUB>114</SUB>> ]
+"275" [label = <(&lt;operator&gt;.fieldAccess,this.backOffMultiplier)<SUB>114</SUB>> ]
+"276" [label = <(IDENTIFIER,this,backOffMultiplier &gt; 1)<SUB>114</SUB>> ]
+"277" [label = <(FIELD_IDENTIFIER,backOffMultiplier,backOffMultiplier)<SUB>114</SUB>> ]
+"278" [label = <(LITERAL,1,backOffMultiplier &gt; 1)<SUB>114</SUB>> ]
+"279" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>114</SUB>> ]
+"280" [label = <(&lt;operator&gt;.assignment,redeliveryDelay = Math.round(backOffMultiplier * previousDelay))<SUB>115</SUB>> ]
+"281" [label = <(IDENTIFIER,redeliveryDelay,redeliveryDelay = Math.round(backOffMultiplier * previousDelay))<SUB>115</SUB>> ]
+"282" [label = <(round,Math.round(backOffMultiplier * previousDelay))<SUB>115</SUB>> ]
+"283" [label = <(IDENTIFIER,Math,Math.round(backOffMultiplier * previousDelay))<SUB>115</SUB>> ]
+"284" [label = <(&lt;operator&gt;.multiplication,backOffMultiplier * previousDelay)<SUB>115</SUB>> ]
+"285" [label = <(&lt;operator&gt;.fieldAccess,this.backOffMultiplier)<SUB>115</SUB>> ]
+"286" [label = <(IDENTIFIER,this,backOffMultiplier * previousDelay)<SUB>115</SUB>> ]
+"287" [label = <(FIELD_IDENTIFIER,backOffMultiplier,backOffMultiplier)<SUB>115</SUB>> ]
+"288" [label = <(IDENTIFIER,previousDelay,backOffMultiplier * previousDelay)<SUB>115</SUB>> ]
+"289" [label = <(CONTROL_STRUCTURE,else,else)<SUB>116</SUB>> ]
+"290" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>116</SUB>> ]
+"291" [label = <(&lt;operator&gt;.assignment,redeliveryDelay = previousDelay)<SUB>117</SUB>> ]
+"292" [label = <(IDENTIFIER,redeliveryDelay,redeliveryDelay = previousDelay)<SUB>117</SUB>> ]
+"293" [label = <(IDENTIFIER,previousDelay,redeliveryDelay = previousDelay)<SUB>117</SUB>> ]
+"294" [label = <(CONTROL_STRUCTURE,if (useCollisionAvoidance),if (useCollisionAvoidance))<SUB>120</SUB>> ]
+"295" [label = <(&lt;operator&gt;.fieldAccess,this.useCollisionAvoidance)<SUB>120</SUB>> ]
+"296" [label = <(IDENTIFIER,this,if (useCollisionAvoidance))<SUB>120</SUB>> ]
+"297" [label = <(FIELD_IDENTIFIER,useCollisionAvoidance,useCollisionAvoidance)<SUB>120</SUB>> ]
+"298" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>120</SUB>> ]
+"299" [label = <(LOCAL,Random random: java.util.Random)> ]
+"300" [label = <(&lt;operator&gt;.assignment,Random random = getRandomNumberGenerator())<SUB>126</SUB>> ]
+"301" [label = <(IDENTIFIER,random,Random random = getRandomNumberGenerator())<SUB>126</SUB>> ]
+"302" [label = <(getRandomNumberGenerator,getRandomNumberGenerator())<SUB>126</SUB>> ]
+"303" [label = <(LOCAL,double variance: double)> ]
+"304" [label = <(&lt;operator&gt;.assignment,double variance = (random.nextBoolean() ? collisionAvoidanceFactor : -collisionAvoidanceFactor) * random.nextDouble())<SUB>127</SUB>> ]
+"305" [label = <(IDENTIFIER,variance,double variance = (random.nextBoolean() ? collisionAvoidanceFactor : -collisionAvoidanceFactor) * random.nextDouble())<SUB>127</SUB>> ]
+"306" [label = <(&lt;operator&gt;.multiplication,(random.nextBoolean() ? collisionAvoidanceFactor : -collisionAvoidanceFactor) * random.nextDouble())<SUB>127</SUB>> ]
+"307" [label = <(&lt;operator&gt;.conditional,random.nextBoolean() ? collisionAvoidanceFactor : -collisionAvoidanceFactor)<SUB>127</SUB>> ]
+"308" [label = <(nextBoolean,random.nextBoolean())<SUB>127</SUB>> ]
+"309" [label = <(IDENTIFIER,random,random.nextBoolean())<SUB>127</SUB>> ]
+"310" [label = <(&lt;operator&gt;.fieldAccess,this.collisionAvoidanceFactor)<SUB>127</SUB>> ]
+"311" [label = <(IDENTIFIER,this,random.nextBoolean() ? collisionAvoidanceFactor : -collisionAvoidanceFactor)<SUB>127</SUB>> ]
+"312" [label = <(FIELD_IDENTIFIER,collisionAvoidanceFactor,collisionAvoidanceFactor)<SUB>127</SUB>> ]
+"313" [label = <(&lt;operator&gt;.minus,-collisionAvoidanceFactor)<SUB>127</SUB>> ]
+"314" [label = <(&lt;operator&gt;.fieldAccess,this.collisionAvoidanceFactor)<SUB>127</SUB>> ]
+"315" [label = <(IDENTIFIER,this,-collisionAvoidanceFactor)<SUB>127</SUB>> ]
+"316" [label = <(FIELD_IDENTIFIER,collisionAvoidanceFactor,collisionAvoidanceFactor)<SUB>127</SUB>> ]
+"317" [label = <(nextDouble,random.nextDouble())<SUB>128</SUB>> ]
+"318" [label = <(IDENTIFIER,random,random.nextDouble())<SUB>128</SUB>> ]
+"319" [label = <(&lt;operator&gt;.assignmentPlus,redeliveryDelay += redeliveryDelay * variance)<SUB>129</SUB>> ]
+"320" [label = <(IDENTIFIER,redeliveryDelay,redeliveryDelay += redeliveryDelay * variance)<SUB>129</SUB>> ]
+"321" [label = <(&lt;operator&gt;.multiplication,redeliveryDelay * variance)<SUB>129</SUB>> ]
+"322" [label = <(IDENTIFIER,redeliveryDelay,redeliveryDelay * variance)<SUB>129</SUB>> ]
+"323" [label = <(IDENTIFIER,variance,redeliveryDelay * variance)<SUB>129</SUB>> ]
+"324" [label = <(CONTROL_STRUCTURE,if (maximumRedeliveryDelay &gt; 0 &amp;&amp; redeliveryDelay &gt; maximumRedeliveryDelay),if (maximumRedeliveryDelay &gt; 0 &amp;&amp; redeliveryDelay &gt; maximumRedeliveryDelay))<SUB>132</SUB>> ]
+"325" [label = <(&lt;operator&gt;.logicalAnd,maximumRedeliveryDelay &gt; 0 &amp;&amp; redeliveryDelay &gt; maximumRedeliveryDelay)<SUB>132</SUB>> ]
+"326" [label = <(&lt;operator&gt;.greaterThan,maximumRedeliveryDelay &gt; 0)<SUB>132</SUB>> ]
+"327" [label = <(&lt;operator&gt;.fieldAccess,this.maximumRedeliveryDelay)<SUB>132</SUB>> ]
+"328" [label = <(IDENTIFIER,this,maximumRedeliveryDelay &gt; 0)<SUB>132</SUB>> ]
+"329" [label = <(FIELD_IDENTIFIER,maximumRedeliveryDelay,maximumRedeliveryDelay)<SUB>132</SUB>> ]
+"330" [label = <(LITERAL,0,maximumRedeliveryDelay &gt; 0)<SUB>132</SUB>> ]
+"331" [label = <(&lt;operator&gt;.greaterThan,redeliveryDelay &gt; maximumRedeliveryDelay)<SUB>132</SUB>> ]
+"332" [label = <(IDENTIFIER,redeliveryDelay,redeliveryDelay &gt; maximumRedeliveryDelay)<SUB>132</SUB>> ]
+"333" [label = <(&lt;operator&gt;.fieldAccess,this.maximumRedeliveryDelay)<SUB>132</SUB>> ]
+"334" [label = <(IDENTIFIER,this,redeliveryDelay &gt; maximumRedeliveryDelay)<SUB>132</SUB>> ]
+"335" [label = <(FIELD_IDENTIFIER,maximumRedeliveryDelay,maximumRedeliveryDelay)<SUB>132</SUB>> ]
+"336" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>132</SUB>> ]
+"337" [label = <(&lt;operator&gt;.assignment,redeliveryDelay = this.maximumRedeliveryDelay)<SUB>133</SUB>> ]
+"338" [label = <(IDENTIFIER,redeliveryDelay,redeliveryDelay = this.maximumRedeliveryDelay)<SUB>133</SUB>> ]
+"339" [label = <(&lt;operator&gt;.fieldAccess,this.maximumRedeliveryDelay)<SUB>133</SUB>> ]
+"340" [label = <(IDENTIFIER,this,redeliveryDelay = this.maximumRedeliveryDelay)<SUB>133</SUB>> ]
+"341" [label = <(FIELD_IDENTIFIER,maximumRedeliveryDelay,maximumRedeliveryDelay)<SUB>133</SUB>> ]
+"342" [label = <(RETURN,return redeliveryDelay;,return redeliveryDelay;)<SUB>136</SUB>> ]
+"343" [label = <(IDENTIFIER,redeliveryDelay,return redeliveryDelay;)<SUB>136</SUB>> ]
+"344" [label = <(MODIFIER,PUBLIC)> ]
+"345" [label = <(MODIFIER,VIRTUAL)> ]
+"346" [label = <(METHOD_RETURN,long)<SUB>109</SUB>> ]
+  "253" -> "254" 
+  "253" -> "255" 
+  "253" -> "256" 
+  "253" -> "344" 
+  "253" -> "345" 
+  "253" -> "346" 
+  "256" -> "257" 
+  "256" -> "258" 
+  "256" -> "294" 
+  "256" -> "324" 
+  "256" -> "342" 
+  "258" -> "259" 
+  "258" -> "262" 
+  "258" -> "268" 
+  "259" -> "260" 
+  "259" -> "261" 
+  "262" -> "263" 
+  "263" -> "264" 
+  "263" -> "265" 
+  "265" -> "266" 
+  "265" -> "267" 
+  "268" -> "269" 
+  "269" -> "270" 
+  "269" -> "279" 
+  "269" -> "289" 
+  "270" -> "271" 
+  "270" -> "274" 
+  "271" -> "272" 
+  "271" -> "273" 
+  "274" -> "275" 
+  "274" -> "278" 
+  "275" -> "276" 
+  "275" -> "277" 
+  "279" -> "280" 
+  "280" -> "281" 
+  "280" -> "282" 
+  "282" -> "283" 
+  "282" -> "284" 
+  "284" -> "285" 
+  "284" -> "288" 
+  "285" -> "286" 
+  "285" -> "287" 
+  "289" -> "290" 
+  "290" -> "291" 
+  "291" -> "292" 
+  "291" -> "293" 
+  "294" -> "295" 
+  "294" -> "298" 
+  "295" -> "296" 
+  "295" -> "297" 
+  "298" -> "299" 
+  "298" -> "300" 
+  "298" -> "303" 
+  "298" -> "304" 
+  "298" -> "319" 
+  "300" -> "301" 
+  "300" -> "302" 
+  "304" -> "305" 
+  "304" -> "306" 
+  "306" -> "307" 
+  "306" -> "317" 
+  "307" -> "308" 
+  "307" -> "310" 
+  "307" -> "313" 
+  "308" -> "309" 
+  "310" -> "311" 
+  "310" -> "312" 
+  "313" -> "314" 
+  "314" -> "315" 
+  "314" -> "316" 
+  "317" -> "318" 
+  "319" -> "320" 
+  "319" -> "321" 
+  "321" -> "322" 
+  "321" -> "323" 
+  "324" -> "325" 
+  "324" -> "336" 
+  "325" -> "326" 
+  "325" -> "331" 
+  "326" -> "327" 
+  "326" -> "330" 
+  "327" -> "328" 
+  "327" -> "329" 
+  "331" -> "332" 
+  "331" -> "333" 
+  "333" -> "334" 
+  "333" -> "335" 
+  "336" -> "337" 
+  "337" -> "338" 
+  "337" -> "339" 
+  "339" -> "340" 
+  "339" -> "341" 
+  "342" -> "343" 
+}

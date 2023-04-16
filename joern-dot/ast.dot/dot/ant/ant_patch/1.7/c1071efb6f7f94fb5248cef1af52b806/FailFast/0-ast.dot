@@ -1,0 +1,45 @@
+digraph "invalidate" {  
+"33" [label = <(METHOD,invalidate)<SUB>39</SUB>> ]
+"34" [label = <(PARAM,Object o)<SUB>39</SUB>> ]
+"35" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>39</SUB>> ]
+"36" [label = <(LOCAL,Set s: java.util.Set)> ]
+"37" [label = <(&lt;operator&gt;.assignment,Set s = (Set) (MAP.get(o)))<SUB>40</SUB>> ]
+"38" [label = <(IDENTIFIER,s,Set s = (Set) (MAP.get(o)))<SUB>40</SUB>> ]
+"39" [label = <(&lt;operator&gt;.cast,(Set) (MAP.get(o)))<SUB>40</SUB>> ]
+"40" [label = <(TYPE_REF,Set,Set)<SUB>40</SUB>> ]
+"41" [label = <(get,MAP.get(o))<SUB>40</SUB>> ]
+"42" [label = <(&lt;operator&gt;.fieldAccess,FailFast.MAP)<SUB>40</SUB>> ]
+"43" [label = <(IDENTIFIER,FailFast,MAP.get(o))<SUB>40</SUB>> ]
+"44" [label = <(FIELD_IDENTIFIER,MAP,MAP)<SUB>40</SUB>> ]
+"45" [label = <(IDENTIFIER,o,MAP.get(o))<SUB>40</SUB>> ]
+"46" [label = <(CONTROL_STRUCTURE,if (s != null),if (s != null))<SUB>41</SUB>> ]
+"47" [label = <(&lt;operator&gt;.notEquals,s != null)<SUB>41</SUB>> ]
+"48" [label = <(IDENTIFIER,s,s != null)<SUB>41</SUB>> ]
+"49" [label = <(LITERAL,null,s != null)<SUB>41</SUB>> ]
+"50" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>41</SUB>> ]
+"51" [label = <(clear,s.clear())<SUB>42</SUB>> ]
+"52" [label = <(IDENTIFIER,s,s.clear())<SUB>42</SUB>> ]
+"53" [label = <(MODIFIER,STATIC)> ]
+"54" [label = <(METHOD_RETURN,void)<SUB>39</SUB>> ]
+  "33" -> "34" 
+  "33" -> "35" 
+  "33" -> "53" 
+  "33" -> "54" 
+  "35" -> "36" 
+  "35" -> "37" 
+  "35" -> "46" 
+  "37" -> "38" 
+  "37" -> "39" 
+  "39" -> "40" 
+  "39" -> "41" 
+  "41" -> "42" 
+  "41" -> "45" 
+  "42" -> "43" 
+  "42" -> "44" 
+  "46" -> "47" 
+  "46" -> "50" 
+  "47" -> "48" 
+  "47" -> "49" 
+  "50" -> "51" 
+  "51" -> "52" 
+}

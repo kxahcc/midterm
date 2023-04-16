@@ -1,0 +1,279 @@
+digraph "addFiles" {  
+"2172" [label = <(METHOD,addFiles)<SUB>843</SUB>> ]
+"102" [label = <(PARAM,this)<SUB>843</SUB>> ]
+"2173" [label = <(PARAM,Vector filesets)<SUB>843</SUB>> ]
+"2174" [label = <(PARAM,ZipOutputStream zOut)<SUB>843</SUB>> ]
+"2175" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>844</SUB>> ]
+"2176" [label = <(CONTROL_STRUCTURE,for (int i = 0; Some(i &lt; filesets.size()); i++),for (int i = 0; Some(i &lt; filesets.size()); i++))<SUB>846</SUB>> ]
+"2177" [label = <(LOCAL,int i: int)> ]
+"2178" [label = <(&lt;operator&gt;.assignment,int i = 0)<SUB>846</SUB>> ]
+"2179" [label = <(IDENTIFIER,i,int i = 0)<SUB>846</SUB>> ]
+"2180" [label = <(LITERAL,0,int i = 0)<SUB>846</SUB>> ]
+"2181" [label = <(&lt;operator&gt;.lessThan,i &lt; filesets.size())<SUB>846</SUB>> ]
+"2182" [label = <(IDENTIFIER,i,i &lt; filesets.size())<SUB>846</SUB>> ]
+"2183" [label = <(size,filesets.size())<SUB>846</SUB>> ]
+"2184" [label = <(IDENTIFIER,filesets,filesets.size())<SUB>846</SUB>> ]
+"2185" [label = <(&lt;operator&gt;.postIncrement,i++)<SUB>846</SUB>> ]
+"2186" [label = <(IDENTIFIER,i,i++)<SUB>846</SUB>> ]
+"2187" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>846</SUB>> ]
+"2188" [label = <(LOCAL,FileSet fs: org.apache.tools.ant.types.FileSet)> ]
+"2189" [label = <(&lt;operator&gt;.assignment,FileSet fs = (FileSet) filesets.elementAt(i))<SUB>847</SUB>> ]
+"2190" [label = <(IDENTIFIER,fs,FileSet fs = (FileSet) filesets.elementAt(i))<SUB>847</SUB>> ]
+"2191" [label = <(&lt;operator&gt;.cast,(FileSet) filesets.elementAt(i))<SUB>847</SUB>> ]
+"2192" [label = <(TYPE_REF,FileSet,FileSet)<SUB>847</SUB>> ]
+"2193" [label = <(elementAt,filesets.elementAt(i))<SUB>847</SUB>> ]
+"2194" [label = <(IDENTIFIER,filesets,filesets.elementAt(i))<SUB>847</SUB>> ]
+"2195" [label = <(IDENTIFIER,i,filesets.elementAt(i))<SUB>847</SUB>> ]
+"2196" [label = <(LOCAL,DirectoryScanner ds: org.apache.tools.ant.DirectoryScanner)> ]
+"2197" [label = <(&lt;operator&gt;.assignment,DirectoryScanner ds = getDirectoryScanner(project))<SUB>848</SUB>> ]
+"2198" [label = <(IDENTIFIER,ds,DirectoryScanner ds = getDirectoryScanner(project))<SUB>848</SUB>> ]
+"2199" [label = <(getDirectoryScanner,getDirectoryScanner(project))<SUB>848</SUB>> ]
+"2200" [label = <(IDENTIFIER,fs,getDirectoryScanner(project))<SUB>848</SUB>> ]
+"2201" [label = <(IDENTIFIER,project,getDirectoryScanner(project))<SUB>848</SUB>> ]
+"2202" [label = <(LOCAL,String prefix: java.lang.String)> ]
+"2203" [label = <(&lt;operator&gt;.assignment,String prefix = &quot;&quot;)<SUB>850</SUB>> ]
+"2204" [label = <(IDENTIFIER,prefix,String prefix = &quot;&quot;)<SUB>850</SUB>> ]
+"2205" [label = <(LITERAL,&quot;&quot;,String prefix = &quot;&quot;)<SUB>850</SUB>> ]
+"2206" [label = <(LOCAL,String fullpath: java.lang.String)> ]
+"2207" [label = <(&lt;operator&gt;.assignment,String fullpath = &quot;&quot;)<SUB>851</SUB>> ]
+"2208" [label = <(IDENTIFIER,fullpath,String fullpath = &quot;&quot;)<SUB>851</SUB>> ]
+"2209" [label = <(LITERAL,&quot;&quot;,String fullpath = &quot;&quot;)<SUB>851</SUB>> ]
+"2210" [label = <(CONTROL_STRUCTURE,if (fs instanceof ZipFileSet),if (fs instanceof ZipFileSet))<SUB>852</SUB>> ]
+"2211" [label = <(&lt;operator&gt;.instanceOf,fs instanceof ZipFileSet)<SUB>852</SUB>> ]
+"2212" [label = <(IDENTIFIER,fs,fs instanceof ZipFileSet)<SUB>852</SUB>> ]
+"2213" [label = <(TYPE_REF,ZipFileSet,ZipFileSet)<SUB>852</SUB>> ]
+"2214" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>852</SUB>> ]
+"2215" [label = <(LOCAL,ZipFileSet zfs: org.apache.tools.ant.types.ZipFileSet)> ]
+"2216" [label = <(&lt;operator&gt;.assignment,ZipFileSet zfs = (ZipFileSet) fs)<SUB>853</SUB>> ]
+"2217" [label = <(IDENTIFIER,zfs,ZipFileSet zfs = (ZipFileSet) fs)<SUB>853</SUB>> ]
+"2218" [label = <(&lt;operator&gt;.cast,(ZipFileSet) fs)<SUB>853</SUB>> ]
+"2219" [label = <(TYPE_REF,ZipFileSet,ZipFileSet)<SUB>853</SUB>> ]
+"2220" [label = <(IDENTIFIER,fs,(ZipFileSet) fs)<SUB>853</SUB>> ]
+"2221" [label = <(&lt;operator&gt;.assignment,prefix = getPrefix())<SUB>854</SUB>> ]
+"2222" [label = <(IDENTIFIER,prefix,prefix = getPrefix())<SUB>854</SUB>> ]
+"2223" [label = <(getPrefix,getPrefix())<SUB>854</SUB>> ]
+"2224" [label = <(IDENTIFIER,zfs,getPrefix())<SUB>854</SUB>> ]
+"2225" [label = <(&lt;operator&gt;.assignment,fullpath = getFullpath())<SUB>855</SUB>> ]
+"2226" [label = <(IDENTIFIER,fullpath,fullpath = getFullpath())<SUB>855</SUB>> ]
+"2227" [label = <(getFullpath,getFullpath())<SUB>855</SUB>> ]
+"2228" [label = <(IDENTIFIER,zfs,getFullpath())<SUB>855</SUB>> ]
+"2229" [label = <(CONTROL_STRUCTURE,if (prefix.length() &gt; 0 &amp;&amp; !prefix.endsWith(&quot;/&quot;) &amp;&amp; !prefix.endsWith(&quot;\\&quot;)),if (prefix.length() &gt; 0 &amp;&amp; !prefix.endsWith(&quot;/&quot;) &amp;&amp; !prefix.endsWith(&quot;\\&quot;)))<SUB>858</SUB>> ]
+"2230" [label = <(&lt;operator&gt;.logicalAnd,prefix.length() &gt; 0 &amp;&amp; !prefix.endsWith(&quot;/&quot;) &amp;&amp; !prefix.endsWith(&quot;\\&quot;))<SUB>858</SUB>> ]
+"2231" [label = <(&lt;operator&gt;.logicalAnd,prefix.length() &gt; 0 &amp;&amp; !prefix.endsWith(&quot;/&quot;))<SUB>858</SUB>> ]
+"2232" [label = <(&lt;operator&gt;.greaterThan,prefix.length() &gt; 0)<SUB>858</SUB>> ]
+"2233" [label = <(length,prefix.length())<SUB>858</SUB>> ]
+"2234" [label = <(IDENTIFIER,prefix,prefix.length())<SUB>858</SUB>> ]
+"2235" [label = <(LITERAL,0,prefix.length() &gt; 0)<SUB>858</SUB>> ]
+"2236" [label = <(&lt;operator&gt;.logicalNot,!prefix.endsWith(&quot;/&quot;))<SUB>859</SUB>> ]
+"2237" [label = <(endsWith,prefix.endsWith(&quot;/&quot;))<SUB>859</SUB>> ]
+"2238" [label = <(IDENTIFIER,prefix,prefix.endsWith(&quot;/&quot;))<SUB>859</SUB>> ]
+"2239" [label = <(LITERAL,&quot;/&quot;,prefix.endsWith(&quot;/&quot;))<SUB>859</SUB>> ]
+"2240" [label = <(&lt;operator&gt;.logicalNot,!prefix.endsWith(&quot;\\&quot;))<SUB>860</SUB>> ]
+"2241" [label = <(endsWith,prefix.endsWith(&quot;\\&quot;))<SUB>860</SUB>> ]
+"2242" [label = <(IDENTIFIER,prefix,prefix.endsWith(&quot;\\&quot;))<SUB>860</SUB>> ]
+"2243" [label = <(LITERAL,&quot;\\&quot;,prefix.endsWith(&quot;\\&quot;))<SUB>860</SUB>> ]
+"2244" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>860</SUB>> ]
+"2245" [label = <(&lt;operator&gt;.assignmentPlus,prefix += &quot;/&quot;)<SUB>861</SUB>> ]
+"2246" [label = <(IDENTIFIER,prefix,prefix += &quot;/&quot;)<SUB>861</SUB>> ]
+"2247" [label = <(LITERAL,&quot;/&quot;,prefix += &quot;/&quot;)<SUB>861</SUB>> ]
+"2248" [label = <(CONTROL_STRUCTURE,if (prefix.length() &gt; 0),if (prefix.length() &gt; 0))<SUB>866</SUB>> ]
+"2249" [label = <(&lt;operator&gt;.greaterThan,prefix.length() &gt; 0)<SUB>866</SUB>> ]
+"2250" [label = <(length,prefix.length())<SUB>866</SUB>> ]
+"2251" [label = <(IDENTIFIER,prefix,prefix.length())<SUB>866</SUB>> ]
+"2252" [label = <(LITERAL,0,prefix.length() &gt; 0)<SUB>866</SUB>> ]
+"2253" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>866</SUB>> ]
+"2254" [label = <(addParentDirs,addParentDirs(null, prefix, zOut, &quot;&quot;))<SUB>867</SUB>> ]
+"101" [label = <(IDENTIFIER,this,addParentDirs(null, prefix, zOut, &quot;&quot;))<SUB>867</SUB>> ]
+"2255" [label = <(LITERAL,null,addParentDirs(null, prefix, zOut, &quot;&quot;))<SUB>867</SUB>> ]
+"2256" [label = <(IDENTIFIER,prefix,addParentDirs(null, prefix, zOut, &quot;&quot;))<SUB>867</SUB>> ]
+"2257" [label = <(IDENTIFIER,zOut,addParentDirs(null, prefix, zOut, &quot;&quot;))<SUB>867</SUB>> ]
+"2258" [label = <(LITERAL,&quot;&quot;,addParentDirs(null, prefix, zOut, &quot;&quot;))<SUB>867</SUB>> ]
+"2259" [label = <(zipDir,zipDir(null, zOut, prefix))<SUB>868</SUB>> ]
+"103" [label = <(IDENTIFIER,this,zipDir(null, zOut, prefix))<SUB>868</SUB>> ]
+"2260" [label = <(LITERAL,null,zipDir(null, zOut, prefix))<SUB>868</SUB>> ]
+"2261" [label = <(IDENTIFIER,zOut,zipDir(null, zOut, prefix))<SUB>868</SUB>> ]
+"2262" [label = <(IDENTIFIER,prefix,zipDir(null, zOut, prefix))<SUB>868</SUB>> ]
+"2263" [label = <(CONTROL_STRUCTURE,else,else)<SUB>869</SUB>> ]
+"2264" [label = <(CONTROL_STRUCTURE,if (fullpath.length() &gt; 0),if (fullpath.length() &gt; 0))<SUB>869</SUB>> ]
+"2265" [label = <(&lt;operator&gt;.greaterThan,fullpath.length() &gt; 0)<SUB>869</SUB>> ]
+"2266" [label = <(length,fullpath.length())<SUB>869</SUB>> ]
+"2267" [label = <(IDENTIFIER,fullpath,fullpath.length())<SUB>869</SUB>> ]
+"2268" [label = <(LITERAL,0,fullpath.length() &gt; 0)<SUB>869</SUB>> ]
+"2269" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>869</SUB>> ]
+"2270" [label = <(addParentDirs,addParentDirs(null, fullpath, zOut, &quot;&quot;))<SUB>870</SUB>> ]
+"104" [label = <(IDENTIFIER,this,addParentDirs(null, fullpath, zOut, &quot;&quot;))<SUB>870</SUB>> ]
+"2271" [label = <(LITERAL,null,addParentDirs(null, fullpath, zOut, &quot;&quot;))<SUB>870</SUB>> ]
+"2272" [label = <(IDENTIFIER,fullpath,addParentDirs(null, fullpath, zOut, &quot;&quot;))<SUB>870</SUB>> ]
+"2273" [label = <(IDENTIFIER,zOut,addParentDirs(null, fullpath, zOut, &quot;&quot;))<SUB>870</SUB>> ]
+"2274" [label = <(LITERAL,&quot;&quot;,addParentDirs(null, fullpath, zOut, &quot;&quot;))<SUB>870</SUB>> ]
+"2275" [label = <(CONTROL_STRUCTURE,if (fs instanceof ZipFileSet &amp;&amp; ((ZipFileSet) fs).getSrc() != null),if (fs instanceof ZipFileSet &amp;&amp; ((ZipFileSet) fs).getSrc() != null))<SUB>873</SUB>> ]
+"2276" [label = <(&lt;operator&gt;.logicalAnd,fs instanceof ZipFileSet &amp;&amp; ((ZipFileSet) fs).getSrc() != null)<SUB>873</SUB>> ]
+"2277" [label = <(&lt;operator&gt;.instanceOf,fs instanceof ZipFileSet)<SUB>873</SUB>> ]
+"2278" [label = <(IDENTIFIER,fs,fs instanceof ZipFileSet)<SUB>873</SUB>> ]
+"2279" [label = <(TYPE_REF,ZipFileSet,ZipFileSet)<SUB>873</SUB>> ]
+"2280" [label = <(&lt;operator&gt;.notEquals,((ZipFileSet) fs).getSrc() != null)<SUB>874</SUB>> ]
+"2281" [label = <(getSrc,getSrc())<SUB>874</SUB>> ]
+"2282" [label = <(&lt;operator&gt;.cast,(ZipFileSet) fs)<SUB>874</SUB>> ]
+"2283" [label = <(TYPE_REF,ZipFileSet,ZipFileSet)<SUB>874</SUB>> ]
+"2284" [label = <(IDENTIFIER,fs,(ZipFileSet) fs)<SUB>874</SUB>> ]
+"2285" [label = <(LITERAL,null,((ZipFileSet) fs).getSrc() != null)<SUB>874</SUB>> ]
+"2286" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>874</SUB>> ]
+"2287" [label = <(addZipEntries,addZipEntries((ZipFileSet) fs, ds, zOut, prefix, fullpath))<SUB>875</SUB>> ]
+"105" [label = <(IDENTIFIER,this,addZipEntries((ZipFileSet) fs, ds, zOut, prefix, fullpath))<SUB>875</SUB>> ]
+"2288" [label = <(&lt;operator&gt;.cast,(ZipFileSet) fs)<SUB>875</SUB>> ]
+"2289" [label = <(TYPE_REF,ZipFileSet,ZipFileSet)<SUB>875</SUB>> ]
+"2290" [label = <(IDENTIFIER,fs,(ZipFileSet) fs)<SUB>875</SUB>> ]
+"2291" [label = <(IDENTIFIER,ds,addZipEntries((ZipFileSet) fs, ds, zOut, prefix, fullpath))<SUB>875</SUB>> ]
+"2292" [label = <(IDENTIFIER,zOut,addZipEntries((ZipFileSet) fs, ds, zOut, prefix, fullpath))<SUB>875</SUB>> ]
+"2293" [label = <(IDENTIFIER,prefix,addZipEntries((ZipFileSet) fs, ds, zOut, prefix, fullpath))<SUB>875</SUB>> ]
+"2294" [label = <(IDENTIFIER,fullpath,addZipEntries((ZipFileSet) fs, ds, zOut, prefix, fullpath))<SUB>875</SUB>> ]
+"2295" [label = <(CONTROL_STRUCTURE,else,else)<SUB>876</SUB>> ]
+"2296" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>876</SUB>> ]
+"2297" [label = <(addFiles,addFiles(ds, zOut, prefix, fullpath))<SUB>878</SUB>> ]
+"106" [label = <(IDENTIFIER,this,addFiles(ds, zOut, prefix, fullpath))<SUB>878</SUB>> ]
+"2298" [label = <(IDENTIFIER,ds,addFiles(ds, zOut, prefix, fullpath))<SUB>878</SUB>> ]
+"2299" [label = <(IDENTIFIER,zOut,addFiles(ds, zOut, prefix, fullpath))<SUB>878</SUB>> ]
+"2300" [label = <(IDENTIFIER,prefix,addFiles(ds, zOut, prefix, fullpath))<SUB>878</SUB>> ]
+"2301" [label = <(IDENTIFIER,fullpath,addFiles(ds, zOut, prefix, fullpath))<SUB>878</SUB>> ]
+"2302" [label = <(MODIFIER,PROTECTED)> ]
+"2303" [label = <(MODIFIER,VIRTUAL)> ]
+"2304" [label = <(METHOD_RETURN,void)<SUB>843</SUB>> ]
+  "2172" -> "102" 
+  "2172" -> "2173" 
+  "2172" -> "2174" 
+  "2172" -> "2175" 
+  "2172" -> "2302" 
+  "2172" -> "2303" 
+  "2172" -> "2304" 
+  "2175" -> "2176" 
+  "2176" -> "2177" 
+  "2176" -> "2178" 
+  "2176" -> "2181" 
+  "2176" -> "2185" 
+  "2176" -> "2187" 
+  "2178" -> "2179" 
+  "2178" -> "2180" 
+  "2181" -> "2182" 
+  "2181" -> "2183" 
+  "2183" -> "2184" 
+  "2185" -> "2186" 
+  "2187" -> "2188" 
+  "2187" -> "2189" 
+  "2187" -> "2196" 
+  "2187" -> "2197" 
+  "2187" -> "2202" 
+  "2187" -> "2203" 
+  "2187" -> "2206" 
+  "2187" -> "2207" 
+  "2187" -> "2210" 
+  "2187" -> "2229" 
+  "2187" -> "2248" 
+  "2187" -> "2275" 
+  "2189" -> "2190" 
+  "2189" -> "2191" 
+  "2191" -> "2192" 
+  "2191" -> "2193" 
+  "2193" -> "2194" 
+  "2193" -> "2195" 
+  "2197" -> "2198" 
+  "2197" -> "2199" 
+  "2199" -> "2200" 
+  "2199" -> "2201" 
+  "2203" -> "2204" 
+  "2203" -> "2205" 
+  "2207" -> "2208" 
+  "2207" -> "2209" 
+  "2210" -> "2211" 
+  "2210" -> "2214" 
+  "2211" -> "2212" 
+  "2211" -> "2213" 
+  "2214" -> "2215" 
+  "2214" -> "2216" 
+  "2214" -> "2221" 
+  "2214" -> "2225" 
+  "2216" -> "2217" 
+  "2216" -> "2218" 
+  "2218" -> "2219" 
+  "2218" -> "2220" 
+  "2221" -> "2222" 
+  "2221" -> "2223" 
+  "2223" -> "2224" 
+  "2225" -> "2226" 
+  "2225" -> "2227" 
+  "2227" -> "2228" 
+  "2229" -> "2230" 
+  "2229" -> "2244" 
+  "2230" -> "2231" 
+  "2230" -> "2240" 
+  "2231" -> "2232" 
+  "2231" -> "2236" 
+  "2232" -> "2233" 
+  "2232" -> "2235" 
+  "2233" -> "2234" 
+  "2236" -> "2237" 
+  "2237" -> "2238" 
+  "2237" -> "2239" 
+  "2240" -> "2241" 
+  "2241" -> "2242" 
+  "2241" -> "2243" 
+  "2244" -> "2245" 
+  "2245" -> "2246" 
+  "2245" -> "2247" 
+  "2248" -> "2249" 
+  "2248" -> "2253" 
+  "2248" -> "2263" 
+  "2249" -> "2250" 
+  "2249" -> "2252" 
+  "2250" -> "2251" 
+  "2253" -> "2254" 
+  "2253" -> "2259" 
+  "2254" -> "101" 
+  "2254" -> "2255" 
+  "2254" -> "2256" 
+  "2254" -> "2257" 
+  "2254" -> "2258" 
+  "2259" -> "103" 
+  "2259" -> "2260" 
+  "2259" -> "2261" 
+  "2259" -> "2262" 
+  "2263" -> "2264" 
+  "2264" -> "2265" 
+  "2264" -> "2269" 
+  "2265" -> "2266" 
+  "2265" -> "2268" 
+  "2266" -> "2267" 
+  "2269" -> "2270" 
+  "2270" -> "104" 
+  "2270" -> "2271" 
+  "2270" -> "2272" 
+  "2270" -> "2273" 
+  "2270" -> "2274" 
+  "2275" -> "2276" 
+  "2275" -> "2286" 
+  "2275" -> "2295" 
+  "2276" -> "2277" 
+  "2276" -> "2280" 
+  "2277" -> "2278" 
+  "2277" -> "2279" 
+  "2280" -> "2281" 
+  "2280" -> "2285" 
+  "2281" -> "2282" 
+  "2282" -> "2283" 
+  "2282" -> "2284" 
+  "2286" -> "2287" 
+  "2287" -> "105" 
+  "2287" -> "2288" 
+  "2287" -> "2291" 
+  "2287" -> "2292" 
+  "2287" -> "2293" 
+  "2287" -> "2294" 
+  "2288" -> "2289" 
+  "2288" -> "2290" 
+  "2295" -> "2296" 
+  "2296" -> "2297" 
+  "2297" -> "106" 
+  "2297" -> "2298" 
+  "2297" -> "2299" 
+  "2297" -> "2300" 
+  "2297" -> "2301" 
+}

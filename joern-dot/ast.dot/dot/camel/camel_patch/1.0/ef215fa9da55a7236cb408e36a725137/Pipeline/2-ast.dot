@@ -1,0 +1,63 @@
+digraph "createNextExchange" {  
+"68" [label = <(METHOD,createNextExchange)<SUB>59</SUB>> ]
+"69" [label = <(PARAM,this)<SUB>59</SUB>> ]
+"70" [label = <(PARAM,Producer producer)<SUB>59</SUB>> ]
+"71" [label = <(PARAM,Exchange previousExchange)<SUB>59</SUB>> ]
+"72" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>59</SUB>> ]
+"73" [label = <(LOCAL,Exchange answer: org.apache.camel.Exchange)> ]
+"74" [label = <(&lt;operator&gt;.assignment,Exchange answer = createExchange(previousExchange))<SUB>60</SUB>> ]
+"75" [label = <(IDENTIFIER,answer,Exchange answer = createExchange(previousExchange))<SUB>60</SUB>> ]
+"76" [label = <(createExchange,createExchange(previousExchange))<SUB>60</SUB>> ]
+"77" [label = <(IDENTIFIER,producer,createExchange(previousExchange))<SUB>60</SUB>> ]
+"78" [label = <(IDENTIFIER,previousExchange,createExchange(previousExchange))<SUB>60</SUB>> ]
+"79" [label = <(LOCAL,Object output: java.lang.Object)> ]
+"80" [label = <(&lt;operator&gt;.assignment,Object output = getBody())<SUB>63</SUB>> ]
+"81" [label = <(IDENTIFIER,output,Object output = getBody())<SUB>63</SUB>> ]
+"82" [label = <(getBody,getBody())<SUB>63</SUB>> ]
+"83" [label = <(getOut,getOut())<SUB>63</SUB>> ]
+"84" [label = <(IDENTIFIER,previousExchange,getOut())<SUB>63</SUB>> ]
+"85" [label = <(CONTROL_STRUCTURE,if (output != null),if (output != null))<SUB>64</SUB>> ]
+"86" [label = <(&lt;operator&gt;.notEquals,output != null)<SUB>64</SUB>> ]
+"87" [label = <(IDENTIFIER,output,output != null)<SUB>64</SUB>> ]
+"88" [label = <(LITERAL,null,output != null)<SUB>64</SUB>> ]
+"89" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>64</SUB>> ]
+"90" [label = <(setBody,setBody(output))<SUB>65</SUB>> ]
+"91" [label = <(getIn,getIn())<SUB>65</SUB>> ]
+"92" [label = <(IDENTIFIER,answer,getIn())<SUB>65</SUB>> ]
+"93" [label = <(IDENTIFIER,output,setBody(output))<SUB>65</SUB>> ]
+"94" [label = <(RETURN,return answer;,return answer;)<SUB>67</SUB>> ]
+"95" [label = <(IDENTIFIER,answer,return answer;)<SUB>67</SUB>> ]
+"96" [label = <(MODIFIER,PROTECTED)> ]
+"97" [label = <(MODIFIER,VIRTUAL)> ]
+"98" [label = <(METHOD_RETURN,org.apache.camel.Exchange)<SUB>59</SUB>> ]
+  "68" -> "69" 
+  "68" -> "70" 
+  "68" -> "71" 
+  "68" -> "72" 
+  "68" -> "96" 
+  "68" -> "97" 
+  "68" -> "98" 
+  "72" -> "73" 
+  "72" -> "74" 
+  "72" -> "79" 
+  "72" -> "80" 
+  "72" -> "85" 
+  "72" -> "94" 
+  "74" -> "75" 
+  "74" -> "76" 
+  "76" -> "77" 
+  "76" -> "78" 
+  "80" -> "81" 
+  "80" -> "82" 
+  "82" -> "83" 
+  "83" -> "84" 
+  "85" -> "86" 
+  "85" -> "89" 
+  "86" -> "87" 
+  "86" -> "88" 
+  "89" -> "90" 
+  "90" -> "91" 
+  "90" -> "93" 
+  "91" -> "92" 
+  "94" -> "95" 
+}

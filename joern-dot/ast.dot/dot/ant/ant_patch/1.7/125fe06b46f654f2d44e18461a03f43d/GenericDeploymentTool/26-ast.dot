@@ -1,0 +1,115 @@
+digraph "needToRebuild" {  
+"1472" [label = <(METHOD,needToRebuild)<SUB>695</SUB>> ]
+"51" [label = <(PARAM,this)<SUB>695</SUB>> ]
+"1473" [label = <(PARAM,Hashtable ejbFiles)<SUB>695</SUB>> ]
+"1474" [label = <(PARAM,File jarFile)<SUB>695</SUB>> ]
+"1475" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>695</SUB>> ]
+"1476" [label = <(CONTROL_STRUCTURE,if (jarFile.exists()),if (jarFile.exists()))<SUB>696</SUB>> ]
+"1477" [label = <(exists,jarFile.exists())<SUB>696</SUB>> ]
+"1478" [label = <(IDENTIFIER,jarFile,jarFile.exists())<SUB>696</SUB>> ]
+"1479" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>696</SUB>> ]
+"1480" [label = <(LOCAL,long lastBuild: long)> ]
+"1481" [label = <(&lt;operator&gt;.assignment,long lastBuild = jarFile.lastModified())<SUB>697</SUB>> ]
+"1482" [label = <(IDENTIFIER,lastBuild,long lastBuild = jarFile.lastModified())<SUB>697</SUB>> ]
+"1483" [label = <(lastModified,jarFile.lastModified())<SUB>697</SUB>> ]
+"1484" [label = <(IDENTIFIER,jarFile,jarFile.lastModified())<SUB>697</SUB>> ]
+"1485" [label = <(LOCAL,Iterator fileIter: java.util.Iterator)> ]
+"1486" [label = <(&lt;operator&gt;.assignment,Iterator fileIter = ejbFiles.values().iterator())<SUB>699</SUB>> ]
+"1487" [label = <(IDENTIFIER,fileIter,Iterator fileIter = ejbFiles.values().iterator())<SUB>699</SUB>> ]
+"1488" [label = <(iterator,ejbFiles.values().iterator())<SUB>699</SUB>> ]
+"1489" [label = <(values,ejbFiles.values())<SUB>699</SUB>> ]
+"1490" [label = <(IDENTIFIER,ejbFiles,ejbFiles.values())<SUB>699</SUB>> ]
+"1491" [label = <(CONTROL_STRUCTURE,while (fileIter.hasNext()),while (fileIter.hasNext()))<SUB>703</SUB>> ]
+"1492" [label = <(hasNext,fileIter.hasNext())<SUB>703</SUB>> ]
+"1493" [label = <(IDENTIFIER,fileIter,fileIter.hasNext())<SUB>703</SUB>> ]
+"1494" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>703</SUB>> ]
+"1495" [label = <(LOCAL,File currentFile: java.io.File)> ]
+"1496" [label = <(&lt;operator&gt;.assignment,File currentFile = (File) fileIter.next())<SUB>704</SUB>> ]
+"1497" [label = <(IDENTIFIER,currentFile,File currentFile = (File) fileIter.next())<SUB>704</SUB>> ]
+"1498" [label = <(&lt;operator&gt;.cast,(File) fileIter.next())<SUB>704</SUB>> ]
+"1499" [label = <(TYPE_REF,File,File)<SUB>704</SUB>> ]
+"1500" [label = <(next,fileIter.next())<SUB>704</SUB>> ]
+"1501" [label = <(IDENTIFIER,fileIter,fileIter.next())<SUB>704</SUB>> ]
+"1502" [label = <(CONTROL_STRUCTURE,if (lastBuild &lt; currentFile.lastModified()),if (lastBuild &lt; currentFile.lastModified()))<SUB>705</SUB>> ]
+"1503" [label = <(&lt;operator&gt;.lessThan,lastBuild &lt; currentFile.lastModified())<SUB>705</SUB>> ]
+"1504" [label = <(IDENTIFIER,lastBuild,lastBuild &lt; currentFile.lastModified())<SUB>705</SUB>> ]
+"1505" [label = <(lastModified,currentFile.lastModified())<SUB>705</SUB>> ]
+"1506" [label = <(IDENTIFIER,currentFile,currentFile.lastModified())<SUB>705</SUB>> ]
+"1507" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>705</SUB>> ]
+"1508" [label = <(log,log(&quot;Build needed because &quot; + currentFile.getPath() + &quot; is out of date&quot;, Project.MSG_VERBOSE))<SUB>706</SUB>> ]
+"50" [label = <(IDENTIFIER,this,log(&quot;Build needed because &quot; + currentFile.getPath() + &quot; is out of date&quot;, Project.MSG_VERBOSE))<SUB>706</SUB>> ]
+"1509" [label = <(&lt;operator&gt;.addition,&quot;Build needed because &quot; + currentFile.getPath() + &quot; is out of date&quot;)<SUB>706</SUB>> ]
+"1510" [label = <(&lt;operator&gt;.addition,&quot;Build needed because &quot; + currentFile.getPath())<SUB>706</SUB>> ]
+"1511" [label = <(LITERAL,&quot;Build needed because &quot;,&quot;Build needed because &quot; + currentFile.getPath())<SUB>706</SUB>> ]
+"1512" [label = <(getPath,currentFile.getPath())<SUB>706</SUB>> ]
+"1513" [label = <(IDENTIFIER,currentFile,currentFile.getPath())<SUB>706</SUB>> ]
+"1514" [label = <(LITERAL,&quot; is out of date&quot;,&quot;Build needed because &quot; + currentFile.getPath() + &quot; is out of date&quot;)<SUB>706</SUB>> ]
+"1515" [label = <(&lt;operator&gt;.fieldAccess,Project.MSG_VERBOSE)<SUB>707</SUB>> ]
+"1516" [label = <(IDENTIFIER,Project,log(&quot;Build needed because &quot; + currentFile.getPath() + &quot; is out of date&quot;, Project.MSG_VERBOSE))<SUB>707</SUB>> ]
+"1517" [label = <(FIELD_IDENTIFIER,MSG_VERBOSE,MSG_VERBOSE)<SUB>707</SUB>> ]
+"1518" [label = <(RETURN,return true;,return true;)<SUB>708</SUB>> ]
+"1519" [label = <(LITERAL,true,return true;)<SUB>708</SUB>> ]
+"1520" [label = <(RETURN,return false;,return false;)<SUB>711</SUB>> ]
+"1521" [label = <(LITERAL,false,return false;)<SUB>711</SUB>> ]
+"1522" [label = <(RETURN,return true;,return true;)<SUB>714</SUB>> ]
+"1523" [label = <(LITERAL,true,return true;)<SUB>714</SUB>> ]
+"1524" [label = <(MODIFIER,PROTECTED)> ]
+"1525" [label = <(MODIFIER,VIRTUAL)> ]
+"1526" [label = <(METHOD_RETURN,boolean)<SUB>695</SUB>> ]
+  "1472" -> "51" 
+  "1472" -> "1473" 
+  "1472" -> "1474" 
+  "1472" -> "1475" 
+  "1472" -> "1524" 
+  "1472" -> "1525" 
+  "1472" -> "1526" 
+  "1475" -> "1476" 
+  "1475" -> "1522" 
+  "1476" -> "1477" 
+  "1476" -> "1479" 
+  "1477" -> "1478" 
+  "1479" -> "1480" 
+  "1479" -> "1481" 
+  "1479" -> "1485" 
+  "1479" -> "1486" 
+  "1479" -> "1491" 
+  "1479" -> "1520" 
+  "1481" -> "1482" 
+  "1481" -> "1483" 
+  "1483" -> "1484" 
+  "1486" -> "1487" 
+  "1486" -> "1488" 
+  "1488" -> "1489" 
+  "1489" -> "1490" 
+  "1491" -> "1492" 
+  "1491" -> "1494" 
+  "1492" -> "1493" 
+  "1494" -> "1495" 
+  "1494" -> "1496" 
+  "1494" -> "1502" 
+  "1496" -> "1497" 
+  "1496" -> "1498" 
+  "1498" -> "1499" 
+  "1498" -> "1500" 
+  "1500" -> "1501" 
+  "1502" -> "1503" 
+  "1502" -> "1507" 
+  "1503" -> "1504" 
+  "1503" -> "1505" 
+  "1505" -> "1506" 
+  "1507" -> "1508" 
+  "1507" -> "1518" 
+  "1508" -> "50" 
+  "1508" -> "1509" 
+  "1508" -> "1515" 
+  "1509" -> "1510" 
+  "1509" -> "1514" 
+  "1510" -> "1511" 
+  "1510" -> "1512" 
+  "1512" -> "1513" 
+  "1515" -> "1516" 
+  "1515" -> "1517" 
+  "1518" -> "1519" 
+  "1520" -> "1521" 
+  "1522" -> "1523" 
+}

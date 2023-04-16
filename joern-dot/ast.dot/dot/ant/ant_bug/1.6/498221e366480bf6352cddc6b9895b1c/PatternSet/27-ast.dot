@@ -1,0 +1,307 @@
+digraph "readFiles" {  
+"1017" [label = <(METHOD,readFiles)<SUB>437</SUB>> ]
+"109" [label = <(PARAM,this)<SUB>437</SUB>> ]
+"1018" [label = <(PARAM,Project p)<SUB>437</SUB>> ]
+"1019" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>437</SUB>> ]
+"1020" [label = <(CONTROL_STRUCTURE,if (includesFileList.size() &gt; 0),if (includesFileList.size() &gt; 0))<SUB>438</SUB>> ]
+"1021" [label = <(&lt;operator&gt;.greaterThan,includesFileList.size() &gt; 0)<SUB>438</SUB>> ]
+"1022" [label = <(size,includesFileList.size())<SUB>438</SUB>> ]
+"1023" [label = <(&lt;operator&gt;.fieldAccess,this.includesFileList)<SUB>438</SUB>> ]
+"1024" [label = <(IDENTIFIER,this,includesFileList.size())<SUB>438</SUB>> ]
+"1025" [label = <(FIELD_IDENTIFIER,includesFileList,includesFileList)<SUB>438</SUB>> ]
+"1026" [label = <(LITERAL,0,includesFileList.size() &gt; 0)<SUB>438</SUB>> ]
+"1027" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>438</SUB>> ]
+"1028" [label = <(LOCAL,Enumeration e: java.util.Enumeration)> ]
+"1029" [label = <(&lt;operator&gt;.assignment,Enumeration e = includesFileList.elements())<SUB>439</SUB>> ]
+"1030" [label = <(IDENTIFIER,e,Enumeration e = includesFileList.elements())<SUB>439</SUB>> ]
+"1031" [label = <(elements,includesFileList.elements())<SUB>439</SUB>> ]
+"1032" [label = <(&lt;operator&gt;.fieldAccess,this.includesFileList)<SUB>439</SUB>> ]
+"1033" [label = <(IDENTIFIER,this,includesFileList.elements())<SUB>439</SUB>> ]
+"1034" [label = <(FIELD_IDENTIFIER,includesFileList,includesFileList)<SUB>439</SUB>> ]
+"1035" [label = <(CONTROL_STRUCTURE,while (e.hasMoreElements()),while (e.hasMoreElements()))<SUB>440</SUB>> ]
+"1036" [label = <(hasMoreElements,e.hasMoreElements())<SUB>440</SUB>> ]
+"1037" [label = <(IDENTIFIER,e,e.hasMoreElements())<SUB>440</SUB>> ]
+"1038" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>440</SUB>> ]
+"1039" [label = <(LOCAL,NameEntry ne: org.apache.tools.ant.types.PatternSet$NameEntry)> ]
+"1040" [label = <(&lt;operator&gt;.assignment,PatternSet$NameEntry ne = (NameEntry) e.nextElement())<SUB>441</SUB>> ]
+"1041" [label = <(IDENTIFIER,ne,PatternSet$NameEntry ne = (NameEntry) e.nextElement())<SUB>441</SUB>> ]
+"1042" [label = <(&lt;operator&gt;.cast,(NameEntry) e.nextElement())<SUB>441</SUB>> ]
+"1043" [label = <(TYPE_REF,NameEntry,NameEntry)<SUB>441</SUB>> ]
+"1044" [label = <(nextElement,e.nextElement())<SUB>441</SUB>> ]
+"1045" [label = <(IDENTIFIER,e,e.nextElement())<SUB>441</SUB>> ]
+"1046" [label = <(LOCAL,String fileName: java.lang.String)> ]
+"1047" [label = <(&lt;operator&gt;.assignment,String fileName = evalName(p))<SUB>442</SUB>> ]
+"1048" [label = <(IDENTIFIER,fileName,String fileName = evalName(p))<SUB>442</SUB>> ]
+"1049" [label = <(evalName,evalName(p))<SUB>442</SUB>> ]
+"1050" [label = <(IDENTIFIER,ne,evalName(p))<SUB>442</SUB>> ]
+"1051" [label = <(IDENTIFIER,p,evalName(p))<SUB>442</SUB>> ]
+"1052" [label = <(CONTROL_STRUCTURE,if (fileName != null),if (fileName != null))<SUB>443</SUB>> ]
+"1053" [label = <(&lt;operator&gt;.notEquals,fileName != null)<SUB>443</SUB>> ]
+"1054" [label = <(IDENTIFIER,fileName,fileName != null)<SUB>443</SUB>> ]
+"1055" [label = <(LITERAL,null,fileName != null)<SUB>443</SUB>> ]
+"1056" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>443</SUB>> ]
+"1057" [label = <(LOCAL,File inclFile: java.io.File)> ]
+"1058" [label = <(&lt;operator&gt;.assignment,File inclFile = resolveFile(fileName))<SUB>444</SUB>> ]
+"1059" [label = <(IDENTIFIER,inclFile,File inclFile = resolveFile(fileName))<SUB>444</SUB>> ]
+"1060" [label = <(resolveFile,resolveFile(fileName))<SUB>444</SUB>> ]
+"1061" [label = <(IDENTIFIER,p,resolveFile(fileName))<SUB>444</SUB>> ]
+"1062" [label = <(IDENTIFIER,fileName,resolveFile(fileName))<SUB>444</SUB>> ]
+"1063" [label = <(CONTROL_STRUCTURE,if (!inclFile.exists()),if (!inclFile.exists()))<SUB>445</SUB>> ]
+"1064" [label = <(&lt;operator&gt;.logicalNot,!inclFile.exists())<SUB>445</SUB>> ]
+"1065" [label = <(exists,inclFile.exists())<SUB>445</SUB>> ]
+"1066" [label = <(IDENTIFIER,inclFile,inclFile.exists())<SUB>445</SUB>> ]
+"1067" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>445</SUB>> ]
+"1068" [label = <(&lt;operator&gt;.throw,throw new BuildException(&quot;Includesfile &quot; + inclFile.getAbsolutePath() + &quot; not found.&quot;);)<SUB>446</SUB>> ]
+"1069" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>446</SUB>> ]
+"1070" [label = <(&lt;operator&gt;.assignment,&lt;empty&gt;)> ]
+"1071" [label = <(IDENTIFIER,$obj15,&lt;empty&gt;)> ]
+"1072" [label = <(&lt;operator&gt;.alloc,new BuildException(&quot;Includesfile &quot; + inclFile.getAbsolutePath() + &quot; not found.&quot;))<SUB>446</SUB>> ]
+"1073" [label = <(&lt;init&gt;,new BuildException(&quot;Includesfile &quot; + inclFile.getAbsolutePath() + &quot; not found.&quot;))<SUB>446</SUB>> ]
+"1074" [label = <(IDENTIFIER,$obj15,new BuildException(&quot;Includesfile &quot; + inclFile.getAbsolutePath() + &quot; not found.&quot;))> ]
+"1075" [label = <(&lt;operator&gt;.addition,&quot;Includesfile &quot; + inclFile.getAbsolutePath() + &quot; not found.&quot;)<SUB>446</SUB>> ]
+"1076" [label = <(&lt;operator&gt;.addition,&quot;Includesfile &quot; + inclFile.getAbsolutePath())<SUB>446</SUB>> ]
+"1077" [label = <(LITERAL,&quot;Includesfile &quot;,&quot;Includesfile &quot; + inclFile.getAbsolutePath())<SUB>446</SUB>> ]
+"1078" [label = <(getAbsolutePath,inclFile.getAbsolutePath())<SUB>447</SUB>> ]
+"1079" [label = <(IDENTIFIER,inclFile,inclFile.getAbsolutePath())<SUB>447</SUB>> ]
+"1080" [label = <(LITERAL,&quot; not found.&quot;,&quot;Includesfile &quot; + inclFile.getAbsolutePath() + &quot; not found.&quot;)<SUB>448</SUB>> ]
+"1081" [label = <(IDENTIFIER,$obj15,&lt;empty&gt;)> ]
+"1082" [label = <(readPatterns,readPatterns(inclFile, includeList, p))<SUB>450</SUB>> ]
+"108" [label = <(IDENTIFIER,this,readPatterns(inclFile, includeList, p))<SUB>450</SUB>> ]
+"1083" [label = <(IDENTIFIER,inclFile,readPatterns(inclFile, includeList, p))<SUB>450</SUB>> ]
+"1084" [label = <(&lt;operator&gt;.fieldAccess,this.includeList)<SUB>450</SUB>> ]
+"1085" [label = <(IDENTIFIER,this,readPatterns(inclFile, includeList, p))<SUB>450</SUB>> ]
+"1086" [label = <(FIELD_IDENTIFIER,includeList,includeList)<SUB>450</SUB>> ]
+"1087" [label = <(IDENTIFIER,p,readPatterns(inclFile, includeList, p))<SUB>450</SUB>> ]
+"1088" [label = <(removeAllElements,includesFileList.removeAllElements())<SUB>453</SUB>> ]
+"1089" [label = <(&lt;operator&gt;.fieldAccess,this.includesFileList)<SUB>453</SUB>> ]
+"1090" [label = <(IDENTIFIER,this,includesFileList.removeAllElements())<SUB>453</SUB>> ]
+"1091" [label = <(FIELD_IDENTIFIER,includesFileList,includesFileList)<SUB>453</SUB>> ]
+"1092" [label = <(CONTROL_STRUCTURE,if (excludesFileList.size() &gt; 0),if (excludesFileList.size() &gt; 0))<SUB>456</SUB>> ]
+"1093" [label = <(&lt;operator&gt;.greaterThan,excludesFileList.size() &gt; 0)<SUB>456</SUB>> ]
+"1094" [label = <(size,excludesFileList.size())<SUB>456</SUB>> ]
+"1095" [label = <(&lt;operator&gt;.fieldAccess,this.excludesFileList)<SUB>456</SUB>> ]
+"1096" [label = <(IDENTIFIER,this,excludesFileList.size())<SUB>456</SUB>> ]
+"1097" [label = <(FIELD_IDENTIFIER,excludesFileList,excludesFileList)<SUB>456</SUB>> ]
+"1098" [label = <(LITERAL,0,excludesFileList.size() &gt; 0)<SUB>456</SUB>> ]
+"1099" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>456</SUB>> ]
+"1100" [label = <(LOCAL,Enumeration e: java.util.Enumeration)> ]
+"1101" [label = <(&lt;operator&gt;.assignment,Enumeration e = excludesFileList.elements())<SUB>457</SUB>> ]
+"1102" [label = <(IDENTIFIER,e,Enumeration e = excludesFileList.elements())<SUB>457</SUB>> ]
+"1103" [label = <(elements,excludesFileList.elements())<SUB>457</SUB>> ]
+"1104" [label = <(&lt;operator&gt;.fieldAccess,this.excludesFileList)<SUB>457</SUB>> ]
+"1105" [label = <(IDENTIFIER,this,excludesFileList.elements())<SUB>457</SUB>> ]
+"1106" [label = <(FIELD_IDENTIFIER,excludesFileList,excludesFileList)<SUB>457</SUB>> ]
+"1107" [label = <(CONTROL_STRUCTURE,while (e.hasMoreElements()),while (e.hasMoreElements()))<SUB>458</SUB>> ]
+"1108" [label = <(hasMoreElements,e.hasMoreElements())<SUB>458</SUB>> ]
+"1109" [label = <(IDENTIFIER,e,e.hasMoreElements())<SUB>458</SUB>> ]
+"1110" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>458</SUB>> ]
+"1111" [label = <(LOCAL,NameEntry ne: org.apache.tools.ant.types.PatternSet$NameEntry)> ]
+"1112" [label = <(&lt;operator&gt;.assignment,PatternSet$NameEntry ne = (NameEntry) e.nextElement())<SUB>459</SUB>> ]
+"1113" [label = <(IDENTIFIER,ne,PatternSet$NameEntry ne = (NameEntry) e.nextElement())<SUB>459</SUB>> ]
+"1114" [label = <(&lt;operator&gt;.cast,(NameEntry) e.nextElement())<SUB>459</SUB>> ]
+"1115" [label = <(TYPE_REF,NameEntry,NameEntry)<SUB>459</SUB>> ]
+"1116" [label = <(nextElement,e.nextElement())<SUB>459</SUB>> ]
+"1117" [label = <(IDENTIFIER,e,e.nextElement())<SUB>459</SUB>> ]
+"1118" [label = <(LOCAL,String fileName: java.lang.String)> ]
+"1119" [label = <(&lt;operator&gt;.assignment,String fileName = evalName(p))<SUB>460</SUB>> ]
+"1120" [label = <(IDENTIFIER,fileName,String fileName = evalName(p))<SUB>460</SUB>> ]
+"1121" [label = <(evalName,evalName(p))<SUB>460</SUB>> ]
+"1122" [label = <(IDENTIFIER,ne,evalName(p))<SUB>460</SUB>> ]
+"1123" [label = <(IDENTIFIER,p,evalName(p))<SUB>460</SUB>> ]
+"1124" [label = <(CONTROL_STRUCTURE,if (fileName != null),if (fileName != null))<SUB>461</SUB>> ]
+"1125" [label = <(&lt;operator&gt;.notEquals,fileName != null)<SUB>461</SUB>> ]
+"1126" [label = <(IDENTIFIER,fileName,fileName != null)<SUB>461</SUB>> ]
+"1127" [label = <(LITERAL,null,fileName != null)<SUB>461</SUB>> ]
+"1128" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>461</SUB>> ]
+"1129" [label = <(LOCAL,File exclFile: java.io.File)> ]
+"1130" [label = <(&lt;operator&gt;.assignment,File exclFile = resolveFile(fileName))<SUB>462</SUB>> ]
+"1131" [label = <(IDENTIFIER,exclFile,File exclFile = resolveFile(fileName))<SUB>462</SUB>> ]
+"1132" [label = <(resolveFile,resolveFile(fileName))<SUB>462</SUB>> ]
+"1133" [label = <(IDENTIFIER,p,resolveFile(fileName))<SUB>462</SUB>> ]
+"1134" [label = <(IDENTIFIER,fileName,resolveFile(fileName))<SUB>462</SUB>> ]
+"1135" [label = <(CONTROL_STRUCTURE,if (!exclFile.exists()),if (!exclFile.exists()))<SUB>463</SUB>> ]
+"1136" [label = <(&lt;operator&gt;.logicalNot,!exclFile.exists())<SUB>463</SUB>> ]
+"1137" [label = <(exists,exclFile.exists())<SUB>463</SUB>> ]
+"1138" [label = <(IDENTIFIER,exclFile,exclFile.exists())<SUB>463</SUB>> ]
+"1139" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>463</SUB>> ]
+"1140" [label = <(&lt;operator&gt;.throw,throw new BuildException(&quot;Excludesfile &quot; + exclFile.getAbsolutePath() + &quot; not found.&quot;);)<SUB>464</SUB>> ]
+"1141" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>464</SUB>> ]
+"1142" [label = <(&lt;operator&gt;.assignment,&lt;empty&gt;)> ]
+"1143" [label = <(IDENTIFIER,$obj16,&lt;empty&gt;)> ]
+"1144" [label = <(&lt;operator&gt;.alloc,new BuildException(&quot;Excludesfile &quot; + exclFile.getAbsolutePath() + &quot; not found.&quot;))<SUB>464</SUB>> ]
+"1145" [label = <(&lt;init&gt;,new BuildException(&quot;Excludesfile &quot; + exclFile.getAbsolutePath() + &quot; not found.&quot;))<SUB>464</SUB>> ]
+"1146" [label = <(IDENTIFIER,$obj16,new BuildException(&quot;Excludesfile &quot; + exclFile.getAbsolutePath() + &quot; not found.&quot;))> ]
+"1147" [label = <(&lt;operator&gt;.addition,&quot;Excludesfile &quot; + exclFile.getAbsolutePath() + &quot; not found.&quot;)<SUB>464</SUB>> ]
+"1148" [label = <(&lt;operator&gt;.addition,&quot;Excludesfile &quot; + exclFile.getAbsolutePath())<SUB>464</SUB>> ]
+"1149" [label = <(LITERAL,&quot;Excludesfile &quot;,&quot;Excludesfile &quot; + exclFile.getAbsolutePath())<SUB>464</SUB>> ]
+"1150" [label = <(getAbsolutePath,exclFile.getAbsolutePath())<SUB>465</SUB>> ]
+"1151" [label = <(IDENTIFIER,exclFile,exclFile.getAbsolutePath())<SUB>465</SUB>> ]
+"1152" [label = <(LITERAL,&quot; not found.&quot;,&quot;Excludesfile &quot; + exclFile.getAbsolutePath() + &quot; not found.&quot;)<SUB>466</SUB>> ]
+"1153" [label = <(IDENTIFIER,$obj16,&lt;empty&gt;)> ]
+"1154" [label = <(readPatterns,readPatterns(exclFile, excludeList, p))<SUB>468</SUB>> ]
+"110" [label = <(IDENTIFIER,this,readPatterns(exclFile, excludeList, p))<SUB>468</SUB>> ]
+"1155" [label = <(IDENTIFIER,exclFile,readPatterns(exclFile, excludeList, p))<SUB>468</SUB>> ]
+"1156" [label = <(&lt;operator&gt;.fieldAccess,this.excludeList)<SUB>468</SUB>> ]
+"1157" [label = <(IDENTIFIER,this,readPatterns(exclFile, excludeList, p))<SUB>468</SUB>> ]
+"1158" [label = <(FIELD_IDENTIFIER,excludeList,excludeList)<SUB>468</SUB>> ]
+"1159" [label = <(IDENTIFIER,p,readPatterns(exclFile, excludeList, p))<SUB>468</SUB>> ]
+"1160" [label = <(removeAllElements,excludesFileList.removeAllElements())<SUB>471</SUB>> ]
+"1161" [label = <(&lt;operator&gt;.fieldAccess,this.excludesFileList)<SUB>471</SUB>> ]
+"1162" [label = <(IDENTIFIER,this,excludesFileList.removeAllElements())<SUB>471</SUB>> ]
+"1163" [label = <(FIELD_IDENTIFIER,excludesFileList,excludesFileList)<SUB>471</SUB>> ]
+"1164" [label = <(MODIFIER,PRIVATE)> ]
+"1165" [label = <(MODIFIER,VIRTUAL)> ]
+"1166" [label = <(METHOD_RETURN,void)<SUB>437</SUB>> ]
+  "1017" -> "109" 
+  "1017" -> "1018" 
+  "1017" -> "1019" 
+  "1017" -> "1164" 
+  "1017" -> "1165" 
+  "1017" -> "1166" 
+  "1019" -> "1020" 
+  "1019" -> "1092" 
+  "1020" -> "1021" 
+  "1020" -> "1027" 
+  "1021" -> "1022" 
+  "1021" -> "1026" 
+  "1022" -> "1023" 
+  "1023" -> "1024" 
+  "1023" -> "1025" 
+  "1027" -> "1028" 
+  "1027" -> "1029" 
+  "1027" -> "1035" 
+  "1027" -> "1088" 
+  "1029" -> "1030" 
+  "1029" -> "1031" 
+  "1031" -> "1032" 
+  "1032" -> "1033" 
+  "1032" -> "1034" 
+  "1035" -> "1036" 
+  "1035" -> "1038" 
+  "1036" -> "1037" 
+  "1038" -> "1039" 
+  "1038" -> "1040" 
+  "1038" -> "1046" 
+  "1038" -> "1047" 
+  "1038" -> "1052" 
+  "1040" -> "1041" 
+  "1040" -> "1042" 
+  "1042" -> "1043" 
+  "1042" -> "1044" 
+  "1044" -> "1045" 
+  "1047" -> "1048" 
+  "1047" -> "1049" 
+  "1049" -> "1050" 
+  "1049" -> "1051" 
+  "1052" -> "1053" 
+  "1052" -> "1056" 
+  "1053" -> "1054" 
+  "1053" -> "1055" 
+  "1056" -> "1057" 
+  "1056" -> "1058" 
+  "1056" -> "1063" 
+  "1056" -> "1082" 
+  "1058" -> "1059" 
+  "1058" -> "1060" 
+  "1060" -> "1061" 
+  "1060" -> "1062" 
+  "1063" -> "1064" 
+  "1063" -> "1067" 
+  "1064" -> "1065" 
+  "1065" -> "1066" 
+  "1067" -> "1068" 
+  "1068" -> "1069" 
+  "1069" -> "1070" 
+  "1069" -> "1073" 
+  "1069" -> "1081" 
+  "1070" -> "1071" 
+  "1070" -> "1072" 
+  "1073" -> "1074" 
+  "1073" -> "1075" 
+  "1075" -> "1076" 
+  "1075" -> "1080" 
+  "1076" -> "1077" 
+  "1076" -> "1078" 
+  "1078" -> "1079" 
+  "1082" -> "108" 
+  "1082" -> "1083" 
+  "1082" -> "1084" 
+  "1082" -> "1087" 
+  "1084" -> "1085" 
+  "1084" -> "1086" 
+  "1088" -> "1089" 
+  "1089" -> "1090" 
+  "1089" -> "1091" 
+  "1092" -> "1093" 
+  "1092" -> "1099" 
+  "1093" -> "1094" 
+  "1093" -> "1098" 
+  "1094" -> "1095" 
+  "1095" -> "1096" 
+  "1095" -> "1097" 
+  "1099" -> "1100" 
+  "1099" -> "1101" 
+  "1099" -> "1107" 
+  "1099" -> "1160" 
+  "1101" -> "1102" 
+  "1101" -> "1103" 
+  "1103" -> "1104" 
+  "1104" -> "1105" 
+  "1104" -> "1106" 
+  "1107" -> "1108" 
+  "1107" -> "1110" 
+  "1108" -> "1109" 
+  "1110" -> "1111" 
+  "1110" -> "1112" 
+  "1110" -> "1118" 
+  "1110" -> "1119" 
+  "1110" -> "1124" 
+  "1112" -> "1113" 
+  "1112" -> "1114" 
+  "1114" -> "1115" 
+  "1114" -> "1116" 
+  "1116" -> "1117" 
+  "1119" -> "1120" 
+  "1119" -> "1121" 
+  "1121" -> "1122" 
+  "1121" -> "1123" 
+  "1124" -> "1125" 
+  "1124" -> "1128" 
+  "1125" -> "1126" 
+  "1125" -> "1127" 
+  "1128" -> "1129" 
+  "1128" -> "1130" 
+  "1128" -> "1135" 
+  "1128" -> "1154" 
+  "1130" -> "1131" 
+  "1130" -> "1132" 
+  "1132" -> "1133" 
+  "1132" -> "1134" 
+  "1135" -> "1136" 
+  "1135" -> "1139" 
+  "1136" -> "1137" 
+  "1137" -> "1138" 
+  "1139" -> "1140" 
+  "1140" -> "1141" 
+  "1141" -> "1142" 
+  "1141" -> "1145" 
+  "1141" -> "1153" 
+  "1142" -> "1143" 
+  "1142" -> "1144" 
+  "1145" -> "1146" 
+  "1145" -> "1147" 
+  "1147" -> "1148" 
+  "1147" -> "1152" 
+  "1148" -> "1149" 
+  "1148" -> "1150" 
+  "1150" -> "1151" 
+  "1154" -> "110" 
+  "1154" -> "1155" 
+  "1154" -> "1156" 
+  "1154" -> "1159" 
+  "1156" -> "1157" 
+  "1156" -> "1158" 
+  "1160" -> "1161" 
+  "1161" -> "1162" 
+  "1161" -> "1163" 
+}

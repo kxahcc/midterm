@@ -1,0 +1,89 @@
+digraph "isSymbolicLink" {  
+"1776" [label = <(METHOD,isSymbolicLink)<SUB>1022</SUB>> ]
+"1777" [label = <(PARAM,this)<SUB>1022</SUB>> ]
+"1778" [label = <(PARAM,File parent)<SUB>1022</SUB>> ]
+"1779" [label = <(PARAM,String name)<SUB>1022</SUB>> ]
+"1780" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>1023</SUB>> ]
+"1781" [label = <(CONTROL_STRUCTURE,if (parent == null),if (parent == null))<SUB>1024</SUB>> ]
+"1782" [label = <(&lt;operator&gt;.equals,parent == null)<SUB>1024</SUB>> ]
+"1783" [label = <(IDENTIFIER,parent,parent == null)<SUB>1024</SUB>> ]
+"1784" [label = <(LITERAL,null,parent == null)<SUB>1024</SUB>> ]
+"1785" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>1024</SUB>> ]
+"66" [label = <(LOCAL,File f: java.io.File)> ]
+"1786" [label = <(&lt;operator&gt;.assignment,File f = new File(name))<SUB>1025</SUB>> ]
+"1787" [label = <(IDENTIFIER,f,File f = new File(name))<SUB>1025</SUB>> ]
+"1788" [label = <(&lt;operator&gt;.alloc,new File(name))<SUB>1025</SUB>> ]
+"1789" [label = <(&lt;init&gt;,new File(name))<SUB>1025</SUB>> ]
+"65" [label = <(IDENTIFIER,f,new File(name))<SUB>1025</SUB>> ]
+"1790" [label = <(IDENTIFIER,name,new File(name))<SUB>1025</SUB>> ]
+"1791" [label = <(&lt;operator&gt;.assignment,parent = f.getParentFile())<SUB>1026</SUB>> ]
+"1792" [label = <(IDENTIFIER,parent,parent = f.getParentFile())<SUB>1026</SUB>> ]
+"1793" [label = <(getParentFile,f.getParentFile())<SUB>1026</SUB>> ]
+"1794" [label = <(IDENTIFIER,f,f.getParentFile())<SUB>1026</SUB>> ]
+"1795" [label = <(&lt;operator&gt;.assignment,name = f.getName())<SUB>1027</SUB>> ]
+"1796" [label = <(IDENTIFIER,name,name = f.getName())<SUB>1027</SUB>> ]
+"1797" [label = <(getName,f.getName())<SUB>1027</SUB>> ]
+"1798" [label = <(IDENTIFIER,f,f.getName())<SUB>1027</SUB>> ]
+"68" [label = <(LOCAL,File toTest: java.io.File)> ]
+"1799" [label = <(&lt;operator&gt;.assignment,File toTest = new File(parent.getCanonicalPath(), name))<SUB>1029</SUB>> ]
+"1800" [label = <(IDENTIFIER,toTest,File toTest = new File(parent.getCanonicalPath(), name))<SUB>1029</SUB>> ]
+"1801" [label = <(&lt;operator&gt;.alloc,new File(parent.getCanonicalPath(), name))<SUB>1029</SUB>> ]
+"1802" [label = <(&lt;init&gt;,new File(parent.getCanonicalPath(), name))<SUB>1029</SUB>> ]
+"67" [label = <(IDENTIFIER,toTest,new File(parent.getCanonicalPath(), name))<SUB>1029</SUB>> ]
+"1803" [label = <(getCanonicalPath,parent.getCanonicalPath())<SUB>1029</SUB>> ]
+"1804" [label = <(IDENTIFIER,parent,parent.getCanonicalPath())<SUB>1029</SUB>> ]
+"1805" [label = <(IDENTIFIER,name,new File(parent.getCanonicalPath(), name))<SUB>1029</SUB>> ]
+"1806" [label = <(RETURN,return !toTest.getAbsolutePath().equals(toTest.getCanonicalPath());,return !toTest.getAbsolutePath().equals(toTest.getCanonicalPath());)<SUB>1030</SUB>> ]
+"1807" [label = <(&lt;operator&gt;.logicalNot,!toTest.getAbsolutePath().equals(toTest.getCanonicalPath()))<SUB>1030</SUB>> ]
+"1808" [label = <(equals,toTest.getAbsolutePath().equals(toTest.getCanonicalPath()))<SUB>1030</SUB>> ]
+"1809" [label = <(getAbsolutePath,toTest.getAbsolutePath())<SUB>1030</SUB>> ]
+"1810" [label = <(IDENTIFIER,toTest,toTest.getAbsolutePath())<SUB>1030</SUB>> ]
+"1811" [label = <(getCanonicalPath,toTest.getCanonicalPath())<SUB>1030</SUB>> ]
+"1812" [label = <(IDENTIFIER,toTest,toTest.getCanonicalPath())<SUB>1030</SUB>> ]
+"1813" [label = <(MODIFIER,PUBLIC)> ]
+"1814" [label = <(MODIFIER,VIRTUAL)> ]
+"1815" [label = <(METHOD_RETURN,boolean)<SUB>1022</SUB>> ]
+  "1776" -> "1777" 
+  "1776" -> "1778" 
+  "1776" -> "1779" 
+  "1776" -> "1780" 
+  "1776" -> "1813" 
+  "1776" -> "1814" 
+  "1776" -> "1815" 
+  "1780" -> "1781" 
+  "1780" -> "68" 
+  "1780" -> "1799" 
+  "1780" -> "1802" 
+  "1780" -> "1806" 
+  "1781" -> "1782" 
+  "1781" -> "1785" 
+  "1782" -> "1783" 
+  "1782" -> "1784" 
+  "1785" -> "66" 
+  "1785" -> "1786" 
+  "1785" -> "1789" 
+  "1785" -> "1791" 
+  "1785" -> "1795" 
+  "1786" -> "1787" 
+  "1786" -> "1788" 
+  "1789" -> "65" 
+  "1789" -> "1790" 
+  "1791" -> "1792" 
+  "1791" -> "1793" 
+  "1793" -> "1794" 
+  "1795" -> "1796" 
+  "1795" -> "1797" 
+  "1797" -> "1798" 
+  "1799" -> "1800" 
+  "1799" -> "1801" 
+  "1802" -> "67" 
+  "1802" -> "1803" 
+  "1802" -> "1805" 
+  "1803" -> "1804" 
+  "1806" -> "1807" 
+  "1807" -> "1808" 
+  "1808" -> "1809" 
+  "1808" -> "1811" 
+  "1809" -> "1810" 
+  "1811" -> "1812" 
+}

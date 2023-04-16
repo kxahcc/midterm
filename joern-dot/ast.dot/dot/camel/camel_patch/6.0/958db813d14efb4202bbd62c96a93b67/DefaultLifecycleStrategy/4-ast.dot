@@ -1,0 +1,101 @@
+digraph "onRouteContextCreate" {  
+"54" [label = <(METHOD,onRouteContextCreate)<SUB>54</SUB>> ]
+"55" [label = <(PARAM,this)<SUB>54</SUB>> ]
+"56" [label = <(PARAM,RouteContext routeContext)<SUB>54</SUB>> ]
+"57" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>54</SUB>> ]
+"58" [label = <(LOCAL,RouteType routeType: org.apache.camel.model.RouteType)> ]
+"59" [label = <(&lt;operator&gt;.assignment,RouteType routeType = getRoute())<SUB>55</SUB>> ]
+"60" [label = <(IDENTIFIER,routeType,RouteType routeType = getRoute())<SUB>55</SUB>> ]
+"61" [label = <(getRoute,getRoute())<SUB>55</SUB>> ]
+"62" [label = <(IDENTIFIER,routeContext,getRoute())<SUB>55</SUB>> ]
+"63" [label = <(CONTROL_STRUCTURE,if (routeType.getInputs() != null &amp;&amp; !routeType.getInputs().isEmpty()),if (routeType.getInputs() != null &amp;&amp; !routeType.getInputs().isEmpty()))<SUB>56</SUB>> ]
+"64" [label = <(&lt;operator&gt;.logicalAnd,routeType.getInputs() != null &amp;&amp; !routeType.getInputs().isEmpty())<SUB>56</SUB>> ]
+"65" [label = <(&lt;operator&gt;.notEquals,routeType.getInputs() != null)<SUB>56</SUB>> ]
+"66" [label = <(getInputs,getInputs())<SUB>56</SUB>> ]
+"67" [label = <(IDENTIFIER,routeType,getInputs())<SUB>56</SUB>> ]
+"68" [label = <(LITERAL,null,routeType.getInputs() != null)<SUB>56</SUB>> ]
+"69" [label = <(&lt;operator&gt;.logicalNot,!routeType.getInputs().isEmpty())<SUB>56</SUB>> ]
+"70" [label = <(isEmpty,isEmpty())<SUB>56</SUB>> ]
+"71" [label = <(getInputs,getInputs())<SUB>56</SUB>> ]
+"72" [label = <(IDENTIFIER,routeType,getInputs())<SUB>56</SUB>> ]
+"73" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>56</SUB>> ]
+"4" [label = <(LOCAL,List&lt;ProcessorType&lt;?&gt;&gt; outputs: ANY)> ]
+"74" [label = <(&lt;operator&gt;.assignment,ANY outputs = new ArrayList&lt;ProcessorType&lt;?&gt;&gt;(routeType.getOutputs()))<SUB>58</SUB>> ]
+"75" [label = <(IDENTIFIER,outputs,ANY outputs = new ArrayList&lt;ProcessorType&lt;?&gt;&gt;(routeType.getOutputs()))<SUB>58</SUB>> ]
+"76" [label = <(&lt;operator&gt;.alloc,new ArrayList&lt;ProcessorType&lt;?&gt;&gt;(routeType.getOutputs()))<SUB>58</SUB>> ]
+"77" [label = <(&lt;init&gt;,new ArrayList&lt;ProcessorType&lt;?&gt;&gt;(routeType.getOutputs()))<SUB>58</SUB>> ]
+"3" [label = <(IDENTIFIER,outputs,new ArrayList&lt;ProcessorType&lt;?&gt;&gt;(routeType.getOutputs()))<SUB>58</SUB>> ]
+"78" [label = <(getOutputs,getOutputs())<SUB>58</SUB>> ]
+"79" [label = <(IDENTIFIER,routeType,getOutputs())<SUB>58</SUB>> ]
+"80" [label = <(clearOutput,clearOutput())<SUB>61</SUB>> ]
+"81" [label = <(IDENTIFIER,routeType,clearOutput())<SUB>61</SUB>> ]
+"82" [label = <(LOCAL,$iterLocal0: java.util.Iterator)<SUB>64</SUB>> ]
+"83" [label = <(&lt;operator&gt;.assignment,)<SUB>64</SUB>> ]
+"84" [label = <(IDENTIFIER,$iterLocal0,)<SUB>64</SUB>> ]
+"85" [label = <(iterator,&lt;empty&gt;)<SUB>64</SUB>> ]
+"86" [label = <(IDENTIFIER,outputs,&lt;empty&gt;)<SUB>64</SUB>> ]
+"87" [label = <(CONTROL_STRUCTURE,FOR,FOR)<SUB>64</SUB>> ]
+"88" [label = <(hasNext,&lt;empty&gt;)<SUB>64</SUB>> ]
+"89" [label = <(IDENTIFIER,$iterLocal0,&lt;empty&gt;)<SUB>64</SUB>> ]
+"90" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>64</SUB>> ]
+"91" [label = <(LOCAL,processorType: ANY)<SUB>64</SUB>> ]
+"92" [label = <(&lt;operator&gt;.assignment,&lt;empty&gt;)<SUB>64</SUB>> ]
+"93" [label = <(IDENTIFIER,processorType,&lt;empty&gt;)<SUB>64</SUB>> ]
+"94" [label = <(next,&lt;empty&gt;)<SUB>64</SUB>> ]
+"95" [label = <(IDENTIFIER,$iterLocal0,&lt;empty&gt;)<SUB>64</SUB>> ]
+"96" [label = <(addOutput,addOutput(processorType))<SUB>65</SUB>> ]
+"97" [label = <(IDENTIFIER,routeType,addOutput(processorType))<SUB>65</SUB>> ]
+"98" [label = <(IDENTIFIER,processorType,addOutput(processorType))<SUB>65</SUB>> ]
+"99" [label = <(MODIFIER,PUBLIC)> ]
+"100" [label = <(MODIFIER,VIRTUAL)> ]
+"101" [label = <(METHOD_RETURN,void)<SUB>54</SUB>> ]
+  "54" -> "55" 
+  "54" -> "56" 
+  "54" -> "57" 
+  "54" -> "99" 
+  "54" -> "100" 
+  "54" -> "101" 
+  "57" -> "58" 
+  "57" -> "59" 
+  "57" -> "63" 
+  "59" -> "60" 
+  "59" -> "61" 
+  "61" -> "62" 
+  "63" -> "64" 
+  "63" -> "73" 
+  "64" -> "65" 
+  "64" -> "69" 
+  "65" -> "66" 
+  "65" -> "68" 
+  "66" -> "67" 
+  "69" -> "70" 
+  "70" -> "71" 
+  "71" -> "72" 
+  "73" -> "4" 
+  "73" -> "74" 
+  "73" -> "77" 
+  "73" -> "80" 
+  "73" -> "82" 
+  "73" -> "83" 
+  "73" -> "87" 
+  "74" -> "75" 
+  "74" -> "76" 
+  "77" -> "3" 
+  "77" -> "78" 
+  "78" -> "79" 
+  "80" -> "81" 
+  "83" -> "84" 
+  "83" -> "85" 
+  "85" -> "86" 
+  "87" -> "88" 
+  "87" -> "90" 
+  "88" -> "89" 
+  "90" -> "91" 
+  "90" -> "92" 
+  "90" -> "96" 
+  "92" -> "93" 
+  "92" -> "94" 
+  "94" -> "95" 
+  "96" -> "97" 
+  "96" -> "98" 
+}

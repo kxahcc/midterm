@@ -1,0 +1,219 @@
+digraph "resolveLocalFileHeaderData" {  
+"772" [label = <(METHOD,resolveLocalFileHeaderData)<SUB>429</SUB>> ]
+"39" [label = <(PARAM,this)<SUB>429</SUB>> ]
+"773" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>430</SUB>> ]
+"774" [label = <(LOCAL,Enumeration e: java.util.Enumeration)> ]
+"775" [label = <(&lt;operator&gt;.assignment,Enumeration e = this.getEntries())<SUB>431</SUB>> ]
+"776" [label = <(IDENTIFIER,e,Enumeration e = this.getEntries())<SUB>431</SUB>> ]
+"777" [label = <(getEntries,this.getEntries())<SUB>431</SUB>> ]
+"38" [label = <(IDENTIFIER,this,this.getEntries())<SUB>431</SUB>> ]
+"778" [label = <(CONTROL_STRUCTURE,while (e.hasMoreElements()),while (e.hasMoreElements()))<SUB>432</SUB>> ]
+"779" [label = <(hasMoreElements,e.hasMoreElements())<SUB>432</SUB>> ]
+"780" [label = <(IDENTIFIER,e,e.hasMoreElements())<SUB>432</SUB>> ]
+"781" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>432</SUB>> ]
+"782" [label = <(LOCAL,ZipEntry ze: ANY)> ]
+"783" [label = <(&lt;operator&gt;.assignment,ANY ze = (ZipEntry) e.nextElement())<SUB>433</SUB>> ]
+"784" [label = <(IDENTIFIER,ze,ANY ze = (ZipEntry) e.nextElement())<SUB>433</SUB>> ]
+"785" [label = <(&lt;operator&gt;.cast,(ZipEntry) e.nextElement())<SUB>433</SUB>> ]
+"786" [label = <(TYPE_REF,ZipEntry,ZipEntry)<SUB>433</SUB>> ]
+"787" [label = <(nextElement,e.nextElement())<SUB>433</SUB>> ]
+"788" [label = <(IDENTIFIER,e,e.nextElement())<SUB>433</SUB>> ]
+"789" [label = <(LOCAL,OffsetEntry offsetEntry: org.apache.tools.zip.ZipFile$OffsetEntry)> ]
+"790" [label = <(&lt;operator&gt;.assignment,ZipFile$OffsetEntry offsetEntry = (OffsetEntry) entries.get(ze))<SUB>434</SUB>> ]
+"791" [label = <(IDENTIFIER,offsetEntry,ZipFile$OffsetEntry offsetEntry = (OffsetEntry) entries.get(ze))<SUB>434</SUB>> ]
+"792" [label = <(&lt;operator&gt;.cast,(OffsetEntry) entries.get(ze))<SUB>434</SUB>> ]
+"793" [label = <(TYPE_REF,OffsetEntry,OffsetEntry)<SUB>434</SUB>> ]
+"794" [label = <(get,get(ze))<SUB>434</SUB>> ]
+"795" [label = <(&lt;operator&gt;.fieldAccess,this.entries)<SUB>434</SUB>> ]
+"796" [label = <(IDENTIFIER,this,get(ze))<SUB>434</SUB>> ]
+"797" [label = <(FIELD_IDENTIFIER,entries,entries)<SUB>434</SUB>> ]
+"798" [label = <(IDENTIFIER,ze,get(ze))<SUB>434</SUB>> ]
+"799" [label = <(LOCAL,long offset: long)> ]
+"800" [label = <(&lt;operator&gt;.assignment,long offset = offsetEntry.headerOffset)<SUB>435</SUB>> ]
+"801" [label = <(IDENTIFIER,offset,long offset = offsetEntry.headerOffset)<SUB>435</SUB>> ]
+"802" [label = <(&lt;operator&gt;.fieldAccess,offsetEntry.headerOffset)<SUB>435</SUB>> ]
+"803" [label = <(IDENTIFIER,offsetEntry,long offset = offsetEntry.headerOffset)<SUB>435</SUB>> ]
+"804" [label = <(FIELD_IDENTIFIER,headerOffset,headerOffset)<SUB>435</SUB>> ]
+"805" [label = <(seek,archive.seek(offset + LFH_OFFSET_FOR_FILENAME_LENGTH))<SUB>436</SUB>> ]
+"806" [label = <(&lt;operator&gt;.fieldAccess,this.archive)<SUB>436</SUB>> ]
+"807" [label = <(IDENTIFIER,this,archive.seek(offset + LFH_OFFSET_FOR_FILENAME_LENGTH))<SUB>436</SUB>> ]
+"808" [label = <(FIELD_IDENTIFIER,archive,archive)<SUB>436</SUB>> ]
+"809" [label = <(&lt;operator&gt;.addition,offset + LFH_OFFSET_FOR_FILENAME_LENGTH)<SUB>436</SUB>> ]
+"810" [label = <(IDENTIFIER,offset,offset + LFH_OFFSET_FOR_FILENAME_LENGTH)<SUB>436</SUB>> ]
+"811" [label = <(&lt;operator&gt;.fieldAccess,ZipFile.LFH_OFFSET_FOR_FILENAME_LENGTH)<SUB>436</SUB>> ]
+"812" [label = <(IDENTIFIER,ZipFile,offset + LFH_OFFSET_FOR_FILENAME_LENGTH)<SUB>436</SUB>> ]
+"813" [label = <(FIELD_IDENTIFIER,LFH_OFFSET_FOR_FILENAME_LENGTH,LFH_OFFSET_FOR_FILENAME_LENGTH)<SUB>436</SUB>> ]
+"814" [label = <(LOCAL,byte[] b: byte[])> ]
+"815" [label = <(&lt;operator&gt;.assignment,byte[] b = new byte[2])<SUB>437</SUB>> ]
+"816" [label = <(IDENTIFIER,b,byte[] b = new byte[2])<SUB>437</SUB>> ]
+"817" [label = <(&lt;operator&gt;.alloc,new byte[2])> ]
+"818" [label = <(LITERAL,2,new byte[2])<SUB>437</SUB>> ]
+"819" [label = <(readFully,archive.readFully(b))<SUB>438</SUB>> ]
+"820" [label = <(&lt;operator&gt;.fieldAccess,this.archive)<SUB>438</SUB>> ]
+"821" [label = <(IDENTIFIER,this,archive.readFully(b))<SUB>438</SUB>> ]
+"822" [label = <(FIELD_IDENTIFIER,archive,archive)<SUB>438</SUB>> ]
+"823" [label = <(IDENTIFIER,b,archive.readFully(b))<SUB>438</SUB>> ]
+"824" [label = <(LOCAL,int fileNameLen: int)> ]
+"825" [label = <(&lt;operator&gt;.assignment,int fileNameLen = getValue(b))<SUB>439</SUB>> ]
+"826" [label = <(IDENTIFIER,fileNameLen,int fileNameLen = getValue(b))<SUB>439</SUB>> ]
+"827" [label = <(getValue,getValue(b))<SUB>439</SUB>> ]
+"828" [label = <(IDENTIFIER,ZipShort,getValue(b))<SUB>439</SUB>> ]
+"829" [label = <(IDENTIFIER,b,getValue(b))<SUB>439</SUB>> ]
+"830" [label = <(readFully,archive.readFully(b))<SUB>440</SUB>> ]
+"831" [label = <(&lt;operator&gt;.fieldAccess,this.archive)<SUB>440</SUB>> ]
+"832" [label = <(IDENTIFIER,this,archive.readFully(b))<SUB>440</SUB>> ]
+"833" [label = <(FIELD_IDENTIFIER,archive,archive)<SUB>440</SUB>> ]
+"834" [label = <(IDENTIFIER,b,archive.readFully(b))<SUB>440</SUB>> ]
+"835" [label = <(LOCAL,int extraFieldLen: int)> ]
+"836" [label = <(&lt;operator&gt;.assignment,int extraFieldLen = getValue(b))<SUB>441</SUB>> ]
+"837" [label = <(IDENTIFIER,extraFieldLen,int extraFieldLen = getValue(b))<SUB>441</SUB>> ]
+"838" [label = <(getValue,getValue(b))<SUB>441</SUB>> ]
+"839" [label = <(IDENTIFIER,ZipShort,getValue(b))<SUB>441</SUB>> ]
+"840" [label = <(IDENTIFIER,b,getValue(b))<SUB>441</SUB>> ]
+"841" [label = <(skipBytes,archive.skipBytes(fileNameLen))<SUB>442</SUB>> ]
+"842" [label = <(&lt;operator&gt;.fieldAccess,this.archive)<SUB>442</SUB>> ]
+"843" [label = <(IDENTIFIER,this,archive.skipBytes(fileNameLen))<SUB>442</SUB>> ]
+"844" [label = <(FIELD_IDENTIFIER,archive,archive)<SUB>442</SUB>> ]
+"845" [label = <(IDENTIFIER,fileNameLen,archive.skipBytes(fileNameLen))<SUB>442</SUB>> ]
+"846" [label = <(LOCAL,byte[] localExtraData: byte[])> ]
+"847" [label = <(&lt;operator&gt;.assignment,byte[] localExtraData = new byte[extraFieldLen])<SUB>443</SUB>> ]
+"848" [label = <(IDENTIFIER,localExtraData,byte[] localExtraData = new byte[extraFieldLen])<SUB>443</SUB>> ]
+"849" [label = <(&lt;operator&gt;.alloc,new byte[extraFieldLen])> ]
+"850" [label = <(IDENTIFIER,extraFieldLen,new byte[extraFieldLen])<SUB>443</SUB>> ]
+"851" [label = <(readFully,archive.readFully(localExtraData))<SUB>444</SUB>> ]
+"852" [label = <(&lt;operator&gt;.fieldAccess,this.archive)<SUB>444</SUB>> ]
+"853" [label = <(IDENTIFIER,this,archive.readFully(localExtraData))<SUB>444</SUB>> ]
+"854" [label = <(FIELD_IDENTIFIER,archive,archive)<SUB>444</SUB>> ]
+"855" [label = <(IDENTIFIER,localExtraData,archive.readFully(localExtraData))<SUB>444</SUB>> ]
+"856" [label = <(setExtra,setExtra(localExtraData))<SUB>445</SUB>> ]
+"857" [label = <(IDENTIFIER,ze,setExtra(localExtraData))<SUB>445</SUB>> ]
+"858" [label = <(IDENTIFIER,localExtraData,setExtra(localExtraData))<SUB>445</SUB>> ]
+"859" [label = <(&lt;operator&gt;.assignment,offsetEntry.dataOffset = offset + LFH_OFFSET_FOR_FILENAME_LENGTH + 2 + 2 + fileNameLen + extraFieldLen)<SUB>450</SUB>> ]
+"860" [label = <(&lt;operator&gt;.fieldAccess,offsetEntry.dataOffset)<SUB>450</SUB>> ]
+"861" [label = <(IDENTIFIER,offsetEntry,offsetEntry.dataOffset = offset + LFH_OFFSET_FOR_FILENAME_LENGTH + 2 + 2 + fileNameLen + extraFieldLen)<SUB>450</SUB>> ]
+"862" [label = <(FIELD_IDENTIFIER,dataOffset,dataOffset)<SUB>450</SUB>> ]
+"863" [label = <(&lt;operator&gt;.addition,offset + LFH_OFFSET_FOR_FILENAME_LENGTH + 2 + 2 + fileNameLen + extraFieldLen)<SUB>450</SUB>> ]
+"864" [label = <(&lt;operator&gt;.addition,offset + LFH_OFFSET_FOR_FILENAME_LENGTH + 2 + 2 + fileNameLen)<SUB>450</SUB>> ]
+"865" [label = <(&lt;operator&gt;.addition,offset + LFH_OFFSET_FOR_FILENAME_LENGTH + 2 + 2)<SUB>450</SUB>> ]
+"866" [label = <(&lt;operator&gt;.addition,offset + LFH_OFFSET_FOR_FILENAME_LENGTH + 2)<SUB>450</SUB>> ]
+"867" [label = <(&lt;operator&gt;.addition,offset + LFH_OFFSET_FOR_FILENAME_LENGTH)<SUB>450</SUB>> ]
+"868" [label = <(IDENTIFIER,offset,offset + LFH_OFFSET_FOR_FILENAME_LENGTH)<SUB>450</SUB>> ]
+"869" [label = <(&lt;operator&gt;.fieldAccess,ZipFile.LFH_OFFSET_FOR_FILENAME_LENGTH)<SUB>450</SUB>> ]
+"870" [label = <(IDENTIFIER,ZipFile,offset + LFH_OFFSET_FOR_FILENAME_LENGTH)<SUB>450</SUB>> ]
+"871" [label = <(FIELD_IDENTIFIER,LFH_OFFSET_FOR_FILENAME_LENGTH,LFH_OFFSET_FOR_FILENAME_LENGTH)<SUB>450</SUB>> ]
+"872" [label = <(LITERAL,2,offset + LFH_OFFSET_FOR_FILENAME_LENGTH + 2)<SUB>451</SUB>> ]
+"873" [label = <(LITERAL,2,offset + LFH_OFFSET_FOR_FILENAME_LENGTH + 2 + 2)<SUB>451</SUB>> ]
+"874" [label = <(IDENTIFIER,fileNameLen,offset + LFH_OFFSET_FOR_FILENAME_LENGTH + 2 + 2 + fileNameLen)<SUB>451</SUB>> ]
+"875" [label = <(IDENTIFIER,extraFieldLen,offset + LFH_OFFSET_FOR_FILENAME_LENGTH + 2 + 2 + fileNameLen + extraFieldLen)<SUB>451</SUB>> ]
+"876" [label = <(MODIFIER,PRIVATE)> ]
+"877" [label = <(MODIFIER,VIRTUAL)> ]
+"878" [label = <(METHOD_RETURN,void)<SUB>429</SUB>> ]
+  "772" -> "39" 
+  "772" -> "773" 
+  "772" -> "876" 
+  "772" -> "877" 
+  "772" -> "878" 
+  "773" -> "774" 
+  "773" -> "775" 
+  "773" -> "778" 
+  "775" -> "776" 
+  "775" -> "777" 
+  "777" -> "38" 
+  "778" -> "779" 
+  "778" -> "781" 
+  "779" -> "780" 
+  "781" -> "782" 
+  "781" -> "783" 
+  "781" -> "789" 
+  "781" -> "790" 
+  "781" -> "799" 
+  "781" -> "800" 
+  "781" -> "805" 
+  "781" -> "814" 
+  "781" -> "815" 
+  "781" -> "819" 
+  "781" -> "824" 
+  "781" -> "825" 
+  "781" -> "830" 
+  "781" -> "835" 
+  "781" -> "836" 
+  "781" -> "841" 
+  "781" -> "846" 
+  "781" -> "847" 
+  "781" -> "851" 
+  "781" -> "856" 
+  "781" -> "859" 
+  "783" -> "784" 
+  "783" -> "785" 
+  "785" -> "786" 
+  "785" -> "787" 
+  "787" -> "788" 
+  "790" -> "791" 
+  "790" -> "792" 
+  "792" -> "793" 
+  "792" -> "794" 
+  "794" -> "795" 
+  "794" -> "798" 
+  "795" -> "796" 
+  "795" -> "797" 
+  "800" -> "801" 
+  "800" -> "802" 
+  "802" -> "803" 
+  "802" -> "804" 
+  "805" -> "806" 
+  "805" -> "809" 
+  "806" -> "807" 
+  "806" -> "808" 
+  "809" -> "810" 
+  "809" -> "811" 
+  "811" -> "812" 
+  "811" -> "813" 
+  "815" -> "816" 
+  "815" -> "817" 
+  "817" -> "818" 
+  "819" -> "820" 
+  "819" -> "823" 
+  "820" -> "821" 
+  "820" -> "822" 
+  "825" -> "826" 
+  "825" -> "827" 
+  "827" -> "828" 
+  "827" -> "829" 
+  "830" -> "831" 
+  "830" -> "834" 
+  "831" -> "832" 
+  "831" -> "833" 
+  "836" -> "837" 
+  "836" -> "838" 
+  "838" -> "839" 
+  "838" -> "840" 
+  "841" -> "842" 
+  "841" -> "845" 
+  "842" -> "843" 
+  "842" -> "844" 
+  "847" -> "848" 
+  "847" -> "849" 
+  "849" -> "850" 
+  "851" -> "852" 
+  "851" -> "855" 
+  "852" -> "853" 
+  "852" -> "854" 
+  "856" -> "857" 
+  "856" -> "858" 
+  "859" -> "860" 
+  "859" -> "863" 
+  "860" -> "861" 
+  "860" -> "862" 
+  "863" -> "864" 
+  "863" -> "875" 
+  "864" -> "865" 
+  "864" -> "874" 
+  "865" -> "866" 
+  "865" -> "873" 
+  "866" -> "867" 
+  "866" -> "872" 
+  "867" -> "868" 
+  "867" -> "869" 
+  "869" -> "870" 
+  "869" -> "871" 
+}

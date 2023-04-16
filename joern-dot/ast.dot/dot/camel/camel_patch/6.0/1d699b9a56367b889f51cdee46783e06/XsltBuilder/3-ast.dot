@@ -1,0 +1,135 @@
+digraph "process" {  
+"191" [label = <(METHOD,process)<SUB>69</SUB>> ]
+"6" [label = <(PARAM,this)<SUB>69</SUB>> ]
+"192" [label = <(PARAM,Exchange exchange)<SUB>69</SUB>> ]
+"193" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>69</SUB>> ]
+"194" [label = <(CONTROL_STRUCTURE,if (getTemplate() == null),if (getTemplate() == null))<SUB>70</SUB>> ]
+"195" [label = <(&lt;operator&gt;.equals,getTemplate() == null)<SUB>70</SUB>> ]
+"196" [label = <(getTemplate,this.getTemplate())<SUB>70</SUB>> ]
+"5" [label = <(IDENTIFIER,this,this.getTemplate())<SUB>70</SUB>> ]
+"197" [label = <(LITERAL,null,getTemplate() == null)<SUB>70</SUB>> ]
+"198" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>70</SUB>> ]
+"199" [label = <(&lt;operator&gt;.throw,throw new IllegalArgumentException(&quot;No template configured!&quot;);)<SUB>71</SUB>> ]
+"200" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>71</SUB>> ]
+"201" [label = <(&lt;operator&gt;.assignment,&lt;empty&gt;)> ]
+"202" [label = <(IDENTIFIER,$obj3,&lt;empty&gt;)> ]
+"203" [label = <(&lt;operator&gt;.alloc,new IllegalArgumentException(&quot;No template configured!&quot;))<SUB>71</SUB>> ]
+"204" [label = <(&lt;init&gt;,new IllegalArgumentException(&quot;No template configured!&quot;))<SUB>71</SUB>> ]
+"205" [label = <(IDENTIFIER,$obj3,new IllegalArgumentException(&quot;No template configured!&quot;))> ]
+"206" [label = <(LITERAL,&quot;No template configured!&quot;,new IllegalArgumentException(&quot;No template configured!&quot;))<SUB>71</SUB>> ]
+"207" [label = <(IDENTIFIER,$obj3,&lt;empty&gt;)> ]
+"208" [label = <(LOCAL,Transformer transformer: javax.xml.transform.Transformer)> ]
+"209" [label = <(&lt;operator&gt;.assignment,Transformer transformer = this.getTemplate().newTransformer())<SUB>73</SUB>> ]
+"210" [label = <(IDENTIFIER,transformer,Transformer transformer = this.getTemplate().newTransformer())<SUB>73</SUB>> ]
+"211" [label = <(newTransformer,this.getTemplate().newTransformer())<SUB>73</SUB>> ]
+"212" [label = <(getTemplate,this.getTemplate())<SUB>73</SUB>> ]
+"7" [label = <(IDENTIFIER,this,this.getTemplate())<SUB>73</SUB>> ]
+"213" [label = <(configureTransformer,configureTransformer(transformer, exchange))<SUB>74</SUB>> ]
+"8" [label = <(IDENTIFIER,this,configureTransformer(transformer, exchange))<SUB>74</SUB>> ]
+"214" [label = <(IDENTIFIER,transformer,configureTransformer(transformer, exchange))<SUB>74</SUB>> ]
+"215" [label = <(IDENTIFIER,exchange,configureTransformer(transformer, exchange))<SUB>74</SUB>> ]
+"216" [label = <(LOCAL,Source source: javax.xml.transform.Source)> ]
+"217" [label = <(&lt;operator&gt;.assignment,Source source = getSource(exchange))<SUB>75</SUB>> ]
+"218" [label = <(IDENTIFIER,source,Source source = getSource(exchange))<SUB>75</SUB>> ]
+"219" [label = <(getSource,getSource(exchange))<SUB>75</SUB>> ]
+"9" [label = <(IDENTIFIER,this,getSource(exchange))<SUB>75</SUB>> ]
+"220" [label = <(IDENTIFIER,exchange,getSource(exchange))<SUB>75</SUB>> ]
+"221" [label = <(LOCAL,ResultHandler resultHandler: ANY)> ]
+"222" [label = <(&lt;operator&gt;.assignment,ANY resultHandler = createResult())<SUB>76</SUB>> ]
+"223" [label = <(IDENTIFIER,resultHandler,ANY resultHandler = createResult())<SUB>76</SUB>> ]
+"224" [label = <(createResult,createResult())<SUB>76</SUB>> ]
+"225" [label = <(&lt;operator&gt;.fieldAccess,this.resultHandlerFactory)<SUB>76</SUB>> ]
+"226" [label = <(IDENTIFIER,this,createResult())<SUB>76</SUB>> ]
+"227" [label = <(FIELD_IDENTIFIER,resultHandlerFactory,resultHandlerFactory)<SUB>76</SUB>> ]
+"228" [label = <(LOCAL,Result result: javax.xml.transform.Result)> ]
+"229" [label = <(&lt;operator&gt;.assignment,Result result = getResult())<SUB>77</SUB>> ]
+"230" [label = <(IDENTIFIER,result,Result result = getResult())<SUB>77</SUB>> ]
+"231" [label = <(getResult,getResult())<SUB>77</SUB>> ]
+"232" [label = <(IDENTIFIER,resultHandler,getResult())<SUB>77</SUB>> ]
+"233" [label = <(LOCAL,Message out: org.apache.camel.Message)> ]
+"234" [label = <(&lt;operator&gt;.assignment,Message out = getOut(true))<SUB>80</SUB>> ]
+"235" [label = <(IDENTIFIER,out,Message out = getOut(true))<SUB>80</SUB>> ]
+"236" [label = <(getOut,getOut(true))<SUB>80</SUB>> ]
+"237" [label = <(IDENTIFIER,exchange,getOut(true))<SUB>80</SUB>> ]
+"238" [label = <(LITERAL,true,getOut(true))<SUB>80</SUB>> ]
+"239" [label = <(copyFrom,copyFrom(exchange.getIn()))<SUB>81</SUB>> ]
+"240" [label = <(IDENTIFIER,out,copyFrom(exchange.getIn()))<SUB>81</SUB>> ]
+"241" [label = <(getIn,getIn())<SUB>81</SUB>> ]
+"242" [label = <(IDENTIFIER,exchange,getIn())<SUB>81</SUB>> ]
+"243" [label = <(transform,transformer.transform(source, result))<SUB>83</SUB>> ]
+"244" [label = <(IDENTIFIER,transformer,transformer.transform(source, result))<SUB>83</SUB>> ]
+"245" [label = <(IDENTIFIER,source,transformer.transform(source, result))<SUB>83</SUB>> ]
+"246" [label = <(IDENTIFIER,result,transformer.transform(source, result))<SUB>83</SUB>> ]
+"247" [label = <(setBody,setBody(out))<SUB>84</SUB>> ]
+"248" [label = <(IDENTIFIER,resultHandler,setBody(out))<SUB>84</SUB>> ]
+"249" [label = <(IDENTIFIER,out,setBody(out))<SUB>84</SUB>> ]
+"250" [label = <(MODIFIER,PUBLIC)> ]
+"251" [label = <(MODIFIER,VIRTUAL)> ]
+"252" [label = <(METHOD_RETURN,void)<SUB>69</SUB>> ]
+  "191" -> "6" 
+  "191" -> "192" 
+  "191" -> "193" 
+  "191" -> "250" 
+  "191" -> "251" 
+  "191" -> "252" 
+  "193" -> "194" 
+  "193" -> "208" 
+  "193" -> "209" 
+  "193" -> "213" 
+  "193" -> "216" 
+  "193" -> "217" 
+  "193" -> "221" 
+  "193" -> "222" 
+  "193" -> "228" 
+  "193" -> "229" 
+  "193" -> "233" 
+  "193" -> "234" 
+  "193" -> "239" 
+  "193" -> "243" 
+  "193" -> "247" 
+  "194" -> "195" 
+  "194" -> "198" 
+  "195" -> "196" 
+  "195" -> "197" 
+  "196" -> "5" 
+  "198" -> "199" 
+  "199" -> "200" 
+  "200" -> "201" 
+  "200" -> "204" 
+  "200" -> "207" 
+  "201" -> "202" 
+  "201" -> "203" 
+  "204" -> "205" 
+  "204" -> "206" 
+  "209" -> "210" 
+  "209" -> "211" 
+  "211" -> "212" 
+  "212" -> "7" 
+  "213" -> "8" 
+  "213" -> "214" 
+  "213" -> "215" 
+  "217" -> "218" 
+  "217" -> "219" 
+  "219" -> "9" 
+  "219" -> "220" 
+  "222" -> "223" 
+  "222" -> "224" 
+  "224" -> "225" 
+  "225" -> "226" 
+  "225" -> "227" 
+  "229" -> "230" 
+  "229" -> "231" 
+  "231" -> "232" 
+  "234" -> "235" 
+  "234" -> "236" 
+  "236" -> "237" 
+  "236" -> "238" 
+  "239" -> "240" 
+  "239" -> "241" 
+  "241" -> "242" 
+  "243" -> "244" 
+  "243" -> "245" 
+  "243" -> "246" 
+  "247" -> "248" 
+  "247" -> "249" 
+}

@@ -1,0 +1,87 @@
+digraph "marshal" {  
+"36" [label = <(METHOD,marshal)<SUB>42</SUB>> ]
+"37" [label = <(PARAM,this)<SUB>42</SUB>> ]
+"38" [label = <(PARAM,Exchange exchange)<SUB>42</SUB>> ]
+"39" [label = <(PARAM,Object graph)<SUB>42</SUB>> ]
+"40" [label = <(PARAM,OutputStream stream)<SUB>42</SUB>> ]
+"41" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>42</SUB>> ]
+"42" [label = <(LOCAL,String text: java.lang.String)> ]
+"43" [label = <(&lt;operator&gt;.assignment,String text = convertToType(exchange, String.class, graph))<SUB>43</SUB>> ]
+"44" [label = <(IDENTIFIER,text,String text = convertToType(exchange, String.class, graph))<SUB>43</SUB>> ]
+"45" [label = <(convertToType,convertToType(exchange, String.class, graph))<SUB>43</SUB>> ]
+"46" [label = <(IDENTIFIER,ExchangeHelper,convertToType(exchange, String.class, graph))<SUB>43</SUB>> ]
+"47" [label = <(IDENTIFIER,exchange,convertToType(exchange, String.class, graph))<SUB>43</SUB>> ]
+"48" [label = <(&lt;operator&gt;.fieldAccess,String.class)<SUB>43</SUB>> ]
+"49" [label = <(IDENTIFIER,String,convertToType(exchange, String.class, graph))<SUB>43</SUB>> ]
+"50" [label = <(FIELD_IDENTIFIER,class,class)<SUB>43</SUB>> ]
+"51" [label = <(IDENTIFIER,graph,convertToType(exchange, String.class, graph))<SUB>43</SUB>> ]
+"52" [label = <(LOCAL,byte[] bytes: byte[])> ]
+"53" [label = <(CONTROL_STRUCTURE,if (charset != null),if (charset != null))<SUB>46</SUB>> ]
+"54" [label = <(&lt;operator&gt;.notEquals,charset != null)<SUB>46</SUB>> ]
+"55" [label = <(&lt;operator&gt;.fieldAccess,this.charset)<SUB>46</SUB>> ]
+"56" [label = <(IDENTIFIER,this,charset != null)<SUB>46</SUB>> ]
+"57" [label = <(FIELD_IDENTIFIER,charset,charset)<SUB>46</SUB>> ]
+"58" [label = <(LITERAL,null,charset != null)<SUB>46</SUB>> ]
+"59" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>46</SUB>> ]
+"60" [label = <(&lt;operator&gt;.assignment,bytes = text.getBytes(charset))<SUB>47</SUB>> ]
+"61" [label = <(IDENTIFIER,bytes,bytes = text.getBytes(charset))<SUB>47</SUB>> ]
+"62" [label = <(getBytes,text.getBytes(charset))<SUB>47</SUB>> ]
+"63" [label = <(IDENTIFIER,text,text.getBytes(charset))<SUB>47</SUB>> ]
+"64" [label = <(&lt;operator&gt;.fieldAccess,this.charset)<SUB>47</SUB>> ]
+"65" [label = <(IDENTIFIER,this,text.getBytes(charset))<SUB>47</SUB>> ]
+"66" [label = <(FIELD_IDENTIFIER,charset,charset)<SUB>47</SUB>> ]
+"67" [label = <(CONTROL_STRUCTURE,else,else)<SUB>48</SUB>> ]
+"68" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>48</SUB>> ]
+"69" [label = <(&lt;operator&gt;.assignment,bytes = text.getBytes())<SUB>49</SUB>> ]
+"70" [label = <(IDENTIFIER,bytes,bytes = text.getBytes())<SUB>49</SUB>> ]
+"71" [label = <(getBytes,text.getBytes())<SUB>49</SUB>> ]
+"72" [label = <(IDENTIFIER,text,text.getBytes())<SUB>49</SUB>> ]
+"73" [label = <(write,stream.write(bytes))<SUB>51</SUB>> ]
+"74" [label = <(IDENTIFIER,stream,stream.write(bytes))<SUB>51</SUB>> ]
+"75" [label = <(IDENTIFIER,bytes,stream.write(bytes))<SUB>51</SUB>> ]
+"76" [label = <(MODIFIER,PUBLIC)> ]
+"77" [label = <(MODIFIER,VIRTUAL)> ]
+"78" [label = <(METHOD_RETURN,void)<SUB>42</SUB>> ]
+  "36" -> "37" 
+  "36" -> "38" 
+  "36" -> "39" 
+  "36" -> "40" 
+  "36" -> "41" 
+  "36" -> "76" 
+  "36" -> "77" 
+  "36" -> "78" 
+  "41" -> "42" 
+  "41" -> "43" 
+  "41" -> "52" 
+  "41" -> "53" 
+  "41" -> "73" 
+  "43" -> "44" 
+  "43" -> "45" 
+  "45" -> "46" 
+  "45" -> "47" 
+  "45" -> "48" 
+  "45" -> "51" 
+  "48" -> "49" 
+  "48" -> "50" 
+  "53" -> "54" 
+  "53" -> "59" 
+  "53" -> "67" 
+  "54" -> "55" 
+  "54" -> "58" 
+  "55" -> "56" 
+  "55" -> "57" 
+  "59" -> "60" 
+  "60" -> "61" 
+  "60" -> "62" 
+  "62" -> "63" 
+  "62" -> "64" 
+  "64" -> "65" 
+  "64" -> "66" 
+  "67" -> "68" 
+  "68" -> "69" 
+  "69" -> "70" 
+  "69" -> "71" 
+  "71" -> "72" 
+  "73" -> "74" 
+  "73" -> "75" 
+}

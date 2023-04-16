@@ -1,0 +1,733 @@
+digraph "buildWeblogicJar" {  
+"783" [label = <(METHOD,buildWeblogicJar)<SUB>537</SUB>> ]
+"58" [label = <(PARAM,this)<SUB>537</SUB>> ]
+"784" [label = <(PARAM,File sourceJar)<SUB>537</SUB>> ]
+"785" [label = <(PARAM,File destJar)<SUB>537</SUB>> ]
+"786" [label = <(PARAM,String publicId)<SUB>537</SUB>> ]
+"787" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>537</SUB>> ]
+"60" [label = <(LOCAL,Java javaTask: org.apache.tools.ant.taskdefs.Java)> ]
+"788" [label = <(&lt;operator&gt;.assignment,Java javaTask = null)<SUB>538</SUB>> ]
+"789" [label = <(IDENTIFIER,javaTask,Java javaTask = null)<SUB>538</SUB>> ]
+"790" [label = <(LITERAL,null,Java javaTask = null)<SUB>538</SUB>> ]
+"791" [label = <(CONTROL_STRUCTURE,if (noEJBC),if (noEJBC))<SUB>540</SUB>> ]
+"792" [label = <(&lt;operator&gt;.fieldAccess,this.noEJBC)<SUB>540</SUB>> ]
+"793" [label = <(IDENTIFIER,this,if (noEJBC))<SUB>540</SUB>> ]
+"794" [label = <(FIELD_IDENTIFIER,noEJBC,noEJBC)<SUB>540</SUB>> ]
+"795" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>540</SUB>> ]
+"796" [label = <(CONTROL_STRUCTURE,try,try)<SUB>541</SUB>> ]
+"797" [label = <(BLOCK,try,try)<SUB>541</SUB>> ]
+"798" [label = <(copyFile,copyFile(sourceJar, destJar))<SUB>542</SUB>> ]
+"799" [label = <(&lt;operator&gt;.fieldAccess,WeblogicDeploymentTool.FILE_UTILS)<SUB>542</SUB>> ]
+"800" [label = <(IDENTIFIER,WeblogicDeploymentTool,copyFile(sourceJar, destJar))<SUB>542</SUB>> ]
+"801" [label = <(FIELD_IDENTIFIER,FILE_UTILS,FILE_UTILS)<SUB>542</SUB>> ]
+"802" [label = <(IDENTIFIER,sourceJar,copyFile(sourceJar, destJar))<SUB>542</SUB>> ]
+"803" [label = <(IDENTIFIER,destJar,copyFile(sourceJar, destJar))<SUB>542</SUB>> ]
+"804" [label = <(CONTROL_STRUCTURE,if (!keepgenerated),if (!keepgenerated))<SUB>543</SUB>> ]
+"805" [label = <(&lt;operator&gt;.logicalNot,!keepgenerated)<SUB>543</SUB>> ]
+"806" [label = <(&lt;operator&gt;.fieldAccess,this.keepgenerated)<SUB>543</SUB>> ]
+"807" [label = <(IDENTIFIER,this,!keepgenerated)<SUB>543</SUB>> ]
+"808" [label = <(FIELD_IDENTIFIER,keepgenerated,keepgenerated)<SUB>543</SUB>> ]
+"809" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>543</SUB>> ]
+"810" [label = <(delete,sourceJar.delete())<SUB>544</SUB>> ]
+"811" [label = <(IDENTIFIER,sourceJar,sourceJar.delete())<SUB>544</SUB>> ]
+"812" [label = <(RETURN,return;,return;)<SUB>546</SUB>> ]
+"813" [label = <(BLOCK,catch,catch)> ]
+"814" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>547</SUB>> ]
+"815" [label = <(&lt;operator&gt;.throw,throw new BuildException(&quot;Unable to write EJB jar&quot;, e);)<SUB>548</SUB>> ]
+"816" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>548</SUB>> ]
+"817" [label = <(&lt;operator&gt;.assignment,&lt;empty&gt;)> ]
+"818" [label = <(IDENTIFIER,$obj9,&lt;empty&gt;)> ]
+"819" [label = <(&lt;operator&gt;.alloc,new BuildException(&quot;Unable to write EJB jar&quot;, e))<SUB>548</SUB>> ]
+"820" [label = <(&lt;init&gt;,new BuildException(&quot;Unable to write EJB jar&quot;, e))<SUB>548</SUB>> ]
+"821" [label = <(IDENTIFIER,$obj9,new BuildException(&quot;Unable to write EJB jar&quot;, e))> ]
+"822" [label = <(LITERAL,&quot;Unable to write EJB jar&quot;,new BuildException(&quot;Unable to write EJB jar&quot;, e))<SUB>548</SUB>> ]
+"823" [label = <(IDENTIFIER,e,new BuildException(&quot;Unable to write EJB jar&quot;, e))<SUB>548</SUB>> ]
+"824" [label = <(IDENTIFIER,$obj9,&lt;empty&gt;)> ]
+"825" [label = <(LOCAL,String ejbcClassName: java.lang.String)> ]
+"826" [label = <(&lt;operator&gt;.assignment,String ejbcClassName = this.ejbcClass)<SUB>552</SUB>> ]
+"827" [label = <(IDENTIFIER,ejbcClassName,String ejbcClassName = this.ejbcClass)<SUB>552</SUB>> ]
+"828" [label = <(&lt;operator&gt;.fieldAccess,this.ejbcClass)<SUB>552</SUB>> ]
+"829" [label = <(IDENTIFIER,this,String ejbcClassName = this.ejbcClass)<SUB>552</SUB>> ]
+"830" [label = <(FIELD_IDENTIFIER,ejbcClass,ejbcClass)<SUB>552</SUB>> ]
+"831" [label = <(CONTROL_STRUCTURE,try,try)<SUB>554</SUB>> ]
+"832" [label = <(BLOCK,try,try)<SUB>554</SUB>> ]
+"833" [label = <(&lt;operator&gt;.assignment,javaTask = new Java(getTask()))<SUB>555</SUB>> ]
+"834" [label = <(IDENTIFIER,javaTask,javaTask = new Java(getTask()))<SUB>555</SUB>> ]
+"835" [label = <(&lt;operator&gt;.alloc,new Java(getTask()))<SUB>555</SUB>> ]
+"836" [label = <(&lt;init&gt;,new Java(getTask()))<SUB>555</SUB>> ]
+"59" [label = <(IDENTIFIER,javaTask,new Java(getTask()))<SUB>555</SUB>> ]
+"837" [label = <(getTask,getTask())<SUB>555</SUB>> ]
+"57" [label = <(IDENTIFIER,this,getTask())<SUB>555</SUB>> ]
+"838" [label = <(setTaskName,setTaskName(&quot;ejbc&quot;))<SUB>556</SUB>> ]
+"839" [label = <(IDENTIFIER,javaTask,setTaskName(&quot;ejbc&quot;))<SUB>556</SUB>> ]
+"840" [label = <(LITERAL,&quot;ejbc&quot;,setTaskName(&quot;ejbc&quot;))<SUB>556</SUB>> ]
+"841" [label = <(setLine,setLine(additionalJvmArgs))<SUB>558</SUB>> ]
+"842" [label = <(createJvmarg,createJvmarg())<SUB>558</SUB>> ]
+"843" [label = <(IDENTIFIER,javaTask,createJvmarg())<SUB>558</SUB>> ]
+"844" [label = <(&lt;operator&gt;.fieldAccess,this.additionalJvmArgs)<SUB>558</SUB>> ]
+"845" [label = <(IDENTIFIER,this,setLine(additionalJvmArgs))<SUB>558</SUB>> ]
+"846" [label = <(FIELD_IDENTIFIER,additionalJvmArgs,additionalJvmArgs)<SUB>558</SUB>> ]
+"847" [label = <(CONTROL_STRUCTURE,if (!(sysprops.isEmpty())),if (!(sysprops.isEmpty())))<SUB>559</SUB>> ]
+"848" [label = <(&lt;operator&gt;.logicalNot,!(sysprops.isEmpty()))<SUB>559</SUB>> ]
+"849" [label = <(isEmpty,sysprops.isEmpty())<SUB>559</SUB>> ]
+"850" [label = <(&lt;operator&gt;.fieldAccess,this.sysprops)<SUB>559</SUB>> ]
+"851" [label = <(IDENTIFIER,this,sysprops.isEmpty())<SUB>559</SUB>> ]
+"852" [label = <(FIELD_IDENTIFIER,sysprops,sysprops)<SUB>559</SUB>> ]
+"853" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>559</SUB>> ]
+"854" [label = <(CONTROL_STRUCTURE,for (Enumeration en = sysprops.elements(); Some(en.hasMoreElements()); ),for (Enumeration en = sysprops.elements(); Some(en.hasMoreElements()); ))<SUB>560</SUB>> ]
+"855" [label = <(LOCAL,Enumeration en: java.util.Enumeration)> ]
+"856" [label = <(&lt;operator&gt;.assignment,Enumeration en = sysprops.elements())<SUB>560</SUB>> ]
+"857" [label = <(IDENTIFIER,en,Enumeration en = sysprops.elements())<SUB>560</SUB>> ]
+"858" [label = <(elements,sysprops.elements())<SUB>560</SUB>> ]
+"859" [label = <(&lt;operator&gt;.fieldAccess,this.sysprops)<SUB>560</SUB>> ]
+"860" [label = <(IDENTIFIER,this,sysprops.elements())<SUB>560</SUB>> ]
+"861" [label = <(FIELD_IDENTIFIER,sysprops,sysprops)<SUB>560</SUB>> ]
+"862" [label = <(hasMoreElements,en.hasMoreElements())<SUB>560</SUB>> ]
+"863" [label = <(IDENTIFIER,en,en.hasMoreElements())<SUB>560</SUB>> ]
+"864" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>560</SUB>> ]
+"865" [label = <(LOCAL,Environment.Variable entry: ANY)> ]
+"866" [label = <(&lt;operator&gt;.assignment,ANY entry = (Environment.Variable) en.nextElement())<SUB>561</SUB>> ]
+"867" [label = <(IDENTIFIER,entry,ANY entry = (Environment.Variable) en.nextElement())<SUB>561</SUB>> ]
+"868" [label = <(&lt;operator&gt;.cast,(Environment.Variable) en.nextElement())<SUB>562</SUB>> ]
+"869" [label = <(TYPE_REF,Environment.Variable,Environment.Variable)<SUB>562</SUB>> ]
+"870" [label = <(nextElement,en.nextElement())<SUB>562</SUB>> ]
+"871" [label = <(IDENTIFIER,en,en.nextElement())<SUB>562</SUB>> ]
+"872" [label = <(addSysproperty,addSysproperty(entry))<SUB>563</SUB>> ]
+"873" [label = <(IDENTIFIER,javaTask,addSysproperty(entry))<SUB>563</SUB>> ]
+"874" [label = <(IDENTIFIER,entry,addSysproperty(entry))<SUB>563</SUB>> ]
+"875" [label = <(CONTROL_STRUCTURE,if (getJvmDebugLevel() != null),if (getJvmDebugLevel() != null))<SUB>567</SUB>> ]
+"876" [label = <(&lt;operator&gt;.notEquals,getJvmDebugLevel() != null)<SUB>567</SUB>> ]
+"877" [label = <(getJvmDebugLevel,this.getJvmDebugLevel())<SUB>567</SUB>> ]
+"61" [label = <(IDENTIFIER,this,this.getJvmDebugLevel())<SUB>567</SUB>> ]
+"878" [label = <(LITERAL,null,getJvmDebugLevel() != null)<SUB>567</SUB>> ]
+"879" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>567</SUB>> ]
+"880" [label = <(setLine,setLine(&quot; -Dweblogic.StdoutSeverityLevel=&quot; + jvmDebugLevel))<SUB>568</SUB>> ]
+"881" [label = <(createJvmarg,createJvmarg())<SUB>568</SUB>> ]
+"882" [label = <(IDENTIFIER,javaTask,createJvmarg())<SUB>568</SUB>> ]
+"883" [label = <(&lt;operator&gt;.addition,&quot; -Dweblogic.StdoutSeverityLevel=&quot; + jvmDebugLevel)<SUB>568</SUB>> ]
+"884" [label = <(LITERAL,&quot; -Dweblogic.StdoutSeverityLevel=&quot;,&quot; -Dweblogic.StdoutSeverityLevel=&quot; + jvmDebugLevel)<SUB>568</SUB>> ]
+"885" [label = <(&lt;operator&gt;.fieldAccess,this.jvmDebugLevel)<SUB>568</SUB>> ]
+"886" [label = <(IDENTIFIER,this,&quot; -Dweblogic.StdoutSeverityLevel=&quot; + jvmDebugLevel)<SUB>568</SUB>> ]
+"887" [label = <(FIELD_IDENTIFIER,jvmDebugLevel,jvmDebugLevel)<SUB>568</SUB>> ]
+"888" [label = <(CONTROL_STRUCTURE,if (ejbcClassName == null),if (ejbcClassName == null))<SUB>571</SUB>> ]
+"889" [label = <(&lt;operator&gt;.equals,ejbcClassName == null)<SUB>571</SUB>> ]
+"890" [label = <(IDENTIFIER,ejbcClassName,ejbcClassName == null)<SUB>571</SUB>> ]
+"891" [label = <(LITERAL,null,ejbcClassName == null)<SUB>571</SUB>> ]
+"892" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>571</SUB>> ]
+"893" [label = <(CONTROL_STRUCTURE,if (PUBLICID_EJB11.equals(publicId)),if (PUBLICID_EJB11.equals(publicId)))<SUB>573</SUB>> ]
+"894" [label = <(equals,PUBLICID_EJB11.equals(publicId))<SUB>573</SUB>> ]
+"895" [label = <(&lt;operator&gt;.fieldAccess,WeblogicDeploymentTool.PUBLICID_EJB11)<SUB>573</SUB>> ]
+"896" [label = <(IDENTIFIER,WeblogicDeploymentTool,PUBLICID_EJB11.equals(publicId))<SUB>573</SUB>> ]
+"897" [label = <(FIELD_IDENTIFIER,PUBLICID_EJB11,PUBLICID_EJB11)<SUB>573</SUB>> ]
+"898" [label = <(IDENTIFIER,publicId,PUBLICID_EJB11.equals(publicId))<SUB>573</SUB>> ]
+"899" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>573</SUB>> ]
+"900" [label = <(&lt;operator&gt;.assignment,ejbcClassName = WeblogicDeploymentTool.COMPILER_EJB11)<SUB>574</SUB>> ]
+"901" [label = <(IDENTIFIER,ejbcClassName,ejbcClassName = WeblogicDeploymentTool.COMPILER_EJB11)<SUB>574</SUB>> ]
+"902" [label = <(&lt;operator&gt;.fieldAccess,WeblogicDeploymentTool.COMPILER_EJB11)<SUB>574</SUB>> ]
+"903" [label = <(IDENTIFIER,WeblogicDeploymentTool,ejbcClassName = WeblogicDeploymentTool.COMPILER_EJB11)<SUB>574</SUB>> ]
+"904" [label = <(FIELD_IDENTIFIER,COMPILER_EJB11,COMPILER_EJB11)<SUB>574</SUB>> ]
+"905" [label = <(CONTROL_STRUCTURE,else,else)<SUB>575</SUB>> ]
+"906" [label = <(CONTROL_STRUCTURE,if (PUBLICID_EJB20.equals(publicId)),if (PUBLICID_EJB20.equals(publicId)))<SUB>575</SUB>> ]
+"907" [label = <(equals,PUBLICID_EJB20.equals(publicId))<SUB>575</SUB>> ]
+"908" [label = <(&lt;operator&gt;.fieldAccess,WeblogicDeploymentTool.PUBLICID_EJB20)<SUB>575</SUB>> ]
+"909" [label = <(IDENTIFIER,WeblogicDeploymentTool,PUBLICID_EJB20.equals(publicId))<SUB>575</SUB>> ]
+"910" [label = <(FIELD_IDENTIFIER,PUBLICID_EJB20,PUBLICID_EJB20)<SUB>575</SUB>> ]
+"911" [label = <(IDENTIFIER,publicId,PUBLICID_EJB20.equals(publicId))<SUB>575</SUB>> ]
+"912" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>575</SUB>> ]
+"913" [label = <(&lt;operator&gt;.assignment,ejbcClassName = WeblogicDeploymentTool.COMPILER_EJB20)<SUB>576</SUB>> ]
+"914" [label = <(IDENTIFIER,ejbcClassName,ejbcClassName = WeblogicDeploymentTool.COMPILER_EJB20)<SUB>576</SUB>> ]
+"915" [label = <(&lt;operator&gt;.fieldAccess,WeblogicDeploymentTool.COMPILER_EJB20)<SUB>576</SUB>> ]
+"916" [label = <(IDENTIFIER,WeblogicDeploymentTool,ejbcClassName = WeblogicDeploymentTool.COMPILER_EJB20)<SUB>576</SUB>> ]
+"917" [label = <(FIELD_IDENTIFIER,COMPILER_EJB20,COMPILER_EJB20)<SUB>576</SUB>> ]
+"918" [label = <(CONTROL_STRUCTURE,else,else)<SUB>577</SUB>> ]
+"919" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>577</SUB>> ]
+"920" [label = <(log,log(&quot;Unrecognized publicId &quot; + publicId + &quot; - using EJB 1.1 compiler&quot;, Project.MSG_WARN))<SUB>578</SUB>> ]
+"62" [label = <(IDENTIFIER,this,log(&quot;Unrecognized publicId &quot; + publicId + &quot; - using EJB 1.1 compiler&quot;, Project.MSG_WARN))<SUB>578</SUB>> ]
+"921" [label = <(&lt;operator&gt;.addition,&quot;Unrecognized publicId &quot; + publicId + &quot; - using EJB 1.1 compiler&quot;)<SUB>578</SUB>> ]
+"922" [label = <(&lt;operator&gt;.addition,&quot;Unrecognized publicId &quot; + publicId)<SUB>578</SUB>> ]
+"923" [label = <(LITERAL,&quot;Unrecognized publicId &quot;,&quot;Unrecognized publicId &quot; + publicId)<SUB>578</SUB>> ]
+"924" [label = <(IDENTIFIER,publicId,&quot;Unrecognized publicId &quot; + publicId)<SUB>578</SUB>> ]
+"925" [label = <(LITERAL,&quot; - using EJB 1.1 compiler&quot;,&quot;Unrecognized publicId &quot; + publicId + &quot; - using EJB 1.1 compiler&quot;)<SUB>579</SUB>> ]
+"926" [label = <(&lt;operator&gt;.fieldAccess,Project.MSG_WARN)<SUB>579</SUB>> ]
+"927" [label = <(IDENTIFIER,Project,log(&quot;Unrecognized publicId &quot; + publicId + &quot; - using EJB 1.1 compiler&quot;, Project.MSG_WARN))<SUB>579</SUB>> ]
+"928" [label = <(FIELD_IDENTIFIER,MSG_WARN,MSG_WARN)<SUB>579</SUB>> ]
+"929" [label = <(&lt;operator&gt;.assignment,ejbcClassName = WeblogicDeploymentTool.COMPILER_EJB11)<SUB>580</SUB>> ]
+"930" [label = <(IDENTIFIER,ejbcClassName,ejbcClassName = WeblogicDeploymentTool.COMPILER_EJB11)<SUB>580</SUB>> ]
+"931" [label = <(&lt;operator&gt;.fieldAccess,WeblogicDeploymentTool.COMPILER_EJB11)<SUB>580</SUB>> ]
+"932" [label = <(IDENTIFIER,WeblogicDeploymentTool,ejbcClassName = WeblogicDeploymentTool.COMPILER_EJB11)<SUB>580</SUB>> ]
+"933" [label = <(FIELD_IDENTIFIER,COMPILER_EJB11,COMPILER_EJB11)<SUB>580</SUB>> ]
+"934" [label = <(setClassname,setClassname(ejbcClassName))<SUB>584</SUB>> ]
+"935" [label = <(IDENTIFIER,javaTask,setClassname(ejbcClassName))<SUB>584</SUB>> ]
+"936" [label = <(IDENTIFIER,ejbcClassName,setClassname(ejbcClassName))<SUB>584</SUB>> ]
+"937" [label = <(setLine,setLine(additionalArgs))<SUB>585</SUB>> ]
+"938" [label = <(createArg,createArg())<SUB>585</SUB>> ]
+"939" [label = <(IDENTIFIER,javaTask,createArg())<SUB>585</SUB>> ]
+"940" [label = <(&lt;operator&gt;.fieldAccess,this.additionalArgs)<SUB>585</SUB>> ]
+"941" [label = <(IDENTIFIER,this,setLine(additionalArgs))<SUB>585</SUB>> ]
+"942" [label = <(FIELD_IDENTIFIER,additionalArgs,additionalArgs)<SUB>585</SUB>> ]
+"943" [label = <(CONTROL_STRUCTURE,if (keepgenerated),if (keepgenerated))<SUB>586</SUB>> ]
+"944" [label = <(&lt;operator&gt;.fieldAccess,this.keepgenerated)<SUB>586</SUB>> ]
+"945" [label = <(IDENTIFIER,this,if (keepgenerated))<SUB>586</SUB>> ]
+"946" [label = <(FIELD_IDENTIFIER,keepgenerated,keepgenerated)<SUB>586</SUB>> ]
+"947" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>586</SUB>> ]
+"948" [label = <(setValue,setValue(&quot;-keepgenerated&quot;))<SUB>587</SUB>> ]
+"949" [label = <(createArg,createArg())<SUB>587</SUB>> ]
+"950" [label = <(IDENTIFIER,javaTask,createArg())<SUB>587</SUB>> ]
+"951" [label = <(LITERAL,&quot;-keepgenerated&quot;,setValue(&quot;-keepgenerated&quot;))<SUB>587</SUB>> ]
+"952" [label = <(CONTROL_STRUCTURE,if (compiler == null),if (compiler == null))<SUB>589</SUB>> ]
+"953" [label = <(&lt;operator&gt;.equals,compiler == null)<SUB>589</SUB>> ]
+"954" [label = <(&lt;operator&gt;.fieldAccess,this.compiler)<SUB>589</SUB>> ]
+"955" [label = <(IDENTIFIER,this,compiler == null)<SUB>589</SUB>> ]
+"956" [label = <(FIELD_IDENTIFIER,compiler,compiler)<SUB>589</SUB>> ]
+"957" [label = <(LITERAL,null,compiler == null)<SUB>589</SUB>> ]
+"958" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>589</SUB>> ]
+"959" [label = <(LOCAL,String buildCompiler: java.lang.String)> ]
+"960" [label = <(&lt;operator&gt;.assignment,String buildCompiler = getProperty(&quot;build.compiler&quot;))<SUB>592</SUB>> ]
+"961" [label = <(IDENTIFIER,buildCompiler,String buildCompiler = getProperty(&quot;build.compiler&quot;))<SUB>592</SUB>> ]
+"962" [label = <(getProperty,getProperty(&quot;build.compiler&quot;))<SUB>593</SUB>> ]
+"963" [label = <(getProject,getProject())<SUB>593</SUB>> ]
+"964" [label = <(getTask,getTask())<SUB>593</SUB>> ]
+"63" [label = <(IDENTIFIER,this,getTask())<SUB>593</SUB>> ]
+"965" [label = <(LITERAL,&quot;build.compiler&quot;,getProperty(&quot;build.compiler&quot;))<SUB>593</SUB>> ]
+"966" [label = <(CONTROL_STRUCTURE,if (buildCompiler != null &amp;&amp; buildCompiler.equals(&quot;jikes&quot;)),if (buildCompiler != null &amp;&amp; buildCompiler.equals(&quot;jikes&quot;)))<SUB>595</SUB>> ]
+"967" [label = <(&lt;operator&gt;.logicalAnd,buildCompiler != null &amp;&amp; buildCompiler.equals(&quot;jikes&quot;))<SUB>595</SUB>> ]
+"968" [label = <(&lt;operator&gt;.notEquals,buildCompiler != null)<SUB>595</SUB>> ]
+"969" [label = <(IDENTIFIER,buildCompiler,buildCompiler != null)<SUB>595</SUB>> ]
+"970" [label = <(LITERAL,null,buildCompiler != null)<SUB>595</SUB>> ]
+"971" [label = <(equals,buildCompiler.equals(&quot;jikes&quot;))<SUB>595</SUB>> ]
+"972" [label = <(IDENTIFIER,buildCompiler,buildCompiler.equals(&quot;jikes&quot;))<SUB>595</SUB>> ]
+"973" [label = <(LITERAL,&quot;jikes&quot;,buildCompiler.equals(&quot;jikes&quot;))<SUB>595</SUB>> ]
+"974" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>595</SUB>> ]
+"975" [label = <(setValue,setValue(&quot;-compiler&quot;))<SUB>596</SUB>> ]
+"976" [label = <(createArg,createArg())<SUB>596</SUB>> ]
+"977" [label = <(IDENTIFIER,javaTask,createArg())<SUB>596</SUB>> ]
+"978" [label = <(LITERAL,&quot;-compiler&quot;,setValue(&quot;-compiler&quot;))<SUB>596</SUB>> ]
+"979" [label = <(setValue,setValue(&quot;jikes&quot;))<SUB>597</SUB>> ]
+"980" [label = <(createArg,createArg())<SUB>597</SUB>> ]
+"981" [label = <(IDENTIFIER,javaTask,createArg())<SUB>597</SUB>> ]
+"982" [label = <(LITERAL,&quot;jikes&quot;,setValue(&quot;jikes&quot;))<SUB>597</SUB>> ]
+"983" [label = <(CONTROL_STRUCTURE,else,else)<SUB>599</SUB>> ]
+"984" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>599</SUB>> ]
+"985" [label = <(CONTROL_STRUCTURE,if (!compiler.equals(DEFAULT_COMPILER)),if (!compiler.equals(DEFAULT_COMPILER)))<SUB>600</SUB>> ]
+"986" [label = <(&lt;operator&gt;.logicalNot,!compiler.equals(DEFAULT_COMPILER))<SUB>600</SUB>> ]
+"987" [label = <(equals,compiler.equals(DEFAULT_COMPILER))<SUB>600</SUB>> ]
+"988" [label = <(&lt;operator&gt;.fieldAccess,this.compiler)<SUB>600</SUB>> ]
+"989" [label = <(IDENTIFIER,this,compiler.equals(DEFAULT_COMPILER))<SUB>600</SUB>> ]
+"990" [label = <(FIELD_IDENTIFIER,compiler,compiler)<SUB>600</SUB>> ]
+"991" [label = <(&lt;operator&gt;.fieldAccess,WeblogicDeploymentTool.DEFAULT_COMPILER)<SUB>600</SUB>> ]
+"992" [label = <(IDENTIFIER,WeblogicDeploymentTool,compiler.equals(DEFAULT_COMPILER))<SUB>600</SUB>> ]
+"993" [label = <(FIELD_IDENTIFIER,DEFAULT_COMPILER,DEFAULT_COMPILER)<SUB>600</SUB>> ]
+"994" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>600</SUB>> ]
+"995" [label = <(setValue,setValue(&quot;-compiler&quot;))<SUB>601</SUB>> ]
+"996" [label = <(createArg,createArg())<SUB>601</SUB>> ]
+"997" [label = <(IDENTIFIER,javaTask,createArg())<SUB>601</SUB>> ]
+"998" [label = <(LITERAL,&quot;-compiler&quot;,setValue(&quot;-compiler&quot;))<SUB>601</SUB>> ]
+"999" [label = <(setLine,setLine(compiler))<SUB>602</SUB>> ]
+"1000" [label = <(createArg,createArg())<SUB>602</SUB>> ]
+"1001" [label = <(IDENTIFIER,javaTask,createArg())<SUB>602</SUB>> ]
+"1002" [label = <(&lt;operator&gt;.fieldAccess,this.compiler)<SUB>602</SUB>> ]
+"1003" [label = <(IDENTIFIER,this,setLine(compiler))<SUB>602</SUB>> ]
+"1004" [label = <(FIELD_IDENTIFIER,compiler,compiler)<SUB>602</SUB>> ]
+"1005" [label = <(LOCAL,Path combinedClasspath: org.apache.tools.ant.types.Path)> ]
+"1006" [label = <(&lt;operator&gt;.assignment,Path combinedClasspath = getCombinedClasspath())<SUB>606</SUB>> ]
+"1007" [label = <(IDENTIFIER,combinedClasspath,Path combinedClasspath = getCombinedClasspath())<SUB>606</SUB>> ]
+"1008" [label = <(getCombinedClasspath,getCombinedClasspath())<SUB>606</SUB>> ]
+"64" [label = <(IDENTIFIER,this,getCombinedClasspath())<SUB>606</SUB>> ]
+"1009" [label = <(CONTROL_STRUCTURE,if (wlClasspath != null &amp;&amp; combinedClasspath != null &amp;&amp; combinedClasspath.toString().trim().length() &gt; 0),if (wlClasspath != null &amp;&amp; combinedClasspath != null &amp;&amp; combinedClasspath.toString().trim().length() &gt; 0))<SUB>607</SUB>> ]
+"1010" [label = <(&lt;operator&gt;.logicalAnd,wlClasspath != null &amp;&amp; combinedClasspath != null &amp;&amp; combinedClasspath.toString().trim().length() &gt; 0)<SUB>607</SUB>> ]
+"1011" [label = <(&lt;operator&gt;.logicalAnd,wlClasspath != null &amp;&amp; combinedClasspath != null)<SUB>607</SUB>> ]
+"1012" [label = <(&lt;operator&gt;.notEquals,wlClasspath != null)<SUB>607</SUB>> ]
+"1013" [label = <(&lt;operator&gt;.fieldAccess,this.wlClasspath)<SUB>607</SUB>> ]
+"1014" [label = <(IDENTIFIER,this,wlClasspath != null)<SUB>607</SUB>> ]
+"1015" [label = <(FIELD_IDENTIFIER,wlClasspath,wlClasspath)<SUB>607</SUB>> ]
+"1016" [label = <(LITERAL,null,wlClasspath != null)<SUB>607</SUB>> ]
+"1017" [label = <(&lt;operator&gt;.notEquals,combinedClasspath != null)<SUB>607</SUB>> ]
+"1018" [label = <(IDENTIFIER,combinedClasspath,combinedClasspath != null)<SUB>607</SUB>> ]
+"1019" [label = <(LITERAL,null,combinedClasspath != null)<SUB>607</SUB>> ]
+"1020" [label = <(&lt;operator&gt;.greaterThan,combinedClasspath.toString().trim().length() &gt; 0)<SUB>608</SUB>> ]
+"1021" [label = <(length,length())<SUB>608</SUB>> ]
+"1022" [label = <(trim,trim())<SUB>608</SUB>> ]
+"1023" [label = <(toString,toString())<SUB>608</SUB>> ]
+"1024" [label = <(IDENTIFIER,combinedClasspath,toString())<SUB>608</SUB>> ]
+"1025" [label = <(LITERAL,0,combinedClasspath.toString().trim().length() &gt; 0)<SUB>608</SUB>> ]
+"1026" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>608</SUB>> ]
+"1027" [label = <(setValue,setValue(&quot;-classpath&quot;))<SUB>609</SUB>> ]
+"1028" [label = <(createArg,createArg())<SUB>609</SUB>> ]
+"1029" [label = <(IDENTIFIER,javaTask,createArg())<SUB>609</SUB>> ]
+"1030" [label = <(LITERAL,&quot;-classpath&quot;,setValue(&quot;-classpath&quot;))<SUB>609</SUB>> ]
+"1031" [label = <(setPath,setPath(combinedClasspath))<SUB>610</SUB>> ]
+"1032" [label = <(createArg,createArg())<SUB>610</SUB>> ]
+"1033" [label = <(IDENTIFIER,javaTask,createArg())<SUB>610</SUB>> ]
+"1034" [label = <(IDENTIFIER,combinedClasspath,setPath(combinedClasspath))<SUB>610</SUB>> ]
+"1035" [label = <(setValue,setValue(sourceJar.getPath()))<SUB>613</SUB>> ]
+"1036" [label = <(createArg,createArg())<SUB>613</SUB>> ]
+"1037" [label = <(IDENTIFIER,javaTask,createArg())<SUB>613</SUB>> ]
+"1038" [label = <(getPath,sourceJar.getPath())<SUB>613</SUB>> ]
+"1039" [label = <(IDENTIFIER,sourceJar,sourceJar.getPath())<SUB>613</SUB>> ]
+"1040" [label = <(CONTROL_STRUCTURE,if (outputDir == null),if (outputDir == null))<SUB>614</SUB>> ]
+"1041" [label = <(&lt;operator&gt;.equals,outputDir == null)<SUB>614</SUB>> ]
+"1042" [label = <(&lt;operator&gt;.fieldAccess,this.outputDir)<SUB>614</SUB>> ]
+"1043" [label = <(IDENTIFIER,this,outputDir == null)<SUB>614</SUB>> ]
+"1044" [label = <(FIELD_IDENTIFIER,outputDir,outputDir)<SUB>614</SUB>> ]
+"1045" [label = <(LITERAL,null,outputDir == null)<SUB>614</SUB>> ]
+"1046" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>614</SUB>> ]
+"1047" [label = <(setValue,setValue(destJar.getPath()))<SUB>615</SUB>> ]
+"1048" [label = <(createArg,createArg())<SUB>615</SUB>> ]
+"1049" [label = <(IDENTIFIER,javaTask,createArg())<SUB>615</SUB>> ]
+"1050" [label = <(getPath,destJar.getPath())<SUB>615</SUB>> ]
+"1051" [label = <(IDENTIFIER,destJar,destJar.getPath())<SUB>615</SUB>> ]
+"1052" [label = <(CONTROL_STRUCTURE,else,else)<SUB>616</SUB>> ]
+"1053" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>616</SUB>> ]
+"1054" [label = <(setValue,setValue(outputDir.getPath()))<SUB>617</SUB>> ]
+"1055" [label = <(createArg,createArg())<SUB>617</SUB>> ]
+"1056" [label = <(IDENTIFIER,javaTask,createArg())<SUB>617</SUB>> ]
+"1057" [label = <(getPath,outputDir.getPath())<SUB>617</SUB>> ]
+"1058" [label = <(&lt;operator&gt;.fieldAccess,this.outputDir)<SUB>617</SUB>> ]
+"1059" [label = <(IDENTIFIER,this,outputDir.getPath())<SUB>617</SUB>> ]
+"1060" [label = <(FIELD_IDENTIFIER,outputDir,outputDir)<SUB>617</SUB>> ]
+"1061" [label = <(LOCAL,Path classpath: org.apache.tools.ant.types.Path)> ]
+"1062" [label = <(&lt;operator&gt;.assignment,Path classpath = this.wlClasspath)<SUB>620</SUB>> ]
+"1063" [label = <(IDENTIFIER,classpath,Path classpath = this.wlClasspath)<SUB>620</SUB>> ]
+"1064" [label = <(&lt;operator&gt;.fieldAccess,this.wlClasspath)<SUB>620</SUB>> ]
+"1065" [label = <(IDENTIFIER,this,Path classpath = this.wlClasspath)<SUB>620</SUB>> ]
+"1066" [label = <(FIELD_IDENTIFIER,wlClasspath,wlClasspath)<SUB>620</SUB>> ]
+"1067" [label = <(CONTROL_STRUCTURE,if (classpath == null),if (classpath == null))<SUB>622</SUB>> ]
+"1068" [label = <(&lt;operator&gt;.equals,classpath == null)<SUB>622</SUB>> ]
+"1069" [label = <(IDENTIFIER,classpath,classpath == null)<SUB>622</SUB>> ]
+"1070" [label = <(LITERAL,null,classpath == null)<SUB>622</SUB>> ]
+"1071" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>622</SUB>> ]
+"1072" [label = <(&lt;operator&gt;.assignment,classpath = getCombinedClasspath())<SUB>623</SUB>> ]
+"1073" [label = <(IDENTIFIER,classpath,classpath = getCombinedClasspath())<SUB>623</SUB>> ]
+"1074" [label = <(getCombinedClasspath,getCombinedClasspath())<SUB>623</SUB>> ]
+"65" [label = <(IDENTIFIER,this,getCombinedClasspath())<SUB>623</SUB>> ]
+"1075" [label = <(setFork,setFork(true))<SUB>626</SUB>> ]
+"1076" [label = <(IDENTIFIER,javaTask,setFork(true))<SUB>626</SUB>> ]
+"1077" [label = <(LITERAL,true,setFork(true))<SUB>626</SUB>> ]
+"1078" [label = <(CONTROL_STRUCTURE,if (classpath != null),if (classpath != null))<SUB>627</SUB>> ]
+"1079" [label = <(&lt;operator&gt;.notEquals,classpath != null)<SUB>627</SUB>> ]
+"1080" [label = <(IDENTIFIER,classpath,classpath != null)<SUB>627</SUB>> ]
+"1081" [label = <(LITERAL,null,classpath != null)<SUB>627</SUB>> ]
+"1082" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>627</SUB>> ]
+"1083" [label = <(setClasspath,setClasspath(classpath))<SUB>628</SUB>> ]
+"1084" [label = <(IDENTIFIER,javaTask,setClasspath(classpath))<SUB>628</SUB>> ]
+"1085" [label = <(IDENTIFIER,classpath,setClasspath(classpath))<SUB>628</SUB>> ]
+"1086" [label = <(log,log(&quot;Calling &quot; + ejbcClassName + &quot; for &quot; + sourceJar.toString(), Project.MSG_VERBOSE))<SUB>631</SUB>> ]
+"66" [label = <(IDENTIFIER,this,log(&quot;Calling &quot; + ejbcClassName + &quot; for &quot; + sourceJar.toString(), Project.MSG_VERBOSE))<SUB>631</SUB>> ]
+"1087" [label = <(&lt;operator&gt;.addition,&quot;Calling &quot; + ejbcClassName + &quot; for &quot; + sourceJar.toString())<SUB>631</SUB>> ]
+"1088" [label = <(&lt;operator&gt;.addition,&quot;Calling &quot; + ejbcClassName + &quot; for &quot;)<SUB>631</SUB>> ]
+"1089" [label = <(&lt;operator&gt;.addition,&quot;Calling &quot; + ejbcClassName)<SUB>631</SUB>> ]
+"1090" [label = <(LITERAL,&quot;Calling &quot;,&quot;Calling &quot; + ejbcClassName)<SUB>631</SUB>> ]
+"1091" [label = <(IDENTIFIER,ejbcClassName,&quot;Calling &quot; + ejbcClassName)<SUB>631</SUB>> ]
+"1092" [label = <(LITERAL,&quot; for &quot;,&quot;Calling &quot; + ejbcClassName + &quot; for &quot;)<SUB>631</SUB>> ]
+"1093" [label = <(toString,sourceJar.toString())<SUB>631</SUB>> ]
+"1094" [label = <(IDENTIFIER,sourceJar,sourceJar.toString())<SUB>631</SUB>> ]
+"1095" [label = <(&lt;operator&gt;.fieldAccess,Project.MSG_VERBOSE)<SUB>632</SUB>> ]
+"1096" [label = <(IDENTIFIER,Project,log(&quot;Calling &quot; + ejbcClassName + &quot; for &quot; + sourceJar.toString(), Project.MSG_VERBOSE))<SUB>632</SUB>> ]
+"1097" [label = <(FIELD_IDENTIFIER,MSG_VERBOSE,MSG_VERBOSE)<SUB>632</SUB>> ]
+"1098" [label = <(CONTROL_STRUCTURE,if (javaTask.executeJava() != 0),if (javaTask.executeJava() != 0))<SUB>634</SUB>> ]
+"1099" [label = <(&lt;operator&gt;.notEquals,javaTask.executeJava() != 0)<SUB>634</SUB>> ]
+"1100" [label = <(executeJava,executeJava())<SUB>634</SUB>> ]
+"1101" [label = <(IDENTIFIER,javaTask,executeJava())<SUB>634</SUB>> ]
+"1102" [label = <(LITERAL,0,javaTask.executeJava() != 0)<SUB>634</SUB>> ]
+"1103" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>634</SUB>> ]
+"1104" [label = <(&lt;operator&gt;.throw,throw new BuildException(&quot;Ejbc reported an error&quot;);)<SUB>635</SUB>> ]
+"1105" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>635</SUB>> ]
+"1106" [label = <(&lt;operator&gt;.assignment,&lt;empty&gt;)> ]
+"1107" [label = <(IDENTIFIER,$obj11,&lt;empty&gt;)> ]
+"1108" [label = <(&lt;operator&gt;.alloc,new BuildException(&quot;Ejbc reported an error&quot;))<SUB>635</SUB>> ]
+"1109" [label = <(&lt;init&gt;,new BuildException(&quot;Ejbc reported an error&quot;))<SUB>635</SUB>> ]
+"1110" [label = <(IDENTIFIER,$obj11,new BuildException(&quot;Ejbc reported an error&quot;))> ]
+"1111" [label = <(LITERAL,&quot;Ejbc reported an error&quot;,new BuildException(&quot;Ejbc reported an error&quot;))<SUB>635</SUB>> ]
+"1112" [label = <(IDENTIFIER,$obj11,&lt;empty&gt;)> ]
+"1113" [label = <(BLOCK,catch,catch)> ]
+"1114" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>637</SUB>> ]
+"1115" [label = <(LOCAL,String msg: java.lang.String)> ]
+"1116" [label = <(&lt;operator&gt;.assignment,String msg = &quot;Exception while calling &quot; + ejbcClassName + &quot;. Details: &quot; + e.toString())<SUB>639</SUB>> ]
+"1117" [label = <(IDENTIFIER,msg,String msg = &quot;Exception while calling &quot; + ejbcClassName + &quot;. Details: &quot; + e.toString())<SUB>639</SUB>> ]
+"1118" [label = <(&lt;operator&gt;.addition,&quot;Exception while calling &quot; + ejbcClassName + &quot;. Details: &quot; + e.toString())<SUB>639</SUB>> ]
+"1119" [label = <(&lt;operator&gt;.addition,&quot;Exception while calling &quot; + ejbcClassName + &quot;. Details: &quot;)<SUB>639</SUB>> ]
+"1120" [label = <(&lt;operator&gt;.addition,&quot;Exception while calling &quot; + ejbcClassName)<SUB>639</SUB>> ]
+"1121" [label = <(LITERAL,&quot;Exception while calling &quot;,&quot;Exception while calling &quot; + ejbcClassName)<SUB>639</SUB>> ]
+"1122" [label = <(IDENTIFIER,ejbcClassName,&quot;Exception while calling &quot; + ejbcClassName)<SUB>639</SUB>> ]
+"1123" [label = <(LITERAL,&quot;. Details: &quot;,&quot;Exception while calling &quot; + ejbcClassName + &quot;. Details: &quot;)<SUB>640</SUB>> ]
+"1124" [label = <(toString,e.toString())<SUB>640</SUB>> ]
+"1125" [label = <(IDENTIFIER,e,e.toString())<SUB>640</SUB>> ]
+"1126" [label = <(&lt;operator&gt;.throw,throw new BuildException(msg, e);)<SUB>642</SUB>> ]
+"1127" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>642</SUB>> ]
+"1128" [label = <(&lt;operator&gt;.assignment,&lt;empty&gt;)> ]
+"1129" [label = <(IDENTIFIER,$obj12,&lt;empty&gt;)> ]
+"1130" [label = <(&lt;operator&gt;.alloc,new BuildException(msg, e))<SUB>642</SUB>> ]
+"1131" [label = <(&lt;init&gt;,new BuildException(msg, e))<SUB>642</SUB>> ]
+"1132" [label = <(IDENTIFIER,$obj12,new BuildException(msg, e))> ]
+"1133" [label = <(IDENTIFIER,msg,new BuildException(msg, e))<SUB>642</SUB>> ]
+"1134" [label = <(IDENTIFIER,e,new BuildException(msg, e))<SUB>642</SUB>> ]
+"1135" [label = <(IDENTIFIER,$obj12,&lt;empty&gt;)> ]
+"1136" [label = <(MODIFIER,PRIVATE)> ]
+"1137" [label = <(MODIFIER,VIRTUAL)> ]
+"1138" [label = <(METHOD_RETURN,void)<SUB>537</SUB>> ]
+  "783" -> "58" 
+  "783" -> "784" 
+  "783" -> "785" 
+  "783" -> "786" 
+  "783" -> "787" 
+  "783" -> "1136" 
+  "783" -> "1137" 
+  "783" -> "1138" 
+  "787" -> "60" 
+  "787" -> "788" 
+  "787" -> "791" 
+  "787" -> "825" 
+  "787" -> "826" 
+  "787" -> "831" 
+  "788" -> "789" 
+  "788" -> "790" 
+  "791" -> "792" 
+  "791" -> "795" 
+  "792" -> "793" 
+  "792" -> "794" 
+  "795" -> "796" 
+  "796" -> "797" 
+  "796" -> "813" 
+  "797" -> "798" 
+  "797" -> "804" 
+  "797" -> "812" 
+  "798" -> "799" 
+  "798" -> "802" 
+  "798" -> "803" 
+  "799" -> "800" 
+  "799" -> "801" 
+  "804" -> "805" 
+  "804" -> "809" 
+  "805" -> "806" 
+  "806" -> "807" 
+  "806" -> "808" 
+  "809" -> "810" 
+  "810" -> "811" 
+  "813" -> "814" 
+  "814" -> "815" 
+  "815" -> "816" 
+  "816" -> "817" 
+  "816" -> "820" 
+  "816" -> "824" 
+  "817" -> "818" 
+  "817" -> "819" 
+  "820" -> "821" 
+  "820" -> "822" 
+  "820" -> "823" 
+  "826" -> "827" 
+  "826" -> "828" 
+  "828" -> "829" 
+  "828" -> "830" 
+  "831" -> "832" 
+  "831" -> "1113" 
+  "832" -> "833" 
+  "832" -> "836" 
+  "832" -> "838" 
+  "832" -> "841" 
+  "832" -> "847" 
+  "832" -> "875" 
+  "832" -> "888" 
+  "832" -> "934" 
+  "832" -> "937" 
+  "832" -> "943" 
+  "832" -> "952" 
+  "832" -> "1005" 
+  "832" -> "1006" 
+  "832" -> "1009" 
+  "832" -> "1035" 
+  "832" -> "1040" 
+  "832" -> "1061" 
+  "832" -> "1062" 
+  "832" -> "1067" 
+  "832" -> "1075" 
+  "832" -> "1078" 
+  "832" -> "1086" 
+  "832" -> "1098" 
+  "833" -> "834" 
+  "833" -> "835" 
+  "836" -> "59" 
+  "836" -> "837" 
+  "837" -> "57" 
+  "838" -> "839" 
+  "838" -> "840" 
+  "841" -> "842" 
+  "841" -> "844" 
+  "842" -> "843" 
+  "844" -> "845" 
+  "844" -> "846" 
+  "847" -> "848" 
+  "847" -> "853" 
+  "848" -> "849" 
+  "849" -> "850" 
+  "850" -> "851" 
+  "850" -> "852" 
+  "853" -> "854" 
+  "854" -> "855" 
+  "854" -> "856" 
+  "854" -> "862" 
+  "854" -> "864" 
+  "856" -> "857" 
+  "856" -> "858" 
+  "858" -> "859" 
+  "859" -> "860" 
+  "859" -> "861" 
+  "862" -> "863" 
+  "864" -> "865" 
+  "864" -> "866" 
+  "864" -> "872" 
+  "866" -> "867" 
+  "866" -> "868" 
+  "868" -> "869" 
+  "868" -> "870" 
+  "870" -> "871" 
+  "872" -> "873" 
+  "872" -> "874" 
+  "875" -> "876" 
+  "875" -> "879" 
+  "876" -> "877" 
+  "876" -> "878" 
+  "877" -> "61" 
+  "879" -> "880" 
+  "880" -> "881" 
+  "880" -> "883" 
+  "881" -> "882" 
+  "883" -> "884" 
+  "883" -> "885" 
+  "885" -> "886" 
+  "885" -> "887" 
+  "888" -> "889" 
+  "888" -> "892" 
+  "889" -> "890" 
+  "889" -> "891" 
+  "892" -> "893" 
+  "893" -> "894" 
+  "893" -> "899" 
+  "893" -> "905" 
+  "894" -> "895" 
+  "894" -> "898" 
+  "895" -> "896" 
+  "895" -> "897" 
+  "899" -> "900" 
+  "900" -> "901" 
+  "900" -> "902" 
+  "902" -> "903" 
+  "902" -> "904" 
+  "905" -> "906" 
+  "906" -> "907" 
+  "906" -> "912" 
+  "906" -> "918" 
+  "907" -> "908" 
+  "907" -> "911" 
+  "908" -> "909" 
+  "908" -> "910" 
+  "912" -> "913" 
+  "913" -> "914" 
+  "913" -> "915" 
+  "915" -> "916" 
+  "915" -> "917" 
+  "918" -> "919" 
+  "919" -> "920" 
+  "919" -> "929" 
+  "920" -> "62" 
+  "920" -> "921" 
+  "920" -> "926" 
+  "921" -> "922" 
+  "921" -> "925" 
+  "922" -> "923" 
+  "922" -> "924" 
+  "926" -> "927" 
+  "926" -> "928" 
+  "929" -> "930" 
+  "929" -> "931" 
+  "931" -> "932" 
+  "931" -> "933" 
+  "934" -> "935" 
+  "934" -> "936" 
+  "937" -> "938" 
+  "937" -> "940" 
+  "938" -> "939" 
+  "940" -> "941" 
+  "940" -> "942" 
+  "943" -> "944" 
+  "943" -> "947" 
+  "944" -> "945" 
+  "944" -> "946" 
+  "947" -> "948" 
+  "948" -> "949" 
+  "948" -> "951" 
+  "949" -> "950" 
+  "952" -> "953" 
+  "952" -> "958" 
+  "952" -> "983" 
+  "953" -> "954" 
+  "953" -> "957" 
+  "954" -> "955" 
+  "954" -> "956" 
+  "958" -> "959" 
+  "958" -> "960" 
+  "958" -> "966" 
+  "960" -> "961" 
+  "960" -> "962" 
+  "962" -> "963" 
+  "962" -> "965" 
+  "963" -> "964" 
+  "964" -> "63" 
+  "966" -> "967" 
+  "966" -> "974" 
+  "967" -> "968" 
+  "967" -> "971" 
+  "968" -> "969" 
+  "968" -> "970" 
+  "971" -> "972" 
+  "971" -> "973" 
+  "974" -> "975" 
+  "974" -> "979" 
+  "975" -> "976" 
+  "975" -> "978" 
+  "976" -> "977" 
+  "979" -> "980" 
+  "979" -> "982" 
+  "980" -> "981" 
+  "983" -> "984" 
+  "984" -> "985" 
+  "985" -> "986" 
+  "985" -> "994" 
+  "986" -> "987" 
+  "987" -> "988" 
+  "987" -> "991" 
+  "988" -> "989" 
+  "988" -> "990" 
+  "991" -> "992" 
+  "991" -> "993" 
+  "994" -> "995" 
+  "994" -> "999" 
+  "995" -> "996" 
+  "995" -> "998" 
+  "996" -> "997" 
+  "999" -> "1000" 
+  "999" -> "1002" 
+  "1000" -> "1001" 
+  "1002" -> "1003" 
+  "1002" -> "1004" 
+  "1006" -> "1007" 
+  "1006" -> "1008" 
+  "1008" -> "64" 
+  "1009" -> "1010" 
+  "1009" -> "1026" 
+  "1010" -> "1011" 
+  "1010" -> "1020" 
+  "1011" -> "1012" 
+  "1011" -> "1017" 
+  "1012" -> "1013" 
+  "1012" -> "1016" 
+  "1013" -> "1014" 
+  "1013" -> "1015" 
+  "1017" -> "1018" 
+  "1017" -> "1019" 
+  "1020" -> "1021" 
+  "1020" -> "1025" 
+  "1021" -> "1022" 
+  "1022" -> "1023" 
+  "1023" -> "1024" 
+  "1026" -> "1027" 
+  "1026" -> "1031" 
+  "1027" -> "1028" 
+  "1027" -> "1030" 
+  "1028" -> "1029" 
+  "1031" -> "1032" 
+  "1031" -> "1034" 
+  "1032" -> "1033" 
+  "1035" -> "1036" 
+  "1035" -> "1038" 
+  "1036" -> "1037" 
+  "1038" -> "1039" 
+  "1040" -> "1041" 
+  "1040" -> "1046" 
+  "1040" -> "1052" 
+  "1041" -> "1042" 
+  "1041" -> "1045" 
+  "1042" -> "1043" 
+  "1042" -> "1044" 
+  "1046" -> "1047" 
+  "1047" -> "1048" 
+  "1047" -> "1050" 
+  "1048" -> "1049" 
+  "1050" -> "1051" 
+  "1052" -> "1053" 
+  "1053" -> "1054" 
+  "1054" -> "1055" 
+  "1054" -> "1057" 
+  "1055" -> "1056" 
+  "1057" -> "1058" 
+  "1058" -> "1059" 
+  "1058" -> "1060" 
+  "1062" -> "1063" 
+  "1062" -> "1064" 
+  "1064" -> "1065" 
+  "1064" -> "1066" 
+  "1067" -> "1068" 
+  "1067" -> "1071" 
+  "1068" -> "1069" 
+  "1068" -> "1070" 
+  "1071" -> "1072" 
+  "1072" -> "1073" 
+  "1072" -> "1074" 
+  "1074" -> "65" 
+  "1075" -> "1076" 
+  "1075" -> "1077" 
+  "1078" -> "1079" 
+  "1078" -> "1082" 
+  "1079" -> "1080" 
+  "1079" -> "1081" 
+  "1082" -> "1083" 
+  "1083" -> "1084" 
+  "1083" -> "1085" 
+  "1086" -> "66" 
+  "1086" -> "1087" 
+  "1086" -> "1095" 
+  "1087" -> "1088" 
+  "1087" -> "1093" 
+  "1088" -> "1089" 
+  "1088" -> "1092" 
+  "1089" -> "1090" 
+  "1089" -> "1091" 
+  "1093" -> "1094" 
+  "1095" -> "1096" 
+  "1095" -> "1097" 
+  "1098" -> "1099" 
+  "1098" -> "1103" 
+  "1099" -> "1100" 
+  "1099" -> "1102" 
+  "1100" -> "1101" 
+  "1103" -> "1104" 
+  "1104" -> "1105" 
+  "1105" -> "1106" 
+  "1105" -> "1109" 
+  "1105" -> "1112" 
+  "1106" -> "1107" 
+  "1106" -> "1108" 
+  "1109" -> "1110" 
+  "1109" -> "1111" 
+  "1113" -> "1114" 
+  "1114" -> "1115" 
+  "1114" -> "1116" 
+  "1114" -> "1126" 
+  "1116" -> "1117" 
+  "1116" -> "1118" 
+  "1118" -> "1119" 
+  "1118" -> "1124" 
+  "1119" -> "1120" 
+  "1119" -> "1123" 
+  "1120" -> "1121" 
+  "1120" -> "1122" 
+  "1124" -> "1125" 
+  "1126" -> "1127" 
+  "1127" -> "1128" 
+  "1127" -> "1131" 
+  "1127" -> "1135" 
+  "1128" -> "1129" 
+  "1128" -> "1130" 
+  "1131" -> "1132" 
+  "1131" -> "1133" 
+  "1131" -> "1134" 
+}

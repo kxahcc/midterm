@@ -1,0 +1,155 @@
+digraph "createProcessorExchangePairsList" {  
+"155" [label = <(METHOD,createProcessorExchangePairsList)<SUB>109</SUB>> ]
+"21" [label = <(PARAM,this)<SUB>109</SUB>> ]
+"156" [label = <(PARAM,Exchange exchange)<SUB>109</SUB>> ]
+"157" [label = <(PARAM,Object value)<SUB>109</SUB>> ]
+"158" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>109</SUB>> ]
+"18" [label = <(LOCAL,List&lt;ProcessorExchangePair&gt; result: ANY)> ]
+"159" [label = <(LOCAL,Integer collectionSize: java.lang.Integer)> ]
+"160" [label = <(&lt;operator&gt;.assignment,Integer collectionSize = size(value))<SUB>111</SUB>> ]
+"161" [label = <(IDENTIFIER,collectionSize,Integer collectionSize = size(value))<SUB>111</SUB>> ]
+"162" [label = <(size,size(value))<SUB>111</SUB>> ]
+"163" [label = <(IDENTIFIER,CollectionHelper,size(value))<SUB>111</SUB>> ]
+"164" [label = <(IDENTIFIER,value,size(value))<SUB>111</SUB>> ]
+"165" [label = <(CONTROL_STRUCTURE,if (collectionSize != null),if (collectionSize != null))<SUB>112</SUB>> ]
+"166" [label = <(&lt;operator&gt;.notEquals,collectionSize != null)<SUB>112</SUB>> ]
+"167" [label = <(IDENTIFIER,collectionSize,collectionSize != null)<SUB>112</SUB>> ]
+"168" [label = <(LITERAL,null,collectionSize != null)<SUB>112</SUB>> ]
+"169" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>112</SUB>> ]
+"170" [label = <(&lt;operator&gt;.assignment,result = new ArrayList&lt;ProcessorExchangePair&gt;(collectionSize))<SUB>113</SUB>> ]
+"171" [label = <(IDENTIFIER,result,result = new ArrayList&lt;ProcessorExchangePair&gt;(collectionSize))<SUB>113</SUB>> ]
+"172" [label = <(&lt;operator&gt;.alloc,new ArrayList&lt;ProcessorExchangePair&gt;(collectionSize))<SUB>113</SUB>> ]
+"173" [label = <(&lt;init&gt;,new ArrayList&lt;ProcessorExchangePair&gt;(collectionSize))<SUB>113</SUB>> ]
+"17" [label = <(IDENTIFIER,result,new ArrayList&lt;ProcessorExchangePair&gt;(collectionSize))<SUB>113</SUB>> ]
+"174" [label = <(IDENTIFIER,collectionSize,new ArrayList&lt;ProcessorExchangePair&gt;(collectionSize))<SUB>113</SUB>> ]
+"175" [label = <(CONTROL_STRUCTURE,else,else)<SUB>114</SUB>> ]
+"176" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>114</SUB>> ]
+"177" [label = <(&lt;operator&gt;.assignment,result = new ArrayList&lt;ProcessorExchangePair&gt;())<SUB>115</SUB>> ]
+"178" [label = <(IDENTIFIER,result,result = new ArrayList&lt;ProcessorExchangePair&gt;())<SUB>115</SUB>> ]
+"179" [label = <(&lt;operator&gt;.alloc,new ArrayList&lt;ProcessorExchangePair&gt;())<SUB>115</SUB>> ]
+"180" [label = <(&lt;init&gt;,new ArrayList&lt;ProcessorExchangePair&gt;())<SUB>115</SUB>> ]
+"19" [label = <(IDENTIFIER,result,new ArrayList&lt;ProcessorExchangePair&gt;())<SUB>115</SUB>> ]
+"181" [label = <(LOCAL,Iterator&lt;Object&gt; iter: java.util.Iterator)> ]
+"182" [label = <(&lt;operator&gt;.assignment,Iterator iter = createIterator(value))<SUB>117</SUB>> ]
+"183" [label = <(IDENTIFIER,iter,Iterator iter = createIterator(value))<SUB>117</SUB>> ]
+"184" [label = <(createIterator,createIterator(value))<SUB>117</SUB>> ]
+"185" [label = <(IDENTIFIER,ObjectHelper,createIterator(value))<SUB>117</SUB>> ]
+"186" [label = <(IDENTIFIER,value,createIterator(value))<SUB>117</SUB>> ]
+"187" [label = <(CONTROL_STRUCTURE,while (iter.hasNext()),while (iter.hasNext()))<SUB>118</SUB>> ]
+"188" [label = <(hasNext,iter.hasNext())<SUB>118</SUB>> ]
+"189" [label = <(IDENTIFIER,iter,iter.hasNext())<SUB>118</SUB>> ]
+"190" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>118</SUB>> ]
+"191" [label = <(LOCAL,Object part: java.lang.Object)> ]
+"192" [label = <(&lt;operator&gt;.assignment,Object part = iter.next())<SUB>119</SUB>> ]
+"193" [label = <(IDENTIFIER,part,Object part = iter.next())<SUB>119</SUB>> ]
+"194" [label = <(next,iter.next())<SUB>119</SUB>> ]
+"195" [label = <(IDENTIFIER,iter,iter.next())<SUB>119</SUB>> ]
+"196" [label = <(LOCAL,Exchange newExchange: org.apache.camel.Exchange)> ]
+"197" [label = <(&lt;operator&gt;.assignment,Exchange newExchange = copy())<SUB>120</SUB>> ]
+"198" [label = <(IDENTIFIER,newExchange,Exchange newExchange = copy())<SUB>120</SUB>> ]
+"199" [label = <(copy,copy())<SUB>120</SUB>> ]
+"200" [label = <(IDENTIFIER,exchange,copy())<SUB>120</SUB>> ]
+"201" [label = <(LOCAL,Message in: org.apache.camel.Message)> ]
+"202" [label = <(&lt;operator&gt;.assignment,Message in = getIn())<SUB>121</SUB>> ]
+"203" [label = <(IDENTIFIER,in,Message in = getIn())<SUB>121</SUB>> ]
+"204" [label = <(getIn,getIn())<SUB>121</SUB>> ]
+"205" [label = <(IDENTIFIER,newExchange,getIn())<SUB>121</SUB>> ]
+"206" [label = <(setBody,setBody(part))<SUB>122</SUB>> ]
+"207" [label = <(IDENTIFIER,in,setBody(part))<SUB>122</SUB>> ]
+"208" [label = <(IDENTIFIER,part,setBody(part))<SUB>122</SUB>> ]
+"209" [label = <(add,add(new ProcessorExchangePair(getProcessors().iterator().next(), newExchange)))<SUB>123</SUB>> ]
+"210" [label = <(IDENTIFIER,result,add(new ProcessorExchangePair(getProcessors().iterator().next(), newExchange)))<SUB>123</SUB>> ]
+"211" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>123</SUB>> ]
+"212" [label = <(&lt;operator&gt;.assignment,&lt;empty&gt;)> ]
+"213" [label = <(IDENTIFIER,$obj3,&lt;empty&gt;)> ]
+"214" [label = <(&lt;operator&gt;.alloc,new ProcessorExchangePair(getProcessors().iterator().next(), newExchange))<SUB>123</SUB>> ]
+"215" [label = <(&lt;init&gt;,new ProcessorExchangePair(getProcessors().iterator().next(), newExchange))<SUB>123</SUB>> ]
+"216" [label = <(IDENTIFIER,$obj3,new ProcessorExchangePair(getProcessors().iterator().next(), newExchange))> ]
+"217" [label = <(next,next())<SUB>123</SUB>> ]
+"218" [label = <(iterator,iterator())<SUB>123</SUB>> ]
+"219" [label = <(getProcessors,getProcessors())<SUB>123</SUB>> ]
+"20" [label = <(IDENTIFIER,this,getProcessors())<SUB>123</SUB>> ]
+"220" [label = <(IDENTIFIER,newExchange,new ProcessorExchangePair(getProcessors().iterator().next(), newExchange))<SUB>123</SUB>> ]
+"221" [label = <(IDENTIFIER,$obj3,&lt;empty&gt;)> ]
+"222" [label = <(RETURN,return result;,return result;)<SUB>125</SUB>> ]
+"223" [label = <(IDENTIFIER,result,return result;)<SUB>125</SUB>> ]
+"224" [label = <(MODIFIER,PRIVATE)> ]
+"225" [label = <(MODIFIER,VIRTUAL)> ]
+"226" [label = <(METHOD_RETURN,ANY)<SUB>109</SUB>> ]
+  "155" -> "21" 
+  "155" -> "156" 
+  "155" -> "157" 
+  "155" -> "158" 
+  "155" -> "224" 
+  "155" -> "225" 
+  "155" -> "226" 
+  "158" -> "18" 
+  "158" -> "159" 
+  "158" -> "160" 
+  "158" -> "165" 
+  "158" -> "181" 
+  "158" -> "182" 
+  "158" -> "187" 
+  "158" -> "222" 
+  "160" -> "161" 
+  "160" -> "162" 
+  "162" -> "163" 
+  "162" -> "164" 
+  "165" -> "166" 
+  "165" -> "169" 
+  "165" -> "175" 
+  "166" -> "167" 
+  "166" -> "168" 
+  "169" -> "170" 
+  "169" -> "173" 
+  "170" -> "171" 
+  "170" -> "172" 
+  "173" -> "17" 
+  "173" -> "174" 
+  "175" -> "176" 
+  "176" -> "177" 
+  "176" -> "180" 
+  "177" -> "178" 
+  "177" -> "179" 
+  "180" -> "19" 
+  "182" -> "183" 
+  "182" -> "184" 
+  "184" -> "185" 
+  "184" -> "186" 
+  "187" -> "188" 
+  "187" -> "190" 
+  "188" -> "189" 
+  "190" -> "191" 
+  "190" -> "192" 
+  "190" -> "196" 
+  "190" -> "197" 
+  "190" -> "201" 
+  "190" -> "202" 
+  "190" -> "206" 
+  "190" -> "209" 
+  "192" -> "193" 
+  "192" -> "194" 
+  "194" -> "195" 
+  "197" -> "198" 
+  "197" -> "199" 
+  "199" -> "200" 
+  "202" -> "203" 
+  "202" -> "204" 
+  "204" -> "205" 
+  "206" -> "207" 
+  "206" -> "208" 
+  "209" -> "210" 
+  "209" -> "211" 
+  "211" -> "212" 
+  "211" -> "215" 
+  "211" -> "221" 
+  "212" -> "213" 
+  "212" -> "214" 
+  "215" -> "216" 
+  "215" -> "217" 
+  "215" -> "220" 
+  "217" -> "218" 
+  "218" -> "219" 
+  "219" -> "20" 
+  "222" -> "223" 
+}

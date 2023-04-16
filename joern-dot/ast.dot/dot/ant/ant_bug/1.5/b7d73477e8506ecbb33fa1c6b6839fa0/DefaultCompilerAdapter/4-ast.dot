@@ -1,0 +1,833 @@
+digraph "setupJavacCommandlineSwitches" {  
+"346" [label = <(METHOD,setupJavacCommandlineSwitches)<SUB>202</SUB>> ]
+"10" [label = <(PARAM,this)<SUB>202</SUB>> ]
+"347" [label = <(PARAM,Commandline cmd)<SUB>202</SUB>> ]
+"348" [label = <(PARAM,boolean useDebugLevel)<SUB>203</SUB>> ]
+"349" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>203</SUB>> ]
+"350" [label = <(LOCAL,Path classpath: org.apache.tools.ant.types.Path)> ]
+"351" [label = <(&lt;operator&gt;.assignment,Path classpath = this.getCompileClasspath())<SUB>204</SUB>> ]
+"352" [label = <(IDENTIFIER,classpath,Path classpath = this.getCompileClasspath())<SUB>204</SUB>> ]
+"353" [label = <(getCompileClasspath,this.getCompileClasspath())<SUB>204</SUB>> ]
+"9" [label = <(IDENTIFIER,this,this.getCompileClasspath())<SUB>204</SUB>> ]
+"354" [label = <(LOCAL,Path sourcepath: org.apache.tools.ant.types.Path)> ]
+"355" [label = <(&lt;operator&gt;.assignment,Path sourcepath = null)<SUB>207</SUB>> ]
+"356" [label = <(IDENTIFIER,sourcepath,Path sourcepath = null)<SUB>207</SUB>> ]
+"357" [label = <(LITERAL,null,Path sourcepath = null)<SUB>207</SUB>> ]
+"358" [label = <(CONTROL_STRUCTURE,if (compileSourcepath != null),if (compileSourcepath != null))<SUB>208</SUB>> ]
+"359" [label = <(&lt;operator&gt;.notEquals,compileSourcepath != null)<SUB>208</SUB>> ]
+"360" [label = <(&lt;operator&gt;.fieldAccess,this.compileSourcepath)<SUB>208</SUB>> ]
+"361" [label = <(IDENTIFIER,this,compileSourcepath != null)<SUB>208</SUB>> ]
+"362" [label = <(FIELD_IDENTIFIER,compileSourcepath,compileSourcepath)<SUB>208</SUB>> ]
+"363" [label = <(LITERAL,null,compileSourcepath != null)<SUB>208</SUB>> ]
+"364" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>208</SUB>> ]
+"365" [label = <(&lt;operator&gt;.assignment,sourcepath = this.compileSourcepath)<SUB>209</SUB>> ]
+"366" [label = <(IDENTIFIER,sourcepath,sourcepath = this.compileSourcepath)<SUB>209</SUB>> ]
+"367" [label = <(&lt;operator&gt;.fieldAccess,this.compileSourcepath)<SUB>209</SUB>> ]
+"368" [label = <(IDENTIFIER,this,sourcepath = this.compileSourcepath)<SUB>209</SUB>> ]
+"369" [label = <(FIELD_IDENTIFIER,compileSourcepath,compileSourcepath)<SUB>209</SUB>> ]
+"370" [label = <(CONTROL_STRUCTURE,else,else)<SUB>210</SUB>> ]
+"371" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>210</SUB>> ]
+"372" [label = <(&lt;operator&gt;.assignment,sourcepath = this.src)<SUB>211</SUB>> ]
+"373" [label = <(IDENTIFIER,sourcepath,sourcepath = this.src)<SUB>211</SUB>> ]
+"374" [label = <(&lt;operator&gt;.fieldAccess,this.src)<SUB>211</SUB>> ]
+"375" [label = <(IDENTIFIER,this,sourcepath = this.src)<SUB>211</SUB>> ]
+"376" [label = <(FIELD_IDENTIFIER,src,src)<SUB>211</SUB>> ]
+"377" [label = <(LOCAL,String memoryParameterPrefix: java.lang.String)> ]
+"378" [label = <(&lt;operator&gt;.assignment,String memoryParameterPrefix = assumeJava11() ? &quot;-J-&quot; : &quot;-J-X&quot;)<SUB>214</SUB>> ]
+"379" [label = <(IDENTIFIER,memoryParameterPrefix,String memoryParameterPrefix = assumeJava11() ? &quot;-J-&quot; : &quot;-J-X&quot;)<SUB>214</SUB>> ]
+"380" [label = <(&lt;operator&gt;.conditional,assumeJava11() ? &quot;-J-&quot; : &quot;-J-X&quot;)<SUB>214</SUB>> ]
+"381" [label = <(assumeJava11,this.assumeJava11())<SUB>214</SUB>> ]
+"11" [label = <(IDENTIFIER,this,this.assumeJava11())<SUB>214</SUB>> ]
+"382" [label = <(LITERAL,&quot;-J-&quot;,assumeJava11() ? &quot;-J-&quot; : &quot;-J-X&quot;)<SUB>214</SUB>> ]
+"383" [label = <(LITERAL,&quot;-J-X&quot;,assumeJava11() ? &quot;-J-&quot; : &quot;-J-X&quot;)<SUB>214</SUB>> ]
+"384" [label = <(CONTROL_STRUCTURE,if (memoryInitialSize != null),if (memoryInitialSize != null))<SUB>215</SUB>> ]
+"385" [label = <(&lt;operator&gt;.notEquals,memoryInitialSize != null)<SUB>215</SUB>> ]
+"386" [label = <(&lt;operator&gt;.fieldAccess,this.memoryInitialSize)<SUB>215</SUB>> ]
+"387" [label = <(IDENTIFIER,this,memoryInitialSize != null)<SUB>215</SUB>> ]
+"388" [label = <(FIELD_IDENTIFIER,memoryInitialSize,memoryInitialSize)<SUB>215</SUB>> ]
+"389" [label = <(LITERAL,null,memoryInitialSize != null)<SUB>215</SUB>> ]
+"390" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>215</SUB>> ]
+"391" [label = <(CONTROL_STRUCTURE,if (!attributes.isForkedJavac()),if (!attributes.isForkedJavac()))<SUB>216</SUB>> ]
+"392" [label = <(&lt;operator&gt;.logicalNot,!attributes.isForkedJavac())<SUB>216</SUB>> ]
+"393" [label = <(isForkedJavac,isForkedJavac())<SUB>216</SUB>> ]
+"394" [label = <(&lt;operator&gt;.fieldAccess,this.attributes)<SUB>216</SUB>> ]
+"395" [label = <(IDENTIFIER,this,isForkedJavac())<SUB>216</SUB>> ]
+"396" [label = <(FIELD_IDENTIFIER,attributes,attributes)<SUB>216</SUB>> ]
+"397" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>216</SUB>> ]
+"398" [label = <(log,log(&quot;Since fork is false, ignoring &quot; + &quot;memoryInitialSize setting.&quot;, Project.MSG_WARN))<SUB>217</SUB>> ]
+"399" [label = <(&lt;operator&gt;.fieldAccess,this.attributes)<SUB>217</SUB>> ]
+"400" [label = <(IDENTIFIER,this,log(&quot;Since fork is false, ignoring &quot; + &quot;memoryInitialSize setting.&quot;, Project.MSG_WARN))<SUB>217</SUB>> ]
+"401" [label = <(FIELD_IDENTIFIER,attributes,attributes)<SUB>217</SUB>> ]
+"402" [label = <(&lt;operator&gt;.addition,&quot;Since fork is false, ignoring &quot; + &quot;memoryInitialSize setting.&quot;)<SUB>217</SUB>> ]
+"403" [label = <(LITERAL,&quot;Since fork is false, ignoring &quot;,&quot;Since fork is false, ignoring &quot; + &quot;memoryInitialSize setting.&quot;)<SUB>217</SUB>> ]
+"404" [label = <(LITERAL,&quot;memoryInitialSize setting.&quot;,&quot;Since fork is false, ignoring &quot; + &quot;memoryInitialSize setting.&quot;)<SUB>218</SUB>> ]
+"405" [label = <(&lt;operator&gt;.fieldAccess,Project.MSG_WARN)<SUB>219</SUB>> ]
+"406" [label = <(IDENTIFIER,Project,log(&quot;Since fork is false, ignoring &quot; + &quot;memoryInitialSize setting.&quot;, Project.MSG_WARN))<SUB>219</SUB>> ]
+"407" [label = <(FIELD_IDENTIFIER,MSG_WARN,MSG_WARN)<SUB>219</SUB>> ]
+"408" [label = <(CONTROL_STRUCTURE,else,else)<SUB>220</SUB>> ]
+"409" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>220</SUB>> ]
+"410" [label = <(setValue,setValue(memoryParameterPrefix + &quot;ms&quot; + memoryInitialSize))<SUB>221</SUB>> ]
+"411" [label = <(createArgument,createArgument())<SUB>221</SUB>> ]
+"412" [label = <(IDENTIFIER,cmd,createArgument())<SUB>221</SUB>> ]
+"413" [label = <(&lt;operator&gt;.addition,memoryParameterPrefix + &quot;ms&quot; + memoryInitialSize)<SUB>221</SUB>> ]
+"414" [label = <(&lt;operator&gt;.addition,memoryParameterPrefix + &quot;ms&quot;)<SUB>221</SUB>> ]
+"415" [label = <(IDENTIFIER,memoryParameterPrefix,memoryParameterPrefix + &quot;ms&quot;)<SUB>221</SUB>> ]
+"416" [label = <(LITERAL,&quot;ms&quot;,memoryParameterPrefix + &quot;ms&quot;)<SUB>222</SUB>> ]
+"417" [label = <(&lt;operator&gt;.fieldAccess,this.memoryInitialSize)<SUB>222</SUB>> ]
+"418" [label = <(IDENTIFIER,this,memoryParameterPrefix + &quot;ms&quot; + memoryInitialSize)<SUB>222</SUB>> ]
+"419" [label = <(FIELD_IDENTIFIER,memoryInitialSize,memoryInitialSize)<SUB>222</SUB>> ]
+"420" [label = <(CONTROL_STRUCTURE,if (memoryMaximumSize != null),if (memoryMaximumSize != null))<SUB>226</SUB>> ]
+"421" [label = <(&lt;operator&gt;.notEquals,memoryMaximumSize != null)<SUB>226</SUB>> ]
+"422" [label = <(&lt;operator&gt;.fieldAccess,this.memoryMaximumSize)<SUB>226</SUB>> ]
+"423" [label = <(IDENTIFIER,this,memoryMaximumSize != null)<SUB>226</SUB>> ]
+"424" [label = <(FIELD_IDENTIFIER,memoryMaximumSize,memoryMaximumSize)<SUB>226</SUB>> ]
+"425" [label = <(LITERAL,null,memoryMaximumSize != null)<SUB>226</SUB>> ]
+"426" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>226</SUB>> ]
+"427" [label = <(CONTROL_STRUCTURE,if (!attributes.isForkedJavac()),if (!attributes.isForkedJavac()))<SUB>227</SUB>> ]
+"428" [label = <(&lt;operator&gt;.logicalNot,!attributes.isForkedJavac())<SUB>227</SUB>> ]
+"429" [label = <(isForkedJavac,isForkedJavac())<SUB>227</SUB>> ]
+"430" [label = <(&lt;operator&gt;.fieldAccess,this.attributes)<SUB>227</SUB>> ]
+"431" [label = <(IDENTIFIER,this,isForkedJavac())<SUB>227</SUB>> ]
+"432" [label = <(FIELD_IDENTIFIER,attributes,attributes)<SUB>227</SUB>> ]
+"433" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>227</SUB>> ]
+"434" [label = <(log,log(&quot;Since fork is false, ignoring &quot; + &quot;memoryMaximumSize setting.&quot;, Project.MSG_WARN))<SUB>228</SUB>> ]
+"435" [label = <(&lt;operator&gt;.fieldAccess,this.attributes)<SUB>228</SUB>> ]
+"436" [label = <(IDENTIFIER,this,log(&quot;Since fork is false, ignoring &quot; + &quot;memoryMaximumSize setting.&quot;, Project.MSG_WARN))<SUB>228</SUB>> ]
+"437" [label = <(FIELD_IDENTIFIER,attributes,attributes)<SUB>228</SUB>> ]
+"438" [label = <(&lt;operator&gt;.addition,&quot;Since fork is false, ignoring &quot; + &quot;memoryMaximumSize setting.&quot;)<SUB>228</SUB>> ]
+"439" [label = <(LITERAL,&quot;Since fork is false, ignoring &quot;,&quot;Since fork is false, ignoring &quot; + &quot;memoryMaximumSize setting.&quot;)<SUB>228</SUB>> ]
+"440" [label = <(LITERAL,&quot;memoryMaximumSize setting.&quot;,&quot;Since fork is false, ignoring &quot; + &quot;memoryMaximumSize setting.&quot;)<SUB>229</SUB>> ]
+"441" [label = <(&lt;operator&gt;.fieldAccess,Project.MSG_WARN)<SUB>230</SUB>> ]
+"442" [label = <(IDENTIFIER,Project,log(&quot;Since fork is false, ignoring &quot; + &quot;memoryMaximumSize setting.&quot;, Project.MSG_WARN))<SUB>230</SUB>> ]
+"443" [label = <(FIELD_IDENTIFIER,MSG_WARN,MSG_WARN)<SUB>230</SUB>> ]
+"444" [label = <(CONTROL_STRUCTURE,else,else)<SUB>231</SUB>> ]
+"445" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>231</SUB>> ]
+"446" [label = <(setValue,setValue(memoryParameterPrefix + &quot;mx&quot; + memoryMaximumSize))<SUB>232</SUB>> ]
+"447" [label = <(createArgument,createArgument())<SUB>232</SUB>> ]
+"448" [label = <(IDENTIFIER,cmd,createArgument())<SUB>232</SUB>> ]
+"449" [label = <(&lt;operator&gt;.addition,memoryParameterPrefix + &quot;mx&quot; + memoryMaximumSize)<SUB>232</SUB>> ]
+"450" [label = <(&lt;operator&gt;.addition,memoryParameterPrefix + &quot;mx&quot;)<SUB>232</SUB>> ]
+"451" [label = <(IDENTIFIER,memoryParameterPrefix,memoryParameterPrefix + &quot;mx&quot;)<SUB>232</SUB>> ]
+"452" [label = <(LITERAL,&quot;mx&quot;,memoryParameterPrefix + &quot;mx&quot;)<SUB>233</SUB>> ]
+"453" [label = <(&lt;operator&gt;.fieldAccess,this.memoryMaximumSize)<SUB>233</SUB>> ]
+"454" [label = <(IDENTIFIER,this,memoryParameterPrefix + &quot;mx&quot; + memoryMaximumSize)<SUB>233</SUB>> ]
+"455" [label = <(FIELD_IDENTIFIER,memoryMaximumSize,memoryMaximumSize)<SUB>233</SUB>> ]
+"456" [label = <(CONTROL_STRUCTURE,if (attributes.getNowarn()),if (attributes.getNowarn()))<SUB>237</SUB>> ]
+"457" [label = <(getNowarn,getNowarn())<SUB>237</SUB>> ]
+"458" [label = <(&lt;operator&gt;.fieldAccess,this.attributes)<SUB>237</SUB>> ]
+"459" [label = <(IDENTIFIER,this,getNowarn())<SUB>237</SUB>> ]
+"460" [label = <(FIELD_IDENTIFIER,attributes,attributes)<SUB>237</SUB>> ]
+"461" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>237</SUB>> ]
+"462" [label = <(setValue,setValue(&quot;-nowarn&quot;))<SUB>238</SUB>> ]
+"463" [label = <(createArgument,createArgument())<SUB>238</SUB>> ]
+"464" [label = <(IDENTIFIER,cmd,createArgument())<SUB>238</SUB>> ]
+"465" [label = <(LITERAL,&quot;-nowarn&quot;,setValue(&quot;-nowarn&quot;))<SUB>238</SUB>> ]
+"466" [label = <(CONTROL_STRUCTURE,if (deprecation == true),if (deprecation == true))<SUB>241</SUB>> ]
+"467" [label = <(&lt;operator&gt;.equals,deprecation == true)<SUB>241</SUB>> ]
+"468" [label = <(&lt;operator&gt;.fieldAccess,this.deprecation)<SUB>241</SUB>> ]
+"469" [label = <(IDENTIFIER,this,deprecation == true)<SUB>241</SUB>> ]
+"470" [label = <(FIELD_IDENTIFIER,deprecation,deprecation)<SUB>241</SUB>> ]
+"471" [label = <(LITERAL,true,deprecation == true)<SUB>241</SUB>> ]
+"472" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>241</SUB>> ]
+"473" [label = <(setValue,setValue(&quot;-deprecation&quot;))<SUB>242</SUB>> ]
+"474" [label = <(createArgument,createArgument())<SUB>242</SUB>> ]
+"475" [label = <(IDENTIFIER,cmd,createArgument())<SUB>242</SUB>> ]
+"476" [label = <(LITERAL,&quot;-deprecation&quot;,setValue(&quot;-deprecation&quot;))<SUB>242</SUB>> ]
+"477" [label = <(CONTROL_STRUCTURE,if (destDir != null),if (destDir != null))<SUB>245</SUB>> ]
+"478" [label = <(&lt;operator&gt;.notEquals,destDir != null)<SUB>245</SUB>> ]
+"479" [label = <(&lt;operator&gt;.fieldAccess,this.destDir)<SUB>245</SUB>> ]
+"480" [label = <(IDENTIFIER,this,destDir != null)<SUB>245</SUB>> ]
+"481" [label = <(FIELD_IDENTIFIER,destDir,destDir)<SUB>245</SUB>> ]
+"482" [label = <(LITERAL,null,destDir != null)<SUB>245</SUB>> ]
+"483" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>245</SUB>> ]
+"484" [label = <(setValue,setValue(&quot;-d&quot;))<SUB>246</SUB>> ]
+"485" [label = <(createArgument,createArgument())<SUB>246</SUB>> ]
+"486" [label = <(IDENTIFIER,cmd,createArgument())<SUB>246</SUB>> ]
+"487" [label = <(LITERAL,&quot;-d&quot;,setValue(&quot;-d&quot;))<SUB>246</SUB>> ]
+"488" [label = <(setFile,setFile(destDir))<SUB>247</SUB>> ]
+"489" [label = <(createArgument,createArgument())<SUB>247</SUB>> ]
+"490" [label = <(IDENTIFIER,cmd,createArgument())<SUB>247</SUB>> ]
+"491" [label = <(&lt;operator&gt;.fieldAccess,this.destDir)<SUB>247</SUB>> ]
+"492" [label = <(IDENTIFIER,this,setFile(destDir))<SUB>247</SUB>> ]
+"493" [label = <(FIELD_IDENTIFIER,destDir,destDir)<SUB>247</SUB>> ]
+"494" [label = <(setValue,setValue(&quot;-classpath&quot;))<SUB>250</SUB>> ]
+"495" [label = <(createArgument,createArgument())<SUB>250</SUB>> ]
+"496" [label = <(IDENTIFIER,cmd,createArgument())<SUB>250</SUB>> ]
+"497" [label = <(LITERAL,&quot;-classpath&quot;,setValue(&quot;-classpath&quot;))<SUB>250</SUB>> ]
+"498" [label = <(CONTROL_STRUCTURE,if (assumeJava11()),if (assumeJava11()))<SUB>254</SUB>> ]
+"499" [label = <(assumeJava11,this.assumeJava11())<SUB>254</SUB>> ]
+"12" [label = <(IDENTIFIER,this,this.assumeJava11())<SUB>254</SUB>> ]
+"500" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>254</SUB>> ]
+"14" [label = <(LOCAL,Path cp: org.apache.tools.ant.types.Path)> ]
+"501" [label = <(&lt;operator&gt;.assignment,Path cp = new Path(project))<SUB>255</SUB>> ]
+"502" [label = <(IDENTIFIER,cp,Path cp = new Path(project))<SUB>255</SUB>> ]
+"503" [label = <(&lt;operator&gt;.alloc,new Path(project))<SUB>255</SUB>> ]
+"504" [label = <(&lt;init&gt;,new Path(project))<SUB>255</SUB>> ]
+"13" [label = <(IDENTIFIER,cp,new Path(project))<SUB>255</SUB>> ]
+"505" [label = <(&lt;operator&gt;.fieldAccess,this.project)<SUB>255</SUB>> ]
+"506" [label = <(IDENTIFIER,this,new Path(project))<SUB>255</SUB>> ]
+"507" [label = <(FIELD_IDENTIFIER,project,project)<SUB>255</SUB>> ]
+"508" [label = <(CONTROL_STRUCTURE,if (bootclasspath != null),if (bootclasspath != null))<SUB>259</SUB>> ]
+"509" [label = <(&lt;operator&gt;.notEquals,bootclasspath != null)<SUB>259</SUB>> ]
+"510" [label = <(&lt;operator&gt;.fieldAccess,this.bootclasspath)<SUB>259</SUB>> ]
+"511" [label = <(IDENTIFIER,this,bootclasspath != null)<SUB>259</SUB>> ]
+"512" [label = <(FIELD_IDENTIFIER,bootclasspath,bootclasspath)<SUB>259</SUB>> ]
+"513" [label = <(LITERAL,null,bootclasspath != null)<SUB>259</SUB>> ]
+"514" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>259</SUB>> ]
+"515" [label = <(append,append(bootclasspath))<SUB>260</SUB>> ]
+"516" [label = <(IDENTIFIER,cp,append(bootclasspath))<SUB>260</SUB>> ]
+"517" [label = <(&lt;operator&gt;.fieldAccess,this.bootclasspath)<SUB>260</SUB>> ]
+"518" [label = <(IDENTIFIER,this,append(bootclasspath))<SUB>260</SUB>> ]
+"519" [label = <(FIELD_IDENTIFIER,bootclasspath,bootclasspath)<SUB>260</SUB>> ]
+"520" [label = <(CONTROL_STRUCTURE,if (extdirs != null),if (extdirs != null))<SUB>262</SUB>> ]
+"521" [label = <(&lt;operator&gt;.notEquals,extdirs != null)<SUB>262</SUB>> ]
+"522" [label = <(&lt;operator&gt;.fieldAccess,this.extdirs)<SUB>262</SUB>> ]
+"523" [label = <(IDENTIFIER,this,extdirs != null)<SUB>262</SUB>> ]
+"524" [label = <(FIELD_IDENTIFIER,extdirs,extdirs)<SUB>262</SUB>> ]
+"525" [label = <(LITERAL,null,extdirs != null)<SUB>262</SUB>> ]
+"526" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>262</SUB>> ]
+"527" [label = <(addExtdirs,addExtdirs(extdirs))<SUB>263</SUB>> ]
+"528" [label = <(IDENTIFIER,cp,addExtdirs(extdirs))<SUB>263</SUB>> ]
+"529" [label = <(&lt;operator&gt;.fieldAccess,this.extdirs)<SUB>263</SUB>> ]
+"530" [label = <(IDENTIFIER,this,addExtdirs(extdirs))<SUB>263</SUB>> ]
+"531" [label = <(FIELD_IDENTIFIER,extdirs,extdirs)<SUB>263</SUB>> ]
+"532" [label = <(append,append(classpath))<SUB>265</SUB>> ]
+"533" [label = <(IDENTIFIER,cp,append(classpath))<SUB>265</SUB>> ]
+"534" [label = <(IDENTIFIER,classpath,append(classpath))<SUB>265</SUB>> ]
+"535" [label = <(append,append(sourcepath))<SUB>266</SUB>> ]
+"536" [label = <(IDENTIFIER,cp,append(sourcepath))<SUB>266</SUB>> ]
+"537" [label = <(IDENTIFIER,sourcepath,append(sourcepath))<SUB>266</SUB>> ]
+"538" [label = <(setPath,setPath(cp))<SUB>267</SUB>> ]
+"539" [label = <(createArgument,createArgument())<SUB>267</SUB>> ]
+"540" [label = <(IDENTIFIER,cmd,createArgument())<SUB>267</SUB>> ]
+"541" [label = <(IDENTIFIER,cp,setPath(cp))<SUB>267</SUB>> ]
+"542" [label = <(CONTROL_STRUCTURE,else,else)<SUB>268</SUB>> ]
+"543" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>268</SUB>> ]
+"544" [label = <(setPath,setPath(classpath))<SUB>269</SUB>> ]
+"545" [label = <(createArgument,createArgument())<SUB>269</SUB>> ]
+"546" [label = <(IDENTIFIER,cmd,createArgument())<SUB>269</SUB>> ]
+"547" [label = <(IDENTIFIER,classpath,setPath(classpath))<SUB>269</SUB>> ]
+"548" [label = <(CONTROL_STRUCTURE,if (sourcepath.size() &gt; 0),if (sourcepath.size() &gt; 0))<SUB>272</SUB>> ]
+"549" [label = <(&lt;operator&gt;.greaterThan,sourcepath.size() &gt; 0)<SUB>272</SUB>> ]
+"550" [label = <(size,size())<SUB>272</SUB>> ]
+"551" [label = <(IDENTIFIER,sourcepath,size())<SUB>272</SUB>> ]
+"552" [label = <(LITERAL,0,sourcepath.size() &gt; 0)<SUB>272</SUB>> ]
+"553" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>272</SUB>> ]
+"554" [label = <(setValue,setValue(&quot;-sourcepath&quot;))<SUB>273</SUB>> ]
+"555" [label = <(createArgument,createArgument())<SUB>273</SUB>> ]
+"556" [label = <(IDENTIFIER,cmd,createArgument())<SUB>273</SUB>> ]
+"557" [label = <(LITERAL,&quot;-sourcepath&quot;,setValue(&quot;-sourcepath&quot;))<SUB>273</SUB>> ]
+"558" [label = <(setPath,setPath(sourcepath))<SUB>274</SUB>> ]
+"559" [label = <(createArgument,createArgument())<SUB>274</SUB>> ]
+"560" [label = <(IDENTIFIER,cmd,createArgument())<SUB>274</SUB>> ]
+"561" [label = <(IDENTIFIER,sourcepath,setPath(sourcepath))<SUB>274</SUB>> ]
+"562" [label = <(CONTROL_STRUCTURE,if (target != null),if (target != null))<SUB>276</SUB>> ]
+"563" [label = <(&lt;operator&gt;.notEquals,target != null)<SUB>276</SUB>> ]
+"564" [label = <(&lt;operator&gt;.fieldAccess,this.target)<SUB>276</SUB>> ]
+"565" [label = <(IDENTIFIER,this,target != null)<SUB>276</SUB>> ]
+"566" [label = <(FIELD_IDENTIFIER,target,target)<SUB>276</SUB>> ]
+"567" [label = <(LITERAL,null,target != null)<SUB>276</SUB>> ]
+"568" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>276</SUB>> ]
+"569" [label = <(setValue,setValue(&quot;-target&quot;))<SUB>277</SUB>> ]
+"570" [label = <(createArgument,createArgument())<SUB>277</SUB>> ]
+"571" [label = <(IDENTIFIER,cmd,createArgument())<SUB>277</SUB>> ]
+"572" [label = <(LITERAL,&quot;-target&quot;,setValue(&quot;-target&quot;))<SUB>277</SUB>> ]
+"573" [label = <(setValue,setValue(target))<SUB>278</SUB>> ]
+"574" [label = <(createArgument,createArgument())<SUB>278</SUB>> ]
+"575" [label = <(IDENTIFIER,cmd,createArgument())<SUB>278</SUB>> ]
+"576" [label = <(&lt;operator&gt;.fieldAccess,this.target)<SUB>278</SUB>> ]
+"577" [label = <(IDENTIFIER,this,setValue(target))<SUB>278</SUB>> ]
+"578" [label = <(FIELD_IDENTIFIER,target,target)<SUB>278</SUB>> ]
+"579" [label = <(CONTROL_STRUCTURE,if (bootclasspath != null &amp;&amp; bootclasspath.size() &gt; 0),if (bootclasspath != null &amp;&amp; bootclasspath.size() &gt; 0))<SUB>280</SUB>> ]
+"580" [label = <(&lt;operator&gt;.logicalAnd,bootclasspath != null &amp;&amp; bootclasspath.size() &gt; 0)<SUB>280</SUB>> ]
+"581" [label = <(&lt;operator&gt;.notEquals,bootclasspath != null)<SUB>280</SUB>> ]
+"582" [label = <(&lt;operator&gt;.fieldAccess,this.bootclasspath)<SUB>280</SUB>> ]
+"583" [label = <(IDENTIFIER,this,bootclasspath != null)<SUB>280</SUB>> ]
+"584" [label = <(FIELD_IDENTIFIER,bootclasspath,bootclasspath)<SUB>280</SUB>> ]
+"585" [label = <(LITERAL,null,bootclasspath != null)<SUB>280</SUB>> ]
+"586" [label = <(&lt;operator&gt;.greaterThan,bootclasspath.size() &gt; 0)<SUB>280</SUB>> ]
+"587" [label = <(size,size())<SUB>280</SUB>> ]
+"588" [label = <(&lt;operator&gt;.fieldAccess,this.bootclasspath)<SUB>280</SUB>> ]
+"589" [label = <(IDENTIFIER,this,size())<SUB>280</SUB>> ]
+"590" [label = <(FIELD_IDENTIFIER,bootclasspath,bootclasspath)<SUB>280</SUB>> ]
+"591" [label = <(LITERAL,0,bootclasspath.size() &gt; 0)<SUB>280</SUB>> ]
+"592" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>280</SUB>> ]
+"593" [label = <(setValue,setValue(&quot;-bootclasspath&quot;))<SUB>281</SUB>> ]
+"594" [label = <(createArgument,createArgument())<SUB>281</SUB>> ]
+"595" [label = <(IDENTIFIER,cmd,createArgument())<SUB>281</SUB>> ]
+"596" [label = <(LITERAL,&quot;-bootclasspath&quot;,setValue(&quot;-bootclasspath&quot;))<SUB>281</SUB>> ]
+"597" [label = <(setPath,setPath(bootclasspath))<SUB>282</SUB>> ]
+"598" [label = <(createArgument,createArgument())<SUB>282</SUB>> ]
+"599" [label = <(IDENTIFIER,cmd,createArgument())<SUB>282</SUB>> ]
+"600" [label = <(&lt;operator&gt;.fieldAccess,this.bootclasspath)<SUB>282</SUB>> ]
+"601" [label = <(IDENTIFIER,this,setPath(bootclasspath))<SUB>282</SUB>> ]
+"602" [label = <(FIELD_IDENTIFIER,bootclasspath,bootclasspath)<SUB>282</SUB>> ]
+"603" [label = <(CONTROL_STRUCTURE,if (extdirs != null &amp;&amp; extdirs.size() &gt; 0),if (extdirs != null &amp;&amp; extdirs.size() &gt; 0))<SUB>284</SUB>> ]
+"604" [label = <(&lt;operator&gt;.logicalAnd,extdirs != null &amp;&amp; extdirs.size() &gt; 0)<SUB>284</SUB>> ]
+"605" [label = <(&lt;operator&gt;.notEquals,extdirs != null)<SUB>284</SUB>> ]
+"606" [label = <(&lt;operator&gt;.fieldAccess,this.extdirs)<SUB>284</SUB>> ]
+"607" [label = <(IDENTIFIER,this,extdirs != null)<SUB>284</SUB>> ]
+"608" [label = <(FIELD_IDENTIFIER,extdirs,extdirs)<SUB>284</SUB>> ]
+"609" [label = <(LITERAL,null,extdirs != null)<SUB>284</SUB>> ]
+"610" [label = <(&lt;operator&gt;.greaterThan,extdirs.size() &gt; 0)<SUB>284</SUB>> ]
+"611" [label = <(size,size())<SUB>284</SUB>> ]
+"612" [label = <(&lt;operator&gt;.fieldAccess,this.extdirs)<SUB>284</SUB>> ]
+"613" [label = <(IDENTIFIER,this,size())<SUB>284</SUB>> ]
+"614" [label = <(FIELD_IDENTIFIER,extdirs,extdirs)<SUB>284</SUB>> ]
+"615" [label = <(LITERAL,0,extdirs.size() &gt; 0)<SUB>284</SUB>> ]
+"616" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>284</SUB>> ]
+"617" [label = <(setValue,setValue(&quot;-extdirs&quot;))<SUB>285</SUB>> ]
+"618" [label = <(createArgument,createArgument())<SUB>285</SUB>> ]
+"619" [label = <(IDENTIFIER,cmd,createArgument())<SUB>285</SUB>> ]
+"620" [label = <(LITERAL,&quot;-extdirs&quot;,setValue(&quot;-extdirs&quot;))<SUB>285</SUB>> ]
+"621" [label = <(setPath,setPath(extdirs))<SUB>286</SUB>> ]
+"622" [label = <(createArgument,createArgument())<SUB>286</SUB>> ]
+"623" [label = <(IDENTIFIER,cmd,createArgument())<SUB>286</SUB>> ]
+"624" [label = <(&lt;operator&gt;.fieldAccess,this.extdirs)<SUB>286</SUB>> ]
+"625" [label = <(IDENTIFIER,this,setPath(extdirs))<SUB>286</SUB>> ]
+"626" [label = <(FIELD_IDENTIFIER,extdirs,extdirs)<SUB>286</SUB>> ]
+"627" [label = <(CONTROL_STRUCTURE,if (encoding != null),if (encoding != null))<SUB>290</SUB>> ]
+"628" [label = <(&lt;operator&gt;.notEquals,encoding != null)<SUB>290</SUB>> ]
+"629" [label = <(&lt;operator&gt;.fieldAccess,this.encoding)<SUB>290</SUB>> ]
+"630" [label = <(IDENTIFIER,this,encoding != null)<SUB>290</SUB>> ]
+"631" [label = <(FIELD_IDENTIFIER,encoding,encoding)<SUB>290</SUB>> ]
+"632" [label = <(LITERAL,null,encoding != null)<SUB>290</SUB>> ]
+"633" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>290</SUB>> ]
+"634" [label = <(setValue,setValue(&quot;-encoding&quot;))<SUB>291</SUB>> ]
+"635" [label = <(createArgument,createArgument())<SUB>291</SUB>> ]
+"636" [label = <(IDENTIFIER,cmd,createArgument())<SUB>291</SUB>> ]
+"637" [label = <(LITERAL,&quot;-encoding&quot;,setValue(&quot;-encoding&quot;))<SUB>291</SUB>> ]
+"638" [label = <(setValue,setValue(encoding))<SUB>292</SUB>> ]
+"639" [label = <(createArgument,createArgument())<SUB>292</SUB>> ]
+"640" [label = <(IDENTIFIER,cmd,createArgument())<SUB>292</SUB>> ]
+"641" [label = <(&lt;operator&gt;.fieldAccess,this.encoding)<SUB>292</SUB>> ]
+"642" [label = <(IDENTIFIER,this,setValue(encoding))<SUB>292</SUB>> ]
+"643" [label = <(FIELD_IDENTIFIER,encoding,encoding)<SUB>292</SUB>> ]
+"644" [label = <(CONTROL_STRUCTURE,if (debug),if (debug))<SUB>294</SUB>> ]
+"645" [label = <(&lt;operator&gt;.fieldAccess,this.debug)<SUB>294</SUB>> ]
+"646" [label = <(IDENTIFIER,this,if (debug))<SUB>294</SUB>> ]
+"647" [label = <(FIELD_IDENTIFIER,debug,debug)<SUB>294</SUB>> ]
+"648" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>294</SUB>> ]
+"649" [label = <(CONTROL_STRUCTURE,if (useDebugLevel &amp;&amp; !assumeJava11()),if (useDebugLevel &amp;&amp; !assumeJava11()))<SUB>295</SUB>> ]
+"650" [label = <(&lt;operator&gt;.logicalAnd,useDebugLevel &amp;&amp; !assumeJava11())<SUB>295</SUB>> ]
+"651" [label = <(IDENTIFIER,useDebugLevel,useDebugLevel &amp;&amp; !assumeJava11())<SUB>295</SUB>> ]
+"652" [label = <(&lt;operator&gt;.logicalNot,!assumeJava11())<SUB>295</SUB>> ]
+"653" [label = <(assumeJava11,this.assumeJava11())<SUB>295</SUB>> ]
+"15" [label = <(IDENTIFIER,this,this.assumeJava11())<SUB>295</SUB>> ]
+"654" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>295</SUB>> ]
+"655" [label = <(LOCAL,String debugLevel: java.lang.String)> ]
+"656" [label = <(&lt;operator&gt;.assignment,String debugLevel = getDebugLevel())<SUB>296</SUB>> ]
+"657" [label = <(IDENTIFIER,debugLevel,String debugLevel = getDebugLevel())<SUB>296</SUB>> ]
+"658" [label = <(getDebugLevel,getDebugLevel())<SUB>296</SUB>> ]
+"659" [label = <(&lt;operator&gt;.fieldAccess,this.attributes)<SUB>296</SUB>> ]
+"660" [label = <(IDENTIFIER,this,getDebugLevel())<SUB>296</SUB>> ]
+"661" [label = <(FIELD_IDENTIFIER,attributes,attributes)<SUB>296</SUB>> ]
+"662" [label = <(CONTROL_STRUCTURE,if (debugLevel != null),if (debugLevel != null))<SUB>297</SUB>> ]
+"663" [label = <(&lt;operator&gt;.notEquals,debugLevel != null)<SUB>297</SUB>> ]
+"664" [label = <(IDENTIFIER,debugLevel,debugLevel != null)<SUB>297</SUB>> ]
+"665" [label = <(LITERAL,null,debugLevel != null)<SUB>297</SUB>> ]
+"666" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>297</SUB>> ]
+"667" [label = <(setValue,setValue(&quot;-g:&quot; + debugLevel))<SUB>298</SUB>> ]
+"668" [label = <(createArgument,createArgument())<SUB>298</SUB>> ]
+"669" [label = <(IDENTIFIER,cmd,createArgument())<SUB>298</SUB>> ]
+"670" [label = <(&lt;operator&gt;.addition,&quot;-g:&quot; + debugLevel)<SUB>298</SUB>> ]
+"671" [label = <(LITERAL,&quot;-g:&quot;,&quot;-g:&quot; + debugLevel)<SUB>298</SUB>> ]
+"672" [label = <(IDENTIFIER,debugLevel,&quot;-g:&quot; + debugLevel)<SUB>298</SUB>> ]
+"673" [label = <(CONTROL_STRUCTURE,else,else)<SUB>299</SUB>> ]
+"674" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>299</SUB>> ]
+"675" [label = <(setValue,setValue(&quot;-g&quot;))<SUB>300</SUB>> ]
+"676" [label = <(createArgument,createArgument())<SUB>300</SUB>> ]
+"677" [label = <(IDENTIFIER,cmd,createArgument())<SUB>300</SUB>> ]
+"678" [label = <(LITERAL,&quot;-g&quot;,setValue(&quot;-g&quot;))<SUB>300</SUB>> ]
+"679" [label = <(CONTROL_STRUCTURE,else,else)<SUB>302</SUB>> ]
+"680" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>302</SUB>> ]
+"681" [label = <(setValue,setValue(&quot;-g&quot;))<SUB>303</SUB>> ]
+"682" [label = <(createArgument,createArgument())<SUB>303</SUB>> ]
+"683" [label = <(IDENTIFIER,cmd,createArgument())<SUB>303</SUB>> ]
+"684" [label = <(LITERAL,&quot;-g&quot;,setValue(&quot;-g&quot;))<SUB>303</SUB>> ]
+"685" [label = <(CONTROL_STRUCTURE,else,else)<SUB>305</SUB>> ]
+"686" [label = <(CONTROL_STRUCTURE,if (!assumeJava11()),if (!assumeJava11()))<SUB>305</SUB>> ]
+"687" [label = <(&lt;operator&gt;.logicalNot,!assumeJava11())<SUB>305</SUB>> ]
+"688" [label = <(assumeJava11,this.assumeJava11())<SUB>305</SUB>> ]
+"16" [label = <(IDENTIFIER,this,this.assumeJava11())<SUB>305</SUB>> ]
+"689" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>305</SUB>> ]
+"690" [label = <(setValue,setValue(&quot;-g:none&quot;))<SUB>306</SUB>> ]
+"691" [label = <(createArgument,createArgument())<SUB>306</SUB>> ]
+"692" [label = <(IDENTIFIER,cmd,createArgument())<SUB>306</SUB>> ]
+"693" [label = <(LITERAL,&quot;-g:none&quot;,setValue(&quot;-g:none&quot;))<SUB>306</SUB>> ]
+"694" [label = <(CONTROL_STRUCTURE,if (optimize),if (optimize))<SUB>308</SUB>> ]
+"695" [label = <(&lt;operator&gt;.fieldAccess,this.optimize)<SUB>308</SUB>> ]
+"696" [label = <(IDENTIFIER,this,if (optimize))<SUB>308</SUB>> ]
+"697" [label = <(FIELD_IDENTIFIER,optimize,optimize)<SUB>308</SUB>> ]
+"698" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>308</SUB>> ]
+"699" [label = <(setValue,setValue(&quot;-O&quot;))<SUB>309</SUB>> ]
+"700" [label = <(createArgument,createArgument())<SUB>309</SUB>> ]
+"701" [label = <(IDENTIFIER,cmd,createArgument())<SUB>309</SUB>> ]
+"702" [label = <(LITERAL,&quot;-O&quot;,setValue(&quot;-O&quot;))<SUB>309</SUB>> ]
+"703" [label = <(CONTROL_STRUCTURE,if (depend),if (depend))<SUB>312</SUB>> ]
+"704" [label = <(&lt;operator&gt;.fieldAccess,this.depend)<SUB>312</SUB>> ]
+"705" [label = <(IDENTIFIER,this,if (depend))<SUB>312</SUB>> ]
+"706" [label = <(FIELD_IDENTIFIER,depend,depend)<SUB>312</SUB>> ]
+"707" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>312</SUB>> ]
+"708" [label = <(CONTROL_STRUCTURE,if (assumeJava11()),if (assumeJava11()))<SUB>313</SUB>> ]
+"709" [label = <(assumeJava11,this.assumeJava11())<SUB>313</SUB>> ]
+"17" [label = <(IDENTIFIER,this,this.assumeJava11())<SUB>313</SUB>> ]
+"710" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>313</SUB>> ]
+"711" [label = <(setValue,setValue(&quot;-depend&quot;))<SUB>314</SUB>> ]
+"712" [label = <(createArgument,createArgument())<SUB>314</SUB>> ]
+"713" [label = <(IDENTIFIER,cmd,createArgument())<SUB>314</SUB>> ]
+"714" [label = <(LITERAL,&quot;-depend&quot;,setValue(&quot;-depend&quot;))<SUB>314</SUB>> ]
+"715" [label = <(CONTROL_STRUCTURE,else,else)<SUB>315</SUB>> ]
+"716" [label = <(CONTROL_STRUCTURE,if (assumeJava12()),if (assumeJava12()))<SUB>315</SUB>> ]
+"717" [label = <(assumeJava12,this.assumeJava12())<SUB>315</SUB>> ]
+"18" [label = <(IDENTIFIER,this,this.assumeJava12())<SUB>315</SUB>> ]
+"718" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>315</SUB>> ]
+"719" [label = <(setValue,setValue(&quot;-Xdepend&quot;))<SUB>316</SUB>> ]
+"720" [label = <(createArgument,createArgument())<SUB>316</SUB>> ]
+"721" [label = <(IDENTIFIER,cmd,createArgument())<SUB>316</SUB>> ]
+"722" [label = <(LITERAL,&quot;-Xdepend&quot;,setValue(&quot;-Xdepend&quot;))<SUB>316</SUB>> ]
+"723" [label = <(CONTROL_STRUCTURE,else,else)<SUB>317</SUB>> ]
+"724" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>317</SUB>> ]
+"725" [label = <(log,log(&quot;depend attribute is not supported by the &quot; + &quot;modern compiler&quot;, Project.MSG_WARN))<SUB>318</SUB>> ]
+"726" [label = <(&lt;operator&gt;.fieldAccess,this.attributes)<SUB>318</SUB>> ]
+"727" [label = <(IDENTIFIER,this,log(&quot;depend attribute is not supported by the &quot; + &quot;modern compiler&quot;, Project.MSG_WARN))<SUB>318</SUB>> ]
+"728" [label = <(FIELD_IDENTIFIER,attributes,attributes)<SUB>318</SUB>> ]
+"729" [label = <(&lt;operator&gt;.addition,&quot;depend attribute is not supported by the &quot; + &quot;modern compiler&quot;)<SUB>318</SUB>> ]
+"730" [label = <(LITERAL,&quot;depend attribute is not supported by the &quot;,&quot;depend attribute is not supported by the &quot; + &quot;modern compiler&quot;)<SUB>318</SUB>> ]
+"731" [label = <(LITERAL,&quot;modern compiler&quot;,&quot;depend attribute is not supported by the &quot; + &quot;modern compiler&quot;)<SUB>319</SUB>> ]
+"732" [label = <(&lt;operator&gt;.fieldAccess,Project.MSG_WARN)<SUB>319</SUB>> ]
+"733" [label = <(IDENTIFIER,Project,log(&quot;depend attribute is not supported by the &quot; + &quot;modern compiler&quot;, Project.MSG_WARN))<SUB>319</SUB>> ]
+"734" [label = <(FIELD_IDENTIFIER,MSG_WARN,MSG_WARN)<SUB>319</SUB>> ]
+"735" [label = <(CONTROL_STRUCTURE,if (verbose),if (verbose))<SUB>323</SUB>> ]
+"736" [label = <(&lt;operator&gt;.fieldAccess,this.verbose)<SUB>323</SUB>> ]
+"737" [label = <(IDENTIFIER,this,if (verbose))<SUB>323</SUB>> ]
+"738" [label = <(FIELD_IDENTIFIER,verbose,verbose)<SUB>323</SUB>> ]
+"739" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>323</SUB>> ]
+"740" [label = <(setValue,setValue(&quot;-verbose&quot;))<SUB>324</SUB>> ]
+"741" [label = <(createArgument,createArgument())<SUB>324</SUB>> ]
+"742" [label = <(IDENTIFIER,cmd,createArgument())<SUB>324</SUB>> ]
+"743" [label = <(LITERAL,&quot;-verbose&quot;,setValue(&quot;-verbose&quot;))<SUB>324</SUB>> ]
+"744" [label = <(addCurrentCompilerArgs,addCurrentCompilerArgs(cmd))<SUB>327</SUB>> ]
+"19" [label = <(IDENTIFIER,this,addCurrentCompilerArgs(cmd))<SUB>327</SUB>> ]
+"745" [label = <(IDENTIFIER,cmd,addCurrentCompilerArgs(cmd))<SUB>327</SUB>> ]
+"746" [label = <(RETURN,return cmd;,return cmd;)<SUB>329</SUB>> ]
+"747" [label = <(IDENTIFIER,cmd,return cmd;)<SUB>329</SUB>> ]
+"748" [label = <(MODIFIER,PROTECTED)> ]
+"749" [label = <(MODIFIER,VIRTUAL)> ]
+"750" [label = <(METHOD_RETURN,org.apache.tools.ant.types.Commandline)<SUB>202</SUB>> ]
+  "346" -> "10" 
+  "346" -> "347" 
+  "346" -> "348" 
+  "346" -> "349" 
+  "346" -> "748" 
+  "346" -> "749" 
+  "346" -> "750" 
+  "349" -> "350" 
+  "349" -> "351" 
+  "349" -> "354" 
+  "349" -> "355" 
+  "349" -> "358" 
+  "349" -> "377" 
+  "349" -> "378" 
+  "349" -> "384" 
+  "349" -> "420" 
+  "349" -> "456" 
+  "349" -> "466" 
+  "349" -> "477" 
+  "349" -> "494" 
+  "349" -> "498" 
+  "349" -> "627" 
+  "349" -> "644" 
+  "349" -> "694" 
+  "349" -> "703" 
+  "349" -> "735" 
+  "349" -> "744" 
+  "349" -> "746" 
+  "351" -> "352" 
+  "351" -> "353" 
+  "353" -> "9" 
+  "355" -> "356" 
+  "355" -> "357" 
+  "358" -> "359" 
+  "358" -> "364" 
+  "358" -> "370" 
+  "359" -> "360" 
+  "359" -> "363" 
+  "360" -> "361" 
+  "360" -> "362" 
+  "364" -> "365" 
+  "365" -> "366" 
+  "365" -> "367" 
+  "367" -> "368" 
+  "367" -> "369" 
+  "370" -> "371" 
+  "371" -> "372" 
+  "372" -> "373" 
+  "372" -> "374" 
+  "374" -> "375" 
+  "374" -> "376" 
+  "378" -> "379" 
+  "378" -> "380" 
+  "380" -> "381" 
+  "380" -> "382" 
+  "380" -> "383" 
+  "381" -> "11" 
+  "384" -> "385" 
+  "384" -> "390" 
+  "385" -> "386" 
+  "385" -> "389" 
+  "386" -> "387" 
+  "386" -> "388" 
+  "390" -> "391" 
+  "391" -> "392" 
+  "391" -> "397" 
+  "391" -> "408" 
+  "392" -> "393" 
+  "393" -> "394" 
+  "394" -> "395" 
+  "394" -> "396" 
+  "397" -> "398" 
+  "398" -> "399" 
+  "398" -> "402" 
+  "398" -> "405" 
+  "399" -> "400" 
+  "399" -> "401" 
+  "402" -> "403" 
+  "402" -> "404" 
+  "405" -> "406" 
+  "405" -> "407" 
+  "408" -> "409" 
+  "409" -> "410" 
+  "410" -> "411" 
+  "410" -> "413" 
+  "411" -> "412" 
+  "413" -> "414" 
+  "413" -> "417" 
+  "414" -> "415" 
+  "414" -> "416" 
+  "417" -> "418" 
+  "417" -> "419" 
+  "420" -> "421" 
+  "420" -> "426" 
+  "421" -> "422" 
+  "421" -> "425" 
+  "422" -> "423" 
+  "422" -> "424" 
+  "426" -> "427" 
+  "427" -> "428" 
+  "427" -> "433" 
+  "427" -> "444" 
+  "428" -> "429" 
+  "429" -> "430" 
+  "430" -> "431" 
+  "430" -> "432" 
+  "433" -> "434" 
+  "434" -> "435" 
+  "434" -> "438" 
+  "434" -> "441" 
+  "435" -> "436" 
+  "435" -> "437" 
+  "438" -> "439" 
+  "438" -> "440" 
+  "441" -> "442" 
+  "441" -> "443" 
+  "444" -> "445" 
+  "445" -> "446" 
+  "446" -> "447" 
+  "446" -> "449" 
+  "447" -> "448" 
+  "449" -> "450" 
+  "449" -> "453" 
+  "450" -> "451" 
+  "450" -> "452" 
+  "453" -> "454" 
+  "453" -> "455" 
+  "456" -> "457" 
+  "456" -> "461" 
+  "457" -> "458" 
+  "458" -> "459" 
+  "458" -> "460" 
+  "461" -> "462" 
+  "462" -> "463" 
+  "462" -> "465" 
+  "463" -> "464" 
+  "466" -> "467" 
+  "466" -> "472" 
+  "467" -> "468" 
+  "467" -> "471" 
+  "468" -> "469" 
+  "468" -> "470" 
+  "472" -> "473" 
+  "473" -> "474" 
+  "473" -> "476" 
+  "474" -> "475" 
+  "477" -> "478" 
+  "477" -> "483" 
+  "478" -> "479" 
+  "478" -> "482" 
+  "479" -> "480" 
+  "479" -> "481" 
+  "483" -> "484" 
+  "483" -> "488" 
+  "484" -> "485" 
+  "484" -> "487" 
+  "485" -> "486" 
+  "488" -> "489" 
+  "488" -> "491" 
+  "489" -> "490" 
+  "491" -> "492" 
+  "491" -> "493" 
+  "494" -> "495" 
+  "494" -> "497" 
+  "495" -> "496" 
+  "498" -> "499" 
+  "498" -> "500" 
+  "498" -> "542" 
+  "499" -> "12" 
+  "500" -> "14" 
+  "500" -> "501" 
+  "500" -> "504" 
+  "500" -> "508" 
+  "500" -> "520" 
+  "500" -> "532" 
+  "500" -> "535" 
+  "500" -> "538" 
+  "501" -> "502" 
+  "501" -> "503" 
+  "504" -> "13" 
+  "504" -> "505" 
+  "505" -> "506" 
+  "505" -> "507" 
+  "508" -> "509" 
+  "508" -> "514" 
+  "509" -> "510" 
+  "509" -> "513" 
+  "510" -> "511" 
+  "510" -> "512" 
+  "514" -> "515" 
+  "515" -> "516" 
+  "515" -> "517" 
+  "517" -> "518" 
+  "517" -> "519" 
+  "520" -> "521" 
+  "520" -> "526" 
+  "521" -> "522" 
+  "521" -> "525" 
+  "522" -> "523" 
+  "522" -> "524" 
+  "526" -> "527" 
+  "527" -> "528" 
+  "527" -> "529" 
+  "529" -> "530" 
+  "529" -> "531" 
+  "532" -> "533" 
+  "532" -> "534" 
+  "535" -> "536" 
+  "535" -> "537" 
+  "538" -> "539" 
+  "538" -> "541" 
+  "539" -> "540" 
+  "542" -> "543" 
+  "543" -> "544" 
+  "543" -> "548" 
+  "543" -> "562" 
+  "543" -> "579" 
+  "543" -> "603" 
+  "544" -> "545" 
+  "544" -> "547" 
+  "545" -> "546" 
+  "548" -> "549" 
+  "548" -> "553" 
+  "549" -> "550" 
+  "549" -> "552" 
+  "550" -> "551" 
+  "553" -> "554" 
+  "553" -> "558" 
+  "554" -> "555" 
+  "554" -> "557" 
+  "555" -> "556" 
+  "558" -> "559" 
+  "558" -> "561" 
+  "559" -> "560" 
+  "562" -> "563" 
+  "562" -> "568" 
+  "563" -> "564" 
+  "563" -> "567" 
+  "564" -> "565" 
+  "564" -> "566" 
+  "568" -> "569" 
+  "568" -> "573" 
+  "569" -> "570" 
+  "569" -> "572" 
+  "570" -> "571" 
+  "573" -> "574" 
+  "573" -> "576" 
+  "574" -> "575" 
+  "576" -> "577" 
+  "576" -> "578" 
+  "579" -> "580" 
+  "579" -> "592" 
+  "580" -> "581" 
+  "580" -> "586" 
+  "581" -> "582" 
+  "581" -> "585" 
+  "582" -> "583" 
+  "582" -> "584" 
+  "586" -> "587" 
+  "586" -> "591" 
+  "587" -> "588" 
+  "588" -> "589" 
+  "588" -> "590" 
+  "592" -> "593" 
+  "592" -> "597" 
+  "593" -> "594" 
+  "593" -> "596" 
+  "594" -> "595" 
+  "597" -> "598" 
+  "597" -> "600" 
+  "598" -> "599" 
+  "600" -> "601" 
+  "600" -> "602" 
+  "603" -> "604" 
+  "603" -> "616" 
+  "604" -> "605" 
+  "604" -> "610" 
+  "605" -> "606" 
+  "605" -> "609" 
+  "606" -> "607" 
+  "606" -> "608" 
+  "610" -> "611" 
+  "610" -> "615" 
+  "611" -> "612" 
+  "612" -> "613" 
+  "612" -> "614" 
+  "616" -> "617" 
+  "616" -> "621" 
+  "617" -> "618" 
+  "617" -> "620" 
+  "618" -> "619" 
+  "621" -> "622" 
+  "621" -> "624" 
+  "622" -> "623" 
+  "624" -> "625" 
+  "624" -> "626" 
+  "627" -> "628" 
+  "627" -> "633" 
+  "628" -> "629" 
+  "628" -> "632" 
+  "629" -> "630" 
+  "629" -> "631" 
+  "633" -> "634" 
+  "633" -> "638" 
+  "634" -> "635" 
+  "634" -> "637" 
+  "635" -> "636" 
+  "638" -> "639" 
+  "638" -> "641" 
+  "639" -> "640" 
+  "641" -> "642" 
+  "641" -> "643" 
+  "644" -> "645" 
+  "644" -> "648" 
+  "644" -> "685" 
+  "645" -> "646" 
+  "645" -> "647" 
+  "648" -> "649" 
+  "649" -> "650" 
+  "649" -> "654" 
+  "649" -> "679" 
+  "650" -> "651" 
+  "650" -> "652" 
+  "652" -> "653" 
+  "653" -> "15" 
+  "654" -> "655" 
+  "654" -> "656" 
+  "654" -> "662" 
+  "656" -> "657" 
+  "656" -> "658" 
+  "658" -> "659" 
+  "659" -> "660" 
+  "659" -> "661" 
+  "662" -> "663" 
+  "662" -> "666" 
+  "662" -> "673" 
+  "663" -> "664" 
+  "663" -> "665" 
+  "666" -> "667" 
+  "667" -> "668" 
+  "667" -> "670" 
+  "668" -> "669" 
+  "670" -> "671" 
+  "670" -> "672" 
+  "673" -> "674" 
+  "674" -> "675" 
+  "675" -> "676" 
+  "675" -> "678" 
+  "676" -> "677" 
+  "679" -> "680" 
+  "680" -> "681" 
+  "681" -> "682" 
+  "681" -> "684" 
+  "682" -> "683" 
+  "685" -> "686" 
+  "686" -> "687" 
+  "686" -> "689" 
+  "687" -> "688" 
+  "688" -> "16" 
+  "689" -> "690" 
+  "690" -> "691" 
+  "690" -> "693" 
+  "691" -> "692" 
+  "694" -> "695" 
+  "694" -> "698" 
+  "695" -> "696" 
+  "695" -> "697" 
+  "698" -> "699" 
+  "699" -> "700" 
+  "699" -> "702" 
+  "700" -> "701" 
+  "703" -> "704" 
+  "703" -> "707" 
+  "704" -> "705" 
+  "704" -> "706" 
+  "707" -> "708" 
+  "708" -> "709" 
+  "708" -> "710" 
+  "708" -> "715" 
+  "709" -> "17" 
+  "710" -> "711" 
+  "711" -> "712" 
+  "711" -> "714" 
+  "712" -> "713" 
+  "715" -> "716" 
+  "716" -> "717" 
+  "716" -> "718" 
+  "716" -> "723" 
+  "717" -> "18" 
+  "718" -> "719" 
+  "719" -> "720" 
+  "719" -> "722" 
+  "720" -> "721" 
+  "723" -> "724" 
+  "724" -> "725" 
+  "725" -> "726" 
+  "725" -> "729" 
+  "725" -> "732" 
+  "726" -> "727" 
+  "726" -> "728" 
+  "729" -> "730" 
+  "729" -> "731" 
+  "732" -> "733" 
+  "732" -> "734" 
+  "735" -> "736" 
+  "735" -> "739" 
+  "736" -> "737" 
+  "736" -> "738" 
+  "739" -> "740" 
+  "740" -> "741" 
+  "740" -> "743" 
+  "741" -> "742" 
+  "744" -> "19" 
+  "744" -> "745" 
+  "746" -> "747" 
+}

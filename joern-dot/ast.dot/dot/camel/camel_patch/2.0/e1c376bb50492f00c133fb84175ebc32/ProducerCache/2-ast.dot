@@ -1,0 +1,79 @@
+digraph "send" {  
+"111" [label = <(METHOD,send)<SUB>80</SUB>> ]
+"6" [label = <(PARAM,this)<SUB>80</SUB>> ]
+"112" [label = <(PARAM,Endpoint&lt;E&gt; endpoint)<SUB>80</SUB>> ]
+"113" [label = <(PARAM,Processor processor)<SUB>80</SUB>> ]
+"114" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>80</SUB>> ]
+"115" [label = <(CONTROL_STRUCTURE,try,try)<SUB>81</SUB>> ]
+"116" [label = <(BLOCK,try,try)<SUB>81</SUB>> ]
+"117" [label = <(LOCAL,Producer&lt;E&gt; producer: ANY)> ]
+"118" [label = <(&lt;operator&gt;.assignment,ANY producer = getProducer(endpoint))<SUB>82</SUB>> ]
+"119" [label = <(IDENTIFIER,producer,ANY producer = getProducer(endpoint))<SUB>82</SUB>> ]
+"120" [label = <(getProducer,getProducer(endpoint))<SUB>82</SUB>> ]
+"5" [label = <(IDENTIFIER,this,getProducer(endpoint))<SUB>82</SUB>> ]
+"121" [label = <(IDENTIFIER,endpoint,getProducer(endpoint))<SUB>82</SUB>> ]
+"122" [label = <(LOCAL,E exchange: java.lang.Object)> ]
+"123" [label = <(&lt;operator&gt;.assignment,Object exchange = createExchange())<SUB>83</SUB>> ]
+"124" [label = <(IDENTIFIER,exchange,Object exchange = createExchange())<SUB>83</SUB>> ]
+"125" [label = <(createExchange,createExchange())<SUB>83</SUB>> ]
+"126" [label = <(IDENTIFIER,producer,createExchange())<SUB>83</SUB>> ]
+"127" [label = <(RETURN,return sendExchange(endpoint, producer, processor, exchange);,return sendExchange(endpoint, producer, processor, exchange);)<SUB>84</SUB>> ]
+"128" [label = <(sendExchange,sendExchange(endpoint, producer, processor, exchange))<SUB>84</SUB>> ]
+"7" [label = <(IDENTIFIER,this,sendExchange(endpoint, producer, processor, exchange))<SUB>84</SUB>> ]
+"129" [label = <(IDENTIFIER,endpoint,sendExchange(endpoint, producer, processor, exchange))<SUB>84</SUB>> ]
+"130" [label = <(IDENTIFIER,producer,sendExchange(endpoint, producer, processor, exchange))<SUB>84</SUB>> ]
+"131" [label = <(IDENTIFIER,processor,sendExchange(endpoint, producer, processor, exchange))<SUB>84</SUB>> ]
+"132" [label = <(IDENTIFIER,exchange,sendExchange(endpoint, producer, processor, exchange))<SUB>84</SUB>> ]
+"133" [label = <(BLOCK,catch,catch)> ]
+"134" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>85</SUB>> ]
+"135" [label = <(&lt;operator&gt;.throw,throw new RuntimeCamelException(e);)<SUB>86</SUB>> ]
+"136" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>86</SUB>> ]
+"137" [label = <(&lt;operator&gt;.assignment,&lt;empty&gt;)> ]
+"138" [label = <(IDENTIFIER,$obj3,&lt;empty&gt;)> ]
+"139" [label = <(&lt;operator&gt;.alloc,new RuntimeCamelException(e))<SUB>86</SUB>> ]
+"140" [label = <(&lt;init&gt;,new RuntimeCamelException(e))<SUB>86</SUB>> ]
+"141" [label = <(IDENTIFIER,$obj3,new RuntimeCamelException(e))> ]
+"142" [label = <(IDENTIFIER,e,new RuntimeCamelException(e))<SUB>86</SUB>> ]
+"143" [label = <(IDENTIFIER,$obj3,&lt;empty&gt;)> ]
+"144" [label = <(MODIFIER,PUBLIC)> ]
+"145" [label = <(MODIFIER,VIRTUAL)> ]
+"146" [label = <(METHOD_RETURN,java.lang.Object)<SUB>80</SUB>> ]
+  "111" -> "6" 
+  "111" -> "112" 
+  "111" -> "113" 
+  "111" -> "114" 
+  "111" -> "144" 
+  "111" -> "145" 
+  "111" -> "146" 
+  "114" -> "115" 
+  "115" -> "116" 
+  "115" -> "133" 
+  "116" -> "117" 
+  "116" -> "118" 
+  "116" -> "122" 
+  "116" -> "123" 
+  "116" -> "127" 
+  "118" -> "119" 
+  "118" -> "120" 
+  "120" -> "5" 
+  "120" -> "121" 
+  "123" -> "124" 
+  "123" -> "125" 
+  "125" -> "126" 
+  "127" -> "128" 
+  "128" -> "7" 
+  "128" -> "129" 
+  "128" -> "130" 
+  "128" -> "131" 
+  "128" -> "132" 
+  "133" -> "134" 
+  "134" -> "135" 
+  "135" -> "136" 
+  "136" -> "137" 
+  "136" -> "140" 
+  "136" -> "143" 
+  "137" -> "138" 
+  "137" -> "139" 
+  "140" -> "141" 
+  "140" -> "142" 
+}

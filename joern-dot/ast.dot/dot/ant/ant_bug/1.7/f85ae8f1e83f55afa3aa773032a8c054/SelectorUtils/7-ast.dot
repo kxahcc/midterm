@@ -1,0 +1,953 @@
+digraph "match" {  
+"585" [label = <(METHOD,match)<SUB>325</SUB>> ]
+"586" [label = <(PARAM,String pattern)<SUB>325</SUB>> ]
+"587" [label = <(PARAM,String str)<SUB>325</SUB>> ]
+"588" [label = <(PARAM,boolean isCaseSensitive)<SUB>326</SUB>> ]
+"589" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>326</SUB>> ]
+"590" [label = <(LOCAL,char[] patArr: char[])> ]
+"591" [label = <(&lt;operator&gt;.assignment,char[] patArr = pattern.toCharArray())<SUB>327</SUB>> ]
+"592" [label = <(IDENTIFIER,patArr,char[] patArr = pattern.toCharArray())<SUB>327</SUB>> ]
+"593" [label = <(toCharArray,pattern.toCharArray())<SUB>327</SUB>> ]
+"594" [label = <(IDENTIFIER,pattern,pattern.toCharArray())<SUB>327</SUB>> ]
+"595" [label = <(LOCAL,char[] strArr: char[])> ]
+"596" [label = <(&lt;operator&gt;.assignment,char[] strArr = str.toCharArray())<SUB>328</SUB>> ]
+"597" [label = <(IDENTIFIER,strArr,char[] strArr = str.toCharArray())<SUB>328</SUB>> ]
+"598" [label = <(toCharArray,str.toCharArray())<SUB>328</SUB>> ]
+"599" [label = <(IDENTIFIER,str,str.toCharArray())<SUB>328</SUB>> ]
+"600" [label = <(LOCAL,int patIdxStart: int)> ]
+"601" [label = <(&lt;operator&gt;.assignment,int patIdxStart = 0)<SUB>329</SUB>> ]
+"602" [label = <(IDENTIFIER,patIdxStart,int patIdxStart = 0)<SUB>329</SUB>> ]
+"603" [label = <(LITERAL,0,int patIdxStart = 0)<SUB>329</SUB>> ]
+"604" [label = <(LOCAL,int patIdxEnd: int)> ]
+"605" [label = <(&lt;operator&gt;.assignment,int patIdxEnd = patArr.length - 1)<SUB>330</SUB>> ]
+"606" [label = <(IDENTIFIER,patIdxEnd,int patIdxEnd = patArr.length - 1)<SUB>330</SUB>> ]
+"607" [label = <(&lt;operator&gt;.subtraction,patArr.length - 1)<SUB>330</SUB>> ]
+"608" [label = <(&lt;operator&gt;.fieldAccess,patArr.length)<SUB>330</SUB>> ]
+"609" [label = <(IDENTIFIER,patArr,patArr.length - 1)<SUB>330</SUB>> ]
+"610" [label = <(FIELD_IDENTIFIER,length,length)<SUB>330</SUB>> ]
+"611" [label = <(LITERAL,1,patArr.length - 1)<SUB>330</SUB>> ]
+"612" [label = <(LOCAL,int strIdxStart: int)> ]
+"613" [label = <(&lt;operator&gt;.assignment,int strIdxStart = 0)<SUB>331</SUB>> ]
+"614" [label = <(IDENTIFIER,strIdxStart,int strIdxStart = 0)<SUB>331</SUB>> ]
+"615" [label = <(LITERAL,0,int strIdxStart = 0)<SUB>331</SUB>> ]
+"616" [label = <(LOCAL,int strIdxEnd: int)> ]
+"617" [label = <(&lt;operator&gt;.assignment,int strIdxEnd = strArr.length - 1)<SUB>332</SUB>> ]
+"618" [label = <(IDENTIFIER,strIdxEnd,int strIdxEnd = strArr.length - 1)<SUB>332</SUB>> ]
+"619" [label = <(&lt;operator&gt;.subtraction,strArr.length - 1)<SUB>332</SUB>> ]
+"620" [label = <(&lt;operator&gt;.fieldAccess,strArr.length)<SUB>332</SUB>> ]
+"621" [label = <(IDENTIFIER,strArr,strArr.length - 1)<SUB>332</SUB>> ]
+"622" [label = <(FIELD_IDENTIFIER,length,length)<SUB>332</SUB>> ]
+"623" [label = <(LITERAL,1,strArr.length - 1)<SUB>332</SUB>> ]
+"624" [label = <(LOCAL,char ch: char)> ]
+"625" [label = <(LOCAL,boolean containsStar: boolean)> ]
+"626" [label = <(&lt;operator&gt;.assignment,boolean containsStar = false)<SUB>335</SUB>> ]
+"627" [label = <(IDENTIFIER,containsStar,boolean containsStar = false)<SUB>335</SUB>> ]
+"628" [label = <(LITERAL,false,boolean containsStar = false)<SUB>335</SUB>> ]
+"629" [label = <(CONTROL_STRUCTURE,for (int i = 0; Some(i &lt; patArr.length); i++),for (int i = 0; Some(i &lt; patArr.length); i++))<SUB>336</SUB>> ]
+"630" [label = <(LOCAL,int i: int)> ]
+"631" [label = <(&lt;operator&gt;.assignment,int i = 0)<SUB>336</SUB>> ]
+"632" [label = <(IDENTIFIER,i,int i = 0)<SUB>336</SUB>> ]
+"633" [label = <(LITERAL,0,int i = 0)<SUB>336</SUB>> ]
+"634" [label = <(&lt;operator&gt;.lessThan,i &lt; patArr.length)<SUB>336</SUB>> ]
+"635" [label = <(IDENTIFIER,i,i &lt; patArr.length)<SUB>336</SUB>> ]
+"636" [label = <(&lt;operator&gt;.fieldAccess,patArr.length)<SUB>336</SUB>> ]
+"637" [label = <(IDENTIFIER,patArr,i &lt; patArr.length)<SUB>336</SUB>> ]
+"638" [label = <(FIELD_IDENTIFIER,length,length)<SUB>336</SUB>> ]
+"639" [label = <(&lt;operator&gt;.postIncrement,i++)<SUB>336</SUB>> ]
+"640" [label = <(IDENTIFIER,i,i++)<SUB>336</SUB>> ]
+"641" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>336</SUB>> ]
+"642" [label = <(CONTROL_STRUCTURE,if (patArr[i] == '*'),if (patArr[i] == '*'))<SUB>337</SUB>> ]
+"643" [label = <(&lt;operator&gt;.equals,patArr[i] == '*')<SUB>337</SUB>> ]
+"644" [label = <(&lt;operator&gt;.indexAccess,patArr[i])<SUB>337</SUB>> ]
+"645" [label = <(IDENTIFIER,patArr,patArr[i] == '*')<SUB>337</SUB>> ]
+"646" [label = <(IDENTIFIER,i,patArr[i] == '*')<SUB>337</SUB>> ]
+"647" [label = <(LITERAL,'*',patArr[i] == '*')<SUB>337</SUB>> ]
+"648" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>337</SUB>> ]
+"649" [label = <(&lt;operator&gt;.assignment,containsStar = true)<SUB>338</SUB>> ]
+"650" [label = <(IDENTIFIER,containsStar,containsStar = true)<SUB>338</SUB>> ]
+"651" [label = <(LITERAL,true,containsStar = true)<SUB>338</SUB>> ]
+"652" [label = <(CONTROL_STRUCTURE,break;,break;)<SUB>339</SUB>> ]
+"653" [label = <(CONTROL_STRUCTURE,if (!containsStar),if (!containsStar))<SUB>343</SUB>> ]
+"654" [label = <(&lt;operator&gt;.logicalNot,!containsStar)<SUB>343</SUB>> ]
+"655" [label = <(IDENTIFIER,containsStar,!containsStar)<SUB>343</SUB>> ]
+"656" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>343</SUB>> ]
+"657" [label = <(CONTROL_STRUCTURE,if (patIdxEnd != strIdxEnd),if (patIdxEnd != strIdxEnd))<SUB>345</SUB>> ]
+"658" [label = <(&lt;operator&gt;.notEquals,patIdxEnd != strIdxEnd)<SUB>345</SUB>> ]
+"659" [label = <(IDENTIFIER,patIdxEnd,patIdxEnd != strIdxEnd)<SUB>345</SUB>> ]
+"660" [label = <(IDENTIFIER,strIdxEnd,patIdxEnd != strIdxEnd)<SUB>345</SUB>> ]
+"661" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>345</SUB>> ]
+"662" [label = <(RETURN,return false;,return false;)<SUB>346</SUB>> ]
+"663" [label = <(LITERAL,false,return false;)<SUB>346</SUB>> ]
+"664" [label = <(CONTROL_STRUCTURE,for (int i = 0; Some(i &lt;= patIdxEnd); i++),for (int i = 0; Some(i &lt;= patIdxEnd); i++))<SUB>348</SUB>> ]
+"665" [label = <(LOCAL,int i: int)> ]
+"666" [label = <(&lt;operator&gt;.assignment,int i = 0)<SUB>348</SUB>> ]
+"667" [label = <(IDENTIFIER,i,int i = 0)<SUB>348</SUB>> ]
+"668" [label = <(LITERAL,0,int i = 0)<SUB>348</SUB>> ]
+"669" [label = <(&lt;operator&gt;.lessEqualsThan,i &lt;= patIdxEnd)<SUB>348</SUB>> ]
+"670" [label = <(IDENTIFIER,i,i &lt;= patIdxEnd)<SUB>348</SUB>> ]
+"671" [label = <(IDENTIFIER,patIdxEnd,i &lt;= patIdxEnd)<SUB>348</SUB>> ]
+"672" [label = <(&lt;operator&gt;.postIncrement,i++)<SUB>348</SUB>> ]
+"673" [label = <(IDENTIFIER,i,i++)<SUB>348</SUB>> ]
+"674" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>348</SUB>> ]
+"675" [label = <(&lt;operator&gt;.assignment,ch = patArr[i])<SUB>349</SUB>> ]
+"676" [label = <(IDENTIFIER,ch,ch = patArr[i])<SUB>349</SUB>> ]
+"677" [label = <(&lt;operator&gt;.indexAccess,patArr[i])<SUB>349</SUB>> ]
+"678" [label = <(IDENTIFIER,patArr,ch = patArr[i])<SUB>349</SUB>> ]
+"679" [label = <(IDENTIFIER,i,ch = patArr[i])<SUB>349</SUB>> ]
+"680" [label = <(CONTROL_STRUCTURE,if (ch != '?'),if (ch != '?'))<SUB>350</SUB>> ]
+"681" [label = <(&lt;operator&gt;.notEquals,ch != '?')<SUB>350</SUB>> ]
+"682" [label = <(IDENTIFIER,ch,ch != '?')<SUB>350</SUB>> ]
+"683" [label = <(LITERAL,'?',ch != '?')<SUB>350</SUB>> ]
+"684" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>350</SUB>> ]
+"685" [label = <(CONTROL_STRUCTURE,if (isCaseSensitive &amp;&amp; ch != strArr[i]),if (isCaseSensitive &amp;&amp; ch != strArr[i]))<SUB>351</SUB>> ]
+"686" [label = <(&lt;operator&gt;.logicalAnd,isCaseSensitive &amp;&amp; ch != strArr[i])<SUB>351</SUB>> ]
+"687" [label = <(IDENTIFIER,isCaseSensitive,isCaseSensitive &amp;&amp; ch != strArr[i])<SUB>351</SUB>> ]
+"688" [label = <(&lt;operator&gt;.notEquals,ch != strArr[i])<SUB>351</SUB>> ]
+"689" [label = <(IDENTIFIER,ch,ch != strArr[i])<SUB>351</SUB>> ]
+"690" [label = <(&lt;operator&gt;.indexAccess,strArr[i])<SUB>351</SUB>> ]
+"691" [label = <(IDENTIFIER,strArr,ch != strArr[i])<SUB>351</SUB>> ]
+"692" [label = <(IDENTIFIER,i,ch != strArr[i])<SUB>351</SUB>> ]
+"693" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>351</SUB>> ]
+"694" [label = <(RETURN,return false;,return false;)<SUB>352</SUB>> ]
+"695" [label = <(LITERAL,false,return false;)<SUB>352</SUB>> ]
+"696" [label = <(CONTROL_STRUCTURE,if (!isCaseSensitive &amp;&amp; Character.toUpperCase(ch) != Character.toUpperCase(strArr[i])),if (!isCaseSensitive &amp;&amp; Character.toUpperCase(ch) != Character.toUpperCase(strArr[i])))<SUB>354</SUB>> ]
+"697" [label = <(&lt;operator&gt;.logicalAnd,!isCaseSensitive &amp;&amp; Character.toUpperCase(ch) != Character.toUpperCase(strArr[i]))<SUB>354</SUB>> ]
+"698" [label = <(&lt;operator&gt;.logicalNot,!isCaseSensitive)<SUB>354</SUB>> ]
+"699" [label = <(IDENTIFIER,isCaseSensitive,!isCaseSensitive)<SUB>354</SUB>> ]
+"700" [label = <(&lt;operator&gt;.notEquals,Character.toUpperCase(ch) != Character.toUpperCase(strArr[i]))<SUB>354</SUB>> ]
+"701" [label = <(toUpperCase,Character.toUpperCase(ch))<SUB>354</SUB>> ]
+"702" [label = <(IDENTIFIER,Character,Character.toUpperCase(ch))<SUB>354</SUB>> ]
+"703" [label = <(IDENTIFIER,ch,Character.toUpperCase(ch))<SUB>354</SUB>> ]
+"704" [label = <(toUpperCase,Character.toUpperCase(strArr[i]))<SUB>355</SUB>> ]
+"705" [label = <(IDENTIFIER,Character,Character.toUpperCase(strArr[i]))<SUB>355</SUB>> ]
+"706" [label = <(&lt;operator&gt;.indexAccess,strArr[i])<SUB>355</SUB>> ]
+"707" [label = <(IDENTIFIER,strArr,Character.toUpperCase(strArr[i]))<SUB>355</SUB>> ]
+"708" [label = <(IDENTIFIER,i,Character.toUpperCase(strArr[i]))<SUB>355</SUB>> ]
+"709" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>355</SUB>> ]
+"710" [label = <(RETURN,return false;,return false;)<SUB>356</SUB>> ]
+"711" [label = <(LITERAL,false,return false;)<SUB>356</SUB>> ]
+"712" [label = <(RETURN,return true;,return true;)<SUB>360</SUB>> ]
+"713" [label = <(LITERAL,true,return true;)<SUB>360</SUB>> ]
+"714" [label = <(CONTROL_STRUCTURE,if (patIdxEnd == 0),if (patIdxEnd == 0))<SUB>363</SUB>> ]
+"715" [label = <(&lt;operator&gt;.equals,patIdxEnd == 0)<SUB>363</SUB>> ]
+"716" [label = <(IDENTIFIER,patIdxEnd,patIdxEnd == 0)<SUB>363</SUB>> ]
+"717" [label = <(LITERAL,0,patIdxEnd == 0)<SUB>363</SUB>> ]
+"718" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>363</SUB>> ]
+"719" [label = <(RETURN,return true;,return true;)<SUB>364</SUB>> ]
+"720" [label = <(LITERAL,true,return true;)<SUB>364</SUB>> ]
+"721" [label = <(CONTROL_STRUCTURE,while ((ch = patArr[patIdxStart]) != '*' &amp;&amp; strIdxStart &lt;= strIdxEnd),while ((ch = patArr[patIdxStart]) != '*' &amp;&amp; strIdxStart &lt;= strIdxEnd))<SUB>368</SUB>> ]
+"722" [label = <(&lt;operator&gt;.logicalAnd,(ch = patArr[patIdxStart]) != '*' &amp;&amp; strIdxStart &lt;= strIdxEnd)<SUB>368</SUB>> ]
+"723" [label = <(&lt;operator&gt;.notEquals,(ch = patArr[patIdxStart]) != '*')<SUB>368</SUB>> ]
+"724" [label = <(&lt;operator&gt;.assignment,ch = patArr[patIdxStart])<SUB>368</SUB>> ]
+"725" [label = <(IDENTIFIER,ch,ch = patArr[patIdxStart])<SUB>368</SUB>> ]
+"726" [label = <(&lt;operator&gt;.indexAccess,patArr[patIdxStart])<SUB>368</SUB>> ]
+"727" [label = <(IDENTIFIER,patArr,ch = patArr[patIdxStart])<SUB>368</SUB>> ]
+"728" [label = <(IDENTIFIER,patIdxStart,ch = patArr[patIdxStart])<SUB>368</SUB>> ]
+"729" [label = <(LITERAL,'*',(ch = patArr[patIdxStart]) != '*')<SUB>368</SUB>> ]
+"730" [label = <(&lt;operator&gt;.lessEqualsThan,strIdxStart &lt;= strIdxEnd)<SUB>368</SUB>> ]
+"731" [label = <(IDENTIFIER,strIdxStart,strIdxStart &lt;= strIdxEnd)<SUB>368</SUB>> ]
+"732" [label = <(IDENTIFIER,strIdxEnd,strIdxStart &lt;= strIdxEnd)<SUB>368</SUB>> ]
+"733" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>368</SUB>> ]
+"734" [label = <(CONTROL_STRUCTURE,if (ch != '?'),if (ch != '?'))<SUB>369</SUB>> ]
+"735" [label = <(&lt;operator&gt;.notEquals,ch != '?')<SUB>369</SUB>> ]
+"736" [label = <(IDENTIFIER,ch,ch != '?')<SUB>369</SUB>> ]
+"737" [label = <(LITERAL,'?',ch != '?')<SUB>369</SUB>> ]
+"738" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>369</SUB>> ]
+"739" [label = <(CONTROL_STRUCTURE,if (isCaseSensitive &amp;&amp; ch != strArr[strIdxStart]),if (isCaseSensitive &amp;&amp; ch != strArr[strIdxStart]))<SUB>370</SUB>> ]
+"740" [label = <(&lt;operator&gt;.logicalAnd,isCaseSensitive &amp;&amp; ch != strArr[strIdxStart])<SUB>370</SUB>> ]
+"741" [label = <(IDENTIFIER,isCaseSensitive,isCaseSensitive &amp;&amp; ch != strArr[strIdxStart])<SUB>370</SUB>> ]
+"742" [label = <(&lt;operator&gt;.notEquals,ch != strArr[strIdxStart])<SUB>370</SUB>> ]
+"743" [label = <(IDENTIFIER,ch,ch != strArr[strIdxStart])<SUB>370</SUB>> ]
+"744" [label = <(&lt;operator&gt;.indexAccess,strArr[strIdxStart])<SUB>370</SUB>> ]
+"745" [label = <(IDENTIFIER,strArr,ch != strArr[strIdxStart])<SUB>370</SUB>> ]
+"746" [label = <(IDENTIFIER,strIdxStart,ch != strArr[strIdxStart])<SUB>370</SUB>> ]
+"747" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>370</SUB>> ]
+"748" [label = <(RETURN,return false;,return false;)<SUB>371</SUB>> ]
+"749" [label = <(LITERAL,false,return false;)<SUB>371</SUB>> ]
+"750" [label = <(CONTROL_STRUCTURE,if (!isCaseSensitive &amp;&amp; Character.toUpperCase(ch) != Character.toUpperCase(strArr[strIdxStart])),if (!isCaseSensitive &amp;&amp; Character.toUpperCase(ch) != Character.toUpperCase(strArr[strIdxStart])))<SUB>373</SUB>> ]
+"751" [label = <(&lt;operator&gt;.logicalAnd,!isCaseSensitive &amp;&amp; Character.toUpperCase(ch) != Character.toUpperCase(strArr[strIdxStart]))<SUB>373</SUB>> ]
+"752" [label = <(&lt;operator&gt;.logicalNot,!isCaseSensitive)<SUB>373</SUB>> ]
+"753" [label = <(IDENTIFIER,isCaseSensitive,!isCaseSensitive)<SUB>373</SUB>> ]
+"754" [label = <(&lt;operator&gt;.notEquals,Character.toUpperCase(ch) != Character.toUpperCase(strArr[strIdxStart]))<SUB>373</SUB>> ]
+"755" [label = <(toUpperCase,Character.toUpperCase(ch))<SUB>373</SUB>> ]
+"756" [label = <(IDENTIFIER,Character,Character.toUpperCase(ch))<SUB>373</SUB>> ]
+"757" [label = <(IDENTIFIER,ch,Character.toUpperCase(ch))<SUB>373</SUB>> ]
+"758" [label = <(toUpperCase,Character.toUpperCase(strArr[strIdxStart]))<SUB>374</SUB>> ]
+"759" [label = <(IDENTIFIER,Character,Character.toUpperCase(strArr[strIdxStart]))<SUB>374</SUB>> ]
+"760" [label = <(&lt;operator&gt;.indexAccess,strArr[strIdxStart])<SUB>374</SUB>> ]
+"761" [label = <(IDENTIFIER,strArr,Character.toUpperCase(strArr[strIdxStart]))<SUB>374</SUB>> ]
+"762" [label = <(IDENTIFIER,strIdxStart,Character.toUpperCase(strArr[strIdxStart]))<SUB>374</SUB>> ]
+"763" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>374</SUB>> ]
+"764" [label = <(RETURN,return false;,return false;)<SUB>375</SUB>> ]
+"765" [label = <(LITERAL,false,return false;)<SUB>375</SUB>> ]
+"766" [label = <(&lt;operator&gt;.postIncrement,patIdxStart++)<SUB>378</SUB>> ]
+"767" [label = <(IDENTIFIER,patIdxStart,patIdxStart++)<SUB>378</SUB>> ]
+"768" [label = <(&lt;operator&gt;.postIncrement,strIdxStart++)<SUB>379</SUB>> ]
+"769" [label = <(IDENTIFIER,strIdxStart,strIdxStart++)<SUB>379</SUB>> ]
+"770" [label = <(CONTROL_STRUCTURE,if (strIdxStart &gt; strIdxEnd),if (strIdxStart &gt; strIdxEnd))<SUB>381</SUB>> ]
+"771" [label = <(&lt;operator&gt;.greaterThan,strIdxStart &gt; strIdxEnd)<SUB>381</SUB>> ]
+"772" [label = <(IDENTIFIER,strIdxStart,strIdxStart &gt; strIdxEnd)<SUB>381</SUB>> ]
+"773" [label = <(IDENTIFIER,strIdxEnd,strIdxStart &gt; strIdxEnd)<SUB>381</SUB>> ]
+"774" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>381</SUB>> ]
+"775" [label = <(CONTROL_STRUCTURE,for (int i = patIdxStart; Some(i &lt;= patIdxEnd); i++),for (int i = patIdxStart; Some(i &lt;= patIdxEnd); i++))<SUB>384</SUB>> ]
+"776" [label = <(LOCAL,int i: int)> ]
+"777" [label = <(&lt;operator&gt;.assignment,int i = patIdxStart)<SUB>384</SUB>> ]
+"778" [label = <(IDENTIFIER,i,int i = patIdxStart)<SUB>384</SUB>> ]
+"779" [label = <(IDENTIFIER,patIdxStart,int i = patIdxStart)<SUB>384</SUB>> ]
+"780" [label = <(&lt;operator&gt;.lessEqualsThan,i &lt;= patIdxEnd)<SUB>384</SUB>> ]
+"781" [label = <(IDENTIFIER,i,i &lt;= patIdxEnd)<SUB>384</SUB>> ]
+"782" [label = <(IDENTIFIER,patIdxEnd,i &lt;= patIdxEnd)<SUB>384</SUB>> ]
+"783" [label = <(&lt;operator&gt;.postIncrement,i++)<SUB>384</SUB>> ]
+"784" [label = <(IDENTIFIER,i,i++)<SUB>384</SUB>> ]
+"785" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>384</SUB>> ]
+"786" [label = <(CONTROL_STRUCTURE,if (patArr[i] != '*'),if (patArr[i] != '*'))<SUB>385</SUB>> ]
+"787" [label = <(&lt;operator&gt;.notEquals,patArr[i] != '*')<SUB>385</SUB>> ]
+"788" [label = <(&lt;operator&gt;.indexAccess,patArr[i])<SUB>385</SUB>> ]
+"789" [label = <(IDENTIFIER,patArr,patArr[i] != '*')<SUB>385</SUB>> ]
+"790" [label = <(IDENTIFIER,i,patArr[i] != '*')<SUB>385</SUB>> ]
+"791" [label = <(LITERAL,'*',patArr[i] != '*')<SUB>385</SUB>> ]
+"792" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>385</SUB>> ]
+"793" [label = <(RETURN,return false;,return false;)<SUB>386</SUB>> ]
+"794" [label = <(LITERAL,false,return false;)<SUB>386</SUB>> ]
+"795" [label = <(RETURN,return true;,return true;)<SUB>389</SUB>> ]
+"796" [label = <(LITERAL,true,return true;)<SUB>389</SUB>> ]
+"797" [label = <(CONTROL_STRUCTURE,while ((ch = patArr[patIdxEnd]) != '*' &amp;&amp; strIdxStart &lt;= strIdxEnd),while ((ch = patArr[patIdxEnd]) != '*' &amp;&amp; strIdxStart &lt;= strIdxEnd))<SUB>393</SUB>> ]
+"798" [label = <(&lt;operator&gt;.logicalAnd,(ch = patArr[patIdxEnd]) != '*' &amp;&amp; strIdxStart &lt;= strIdxEnd)<SUB>393</SUB>> ]
+"799" [label = <(&lt;operator&gt;.notEquals,(ch = patArr[patIdxEnd]) != '*')<SUB>393</SUB>> ]
+"800" [label = <(&lt;operator&gt;.assignment,ch = patArr[patIdxEnd])<SUB>393</SUB>> ]
+"801" [label = <(IDENTIFIER,ch,ch = patArr[patIdxEnd])<SUB>393</SUB>> ]
+"802" [label = <(&lt;operator&gt;.indexAccess,patArr[patIdxEnd])<SUB>393</SUB>> ]
+"803" [label = <(IDENTIFIER,patArr,ch = patArr[patIdxEnd])<SUB>393</SUB>> ]
+"804" [label = <(IDENTIFIER,patIdxEnd,ch = patArr[patIdxEnd])<SUB>393</SUB>> ]
+"805" [label = <(LITERAL,'*',(ch = patArr[patIdxEnd]) != '*')<SUB>393</SUB>> ]
+"806" [label = <(&lt;operator&gt;.lessEqualsThan,strIdxStart &lt;= strIdxEnd)<SUB>393</SUB>> ]
+"807" [label = <(IDENTIFIER,strIdxStart,strIdxStart &lt;= strIdxEnd)<SUB>393</SUB>> ]
+"808" [label = <(IDENTIFIER,strIdxEnd,strIdxStart &lt;= strIdxEnd)<SUB>393</SUB>> ]
+"809" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>393</SUB>> ]
+"810" [label = <(CONTROL_STRUCTURE,if (ch != '?'),if (ch != '?'))<SUB>394</SUB>> ]
+"811" [label = <(&lt;operator&gt;.notEquals,ch != '?')<SUB>394</SUB>> ]
+"812" [label = <(IDENTIFIER,ch,ch != '?')<SUB>394</SUB>> ]
+"813" [label = <(LITERAL,'?',ch != '?')<SUB>394</SUB>> ]
+"814" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>394</SUB>> ]
+"815" [label = <(CONTROL_STRUCTURE,if (isCaseSensitive &amp;&amp; ch != strArr[strIdxEnd]),if (isCaseSensitive &amp;&amp; ch != strArr[strIdxEnd]))<SUB>395</SUB>> ]
+"816" [label = <(&lt;operator&gt;.logicalAnd,isCaseSensitive &amp;&amp; ch != strArr[strIdxEnd])<SUB>395</SUB>> ]
+"817" [label = <(IDENTIFIER,isCaseSensitive,isCaseSensitive &amp;&amp; ch != strArr[strIdxEnd])<SUB>395</SUB>> ]
+"818" [label = <(&lt;operator&gt;.notEquals,ch != strArr[strIdxEnd])<SUB>395</SUB>> ]
+"819" [label = <(IDENTIFIER,ch,ch != strArr[strIdxEnd])<SUB>395</SUB>> ]
+"820" [label = <(&lt;operator&gt;.indexAccess,strArr[strIdxEnd])<SUB>395</SUB>> ]
+"821" [label = <(IDENTIFIER,strArr,ch != strArr[strIdxEnd])<SUB>395</SUB>> ]
+"822" [label = <(IDENTIFIER,strIdxEnd,ch != strArr[strIdxEnd])<SUB>395</SUB>> ]
+"823" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>395</SUB>> ]
+"824" [label = <(RETURN,return false;,return false;)<SUB>396</SUB>> ]
+"825" [label = <(LITERAL,false,return false;)<SUB>396</SUB>> ]
+"826" [label = <(CONTROL_STRUCTURE,if (!isCaseSensitive &amp;&amp; Character.toUpperCase(ch) != Character.toUpperCase(strArr[strIdxEnd])),if (!isCaseSensitive &amp;&amp; Character.toUpperCase(ch) != Character.toUpperCase(strArr[strIdxEnd])))<SUB>398</SUB>> ]
+"827" [label = <(&lt;operator&gt;.logicalAnd,!isCaseSensitive &amp;&amp; Character.toUpperCase(ch) != Character.toUpperCase(strArr[strIdxEnd]))<SUB>398</SUB>> ]
+"828" [label = <(&lt;operator&gt;.logicalNot,!isCaseSensitive)<SUB>398</SUB>> ]
+"829" [label = <(IDENTIFIER,isCaseSensitive,!isCaseSensitive)<SUB>398</SUB>> ]
+"830" [label = <(&lt;operator&gt;.notEquals,Character.toUpperCase(ch) != Character.toUpperCase(strArr[strIdxEnd]))<SUB>398</SUB>> ]
+"831" [label = <(toUpperCase,Character.toUpperCase(ch))<SUB>398</SUB>> ]
+"832" [label = <(IDENTIFIER,Character,Character.toUpperCase(ch))<SUB>398</SUB>> ]
+"833" [label = <(IDENTIFIER,ch,Character.toUpperCase(ch))<SUB>398</SUB>> ]
+"834" [label = <(toUpperCase,Character.toUpperCase(strArr[strIdxEnd]))<SUB>399</SUB>> ]
+"835" [label = <(IDENTIFIER,Character,Character.toUpperCase(strArr[strIdxEnd]))<SUB>399</SUB>> ]
+"836" [label = <(&lt;operator&gt;.indexAccess,strArr[strIdxEnd])<SUB>399</SUB>> ]
+"837" [label = <(IDENTIFIER,strArr,Character.toUpperCase(strArr[strIdxEnd]))<SUB>399</SUB>> ]
+"838" [label = <(IDENTIFIER,strIdxEnd,Character.toUpperCase(strArr[strIdxEnd]))<SUB>399</SUB>> ]
+"839" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>399</SUB>> ]
+"840" [label = <(RETURN,return false;,return false;)<SUB>400</SUB>> ]
+"841" [label = <(LITERAL,false,return false;)<SUB>400</SUB>> ]
+"842" [label = <(&lt;operator&gt;.postDecrement,patIdxEnd--)<SUB>403</SUB>> ]
+"843" [label = <(IDENTIFIER,patIdxEnd,patIdxEnd--)<SUB>403</SUB>> ]
+"844" [label = <(&lt;operator&gt;.postDecrement,strIdxEnd--)<SUB>404</SUB>> ]
+"845" [label = <(IDENTIFIER,strIdxEnd,strIdxEnd--)<SUB>404</SUB>> ]
+"846" [label = <(CONTROL_STRUCTURE,if (strIdxStart &gt; strIdxEnd),if (strIdxStart &gt; strIdxEnd))<SUB>406</SUB>> ]
+"847" [label = <(&lt;operator&gt;.greaterThan,strIdxStart &gt; strIdxEnd)<SUB>406</SUB>> ]
+"848" [label = <(IDENTIFIER,strIdxStart,strIdxStart &gt; strIdxEnd)<SUB>406</SUB>> ]
+"849" [label = <(IDENTIFIER,strIdxEnd,strIdxStart &gt; strIdxEnd)<SUB>406</SUB>> ]
+"850" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>406</SUB>> ]
+"851" [label = <(CONTROL_STRUCTURE,for (int i = patIdxStart; Some(i &lt;= patIdxEnd); i++),for (int i = patIdxStart; Some(i &lt;= patIdxEnd); i++))<SUB>409</SUB>> ]
+"852" [label = <(LOCAL,int i: int)> ]
+"853" [label = <(&lt;operator&gt;.assignment,int i = patIdxStart)<SUB>409</SUB>> ]
+"854" [label = <(IDENTIFIER,i,int i = patIdxStart)<SUB>409</SUB>> ]
+"855" [label = <(IDENTIFIER,patIdxStart,int i = patIdxStart)<SUB>409</SUB>> ]
+"856" [label = <(&lt;operator&gt;.lessEqualsThan,i &lt;= patIdxEnd)<SUB>409</SUB>> ]
+"857" [label = <(IDENTIFIER,i,i &lt;= patIdxEnd)<SUB>409</SUB>> ]
+"858" [label = <(IDENTIFIER,patIdxEnd,i &lt;= patIdxEnd)<SUB>409</SUB>> ]
+"859" [label = <(&lt;operator&gt;.postIncrement,i++)<SUB>409</SUB>> ]
+"860" [label = <(IDENTIFIER,i,i++)<SUB>409</SUB>> ]
+"861" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>409</SUB>> ]
+"862" [label = <(CONTROL_STRUCTURE,if (patArr[i] != '*'),if (patArr[i] != '*'))<SUB>410</SUB>> ]
+"863" [label = <(&lt;operator&gt;.notEquals,patArr[i] != '*')<SUB>410</SUB>> ]
+"864" [label = <(&lt;operator&gt;.indexAccess,patArr[i])<SUB>410</SUB>> ]
+"865" [label = <(IDENTIFIER,patArr,patArr[i] != '*')<SUB>410</SUB>> ]
+"866" [label = <(IDENTIFIER,i,patArr[i] != '*')<SUB>410</SUB>> ]
+"867" [label = <(LITERAL,'*',patArr[i] != '*')<SUB>410</SUB>> ]
+"868" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>410</SUB>> ]
+"869" [label = <(RETURN,return false;,return false;)<SUB>411</SUB>> ]
+"870" [label = <(LITERAL,false,return false;)<SUB>411</SUB>> ]
+"871" [label = <(RETURN,return true;,return true;)<SUB>414</SUB>> ]
+"872" [label = <(LITERAL,true,return true;)<SUB>414</SUB>> ]
+"873" [label = <(CONTROL_STRUCTURE,while (patIdxStart != patIdxEnd &amp;&amp; strIdxStart &lt;= strIdxEnd),while (patIdxStart != patIdxEnd &amp;&amp; strIdxStart &lt;= strIdxEnd))<SUB>419</SUB>> ]
+"874" [label = <(&lt;operator&gt;.logicalAnd,patIdxStart != patIdxEnd &amp;&amp; strIdxStart &lt;= strIdxEnd)<SUB>419</SUB>> ]
+"875" [label = <(&lt;operator&gt;.notEquals,patIdxStart != patIdxEnd)<SUB>419</SUB>> ]
+"876" [label = <(IDENTIFIER,patIdxStart,patIdxStart != patIdxEnd)<SUB>419</SUB>> ]
+"877" [label = <(IDENTIFIER,patIdxEnd,patIdxStart != patIdxEnd)<SUB>419</SUB>> ]
+"878" [label = <(&lt;operator&gt;.lessEqualsThan,strIdxStart &lt;= strIdxEnd)<SUB>419</SUB>> ]
+"879" [label = <(IDENTIFIER,strIdxStart,strIdxStart &lt;= strIdxEnd)<SUB>419</SUB>> ]
+"880" [label = <(IDENTIFIER,strIdxEnd,strIdxStart &lt;= strIdxEnd)<SUB>419</SUB>> ]
+"881" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>419</SUB>> ]
+"882" [label = <(LOCAL,int patIdxTmp: int)> ]
+"883" [label = <(&lt;operator&gt;.assignment,int patIdxTmp = -1)<SUB>420</SUB>> ]
+"884" [label = <(IDENTIFIER,patIdxTmp,int patIdxTmp = -1)<SUB>420</SUB>> ]
+"885" [label = <(&lt;operator&gt;.minus,-1)<SUB>420</SUB>> ]
+"886" [label = <(LITERAL,1,-1)<SUB>420</SUB>> ]
+"887" [label = <(CONTROL_STRUCTURE,for (int i = patIdxStart + 1; Some(i &lt;= patIdxEnd); i++),for (int i = patIdxStart + 1; Some(i &lt;= patIdxEnd); i++))<SUB>421</SUB>> ]
+"888" [label = <(LOCAL,int i: int)> ]
+"889" [label = <(&lt;operator&gt;.assignment,int i = patIdxStart + 1)<SUB>421</SUB>> ]
+"890" [label = <(IDENTIFIER,i,int i = patIdxStart + 1)<SUB>421</SUB>> ]
+"891" [label = <(&lt;operator&gt;.addition,patIdxStart + 1)<SUB>421</SUB>> ]
+"892" [label = <(IDENTIFIER,patIdxStart,patIdxStart + 1)<SUB>421</SUB>> ]
+"893" [label = <(LITERAL,1,patIdxStart + 1)<SUB>421</SUB>> ]
+"894" [label = <(&lt;operator&gt;.lessEqualsThan,i &lt;= patIdxEnd)<SUB>421</SUB>> ]
+"895" [label = <(IDENTIFIER,i,i &lt;= patIdxEnd)<SUB>421</SUB>> ]
+"896" [label = <(IDENTIFIER,patIdxEnd,i &lt;= patIdxEnd)<SUB>421</SUB>> ]
+"897" [label = <(&lt;operator&gt;.postIncrement,i++)<SUB>421</SUB>> ]
+"898" [label = <(IDENTIFIER,i,i++)<SUB>421</SUB>> ]
+"899" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>421</SUB>> ]
+"900" [label = <(CONTROL_STRUCTURE,if (patArr[i] == '*'),if (patArr[i] == '*'))<SUB>422</SUB>> ]
+"901" [label = <(&lt;operator&gt;.equals,patArr[i] == '*')<SUB>422</SUB>> ]
+"902" [label = <(&lt;operator&gt;.indexAccess,patArr[i])<SUB>422</SUB>> ]
+"903" [label = <(IDENTIFIER,patArr,patArr[i] == '*')<SUB>422</SUB>> ]
+"904" [label = <(IDENTIFIER,i,patArr[i] == '*')<SUB>422</SUB>> ]
+"905" [label = <(LITERAL,'*',patArr[i] == '*')<SUB>422</SUB>> ]
+"906" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>422</SUB>> ]
+"907" [label = <(&lt;operator&gt;.assignment,patIdxTmp = i)<SUB>423</SUB>> ]
+"908" [label = <(IDENTIFIER,patIdxTmp,patIdxTmp = i)<SUB>423</SUB>> ]
+"909" [label = <(IDENTIFIER,i,patIdxTmp = i)<SUB>423</SUB>> ]
+"910" [label = <(CONTROL_STRUCTURE,break;,break;)<SUB>424</SUB>> ]
+"911" [label = <(CONTROL_STRUCTURE,if (patIdxTmp == patIdxStart + 1),if (patIdxTmp == patIdxStart + 1))<SUB>427</SUB>> ]
+"912" [label = <(&lt;operator&gt;.equals,patIdxTmp == patIdxStart + 1)<SUB>427</SUB>> ]
+"913" [label = <(IDENTIFIER,patIdxTmp,patIdxTmp == patIdxStart + 1)<SUB>427</SUB>> ]
+"914" [label = <(&lt;operator&gt;.addition,patIdxStart + 1)<SUB>427</SUB>> ]
+"915" [label = <(IDENTIFIER,patIdxStart,patIdxStart + 1)<SUB>427</SUB>> ]
+"916" [label = <(LITERAL,1,patIdxStart + 1)<SUB>427</SUB>> ]
+"917" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>427</SUB>> ]
+"918" [label = <(&lt;operator&gt;.postIncrement,patIdxStart++)<SUB>429</SUB>> ]
+"919" [label = <(IDENTIFIER,patIdxStart,patIdxStart++)<SUB>429</SUB>> ]
+"920" [label = <(CONTROL_STRUCTURE,continue;,continue;)<SUB>430</SUB>> ]
+"921" [label = <(LOCAL,int patLength: int)> ]
+"922" [label = <(&lt;operator&gt;.assignment,int patLength = patIdxTmp - patIdxStart - 1)<SUB>434</SUB>> ]
+"923" [label = <(IDENTIFIER,patLength,int patLength = patIdxTmp - patIdxStart - 1)<SUB>434</SUB>> ]
+"924" [label = <(&lt;operator&gt;.subtraction,patIdxTmp - patIdxStart - 1)<SUB>434</SUB>> ]
+"925" [label = <(&lt;operator&gt;.subtraction,patIdxTmp - patIdxStart)<SUB>434</SUB>> ]
+"926" [label = <(IDENTIFIER,patIdxTmp,patIdxTmp - patIdxStart)<SUB>434</SUB>> ]
+"927" [label = <(IDENTIFIER,patIdxStart,patIdxTmp - patIdxStart)<SUB>434</SUB>> ]
+"928" [label = <(LITERAL,1,patIdxTmp - patIdxStart - 1)<SUB>434</SUB>> ]
+"929" [label = <(LOCAL,int strLength: int)> ]
+"930" [label = <(&lt;operator&gt;.assignment,int strLength = strIdxEnd - strIdxStart + 1)<SUB>435</SUB>> ]
+"931" [label = <(IDENTIFIER,strLength,int strLength = strIdxEnd - strIdxStart + 1)<SUB>435</SUB>> ]
+"932" [label = <(&lt;operator&gt;.addition,strIdxEnd - strIdxStart + 1)<SUB>435</SUB>> ]
+"933" [label = <(&lt;operator&gt;.subtraction,strIdxEnd - strIdxStart)<SUB>435</SUB>> ]
+"934" [label = <(IDENTIFIER,strIdxEnd,strIdxEnd - strIdxStart)<SUB>435</SUB>> ]
+"935" [label = <(IDENTIFIER,strIdxStart,strIdxEnd - strIdxStart)<SUB>435</SUB>> ]
+"936" [label = <(LITERAL,1,strIdxEnd - strIdxStart + 1)<SUB>435</SUB>> ]
+"937" [label = <(LOCAL,int foundIdx: int)> ]
+"938" [label = <(&lt;operator&gt;.assignment,int foundIdx = -1)<SUB>436</SUB>> ]
+"939" [label = <(IDENTIFIER,foundIdx,int foundIdx = -1)<SUB>436</SUB>> ]
+"940" [label = <(&lt;operator&gt;.minus,-1)<SUB>436</SUB>> ]
+"941" [label = <(LITERAL,1,-1)<SUB>436</SUB>> ]
+"942" [label = <(JUMP_TARGET,strLoop)> ]
+"943" [label = <(CONTROL_STRUCTURE,for (int i = 0; Some(i &lt;= strLength - patLength); i++),for (int i = 0; Some(i &lt;= strLength - patLength); i++))<SUB>438</SUB>> ]
+"944" [label = <(LOCAL,int i: int)> ]
+"945" [label = <(&lt;operator&gt;.assignment,int i = 0)<SUB>438</SUB>> ]
+"946" [label = <(IDENTIFIER,i,int i = 0)<SUB>438</SUB>> ]
+"947" [label = <(LITERAL,0,int i = 0)<SUB>438</SUB>> ]
+"948" [label = <(&lt;operator&gt;.lessEqualsThan,i &lt;= strLength - patLength)<SUB>438</SUB>> ]
+"949" [label = <(IDENTIFIER,i,i &lt;= strLength - patLength)<SUB>438</SUB>> ]
+"950" [label = <(&lt;operator&gt;.subtraction,strLength - patLength)<SUB>438</SUB>> ]
+"951" [label = <(IDENTIFIER,strLength,strLength - patLength)<SUB>438</SUB>> ]
+"952" [label = <(IDENTIFIER,patLength,strLength - patLength)<SUB>438</SUB>> ]
+"953" [label = <(&lt;operator&gt;.postIncrement,i++)<SUB>438</SUB>> ]
+"954" [label = <(IDENTIFIER,i,i++)<SUB>438</SUB>> ]
+"955" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>438</SUB>> ]
+"956" [label = <(CONTROL_STRUCTURE,for (int j = 0; Some(j &lt; patLength); j++),for (int j = 0; Some(j &lt; patLength); j++))<SUB>439</SUB>> ]
+"957" [label = <(LOCAL,int j: int)> ]
+"958" [label = <(&lt;operator&gt;.assignment,int j = 0)<SUB>439</SUB>> ]
+"959" [label = <(IDENTIFIER,j,int j = 0)<SUB>439</SUB>> ]
+"960" [label = <(LITERAL,0,int j = 0)<SUB>439</SUB>> ]
+"961" [label = <(&lt;operator&gt;.lessThan,j &lt; patLength)<SUB>439</SUB>> ]
+"962" [label = <(IDENTIFIER,j,j &lt; patLength)<SUB>439</SUB>> ]
+"963" [label = <(IDENTIFIER,patLength,j &lt; patLength)<SUB>439</SUB>> ]
+"964" [label = <(&lt;operator&gt;.postIncrement,j++)<SUB>439</SUB>> ]
+"965" [label = <(IDENTIFIER,j,j++)<SUB>439</SUB>> ]
+"966" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>439</SUB>> ]
+"967" [label = <(&lt;operator&gt;.assignment,ch = patArr[patIdxStart + j + 1])<SUB>440</SUB>> ]
+"968" [label = <(IDENTIFIER,ch,ch = patArr[patIdxStart + j + 1])<SUB>440</SUB>> ]
+"969" [label = <(&lt;operator&gt;.indexAccess,patArr[patIdxStart + j + 1])<SUB>440</SUB>> ]
+"970" [label = <(IDENTIFIER,patArr,ch = patArr[patIdxStart + j + 1])<SUB>440</SUB>> ]
+"971" [label = <(&lt;operator&gt;.addition,patIdxStart + j + 1)<SUB>440</SUB>> ]
+"972" [label = <(&lt;operator&gt;.addition,patIdxStart + j)<SUB>440</SUB>> ]
+"973" [label = <(IDENTIFIER,patIdxStart,patIdxStart + j)<SUB>440</SUB>> ]
+"974" [label = <(IDENTIFIER,j,patIdxStart + j)<SUB>440</SUB>> ]
+"975" [label = <(LITERAL,1,patIdxStart + j + 1)<SUB>440</SUB>> ]
+"976" [label = <(CONTROL_STRUCTURE,if (ch != '?'),if (ch != '?'))<SUB>441</SUB>> ]
+"977" [label = <(&lt;operator&gt;.notEquals,ch != '?')<SUB>441</SUB>> ]
+"978" [label = <(IDENTIFIER,ch,ch != '?')<SUB>441</SUB>> ]
+"979" [label = <(LITERAL,'?',ch != '?')<SUB>441</SUB>> ]
+"980" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>441</SUB>> ]
+"981" [label = <(CONTROL_STRUCTURE,if (isCaseSensitive &amp;&amp; ch != strArr[strIdxStart + i + j]),if (isCaseSensitive &amp;&amp; ch != strArr[strIdxStart + i + j]))<SUB>442</SUB>> ]
+"982" [label = <(&lt;operator&gt;.logicalAnd,isCaseSensitive &amp;&amp; ch != strArr[strIdxStart + i + j])<SUB>442</SUB>> ]
+"983" [label = <(IDENTIFIER,isCaseSensitive,isCaseSensitive &amp;&amp; ch != strArr[strIdxStart + i + j])<SUB>442</SUB>> ]
+"984" [label = <(&lt;operator&gt;.notEquals,ch != strArr[strIdxStart + i + j])<SUB>442</SUB>> ]
+"985" [label = <(IDENTIFIER,ch,ch != strArr[strIdxStart + i + j])<SUB>442</SUB>> ]
+"986" [label = <(&lt;operator&gt;.indexAccess,strArr[strIdxStart + i + j])<SUB>442</SUB>> ]
+"987" [label = <(IDENTIFIER,strArr,ch != strArr[strIdxStart + i + j])<SUB>442</SUB>> ]
+"988" [label = <(&lt;operator&gt;.addition,strIdxStart + i + j)<SUB>442</SUB>> ]
+"989" [label = <(&lt;operator&gt;.addition,strIdxStart + i)<SUB>442</SUB>> ]
+"990" [label = <(IDENTIFIER,strIdxStart,strIdxStart + i)<SUB>442</SUB>> ]
+"991" [label = <(IDENTIFIER,i,strIdxStart + i)<SUB>442</SUB>> ]
+"992" [label = <(IDENTIFIER,j,strIdxStart + i + j)<SUB>443</SUB>> ]
+"993" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>443</SUB>> ]
+"994" [label = <(CONTROL_STRUCTURE,continue strLoop;,continue strLoop;)<SUB>444</SUB>> ]
+"995" [label = <(CONTROL_STRUCTURE,if (!isCaseSensitive &amp;&amp; Character.toUpperCase(ch) != Character.toUpperCase(strArr[strIdxStart + i + j])),if (!isCaseSensitive &amp;&amp; Character.toUpperCase(ch) != Character.toUpperCase(strArr[strIdxStart + i + j])))<SUB>446</SUB>> ]
+"996" [label = <(&lt;operator&gt;.logicalAnd,!isCaseSensitive &amp;&amp; Character.toUpperCase(ch) != Character.toUpperCase(strArr[strIdxStart + i + j]))<SUB>446</SUB>> ]
+"997" [label = <(&lt;operator&gt;.logicalNot,!isCaseSensitive)<SUB>446</SUB>> ]
+"998" [label = <(IDENTIFIER,isCaseSensitive,!isCaseSensitive)<SUB>446</SUB>> ]
+"999" [label = <(&lt;operator&gt;.notEquals,Character.toUpperCase(ch) != Character.toUpperCase(strArr[strIdxStart + i + j]))<SUB>447</SUB>> ]
+"1000" [label = <(toUpperCase,Character.toUpperCase(ch))<SUB>447</SUB>> ]
+"1001" [label = <(IDENTIFIER,Character,Character.toUpperCase(ch))<SUB>447</SUB>> ]
+"1002" [label = <(IDENTIFIER,ch,Character.toUpperCase(ch))<SUB>447</SUB>> ]
+"1003" [label = <(toUpperCase,Character.toUpperCase(strArr[strIdxStart + i + j]))<SUB>448</SUB>> ]
+"1004" [label = <(IDENTIFIER,Character,Character.toUpperCase(strArr[strIdxStart + i + j]))<SUB>448</SUB>> ]
+"1005" [label = <(&lt;operator&gt;.indexAccess,strArr[strIdxStart + i + j])<SUB>448</SUB>> ]
+"1006" [label = <(IDENTIFIER,strArr,Character.toUpperCase(strArr[strIdxStart + i + j]))<SUB>448</SUB>> ]
+"1007" [label = <(&lt;operator&gt;.addition,strIdxStart + i + j)<SUB>448</SUB>> ]
+"1008" [label = <(&lt;operator&gt;.addition,strIdxStart + i)<SUB>448</SUB>> ]
+"1009" [label = <(IDENTIFIER,strIdxStart,strIdxStart + i)<SUB>448</SUB>> ]
+"1010" [label = <(IDENTIFIER,i,strIdxStart + i)<SUB>448</SUB>> ]
+"1011" [label = <(IDENTIFIER,j,strIdxStart + i + j)<SUB>448</SUB>> ]
+"1012" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>448</SUB>> ]
+"1013" [label = <(CONTROL_STRUCTURE,continue strLoop;,continue strLoop;)<SUB>449</SUB>> ]
+"1014" [label = <(&lt;operator&gt;.assignment,foundIdx = strIdxStart + i)<SUB>454</SUB>> ]
+"1015" [label = <(IDENTIFIER,foundIdx,foundIdx = strIdxStart + i)<SUB>454</SUB>> ]
+"1016" [label = <(&lt;operator&gt;.addition,strIdxStart + i)<SUB>454</SUB>> ]
+"1017" [label = <(IDENTIFIER,strIdxStart,strIdxStart + i)<SUB>454</SUB>> ]
+"1018" [label = <(IDENTIFIER,i,strIdxStart + i)<SUB>454</SUB>> ]
+"1019" [label = <(CONTROL_STRUCTURE,break;,break;)<SUB>455</SUB>> ]
+"1020" [label = <(CONTROL_STRUCTURE,if (foundIdx == -1),if (foundIdx == -1))<SUB>458</SUB>> ]
+"1021" [label = <(&lt;operator&gt;.equals,foundIdx == -1)<SUB>458</SUB>> ]
+"1022" [label = <(IDENTIFIER,foundIdx,foundIdx == -1)<SUB>458</SUB>> ]
+"1023" [label = <(&lt;operator&gt;.minus,-1)<SUB>458</SUB>> ]
+"1024" [label = <(LITERAL,1,-1)<SUB>458</SUB>> ]
+"1025" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>458</SUB>> ]
+"1026" [label = <(RETURN,return false;,return false;)<SUB>459</SUB>> ]
+"1027" [label = <(LITERAL,false,return false;)<SUB>459</SUB>> ]
+"1028" [label = <(&lt;operator&gt;.assignment,patIdxStart = patIdxTmp)<SUB>462</SUB>> ]
+"1029" [label = <(IDENTIFIER,patIdxStart,patIdxStart = patIdxTmp)<SUB>462</SUB>> ]
+"1030" [label = <(IDENTIFIER,patIdxTmp,patIdxStart = patIdxTmp)<SUB>462</SUB>> ]
+"1031" [label = <(&lt;operator&gt;.assignment,strIdxStart = foundIdx + patLength)<SUB>463</SUB>> ]
+"1032" [label = <(IDENTIFIER,strIdxStart,strIdxStart = foundIdx + patLength)<SUB>463</SUB>> ]
+"1033" [label = <(&lt;operator&gt;.addition,foundIdx + patLength)<SUB>463</SUB>> ]
+"1034" [label = <(IDENTIFIER,foundIdx,foundIdx + patLength)<SUB>463</SUB>> ]
+"1035" [label = <(IDENTIFIER,patLength,foundIdx + patLength)<SUB>463</SUB>> ]
+"1036" [label = <(CONTROL_STRUCTURE,for (int i = patIdxStart; Some(i &lt;= patIdxEnd); i++),for (int i = patIdxStart; Some(i &lt;= patIdxEnd); i++))<SUB>468</SUB>> ]
+"1037" [label = <(LOCAL,int i: int)> ]
+"1038" [label = <(&lt;operator&gt;.assignment,int i = patIdxStart)<SUB>468</SUB>> ]
+"1039" [label = <(IDENTIFIER,i,int i = patIdxStart)<SUB>468</SUB>> ]
+"1040" [label = <(IDENTIFIER,patIdxStart,int i = patIdxStart)<SUB>468</SUB>> ]
+"1041" [label = <(&lt;operator&gt;.lessEqualsThan,i &lt;= patIdxEnd)<SUB>468</SUB>> ]
+"1042" [label = <(IDENTIFIER,i,i &lt;= patIdxEnd)<SUB>468</SUB>> ]
+"1043" [label = <(IDENTIFIER,patIdxEnd,i &lt;= patIdxEnd)<SUB>468</SUB>> ]
+"1044" [label = <(&lt;operator&gt;.postIncrement,i++)<SUB>468</SUB>> ]
+"1045" [label = <(IDENTIFIER,i,i++)<SUB>468</SUB>> ]
+"1046" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>468</SUB>> ]
+"1047" [label = <(CONTROL_STRUCTURE,if (patArr[i] != '*'),if (patArr[i] != '*'))<SUB>469</SUB>> ]
+"1048" [label = <(&lt;operator&gt;.notEquals,patArr[i] != '*')<SUB>469</SUB>> ]
+"1049" [label = <(&lt;operator&gt;.indexAccess,patArr[i])<SUB>469</SUB>> ]
+"1050" [label = <(IDENTIFIER,patArr,patArr[i] != '*')<SUB>469</SUB>> ]
+"1051" [label = <(IDENTIFIER,i,patArr[i] != '*')<SUB>469</SUB>> ]
+"1052" [label = <(LITERAL,'*',patArr[i] != '*')<SUB>469</SUB>> ]
+"1053" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>469</SUB>> ]
+"1054" [label = <(RETURN,return false;,return false;)<SUB>470</SUB>> ]
+"1055" [label = <(LITERAL,false,return false;)<SUB>470</SUB>> ]
+"1056" [label = <(RETURN,return true;,return true;)<SUB>473</SUB>> ]
+"1057" [label = <(LITERAL,true,return true;)<SUB>473</SUB>> ]
+"1058" [label = <(MODIFIER,PUBLIC)> ]
+"1059" [label = <(MODIFIER,STATIC)> ]
+"1060" [label = <(METHOD_RETURN,boolean)<SUB>325</SUB>> ]
+  "585" -> "586" 
+  "585" -> "587" 
+  "585" -> "588" 
+  "585" -> "589" 
+  "585" -> "1058" 
+  "585" -> "1059" 
+  "585" -> "1060" 
+  "589" -> "590" 
+  "589" -> "591" 
+  "589" -> "595" 
+  "589" -> "596" 
+  "589" -> "600" 
+  "589" -> "601" 
+  "589" -> "604" 
+  "589" -> "605" 
+  "589" -> "612" 
+  "589" -> "613" 
+  "589" -> "616" 
+  "589" -> "617" 
+  "589" -> "624" 
+  "589" -> "625" 
+  "589" -> "626" 
+  "589" -> "629" 
+  "589" -> "653" 
+  "589" -> "714" 
+  "589" -> "721" 
+  "589" -> "770" 
+  "589" -> "797" 
+  "589" -> "846" 
+  "589" -> "873" 
+  "589" -> "1036" 
+  "589" -> "1056" 
+  "591" -> "592" 
+  "591" -> "593" 
+  "593" -> "594" 
+  "596" -> "597" 
+  "596" -> "598" 
+  "598" -> "599" 
+  "601" -> "602" 
+  "601" -> "603" 
+  "605" -> "606" 
+  "605" -> "607" 
+  "607" -> "608" 
+  "607" -> "611" 
+  "608" -> "609" 
+  "608" -> "610" 
+  "613" -> "614" 
+  "613" -> "615" 
+  "617" -> "618" 
+  "617" -> "619" 
+  "619" -> "620" 
+  "619" -> "623" 
+  "620" -> "621" 
+  "620" -> "622" 
+  "626" -> "627" 
+  "626" -> "628" 
+  "629" -> "630" 
+  "629" -> "631" 
+  "629" -> "634" 
+  "629" -> "639" 
+  "629" -> "641" 
+  "631" -> "632" 
+  "631" -> "633" 
+  "634" -> "635" 
+  "634" -> "636" 
+  "636" -> "637" 
+  "636" -> "638" 
+  "639" -> "640" 
+  "641" -> "642" 
+  "642" -> "643" 
+  "642" -> "648" 
+  "643" -> "644" 
+  "643" -> "647" 
+  "644" -> "645" 
+  "644" -> "646" 
+  "648" -> "649" 
+  "648" -> "652" 
+  "649" -> "650" 
+  "649" -> "651" 
+  "653" -> "654" 
+  "653" -> "656" 
+  "654" -> "655" 
+  "656" -> "657" 
+  "656" -> "664" 
+  "656" -> "712" 
+  "657" -> "658" 
+  "657" -> "661" 
+  "658" -> "659" 
+  "658" -> "660" 
+  "661" -> "662" 
+  "662" -> "663" 
+  "664" -> "665" 
+  "664" -> "666" 
+  "664" -> "669" 
+  "664" -> "672" 
+  "664" -> "674" 
+  "666" -> "667" 
+  "666" -> "668" 
+  "669" -> "670" 
+  "669" -> "671" 
+  "672" -> "673" 
+  "674" -> "675" 
+  "674" -> "680" 
+  "675" -> "676" 
+  "675" -> "677" 
+  "677" -> "678" 
+  "677" -> "679" 
+  "680" -> "681" 
+  "680" -> "684" 
+  "681" -> "682" 
+  "681" -> "683" 
+  "684" -> "685" 
+  "684" -> "696" 
+  "685" -> "686" 
+  "685" -> "693" 
+  "686" -> "687" 
+  "686" -> "688" 
+  "688" -> "689" 
+  "688" -> "690" 
+  "690" -> "691" 
+  "690" -> "692" 
+  "693" -> "694" 
+  "694" -> "695" 
+  "696" -> "697" 
+  "696" -> "709" 
+  "697" -> "698" 
+  "697" -> "700" 
+  "698" -> "699" 
+  "700" -> "701" 
+  "700" -> "704" 
+  "701" -> "702" 
+  "701" -> "703" 
+  "704" -> "705" 
+  "704" -> "706" 
+  "706" -> "707" 
+  "706" -> "708" 
+  "709" -> "710" 
+  "710" -> "711" 
+  "712" -> "713" 
+  "714" -> "715" 
+  "714" -> "718" 
+  "715" -> "716" 
+  "715" -> "717" 
+  "718" -> "719" 
+  "719" -> "720" 
+  "721" -> "722" 
+  "721" -> "733" 
+  "722" -> "723" 
+  "722" -> "730" 
+  "723" -> "724" 
+  "723" -> "729" 
+  "724" -> "725" 
+  "724" -> "726" 
+  "726" -> "727" 
+  "726" -> "728" 
+  "730" -> "731" 
+  "730" -> "732" 
+  "733" -> "734" 
+  "733" -> "766" 
+  "733" -> "768" 
+  "734" -> "735" 
+  "734" -> "738" 
+  "735" -> "736" 
+  "735" -> "737" 
+  "738" -> "739" 
+  "738" -> "750" 
+  "739" -> "740" 
+  "739" -> "747" 
+  "740" -> "741" 
+  "740" -> "742" 
+  "742" -> "743" 
+  "742" -> "744" 
+  "744" -> "745" 
+  "744" -> "746" 
+  "747" -> "748" 
+  "748" -> "749" 
+  "750" -> "751" 
+  "750" -> "763" 
+  "751" -> "752" 
+  "751" -> "754" 
+  "752" -> "753" 
+  "754" -> "755" 
+  "754" -> "758" 
+  "755" -> "756" 
+  "755" -> "757" 
+  "758" -> "759" 
+  "758" -> "760" 
+  "760" -> "761" 
+  "760" -> "762" 
+  "763" -> "764" 
+  "764" -> "765" 
+  "766" -> "767" 
+  "768" -> "769" 
+  "770" -> "771" 
+  "770" -> "774" 
+  "771" -> "772" 
+  "771" -> "773" 
+  "774" -> "775" 
+  "774" -> "795" 
+  "775" -> "776" 
+  "775" -> "777" 
+  "775" -> "780" 
+  "775" -> "783" 
+  "775" -> "785" 
+  "777" -> "778" 
+  "777" -> "779" 
+  "780" -> "781" 
+  "780" -> "782" 
+  "783" -> "784" 
+  "785" -> "786" 
+  "786" -> "787" 
+  "786" -> "792" 
+  "787" -> "788" 
+  "787" -> "791" 
+  "788" -> "789" 
+  "788" -> "790" 
+  "792" -> "793" 
+  "793" -> "794" 
+  "795" -> "796" 
+  "797" -> "798" 
+  "797" -> "809" 
+  "798" -> "799" 
+  "798" -> "806" 
+  "799" -> "800" 
+  "799" -> "805" 
+  "800" -> "801" 
+  "800" -> "802" 
+  "802" -> "803" 
+  "802" -> "804" 
+  "806" -> "807" 
+  "806" -> "808" 
+  "809" -> "810" 
+  "809" -> "842" 
+  "809" -> "844" 
+  "810" -> "811" 
+  "810" -> "814" 
+  "811" -> "812" 
+  "811" -> "813" 
+  "814" -> "815" 
+  "814" -> "826" 
+  "815" -> "816" 
+  "815" -> "823" 
+  "816" -> "817" 
+  "816" -> "818" 
+  "818" -> "819" 
+  "818" -> "820" 
+  "820" -> "821" 
+  "820" -> "822" 
+  "823" -> "824" 
+  "824" -> "825" 
+  "826" -> "827" 
+  "826" -> "839" 
+  "827" -> "828" 
+  "827" -> "830" 
+  "828" -> "829" 
+  "830" -> "831" 
+  "830" -> "834" 
+  "831" -> "832" 
+  "831" -> "833" 
+  "834" -> "835" 
+  "834" -> "836" 
+  "836" -> "837" 
+  "836" -> "838" 
+  "839" -> "840" 
+  "840" -> "841" 
+  "842" -> "843" 
+  "844" -> "845" 
+  "846" -> "847" 
+  "846" -> "850" 
+  "847" -> "848" 
+  "847" -> "849" 
+  "850" -> "851" 
+  "850" -> "871" 
+  "851" -> "852" 
+  "851" -> "853" 
+  "851" -> "856" 
+  "851" -> "859" 
+  "851" -> "861" 
+  "853" -> "854" 
+  "853" -> "855" 
+  "856" -> "857" 
+  "856" -> "858" 
+  "859" -> "860" 
+  "861" -> "862" 
+  "862" -> "863" 
+  "862" -> "868" 
+  "863" -> "864" 
+  "863" -> "867" 
+  "864" -> "865" 
+  "864" -> "866" 
+  "868" -> "869" 
+  "869" -> "870" 
+  "871" -> "872" 
+  "873" -> "874" 
+  "873" -> "881" 
+  "874" -> "875" 
+  "874" -> "878" 
+  "875" -> "876" 
+  "875" -> "877" 
+  "878" -> "879" 
+  "878" -> "880" 
+  "881" -> "882" 
+  "881" -> "883" 
+  "881" -> "887" 
+  "881" -> "911" 
+  "881" -> "921" 
+  "881" -> "922" 
+  "881" -> "929" 
+  "881" -> "930" 
+  "881" -> "937" 
+  "881" -> "938" 
+  "881" -> "942" 
+  "881" -> "943" 
+  "881" -> "1020" 
+  "881" -> "1028" 
+  "881" -> "1031" 
+  "883" -> "884" 
+  "883" -> "885" 
+  "885" -> "886" 
+  "887" -> "888" 
+  "887" -> "889" 
+  "887" -> "894" 
+  "887" -> "897" 
+  "887" -> "899" 
+  "889" -> "890" 
+  "889" -> "891" 
+  "891" -> "892" 
+  "891" -> "893" 
+  "894" -> "895" 
+  "894" -> "896" 
+  "897" -> "898" 
+  "899" -> "900" 
+  "900" -> "901" 
+  "900" -> "906" 
+  "901" -> "902" 
+  "901" -> "905" 
+  "902" -> "903" 
+  "902" -> "904" 
+  "906" -> "907" 
+  "906" -> "910" 
+  "907" -> "908" 
+  "907" -> "909" 
+  "911" -> "912" 
+  "911" -> "917" 
+  "912" -> "913" 
+  "912" -> "914" 
+  "914" -> "915" 
+  "914" -> "916" 
+  "917" -> "918" 
+  "917" -> "920" 
+  "918" -> "919" 
+  "922" -> "923" 
+  "922" -> "924" 
+  "924" -> "925" 
+  "924" -> "928" 
+  "925" -> "926" 
+  "925" -> "927" 
+  "930" -> "931" 
+  "930" -> "932" 
+  "932" -> "933" 
+  "932" -> "936" 
+  "933" -> "934" 
+  "933" -> "935" 
+  "938" -> "939" 
+  "938" -> "940" 
+  "940" -> "941" 
+  "943" -> "944" 
+  "943" -> "945" 
+  "943" -> "948" 
+  "943" -> "953" 
+  "943" -> "955" 
+  "945" -> "946" 
+  "945" -> "947" 
+  "948" -> "949" 
+  "948" -> "950" 
+  "950" -> "951" 
+  "950" -> "952" 
+  "953" -> "954" 
+  "955" -> "956" 
+  "955" -> "1014" 
+  "955" -> "1019" 
+  "956" -> "957" 
+  "956" -> "958" 
+  "956" -> "961" 
+  "956" -> "964" 
+  "956" -> "966" 
+  "958" -> "959" 
+  "958" -> "960" 
+  "961" -> "962" 
+  "961" -> "963" 
+  "964" -> "965" 
+  "966" -> "967" 
+  "966" -> "976" 
+  "967" -> "968" 
+  "967" -> "969" 
+  "969" -> "970" 
+  "969" -> "971" 
+  "971" -> "972" 
+  "971" -> "975" 
+  "972" -> "973" 
+  "972" -> "974" 
+  "976" -> "977" 
+  "976" -> "980" 
+  "977" -> "978" 
+  "977" -> "979" 
+  "980" -> "981" 
+  "980" -> "995" 
+  "981" -> "982" 
+  "981" -> "993" 
+  "982" -> "983" 
+  "982" -> "984" 
+  "984" -> "985" 
+  "984" -> "986" 
+  "986" -> "987" 
+  "986" -> "988" 
+  "988" -> "989" 
+  "988" -> "992" 
+  "989" -> "990" 
+  "989" -> "991" 
+  "993" -> "994" 
+  "995" -> "996" 
+  "995" -> "1012" 
+  "996" -> "997" 
+  "996" -> "999" 
+  "997" -> "998" 
+  "999" -> "1000" 
+  "999" -> "1003" 
+  "1000" -> "1001" 
+  "1000" -> "1002" 
+  "1003" -> "1004" 
+  "1003" -> "1005" 
+  "1005" -> "1006" 
+  "1005" -> "1007" 
+  "1007" -> "1008" 
+  "1007" -> "1011" 
+  "1008" -> "1009" 
+  "1008" -> "1010" 
+  "1012" -> "1013" 
+  "1014" -> "1015" 
+  "1014" -> "1016" 
+  "1016" -> "1017" 
+  "1016" -> "1018" 
+  "1020" -> "1021" 
+  "1020" -> "1025" 
+  "1021" -> "1022" 
+  "1021" -> "1023" 
+  "1023" -> "1024" 
+  "1025" -> "1026" 
+  "1026" -> "1027" 
+  "1028" -> "1029" 
+  "1028" -> "1030" 
+  "1031" -> "1032" 
+  "1031" -> "1033" 
+  "1033" -> "1034" 
+  "1033" -> "1035" 
+  "1036" -> "1037" 
+  "1036" -> "1038" 
+  "1036" -> "1041" 
+  "1036" -> "1044" 
+  "1036" -> "1046" 
+  "1038" -> "1039" 
+  "1038" -> "1040" 
+  "1041" -> "1042" 
+  "1041" -> "1043" 
+  "1044" -> "1045" 
+  "1046" -> "1047" 
+  "1047" -> "1048" 
+  "1047" -> "1053" 
+  "1048" -> "1049" 
+  "1048" -> "1052" 
+  "1049" -> "1050" 
+  "1049" -> "1051" 
+  "1053" -> "1054" 
+  "1054" -> "1055" 
+  "1056" -> "1057" 
+}

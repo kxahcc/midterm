@@ -1,0 +1,109 @@
+digraph "handleException" {  
+"234" [label = <(METHOD,handleException)<SUB>106</SUB>> ]
+"235" [label = <(PARAM,this)<SUB>106</SUB>> ]
+"236" [label = <(PARAM,Exchange exchange)<SUB>106</SUB>> ]
+"237" [label = <(PARAM,Throwable e)<SUB>106</SUB>> ]
+"238" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>106</SUB>> ]
+"239" [label = <(LOCAL,$iterLocal0: java.util.Iterator)<SUB>107</SUB>> ]
+"240" [label = <(&lt;operator&gt;.assignment,)<SUB>107</SUB>> ]
+"241" [label = <(IDENTIFIER,$iterLocal0,)<SUB>107</SUB>> ]
+"242" [label = <(iterator,&lt;empty&gt;)<SUB>107</SUB>> ]
+"243" [label = <(&lt;operator&gt;.fieldAccess,this.catchClauses)<SUB>107</SUB>> ]
+"244" [label = <(IDENTIFIER,this,&lt;empty&gt;)<SUB>107</SUB>> ]
+"245" [label = <(FIELD_IDENTIFIER,catchClauses,catchClauses)<SUB>107</SUB>> ]
+"246" [label = <(CONTROL_STRUCTURE,FOR,FOR)<SUB>107</SUB>> ]
+"247" [label = <(hasNext,&lt;empty&gt;)<SUB>107</SUB>> ]
+"248" [label = <(IDENTIFIER,$iterLocal0,&lt;empty&gt;)<SUB>107</SUB>> ]
+"249" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>107</SUB>> ]
+"250" [label = <(LOCAL,catchClause: ANY)<SUB>107</SUB>> ]
+"251" [label = <(&lt;operator&gt;.assignment,&lt;empty&gt;)<SUB>107</SUB>> ]
+"252" [label = <(IDENTIFIER,catchClause,&lt;empty&gt;)<SUB>107</SUB>> ]
+"253" [label = <(next,&lt;empty&gt;)<SUB>107</SUB>> ]
+"254" [label = <(IDENTIFIER,$iterLocal0,&lt;empty&gt;)<SUB>107</SUB>> ]
+"255" [label = <(CONTROL_STRUCTURE,if (catchClause.catches(e)),if (catchClause.catches(e)))<SUB>108</SUB>> ]
+"256" [label = <(catches,catches(e))<SUB>108</SUB>> ]
+"257" [label = <(IDENTIFIER,catchClause,catches(e))<SUB>108</SUB>> ]
+"258" [label = <(IDENTIFIER,e,catches(e))<SUB>108</SUB>> ]
+"259" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>108</SUB>> ]
+"260" [label = <(LOCAL,Exchange localExchange: org.apache.camel.Exchange)> ]
+"261" [label = <(&lt;operator&gt;.assignment,Exchange localExchange = copy())<SUB>110</SUB>> ]
+"262" [label = <(IDENTIFIER,localExchange,Exchange localExchange = copy())<SUB>110</SUB>> ]
+"263" [label = <(copy,copy())<SUB>110</SUB>> ]
+"264" [label = <(IDENTIFIER,exchange,copy())<SUB>110</SUB>> ]
+"265" [label = <(setHeader,setHeader(&quot;caught.exception&quot;, e))<SUB>111</SUB>> ]
+"266" [label = <(getIn,getIn())<SUB>111</SUB>> ]
+"267" [label = <(IDENTIFIER,localExchange,getIn())<SUB>111</SUB>> ]
+"268" [label = <(LITERAL,&quot;caught.exception&quot;,setHeader(&quot;caught.exception&quot;, e))<SUB>111</SUB>> ]
+"269" [label = <(IDENTIFIER,e,setHeader(&quot;caught.exception&quot;, e))<SUB>111</SUB>> ]
+"270" [label = <(setException,setException(null))<SUB>113</SUB>> ]
+"271" [label = <(IDENTIFIER,localExchange,setException(null))<SUB>113</SUB>> ]
+"272" [label = <(LITERAL,null,setException(null))<SUB>113</SUB>> ]
+"273" [label = <(process,process(localExchange))<SUB>116</SUB>> ]
+"274" [label = <(IDENTIFIER,catchClause,process(localExchange))<SUB>116</SUB>> ]
+"275" [label = <(IDENTIFIER,localExchange,process(localExchange))<SUB>116</SUB>> ]
+"276" [label = <(removeHeader,removeHeader(&quot;caught.exception&quot;))<SUB>117</SUB>> ]
+"277" [label = <(getIn,getIn())<SUB>117</SUB>> ]
+"278" [label = <(IDENTIFIER,localExchange,getIn())<SUB>117</SUB>> ]
+"279" [label = <(LITERAL,&quot;caught.exception&quot;,removeHeader(&quot;caught.exception&quot;))<SUB>117</SUB>> ]
+"280" [label = <(copyResults,copyResults(exchange, localExchange))<SUB>118</SUB>> ]
+"281" [label = <(IDENTIFIER,ExchangeHelper,copyResults(exchange, localExchange))<SUB>118</SUB>> ]
+"282" [label = <(IDENTIFIER,exchange,copyResults(exchange, localExchange))<SUB>118</SUB>> ]
+"283" [label = <(IDENTIFIER,localExchange,copyResults(exchange, localExchange))<SUB>118</SUB>> ]
+"284" [label = <(RETURN,return;,return;)<SUB>119</SUB>> ]
+"285" [label = <(MODIFIER,PROTECTED)> ]
+"286" [label = <(MODIFIER,VIRTUAL)> ]
+"287" [label = <(METHOD_RETURN,void)<SUB>106</SUB>> ]
+  "234" -> "235" 
+  "234" -> "236" 
+  "234" -> "237" 
+  "234" -> "238" 
+  "234" -> "285" 
+  "234" -> "286" 
+  "234" -> "287" 
+  "238" -> "239" 
+  "238" -> "240" 
+  "238" -> "246" 
+  "240" -> "241" 
+  "240" -> "242" 
+  "242" -> "243" 
+  "243" -> "244" 
+  "243" -> "245" 
+  "246" -> "247" 
+  "246" -> "249" 
+  "247" -> "248" 
+  "249" -> "250" 
+  "249" -> "251" 
+  "249" -> "255" 
+  "251" -> "252" 
+  "251" -> "253" 
+  "253" -> "254" 
+  "255" -> "256" 
+  "255" -> "259" 
+  "256" -> "257" 
+  "256" -> "258" 
+  "259" -> "260" 
+  "259" -> "261" 
+  "259" -> "265" 
+  "259" -> "270" 
+  "259" -> "273" 
+  "259" -> "276" 
+  "259" -> "280" 
+  "259" -> "284" 
+  "261" -> "262" 
+  "261" -> "263" 
+  "263" -> "264" 
+  "265" -> "266" 
+  "265" -> "268" 
+  "265" -> "269" 
+  "266" -> "267" 
+  "270" -> "271" 
+  "270" -> "272" 
+  "273" -> "274" 
+  "273" -> "275" 
+  "276" -> "277" 
+  "276" -> "279" 
+  "277" -> "278" 
+  "280" -> "281" 
+  "280" -> "282" 
+  "280" -> "283" 
+}

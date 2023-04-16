@@ -1,0 +1,167 @@
+digraph "addExtdirs" {  
+"1512" [label = <(METHOD,addExtdirs)<SUB>629</SUB>> ]
+"130" [label = <(PARAM,this)<SUB>629</SUB>> ]
+"132" [label = <(PARAM,Path extdirs)<SUB>629</SUB>> ]
+"1513" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>629</SUB>> ]
+"1514" [label = <(CONTROL_STRUCTURE,if (extdirs == null),if (extdirs == null))<SUB>630</SUB>> ]
+"1515" [label = <(&lt;operator&gt;.equals,extdirs == null)<SUB>630</SUB>> ]
+"1516" [label = <(IDENTIFIER,extdirs,extdirs == null)<SUB>630</SUB>> ]
+"1517" [label = <(LITERAL,null,extdirs == null)<SUB>630</SUB>> ]
+"1518" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>630</SUB>> ]
+"1519" [label = <(LOCAL,String extProp: java.lang.String)> ]
+"1520" [label = <(&lt;operator&gt;.assignment,String extProp = System.getProperty(&quot;java.ext.dirs&quot;))<SUB>631</SUB>> ]
+"1521" [label = <(IDENTIFIER,extProp,String extProp = System.getProperty(&quot;java.ext.dirs&quot;))<SUB>631</SUB>> ]
+"1522" [label = <(getProperty,System.getProperty(&quot;java.ext.dirs&quot;))<SUB>631</SUB>> ]
+"1523" [label = <(IDENTIFIER,System,System.getProperty(&quot;java.ext.dirs&quot;))<SUB>631</SUB>> ]
+"1524" [label = <(LITERAL,&quot;java.ext.dirs&quot;,System.getProperty(&quot;java.ext.dirs&quot;))<SUB>631</SUB>> ]
+"1525" [label = <(CONTROL_STRUCTURE,if (extProp != null),if (extProp != null))<SUB>632</SUB>> ]
+"1526" [label = <(&lt;operator&gt;.notEquals,extProp != null)<SUB>632</SUB>> ]
+"1527" [label = <(IDENTIFIER,extProp,extProp != null)<SUB>632</SUB>> ]
+"1528" [label = <(LITERAL,null,extProp != null)<SUB>632</SUB>> ]
+"1529" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>632</SUB>> ]
+"1530" [label = <(&lt;operator&gt;.assignment,extdirs = new Path(getProject(), extProp))<SUB>633</SUB>> ]
+"1531" [label = <(IDENTIFIER,extdirs,extdirs = new Path(getProject(), extProp))<SUB>633</SUB>> ]
+"1532" [label = <(&lt;operator&gt;.alloc,new Path(getProject(), extProp))<SUB>633</SUB>> ]
+"1533" [label = <(&lt;init&gt;,new Path(getProject(), extProp))<SUB>633</SUB>> ]
+"131" [label = <(IDENTIFIER,extdirs,new Path(getProject(), extProp))<SUB>633</SUB>> ]
+"1534" [label = <(getProject,getProject())<SUB>633</SUB>> ]
+"129" [label = <(IDENTIFIER,this,getProject())<SUB>633</SUB>> ]
+"1535" [label = <(IDENTIFIER,extProp,new Path(getProject(), extProp))<SUB>633</SUB>> ]
+"1536" [label = <(CONTROL_STRUCTURE,else,else)<SUB>634</SUB>> ]
+"1537" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>634</SUB>> ]
+"1538" [label = <(RETURN,return;,return;)<SUB>635</SUB>> ]
+"1539" [label = <(LOCAL,String[] dirs: java.lang.String[])> ]
+"1540" [label = <(&lt;operator&gt;.assignment,String[] dirs = extdirs.list())<SUB>639</SUB>> ]
+"1541" [label = <(IDENTIFIER,dirs,String[] dirs = extdirs.list())<SUB>639</SUB>> ]
+"1542" [label = <(list,extdirs.list())<SUB>639</SUB>> ]
+"1543" [label = <(IDENTIFIER,extdirs,extdirs.list())<SUB>639</SUB>> ]
+"1544" [label = <(CONTROL_STRUCTURE,for (int i = 0; Some(i &lt; dirs.length); i++),for (int i = 0; Some(i &lt; dirs.length); i++))<SUB>640</SUB>> ]
+"1545" [label = <(LOCAL,int i: int)> ]
+"1546" [label = <(&lt;operator&gt;.assignment,int i = 0)<SUB>640</SUB>> ]
+"1547" [label = <(IDENTIFIER,i,int i = 0)<SUB>640</SUB>> ]
+"1548" [label = <(LITERAL,0,int i = 0)<SUB>640</SUB>> ]
+"1549" [label = <(&lt;operator&gt;.lessThan,i &lt; dirs.length)<SUB>640</SUB>> ]
+"1550" [label = <(IDENTIFIER,i,i &lt; dirs.length)<SUB>640</SUB>> ]
+"1551" [label = <(&lt;operator&gt;.fieldAccess,dirs.length)<SUB>640</SUB>> ]
+"1552" [label = <(IDENTIFIER,dirs,i &lt; dirs.length)<SUB>640</SUB>> ]
+"1553" [label = <(FIELD_IDENTIFIER,length,length)<SUB>640</SUB>> ]
+"1554" [label = <(&lt;operator&gt;.postIncrement,i++)<SUB>640</SUB>> ]
+"1555" [label = <(IDENTIFIER,i,i++)<SUB>640</SUB>> ]
+"1556" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>640</SUB>> ]
+"1557" [label = <(LOCAL,File dir: java.io.File)> ]
+"1558" [label = <(&lt;operator&gt;.assignment,File dir = resolveFile(dirs[i]))<SUB>641</SUB>> ]
+"1559" [label = <(IDENTIFIER,dir,File dir = resolveFile(dirs[i]))<SUB>641</SUB>> ]
+"1560" [label = <(resolveFile,resolveFile(dirs[i]))<SUB>641</SUB>> ]
+"1561" [label = <(getProject,getProject())<SUB>641</SUB>> ]
+"133" [label = <(IDENTIFIER,this,getProject())<SUB>641</SUB>> ]
+"1562" [label = <(&lt;operator&gt;.indexAccess,dirs[i])<SUB>641</SUB>> ]
+"1563" [label = <(IDENTIFIER,dirs,resolveFile(dirs[i]))<SUB>641</SUB>> ]
+"1564" [label = <(IDENTIFIER,i,resolveFile(dirs[i]))<SUB>641</SUB>> ]
+"1565" [label = <(CONTROL_STRUCTURE,if (dir.exists() &amp;&amp; dir.isDirectory()),if (dir.exists() &amp;&amp; dir.isDirectory()))<SUB>642</SUB>> ]
+"1566" [label = <(&lt;operator&gt;.logicalAnd,dir.exists() &amp;&amp; dir.isDirectory())<SUB>642</SUB>> ]
+"1567" [label = <(exists,dir.exists())<SUB>642</SUB>> ]
+"1568" [label = <(IDENTIFIER,dir,dir.exists())<SUB>642</SUB>> ]
+"1569" [label = <(isDirectory,dir.isDirectory())<SUB>642</SUB>> ]
+"1570" [label = <(IDENTIFIER,dir,dir.isDirectory())<SUB>642</SUB>> ]
+"1571" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>642</SUB>> ]
+"135" [label = <(LOCAL,FileSet fs: ANY)> ]
+"1572" [label = <(&lt;operator&gt;.assignment,ANY fs = new FileSet())<SUB>643</SUB>> ]
+"1573" [label = <(IDENTIFIER,fs,ANY fs = new FileSet())<SUB>643</SUB>> ]
+"1574" [label = <(&lt;operator&gt;.alloc,new FileSet())<SUB>643</SUB>> ]
+"1575" [label = <(&lt;init&gt;,new FileSet())<SUB>643</SUB>> ]
+"134" [label = <(IDENTIFIER,fs,new FileSet())<SUB>643</SUB>> ]
+"1576" [label = <(setDir,setDir(dir))<SUB>644</SUB>> ]
+"1577" [label = <(IDENTIFIER,fs,setDir(dir))<SUB>644</SUB>> ]
+"1578" [label = <(IDENTIFIER,dir,setDir(dir))<SUB>644</SUB>> ]
+"1579" [label = <(setIncludes,setIncludes(&quot;*&quot;))<SUB>645</SUB>> ]
+"1580" [label = <(IDENTIFIER,fs,setIncludes(&quot;*&quot;))<SUB>645</SUB>> ]
+"1581" [label = <(LITERAL,&quot;*&quot;,setIncludes(&quot;*&quot;))<SUB>645</SUB>> ]
+"1582" [label = <(addFileset,addFileset(fs))<SUB>646</SUB>> ]
+"136" [label = <(IDENTIFIER,this,addFileset(fs))<SUB>646</SUB>> ]
+"1583" [label = <(IDENTIFIER,fs,addFileset(fs))<SUB>646</SUB>> ]
+"1584" [label = <(MODIFIER,PUBLIC)> ]
+"1585" [label = <(MODIFIER,VIRTUAL)> ]
+"1586" [label = <(METHOD_RETURN,void)<SUB>629</SUB>> ]
+  "1512" -> "130" 
+  "1512" -> "132" 
+  "1512" -> "1513" 
+  "1512" -> "1584" 
+  "1512" -> "1585" 
+  "1512" -> "1586" 
+  "1513" -> "1514" 
+  "1513" -> "1539" 
+  "1513" -> "1540" 
+  "1513" -> "1544" 
+  "1514" -> "1515" 
+  "1514" -> "1518" 
+  "1515" -> "1516" 
+  "1515" -> "1517" 
+  "1518" -> "1519" 
+  "1518" -> "1520" 
+  "1518" -> "1525" 
+  "1520" -> "1521" 
+  "1520" -> "1522" 
+  "1522" -> "1523" 
+  "1522" -> "1524" 
+  "1525" -> "1526" 
+  "1525" -> "1529" 
+  "1525" -> "1536" 
+  "1526" -> "1527" 
+  "1526" -> "1528" 
+  "1529" -> "1530" 
+  "1529" -> "1533" 
+  "1530" -> "1531" 
+  "1530" -> "1532" 
+  "1533" -> "131" 
+  "1533" -> "1534" 
+  "1533" -> "1535" 
+  "1534" -> "129" 
+  "1536" -> "1537" 
+  "1537" -> "1538" 
+  "1540" -> "1541" 
+  "1540" -> "1542" 
+  "1542" -> "1543" 
+  "1544" -> "1545" 
+  "1544" -> "1546" 
+  "1544" -> "1549" 
+  "1544" -> "1554" 
+  "1544" -> "1556" 
+  "1546" -> "1547" 
+  "1546" -> "1548" 
+  "1549" -> "1550" 
+  "1549" -> "1551" 
+  "1551" -> "1552" 
+  "1551" -> "1553" 
+  "1554" -> "1555" 
+  "1556" -> "1557" 
+  "1556" -> "1558" 
+  "1556" -> "1565" 
+  "1558" -> "1559" 
+  "1558" -> "1560" 
+  "1560" -> "1561" 
+  "1560" -> "1562" 
+  "1561" -> "133" 
+  "1562" -> "1563" 
+  "1562" -> "1564" 
+  "1565" -> "1566" 
+  "1565" -> "1571" 
+  "1566" -> "1567" 
+  "1566" -> "1569" 
+  "1567" -> "1568" 
+  "1569" -> "1570" 
+  "1571" -> "135" 
+  "1571" -> "1572" 
+  "1571" -> "1575" 
+  "1571" -> "1576" 
+  "1571" -> "1579" 
+  "1571" -> "1582" 
+  "1572" -> "1573" 
+  "1572" -> "1574" 
+  "1575" -> "134" 
+  "1576" -> "1577" 
+  "1576" -> "1578" 
+  "1579" -> "1580" 
+  "1579" -> "1581" 
+  "1582" -> "136" 
+  "1582" -> "1583" 
+}

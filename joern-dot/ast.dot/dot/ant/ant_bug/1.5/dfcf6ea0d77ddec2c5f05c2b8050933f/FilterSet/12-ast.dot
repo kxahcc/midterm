@@ -1,0 +1,89 @@
+digraph "getFilterHash" {  
+"310" [label = <(METHOD,getFilterHash)<SUB>213</SUB>> ]
+"50" [label = <(PARAM,this)<SUB>213</SUB>> ]
+"311" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>213</SUB>> ]
+"312" [label = <(LOCAL,int filterSize: int)> ]
+"313" [label = <(&lt;operator&gt;.assignment,int filterSize = this.getFilters().size())<SUB>214</SUB>> ]
+"314" [label = <(IDENTIFIER,filterSize,int filterSize = this.getFilters().size())<SUB>214</SUB>> ]
+"315" [label = <(size,this.getFilters().size())<SUB>214</SUB>> ]
+"316" [label = <(getFilters,this.getFilters())<SUB>214</SUB>> ]
+"49" [label = <(IDENTIFIER,this,this.getFilters())<SUB>214</SUB>> ]
+"52" [label = <(LOCAL,Hashtable filterHash: java.util.Hashtable)> ]
+"317" [label = <(&lt;operator&gt;.assignment,Hashtable filterHash = new Hashtable(filterSize))<SUB>215</SUB>> ]
+"318" [label = <(IDENTIFIER,filterHash,Hashtable filterHash = new Hashtable(filterSize))<SUB>215</SUB>> ]
+"319" [label = <(&lt;operator&gt;.alloc,new Hashtable(filterSize))<SUB>215</SUB>> ]
+"320" [label = <(&lt;init&gt;,new Hashtable(filterSize))<SUB>215</SUB>> ]
+"51" [label = <(IDENTIFIER,filterHash,new Hashtable(filterSize))<SUB>215</SUB>> ]
+"321" [label = <(IDENTIFIER,filterSize,new Hashtable(filterSize))<SUB>215</SUB>> ]
+"322" [label = <(CONTROL_STRUCTURE,for (Enumeration e = getFilters().elements(); Some(e.hasMoreElements()); ),for (Enumeration e = getFilters().elements(); Some(e.hasMoreElements()); ))<SUB>216</SUB>> ]
+"323" [label = <(LOCAL,Enumeration e: java.util.Enumeration)> ]
+"324" [label = <(&lt;operator&gt;.assignment,Enumeration e = this.getFilters().elements())<SUB>216</SUB>> ]
+"325" [label = <(IDENTIFIER,e,Enumeration e = this.getFilters().elements())<SUB>216</SUB>> ]
+"326" [label = <(elements,this.getFilters().elements())<SUB>216</SUB>> ]
+"327" [label = <(getFilters,this.getFilters())<SUB>216</SUB>> ]
+"53" [label = <(IDENTIFIER,this,this.getFilters())<SUB>216</SUB>> ]
+"328" [label = <(hasMoreElements,e.hasMoreElements())<SUB>216</SUB>> ]
+"329" [label = <(IDENTIFIER,e,e.hasMoreElements())<SUB>216</SUB>> ]
+"330" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>216</SUB>> ]
+"331" [label = <(LOCAL,Filter filter: org.apache.tools.ant.types.FilterSet$Filter)> ]
+"332" [label = <(&lt;operator&gt;.assignment,FilterSet$Filter filter = (Filter) e.nextElement())<SUB>217</SUB>> ]
+"333" [label = <(IDENTIFIER,filter,FilterSet$Filter filter = (Filter) e.nextElement())<SUB>217</SUB>> ]
+"334" [label = <(&lt;operator&gt;.cast,(Filter) e.nextElement())<SUB>217</SUB>> ]
+"335" [label = <(TYPE_REF,Filter,Filter)<SUB>217</SUB>> ]
+"336" [label = <(nextElement,e.nextElement())<SUB>217</SUB>> ]
+"337" [label = <(IDENTIFIER,e,e.nextElement())<SUB>217</SUB>> ]
+"338" [label = <(put,filterHash.put(filter.getToken(), filter.getValue()))<SUB>218</SUB>> ]
+"339" [label = <(IDENTIFIER,filterHash,filterHash.put(filter.getToken(), filter.getValue()))<SUB>218</SUB>> ]
+"340" [label = <(getToken,filter.getToken())<SUB>218</SUB>> ]
+"341" [label = <(IDENTIFIER,filter,filter.getToken())<SUB>218</SUB>> ]
+"342" [label = <(getValue,filter.getValue())<SUB>218</SUB>> ]
+"343" [label = <(IDENTIFIER,filter,filter.getValue())<SUB>218</SUB>> ]
+"344" [label = <(RETURN,return filterHash;,return filterHash;)<SUB>220</SUB>> ]
+"345" [label = <(IDENTIFIER,filterHash,return filterHash;)<SUB>220</SUB>> ]
+"346" [label = <(MODIFIER,PUBLIC)> ]
+"347" [label = <(MODIFIER,VIRTUAL)> ]
+"348" [label = <(METHOD_RETURN,java.util.Hashtable)<SUB>213</SUB>> ]
+  "310" -> "50" 
+  "310" -> "311" 
+  "310" -> "346" 
+  "310" -> "347" 
+  "310" -> "348" 
+  "311" -> "312" 
+  "311" -> "313" 
+  "311" -> "52" 
+  "311" -> "317" 
+  "311" -> "320" 
+  "311" -> "322" 
+  "311" -> "344" 
+  "313" -> "314" 
+  "313" -> "315" 
+  "315" -> "316" 
+  "316" -> "49" 
+  "317" -> "318" 
+  "317" -> "319" 
+  "320" -> "51" 
+  "320" -> "321" 
+  "322" -> "323" 
+  "322" -> "324" 
+  "322" -> "328" 
+  "322" -> "330" 
+  "324" -> "325" 
+  "324" -> "326" 
+  "326" -> "327" 
+  "327" -> "53" 
+  "328" -> "329" 
+  "330" -> "331" 
+  "330" -> "332" 
+  "330" -> "338" 
+  "332" -> "333" 
+  "332" -> "334" 
+  "334" -> "335" 
+  "334" -> "336" 
+  "336" -> "337" 
+  "338" -> "339" 
+  "338" -> "340" 
+  "338" -> "342" 
+  "340" -> "341" 
+  "342" -> "343" 
+  "344" -> "345" 
+}

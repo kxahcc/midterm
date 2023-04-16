@@ -1,0 +1,141 @@
+digraph "findSetterMethod" {  
+"552" [label = <(METHOD,findSetterMethod)<SUB>187</SUB>> ]
+"553" [label = <(PARAM,Class clazz)<SUB>187</SUB>> ]
+"554" [label = <(PARAM,String name)<SUB>187</SUB>> ]
+"555" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>187</SUB>> ]
+"556" [label = <(&lt;operator&gt;.assignment,name = &quot;set&quot; + name.substring(0, 1).toUpperCase() + name.substring(1))<SUB>189</SUB>> ]
+"557" [label = <(IDENTIFIER,name,name = &quot;set&quot; + name.substring(0, 1).toUpperCase() + name.substring(1))<SUB>189</SUB>> ]
+"558" [label = <(&lt;operator&gt;.addition,&quot;set&quot; + name.substring(0, 1).toUpperCase() + name.substring(1))<SUB>189</SUB>> ]
+"559" [label = <(&lt;operator&gt;.addition,&quot;set&quot; + name.substring(0, 1).toUpperCase())<SUB>189</SUB>> ]
+"560" [label = <(LITERAL,&quot;set&quot;,&quot;set&quot; + name.substring(0, 1).toUpperCase())<SUB>189</SUB>> ]
+"561" [label = <(toUpperCase,name.substring(0, 1).toUpperCase())<SUB>189</SUB>> ]
+"562" [label = <(substring,name.substring(0, 1))<SUB>189</SUB>> ]
+"563" [label = <(IDENTIFIER,name,name.substring(0, 1))<SUB>189</SUB>> ]
+"564" [label = <(LITERAL,0,name.substring(0, 1))<SUB>189</SUB>> ]
+"565" [label = <(LITERAL,1,name.substring(0, 1))<SUB>189</SUB>> ]
+"566" [label = <(substring,name.substring(1))<SUB>189</SUB>> ]
+"567" [label = <(IDENTIFIER,name,name.substring(1))<SUB>189</SUB>> ]
+"568" [label = <(LITERAL,1,name.substring(1))<SUB>189</SUB>> ]
+"569" [label = <(LOCAL,Method[] methods: java.lang.reflect.Method[])> ]
+"570" [label = <(&lt;operator&gt;.assignment,Method[] methods = clazz.getMethods())<SUB>190</SUB>> ]
+"571" [label = <(IDENTIFIER,methods,Method[] methods = clazz.getMethods())<SUB>190</SUB>> ]
+"572" [label = <(getMethods,clazz.getMethods())<SUB>190</SUB>> ]
+"573" [label = <(IDENTIFIER,clazz,clazz.getMethods())<SUB>190</SUB>> ]
+"574" [label = <(CONTROL_STRUCTURE,for (int i = 0; Some(i &lt; methods.length); i++),for (int i = 0; Some(i &lt; methods.length); i++))<SUB>191</SUB>> ]
+"575" [label = <(LOCAL,int i: int)> ]
+"576" [label = <(&lt;operator&gt;.assignment,int i = 0)<SUB>191</SUB>> ]
+"577" [label = <(IDENTIFIER,i,int i = 0)<SUB>191</SUB>> ]
+"578" [label = <(LITERAL,0,int i = 0)<SUB>191</SUB>> ]
+"579" [label = <(&lt;operator&gt;.lessThan,i &lt; methods.length)<SUB>191</SUB>> ]
+"580" [label = <(IDENTIFIER,i,i &lt; methods.length)<SUB>191</SUB>> ]
+"581" [label = <(&lt;operator&gt;.fieldAccess,methods.length)<SUB>191</SUB>> ]
+"582" [label = <(IDENTIFIER,methods,i &lt; methods.length)<SUB>191</SUB>> ]
+"583" [label = <(FIELD_IDENTIFIER,length,length)<SUB>191</SUB>> ]
+"584" [label = <(&lt;operator&gt;.postIncrement,i++)<SUB>191</SUB>> ]
+"585" [label = <(IDENTIFIER,i,i++)<SUB>191</SUB>> ]
+"586" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>191</SUB>> ]
+"587" [label = <(LOCAL,Method method: java.lang.reflect.Method)> ]
+"588" [label = <(&lt;operator&gt;.assignment,Method method = methods[i])<SUB>192</SUB>> ]
+"589" [label = <(IDENTIFIER,method,Method method = methods[i])<SUB>192</SUB>> ]
+"590" [label = <(&lt;operator&gt;.indexAccess,methods[i])<SUB>192</SUB>> ]
+"591" [label = <(IDENTIFIER,methods,Method method = methods[i])<SUB>192</SUB>> ]
+"592" [label = <(IDENTIFIER,i,Method method = methods[i])<SUB>192</SUB>> ]
+"593" [label = <(LOCAL,Class[] params: java.lang.Class[])> ]
+"594" [label = <(&lt;operator&gt;.assignment,Class[] params = method.getParameterTypes())<SUB>193</SUB>> ]
+"595" [label = <(IDENTIFIER,params,Class[] params = method.getParameterTypes())<SUB>193</SUB>> ]
+"596" [label = <(getParameterTypes,method.getParameterTypes())<SUB>193</SUB>> ]
+"597" [label = <(IDENTIFIER,method,method.getParameterTypes())<SUB>193</SUB>> ]
+"598" [label = <(CONTROL_STRUCTURE,if (method.getName().equals(name) &amp;&amp; params.length == 1 &amp;&amp; isSettableType(params[0])),if (method.getName().equals(name) &amp;&amp; params.length == 1 &amp;&amp; isSettableType(params[0])))<SUB>194</SUB>> ]
+"599" [label = <(&lt;operator&gt;.logicalAnd,method.getName().equals(name) &amp;&amp; params.length == 1 &amp;&amp; isSettableType(params[0]))<SUB>194</SUB>> ]
+"600" [label = <(&lt;operator&gt;.logicalAnd,method.getName().equals(name) &amp;&amp; params.length == 1)<SUB>194</SUB>> ]
+"601" [label = <(equals,method.getName().equals(name))<SUB>194</SUB>> ]
+"602" [label = <(getName,method.getName())<SUB>194</SUB>> ]
+"603" [label = <(IDENTIFIER,method,method.getName())<SUB>194</SUB>> ]
+"604" [label = <(IDENTIFIER,name,method.getName().equals(name))<SUB>194</SUB>> ]
+"605" [label = <(&lt;operator&gt;.equals,params.length == 1)<SUB>195</SUB>> ]
+"606" [label = <(&lt;operator&gt;.fieldAccess,params.length)<SUB>195</SUB>> ]
+"607" [label = <(IDENTIFIER,params,params.length == 1)<SUB>195</SUB>> ]
+"608" [label = <(FIELD_IDENTIFIER,length,length)<SUB>195</SUB>> ]
+"609" [label = <(LITERAL,1,params.length == 1)<SUB>195</SUB>> ]
+"610" [label = <(isSettableType,isSettableType(params[0]))<SUB>196</SUB>> ]
+"611" [label = <(&lt;operator&gt;.indexAccess,params[0])<SUB>196</SUB>> ]
+"612" [label = <(IDENTIFIER,params,isSettableType(params[0]))<SUB>196</SUB>> ]
+"613" [label = <(LITERAL,0,isSettableType(params[0]))<SUB>196</SUB>> ]
+"614" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>196</SUB>> ]
+"615" [label = <(RETURN,return method;,return method;)<SUB>197</SUB>> ]
+"616" [label = <(IDENTIFIER,method,return method;)<SUB>197</SUB>> ]
+"617" [label = <(RETURN,return null;,return null;)<SUB>200</SUB>> ]
+"618" [label = <(LITERAL,null,return null;)<SUB>200</SUB>> ]
+"619" [label = <(MODIFIER,PRIVATE)> ]
+"620" [label = <(MODIFIER,STATIC)> ]
+"621" [label = <(METHOD_RETURN,java.lang.reflect.Method)<SUB>187</SUB>> ]
+  "552" -> "553" 
+  "552" -> "554" 
+  "552" -> "555" 
+  "552" -> "619" 
+  "552" -> "620" 
+  "552" -> "621" 
+  "555" -> "556" 
+  "555" -> "569" 
+  "555" -> "570" 
+  "555" -> "574" 
+  "555" -> "617" 
+  "556" -> "557" 
+  "556" -> "558" 
+  "558" -> "559" 
+  "558" -> "566" 
+  "559" -> "560" 
+  "559" -> "561" 
+  "561" -> "562" 
+  "562" -> "563" 
+  "562" -> "564" 
+  "562" -> "565" 
+  "566" -> "567" 
+  "566" -> "568" 
+  "570" -> "571" 
+  "570" -> "572" 
+  "572" -> "573" 
+  "574" -> "575" 
+  "574" -> "576" 
+  "574" -> "579" 
+  "574" -> "584" 
+  "574" -> "586" 
+  "576" -> "577" 
+  "576" -> "578" 
+  "579" -> "580" 
+  "579" -> "581" 
+  "581" -> "582" 
+  "581" -> "583" 
+  "584" -> "585" 
+  "586" -> "587" 
+  "586" -> "588" 
+  "586" -> "593" 
+  "586" -> "594" 
+  "586" -> "598" 
+  "588" -> "589" 
+  "588" -> "590" 
+  "590" -> "591" 
+  "590" -> "592" 
+  "594" -> "595" 
+  "594" -> "596" 
+  "596" -> "597" 
+  "598" -> "599" 
+  "598" -> "614" 
+  "599" -> "600" 
+  "599" -> "610" 
+  "600" -> "601" 
+  "600" -> "605" 
+  "601" -> "602" 
+  "601" -> "604" 
+  "602" -> "603" 
+  "605" -> "606" 
+  "605" -> "609" 
+  "606" -> "607" 
+  "606" -> "608" 
+  "610" -> "611" 
+  "611" -> "612" 
+  "611" -> "613" 
+  "614" -> "615" 
+  "615" -> "616" 
+  "617" -> "618" 
+}

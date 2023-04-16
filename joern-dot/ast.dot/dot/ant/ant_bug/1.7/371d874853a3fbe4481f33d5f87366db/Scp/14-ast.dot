@@ -1,0 +1,151 @@
+digraph "upload" {  
+"627" [label = <(METHOD,upload)<SUB>285</SUB>> ]
+"68" [label = <(PARAM,this)<SUB>285</SUB>> ]
+"628" [label = <(PARAM,String fromPath)<SUB>285</SUB>> ]
+"629" [label = <(PARAM,String toSshUri)<SUB>285</SUB>> ]
+"630" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>286</SUB>> ]
+"631" [label = <(LOCAL,String file: java.lang.String)> ]
+"632" [label = <(&lt;operator&gt;.assignment,String file = this.parseUri(toSshUri))<SUB>287</SUB>> ]
+"633" [label = <(IDENTIFIER,file,String file = this.parseUri(toSshUri))<SUB>287</SUB>> ]
+"634" [label = <(parseUri,this.parseUri(toSshUri))<SUB>287</SUB>> ]
+"67" [label = <(IDENTIFIER,this,this.parseUri(toSshUri))<SUB>287</SUB>> ]
+"635" [label = <(IDENTIFIER,toSshUri,this.parseUri(toSshUri))<SUB>287</SUB>> ]
+"636" [label = <(LOCAL,Session session: com.jcraft.jsch.Session)> ]
+"637" [label = <(&lt;operator&gt;.assignment,Session session = null)<SUB>289</SUB>> ]
+"638" [label = <(IDENTIFIER,session,Session session = null)<SUB>289</SUB>> ]
+"639" [label = <(LITERAL,null,Session session = null)<SUB>289</SUB>> ]
+"640" [label = <(CONTROL_STRUCTURE,try,try)<SUB>290</SUB>> ]
+"641" [label = <(BLOCK,try,try)<SUB>290</SUB>> ]
+"642" [label = <(&lt;operator&gt;.assignment,session = openSession())<SUB>291</SUB>> ]
+"643" [label = <(IDENTIFIER,session,session = openSession())<SUB>291</SUB>> ]
+"644" [label = <(openSession,openSession())<SUB>291</SUB>> ]
+"69" [label = <(IDENTIFIER,this,openSession())<SUB>291</SUB>> ]
+"73" [label = <(LOCAL,ScpToMessage message: ANY)> ]
+"645" [label = <(&lt;operator&gt;.assignment,ANY message = null)<SUB>292</SUB>> ]
+"646" [label = <(IDENTIFIER,message,ANY message = null)<SUB>292</SUB>> ]
+"647" [label = <(LITERAL,null,ANY message = null)<SUB>292</SUB>> ]
+"648" [label = <(CONTROL_STRUCTURE,if (!isSftp),if (!isSftp))<SUB>293</SUB>> ]
+"649" [label = <(&lt;operator&gt;.logicalNot,!isSftp)<SUB>293</SUB>> ]
+"650" [label = <(&lt;operator&gt;.fieldAccess,this.isSftp)<SUB>293</SUB>> ]
+"651" [label = <(IDENTIFIER,this,!isSftp)<SUB>293</SUB>> ]
+"652" [label = <(FIELD_IDENTIFIER,isSftp,isSftp)<SUB>293</SUB>> ]
+"653" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>293</SUB>> ]
+"654" [label = <(&lt;operator&gt;.assignment,message = new ScpToMessage(getVerbose(), session, getProject().resolveFile(fromPath), file))<SUB>294</SUB>> ]
+"655" [label = <(IDENTIFIER,message,message = new ScpToMessage(getVerbose(), session, getProject().resolveFile(fromPath), file))<SUB>294</SUB>> ]
+"656" [label = <(&lt;operator&gt;.alloc,new ScpToMessage(getVerbose(), session, getProject().resolveFile(fromPath), file))<SUB>295</SUB>> ]
+"657" [label = <(&lt;init&gt;,new ScpToMessage(getVerbose(), session, getProject().resolveFile(fromPath), file))<SUB>295</SUB>> ]
+"72" [label = <(IDENTIFIER,message,new ScpToMessage(getVerbose(), session, getProject().resolveFile(fromPath), file))<SUB>294</SUB>> ]
+"658" [label = <(getVerbose,getVerbose())<SUB>295</SUB>> ]
+"70" [label = <(IDENTIFIER,this,getVerbose())<SUB>295</SUB>> ]
+"659" [label = <(IDENTIFIER,session,new ScpToMessage(getVerbose(), session, getProject().resolveFile(fromPath), file))<SUB>295</SUB>> ]
+"660" [label = <(resolveFile,resolveFile(fromPath))<SUB>296</SUB>> ]
+"661" [label = <(getProject,getProject())<SUB>296</SUB>> ]
+"71" [label = <(IDENTIFIER,this,getProject())<SUB>296</SUB>> ]
+"662" [label = <(IDENTIFIER,fromPath,resolveFile(fromPath))<SUB>296</SUB>> ]
+"663" [label = <(IDENTIFIER,file,new ScpToMessage(getVerbose(), session, getProject().resolveFile(fromPath), file))<SUB>296</SUB>> ]
+"664" [label = <(CONTROL_STRUCTURE,else,else)<SUB>297</SUB>> ]
+"665" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>297</SUB>> ]
+"666" [label = <(&lt;operator&gt;.assignment,message = new ScpToMessageBySftp(getVerbose(), session, getProject().resolveFile(fromPath), file))<SUB>298</SUB>> ]
+"667" [label = <(IDENTIFIER,message,message = new ScpToMessageBySftp(getVerbose(), session, getProject().resolveFile(fromPath), file))<SUB>298</SUB>> ]
+"668" [label = <(&lt;operator&gt;.alloc,new ScpToMessageBySftp(getVerbose(), session, getProject().resolveFile(fromPath), file))<SUB>299</SUB>> ]
+"669" [label = <(&lt;init&gt;,new ScpToMessageBySftp(getVerbose(), session, getProject().resolveFile(fromPath), file))<SUB>299</SUB>> ]
+"76" [label = <(IDENTIFIER,message,new ScpToMessageBySftp(getVerbose(), session, getProject().resolveFile(fromPath), file))<SUB>298</SUB>> ]
+"670" [label = <(getVerbose,getVerbose())<SUB>299</SUB>> ]
+"74" [label = <(IDENTIFIER,this,getVerbose())<SUB>299</SUB>> ]
+"671" [label = <(IDENTIFIER,session,new ScpToMessageBySftp(getVerbose(), session, getProject().resolveFile(fromPath), file))<SUB>299</SUB>> ]
+"672" [label = <(resolveFile,resolveFile(fromPath))<SUB>300</SUB>> ]
+"673" [label = <(getProject,getProject())<SUB>300</SUB>> ]
+"75" [label = <(IDENTIFIER,this,getProject())<SUB>300</SUB>> ]
+"674" [label = <(IDENTIFIER,fromPath,resolveFile(fromPath))<SUB>300</SUB>> ]
+"675" [label = <(IDENTIFIER,file,new ScpToMessageBySftp(getVerbose(), session, getProject().resolveFile(fromPath), file))<SUB>301</SUB>> ]
+"676" [label = <(setLogListener,setLogListener(this))<SUB>303</SUB>> ]
+"677" [label = <(IDENTIFIER,message,setLogListener(this))<SUB>303</SUB>> ]
+"77" [label = <(IDENTIFIER,this,setLogListener(this))<SUB>303</SUB>> ]
+"678" [label = <(execute,execute())<SUB>304</SUB>> ]
+"679" [label = <(IDENTIFIER,message,execute())<SUB>304</SUB>> ]
+"680" [label = <(BLOCK,finally,finally)<SUB>305</SUB>> ]
+"681" [label = <(CONTROL_STRUCTURE,if (session != null),if (session != null))<SUB>306</SUB>> ]
+"682" [label = <(&lt;operator&gt;.notEquals,session != null)<SUB>306</SUB>> ]
+"683" [label = <(IDENTIFIER,session,session != null)<SUB>306</SUB>> ]
+"684" [label = <(LITERAL,null,session != null)<SUB>306</SUB>> ]
+"685" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>306</SUB>> ]
+"686" [label = <(disconnect,disconnect())<SUB>307</SUB>> ]
+"687" [label = <(IDENTIFIER,session,disconnect())<SUB>307</SUB>> ]
+"688" [label = <(MODIFIER,PRIVATE)> ]
+"689" [label = <(MODIFIER,VIRTUAL)> ]
+"690" [label = <(METHOD_RETURN,void)<SUB>285</SUB>> ]
+  "627" -> "68" 
+  "627" -> "628" 
+  "627" -> "629" 
+  "627" -> "630" 
+  "627" -> "688" 
+  "627" -> "689" 
+  "627" -> "690" 
+  "630" -> "631" 
+  "630" -> "632" 
+  "630" -> "636" 
+  "630" -> "637" 
+  "630" -> "640" 
+  "632" -> "633" 
+  "632" -> "634" 
+  "634" -> "67" 
+  "634" -> "635" 
+  "637" -> "638" 
+  "637" -> "639" 
+  "640" -> "641" 
+  "640" -> "680" 
+  "641" -> "642" 
+  "641" -> "73" 
+  "641" -> "645" 
+  "641" -> "648" 
+  "641" -> "676" 
+  "641" -> "678" 
+  "642" -> "643" 
+  "642" -> "644" 
+  "644" -> "69" 
+  "645" -> "646" 
+  "645" -> "647" 
+  "648" -> "649" 
+  "648" -> "653" 
+  "648" -> "664" 
+  "649" -> "650" 
+  "650" -> "651" 
+  "650" -> "652" 
+  "653" -> "654" 
+  "653" -> "657" 
+  "654" -> "655" 
+  "654" -> "656" 
+  "657" -> "72" 
+  "657" -> "658" 
+  "657" -> "659" 
+  "657" -> "660" 
+  "657" -> "663" 
+  "658" -> "70" 
+  "660" -> "661" 
+  "660" -> "662" 
+  "661" -> "71" 
+  "664" -> "665" 
+  "665" -> "666" 
+  "665" -> "669" 
+  "666" -> "667" 
+  "666" -> "668" 
+  "669" -> "76" 
+  "669" -> "670" 
+  "669" -> "671" 
+  "669" -> "672" 
+  "669" -> "675" 
+  "670" -> "74" 
+  "672" -> "673" 
+  "672" -> "674" 
+  "673" -> "75" 
+  "676" -> "677" 
+  "676" -> "77" 
+  "678" -> "679" 
+  "680" -> "681" 
+  "681" -> "682" 
+  "681" -> "685" 
+  "682" -> "683" 
+  "682" -> "684" 
+  "685" -> "686" 
+  "686" -> "687" 
+}

@@ -1,0 +1,141 @@
+digraph "getInputStream" {  
+"127" [label = <(METHOD,getInputStream)<SUB>77</SUB>> ]
+"10" [label = <(PARAM,this)<SUB>77</SUB>> ]
+"128" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>77</SUB>> ]
+"129" [label = <(CONTROL_STRUCTURE,if (isReference()),if (isReference()))<SUB>78</SUB>> ]
+"130" [label = <(isReference,isReference())<SUB>78</SUB>> ]
+"9" [label = <(IDENTIFIER,this,isReference())<SUB>78</SUB>> ]
+"131" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>78</SUB>> ]
+"132" [label = <(RETURN,return ((Resource) getCheckedRef()).getInputStream();,return ((Resource) getCheckedRef()).getInputStream();)<SUB>79</SUB>> ]
+"133" [label = <(getInputStream,getInputStream())<SUB>79</SUB>> ]
+"134" [label = <(&lt;operator&gt;.cast,(Resource) getCheckedRef())<SUB>79</SUB>> ]
+"135" [label = <(TYPE_REF,Resource,Resource)<SUB>79</SUB>> ]
+"136" [label = <(getCheckedRef,getCheckedRef())<SUB>79</SUB>> ]
+"11" [label = <(IDENTIFIER,this,getCheckedRef())<SUB>79</SUB>> ]
+"137" [label = <(LOCAL,Resource archive: org.apache.tools.ant.types.Resource)> ]
+"138" [label = <(&lt;operator&gt;.assignment,Resource archive = getArchive())<SUB>81</SUB>> ]
+"139" [label = <(IDENTIFIER,archive,Resource archive = getArchive())<SUB>81</SUB>> ]
+"140" [label = <(getArchive,getArchive())<SUB>81</SUB>> ]
+"12" [label = <(IDENTIFIER,this,getArchive())<SUB>81</SUB>> ]
+"14" [label = <(LOCAL,TarInputStream i: org.apache.tools.tar.TarInputStream)> ]
+"141" [label = <(&lt;operator&gt;.assignment,TarInputStream i = new TarInputStream(archive.getInputStream()))<SUB>82</SUB>> ]
+"142" [label = <(IDENTIFIER,i,TarInputStream i = new TarInputStream(archive.getInputStream()))<SUB>82</SUB>> ]
+"143" [label = <(&lt;operator&gt;.alloc,new TarInputStream(archive.getInputStream()))<SUB>82</SUB>> ]
+"144" [label = <(&lt;init&gt;,new TarInputStream(archive.getInputStream()))<SUB>82</SUB>> ]
+"13" [label = <(IDENTIFIER,i,new TarInputStream(archive.getInputStream()))<SUB>82</SUB>> ]
+"145" [label = <(getInputStream,getInputStream())<SUB>82</SUB>> ]
+"146" [label = <(IDENTIFIER,archive,getInputStream())<SUB>82</SUB>> ]
+"147" [label = <(LOCAL,TarEntry te: org.apache.tools.tar.TarEntry)> ]
+"148" [label = <(&lt;operator&gt;.assignment,TarEntry te = null)<SUB>83</SUB>> ]
+"149" [label = <(IDENTIFIER,te,TarEntry te = null)<SUB>83</SUB>> ]
+"150" [label = <(LITERAL,null,TarEntry te = null)<SUB>83</SUB>> ]
+"151" [label = <(CONTROL_STRUCTURE,while ((te = i.getNextEntry()) != null),while ((te = i.getNextEntry()) != null))<SUB>84</SUB>> ]
+"152" [label = <(&lt;operator&gt;.notEquals,(te = i.getNextEntry()) != null)<SUB>84</SUB>> ]
+"153" [label = <(&lt;operator&gt;.assignment,te = getNextEntry())<SUB>84</SUB>> ]
+"154" [label = <(IDENTIFIER,te,te = getNextEntry())<SUB>84</SUB>> ]
+"155" [label = <(getNextEntry,getNextEntry())<SUB>84</SUB>> ]
+"156" [label = <(IDENTIFIER,i,getNextEntry())<SUB>84</SUB>> ]
+"157" [label = <(LITERAL,null,(te = i.getNextEntry()) != null)<SUB>84</SUB>> ]
+"158" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>84</SUB>> ]
+"159" [label = <(CONTROL_STRUCTURE,if (te.getName().equals(getName())),if (te.getName().equals(getName())))<SUB>85</SUB>> ]
+"160" [label = <(equals,equals(getName()))<SUB>85</SUB>> ]
+"161" [label = <(getName,getName())<SUB>85</SUB>> ]
+"162" [label = <(IDENTIFIER,te,getName())<SUB>85</SUB>> ]
+"163" [label = <(getName,getName())<SUB>85</SUB>> ]
+"15" [label = <(IDENTIFIER,this,getName())<SUB>85</SUB>> ]
+"164" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>85</SUB>> ]
+"165" [label = <(RETURN,return i;,return i;)<SUB>86</SUB>> ]
+"166" [label = <(IDENTIFIER,i,return i;)<SUB>86</SUB>> ]
+"167" [label = <(close,close(i))<SUB>90</SUB>> ]
+"168" [label = <(IDENTIFIER,FileUtils,close(i))<SUB>90</SUB>> ]
+"169" [label = <(IDENTIFIER,i,close(i))<SUB>90</SUB>> ]
+"170" [label = <(&lt;operator&gt;.throw,throw new BuildException(&quot;no entry &quot; + getName() + &quot; in &quot; + getArchive());)<SUB>91</SUB>> ]
+"171" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>91</SUB>> ]
+"172" [label = <(&lt;operator&gt;.assignment,&lt;empty&gt;)> ]
+"173" [label = <(IDENTIFIER,$obj1,&lt;empty&gt;)> ]
+"174" [label = <(&lt;operator&gt;.alloc,new BuildException(&quot;no entry &quot; + getName() + &quot; in &quot; + getArchive()))<SUB>91</SUB>> ]
+"175" [label = <(&lt;init&gt;,new BuildException(&quot;no entry &quot; + getName() + &quot; in &quot; + getArchive()))<SUB>91</SUB>> ]
+"176" [label = <(IDENTIFIER,$obj1,new BuildException(&quot;no entry &quot; + getName() + &quot; in &quot; + getArchive()))> ]
+"177" [label = <(&lt;operator&gt;.addition,&quot;no entry &quot; + getName() + &quot; in &quot; + getArchive())<SUB>91</SUB>> ]
+"178" [label = <(&lt;operator&gt;.addition,&quot;no entry &quot; + getName() + &quot; in &quot;)<SUB>91</SUB>> ]
+"179" [label = <(&lt;operator&gt;.addition,&quot;no entry &quot; + getName())<SUB>91</SUB>> ]
+"180" [label = <(LITERAL,&quot;no entry &quot;,&quot;no entry &quot; + getName())<SUB>91</SUB>> ]
+"181" [label = <(getName,getName())<SUB>91</SUB>> ]
+"16" [label = <(IDENTIFIER,this,getName())<SUB>91</SUB>> ]
+"182" [label = <(LITERAL,&quot; in &quot;,&quot;no entry &quot; + getName() + &quot; in &quot;)<SUB>91</SUB>> ]
+"183" [label = <(getArchive,getArchive())<SUB>92</SUB>> ]
+"17" [label = <(IDENTIFIER,this,getArchive())<SUB>92</SUB>> ]
+"184" [label = <(IDENTIFIER,$obj1,&lt;empty&gt;)> ]
+"185" [label = <(MODIFIER,PUBLIC)> ]
+"186" [label = <(MODIFIER,VIRTUAL)> ]
+"187" [label = <(METHOD_RETURN,java.io.InputStream)<SUB>77</SUB>> ]
+  "127" -> "10" 
+  "127" -> "128" 
+  "127" -> "185" 
+  "127" -> "186" 
+  "127" -> "187" 
+  "128" -> "129" 
+  "128" -> "137" 
+  "128" -> "138" 
+  "128" -> "14" 
+  "128" -> "141" 
+  "128" -> "144" 
+  "128" -> "147" 
+  "128" -> "148" 
+  "128" -> "151" 
+  "128" -> "167" 
+  "128" -> "170" 
+  "129" -> "130" 
+  "129" -> "131" 
+  "130" -> "9" 
+  "131" -> "132" 
+  "132" -> "133" 
+  "133" -> "134" 
+  "134" -> "135" 
+  "134" -> "136" 
+  "136" -> "11" 
+  "138" -> "139" 
+  "138" -> "140" 
+  "140" -> "12" 
+  "141" -> "142" 
+  "141" -> "143" 
+  "144" -> "13" 
+  "144" -> "145" 
+  "145" -> "146" 
+  "148" -> "149" 
+  "148" -> "150" 
+  "151" -> "152" 
+  "151" -> "158" 
+  "152" -> "153" 
+  "152" -> "157" 
+  "153" -> "154" 
+  "153" -> "155" 
+  "155" -> "156" 
+  "158" -> "159" 
+  "159" -> "160" 
+  "159" -> "164" 
+  "160" -> "161" 
+  "160" -> "163" 
+  "161" -> "162" 
+  "163" -> "15" 
+  "164" -> "165" 
+  "165" -> "166" 
+  "167" -> "168" 
+  "167" -> "169" 
+  "170" -> "171" 
+  "171" -> "172" 
+  "171" -> "175" 
+  "171" -> "184" 
+  "172" -> "173" 
+  "172" -> "174" 
+  "175" -> "176" 
+  "175" -> "177" 
+  "177" -> "178" 
+  "177" -> "183" 
+  "178" -> "179" 
+  "178" -> "182" 
+  "179" -> "180" 
+  "179" -> "181" 
+  "181" -> "16" 
+  "183" -> "17" 
+}

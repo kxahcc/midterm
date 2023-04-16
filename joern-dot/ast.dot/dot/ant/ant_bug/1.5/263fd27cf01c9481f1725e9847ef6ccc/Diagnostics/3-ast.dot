@@ -1,0 +1,137 @@
+digraph "listLibraries" {  
+"101" [label = <(METHOD,listLibraries)<SUB>121</SUB>> ]
+"102" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>121</SUB>> ]
+"103" [label = <(LOCAL,String home: java.lang.String)> ]
+"104" [label = <(&lt;operator&gt;.assignment,String home = System.getProperty(&quot;ant.home&quot;))<SUB>122</SUB>> ]
+"105" [label = <(IDENTIFIER,home,String home = System.getProperty(&quot;ant.home&quot;))<SUB>122</SUB>> ]
+"106" [label = <(getProperty,System.getProperty(&quot;ant.home&quot;))<SUB>122</SUB>> ]
+"107" [label = <(IDENTIFIER,System,System.getProperty(&quot;ant.home&quot;))<SUB>122</SUB>> ]
+"108" [label = <(LITERAL,&quot;ant.home&quot;,System.getProperty(&quot;ant.home&quot;))<SUB>122</SUB>> ]
+"4" [label = <(LOCAL,File libDir: java.io.File)> ]
+"109" [label = <(&lt;operator&gt;.assignment,File libDir = new File(home, &quot;lib&quot;))<SUB>123</SUB>> ]
+"110" [label = <(IDENTIFIER,libDir,File libDir = new File(home, &quot;lib&quot;))<SUB>123</SUB>> ]
+"111" [label = <(&lt;operator&gt;.alloc,new File(home, &quot;lib&quot;))<SUB>123</SUB>> ]
+"112" [label = <(&lt;init&gt;,new File(home, &quot;lib&quot;))<SUB>123</SUB>> ]
+"3" [label = <(IDENTIFIER,libDir,new File(home, &quot;lib&quot;))<SUB>123</SUB>> ]
+"113" [label = <(IDENTIFIER,home,new File(home, &quot;lib&quot;))<SUB>123</SUB>> ]
+"114" [label = <(LITERAL,&quot;lib&quot;,new File(home, &quot;lib&quot;))<SUB>123</SUB>> ]
+"6" [label = <(LOCAL,FilenameFilter filter: java.io.FilenameFilter)> ]
+"115" [label = <(&lt;operator&gt;.assignment,FilenameFilter filter = new FilenameFilter() {\012\012    public boolean accept(File dir, String name) {\012        return name.endsWith(&quot;.jar&quot;);\012    }\012})<SUB>124</SUB>> ]
+"116" [label = <(IDENTIFIER,filter,FilenameFilter filter = new FilenameFilter() {\012\012    public boolean accept(File dir, String name) {\012        return name.endsWith(&quot;.jar&quot;);\012    }\012})<SUB>124</SUB>> ]
+"117" [label = <(&lt;operator&gt;.alloc,new FilenameFilter() {\012\012    public boolean accept(File dir, String name) {\012        return name.endsWith(&quot;.jar&quot;);\012    }\012})<SUB>124</SUB>> ]
+"118" [label = <(&lt;init&gt;,new FilenameFilter() {\012\012    public boolean accept(File dir, String name) {\012        return name.endsWith(&quot;.jar&quot;);\012    }\012})<SUB>124</SUB>> ]
+"5" [label = <(IDENTIFIER,filter,new FilenameFilter() {\012\012    public boolean accept(File dir, String name) {\012        return name.endsWith(&quot;.jar&quot;);\012    }\012})<SUB>124</SUB>> ]
+"119" [label = <(LOCAL,String[] filenames: java.lang.String[])> ]
+"120" [label = <(&lt;operator&gt;.assignment,String[] filenames = libDir.list(filter))<SUB>130</SUB>> ]
+"121" [label = <(IDENTIFIER,filenames,String[] filenames = libDir.list(filter))<SUB>130</SUB>> ]
+"122" [label = <(list,libDir.list(filter))<SUB>130</SUB>> ]
+"123" [label = <(IDENTIFIER,libDir,libDir.list(filter))<SUB>130</SUB>> ]
+"124" [label = <(IDENTIFIER,filter,libDir.list(filter))<SUB>130</SUB>> ]
+"125" [label = <(LOCAL,File[] files: java.io.File[])> ]
+"126" [label = <(&lt;operator&gt;.assignment,File[] files = new File[filenames.length])<SUB>131</SUB>> ]
+"127" [label = <(IDENTIFIER,files,File[] files = new File[filenames.length])<SUB>131</SUB>> ]
+"128" [label = <(&lt;operator&gt;.alloc,new File[filenames.length])> ]
+"129" [label = <(&lt;operator&gt;.fieldAccess,filenames.length)<SUB>131</SUB>> ]
+"130" [label = <(IDENTIFIER,filenames,new File[filenames.length])<SUB>131</SUB>> ]
+"131" [label = <(FIELD_IDENTIFIER,length,length)<SUB>131</SUB>> ]
+"132" [label = <(CONTROL_STRUCTURE,for (int i = 0; Some(i &lt; filenames.length); i++),for (int i = 0; Some(i &lt; filenames.length); i++))<SUB>132</SUB>> ]
+"133" [label = <(LOCAL,int i: int)> ]
+"134" [label = <(&lt;operator&gt;.assignment,int i = 0)<SUB>132</SUB>> ]
+"135" [label = <(IDENTIFIER,i,int i = 0)<SUB>132</SUB>> ]
+"136" [label = <(LITERAL,0,int i = 0)<SUB>132</SUB>> ]
+"137" [label = <(&lt;operator&gt;.lessThan,i &lt; filenames.length)<SUB>132</SUB>> ]
+"138" [label = <(IDENTIFIER,i,i &lt; filenames.length)<SUB>132</SUB>> ]
+"139" [label = <(&lt;operator&gt;.fieldAccess,filenames.length)<SUB>132</SUB>> ]
+"140" [label = <(IDENTIFIER,filenames,i &lt; filenames.length)<SUB>132</SUB>> ]
+"141" [label = <(FIELD_IDENTIFIER,length,length)<SUB>132</SUB>> ]
+"142" [label = <(&lt;operator&gt;.postIncrement,i++)<SUB>132</SUB>> ]
+"143" [label = <(IDENTIFIER,i,i++)<SUB>132</SUB>> ]
+"144" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>132</SUB>> ]
+"145" [label = <(&lt;operator&gt;.assignment,files[i] = new File(libDir, filenames[i]))<SUB>133</SUB>> ]
+"146" [label = <(&lt;operator&gt;.indexAccess,files[i])<SUB>133</SUB>> ]
+"147" [label = <(IDENTIFIER,files,files[i] = new File(libDir, filenames[i]))<SUB>133</SUB>> ]
+"148" [label = <(IDENTIFIER,i,files[i] = new File(libDir, filenames[i]))<SUB>133</SUB>> ]
+"149" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>133</SUB>> ]
+"150" [label = <(&lt;operator&gt;.assignment,&lt;empty&gt;)> ]
+"151" [label = <(IDENTIFIER,$obj3,&lt;empty&gt;)> ]
+"152" [label = <(&lt;operator&gt;.alloc,new File(libDir, filenames[i]))<SUB>133</SUB>> ]
+"153" [label = <(&lt;init&gt;,new File(libDir, filenames[i]))<SUB>133</SUB>> ]
+"154" [label = <(IDENTIFIER,$obj3,new File(libDir, filenames[i]))> ]
+"155" [label = <(IDENTIFIER,libDir,new File(libDir, filenames[i]))<SUB>133</SUB>> ]
+"156" [label = <(&lt;operator&gt;.indexAccess,filenames[i])<SUB>133</SUB>> ]
+"157" [label = <(IDENTIFIER,filenames,new File(libDir, filenames[i]))<SUB>133</SUB>> ]
+"158" [label = <(IDENTIFIER,i,new File(libDir, filenames[i]))<SUB>133</SUB>> ]
+"159" [label = <(IDENTIFIER,$obj3,&lt;empty&gt;)> ]
+"160" [label = <(RETURN,return files;,return files;)<SUB>135</SUB>> ]
+"161" [label = <(IDENTIFIER,files,return files;)<SUB>135</SUB>> ]
+"162" [label = <(MODIFIER,PUBLIC)> ]
+"163" [label = <(MODIFIER,STATIC)> ]
+"164" [label = <(METHOD_RETURN,java.io.File[])<SUB>121</SUB>> ]
+  "101" -> "102" 
+  "101" -> "162" 
+  "101" -> "163" 
+  "101" -> "164" 
+  "102" -> "103" 
+  "102" -> "104" 
+  "102" -> "4" 
+  "102" -> "109" 
+  "102" -> "112" 
+  "102" -> "6" 
+  "102" -> "115" 
+  "102" -> "118" 
+  "102" -> "119" 
+  "102" -> "120" 
+  "102" -> "125" 
+  "102" -> "126" 
+  "102" -> "132" 
+  "102" -> "160" 
+  "104" -> "105" 
+  "104" -> "106" 
+  "106" -> "107" 
+  "106" -> "108" 
+  "109" -> "110" 
+  "109" -> "111" 
+  "112" -> "3" 
+  "112" -> "113" 
+  "112" -> "114" 
+  "115" -> "116" 
+  "115" -> "117" 
+  "118" -> "5" 
+  "120" -> "121" 
+  "120" -> "122" 
+  "122" -> "123" 
+  "122" -> "124" 
+  "126" -> "127" 
+  "126" -> "128" 
+  "128" -> "129" 
+  "129" -> "130" 
+  "129" -> "131" 
+  "132" -> "133" 
+  "132" -> "134" 
+  "132" -> "137" 
+  "132" -> "142" 
+  "132" -> "144" 
+  "134" -> "135" 
+  "134" -> "136" 
+  "137" -> "138" 
+  "137" -> "139" 
+  "139" -> "140" 
+  "139" -> "141" 
+  "142" -> "143" 
+  "144" -> "145" 
+  "145" -> "146" 
+  "145" -> "149" 
+  "146" -> "147" 
+  "146" -> "148" 
+  "149" -> "150" 
+  "149" -> "153" 
+  "149" -> "159" 
+  "150" -> "151" 
+  "150" -> "152" 
+  "153" -> "154" 
+  "153" -> "155" 
+  "153" -> "156" 
+  "156" -> "157" 
+  "156" -> "158" 
+  "160" -> "161" 
+}

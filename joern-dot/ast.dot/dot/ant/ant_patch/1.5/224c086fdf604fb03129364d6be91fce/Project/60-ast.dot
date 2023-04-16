@@ -1,0 +1,155 @@
+digraph "translatePath" {  
+"2487" [label = <(METHOD,translatePath)<SUB>1363</SUB>> ]
+"2488" [label = <(PARAM,String toProcess)<SUB>1363</SUB>> ]
+"2489" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>1363</SUB>> ]
+"2490" [label = <(CONTROL_STRUCTURE,if (toProcess == null || toProcess.length() == 0),if (toProcess == null || toProcess.length() == 0))<SUB>1364</SUB>> ]
+"2491" [label = <(&lt;operator&gt;.logicalOr,toProcess == null || toProcess.length() == 0)<SUB>1364</SUB>> ]
+"2492" [label = <(&lt;operator&gt;.equals,toProcess == null)<SUB>1364</SUB>> ]
+"2493" [label = <(IDENTIFIER,toProcess,toProcess == null)<SUB>1364</SUB>> ]
+"2494" [label = <(LITERAL,null,toProcess == null)<SUB>1364</SUB>> ]
+"2495" [label = <(&lt;operator&gt;.equals,toProcess.length() == 0)<SUB>1364</SUB>> ]
+"2496" [label = <(length,toProcess.length())<SUB>1364</SUB>> ]
+"2497" [label = <(IDENTIFIER,toProcess,toProcess.length())<SUB>1364</SUB>> ]
+"2498" [label = <(LITERAL,0,toProcess.length() == 0)<SUB>1364</SUB>> ]
+"2499" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>1364</SUB>> ]
+"2500" [label = <(RETURN,return &quot;&quot;;,return &quot;&quot;;)<SUB>1365</SUB>> ]
+"2501" [label = <(LITERAL,&quot;&quot;,return &quot;&quot;;)<SUB>1365</SUB>> ]
+"113" [label = <(LOCAL,StringBuffer path: java.lang.StringBuffer)> ]
+"2502" [label = <(&lt;operator&gt;.assignment,StringBuffer path = new StringBuffer(toProcess.length() + 50))<SUB>1368</SUB>> ]
+"2503" [label = <(IDENTIFIER,path,StringBuffer path = new StringBuffer(toProcess.length() + 50))<SUB>1368</SUB>> ]
+"2504" [label = <(&lt;operator&gt;.alloc,new StringBuffer(toProcess.length() + 50))<SUB>1368</SUB>> ]
+"2505" [label = <(&lt;init&gt;,new StringBuffer(toProcess.length() + 50))<SUB>1368</SUB>> ]
+"112" [label = <(IDENTIFIER,path,new StringBuffer(toProcess.length() + 50))<SUB>1368</SUB>> ]
+"2506" [label = <(&lt;operator&gt;.addition,toProcess.length() + 50)<SUB>1368</SUB>> ]
+"2507" [label = <(length,toProcess.length())<SUB>1368</SUB>> ]
+"2508" [label = <(IDENTIFIER,toProcess,toProcess.length())<SUB>1368</SUB>> ]
+"2509" [label = <(LITERAL,50,toProcess.length() + 50)<SUB>1368</SUB>> ]
+"115" [label = <(LOCAL,PathTokenizer tokenizer: ANY)> ]
+"2510" [label = <(&lt;operator&gt;.assignment,ANY tokenizer = new PathTokenizer(toProcess))<SUB>1369</SUB>> ]
+"2511" [label = <(IDENTIFIER,tokenizer,ANY tokenizer = new PathTokenizer(toProcess))<SUB>1369</SUB>> ]
+"2512" [label = <(&lt;operator&gt;.alloc,new PathTokenizer(toProcess))<SUB>1369</SUB>> ]
+"2513" [label = <(&lt;init&gt;,new PathTokenizer(toProcess))<SUB>1369</SUB>> ]
+"114" [label = <(IDENTIFIER,tokenizer,new PathTokenizer(toProcess))<SUB>1369</SUB>> ]
+"2514" [label = <(IDENTIFIER,toProcess,new PathTokenizer(toProcess))<SUB>1369</SUB>> ]
+"2515" [label = <(CONTROL_STRUCTURE,while (tokenizer.hasMoreTokens()),while (tokenizer.hasMoreTokens()))<SUB>1370</SUB>> ]
+"2516" [label = <(hasMoreTokens,hasMoreTokens())<SUB>1370</SUB>> ]
+"2517" [label = <(IDENTIFIER,tokenizer,hasMoreTokens())<SUB>1370</SUB>> ]
+"2518" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>1370</SUB>> ]
+"2519" [label = <(LOCAL,String pathComponent: java.lang.String)> ]
+"2520" [label = <(&lt;operator&gt;.assignment,String pathComponent = nextToken())<SUB>1371</SUB>> ]
+"2521" [label = <(IDENTIFIER,pathComponent,String pathComponent = nextToken())<SUB>1371</SUB>> ]
+"2522" [label = <(nextToken,nextToken())<SUB>1371</SUB>> ]
+"2523" [label = <(IDENTIFIER,tokenizer,nextToken())<SUB>1371</SUB>> ]
+"2524" [label = <(&lt;operator&gt;.assignment,pathComponent = pathComponent.replace('/', File.separatorChar))<SUB>1372</SUB>> ]
+"2525" [label = <(IDENTIFIER,pathComponent,pathComponent = pathComponent.replace('/', File.separatorChar))<SUB>1372</SUB>> ]
+"2526" [label = <(replace,pathComponent.replace('/', File.separatorChar))<SUB>1372</SUB>> ]
+"2527" [label = <(IDENTIFIER,pathComponent,pathComponent.replace('/', File.separatorChar))<SUB>1372</SUB>> ]
+"2528" [label = <(LITERAL,'/',pathComponent.replace('/', File.separatorChar))<SUB>1372</SUB>> ]
+"2529" [label = <(&lt;operator&gt;.fieldAccess,File.separatorChar)<SUB>1372</SUB>> ]
+"2530" [label = <(IDENTIFIER,File,pathComponent.replace('/', File.separatorChar))<SUB>1372</SUB>> ]
+"2531" [label = <(FIELD_IDENTIFIER,separatorChar,separatorChar)<SUB>1372</SUB>> ]
+"2532" [label = <(&lt;operator&gt;.assignment,pathComponent = pathComponent.replace('\\', File.separatorChar))<SUB>1373</SUB>> ]
+"2533" [label = <(IDENTIFIER,pathComponent,pathComponent = pathComponent.replace('\\', File.separatorChar))<SUB>1373</SUB>> ]
+"2534" [label = <(replace,pathComponent.replace('\\', File.separatorChar))<SUB>1373</SUB>> ]
+"2535" [label = <(IDENTIFIER,pathComponent,pathComponent.replace('\\', File.separatorChar))<SUB>1373</SUB>> ]
+"2536" [label = <(LITERAL,'\\',pathComponent.replace('\\', File.separatorChar))<SUB>1373</SUB>> ]
+"2537" [label = <(&lt;operator&gt;.fieldAccess,File.separatorChar)<SUB>1373</SUB>> ]
+"2538" [label = <(IDENTIFIER,File,pathComponent.replace('\\', File.separatorChar))<SUB>1373</SUB>> ]
+"2539" [label = <(FIELD_IDENTIFIER,separatorChar,separatorChar)<SUB>1373</SUB>> ]
+"2540" [label = <(CONTROL_STRUCTURE,if (path.length() != 0),if (path.length() != 0))<SUB>1374</SUB>> ]
+"2541" [label = <(&lt;operator&gt;.notEquals,path.length() != 0)<SUB>1374</SUB>> ]
+"2542" [label = <(length,path.length())<SUB>1374</SUB>> ]
+"2543" [label = <(IDENTIFIER,path,path.length())<SUB>1374</SUB>> ]
+"2544" [label = <(LITERAL,0,path.length() != 0)<SUB>1374</SUB>> ]
+"2545" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>1374</SUB>> ]
+"2546" [label = <(append,path.append(File.pathSeparatorChar))<SUB>1375</SUB>> ]
+"2547" [label = <(IDENTIFIER,path,path.append(File.pathSeparatorChar))<SUB>1375</SUB>> ]
+"2548" [label = <(&lt;operator&gt;.fieldAccess,File.pathSeparatorChar)<SUB>1375</SUB>> ]
+"2549" [label = <(IDENTIFIER,File,path.append(File.pathSeparatorChar))<SUB>1375</SUB>> ]
+"2550" [label = <(FIELD_IDENTIFIER,pathSeparatorChar,pathSeparatorChar)<SUB>1375</SUB>> ]
+"2551" [label = <(append,path.append(pathComponent))<SUB>1377</SUB>> ]
+"2552" [label = <(IDENTIFIER,path,path.append(pathComponent))<SUB>1377</SUB>> ]
+"2553" [label = <(IDENTIFIER,pathComponent,path.append(pathComponent))<SUB>1377</SUB>> ]
+"2554" [label = <(RETURN,return path.toString();,return path.toString();)<SUB>1380</SUB>> ]
+"2555" [label = <(toString,path.toString())<SUB>1380</SUB>> ]
+"2556" [label = <(IDENTIFIER,path,path.toString())<SUB>1380</SUB>> ]
+"2557" [label = <(MODIFIER,PUBLIC)> ]
+"2558" [label = <(MODIFIER,STATIC)> ]
+"2559" [label = <(METHOD_RETURN,java.lang.String)<SUB>1363</SUB>> ]
+  "2487" -> "2488" 
+  "2487" -> "2489" 
+  "2487" -> "2557" 
+  "2487" -> "2558" 
+  "2487" -> "2559" 
+  "2489" -> "2490" 
+  "2489" -> "113" 
+  "2489" -> "2502" 
+  "2489" -> "2505" 
+  "2489" -> "115" 
+  "2489" -> "2510" 
+  "2489" -> "2513" 
+  "2489" -> "2515" 
+  "2489" -> "2554" 
+  "2490" -> "2491" 
+  "2490" -> "2499" 
+  "2491" -> "2492" 
+  "2491" -> "2495" 
+  "2492" -> "2493" 
+  "2492" -> "2494" 
+  "2495" -> "2496" 
+  "2495" -> "2498" 
+  "2496" -> "2497" 
+  "2499" -> "2500" 
+  "2500" -> "2501" 
+  "2502" -> "2503" 
+  "2502" -> "2504" 
+  "2505" -> "112" 
+  "2505" -> "2506" 
+  "2506" -> "2507" 
+  "2506" -> "2509" 
+  "2507" -> "2508" 
+  "2510" -> "2511" 
+  "2510" -> "2512" 
+  "2513" -> "114" 
+  "2513" -> "2514" 
+  "2515" -> "2516" 
+  "2515" -> "2518" 
+  "2516" -> "2517" 
+  "2518" -> "2519" 
+  "2518" -> "2520" 
+  "2518" -> "2524" 
+  "2518" -> "2532" 
+  "2518" -> "2540" 
+  "2518" -> "2551" 
+  "2520" -> "2521" 
+  "2520" -> "2522" 
+  "2522" -> "2523" 
+  "2524" -> "2525" 
+  "2524" -> "2526" 
+  "2526" -> "2527" 
+  "2526" -> "2528" 
+  "2526" -> "2529" 
+  "2529" -> "2530" 
+  "2529" -> "2531" 
+  "2532" -> "2533" 
+  "2532" -> "2534" 
+  "2534" -> "2535" 
+  "2534" -> "2536" 
+  "2534" -> "2537" 
+  "2537" -> "2538" 
+  "2537" -> "2539" 
+  "2540" -> "2541" 
+  "2540" -> "2545" 
+  "2541" -> "2542" 
+  "2541" -> "2544" 
+  "2542" -> "2543" 
+  "2545" -> "2546" 
+  "2546" -> "2547" 
+  "2546" -> "2548" 
+  "2548" -> "2549" 
+  "2548" -> "2550" 
+  "2551" -> "2552" 
+  "2551" -> "2553" 
+  "2554" -> "2555" 
+  "2555" -> "2556" 
+}

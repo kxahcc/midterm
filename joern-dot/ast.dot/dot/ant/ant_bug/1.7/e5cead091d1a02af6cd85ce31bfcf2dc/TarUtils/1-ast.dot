@@ -1,0 +1,99 @@
+digraph "parseName" {  
+"106" [label = <(METHOD,parseName)<SUB>76</SUB>> ]
+"107" [label = <(PARAM,byte[] header)<SUB>76</SUB>> ]
+"108" [label = <(PARAM,int offset)<SUB>76</SUB>> ]
+"109" [label = <(PARAM,int length)<SUB>76</SUB>> ]
+"110" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>76</SUB>> ]
+"4" [label = <(LOCAL,StringBuffer result: java.lang.StringBuffer)> ]
+"111" [label = <(&lt;operator&gt;.assignment,StringBuffer result = new StringBuffer(length))<SUB>77</SUB>> ]
+"112" [label = <(IDENTIFIER,result,StringBuffer result = new StringBuffer(length))<SUB>77</SUB>> ]
+"113" [label = <(&lt;operator&gt;.alloc,new StringBuffer(length))<SUB>77</SUB>> ]
+"114" [label = <(&lt;init&gt;,new StringBuffer(length))<SUB>77</SUB>> ]
+"3" [label = <(IDENTIFIER,result,new StringBuffer(length))<SUB>77</SUB>> ]
+"115" [label = <(IDENTIFIER,length,new StringBuffer(length))<SUB>77</SUB>> ]
+"116" [label = <(LOCAL,int end: int)> ]
+"117" [label = <(&lt;operator&gt;.assignment,int end = offset + length)<SUB>78</SUB>> ]
+"118" [label = <(IDENTIFIER,end,int end = offset + length)<SUB>78</SUB>> ]
+"119" [label = <(&lt;operator&gt;.addition,offset + length)<SUB>78</SUB>> ]
+"120" [label = <(IDENTIFIER,offset,offset + length)<SUB>78</SUB>> ]
+"121" [label = <(IDENTIFIER,length,offset + length)<SUB>78</SUB>> ]
+"122" [label = <(CONTROL_STRUCTURE,for (int i = offset; Some(i &lt; end); ++i),for (int i = offset; Some(i &lt; end); ++i))<SUB>80</SUB>> ]
+"123" [label = <(LOCAL,int i: int)> ]
+"124" [label = <(&lt;operator&gt;.assignment,int i = offset)<SUB>80</SUB>> ]
+"125" [label = <(IDENTIFIER,i,int i = offset)<SUB>80</SUB>> ]
+"126" [label = <(IDENTIFIER,offset,int i = offset)<SUB>80</SUB>> ]
+"127" [label = <(&lt;operator&gt;.lessThan,i &lt; end)<SUB>80</SUB>> ]
+"128" [label = <(IDENTIFIER,i,i &lt; end)<SUB>80</SUB>> ]
+"129" [label = <(IDENTIFIER,end,i &lt; end)<SUB>80</SUB>> ]
+"130" [label = <(&lt;operator&gt;.preIncrement,++i)<SUB>80</SUB>> ]
+"131" [label = <(IDENTIFIER,i,++i)<SUB>80</SUB>> ]
+"132" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>80</SUB>> ]
+"133" [label = <(CONTROL_STRUCTURE,if (header[i] == 0),if (header[i] == 0))<SUB>81</SUB>> ]
+"134" [label = <(&lt;operator&gt;.equals,header[i] == 0)<SUB>81</SUB>> ]
+"135" [label = <(&lt;operator&gt;.indexAccess,header[i])<SUB>81</SUB>> ]
+"136" [label = <(IDENTIFIER,header,header[i] == 0)<SUB>81</SUB>> ]
+"137" [label = <(IDENTIFIER,i,header[i] == 0)<SUB>81</SUB>> ]
+"138" [label = <(LITERAL,0,header[i] == 0)<SUB>81</SUB>> ]
+"139" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>81</SUB>> ]
+"140" [label = <(CONTROL_STRUCTURE,break;,break;)<SUB>82</SUB>> ]
+"141" [label = <(append,result.append((char) header[i]))<SUB>85</SUB>> ]
+"142" [label = <(IDENTIFIER,result,result.append((char) header[i]))<SUB>85</SUB>> ]
+"143" [label = <(&lt;operator&gt;.cast,(char) header[i])<SUB>85</SUB>> ]
+"144" [label = <(TYPE_REF,char,char)<SUB>85</SUB>> ]
+"145" [label = <(&lt;operator&gt;.indexAccess,header[i])<SUB>85</SUB>> ]
+"146" [label = <(IDENTIFIER,header,(char) header[i])<SUB>85</SUB>> ]
+"147" [label = <(IDENTIFIER,i,(char) header[i])<SUB>85</SUB>> ]
+"148" [label = <(RETURN,return result;,return result;)<SUB>88</SUB>> ]
+"149" [label = <(IDENTIFIER,result,return result;)<SUB>88</SUB>> ]
+"150" [label = <(MODIFIER,PUBLIC)> ]
+"151" [label = <(MODIFIER,STATIC)> ]
+"152" [label = <(METHOD_RETURN,java.lang.StringBuffer)<SUB>76</SUB>> ]
+  "106" -> "107" 
+  "106" -> "108" 
+  "106" -> "109" 
+  "106" -> "110" 
+  "106" -> "150" 
+  "106" -> "151" 
+  "106" -> "152" 
+  "110" -> "4" 
+  "110" -> "111" 
+  "110" -> "114" 
+  "110" -> "116" 
+  "110" -> "117" 
+  "110" -> "122" 
+  "110" -> "148" 
+  "111" -> "112" 
+  "111" -> "113" 
+  "114" -> "3" 
+  "114" -> "115" 
+  "117" -> "118" 
+  "117" -> "119" 
+  "119" -> "120" 
+  "119" -> "121" 
+  "122" -> "123" 
+  "122" -> "124" 
+  "122" -> "127" 
+  "122" -> "130" 
+  "122" -> "132" 
+  "124" -> "125" 
+  "124" -> "126" 
+  "127" -> "128" 
+  "127" -> "129" 
+  "130" -> "131" 
+  "132" -> "133" 
+  "132" -> "141" 
+  "133" -> "134" 
+  "133" -> "139" 
+  "134" -> "135" 
+  "134" -> "138" 
+  "135" -> "136" 
+  "135" -> "137" 
+  "139" -> "140" 
+  "141" -> "142" 
+  "141" -> "143" 
+  "143" -> "144" 
+  "143" -> "145" 
+  "145" -> "146" 
+  "145" -> "147" 
+  "148" -> "149" 
+}

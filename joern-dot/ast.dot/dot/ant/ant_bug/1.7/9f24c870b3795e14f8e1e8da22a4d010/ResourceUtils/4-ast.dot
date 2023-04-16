@@ -1,0 +1,509 @@
+digraph "selectOutOfDateSources" {  
+"188" [label = <(METHOD,selectOutOfDateSources)<SUB>143</SUB>> ]
+"189" [label = <(PARAM,ProjectComponent logTo)<SUB>143</SUB>> ]
+"190" [label = <(PARAM,ResourceCollection source)<SUB>144</SUB>> ]
+"191" [label = <(PARAM,FileNameMapper mapper)<SUB>145</SUB>> ]
+"192" [label = <(PARAM,ResourceFactory targets)<SUB>146</SUB>> ]
+"193" [label = <(PARAM,long granularity)<SUB>147</SUB>> ]
+"194" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>147</SUB>> ]
+"195" [label = <(CONTROL_STRUCTURE,if (source.size() == 0),if (source.size() == 0))<SUB>148</SUB>> ]
+"196" [label = <(&lt;operator&gt;.equals,source.size() == 0)<SUB>148</SUB>> ]
+"197" [label = <(size,size())<SUB>148</SUB>> ]
+"198" [label = <(IDENTIFIER,source,size())<SUB>148</SUB>> ]
+"199" [label = <(LITERAL,0,source.size() == 0)<SUB>148</SUB>> ]
+"200" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>148</SUB>> ]
+"201" [label = <(log,log(&quot;No sources found.&quot;, Project.MSG_VERBOSE))<SUB>149</SUB>> ]
+"202" [label = <(IDENTIFIER,logTo,log(&quot;No sources found.&quot;, Project.MSG_VERBOSE))<SUB>149</SUB>> ]
+"203" [label = <(LITERAL,&quot;No sources found.&quot;,log(&quot;No sources found.&quot;, Project.MSG_VERBOSE))<SUB>149</SUB>> ]
+"204" [label = <(&lt;operator&gt;.fieldAccess,Project.MSG_VERBOSE)<SUB>149</SUB>> ]
+"205" [label = <(IDENTIFIER,Project,log(&quot;No sources found.&quot;, Project.MSG_VERBOSE))<SUB>149</SUB>> ]
+"206" [label = <(FIELD_IDENTIFIER,MSG_VERBOSE,MSG_VERBOSE)<SUB>149</SUB>> ]
+"207" [label = <(RETURN,return Resources.NONE;,return Resources.NONE;)<SUB>150</SUB>> ]
+"208" [label = <(&lt;operator&gt;.fieldAccess,Resources.NONE)<SUB>150</SUB>> ]
+"209" [label = <(IDENTIFIER,Resources,return Resources.NONE;)<SUB>150</SUB>> ]
+"210" [label = <(FIELD_IDENTIFIER,NONE,NONE)<SUB>150</SUB>> ]
+"211" [label = <(&lt;operator&gt;.assignment,source = getInstance(source))<SUB>152</SUB>> ]
+"212" [label = <(IDENTIFIER,source,source = getInstance(source))<SUB>152</SUB>> ]
+"213" [label = <(getInstance,getInstance(source))<SUB>152</SUB>> ]
+"214" [label = <(IDENTIFIER,Union,getInstance(source))<SUB>152</SUB>> ]
+"215" [label = <(IDENTIFIER,source,getInstance(source))<SUB>152</SUB>> ]
+"216" [label = <(logFuture,logFuture(logTo, source, granularity))<SUB>153</SUB>> ]
+"217" [label = <(IDENTIFIER,this,logFuture(logTo, source, granularity))<SUB>153</SUB>> ]
+"218" [label = <(IDENTIFIER,logTo,logFuture(logTo, source, granularity))<SUB>153</SUB>> ]
+"219" [label = <(IDENTIFIER,source,logFuture(logTo, source, granularity))<SUB>153</SUB>> ]
+"220" [label = <(IDENTIFIER,granularity,logFuture(logTo, source, granularity))<SUB>153</SUB>> ]
+"25" [label = <(LOCAL,Union result: org.apache.tools.ant.types.resources.Union)> ]
+"221" [label = <(&lt;operator&gt;.assignment,Union result = new Union())<SUB>155</SUB>> ]
+"222" [label = <(IDENTIFIER,result,Union result = new Union())<SUB>155</SUB>> ]
+"223" [label = <(&lt;operator&gt;.alloc,new Union())<SUB>155</SUB>> ]
+"224" [label = <(&lt;init&gt;,new Union())<SUB>155</SUB>> ]
+"24" [label = <(IDENTIFIER,result,new Union())<SUB>155</SUB>> ]
+"225" [label = <(CONTROL_STRUCTURE,for (Iterator iter = source.iterator(); Some(iter.hasNext()); ),for (Iterator iter = source.iterator(); Some(iter.hasNext()); ))<SUB>156</SUB>> ]
+"226" [label = <(LOCAL,Iterator iter: java.util.Iterator)> ]
+"227" [label = <(&lt;operator&gt;.assignment,Iterator iter = iterator())<SUB>156</SUB>> ]
+"228" [label = <(IDENTIFIER,iter,Iterator iter = iterator())<SUB>156</SUB>> ]
+"229" [label = <(iterator,iterator())<SUB>156</SUB>> ]
+"230" [label = <(IDENTIFIER,source,iterator())<SUB>156</SUB>> ]
+"231" [label = <(hasNext,iter.hasNext())<SUB>156</SUB>> ]
+"232" [label = <(IDENTIFIER,iter,iter.hasNext())<SUB>156</SUB>> ]
+"233" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>156</SUB>> ]
+"234" [label = <(LOCAL,Resource sr: org.apache.tools.ant.types.Resource)> ]
+"235" [label = <(&lt;operator&gt;.assignment,Resource sr = (Resource) iter.next())<SUB>157</SUB>> ]
+"236" [label = <(IDENTIFIER,sr,Resource sr = (Resource) iter.next())<SUB>157</SUB>> ]
+"237" [label = <(&lt;operator&gt;.cast,(Resource) iter.next())<SUB>157</SUB>> ]
+"238" [label = <(TYPE_REF,Resource,Resource)<SUB>157</SUB>> ]
+"239" [label = <(next,iter.next())<SUB>157</SUB>> ]
+"240" [label = <(IDENTIFIER,iter,iter.next())<SUB>157</SUB>> ]
+"241" [label = <(LOCAL,String srName: java.lang.String)> ]
+"242" [label = <(&lt;operator&gt;.assignment,String srName = getName())<SUB>158</SUB>> ]
+"243" [label = <(IDENTIFIER,srName,String srName = getName())<SUB>158</SUB>> ]
+"244" [label = <(getName,getName())<SUB>158</SUB>> ]
+"245" [label = <(IDENTIFIER,sr,getName())<SUB>158</SUB>> ]
+"246" [label = <(&lt;operator&gt;.assignment,srName = srName == null ? srName : srName.replace('/', File.separatorChar))<SUB>159</SUB>> ]
+"247" [label = <(IDENTIFIER,srName,srName = srName == null ? srName : srName.replace('/', File.separatorChar))<SUB>159</SUB>> ]
+"248" [label = <(&lt;operator&gt;.conditional,srName == null ? srName : srName.replace('/', File.separatorChar))<SUB>159</SUB>> ]
+"249" [label = <(&lt;operator&gt;.equals,srName == null)<SUB>159</SUB>> ]
+"250" [label = <(IDENTIFIER,srName,srName == null)<SUB>159</SUB>> ]
+"251" [label = <(LITERAL,null,srName == null)<SUB>159</SUB>> ]
+"252" [label = <(IDENTIFIER,srName,srName == null ? srName : srName.replace('/', File.separatorChar))<SUB>160</SUB>> ]
+"253" [label = <(replace,srName.replace('/', File.separatorChar))<SUB>160</SUB>> ]
+"254" [label = <(IDENTIFIER,srName,srName.replace('/', File.separatorChar))<SUB>160</SUB>> ]
+"255" [label = <(LITERAL,'/',srName.replace('/', File.separatorChar))<SUB>160</SUB>> ]
+"256" [label = <(&lt;operator&gt;.fieldAccess,File.separatorChar)<SUB>160</SUB>> ]
+"257" [label = <(IDENTIFIER,File,srName.replace('/', File.separatorChar))<SUB>160</SUB>> ]
+"258" [label = <(FIELD_IDENTIFIER,separatorChar,separatorChar)<SUB>160</SUB>> ]
+"259" [label = <(LOCAL,String[] targetnames: java.lang.String[])> ]
+"260" [label = <(&lt;operator&gt;.assignment,String[] targetnames = null)<SUB>162</SUB>> ]
+"261" [label = <(IDENTIFIER,targetnames,String[] targetnames = null)<SUB>162</SUB>> ]
+"262" [label = <(LITERAL,null,String[] targetnames = null)<SUB>162</SUB>> ]
+"263" [label = <(CONTROL_STRUCTURE,try,try)<SUB>163</SUB>> ]
+"264" [label = <(BLOCK,try,try)<SUB>163</SUB>> ]
+"265" [label = <(&lt;operator&gt;.assignment,targetnames = mapFileName(srName))<SUB>164</SUB>> ]
+"266" [label = <(IDENTIFIER,targetnames,targetnames = mapFileName(srName))<SUB>164</SUB>> ]
+"267" [label = <(mapFileName,mapFileName(srName))<SUB>164</SUB>> ]
+"268" [label = <(IDENTIFIER,mapper,mapFileName(srName))<SUB>164</SUB>> ]
+"269" [label = <(IDENTIFIER,srName,mapFileName(srName))<SUB>164</SUB>> ]
+"270" [label = <(BLOCK,catch,catch)> ]
+"271" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>165</SUB>> ]
+"272" [label = <(log,log(&quot;Caught &quot; + e + &quot; mapping resource &quot; + sr, Project.MSG_VERBOSE))<SUB>166</SUB>> ]
+"273" [label = <(IDENTIFIER,logTo,log(&quot;Caught &quot; + e + &quot; mapping resource &quot; + sr, Project.MSG_VERBOSE))<SUB>166</SUB>> ]
+"274" [label = <(&lt;operator&gt;.addition,&quot;Caught &quot; + e + &quot; mapping resource &quot; + sr)<SUB>166</SUB>> ]
+"275" [label = <(&lt;operator&gt;.addition,&quot;Caught &quot; + e + &quot; mapping resource &quot;)<SUB>166</SUB>> ]
+"276" [label = <(&lt;operator&gt;.addition,&quot;Caught &quot; + e)<SUB>166</SUB>> ]
+"277" [label = <(LITERAL,&quot;Caught &quot;,&quot;Caught &quot; + e)<SUB>166</SUB>> ]
+"278" [label = <(IDENTIFIER,e,&quot;Caught &quot; + e)<SUB>166</SUB>> ]
+"279" [label = <(LITERAL,&quot; mapping resource &quot;,&quot;Caught &quot; + e + &quot; mapping resource &quot;)<SUB>166</SUB>> ]
+"280" [label = <(IDENTIFIER,sr,&quot;Caught &quot; + e + &quot; mapping resource &quot; + sr)<SUB>166</SUB>> ]
+"281" [label = <(&lt;operator&gt;.fieldAccess,Project.MSG_VERBOSE)<SUB>167</SUB>> ]
+"282" [label = <(IDENTIFIER,Project,log(&quot;Caught &quot; + e + &quot; mapping resource &quot; + sr, Project.MSG_VERBOSE))<SUB>167</SUB>> ]
+"283" [label = <(FIELD_IDENTIFIER,MSG_VERBOSE,MSG_VERBOSE)<SUB>167</SUB>> ]
+"284" [label = <(CONTROL_STRUCTURE,if (targetnames == null || targetnames.length == 0),if (targetnames == null || targetnames.length == 0))<SUB>169</SUB>> ]
+"285" [label = <(&lt;operator&gt;.logicalOr,targetnames == null || targetnames.length == 0)<SUB>169</SUB>> ]
+"286" [label = <(&lt;operator&gt;.equals,targetnames == null)<SUB>169</SUB>> ]
+"287" [label = <(IDENTIFIER,targetnames,targetnames == null)<SUB>169</SUB>> ]
+"288" [label = <(LITERAL,null,targetnames == null)<SUB>169</SUB>> ]
+"289" [label = <(&lt;operator&gt;.equals,targetnames.length == 0)<SUB>169</SUB>> ]
+"290" [label = <(&lt;operator&gt;.fieldAccess,targetnames.length)<SUB>169</SUB>> ]
+"291" [label = <(IDENTIFIER,targetnames,targetnames.length == 0)<SUB>169</SUB>> ]
+"292" [label = <(FIELD_IDENTIFIER,length,length)<SUB>169</SUB>> ]
+"293" [label = <(LITERAL,0,targetnames.length == 0)<SUB>169</SUB>> ]
+"294" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>169</SUB>> ]
+"295" [label = <(log,log(sr + &quot; skipped - don\'t know how to handle it&quot;, Project.MSG_VERBOSE))<SUB>170</SUB>> ]
+"296" [label = <(IDENTIFIER,logTo,log(sr + &quot; skipped - don\'t know how to handle it&quot;, Project.MSG_VERBOSE))<SUB>170</SUB>> ]
+"297" [label = <(&lt;operator&gt;.addition,sr + &quot; skipped - don\'t know how to handle it&quot;)<SUB>170</SUB>> ]
+"298" [label = <(IDENTIFIER,sr,sr + &quot; skipped - don\'t know how to handle it&quot;)<SUB>170</SUB>> ]
+"299" [label = <(LITERAL,&quot; skipped - don\'t know how to handle it&quot;,sr + &quot; skipped - don\'t know how to handle it&quot;)<SUB>170</SUB>> ]
+"300" [label = <(&lt;operator&gt;.fieldAccess,Project.MSG_VERBOSE)<SUB>171</SUB>> ]
+"301" [label = <(IDENTIFIER,Project,log(sr + &quot; skipped - don\'t know how to handle it&quot;, Project.MSG_VERBOSE))<SUB>171</SUB>> ]
+"302" [label = <(FIELD_IDENTIFIER,MSG_VERBOSE,MSG_VERBOSE)<SUB>171</SUB>> ]
+"303" [label = <(CONTROL_STRUCTURE,continue;,continue;)<SUB>172</SUB>> ]
+"27" [label = <(LOCAL,Union targetColl: org.apache.tools.ant.types.resources.Union)> ]
+"304" [label = <(&lt;operator&gt;.assignment,Union targetColl = new Union())<SUB>174</SUB>> ]
+"305" [label = <(IDENTIFIER,targetColl,Union targetColl = new Union())<SUB>174</SUB>> ]
+"306" [label = <(&lt;operator&gt;.alloc,new Union())<SUB>174</SUB>> ]
+"307" [label = <(&lt;init&gt;,new Union())<SUB>174</SUB>> ]
+"26" [label = <(IDENTIFIER,targetColl,new Union())<SUB>174</SUB>> ]
+"308" [label = <(CONTROL_STRUCTURE,for (int i = 0; Some(i &lt; targetnames.length); i++),for (int i = 0; Some(i &lt; targetnames.length); i++))<SUB>175</SUB>> ]
+"309" [label = <(LOCAL,int i: int)> ]
+"310" [label = <(&lt;operator&gt;.assignment,int i = 0)<SUB>175</SUB>> ]
+"311" [label = <(IDENTIFIER,i,int i = 0)<SUB>175</SUB>> ]
+"312" [label = <(LITERAL,0,int i = 0)<SUB>175</SUB>> ]
+"313" [label = <(&lt;operator&gt;.lessThan,i &lt; targetnames.length)<SUB>175</SUB>> ]
+"314" [label = <(IDENTIFIER,i,i &lt; targetnames.length)<SUB>175</SUB>> ]
+"315" [label = <(&lt;operator&gt;.fieldAccess,targetnames.length)<SUB>175</SUB>> ]
+"316" [label = <(IDENTIFIER,targetnames,i &lt; targetnames.length)<SUB>175</SUB>> ]
+"317" [label = <(FIELD_IDENTIFIER,length,length)<SUB>175</SUB>> ]
+"318" [label = <(&lt;operator&gt;.postIncrement,i++)<SUB>175</SUB>> ]
+"319" [label = <(IDENTIFIER,i,i++)<SUB>175</SUB>> ]
+"320" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>175</SUB>> ]
+"321" [label = <(add,add(targets.getResource(targetnames[i].replace(File.separatorChar, '/'))))<SUB>176</SUB>> ]
+"322" [label = <(IDENTIFIER,targetColl,add(targets.getResource(targetnames[i].replace(File.separatorChar, '/'))))<SUB>176</SUB>> ]
+"323" [label = <(getResource,getResource(targetnames[i].replace(File.separatorChar, '/')))<SUB>176</SUB>> ]
+"324" [label = <(IDENTIFIER,targets,getResource(targetnames[i].replace(File.separatorChar, '/')))<SUB>176</SUB>> ]
+"325" [label = <(replace,this.replace(File.separatorChar, '/'))<SUB>177</SUB>> ]
+"326" [label = <(&lt;operator&gt;.indexAccess,targetnames[i])<SUB>177</SUB>> ]
+"327" [label = <(IDENTIFIER,targetnames,this.replace(File.separatorChar, '/'))<SUB>177</SUB>> ]
+"328" [label = <(IDENTIFIER,i,this.replace(File.separatorChar, '/'))<SUB>177</SUB>> ]
+"329" [label = <(&lt;operator&gt;.fieldAccess,File.separatorChar)<SUB>177</SUB>> ]
+"330" [label = <(IDENTIFIER,File,this.replace(File.separatorChar, '/'))<SUB>177</SUB>> ]
+"331" [label = <(FIELD_IDENTIFIER,separatorChar,separatorChar)<SUB>177</SUB>> ]
+"332" [label = <(LITERAL,'/',this.replace(File.separatorChar, '/'))<SUB>177</SUB>> ]
+"29" [label = <(LOCAL,Restrict r: org.apache.tools.ant.types.resources.Restrict)> ]
+"333" [label = <(&lt;operator&gt;.assignment,Restrict r = new Restrict())<SUB>180</SUB>> ]
+"334" [label = <(IDENTIFIER,r,Restrict r = new Restrict())<SUB>180</SUB>> ]
+"335" [label = <(&lt;operator&gt;.alloc,new Restrict())<SUB>180</SUB>> ]
+"336" [label = <(&lt;init&gt;,new Restrict())<SUB>180</SUB>> ]
+"28" [label = <(IDENTIFIER,r,new Restrict())<SUB>180</SUB>> ]
+"337" [label = <(add,add(new And(new ResourceSelector[] { Type.FILE, new Or(new ResourceSelector[] { NOT_EXISTS, new Outdated(sr, granularity) }) })))<SUB>181</SUB>> ]
+"338" [label = <(IDENTIFIER,r,add(new And(new ResourceSelector[] { Type.FILE, new Or(new ResourceSelector[] { NOT_EXISTS, new Outdated(sr, granularity) }) })))<SUB>181</SUB>> ]
+"339" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>181</SUB>> ]
+"340" [label = <(&lt;operator&gt;.assignment,&lt;empty&gt;)> ]
+"341" [label = <(IDENTIFIER,$obj8,&lt;empty&gt;)> ]
+"342" [label = <(&lt;operator&gt;.alloc,new And(new ResourceSelector[] { Type.FILE, new Or(new ResourceSelector[] { NOT_EXISTS, new Outdated(sr, granularity) }) }))<SUB>181</SUB>> ]
+"343" [label = <(&lt;init&gt;,new And(new ResourceSelector[] { Type.FILE, new Or(new ResourceSelector[] { NOT_EXISTS, new Outdated(sr, granularity) }) }))<SUB>181</SUB>> ]
+"344" [label = <(IDENTIFIER,$obj8,new And(new ResourceSelector[] { Type.FILE, new Or(new ResourceSelector[] { NOT_EXISTS, new Outdated(sr, granularity) }) }))> ]
+"345" [label = <(&lt;operator&gt;.arrayInitializer,new ResourceSelector[] { Type.FILE, new Or(new ResourceSelector[] { NOT_EXISTS, new Outdated(sr, granularity) }) })<SUB>181</SUB>> ]
+"346" [label = <(&lt;operator&gt;.fieldAccess,Type.FILE)<SUB>181</SUB>> ]
+"347" [label = <(IDENTIFIER,Type,new ResourceSelector[] { Type.FILE, new Or(new ResourceSelector[] { NOT_EXISTS, new Outdated(sr, granularity) }) })<SUB>181</SUB>> ]
+"348" [label = <(FIELD_IDENTIFIER,FILE,FILE)<SUB>181</SUB>> ]
+"349" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>181</SUB>> ]
+"350" [label = <(&lt;operator&gt;.assignment,&lt;empty&gt;)> ]
+"351" [label = <(IDENTIFIER,$obj7,&lt;empty&gt;)> ]
+"352" [label = <(&lt;operator&gt;.alloc,new Or(new ResourceSelector[] { NOT_EXISTS, new Outdated(sr, granularity) }))<SUB>181</SUB>> ]
+"353" [label = <(&lt;init&gt;,new Or(new ResourceSelector[] { NOT_EXISTS, new Outdated(sr, granularity) }))<SUB>181</SUB>> ]
+"354" [label = <(IDENTIFIER,$obj7,new Or(new ResourceSelector[] { NOT_EXISTS, new Outdated(sr, granularity) }))> ]
+"355" [label = <(&lt;operator&gt;.arrayInitializer,new ResourceSelector[] { NOT_EXISTS, new Outdated(sr, granularity) })<SUB>182</SUB>> ]
+"356" [label = <(&lt;operator&gt;.fieldAccess,ResourceUtils.NOT_EXISTS)<SUB>182</SUB>> ]
+"357" [label = <(IDENTIFIER,ResourceUtils,new ResourceSelector[] { NOT_EXISTS, new Outdated(sr, granularity) })<SUB>182</SUB>> ]
+"358" [label = <(FIELD_IDENTIFIER,NOT_EXISTS,NOT_EXISTS)<SUB>182</SUB>> ]
+"359" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>182</SUB>> ]
+"360" [label = <(&lt;operator&gt;.assignment,&lt;empty&gt;)> ]
+"361" [label = <(IDENTIFIER,$obj6,&lt;empty&gt;)> ]
+"362" [label = <(&lt;operator&gt;.alloc,new Outdated(sr, granularity))<SUB>182</SUB>> ]
+"363" [label = <(&lt;init&gt;,new Outdated(sr, granularity))<SUB>182</SUB>> ]
+"364" [label = <(IDENTIFIER,$obj6,new Outdated(sr, granularity))> ]
+"365" [label = <(IDENTIFIER,sr,new Outdated(sr, granularity))<SUB>182</SUB>> ]
+"366" [label = <(IDENTIFIER,granularity,new Outdated(sr, granularity))<SUB>182</SUB>> ]
+"367" [label = <(IDENTIFIER,$obj6,&lt;empty&gt;)> ]
+"368" [label = <(IDENTIFIER,$obj7,&lt;empty&gt;)> ]
+"369" [label = <(IDENTIFIER,$obj8,&lt;empty&gt;)> ]
+"370" [label = <(add,add(targetColl))<SUB>183</SUB>> ]
+"371" [label = <(IDENTIFIER,r,add(targetColl))<SUB>183</SUB>> ]
+"372" [label = <(IDENTIFIER,targetColl,add(targetColl))<SUB>183</SUB>> ]
+"373" [label = <(CONTROL_STRUCTURE,if (r.size() &gt; 0),if (r.size() &gt; 0))<SUB>184</SUB>> ]
+"374" [label = <(&lt;operator&gt;.greaterThan,r.size() &gt; 0)<SUB>184</SUB>> ]
+"375" [label = <(size,size())<SUB>184</SUB>> ]
+"376" [label = <(IDENTIFIER,r,size())<SUB>184</SUB>> ]
+"377" [label = <(LITERAL,0,r.size() &gt; 0)<SUB>184</SUB>> ]
+"378" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>184</SUB>> ]
+"379" [label = <(add,add(sr))<SUB>185</SUB>> ]
+"380" [label = <(IDENTIFIER,result,add(sr))<SUB>185</SUB>> ]
+"381" [label = <(IDENTIFIER,sr,add(sr))<SUB>185</SUB>> ]
+"382" [label = <(LOCAL,Resource t: org.apache.tools.ant.types.Resource)> ]
+"383" [label = <(&lt;operator&gt;.assignment,Resource t = (Resource) (r.iterator().next()))<SUB>186</SUB>> ]
+"384" [label = <(IDENTIFIER,t,Resource t = (Resource) (r.iterator().next()))<SUB>186</SUB>> ]
+"385" [label = <(&lt;operator&gt;.cast,(Resource) (r.iterator().next()))<SUB>186</SUB>> ]
+"386" [label = <(TYPE_REF,Resource,Resource)<SUB>186</SUB>> ]
+"387" [label = <(next,next())<SUB>186</SUB>> ]
+"388" [label = <(iterator,iterator())<SUB>186</SUB>> ]
+"389" [label = <(IDENTIFIER,r,iterator())<SUB>186</SUB>> ]
+"390" [label = <(log,log(sr.getName() + &quot; added as &quot; + t.getName() + (t.isExists() ? &quot; is outdated.&quot; : &quot; doesn\'t exist.&quot;), Project.MSG_VERBOSE))<SUB>187</SUB>> ]
+"391" [label = <(IDENTIFIER,logTo,log(sr.getName() + &quot; added as &quot; + t.getName() + (t.isExists() ? &quot; is outdated.&quot; : &quot; doesn\'t exist.&quot;), Project.MSG_VERBOSE))<SUB>187</SUB>> ]
+"392" [label = <(&lt;operator&gt;.addition,sr.getName() + &quot; added as &quot; + t.getName() + (t.isExists() ? &quot; is outdated.&quot; : &quot; doesn\'t exist.&quot;))<SUB>187</SUB>> ]
+"393" [label = <(&lt;operator&gt;.addition,sr.getName() + &quot; added as &quot; + t.getName())<SUB>187</SUB>> ]
+"394" [label = <(&lt;operator&gt;.addition,sr.getName() + &quot; added as &quot;)<SUB>187</SUB>> ]
+"395" [label = <(getName,getName())<SUB>187</SUB>> ]
+"396" [label = <(IDENTIFIER,sr,getName())<SUB>187</SUB>> ]
+"397" [label = <(LITERAL,&quot; added as &quot;,sr.getName() + &quot; added as &quot;)<SUB>187</SUB>> ]
+"398" [label = <(getName,getName())<SUB>187</SUB>> ]
+"399" [label = <(IDENTIFIER,t,getName())<SUB>187</SUB>> ]
+"400" [label = <(&lt;operator&gt;.conditional,t.isExists() ? &quot; is outdated.&quot; : &quot; doesn\'t exist.&quot;)<SUB>188</SUB>> ]
+"401" [label = <(isExists,isExists())<SUB>188</SUB>> ]
+"402" [label = <(IDENTIFIER,t,isExists())<SUB>188</SUB>> ]
+"403" [label = <(LITERAL,&quot; is outdated.&quot;,t.isExists() ? &quot; is outdated.&quot; : &quot; doesn\'t exist.&quot;)<SUB>188</SUB>> ]
+"404" [label = <(LITERAL,&quot; doesn\'t exist.&quot;,t.isExists() ? &quot; is outdated.&quot; : &quot; doesn\'t exist.&quot;)<SUB>188</SUB>> ]
+"405" [label = <(&lt;operator&gt;.fieldAccess,Project.MSG_VERBOSE)<SUB>189</SUB>> ]
+"406" [label = <(IDENTIFIER,Project,log(sr.getName() + &quot; added as &quot; + t.getName() + (t.isExists() ? &quot; is outdated.&quot; : &quot; doesn\'t exist.&quot;), Project.MSG_VERBOSE))<SUB>189</SUB>> ]
+"407" [label = <(FIELD_IDENTIFIER,MSG_VERBOSE,MSG_VERBOSE)<SUB>189</SUB>> ]
+"408" [label = <(CONTROL_STRUCTURE,continue;,continue;)<SUB>190</SUB>> ]
+"409" [label = <(log,log(sr.getName() + &quot; omitted as &quot; + targetColl.toString() + (targetColl.size() == 1 ? &quot; is&quot; : &quot; are &quot;) + &quot; up to date.&quot;, Project.MSG_VERBOSE))<SUB>193</SUB>> ]
+"410" [label = <(IDENTIFIER,logTo,log(sr.getName() + &quot; omitted as &quot; + targetColl.toString() + (targetColl.size() == 1 ? &quot; is&quot; : &quot; are &quot;) + &quot; up to date.&quot;, Project.MSG_VERBOSE))<SUB>193</SUB>> ]
+"411" [label = <(&lt;operator&gt;.addition,sr.getName() + &quot; omitted as &quot; + targetColl.toString() + (targetColl.size() == 1 ? &quot; is&quot; : &quot; are &quot;) + &quot; up to date.&quot;)<SUB>193</SUB>> ]
+"412" [label = <(&lt;operator&gt;.addition,sr.getName() + &quot; omitted as &quot; + targetColl.toString() + (targetColl.size() == 1 ? &quot; is&quot; : &quot; are &quot;))<SUB>193</SUB>> ]
+"413" [label = <(&lt;operator&gt;.addition,sr.getName() + &quot; omitted as &quot; + targetColl.toString())<SUB>193</SUB>> ]
+"414" [label = <(&lt;operator&gt;.addition,sr.getName() + &quot; omitted as &quot;)<SUB>193</SUB>> ]
+"415" [label = <(getName,getName())<SUB>193</SUB>> ]
+"416" [label = <(IDENTIFIER,sr,getName())<SUB>193</SUB>> ]
+"417" [label = <(LITERAL,&quot; omitted as &quot;,sr.getName() + &quot; omitted as &quot;)<SUB>194</SUB>> ]
+"418" [label = <(toString,toString())<SUB>194</SUB>> ]
+"419" [label = <(IDENTIFIER,targetColl,toString())<SUB>194</SUB>> ]
+"420" [label = <(&lt;operator&gt;.conditional,targetColl.size() == 1 ? &quot; is&quot; : &quot; are &quot;)<SUB>195</SUB>> ]
+"421" [label = <(&lt;operator&gt;.equals,targetColl.size() == 1)<SUB>195</SUB>> ]
+"422" [label = <(size,size())<SUB>195</SUB>> ]
+"423" [label = <(IDENTIFIER,targetColl,size())<SUB>195</SUB>> ]
+"424" [label = <(LITERAL,1,targetColl.size() == 1)<SUB>195</SUB>> ]
+"425" [label = <(LITERAL,&quot; is&quot;,targetColl.size() == 1 ? &quot; is&quot; : &quot; are &quot;)<SUB>195</SUB>> ]
+"426" [label = <(LITERAL,&quot; are &quot;,targetColl.size() == 1 ? &quot; is&quot; : &quot; are &quot;)<SUB>195</SUB>> ]
+"427" [label = <(LITERAL,&quot; up to date.&quot;,sr.getName() + &quot; omitted as &quot; + targetColl.toString() + (targetColl.size() == 1 ? &quot; is&quot; : &quot; are &quot;) + &quot; up to date.&quot;)<SUB>196</SUB>> ]
+"428" [label = <(&lt;operator&gt;.fieldAccess,Project.MSG_VERBOSE)<SUB>196</SUB>> ]
+"429" [label = <(IDENTIFIER,Project,log(sr.getName() + &quot; omitted as &quot; + targetColl.toString() + (targetColl.size() == 1 ? &quot; is&quot; : &quot; are &quot;) + &quot; up to date.&quot;, Project.MSG_VERBOSE))<SUB>196</SUB>> ]
+"430" [label = <(FIELD_IDENTIFIER,MSG_VERBOSE,MSG_VERBOSE)<SUB>196</SUB>> ]
+"431" [label = <(RETURN,return result;,return result;)<SUB>198</SUB>> ]
+"432" [label = <(IDENTIFIER,result,return result;)<SUB>198</SUB>> ]
+"433" [label = <(MODIFIER,PUBLIC)> ]
+"434" [label = <(MODIFIER,STATIC)> ]
+"435" [label = <(METHOD_RETURN,org.apache.tools.ant.types.ResourceCollection)<SUB>143</SUB>> ]
+  "188" -> "189" 
+  "188" -> "190" 
+  "188" -> "191" 
+  "188" -> "192" 
+  "188" -> "193" 
+  "188" -> "194" 
+  "188" -> "433" 
+  "188" -> "434" 
+  "188" -> "435" 
+  "194" -> "195" 
+  "194" -> "211" 
+  "194" -> "216" 
+  "194" -> "25" 
+  "194" -> "221" 
+  "194" -> "224" 
+  "194" -> "225" 
+  "194" -> "431" 
+  "195" -> "196" 
+  "195" -> "200" 
+  "196" -> "197" 
+  "196" -> "199" 
+  "197" -> "198" 
+  "200" -> "201" 
+  "200" -> "207" 
+  "201" -> "202" 
+  "201" -> "203" 
+  "201" -> "204" 
+  "204" -> "205" 
+  "204" -> "206" 
+  "207" -> "208" 
+  "208" -> "209" 
+  "208" -> "210" 
+  "211" -> "212" 
+  "211" -> "213" 
+  "213" -> "214" 
+  "213" -> "215" 
+  "216" -> "217" 
+  "216" -> "218" 
+  "216" -> "219" 
+  "216" -> "220" 
+  "221" -> "222" 
+  "221" -> "223" 
+  "224" -> "24" 
+  "225" -> "226" 
+  "225" -> "227" 
+  "225" -> "231" 
+  "225" -> "233" 
+  "227" -> "228" 
+  "227" -> "229" 
+  "229" -> "230" 
+  "231" -> "232" 
+  "233" -> "234" 
+  "233" -> "235" 
+  "233" -> "241" 
+  "233" -> "242" 
+  "233" -> "246" 
+  "233" -> "259" 
+  "233" -> "260" 
+  "233" -> "263" 
+  "233" -> "284" 
+  "233" -> "27" 
+  "233" -> "304" 
+  "233" -> "307" 
+  "233" -> "308" 
+  "233" -> "29" 
+  "233" -> "333" 
+  "233" -> "336" 
+  "233" -> "337" 
+  "233" -> "370" 
+  "233" -> "373" 
+  "233" -> "409" 
+  "235" -> "236" 
+  "235" -> "237" 
+  "237" -> "238" 
+  "237" -> "239" 
+  "239" -> "240" 
+  "242" -> "243" 
+  "242" -> "244" 
+  "244" -> "245" 
+  "246" -> "247" 
+  "246" -> "248" 
+  "248" -> "249" 
+  "248" -> "252" 
+  "248" -> "253" 
+  "249" -> "250" 
+  "249" -> "251" 
+  "253" -> "254" 
+  "253" -> "255" 
+  "253" -> "256" 
+  "256" -> "257" 
+  "256" -> "258" 
+  "260" -> "261" 
+  "260" -> "262" 
+  "263" -> "264" 
+  "263" -> "270" 
+  "264" -> "265" 
+  "265" -> "266" 
+  "265" -> "267" 
+  "267" -> "268" 
+  "267" -> "269" 
+  "270" -> "271" 
+  "271" -> "272" 
+  "272" -> "273" 
+  "272" -> "274" 
+  "272" -> "281" 
+  "274" -> "275" 
+  "274" -> "280" 
+  "275" -> "276" 
+  "275" -> "279" 
+  "276" -> "277" 
+  "276" -> "278" 
+  "281" -> "282" 
+  "281" -> "283" 
+  "284" -> "285" 
+  "284" -> "294" 
+  "285" -> "286" 
+  "285" -> "289" 
+  "286" -> "287" 
+  "286" -> "288" 
+  "289" -> "290" 
+  "289" -> "293" 
+  "290" -> "291" 
+  "290" -> "292" 
+  "294" -> "295" 
+  "294" -> "303" 
+  "295" -> "296" 
+  "295" -> "297" 
+  "295" -> "300" 
+  "297" -> "298" 
+  "297" -> "299" 
+  "300" -> "301" 
+  "300" -> "302" 
+  "304" -> "305" 
+  "304" -> "306" 
+  "307" -> "26" 
+  "308" -> "309" 
+  "308" -> "310" 
+  "308" -> "313" 
+  "308" -> "318" 
+  "308" -> "320" 
+  "310" -> "311" 
+  "310" -> "312" 
+  "313" -> "314" 
+  "313" -> "315" 
+  "315" -> "316" 
+  "315" -> "317" 
+  "318" -> "319" 
+  "320" -> "321" 
+  "321" -> "322" 
+  "321" -> "323" 
+  "323" -> "324" 
+  "323" -> "325" 
+  "325" -> "326" 
+  "325" -> "329" 
+  "325" -> "332" 
+  "326" -> "327" 
+  "326" -> "328" 
+  "329" -> "330" 
+  "329" -> "331" 
+  "333" -> "334" 
+  "333" -> "335" 
+  "336" -> "28" 
+  "337" -> "338" 
+  "337" -> "339" 
+  "339" -> "340" 
+  "339" -> "343" 
+  "339" -> "369" 
+  "340" -> "341" 
+  "340" -> "342" 
+  "343" -> "344" 
+  "343" -> "345" 
+  "345" -> "346" 
+  "345" -> "349" 
+  "346" -> "347" 
+  "346" -> "348" 
+  "349" -> "350" 
+  "349" -> "353" 
+  "349" -> "368" 
+  "350" -> "351" 
+  "350" -> "352" 
+  "353" -> "354" 
+  "353" -> "355" 
+  "355" -> "356" 
+  "355" -> "359" 
+  "356" -> "357" 
+  "356" -> "358" 
+  "359" -> "360" 
+  "359" -> "363" 
+  "359" -> "367" 
+  "360" -> "361" 
+  "360" -> "362" 
+  "363" -> "364" 
+  "363" -> "365" 
+  "363" -> "366" 
+  "370" -> "371" 
+  "370" -> "372" 
+  "373" -> "374" 
+  "373" -> "378" 
+  "374" -> "375" 
+  "374" -> "377" 
+  "375" -> "376" 
+  "378" -> "379" 
+  "378" -> "382" 
+  "378" -> "383" 
+  "378" -> "390" 
+  "378" -> "408" 
+  "379" -> "380" 
+  "379" -> "381" 
+  "383" -> "384" 
+  "383" -> "385" 
+  "385" -> "386" 
+  "385" -> "387" 
+  "387" -> "388" 
+  "388" -> "389" 
+  "390" -> "391" 
+  "390" -> "392" 
+  "390" -> "405" 
+  "392" -> "393" 
+  "392" -> "400" 
+  "393" -> "394" 
+  "393" -> "398" 
+  "394" -> "395" 
+  "394" -> "397" 
+  "395" -> "396" 
+  "398" -> "399" 
+  "400" -> "401" 
+  "400" -> "403" 
+  "400" -> "404" 
+  "401" -> "402" 
+  "405" -> "406" 
+  "405" -> "407" 
+  "409" -> "410" 
+  "409" -> "411" 
+  "409" -> "428" 
+  "411" -> "412" 
+  "411" -> "427" 
+  "412" -> "413" 
+  "412" -> "420" 
+  "413" -> "414" 
+  "413" -> "418" 
+  "414" -> "415" 
+  "414" -> "417" 
+  "415" -> "416" 
+  "418" -> "419" 
+  "420" -> "421" 
+  "420" -> "425" 
+  "420" -> "426" 
+  "421" -> "422" 
+  "421" -> "424" 
+  "422" -> "423" 
+  "428" -> "429" 
+  "428" -> "430" 
+  "431" -> "432" 
+}

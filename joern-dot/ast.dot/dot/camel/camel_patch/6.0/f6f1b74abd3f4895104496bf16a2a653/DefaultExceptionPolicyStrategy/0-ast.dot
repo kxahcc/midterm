@@ -1,0 +1,75 @@
+digraph "getExceptionPolicy" {  
+"50" [label = <(METHOD,getExceptionPolicy)<SUB>57</SUB>> ]
+"4" [label = <(PARAM,this)<SUB>57</SUB>> ]
+"51" [label = <(PARAM,Map&lt;ExceptionPolicyKey, ExceptionType&gt; exceptionPolicices)<SUB>57</SUB>> ]
+"52" [label = <(PARAM,Exchange exchange)<SUB>57</SUB>> ]
+"53" [label = <(PARAM,Throwable exception)<SUB>58</SUB>> ]
+"54" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>58</SUB>> ]
+"55" [label = <(LOCAL,Iterator&lt;Throwable&gt; it: java.util.Iterator)> ]
+"56" [label = <(&lt;operator&gt;.assignment,Iterator it = this.createExceptionIterator(exception))<SUB>61</SUB>> ]
+"57" [label = <(IDENTIFIER,it,Iterator it = this.createExceptionIterator(exception))<SUB>61</SUB>> ]
+"58" [label = <(createExceptionIterator,this.createExceptionIterator(exception))<SUB>61</SUB>> ]
+"3" [label = <(IDENTIFIER,this,this.createExceptionIterator(exception))<SUB>61</SUB>> ]
+"59" [label = <(IDENTIFIER,exception,this.createExceptionIterator(exception))<SUB>61</SUB>> ]
+"60" [label = <(CONTROL_STRUCTURE,while (it.hasNext()),while (it.hasNext()))<SUB>62</SUB>> ]
+"61" [label = <(hasNext,it.hasNext())<SUB>62</SUB>> ]
+"62" [label = <(IDENTIFIER,it,it.hasNext())<SUB>62</SUB>> ]
+"63" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>62</SUB>> ]
+"64" [label = <(LOCAL,ExceptionType type: org.apache.camel.model.ExceptionType)> ]
+"65" [label = <(&lt;operator&gt;.assignment,ExceptionType type = findMatchedExceptionPolicy(exceptionPolicices, exchange, it.next()))<SUB>63</SUB>> ]
+"66" [label = <(IDENTIFIER,type,ExceptionType type = findMatchedExceptionPolicy(exceptionPolicices, exchange, it.next()))<SUB>63</SUB>> ]
+"67" [label = <(findMatchedExceptionPolicy,findMatchedExceptionPolicy(exceptionPolicices, exchange, it.next()))<SUB>63</SUB>> ]
+"5" [label = <(IDENTIFIER,this,findMatchedExceptionPolicy(exceptionPolicices, exchange, it.next()))<SUB>63</SUB>> ]
+"68" [label = <(IDENTIFIER,exceptionPolicices,findMatchedExceptionPolicy(exceptionPolicices, exchange, it.next()))<SUB>63</SUB>> ]
+"69" [label = <(IDENTIFIER,exchange,findMatchedExceptionPolicy(exceptionPolicices, exchange, it.next()))<SUB>63</SUB>> ]
+"70" [label = <(next,it.next())<SUB>63</SUB>> ]
+"71" [label = <(IDENTIFIER,it,it.next())<SUB>63</SUB>> ]
+"72" [label = <(CONTROL_STRUCTURE,if (type != null),if (type != null))<SUB>64</SUB>> ]
+"73" [label = <(&lt;operator&gt;.notEquals,type != null)<SUB>64</SUB>> ]
+"74" [label = <(IDENTIFIER,type,type != null)<SUB>64</SUB>> ]
+"75" [label = <(LITERAL,null,type != null)<SUB>64</SUB>> ]
+"76" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>64</SUB>> ]
+"77" [label = <(RETURN,return type;,return type;)<SUB>65</SUB>> ]
+"78" [label = <(IDENTIFIER,type,return type;)<SUB>65</SUB>> ]
+"79" [label = <(RETURN,return null;,return null;)<SUB>70</SUB>> ]
+"80" [label = <(LITERAL,null,return null;)<SUB>70</SUB>> ]
+"81" [label = <(MODIFIER,PUBLIC)> ]
+"82" [label = <(MODIFIER,VIRTUAL)> ]
+"83" [label = <(METHOD_RETURN,org.apache.camel.model.ExceptionType)<SUB>57</SUB>> ]
+  "50" -> "4" 
+  "50" -> "51" 
+  "50" -> "52" 
+  "50" -> "53" 
+  "50" -> "54" 
+  "50" -> "81" 
+  "50" -> "82" 
+  "50" -> "83" 
+  "54" -> "55" 
+  "54" -> "56" 
+  "54" -> "60" 
+  "54" -> "79" 
+  "56" -> "57" 
+  "56" -> "58" 
+  "58" -> "3" 
+  "58" -> "59" 
+  "60" -> "61" 
+  "60" -> "63" 
+  "61" -> "62" 
+  "63" -> "64" 
+  "63" -> "65" 
+  "63" -> "72" 
+  "65" -> "66" 
+  "65" -> "67" 
+  "67" -> "5" 
+  "67" -> "68" 
+  "67" -> "69" 
+  "67" -> "70" 
+  "70" -> "71" 
+  "72" -> "73" 
+  "72" -> "76" 
+  "73" -> "74" 
+  "73" -> "75" 
+  "76" -> "77" 
+  "77" -> "78" 
+  "79" -> "80" 
+}

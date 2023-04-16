@@ -1,0 +1,233 @@
+digraph "loadResource" {  
+"830" [label = <(METHOD,loadResource)<SUB>466</SUB>> ]
+"73" [label = <(PARAM,this)<SUB>466</SUB>> ]
+"831" [label = <(PARAM,String name)<SUB>466</SUB>> ]
+"832" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>466</SUB>> ]
+"71" [label = <(LOCAL,Properties props: java.util.Properties)> ]
+"833" [label = <(&lt;operator&gt;.assignment,Properties props = new Properties())<SUB>467</SUB>> ]
+"834" [label = <(IDENTIFIER,props,Properties props = new Properties())<SUB>467</SUB>> ]
+"835" [label = <(&lt;operator&gt;.alloc,new Properties())<SUB>467</SUB>> ]
+"836" [label = <(&lt;init&gt;,new Properties())<SUB>467</SUB>> ]
+"70" [label = <(IDENTIFIER,props,new Properties())<SUB>467</SUB>> ]
+"837" [label = <(log,log(&quot;Resource Loading &quot; + name, Project.MSG_VERBOSE))<SUB>468</SUB>> ]
+"72" [label = <(IDENTIFIER,this,log(&quot;Resource Loading &quot; + name, Project.MSG_VERBOSE))<SUB>468</SUB>> ]
+"838" [label = <(&lt;operator&gt;.addition,&quot;Resource Loading &quot; + name)<SUB>468</SUB>> ]
+"839" [label = <(LITERAL,&quot;Resource Loading &quot;,&quot;Resource Loading &quot; + name)<SUB>468</SUB>> ]
+"840" [label = <(IDENTIFIER,name,&quot;Resource Loading &quot; + name)<SUB>468</SUB>> ]
+"841" [label = <(&lt;operator&gt;.fieldAccess,Project.MSG_VERBOSE)<SUB>468</SUB>> ]
+"842" [label = <(IDENTIFIER,Project,log(&quot;Resource Loading &quot; + name, Project.MSG_VERBOSE))<SUB>468</SUB>> ]
+"843" [label = <(FIELD_IDENTIFIER,MSG_VERBOSE,MSG_VERBOSE)<SUB>468</SUB>> ]
+"844" [label = <(LOCAL,InputStream is: java.io.InputStream)> ]
+"845" [label = <(&lt;operator&gt;.assignment,InputStream is = null)<SUB>469</SUB>> ]
+"846" [label = <(IDENTIFIER,is,InputStream is = null)<SUB>469</SUB>> ]
+"847" [label = <(LITERAL,null,InputStream is = null)<SUB>469</SUB>> ]
+"848" [label = <(CONTROL_STRUCTURE,try,try)<SUB>470</SUB>> ]
+"849" [label = <(BLOCK,try,try)<SUB>470</SUB>> ]
+"850" [label = <(LOCAL,ClassLoader cL: java.lang.ClassLoader)> ]
+"851" [label = <(&lt;operator&gt;.assignment,ClassLoader cL = null)<SUB>471</SUB>> ]
+"852" [label = <(IDENTIFIER,cL,ClassLoader cL = null)<SUB>471</SUB>> ]
+"853" [label = <(LITERAL,null,ClassLoader cL = null)<SUB>471</SUB>> ]
+"854" [label = <(CONTROL_STRUCTURE,if (classpath != null),if (classpath != null))<SUB>473</SUB>> ]
+"855" [label = <(&lt;operator&gt;.notEquals,classpath != null)<SUB>473</SUB>> ]
+"856" [label = <(&lt;operator&gt;.fieldAccess,this.classpath)<SUB>473</SUB>> ]
+"857" [label = <(IDENTIFIER,this,classpath != null)<SUB>473</SUB>> ]
+"858" [label = <(FIELD_IDENTIFIER,classpath,classpath)<SUB>473</SUB>> ]
+"859" [label = <(LITERAL,null,classpath != null)<SUB>473</SUB>> ]
+"860" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>473</SUB>> ]
+"861" [label = <(&lt;operator&gt;.assignment,cL = createClassLoader(classpath))<SUB>474</SUB>> ]
+"862" [label = <(IDENTIFIER,cL,cL = createClassLoader(classpath))<SUB>474</SUB>> ]
+"863" [label = <(createClassLoader,createClassLoader(classpath))<SUB>474</SUB>> ]
+"864" [label = <(getProject,getProject())<SUB>474</SUB>> ]
+"74" [label = <(IDENTIFIER,this,getProject())<SUB>474</SUB>> ]
+"865" [label = <(&lt;operator&gt;.fieldAccess,this.classpath)<SUB>474</SUB>> ]
+"866" [label = <(IDENTIFIER,this,createClassLoader(classpath))<SUB>474</SUB>> ]
+"867" [label = <(FIELD_IDENTIFIER,classpath,classpath)<SUB>474</SUB>> ]
+"868" [label = <(CONTROL_STRUCTURE,else,else)<SUB>475</SUB>> ]
+"869" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>475</SUB>> ]
+"870" [label = <(&lt;operator&gt;.assignment,cL = getClassLoader())<SUB>476</SUB>> ]
+"871" [label = <(IDENTIFIER,cL,cL = getClassLoader())<SUB>476</SUB>> ]
+"872" [label = <(getClassLoader,getClassLoader())<SUB>476</SUB>> ]
+"873" [label = <(getClass,getClass())<SUB>476</SUB>> ]
+"75" [label = <(IDENTIFIER,this,getClass())<SUB>476</SUB>> ]
+"874" [label = <(CONTROL_STRUCTURE,if (cL == null),if (cL == null))<SUB>479</SUB>> ]
+"875" [label = <(&lt;operator&gt;.equals,cL == null)<SUB>479</SUB>> ]
+"876" [label = <(IDENTIFIER,cL,cL == null)<SUB>479</SUB>> ]
+"877" [label = <(LITERAL,null,cL == null)<SUB>479</SUB>> ]
+"878" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>479</SUB>> ]
+"879" [label = <(&lt;operator&gt;.assignment,is = ClassLoader.getSystemResourceAsStream(name))<SUB>480</SUB>> ]
+"880" [label = <(IDENTIFIER,is,is = ClassLoader.getSystemResourceAsStream(name))<SUB>480</SUB>> ]
+"881" [label = <(getSystemResourceAsStream,ClassLoader.getSystemResourceAsStream(name))<SUB>480</SUB>> ]
+"882" [label = <(IDENTIFIER,ClassLoader,ClassLoader.getSystemResourceAsStream(name))<SUB>480</SUB>> ]
+"883" [label = <(IDENTIFIER,name,ClassLoader.getSystemResourceAsStream(name))<SUB>480</SUB>> ]
+"884" [label = <(CONTROL_STRUCTURE,else,else)<SUB>481</SUB>> ]
+"885" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>481</SUB>> ]
+"886" [label = <(&lt;operator&gt;.assignment,is = cL.getResourceAsStream(name))<SUB>482</SUB>> ]
+"887" [label = <(IDENTIFIER,is,is = cL.getResourceAsStream(name))<SUB>482</SUB>> ]
+"888" [label = <(getResourceAsStream,cL.getResourceAsStream(name))<SUB>482</SUB>> ]
+"889" [label = <(IDENTIFIER,cL,cL.getResourceAsStream(name))<SUB>482</SUB>> ]
+"890" [label = <(IDENTIFIER,name,cL.getResourceAsStream(name))<SUB>482</SUB>> ]
+"891" [label = <(CONTROL_STRUCTURE,if (is != null),if (is != null))<SUB>485</SUB>> ]
+"892" [label = <(&lt;operator&gt;.notEquals,is != null)<SUB>485</SUB>> ]
+"893" [label = <(IDENTIFIER,is,is != null)<SUB>485</SUB>> ]
+"894" [label = <(LITERAL,null,is != null)<SUB>485</SUB>> ]
+"895" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>485</SUB>> ]
+"896" [label = <(load,props.load(is))<SUB>486</SUB>> ]
+"897" [label = <(IDENTIFIER,props,props.load(is))<SUB>486</SUB>> ]
+"898" [label = <(IDENTIFIER,is,props.load(is))<SUB>486</SUB>> ]
+"899" [label = <(addProperties,this.addProperties(props))<SUB>487</SUB>> ]
+"76" [label = <(IDENTIFIER,this,this.addProperties(props))<SUB>487</SUB>> ]
+"900" [label = <(IDENTIFIER,props,this.addProperties(props))<SUB>487</SUB>> ]
+"901" [label = <(CONTROL_STRUCTURE,else,else)<SUB>488</SUB>> ]
+"902" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>488</SUB>> ]
+"903" [label = <(log,log(&quot;Unable to find resource &quot; + name, Project.MSG_WARN))<SUB>489</SUB>> ]
+"77" [label = <(IDENTIFIER,this,log(&quot;Unable to find resource &quot; + name, Project.MSG_WARN))<SUB>489</SUB>> ]
+"904" [label = <(&lt;operator&gt;.addition,&quot;Unable to find resource &quot; + name)<SUB>489</SUB>> ]
+"905" [label = <(LITERAL,&quot;Unable to find resource &quot;,&quot;Unable to find resource &quot; + name)<SUB>489</SUB>> ]
+"906" [label = <(IDENTIFIER,name,&quot;Unable to find resource &quot; + name)<SUB>489</SUB>> ]
+"907" [label = <(&lt;operator&gt;.fieldAccess,Project.MSG_WARN)<SUB>489</SUB>> ]
+"908" [label = <(IDENTIFIER,Project,log(&quot;Unable to find resource &quot; + name, Project.MSG_WARN))<SUB>489</SUB>> ]
+"909" [label = <(FIELD_IDENTIFIER,MSG_WARN,MSG_WARN)<SUB>489</SUB>> ]
+"910" [label = <(BLOCK,catch,catch)> ]
+"911" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>491</SUB>> ]
+"912" [label = <(&lt;operator&gt;.throw,throw new BuildException(ex, getLocation());)<SUB>492</SUB>> ]
+"913" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>492</SUB>> ]
+"914" [label = <(&lt;operator&gt;.assignment,&lt;empty&gt;)> ]
+"915" [label = <(IDENTIFIER,$obj11,&lt;empty&gt;)> ]
+"916" [label = <(&lt;operator&gt;.alloc,new BuildException(ex, getLocation()))<SUB>492</SUB>> ]
+"917" [label = <(&lt;init&gt;,new BuildException(ex, getLocation()))<SUB>492</SUB>> ]
+"918" [label = <(IDENTIFIER,$obj11,new BuildException(ex, getLocation()))> ]
+"919" [label = <(IDENTIFIER,ex,new BuildException(ex, getLocation()))<SUB>492</SUB>> ]
+"920" [label = <(getLocation,getLocation())<SUB>492</SUB>> ]
+"78" [label = <(IDENTIFIER,this,getLocation())<SUB>492</SUB>> ]
+"921" [label = <(IDENTIFIER,$obj11,&lt;empty&gt;)> ]
+"922" [label = <(BLOCK,finally,finally)<SUB>493</SUB>> ]
+"923" [label = <(CONTROL_STRUCTURE,if (is != null),if (is != null))<SUB>494</SUB>> ]
+"924" [label = <(&lt;operator&gt;.notEquals,is != null)<SUB>494</SUB>> ]
+"925" [label = <(IDENTIFIER,is,is != null)<SUB>494</SUB>> ]
+"926" [label = <(LITERAL,null,is != null)<SUB>494</SUB>> ]
+"927" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>494</SUB>> ]
+"928" [label = <(CONTROL_STRUCTURE,try,try)<SUB>495</SUB>> ]
+"929" [label = <(BLOCK,try,try)<SUB>495</SUB>> ]
+"930" [label = <(close,is.close())<SUB>496</SUB>> ]
+"931" [label = <(IDENTIFIER,is,is.close())<SUB>496</SUB>> ]
+"932" [label = <(BLOCK,catch,catch)> ]
+"933" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>497</SUB>> ]
+"934" [label = <(MODIFIER,PROTECTED)> ]
+"935" [label = <(MODIFIER,VIRTUAL)> ]
+"936" [label = <(METHOD_RETURN,void)<SUB>466</SUB>> ]
+  "830" -> "73" 
+  "830" -> "831" 
+  "830" -> "832" 
+  "830" -> "934" 
+  "830" -> "935" 
+  "830" -> "936" 
+  "832" -> "71" 
+  "832" -> "833" 
+  "832" -> "836" 
+  "832" -> "837" 
+  "832" -> "844" 
+  "832" -> "845" 
+  "832" -> "848" 
+  "833" -> "834" 
+  "833" -> "835" 
+  "836" -> "70" 
+  "837" -> "72" 
+  "837" -> "838" 
+  "837" -> "841" 
+  "838" -> "839" 
+  "838" -> "840" 
+  "841" -> "842" 
+  "841" -> "843" 
+  "845" -> "846" 
+  "845" -> "847" 
+  "848" -> "849" 
+  "848" -> "910" 
+  "848" -> "922" 
+  "849" -> "850" 
+  "849" -> "851" 
+  "849" -> "854" 
+  "849" -> "874" 
+  "849" -> "891" 
+  "851" -> "852" 
+  "851" -> "853" 
+  "854" -> "855" 
+  "854" -> "860" 
+  "854" -> "868" 
+  "855" -> "856" 
+  "855" -> "859" 
+  "856" -> "857" 
+  "856" -> "858" 
+  "860" -> "861" 
+  "861" -> "862" 
+  "861" -> "863" 
+  "863" -> "864" 
+  "863" -> "865" 
+  "864" -> "74" 
+  "865" -> "866" 
+  "865" -> "867" 
+  "868" -> "869" 
+  "869" -> "870" 
+  "870" -> "871" 
+  "870" -> "872" 
+  "872" -> "873" 
+  "873" -> "75" 
+  "874" -> "875" 
+  "874" -> "878" 
+  "874" -> "884" 
+  "875" -> "876" 
+  "875" -> "877" 
+  "878" -> "879" 
+  "879" -> "880" 
+  "879" -> "881" 
+  "881" -> "882" 
+  "881" -> "883" 
+  "884" -> "885" 
+  "885" -> "886" 
+  "886" -> "887" 
+  "886" -> "888" 
+  "888" -> "889" 
+  "888" -> "890" 
+  "891" -> "892" 
+  "891" -> "895" 
+  "891" -> "901" 
+  "892" -> "893" 
+  "892" -> "894" 
+  "895" -> "896" 
+  "895" -> "899" 
+  "896" -> "897" 
+  "896" -> "898" 
+  "899" -> "76" 
+  "899" -> "900" 
+  "901" -> "902" 
+  "902" -> "903" 
+  "903" -> "77" 
+  "903" -> "904" 
+  "903" -> "907" 
+  "904" -> "905" 
+  "904" -> "906" 
+  "907" -> "908" 
+  "907" -> "909" 
+  "910" -> "911" 
+  "911" -> "912" 
+  "912" -> "913" 
+  "913" -> "914" 
+  "913" -> "917" 
+  "913" -> "921" 
+  "914" -> "915" 
+  "914" -> "916" 
+  "917" -> "918" 
+  "917" -> "919" 
+  "917" -> "920" 
+  "920" -> "78" 
+  "922" -> "923" 
+  "923" -> "924" 
+  "923" -> "927" 
+  "924" -> "925" 
+  "924" -> "926" 
+  "927" -> "928" 
+  "928" -> "929" 
+  "928" -> "932" 
+  "929" -> "930" 
+  "930" -> "931" 
+  "932" -> "933" 
+}

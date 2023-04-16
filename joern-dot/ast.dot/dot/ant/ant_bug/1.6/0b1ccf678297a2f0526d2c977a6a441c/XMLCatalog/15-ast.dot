@@ -1,0 +1,329 @@
+digraph "resolve" {  
+"600" [label = <(METHOD,resolve)<SUB>464</SUB>> ]
+"76" [label = <(PARAM,this)<SUB>464</SUB>> ]
+"601" [label = <(PARAM,String href)<SUB>464</SUB>> ]
+"602" [label = <(PARAM,String base)<SUB>464</SUB>> ]
+"603" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>465</SUB>> ]
+"604" [label = <(CONTROL_STRUCTURE,if (isReference()),if (isReference()))<SUB>467</SUB>> ]
+"605" [label = <(isReference,isReference())<SUB>467</SUB>> ]
+"75" [label = <(IDENTIFIER,this,isReference())<SUB>467</SUB>> ]
+"606" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>467</SUB>> ]
+"607" [label = <(RETURN,return getRef().resolve(href, base);,return getRef().resolve(href, base);)<SUB>468</SUB>> ]
+"608" [label = <(resolve,this.getRef().resolve(href, base))<SUB>468</SUB>> ]
+"609" [label = <(getRef,this.getRef())<SUB>468</SUB>> ]
+"77" [label = <(IDENTIFIER,this,this.getRef())<SUB>468</SUB>> ]
+"610" [label = <(IDENTIFIER,href,this.getRef().resolve(href, base))<SUB>468</SUB>> ]
+"611" [label = <(IDENTIFIER,base,this.getRef().resolve(href, base))<SUB>468</SUB>> ]
+"612" [label = <(CONTROL_STRUCTURE,if (!isChecked()),if (!isChecked()))<SUB>471</SUB>> ]
+"613" [label = <(&lt;operator&gt;.logicalNot,!isChecked())<SUB>471</SUB>> ]
+"614" [label = <(isChecked,isChecked())<SUB>471</SUB>> ]
+"78" [label = <(IDENTIFIER,this,isChecked())<SUB>471</SUB>> ]
+"615" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>471</SUB>> ]
+"80" [label = <(LOCAL,Stack stk: java.util.Stack)> ]
+"616" [label = <(&lt;operator&gt;.assignment,Stack stk = new Stack())<SUB>473</SUB>> ]
+"617" [label = <(IDENTIFIER,stk,Stack stk = new Stack())<SUB>473</SUB>> ]
+"618" [label = <(&lt;operator&gt;.alloc,new Stack())<SUB>473</SUB>> ]
+"619" [label = <(&lt;init&gt;,new Stack())<SUB>473</SUB>> ]
+"79" [label = <(IDENTIFIER,stk,new Stack())<SUB>473</SUB>> ]
+"620" [label = <(push,stk.push(this))<SUB>474</SUB>> ]
+"621" [label = <(IDENTIFIER,stk,stk.push(this))<SUB>474</SUB>> ]
+"81" [label = <(IDENTIFIER,this,stk.push(this))<SUB>474</SUB>> ]
+"622" [label = <(dieOnCircularReference,dieOnCircularReference(stk, getProject()))<SUB>475</SUB>> ]
+"83" [label = <(IDENTIFIER,this,dieOnCircularReference(stk, getProject()))<SUB>475</SUB>> ]
+"623" [label = <(IDENTIFIER,stk,dieOnCircularReference(stk, getProject()))<SUB>475</SUB>> ]
+"624" [label = <(getProject,getProject())<SUB>475</SUB>> ]
+"82" [label = <(IDENTIFIER,this,getProject())<SUB>475</SUB>> ]
+"89" [label = <(LOCAL,SAXSource source: javax.xml.transform.sax.SAXSource)> ]
+"625" [label = <(&lt;operator&gt;.assignment,SAXSource source = null)<SUB>478</SUB>> ]
+"626" [label = <(IDENTIFIER,source,SAXSource source = null)<SUB>478</SUB>> ]
+"627" [label = <(LITERAL,null,SAXSource source = null)<SUB>478</SUB>> ]
+"628" [label = <(LOCAL,String uri: java.lang.String)> ]
+"629" [label = <(&lt;operator&gt;.assignment,String uri = this.removeFragment(href))<SUB>480</SUB>> ]
+"630" [label = <(IDENTIFIER,uri,String uri = this.removeFragment(href))<SUB>480</SUB>> ]
+"631" [label = <(removeFragment,this.removeFragment(href))<SUB>480</SUB>> ]
+"84" [label = <(IDENTIFIER,this,this.removeFragment(href))<SUB>480</SUB>> ]
+"632" [label = <(IDENTIFIER,href,this.removeFragment(href))<SUB>480</SUB>> ]
+"633" [label = <(log,log(&quot;resolve: '&quot; + uri + &quot;' with base: '&quot; + base + &quot;'&quot;, Project.MSG_DEBUG))<SUB>482</SUB>> ]
+"85" [label = <(IDENTIFIER,this,log(&quot;resolve: '&quot; + uri + &quot;' with base: '&quot; + base + &quot;'&quot;, Project.MSG_DEBUG))<SUB>482</SUB>> ]
+"634" [label = <(&lt;operator&gt;.addition,&quot;resolve: '&quot; + uri + &quot;' with base: '&quot; + base + &quot;'&quot;)<SUB>482</SUB>> ]
+"635" [label = <(&lt;operator&gt;.addition,&quot;resolve: '&quot; + uri + &quot;' with base: '&quot; + base)<SUB>482</SUB>> ]
+"636" [label = <(&lt;operator&gt;.addition,&quot;resolve: '&quot; + uri + &quot;' with base: '&quot;)<SUB>482</SUB>> ]
+"637" [label = <(&lt;operator&gt;.addition,&quot;resolve: '&quot; + uri)<SUB>482</SUB>> ]
+"638" [label = <(LITERAL,&quot;resolve: '&quot;,&quot;resolve: '&quot; + uri)<SUB>482</SUB>> ]
+"639" [label = <(IDENTIFIER,uri,&quot;resolve: '&quot; + uri)<SUB>482</SUB>> ]
+"640" [label = <(LITERAL,&quot;' with base: '&quot;,&quot;resolve: '&quot; + uri + &quot;' with base: '&quot;)<SUB>482</SUB>> ]
+"641" [label = <(IDENTIFIER,base,&quot;resolve: '&quot; + uri + &quot;' with base: '&quot; + base)<SUB>482</SUB>> ]
+"642" [label = <(LITERAL,&quot;'&quot;,&quot;resolve: '&quot; + uri + &quot;' with base: '&quot; + base + &quot;'&quot;)<SUB>482</SUB>> ]
+"643" [label = <(&lt;operator&gt;.fieldAccess,Project.MSG_DEBUG)<SUB>482</SUB>> ]
+"644" [label = <(IDENTIFIER,Project,log(&quot;resolve: '&quot; + uri + &quot;' with base: '&quot; + base + &quot;'&quot;, Project.MSG_DEBUG))<SUB>482</SUB>> ]
+"645" [label = <(FIELD_IDENTIFIER,MSG_DEBUG,MSG_DEBUG)<SUB>482</SUB>> ]
+"646" [label = <(&lt;operator&gt;.assignment,source = (SAXSource) getCatalogResolver().resolve(uri, base))<SUB>484</SUB>> ]
+"647" [label = <(IDENTIFIER,source,source = (SAXSource) getCatalogResolver().resolve(uri, base))<SUB>484</SUB>> ]
+"648" [label = <(&lt;operator&gt;.cast,(SAXSource) getCatalogResolver().resolve(uri, base))<SUB>484</SUB>> ]
+"649" [label = <(TYPE_REF,SAXSource,SAXSource)<SUB>484</SUB>> ]
+"650" [label = <(resolve,this.getCatalogResolver().resolve(uri, base))<SUB>484</SUB>> ]
+"651" [label = <(getCatalogResolver,this.getCatalogResolver())<SUB>484</SUB>> ]
+"86" [label = <(IDENTIFIER,this,this.getCatalogResolver())<SUB>484</SUB>> ]
+"652" [label = <(IDENTIFIER,uri,this.getCatalogResolver().resolve(uri, base))<SUB>484</SUB>> ]
+"653" [label = <(IDENTIFIER,base,this.getCatalogResolver().resolve(uri, base))<SUB>484</SUB>> ]
+"654" [label = <(CONTROL_STRUCTURE,if (source == null),if (source == null))<SUB>486</SUB>> ]
+"655" [label = <(&lt;operator&gt;.equals,source == null)<SUB>486</SUB>> ]
+"656" [label = <(IDENTIFIER,source,source == null)<SUB>486</SUB>> ]
+"657" [label = <(LITERAL,null,source == null)<SUB>486</SUB>> ]
+"658" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>486</SUB>> ]
+"659" [label = <(log,log(&quot;No matching catalog entry found, parser will use: '&quot; + href + &quot;'&quot;, Project.MSG_DEBUG))<SUB>487</SUB>> ]
+"87" [label = <(IDENTIFIER,this,log(&quot;No matching catalog entry found, parser will use: '&quot; + href + &quot;'&quot;, Project.MSG_DEBUG))<SUB>487</SUB>> ]
+"660" [label = <(&lt;operator&gt;.addition,&quot;No matching catalog entry found, parser will use: '&quot; + href + &quot;'&quot;)<SUB>487</SUB>> ]
+"661" [label = <(&lt;operator&gt;.addition,&quot;No matching catalog entry found, parser will use: '&quot; + href)<SUB>487</SUB>> ]
+"662" [label = <(LITERAL,&quot;No matching catalog entry found, parser will use: '&quot;,&quot;No matching catalog entry found, parser will use: '&quot; + href)<SUB>487</SUB>> ]
+"663" [label = <(IDENTIFIER,href,&quot;No matching catalog entry found, parser will use: '&quot; + href)<SUB>488</SUB>> ]
+"664" [label = <(LITERAL,&quot;'&quot;,&quot;No matching catalog entry found, parser will use: '&quot; + href + &quot;'&quot;)<SUB>488</SUB>> ]
+"665" [label = <(&lt;operator&gt;.fieldAccess,Project.MSG_DEBUG)<SUB>488</SUB>> ]
+"666" [label = <(IDENTIFIER,Project,log(&quot;No matching catalog entry found, parser will use: '&quot; + href + &quot;'&quot;, Project.MSG_DEBUG))<SUB>488</SUB>> ]
+"667" [label = <(FIELD_IDENTIFIER,MSG_DEBUG,MSG_DEBUG)<SUB>488</SUB>> ]
+"668" [label = <(&lt;operator&gt;.assignment,source = new SAXSource())<SUB>493</SUB>> ]
+"669" [label = <(IDENTIFIER,source,source = new SAXSource())<SUB>493</SUB>> ]
+"670" [label = <(&lt;operator&gt;.alloc,new SAXSource())<SUB>493</SUB>> ]
+"671" [label = <(&lt;init&gt;,new SAXSource())<SUB>493</SUB>> ]
+"88" [label = <(IDENTIFIER,source,new SAXSource())<SUB>493</SUB>> ]
+"92" [label = <(LOCAL,URL baseURL: java.net.URL)> ]
+"672" [label = <(&lt;operator&gt;.assignment,URL baseURL = null)<SUB>494</SUB>> ]
+"673" [label = <(IDENTIFIER,baseURL,URL baseURL = null)<SUB>494</SUB>> ]
+"674" [label = <(LITERAL,null,URL baseURL = null)<SUB>494</SUB>> ]
+"675" [label = <(CONTROL_STRUCTURE,try,try)<SUB>495</SUB>> ]
+"676" [label = <(BLOCK,try,try)<SUB>495</SUB>> ]
+"677" [label = <(CONTROL_STRUCTURE,if (base == null),if (base == null))<SUB>496</SUB>> ]
+"678" [label = <(&lt;operator&gt;.equals,base == null)<SUB>496</SUB>> ]
+"679" [label = <(IDENTIFIER,base,base == null)<SUB>496</SUB>> ]
+"680" [label = <(LITERAL,null,base == null)<SUB>496</SUB>> ]
+"681" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>496</SUB>> ]
+"682" [label = <(&lt;operator&gt;.assignment,baseURL = getFileURL(getProject().getBaseDir()))<SUB>497</SUB>> ]
+"683" [label = <(IDENTIFIER,baseURL,baseURL = getFileURL(getProject().getBaseDir()))<SUB>497</SUB>> ]
+"684" [label = <(getFileURL,getFileURL(getProject().getBaseDir()))<SUB>497</SUB>> ]
+"685" [label = <(&lt;operator&gt;.fieldAccess,XMLCatalog.fileUtils)<SUB>497</SUB>> ]
+"686" [label = <(IDENTIFIER,XMLCatalog,getFileURL(getProject().getBaseDir()))<SUB>497</SUB>> ]
+"687" [label = <(FIELD_IDENTIFIER,fileUtils,fileUtils)<SUB>497</SUB>> ]
+"688" [label = <(getBaseDir,getBaseDir())<SUB>497</SUB>> ]
+"689" [label = <(getProject,getProject())<SUB>497</SUB>> ]
+"90" [label = <(IDENTIFIER,this,getProject())<SUB>497</SUB>> ]
+"690" [label = <(CONTROL_STRUCTURE,else,else)<SUB>498</SUB>> ]
+"691" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>498</SUB>> ]
+"692" [label = <(&lt;operator&gt;.assignment,baseURL = new URL(base))<SUB>499</SUB>> ]
+"693" [label = <(IDENTIFIER,baseURL,baseURL = new URL(base))<SUB>499</SUB>> ]
+"694" [label = <(&lt;operator&gt;.alloc,new URL(base))<SUB>499</SUB>> ]
+"695" [label = <(&lt;init&gt;,new URL(base))<SUB>499</SUB>> ]
+"91" [label = <(IDENTIFIER,baseURL,new URL(base))<SUB>499</SUB>> ]
+"696" [label = <(IDENTIFIER,base,new URL(base))<SUB>499</SUB>> ]
+"697" [label = <(LOCAL,URL url: java.net.URL)> ]
+"698" [label = <(&lt;operator&gt;.assignment,URL url = uri.length() == 0 ? baseURL : new URL(baseURL, uri))<SUB>501</SUB>> ]
+"699" [label = <(IDENTIFIER,url,URL url = uri.length() == 0 ? baseURL : new URL(baseURL, uri))<SUB>501</SUB>> ]
+"700" [label = <(&lt;operator&gt;.conditional,uri.length() == 0 ? baseURL : new URL(baseURL, uri))<SUB>501</SUB>> ]
+"701" [label = <(&lt;operator&gt;.equals,uri.length() == 0)<SUB>501</SUB>> ]
+"702" [label = <(length,uri.length())<SUB>501</SUB>> ]
+"703" [label = <(IDENTIFIER,uri,uri.length())<SUB>501</SUB>> ]
+"704" [label = <(LITERAL,0,uri.length() == 0)<SUB>501</SUB>> ]
+"705" [label = <(IDENTIFIER,baseURL,uri.length() == 0 ? baseURL : new URL(baseURL, uri))<SUB>501</SUB>> ]
+"706" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>501</SUB>> ]
+"707" [label = <(&lt;operator&gt;.assignment,&lt;empty&gt;)> ]
+"708" [label = <(IDENTIFIER,$obj7,&lt;empty&gt;)> ]
+"709" [label = <(&lt;operator&gt;.alloc,new URL(baseURL, uri))<SUB>501</SUB>> ]
+"710" [label = <(&lt;init&gt;,new URL(baseURL, uri))<SUB>501</SUB>> ]
+"711" [label = <(IDENTIFIER,$obj7,new URL(baseURL, uri))> ]
+"712" [label = <(IDENTIFIER,baseURL,new URL(baseURL, uri))<SUB>501</SUB>> ]
+"713" [label = <(IDENTIFIER,uri,new URL(baseURL, uri))<SUB>501</SUB>> ]
+"714" [label = <(IDENTIFIER,$obj7,&lt;empty&gt;)> ]
+"715" [label = <(setInputSource,setInputSource(new InputSource(url.toString())))<SUB>502</SUB>> ]
+"716" [label = <(IDENTIFIER,source,setInputSource(new InputSource(url.toString())))<SUB>502</SUB>> ]
+"717" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>502</SUB>> ]
+"718" [label = <(&lt;operator&gt;.assignment,&lt;empty&gt;)> ]
+"719" [label = <(IDENTIFIER,$obj8,&lt;empty&gt;)> ]
+"720" [label = <(&lt;operator&gt;.alloc,new InputSource(url.toString()))<SUB>502</SUB>> ]
+"721" [label = <(&lt;init&gt;,new InputSource(url.toString()))<SUB>502</SUB>> ]
+"722" [label = <(IDENTIFIER,$obj8,new InputSource(url.toString()))> ]
+"723" [label = <(toString,url.toString())<SUB>502</SUB>> ]
+"724" [label = <(IDENTIFIER,url,url.toString())<SUB>502</SUB>> ]
+"725" [label = <(IDENTIFIER,$obj8,&lt;empty&gt;)> ]
+"726" [label = <(BLOCK,catch,catch)> ]
+"727" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>503</SUB>> ]
+"728" [label = <(setInputSource,setInputSource(new InputSource(uri)))<SUB>506</SUB>> ]
+"729" [label = <(IDENTIFIER,source,setInputSource(new InputSource(uri)))<SUB>506</SUB>> ]
+"730" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>506</SUB>> ]
+"731" [label = <(&lt;operator&gt;.assignment,&lt;empty&gt;)> ]
+"732" [label = <(IDENTIFIER,$obj9,&lt;empty&gt;)> ]
+"733" [label = <(&lt;operator&gt;.alloc,new InputSource(uri))<SUB>506</SUB>> ]
+"734" [label = <(&lt;init&gt;,new InputSource(uri))<SUB>506</SUB>> ]
+"735" [label = <(IDENTIFIER,$obj9,new InputSource(uri))> ]
+"736" [label = <(IDENTIFIER,uri,new InputSource(uri))<SUB>506</SUB>> ]
+"737" [label = <(IDENTIFIER,$obj9,&lt;empty&gt;)> ]
+"738" [label = <(setEntityResolver,this.setEntityResolver(source))<SUB>510</SUB>> ]
+"93" [label = <(IDENTIFIER,this,this.setEntityResolver(source))<SUB>510</SUB>> ]
+"739" [label = <(IDENTIFIER,source,this.setEntityResolver(source))<SUB>510</SUB>> ]
+"740" [label = <(RETURN,return source;,return source;)<SUB>511</SUB>> ]
+"741" [label = <(IDENTIFIER,source,return source;)<SUB>511</SUB>> ]
+"742" [label = <(MODIFIER,PUBLIC)> ]
+"743" [label = <(MODIFIER,VIRTUAL)> ]
+"744" [label = <(METHOD_RETURN,javax.xml.transform.Source)<SUB>464</SUB>> ]
+  "600" -> "76" 
+  "600" -> "601" 
+  "600" -> "602" 
+  "600" -> "603" 
+  "600" -> "742" 
+  "600" -> "743" 
+  "600" -> "744" 
+  "603" -> "604" 
+  "603" -> "612" 
+  "603" -> "89" 
+  "603" -> "625" 
+  "603" -> "628" 
+  "603" -> "629" 
+  "603" -> "633" 
+  "603" -> "646" 
+  "603" -> "654" 
+  "603" -> "738" 
+  "603" -> "740" 
+  "604" -> "605" 
+  "604" -> "606" 
+  "605" -> "75" 
+  "606" -> "607" 
+  "607" -> "608" 
+  "608" -> "609" 
+  "608" -> "610" 
+  "608" -> "611" 
+  "609" -> "77" 
+  "612" -> "613" 
+  "612" -> "615" 
+  "613" -> "614" 
+  "614" -> "78" 
+  "615" -> "80" 
+  "615" -> "616" 
+  "615" -> "619" 
+  "615" -> "620" 
+  "615" -> "622" 
+  "616" -> "617" 
+  "616" -> "618" 
+  "619" -> "79" 
+  "620" -> "621" 
+  "620" -> "81" 
+  "622" -> "83" 
+  "622" -> "623" 
+  "622" -> "624" 
+  "624" -> "82" 
+  "625" -> "626" 
+  "625" -> "627" 
+  "629" -> "630" 
+  "629" -> "631" 
+  "631" -> "84" 
+  "631" -> "632" 
+  "633" -> "85" 
+  "633" -> "634" 
+  "633" -> "643" 
+  "634" -> "635" 
+  "634" -> "642" 
+  "635" -> "636" 
+  "635" -> "641" 
+  "636" -> "637" 
+  "636" -> "640" 
+  "637" -> "638" 
+  "637" -> "639" 
+  "643" -> "644" 
+  "643" -> "645" 
+  "646" -> "647" 
+  "646" -> "648" 
+  "648" -> "649" 
+  "648" -> "650" 
+  "650" -> "651" 
+  "650" -> "652" 
+  "650" -> "653" 
+  "651" -> "86" 
+  "654" -> "655" 
+  "654" -> "658" 
+  "655" -> "656" 
+  "655" -> "657" 
+  "658" -> "659" 
+  "658" -> "668" 
+  "658" -> "671" 
+  "658" -> "92" 
+  "658" -> "672" 
+  "658" -> "675" 
+  "659" -> "87" 
+  "659" -> "660" 
+  "659" -> "665" 
+  "660" -> "661" 
+  "660" -> "664" 
+  "661" -> "662" 
+  "661" -> "663" 
+  "665" -> "666" 
+  "665" -> "667" 
+  "668" -> "669" 
+  "668" -> "670" 
+  "671" -> "88" 
+  "672" -> "673" 
+  "672" -> "674" 
+  "675" -> "676" 
+  "675" -> "726" 
+  "676" -> "677" 
+  "676" -> "697" 
+  "676" -> "698" 
+  "676" -> "715" 
+  "677" -> "678" 
+  "677" -> "681" 
+  "677" -> "690" 
+  "678" -> "679" 
+  "678" -> "680" 
+  "681" -> "682" 
+  "682" -> "683" 
+  "682" -> "684" 
+  "684" -> "685" 
+  "684" -> "688" 
+  "685" -> "686" 
+  "685" -> "687" 
+  "688" -> "689" 
+  "689" -> "90" 
+  "690" -> "691" 
+  "691" -> "692" 
+  "691" -> "695" 
+  "692" -> "693" 
+  "692" -> "694" 
+  "695" -> "91" 
+  "695" -> "696" 
+  "698" -> "699" 
+  "698" -> "700" 
+  "700" -> "701" 
+  "700" -> "705" 
+  "700" -> "706" 
+  "701" -> "702" 
+  "701" -> "704" 
+  "702" -> "703" 
+  "706" -> "707" 
+  "706" -> "710" 
+  "706" -> "714" 
+  "707" -> "708" 
+  "707" -> "709" 
+  "710" -> "711" 
+  "710" -> "712" 
+  "710" -> "713" 
+  "715" -> "716" 
+  "715" -> "717" 
+  "717" -> "718" 
+  "717" -> "721" 
+  "717" -> "725" 
+  "718" -> "719" 
+  "718" -> "720" 
+  "721" -> "722" 
+  "721" -> "723" 
+  "723" -> "724" 
+  "726" -> "727" 
+  "727" -> "728" 
+  "728" -> "729" 
+  "728" -> "730" 
+  "730" -> "731" 
+  "730" -> "734" 
+  "730" -> "737" 
+  "731" -> "732" 
+  "731" -> "733" 
+  "734" -> "735" 
+  "734" -> "736" 
+  "738" -> "93" 
+  "738" -> "739" 
+  "740" -> "741" 
+}

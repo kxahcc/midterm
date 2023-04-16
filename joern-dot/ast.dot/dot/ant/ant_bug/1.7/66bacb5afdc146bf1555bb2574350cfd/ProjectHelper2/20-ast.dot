@@ -1,0 +1,289 @@
+digraph "resolveEntity" {  
+"950" [label = <(METHOD,resolveEntity)<SUB>469</SUB>> ]
+"951" [label = <(PARAM,this)<SUB>469</SUB>> ]
+"952" [label = <(PARAM,String publicId)<SUB>469</SUB>> ]
+"953" [label = <(PARAM,String systemId)<SUB>470</SUB>> ]
+"954" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>470</SUB>> ]
+"955" [label = <(log,log(&quot;resolving systemId: &quot; + systemId, Project.MSG_VERBOSE))<SUB>472</SUB>> ]
+"956" [label = <(getProject,getProject())<SUB>472</SUB>> ]
+"957" [label = <(&lt;operator&gt;.fieldAccess,this.context)<SUB>472</SUB>> ]
+"958" [label = <(IDENTIFIER,this,getProject())<SUB>472</SUB>> ]
+"959" [label = <(FIELD_IDENTIFIER,context,context)<SUB>472</SUB>> ]
+"960" [label = <(&lt;operator&gt;.addition,&quot;resolving systemId: &quot; + systemId)<SUB>472</SUB>> ]
+"961" [label = <(LITERAL,&quot;resolving systemId: &quot;,&quot;resolving systemId: &quot; + systemId)<SUB>472</SUB>> ]
+"962" [label = <(IDENTIFIER,systemId,&quot;resolving systemId: &quot; + systemId)<SUB>473</SUB>> ]
+"963" [label = <(&lt;operator&gt;.fieldAccess,Project.MSG_VERBOSE)<SUB>473</SUB>> ]
+"964" [label = <(IDENTIFIER,Project,log(&quot;resolving systemId: &quot; + systemId, Project.MSG_VERBOSE))<SUB>473</SUB>> ]
+"965" [label = <(FIELD_IDENTIFIER,MSG_VERBOSE,MSG_VERBOSE)<SUB>473</SUB>> ]
+"966" [label = <(CONTROL_STRUCTURE,if (systemId.startsWith(&quot;file:&quot;)),if (systemId.startsWith(&quot;file:&quot;)))<SUB>475</SUB>> ]
+"967" [label = <(startsWith,systemId.startsWith(&quot;file:&quot;))<SUB>475</SUB>> ]
+"968" [label = <(IDENTIFIER,systemId,systemId.startsWith(&quot;file:&quot;))<SUB>475</SUB>> ]
+"969" [label = <(LITERAL,&quot;file:&quot;,systemId.startsWith(&quot;file:&quot;))<SUB>475</SUB>> ]
+"970" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>475</SUB>> ]
+"971" [label = <(LOCAL,String path: java.lang.String)> ]
+"972" [label = <(&lt;operator&gt;.assignment,String path = fromURI(systemId))<SUB>476</SUB>> ]
+"973" [label = <(IDENTIFIER,path,String path = fromURI(systemId))<SUB>476</SUB>> ]
+"974" [label = <(fromURI,fromURI(systemId))<SUB>476</SUB>> ]
+"975" [label = <(&lt;operator&gt;.fieldAccess,ProjectHelper2$RootHandler.FILE_UTILS)<SUB>476</SUB>> ]
+"976" [label = <(IDENTIFIER,ProjectHelper2$RootHandler,fromURI(systemId))<SUB>476</SUB>> ]
+"977" [label = <(FIELD_IDENTIFIER,FILE_UTILS,FILE_UTILS)<SUB>476</SUB>> ]
+"978" [label = <(IDENTIFIER,systemId,fromURI(systemId))<SUB>476</SUB>> ]
+"55" [label = <(LOCAL,File file: java.io.File)> ]
+"979" [label = <(&lt;operator&gt;.assignment,File file = new File(path))<SUB>478</SUB>> ]
+"980" [label = <(IDENTIFIER,file,File file = new File(path))<SUB>478</SUB>> ]
+"981" [label = <(&lt;operator&gt;.alloc,new File(path))<SUB>478</SUB>> ]
+"982" [label = <(&lt;init&gt;,new File(path))<SUB>478</SUB>> ]
+"54" [label = <(IDENTIFIER,file,new File(path))<SUB>478</SUB>> ]
+"983" [label = <(IDENTIFIER,path,new File(path))<SUB>478</SUB>> ]
+"984" [label = <(CONTROL_STRUCTURE,if (!file.isAbsolute()),if (!file.isAbsolute()))<SUB>479</SUB>> ]
+"985" [label = <(&lt;operator&gt;.logicalNot,!file.isAbsolute())<SUB>479</SUB>> ]
+"986" [label = <(isAbsolute,file.isAbsolute())<SUB>479</SUB>> ]
+"987" [label = <(IDENTIFIER,file,file.isAbsolute())<SUB>479</SUB>> ]
+"988" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>479</SUB>> ]
+"989" [label = <(&lt;operator&gt;.assignment,file = resolveFile(context.getBuildFileParent(), path))<SUB>480</SUB>> ]
+"990" [label = <(IDENTIFIER,file,file = resolveFile(context.getBuildFileParent(), path))<SUB>480</SUB>> ]
+"991" [label = <(resolveFile,resolveFile(context.getBuildFileParent(), path))<SUB>480</SUB>> ]
+"992" [label = <(&lt;operator&gt;.fieldAccess,ProjectHelper2$RootHandler.FILE_UTILS)<SUB>480</SUB>> ]
+"993" [label = <(IDENTIFIER,ProjectHelper2$RootHandler,resolveFile(context.getBuildFileParent(), path))<SUB>480</SUB>> ]
+"994" [label = <(FIELD_IDENTIFIER,FILE_UTILS,FILE_UTILS)<SUB>480</SUB>> ]
+"995" [label = <(getBuildFileParent,getBuildFileParent())<SUB>480</SUB>> ]
+"996" [label = <(&lt;operator&gt;.fieldAccess,this.context)<SUB>480</SUB>> ]
+"997" [label = <(IDENTIFIER,this,getBuildFileParent())<SUB>480</SUB>> ]
+"998" [label = <(FIELD_IDENTIFIER,context,context)<SUB>480</SUB>> ]
+"999" [label = <(IDENTIFIER,path,resolveFile(context.getBuildFileParent(), path))<SUB>480</SUB>> ]
+"1000" [label = <(log,log(&quot;Warning: '&quot; + systemId + &quot;' in &quot; + context.getBuildFile() + &quot; should be expressed simply as '&quot; + path.replace('\\', '/') + &quot;' for compliance with other XML tools&quot;, Project.MSG_WARN))<SUB>481</SUB>> ]
+"1001" [label = <(getProject,getProject())<SUB>481</SUB>> ]
+"1002" [label = <(&lt;operator&gt;.fieldAccess,this.context)<SUB>481</SUB>> ]
+"1003" [label = <(IDENTIFIER,this,getProject())<SUB>481</SUB>> ]
+"1004" [label = <(FIELD_IDENTIFIER,context,context)<SUB>481</SUB>> ]
+"1005" [label = <(&lt;operator&gt;.addition,&quot;Warning: '&quot; + systemId + &quot;' in &quot; + context.getBuildFile() + &quot; should be expressed simply as '&quot; + path.replace('\\', '/') + &quot;' for compliance with other XML tools&quot;)<SUB>482</SUB>> ]
+"1006" [label = <(&lt;operator&gt;.addition,&quot;Warning: '&quot; + systemId + &quot;' in &quot; + context.getBuildFile() + &quot; should be expressed simply as '&quot; + path.replace('\\', '/'))<SUB>482</SUB>> ]
+"1007" [label = <(&lt;operator&gt;.addition,&quot;Warning: '&quot; + systemId + &quot;' in &quot; + context.getBuildFile() + &quot; should be expressed simply as '&quot;)<SUB>482</SUB>> ]
+"1008" [label = <(&lt;operator&gt;.addition,&quot;Warning: '&quot; + systemId + &quot;' in &quot; + context.getBuildFile())<SUB>482</SUB>> ]
+"1009" [label = <(&lt;operator&gt;.addition,&quot;Warning: '&quot; + systemId + &quot;' in &quot;)<SUB>482</SUB>> ]
+"1010" [label = <(&lt;operator&gt;.addition,&quot;Warning: '&quot; + systemId)<SUB>482</SUB>> ]
+"1011" [label = <(LITERAL,&quot;Warning: '&quot;,&quot;Warning: '&quot; + systemId)<SUB>482</SUB>> ]
+"1012" [label = <(IDENTIFIER,systemId,&quot;Warning: '&quot; + systemId)<SUB>482</SUB>> ]
+"1013" [label = <(LITERAL,&quot;' in &quot;,&quot;Warning: '&quot; + systemId + &quot;' in &quot;)<SUB>482</SUB>> ]
+"1014" [label = <(getBuildFile,getBuildFile())<SUB>482</SUB>> ]
+"1015" [label = <(&lt;operator&gt;.fieldAccess,this.context)<SUB>482</SUB>> ]
+"1016" [label = <(IDENTIFIER,this,getBuildFile())<SUB>482</SUB>> ]
+"1017" [label = <(FIELD_IDENTIFIER,context,context)<SUB>482</SUB>> ]
+"1018" [label = <(LITERAL,&quot; should be expressed simply as '&quot;,&quot;Warning: '&quot; + systemId + &quot;' in &quot; + context.getBuildFile() + &quot; should be expressed simply as '&quot;)<SUB>483</SUB>> ]
+"1019" [label = <(replace,path.replace('\\', '/'))<SUB>483</SUB>> ]
+"1020" [label = <(IDENTIFIER,path,path.replace('\\', '/'))<SUB>483</SUB>> ]
+"1021" [label = <(LITERAL,'\\',path.replace('\\', '/'))<SUB>483</SUB>> ]
+"1022" [label = <(LITERAL,'/',path.replace('\\', '/'))<SUB>483</SUB>> ]
+"1023" [label = <(LITERAL,&quot;' for compliance with other XML tools&quot;,&quot;Warning: '&quot; + systemId + &quot;' in &quot; + context.getBuildFile() + &quot; should be expressed simply as '&quot; + path.replace('\\', '/') + &quot;' for compliance with other XML tools&quot;)<SUB>484</SUB>> ]
+"1024" [label = <(&lt;operator&gt;.fieldAccess,Project.MSG_WARN)<SUB>485</SUB>> ]
+"1025" [label = <(IDENTIFIER,Project,log(&quot;Warning: '&quot; + systemId + &quot;' in &quot; + context.getBuildFile() + &quot; should be expressed simply as '&quot; + path.replace('\\', '/') + &quot;' for compliance with other XML tools&quot;, Project.MSG_WARN))<SUB>485</SUB>> ]
+"1026" [label = <(FIELD_IDENTIFIER,MSG_WARN,MSG_WARN)<SUB>485</SUB>> ]
+"1027" [label = <(log,log(&quot;file=&quot; + file, Project.MSG_DEBUG))<SUB>487</SUB>> ]
+"1028" [label = <(getProject,getProject())<SUB>487</SUB>> ]
+"1029" [label = <(&lt;operator&gt;.fieldAccess,this.context)<SUB>487</SUB>> ]
+"1030" [label = <(IDENTIFIER,this,getProject())<SUB>487</SUB>> ]
+"1031" [label = <(FIELD_IDENTIFIER,context,context)<SUB>487</SUB>> ]
+"1032" [label = <(&lt;operator&gt;.addition,&quot;file=&quot; + file)<SUB>487</SUB>> ]
+"1033" [label = <(LITERAL,&quot;file=&quot;,&quot;file=&quot; + file)<SUB>487</SUB>> ]
+"1034" [label = <(IDENTIFIER,file,&quot;file=&quot; + file)<SUB>487</SUB>> ]
+"1035" [label = <(&lt;operator&gt;.fieldAccess,Project.MSG_DEBUG)<SUB>487</SUB>> ]
+"1036" [label = <(IDENTIFIER,Project,log(&quot;file=&quot; + file, Project.MSG_DEBUG))<SUB>487</SUB>> ]
+"1037" [label = <(FIELD_IDENTIFIER,MSG_DEBUG,MSG_DEBUG)<SUB>487</SUB>> ]
+"1038" [label = <(CONTROL_STRUCTURE,try,try)<SUB>488</SUB>> ]
+"1039" [label = <(BLOCK,try,try)<SUB>488</SUB>> ]
+"57" [label = <(LOCAL,InputSource inputSource: org.xml.sax.InputSource)> ]
+"1040" [label = <(&lt;operator&gt;.assignment,InputSource inputSource = new InputSource(new FileInputStream(file)))<SUB>489</SUB>> ]
+"1041" [label = <(IDENTIFIER,inputSource,InputSource inputSource = new InputSource(new FileInputStream(file)))<SUB>489</SUB>> ]
+"1042" [label = <(&lt;operator&gt;.alloc,new InputSource(new FileInputStream(file)))<SUB>490</SUB>> ]
+"1043" [label = <(&lt;init&gt;,new InputSource(new FileInputStream(file)))<SUB>490</SUB>> ]
+"56" [label = <(IDENTIFIER,inputSource,new InputSource(new FileInputStream(file)))<SUB>489</SUB>> ]
+"1044" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>490</SUB>> ]
+"1045" [label = <(&lt;operator&gt;.assignment,&lt;empty&gt;)> ]
+"1046" [label = <(IDENTIFIER,$obj28,&lt;empty&gt;)> ]
+"1047" [label = <(&lt;operator&gt;.alloc,new FileInputStream(file))<SUB>490</SUB>> ]
+"1048" [label = <(&lt;init&gt;,new FileInputStream(file))<SUB>490</SUB>> ]
+"1049" [label = <(IDENTIFIER,$obj28,new FileInputStream(file))> ]
+"1050" [label = <(IDENTIFIER,file,new FileInputStream(file))<SUB>490</SUB>> ]
+"1051" [label = <(IDENTIFIER,$obj28,&lt;empty&gt;)> ]
+"1052" [label = <(setSystemId,setSystemId(FILE_UTILS.toURI(file.getAbsolutePath())))<SUB>491</SUB>> ]
+"1053" [label = <(IDENTIFIER,inputSource,setSystemId(FILE_UTILS.toURI(file.getAbsolutePath())))<SUB>491</SUB>> ]
+"1054" [label = <(toURI,toURI(file.getAbsolutePath()))<SUB>491</SUB>> ]
+"1055" [label = <(&lt;operator&gt;.fieldAccess,ProjectHelper2$RootHandler.FILE_UTILS)<SUB>491</SUB>> ]
+"1056" [label = <(IDENTIFIER,ProjectHelper2$RootHandler,toURI(file.getAbsolutePath()))<SUB>491</SUB>> ]
+"1057" [label = <(FIELD_IDENTIFIER,FILE_UTILS,FILE_UTILS)<SUB>491</SUB>> ]
+"1058" [label = <(getAbsolutePath,file.getAbsolutePath())<SUB>491</SUB>> ]
+"1059" [label = <(IDENTIFIER,file,file.getAbsolutePath())<SUB>491</SUB>> ]
+"1060" [label = <(RETURN,return inputSource;,return inputSource;)<SUB>492</SUB>> ]
+"1061" [label = <(IDENTIFIER,inputSource,return inputSource;)<SUB>492</SUB>> ]
+"1062" [label = <(BLOCK,catch,catch)> ]
+"1063" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>493</SUB>> ]
+"1064" [label = <(log,log(file.getAbsolutePath() + &quot; could not be found&quot;, Project.MSG_WARN))<SUB>494</SUB>> ]
+"1065" [label = <(getProject,getProject())<SUB>494</SUB>> ]
+"1066" [label = <(&lt;operator&gt;.fieldAccess,this.context)<SUB>494</SUB>> ]
+"1067" [label = <(IDENTIFIER,this,getProject())<SUB>494</SUB>> ]
+"1068" [label = <(FIELD_IDENTIFIER,context,context)<SUB>494</SUB>> ]
+"1069" [label = <(&lt;operator&gt;.addition,file.getAbsolutePath() + &quot; could not be found&quot;)<SUB>494</SUB>> ]
+"1070" [label = <(getAbsolutePath,file.getAbsolutePath())<SUB>494</SUB>> ]
+"1071" [label = <(IDENTIFIER,file,file.getAbsolutePath())<SUB>494</SUB>> ]
+"1072" [label = <(LITERAL,&quot; could not be found&quot;,file.getAbsolutePath() + &quot; could not be found&quot;)<SUB>495</SUB>> ]
+"1073" [label = <(&lt;operator&gt;.fieldAccess,Project.MSG_WARN)<SUB>495</SUB>> ]
+"1074" [label = <(IDENTIFIER,Project,log(file.getAbsolutePath() + &quot; could not be found&quot;, Project.MSG_WARN))<SUB>495</SUB>> ]
+"1075" [label = <(FIELD_IDENTIFIER,MSG_WARN,MSG_WARN)<SUB>495</SUB>> ]
+"1076" [label = <(log,log(&quot;could not resolve systemId&quot;, Project.MSG_DEBUG))<SUB>500</SUB>> ]
+"1077" [label = <(getProject,getProject())<SUB>500</SUB>> ]
+"1078" [label = <(&lt;operator&gt;.fieldAccess,this.context)<SUB>500</SUB>> ]
+"1079" [label = <(IDENTIFIER,this,getProject())<SUB>500</SUB>> ]
+"1080" [label = <(FIELD_IDENTIFIER,context,context)<SUB>500</SUB>> ]
+"1081" [label = <(LITERAL,&quot;could not resolve systemId&quot;,log(&quot;could not resolve systemId&quot;, Project.MSG_DEBUG))<SUB>501</SUB>> ]
+"1082" [label = <(&lt;operator&gt;.fieldAccess,Project.MSG_DEBUG)<SUB>501</SUB>> ]
+"1083" [label = <(IDENTIFIER,Project,log(&quot;could not resolve systemId&quot;, Project.MSG_DEBUG))<SUB>501</SUB>> ]
+"1084" [label = <(FIELD_IDENTIFIER,MSG_DEBUG,MSG_DEBUG)<SUB>501</SUB>> ]
+"1085" [label = <(RETURN,return null;,return null;)<SUB>502</SUB>> ]
+"1086" [label = <(LITERAL,null,return null;)<SUB>502</SUB>> ]
+"1087" [label = <(MODIFIER,PUBLIC)> ]
+"1088" [label = <(MODIFIER,VIRTUAL)> ]
+"1089" [label = <(METHOD_RETURN,org.xml.sax.InputSource)<SUB>469</SUB>> ]
+  "950" -> "951" 
+  "950" -> "952" 
+  "950" -> "953" 
+  "950" -> "954" 
+  "950" -> "1087" 
+  "950" -> "1088" 
+  "950" -> "1089" 
+  "954" -> "955" 
+  "954" -> "966" 
+  "954" -> "1076" 
+  "954" -> "1085" 
+  "955" -> "956" 
+  "955" -> "960" 
+  "955" -> "963" 
+  "956" -> "957" 
+  "957" -> "958" 
+  "957" -> "959" 
+  "960" -> "961" 
+  "960" -> "962" 
+  "963" -> "964" 
+  "963" -> "965" 
+  "966" -> "967" 
+  "966" -> "970" 
+  "967" -> "968" 
+  "967" -> "969" 
+  "970" -> "971" 
+  "970" -> "972" 
+  "970" -> "55" 
+  "970" -> "979" 
+  "970" -> "982" 
+  "970" -> "984" 
+  "970" -> "1027" 
+  "970" -> "1038" 
+  "972" -> "973" 
+  "972" -> "974" 
+  "974" -> "975" 
+  "974" -> "978" 
+  "975" -> "976" 
+  "975" -> "977" 
+  "979" -> "980" 
+  "979" -> "981" 
+  "982" -> "54" 
+  "982" -> "983" 
+  "984" -> "985" 
+  "984" -> "988" 
+  "985" -> "986" 
+  "986" -> "987" 
+  "988" -> "989" 
+  "988" -> "1000" 
+  "989" -> "990" 
+  "989" -> "991" 
+  "991" -> "992" 
+  "991" -> "995" 
+  "991" -> "999" 
+  "992" -> "993" 
+  "992" -> "994" 
+  "995" -> "996" 
+  "996" -> "997" 
+  "996" -> "998" 
+  "1000" -> "1001" 
+  "1000" -> "1005" 
+  "1000" -> "1024" 
+  "1001" -> "1002" 
+  "1002" -> "1003" 
+  "1002" -> "1004" 
+  "1005" -> "1006" 
+  "1005" -> "1023" 
+  "1006" -> "1007" 
+  "1006" -> "1019" 
+  "1007" -> "1008" 
+  "1007" -> "1018" 
+  "1008" -> "1009" 
+  "1008" -> "1014" 
+  "1009" -> "1010" 
+  "1009" -> "1013" 
+  "1010" -> "1011" 
+  "1010" -> "1012" 
+  "1014" -> "1015" 
+  "1015" -> "1016" 
+  "1015" -> "1017" 
+  "1019" -> "1020" 
+  "1019" -> "1021" 
+  "1019" -> "1022" 
+  "1024" -> "1025" 
+  "1024" -> "1026" 
+  "1027" -> "1028" 
+  "1027" -> "1032" 
+  "1027" -> "1035" 
+  "1028" -> "1029" 
+  "1029" -> "1030" 
+  "1029" -> "1031" 
+  "1032" -> "1033" 
+  "1032" -> "1034" 
+  "1035" -> "1036" 
+  "1035" -> "1037" 
+  "1038" -> "1039" 
+  "1038" -> "1062" 
+  "1039" -> "57" 
+  "1039" -> "1040" 
+  "1039" -> "1043" 
+  "1039" -> "1052" 
+  "1039" -> "1060" 
+  "1040" -> "1041" 
+  "1040" -> "1042" 
+  "1043" -> "56" 
+  "1043" -> "1044" 
+  "1044" -> "1045" 
+  "1044" -> "1048" 
+  "1044" -> "1051" 
+  "1045" -> "1046" 
+  "1045" -> "1047" 
+  "1048" -> "1049" 
+  "1048" -> "1050" 
+  "1052" -> "1053" 
+  "1052" -> "1054" 
+  "1054" -> "1055" 
+  "1054" -> "1058" 
+  "1055" -> "1056" 
+  "1055" -> "1057" 
+  "1058" -> "1059" 
+  "1060" -> "1061" 
+  "1062" -> "1063" 
+  "1063" -> "1064" 
+  "1064" -> "1065" 
+  "1064" -> "1069" 
+  "1064" -> "1073" 
+  "1065" -> "1066" 
+  "1066" -> "1067" 
+  "1066" -> "1068" 
+  "1069" -> "1070" 
+  "1069" -> "1072" 
+  "1070" -> "1071" 
+  "1073" -> "1074" 
+  "1073" -> "1075" 
+  "1076" -> "1077" 
+  "1076" -> "1081" 
+  "1076" -> "1082" 
+  "1077" -> "1078" 
+  "1078" -> "1079" 
+  "1078" -> "1080" 
+  "1082" -> "1083" 
+  "1082" -> "1084" 
+  "1085" -> "1086" 
+}

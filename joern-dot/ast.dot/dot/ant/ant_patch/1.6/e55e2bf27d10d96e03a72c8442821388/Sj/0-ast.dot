@@ -1,0 +1,97 @@
+digraph "execute" {  
+"11" [label = <(METHOD,execute)<SUB>73</SUB>> ]
+"4" [label = <(PARAM,this)<SUB>73</SUB>> ]
+"12" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>73</SUB>> ]
+"13" [label = <(log,log(&quot;Using symantec java compiler&quot;, Project.MSG_VERBOSE))<SUB>74</SUB>> ]
+"14" [label = <(IDENTIFIER,attributes,log(&quot;Using symantec java compiler&quot;, Project.MSG_VERBOSE))<SUB>74</SUB>> ]
+"15" [label = <(LITERAL,&quot;Using symantec java compiler&quot;,log(&quot;Using symantec java compiler&quot;, Project.MSG_VERBOSE))<SUB>74</SUB>> ]
+"16" [label = <(&lt;operator&gt;.fieldAccess,Project.MSG_VERBOSE)<SUB>74</SUB>> ]
+"17" [label = <(IDENTIFIER,Project,log(&quot;Using symantec java compiler&quot;, Project.MSG_VERBOSE))<SUB>74</SUB>> ]
+"18" [label = <(FIELD_IDENTIFIER,MSG_VERBOSE,MSG_VERBOSE)<SUB>74</SUB>> ]
+"19" [label = <(LOCAL,Commandline cmd: org.apache.tools.ant.types.Commandline)> ]
+"20" [label = <(&lt;operator&gt;.assignment,Commandline cmd = setupJavacCommand())<SUB>76</SUB>> ]
+"21" [label = <(IDENTIFIER,cmd,Commandline cmd = setupJavacCommand())<SUB>76</SUB>> ]
+"22" [label = <(setupJavacCommand,setupJavacCommand())<SUB>76</SUB>> ]
+"3" [label = <(IDENTIFIER,this,setupJavacCommand())<SUB>76</SUB>> ]
+"23" [label = <(LOCAL,String exec: java.lang.String)> ]
+"24" [label = <(&lt;operator&gt;.assignment,String exec = getExecutable())<SUB>77</SUB>> ]
+"25" [label = <(IDENTIFIER,exec,String exec = getExecutable())<SUB>77</SUB>> ]
+"26" [label = <(getExecutable,getExecutable())<SUB>77</SUB>> ]
+"27" [label = <(getJavac,getJavac())<SUB>77</SUB>> ]
+"5" [label = <(IDENTIFIER,this,getJavac())<SUB>77</SUB>> ]
+"28" [label = <(setExecutable,setExecutable(exec == null ? &quot;sj&quot; : exec))<SUB>78</SUB>> ]
+"29" [label = <(IDENTIFIER,cmd,setExecutable(exec == null ? &quot;sj&quot; : exec))<SUB>78</SUB>> ]
+"30" [label = <(&lt;operator&gt;.conditional,exec == null ? &quot;sj&quot; : exec)<SUB>78</SUB>> ]
+"31" [label = <(&lt;operator&gt;.equals,exec == null)<SUB>78</SUB>> ]
+"32" [label = <(IDENTIFIER,exec,exec == null)<SUB>78</SUB>> ]
+"33" [label = <(LITERAL,null,exec == null)<SUB>78</SUB>> ]
+"34" [label = <(LITERAL,&quot;sj&quot;,exec == null ? &quot;sj&quot; : exec)<SUB>78</SUB>> ]
+"35" [label = <(IDENTIFIER,exec,exec == null ? &quot;sj&quot; : exec)<SUB>78</SUB>> ]
+"36" [label = <(LOCAL,int firstFileName: int)> ]
+"37" [label = <(&lt;operator&gt;.assignment,int firstFileName = cmd.size() - compileList.length)<SUB>80</SUB>> ]
+"38" [label = <(IDENTIFIER,firstFileName,int firstFileName = cmd.size() - compileList.length)<SUB>80</SUB>> ]
+"39" [label = <(&lt;operator&gt;.subtraction,cmd.size() - compileList.length)<SUB>80</SUB>> ]
+"40" [label = <(size,size())<SUB>80</SUB>> ]
+"41" [label = <(IDENTIFIER,cmd,size())<SUB>80</SUB>> ]
+"42" [label = <(&lt;operator&gt;.fieldAccess,compileList.length)<SUB>80</SUB>> ]
+"43" [label = <(IDENTIFIER,compileList,cmd.size() - compileList.length)<SUB>80</SUB>> ]
+"44" [label = <(FIELD_IDENTIFIER,length,length)<SUB>80</SUB>> ]
+"45" [label = <(RETURN,return executeExternalCompile(cmd.getCommandline(), firstFileName) == 0;,return executeExternalCompile(cmd.getCommandline(), firstFileName) == 0;)<SUB>82</SUB>> ]
+"46" [label = <(&lt;operator&gt;.equals,executeExternalCompile(cmd.getCommandline(), firstFileName) == 0)<SUB>83</SUB>> ]
+"47" [label = <(executeExternalCompile,executeExternalCompile(cmd.getCommandline(), firstFileName))<SUB>83</SUB>> ]
+"6" [label = <(IDENTIFIER,this,executeExternalCompile(cmd.getCommandline(), firstFileName))<SUB>83</SUB>> ]
+"48" [label = <(getCommandline,getCommandline())<SUB>83</SUB>> ]
+"49" [label = <(IDENTIFIER,cmd,getCommandline())<SUB>83</SUB>> ]
+"50" [label = <(IDENTIFIER,firstFileName,executeExternalCompile(cmd.getCommandline(), firstFileName))<SUB>83</SUB>> ]
+"51" [label = <(LITERAL,0,executeExternalCompile(cmd.getCommandline(), firstFileName) == 0)<SUB>83</SUB>> ]
+"52" [label = <(MODIFIER,PUBLIC)> ]
+"53" [label = <(MODIFIER,VIRTUAL)> ]
+"54" [label = <(METHOD_RETURN,boolean)<SUB>73</SUB>> ]
+  "11" -> "4" 
+  "11" -> "12" 
+  "11" -> "52" 
+  "11" -> "53" 
+  "11" -> "54" 
+  "12" -> "13" 
+  "12" -> "19" 
+  "12" -> "20" 
+  "12" -> "23" 
+  "12" -> "24" 
+  "12" -> "28" 
+  "12" -> "36" 
+  "12" -> "37" 
+  "12" -> "45" 
+  "13" -> "14" 
+  "13" -> "15" 
+  "13" -> "16" 
+  "16" -> "17" 
+  "16" -> "18" 
+  "20" -> "21" 
+  "20" -> "22" 
+  "22" -> "3" 
+  "24" -> "25" 
+  "24" -> "26" 
+  "26" -> "27" 
+  "27" -> "5" 
+  "28" -> "29" 
+  "28" -> "30" 
+  "30" -> "31" 
+  "30" -> "34" 
+  "30" -> "35" 
+  "31" -> "32" 
+  "31" -> "33" 
+  "37" -> "38" 
+  "37" -> "39" 
+  "39" -> "40" 
+  "39" -> "42" 
+  "40" -> "41" 
+  "42" -> "43" 
+  "42" -> "44" 
+  "45" -> "46" 
+  "46" -> "47" 
+  "46" -> "51" 
+  "47" -> "6" 
+  "47" -> "48" 
+  "47" -> "50" 
+  "48" -> "49" 
+}

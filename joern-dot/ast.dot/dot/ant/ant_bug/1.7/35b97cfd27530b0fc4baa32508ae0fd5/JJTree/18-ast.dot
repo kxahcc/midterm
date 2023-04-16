@@ -1,0 +1,169 @@
+digraph "validateOutputFile" {  
+"869" [label = <(METHOD,validateOutputFile)<SUB>338</SUB>> ]
+"28" [label = <(PARAM,this)<SUB>338</SUB>> ]
+"870" [label = <(PARAM,String destFile)<SUB>338</SUB>> ]
+"871" [label = <(PARAM,String outputDir)<SUB>339</SUB>> ]
+"872" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>340</SUB>> ]
+"873" [label = <(CONTROL_STRUCTURE,if (destFile == null),if (destFile == null))<SUB>341</SUB>> ]
+"874" [label = <(&lt;operator&gt;.equals,destFile == null)<SUB>341</SUB>> ]
+"875" [label = <(IDENTIFIER,destFile,destFile == null)<SUB>341</SUB>> ]
+"876" [label = <(LITERAL,null,destFile == null)<SUB>341</SUB>> ]
+"877" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>341</SUB>> ]
+"878" [label = <(RETURN,return null;,return null;)<SUB>342</SUB>> ]
+"879" [label = <(LITERAL,null,return null;)<SUB>342</SUB>> ]
+"880" [label = <(CONTROL_STRUCTURE,if ((outputDir == null) &amp;&amp; (destFile.startsWith(&quot;/&quot;) || destFile.startsWith(&quot;\\&quot;))),if ((outputDir == null) &amp;&amp; (destFile.startsWith(&quot;/&quot;) || destFile.startsWith(&quot;\\&quot;))))<SUB>345</SUB>> ]
+"881" [label = <(&lt;operator&gt;.logicalAnd,(outputDir == null) &amp;&amp; (destFile.startsWith(&quot;/&quot;) || destFile.startsWith(&quot;\\&quot;)))<SUB>345</SUB>> ]
+"882" [label = <(&lt;operator&gt;.equals,outputDir == null)<SUB>345</SUB>> ]
+"883" [label = <(IDENTIFIER,outputDir,outputDir == null)<SUB>345</SUB>> ]
+"884" [label = <(LITERAL,null,outputDir == null)<SUB>345</SUB>> ]
+"885" [label = <(&lt;operator&gt;.logicalOr,destFile.startsWith(&quot;/&quot;) || destFile.startsWith(&quot;\\&quot;))<SUB>346</SUB>> ]
+"886" [label = <(startsWith,destFile.startsWith(&quot;/&quot;))<SUB>346</SUB>> ]
+"887" [label = <(IDENTIFIER,destFile,destFile.startsWith(&quot;/&quot;))<SUB>346</SUB>> ]
+"888" [label = <(LITERAL,&quot;/&quot;,destFile.startsWith(&quot;/&quot;))<SUB>346</SUB>> ]
+"889" [label = <(startsWith,destFile.startsWith(&quot;\\&quot;))<SUB>346</SUB>> ]
+"890" [label = <(IDENTIFIER,destFile,destFile.startsWith(&quot;\\&quot;))<SUB>346</SUB>> ]
+"891" [label = <(LITERAL,&quot;\\&quot;,destFile.startsWith(&quot;\\&quot;))<SUB>346</SUB>> ]
+"892" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>346</SUB>> ]
+"893" [label = <(LOCAL,String relativeOutputFile: java.lang.String)> ]
+"894" [label = <(&lt;operator&gt;.assignment,String relativeOutputFile = this.makeOutputFileRelative(destFile))<SUB>347</SUB>> ]
+"895" [label = <(IDENTIFIER,relativeOutputFile,String relativeOutputFile = this.makeOutputFileRelative(destFile))<SUB>347</SUB>> ]
+"896" [label = <(makeOutputFileRelative,this.makeOutputFileRelative(destFile))<SUB>347</SUB>> ]
+"27" [label = <(IDENTIFIER,this,this.makeOutputFileRelative(destFile))<SUB>347</SUB>> ]
+"897" [label = <(IDENTIFIER,destFile,this.makeOutputFileRelative(destFile))<SUB>347</SUB>> ]
+"898" [label = <(setOutputfile,this.setOutputfile(relativeOutputFile))<SUB>348</SUB>> ]
+"29" [label = <(IDENTIFIER,this,this.setOutputfile(relativeOutputFile))<SUB>348</SUB>> ]
+"899" [label = <(IDENTIFIER,relativeOutputFile,this.setOutputfile(relativeOutputFile))<SUB>348</SUB>> ]
+"900" [label = <(RETURN,return relativeOutputFile;,return relativeOutputFile;)<SUB>350</SUB>> ]
+"901" [label = <(IDENTIFIER,relativeOutputFile,return relativeOutputFile;)<SUB>350</SUB>> ]
+"902" [label = <(LOCAL,String root: java.lang.String)> ]
+"903" [label = <(&lt;operator&gt;.assignment,String root = this.getRoot(new File(destFile)).getAbsolutePath())<SUB>353</SUB>> ]
+"904" [label = <(IDENTIFIER,root,String root = this.getRoot(new File(destFile)).getAbsolutePath())<SUB>353</SUB>> ]
+"905" [label = <(getAbsolutePath,this.getRoot(new File(destFile)).getAbsolutePath())<SUB>353</SUB>> ]
+"906" [label = <(getRoot,this.getRoot(new File(destFile)))<SUB>353</SUB>> ]
+"30" [label = <(IDENTIFIER,this,this.getRoot(new File(destFile)))<SUB>353</SUB>> ]
+"907" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>353</SUB>> ]
+"908" [label = <(&lt;operator&gt;.assignment,&lt;empty&gt;)> ]
+"909" [label = <(IDENTIFIER,$obj10,&lt;empty&gt;)> ]
+"910" [label = <(&lt;operator&gt;.alloc,new File(destFile))<SUB>353</SUB>> ]
+"911" [label = <(&lt;init&gt;,new File(destFile))<SUB>353</SUB>> ]
+"912" [label = <(IDENTIFIER,$obj10,new File(destFile))> ]
+"913" [label = <(IDENTIFIER,destFile,new File(destFile))<SUB>353</SUB>> ]
+"914" [label = <(IDENTIFIER,$obj10,&lt;empty&gt;)> ]
+"915" [label = <(CONTROL_STRUCTURE,if ((root.length() &gt; 1) &amp;&amp; destFile.startsWith(root.substring(0, root.length() - 1))),if ((root.length() &gt; 1) &amp;&amp; destFile.startsWith(root.substring(0, root.length() - 1))))<SUB>355</SUB>> ]
+"916" [label = <(&lt;operator&gt;.logicalAnd,(root.length() &gt; 1) &amp;&amp; destFile.startsWith(root.substring(0, root.length() - 1)))<SUB>355</SUB>> ]
+"917" [label = <(&lt;operator&gt;.greaterThan,root.length() &gt; 1)<SUB>355</SUB>> ]
+"918" [label = <(length,root.length())<SUB>355</SUB>> ]
+"919" [label = <(IDENTIFIER,root,root.length())<SUB>355</SUB>> ]
+"920" [label = <(LITERAL,1,root.length() &gt; 1)<SUB>355</SUB>> ]
+"921" [label = <(startsWith,destFile.startsWith(root.substring(0, root.length() - 1)))<SUB>356</SUB>> ]
+"922" [label = <(IDENTIFIER,destFile,destFile.startsWith(root.substring(0, root.length() - 1)))<SUB>356</SUB>> ]
+"923" [label = <(substring,root.substring(0, root.length() - 1))<SUB>356</SUB>> ]
+"924" [label = <(IDENTIFIER,root,root.substring(0, root.length() - 1))<SUB>356</SUB>> ]
+"925" [label = <(LITERAL,0,root.substring(0, root.length() - 1))<SUB>356</SUB>> ]
+"926" [label = <(&lt;operator&gt;.subtraction,root.length() - 1)<SUB>356</SUB>> ]
+"927" [label = <(length,root.length())<SUB>356</SUB>> ]
+"928" [label = <(IDENTIFIER,root,root.length())<SUB>356</SUB>> ]
+"929" [label = <(LITERAL,1,root.length() - 1)<SUB>356</SUB>> ]
+"930" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>356</SUB>> ]
+"931" [label = <(&lt;operator&gt;.throw,throw new BuildException(&quot;Drive letter in 'outputfile' not &quot; + &quot;supported: &quot; + destFile);)<SUB>357</SUB>> ]
+"932" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>357</SUB>> ]
+"933" [label = <(&lt;operator&gt;.assignment,&lt;empty&gt;)> ]
+"934" [label = <(IDENTIFIER,$obj11,&lt;empty&gt;)> ]
+"935" [label = <(&lt;operator&gt;.alloc,new BuildException(&quot;Drive letter in 'outputfile' not &quot; + &quot;supported: &quot; + destFile))<SUB>357</SUB>> ]
+"936" [label = <(&lt;init&gt;,new BuildException(&quot;Drive letter in 'outputfile' not &quot; + &quot;supported: &quot; + destFile))<SUB>357</SUB>> ]
+"937" [label = <(IDENTIFIER,$obj11,new BuildException(&quot;Drive letter in 'outputfile' not &quot; + &quot;supported: &quot; + destFile))> ]
+"938" [label = <(&lt;operator&gt;.addition,&quot;Drive letter in 'outputfile' not &quot; + &quot;supported: &quot; + destFile)<SUB>357</SUB>> ]
+"939" [label = <(&lt;operator&gt;.addition,&quot;Drive letter in 'outputfile' not &quot; + &quot;supported: &quot;)<SUB>357</SUB>> ]
+"940" [label = <(LITERAL,&quot;Drive letter in 'outputfile' not &quot;,&quot;Drive letter in 'outputfile' not &quot; + &quot;supported: &quot;)<SUB>357</SUB>> ]
+"941" [label = <(LITERAL,&quot;supported: &quot;,&quot;Drive letter in 'outputfile' not &quot; + &quot;supported: &quot;)<SUB>358</SUB>> ]
+"942" [label = <(IDENTIFIER,destFile,&quot;Drive letter in 'outputfile' not &quot; + &quot;supported: &quot; + destFile)<SUB>358</SUB>> ]
+"943" [label = <(IDENTIFIER,$obj11,&lt;empty&gt;)> ]
+"944" [label = <(RETURN,return destFile;,return destFile;)<SUB>361</SUB>> ]
+"945" [label = <(IDENTIFIER,destFile,return destFile;)<SUB>361</SUB>> ]
+"946" [label = <(MODIFIER,PRIVATE)> ]
+"947" [label = <(MODIFIER,VIRTUAL)> ]
+"948" [label = <(METHOD_RETURN,java.lang.String)<SUB>338</SUB>> ]
+  "869" -> "28" 
+  "869" -> "870" 
+  "869" -> "871" 
+  "869" -> "872" 
+  "869" -> "946" 
+  "869" -> "947" 
+  "869" -> "948" 
+  "872" -> "873" 
+  "872" -> "880" 
+  "872" -> "902" 
+  "872" -> "903" 
+  "872" -> "915" 
+  "872" -> "944" 
+  "873" -> "874" 
+  "873" -> "877" 
+  "874" -> "875" 
+  "874" -> "876" 
+  "877" -> "878" 
+  "878" -> "879" 
+  "880" -> "881" 
+  "880" -> "892" 
+  "881" -> "882" 
+  "881" -> "885" 
+  "882" -> "883" 
+  "882" -> "884" 
+  "885" -> "886" 
+  "885" -> "889" 
+  "886" -> "887" 
+  "886" -> "888" 
+  "889" -> "890" 
+  "889" -> "891" 
+  "892" -> "893" 
+  "892" -> "894" 
+  "892" -> "898" 
+  "892" -> "900" 
+  "894" -> "895" 
+  "894" -> "896" 
+  "896" -> "27" 
+  "896" -> "897" 
+  "898" -> "29" 
+  "898" -> "899" 
+  "900" -> "901" 
+  "903" -> "904" 
+  "903" -> "905" 
+  "905" -> "906" 
+  "906" -> "30" 
+  "906" -> "907" 
+  "907" -> "908" 
+  "907" -> "911" 
+  "907" -> "914" 
+  "908" -> "909" 
+  "908" -> "910" 
+  "911" -> "912" 
+  "911" -> "913" 
+  "915" -> "916" 
+  "915" -> "930" 
+  "916" -> "917" 
+  "916" -> "921" 
+  "917" -> "918" 
+  "917" -> "920" 
+  "918" -> "919" 
+  "921" -> "922" 
+  "921" -> "923" 
+  "923" -> "924" 
+  "923" -> "925" 
+  "923" -> "926" 
+  "926" -> "927" 
+  "926" -> "929" 
+  "927" -> "928" 
+  "930" -> "931" 
+  "931" -> "932" 
+  "932" -> "933" 
+  "932" -> "936" 
+  "932" -> "943" 
+  "933" -> "934" 
+  "933" -> "935" 
+  "936" -> "937" 
+  "936" -> "938" 
+  "938" -> "939" 
+  "938" -> "942" 
+  "939" -> "940" 
+  "939" -> "941" 
+  "944" -> "945" 
+}

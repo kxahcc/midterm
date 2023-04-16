@@ -1,0 +1,401 @@
+digraph "chooseMethodWithMatchingBody" {  
+"851" [label = <(METHOD,chooseMethodWithMatchingBody)<SUB>301</SUB>> ]
+"38" [label = <(PARAM,this)<SUB>301</SUB>> ]
+"852" [label = <(PARAM,Exchange exchange)<SUB>301</SUB>> ]
+"853" [label = <(PARAM,Collection&lt;MethodInfo&gt; operationList)<SUB>301</SUB>> ]
+"854" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>301</SUB>> ]
+"855" [label = <(LOCAL,Message in: org.apache.camel.Message)> ]
+"856" [label = <(&lt;operator&gt;.assignment,Message in = getIn())<SUB>303</SUB>> ]
+"857" [label = <(IDENTIFIER,in,Message in = getIn())<SUB>303</SUB>> ]
+"858" [label = <(getIn,getIn())<SUB>303</SUB>> ]
+"859" [label = <(IDENTIFIER,exchange,getIn())<SUB>303</SUB>> ]
+"860" [label = <(LOCAL,Object body: java.lang.Object)> ]
+"861" [label = <(&lt;operator&gt;.assignment,Object body = getBody())<SUB>304</SUB>> ]
+"862" [label = <(IDENTIFIER,body,Object body = getBody())<SUB>304</SUB>> ]
+"863" [label = <(getBody,getBody())<SUB>304</SUB>> ]
+"864" [label = <(IDENTIFIER,in,getBody())<SUB>304</SUB>> ]
+"865" [label = <(CONTROL_STRUCTURE,if (body != null),if (body != null))<SUB>305</SUB>> ]
+"866" [label = <(&lt;operator&gt;.notEquals,body != null)<SUB>305</SUB>> ]
+"867" [label = <(IDENTIFIER,body,body != null)<SUB>305</SUB>> ]
+"868" [label = <(LITERAL,null,body != null)<SUB>305</SUB>> ]
+"869" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>305</SUB>> ]
+"870" [label = <(LOCAL,Class bodyType: java.lang.Class)> ]
+"871" [label = <(&lt;operator&gt;.assignment,Class bodyType = body.getClass())<SUB>306</SUB>> ]
+"872" [label = <(IDENTIFIER,bodyType,Class bodyType = body.getClass())<SUB>306</SUB>> ]
+"873" [label = <(getClass,body.getClass())<SUB>306</SUB>> ]
+"874" [label = <(IDENTIFIER,body,body.getClass())<SUB>306</SUB>> ]
+"875" [label = <(CONTROL_STRUCTURE,if (LOG.isTraceEnabled()),if (LOG.isTraceEnabled()))<SUB>307</SUB>> ]
+"876" [label = <(isTraceEnabled,isTraceEnabled())<SUB>307</SUB>> ]
+"877" [label = <(&lt;operator&gt;.fieldAccess,BeanInfo.LOG)<SUB>307</SUB>> ]
+"878" [label = <(IDENTIFIER,BeanInfo,isTraceEnabled())<SUB>307</SUB>> ]
+"879" [label = <(FIELD_IDENTIFIER,LOG,LOG)<SUB>307</SUB>> ]
+"880" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>307</SUB>> ]
+"881" [label = <(trace,trace(&quot;Matching for method with a single parameter that matches type: &quot; + bodyType.getCanonicalName()))<SUB>308</SUB>> ]
+"882" [label = <(&lt;operator&gt;.fieldAccess,BeanInfo.LOG)<SUB>308</SUB>> ]
+"883" [label = <(IDENTIFIER,BeanInfo,trace(&quot;Matching for method with a single parameter that matches type: &quot; + bodyType.getCanonicalName()))<SUB>308</SUB>> ]
+"884" [label = <(FIELD_IDENTIFIER,LOG,LOG)<SUB>308</SUB>> ]
+"885" [label = <(&lt;operator&gt;.addition,&quot;Matching for method with a single parameter that matches type: &quot; + bodyType.getCanonicalName())<SUB>308</SUB>> ]
+"886" [label = <(LITERAL,&quot;Matching for method with a single parameter that matches type: &quot;,&quot;Matching for method with a single parameter that matches type: &quot; + bodyType.getCanonicalName())<SUB>308</SUB>> ]
+"887" [label = <(getCanonicalName,bodyType.getCanonicalName())<SUB>308</SUB>> ]
+"888" [label = <(IDENTIFIER,bodyType,bodyType.getCanonicalName())<SUB>308</SUB>> ]
+"36" [label = <(LOCAL,List&lt;MethodInfo&gt; possibles: ANY)> ]
+"889" [label = <(&lt;operator&gt;.assignment,ANY possibles = new ArrayList&lt;MethodInfo&gt;())<SUB>311</SUB>> ]
+"890" [label = <(IDENTIFIER,possibles,ANY possibles = new ArrayList&lt;MethodInfo&gt;())<SUB>311</SUB>> ]
+"891" [label = <(&lt;operator&gt;.alloc,new ArrayList&lt;MethodInfo&gt;())<SUB>311</SUB>> ]
+"892" [label = <(&lt;init&gt;,new ArrayList&lt;MethodInfo&gt;())<SUB>311</SUB>> ]
+"35" [label = <(IDENTIFIER,possibles,new ArrayList&lt;MethodInfo&gt;())<SUB>311</SUB>> ]
+"893" [label = <(LOCAL,$iterLocal2: java.util.Iterator)<SUB>312</SUB>> ]
+"894" [label = <(&lt;operator&gt;.assignment,)<SUB>312</SUB>> ]
+"895" [label = <(IDENTIFIER,$iterLocal2,)<SUB>312</SUB>> ]
+"896" [label = <(iterator,&lt;empty&gt;)<SUB>312</SUB>> ]
+"897" [label = <(IDENTIFIER,operationList,&lt;empty&gt;)<SUB>312</SUB>> ]
+"898" [label = <(CONTROL_STRUCTURE,FOR,FOR)<SUB>312</SUB>> ]
+"899" [label = <(hasNext,&lt;empty&gt;)<SUB>312</SUB>> ]
+"900" [label = <(IDENTIFIER,$iterLocal2,&lt;empty&gt;)<SUB>312</SUB>> ]
+"901" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>312</SUB>> ]
+"902" [label = <(LOCAL,methodInfo: ANY)<SUB>312</SUB>> ]
+"903" [label = <(&lt;operator&gt;.assignment,&lt;empty&gt;)<SUB>312</SUB>> ]
+"904" [label = <(IDENTIFIER,methodInfo,&lt;empty&gt;)<SUB>312</SUB>> ]
+"905" [label = <(next,&lt;empty&gt;)<SUB>312</SUB>> ]
+"906" [label = <(IDENTIFIER,$iterLocal2,&lt;empty&gt;)<SUB>312</SUB>> ]
+"907" [label = <(LOCAL,boolean out: boolean)> ]
+"908" [label = <(&lt;operator&gt;.assignment,boolean out = isOutCapable())<SUB>318</SUB>> ]
+"909" [label = <(IDENTIFIER,out,boolean out = isOutCapable())<SUB>318</SUB>> ]
+"910" [label = <(isOutCapable,isOutCapable())<SUB>318</SUB>> ]
+"911" [label = <(getPattern,getPattern())<SUB>318</SUB>> ]
+"912" [label = <(IDENTIFIER,exchange,getPattern())<SUB>318</SUB>> ]
+"913" [label = <(CONTROL_STRUCTURE,if (out &amp;&amp; methodInfo.isReturnTypeVoid()),if (out &amp;&amp; methodInfo.isReturnTypeVoid()))<SUB>319</SUB>> ]
+"914" [label = <(&lt;operator&gt;.logicalAnd,out &amp;&amp; methodInfo.isReturnTypeVoid())<SUB>319</SUB>> ]
+"915" [label = <(IDENTIFIER,out,out &amp;&amp; methodInfo.isReturnTypeVoid())<SUB>319</SUB>> ]
+"916" [label = <(isReturnTypeVoid,isReturnTypeVoid())<SUB>319</SUB>> ]
+"917" [label = <(IDENTIFIER,methodInfo,isReturnTypeVoid())<SUB>319</SUB>> ]
+"918" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>319</SUB>> ]
+"919" [label = <(CONTROL_STRUCTURE,continue;,continue;)<SUB>321</SUB>> ]
+"920" [label = <(CONTROL_STRUCTURE,if (methodInfo.bodyParameterMatches(bodyType)),if (methodInfo.bodyParameterMatches(bodyType)))<SUB>325</SUB>> ]
+"921" [label = <(bodyParameterMatches,bodyParameterMatches(bodyType))<SUB>325</SUB>> ]
+"922" [label = <(IDENTIFIER,methodInfo,bodyParameterMatches(bodyType))<SUB>325</SUB>> ]
+"923" [label = <(IDENTIFIER,bodyType,bodyParameterMatches(bodyType))<SUB>325</SUB>> ]
+"924" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>325</SUB>> ]
+"925" [label = <(add,add(methodInfo))<SUB>326</SUB>> ]
+"926" [label = <(IDENTIFIER,possibles,add(methodInfo))<SUB>326</SUB>> ]
+"927" [label = <(IDENTIFIER,methodInfo,add(methodInfo))<SUB>326</SUB>> ]
+"928" [label = <(CONTROL_STRUCTURE,if (possibles.size() == 1),if (possibles.size() == 1))<SUB>329</SUB>> ]
+"929" [label = <(&lt;operator&gt;.equals,possibles.size() == 1)<SUB>329</SUB>> ]
+"930" [label = <(size,size())<SUB>329</SUB>> ]
+"931" [label = <(IDENTIFIER,possibles,size())<SUB>329</SUB>> ]
+"932" [label = <(LITERAL,1,possibles.size() == 1)<SUB>329</SUB>> ]
+"933" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>329</SUB>> ]
+"934" [label = <(RETURN,return possibles.get(0);,return possibles.get(0);)<SUB>330</SUB>> ]
+"935" [label = <(get,get(0))<SUB>330</SUB>> ]
+"936" [label = <(IDENTIFIER,possibles,get(0))<SUB>330</SUB>> ]
+"937" [label = <(LITERAL,0,get(0))<SUB>330</SUB>> ]
+"938" [label = <(CONTROL_STRUCTURE,else,else)<SUB>331</SUB>> ]
+"939" [label = <(CONTROL_STRUCTURE,if (possibles.isEmpty()),if (possibles.isEmpty()))<SUB>331</SUB>> ]
+"940" [label = <(isEmpty,isEmpty())<SUB>331</SUB>> ]
+"941" [label = <(IDENTIFIER,possibles,isEmpty())<SUB>331</SUB>> ]
+"942" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>331</SUB>> ]
+"943" [label = <(LOCAL,Object newBody: java.lang.Object)> ]
+"944" [label = <(&lt;operator&gt;.assignment,Object newBody = null)<SUB>333</SUB>> ]
+"945" [label = <(IDENTIFIER,newBody,Object newBody = null)<SUB>333</SUB>> ]
+"946" [label = <(LITERAL,null,Object newBody = null)<SUB>333</SUB>> ]
+"947" [label = <(LOCAL,MethodInfo matched: ANY)> ]
+"948" [label = <(&lt;operator&gt;.assignment,ANY matched = null)<SUB>334</SUB>> ]
+"949" [label = <(IDENTIFIER,matched,ANY matched = null)<SUB>334</SUB>> ]
+"950" [label = <(LITERAL,null,ANY matched = null)<SUB>334</SUB>> ]
+"951" [label = <(LOCAL,$iterLocal3: java.util.Iterator)<SUB>335</SUB>> ]
+"952" [label = <(&lt;operator&gt;.assignment,)<SUB>335</SUB>> ]
+"953" [label = <(IDENTIFIER,$iterLocal3,)<SUB>335</SUB>> ]
+"954" [label = <(iterator,&lt;empty&gt;)<SUB>335</SUB>> ]
+"955" [label = <(IDENTIFIER,operationList,&lt;empty&gt;)<SUB>335</SUB>> ]
+"956" [label = <(CONTROL_STRUCTURE,FOR,FOR)<SUB>335</SUB>> ]
+"957" [label = <(hasNext,&lt;empty&gt;)<SUB>335</SUB>> ]
+"958" [label = <(IDENTIFIER,$iterLocal3,&lt;empty&gt;)<SUB>335</SUB>> ]
+"959" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>335</SUB>> ]
+"960" [label = <(LOCAL,methodInfo: ANY)<SUB>335</SUB>> ]
+"961" [label = <(&lt;operator&gt;.assignment,&lt;empty&gt;)<SUB>335</SUB>> ]
+"962" [label = <(IDENTIFIER,methodInfo,&lt;empty&gt;)<SUB>335</SUB>> ]
+"963" [label = <(next,&lt;empty&gt;)<SUB>335</SUB>> ]
+"964" [label = <(IDENTIFIER,$iterLocal3,&lt;empty&gt;)<SUB>335</SUB>> ]
+"965" [label = <(LOCAL,Object value: java.lang.Object)> ]
+"966" [label = <(&lt;operator&gt;.assignment,Object value = null)<SUB>336</SUB>> ]
+"967" [label = <(IDENTIFIER,value,Object value = null)<SUB>336</SUB>> ]
+"968" [label = <(LITERAL,null,Object value = null)<SUB>336</SUB>> ]
+"969" [label = <(CONTROL_STRUCTURE,try,try)<SUB>337</SUB>> ]
+"970" [label = <(BLOCK,try,try)<SUB>337</SUB>> ]
+"971" [label = <(&lt;operator&gt;.assignment,value = convertToType(exchange, methodInfo.getBodyParameterType(), body))<SUB>338</SUB>> ]
+"972" [label = <(IDENTIFIER,value,value = convertToType(exchange, methodInfo.getBodyParameterType(), body))<SUB>338</SUB>> ]
+"973" [label = <(convertToType,convertToType(exchange, methodInfo.getBodyParameterType(), body))<SUB>338</SUB>> ]
+"37" [label = <(IDENTIFIER,this,convertToType(exchange, methodInfo.getBodyParameterType(), body))<SUB>338</SUB>> ]
+"974" [label = <(IDENTIFIER,exchange,convertToType(exchange, methodInfo.getBodyParameterType(), body))<SUB>338</SUB>> ]
+"975" [label = <(getBodyParameterType,getBodyParameterType())<SUB>338</SUB>> ]
+"976" [label = <(IDENTIFIER,methodInfo,getBodyParameterType())<SUB>338</SUB>> ]
+"977" [label = <(IDENTIFIER,body,convertToType(exchange, methodInfo.getBodyParameterType(), body))<SUB>338</SUB>> ]
+"978" [label = <(CONTROL_STRUCTURE,if (value != null),if (value != null))<SUB>339</SUB>> ]
+"979" [label = <(&lt;operator&gt;.notEquals,value != null)<SUB>339</SUB>> ]
+"980" [label = <(IDENTIFIER,value,value != null)<SUB>339</SUB>> ]
+"981" [label = <(LITERAL,null,value != null)<SUB>339</SUB>> ]
+"982" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>339</SUB>> ]
+"983" [label = <(CONTROL_STRUCTURE,if (newBody != null),if (newBody != null))<SUB>340</SUB>> ]
+"984" [label = <(&lt;operator&gt;.notEquals,newBody != null)<SUB>340</SUB>> ]
+"985" [label = <(IDENTIFIER,newBody,newBody != null)<SUB>340</SUB>> ]
+"986" [label = <(LITERAL,null,newBody != null)<SUB>340</SUB>> ]
+"987" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>340</SUB>> ]
+"988" [label = <(&lt;operator&gt;.throw,throw new AmbiguousMethodCallException(exchange, Arrays.asList(matched, methodInfo));)<SUB>341</SUB>> ]
+"989" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>341</SUB>> ]
+"990" [label = <(&lt;operator&gt;.assignment,&lt;empty&gt;)> ]
+"991" [label = <(IDENTIFIER,$obj10,&lt;empty&gt;)> ]
+"992" [label = <(&lt;operator&gt;.alloc,new AmbiguousMethodCallException(exchange, Arrays.asList(matched, methodInfo)))<SUB>341</SUB>> ]
+"993" [label = <(&lt;init&gt;,new AmbiguousMethodCallException(exchange, Arrays.asList(matched, methodInfo)))<SUB>341</SUB>> ]
+"994" [label = <(IDENTIFIER,$obj10,new AmbiguousMethodCallException(exchange, Arrays.asList(matched, methodInfo)))> ]
+"995" [label = <(IDENTIFIER,exchange,new AmbiguousMethodCallException(exchange, Arrays.asList(matched, methodInfo)))<SUB>341</SUB>> ]
+"996" [label = <(asList,asList(matched, methodInfo))<SUB>341</SUB>> ]
+"997" [label = <(IDENTIFIER,Arrays,asList(matched, methodInfo))<SUB>341</SUB>> ]
+"998" [label = <(IDENTIFIER,matched,asList(matched, methodInfo))<SUB>341</SUB>> ]
+"999" [label = <(IDENTIFIER,methodInfo,asList(matched, methodInfo))<SUB>342</SUB>> ]
+"1000" [label = <(IDENTIFIER,$obj10,&lt;empty&gt;)> ]
+"1001" [label = <(CONTROL_STRUCTURE,else,else)<SUB>343</SUB>> ]
+"1002" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>343</SUB>> ]
+"1003" [label = <(&lt;operator&gt;.assignment,newBody = value)<SUB>344</SUB>> ]
+"1004" [label = <(IDENTIFIER,newBody,newBody = value)<SUB>344</SUB>> ]
+"1005" [label = <(IDENTIFIER,value,newBody = value)<SUB>344</SUB>> ]
+"1006" [label = <(&lt;operator&gt;.assignment,matched = methodInfo)<SUB>345</SUB>> ]
+"1007" [label = <(IDENTIFIER,matched,matched = methodInfo)<SUB>345</SUB>> ]
+"1008" [label = <(IDENTIFIER,methodInfo,matched = methodInfo)<SUB>345</SUB>> ]
+"1009" [label = <(BLOCK,catch,catch)> ]
+"1010" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>348</SUB>> ]
+"1011" [label = <(CONTROL_STRUCTURE,if (matched != null),if (matched != null))<SUB>353</SUB>> ]
+"1012" [label = <(&lt;operator&gt;.notEquals,matched != null)<SUB>353</SUB>> ]
+"1013" [label = <(IDENTIFIER,matched,matched != null)<SUB>353</SUB>> ]
+"1014" [label = <(LITERAL,null,matched != null)<SUB>353</SUB>> ]
+"1015" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>353</SUB>> ]
+"1016" [label = <(setBody,setBody(newBody))<SUB>354</SUB>> ]
+"1017" [label = <(IDENTIFIER,in,setBody(newBody))<SUB>354</SUB>> ]
+"1018" [label = <(IDENTIFIER,newBody,setBody(newBody))<SUB>354</SUB>> ]
+"1019" [label = <(RETURN,return matched;,return matched;)<SUB>355</SUB>> ]
+"1020" [label = <(IDENTIFIER,matched,return matched;)<SUB>355</SUB>> ]
+"1021" [label = <(CONTROL_STRUCTURE,else,else)<SUB>357</SUB>> ]
+"1022" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>357</SUB>> ]
+"1023" [label = <(CONTROL_STRUCTURE,if (operationsWithCustomAnnotation.size() == 1),if (operationsWithCustomAnnotation.size() == 1))<SUB>359</SUB>> ]
+"1024" [label = <(&lt;operator&gt;.equals,operationsWithCustomAnnotation.size() == 1)<SUB>359</SUB>> ]
+"1025" [label = <(size,size())<SUB>359</SUB>> ]
+"1026" [label = <(&lt;operator&gt;.fieldAccess,this.operationsWithCustomAnnotation)<SUB>359</SUB>> ]
+"1027" [label = <(IDENTIFIER,this,size())<SUB>359</SUB>> ]
+"1028" [label = <(FIELD_IDENTIFIER,operationsWithCustomAnnotation,operationsWithCustomAnnotation)<SUB>359</SUB>> ]
+"1029" [label = <(LITERAL,1,operationsWithCustomAnnotation.size() == 1)<SUB>359</SUB>> ]
+"1030" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>359</SUB>> ]
+"1031" [label = <(RETURN,return operationsWithCustomAnnotation.get(0);,return operationsWithCustomAnnotation.get(0);)<SUB>360</SUB>> ]
+"1032" [label = <(get,get(0))<SUB>360</SUB>> ]
+"1033" [label = <(&lt;operator&gt;.fieldAccess,this.operationsWithCustomAnnotation)<SUB>360</SUB>> ]
+"1034" [label = <(IDENTIFIER,this,get(0))<SUB>360</SUB>> ]
+"1035" [label = <(FIELD_IDENTIFIER,operationsWithCustomAnnotation,operationsWithCustomAnnotation)<SUB>360</SUB>> ]
+"1036" [label = <(LITERAL,0,get(0))<SUB>360</SUB>> ]
+"1037" [label = <(RETURN,return chooseMethodWithCustomAnnotations(exchange, possibles);,return chooseMethodWithCustomAnnotations(exchange, possibles);)<SUB>362</SUB>> ]
+"1038" [label = <(chooseMethodWithCustomAnnotations,chooseMethodWithCustomAnnotations(exchange, possibles))<SUB>362</SUB>> ]
+"39" [label = <(IDENTIFIER,this,chooseMethodWithCustomAnnotations(exchange, possibles))<SUB>362</SUB>> ]
+"1039" [label = <(IDENTIFIER,exchange,chooseMethodWithCustomAnnotations(exchange, possibles))<SUB>362</SUB>> ]
+"1040" [label = <(IDENTIFIER,possibles,chooseMethodWithCustomAnnotations(exchange, possibles))<SUB>362</SUB>> ]
+"1041" [label = <(RETURN,return null;,return null;)<SUB>366</SUB>> ]
+"1042" [label = <(LITERAL,null,return null;)<SUB>366</SUB>> ]
+"1043" [label = <(MODIFIER,PROTECTED)> ]
+"1044" [label = <(MODIFIER,VIRTUAL)> ]
+"1045" [label = <(METHOD_RETURN,ANY)<SUB>301</SUB>> ]
+  "851" -> "38" 
+  "851" -> "852" 
+  "851" -> "853" 
+  "851" -> "854" 
+  "851" -> "1043" 
+  "851" -> "1044" 
+  "851" -> "1045" 
+  "854" -> "855" 
+  "854" -> "856" 
+  "854" -> "860" 
+  "854" -> "861" 
+  "854" -> "865" 
+  "854" -> "1041" 
+  "856" -> "857" 
+  "856" -> "858" 
+  "858" -> "859" 
+  "861" -> "862" 
+  "861" -> "863" 
+  "863" -> "864" 
+  "865" -> "866" 
+  "865" -> "869" 
+  "866" -> "867" 
+  "866" -> "868" 
+  "869" -> "870" 
+  "869" -> "871" 
+  "869" -> "875" 
+  "869" -> "36" 
+  "869" -> "889" 
+  "869" -> "892" 
+  "869" -> "893" 
+  "869" -> "894" 
+  "869" -> "898" 
+  "869" -> "928" 
+  "871" -> "872" 
+  "871" -> "873" 
+  "873" -> "874" 
+  "875" -> "876" 
+  "875" -> "880" 
+  "876" -> "877" 
+  "877" -> "878" 
+  "877" -> "879" 
+  "880" -> "881" 
+  "881" -> "882" 
+  "881" -> "885" 
+  "882" -> "883" 
+  "882" -> "884" 
+  "885" -> "886" 
+  "885" -> "887" 
+  "887" -> "888" 
+  "889" -> "890" 
+  "889" -> "891" 
+  "892" -> "35" 
+  "894" -> "895" 
+  "894" -> "896" 
+  "896" -> "897" 
+  "898" -> "899" 
+  "898" -> "901" 
+  "899" -> "900" 
+  "901" -> "902" 
+  "901" -> "903" 
+  "901" -> "907" 
+  "901" -> "908" 
+  "901" -> "913" 
+  "901" -> "920" 
+  "903" -> "904" 
+  "903" -> "905" 
+  "905" -> "906" 
+  "908" -> "909" 
+  "908" -> "910" 
+  "910" -> "911" 
+  "911" -> "912" 
+  "913" -> "914" 
+  "913" -> "918" 
+  "914" -> "915" 
+  "914" -> "916" 
+  "916" -> "917" 
+  "918" -> "919" 
+  "920" -> "921" 
+  "920" -> "924" 
+  "921" -> "922" 
+  "921" -> "923" 
+  "924" -> "925" 
+  "925" -> "926" 
+  "925" -> "927" 
+  "928" -> "929" 
+  "928" -> "933" 
+  "928" -> "938" 
+  "929" -> "930" 
+  "929" -> "932" 
+  "930" -> "931" 
+  "933" -> "934" 
+  "934" -> "935" 
+  "935" -> "936" 
+  "935" -> "937" 
+  "938" -> "939" 
+  "939" -> "940" 
+  "939" -> "942" 
+  "939" -> "1021" 
+  "940" -> "941" 
+  "942" -> "943" 
+  "942" -> "944" 
+  "942" -> "947" 
+  "942" -> "948" 
+  "942" -> "951" 
+  "942" -> "952" 
+  "942" -> "956" 
+  "942" -> "1011" 
+  "944" -> "945" 
+  "944" -> "946" 
+  "948" -> "949" 
+  "948" -> "950" 
+  "952" -> "953" 
+  "952" -> "954" 
+  "954" -> "955" 
+  "956" -> "957" 
+  "956" -> "959" 
+  "957" -> "958" 
+  "959" -> "960" 
+  "959" -> "961" 
+  "959" -> "965" 
+  "959" -> "966" 
+  "959" -> "969" 
+  "961" -> "962" 
+  "961" -> "963" 
+  "963" -> "964" 
+  "966" -> "967" 
+  "966" -> "968" 
+  "969" -> "970" 
+  "969" -> "1009" 
+  "970" -> "971" 
+  "970" -> "978" 
+  "971" -> "972" 
+  "971" -> "973" 
+  "973" -> "37" 
+  "973" -> "974" 
+  "973" -> "975" 
+  "973" -> "977" 
+  "975" -> "976" 
+  "978" -> "979" 
+  "978" -> "982" 
+  "979" -> "980" 
+  "979" -> "981" 
+  "982" -> "983" 
+  "983" -> "984" 
+  "983" -> "987" 
+  "983" -> "1001" 
+  "984" -> "985" 
+  "984" -> "986" 
+  "987" -> "988" 
+  "988" -> "989" 
+  "989" -> "990" 
+  "989" -> "993" 
+  "989" -> "1000" 
+  "990" -> "991" 
+  "990" -> "992" 
+  "993" -> "994" 
+  "993" -> "995" 
+  "993" -> "996" 
+  "996" -> "997" 
+  "996" -> "998" 
+  "996" -> "999" 
+  "1001" -> "1002" 
+  "1002" -> "1003" 
+  "1002" -> "1006" 
+  "1003" -> "1004" 
+  "1003" -> "1005" 
+  "1006" -> "1007" 
+  "1006" -> "1008" 
+  "1009" -> "1010" 
+  "1011" -> "1012" 
+  "1011" -> "1015" 
+  "1012" -> "1013" 
+  "1012" -> "1014" 
+  "1015" -> "1016" 
+  "1015" -> "1019" 
+  "1016" -> "1017" 
+  "1016" -> "1018" 
+  "1019" -> "1020" 
+  "1021" -> "1022" 
+  "1022" -> "1023" 
+  "1022" -> "1037" 
+  "1023" -> "1024" 
+  "1023" -> "1030" 
+  "1024" -> "1025" 
+  "1024" -> "1029" 
+  "1025" -> "1026" 
+  "1026" -> "1027" 
+  "1026" -> "1028" 
+  "1030" -> "1031" 
+  "1031" -> "1032" 
+  "1032" -> "1033" 
+  "1032" -> "1036" 
+  "1033" -> "1034" 
+  "1033" -> "1035" 
+  "1037" -> "1038" 
+  "1038" -> "39" 
+  "1038" -> "1039" 
+  "1038" -> "1040" 
+  "1041" -> "1042" 
+}

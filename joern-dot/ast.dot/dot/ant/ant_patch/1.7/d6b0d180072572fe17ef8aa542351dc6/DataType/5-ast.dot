@@ -1,0 +1,127 @@
+digraph "dieOnCircularReference" {  
+"143" [label = <(METHOD,dieOnCircularReference)<SUB>137</SUB>> ]
+"16" [label = <(PARAM,this)<SUB>137</SUB>> ]
+"144" [label = <(PARAM,final Stack stack)<SUB>137</SUB>> ]
+"145" [label = <(PARAM,final Project project)<SUB>138</SUB>> ]
+"146" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>139</SUB>> ]
+"147" [label = <(CONTROL_STRUCTURE,if (checked || !isReference()),if (checked || !isReference()))<SUB>141</SUB>> ]
+"148" [label = <(&lt;operator&gt;.logicalOr,checked || !isReference())<SUB>141</SUB>> ]
+"149" [label = <(&lt;operator&gt;.fieldAccess,this.checked)<SUB>141</SUB>> ]
+"150" [label = <(IDENTIFIER,this,checked || !isReference())<SUB>141</SUB>> ]
+"151" [label = <(FIELD_IDENTIFIER,checked,checked)<SUB>141</SUB>> ]
+"152" [label = <(&lt;operator&gt;.logicalNot,!isReference())<SUB>141</SUB>> ]
+"153" [label = <(isReference,this.isReference())<SUB>141</SUB>> ]
+"15" [label = <(IDENTIFIER,this,this.isReference())<SUB>141</SUB>> ]
+"154" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>141</SUB>> ]
+"155" [label = <(RETURN,return;,return;)<SUB>142</SUB>> ]
+"156" [label = <(LOCAL,Object o: java.lang.Object)> ]
+"157" [label = <(&lt;operator&gt;.assignment,Object o = getReferencedObject(project))<SUB>144</SUB>> ]
+"158" [label = <(IDENTIFIER,o,Object o = getReferencedObject(project))<SUB>144</SUB>> ]
+"159" [label = <(getReferencedObject,getReferencedObject(project))<SUB>144</SUB>> ]
+"160" [label = <(&lt;operator&gt;.fieldAccess,this.ref)<SUB>144</SUB>> ]
+"161" [label = <(IDENTIFIER,this,getReferencedObject(project))<SUB>144</SUB>> ]
+"162" [label = <(FIELD_IDENTIFIER,ref,ref)<SUB>144</SUB>> ]
+"163" [label = <(IDENTIFIER,project,getReferencedObject(project))<SUB>144</SUB>> ]
+"164" [label = <(CONTROL_STRUCTURE,if (o instanceof DataType),if (o instanceof DataType))<SUB>146</SUB>> ]
+"165" [label = <(&lt;operator&gt;.instanceOf,o instanceof DataType)<SUB>146</SUB>> ]
+"166" [label = <(IDENTIFIER,o,o instanceof DataType)<SUB>146</SUB>> ]
+"167" [label = <(TYPE_REF,DataType,DataType)<SUB>146</SUB>> ]
+"168" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>146</SUB>> ]
+"169" [label = <(LOCAL,IdentityStack id: org.apache.tools.ant.util.IdentityStack)> ]
+"170" [label = <(&lt;operator&gt;.assignment,IdentityStack id = getInstance(stack))<SUB>147</SUB>> ]
+"171" [label = <(IDENTIFIER,id,IdentityStack id = getInstance(stack))<SUB>147</SUB>> ]
+"172" [label = <(getInstance,getInstance(stack))<SUB>147</SUB>> ]
+"173" [label = <(IDENTIFIER,IdentityStack,getInstance(stack))<SUB>147</SUB>> ]
+"174" [label = <(IDENTIFIER,stack,getInstance(stack))<SUB>147</SUB>> ]
+"175" [label = <(CONTROL_STRUCTURE,if (id.contains(o)),if (id.contains(o)))<SUB>149</SUB>> ]
+"176" [label = <(contains,contains(o))<SUB>149</SUB>> ]
+"177" [label = <(IDENTIFIER,id,contains(o))<SUB>149</SUB>> ]
+"178" [label = <(IDENTIFIER,o,contains(o))<SUB>149</SUB>> ]
+"179" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>149</SUB>> ]
+"180" [label = <(&lt;operator&gt;.throw,throw circularReference();)<SUB>150</SUB>> ]
+"181" [label = <(circularReference,this.circularReference())<SUB>150</SUB>> ]
+"17" [label = <(IDENTIFIER,this,this.circularReference())<SUB>150</SUB>> ]
+"182" [label = <(CONTROL_STRUCTURE,else,else)<SUB>151</SUB>> ]
+"183" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>151</SUB>> ]
+"184" [label = <(push,push(o))<SUB>152</SUB>> ]
+"185" [label = <(IDENTIFIER,id,push(o))<SUB>152</SUB>> ]
+"186" [label = <(IDENTIFIER,o,push(o))<SUB>152</SUB>> ]
+"187" [label = <(dieOnCircularReference,dieOnCircularReference(id, project))<SUB>153</SUB>> ]
+"188" [label = <(&lt;operator&gt;.cast,(DataType) o)<SUB>153</SUB>> ]
+"189" [label = <(TYPE_REF,DataType,DataType)<SUB>153</SUB>> ]
+"190" [label = <(IDENTIFIER,o,(DataType) o)<SUB>153</SUB>> ]
+"191" [label = <(IDENTIFIER,id,dieOnCircularReference(id, project))<SUB>153</SUB>> ]
+"192" [label = <(IDENTIFIER,project,dieOnCircularReference(id, project))<SUB>153</SUB>> ]
+"193" [label = <(pop,pop())<SUB>154</SUB>> ]
+"194" [label = <(IDENTIFIER,id,pop())<SUB>154</SUB>> ]
+"195" [label = <(&lt;operator&gt;.assignment,this.checked = true)<SUB>157</SUB>> ]
+"196" [label = <(&lt;operator&gt;.fieldAccess,this.checked)<SUB>157</SUB>> ]
+"197" [label = <(IDENTIFIER,this,this.checked = true)<SUB>157</SUB>> ]
+"198" [label = <(FIELD_IDENTIFIER,checked,checked)<SUB>157</SUB>> ]
+"199" [label = <(LITERAL,true,this.checked = true)<SUB>157</SUB>> ]
+"200" [label = <(MODIFIER,PROTECTED)> ]
+"201" [label = <(MODIFIER,VIRTUAL)> ]
+"202" [label = <(METHOD_RETURN,void)<SUB>137</SUB>> ]
+  "143" -> "16" 
+  "143" -> "144" 
+  "143" -> "145" 
+  "143" -> "146" 
+  "143" -> "200" 
+  "143" -> "201" 
+  "143" -> "202" 
+  "146" -> "147" 
+  "146" -> "156" 
+  "146" -> "157" 
+  "146" -> "164" 
+  "146" -> "195" 
+  "147" -> "148" 
+  "147" -> "154" 
+  "148" -> "149" 
+  "148" -> "152" 
+  "149" -> "150" 
+  "149" -> "151" 
+  "152" -> "153" 
+  "153" -> "15" 
+  "154" -> "155" 
+  "157" -> "158" 
+  "157" -> "159" 
+  "159" -> "160" 
+  "159" -> "163" 
+  "160" -> "161" 
+  "160" -> "162" 
+  "164" -> "165" 
+  "164" -> "168" 
+  "165" -> "166" 
+  "165" -> "167" 
+  "168" -> "169" 
+  "168" -> "170" 
+  "168" -> "175" 
+  "170" -> "171" 
+  "170" -> "172" 
+  "172" -> "173" 
+  "172" -> "174" 
+  "175" -> "176" 
+  "175" -> "179" 
+  "175" -> "182" 
+  "176" -> "177" 
+  "176" -> "178" 
+  "179" -> "180" 
+  "180" -> "181" 
+  "181" -> "17" 
+  "182" -> "183" 
+  "183" -> "184" 
+  "183" -> "187" 
+  "183" -> "193" 
+  "184" -> "185" 
+  "184" -> "186" 
+  "187" -> "188" 
+  "187" -> "191" 
+  "187" -> "192" 
+  "188" -> "189" 
+  "188" -> "190" 
+  "193" -> "194" 
+  "195" -> "196" 
+  "195" -> "199" 
+  "196" -> "197" 
+  "196" -> "198" 
+}

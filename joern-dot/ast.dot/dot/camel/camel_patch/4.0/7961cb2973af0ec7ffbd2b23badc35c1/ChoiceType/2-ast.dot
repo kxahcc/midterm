@@ -1,0 +1,141 @@
+digraph "createProcessor" {  
+"98" [label = <(METHOD,createProcessor)<SUB>70</SUB>> ]
+"99" [label = <(PARAM,this)<SUB>70</SUB>> ]
+"100" [label = <(PARAM,RouteContext routeContext)<SUB>71</SUB>> ]
+"101" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>71</SUB>> ]
+"9" [label = <(LOCAL,List&lt;FilterProcessor&gt; filters: ANY)> ]
+"102" [label = <(&lt;operator&gt;.assignment,ANY filters = new ArrayList&lt;FilterProcessor&gt;())<SUB>72</SUB>> ]
+"103" [label = <(IDENTIFIER,filters,ANY filters = new ArrayList&lt;FilterProcessor&gt;())<SUB>72</SUB>> ]
+"104" [label = <(&lt;operator&gt;.alloc,new ArrayList&lt;FilterProcessor&gt;())<SUB>72</SUB>> ]
+"105" [label = <(&lt;init&gt;,new ArrayList&lt;FilterProcessor&gt;())<SUB>72</SUB>> ]
+"8" [label = <(IDENTIFIER,filters,new ArrayList&lt;FilterProcessor&gt;())<SUB>72</SUB>> ]
+"106" [label = <(LOCAL,$iterLocal0: java.util.Iterator)<SUB>73</SUB>> ]
+"107" [label = <(&lt;operator&gt;.assignment,)<SUB>73</SUB>> ]
+"108" [label = <(IDENTIFIER,$iterLocal0,)<SUB>73</SUB>> ]
+"109" [label = <(iterator,&lt;empty&gt;)<SUB>73</SUB>> ]
+"110" [label = <(&lt;operator&gt;.fieldAccess,this.whenClauses)<SUB>73</SUB>> ]
+"111" [label = <(IDENTIFIER,this,&lt;empty&gt;)<SUB>73</SUB>> ]
+"112" [label = <(FIELD_IDENTIFIER,whenClauses,whenClauses)<SUB>73</SUB>> ]
+"113" [label = <(CONTROL_STRUCTURE,FOR,FOR)<SUB>73</SUB>> ]
+"114" [label = <(hasNext,&lt;empty&gt;)<SUB>73</SUB>> ]
+"115" [label = <(IDENTIFIER,$iterLocal0,&lt;empty&gt;)<SUB>73</SUB>> ]
+"116" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>73</SUB>> ]
+"117" [label = <(LOCAL,whenClaus: ANY)<SUB>73</SUB>> ]
+"118" [label = <(&lt;operator&gt;.assignment,&lt;empty&gt;)<SUB>73</SUB>> ]
+"119" [label = <(IDENTIFIER,whenClaus,&lt;empty&gt;)<SUB>73</SUB>> ]
+"120" [label = <(next,&lt;empty&gt;)<SUB>73</SUB>> ]
+"121" [label = <(IDENTIFIER,$iterLocal0,&lt;empty&gt;)<SUB>73</SUB>> ]
+"122" [label = <(add,add(whenClaus.createProcessor(routeContext)))<SUB>74</SUB>> ]
+"123" [label = <(IDENTIFIER,filters,add(whenClaus.createProcessor(routeContext)))<SUB>74</SUB>> ]
+"124" [label = <(createProcessor,createProcessor(routeContext))<SUB>74</SUB>> ]
+"125" [label = <(IDENTIFIER,whenClaus,createProcessor(routeContext))<SUB>74</SUB>> ]
+"126" [label = <(IDENTIFIER,routeContext,createProcessor(routeContext))<SUB>74</SUB>> ]
+"127" [label = <(LOCAL,Processor otherwiseProcessor: org.apache.camel.Processor)> ]
+"128" [label = <(&lt;operator&gt;.assignment,Processor otherwiseProcessor = null)<SUB>76</SUB>> ]
+"129" [label = <(IDENTIFIER,otherwiseProcessor,Processor otherwiseProcessor = null)<SUB>76</SUB>> ]
+"130" [label = <(LITERAL,null,Processor otherwiseProcessor = null)<SUB>76</SUB>> ]
+"131" [label = <(CONTROL_STRUCTURE,if (otherwise != null),if (otherwise != null))<SUB>77</SUB>> ]
+"132" [label = <(&lt;operator&gt;.notEquals,otherwise != null)<SUB>77</SUB>> ]
+"133" [label = <(&lt;operator&gt;.fieldAccess,this.otherwise)<SUB>77</SUB>> ]
+"134" [label = <(IDENTIFIER,this,otherwise != null)<SUB>77</SUB>> ]
+"135" [label = <(FIELD_IDENTIFIER,otherwise,otherwise)<SUB>77</SUB>> ]
+"136" [label = <(LITERAL,null,otherwise != null)<SUB>77</SUB>> ]
+"137" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>77</SUB>> ]
+"138" [label = <(&lt;operator&gt;.assignment,otherwiseProcessor = createProcessor(routeContext))<SUB>78</SUB>> ]
+"139" [label = <(IDENTIFIER,otherwiseProcessor,otherwiseProcessor = createProcessor(routeContext))<SUB>78</SUB>> ]
+"140" [label = <(createProcessor,createProcessor(routeContext))<SUB>78</SUB>> ]
+"141" [label = <(&lt;operator&gt;.fieldAccess,this.otherwise)<SUB>78</SUB>> ]
+"142" [label = <(IDENTIFIER,this,createProcessor(routeContext))<SUB>78</SUB>> ]
+"143" [label = <(FIELD_IDENTIFIER,otherwise,otherwise)<SUB>78</SUB>> ]
+"144" [label = <(IDENTIFIER,routeContext,createProcessor(routeContext))<SUB>78</SUB>> ]
+"145" [label = <(CONTROL_STRUCTURE,else,else)<SUB>79</SUB>> ]
+"146" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>79</SUB>> ]
+"147" [label = <(warn,warn(&quot;No otherwise clause was specified for a choice block -- any unmatched exchanges will be dropped&quot;))<SUB>80</SUB>> ]
+"148" [label = <(&lt;operator&gt;.fieldAccess,ChoiceType.LOG)<SUB>80</SUB>> ]
+"149" [label = <(IDENTIFIER,ChoiceType,warn(&quot;No otherwise clause was specified for a choice block -- any unmatched exchanges will be dropped&quot;))<SUB>80</SUB>> ]
+"150" [label = <(FIELD_IDENTIFIER,LOG,LOG)<SUB>80</SUB>> ]
+"151" [label = <(LITERAL,&quot;No otherwise clause was specified for a choice block -- any unmatched exchanges will be dropped&quot;,warn(&quot;No otherwise clause was specified for a choice block -- any unmatched exchanges will be dropped&quot;))<SUB>80</SUB>> ]
+"152" [label = <(RETURN,return new ChoiceProcessor(filters, otherwiseProcessor);,return new ChoiceProcessor(filters, otherwiseProcessor);)<SUB>82</SUB>> ]
+"153" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>82</SUB>> ]
+"154" [label = <(&lt;operator&gt;.assignment,&lt;empty&gt;)> ]
+"155" [label = <(IDENTIFIER,$obj2,&lt;empty&gt;)> ]
+"156" [label = <(&lt;operator&gt;.alloc,new ChoiceProcessor(filters, otherwiseProcessor))<SUB>82</SUB>> ]
+"157" [label = <(&lt;init&gt;,new ChoiceProcessor(filters, otherwiseProcessor))<SUB>82</SUB>> ]
+"158" [label = <(IDENTIFIER,$obj2,new ChoiceProcessor(filters, otherwiseProcessor))> ]
+"159" [label = <(IDENTIFIER,filters,new ChoiceProcessor(filters, otherwiseProcessor))<SUB>82</SUB>> ]
+"160" [label = <(IDENTIFIER,otherwiseProcessor,new ChoiceProcessor(filters, otherwiseProcessor))<SUB>82</SUB>> ]
+"161" [label = <(IDENTIFIER,$obj2,&lt;empty&gt;)> ]
+"162" [label = <(MODIFIER,PUBLIC)> ]
+"163" [label = <(MODIFIER,VIRTUAL)> ]
+"164" [label = <(ANNOTATION,@Override,@Override)<SUB>70</SUB>> ]
+"165" [label = <(METHOD_RETURN,org.apache.camel.Processor)<SUB>71</SUB>> ]
+  "98" -> "99" 
+  "98" -> "100" 
+  "98" -> "101" 
+  "98" -> "162" 
+  "98" -> "163" 
+  "98" -> "164" 
+  "98" -> "165" 
+  "101" -> "9" 
+  "101" -> "102" 
+  "101" -> "105" 
+  "101" -> "106" 
+  "101" -> "107" 
+  "101" -> "113" 
+  "101" -> "127" 
+  "101" -> "128" 
+  "101" -> "131" 
+  "101" -> "152" 
+  "102" -> "103" 
+  "102" -> "104" 
+  "105" -> "8" 
+  "107" -> "108" 
+  "107" -> "109" 
+  "109" -> "110" 
+  "110" -> "111" 
+  "110" -> "112" 
+  "113" -> "114" 
+  "113" -> "116" 
+  "114" -> "115" 
+  "116" -> "117" 
+  "116" -> "118" 
+  "116" -> "122" 
+  "118" -> "119" 
+  "118" -> "120" 
+  "120" -> "121" 
+  "122" -> "123" 
+  "122" -> "124" 
+  "124" -> "125" 
+  "124" -> "126" 
+  "128" -> "129" 
+  "128" -> "130" 
+  "131" -> "132" 
+  "131" -> "137" 
+  "131" -> "145" 
+  "132" -> "133" 
+  "132" -> "136" 
+  "133" -> "134" 
+  "133" -> "135" 
+  "137" -> "138" 
+  "138" -> "139" 
+  "138" -> "140" 
+  "140" -> "141" 
+  "140" -> "144" 
+  "141" -> "142" 
+  "141" -> "143" 
+  "145" -> "146" 
+  "146" -> "147" 
+  "147" -> "148" 
+  "147" -> "151" 
+  "148" -> "149" 
+  "148" -> "150" 
+  "152" -> "153" 
+  "153" -> "154" 
+  "153" -> "157" 
+  "153" -> "161" 
+  "154" -> "155" 
+  "154" -> "156" 
+  "157" -> "158" 
+  "157" -> "159" 
+  "157" -> "160" 
+}

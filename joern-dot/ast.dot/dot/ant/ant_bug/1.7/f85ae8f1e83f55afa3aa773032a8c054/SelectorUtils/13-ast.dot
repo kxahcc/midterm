@@ -1,0 +1,71 @@
+digraph "isOutOfDate" {  
+"1355" [label = <(METHOD,isOutOfDate)<SUB>621</SUB>> ]
+"1356" [label = <(PARAM,Resource src)<SUB>621</SUB>> ]
+"1357" [label = <(PARAM,Resource target)<SUB>621</SUB>> ]
+"1358" [label = <(PARAM,long granularity)<SUB>622</SUB>> ]
+"1359" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>622</SUB>> ]
+"1360" [label = <(CONTROL_STRUCTURE,if (!src.isExists()),if (!src.isExists()))<SUB>623</SUB>> ]
+"1361" [label = <(&lt;operator&gt;.logicalNot,!src.isExists())<SUB>623</SUB>> ]
+"1362" [label = <(isExists,isExists())<SUB>623</SUB>> ]
+"1363" [label = <(IDENTIFIER,src,isExists())<SUB>623</SUB>> ]
+"1364" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>623</SUB>> ]
+"1365" [label = <(RETURN,return false;,return false;)<SUB>624</SUB>> ]
+"1366" [label = <(LITERAL,false,return false;)<SUB>624</SUB>> ]
+"1367" [label = <(CONTROL_STRUCTURE,if (!target.isExists()),if (!target.isExists()))<SUB>626</SUB>> ]
+"1368" [label = <(&lt;operator&gt;.logicalNot,!target.isExists())<SUB>626</SUB>> ]
+"1369" [label = <(isExists,isExists())<SUB>626</SUB>> ]
+"1370" [label = <(IDENTIFIER,target,isExists())<SUB>626</SUB>> ]
+"1371" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>626</SUB>> ]
+"1372" [label = <(RETURN,return true;,return true;)<SUB>627</SUB>> ]
+"1373" [label = <(LITERAL,true,return true;)<SUB>627</SUB>> ]
+"1374" [label = <(CONTROL_STRUCTURE,if ((src.getLastModified() - granularity) &gt; target.getLastModified()),if ((src.getLastModified() - granularity) &gt; target.getLastModified()))<SUB>629</SUB>> ]
+"1375" [label = <(&lt;operator&gt;.greaterThan,(src.getLastModified() - granularity) &gt; target.getLastModified())<SUB>629</SUB>> ]
+"1376" [label = <(&lt;operator&gt;.subtraction,src.getLastModified() - granularity)<SUB>629</SUB>> ]
+"1377" [label = <(getLastModified,getLastModified())<SUB>629</SUB>> ]
+"1378" [label = <(IDENTIFIER,src,getLastModified())<SUB>629</SUB>> ]
+"1379" [label = <(IDENTIFIER,granularity,src.getLastModified() - granularity)<SUB>629</SUB>> ]
+"1380" [label = <(getLastModified,getLastModified())<SUB>629</SUB>> ]
+"1381" [label = <(IDENTIFIER,target,getLastModified())<SUB>629</SUB>> ]
+"1382" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>629</SUB>> ]
+"1383" [label = <(RETURN,return true;,return true;)<SUB>630</SUB>> ]
+"1384" [label = <(LITERAL,true,return true;)<SUB>630</SUB>> ]
+"1385" [label = <(RETURN,return false;,return false;)<SUB>632</SUB>> ]
+"1386" [label = <(LITERAL,false,return false;)<SUB>632</SUB>> ]
+"1387" [label = <(MODIFIER,PUBLIC)> ]
+"1388" [label = <(MODIFIER,STATIC)> ]
+"1389" [label = <(METHOD_RETURN,boolean)<SUB>621</SUB>> ]
+  "1355" -> "1356" 
+  "1355" -> "1357" 
+  "1355" -> "1358" 
+  "1355" -> "1359" 
+  "1355" -> "1387" 
+  "1355" -> "1388" 
+  "1355" -> "1389" 
+  "1359" -> "1360" 
+  "1359" -> "1367" 
+  "1359" -> "1374" 
+  "1359" -> "1385" 
+  "1360" -> "1361" 
+  "1360" -> "1364" 
+  "1361" -> "1362" 
+  "1362" -> "1363" 
+  "1364" -> "1365" 
+  "1365" -> "1366" 
+  "1367" -> "1368" 
+  "1367" -> "1371" 
+  "1368" -> "1369" 
+  "1369" -> "1370" 
+  "1371" -> "1372" 
+  "1372" -> "1373" 
+  "1374" -> "1375" 
+  "1374" -> "1382" 
+  "1375" -> "1376" 
+  "1375" -> "1380" 
+  "1376" -> "1377" 
+  "1376" -> "1379" 
+  "1377" -> "1378" 
+  "1380" -> "1381" 
+  "1382" -> "1383" 
+  "1383" -> "1384" 
+  "1385" -> "1386" 
+}

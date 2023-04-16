@@ -1,0 +1,91 @@
+digraph "createNextExchange" {  
+"196" [label = <(METHOD,createNextExchange)<SUB>143</SUB>> ]
+"197" [label = <(PARAM,this)<SUB>143</SUB>> ]
+"198" [label = <(PARAM,Processor producer)<SUB>143</SUB>> ]
+"199" [label = <(PARAM,Exchange previousExchange)<SUB>143</SUB>> ]
+"200" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>143</SUB>> ]
+"201" [label = <(LOCAL,Exchange answer: org.apache.camel.Exchange)> ]
+"202" [label = <(&lt;operator&gt;.assignment,Exchange answer = newInstance())<SUB>144</SUB>> ]
+"203" [label = <(IDENTIFIER,answer,Exchange answer = newInstance())<SUB>144</SUB>> ]
+"204" [label = <(newInstance,newInstance())<SUB>144</SUB>> ]
+"205" [label = <(IDENTIFIER,previousExchange,newInstance())<SUB>144</SUB>> ]
+"206" [label = <(putAll,putAll(previousExchange.getProperties()))<SUB>146</SUB>> ]
+"207" [label = <(getProperties,getProperties())<SUB>146</SUB>> ]
+"208" [label = <(IDENTIFIER,answer,getProperties())<SUB>146</SUB>> ]
+"209" [label = <(getProperties,getProperties())<SUB>146</SUB>> ]
+"210" [label = <(IDENTIFIER,previousExchange,getProperties())<SUB>146</SUB>> ]
+"211" [label = <(LOCAL,Message previousOut: org.apache.camel.Message)> ]
+"212" [label = <(&lt;operator&gt;.assignment,Message previousOut = getOut(false))<SUB>150</SUB>> ]
+"213" [label = <(IDENTIFIER,previousOut,Message previousOut = getOut(false))<SUB>150</SUB>> ]
+"214" [label = <(getOut,getOut(false))<SUB>150</SUB>> ]
+"215" [label = <(IDENTIFIER,previousExchange,getOut(false))<SUB>150</SUB>> ]
+"216" [label = <(LITERAL,false,getOut(false))<SUB>150</SUB>> ]
+"217" [label = <(LOCAL,Message in: org.apache.camel.Message)> ]
+"218" [label = <(&lt;operator&gt;.assignment,Message in = getIn())<SUB>151</SUB>> ]
+"219" [label = <(IDENTIFIER,in,Message in = getIn())<SUB>151</SUB>> ]
+"220" [label = <(getIn,getIn())<SUB>151</SUB>> ]
+"221" [label = <(IDENTIFIER,answer,getIn())<SUB>151</SUB>> ]
+"222" [label = <(CONTROL_STRUCTURE,if (previousOut != null),if (previousOut != null))<SUB>152</SUB>> ]
+"223" [label = <(&lt;operator&gt;.notEquals,previousOut != null)<SUB>152</SUB>> ]
+"224" [label = <(IDENTIFIER,previousOut,previousOut != null)<SUB>152</SUB>> ]
+"225" [label = <(LITERAL,null,previousOut != null)<SUB>152</SUB>> ]
+"226" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>152</SUB>> ]
+"227" [label = <(copyFrom,copyFrom(previousOut))<SUB>153</SUB>> ]
+"228" [label = <(IDENTIFIER,in,copyFrom(previousOut))<SUB>153</SUB>> ]
+"229" [label = <(IDENTIFIER,previousOut,copyFrom(previousOut))<SUB>153</SUB>> ]
+"230" [label = <(CONTROL_STRUCTURE,else,else)<SUB>154</SUB>> ]
+"231" [label = <(BLOCK,&lt;empty&gt;,&lt;empty&gt;)<SUB>154</SUB>> ]
+"232" [label = <(copyFrom,copyFrom(previousExchange.getIn()))<SUB>155</SUB>> ]
+"233" [label = <(IDENTIFIER,in,copyFrom(previousExchange.getIn()))<SUB>155</SUB>> ]
+"234" [label = <(getIn,getIn())<SUB>155</SUB>> ]
+"235" [label = <(IDENTIFIER,previousExchange,getIn())<SUB>155</SUB>> ]
+"236" [label = <(RETURN,return answer;,return answer;)<SUB>157</SUB>> ]
+"237" [label = <(IDENTIFIER,answer,return answer;)<SUB>157</SUB>> ]
+"238" [label = <(MODIFIER,PROTECTED)> ]
+"239" [label = <(MODIFIER,VIRTUAL)> ]
+"240" [label = <(METHOD_RETURN,org.apache.camel.Exchange)<SUB>143</SUB>> ]
+  "196" -> "197" 
+  "196" -> "198" 
+  "196" -> "199" 
+  "196" -> "200" 
+  "196" -> "238" 
+  "196" -> "239" 
+  "196" -> "240" 
+  "200" -> "201" 
+  "200" -> "202" 
+  "200" -> "206" 
+  "200" -> "211" 
+  "200" -> "212" 
+  "200" -> "217" 
+  "200" -> "218" 
+  "200" -> "222" 
+  "200" -> "236" 
+  "202" -> "203" 
+  "202" -> "204" 
+  "204" -> "205" 
+  "206" -> "207" 
+  "206" -> "209" 
+  "207" -> "208" 
+  "209" -> "210" 
+  "212" -> "213" 
+  "212" -> "214" 
+  "214" -> "215" 
+  "214" -> "216" 
+  "218" -> "219" 
+  "218" -> "220" 
+  "220" -> "221" 
+  "222" -> "223" 
+  "222" -> "226" 
+  "222" -> "230" 
+  "223" -> "224" 
+  "223" -> "225" 
+  "226" -> "227" 
+  "227" -> "228" 
+  "227" -> "229" 
+  "230" -> "231" 
+  "231" -> "232" 
+  "232" -> "233" 
+  "232" -> "234" 
+  "234" -> "235" 
+  "236" -> "237" 
+}
